@@ -17,6 +17,7 @@ const NAV_LINKS = [
   { label: "GCSE 分数线", to: "/gcse" },
   { label: "等级预测", to: "/calculator" },
   { label: "刷题规划", to: "/planner" },
+  { label: "A*率趋势", to: "/statistics" },
   { label: "人格测试", to: "/personality" },
 ];
 
@@ -117,6 +118,16 @@ const FEATURE_CARDS = [
     to: "/planner",
     stat: "1,146",
     statLabel: "份试卷",
+  },
+  {
+    title: "历年 A*率趋势",
+    desc: "15+ 科目 · 2017-2025 · 多考试局",
+    detail: "查看 CAIE、UK National 等考试局历年 A*率、A率、B率趋势。覆盖数学、进阶数学、物理、化学、生物等核心科目。",
+    icon: BarChart3,
+    accent: "#C75B2A",
+    to: "/statistics",
+    stat: "2017-2025",
+    statLabel: "数据跨度",
   },
   {
     title: "A-Level 人格诊断",

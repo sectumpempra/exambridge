@@ -5,6 +5,7 @@ import Planner from "./pages/Planner";
 import About from "./pages/About";
 import PersonalityTest from "./pages/PersonalityTest";
 import IdentitySelect from "./pages/IdentitySelect";
+import ResultStatisticsPage from "./pages/ResultStatisticsPage";
 
 // A-Level pages
 import AlevelHome from "./pages/alevel/Home";
@@ -52,6 +53,9 @@ export default function App() {
       {/* Personality Test */}
       <Route path="/personality" element={<IdentitySelect />} />
       <Route path="/personality/test" element={<PersonalityTest />} />
+
+      {/* Result Statistics */}
+      <Route path="/statistics" element={<ResultStatisticsPage />} />
     </Routes>
   );
 }

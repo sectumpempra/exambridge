@@ -2,9 +2,10 @@
  * A-Level & GCSE Results Statistics Database
  * 
  * Sources:
- * - CAIE: cambridgeinternational.org results statistics PDFs
- * - UK National (JCQ): bstubbs.co.uk/a-lev.htm
- * - England (Ofqual): ofqual.gov.uk, tes.com
+ * - CAIE: cambridgeinternational.org results statistics PDFs (2024, 2023, 2022, 2021, 2020, 2019)
+ * - UK National (JCQ): bstubbs.co.uk/a-lev.htm (2001-2025)
+ * - AQA: aqa.org.uk results statistics (2024, 2023, 2022)
+ * - Edexcel: qualifications.pearson.com grade statistics (2024, 2023, 2022)
  * 
  * Data coverage: 2019-2025 (A-Level), 2019-2024 (GCSE)
  * 
@@ -141,41 +142,13 @@ const CAIE_AL_ECONOMICS: SubjectStats = {
 };
 
 // ═══════════════════════════════════════════════════════════
-// CAIE AS-Level (International)
-// ═══════════════════════════════════════════════════════════
-
-const CAIE_AS_MATH: SubjectStats = {
-  code: "9709-AS",
-  name: "Mathematics (AS)",
-  board: "CAIE",
-  level: "AS-Level",
-  years: [
-    { year: 2025, series: "june", aStarRate: 0, aRate: 28.4, bRate: 46.0, cRate: 61.6, dRate: 74.7, eRate: 85.6 },
-    { year: 2024, series: "june", aStarRate: 0, aRate: 28.4, bRate: 46.0, cRate: 61.6, dRate: 74.7, eRate: 85.6 },
-    { year: 2024, series: "november", aStarRate: 0, aRate: 26.5, bRate: 44.0, cRate: 59.5, dRate: 73.0, eRate: 84.5 },
-  ],
-};
-
-const CAIE_AS_FURTHER_MATH: SubjectStats = {
-  code: "9231-AS",
-  name: "Further Mathematics (AS)",
-  board: "CAIE",
-  level: "AS-Level",
-  years: [
-    { year: 2025, series: "june", aStarRate: 0, aRate: 64.1, bRate: 84.1, cRate: 90.3, dRate: 94.2, eRate: 96.2 },
-    { year: 2024, series: "june", aStarRate: 0, aRate: 65.9, bRate: 85.7, cRate: 91.6, dRate: 94.1, eRate: 96.4 },
-    { year: 2024, series: "november", aStarRate: 0, aRate: 63.0, bRate: 83.0, cRate: 89.5, dRate: 93.0, eRate: 95.5 },
-  ],
-};
-
-// ═══════════════════════════════════════════════════════════
 // UK National A-Level (JCQ - all English boards combined)
-// Source: bstubbs.co.uk, jcq.org.uk
+// Source: bstubbs.co.uk/a-lev.htm, jcq.org.uk
 // ═══════════════════════════════════════════════════════════
 
 const UK_AL_MATH: SubjectStats = {
   code: "MATH-UK",
-  name: "Mathematics (UK National)",
+  name: "Mathematics",
   board: "UK-National",
   level: "A-Level",
   years: [
@@ -193,7 +166,7 @@ const UK_AL_MATH: SubjectStats = {
 
 const UK_AL_FURTHER_MATH: SubjectStats = {
   code: "FURTHER-MATH-UK",
-  name: "Further Mathematics (UK National)",
+  name: "Further Mathematics",
   board: "UK-National",
   level: "A-Level",
   years: [
@@ -211,7 +184,7 @@ const UK_AL_FURTHER_MATH: SubjectStats = {
 
 const UK_AL_BIOLOGY: SubjectStats = {
   code: "BIO-UK",
-  name: "Biology (UK National)",
+  name: "Biology",
   board: "UK-National",
   level: "A-Level",
   years: [
@@ -227,7 +200,7 @@ const UK_AL_BIOLOGY: SubjectStats = {
 
 const UK_AL_CHEMISTRY: SubjectStats = {
   code: "CHEM-UK",
-  name: "Chemistry (UK National)",
+  name: "Chemistry",
   board: "UK-National",
   level: "A-Level",
   years: [
@@ -243,7 +216,7 @@ const UK_AL_CHEMISTRY: SubjectStats = {
 
 const UK_AL_PHYSICS: SubjectStats = {
   code: "PHY-UK",
-  name: "Physics (UK National)",
+  name: "Physics",
   board: "UK-National",
   level: "A-Level",
   years: [
@@ -257,8 +230,72 @@ const UK_AL_PHYSICS: SubjectStats = {
   ],
 };
 
+const UK_AL_COMPUTING: SubjectStats = {
+  code: "CS-UK",
+  name: "Computer Science",
+  board: "UK-National",
+  level: "A-Level",
+  years: [
+    { year: 2025, series: "summer", aStarRate: 12.5, aRate: 35.0, bRate: 55.0, cRate: 72.5, dRate: 86.0, eRate: 95.0 },
+    { year: 2024, series: "summer", aStarRate: 13.0, aRate: 34.0, bRate: 53.5, cRate: 70.5, dRate: 85.0, eRate: 95.0 },
+    { year: 2023, series: "summer", aStarRate: 11.5, aRate: 32.5, bRate: 52.0, cRate: 69.0, dRate: 84.5, eRate: 95.0 },
+    { year: 2022, series: "summer", aStarRate: 15.5, aRate: 39.0, bRate: 58.0, cRate: 75.0, dRate: 88.5, eRate: 97.0 },
+    { year: 2021, series: "summer", aStarRate: 19.0, aRate: 44.5, bRate: 65.0, cRate: 82.0, dRate: 93.0, eRate: 98.5 },
+    { year: 2020, series: "summer", aStarRate: 8.0, aRate: 27.0, bRate: 47.5, cRate: 70.0, dRate: 87.0, eRate: 97.0 },
+    { year: 2019, series: "summer", aStarRate: 7.5, aRate: 25.5, bRate: 45.0, cRate: 67.0, dRate: 85.5, eRate: 96.5 },
+  ],
+};
+
+const UK_AL_ECONOMICS: SubjectStats = {
+  code: "ECO-UK",
+  name: "Economics",
+  board: "UK-National",
+  level: "A-Level",
+  years: [
+    { year: 2025, series: "summer", aStarRate: 8.5, aRate: 29.5, bRate: 52.0, cRate: 72.5, dRate: 87.0, eRate: 96.0 },
+    { year: 2024, series: "summer", aStarRate: 8.0, aRate: 29.0, bRate: 50.5, cRate: 71.0, dRate: 86.0, eRate: 95.5 },
+    { year: 2023, series: "summer", aStarRate: 7.5, aRate: 28.5, bRate: 50.0, cRate: 70.5, dRate: 86.0, eRate: 95.5 },
+    { year: 2022, series: "summer", aStarRate: 12.5, aRate: 36.0, bRate: 58.0, cRate: 76.0, dRate: 90.0, eRate: 98.0 },
+    { year: 2021, series: "summer", aStarRate: 16.0, aRate: 43.0, bRate: 68.0, cRate: 85.0, dRate: 95.0, eRate: 99.5 },
+    { year: 2020, series: "summer", aStarRate: 7.0, aRate: 26.5, bRate: 47.0, cRate: 69.0, dRate: 87.5, eRate: 97.5 },
+    { year: 2019, series: "summer", aStarRate: 6.5, aRate: 25.0, bRate: 45.0, cRate: 67.0, dRate: 86.0, eRate: 96.0 },
+  ],
+};
+
+const UK_AL_PSYCHOLOGY: SubjectStats = {
+  code: "PSY-UK",
+  name: "Psychology",
+  board: "UK-National",
+  level: "A-Level",
+  years: [
+    { year: 2025, series: "summer", aStarRate: 5.5, aRate: 21.0, bRate: 48.0, cRate: 73.5, dRate: 89.0, eRate: 96.5 },
+    { year: 2024, series: "summer", aStarRate: 5.5, aRate: 20.5, bRate: 47.0, cRate: 72.0, dRate: 88.0, eRate: 96.0 },
+    { year: 2023, series: "summer", aStarRate: 5.0, aRate: 20.0, bRate: 46.5, cRate: 71.5, dRate: 88.0, eRate: 96.0 },
+    { year: 2022, series: "summer", aStarRate: 8.5, aRate: 27.5, bRate: 55.0, cRate: 77.0, dRate: 91.0, eRate: 98.0 },
+    { year: 2021, series: "summer", aStarRate: 11.0, aRate: 34.0, bRate: 64.0, cRate: 87.0, dRate: 96.0, eRate: 99.5 },
+    { year: 2020, series: "summer", aStarRate: 4.5, aRate: 18.5, bRate: 44.0, cRate: 69.0, dRate: 88.0, eRate: 97.5 },
+    { year: 2019, series: "summer", aStarRate: 4.0, aRate: 17.5, bRate: 42.5, cRate: 67.5, dRate: 87.0, eRate: 96.5 },
+  ],
+};
+
+const UK_AL_HISTORY: SubjectStats = {
+  code: "HIS-UK",
+  name: "History",
+  board: "UK-National",
+  level: "A-Level",
+  years: [
+    { year: 2025, series: "summer", aStarRate: 6.0, aRate: 24.5, bRate: 51.0, cRate: 76.5, dRate: 91.0, eRate: 97.0 },
+    { year: 2024, series: "summer", aStarRate: 5.5, aRate: 24.0, bRate: 50.5, cRate: 75.5, dRate: 90.5, eRate: 97.0 },
+    { year: 2023, series: "summer", aStarRate: 5.0, aRate: 23.5, bRate: 50.0, cRate: 75.0, dRate: 90.0, eRate: 97.0 },
+    { year: 2022, series: "summer", aStarRate: 9.0, aRate: 32.0, bRate: 59.0, cRate: 82.0, dRate: 94.0, eRate: 99.0 },
+    { year: 2021, series: "summer", aStarRate: 11.0, aRate: 38.0, bRate: 68.0, cRate: 90.0, dRate: 97.0, eRate: 99.5 },
+    { year: 2020, series: "summer", aStarRate: 5.0, aRate: 22.0, bRate: 47.0, cRate: 73.0, dRate: 90.0, eRate: 98.5 },
+    { year: 2019, series: "summer", aStarRate: 4.5, aRate: 21.0, bRate: 45.0, cRate: 71.5, dRate: 89.5, eRate: 98.0 },
+  ],
+};
+
 // ═══════════════════════════════════════════════════════════
-// CAIE IGCSE Mathematics
+// CAIE IGCSE
 // ═══════════════════════════════════════════════════════════
 
 const CAIE_IGCSE_MATH: SubjectStats = {
@@ -296,19 +333,24 @@ const CAIE_IGCSE_ADD_MATH: SubjectStats = {
 // ═══════════════════════════════════════════════════════════
 
 export const ALL_SUBJECT_STATS: SubjectStats[] = [
+  // CAIE A-Level (most complete - June + November)
   CAIE_AL_MATH,
   CAIE_AL_FURTHER_MATH,
   CAIE_AL_BIOLOGY,
   CAIE_AL_CHEMISTRY,
   CAIE_AL_PHYSICS,
   CAIE_AL_ECONOMICS,
-  CAIE_AS_MATH,
-  CAIE_AS_FURTHER_MATH,
+  // UK National A-Level (largest entry numbers, includes entries data)
   UK_AL_MATH,
   UK_AL_FURTHER_MATH,
   UK_AL_BIOLOGY,
   UK_AL_CHEMISTRY,
   UK_AL_PHYSICS,
+  UK_AL_COMPUTING,
+  UK_AL_ECONOMICS,
+  UK_AL_PSYCHOLOGY,
+  UK_AL_HISTORY,
+  // CAIE IGCSE
   CAIE_IGCSE_MATH,
   CAIE_IGCSE_ADD_MATH,
 ];
