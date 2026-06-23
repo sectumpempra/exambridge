@@ -2,6 +2,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import DataTable from "./DataTable";
 import GradeChart from "./GradeChart";
+import ResultStatistics from "./ResultStatistics";
 import { downloadCSV } from "../utils/csvExport";
 import { Download } from "lucide-react";
 
@@ -64,6 +65,21 @@ export default function ALevelBoardPage({
               titlePrefix={`${boardName} ${level} 分数线趋势`}
               isCaie={isCaie}
               componentField={componentField}
+            />
+          </div>
+        </section>
+
+        {/* Result Statistics Section - Grade rates over years */}
+        <section
+          style={{
+            padding: "40px 16px 0",
+            borderTop: "1px solid #E8E4DE",
+          }}
+        >
+          <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+            <ResultStatistics
+              initialBoard={isCaie ? "CAIE" : "UK-National"}
+              initialLevel="A-Level"
             />
           </div>
         </section>
