@@ -377,9 +377,14 @@ export default function ResultStatisticsPage() {
                 <select
                   value={selectedBoard}
                   onChange={(e) => {
-                    setSelectedBoard(e.target.value);
-                    const newLevels = getAvailableLevels(e.target.value);
-                    if (newLevels.length > 0) setSelectedLevel(newLevels[0]);
+                    const newBoard = e.target.value;
+                    setSelectedBoard(newBoard);
+                    const newLevels = getAvailableLevels(newBoard);
+                    if (newLevels.length > 0) {
+                      setSelectedLevel(newLevels[0]);
+                      const newSubjects = getAvailableSubjects(newBoard, newLevels[0]);
+                      if (newSubjects.length > 0) setSelectedSubjectCode(newSubjects[0].code);
+                    }
                   }}
                   style={selectStyle}
                 >
@@ -693,7 +698,9 @@ export default function ResultStatisticsPage() {
                 数据来源：
                 {selectedBoard === "CAIE"
                   ? "Cambridge International Education official results statistics (world totals)"
-                  : "JCQ Joint Council for Qualifications (UK national aggregates, combining Edexcel + AQA + OCR)"}
+                  : selectedBoard === "AQA"
+                  ? "AQA official results statistics (aqa.org.uk)"
+                  : "OCR official results statistics (ocr.org.uk)"}
               </p>
             </>
           )}
