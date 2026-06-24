@@ -242,7 +242,7 @@ function ExamBoardCard({
       to={`/alevel/${board.id}`}
       className="hero-board-card scroll-reveal"
       style={{
-        padding: "28px 24px",
+        padding: "32px 28px",
         display: "block",
         textDecoration: "none",
         color: "inherit",
@@ -622,7 +622,7 @@ export default function Home() {
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(3, 1fr)",
-                gap: 20,
+                gap: 24,
               }}
             >
               {FEATURE_CARDS.map((card) => {

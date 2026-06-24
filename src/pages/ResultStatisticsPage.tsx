@@ -696,8 +696,10 @@ export default function ResultStatisticsPage() {
               >
                 <Info size={12} />
                 数据来源：
-                {selectedBoard === "CAIE"
-                  ? "Cambridge International Education official results statistics (world totals)"
+                {selectedBoard === "CAIE" && selectedLevel === "A-Level"
+                  ? "Cambridge International Education official results statistics (A-Level, world totals)"
+                  : selectedBoard === "CAIE" && selectedLevel === "IGCSE"
+                  ? "Cambridge International Education official results statistics (IGCSE A*-G, world totals)"
                   : selectedBoard === "AQA"
                   ? "AQA official results statistics (aqa.org.uk)"
                   : "OCR official results statistics (ocr.org.uk)"}

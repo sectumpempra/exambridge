@@ -1,12 +1,13 @@
 /**
- * A-Level Results Statistics Database
+ * Results Statistics Database - A-Level & IGCSE
  *
  * Sources:
- * - CAIE: cambridgeinternational.org results statistics PDFs (2019-2024)
- * - AQA: filestore.aqa.org.uk results statistics PDFs (2022-2024)
- * - OCR: ocr.org.uk results statistics PDFs (2022-2024)
+ * - CAIE A-Level: cambridgeinternational.org (2019-2024)
+ * - CAIE IGCSE: cambridgeinternational.org (2023-2025)
+ * - AQA A-Level: filestore.aqa.org.uk (2022-2024)
+ * - OCR A-Level: ocr.org.uk (2022-2024)
  *
- * All data is cumulative percentage achieving each grade or higher.
+ * All percentages are cumulative (achieving grade or higher).
  */
 
 export interface YearlyStats {
@@ -29,18 +30,8 @@ export interface SubjectStats {
   years: YearlyStats[];
 }
 
-// Helper to create a year entry
-function y(
-  year: number,
-  series: "june" | "november" | "march" | "summer",
-  aStar: number,
-  a: number,
-  b: number,
-  c: number,
-  d: number,
-  e: number,
-  entries?: number
-): YearlyStats {
+function y(year: number, series: "june" | "november" | "march" | "summer",
+  aStar: number, a: number, b: number, c: number, d: number, e: number, entries?: number): YearlyStats {
   return { year, series, aStarRate: aStar, aRate: a, bRate: b, cRate: c, dRate: d, eRate: e, entries };
 }
 
@@ -50,8 +41,7 @@ function s(code: string, name: string, board: string, level: "A-Level" | "AS-Lev
 
 
 // ═══════════════════════════════════════════════════════════
-// CAIE A-Level (International) — 34 subjects
-// Source: CAIE official results statistics PDFs
+// CAIE A-Level — 34 subjects (2019-2024)
 // ═══════════════════════════════════════════════════════════
 
 const CAIE_AL_SUBJECTS: SubjectStats[] = [
@@ -200,8 +190,7 @@ const CAIE_AL_SUBJECTS: SubjectStats[] = [
 ];
 
 // ═══════════════════════════════════════════════════════════
-// AQA A-Level — 2022-2024
-// Source: AQA official results statistics PDFs
+// AQA A-Level — 43 subjects (2022-2024)
 // ═══════════════════════════════════════════════════════════
 
 const AQA_AL_SUBJECTS: SubjectStats[] = [
@@ -422,8 +411,7 @@ const AQA_AL_SUBJECTS: SubjectStats[] = [
 ];
 
 // ═══════════════════════════════════════════════════════════
-// OCR A-Level — 2022-2024
-// Source: OCR official results statistics PDFs
+// OCR A-Level — 42 subjects (2022-2024)
 // ═══════════════════════════════════════════════════════════
 
 const OCR_AL_SUBJECTS: SubjectStats[] = [
@@ -640,6 +628,307 @@ const OCR_AL_SUBJECTS: SubjectStats[] = [
 ];
 
 // ═══════════════════════════════════════════════════════════
+// CAIE IGCSE — 56 subjects (2023-2025)
+// Source: cambridgeinternational.org results statistics PDFs
+// ═══════════════════════════════════════════════════════════
+
+const CAIE_IGCSE_SUBJECTS: SubjectStats[] = [
+  s("0262", "Swahili (0262)", "CAIE", "IGCSE", [
+    y(2025, "june", 9.9, 32.8, 56.9, 75.7, 87.0, 92.4),
+    y(2024, "june", 6.4, 33.6, 59.0, 77.2, 86.0, 8.0),
+    y(2023, "june", 15.9, 39.8, 64.9, 80.8, 90.8, 94.5),
+  ]),
+  s("0400", "Art and Design (0400)", "CAIE", "IGCSE", [
+    y(2025, "june", 6.5, 21.2, 44.0, 67.6, 82.6, 92.7),
+    y(2024, "june", 2.9, 14.2, 37.7, 62.4, 78.0, 2.0),
+    y(2024, "november", 0.6, 7.0, 23.4, 45.9, 64.4, 82.1),
+    y(2023, "june", 0.9, 5.4, 18.6, 42.3, 65.2, 82.5),
+    y(2023, "november", 1.0, 6.0, 18.1, 33.7, 52.2, 71.0),
+  ]),
+  s("0408", "World Literature (0408)", "CAIE", "IGCSE", [
+    y(2025, "june", 20.7, 51.6, 78.7, 93.8, 98.7, 99.7),
+    y(2024, "june", 19.1, 46.2, 71.5, 90.1, 96.0, 6.0),
+    y(2023, "june", 13.3, 42.2, 72.4, 90.8, 97.5, 99.4),
+  ]),
+  s("0410", "Music (0410)", "CAIE", "IGCSE", [
+    y(2025, "june", 20.0, 47.3, 73.6, 91.5, 97.6, 99.2),
+    y(2024, "june", 18.9, 47.7, 76.5, 92.0, 97.0, 6.0),
+    y(2024, "november", 18.3, 39.6, 60.9, 81.4, 88.4, 96.1),
+    y(2023, "june", 17.8, 47.0, 75.4, 91.0, 96.8, 98.9),
+    y(2023, "november", 18.1, 35.5, 56.7, 78.5, 90.3, 95.1),
+  ]),
+  s("0411", "Drama (0411)", "CAIE", "IGCSE", [
+    y(2025, "june", 9.8, 38.8, 69.0, 86.7, 95.0, 97.9),
+    y(2024, "june", 8.4, 38.3, 71.1, 89.0, 96.0, 4.0),
+    y(2024, "november", 9.2, 39.0, 65.8, 81.5, 91.1, 96.1),
+    y(2023, "june", 10.9, 41.4, 72.9, 89.1, 95.6, 98.5),
+    y(2023, "november", 5.7, 31.4, 61.4, 82.7, 92.2, 97.6),
+  ]),
+  s("0413", "Physical Education (0413)", "CAIE", "IGCSE", [
+    y(2025, "june", 6.1, 23.0, 45.2, 66.7, 84.1, 93.5),
+    y(2024, "june", 9.4, 26.2, 47.4, 68.7, 85.0, 2.0),
+    y(2024, "november", 6.2, 21.7, 45.2, 67.7, 85.2, 94.4),
+    y(2023, "june", 12.6, 27.9, 46.8, 64.5, 83.5, 93.7),
+    y(2023, "november", 1.7, 11.2, 32.8, 58.7, 77.1, 87.6),
+  ]),
+  s("0417", "ICT (0417)", "CAIE", "IGCSE", [
+    y(2025, "june", 14.4, 36.0, 56.9, 73.6, 81.7, 88.2),
+    y(2024, "june", 14.3, 36.9, 58.5, 75.0, 82.0, 6.0),
+    y(2024, "november", 6.4, 20.2, 36.7, 57.5, 68.2, 78.1),
+    y(2023, "june", 13.4, 36.9, 58.7, 74.4, 82.6, 89.0),
+    y(2023, "november", 5.2, 18.9, 37.2, 54.5, 64.1, 73.8),
+  ]),
+  s("0445", "Design and Technology (0445)", "CAIE", "IGCSE", [
+    y(2025, "june", 9.1, 30.7, 53.8, 75.6, 87.4, 94.0),
+    y(2024, "june", 12.7, 33.5, 53.6, 72.8, 84.0, 0.0),
+    y(2024, "november", 3.6, 18.3, 42.1, 67.7, 83.6, 92.1),
+    y(2023, "june", 14.4, 33.7, 55.0, 74.7, 86.6, 93.4),
+    y(2023, "november", 4.0, 16.7, 41.4, 66.5, 84.5, 92.3),
+  ]),
+  s("0448", "Pakistan Studies (0448)", "CAIE", "IGCSE", [
+    y(2025, "june", 15.5, 41.4, 67.7, 85.2, 92.5, 96.5),
+    y(2024, "june", 13.2, 37.4, 65.0, 83.8, 91.0, 6.0),
+    y(2023, "june", 11.3, 33.5, 60.6, 82.6, 91.4, 96.5),
+  ]),
+  s("0450", "Business Studies (0450)", "CAIE", "IGCSE", [
+    y(2025, "june", 9.8, 28.0, 50.1, 71.0, 80.3, 87.5),
+    y(2024, "june", 9.9, 27.6, 49.3, 70.1, 78.0, 9.0),
+    y(2024, "november", 4.1, 14.8, 34.8, 62.3, 73.0, 83.4),
+    y(2023, "june", 9.8, 27.4, 49.2, 70.3, 79.9, 87.8),
+    y(2023, "november", 4.0, 14.0, 32.8, 59.4, 70.6, 80.4),
+  ]),
+  s("0452", "Accounting (0452)", "CAIE", "IGCSE", [
+    y(2025, "june", 14.6, 30.1, 49.3, 72.8, 79.7, 85.2),
+    y(2024, "june", 13.8, 29.9, 49.6, 73.3, 80.0, 0.0),
+    y(2024, "november", 8.3, 22.2, 42.0, 68.8, 78.5, 86.9),
+    y(2023, "june", 12.9, 31.3, 51.9, 75.3, 81.5, 86.5),
+    y(2023, "november", 7.9, 22.3, 41.4, 66.3, 77.9, 88.2),
+  ]),
+  s("0454", "Enterprise (0454)", "CAIE", "IGCSE", [
+    y(2025, "june", 2.2, 10.8, 31.5, 59.2, 78.6, 92.7),
+    y(2024, "june", 3.1, 12.0, 30.3, 55.1, 72.0, 7.0),
+    y(2024, "november", 0.5, 7.7, 27.1, 56.9, 76.7, 89.2),
+    y(2023, "june", 1.7, 12.4, 37.1, 69.6, 85.1, 95.3),
+    y(2023, "november", 0.7, 7.8, 26.1, 53.8, 76.3, 90.0),
+  ]),
+  s("0455", "Economics (0455)", "CAIE", "IGCSE", [
+    y(2025, "june", 17.8, 42.0, 61.8, 77.6, 83.6, 88.7),
+    y(2024, "june", 14.2, 37.0, 57.6, 73.9, 80.0, 9.0),
+    y(2024, "november", 9.3, 30.0, 51.5, 71.4, 81.7, 89.3),
+    y(2023, "june", 13.5, 36.1, 57.2, 74.2, 81.8, 88.0),
+    y(2023, "november", 6.4, 22.5, 43.0, 63.2, 74.4, 83.9),
+  ]),
+  s("0457", "Global Perspectives (0457)", "CAIE", "IGCSE", [
+    y(2025, "june", 15.8, 39.9, 63.2, 83.2, 91.6, 96.6),
+    y(2024, "june", 13.4, 37.3, 61.6, 81.3, 90.0, 2.0),
+    y(2024, "november", 8.8, 27.2, 50.7, 73.1, 88.8, 96.6),
+  ]),
+  s("0460", "Geography (0460)", "CAIE", "IGCSE", [
+    y(2025, "june", 6.2, 23.2, 48.4, 71.9, 84.1, 91.6),
+    y(2024, "june", 6.3, 23.0, 46.2, 70.1, 82.0, 9.0),
+    y(2024, "november", 2.1, 12.3, 34.0, 61.2, 78.0, 89.0),
+    y(2023, "june", 7.1, 24.0, 46.6, 69.0, 81.4, 90.3),
+    y(2023, "november", 3.6, 14.7, 35.1, 61.6, 77.6, 89.1),
+  ]),
+  s("0470", "History (0470)", "CAIE", "IGCSE", [
+    y(2025, "june", 15.8, 34.2, 55.7, 75.6, 81.7, 87.2),
+    y(2024, "june", 20.2, 36.6, 54.7, 73.0, 79.0, 9.0),
+    y(2024, "november", 5.4, 17.7, 38.6, 65.0, 76.5, 86.4),
+    y(2023, "june", 14.0, 30.8, 50.1, 69.5, 78.2, 85.4),
+    y(2023, "november", 4.3, 16.1, 38.1, 64.7, 77.9, 87.1),
+  ]),
+  s("0471", "Travel & Tourism (0471)", "CAIE", "IGCSE", [
+    y(2025, "june", 3.2, 15.0, 36.0, 59.6, 72.6, 84.1),
+    y(2024, "june", 3.7, 14.2, 33.6, 57.8, 71.0, 5.0),
+    y(2023, "june", 1.5, 11.7, 32.6, 59.2, 75.2, 86.8),
+  ]),
+  s("0472", "English as an A (0472)", "CAIE", "IGCSE", [
+    y(2025, "june", 50.2, 75.9, 89.1, 95.3, 97.4, 98.5),
+    y(2024, "june", 56.5, 78.8, 91.8, 96.4, 98.0, 1.0),
+    y(2023, "june", 45.7, 74.6, 87.5, 93.5, 95.9, 97.8),
+  ]),
+  s("0474", "Literature (Sp (0474)", "CAIE", "IGCSE", [
+    y(2025, "june", 12.7, 35.5, 64.0, 83.5, 92.9, 97.2),
+    y(2024, "june", 8.1, 35.4, 65.3, 86.3, 95.0, 6.0),
+    y(2024, "november", 3.9, 23.4, 59.9, 84.4, 93.4, 96.0),
+    y(2023, "november", 2.5, 20.1, 54.7, 78.1, 89.4, 95.6),
+  ]),
+  s("0475", "Literature (English) (0475)", "CAIE", "IGCSE", [
+    y(2025, "june", 14.0, 40.7, 71.8, 90.8, 95.0, 97.7),
+    y(2024, "june", 15.3, 42.7, 73.7, 90.9, 95.0, 1.0),
+    y(2024, "november", 8.4, 26.9, 56.2, 81.0, 90.3, 95.6),
+    y(2023, "june", 19.2, 46.0, 72.7, 89.2, 94.3, 96.9),
+    y(2023, "november", 12.0, 31.6, 59.4, 82.3, 91.3, 96.3),
+  ]),
+  s("0478", "Computer Science (0478)", "CAIE", "IGCSE", [
+    y(2025, "june", 13.4, 40.7, 65.2, 85.4, 90.4, 94.2),
+    y(2024, "june", 11.2, 37.9, 64.3, 85.0, 89.0, 8.0),
+    y(2024, "november", 13.0, 31.0, 54.5, 77.1, 85.7, 92.2),
+    y(2023, "june", 17.0, 40.7, 64.4, 84.9, 90.0, 93.7),
+    y(2023, "november", 15.5, 34.7, 58.0, 79.2, 87.3, 93.7),
+  ]),
+  s("0480", "Latin (0480)", "CAIE", "IGCSE", [
+    y(2025, "june", 14.8, 32.1, 47.0, 60.4, 73.8, 86.6),
+    y(2024, "june", 9.7, 27.2, 46.0, 62.4, 80.0, 0.0),
+    y(2023, "june", 15.5, 29.9, 47.1, 64.3, 77.6, 90.2),
+  ]),
+  s("0493", "Islamiyat (0493)", "CAIE", "IGCSE", [
+    y(2025, "june", 15.8, 39.2, 61.8, 80.5, 90.5, 95.8),
+    y(2024, "june", 15.6, 38.0, 60.8, 79.6, 89.0, 7.0),
+    y(2024, "november", 7.9, 25.4, 46.2, 67.9, 81.5, 88.2),
+    y(2023, "june", 13.9, 37.1, 60.9, 77.8, 88.6, 95.4),
+    y(2023, "november", 3.9, 14.0, 35.0, 58.2, 70.4, 82.5),
+  ]),
+  s("0495", "Sociology (0495)", "CAIE", "IGCSE", [
+    y(2025, "june", 7.8, 27.8, 50.6, 73.5, 81.9, 89.5),
+    y(2024, "june", 5.4, 26.6, 51.5, 72.0, 81.0, 5.0),
+    y(2024, "november", 3.4, 14.4, 33.2, 55.5, 70.4, 83.1),
+    y(2023, "june", 7.3, 26.0, 48.2, 68.9, 77.5, 85.8),
+    y(2023, "november", 3.4, 14.3, 32.8, 51.6, 69.0, 86.8),
+  ]),
+  s("0499", "Sanskrit (0499)", "CAIE", "IGCSE", [
+    y(2025, "june", 23.2, 32.2, 40.3, 44.2, 48.1, 55.8),
+    y(2024, "june", 29.6, 40.8, 47.3, 55.6, 58.0, 1.0),
+    y(2023, "june", 24.2, 36.3, 45.2, 54.1, 62.6, 71.2),
+  ]),
+  s("0500", "First Language English (0500)", "CAIE", "IGCSE", [
+    y(2024, "november", 5.7, 20.4, 48.0, 76.1, 92.6, 98.2),
+  ]),
+  s("0502", "First Language Spanish (0502)", "CAIE", "IGCSE", [
+    y(2024, "november", 4.5, 17.9, 44.2, 72.7, 94.9, 98.9),
+  ]),
+  s("0508", "First Language Arabic (0508)", "CAIE", "IGCSE", [
+    y(2024, "november", 13.4, 30.0, 51.0, 70.9, 82.5, 92.3),
+  ]),
+  s("0510", "English as a Se (0510)", "CAIE", "IGCSE", [
+    y(2025, "june", 10.0, 25.9, 52.2, 71.1, 83.1, 90.5),
+    y(2024, "june", 10.6, 23.1, 48.6, 67.3, 80.0, 8.0),
+    y(2023, "june", 5.7, 22.0, 48.2, 69.2, 82.4, 90.3),
+    y(2023, "november", 4.5, 16.2, 31.4, 48.5, 64.8, 77.4),
+  ]),
+  s("0520", "French (0520)", "CAIE", "IGCSE", [
+    y(2025, "june", 25.7, 48.9, 69.3, 84.8, 91.6, 96.4),
+    y(2024, "june", 27.4, 50.7, 69.6, 84.7, 91.0, 1.0),
+    y(2024, "november", 9.4, 28.5, 51.5, 73.7, 84.2, 91.2),
+    y(2023, "june", 30.7, 50.8, 68.7, 83.1, 90.5, 94.9),
+    y(2023, "november", 11.0, 28.6, 51.1, 71.7, 81.2, 90.4),
+  ]),
+  s("0523", "Chinese as a S (0523)", "CAIE", "IGCSE", [
+    y(2025, "june", 27.5, 62.3, 81.8, 91.4, 95.6, 98.2),
+    y(2024, "june", 30.0, 62.0, 80.8, 91.8, 96.0, 5.0),
+    y(2023, "june", 21.7, 59.3, 82.7, 93.2, 96.7, 98.6),
+  ]),
+  s("0525", "German (0525)", "CAIE", "IGCSE", [
+    y(2025, "june", 43.3, 66.2, 83.0, 92.5, 96.3, 98.3),
+    y(2024, "june", 42.2, 65.2, 80.1, 90.4, 95.0, 0.0),
+    y(2024, "november", 37.9, 60.3, 77.7, 93.3, 97.2, 98.9),
+    y(2023, "june", 42.1, 63.4, 80.3, 91.0, 96.0, 98.2),
+    y(2023, "november", 33.0, 52.4, 73.8, 86.3, 94.8, 97.9),
+  ]),
+  s("0530", "Spanish (0530)", "CAIE", "IGCSE", [
+    y(2025, "june", 46.3, 67.1, 81.5, 91.0, 95.5, 98.4),
+    y(2024, "june", 46.9, 65.5, 80.5, 90.8, 95.0, 0.0),
+    y(2024, "november", 56.2, 71.8, 84.3, 94.4, 96.8, 98.2),
+    y(2023, "june", 44.5, 63.1, 78.3, 89.6, 94.1, 97.5),
+    y(2023, "november", 45.3, 66.4, 82.3, 89.8, 96.0, 98.5),
+  ]),
+  s("0535", "Italian (0535)", "CAIE", "IGCSE", [
+    y(2025, "june", 77.3, 87.2, 93.3, 97.4, 98.7, 99.7),
+    y(2024, "june", 64.2, 82.6, 91.5, 95.6, 97.0, 5.0),
+    y(2023, "june", 65.2, 84.8, 93.2, 97.6, 98.6, 99.2),
+  ]),
+  s("0539", "Urdu as a Secon (0539)", "CAIE", "IGCSE", [
+    y(2025, "june", 36.9, 69.1, 84.6, 92.2, 96.1, 98.2),
+    y(2024, "june", 35.0, 71.7, 86.2, 92.8, 96.0, 5.0),
+  ]),
+  s("0544", "Arabic (0544)", "CAIE", "IGCSE", [
+    y(2025, "june", 50.7, 72.7, 84.6, 92.3, 95.4, 97.5),
+    y(2024, "june", 57.0, 72.6, 83.5, 92.0, 95.0, 0.0),
+    y(2023, "june", 54.2, 73.7, 85.3, 92.8, 95.6, 97.6),
+  ]),
+  s("0546", "Malay (0546)", "CAIE", "IGCSE", [
+    y(2025, "june", 67.7, 80.6, 88.1, 93.2, 96.0, 98.2),
+    y(2024, "june", 70.8, 83.3, 89.7, 94.3, 97.0, 2.0),
+    y(2023, "june", 70.7, 83.1, 90.0, 94.5, 96.8, 98.3),
+  ]),
+  s("0547", "Mandarin Chinese (0547)", "CAIE", "IGCSE", [
+    y(2025, "june", 76.9, 89.7, 95.3, 97.9, 98.5, 99.2),
+    y(2024, "june", 74.5, 87.0, 93.0, 96.2, 97.0, 6.0),
+    y(2023, "june", 72.4, 86.0, 92.9, 96.1, 97.6, 98.6),
+  ]),
+  s("0580", "Mathematics (0580)", "CAIE", "IGCSE", [
+    y(2025, "june", 19.8, 34.1, 50.0, 70.9, 80.3, 87.8),
+    y(2024, "june", 17.1, 33.9, 50.8, 71.0, 80.0, 4.0),
+    y(2024, "november", 10.8, 22.5, 36.0, 62.3, 75.0, 84.7),
+    y(2023, "june", 18.3, 34.7, 50.8, 72.5, 81.7, 89.4),
+    y(2023, "november", 10.1, 22.9, 37.0, 63.4, 75.2, 84.9),
+  ]),
+  s("0606", "Additional Mathematics (0606)", "CAIE", "IGCSE", [
+    y(2025, "june", 30.3, 54.1, 74.5, 87.7, 91.2, 94.4),
+    y(2024, "june", 27.0, 54.5, 74.7, 87.3, 90.0, 9.0),
+    y(2024, "november", 13.5, 31.3, 56.8, 76.7, 82.6, 89.5),
+    y(2023, "june", 27.4, 54.8, 75.7, 88.9, 92.2, 95.2),
+    y(2023, "november", 14.7, 26.9, 50.8, 74.1, 81.7, 89.2),
+  ]),
+  s("0607", "International (0607)", "CAIE", "IGCSE", [
+    y(2025, "june", 21.3, 44.7, 65.8, 84.8, 91.8, 96.0),
+    y(2024, "june", 22.5, 46.5, 65.6, 83.5, 91.0, 1.0),
+    y(2024, "november", 15.5, 35.3, 55.1, 77.9, 88.0, 94.7),
+    y(2023, "november", 18.3, 34.3, 52.2, 76.0, 86.1, 94.4),
+  ]),
+  s("0610", "Biology (0610)", "CAIE", "IGCSE", [
+    y(2025, "june", 13.8, 35.9, 55.1, 75.2, 82.7, 89.0),
+    y(2024, "june", 13.4, 34.2, 54.2, 74.6, 82.0, 5.0),
+    y(2024, "november", 10.8, 25.6, 42.6, 65.8, 77.3, 87.3),
+    y(2023, "june", 12.0, 32.5, 52.9, 72.0, 80.4, 88.1),
+    y(2023, "november", 11.6, 25.0, 41.5, 63.5, 75.7, 85.9),
+  ]),
+  s("0620", "Chemistry (0620)", "CAIE", "IGCSE", [
+    y(2025, "june", 17.0, 44.4, 66.1, 82.7, 88.1, 92.1),
+    y(2024, "june", 18.0, 44.3, 65.5, 82.6, 87.0, 6.0),
+    y(2024, "november", 18.1, 36.2, 54.3, 74.3, 83.3, 90.5),
+    y(2023, "june", 20.7, 44.4, 64.7, 82.3, 87.3, 91.7),
+    y(2023, "november", 18.1, 34.7, 52.8, 72.5, 81.2, 88.8),
+  ]),
+  s("0625", "Physics (0625)", "CAIE", "IGCSE", [
+    y(2025, "june", 21.6, 44.1, 63.6, 81.1, 86.8, 91.2),
+    y(2024, "june", 22.1, 44.1, 63.4, 80.5, 85.0, 6.0),
+    y(2024, "november", 19.1, 35.7, 53.9, 72.2, 81.0, 89.1),
+    y(2023, "june", 25.0, 46.5, 64.6, 80.7, 85.9, 90.5),
+    y(2023, "november", 19.1, 35.9, 53.7, 72.3, 81.0, 89.0),
+  ]),
+  s("0648", "Food and Nutrition (0648)", "CAIE", "IGCSE", [
+    y(2025, "june", 3.7, 16.5, 42.7, 69.2, 82.9, 94.1),
+    y(2024, "june", 3.0, 14.7, 36.5, 64.7, 80.0, 4.0),
+    y(2024, "november", 2.3, 16.4, 44.1, 77.3, 92.7, 96.9),
+  ]),
+  s("0653", "Combined Science (0653)", "CAIE", "IGCSE", [
+    y(2025, "june", 22.4, 36.5, 49.6, 68.7, 77.9, 85.0),
+    y(2024, "june", 23.8, 39.3, 52.0, 71.8, 80.0, 1.0),
+    y(2024, "november", 43.9, 59.9, 70.2, 83.5, 88.8, 93.5),
+    y(2023, "june", 21.8, 35.0, 45.7, 66.3, 75.2, 83.5),
+    y(2023, "november", 39.3, 53.0, 63.4, 79.4, 86.2, 91.9),
+  ]),
+  s("0654", "Co-ordinated Sciences (0654)", "CAIE", "IGCSE", [
+    y(2025, "june", 20.1, 38.0, 59.3, 81.6, 88.9, 94.0),
+    y(2024, "june", 18.0, 38.8, 58.9, 81.8, 89.0, 6.0),
+    y(2024, "november", 11.3, 23.4, 43.0, 71.6, 82.1, 91.4),
+    y(2023, "june", 16.7, 36.2, 57.4, 79.8, 88.2, 94.1),
+    y(2023, "november", 11.4, 25.0, 44.6, 72.4, 82.5, 92.2),
+  ]),
+  s("0680", "Environmental (0680)", "CAIE", "IGCSE", [
+    y(2025, "june", 15.7, 35.9, 57.4, 74.8, 84.7, 91.2),
+    y(2024, "june", 16.0, 35.2, 53.9, 70.7, 81.0, 5.0),
+    y(2023, "june", 15.0, 31.6, 50.6, 67.4, 78.3, 87.0),
+    y(2023, "november", 4.5, 19.2, 40.5, 63.3, 80.1, 91.8),
+  ]),
+  s("0697", "Marine Scien (0697)", "CAIE", "IGCSE", [
+    y(2025, "june", 8.1, 24.9, 44.9, 67.6, 78.5, 87.6),
+    y(2024, "june", 5.1, 24.3, 45.7, 66.7, 79.0, 3.0),
+  ]),
+];
+
+// ═══════════════════════════════════════════════════════════
 // All subjects collection
 // ═══════════════════════════════════════════════════════════
 
@@ -647,7 +936,57 @@ export const ALL_SUBJECT_STATS: SubjectStats[] = [
   ...CAIE_AL_SUBJECTS,
   ...AQA_AL_SUBJECTS,
   ...OCR_AL_SUBJECTS,
+  ...CAIE_IGCSE_SUBJECTS,
 ];
+
+/**
+ * Get subjects sorted by priority:
+ * 1. Mathematics subjects first (pure, then further)
+ * 2. Then Physics, Economics, Biology, Chemistry
+ * 3. Finally remaining subjects sorted by code
+ */
+export function getSortedSubjects(
+  board: string,
+  level: string
+): { code: string; name: string }[] {
+  const subjects = ALL_SUBJECT_STATS
+    .filter((s) => s.board === board && s.level === level);
+
+  const getPriority = (name: string): number => {
+    const lower = name.toLowerCase();
+    // Group 1: Pure Mathematics (not Further)
+    if ((lower.includes("mathematics") || lower.includes("maths")) && !lower.includes("further")) return 1;
+    // Group 2: Further Mathematics
+    if (lower.includes("further mathematics") || lower.includes("further math") || lower.includes("further maths")) return 2;
+    // Group 3: Physics
+    if (lower.includes("physics")) return 3;
+    // Group 4: Economics
+    if (lower.includes("economics")) return 4;
+    // Group 5: Biology
+    if (lower.includes("biology")) return 5;
+    // Group 6: Chemistry
+    if (lower.includes("chemistry")) return 6;
+    // Group 7: Everything else
+    return 7;
+  };
+
+  return subjects
+    .sort((a, b) => {
+      const pa = getPriority(a.name);
+      const pb = getPriority(b.name);
+      if (pa !== pb) return pa - pb;
+      return a.code.localeCompare(b.code, undefined, { numeric: true });
+    })
+    .map((s) => ({ code: s.code, name: s.name }));
+}
+
+/** Get all subjects for a given board and level (sorted) */
+export function getAvailableSubjects(
+  board: string,
+  level: string
+): { code: string; name: string }[] {
+  return getSortedSubjects(board, level);
+}
 
 /** Get stats by subject code and board */
 export function getSubjectStats(code: string, board: string): SubjectStats | undefined {
@@ -669,58 +1008,6 @@ export function getStatsByBoardAndLevel(
 /** Get all unique boards */
 export function getAvailableBoards(): string[] {
   return [...new Set(ALL_SUBJECT_STATS.map((s) => s.board))];
-}
-
-/**
- * Get subjects sorted by priority:
- * 1. Mathematics subjects first
- * 2. Then Physics, Economics, Biology, Chemistry (in that order)
- * 3. Finally remaining subjects sorted by code
- */
-export function getSortedSubjects(
-  board: string,
-  level: string
-): { code: string; name: string }[] {
-  const subjects = ALL_SUBJECT_STATS
-    .filter((s) => s.board === board && s.level === level);
-
-  // Priority groups (lower number = higher priority)
-  const getPriority = (name: string): number => {
-    const lower = name.toLowerCase();
-    // Group 1: Pure Mathematics (not Further Mathematics)
-    if (lower.includes("mathematics") && !lower.includes("further")) return 1;
-    // Group 2: Further Mathematics
-    if (lower.includes("further mathematics") || lower.includes("further math")) return 2;
-    // Group 3: Physics
-    if (lower.includes("physics")) return 3;
-    // Group 4: Economics
-    if (lower.includes("economics")) return 4;
-    // Group 5: Biology
-    if (lower.includes("biology")) return 5;
-    // Group 6: Chemistry
-    if (lower.includes("chemistry")) return 6;
-    // Group 7: Everything else - sort by code
-    return 7;
-  };
-
-  return subjects
-    .sort((a, b) => {
-      const pa = getPriority(a.name);
-      const pb = getPriority(b.name);
-      // Different priority groups → sort by priority
-      if (pa !== pb) return pa - pb;
-      // Same priority group → sort by code (numeric)
-      return a.code.localeCompare(b.code, undefined, { numeric: true });
-    })
-    .map((s) => ({ code: s.code, name: s.name }));
-}
-
-/** Get all subjects for a given board and level (sorted) */
-export function getAvailableSubjects(
-  board: string,
-  level: string
-): { code: string; name: string }[] {
-  return getSortedSubjects(board, level);
 }
 
 /** Get all levels available for a board */

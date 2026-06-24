@@ -529,7 +529,7 @@ export default function ResultStatistics({
         }}
       >
         数据来源：{currentStats.board === "CAIE"
-          ? "Cambridge International Education official results statistics"
+          ? `Cambridge International Education official results statistics${currentStats.level === "IGCSE" ? " (IGCSE A*-G)" : " (A-Level)"}`
           : currentStats.board === "AQA"
           ? "AQA official results statistics (aqa.org.uk)"
           : currentStats.board === "OCR"

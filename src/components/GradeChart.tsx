@@ -101,13 +101,21 @@ function getCodeOptions(data: Record<string, string | number>[], codeField: stri
   return Object.entries(map).map(([code, name]) => ({
     code, name, category: getSubjectCategory(code),
   })).sort((a, b) => {
-    const catOrder: Record<string, number> = { math: 0, physics: 1, chemistry: 2, economics: 3, biology: 4, cs: 5, other: 99 };
-    const oa = catOrder[a.category] ?? 99;
-    const ob = catOrder[b.category] ?? 99;
+    // Priority: Math > Further Math > Physics > Economics > Biology > Chemistry > CS > Other
+    const getCatPriority = (cat: string): number => {
+      const order: Record<string, number> = { math: 1, physics: 3, economics: 4, biology: 5, chemistry: 6, cs: 7, other: 99 };
+      return order[cat] ?? 99;
+    };
+    // Within math group: Pure Mathematics before Further Mathematics
+    if (a.category === "math" && b.category === "math") {
+      const aIsFurther = a.name.toLowerCase().includes("further") || a.code.toLowerCase().startsWith("fm") || a.code === "9231";
+      const bIsFurther = b.name.toLowerCase().includes("further") || b.code.toLowerCase().startsWith("fm") || b.code === "9231";
+      if (aIsFurther !== bIsFurther) return aIsFurther ? 1 : -1;
+    }
+    const oa = getCatPriority(a.category);
+    const ob = getCatPriority(b.category);
     if (oa !== ob) return oa - ob;
-    if (a.code === "9709" && b.code === "9231") return -1;
-    if (a.code === "9231" && b.code === "9709") return 1;
-    return a.code.localeCompare(b.code);
+    return a.code.localeCompare(b.code, undefined, { numeric: true });
   });
 }
 
