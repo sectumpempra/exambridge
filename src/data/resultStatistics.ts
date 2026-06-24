@@ -671,14 +671,56 @@ export function getAvailableBoards(): string[] {
   return [...new Set(ALL_SUBJECT_STATS.map((s) => s.board))];
 }
 
-/** Get all subjects for a given board and level */
+/**
+ * Get subjects sorted by priority:
+ * 1. Mathematics subjects first
+ * 2. Then Physics, Economics, Biology, Chemistry (in that order)
+ * 3. Finally remaining subjects sorted by code
+ */
+export function getSortedSubjects(
+  board: string,
+  level: string
+): { code: string; name: string }[] {
+  const subjects = ALL_SUBJECT_STATS
+    .filter((s) => s.board === board && s.level === level);
+
+  // Priority groups (lower number = higher priority)
+  const getPriority = (name: string): number => {
+    const lower = name.toLowerCase();
+    // Group 1: Pure Mathematics (not Further Mathematics)
+    if (lower.includes("mathematics") && !lower.includes("further")) return 1;
+    // Group 2: Further Mathematics
+    if (lower.includes("further mathematics") || lower.includes("further math")) return 2;
+    // Group 3: Physics
+    if (lower.includes("physics")) return 3;
+    // Group 4: Economics
+    if (lower.includes("economics")) return 4;
+    // Group 5: Biology
+    if (lower.includes("biology")) return 5;
+    // Group 6: Chemistry
+    if (lower.includes("chemistry")) return 6;
+    // Group 7: Everything else - sort by code
+    return 7;
+  };
+
+  return subjects
+    .sort((a, b) => {
+      const pa = getPriority(a.name);
+      const pb = getPriority(b.name);
+      // Different priority groups → sort by priority
+      if (pa !== pb) return pa - pb;
+      // Same priority group → sort by code (numeric)
+      return a.code.localeCompare(b.code, undefined, { numeric: true });
+    })
+    .map((s) => ({ code: s.code, name: s.name }));
+}
+
+/** Get all subjects for a given board and level (sorted) */
 export function getAvailableSubjects(
   board: string,
   level: string
 ): { code: string; name: string }[] {
-  return ALL_SUBJECT_STATS
-    .filter((s) => s.board === board && s.level === level)
-    .map((s) => ({ code: s.code, name: s.name }));
+  return getSortedSubjects(board, level);
 }
 
 /** Get all levels available for a board */

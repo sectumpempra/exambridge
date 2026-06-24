@@ -310,9 +310,14 @@ export default function ResultStatistics({
         <select
           value={selectedBoard}
           onChange={(e) => {
-            setSelectedBoard(e.target.value);
-            const newLevels = getAvailableLevels(e.target.value);
-            if (newLevels.length > 0) setSelectedLevel(newLevels[0]);
+            const newBoard = e.target.value;
+            setSelectedBoard(newBoard);
+            const newLevels = getAvailableLevels(newBoard);
+            if (newLevels.length > 0) {
+              setSelectedLevel(newLevels[0]);
+              const newSubjects = getAvailableSubjects(newBoard, newLevels[0]);
+              if (newSubjects.length > 0) setSelectedSubjectCode(newSubjects[0].code);
+            }
           }}
           style={{
             padding: "8px 12px",
@@ -525,8 +530,10 @@ export default function ResultStatistics({
       >
         数据来源：{currentStats.board === "CAIE"
           ? "Cambridge International Education official results statistics"
-          : currentStats.board === "UK-National"
-          ? "JCQ Joint Council for Qualifications (UK national aggregates)"
+          : currentStats.board === "AQA"
+          ? "AQA official results statistics (aqa.org.uk)"
+          : currentStats.board === "OCR"
+          ? "OCR official results statistics (ocr.org.uk)"
           : "Official exam board results statistics"}
         {latestStats?.entries ? ` · ${latestStats.entries.toLocaleString()} entries (${latestStats.year})` : ""}
       </p>

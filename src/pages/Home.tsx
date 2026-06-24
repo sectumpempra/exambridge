@@ -122,7 +122,7 @@ const FEATURE_CARDS = [
   {
     title: "历年 A*率趋势",
     desc: "15+ 科目 · 2017-2025 · 多考试局",
-    detail: "查看 CAIE、UK National 等考试局历年 A*率、A率、B率趋势。覆盖数学、进阶数学、物理、化学、生物等核心科目。",
+    detail: "查看 CAIE、AQA、OCR 等考试局历年 A*率、A率、B率趋势。覆盖数学、进阶数学、物理、化学、生物等核心科目。",
     icon: BarChart3,
     accent: "#C75B2A",
     to: "/statistics",
@@ -148,6 +148,26 @@ const FEATURE_CARDS = [
     to: "/charts",
     stat: "趋势",
     statLabel: "可视化",
+  },
+  {
+    title: "备考社区",
+    desc: "交流互助 · 经验分享 · 答疑",
+    detail: "与其他 A-Level 考生交流学习经验，分享备考心得，获取最新考试资讯和复习资料。",
+    icon: Sparkles,
+    accent: "#7B6EA5",
+    to: "/",
+    stat: "即将",
+    statLabel: "推出",
+  },
+  {
+    title: "智能错题本",
+    desc: "AI 分析 · 薄弱环节 · 针对性练习",
+    detail: "自动记录和分析刷题过程中的错题，智能推荐针对性练习，帮助你高效突破薄弱环节。",
+    icon: BookOpen,
+    accent: "#5A8F7A",
+    to: "/",
+    stat: "即将",
+    statLabel: "推出",
   },
 ];
 
@@ -596,12 +616,12 @@ export default function Home() {
               </h2>
             </div>
 
-            {/* Cards grid */}
+            {/* Cards grid - 3x3 layout */}
             <div
               className="scroll-stagger"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
+                gridTemplateColumns: "repeat(3, 1fr)",
                 gap: 20,
               }}
             >
