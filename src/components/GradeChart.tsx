@@ -228,7 +228,7 @@ export default function GradeChart({
 
     const entries = Array.from(entryMap2.values());
     entries.sort((a, b) => (a._sortKey as number) - (b._sortKey as number));
-    return entries.map(({ _sortKey, ...rest }) => rest);
+    return entries.map((e) => { const { _sortKey: _sk, ...rest } = e; void _sk; return rest; });
   }, [selectedCode, selectedComponent, data, codeField, sessionField, yearField, maxMarkField, gradeFields, isCaie, componentField]);
 
   const selectedName = codeOptions.find(o => o.code === selectedCode)?.name || "";

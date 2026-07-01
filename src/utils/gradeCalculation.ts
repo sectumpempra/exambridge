@@ -668,14 +668,14 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
     const a2Max = is6Unit ? 300 : 200;
     const a2Threshold = a2Max * 0.9;
 
-    const a2Papers = papers.filter(p => isA2Unit(p.component));
+    // Use asA2Tag (computed by getASA2Tag) for consistent A2/AS classification
+    const a2Papers = papers.filter(p => p.asA2Tag === "A2");
     const a2UMS = a2Papers.reduce((s, p) => s + p.normalizedScore, 0);
 
     const totalMet = totalNormalized >= aThreshold;
     const a2Met = a2Papers.length === 0 ? false : a2UMS >= a2Threshold;
 
     // Math special rule: Core 34 (P3+P4) >= 180
-    // Only count WMAxx (Mathematics) P3 (ends in 03/13) and P4 (ends in 04/14)
     const isMath = subjectCode.startsWith("WMA");
     if (isMath && a2Papers.length >= 2) {
       const p3p4 = a2Papers
@@ -714,7 +714,7 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
 
   // AQA A-Level
   if (boardKey === "AQA-AL") {
-    const a2Papers = papers.filter(p => isA2Unit(p.component));
+    const a2Papers = papers.filter(p => p.asA2Tag === "A2");
     const totalMax = 400;
     const aThreshold = totalMax * 0.8;
     const a2Max = 240;
@@ -741,7 +741,7 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
 
   // OCR A-Level
   if (boardKey === "OCR-AL") {
-    const a2Papers = papers.filter(p => isA2Unit(p.component));
+    const a2Papers = papers.filter(p => p.asA2Tag === "A2");
     const totalMax = 400;
     const aThreshold = totalMax * 0.8;
     const a2Max = 200;
@@ -770,24 +770,6 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
 }
 
 /** Heuristic: determine if a unit/component is A2 level */
-function isA2Unit(component: string): boolean {
-  const comp = component.toLowerCase();
-  if (/\d+/.test(comp)) {
-    const numMatch = comp.match(/(\d+)/);
-    if (numMatch) {
-      const num = parseInt(numMatch[1]);
-      if (num >= 13 && num <= 19) return true;
-      if (num >= 23 && num <= 29) return true;
-      if (num >= 33 && num <= 39) return true;
-      if (num >= 43 && num <= 49) return true;
-      if (num >= 53 && num <= 59) return true;
-      if (num >= 63 && num <= 69) return true;
-    }
-  }
-  if (/^[34]\d/.test(comp) || /^6\d/.test(comp)) return true;
-  return false;
-}
-
 // ─────────────────────────────────────────────────────────────────────────────
 // 6. Precision Assessment
 // ─────────────────────────────────────────────────────────────────────────────
@@ -956,7 +938,7 @@ function mapGrade(
   gradeResults: GradeBoundaryResult[];
   nextGradeGap: number | null;
 } {
-  let gradeResults: GradeBoundaryResult[] = [];
+  const gradeResults: GradeBoundaryResult[] = [];
   let predictedGrade = "U";
   let nextGradeGap: number | null = null;
 

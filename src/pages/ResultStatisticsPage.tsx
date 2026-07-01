@@ -326,10 +326,9 @@ export default function ResultStatisticsPage() {
       return (order[a.series] ?? 0) - (order[b.series] ?? 0);
     });
     const now = sorted[0];
-    // Compare against same series in previous year; fallback to nearest earlier data point
+    // Compare against same series in previous year; fallback to any previous year
     const prev = sorted.find((y) => y.year < now.year && y.series === now.series)
-      || sorted.find((y) => y.year < now.year)
-      || sorted.find((y) => y.year === now.year && y.series !== now.series);
+      || sorted.find((y) => y.year < now.year);
     if (!prev) return {} as Record<string, number | null>;
     const result: Record<string, number | null> = {};
     ALL_GRADES.forEach((g) => {

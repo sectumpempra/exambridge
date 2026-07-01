@@ -11,7 +11,7 @@ import './graph.css';
 let idCounter = 0;
 function generateId(): string {
   idCounter++;
-  return 'func_' + idCounter + '_' + Math.random().toString(36).slice(2, 5);
+  return 'func_' + idCounter + '_' + Date.now().toString(36);
 }
 
 function createDefaultFunction(index: number): FunctionEntry {
@@ -80,7 +80,25 @@ export default function GraphPage() {
   const canvasContainerRef = useRef<HTMLDivElement>(null);
 
   const [functions, setFunctions] = useState<FunctionEntry[]>(() => {
-    // Try restore from localStorage (avoid window.location.hash conflict with HashRouter)
+    // Priority 1: URL state param (for shared links)
+    try {
+      const hash = window.location.hash;
+      const qIdx = hash.indexOf('?');
+      if (qIdx !== -1) {
+        const params = new URLSearchParams(hash.slice(qIdx + 1));
+        const stateParam = params.get('state');
+        if (stateParam) {
+          const restored = deserializeState(stateParam);
+          if (restored && restored.length > 0) {
+            // Clean URL state after restoring
+            window.history.replaceState(null, '', window.location.pathname + window.location.hash.slice(0, qIdx));
+            return restored;
+          }
+        }
+      }
+    } catch { /* ignore parse errors */ }
+
+    // Priority 2: localStorage
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       const restored = deserializeState(saved);

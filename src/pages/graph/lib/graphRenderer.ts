@@ -33,7 +33,7 @@ const FUNC_NAMES_SORTED = Array.from(MATH_BUILTINS)
   .filter(n => n.length > 1 && !['pi', 'e', 'x', 't', 'theta', 'atan2'].includes(n))
   .sort((a, b) => b.length - a.length);
 
-const NAMES_TO_PROTECT = [...FUNC_NAMES_SORTED, 'theta'];
+const NAMES_TO_PROTECT = [...FUNC_NAMES_SORTED, 'theta', 'atan2'];
 const PH = '\uE000';
 
 // ==== IMPLICIT MULTIPLICATION ====
@@ -156,7 +156,8 @@ export function convertNumbersToParams(expression: string): { expression: string
       const afterIdx = i + numMatch[1].length;
       const next = afterIdx < preprocessed.length ? preprocessed[afterIdx] : '';
       // Standalone: surrounded by operators, parens, or string boundaries — NOT letters
-      if (!/[a-zA-Z]/.test(prev) && !/[a-zA-Z]/.test(next)) {
+      // Skip numbers immediately after ^ (exponents should not become params)
+      if (prev !== '^' && !/[a-zA-Z]/.test(prev) && !/[a-zA-Z]/.test(next)) {
         matches.push({ start: i, end: afterIdx, value: parseFloat(numMatch[1]) });
       }
       i += numMatch[1].length;
@@ -552,7 +553,7 @@ function drawVerticalAsymptote(ctx: CanvasRenderingContext2D, x: number, color: 
 }
 
 /** Draw horizontal asymptote — same style as vertical asymptote */
-function drawHorizontalAsymptote(ctx: CanvasRenderingContext2D, y: number, color: string, w: number, _dVal: number) {
+function drawHorizontalAsymptote(ctx: CanvasRenderingContext2D, y: number, color: string, w: number, _labelVal: number) {
   ctx.save();
   ctx.strokeStyle = color;
   ctx.globalAlpha = 0.85;
@@ -678,36 +679,38 @@ export function drawCartesianFunction(ctx: CanvasRenderingContext2D, entry: Func
     // Match: /x, /(x, /(2.8x, /(bx, etc. — any denominator containing x
     const hasRationalAsymptote = exprLower.includes('/x') || exprLower.match(/\/\([^)]*x/);
 
-    if ((hasExpAsymptote || hasRationalAsymptote) && p.d !== undefined) {
-      const hCanvas = cy - p.d * up;
+    // Default d = 0 when not parameterized (e.g. e^x, 1/x)
+    const dVal = p.d ?? 0;
+    if (hasExpAsymptote || hasRationalAsymptote) {
+      const hCanvas = cy - dVal * up;
       if (hCanvas > 0 && hCanvas < h) {
-        drawHorizontalAsymptote(ctx, hCanvas, entry.color, w, p.d);
+        drawHorizontalAsymptote(ctx, hCanvas, entry.color, w, dVal);
       }
     }
 
     // 3. tanh: a*tanh(b*x) + d → y = d ± a
-    if (exprLower.includes('tanh(') && p.a !== undefined && p.d !== undefined) {
+    if (exprLower.includes('tanh(') && p.a !== undefined) {
       const aVal = Math.abs(p.a);
-      const upperY = cy - (p.d + aVal) * up;
+      const upperY = cy - (dVal + aVal) * up;
       if (upperY > 0 && upperY < h) {
-        drawHorizontalAsymptote(ctx, upperY, entry.color, w, p.d + aVal);
+        drawHorizontalAsymptote(ctx, upperY, entry.color, w, dVal + aVal);
       }
-      const lowerY = cy - (p.d - aVal) * up;
+      const lowerY = cy - (dVal - aVal) * up;
       if (lowerY > 0 && lowerY < h) {
-        drawHorizontalAsymptote(ctx, lowerY, entry.color, w, p.d - aVal);
+        drawHorizontalAsymptote(ctx, lowerY, entry.color, w, dVal - aVal);
       }
     }
 
     // 4. arctan: a*atan(b*x+c) + d → y = d ± a*π/2
-    if (exprLower.includes('atan(') && p.a !== undefined && p.d !== undefined) {
+    if (exprLower.includes('atan(') && p.a !== undefined) {
       const aVal = Math.abs(p.a) * Math.PI / 2;
-      const upperY = cy - (p.d + aVal) * up;
+      const upperY = cy - (dVal + aVal) * up;
       if (upperY > 0 && upperY < h) {
-        drawHorizontalAsymptote(ctx, upperY, entry.color, w, p.d + aVal);
+        drawHorizontalAsymptote(ctx, upperY, entry.color, w, dVal + aVal);
       }
-      const lowerY = cy - (p.d - aVal) * up;
+      const lowerY = cy - (dVal - aVal) * up;
       if (lowerY > 0 && lowerY < h) {
-        drawHorizontalAsymptote(ctx, lowerY, entry.color, w, p.d - aVal);
+        drawHorizontalAsymptote(ctx, lowerY, entry.color, w, dVal - aVal);
       }
     }
   }

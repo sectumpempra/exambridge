@@ -3,8 +3,8 @@ import type { WeekGroup } from "../hooks/usePlanner";
 
 /** Show export error alert */
 function handleExportError(err: unknown, type: string): void {
-  console.error(`${type} 导出失败:`, err);
   alert(`导出失败，请稍后重试\n${err instanceof Error ? err.message : ""}`);
+  void type; void err; // prevent unused var warnings
 }
 
 // ── Excel 导出 ───────────────────────────────────────────────────────

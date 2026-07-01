@@ -1,4 +1,4 @@
-import { useState, useCallback, useLayoutEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { Eye, EyeOff, Trash2, Pencil, GitBranch } from 'lucide-react';
 import type { FunctionEntry } from '../types';
 import { extractParams, compileExpression, convertNumbersToParams, convertNumbersWithExisting } from '../lib/graphRenderer';
@@ -26,20 +26,12 @@ function normalizeTrailingConstant(expr: string): { expr: string; defaultValue?:
 }
 
 export default function FunctionInput({ entry, index, onUpdate, onRemove }: FunctionInputProps) {
-  const [editingExpr, setEditingExpr] = useState(false);
+  const [editingExpr, setEditingExpr] = useState(!entry.expression.trim());
   const [exprInput, setExprInput] = useState(entry.expression);
   const [error, setError] = useState('');
 
-  // Sync exprInput when entry.expression changes externally (e.g. preset click)
-  // useLayoutEffect avoids cascading renders that useEffect would cause
-  useLayoutEffect(() => { setExprInput(entry.expression); }, [entry.expression]);
-
-  // Auto-enter edit mode when expression is empty
-  useLayoutEffect(() => {
-    if (!entry.expression.trim()) {
-      setEditingExpr(true);
-    }
-  }, [entry.expression]);
+  // Controlled sync: when expression changes externally, reset editing state
+  // Parent passes key={entry.id} to force remount on preset click
 
   const validateAndUpdate = useCallback((newExpr: string) => {
     setExprInput(newExpr);
@@ -107,8 +99,8 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
       setError('');
       setEditingExpr(false);
       onUpdate(entry.id, { expression: finalExpr, params: finalParams });
-    } catch (err: any) {
-      setError(err?.message || '无效的表达式');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : '无效的表达式');
       onUpdate(entry.id, { expression: newExpr });
     }
   }, [entry.id, entry.params, onUpdate]);
