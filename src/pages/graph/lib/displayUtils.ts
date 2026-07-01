@@ -92,9 +92,9 @@ export function displayWithParams(expression: string, params: Record<string, num
 
   // Step 8: Fix +0, -0, +-, -- (must be AFTER removing *)
   s = s.replace(/\+0(?!\.)/g, '');        // +0 → ''
-  s = s.replace(/\+\-/g, '-');             // +- → -
+  s = s.replace(/\+-/g, '-');              // +- → -
   s = s.replace(/\+\+/g, '+');
-  s = s.replace(/\-\-/g, '+');
+  s = s.replace(/--/g, '+');
   s = s.replace(/\+$/g, '');               // trailing +
 
   return s;

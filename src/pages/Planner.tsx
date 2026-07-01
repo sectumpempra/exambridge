@@ -42,18 +42,14 @@ interface SelectedPaperGroup {
   variants: { code: string; component: string }[];
 }
 
-/** Generate past papers for a selected paper group (all variants) */
-function generatePastPapersForGroup(group: SelectedPaperGroup): string[] {
-  const { subjectCode, variants } = group;
+/** Generate past papers for a single variant/component */
+function generatePastPapersForVariant(subjectCode: string, component: string): string[] {
   const years = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
   const papers: string[] = [];
-  for (const variant of variants) {
-    const component = variant.component;
-    for (const year of years) {
-      const series = year >= 2023 ? ["s", "m", "w"] : ["s", "w"];
-      for (const ser of series) {
-        papers.push(`${subjectCode}_${ser}_${year}_${component}`);
-      }
+  for (const year of years) {
+    const series = year >= 2023 ? ["s", "m", "w"] : ["s", "w"];
+    for (const ser of series) {
+      papers.push(`${subjectCode}_${ser}_${year}_${component}`);
     }
   }
   const so: Record<string, number> = { s: 0, m: 1, w: 2 };
@@ -214,7 +210,9 @@ export default function Planner() {
     };
     const map: Record<string, string[]> = {};
     for (const g of selectedGroups) {
-      map[`${g.subjectCode}_${g.paperNum}`] = generatePastPapersForGroup(g);
+      for (const v of g.variants) {
+        map[v.code] = generatePastPapersForVariant(g.subjectCode, v.component);
+      }
     }
     return { config: cfg, pastPapersMap: map };
   }, [selectedGroups, startDate, restDays, intensity, paperOverrides]);

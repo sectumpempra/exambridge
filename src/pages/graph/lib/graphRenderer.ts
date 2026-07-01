@@ -1,4 +1,4 @@
-import type { FunctionEntry, FunctionMode, ViewState, TooltipData, AxisMode } from '../types';
+import type { FunctionEntry, FunctionMode, ViewState, TooltipData } from '../types';
 import { create, all } from 'mathjs';
 
 const math = create(all, {});
@@ -49,7 +49,7 @@ export function preprocessExpression(expr: string): string {
     if (i < tokens.length - 1) {
       const a = tokens[i][tokens[i].length - 1];
       const b = tokens[i + 1][0];
-      if (/[\w\)]/.test(a) && /[\w(]/.test(b)) r += '*';
+      if (/[\w)]/.test(a) && /[\w(]/.test(b)) r += '*';
     }
   }
   s = r;
@@ -287,12 +287,9 @@ export function evaluateCartesian(
   compiled: any,
   x: number,
   params: Record<string, number>,
-  axisMode: AxisMode = 'number',
 ): number | null {
   try {
-    // degree mode: convert degrees to radians before evaluating
-    const xRad = axisMode === 'degree' ? (x * Math.PI / 180) : x;
-    const scope: Record<string, number> = { x: xRad, e: Math.E, pi: Math.PI, ...params };
+    const scope: Record<string, number> = { x, e: Math.E, pi: Math.PI, ...params };
     const result = compiled.evaluate(scope);
     if (typeof result !== 'number' || !isFinite(result)) return null;
     if (Math.abs(result) > 1e6) return null;
@@ -304,12 +301,9 @@ export function evaluatePolar(
   compiled: any,
   theta: number,
   params: Record<string, number>,
-  axisMode: AxisMode = 'number',
 ): number | null {
   try {
-    // degree mode: convert degrees to radians before evaluating
-    const thetaRad = axisMode === 'degree' ? (theta * Math.PI / 180) : theta;
-    const scope: Record<string, number> = { theta: thetaRad, t: thetaRad, e: Math.E, pi: Math.PI, ...params };
+    const scope: Record<string, number> = { theta, t: theta, e: Math.E, pi: Math.PI, ...params };
     const result = compiled.evaluate(scope);
     if (typeof result !== 'number' || !isFinite(result)) return null;
     if (Math.abs(result) > 1e6) return null;
@@ -567,7 +561,7 @@ function drawVerticalAsymptote(ctx: CanvasRenderingContext2D, x: number, color: 
 }
 
 /** Draw horizontal asymptote — same style as vertical asymptote */
-function drawHorizontalAsymptote(ctx: CanvasRenderingContext2D, y: number, color: string, w: number, _labelVal: number) {
+function drawHorizontalAsymptote(ctx: CanvasRenderingContext2D, y: number, color: string, w: number) {
   ctx.save();
   ctx.strokeStyle = color;
   ctx.globalAlpha = 0.85;
@@ -625,7 +619,7 @@ export function drawCartesianFunction(ctx: CanvasRenderingContext2D, entry: Func
     let prevPy: number | null = null;
     for (let i = 0; i <= n; i++) {
       const mx = minX + i * step;
-      const yVal = evaluateCartesian(compiled, mx, entry.params, view.axisMode);
+      const yVal = evaluateCartesian(compiled, mx, entry.params);
 
       // Method 1: defined ↔ undefined boundary (domain-limited functions)
       if (prevVal !== null && yVal !== null) {
@@ -699,7 +693,7 @@ export function drawCartesianFunction(ctx: CanvasRenderingContext2D, entry: Func
     if (hasExpAsymptote || hasRationalAsymptote) {
       const hCanvas = cy - dVal * up;
       if (hCanvas > 0 && hCanvas < h) {
-        drawHorizontalAsymptote(ctx, hCanvas, entry.color, w, dVal);
+        drawHorizontalAsymptote(ctx, hCanvas, entry.color, w);
       }
     }
 
@@ -708,11 +702,11 @@ export function drawCartesianFunction(ctx: CanvasRenderingContext2D, entry: Func
       const aVal = Math.abs(p.a);
       const upperY = cy - (dVal + aVal) * up;
       if (upperY > 0 && upperY < h) {
-        drawHorizontalAsymptote(ctx, upperY, entry.color, w, dVal + aVal);
+        drawHorizontalAsymptote(ctx, upperY, entry.color, w);
       }
       const lowerY = cy - (dVal - aVal) * up;
       if (lowerY > 0 && lowerY < h) {
-        drawHorizontalAsymptote(ctx, lowerY, entry.color, w, dVal - aVal);
+        drawHorizontalAsymptote(ctx, lowerY, entry.color, w);
       }
     }
 
@@ -721,11 +715,11 @@ export function drawCartesianFunction(ctx: CanvasRenderingContext2D, entry: Func
       const aVal = Math.abs(p.a) * Math.PI / 2;
       const upperY = cy - (dVal + aVal) * up;
       if (upperY > 0 && upperY < h) {
-        drawHorizontalAsymptote(ctx, upperY, entry.color, w, dVal + aVal);
+        drawHorizontalAsymptote(ctx, upperY, entry.color, w);
       }
       const lowerY = cy - (dVal - aVal) * up;
       if (lowerY > 0 && lowerY < h) {
-        drawHorizontalAsymptote(ctx, lowerY, entry.color, w, dVal - aVal);
+        drawHorizontalAsymptote(ctx, lowerY, entry.color, w);
       }
     }
   }
@@ -741,7 +735,7 @@ export function drawCartesianFunction(ctx: CanvasRenderingContext2D, entry: Func
 
   for (let i = 0; i <= n; i++) {
     const mx = minX + i * step;
-    const yVal = evaluateCartesian(compiled, mx, entry.params, view.axisMode);
+    const yVal = evaluateCartesian(compiled, mx, entry.params);
     if (yVal === null) { prevY = null; continue; }
 
     const px = cx + mx * up;
@@ -795,7 +789,7 @@ export function drawPolarFunction(ctx: CanvasRenderingContext2D, entry: Function
 
   for (let i = 0; i <= n; i++) {
     const theta = thetaMin + i * dTheta;
-    const r = evaluatePolar(compiled, theta, entry.params, view.axisMode);
+    const r = evaluatePolar(compiled, theta, entry.params);
     if (r === null) { prevX = null; prevY = null; continue; }
 
     const mx = r * Math.cos(theta);
@@ -833,7 +827,7 @@ function findLabelPos(compiled: any, entry: FunctionEntry, w: number, h: number,
     // that lies within the visible canvas area
     const thetas = [Math.PI / 4, Math.PI / 2, Math.PI / 6, Math.PI / 3, Math.PI, 3 * Math.PI / 4];
     for (const theta of thetas) {
-      const r = evaluatePolar(compiled, theta, entry.params, view.axisMode);
+      const r = evaluatePolar(compiled, theta, entry.params);
       if (r === null) continue;
       const mx = r * Math.cos(theta);
       const my = r * Math.sin(theta);
@@ -850,7 +844,7 @@ function findLabelPos(compiled: any, entry: FunctionEntry, w: number, h: number,
   const rx = (w - cx0) / up, lx = (-cx0) / up;
   for (const f of [0.85, 0.7, 0.5, 0.3, 0.15]) {
     const tx = lx + (rx - lx) * f;
-    const yv = evaluateCartesian(compiled, tx, entry.params, view.axisMode);
+    const yv = evaluateCartesian(compiled, tx, entry.params);
     if (yv === null) continue;
     const px = cx0 + tx * up;
     const py = cy0 - yv * up;
@@ -1079,7 +1073,7 @@ export function findNearestPoint(mx: number, my: number, entries: FunctionEntry[
       let bestTheta = 0, bestR = 0, minGeoDist = Infinity;
       for (let i = 0; i <= 200; i++) {
         const theta = (i / 200) * 4 * Math.PI;
-        const r = evaluatePolar(compiled, theta, entry.params, view.axisMode);
+        const r = evaluatePolar(compiled, theta, entry.params);
         if (r === null) continue;
         const px = r * Math.cos(theta);
         const py = r * Math.sin(theta);
@@ -1100,7 +1094,7 @@ export function findNearestPoint(mx: number, my: number, entries: FunctionEntry[
     }
 
     // Cartesian: find nearest point along vertical line at mouse x
-    const yVal = evaluateCartesian(compiled, mathX, entry.params, view.axisMode);
+    const yVal = evaluateCartesian(compiled, mathX, entry.params);
     if (yVal === null) continue;
     const [, canvasY] = mathToCanvas(mathX, yVal, w, h, view);
     const dist = Math.abs(canvasY - my);

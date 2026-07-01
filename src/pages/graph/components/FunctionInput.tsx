@@ -53,7 +53,7 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
 
       let finalParams = { ...entry.params };
       // If normalizeTrailingConstant introduced d, use the original numeric value
-      if (trailingDDefault !== undefined && !('d' in finalParams)) {
+      if (trailingDDefault !== undefined) {
         finalParams = { ...finalParams, d: trailingDDefault };
       }
 

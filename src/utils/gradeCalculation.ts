@@ -521,22 +521,34 @@ export function calculateUMS(
   if (raw >= maxMark) return maxUMS;
   if (!boundaries) return Math.round((raw / maxMark) * maxUMS * 10) / 10;
 
-  const aRaw = boundaries["a_star"] && boundaries["a_star"] > 0
+  const aStarRaw = boundaries["a_star"] && boundaries["a_star"] > 0
     ? boundaries["a_star"]
-    : boundaries["a"];
+    : null;
+  const aRaw = boundaries["a"];
   const bRaw = boundaries["b"];
   const cRaw = boundaries["c"];
   const dRaw = boundaries["d"];
   const eRaw = boundaries["e"];
 
+  const aStarUMS = maxUMS * 0.9;
   const aUMS = maxUMS * 0.8;
   const bUMS = maxUMS * 0.7;
   const cUMS = maxUMS * 0.6;
   const dUMS = maxUMS * 0.5;
   const eUMS = maxUMS * 0.4;
 
-  // A or above
-  if (aRaw && raw >= aRaw) {
+  // A* or above (when a_star boundary exists)
+  if (aStarRaw && raw >= aStarRaw) {
+    const ratio = maxMark > aStarRaw ? (raw - aStarRaw) / (maxMark - aStarRaw) : 0;
+    return Math.min(maxUMS, Math.round((aStarUMS + ratio * (maxUMS - aStarUMS)) * 10) / 10);
+  }
+  // A~A* interval (when a_star boundary exists)
+  if (aStarRaw && aRaw && raw >= aRaw) {
+    const ratio = aStarRaw > aRaw ? (raw - aRaw) / (aStarRaw - aRaw) : 0;
+    return Math.round((aUMS + ratio * (aStarUMS - aUMS)) * 10) / 10;
+  }
+  // A or above (no a_star boundary)
+  if (!aStarRaw && aRaw && raw >= aRaw) {
     const ratio = maxMark > aRaw ? (raw - aRaw) / (maxMark - aRaw) : 0;
     return Math.min(maxUMS, Math.round((aUMS + ratio * (maxUMS - aUMS)) * 10) / 10);
   }

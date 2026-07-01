@@ -3,6 +3,15 @@ import { format, addDays, differenceInDays } from "date-fns";
 import { INTENSITY_CONFIG } from "../data/examData";
 import type { Intensity } from "../data/examData";
 
+/** Parse a date-only string as local time (avoid UTC offset issues) */
+function parseLocalDate(dateStr: string): Date {
+  if (dateStr.length === 10) {
+    // "YYYY-MM-DD" → append "T00:00:00" for local-time parsing
+    return new Date(dateStr + "T00:00:00");
+  }
+  return new Date(dateStr);
+}
+
 export interface DailyTask {
   date: string;
   dateLabel: string;
@@ -51,7 +60,7 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
     const { startDate, selectedPapers, restDays, intensity, paperOverrides } = config;
     if (selectedPapers.length === 0) return { weeks: [], totalTasks: 0, totalDays: 0 };
 
-    const start = new Date(startDate);
+    const start = parseLocalDate(startDate);
     const papersPerWeek = INTENSITY_CONFIG[intensity].papersPerWeek;
 
     // Build exam date map
@@ -61,7 +70,7 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
     // Find end date (latest exam + 1 day)
     let endDate = start;
     examDateMap.forEach(dateStr => {
-      const d = new Date(dateStr);
+      const d = parseLocalDate(dateStr);
       if (d > endDate) endDate = d;
     });
     endDate = addDays(endDate, 1);
@@ -100,7 +109,7 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
         for (const paper of selectedPapers) {
           const examDate = examDateMap.get(paper.code);
           if (!examDate) continue;
-          const daysUntilExam = differenceInDays(new Date(examDate), date);
+          const daysUntilExam = differenceInDays(parseLocalDate(examDate), date);
           if (daysUntilExam <= 0) continue;
 
           const count = weeklyCounts.get(paper.code) ?? 0;

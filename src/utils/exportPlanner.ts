@@ -160,9 +160,6 @@ export function exportToWord(weeks: WeekGroup[], boardName?: string, studentName
 
 // ── PDF 导出 ─────────────────────────────────────────────────────────
 export function exportToPDF(elementId: string, boardName?: string, studentName?: string): void {
-  // xlsx import placeholder for future Excel export feature
-  void import("xlsx").catch(() => null);
-
   Promise.all([
     import("html2canvas"),
     import("jspdf"),

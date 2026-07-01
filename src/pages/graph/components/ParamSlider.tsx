@@ -30,7 +30,13 @@ export default function ParamSlider({
   const animRef = useRef<number>(0);
   const directionRef = useRef(1);
   const valueRef = useRef(value);
+  const minRef = useRef(min);
+  const maxRef = useRef(max);
+  const stepRef = useRef(step);
   useEffect(() => { valueRef.current = value; }, [value]);
+  useEffect(() => { minRef.current = min; }, [min]);
+  useEffect(() => { maxRef.current = max; }, [max]);
+  useEffect(() => { stepRef.current = step; }, [step]);
 
   const triggerChange = useCallback(
     (v: number) => {
@@ -75,12 +81,14 @@ export default function ParamSlider({
         return false;
       } else {
         // Was stopped, now start
-        const speed = (max - min) * 0.005;
         const animate = () => {
           const currentValue = valueRef.current;
+          const currentMin = minRef.current;
+          const currentMax = maxRef.current;
+          const speed = (currentMax - currentMin) * 0.005;
           const newVal = currentValue + speed * directionRef.current;
-          if (newVal >= max) { directionRef.current = -1; triggerChange(max); }
-          else if (newVal <= min) { directionRef.current = 1; triggerChange(min); }
+          if (newVal >= currentMax) { directionRef.current = -1; triggerChange(currentMax); }
+          else if (newVal <= currentMin) { directionRef.current = 1; triggerChange(currentMin); }
           else triggerChange(newVal);
           animRef.current = requestAnimationFrame(animate);
         };
@@ -88,7 +96,7 @@ export default function ParamSlider({
         return true;
       }
     });
-  }, [min, max, triggerChange]);
+  }, [triggerChange]);
 
   useEffect(() => () => cancelAnimationFrame(animRef.current), []);
 
