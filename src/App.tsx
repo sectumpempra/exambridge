@@ -6,6 +6,7 @@ import About from "./pages/About";
 import PersonalityTest from "./pages/PersonalityTest";
 import IdentitySelect from "./pages/IdentitySelect";
 import ResultStatisticsPage from "./pages/ResultStatisticsPage";
+import GraphPage from "./pages/graph/GraphPage";
 
 // A-Level pages
 import AlevelHome from "./pages/alevel/Home";
@@ -56,6 +57,9 @@ export default function App() {
 
       {/* Result Statistics */}
       <Route path="/statistics" element={<ResultStatisticsPage />} />
+
+      {/* Function Graph */}
+      <Route path="/graph" element={<GraphPage />} />
     </Routes>
   );
 }
