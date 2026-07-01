@@ -381,7 +381,8 @@ export default function GradeCalculator() {
       const next = scale.find(g => totalNormalized < g.threshold);
       nextGradeGap = next ? Math.max(0, Math.ceil(next.threshold - totalNormalized)) : null;
     } else {
-      // 9-1 GCSE
+      // 9-1 GCSE — 以下为近似参考阈值，实际 grade boundaries 每年浮动
+      // 建议查阅官方 PDF 获取精确合分标准
       const scale = [
         { label: "9", threshold: 90 }, { label: "8", threshold: 80 },
         { label: "7", threshold: 70 }, { label: "6", threshold: 60 },
@@ -795,6 +796,11 @@ export default function GradeCalculator() {
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: "0 0 8px", display: "flex", alignItems: "center", gap: 6 }}>
                   <TrendingUp size={16} /> 等级分数线参考
                 </h4>
+                {selectedBoard.includes("GCSE") && !selectedBoard.includes("CAIE") && (
+                  <div style={{ fontSize: 12, color: "#C17B5F", background: "rgba(193,123,95,0.08)", padding: "8px 12px", borderRadius: 8, margin: "0 0 12px", border: "1px solid rgba(193,123,95,0.2)" }}>
+                    9-1 等级为近似参考，实际 grade boundaries 每年浮动，请以官方 PDF 为准。
+                  </div>
+                )}
                 <p style={{ fontSize: 12, color: "#A8A095", margin: "0 0 16px" }}>基于所选年份各 Paper 的 component 分数线累加估算</p>
                 <div style={{ overflowX: "auto" }}>
                   <table style={{ width: "100%", borderCollapse: "collapse" }}>

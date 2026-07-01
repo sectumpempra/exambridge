@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import DataTable from "./DataTable";
@@ -88,9 +89,9 @@ export default function ALevelBoardPage({
                 <Download size={16} /> 下载 CSV
               </button>
               <span style={{ fontSize: 12, color: "#A8A095" }}>
-                <a href={`/#${otherLevelPath}`} style={{ color: "#8F7F6E", textDecoration: "none" }}>
+                <Link to={otherLevelPath} style={{ color: "#8F7F6E", textDecoration: "none" }}>
                   切换到 {otherLevelLabel} →
-                </a>
+                </Link>
               </span>
             </div>
           </div>
