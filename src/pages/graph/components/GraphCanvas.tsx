@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { ZoomIn, ZoomOut, Maximize } from 'lucide-react';
-import type { FunctionEntry, ViewState, TooltipData } from '../types';
+import type { FunctionEntry, ViewState, TooltipData, AxisMode } from '../types';
 import {
   drawGrid,
   drawFunction,
@@ -17,12 +17,12 @@ interface GraphCanvasProps {
 export default function GraphCanvas({ functions }: GraphCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const viewRef = useRef<ViewState>({ scale: 1, offsetX: 0, offsetY: 0, piMode: false });
+  const viewRef = useRef<ViewState>({ scale: 1, offsetX: 0, offsetY: 0, axisMode: 'number' });
   const sizeRef = useRef({ width: 0, height: 0 });
   const dprRef = useRef(1);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ left: 0, top: 0 });
-  const [piMode, setPiMode] = useState(false);
+  const [axisMode, setAxisMode] = useState<AxisMode>('number');
   const isDragging = useRef(false);
   const lastMouse = useRef({ x: 0, y: 0 });
   const needsRenderRef = useRef(true);
@@ -40,14 +40,16 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
   }, []);
 
   const resetView = useCallback(() => {
-    viewRef.current = { scale: 1, offsetX: 0, offsetY: 0, piMode: viewRef.current.piMode };
+    viewRef.current = { scale: 1, offsetX: 0, offsetY: 0, axisMode: viewRef.current.axisMode };
     needsRenderRef.current = true;
   }, []);
 
-  const togglePiMode = useCallback(() => {
-    setPiMode((prev) => {
-      const next = !prev;
-      viewRef.current.piMode = next;
+  const AXIS_MODE_CYCLE: AxisMode[] = ['number', 'pi', 'degree'];
+  const cycleAxisMode = useCallback(() => {
+    setAxisMode((prev) => {
+      const idx = AXIS_MODE_CYCLE.indexOf(prev);
+      const next = AXIS_MODE_CYCLE[(idx + 1) % AXIS_MODE_CYCLE.length];
+      viewRef.current.axisMode = next;
       needsRenderRef.current = true;
       return next;
     });
@@ -267,13 +269,13 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
           <Maximize className="w-4 h-4 text-[#333]" />
         </button>
         <button
-          onClick={togglePiMode}
+          onClick={cycleAxisMode}
           className={`p-2 transition-colors border-t border-[#e5e5e5] text-xs font-bold mono-num ${
-            piMode ? 'bg-black text-white' : 'hover:bg-[#f5f5f5] text-[#333]'
+            axisMode !== 'number' ? 'bg-black text-white' : 'hover:bg-[#f5f5f5] text-[#333]'
           }`}
-          title="切换 π 刻度"
+          title="切换横坐标刻度 (x / π / °)"
         >
-          {piMode ? 'π' : 'x'}
+          {axisMode === 'pi' ? 'π' : axisMode === 'degree' ? '°' : 'x'}
         </button>
       </div>
 
@@ -291,7 +293,11 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
         >
           <div className="mono-num text-xs text-black">
             <span className="text-[#6c6c6c]">x:</span>{' '}
-            {tooltip.x.toFixed(2)}
+            {axisMode === 'degree'
+              ? `${(tooltip.x * 180 / Math.PI).toFixed(1)}°`
+              : axisMode === 'pi'
+              ? `${(tooltip.x / Math.PI).toFixed(2)}π`
+              : tooltip.x.toFixed(2)}
           </div>
           <div className="mono-num text-xs text-black mt-0.5">
             <span className="text-[#6c6c6c]">y:</span>{' '}

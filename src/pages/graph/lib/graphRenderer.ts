@@ -342,6 +342,17 @@ function getPiStep(up: number): number {
   return PI / 4;
 }
 
+/** Get degree-based grid step for x-axis (returned in radians) */
+function getDegreeStep(up: number): number {
+  // up = pixels per unit (radian). Convert to pixels per degree: upDeg = up * PI/180
+  const upDeg = up * PI / 180;
+  if (upDeg < 8) return 90 * PI / 180;   // 90°
+  if (upDeg < 15) return 45 * PI / 180;  // 45°
+  if (upDeg < 30) return 30 * PI / 180;  // 30°
+  if (upDeg < 60) return 15 * PI / 180;  // 15°
+  return 10 * PI / 180;                    // 10°
+}
+
 /**
  * Parse a value into π fraction parts for vertical fraction rendering.
  * Returns null for values that should be drawn inline (nπ).
@@ -436,10 +447,10 @@ export function drawGrid(ctx: CanvasRenderingContext2D, w: number, h: number, vi
   const up = 40 * view.scale;
   const cx = w / 2 + view.offsetX;
   const cy = h / 2 + view.offsetY;
-  const piMode = view.piMode ?? false;
+  const axisMode = view.axisMode ?? 'number';
 
-  // Separate steps: x-axis may use π, y-axis always uses integer
-  const gsX = piMode ? getPiStep(up) : getGridStep(up);
+  // Separate steps: x-axis may use π or degree, y-axis always uses integer
+  const gsX = axisMode === 'pi' ? getPiStep(up) : axisMode === 'degree' ? getDegreeStep(up) : getGridStep(up);
   const gsY = getGridStep(up);
 
   // --- Grid lines ---
@@ -480,13 +491,20 @@ export function drawGrid(ctx: CanvasRenderingContext2D, w: number, h: number, vi
   ctx.fill();
 
   // --- Axis labels ---
-  // X-axis labels (π mode or integer)
+  // X-axis labels (π mode / degree mode / integer)
   for (let g = sgx; g <= egx; g += gsX) {
     if (Math.abs(g) < 0.0001) continue;
     const px = cx + g * up;
     if (px < 10 || px > w - 10) continue;
-    if (piMode) {
+    if (axisMode === 'pi') {
       drawXAxisLabel(ctx, g, px, Math.min(cy + 6, h - 22));
+    } else if (axisMode === 'degree') {
+      const deg = Math.round(g * 180 / PI);
+      ctx.fillStyle = '#6c6c6c';
+      ctx.font = '11px ui-monospace, "Cascadia Code", "Source Code Pro", monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText(`${deg}°`, px, Math.min(cy + 6, h - 16));
     } else {
       ctx.fillStyle = '#6c6c6c';
       ctx.font = '11px ui-monospace, "Cascadia Code", "Source Code Pro", monospace';

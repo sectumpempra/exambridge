@@ -19,11 +19,13 @@ export interface FunctionEntry {
   showAsymptotes: boolean;
 }
 
+export type AxisMode = 'number' | 'pi' | 'degree';
+
 export interface ViewState {
   scale: number;
   offsetX: number;
   offsetY: number;
-  piMode?: boolean;
+  axisMode: AxisMode;
 }
 
 export interface Point {
