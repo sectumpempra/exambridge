@@ -97,12 +97,23 @@ export function exportToWord(weeks: WeekGroup[], boardName?: string, studentName
                 new TableCell({ children: [new Paragraph("")] }),
               ],
             }));
+          } else if (day.isExamDay) {
+            rows.push(new TableRow({
+              children: [
+                new TableCell({ children: [new Paragraph(week.weekLabel)] }),
+                new TableCell({ children: [new Paragraph(day.dateLabel)] }),
+                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "考试日", color: "C17B5F" })] })] }),
+                new TableCell({ children: [new Paragraph("")] }),
+                new TableCell({ children: [new Paragraph("")] }),
+                new TableCell({ children: [new Paragraph("")] }),
+              ],
+            }));
           } else if (day.papers.length === 0) {
             rows.push(new TableRow({
               children: [
                 new TableCell({ children: [new Paragraph(week.weekLabel)] }),
                 new TableCell({ children: [new Paragraph(day.dateLabel)] }),
-                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: day.isExamDay ? "考试日" : "—", color: "C17B5F" })] })] }),
+                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "—", color: "C17B5F" })] })] }),
                 new TableCell({ children: [new Paragraph("")] }),
                 new TableCell({ children: [new Paragraph("")] }),
                 new TableCell({ children: [new Paragraph("")] }),

@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -34,6 +34,17 @@ export default function PersonalityTest() {
   const personalities = useMemo(() => mode === "teacher" ? TEACHER_PERSONALITIES : PERSONALITIES, [mode]);
   const isTeacher = mode === "teacher";
 
+  // Reset quiz state when mode changes
+  useEffect(() => {
+    setPage("landing");
+    setCurrentQ(0);
+    setAnswers([]);
+    setResult(null);
+    setDimensions({});
+    setCopied(false);
+    setAnimating(false);
+  }, [mode]);
+
   const startQuiz = () => {
     setAnswers([]);
     setCurrentQ(0);
@@ -52,7 +63,7 @@ export default function PersonalityTest() {
         setAnimating(false);
       }, 300);
     } else {
-      const { code, dimensions: dims } = calculatePersonality(newAnswers);
+      const { code, dimensions: dims } = calculatePersonality(newAnswers, questions);
       const personality = personalities[code];
       setResult(personality || null);
       setDimensions(dims);

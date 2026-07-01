@@ -184,7 +184,7 @@ const CAIE_AL_SUBJECTS: SubjectStats[] = [
   s("9693", "Marine Science (9693)", "CAIE", "A-Level", [
     y(2024, "june", 1.1, 2.6, 9.0, 22.4, 43.4, 65.8),
   ]),
-  s("9482", "Digital Media and Design (9482)", "CAIE", "A-Level", [
+  s("9481", "Digital Media and Design (9481)", "CAIE", "A-Level", [
     y(2024, "june", 4.5, 13.2, 30.9, 54.7, 77.7, 92.8),
   ]),
   s("9395", "Travel and Tourism (9395)", "CAIE", "A-Level", [
@@ -1473,6 +1473,13 @@ export function getSortedSubjects(
   const subjects = ALL_SUBJECT_STATS
     .filter((s) => s.board === board && s.level === level);
 
+  // Deduplicate by code (supplement data may overlap with main table)
+  const codeMap = new Map<string, string>();
+  for (const s of subjects) {
+    if (!codeMap.has(s.code)) codeMap.set(s.code, s.name);
+  }
+  const uniqueSubjects = Array.from(codeMap.entries()).map(([code, name]) => ({ code, name }));
+
   const getPriority = (name: string): number => {
     const lower = name.toLowerCase();
     // Group 1: Pure Mathematics / Maths (not Further)
@@ -1493,14 +1500,13 @@ export function getSortedSubjects(
     return 7;
   };
 
-  return subjects
+  return uniqueSubjects
     .sort((a, b) => {
       const pa = getPriority(a.name);
       const pb = getPriority(b.name);
       if (pa !== pb) return pa - pb;
       return a.code.localeCompare(b.code, undefined, { numeric: true });
-    })
-    .map((s) => ({ code: s.code, name: s.name }));
+    });
 }
 
 /** Get all subjects for a given board and level (sorted) */
@@ -1511,11 +1517,26 @@ export function getAvailableSubjects(
   return getSortedSubjects(board, level);
 }
 
-/** Get stats by subject code and board */
+/** Get stats by subject code and board (merges main + supplement data) */
 export function getSubjectStats(code: string, board: string): SubjectStats | undefined {
-  return ALL_SUBJECT_STATS.find(
+  const matches = ALL_SUBJECT_STATS.filter(
     (s) => s.code === code && s.board === board
   );
+  if (matches.length === 0) return undefined;
+  if (matches.length === 1) return matches[0];
+  // Merge: deduplicate years by year+series, preferring earlier entries
+  const seen = new Set<string>();
+  const mergedYears: YearlyStats[] = [];
+  for (const m of matches) {
+    for (const y of m.years) {
+      const key = `${y.year}-${y.series}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        mergedYears.push(y);
+      }
+    }
+  }
+  return { ...matches[0], years: mergedYears };
 }
 
 /** Get stats by board and level */

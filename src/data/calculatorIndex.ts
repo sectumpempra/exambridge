@@ -167,7 +167,7 @@ export const BOARD_META: Record<string, BoardMeta> = {
     seriesField: "series",
     maxMarkField: "max_mark",
     gradeConfig: BOARD_GRADE_CONFIG["Edexcel-AL"],
-    fieldMap: { a_star: "a_star", a: "a", b: "b", c: "c", d: "d", e: "e" },
+    fieldMap: { a_star: "a*", a: "a", b: "b", c: "c", d: "d", e: "e" },
     yearField: "year",
     sessionFieldAlt: "session",
   },
@@ -195,7 +195,7 @@ export const BOARD_META: Record<string, BoardMeta> = {
     gradeConfig: BOARD_GRADE_CONFIG["OCR-AL"],
     yearField: "year",
     sessionFieldAlt: "session",
-    fieldMap: { a_star: "a_star", a: "a", b: "b", c: "c", d: "d", e: "e" },
+    fieldMap: { a_star: "a*", a: "a", b: "b", c: "c", d: "d", e: "e" },
   },
   "AQA-AL": {
     key: "AQA-AL",

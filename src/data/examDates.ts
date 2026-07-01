@@ -210,8 +210,8 @@ export const EXAM_DATES: Record<string, Record<string, string>> = {
     "H573": "2027-06-04",
     // History H543
     "H543": "2027-06-04",
-    // Law H415
-    "H415": "2027-06-08",
+    // Law H418
+    "H418": "2027-06-08",
     // Sociology H580
     "H580": "2027-06-08",
     // Geography H481
@@ -316,7 +316,7 @@ export function getSubjectCategory(code: string): SubjectCategory {
   if (c.startsWith("h556") || c.startsWith("h557")) return "physics";
   if (c.startsWith("h420")) return "biology";
   if (c.startsWith("h432") || c.startsWith("h422")) return "chemistry";
-  if (c.startsWith("h446") || c.startsWith("h443")) return "cs";
+  if (c.startsWith("h446")) return "cs";
   if (c.startsWith("h481")) return "other";
   if (c.startsWith("h567")) return "other";
   if (c.startsWith("h407") || c.startsWith("h408")) return "other";
@@ -325,7 +325,7 @@ export function getSubjectCategory(code: string): SubjectCategory {
   if (c.startsWith("h543")) return "other";
   if (c.startsWith("h415") || c.startsWith("h418")) return "other";
   if (c.startsWith("h580")) return "other";
-  if (c.startsWith("h431")) return "biology";
+  // H431 is Business, not Biology — falls through to "other"
   if (c.startsWith("h433")) return "chemistry";
 
   // AQA A-Level

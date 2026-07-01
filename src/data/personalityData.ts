@@ -160,11 +160,14 @@ export const PERSONALITIES: Record<string, Personality> = {
   ENTJ: { code: "ENTJ", name: "未来 CEO", tagline: "A-Level 只是我的 IPO 路演", description: "你对待 A-Level 就像对待一个商业项目——目标明确、策略清晰、执行 ruthlessly efficient。你是那个在 16 岁就已经有了 10 年人生规划的人。", quote: "我不是在参加 A-Level 考试，我在运行一个名为'我的人生'的 startup。", powers: ["Long-term vision 清晰得可怕", "Networking 和 self-promotion 天赋异禀", "Leadership 是天生的不是学的", "在任何竞争中都能脱颖而出"], weaknesses: ["对失败者 zero tolerance", "Work-life balance 是什么？", "容易因为过于 aggressive 而得罪人", "偶尔忘记了学习的乐趣"], advice: ["Success 不是唯一重要的东西", "偶尔停下来看看路边的风景", "Empathy 也是一种 strength"], partners: "ENTP, INTJ, ESTJ", emoji: "🚀", color: "#AB47BC" },
 };
 
-export function calculatePersonality(answers: number[]): { code: string; dimensions: Record<string, number> } {
+export function calculatePersonality(
+  answers: number[],
+  questions: Question[] = QUESTIONS
+): { code: string; dimensions: Record<string, number> } {
   const scores: Record<string, number> = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 
   answers.forEach((answerIdx, qIdx) => {
-    const q = QUESTIONS[qIdx];
+    const q = questions[qIdx];
     if (!q || answerIdx < 0 || answerIdx >= q.options.length) return;
     const opt = q.options[answerIdx];
     Object.entries(opt.scores).forEach(([dim, val]) => {
@@ -183,10 +186,11 @@ export function calculatePersonality(answers: number[]): { code: string; dimensi
 }
 
 export function getDimensionPercentages(dimensions: Record<string, number>) {
+  const safePct = (a: number, b: number) => (a + b) === 0 ? 50 : (a / (a + b)) * 100;
   return {
-    EI: { left: dimensions.E / (dimensions.E + dimensions.I) * 100, label: "E/I" },
-    SN: { left: dimensions.S / (dimensions.S + dimensions.N) * 100, label: "S/N" },
-    TF: { left: dimensions.T / (dimensions.T + dimensions.F) * 100, label: "T/F" },
-    JP: { left: dimensions.J / (dimensions.J + dimensions.P) * 100, label: "J/P" },
+    EI: { left: safePct(dimensions.E, dimensions.I), label: "E/I" },
+    SN: { left: safePct(dimensions.S, dimensions.N), label: "S/N" },
+    TF: { left: safePct(dimensions.T, dimensions.F), label: "T/F" },
+    JP: { left: safePct(dimensions.J, dimensions.P), label: "J/P" },
   };
 }
