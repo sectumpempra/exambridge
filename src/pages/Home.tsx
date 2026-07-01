@@ -71,7 +71,7 @@ const EXAM_BOARDS = [
     subjects: 45,
     papers: 166,
     levels: "GCSE · A-Level · FSMQ",
-    features: ["H_serial_s 分层试卷", "多样化的评估方式", "数学类科目覆盖全"],
+    features: ["分层试卷 (H/F 系列)", "多样化的评估方式", "数学类科目覆盖全"],
   },
 ];
 

@@ -893,7 +893,7 @@ function getCompletenessWarning(boardKey: string, subjectCode: string, selectedC
     const hasP3 = selectedComponents.some(c => c.startsWith("3"));
     const appliedCount = selectedComponents.filter(c => c.startsWith("4") || c.startsWith("5") || c.startsWith("6")).length;
     if (!hasP1) return "缺少 Pure Mathematics 1 (P1)，AS/A-Level 必修";
-    if (selectedComponents.length <= 2) return "AS Level 至少需 P1 + 1个 applied paper";
+    if (appliedCount < 1) return "AS Level 至少需 P1 + 1个 applied paper";
     if (!hasP3) return "缺少 Pure Mathematics 3 (P3)，A-Level 必修";
     if (appliedCount < 2) return "A-Level 需至少 2 个 applied papers (M1/S1/S2等)";
     return undefined;

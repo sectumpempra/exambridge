@@ -188,7 +188,7 @@ export default function GraphPage() {
 
   const handleShare = useCallback(() => {
     const hash = serializeState(functions);
-    const url = window.location.origin + '/#/graph?state=' + hash;
+    const url = window.location.origin + '/#/graph?state=' + encodeURIComponent(hash);
     if (url.length > 2000) {
       toast.error('链接过长，请改用导出 PNG 分享');
       return;

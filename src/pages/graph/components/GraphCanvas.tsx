@@ -301,7 +301,9 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
                 <span className="text-[#6c6c6c]">θ:</span>{' '}
                 {axisMode === 'degree'
                   ? `${(tooltip.x * 180 / Math.PI).toFixed(1)}°`
-                  : `${(tooltip.x / Math.PI).toFixed(2)}π`}
+                  : axisMode === 'pi'
+                  ? `${(tooltip.x / Math.PI).toFixed(2)}π`
+                  : tooltip.x.toFixed(2)}
               </div>
             </>
           ) : (

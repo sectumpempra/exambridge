@@ -40,11 +40,14 @@ export default function ParamSlider({
 
   const triggerChange = useCallback(
     (v: number) => {
-      const clamped = Math.max(min, Math.min(max, v));
-      const rounded = Math.round(clamped / step) * step;
+      const currentMin = minRef.current;
+      const currentMax = maxRef.current;
+      const currentStep = stepRef.current;
+      const clamped = Math.max(currentMin, Math.min(currentMax, v));
+      const rounded = Math.round(clamped / currentStep) * currentStep;
       onChange(name, rounded);
     },
-    [name, onChange, min, max, step]
+    [name, onChange]
   );
 
   const handleSliderChange = useCallback(

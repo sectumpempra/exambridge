@@ -76,7 +76,7 @@ function buildChartData(
   // Sort chronologically
   const sorted = [...stats.years].sort((a, b) => {
     if (a.year !== b.year) return a.year - b.year;
-    const seriesOrder = { march: 0, june: 1, summer: 1, november: 2 };
+    const seriesOrder = { autumn: 0, january: 1, march: 2, june: 3, summer: 3, november: 4 };
     return (seriesOrder[a.series as keyof typeof seriesOrder] || 0) -
            (seriesOrder[b.series as keyof typeof seriesOrder] || 0);
   });
@@ -466,7 +466,7 @@ export default function ResultStatisticsPage() {
                     color={GRADE_COLORS.cRate.stroke}
                     change={changes.cRate ?? null}
                   />
-                  {latest.entries && (
+                  {latest.entries !== undefined && (
                     <div
                       style={{
                         textAlign: "center",
@@ -641,7 +641,7 @@ export default function ResultStatisticsPage() {
                         <th style={{ padding: "10px 12px", textAlign: "center", color: GRADE_COLORS.cRate.stroke, fontWeight: 700, borderBottom: "1px solid #E8E4DE" }}>C</th>
                         <th style={{ padding: "10px 12px", textAlign: "center", color: GRADE_COLORS.dRate.stroke, fontWeight: 700, borderBottom: "1px solid #E8E4DE" }}>D</th>
                         <th style={{ padding: "10px 12px", textAlign: "center", color: GRADE_COLORS.eRate.stroke, fontWeight: 700, borderBottom: "1px solid #E8E4DE" }}>E</th>
-                        {latest?.entries !== undefined && (
+                        {currentStats.years.some(y => y.entries !== undefined) && (
                           <th style={{ padding: "10px 12px", textAlign: "right", color: "#8B8378", fontWeight: 600, borderBottom: "1px solid #E8E4DE" }}>考生</th>
                         )}
                       </tr>

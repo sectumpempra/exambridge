@@ -291,7 +291,7 @@ export const DATA_INDEX: DataIndex = {
   ocr: buildIndex(ocrJson as Record<string, string | number>[], BOARD_META["OCR-GCSE"]),
   aqa: buildIndex(aqaJson as Record<string, string | number>[], BOARD_META["AQA-GCSE"]),
   edexcel_al: buildIndex(edexcelALJson as Record<string, string | number>[], BOARD_META["Edexcel-AL"]),
-  cie_al: buildIndex(cieALJson as Record<string, string | number>[], BOARD_META["CAIE-AL"]),
+  caie_al: buildIndex(cieALJson as Record<string, string | number>[], BOARD_META["CAIE-AL"]),
   ocr_al: buildIndex(ocrALJson as Record<string, string | number>[], BOARD_META["OCR-AL"]),
   aqa_al: buildIndex(aqaALJson as Record<string, string | number>[], BOARD_META["AQA-AL"]),
 };
