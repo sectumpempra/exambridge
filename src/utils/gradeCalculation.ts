@@ -675,10 +675,11 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
     const a2Met = a2Papers.length === 0 ? false : a2UMS >= a2Threshold;
 
     // Math special rule: Core 34 (P3+P4) >= 180
+    // Only count WMAxx (Mathematics) P3 (ends in 03/13) and P4 (ends in 04/14)
     const isMath = subjectCode.startsWith("WMA");
     if (isMath && a2Papers.length >= 2) {
       const p3p4 = a2Papers
-        .filter(p => p.component.includes("13") || p.component.includes("14"))
+        .filter(p => /^WMA\d+(?:0[34]|1[34])$/.test(p.component))
         .reduce((s, p) => s + p.normalizedScore, 0);
       const core34Met = p3p4 >= 180;
       const eligible = totalMet && core34Met;
@@ -918,8 +919,6 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
   const { predictedGrade, gradeResults, nextGradeGap } = mapGrade(
     boardKey,
     totalNormalized,
-    maxNormalized,
-    results
   );
 
   // Step 4: A* check
@@ -952,8 +951,6 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
 function mapGrade(
   boardKey: string,
   totalNormalized: number,
-  _maxNormalized: number,
-  _papers: PaperResult[]
 ): {
   predictedGrade: string;
   gradeResults: GradeBoundaryResult[];

@@ -14,12 +14,75 @@ import { useState, useMemo } from "react";
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend, ResponsiveContainer,
+  type TooltipProps,
 } from "recharts";
 import {
   ALL_SUBJECT_STATS, getAvailableBoards, getAvailableLevels, getAvailableSubjects,
   type SubjectStats,
 } from "../data/resultStatistics";
 import { BarChart3, Info } from "lucide-react";
+
+// ── Standalone Tooltip (defined OUTSIDE component to avoid re-creation on every render)
+const GRADE_LABELS: Record<string, string> = {
+  aStarRate: "A*",
+  aRate: "A",
+  bRate: "B",
+  cRate: "C",
+  dRate: "D",
+  eRate: "E",
+};
+
+interface TooltipPayloadItem {
+  dataKey: string;
+  color: string;
+  value: number;
+}
+
+function ResultStatsTooltip({ active, payload, label }: TooltipProps<number, string>) {
+  if (!active || !payload?.length) return null;
+  return (
+    <div
+      style={{
+        background: "#FFF",
+        border: "1px solid #E8E4DE",
+        borderRadius: 10,
+        padding: "12px 16px",
+        boxShadow: "0 4px 16px rgba(61,56,50,0.1)",
+        fontSize: 13,
+      }}
+    >
+      <p style={{ fontWeight: 700, color: "#3D3832", margin: "0 0 8px" }}>
+        {label}
+      </p>
+      {(payload as unknown as TooltipPayloadItem[]).map((entry) => (
+        <div
+          key={entry.dataKey}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            marginBottom: 4,
+            color: "#5A554F",
+          }}
+        >
+          <span
+            style={{
+              width: 10,
+              height: 10,
+              borderRadius: 3,
+              background: entry.color,
+              display: "inline-block",
+            }}
+          />
+          <span style={{ fontWeight: 600 }}>{GRADE_LABELS[entry.dataKey]}</span>
+          <span style={{ marginLeft: "auto", fontWeight: 700 }}>
+            {entry.value?.toFixed(1)}%
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 const GRADE_COLORS: Record<string, string> = {
   aStarRate: "#8F7F6E",  // Morandi brown-gold
@@ -28,15 +91,6 @@ const GRADE_COLORS: Record<string, string> = {
   cRate: "#BFA8A0",      // Morandi rose
   dRate: "#B8A68A",      // Morandi gold
   eRate: "#A8A0B0",      // Morandi mauve
-};
-
-const GRADE_LABELS: Record<string, string> = {
-  aStarRate: "A*",
-  aRate: "A",
-  bRate: "B",
-  cRate: "C",
-  dRate: "D",
-  eRate: "E",
 };
 
 interface ChartDataPoint {
@@ -144,52 +198,7 @@ export default function ResultStatistics({
     );
   };
 
-  // Custom tooltip
-  const CustomTooltip = ({ active, payload, label }: any) => {
-    if (!active || !payload?.length) return null;
-    return (
-      <div
-        style={{
-          background: "#FFF",
-          border: "1px solid #E8E4DE",
-          borderRadius: 10,
-          padding: "12px 16px",
-          boxShadow: "0 4px 16px rgba(61,56,50,0.1)",
-          fontSize: 13,
-        }}
-      >
-        <p style={{ fontWeight: 700, color: "#3D3832", margin: "0 0 8px" }}>
-          {label}
-        </p>
-        {payload.map((entry: any) => (
-          <div
-            key={entry.dataKey}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              marginBottom: 4,
-              color: "#5A554F",
-            }}
-          >
-            <span
-              style={{
-                width: 10,
-                height: 10,
-                borderRadius: 3,
-                background: entry.color,
-                display: "inline-block",
-              }}
-            />
-            <span style={{ fontWeight: 600 }}>{GRADE_LABELS[entry.dataKey]}</span>
-            <span style={{ marginLeft: "auto", fontWeight: 700 }}>
-              {entry.value?.toFixed(1)}%
-            </span>
-          </div>
-        ))}
-      </div>
-    );
-  };
+  // (CustomTooltip is now defined at module level as ResultStatsTooltip)
 
   if (!currentStats) {
     return (
@@ -494,7 +503,7 @@ export default function ResultStatistics({
                 offset: 10,
               }}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip content={<ResultStatsTooltip />} />
             <Legend
               formatter={(value: string) => (
                 <span style={{ color: "#8B8378", fontSize: 12, fontWeight: 500 }}>

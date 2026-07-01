@@ -8,7 +8,8 @@ interface HeaderProps {
   scrolled?: boolean;
 }
 
-export default function Header({ title: _title, links, scrolled = false }: HeaderProps) {
+export default function Header({ title: _headerTitle, links, scrolled = false }: HeaderProps) {
+  void _headerTitle; // Part of interface, reserved for future use
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 

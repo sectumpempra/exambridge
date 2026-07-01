@@ -23,7 +23,7 @@ export function downloadCSV(data: Record<string, unknown>[], filename: string) {
     ),
   ];
 
-  const csvContent = csvRows.join("\n");
+  const csvContent = "\uFEFF" + csvRows.join("\n");  // BOM prefix for Excel UTF-8
   const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");

@@ -110,7 +110,7 @@ function lookupExamDate(level: string, board: string, paperCode: string): string
   }
 
   // Fallback: try without suffix after dash or space
-  const baseCode = paperCode.split(/[\/\s]/)[0];
+  const baseCode = paperCode.split(/[/\s]/)[0];
   if (dates[baseCode]) return dates[baseCode];
 
   return "2026-10-01";
@@ -274,7 +274,7 @@ export default function Planner() {
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}><Settings size={16} style={{ color: "#8F7F6E" }} /><h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>规划设置</h3></div>
               <div style={{ marginBottom: 12 }}><label style={{ fontSize: 12, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 6 }}>开始日期</label><input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} style={{ padding: "8px 12px", border: "1px solid #D9D4CE", borderRadius: 8, fontSize: 14, width: "100%", color: "#3D3832", background: "#FFF" }} /></div>
               <div style={{ marginBottom: 12 }}><label style={{ fontSize: 12, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 6 }}>备考强度</label><div style={{ display: "flex", gap: 6 }}>{(Object.keys(INTENSITY_CONFIG) as Intensity[]).map(k => (<button key={k} onClick={() => setIntensity(k)} style={selectBtn(intensity === k)}>{INTENSITY_CONFIG[k].label}</button>))}</div><p style={{ fontSize: 11, color: "#A8A095", margin: "4px 0 0" }}>{INTENSITY_CONFIG[intensity].description}</p></div>
-              <div><label style={{ fontSize: 12, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 6 }}>休息日</label><div style={{ display: "flex", gap: 4 }}>{WEEKDAYS.map((name, i) => (<button key={i} onClick={() => toggleRestDay(i)} title={WEEKDAYS[i]} style={{ width: 36, height: 36, borderRadius: 8, fontSize: 13, fontWeight: 600, border: restDays.includes(i) ? "1px solid #8F7F6E" : "1px solid #D9D4CE", background: restDays.includes(i) ? "linear-gradient(135deg, #8F7F6E, #A69888)" : "#FFF", color: restDays.includes(i) ? "#FFF" : "#8B8378", cursor: "pointer" }}>{name}</button>))}</div></div>
+              <div><label style={{ fontSize: 12, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 6 }}>休息日</label><div style={{ display: "flex", gap: 4 }}>{WEEKDAYS.map((name, i) => (<button key={i} onClick={() => toggleRestDay(i)} title={WEEKDAYS[i]} style={{ width: 36, height: 36, borderRadius: 8, fontSize: 13, fontWeight: 600, border: restDays.includes(i) ? "1px solid #8F7F6E" : "1px solid #D9D4CE", background: restDays.includes(i) ? "linear-gradient(135deg, #8F7F6E, #A69888)" : "#FFF", color: restDays.includes(i) ? "#FFF" : "#8B8378", cursor: "pointer" }}>{name}</button>))}</div>{restDays.length >= 7 && <p style={{ fontSize: 11, color: "#C75B2A", margin: "4px 0 0" }}>⚠️ 一周内每天都设为休息日将导致规划为空</p>}</div>
             </div>
 
             {/* Subject & Paper Selection */}

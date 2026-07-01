@@ -15,6 +15,7 @@ import { useState, useMemo } from "react";
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend, ResponsiveContainer,
+  type TooltipProps,
 } from "recharts";
 import {
   ALL_SUBJECT_STATS, getAvailableBoards, getAvailableLevels, getAvailableSubjects,
@@ -96,7 +97,13 @@ function buildChartData(
 // TOOLTIP
 // ═══════════════════════════════════════════════════════════
 
-function CustomTooltip({ active, payload, label }: any) {
+interface PayloadItem {
+  dataKey: string;
+  color: string;
+  value: number;
+}
+
+function CustomTooltip({ active, payload, label }: TooltipProps<number, string>) {
   if (!active || !payload?.length) return null;
   return (
     <div
@@ -112,7 +119,7 @@ function CustomTooltip({ active, payload, label }: any) {
       <p style={{ fontWeight: 700, color: "#3D3832", margin: "0 0 8px" }}>
         {label}
       </p>
-      {payload.map((entry: any) => (
+      {(payload as unknown as PayloadItem[]).map((entry) => (
         <div
           key={entry.dataKey}
           style={{
@@ -147,7 +154,12 @@ function CustomTooltip({ active, payload, label }: any) {
 // LEGEND
 // ═══════════════════════════════════════════════════════════
 
-function CustomLegend({ payload }: any) {
+interface LegendPayloadItem {
+  value: string;
+  color: string;
+}
+
+function CustomLegend({ payload }: { payload?: LegendPayloadItem[] }) {
   if (!payload) return null;
   return (
     <div
@@ -159,7 +171,7 @@ function CustomLegend({ payload }: any) {
         flexWrap: "wrap",
       }}
     >
-      {payload.map((entry: any) => (
+      {payload.map((entry) => (
         <span
           key={entry.value}
           style={{
@@ -300,8 +312,8 @@ export default function ResultStatisticsPage() {
     if (!currentStats || currentStats.years.length === 0) return null;
     return [...currentStats.years].sort((a, b) => {
       if (a.year !== b.year) return b.year - a.year;
-      const order = { november: 2, june: 1, summer: 1, march: 0 };
-      return (order[a.series] || 0) - (order[b.series] || 0);
+      const order: Record<string, number> = { november: 4, june: 3, summer: 3, march: 2, january: 1, autumn: 0 };
+      return (order[a.series] ?? 0) - (order[b.series] ?? 0);
     })[0];
   }, [currentStats]);
 
@@ -310,8 +322,8 @@ export default function ResultStatisticsPage() {
     if (!currentStats || currentStats.years.length < 2) return {} as Record<string, number | null>;
     const sorted = [...currentStats.years].sort((a, b) => {
       if (a.year !== b.year) return b.year - a.year;
-      const order = { november: 2, june: 1, summer: 1, march: 0 };
-      return (order[a.series] || 0) - (order[b.series] || 0);
+      const order: Record<string, number> = { november: 4, june: 3, summer: 3, march: 2, january: 1, autumn: 0 };
+      return (order[a.series] ?? 0) - (order[b.series] ?? 0);
     });
     const now = sorted[0];
     const prev = sorted.find((y) => y.year < now.year || (y.year === now.year && y.series !== now.series));
@@ -636,8 +648,8 @@ export default function ResultStatisticsPage() {
                       {[...currentStats.years]
                         .sort((a, b) => {
                           if (a.year !== b.year) return b.year - a.year;
-                          const order = { november: 2, june: 1, summer: 1, march: 0 };
-                          return (order[a.series] || 0) - (order[b.series] || 0);
+                          const order: Record<string, number> = { november: 4, june: 3, summer: 3, march: 2, january: 1, autumn: 0 };
+                          return (order[a.series] ?? 0) - (order[b.series] ?? 0);
                         })
                         .map((y, i) => (
                           <tr
