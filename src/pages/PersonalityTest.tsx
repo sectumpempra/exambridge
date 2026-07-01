@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -34,16 +34,7 @@ export default function PersonalityTest() {
   const personalities = useMemo(() => mode === "teacher" ? TEACHER_PERSONALITIES : PERSONALITIES, [mode]);
   const isTeacher = mode === "teacher";
 
-  // Reset quiz state when mode changes
-  useEffect(() => {
-    setPage("landing");
-    setCurrentQ(0);
-    setAnswers([]);
-    setResult(null);
-    setDimensions({});
-    setCopied(false);
-    setAnimating(false);
-  }, [mode]);
+  // Mode change resets handled by key prop on route component
 
   const startQuiz = () => {
     setAnswers([]);

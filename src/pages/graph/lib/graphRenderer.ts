@@ -33,7 +33,7 @@ const FUNC_NAMES_SORTED = Array.from(MATH_BUILTINS)
   .filter(n => n.length > 1 && !['pi', 'e', 'x', 't', 'theta', 'atan2'].includes(n))
   .sort((a, b) => b.length - a.length);
 
-const NAMES_TO_PROTECT = [...FUNC_NAMES_SORTED, 'theta', 'atan2'];
+const NAMES_TO_PROTECT = [...FUNC_NAMES_SORTED, 'theta', 'atan2', 'pi'];
 const PH = '\uE000';
 
 // ==== IMPLICIT MULTIPLICATION ====
@@ -42,6 +42,7 @@ export function preprocessExpression(expr: string): string {
   let s = expr.trim();
 
   // Step 1: Space-separated tokens → insert *
+  // But NOT between function name and its argument: sin x → sin(x), not sin*x
   const tokens = s.split(/ +/);
   let r = '';
   for (let i = 0; i < tokens.length; i++) {
@@ -49,6 +50,17 @@ export function preprocessExpression(expr: string): string {
     if (i < tokens.length - 1) {
       const a = tokens[i][tokens[i].length - 1];
       const b = tokens[i + 1][0];
+      const currentToken = tokens[i];
+      const nextToken = tokens[i + 1];
+      // Check if current token is a function name → wrap next token in parens
+      const isFunc = FUNC_NAMES_SORTED.includes(currentToken.toLowerCase());
+      if (isFunc && /^[a-zA-Z0-9(]/.test(nextToken)) {
+        // sin x → sin(x), sin 2x → sin(2x), sin (x+1) → sin(x+1)
+        r += '(' + nextToken + ')';
+        // Skip the next token since we've already consumed it
+        i++;
+        continue;
+      }
       if (/[\w)]/.test(a) && /[\w(]/.test(b)) r += '*';
     }
   }
@@ -156,8 +168,9 @@ export function convertNumbersToParams(expression: string): { expression: string
       const afterIdx = i + numMatch[1].length;
       const next = afterIdx < preprocessed.length ? preprocessed[afterIdx] : '';
       // Standalone: surrounded by operators, parens, or string boundaries — NOT letters
-      // Skip numbers immediately after ^ (exponents should not become params)
-      if (prev !== '^' && !/[a-zA-Z]/.test(prev) && !/[a-zA-Z]/.test(next)) {
+      // Skip numbers in exponent position: ^2, ^(2)
+      const isExponent = prev === '^' || (prev === '(' && i > 1 && preprocessed[i - 2] === '^');
+      if (!isExponent && !/[a-zA-Z]/.test(prev) && !/[a-zA-Z]/.test(next)) {
         matches.push({ start: i, end: afterIdx, value: parseFloat(numMatch[1]) });
       }
       i += numMatch[1].length;
@@ -215,7 +228,9 @@ export function convertNumbersWithExisting(
       const prev = i > 0 ? preprocessed[i - 1] : '';
       const afterIdx = i + numMatch[1].length;
       const next = afterIdx < preprocessed.length ? preprocessed[afterIdx] : '';
-      if (prev !== '^' && !/[a-zA-Z]/.test(prev) && !/[a-zA-Z]/.test(next)) {
+      // Skip numbers in exponent position: ^2, ^(2)
+      const isExponent = prev === '^' || (prev === '(' && i > 1 && preprocessed[i - 2] === '^');
+      if (!isExponent && !/[a-zA-Z]/.test(prev) && !/[a-zA-Z]/.test(next)) {
         matches.push({ start: i, end: afterIdx, value: parseFloat(numMatch[1]) });
       }
       i += numMatch[1].length;
@@ -608,13 +623,15 @@ export function drawCartesianFunction(ctx: CanvasRenderingContext2D, entry: Func
 
   // Skip vertical asymptote detection for:
   // - sinh, cosh: monotonic, no asymptotes
-  // - exponential functions (a^bx, e^x, 2^x): no vertical asymptotes, but extreme y values cause false detection
-  //   Do NOT skip for polynomials/rationals with x^2, x^(n) in denominator
-  const isExponential =
-    /[a-wyz0-9]\^\s*\(/.test(exprLower) ||  // a^(x), 2^(x) — base^(exponent)
+  // - pure exponential functions (e^x, 2^x without denominator division): no vertical asymptotes
+  //   But DO detect for rationals like 1/(2^x - 1) which have vertical asymptotes where denominator=0
+  const hasDivision = exprLower.includes('/');
+  const isPureExponential = !hasDivision && (
+    /[a-wyz0-9]\^\s*\(/.test(exprLower) ||  // a^(x), 2^(x)
     /\be\^/.test(exprLower) ||                // e^x
-    /\d+\^/.test(exprLower);                  // 10^x
-  if (entry.showAsymptotes && !isSinhCosh && !isExponential) {
+    /\d+\^/.test(exprLower)                   // 10^x
+  );
+  if (entry.showAsymptotes && !isSinhCosh && !isPureExponential) {
     let prevVal: number | null = null;
     let prevPy: number | null = null;
     for (let i = 0; i <= n; i++) {

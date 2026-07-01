@@ -910,9 +910,13 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
     : 0;
 
   // Step 3: Grade mapping
+  // For non-CAIE A-Level, use normalized percentage (0-100) instead of raw UMS sum
+  const gradeInput = (boardKey.includes("AL") && !boardKey.startsWith("CAIE"))
+    ? percentage
+    : totalNormalized;
   const { predictedGrade, gradeResults, nextGradeGap } = mapGrade(
     boardKey,
-    totalNormalized,
+    gradeInput,
   );
 
   // Step 4: A* check

@@ -69,6 +69,9 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
           if (trailingDDefault !== undefined) {
             finalParams = { ...finalParams, d: trailingDDefault };
           }
+        } else {
+          // No params and no numbers to convert: clear old params (except d if set)
+          finalParams = trailingDDefault !== undefined ? { d: trailingDDefault } : {};
         }
       } else {
         // Has some letter params: keep them AND convert remaining numbers

@@ -53,7 +53,7 @@ export default function App() {
 
       {/* Personality Test */}
       <Route path="/personality" element={<IdentitySelect />} />
-      <Route path="/personality/test" element={<PersonalityTest />} />
+      <Route path="/personality/test" element={<PersonalityTest key={window.location.search} />} />
 
       {/* Result Statistics */}
       <Route path="/statistics" element={<ResultStatisticsPage />} />

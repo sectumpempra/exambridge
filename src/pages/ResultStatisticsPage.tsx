@@ -18,7 +18,7 @@ import {
   type TooltipProps,
 } from "recharts";
 import {
-  ALL_SUBJECT_STATS, getAvailableBoards, getAvailableLevels, getAvailableSubjects,
+  getSubjectStats, getAvailableBoards, getAvailableLevels, getAvailableSubjects,
   type SubjectStats,
 } from "../data/resultStatistics";
 import Header from "../components/Header";
@@ -294,11 +294,9 @@ export default function ResultStatisticsPage() {
   const levels = getAvailableLevels(selectedBoard);
   const subjects = getAvailableSubjects(selectedBoard, selectedLevel);
 
-  // Current subject
+  // Current subject (uses getSubjectStats to merge main + supplement data)
   const currentStats = useMemo(() => {
-    return ALL_SUBJECT_STATS.find(
-      (s) => s.code === selectedSubjectCode && s.board === selectedBoard
-    );
+    return getSubjectStats(selectedSubjectCode, selectedBoard);
   }, [selectedSubjectCode, selectedBoard]);
 
   // Chart data
