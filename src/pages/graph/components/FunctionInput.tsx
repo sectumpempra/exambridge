@@ -159,6 +159,8 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
           entry.expression.match(/\/\([^)]*x/) ||
           entry.expression.match(/\^\s*\(/) ||
           entry.expression.match(/\d+\^/) ||
+          entry.expression.match(/\be\^/) ||
+          entry.expression.match(/[a-zA-Z]\^x/) ||
           entry.expression.includes('log(')) && (
           <button
             onClick={() => onUpdate(entry.id, { showAsymptotes: !entry.showAsymptotes })}

@@ -105,7 +105,7 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
 
   useEffect(() => {
     needsRenderRef.current = true;
-  });
+  }, [functions]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -291,18 +291,35 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
           className="absolute pointer-events-none z-10 px-3 py-2 bg-white border border-black tooltip-fade"
           style={{ left: tooltipPos.left, top: tooltipPos.top }}
         >
-          <div className="mono-num text-xs text-black">
-            <span className="text-[#6c6c6c]">x:</span>{' '}
-            {axisMode === 'degree'
-              ? `${(tooltip.x * 180 / Math.PI).toFixed(1)}°`
-              : axisMode === 'pi'
-              ? `${(tooltip.x / Math.PI).toFixed(2)}π`
-              : tooltip.x.toFixed(2)}
-          </div>
-          <div className="mono-num text-xs text-black mt-0.5">
-            <span className="text-[#6c6c6c]">y:</span>{' '}
-            {tooltip.y.toFixed(2)}
-          </div>
+          {tooltip.mode === 'polar' ? (
+            <>
+              <div className="mono-num text-xs text-black">
+                <span className="text-[#6c6c6c]">r:</span>{' '}
+                {tooltip.y.toFixed(2)}
+              </div>
+              <div className="mono-num text-xs text-black mt-0.5">
+                <span className="text-[#6c6c6c]">θ:</span>{' '}
+                {axisMode === 'degree'
+                  ? `${(tooltip.x * 180 / Math.PI).toFixed(1)}°`
+                  : `${(tooltip.x / Math.PI).toFixed(2)}π`}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="mono-num text-xs text-black">
+                <span className="text-[#6c6c6c]">x:</span>{' '}
+                {axisMode === 'degree'
+                  ? `${(tooltip.x * 180 / Math.PI).toFixed(1)}°`
+                  : axisMode === 'pi'
+                  ? `${(tooltip.x / Math.PI).toFixed(2)}π`
+                  : tooltip.x.toFixed(2)}
+              </div>
+              <div className="mono-num text-xs text-black mt-0.5">
+                <span className="text-[#6c6c6c]">y:</span>{' '}
+                {tooltip.y.toFixed(2)}
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>

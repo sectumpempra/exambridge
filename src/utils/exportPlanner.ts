@@ -199,7 +199,6 @@ export function exportToPDF(elementId: string, boardName?: string, studentName?:
           pdf.save(`${prefix}${suffix}_${format(new Date(), "yyyyMMdd")}.pdf`);
         })
         .catch(err => {
-          console.error("html2canvas 渲染失败:", err);
           throw new Error("PDF渲染失败: " + (err instanceof Error ? err.message : String(err)));
         });
     })

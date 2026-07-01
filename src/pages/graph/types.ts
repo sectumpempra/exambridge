@@ -38,6 +38,7 @@ export interface TooltipData {
   y: number;
   canvasX: number;
   canvasY: number;
+  mode?: FunctionMode;
 }
 
 export interface PresetFunction {
