@@ -167,7 +167,7 @@ export default function GradeCalculator() {
         selected: false, // default all unselected
       };
     });
-  }, [getComponentsForSubject, getAvailableSeries, getComponentLabel, sortSeriesNewestFirst]);
+  }, []);
 
   const handleSelectSubject = (code: string) => {
     if (!selectedBoard) return;

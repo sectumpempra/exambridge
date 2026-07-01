@@ -119,7 +119,7 @@ function CustomTooltip({ active, payload, label }: TooltipProps<number, string>)
       <p style={{ fontWeight: 700, color: "#3D3832", margin: "0 0 8px" }}>
         {label}
       </p>
-      {(payload as unknown as PayloadItem[]).map((entry) => (
+      {(payload as PayloadItem[]).map((entry) => (
         <div
           key={entry.dataKey}
           style={{
