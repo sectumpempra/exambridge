@@ -146,13 +146,25 @@ export default function DataTable({ columns, data, itemsPerPageOptions = [10, 25
 
       {/* Table */}
       <div style={{ marginTop: 10, borderRadius: 12, overflow: "hidden", border: "1px solid #E8E4DE", overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", tableLayout: "fixed" }}>
+          <colgroup>
+            {columns.map(col => {
+              // Assign proportional widths based on column content
+              let width = '8%';
+              if (col.key === 'subject') width = '18%';
+              else if (col.key === 'subjectCode') width = '10%';
+              else if (col.key === 'series') width = '10%';
+              else if (col.key === 'component') width = '8%';
+              else if (col.key === 'maxMark') width = '8%';
+              return <col key={col.key} style={{ width }} />;
+            })}
+          </colgroup>
           <thead>
             <tr style={{ background: "linear-gradient(135deg, #ECE7E0 0%, #E8E4DE 100%)" }}>
               {columns.map(col => (
                 <th key={col.key} onClick={() => col.sortable !== false && handleSort(col.key)}
-                  style={{ padding: "11px 13px", color: "#7A6E5F", fontSize: 12, fontWeight: 600, textTransform: "uppercase", textAlign: "left", cursor: col.sortable !== false ? "pointer" : "default", whiteSpace: "nowrap", letterSpacing: "0.03em", userSelect: "none", borderBottom: "1px solid #D9D4CE" }}>
-                  <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
+                  style={{ padding: "11px 8px", color: "#7A6E5F", fontSize: 12, fontWeight: 600, textTransform: "uppercase", textAlign: "center", cursor: col.sortable !== false ? "pointer" : "default", whiteSpace: "nowrap", letterSpacing: "0.03em", userSelect: "none", borderBottom: "1px solid #D9D4CE" }}>
+                  <span style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 3 }}>
                     {col.label}
                     {sortColumn === col.key && (sortDirection === "asc" ? <ChevronUp size={13} /> : <ChevronDown size={13} />)}
                   </span>
@@ -164,9 +176,13 @@ export default function DataTable({ columns, data, itemsPerPageOptions = [10, 25
             {paginatedData.map((row, idx) => (
               <tr key={idx} className="data-row-hover"
                 style={{ backgroundColor: idx % 2 === 0 ? "rgba(255,255,255,0.8)" : "rgba(245,242,238,0.6)", borderBottom: "1px solid rgba(233,228,222,0.6)", transition: "background-color 0.2s ease" }}>
-                {columns.map(col => (
-                  <td key={col.key} style={{ padding: "9px 13px", fontSize: 13, color: "#4A453F", whiteSpace: "nowrap" }}>{row[col.key]}</td>
-                ))}
+                {columns.map(col => {
+                  const val = row[col.key];
+                  const display = val === null || val === undefined || val === '' ? '-' : String(val);
+                  return (
+                    <td key={col.key} style={{ padding: "9px 13px", fontSize: 13, color: val === null || val === undefined ? '#B8B0A4' : '#4A453F', whiteSpace: "nowrap", textAlign: "center" }}>{display}</td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>
