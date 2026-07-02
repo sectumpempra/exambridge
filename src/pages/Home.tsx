@@ -73,6 +73,18 @@ const EXAM_BOARDS = [
     levels: "GCSE · A-Level · FSMQ",
     features: ["分层试卷 (H/F 系列)", "多样化的评估方式", "数学类科目覆盖全"],
   },
+  {
+    id: "wjec",
+    short: "WJEC/Eduqas",
+    name: "WJEC / Eduqas",
+    nameZh: "威尔士/英格兰资格",
+    color: "#7B8FA0",
+    gradient: "linear-gradient(135deg, #5A7080 0%, #7B8FA0 100%)",
+    subjects: 71,
+    papers: 439,
+    levels: "GCSE · A-Level",
+    features: ["威尔士主要考试局", "英格兰分校 Eduqas", "艺术人文科目见长"],
+  },
 ];
 
 /* ═══════════════════════════════════════════════════════════
@@ -81,7 +93,7 @@ const EXAM_BOARDS = [
 const FEATURE_CARDS = [
   {
     title: "A-Level 分数线",
-    desc: "8,000+ 条数据 · 四大考试局",
+    desc: "8,000+ 条数据 · 五大考试局",
     detail: "A-Level 等级制（A*-E）分数线数据。覆盖 Edexcel、CAIE、AQA、OCR，数据跨度 2014-2026。",
     icon: GraduationCap,
     accent: "#94A8B8",
@@ -91,7 +103,7 @@ const FEATURE_CARDS = [
   },
   {
     title: "GCSE / IGCSE 分数线",
-    desc: "640+ 条数据 · 四大考试局",
+    desc: "640+ 条数据 · 五大考试局",
     detail: "9-1 等级制（或 A*-G）GCSE / IGCSE 分数线数据。覆盖数学、科学、英语等主流科目。",
     icon: School,
     accent: "#8F7F6E",
@@ -112,7 +124,7 @@ const FEATURE_CARDS = [
   {
     title: "刷题规划",
     desc: "智能排课 · 考试倒计时 · 导出",
-    detail: "为 A-Level / GCSE 备考智能安排刷题计划。支持四大考试局，按周分配历年真题，考试倒计时提醒。",
+    detail: "为 A-Level / GCSE 备考智能安排刷题计划。支持五大考试局，按周分配历年真题，考试倒计时提醒。",
     icon: BookOpen,
     accent: "#BFA8A0",
     to: "/planner",
@@ -511,7 +523,7 @@ export default function Home() {
             >
               查分数线 · 算预估分 · 排刷题表 · 测学习人格
               <br />
-              覆盖 CAIE / Edexcel / AQA / OCR 四大考试局
+              覆盖 CAIE / Edexcel / AQA / OCR / WJEC-Eduqas 五大考试局
             </p>
 
             {/* Scroll indicator */}
@@ -576,9 +588,9 @@ export default function Home() {
             }}
           >
             <StatItem end={10000} suffix="+" label="条分数线" delay={1} />
-            <StatItem end={307} suffix="" label="个科目" delay={2} />
+            <StatItem end={560} suffix="" label="个科目" delay={2} />
             <StatItem end={1146} suffix="" label="份试卷" delay={3} />
-            <StatItem end={4} suffix="" label="大考试局" delay={4} />
+            <StatItem end={5} suffix="" label="大考试局" delay={4} />
           </div>
         </section>
 
@@ -910,7 +922,7 @@ export default function Home() {
                   color: "#F0EDE8",
                 }}
               >
-                覆盖四大考试局全部核心数据
+                覆盖五大考试局全部核心数据
               </h2>
               <p
                 style={{
