@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { QRCodeSVG } from "qrcode.react";
-import { format, differenceInDays } from "date-fns";
+import { format, differenceInDays, parseISO } from "date-fns";
 import {
   BookOpen, Settings, Share2, Clock, Check, ChevronDown, ChevronUp,
   Copy, CheckCheck, FileSpreadsheet, FileText, FileDown, GraduationCap,
@@ -223,7 +223,7 @@ export default function Planner() {
   const examGroups = useMemo(() =>
     selectedGroups.map(g => {
       const date = getGroupNearestExamDate(g.level, g.board, g.variants);
-      const days = differenceInDays(new Date(date), new Date());
+      const days = differenceInDays(parseISO(date), new Date());
       return { label: `${g.subjectCode} ${g.paperLabel}`, date, daysUntil: days };
     }).sort((a, b) => a.daysUntil - b.daysUntil),
   [selectedGroups]);
@@ -299,7 +299,7 @@ export default function Planner() {
                   /* Other boards: per-subject with paper groups */
                 <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 {subjects.map(subject => {
-                  const isSubjectCollapsed = collapsedSubjects[subject.code] !== false; // default collapsed
+                  const isSubjectCollapsed = collapsedSubjects[subject.code] === undefined ? true : collapsedSubjects[subject.code]; // default collapsed
                   const selectedPaperCount = selectedGroups.filter(g => g.subjectCode === subject.code).length;
                   return (
                     <div key={subject.code} style={{ border: "1px solid #E9E5DE", borderRadius: 10, overflow: "hidden" }}>
@@ -316,7 +316,7 @@ export default function Planner() {
                           {subject.paperGroups.map(group => {
                             const isSelected = selectedGroups.some(g => g.subjectCode === subject.code && g.paperNum === group.paperNum);
                             const examDate = getGroupNearestExamDate(selectedLevel, selectedBoard, group.papers);
-                            const daysUntil = differenceInDays(new Date(examDate), new Date());
+                            const daysUntil = differenceInDays(parseISO(examDate), new Date());
                             return (
                               <div key={`${subject.code}_${group.paperNum}`} onClick={() => togglePaperGroup(subject.code, group)}
                                 style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 14px", cursor: "pointer", background: isSelected ? "rgba(143,127,110,0.04)" : "transparent", borderLeft: isSelected ? "3px solid #8F7F6E" : "3px solid transparent" }}>
@@ -476,7 +476,7 @@ function EdexcelALSubjectList({
     <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
       {groups.map(group => {
         const key = `edx_${group.category}_${group.subjectName}`;
-        const isCollapsed = collapsedSubjects[key] !== false; // default collapsed
+        const isCollapsed = collapsedSubjects[key] === undefined ? true : collapsedSubjects[key]; // default collapsed
         const selectedCount = group.units.filter(u => selectedGroups.some(g => g.subjectCode === u.code)).length;
         return (
           <div key={key} style={{ border: "1px solid #E9E5DE", borderRadius: 10, overflow: "hidden" }}>
@@ -494,7 +494,7 @@ function EdexcelALSubjectList({
                 {group.units.map(unit => {
                   const isSelected = selectedGroups.some(g => g.subjectCode === unit.code);
                   const examDate = getGroupNearestExamDate(selectedLevel, selectedBoard, unit.papers);
-                  const daysUntil = differenceInDays(new Date(examDate), new Date());
+                  const daysUntil = differenceInDays(parseISO(examDate), new Date());
                   return (
                     <div key={unit.code} onClick={() => onToggleUnit(unit.code, unit.papers)}
                       style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 14px", cursor: "pointer", background: isSelected ? "rgba(143,127,110,0.04)" : "transparent", borderLeft: isSelected ? "3px solid #8F7F6E" : "3px solid transparent" }}>

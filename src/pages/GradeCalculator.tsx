@@ -367,19 +367,23 @@ export default function GradeCalculator() {
       nextGradeGap = next ? Math.max(0, Math.ceil(next.threshold - totalNormalized)) : null;
     } else if (isAL) {
       // A-Level: A*-E (using normalized PUM/UMS)
+      // For UMS-based boards (non-CAIE), convert total UMS to percentage
+      const comparisonScore = (isAL && !isCAIE)
+        ? Math.round((totalNormalized / maxNormalized) * 100 * 10) / 10
+        : totalNormalized;
       const scale = [
         { label: "A*", threshold: 90 }, { label: "A", threshold: 80 },
         { label: "B", threshold: 70 }, { label: "C", threshold: 60 },
         { label: "D", threshold: 50 }, { label: "E", threshold: 40 },
       ];
       for (const g of scale) {
-        gradeResults.push({ gradeLabel: g.label, fieldKey: g.label.toLowerCase().replace("*", "_star"), requiredTotal: g.threshold, achieved: totalNormalized >= g.threshold, gap: Math.round((totalNormalized - g.threshold) * 10) / 10 });
+        gradeResults.push({ gradeLabel: g.label, fieldKey: g.label.toLowerCase().replace("*", "_star"), requiredTotal: g.threshold, achieved: comparisonScore >= g.threshold, gap: Math.round((comparisonScore - g.threshold) * 10) / 10 });
       }
       for (const g of scale) {
-        if (totalNormalized >= g.threshold) { predictedGrade = g.label; break; }
+        if (comparisonScore >= g.threshold) { predictedGrade = g.label; break; }
       }
-      const next = scale.find(g => totalNormalized < g.threshold);
-      nextGradeGap = next ? Math.max(0, Math.ceil(next.threshold - totalNormalized)) : null;
+      const next = scale.find(g => comparisonScore < g.threshold);
+      nextGradeGap = next ? Math.max(0, Math.ceil(next.threshold - comparisonScore)) : null;
     } else {
       // 9-1 GCSE — 以下为近似参考阈值，实际 grade boundaries 每年浮动
       // 建议查阅官方 PDF 获取精确合分标准
@@ -579,7 +583,7 @@ export default function GradeCalculator() {
                   );
                   return groups.map(group => {
                     const groupKey = `${selectedCode}_${group.paperNum}`;
-                    const isCollapsed = collapsedGroups[groupKey] !== false; // default collapsed
+                    const isCollapsed = collapsedGroups[groupKey] === undefined ? true : collapsedGroups[groupKey]; // default collapsed
                     // Find indices in paperConfigs for this group's papers
                     const groupPaperIndices = paperConfigs
                       .map((p, idx) => ({ ...p, idx }))

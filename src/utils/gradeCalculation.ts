@@ -599,15 +599,18 @@ export function calculateGNS(
 
   // Try 9-1 boundaries
   const grades = ["grade9", "grade8", "grade7", "grade6", "grade5", "grade4", "grade3", "grade2", "grade1"];
-  const thresholds = grades.map(g => boundaries[g]).filter((v): v is number => v !== undefined && v > 0);
+  const available = grades
+    .map(g => ({ grade: g, threshold: boundaries[g] }))
+    .filter((v): v is { grade: string; threshold: number } => v.threshold !== undefined && v.threshold > 0);
 
-  if (thresholds.length === 0) return Math.round((raw / maxMark) * 100 * 10) / 10;
+  if (available.length === 0) return Math.round((raw / maxMark) * 100 * 10) / 10;
 
   // Check each grade band from highest to lowest
-  for (let i = 0; i < thresholds.length; i++) {
-    const threshold = thresholds[i];
-    const upper = i === 0 ? maxMark : thresholds[i - 1];
-    const baseScore = 90 - i * 10;
+  for (let i = 0; i < available.length; i++) {
+    const { grade, threshold } = available[i];
+    const upper = i === 0 ? maxMark : available[i - 1].threshold;
+    const gradeNum = parseInt(grade.replace("grade", ""));
+    const baseScore = gradeNum * 10;
 
     if (raw >= threshold) {
       const range = upper > threshold ? upper - threshold : maxMark - threshold;
@@ -617,9 +620,9 @@ export function calculateGNS(
   }
 
   // Below lowest grade
-  const lowest = thresholds[thresholds.length - 1];
-  if (lowest && lowest > 0) {
-    return Math.round(Math.max(0, (raw / lowest) * 10) * 10) / 10;
+  const lowest = available[available.length - 1];
+  if (lowest && lowest.threshold > 0) {
+    return Math.round(Math.max(0, (raw / lowest.threshold) * 10) * 10) / 10;
   }
   return 0;
 }
@@ -691,7 +694,7 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
     const isMath = subjectCode.startsWith("WMA");
     if (isMath && a2Papers.length >= 2) {
       const p3p4 = a2Papers
-        .filter(p => /^WMA\d+(?:0[34]|1[34])$/.test(p.component))
+        .filter(p => /^WMA(?:0[34]|1[34])$/.test(p.component))
         .reduce((s, p) => s + p.normalizedScore, 0);
       const core34Met = p3p4 >= 180;
       const eligible = totalMet && core34Met;

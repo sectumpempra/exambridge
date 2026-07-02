@@ -242,7 +242,7 @@ export function convertNumbersWithExisting(
   if (matches.length === 0) return null;
 
   // Step 3: Replace numbers with new param names (skip existing names)
-  const paramNames = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+  const paramNames = ['a', 'b', 'c', 'd', 'f', 'g', 'h', 'k'];
   const usedNames = new Set(existingParamNames);
   const params: Record<string, number> = {};
   let result = preprocessed;
