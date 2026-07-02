@@ -841,10 +841,14 @@ function findLabelPos(compiled: any, entry: FunctionEntry, w: number, h: number,
   const off = li * 24;
 
   if (entry.mode === 'polar') {
-    // For polar: sample at fixed theta values to find a point on the curve
-    // that lies within the visible canvas area
-    const thetas = [Math.PI / 4, Math.PI / 2, Math.PI / 6, Math.PI / 3, Math.PI, 3 * Math.PI / 4];
-    for (const theta of thetas) {
+    // For polar: sample at fractional positions within user-defined domain
+    const dMin = parseDomainValue(entry.domainMin);
+    const dMax = parseDomainValue(entry.domainMax);
+    const tMin = dMin !== null ? dMin : 0;
+    const tMax = dMax !== null ? dMax : 2 * Math.PI;
+    const fractions = [0.25, 0.5, 0.125, 0.375, 0.75, 0.625];
+    for (const f of fractions) {
+      const theta = tMin + f * (tMax - tMin);
       const r = evaluatePolar(compiled, theta, entry.params);
       if (r === null) continue;
       const mx = r * Math.cos(theta);
@@ -1087,10 +1091,14 @@ export function findNearestPoint(mx: number, my: number, entries: FunctionEntry[
     }
 
     if (entry.mode === 'polar') {
-      // Polar: sample theta values to find geometrically nearest point on curve
+      // Polar: sample theta values within user-defined domain
+      const dMin = parseDomainValue(entry.domainMin);
+      const dMax = parseDomainValue(entry.domainMax);
+      const tMin = dMin !== null ? dMin : 0;
+      const tMax = dMax !== null ? dMax : 4 * Math.PI;
       let bestTheta = 0, bestR = 0, minGeoDist = Infinity;
       for (let i = 0; i <= 200; i++) {
-        const theta = (i / 200) * 4 * Math.PI;
+        const theta = tMin + (i / 200) * (tMax - tMin);
         const r = evaluatePolar(compiled, theta, entry.params);
         if (r === null) continue;
         const px = r * Math.cos(theta);

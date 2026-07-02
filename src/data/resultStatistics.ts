@@ -704,8 +704,10 @@ export const ALL_SUBJECT_STATS: SubjectStats[] = [
   ...WJEC_EDUQAS_GCSE_SUBJECTS,
 ];
 
-export function getSubjectStats(code: string, board: string): SubjectStats | undefined {
-  const matches = ALL_SUBJECT_STATS.filter(s => s.code === code && s.board === board);
+export function getSubjectStats(code: string, board: string, level?: string): SubjectStats | undefined {
+  const matches = ALL_SUBJECT_STATS.filter(
+    s => s.code === code && s.board === board && (!level || s.level === level)
+  );
   if (matches.length === 0) return undefined;
   if (matches.length === 1) return matches[0];
   const seen = new Set<string>();

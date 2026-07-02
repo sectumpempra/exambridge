@@ -19,7 +19,6 @@ import {
 } from "recharts";
 import {
   getSubjectStats, getAvailableBoards, getAvailableLevels, getAvailableSubjects,
-  ALL_SUBJECT_STATS,
   type SubjectStats,
 } from "../data/resultStatistics";
 import Header from "../components/Header";
@@ -297,15 +296,7 @@ export default function ResultStatisticsPage() {
 
   // Current subject (uses getSubjectStats to merge main + supplement data)
   const currentStats = useMemo(() => {
-    const stats = getSubjectStats(selectedSubjectCode, selectedBoard);
-    // If level mismatch (e.g., same code exists in both A-Level and IGCSE),
-    // fall back to exact level match
-    if (stats && stats.level !== selectedLevel) {
-      return ALL_SUBJECT_STATS.find(
-        (s) => s.code === selectedSubjectCode && s.board === selectedBoard && s.level === selectedLevel
-      );
-    }
-    return stats;
+    return getSubjectStats(selectedSubjectCode, selectedBoard, selectedLevel);
   }, [selectedSubjectCode, selectedBoard, selectedLevel]);
 
   // Chart data
