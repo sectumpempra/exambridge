@@ -11,7 +11,7 @@
  * - Responsive area chart with Recharts
  */
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend, ResponsiveContainer,
@@ -312,7 +312,7 @@ export default function ResultStatisticsPage() {
   const [gradesToShow, setGradesToShow] = useState<string[]>([]);
 
   // Reset gradesToShow when config changes (board/level switched)
-  useMemo(() => {
+  useEffect(() => {
     const top3 = gradeConfig.grades.slice(0, 3);
     setGradesToShow(top3);
   }, [gradeConfig]);
@@ -401,9 +401,7 @@ export default function ResultStatisticsPage() {
             </div>
           </div>
 
-          {currentStats && (
-            <>
-              {/* Controls */}
+              {/* Controls - always visible */}
               <div
                 style={{
                   display: "flex",
@@ -457,6 +455,8 @@ export default function ResultStatisticsPage() {
                 </select>
               </div>
 
+          {currentStats ? (
+            <>
               {/* Stat Cards */}
               {latest && (
                 <div
@@ -683,9 +683,9 @@ export default function ResultStatisticsPage() {
                                 </td>
                               );
                             })}
-                            {y.entries !== undefined && (
+                            {currentStats.years.some(yy => yy.entries !== undefined) && (
                               <td style={{ padding: "8px 12px", textAlign: "right", color: "#8B8378", fontWeight: 500, borderBottom: "1px solid #F0EDE8" }}>
-                                {y.entries.toLocaleString()}
+                                {y.entries !== undefined ? y.entries.toLocaleString() : "—"}
                               </td>
                             )}
                           </tr>
@@ -713,11 +713,24 @@ export default function ResultStatisticsPage() {
                   ? "Cambridge International Education official results statistics (A-Level, world totals)"
                   : selectedBoard === "CAIE" && selectedLevel === "IGCSE"
                   ? "Cambridge International Education official results statistics (IGCSE A*-G, world totals)"
+                  : selectedBoard === "Edexcel" && selectedLevel === "IGCSE"
+                  ? "Pearson Edexcel official results statistics (9-1, International GCSE)"
+                  : selectedBoard === "Edexcel"
+                  ? "Pearson Edexcel official results statistics (IAL/International A-Level)"
+                  : selectedBoard === "Edexcel UK"
+                  ? "Pearson Edexcel UK official results statistics"
                   : selectedBoard === "AQA"
                   ? "AQA official results statistics (aqa.org.uk)"
-                  : "OCR official results statistics (ocr.org.uk)"}
+                  : selectedBoard === "OCR"
+                  ? "OCR official results statistics (ocr.org.uk)"
+                  : "WJEC/Eduqas official results statistics"}
               </p>
             </>
+          ) : (
+            <div style={{ textAlign: "center", padding: "40px 0", color: "#A8A095" }}>
+              <p style={{ fontSize: 14 }}>该科目暂无数据</p>
+              <p style={{ fontSize: 12, marginTop: 4 }}>请尝试切换其他科目</p>
+            </div>
           )}
         </div>
       </main>

@@ -52,7 +52,7 @@ function generatePastPapersForVariant(subjectCode: string, component: string): s
       papers.push(`${subjectCode}_${ser}_${year}_${component}`);
     }
   }
-  const so: Record<string, number> = { s: 0, m: 1, w: 2 };
+  const so: Record<string, number> = { w: 0, s: 1, m: 2 };
   return papers.sort((a, b) => {
     const pa = a.split("_"), pb = b.split("_");
     const yA = parseInt(pa[2]), yB = parseInt(pb[2]);

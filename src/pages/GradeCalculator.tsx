@@ -363,7 +363,7 @@ export default function GradeCalculator() {
       for (const g of scale) {
         if (totalNormalized >= g.threshold) { predictedGrade = g.label; break; }
       }
-      const next = scale.find(g => totalNormalized < g.threshold);
+      const next = [...scale].reverse().find(g => totalNormalized < g.threshold);
       nextGradeGap = next ? Math.max(0, Math.ceil(next.threshold - totalNormalized)) : null;
     } else if (isAL) {
       // A-Level: A*-E (using normalized PUM/UMS)
@@ -382,7 +382,7 @@ export default function GradeCalculator() {
       for (const g of scale) {
         if (comparisonScore >= g.threshold) { predictedGrade = g.label; break; }
       }
-      const next = scale.find(g => comparisonScore < g.threshold);
+      const next = [...scale].reverse().find(g => comparisonScore < g.threshold);
       nextGradeGap = next ? Math.max(0, Math.ceil(next.threshold - comparisonScore)) : null;
     } else {
       // 9-1 GCSE — 以下为近似参考阈值，实际 grade boundaries 每年浮动
@@ -400,7 +400,7 @@ export default function GradeCalculator() {
       for (const g of scale) {
         if (totalNormalized >= g.threshold) { predictedGrade = g.label; break; }
       }
-      const next = scale.find(g => totalNormalized < g.threshold);
+      const next = [...scale].reverse().find(g => totalNormalized < g.threshold);
       nextGradeGap = next ? Math.max(0, Math.ceil(next.threshold - totalNormalized)) : null;
     }
 
@@ -727,7 +727,7 @@ export default function GradeCalculator() {
                     <ArrowRight size={16} />距离下一等级还需 {result.nextGradeGap} 分
                   </div>
                 )}
-                {result.nextGradeGap !== null && result.nextGradeGap === 0 && (
+                {result.nextGradeGap === null && (
                   <div style={{ marginTop: 16, padding: "10px 20px", borderRadius: 8, background: "rgba(255,255,255,0.15)", display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 500 }}>
                     <Award size={16} />已达到最高预测等级
                   </div>

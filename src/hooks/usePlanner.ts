@@ -105,7 +105,7 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
 
       const tasks: TaskPaper[] = [];
 
-      if (!isRest && !isExam) {
+      if (!isRest) {
         for (const paper of selectedPapers) {
           const examDate = examDateMap.get(paper.code);
           if (!examDate) continue;

@@ -862,10 +862,14 @@ function findLabelPos(compiled: any, entry: FunctionEntry, w: number, h: number,
     return { cx: w - 130, cy: 30 + li * 24, ok: true };
   }
 
-  // Cartesian: scan along x-axis at fractional positions
+  // Cartesian: scan along x-axis at fractional positions, constrained to user domain
+  const dMin = parseDomainValue(entry.domainMin);
+  const dMax = parseDomainValue(entry.domainMax);
   const rx = (w - cx0) / up, lx = (-cx0) / up;
+  const xMin = dMin !== null ? Math.max(lx, dMin) : lx;
+  const xMax = dMax !== null ? Math.min(rx, dMax) : rx;
   for (const f of [0.85, 0.7, 0.5, 0.3, 0.15]) {
-    const tx = lx + (rx - lx) * f;
+    const tx = xMin + (xMax - xMin) * f;
     const yv = evaluateCartesian(compiled, tx, entry.params);
     if (yv === null) continue;
     const px = cx0 + tx * up;
