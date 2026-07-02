@@ -182,7 +182,8 @@ export function convertNumbersToParams(expression: string): { expression: string
   if (matches.length === 0) return null;
 
   // Step 3: Replace numbers with param names (left-to-right: a, b, c...)
-  const paramNames = ['a', 'b', 'c', 'd', 'e', 'f'];
+  // 'e' excluded to avoid shadowing Math.E in evaluateCartesian
+  const paramNames = ['a', 'b', 'c', 'd', 'f', 'g'];
   const params: Record<string, number> = {};
   let result = preprocessed;
   let offset = 0;
