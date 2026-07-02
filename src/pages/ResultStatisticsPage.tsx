@@ -19,6 +19,7 @@ import {
 } from "recharts";
 import {
   getSubjectStats, getAvailableBoards, getAvailableLevels, getAvailableSubjects,
+  isNineToOne,
   type SubjectStats,
 } from "../data/resultStatistics";
 import Header from "../components/Header";
@@ -26,28 +27,47 @@ import Footer from "../components/Footer";
 import { BarChart3, Info, TrendingDown, TrendingUp, Minus } from "lucide-react";
 
 // ═══════════════════════════════════════════════════════════
-// HIGH-CONTRAST GRADE COLORS (distinct and accessible)
+// GRADE CONFIGURATION: supports both A*-E and 9-1 grading
 // ═══════════════════════════════════════════════════════════
 
-const GRADE_COLORS: Record<string, { stroke: string; fill: string }> = {
-  aStarRate: { stroke: "#C75B2A", fill: "#C75B2A" },   // Burnt orange - A*
-  aRate:     { stroke: "#2E7D6F", fill: "#2E7D6F" },   // Teal green - A
-  bRate:     { stroke: "#3B6EA5", fill: "#3B6EA5" },   // Steel blue - B
-  cRate:     { stroke: "#7B5EA7", fill: "#7B5EA7" },   // Purple - C
-  dRate:     { stroke: "#A0885E", fill: "#A0885E" },   // Tan - D
-  eRate:     { stroke: "#8A8A8A", fill: "#8A8A8A" },   // Gray - E
+interface GradeConfig {
+  colors: Record<string, { stroke: string; fill: string }>;
+  labels: Record<string, string>;
+  grades: string[];
+}
+
+const CONFIG_A_STAR: GradeConfig = {
+  colors: {
+    aStarRate: { stroke: "#C75B2A", fill: "#C75B2A" },   // A* - Burnt orange
+    aRate:     { stroke: "#2E7D6F", fill: "#2E7D6F" },   // A - Teal green
+    bRate:     { stroke: "#3B6EA5", fill: "#3B6EA5" },   // B - Steel blue
+    cRate:     { stroke: "#7B5EA7", fill: "#7B5EA7" },   // C - Purple
+    dRate:     { stroke: "#A0885E", fill: "#A0885E" },   // D - Tan
+    eRate:     { stroke: "#8A8A8A", fill: "#8A8A8A" },   // E - Gray
+  },
+  labels: { aStarRate: "A*", aRate: "A", bRate: "B", cRate: "C", dRate: "D", eRate: "E" },
+  grades: ["aStarRate", "aRate", "bRate", "cRate", "dRate", "eRate"],
 };
 
-const GRADE_LABELS: Record<string, string> = {
-  aStarRate: "A*",
-  aRate: "A",
-  bRate: "B",
-  cRate: "C",
-  dRate: "D",
-  eRate: "E",
+const CONFIG_9_1: GradeConfig = {
+  colors: {
+    grade9Rate: { stroke: "#C75B2A", fill: "#C75B2A" },  // 9 - Burnt orange
+    grade8Rate: { stroke: "#2E7D6F", fill: "#2E7D6F" },  // 8 - Teal green
+    grade7Rate: { stroke: "#3B6EA5", fill: "#3B6EA5" },  // 7 - Steel blue
+    grade6Rate: { stroke: "#7B5EA7", fill: "#7B5EA7" },  // 6 - Purple
+    grade5Rate: { stroke: "#A0885E", fill: "#A0885E" },  // 5 - Tan
+    grade4Rate: { stroke: "#8A8A8A", fill: "#8A8A8A" },  // 4 - Gray
+    grade3Rate: { stroke: "#B07050", fill: "#B07050" },  // 3 - Brown
+    grade2Rate: { stroke: "#6090A0", fill: "#6090A0" },  // 2 - Blue-gray
+    grade1Rate: { stroke: "#A0A0A0", fill: "#A0A0A0" },  // 1 - Light gray
+  },
+  labels: { grade9Rate: "9", grade8Rate: "8", grade7Rate: "7", grade6Rate: "6", grade5Rate: "5", grade4Rate: "4", grade3Rate: "3", grade2Rate: "2", grade1Rate: "1" },
+  grades: ["grade9Rate", "grade8Rate", "grade7Rate", "grade6Rate", "grade5Rate", "grade4Rate", "grade3Rate", "grade2Rate", "grade1Rate"],
 };
 
-const ALL_GRADES = ["aStarRate", "aRate", "bRate", "cRate", "dRate", "eRate"];
+function getGradeConfig(board: string, level: string): GradeConfig {
+  return isNineToOne(board, level) ? CONFIG_9_1 : CONFIG_A_STAR;
+}
 
 // ═══════════════════════════════════════════════════════════
 // X-AXIS LABEL: always show year + month
@@ -103,7 +123,7 @@ interface PayloadItem {
   value: number;
 }
 
-function CustomTooltip({ active, payload, label }: TooltipProps<number, string>) {
+function CustomTooltip({ active, payload, label, labels }: TooltipProps<number, string> & { labels: Record<string, string> }) {
   if (!active || !payload?.length) return null;
   return (
     <div
@@ -140,7 +160,7 @@ function CustomTooltip({ active, payload, label }: TooltipProps<number, string>)
               flexShrink: 0,
             }}
           />
-          <span style={{ fontWeight: 600 }}>{GRADE_LABELS[entry.dataKey]}</span>
+          <span style={{ fontWeight: 600 }}>{labels[entry.dataKey]}</span>
           <span style={{ marginLeft: "auto", fontWeight: 700, minWidth: 48, textAlign: "right" }}>
             {typeof entry.value === "number" ? entry.value.toFixed(1) : entry.value}%
           </span>
@@ -159,7 +179,7 @@ interface LegendPayloadItem {
   color: string;
 }
 
-function CustomLegend({ payload }: { payload?: LegendPayloadItem[] }) {
+function CustomLegend({ payload, labels }: { payload?: LegendPayloadItem[]; labels: Record<string, string> }) {
   if (!payload) return null;
   return (
     <div
@@ -192,7 +212,7 @@ function CustomLegend({ payload }: { payload?: LegendPayloadItem[] }) {
               display: "inline-block",
             }}
           />
-          {GRADE_LABELS[entry.value]} 率
+          {labels[entry.value]} 率
         </span>
       ))}
     </div>
@@ -285,16 +305,24 @@ export default function ResultStatisticsPage() {
   const [selectedBoard, setSelectedBoard] = useState("CAIE");
   const [selectedLevel, setSelectedLevel] = useState("A-Level");
   const [selectedSubjectCode, setSelectedSubjectCode] = useState("9709");
-  const [gradesToShow, setGradesToShow] = useState<string[]>([
-    "aStarRate", "aRate", "bRate",
-  ]);
+
+  // Grade configuration (dynamic: A*-E or 9-1 based on board+level)
+  const gradeConfig = useMemo(() => getGradeConfig(selectedBoard, selectedLevel), [selectedBoard, selectedLevel]);
+
+  const [gradesToShow, setGradesToShow] = useState<string[]>([]);
+
+  // Reset gradesToShow when config changes (board/level switched)
+  useMemo(() => {
+    const top3 = gradeConfig.grades.slice(0, 3);
+    setGradesToShow(top3);
+  }, [gradeConfig]);
 
   // Derived options
   const boards = getAvailableBoards();
   const levels = getAvailableLevels(selectedBoard);
   const subjects = getAvailableSubjects(selectedBoard, selectedLevel);
 
-  // Current subject (uses getSubjectStats to merge main + supplement data)
+  // Current subject
   const currentStats = useMemo(() => {
     return getSubjectStats(selectedSubjectCode, selectedBoard, selectedLevel);
   }, [selectedSubjectCode, selectedBoard, selectedLevel]);
@@ -324,16 +352,15 @@ export default function ResultStatisticsPage() {
       return (order[a.series] ?? 0) - (order[b.series] ?? 0);
     });
     const now = sorted[0];
-    // Compare against same series in previous year; fallback to any previous year
     const prev = sorted.find((y) => y.year < now.year && y.series === now.series)
       || sorted.find((y) => y.year < now.year);
     if (!prev) return {} as Record<string, number | null>;
     const result: Record<string, number | null> = {};
-    ALL_GRADES.forEach((g) => {
+    gradeConfig.grades.forEach((g) => {
       result[g] = ((now as unknown) as Record<string, number>)[g] - ((prev as unknown) as Record<string, number>)[g];
     });
     return result;
-  }, [currentStats]);
+  }, [currentStats, gradeConfig]);
 
   const toggleGrade = (grade: string) => {
     setGradesToShow((prev) =>
@@ -365,7 +392,7 @@ export default function ResultStatisticsPage() {
               </div>
               <div>
                 <h1 style={{ fontSize: 22, fontWeight: 700, color: "#3D3832", margin: 0 }}>
-                  历年 A*率 / A率趋势
+                  历年 {isNineToOne(selectedBoard, selectedLevel) ? "Grade 9 / Grade 8" : "A*率 / A率"} 趋势
                 </h1>
                 <p style={{ fontSize: 12, color: "#A8A095", margin: "2px 0 0" }}>
                   各考试局、各科目历年成绩统计 · 数据驱动备考决策
@@ -440,30 +467,15 @@ export default function ResultStatisticsPage() {
                     flexWrap: "wrap",
                   }}
                 >
-                  <StatCard
-                    label="A* 率"
-                    value={latest.aStarRate}
-                    color={GRADE_COLORS.aStarRate.stroke}
-                    change={changes.aStarRate ?? null}
-                  />
-                  <StatCard
-                    label="A 率"
-                    value={latest.aRate}
-                    color={GRADE_COLORS.aRate.stroke}
-                    change={changes.aRate ?? null}
-                  />
-                  <StatCard
-                    label="B 率"
-                    value={latest.bRate}
-                    color={GRADE_COLORS.bRate.stroke}
-                    change={changes.bRate ?? null}
-                  />
-                  <StatCard
-                    label="C 率"
-                    value={latest.cRate}
-                    color={GRADE_COLORS.cRate.stroke}
-                    change={changes.cRate ?? null}
-                  />
+                  {gradeConfig.grades.slice(0, 4).map((g) => (
+                    <StatCard
+                      key={g}
+                      label={`${gradeConfig.labels[g]} 率`}
+                      value={((latest as unknown) as Record<string, number>)[g]}
+                      color={gradeConfig.colors[g].stroke}
+                      change={changes[g] ?? null}
+                    />
+                  ))}
                   {latest.entries !== undefined && (
                     <div
                       style={{
@@ -509,9 +521,9 @@ export default function ResultStatisticsPage() {
                   flexWrap: "wrap",
                 }}
               >
-                {ALL_GRADES.map((g) => {
+                {gradeConfig.grades.map((g) => {
                   const active = gradesToShow.includes(g);
-                  const colors = GRADE_COLORS[g];
+                  const colors = gradeConfig.colors[g];
                   return (
                     <button
                       key={g}
@@ -540,7 +552,7 @@ export default function ResultStatisticsPage() {
                           display: "inline-block",
                         }}
                       />
-                      {GRADE_LABELS[g]}
+                      {gradeConfig.labels[g]}
                     </button>
                   );
                 })}
@@ -563,8 +575,8 @@ export default function ResultStatisticsPage() {
                     <defs>
                       {gradesToShow.map((g) => (
                         <linearGradient key={g} id={`grad-${g}`} x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor={GRADE_COLORS[g].fill} stopOpacity={0.25} />
-                          <stop offset="95%" stopColor={GRADE_COLORS[g].fill} stopOpacity={0.02} />
+                          <stop offset="5%" stopColor={gradeConfig.colors[g].fill} stopOpacity={0.25} />
+                          <stop offset="95%" stopColor={gradeConfig.colors[g].fill} stopOpacity={0.02} />
                         </linearGradient>
                       ))}
                     </defs>
@@ -587,17 +599,17 @@ export default function ResultStatisticsPage() {
                       tickFormatter={(v) => `${v}%`}
                       width={45}
                     />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Legend content={<CustomLegend />} />
+                    <Tooltip content={<CustomTooltip labels={gradeConfig.labels} />} />
+                    <Legend content={<CustomLegend labels={gradeConfig.labels} />} />
                     {gradesToShow.map((g) => (
                       <Area
                         key={g}
                         type="monotone"
                         dataKey={g}
-                        stroke={GRADE_COLORS[g].stroke}
+                        stroke={gradeConfig.colors[g].stroke}
                         fill={`url(#grad-${g})`}
                         strokeWidth={2.5}
-                        dot={{ r: 3, fill: GRADE_COLORS[g].fill, stroke: "#FFF", strokeWidth: 2 }}
+                        dot={{ r: 3, fill: gradeConfig.colors[g].fill, stroke: "#FFF", strokeWidth: 2 }}
                         activeDot={{ r: 5, strokeWidth: 2, fill: "#FFF" }}
                         name={g}
                       />
@@ -633,12 +645,11 @@ export default function ResultStatisticsPage() {
                     <thead>
                       <tr style={{ background: "#FAF8F5" }}>
                         <th style={{ padding: "10px 12px", textAlign: "left", color: "#8B8378", fontWeight: 600, borderBottom: "1px solid #E8E4DE" }}>考季</th>
-                        <th style={{ padding: "10px 12px", textAlign: "center", color: GRADE_COLORS.aStarRate.stroke, fontWeight: 700, borderBottom: "1px solid #E8E4DE" }}>A*</th>
-                        <th style={{ padding: "10px 12px", textAlign: "center", color: GRADE_COLORS.aRate.stroke, fontWeight: 700, borderBottom: "1px solid #E8E4DE" }}>A</th>
-                        <th style={{ padding: "10px 12px", textAlign: "center", color: GRADE_COLORS.bRate.stroke, fontWeight: 700, borderBottom: "1px solid #E8E4DE" }}>B</th>
-                        <th style={{ padding: "10px 12px", textAlign: "center", color: GRADE_COLORS.cRate.stroke, fontWeight: 700, borderBottom: "1px solid #E8E4DE" }}>C</th>
-                        <th style={{ padding: "10px 12px", textAlign: "center", color: GRADE_COLORS.dRate.stroke, fontWeight: 700, borderBottom: "1px solid #E8E4DE" }}>D</th>
-                        <th style={{ padding: "10px 12px", textAlign: "center", color: GRADE_COLORS.eRate.stroke, fontWeight: 700, borderBottom: "1px solid #E8E4DE" }}>E</th>
+                        {gradeConfig.grades.slice(0, 6).map((g) => (
+                          <th key={g} style={{ padding: "10px 12px", textAlign: "center", color: gradeConfig.colors[g].stroke, fontWeight: 700, borderBottom: "1px solid #E8E4DE" }}>
+                            {gradeConfig.labels[g]}
+                          </th>
+                        ))}
                         {currentStats.years.some(y => y.entries !== undefined) && (
                           <th style={{ padding: "10px 12px", textAlign: "right", color: "#8B8378", fontWeight: 600, borderBottom: "1px solid #E8E4DE" }}>考生</th>
                         )}
@@ -664,24 +675,14 @@ export default function ResultStatisticsPage() {
                             <td style={{ padding: "8px 12px", fontWeight: 600, color: "#3D3832", borderBottom: "1px solid #F0EDE8" }}>
                               {formatXAxisLabel(y.year, y.series)}
                             </td>
-                            <td style={{ padding: "8px 12px", textAlign: "center", color: GRADE_COLORS.aStarRate.stroke, fontWeight: 700, borderBottom: "1px solid #F0EDE8" }}>
-                              {y.aStarRate}%
-                            </td>
-                            <td style={{ padding: "8px 12px", textAlign: "center", color: GRADE_COLORS.aRate.stroke, fontWeight: 600, borderBottom: "1px solid #F0EDE8" }}>
-                              {y.aRate}%
-                            </td>
-                            <td style={{ padding: "8px 12px", textAlign: "center", color: GRADE_COLORS.bRate.stroke, fontWeight: 600, borderBottom: "1px solid #F0EDE8" }}>
-                              {y.bRate}%
-                            </td>
-                            <td style={{ padding: "8px 12px", textAlign: "center", color: GRADE_COLORS.cRate.stroke, fontWeight: 600, borderBottom: "1px solid #F0EDE8" }}>
-                              {y.cRate}%
-                            </td>
-                            <td style={{ padding: "8px 12px", textAlign: "center", color: GRADE_COLORS.dRate.stroke, fontWeight: 600, borderBottom: "1px solid #F0EDE8" }}>
-                              {y.dRate}%
-                            </td>
-                            <td style={{ padding: "8px 12px", textAlign: "center", color: GRADE_COLORS.eRate.stroke, fontWeight: 600, borderBottom: "1px solid #F0EDE8" }}>
-                              {y.eRate}%
-                            </td>
+                            {gradeConfig.grades.slice(0, 6).map((g, gi) => {
+                              const rate = (y as unknown as Record<string, number>)[g] ?? 0;
+                              return (
+                                <td key={g} style={{ padding: "8px 12px", textAlign: "center", color: gradeConfig.colors[g].stroke, fontWeight: gi === 0 ? 700 : 600, borderBottom: "1px solid #F0EDE8" }}>
+                                  {rate.toFixed(1)}%
+                                </td>
+                              );
+                            })}
                             {y.entries !== undefined && (
                               <td style={{ padding: "8px 12px", textAlign: "right", color: "#8B8378", fontWeight: 500, borderBottom: "1px solid #F0EDE8" }}>
                                 {y.entries.toLocaleString()}
