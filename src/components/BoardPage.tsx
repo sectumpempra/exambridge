@@ -77,11 +77,9 @@ export default function BoardPage({
 
             <DataTable columns={columns} data={data} filterFields={filterFields} />
 
-            <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 20 }}>
+            <div className="mt-5 flex justify-end">
               <button onClick={handleDownloadCSV}
-                style={{ background: "linear-gradient(135deg, rgba(166,152,136,0.1), rgba(166,152,136,0.04))", color: "#7A6E5F", fontSize: 14, fontWeight: 500, padding: "10px 24px", borderRadius: 10, border: "1px solid #C9C0B3", cursor: "pointer", display: "flex", alignItems: "center", gap: 8, transition: "all 0.3s ease", letterSpacing: "0.02em" }}
-                onMouseEnter={(e) => { (e.target as HTMLElement).style.background = "linear-gradient(135deg, rgba(166,152,136,0.18), rgba(166,152,136,0.08))"; (e.target as HTMLElement).style.borderColor = "#A69888"; (e.target as HTMLElement).style.boxShadow = "0 4px 12px rgba(166,152,136,0.12)"; }}
-                onMouseLeave={(e) => { (e.target as HTMLElement).style.background = "linear-gradient(135deg, rgba(166,152,136,0.1), rgba(166,152,136,0.04))"; (e.target as HTMLElement).style.borderColor = "#C9C0B3"; (e.target as HTMLElement).style.boxShadow = "none"; }}>
+                className="inline-flex cursor-pointer items-center gap-2 rounded-[10px] border border-[#C9C0B3] bg-gradient-to-br from-[rgba(166,152,136,0.1)] to-[rgba(166,152,136,0.04)] px-6 py-2.5 text-sm font-medium tracking-wider text-[#7A6E5F] transition-all hover:border-[#A69888] hover:from-[rgba(166,152,136,0.18)] hover:to-[rgba(166,152,136,0.08)] hover:shadow-[0_4px_12px_rgba(166,152,136,0.12)]">
                 <Download size={16} /> 下载 CSV
               </button>
             </div>
