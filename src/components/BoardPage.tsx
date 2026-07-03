@@ -75,7 +75,7 @@ export default function BoardPage({
               <p style={{ fontSize: 13, color: "#A8A095", marginTop: 6 }}>{note}</p>
             </div>
 
-            <DataTable columns={columns} data={data} filterFields={filterFields} />
+            <DataTable columns={columns} data={data} filterFields={filterFields} urlStateKey={boardName.toLowerCase().replace(/\s+/g, "-")} />
 
             <div className="mt-5 flex justify-end">
               <button onClick={handleDownloadCSV}

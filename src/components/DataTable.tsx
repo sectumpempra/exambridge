@@ -1,4 +1,5 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { ChevronUp, ChevronDown, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -21,6 +22,8 @@ interface DataTableProps {
   data: Record<string, string | number>[];
   itemsPerPageOptions?: number[];
   filterFields?: { key: string; label: string }[];
+  /** Key prefix for URL state persistence (e.g. "caie-al"). Omit to disable URL sync. */
+  urlStateKey?: string;
 }
 
 /** Extract unique values for a field (preserves 0, excludes null/undefined/"") */
@@ -43,13 +46,67 @@ export default function DataTable({
   data,
   itemsPerPageOptions = [10, 25, 50, 100],
   filterFields = [],
+  urlStateKey,
 }: DataTableProps) {
-  const [search, setSearch] = useState("");
-  const [itemsPerPage, setItemsPerPage] = useState(10);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [sortColumn, setSortColumn] = useState<string | null>(null);
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
-  const [activeFilters, setActiveFilters] = useState<Record<string, string>>({});
+  const [searchParams, setSearchParams] = useSearchParams();
+  const prefix = urlStateKey ? `${urlStateKey}_` : "";
+
+  // Helper: get param from URL or default
+  const getParam = (key: string, fallback: string): string =>
+    urlStateKey ? (searchParams.get(`${prefix}${key}`) ?? fallback) : fallback;
+
+  const [search, setSearch] = useState(() => getParam("search", ""));
+  const [itemsPerPage, setItemsPerPage] = useState(() =>
+    Number(getParam("perPage", "10")) || 10
+  );
+  const [currentPage, setCurrentPage] = useState(() =>
+    Number(getParam("page", "1")) || 1
+  );
+  const [sortColumn, setSortColumn] = useState<string | null>(() => {
+    const v = getParam("sort", "");
+    return v || null;
+  });
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">(() =>
+    (getParam("sortDir", "asc") as "asc" | "desc") === "desc" ? "desc" : "asc"
+  );
+  const [activeFilters, setActiveFilters] = useState<Record<string, string>>(() => {
+    if (!urlStateKey) return {};
+    const filters: Record<string, string> = {};
+    filterFields.forEach((ff) => {
+      const v = searchParams.get(`${prefix}filter_${ff.key}`);
+      if (v) filters[ff.key] = v;
+    });
+    return filters;
+  });
+
+  // Sync state changes back to URL
+  useEffect(() => {
+    if (!urlStateKey) return;
+    const params = new URLSearchParams(searchParams);
+
+    const setOrDelete = (key: string, value: string, defaultValue?: string) => {
+      const fullKey = `${prefix}${key}`;
+      if (!value || value === defaultValue) params.delete(fullKey);
+      else params.set(fullKey, value);
+    };
+
+    setOrDelete("search", search);
+    setOrDelete("perPage", String(itemsPerPage), "10");
+    setOrDelete("page", String(currentPage), "1");
+    setOrDelete("sort", sortColumn ?? "");
+    setOrDelete("sortDir", sortDirection, "asc");
+
+    // Filter fields
+    filterFields.forEach((ff) => {
+      const fullKey = `${prefix}filter_${ff.key}`;
+      const val = activeFilters[ff.key];
+      if (val) params.set(fullKey, val);
+      else params.delete(fullKey);
+    });
+
+    setSearchParams(params, { replace: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search, itemsPerPage, currentPage, sortColumn, sortDirection, activeFilters, urlStateKey, prefix]);
 
   /* Dropdown options */
   const filterOptions = useMemo(() => {
