@@ -30,6 +30,9 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
   const needsRenderRef = useRef(true);
   const animIdRef = useRef<number | null>(null);
   const requestRenderRef = useRef<() => void>(() => {});
+  // Mouse raf throttling (bug 3.9): avoid findNearestPoint on every mousemove
+  const mouseRafRef = useRef<number | null>(null);
+  const pendingMouse = useRef<{ x: number; y: number } | null>(null);
   const zoom = useCallback((factor: number) => {
     const { width, height } = sizeRef.current;
     const view = viewRef.current;
@@ -196,21 +199,31 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
         return;
       }
 
-      const found = findNearestPoint(x, y, functions, width, height, viewRef.current);
-      if (found) {
-        setTooltip(found);
-        setTooltipPos({
-          left: Math.min(found.canvasX + 16, width - 160),
-          top: Math.max(found.canvasY - 50, 8),
+      // raf throttling (bug 3.9): debounce tooltip hit-test to raf
+      pendingMouse.current = { x, y };
+      if (mouseRafRef.current === null) {
+        mouseRafRef.current = requestAnimationFrame(() => {
+          mouseRafRef.current = null;
+          const m = pendingMouse.current;
+          if (!m) return;
+          pendingMouse.current = null;
+          const found = findNearestPoint(m.x, m.y, functions, width, height, viewRef.current);
+          if (found) {
+            setTooltip(found);
+            setTooltipPos({
+              left: Math.min(found.canvasX + 16, width - 160),
+              top: Math.max(found.canvasY - 50, 8),
+            });
+            needsRenderRef.current = true;
+            requestRenderRef.current();
+          } else {
+            if (tooltip) {
+              setTooltip(null);
+              needsRenderRef.current = true;
+              requestRenderRef.current();
+            }
+          }
         });
-        needsRenderRef.current = true;
-        requestRenderRef.current();
-      } else {
-        if (tooltip) {
-          setTooltip(null);
-          needsRenderRef.current = true;
-          requestRenderRef.current();
-        }
       }
     },
     [functions, tooltip]

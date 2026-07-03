@@ -21,6 +21,7 @@ type TestMode = "student" | "teacher";
 
 export default function PersonalityTest() {
   const [searchParams] = useSearchParams();
+  const queryKey = searchParams.toString();
   const mode: TestMode = (searchParams.get("mode") as TestMode) || "student";
 
   const [page, setPage] = useState<PageState>("landing");
@@ -92,7 +93,7 @@ export default function PersonalityTest() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "linear-gradient(180deg, #F0EDE8, #F5F2EE)" }}>
+    <div key={queryKey} style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "linear-gradient(180deg, #F0EDE8, #F5F2EE)" }}>
       <Header title={isTeacher ? "A-Level 教师人格诊断" : "A-Level 学科人格诊断"} links={NAV_LINKS} />
       <main style={{ flex: 1, padding: "24px 16px 40px" }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>

@@ -2,7 +2,8 @@ import { useState, useMemo, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { QRCodeSVG } from "qrcode.react";
-import { format, differenceInDays, parseISO } from "date-fns";
+import { format, differenceInDays } from "date-fns";
+import { parseLocalDate } from "../hooks/usePlanner";
 import {
   BookOpen, Settings, Share2, Clock, Check, ChevronDown, ChevronUp,
   Copy, CheckCheck, FileSpreadsheet, FileText, FileDown, GraduationCap,
@@ -52,14 +53,31 @@ function generatePastPapersForVariant(subjectCode: string, component: string): s
   });
 }
 
-/** Get the nearest exam date for a paper group */
+/** Get the nearest future exam date for a paper group (bug 3.15) */
 function getGroupNearestExamDate(level: string, board: string, variants: { code: string }[]): string {
-  let earliest = "";
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  let nearest = "";
+  let nearestDiff = Infinity;
   for (const v of variants) {
     const d = lookupExamDate(level, board, v.code);
-    if (!earliest || d < earliest) earliest = d;
+    if (!d) continue;
+    const diff = parseLocalDate(d).getTime() - today.getTime();
+    if (diff >= 0 && diff < nearestDiff) {
+      nearestDiff = diff;
+      nearest = d;
+    }
   }
-  return earliest || "2026-05-01";
+  // Fallback: if no future date found, return the latest available date
+  if (!nearest) {
+    let latest = "";
+    for (const v of variants) {
+      const d = lookupExamDate(level, board, v.code);
+      if (!latest || d > latest) latest = d;
+    }
+    nearest = latest;
+  }
+  return nearest || "2026-05-01";
 }
 
 /** Get exam date from EXAM_DATES */
@@ -235,7 +253,7 @@ export default function Planner() {
   const examGroups = useMemo(() =>
     selectedGroups.map(g => {
       const date = getGroupNearestExamDate(g.level, g.board, g.variants);
-      const days = differenceInDays(parseISO(date), new Date());
+      const days = differenceInDays(parseLocalDate(date), new Date());
       return { label: `${g.subjectCode} ${g.paperLabel}`, date, daysUntil: days };
     }).sort((a, b) => a.daysUntil - b.daysUntil),
   [selectedGroups]);
@@ -328,7 +346,7 @@ export default function Planner() {
                           {subject.paperGroups.map(group => {
                             const isSelected = selectedGroups.some(g => g.subjectCode === subject.code && g.paperNum === group.paperNum);
                             const examDate = getGroupNearestExamDate(selectedLevel, selectedBoard, group.papers);
-                            const daysUntil = differenceInDays(parseISO(examDate), new Date());
+                            const daysUntil = differenceInDays(parseLocalDate(examDate), new Date());
                             return (
                               <div key={`${subject.code}_${group.paperNum}`} onClick={() => togglePaperGroup(subject.code, group)}
                                 style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 14px", cursor: "pointer", background: isSelected ? "rgba(143,127,110,0.04)" : "transparent", borderLeft: isSelected ? "3px solid #8F7F6E" : "3px solid transparent" }}>
@@ -506,7 +524,7 @@ function EdexcelALSubjectList({
                 {group.units.map(unit => {
                   const isSelected = selectedGroups.some(g => g.subjectCode === unit.code);
                   const examDate = getGroupNearestExamDate(selectedLevel, selectedBoard, unit.papers);
-                  const daysUntil = differenceInDays(parseISO(examDate), new Date());
+                  const daysUntil = differenceInDays(parseLocalDate(examDate), new Date());
                   return (
                     <div key={unit.code} onClick={() => onToggleUnit(unit.code, unit.papers)}
                       style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 14px", cursor: "pointer", background: isSelected ? "rgba(143,127,110,0.04)" : "transparent", borderLeft: isSelected ? "3px solid #8F7F6E" : "3px solid transparent" }}>

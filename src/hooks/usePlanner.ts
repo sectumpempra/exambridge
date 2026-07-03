@@ -3,8 +3,10 @@ import { format, addDays, differenceInDays } from "date-fns";
 import { INTENSITY_CONFIG } from "../data/examData";
 import type { Intensity } from "../data/examData";
 
-/** Parse a date-only string as local time (avoid UTC offset issues) */
-function parseLocalDate(dateStr: string): Date {
+/** Parse a date-only string as local time (avoid UTC offset issues).
+ *  Exported for use in Planner.tsx (bug 3.14: parseISO timezone drift).
+ */
+export function parseLocalDate(dateStr: string): Date {
   if (dateStr.length === 10) {
     // "YYYY-MM-DD" → append "T00:00:00" for local-time parsing
     return new Date(dateStr + "T00:00:00");

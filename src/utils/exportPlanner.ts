@@ -1,10 +1,15 @@
 import { format } from "date-fns";
+import { toast } from "sonner";
 import type { WeekGroup } from "../hooks/usePlanner";
 
-/** Show export error alert */
+/** Show export error toast (bug 3.16: replaces alert + void hack) */
 function handleExportError(err: unknown, type: string): void {
-  alert(`导出失败，请稍后重试\n${err instanceof Error ? err.message : ""}`);
-  void type; void err; // prevent unused var warnings
+  const msg = err instanceof Error ? err.message : String(err);
+  toast.error(`${type} 导出失败`, {
+    description: msg,
+    duration: 4000,
+  });
+  console.error(`[exportPlanner] ${type} export failed:`, err);
 }
 
 // ── Excel 导出 ───────────────────────────────────────────────────────
@@ -184,10 +189,30 @@ export function exportToPDF(elementId: string, boardName?: string, studentName?:
         .then(canvas => {
           const imgData = canvas.toDataURL("image/png");
           const pdf = new jsPDF.jsPDF("p", "mm", "a4");
+
+          // Bug 3.17: use getImageProperties for robust multi-page pagination
           const pageWidth = pdf.internal.pageSize.getWidth();
           const pageHeight = pdf.internal.pageSize.getHeight();
-          const imgWidth = pageWidth;
-          const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+          let imgWidth: number;
+          let imgHeight: number;
+
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const jspdfPdf = pdf as any;
+          if (jspdfPdf.getImageProperties) {
+            try {
+              const props = jspdfPdf.getImageProperties(imgData);
+              const ratio = props.width / pageWidth;
+              imgWidth = pageWidth;
+              imgHeight = props.height / ratio;
+            } catch {
+              imgWidth = pageWidth;
+              imgHeight = (canvas.height * imgWidth) / canvas.width;
+            }
+          } else {
+            imgWidth = pageWidth;
+            imgHeight = (canvas.height * imgWidth) / canvas.width;
+          }
 
           let heightLeft = imgHeight;
           let position = 0;
