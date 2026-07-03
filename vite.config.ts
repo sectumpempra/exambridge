@@ -24,9 +24,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icons/*.png'],
       manifest: {
-        name: 'GradeMaster A-Level备考管家',
-        short_name: 'GradeMaster',
-        description: 'A-Level备考管家 - 分数线查询、等级预测、刷题规划一站式平台',
+        name: 'ExamBridge 教师扩科助手',
+        short_name: 'ExamBridge',
+        description: 'ExamBridge - 面向教师的跨考试局扩科教研平台',
         theme_color: '#2C3E50',
         background_color: '#F0EDE8',
         display: 'standalone',
@@ -56,8 +56,29 @@ export default defineConfig({
         dir: 'ltr',
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,png,svg,ico,json}'],
+        // Clean old caches on new SW install
+        cleanupOutdatedCaches: true,
+        // New SW takes control immediately
+        clientsClaim: true,
+        // SkipWaiting for immediate activation
+        skipWaiting: true,
+        // Don't pre-cache HTML — use NetworkFirst instead
+        globPatterns: ['**/*.{js,css,png,svg,ico,json,webmanifest}'],
         runtimeCaching: [
+          {
+            // HTML pages: network first to always get latest
+            urlPattern: ({ url }: { url: URL }) => url.pathname === '/index.html' || url.pathname === '/',
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'html-cache',
+              expiration: {
+                maxAgeSeconds: 60 * 60, // 1 hour
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
             handler: 'CacheFirst',
@@ -65,7 +86,7 @@ export default defineConfig({
               cacheName: 'google-fonts-cache',
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365, // 365 days
+                maxAgeSeconds: 60 * 60 * 24 * 365,
               },
               cacheableResponse: {
                 statuses: [0, 200],
@@ -79,7 +100,7 @@ export default defineConfig({
               cacheName: 'gstatic-fonts-cache',
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365, // 365 days
+                maxAgeSeconds: 60 * 60 * 24 * 365,
               },
               cacheableResponse: {
                 statuses: [0, 200],

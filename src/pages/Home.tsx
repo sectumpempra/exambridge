@@ -180,7 +180,7 @@ function ExpansionPathCard({ path }: { path: (typeof EXPANSION_PATHS)[0] }) {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   EXAM BOARD CARD
+   EXAM BOARD CARD (hover to expand)
    ═══════════════════════════════════════════════════════════ */
 function ExamBoardCard({ board }: { board: (typeof EXAM_BOARDS)[0] }) {
   return (
@@ -361,7 +361,7 @@ export default function Home() {
             STATS BAR (IntersectionObserver triggered)
             ════════════════════════════════════════════════ */}
         <section className="border-y border-[#E8E4DE] px-4 py-10">
-          <div className="mx-auto grid max-w-[960px] grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-6 md:grid-cols-4">
             <StatItem end={10000} suffix="+" label="条分数线" delay={1} />
             <StatItem end={560} suffix="" label="个科目" delay={2} />
             <StatItem end={1146} suffix="" label="份试卷" delay={3} />

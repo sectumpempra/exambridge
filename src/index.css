@@ -235,6 +235,7 @@
   opacity: 1;
 }
 
+/* Card details: collapsed by default, expanded on hover */
 .hero-board-card .card-details {
   max-height: 0;
   opacity: 0;
@@ -243,7 +244,6 @@
               opacity 0.4s ease 0.1s;
 }
 
-/* Only expand on hover — NOT on .active */
 .hero-board-card:hover .card-details {
   max-height: 400px;
   opacity: 1;
@@ -344,13 +344,13 @@
 }
 
 .stat-number {
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(24px, 3.2vw, 38px);
   font-weight: 800;
   background: linear-gradient(135deg, #8F7F6E 0%, #B8A68A 50%, #A69888 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: 1.1;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
