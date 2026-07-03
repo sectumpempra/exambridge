@@ -1,4 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
+import LZString from 'lz-string';
 import type { FunctionEntry, PresetFunction } from './types';
 import { getFunctionColor, getNextUnusedColor } from './lib/graphRenderer';
 import GraphCanvas from './components/GraphCanvas';
@@ -41,12 +42,14 @@ function serializeState(functions: FunctionEntry[]): string {
     r: f.paramRanges,
     sa: f.showAsymptotes,
   }));
-  return btoa(encodeURIComponent(JSON.stringify(data)));
+  // Use LZString instead of btoa to support Unicode (Chinese, π, etc.)
+  return LZString.compressToEncodedURIComponent(JSON.stringify(data));
 }
 
 function deserializeState(hash: string): FunctionEntry[] | null {
   try {
-    const decoded = decodeURIComponent(atob(hash));
+    const decoded = LZString.decompressFromEncodedURIComponent(hash);
+    if (!decoded) return null;
     const data = JSON.parse(decoded);
     if (!Array.isArray(data)) return null;
     return data.map((item: Record<string, unknown>, index: number) => ({
@@ -188,7 +191,7 @@ export default function GraphPage() {
 
   const handleShare = useCallback(() => {
     const hash = serializeState(functions);
-    const url = window.location.origin + '/#/graph?state=' + encodeURIComponent(hash);
+    const url = window.location.origin + '/#/graph?state=' + hash;
     if (url.length > 2000) {
       toast.error('链接过长，请改用导出 PNG 分享');
       return;

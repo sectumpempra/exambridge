@@ -13,7 +13,12 @@ interface DataTableProps {
 /** Extract unique values for a field */
 function getUniqueValues(data: Record<string, string | number>[], key: string): string[] {
   const vals = new Set<string>();
-  data.forEach(r => { const v = String(r[key] || ""); if (v) vals.add(v); });
+  data.forEach(r => {
+    const raw = r[key];
+    if (raw !== null && raw !== undefined && raw !== "") {
+      vals.add(String(raw));
+    }
+  });
   return Array.from(vals).sort();
 }
 

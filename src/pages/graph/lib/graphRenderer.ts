@@ -304,11 +304,12 @@ export function evaluateCartesian(
   compiled: EvalFunction,
   x: number,
   params: Record<string, number>,
-  angleMode: 'number' | 'pi' | 'degree' = 'number',
+  _angleMode?: 'number' | 'pi' | 'degree',
 ): number | null {
   try {
-    const xRad = angleMode === 'degree' ? x * Math.PI / 180 : x;
-    const scope: Record<string, number> = { x: xRad, e: Math.E, pi: Math.PI, ...params };
+    // axisMode only controls axis label display, not function evaluation.
+    // Math coordinates are always in radians, so x is passed directly.
+    const scope: Record<string, number> = { x, e: Math.E, pi: Math.PI, ...params };
     const result = compiled.evaluate(scope);
     if (typeof result !== 'number' || !isFinite(result)) return null;
     if (Math.abs(result) > 1e6) return null;
@@ -320,11 +321,10 @@ export function evaluatePolar(
   compiled: EvalFunction,
   theta: number,
   params: Record<string, number>,
-  angleMode: 'number' | 'pi' | 'degree' = 'number',
+  _angleMode?: 'number' | 'pi' | 'degree',
 ): number | null {
   try {
-    const thetaRad = angleMode === 'degree' ? theta * Math.PI / 180 : theta;
-    const scope: Record<string, number> = { theta: thetaRad, t: thetaRad, e: Math.E, pi: Math.PI, ...params };
+    const scope: Record<string, number> = { theta, t: theta, e: Math.E, pi: Math.PI, ...params };
     const result = compiled.evaluate(scope);
     if (typeof result !== 'number' || !isFinite(result)) return null;
     if (Math.abs(result) > 1e6) return null;

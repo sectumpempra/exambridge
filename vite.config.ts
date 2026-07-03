@@ -1,12 +1,22 @@
 import path from "path"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
-import { inspectAttr } from 'kimi-plugin-inspect-react'
+
+// Only load inspect plugin in development
+const inspectPlugin = (() => {
+  if (process.env.NODE_ENV !== 'production') {
+    try {
+      const { inspectAttr } = require('kimi-plugin-inspect-react');
+      return inspectAttr();
+    } catch { /* ignore if not installed */ }
+  }
+  return null;
+})();
 
 // https://vite.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [inspectAttr(), react()],
+  plugins: [react(), ...(inspectPlugin ? [inspectPlugin] : [])],
   server: {
     port: 3000,
   },

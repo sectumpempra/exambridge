@@ -23,20 +23,27 @@ export function loadFromLocal(): PlannerConfig | null {
   }
 }
 
-/** Generate share URL by compressing config */
+/** Generate share URL by compressing config.
+ *  HashRouter safe: uses hash fragment for query params.
+ */
 export function generateShareUrl(config: PlannerConfig): string {
   const json = JSON.stringify(config);
   const compressed = LZString.compressToEncodedURIComponent(json);
-  const url = new URL(window.location.href);
-  url.searchParams.set("plan", compressed);
-  return url.toString();
+  const hash = window.location.hash || "#/planner";
+  const path = hash.split("?")[0]; // preserve hash path only
+  return `${window.location.origin}${window.location.pathname}#${path}?plan=${compressed}`;
 }
 
-/** Parse config from URL */
+/** Parse config from URL (HashRouter safe).
+ *  Looks for ?plan=... inside the hash fragment.
+ */
 export function parseShareUrl(url?: string): PlannerConfig | null {
   try {
-    const u = new URL(url || window.location.href);
-    const compressed = u.searchParams.get("plan");
+    const hash = url ? new URL(url).hash : window.location.hash;
+    const qIdx = hash.indexOf("?");
+    if (qIdx === -1) return null;
+    const params = new URLSearchParams(hash.slice(qIdx + 1));
+    const compressed = params.get("plan");
     if (!compressed) return null;
     const json = LZString.decompressFromEncodedURIComponent(compressed);
     if (!json) return null;
@@ -46,9 +53,14 @@ export function parseShareUrl(url?: string): PlannerConfig | null {
   }
 }
 
-/** Clear plan from URL */
+/** Clear plan from URL (HashRouter safe) */
 export function clearPlanUrl(): void {
-  const url = new URL(window.location.href);
-  url.searchParams.delete("plan");
-  window.history.replaceState({}, "", url.toString());
+  const hash = window.location.hash || "";
+  const qIdx = hash.indexOf("?");
+  if (qIdx === -1) return;
+  window.history.replaceState(
+    {},
+    "",
+    `${window.location.origin}${window.location.pathname}${hash.slice(0, qIdx)}`
+  );
 }

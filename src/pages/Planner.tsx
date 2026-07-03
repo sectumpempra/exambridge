@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { QRCodeSVG } from "qrcode.react";
@@ -107,7 +107,7 @@ export default function Planner() {
   // Parse shared plan from URL once (before state init)
   const initialShared = useMemo(() => parseShareUrl(), []);
   // Clean URL after parsing
-  useMemo(() => { if (initialShared) clearPlanUrl(); }, [initialShared]);
+  useEffect(() => { if (initialShared) clearPlanUrl(); }, [initialShared]);
 
   const [studentName, setStudentName] = useState("");
   const [selectedLevel, setSelectedLevel] = useState(initialShared?.level ?? "A-Level");

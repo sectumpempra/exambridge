@@ -732,8 +732,8 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
     const a2Papers = papers.filter(p => p.asA2Tag === "A2");
     const totalMax = 400;
     const aThreshold = totalMax * 0.8;
-    const a2Max = 240;
-    const a2Threshold = a2Max * 0.9;
+    const a2Max = 200; // AQA A2: 2 units × 100 UMS = 200
+    const a2Threshold = a2Max * 0.9; // 180
     const a2UMS = a2Papers.reduce((s, p) => s + p.normalizedScore, 0);
 
     const totalMet = totalNormalized >= aThreshold;
