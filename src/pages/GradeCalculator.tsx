@@ -108,34 +108,10 @@ function sortSeriesNewestFirst(a: string, b: string): number {
   return (order[pb] ?? 0) - (order[pa] ?? 0);
 }
 
-// ── Styles ───────────────────────────────────────────────────────────
-const cardStyle: React.CSSProperties = {
-  padding: 24, borderRadius: 16,
-  background: "linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,248,245,0.9))",
-  backdropFilter: "blur(12px)",
-  boxShadow: "0 4px 24px rgba(61,56,50,0.06), 0 1px 3px rgba(61,56,50,0.04)",
-  border: "1px solid rgba(233,229,222,0.8)",
-};
-
-const stepNumStyle = (): React.CSSProperties => ({
-  width: 32, height: 32, borderRadius: "50%",
-  background: "linear-gradient(135deg, #8F7F6E, #A69888)",
-  display: "flex", alignItems: "center", justifyContent: "center",
-  color: "#FFF", fontSize: 14, fontWeight: 700, flexShrink: 0,
-});
-
-const selectStyle: React.CSSProperties = {
-  padding: "10px 14px", border: "1px solid #D9D4CE", borderRadius: 10, fontSize: 14,
-  backgroundColor: "#FFF", color: "#3D3832", outline: "none", cursor: "pointer",
-  width: "100%", transition: "all 0.2s ease", appearance: "none" as const,
-  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238B8378' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
-  backgroundRepeat: "no-repeat", backgroundPosition: "right 12px center", paddingRight: 36,
-};
-
-const inputStyle: React.CSSProperties = {
-  padding: "10px 14px", border: "1px solid #D9D4CE", borderRadius: 10, fontSize: 15,
-  backgroundColor: "#FFF", color: "#3D3832", outline: "none", width: "100%", transition: "all 0.2s ease",
-};
+// ── Design System: Tailwind + shadcn constants ──────────────────────
+const CARD_CLS = "rounded-2xl border border-[rgba(233,229,222,0.8)] bg-gradient-to-br from-[rgba(255,255,255,0.95)] to-[rgba(250,248,245,0.9)] p-6 shadow-[0_4px_24px_rgba(61,56,50,0.06),0_1px_3px_rgba(61,56,50,0.04)] backdrop-blur-xl";
+const SELECT_CLS = "w-full cursor-pointer rounded-[10px] border border-[#D9D4CE] bg-white bg-[url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238B8378' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\")] bg-[length:16px] bg-[right_12px_center] bg-no-repeat px-3.5 py-2.5 pr-9 text-sm text-[#3D3832] outline-none transition-all focus:border-[#A69888] focus:ring-2 focus:ring-[rgba(166,152,136,0.12)]";
+const STEP_NUM = "flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#8F7F6E] to-[#A69888] text-sm font-bold text-white";
 
 // ── Main Component ───────────────────────────────────────────────────
 export default function GradeCalculator() {
@@ -486,9 +462,9 @@ export default function GradeCalculator() {
           </div>
 
           {/* Step 1: Board */}
-          <div style={cardStyle}>
+          <div className={CARD_CLS}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
-              <div style={stepNumStyle()}>1</div>
+              <div className={STEP_NUM}>1</div>
               <h3 style={{ fontSize: 16, fontWeight: 600, color: "#3D3832", margin: 0 }}>选择考试局</h3>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
@@ -518,14 +494,14 @@ export default function GradeCalculator() {
 
           {/* Step 2: Subject */}
           {selectedBoard && (
-            <div style={{ ...cardStyle, marginTop: 20 }}>
+            <div className={`${CARD_CLS} mt-5`}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
-                <div style={stepNumStyle()}>2</div>
+                <div className={STEP_NUM}>2</div>
                 <h3 style={{ fontSize: 16, fontWeight: 600, color: "#3D3832", margin: 0 }}>选择科目</h3>
               </div>
               <div style={{ position: "relative", maxWidth: 480 }}>
                 <BookOpen size={16} style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", color: "#A8A095", pointerEvents: "none" }} />
-                <select value={selectedCode} onChange={e => handleSelectSubject(e.target.value)} style={{ ...selectStyle, paddingLeft: 38 }}>
+                <select value={selectedCode} onChange={e => handleSelectSubject(e.target.value)} className={SELECT_CLS}>
                   <option value="">请选择科目...</option>
                   {/* Group by category */}
                   {(() => {
@@ -555,9 +531,9 @@ export default function GradeCalculator() {
 
           {/* Step 3: Paper Selection & Input */}
           {selectedCode && paperConfigs.length > 0 && (
-            <div style={{ ...cardStyle, marginTop: 20 }}>
+            <div className={`${CARD_CLS} mt-5`}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-                <div style={stepNumStyle()}>3</div>
+                <div className={STEP_NUM}>3</div>
                 <h3 style={{ fontSize: 16, fontWeight: 600, color: "#3D3832", margin: 0 }}>选择 Paper 并输入分数</h3>
                 <span style={{ fontSize: 12, color: "#A8A095", marginLeft: "auto" }}>
                   已选 {selectedCount} / {paperConfigs.length} 个 Paper
@@ -638,7 +614,7 @@ export default function GradeCalculator() {
                                         <label style={{ fontSize: 11, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 4 }}>
                                           <Calendar size={10} style={{ display: "inline", marginRight: 3, verticalAlign: "middle" }} />考试年份
                                         </label>
-                                        <select value={p.series} onChange={e => updatePaper(i, { series: e.target.value })} style={{ ...selectStyle, padding: "6px 10px", fontSize: 13 }}>
+                                        <select value={p.series} onChange={e => updatePaper(i, { series: e.target.value })} className="w-full cursor-pointer rounded-lg border border-[#D9D4CE] bg-white px-2.5 py-1.5 text-[13px] text-[#3D3832] outline-none">
                                           {availableSeries.sort(sortSeriesNewestFirst).map(s => (
                                             <option key={s} value={s}>{formatSeries(s)}</option>
                                           ))}
@@ -652,7 +628,7 @@ export default function GradeCalculator() {
                                         <input type="number" min={0} max={maxMark || undefined} step="0.5" value={p.score}
                                           onChange={e => { updatePaper(i, { score: e.target.value }); if (errors[`score-${i}`]) { setErrors(prev => { const n = { ...prev }; delete n[`score-${i}`]; return n; }); } }}
                                           placeholder={`0${maxMark ? ` - ${maxMark}` : ""}`}
-                                          style={{ ...inputStyle, padding: "6px 10px", fontSize: 13, borderColor: errors[`score-${i}`] ? "#C17B5F" : "#D9D4CE" }} />
+                                          className="w-full rounded-lg border bg-white px-2.5 py-1.5 text-[13px] text-[#3D3832] outline-none" style={{ borderColor: errors[`score-${i}`] ? "#C17B5F" : "#D9D4CE" }} />
                                         {errors[`score-${i}`] && <span style={{ color: "#C17B5F", fontSize: 11, marginTop: 2, display: "block" }}>{errors[`score-${i}`]}</span>}
                                       </div>
                                     </div>
@@ -738,7 +714,7 @@ export default function GradeCalculator() {
 
               {/* A* Check Details (A-Level only) */}
               {result.aStarCheck && (
-                <div style={{ ...cardStyle, marginTop: 20, borderLeft: result.aStarCheck.eligible ? "4px solid #6B8F5E" : "4px solid #C9A87C" }}>
+                <div className={`${CARD_CLS} mt-5`} style={{ borderLeft: result.aStarCheck.eligible ? "4px solid #6B8F5E" : "4px solid #C9A87C" }}>
                   <h4 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: "0 0 12px", display: "flex", alignItems: "center", gap: 6 }}>
                     <Award size={16} /> A* 条件检查
                     {result.aStarCheck.eligible && <span style={{ marginLeft: 8, padding: "2px 10px", borderRadius: 6, background: "linear-gradient(135deg, #6B8F5E, #8AAF7E)", color: "#FFF", fontSize: 12, fontWeight: 600 }}>满足 A* ✅</span>}
@@ -754,7 +730,7 @@ export default function GradeCalculator() {
               )}
 
               {/* Paper Breakdown */}
-              <div style={{ ...cardStyle, marginTop: 20 }}>
+              <div className={`${CARD_CLS} mt-5`}>
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: "0 0 16px", display: "flex", alignItems: "center", gap: 6 }}>
                   <Info size={16} /> 各 Paper 得分明细
                 </h4>
@@ -798,7 +774,7 @@ export default function GradeCalculator() {
               </div>
 
               {/* Grade Boundaries */}
-              <div style={{ ...cardStyle, marginTop: 20 }}>
+              <div className={`${CARD_CLS} mt-5`}>
                 <h4 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: "0 0 8px", display: "flex", alignItems: "center", gap: 6 }}>
                   <TrendingUp size={16} /> 等级分数线参考
                 </h4>
@@ -852,7 +828,7 @@ export default function GradeCalculator() {
           )}
 
           {selectedCode && paperConfigs.length === 0 && (
-            <div style={{ ...cardStyle, marginTop: 20, textAlign: "center", padding: 40 }}>
+            <div className={`${CARD_CLS} mt-5 text-center py-10`}>
               <AlertCircle size={32} style={{ color: "#C4BDB3", marginBottom: 12 }} />
               <p style={{ fontSize: 15, color: "#8B8378", margin: 0 }}>该科目暂无 component 配置数据</p>
             </div>

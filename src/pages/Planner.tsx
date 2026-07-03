@@ -263,8 +263,9 @@ export default function Planner() {
   };
 
   const getCountdownColor = (days: number) => days < 7 ? "#C17B5F" : days < 30 ? "#C9A87C" : "#6B8F5E";
-  const cardStyle: React.CSSProperties = { padding: 20, borderRadius: 14, background: "linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,248,245,0.9))", boxShadow: "0 4px 20px rgba(61,56,50,0.06)", border: "1px solid rgba(233,229,222,0.8)" };
-  const selectBtn = (active: boolean): React.CSSProperties => ({ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 500, border: active ? "1px solid #8F7F6E" : "1px solid #D9D4CE", background: active ? "linear-gradient(135deg, rgba(143,127,110,0.12), rgba(143,127,110,0.04))" : "#FFF", color: active ? "#8F7F6E" : "#8B8378", cursor: "pointer", transition: "all 0.2s ease" });
+  const CARD_CLS = "rounded-[14px] border border-[rgba(233,229,222,0.8)] bg-gradient-to-br from-[rgba(255,255,255,0.95)] to-[rgba(250,248,245,0.9)] p-5 shadow-[0_4px_20px_rgba(61,56,50,0.06)]";
+  // cardStyle deprecated — all usages now use CARD_CLS
+  const selectBtnCls = (active: boolean) => `cursor-pointer rounded-lg px-3.5 py-2 text-[13px] font-medium transition-all ${active ? "border border-[#8F7F6E] bg-gradient-to-br from-[rgba(143,127,110,0.12)] to-[rgba(143,127,110,0.04)] text-[#8F7F6E]" : "border border-[#D9D4CE] bg-white text-[#8B8378] hover:border-[#A69888] hover:text-[#8F7F6E]"}`;
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "linear-gradient(180deg, #F0EDE8, #F5F2EE)" }}>
@@ -276,7 +277,7 @@ export default function Planner() {
           <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
 
             {/* Student Name */}
-            <div style={cardStyle}>
+            <div className={CARD_CLS}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
                 <User size={16} style={{ color: "#8F7F6E" }} />
                 <h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>学生信息</h3>
@@ -286,27 +287,27 @@ export default function Planner() {
             </div>
 
             {/* Level */}
-            <div style={cardStyle}>
+            <div className={CARD_CLS}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}><Filter size={16} style={{ color: "#8F7F6E" }} /><h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>选择学段</h3></div>
-              <div style={{ display: "flex", gap: 8 }}>{levels.map(l => (<button key={l} onClick={() => { setSelectedLevel(l); setSelectedBoard(Object.keys((plannerData as Record<string, Record<string, unknown>>)[l] || {})[0] || ""); setSelectedGroups([]); }} style={selectBtn(selectedLevel === l)}>{l}</button>))}</div>
+              <div style={{ display: "flex", gap: 8 }}>{levels.map(l => (<button key={l} onClick={() => { setSelectedLevel(l); setSelectedBoard(Object.keys((plannerData as Record<string, Record<string, unknown>>)[l] || {})[0] || ""); setSelectedGroups([]); }} className={selectBtnCls(selectedLevel === l)}>{l}</button>))}</div>
             </div>
 
             {/* Board */}
-            <div style={cardStyle}>
+            <div className={CARD_CLS}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}><GraduationCap size={16} style={{ color: "#8F7F6E" }} /><h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>选择考试局</h3></div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>{boards.map(b => (<button key={b} onClick={() => { setSelectedBoard(b); setSelectedGroups([]); }} style={selectBtn(selectedBoard === b)}>{b}</button>))}</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>{boards.map(b => (<button key={b} onClick={() => { setSelectedBoard(b); setSelectedGroups([]); }} className={selectBtnCls(selectedBoard === b)}>{b}</button>))}</div>
             </div>
 
             {/* Settings */}
-            <div style={cardStyle}>
+            <div className={CARD_CLS}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}><Settings size={16} style={{ color: "#8F7F6E" }} /><h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>规划设置</h3></div>
               <div style={{ marginBottom: 12 }}><label style={{ fontSize: 12, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 6 }}>开始日期</label><input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} style={{ padding: "8px 12px", border: "1px solid #D9D4CE", borderRadius: 8, fontSize: 14, width: "100%", color: "#3D3832", background: "#FFF" }} /></div>
-              <div style={{ marginBottom: 12 }}><label style={{ fontSize: 12, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 6 }}>备考强度</label><div style={{ display: "flex", gap: 6 }}>{(Object.keys(INTENSITY_CONFIG) as Intensity[]).map(k => (<button key={k} onClick={() => setIntensity(k)} style={selectBtn(intensity === k)}>{INTENSITY_CONFIG[k].label}</button>))}</div><p style={{ fontSize: 11, color: "#A8A095", margin: "4px 0 0" }}>{INTENSITY_CONFIG[intensity].description}</p></div>
+              <div style={{ marginBottom: 12 }}><label style={{ fontSize: 12, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 6 }}>备考强度</label><div style={{ display: "flex", gap: 6 }}>{(Object.keys(INTENSITY_CONFIG) as Intensity[]).map(k => (<button key={k} onClick={() => setIntensity(k)} className={selectBtnCls(intensity === k)}>{INTENSITY_CONFIG[k].label}</button>))}</div><p style={{ fontSize: 11, color: "#A8A095", margin: "4px 0 0" }}>{INTENSITY_CONFIG[intensity].description}</p></div>
               <div><label style={{ fontSize: 12, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 6 }}>休息日</label><div style={{ display: "flex", gap: 4 }}>{WEEKDAYS.map((name, i) => (<button key={i} onClick={() => toggleRestDay(i)} title={WEEKDAYS[i]} style={{ width: 36, height: 36, borderRadius: 8, fontSize: 13, fontWeight: 600, border: restDays.includes(i) ? "1px solid #8F7F6E" : "1px solid #D9D4CE", background: restDays.includes(i) ? "linear-gradient(135deg, #8F7F6E, #A69888)" : "#FFF", color: restDays.includes(i) ? "#FFF" : "#8B8378", cursor: "pointer" }}>{name}</button>))}</div>{restDays.length >= 7 && <p style={{ fontSize: 11, color: "#C75B2A", margin: "4px 0 0" }}>⚠️ 一周内每天都设为休息日将导致规划为空</p>}</div>
             </div>
 
             {/* Subject & Paper Selection */}
-            <div style={cardStyle}>
+            <div className={CARD_CLS}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
                 <BookOpen size={16} style={{ color: "#8F7F6E" }} />
                 <h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>选择科目 <span style={{ fontSize: 11, color: "#A8A095", fontWeight: 400 }}>({selectedGroups.length} 个 Paper)</span></h3>
@@ -373,7 +374,7 @@ export default function Planner() {
 
             {/* Countdown */}
             {selectedGroups.length > 0 && (
-              <div style={cardStyle}>
+              <div className={CARD_CLS}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}><Clock size={16} style={{ color: "#8F7F6E" }} /><h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>考试倒计时</h3></div>
                 <div style={{ maxHeight: 200, overflowY: "auto" }}>{examGroups.map((g, i) => (
                   <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "5px 0", borderBottom: "1px solid #F0EDE8" }}>
@@ -385,7 +386,7 @@ export default function Planner() {
             )}
 
             {/* Share */}
-            <div style={cardStyle}>
+            <div className={CARD_CLS}>
               <button onClick={() => { const url = generateShareUrl(config); setShareUrl(url); setShowShare(true); }} style={{ width: "100%", padding: "10px", borderRadius: 8, background: "linear-gradient(135deg, #8F7F6E, #A69888)", color: "#FFF", fontSize: 14, fontWeight: 600, border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}><Share2 size={16} /> 生成分享链接</button>
               {showShare && (<div style={{ marginTop: 10, padding: 10, background: "rgba(143,127,110,0.06)", borderRadius: 8 }}><div style={{ display: "flex", gap: 6, marginBottom: 8 }}><input value={shareUrl} readOnly style={{ flex: 1, padding: "6px 10px", border: "1px solid #D9D4CE", borderRadius: 6, fontSize: 11, color: "#8B8378" }} /><button onClick={() => navigator.clipboard.writeText(shareUrl).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); })} style={{ padding: "6px 10px", borderRadius: 6, background: "#8F7F6E", color: "#FFF", border: "none", cursor: "pointer" }}>{copied ? <CheckCheck size={14} /> : <Copy size={14} />}</button></div><div style={{ display: "flex", justifyContent: "center" }}><QRCodeSVG value={shareUrl} size={100} level="M" /></div></div>)}
             </div>
@@ -393,7 +394,7 @@ export default function Planner() {
 
           {/* Plan Area */}
           <div>
-            <div style={{ ...cardStyle, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
+            <div className={`${CARD_CLS} mb-3.5 flex items-center justify-between gap-2.5 flex-wrap`}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <GraduationCap size={20} style={{ color: "#8F7F6E" }} />
                 <div>
@@ -414,7 +415,7 @@ export default function Planner() {
 
             <div id="planner-export" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {studentName && (
-                <div style={{ ...cardStyle, padding: "16px 20px", marginBottom: 4 }}>
+                <div className={`${CARD_CLS} px-5 py-4 mb-1`}>
                   <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
                     <div><span style={{ fontSize: 12, color: "#A8A095" }}>学生</span><div style={{ fontSize: 16, fontWeight: 600, color: "#3D3832" }}>{studentName}</div></div>
                     <div><span style={{ fontSize: 12, color: "#A8A095" }}>学段</span><div style={{ fontSize: 14, fontWeight: 500, color: "#4A453F" }}>{selectedLevel}</div></div>
@@ -426,9 +427,9 @@ export default function Planner() {
               )}
 
               {weeks.length === 0 ? (
-                <div style={{ ...cardStyle, textAlign: "center", padding: 60 }}><BookOpen size={32} style={{ color: "#C4BDB3", marginBottom: 12 }} /><p style={{ fontSize: 15, color: "#8B8378", margin: 0 }}>请先选择科目和 Paper</p></div>
+                <div className={`${CARD_CLS} text-center py-15`}><BookOpen size={32} style={{ color: "#C4BDB3", marginBottom: 12 }} /><p style={{ fontSize: 15, color: "#8B8378", margin: 0 }}>请先选择科目和 Paper</p></div>
               ) : (weeks.map(week => (
-                <div key={week.weekNum} style={cardStyle}>
+                <div key={week.weekNum} className={CARD_CLS}>
                   <div onClick={() => setCollapsedWeeks(prev => ({ ...prev, [week.weekNum]: !prev[week.weekNum] }))} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", paddingBottom: 8, borderBottom: "1px solid #F0EDE8" }}>
                     <span style={{ fontSize: 15, fontWeight: 600, color: "#3D3832" }}>{week.weekLabel}</span>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
