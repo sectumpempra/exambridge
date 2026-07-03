@@ -10,7 +10,7 @@ import {
   getAvailableSeries, getRecord, getMaxMark, getBoundaries,
   getComponentLabel,
   getSubjectsForBoard, getComponentsForSubject,
-  formatSeries, getGradeFields,
+  formatSeries,
   type BoardMeta,
 } from "../data/calculatorIndex";
 import { CATEGORY_NAMES, type SubjectCategory } from "../data/examDates";
@@ -255,38 +255,6 @@ export default function GradeCalculator() {
       targetGradeScale: gradeConfig.labels.join("/"),
       completenessCheck: getCompletenessWarning,
     });
-
-    // Compute raw-score based grade boundaries as reference (UI-specific enhancement)
-    const gradeFields = getGradeFields(selectedBoard);
-    const rawScoreRef = selectedPapers.map(p => {
-      const record = getRecord(selectedBoard, selectedCode, p.component, p.series);
-      return { record, score: parseFloat(p.score) || 0 };
-    });
-    const totalScore = engineResult.totalScore;
-
-    // Build raw-score grade results for display
-    const rawGradeResults: GradeBoundaryResult[] = [];
-    for (const gf of gradeFields) {
-      let requiredTotal = 0;
-      let hasData = true;
-      for (const { record } of rawScoreRef) {
-        if (!record) { hasData = false; break; }
-        const boundaries = getBoundaries(record, meta);
-        const val = boundaries[gf.fieldKey];
-        if (val === undefined || val <= 0) { hasData = false; break; }
-        requiredTotal += val;
-      }
-      if (hasData && requiredTotal > 0) {
-        const gap = totalScore - requiredTotal;
-        rawGradeResults.push({
-          gradeLabel: gf.label,
-          fieldKey: gf.fieldKey,
-          requiredTotal: Math.round(requiredTotal),
-          achieved: totalScore >= requiredTotal,
-          gap: Math.round(gap * 10) / 10,
-        });
-      }
-    }
 
     // Merge engine results into UI result type
     setResult({
