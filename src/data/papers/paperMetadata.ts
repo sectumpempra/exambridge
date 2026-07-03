@@ -42,8 +42,8 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     calculatorAllowed: true,
     paperType: "Written",
     syllabusVersion: "2020-2025",
-    variantCodes: ["11", "12", "13", "15", "58", "59", "60"],
-    description: "Quadratics, functions, coordinate geometry, circular measure, trigonometry, series, differentiation, integration. Includes China zone variants (15, 58, 59, 60).",
+    variantCodes: ["11", "12", "13", "15"],
+    description: "Quadratics, functions, coordinate geometry, circular measure, trigonometry, series, differentiation, integration. Includes China zone variant (15)."
   },
   {
     paperId: "CAIE-9709-P2",
