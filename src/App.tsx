@@ -9,6 +9,7 @@ import ResultStatisticsPage from "./pages/ResultStatisticsPage";
 import GraphPage from "./pages/graph/GraphPage";
 import PaperSearchPage from "./pages/papers/PaperSearchPage";
 import PaperDetailPage from "./pages/papers/PaperDetailPage";
+import PaperComparePage from "./pages/papers/PaperComparePage";
 
 // A-Level pages
 import AlevelHome from "./pages/alevel/Home";
@@ -68,6 +69,7 @@ export default function App() {
       {/* Paper Query */}
       <Route path="/papers" element={<PaperSearchPage />} />
       <Route path="/papers/:paperId" element={<PaperDetailPage />} />
+      <Route path="/papers/compare" element={<PaperComparePage />} />
     </Routes>
   );
 }

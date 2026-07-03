@@ -1,10 +1,12 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Clock, Calculator, FileText, TrendingUp, AlertCircle } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, Clock, Calculator, FileText, TrendingUp, AlertCircle, BookOpen, ChevronDown, ChevronRight, GitCompareArrows } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { getPaperById } from "../../data/papers/paperMetadata";
+import { getPaperById, ALL_PAPERS } from "../../data/papers/paperMetadata";
 import { getBoundariesForPaper } from "../../data/papers/paperBoundaries";
 import { getSubjectStats } from "../../data/resultStatistics";
+import { getSyllabusForPaper } from "../../data/papers/paperSyllabus";
 
 const NAV_LINKS = [
   { label: "首页", to: "/" },
@@ -18,6 +20,9 @@ const NAV_LINKS = [
 
 export default function PaperDetailPage() {
   const { paperId } = useParams<{ paperId: string }>();
+  const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
+  const [comparePaperId, setComparePaperId] = useState("");
+
   const paper = paperId ? getPaperById(paperId) : undefined;
 
   if (!paper) {
@@ -260,6 +265,59 @@ export default function PaperDetailPage() {
           </div>
         </section>
 
+        {/* Syllabus Topics */}
+        {(() => {
+          const syllabus = paperId ? getSyllabusForPaper(paperId) : null;
+          if (!syllabus) return null;
+          return (
+            <section style={{ padding: "0 16px 32px" }}>
+              <div style={{ maxWidth: 900, margin: "0 auto" }}>
+                <h2 style={{ fontSize: 18, fontWeight: 600, color: "#3D3832", margin: "0 0 12px", display: "flex", alignItems: "center", gap: 8 }}>
+                  <BookOpen size={18} style={{ color: "#A69888" }} />
+                  考纲知识点
+                  <span style={{ fontSize: 12, color: "#A8A095", fontWeight: 400 }}>({syllabus.totalTopics} 个知识点)</span>
+                </h2>
+
+                {syllabus.topics.map((topic) => {
+                  const isExpanded = expandedTopic === topic.topicId;
+                  return (
+                    <div key={topic.topicId} style={{ marginBottom: 6, borderRadius: 10, overflow: "hidden", border: "1px solid #E8E4DE", background: "rgba(255,255,255,0.7)" }}>
+                      <div
+                        onClick={() => setExpandedTopic(isExpanded ? null : topic.topicId)}
+                        style={{ display: "flex", alignItems: "center", padding: "10px 14px", cursor: "pointer", gap: 10 }}
+                      >
+                        <span style={{ color: "#A8A095", flexShrink: 0 }}>
+                          {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                        </span>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ fontSize: 13, fontWeight: 600, color: "#3D3832" }}>
+                            {topic.topicName}
+                            <span style={{ fontSize: 10, color: "#A8A095", marginLeft: 8, fontWeight: 400, background: "rgba(166,152,136,0.1)", padding: "1px 6px", borderRadius: 4 }}>{topic.topicCategory}</span>
+                          </div>
+                          <div style={{ fontSize: 11, color: "#8B8378", marginTop: 1 }}>
+                            {topic.subtopics.length} 个子知识点 · {topic.difficulty === "Advanced" ? "高级" : topic.difficulty === "Foundation" ? "基础" : "标准"}
+                          </div>
+                        </div>
+                      </div>
+                      {isExpanded && (
+                        <div style={{ padding: "0 14px 12px 38px", fontSize: 12 }}>
+                          <p style={{ color: "#5A554F", lineHeight: 1.6, margin: "0 0 8px" }}>{topic.description}</p>
+                          {topic.subtopics.map((s, i) => (
+                            <div key={i} style={{ color: "#4A453F", padding: "3px 0", display: "flex", alignItems: "flex-start", gap: 6 }}>
+                              <span style={{ color: "#A69888", fontSize: 10, marginTop: 2, flexShrink: 0 }}>•</span>
+                              {s}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })()}
+
         {/* Compare CTA */}
         <section style={{ padding: "0 16px 48px" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -269,26 +327,44 @@ export default function PaperDetailPage() {
               border: "1px solid rgba(166,152,136,0.2)",
               borderRadius: 12,
               display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
+              flexDirection: "column",
               gap: 12,
             }}>
-              <div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: "#3D3832" }}>Paper 对比功能</div>
-                <div style={{ fontSize: 12, color: "#8B8378", marginTop: 4 }}>
-                  选择两份 Paper，查看考纲重合度与差异（即将上线）
-                </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <GitCompareArrows size={18} style={{ color: "#8F7F6E" }} />
+                <span style={{ fontSize: 14, fontWeight: 600, color: "#3D3832" }}>考纲对比</span>
               </div>
-              <span style={{
-                fontSize: 12,
-                color: "#A8A095",
-                background: "rgba(255,255,255,0.6)",
-                padding: "4px 12px",
-                borderRadius: 6,
-              }}>
-                开发中
-              </span>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center" }}>
+                <select
+                  value={comparePaperId}
+                  onChange={(e) => setComparePaperId(e.target.value)}
+                  style={{ flex: "1 1 200px", padding: "8px 10px", border: "1px solid #D9D4CE", borderRadius: 8, fontSize: 13, background: "#FFF", color: "#3D3832", cursor: "pointer", outline: "none" }}
+                >
+                  <option value="">选择另一份 Paper 进行对比...</option>
+                  {ALL_PAPERS.filter((p) => p.paperId !== paperId).map((p) => (
+                    <option key={p.paperId} value={p.paperId}>
+                      {p.board} {p.subjectCode} Paper {p.paperNumber} — {p.paperName}
+                    </option>
+                  ))}
+                </select>
+                {comparePaperId && (
+                  <Link
+                    to={`/papers/compare?a=${paperId}&b=${comparePaperId}`}
+                    style={{
+                      padding: "8px 18px",
+                      background: "linear-gradient(135deg, #8F7F6E, #A69888)",
+                      color: "#FFF",
+                      fontSize: 13,
+                      fontWeight: 600,
+                      borderRadius: 8,
+                      textDecoration: "none",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    开始对比 →
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </section>
