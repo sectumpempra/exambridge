@@ -126,29 +126,9 @@ const STEPS = [
 function StatItem({ end, suffix, label, delay }: { end: number; suffix: string; label: string; delay: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const countRef = useRef<HTMLDivElement>(null);
-  const [started, setStarted] = useState(false);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setStarted(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (started && countRef.current) {
-      useCountUp(countRef, end, 2000);
-    }
-  }, [started, end]);
+  // useCountUp itself uses IntersectionObserver internally
+  useCountUp(countRef, end, 2000);
 
   return (
     <div ref={ref} className={cn("stat-card scroll-reveal", `scroll-reveal-delay-${delay}`)}>
