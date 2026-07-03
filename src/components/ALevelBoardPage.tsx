@@ -43,6 +43,7 @@ export default function ALevelBoardPage({
     { label: "首页", to: "/" },
     { label: "A-Level", to: "/alevel" },
     { label: "GCSE", to: "/gcse" },
+    { label: "Paper 查询", to: "/papers" },
     { label: "等级预测", to: "/calculator" },
     { label: "刷题规划", to: "/planner" },
     { label: "人格测试", to: "/personality" },

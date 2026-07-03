@@ -6,6 +6,7 @@ import { GraduationCap, BookOpen, Sparkles } from "lucide-react";
 const NAV_LINKS = [
   { label: "首页", to: "/" },
   { label: "A-level 分数线", to: "/alevel" },
+  { label: "Paper 查询", to: "/papers" },
   { label: "GCSE 分数线", to: "/gcse" },
   { label: "等级预测模拟器", to: "/calculator" },
   { label: "刷题规划", to: "/planner" },

@@ -7,6 +7,8 @@ import PersonalityTest from "./pages/PersonalityTest";
 import IdentitySelect from "./pages/IdentitySelect";
 import ResultStatisticsPage from "./pages/ResultStatisticsPage";
 import GraphPage from "./pages/graph/GraphPage";
+import PaperSearchPage from "./pages/papers/PaperSearchPage";
+import PaperDetailPage from "./pages/papers/PaperDetailPage";
 
 // A-Level pages
 import AlevelHome from "./pages/alevel/Home";
@@ -62,6 +64,10 @@ export default function App() {
 
       {/* Function Graph */}
       <Route path="/graph" element={<GraphPage />} />
+
+      {/* Paper Query */}
+      <Route path="/papers" element={<PaperSearchPage />} />
+      <Route path="/papers/:paperId" element={<PaperDetailPage />} />
     </Routes>
   );
 }

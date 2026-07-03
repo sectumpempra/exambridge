@@ -92,7 +92,10 @@ const BOARD_GROUPS = [
 const NAV_LINKS = [
   { label: "首页", to: "/" },
   { label: "A-Level", to: "/alevel" },
+  { label: "Paper 查询", to: "/papers" },
+  { label: "Paper 查询", to: "/papers" },
   { label: "GCSE", to: "/gcse" },
+  { label: "Paper 查询", to: "/papers" },
   { label: "刷题规划", to: "/planner" },
 ];
 
