@@ -42,8 +42,8 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     calculatorAllowed: true,
     paperType: "Written",
     syllabusVersion: "2020-2025",
-    variantCodes: ["11", "12", "13"],
-    description: "Quadratics, functions, coordinate geometry, circular measure, trigonometry, series, differentiation, integration.",
+    variantCodes: ["11", "12", "13", "15", "58", "59", "60"],
+    description: "Quadratics, functions, coordinate geometry, circular measure, trigonometry, series, differentiation, integration. Includes China zone variants (15, 58, 59, 60).",
   },
   {
     paperId: "CAIE-9709-P2",
@@ -61,8 +61,8 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     calculatorAllowed: true,
     paperType: "Written",
     syllabusVersion: "2020-2025",
-    variantCodes: ["21", "22", "23"],
-    description: "Algebra, logarithmic and exponential functions, trigonometry, differentiation, integration, numerical solutions of equations. (AS only)",
+    variantCodes: ["21", "22", "23", "25"],
+    description: "Algebra, logarithmic and exponential functions, trigonometry, differentiation, integration, numerical solutions of equations. (AS only) Includes China zone variant (25)."
   },
   {
     paperId: "CAIE-9709-P3",
@@ -80,8 +80,8 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     calculatorAllowed: true,
     paperType: "Written",
     syllabusVersion: "2020-2025",
-    variantCodes: ["31", "32", "33"],
-    description: "Algebra, logarithmic and exponential functions, trigonometry, differentiation, integration, numerical solutions of equations, vectors, differential equations, complex numbers.",
+    variantCodes: ["31", "32", "33", "35"],
+    description: "Algebra, logarithmic and exponential functions, trigonometry, differentiation, integration, numerical solutions of equations, vectors, differential equations, complex numbers. Includes China zone variant (35)."
   },
   {
     paperId: "CAIE-9709-P4",
@@ -99,8 +99,8 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     calculatorAllowed: true,
     paperType: "Written",
     syllabusVersion: "2020-2025",
-    variantCodes: ["41", "42", "43"],
-    description: "Forces and equilibrium, kinematics of motion in a straight line, momentum, Newton's laws of motion, energy, work and power.",
+    variantCodes: ["41", "42", "43", "45"],
+    description: "Forces and equilibrium, kinematics of motion in a straight line, momentum, Newton's laws of motion, energy, work and power. Includes China zone variant (45)."
   },
   {
     paperId: "CAIE-9709-P5",
@@ -118,8 +118,8 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     calculatorAllowed: true,
     paperType: "Written",
     syllabusVersion: "2020-2025",
-    variantCodes: ["51", "52", "53"],
-    description: "Representation of data, permutations and combinations, probability, discrete random variables, the normal distribution.",
+    variantCodes: ["51", "52", "53", "55"],
+    description: "Representation of data, permutations and combinations, probability, discrete random variables, the normal distribution. Includes China zone variant (55)."
   },
   {
     paperId: "CAIE-9709-P6",
@@ -137,8 +137,8 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     calculatorAllowed: true,
     paperType: "Written",
     syllabusVersion: "2020-2025",
-    variantCodes: ["61", "62", "63"],
-    description: "The Poisson distribution, linear combinations of random variables, continuous random variables, sampling and estimation, hypothesis tests.",
+    variantCodes: ["61", "62", "63", "65"],
+    description: "The Poisson distribution, linear combinations of random variables, continuous random variables, sampling and estimation, hypothesis tests. Includes China zone variant (65)."
   },
 ];
 

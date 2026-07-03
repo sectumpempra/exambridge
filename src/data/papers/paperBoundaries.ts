@@ -1,6 +1,7 @@
 /**
  * Paper 级 Grade Boundaries 数据
  * 从现有分数线数据按 Paper 维度重组
+ * 包含中国区(Zone 5)考卷：15/25/35/45/55/65 及额外变体 58/59/60
  */
 
 export interface PaperBoundaryEntry {
@@ -906,6 +907,32 @@ const CAIE_9709_P1: PaperBoundaryEntry[] = [
   },
   {
     "year": "2025",
+    "session": "June",
+    "component": "59",
+    "maxMark": 75,
+    "grades": {
+      "A": 64,
+      "B": 59,
+      "C": 49,
+      "D": 39,
+      "E": 30
+    }
+  },
+  {
+    "year": "2025",
+    "session": "June",
+    "component": "60",
+    "maxMark": 75,
+    "grades": {
+      "A": 64,
+      "B": 59,
+      "C": 52,
+      "D": 45,
+      "E": 37
+    }
+  },
+  {
+    "year": "2025",
     "session": "March",
     "component": "12",
     "maxMark": 75,
@@ -1049,6 +1076,32 @@ const CAIE_9709_P1: PaperBoundaryEntry[] = [
   },
   {
     "year": "2023",
+    "session": "November",
+    "component": "58",
+    "maxMark": 75,
+    "grades": {
+      "A": 66,
+      "B": 61,
+      "C": 53,
+      "D": 46,
+      "E": 39
+    }
+  },
+  {
+    "year": "2023",
+    "session": "November",
+    "component": "59",
+    "maxMark": 75,
+    "grades": {
+      "A": 64,
+      "B": 59,
+      "C": 49,
+      "D": 39,
+      "E": 30
+    }
+  },
+  {
+    "year": "2023",
     "session": "June",
     "component": "11",
     "maxMark": 75,
@@ -1084,6 +1137,45 @@ const CAIE_9709_P1: PaperBoundaryEntry[] = [
       "C": 40,
       "D": 28,
       "E": 16
+    }
+  },
+  {
+    "year": "2023",
+    "session": "June",
+    "component": "58",
+    "maxMark": 75,
+    "grades": {
+      "A": 66,
+      "B": 61,
+      "C": 53,
+      "D": 46,
+      "E": 39
+    }
+  },
+  {
+    "year": "2023",
+    "session": "June",
+    "component": "59",
+    "maxMark": 75,
+    "grades": {
+      "A": 64,
+      "B": 59,
+      "C": 49,
+      "D": 39,
+      "E": 30
+    }
+  },
+  {
+    "year": "2023",
+    "session": "June",
+    "component": "60",
+    "maxMark": 75,
+    "grades": {
+      "A": 64,
+      "B": 59,
+      "C": 52,
+      "D": 45,
+      "E": 37
     }
   },
   {
@@ -1140,6 +1232,32 @@ const CAIE_9709_P1: PaperBoundaryEntry[] = [
   },
   {
     "year": "2022",
+    "session": "November",
+    "component": "58",
+    "maxMark": 75,
+    "grades": {
+      "A": 51,
+      "B": 42,
+      "C": 33,
+      "D": 24,
+      "E": 15
+    }
+  },
+  {
+    "year": "2022",
+    "session": "November",
+    "component": "59",
+    "maxMark": 75,
+    "grades": {
+      "A": 50,
+      "B": 44,
+      "C": 35,
+      "D": 26,
+      "E": 18
+    }
+  },
+  {
+    "year": "2022",
     "session": "June",
     "component": "11",
     "maxMark": 75,
@@ -1175,6 +1293,45 @@ const CAIE_9709_P1: PaperBoundaryEntry[] = [
       "C": 41,
       "D": 31,
       "E": 21
+    }
+  },
+  {
+    "year": "2022",
+    "session": "June",
+    "component": "58",
+    "maxMark": 75,
+    "grades": {
+      "A": 51,
+      "B": 42,
+      "C": 33,
+      "D": 24,
+      "E": 15
+    }
+  },
+  {
+    "year": "2022",
+    "session": "June",
+    "component": "59",
+    "maxMark": 75,
+    "grades": {
+      "A": 50,
+      "B": 44,
+      "C": 35,
+      "D": 26,
+      "E": 18
+    }
+  },
+  {
+    "year": "2022",
+    "session": "June",
+    "component": "60",
+    "maxMark": 75,
+    "grades": {
+      "A": 51,
+      "B": 44,
+      "C": 35,
+      "D": 27,
+      "E": 18
     }
   },
   {
