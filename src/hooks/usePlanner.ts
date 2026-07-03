@@ -88,15 +88,16 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
     endDate = addDays(endDate, 1);
     const totalDays = differenceInDays(endDate, start) + 1;
 
-    // Track paper index for each selected paper
+    // Track paper index and weekly counts per paper NAME (not per variant code)
+    // so all variants of the same paper share one slot per week
     const paperIndex = new Map<string, number>();
-    selectedPapers.forEach(p => paperIndex.set(p.code, 0));
+    selectedPapers.forEach(p => { if (!paperIndex.has(p.name)) paperIndex.set(p.name, 0); });
 
     // Build day-by-day
     const weeks: WeekGroup[] = [];
     let currentWeek: DailyTask[] = [];
     let weeklyCounts = new Map<string, number>();
-    selectedPapers.forEach(p => weeklyCounts.set(p.code, 0));
+    selectedPapers.forEach(p => { if (!weeklyCounts.has(p.name)) weeklyCounts.set(p.name, 0); });
 
     for (let d = 0; d < totalDays; d++) {
       const date = addDays(start, d);
@@ -112,7 +113,7 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
         weeks.push({ weekNum: weeks.length + 1, weekLabel: `第 ${weeks.length + 1} 周`, days: currentWeek });
         currentWeek = [];
         weeklyCounts = new Map<string, number>();
-        selectedPapers.forEach(p => weeklyCounts.set(p.code, 0));
+        selectedPapers.forEach(p => { if (!weeklyCounts.has(p.name)) weeklyCounts.set(p.name, 0); });
       }
 
       const tasks: TaskPaper[] = [];
@@ -124,13 +125,14 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
           const daysUntilExam = differenceInDays(parseLocalDate(examDate), date);
           if (daysUntilExam <= 0) continue;
 
-          const count = weeklyCounts.get(paper.code) ?? 0;
+          // Count per paper name (all variants share the weekly quota)
+          const count = weeklyCounts.get(paper.name) ?? 0;
           if (count < papersPerWeek) {
-            const pastPapers = pastPapersMap[paper.code] ?? [];
-            const idx = paperIndex.get(paper.code) ?? 0;
+            const pastPapers = pastPapersMap[paper.name] ?? pastPapersMap[paper.code] ?? [];
+            const idx = paperIndex.get(paper.name) ?? 0;
 
             if (idx < pastPapers.length) {
-              const pastPaper = paperOverrides[paper.code] || pastPapers[idx];
+              const pastPaper = paperOverrides[paper.name] || paperOverrides[paper.code] || pastPapers[idx];
               tasks.push({
                 paperCode: paper.code,
                 paperName: paper.name,
@@ -139,8 +141,8 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
                 completed: false,
                 dayOffset: d,
               });
-              paperIndex.set(paper.code, idx + 1);
-              weeklyCounts.set(paper.code, count + 1);
+              paperIndex.set(paper.name, idx + 1);
+              weeklyCounts.set(paper.name, count + 1);
             }
           }
         }

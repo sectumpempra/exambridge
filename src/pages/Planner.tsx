@@ -208,9 +208,22 @@ export default function Planner() {
     };
     const map: Record<string, string[]> = {};
     for (const g of selectedGroups) {
+      // Merge all variants' past papers under the paper group name
+      // so scheduling is per-paper (not per-variant)
+      const name = `${g.subjectCode} ${g.paperLabel}`;
+      const allPapers: string[] = [];
       for (const v of g.variants) {
-        map[v.code] = generatePastPapersForVariant(g.subjectCode, v.component);
+        allPapers.push(...generatePastPapersForVariant(g.subjectCode, v.component));
       }
+      // Sort newest first
+      const so: Record<string, number> = { w: 0, s: 1, m: 2 };
+      allPapers.sort((a, b) => {
+        const pa = a.split("_"), pb = b.split("_");
+        const yA = parseInt(pa[2]), yB = parseInt(pb[2]);
+        if (yB !== yA) return yB - yA;
+        return (so[pa[1]] ?? 3) - (so[pb[1]] ?? 3);
+      });
+      map[name] = allPapers;
     }
     return { config: cfg, pastPapersMap: map };
   }, [selectedGroups, startDate, restDays, intensity, paperOverrides]);
