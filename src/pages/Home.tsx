@@ -180,13 +180,16 @@ function ExpansionPathCard({ path }: { path: (typeof EXPANSION_PATHS)[0] }) {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   EXAM BOARD CARD (hover to expand)
+   EXAM BOARD CARD (hover to expand, click button to navigate)
    ═══════════════════════════════════════════════════════════ */
 function ExamBoardCard({ board }: { board: (typeof EXAM_BOARDS)[0] }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <Link
-      to={`/alevel/${board.id}`}
-      className="hero-board-card scroll-reveal block no-underline text-inherit p-5"
+    <div
+      className="hero-board-card scroll-reveal p-5"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div style={{ height: 3, borderRadius: 2, background: board.gradient, marginBottom: 16, opacity: 0.8 }} />
       <div style={{ fontSize: 28, fontWeight: 800, color: board.color, letterSpacing: "0.04em", lineHeight: 1, marginBottom: 6 }}>
@@ -195,7 +198,7 @@ function ExamBoardCard({ board }: { board: (typeof EXAM_BOARDS)[0] }) {
       <div style={{ fontSize: 12, color: "#A8A095", fontWeight: 500, marginBottom: 4 }}>{board.nameZh}</div>
       <div style={{ fontSize: 11, color: "#C4BDB3", letterSpacing: "0.05em", marginBottom: 12 }}>{board.levels}</div>
 
-      <div className="card-details">
+      <div className={cn("card-details", isHovered && "expanded")}>
         <div style={{ borderTop: "1px solid #E8E4DE", paddingTop: 12, marginTop: 6 }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 12 }}>
             <div>
@@ -213,12 +216,15 @@ function ExamBoardCard({ board }: { board: (typeof EXAM_BOARDS)[0] }) {
               {f}
             </div>
           ))}
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 4, marginTop: 8, fontSize: 11, fontWeight: 600, color: board.color, padding: "6px 12px", borderRadius: 6, background: `${board.color}10`, border: `1px solid ${board.color}25` }}>
+          <Link
+            to={`/alevel/${board.id}`}
+            style={{ display: "inline-flex", alignItems: "center", gap: 4, marginTop: 8, fontSize: 11, fontWeight: 600, color: board.color, padding: "6px 12px", borderRadius: 6, background: `${board.color}10`, border: `1px solid ${board.color}25`, textDecoration: "none" }}
+          >
             浏览 {board.short} 科目 <ArrowRight size={12} />
-          </div>
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 

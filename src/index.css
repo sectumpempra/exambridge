@@ -235,7 +235,7 @@
   opacity: 1;
 }
 
-/* Card details: collapsed by default, expanded on hover */
+/* Card details: collapsed by default, expanded via JS .expanded class */
 .hero-board-card .card-details {
   max-height: 0;
   opacity: 0;
@@ -244,7 +244,7 @@
               opacity 0.4s ease 0.1s;
 }
 
-.hero-board-card:hover .card-details {
+.hero-board-card .card-details.expanded {
   max-height: 400px;
   opacity: 1;
 }
