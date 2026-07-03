@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { QRCodeSVG } from "qrcode.react";
@@ -103,14 +103,19 @@ function lookupExamDate(level: string, board: string, paperCode: string): string
 }
 
 export default function Planner() {
+  // Parse shared plan from URL once (before state init)
+  const initialShared = useMemo(() => parseShareUrl(), []);
+  // Clean URL after parsing
+  useMemo(() => { if (initialShared) clearPlanUrl(); }, [initialShared]);
+
   const [studentName, setStudentName] = useState("");
-  const [selectedLevel, setSelectedLevel] = useState("A-Level");
-  const [selectedBoard, setSelectedBoard] = useState("CAIE");
-  const [selectedGroups, setSelectedGroups] = useState<SelectedPaperGroup[]>([]);
-  const [startDate, setStartDate] = useState(format(new Date(), "yyyy-MM-dd"));
-  const [restDays, setRestDays] = useState<number[]>([0]);
-  const [intensity, setIntensity] = useState<Intensity>("normal");
-  const [paperOverrides, setPaperOverrides] = useState<Record<string, string>>({});
+  const [selectedLevel, setSelectedLevel] = useState(initialShared?.level ?? "A-Level");
+  const [selectedBoard, setSelectedBoard] = useState(initialShared?.board ?? "CAIE");
+  const [selectedGroups, setSelectedGroups] = useState<SelectedPaperGroup[]>(initialShared?.selectedGroups ?? []);
+  const [startDate, setStartDate] = useState(initialShared?.startDate ?? format(new Date(), "yyyy-MM-dd"));
+  const [restDays, setRestDays] = useState<number[]>(initialShared?.restDays ?? [0]);
+  const [intensity, setIntensity] = useState<Intensity>(initialShared?.intensity ?? "normal");
+  const [paperOverrides, _setPaperOverrides] = useState<Record<string, string>>(initialShared?.paperOverrides ?? {});
   const [completedTasks, setCompletedTasks] = useState<Record<string, boolean>>({});
   const [collapsedWeeks, setCollapsedWeeks] = useState<Record<number, boolean>>({});
   // All subjects collapsed by default (true = collapsed)
@@ -121,21 +126,6 @@ export default function Planner() {
   const [shareUrl, setShareUrl] = useState("");
   const [showShare, setShowShare] = useState(false);
   const [copied, setCopied] = useState(false);
-
-  // Parse shared plan from URL on mount
-  useEffect(() => {
-    const shared = parseShareUrl();
-    if (shared) {
-      if (shared.startDate) setStartDate(shared.startDate);
-      if (shared.restDays) setRestDays(shared.restDays);
-      if (shared.intensity) setIntensity(shared.intensity);
-      if (shared.paperOverrides) setPaperOverrides(shared.paperOverrides);
-      if (shared.selectedGroups && shared.selectedGroups.length > 0) {
-        setSelectedGroups(shared.selectedGroups);
-      }
-      clearPlanUrl();
-    }
-  }, []);
 
   // Available options
   const levels = Object.keys(plannerData);
@@ -213,6 +203,8 @@ export default function Planner() {
       selectedPapers,
       restDays, intensity, paperOverrides,
       selectedGroups,
+      level: selectedLevel,
+      board: selectedBoard,
     };
     const map: Record<string, string[]> = {};
     for (const g of selectedGroups) {

@@ -57,6 +57,8 @@ export interface PlannerConfig {
   intensity: Intensity;
   paperOverrides: Record<string, string>;
   selectedGroups?: SelectedPaperGroup[];
+  level?: string;
+  board?: string;
 }
 
 export interface PlannerResult {

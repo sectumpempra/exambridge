@@ -839,7 +839,7 @@ export function drawFunction(ctx: CanvasRenderingContext2D, entry: FunctionEntry
 }
 
 // ==== LABELS ====
-function findLabelPos(compiled: any, entry: FunctionEntry, w: number, h: number, view: ViewState, li: number): { cx: number; cy: number; ok: boolean } {
+function findLabelPos(compiled: EvalFunction, entry: FunctionEntry, w: number, h: number, view: ViewState, li: number): { cx: number; cy: number; ok: boolean } {
   const up = 40 * view.scale;
   const cx0 = w / 2 + view.offsetX;
   const cy0 = h / 2 + view.offsetY;
