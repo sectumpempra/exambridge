@@ -243,9 +243,9 @@
               opacity 0.4s ease 0.1s;
 }
 
-.hero-board-card:hover .card-details,
-.hero-board-card.active .card-details {
-  max-height: 300px;
+/* Only expand on hover — NOT on .active */
+.hero-board-card:hover .card-details {
+  max-height: 400px;
   opacity: 1;
 }
 
@@ -344,13 +344,14 @@
 }
 
 .stat-number {
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(28px, 4vw, 44px);
   font-weight: 800;
   background: linear-gradient(135deg, #8F7F6E 0%, #B8A68A 50%, #A69888 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .stat-label {
