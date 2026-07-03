@@ -150,12 +150,21 @@ export default function DataTable({ columns, data, itemsPerPageOptions = [10, 25
           <colgroup>
             {columns.map(col => {
               // Assign proportional widths based on column content
-              let width = '8%';
-              if (col.key === 'subject') width = '18%';
-              else if (col.key === 'subjectCode') width = '10%';
-              else if (col.key === 'series') width = '10%';
-              else if (col.key === 'component') width = '8%';
-              else if (col.key === 'maxMark') width = '8%';
+              // Normalize key to lowercase for matching
+              const k = col.key.toLowerCase();
+              let width = '7%';
+              // Subject name columns (widest — can have long names like "Mathematics Paper 01F")
+              if (k === 'subject' || k === 'unit') width = '20%';
+              // Subject code columns
+              else if (k === 'code' || k === 'subjectcode') width = '9%';
+              // Year column
+              else if (k === 'year') width = '7%';
+              // Session/series columns
+              else if (k === 'session' || k === 'series') width = '8%';
+              // Component/paper columns
+              else if (k === 'component') width = '8%';
+              // Max mark columns
+              else if (k === 'maxmark' || k === 'max_mark' || k === 'maxrawmark') width = '7%';
               return <col key={col.key} style={{ width }} />;
             })}
           </colgroup>
@@ -179,8 +188,23 @@ export default function DataTable({ columns, data, itemsPerPageOptions = [10, 25
                 {columns.map(col => {
                   const val = row[col.key];
                   const display = val === null || val === undefined || val === '' ? '-' : String(val);
+                  // Subject name columns need overflow handling for long names
+                  const isSubjectName = ['subject', 'unit'].includes(col.key.toLowerCase());
                   return (
-                    <td key={col.key} style={{ padding: "9px 13px", fontSize: 13, color: val === null || val === undefined ? '#B8B0A4' : '#4A453F', whiteSpace: "nowrap", textAlign: "center" }}>{display}</td>
+                    <td key={col.key}
+                      title={isSubjectName ? display : undefined}
+                      style={{
+                        padding: "9px 10px",
+                        fontSize: 13,
+                        color: val === null || val === undefined ? '#B8B0A4' : '#4A453F',
+                        whiteSpace: "nowrap",
+                        textAlign: "center",
+                        overflow: "hidden",
+                        textOverflow: isSubjectName ? "ellipsis" : undefined,
+                        maxWidth: isSubjectName ? "1px" : undefined, // force ellipsis to work with table-layout:fixed
+                      }}>
+                      {display}
+                    </td>
                   );
                 })}
               </tr>
