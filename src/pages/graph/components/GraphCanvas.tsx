@@ -29,6 +29,7 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
   const lastMouse = useRef({ x: 0, y: 0 });
   const needsRenderRef = useRef(true);
   const animIdRef = useRef<number | null>(null);
+  const requestRenderRef = useRef<() => void>(() => {});
   const zoom = useCallback((factor: number) => {
     const { width, height } = sizeRef.current;
     const view = viewRef.current;
@@ -40,11 +41,13 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
     view.offsetX += (afterX - beforeX) * 40 * view.scale;
     view.offsetY -= (afterY - beforeY) * 40 * view.scale;
     needsRenderRef.current = true;
+    requestRenderRef.current();
   }, []);
 
   const resetView = useCallback(() => {
     viewRef.current = { scale: 1, offsetX: 0, offsetY: 0, axisMode: viewRef.current.axisMode };
     needsRenderRef.current = true;
+    requestRenderRef.current();
   }, []);
 
   const cycleAxisMode = useCallback(() => {
@@ -53,6 +56,7 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
       const next = AXIS_MODE_CYCLE[(idx + 1) % AXIS_MODE_CYCLE.length];
       viewRef.current.axisMode = next;
       needsRenderRef.current = true;
+      requestRenderRef.current();
       return next;
     });
   }, []);
@@ -94,7 +98,12 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
       }
     };
 
-    requestRender();
+    // Expose requestRender to event handlers and resize observer
+    requestRenderRef.current = requestRender;
+
+    // Initial render: call directly (not via raf) to ensure it runs
+    needsRenderRef.current = true;
+    render();
 
     return () => {
       if (animIdRef.current !== null) {
@@ -103,16 +112,6 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
       }
     };
   }, [render]);
-
-  useEffect(() => {
-    needsRenderRef.current = true;
-    if (animIdRef.current === null) {
-      animIdRef.current = requestAnimationFrame(() => {
-        animIdRef.current = null;
-        if (needsRenderRef.current) render();
-      });
-    }
-  }, [functions, render]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -126,14 +125,22 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
       const rect = container.getBoundingClientRect();
       const w = Math.round(rect.width);
       const h = Math.round(rect.height);
-      sizeRef.current = { width: w, height: h };
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
-      const ctx = canvas.getContext('2d');
-      if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const { width: oldW, height: oldH } = sizeRef.current;
+      // Only reset canvas dimensions if they actually changed
+      // (assigning canvas.width/height clears the canvas)
+      if (w !== oldW || h !== oldH) {
+        sizeRef.current = { width: w, height: h };
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        const ctx = canvas.getContext('2d');
+        if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
       needsRenderRef.current = true;
+      requestRenderRef.current();
+      // Fallback: render directly in case raf doesn't fire (headless/background tab)
+      render();
     };
 
     resize();
@@ -185,6 +192,7 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
         viewRef.current.offsetY += dy;
         lastMouse.current = { x, y };
         needsRenderRef.current = true;
+        requestRenderRef.current();
         return;
       }
 
@@ -196,10 +204,12 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
           top: Math.max(found.canvasY - 50, 8),
         });
         needsRenderRef.current = true;
+        requestRenderRef.current();
       } else {
         if (tooltip) {
           setTooltip(null);
           needsRenderRef.current = true;
+          requestRenderRef.current();
         }
       }
     },
@@ -238,6 +248,7 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
       view.offsetX += (afterX - beforeX) * 40 * view.scale;
       view.offsetY -= (afterY - beforeY) * 40 * view.scale;
       needsRenderRef.current = true;
+      requestRenderRef.current();
     },
     []
   );

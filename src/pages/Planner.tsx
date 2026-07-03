@@ -116,7 +116,7 @@ export default function Planner() {
   const [startDate, setStartDate] = useState(initialShared?.startDate ?? format(new Date(), "yyyy-MM-dd"));
   const [restDays, setRestDays] = useState<number[]>(initialShared?.restDays ?? [0]);
   const [intensity, setIntensity] = useState<Intensity>(initialShared?.intensity ?? "normal");
-  const [paperOverrides, _setPaperOverrides] = useState<Record<string, string>>(initialShared?.paperOverrides ?? {});
+  const [paperOverrides] = useState<Record<string, string>>(initialShared?.paperOverrides ?? {});
   const [completedTasks, setCompletedTasks] = useState<Record<string, boolean>>({});
   const [collapsedWeeks, setCollapsedWeeks] = useState<Record<number, boolean>>({});
   // All subjects collapsed by default (true = collapsed)
@@ -227,7 +227,7 @@ export default function Planner() {
       map[name] = allPapers;
     }
     return { config: cfg, pastPapersMap: map };
-  }, [selectedGroups, startDate, restDays, intensity, paperOverrides]);
+  }, [selectedGroups, startDate, restDays, intensity, paperOverrides, selectedLevel, selectedBoard]);
 
   const { weeks, totalTasks } = usePlanner(config, pastPapersMap);
 
