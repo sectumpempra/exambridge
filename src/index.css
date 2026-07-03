@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    /* shadcn/ui semantic tokens */
     --background: 30 15% 94%;
     --foreground: 30 8% 20%;
     --card: 0 0% 100%;
@@ -24,6 +25,50 @@
     --input: 30 12% 85%;
     --ring: 25 20% 55%;
     --radius: 0.625rem;
+
+    /* Component-level semantic aliases */
+    /* Surfaces */
+    --surface-primary: #FFFFFF;
+    --surface-secondary: #F5F2EE;
+    --surface-tertiary: #ECE7E0;
+
+    /* Content */
+    --content-primary: #3D3832;
+    --content-secondary: #5A554F;
+    --content-tertiary: #8B8378;
+    --content-quaternary: #A8A095;
+    --content-inverse: #FFFFFF;
+
+    /* Interaction */
+    --interactive-primary: #A69888;
+    --interactive-primary-hover: #8F7F6E;
+    --interactive-primary-active: #7A6E5F;
+    --interactive-primary-disabled: #D9D4CE;
+    --interactive-secondary: #F0EDE8;
+    --interactive-secondary-hover: #E8E4DE;
+
+    /* Borders */
+    --border-default: #D9D4CE;
+    --border-hover: #C9C0B3;
+    --border-active: #A69888;
+
+    /* Status */
+    --status-success: #5A7A5E;
+    --status-success-bg: rgba(154, 175, 158, 0.15);
+    --status-warning: #8A7A5E;
+    --status-warning-bg: rgba(184, 166, 138, 0.15);
+    --status-error: #8F6860;
+    --status-error-bg: rgba(191, 168, 160, 0.15);
+    --status-info: #5A7A8E;
+    --status-info-bg: rgba(148, 168, 184, 0.15);
+
+    /* Dark section */
+    --surface-dark: #1E2435;
+    --surface-dark-card: #232838;
+    --content-dark-primary: #E8E4DE;
+    --content-dark-secondary: #A8A095;
+    --content-dark-tertiary: #7A756F;
+    --interactive-dark: #C9A55A;
 
     /* Morandi color palette */
     --morandi-bg: #F0EDE8;

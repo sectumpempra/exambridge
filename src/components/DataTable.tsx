@@ -1,7 +1,20 @@
 import { useState, useMemo, useCallback } from "react";
 import { ChevronUp, ChevronDown, Search } from "lucide-react";
+import { cn } from "@/lib/utils";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
-interface Column { key: string; label: string; sortable?: boolean; }
+interface Column {
+  key: string;
+  label: string;
+  sortable?: boolean;
+}
 
 interface DataTableProps {
   columns: Column[];
@@ -10,10 +23,13 @@ interface DataTableProps {
   filterFields?: { key: string; label: string }[];
 }
 
-/** Extract unique values for a field */
-function getUniqueValues(data: Record<string, string | number>[], key: string): string[] {
+/** Extract unique values for a field (preserves 0, excludes null/undefined/"") */
+function getUniqueValues(
+  data: Record<string, string | number>[],
+  key: string
+): string[] {
   const vals = new Set<string>();
-  data.forEach(r => {
+  data.forEach((r) => {
     const raw = r[key];
     if (raw !== null && raw !== undefined && raw !== "") {
       vals.add(String(raw));
@@ -22,7 +38,12 @@ function getUniqueValues(data: Record<string, string | number>[], key: string): 
   return Array.from(vals).sort();
 }
 
-export default function DataTable({ columns, data, itemsPerPageOptions = [10, 25, 50, 100], filterFields = [] }: DataTableProps) {
+export default function DataTable({
+  columns,
+  data,
+  itemsPerPageOptions = [10, 25, 50, 100],
+  filterFields = [],
+}: DataTableProps) {
   const [search, setSearch] = useState("");
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,48 +51,73 @@ export default function DataTable({ columns, data, itemsPerPageOptions = [10, 25
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
   const [activeFilters, setActiveFilters] = useState<Record<string, string>>({});
 
-  // Build dropdown options for filter fields
+  /* Dropdown options */
   const filterOptions = useMemo(() => {
     const opts: Record<string, string[]> = {};
-    filterFields.forEach(ff => {
+    filterFields.forEach((ff) => {
       opts[ff.key] = getUniqueValues(data, ff.key);
     });
     return opts;
   }, [data, filterFields]);
 
-  const handleSort = useCallback((columnKey: string) => {
-    if (sortColumn === columnKey) {
-      if (sortDirection === "asc") setSortDirection("desc");
-      else { setSortColumn(null); setSortDirection("asc"); }
-    } else { setSortColumn(columnKey); setSortDirection("asc"); }
-  }, [sortColumn, sortDirection]);
+  const handleSort = useCallback(
+    (columnKey: string) => {
+      if (sortColumn === columnKey) {
+        if (sortDirection === "asc") setSortDirection("desc");
+        else {
+          setSortColumn(null);
+          setSortDirection("asc");
+        }
+      } else {
+        setSortColumn(columnKey);
+        setSortDirection("asc");
+      }
+    },
+    [sortColumn, sortDirection]
+  );
 
   const setFilter = (key: string, value: string) => {
-    setActiveFilters(prev => ({ ...prev, [key]: value }));
+    setActiveFilters((prev) => ({ ...prev, [key]: value }));
     setCurrentPage(1);
   };
 
+  /* Filtered + sorted + paginated data */
   const filteredData = useMemo(() => {
     let result = [...data];
-    // Apply dropdown filters
+    // Dropdown filters
     Object.entries(activeFilters).forEach(([key, value]) => {
       if (value) {
-        result = result.filter(r => String(r[key]).toLowerCase() === value.toLowerCase());
+        result = result.filter(
+          (r) => String(r[key]).toLowerCase() === value.toLowerCase()
+        );
       }
     });
-    // Apply text search
+    // Text search
     if (search.trim()) {
       const s = search.toLowerCase();
-      result = result.filter(r => Object.values(r).some(v => String(v).toLowerCase().includes(s)));
+      result = result.filter((r) =>
+        Object.values(r).some((v) =>
+          String(v).toLowerCase().includes(s)
+        )
+      );
     }
+    // Sort
     if (sortColumn) {
       result.sort((a, b) => {
-        const aVal = a[sortColumn], bVal = b[sortColumn];
-        const aNum = Number(aVal), bNum = Number(bVal);
-        if (!isNaN(aNum) && !isNaN(bNum) && aVal !== "" && bVal !== "") {
+        const aVal = a[sortColumn],
+          bVal = b[sortColumn];
+        const aNum = Number(aVal),
+          bNum = Number(bVal);
+        if (
+          !isNaN(aNum) &&
+          !isNaN(bNum) &&
+          aVal !== "" &&
+          bVal !== ""
+        ) {
           return sortDirection === "asc" ? aNum - bNum : bNum - aNum;
         }
-        const aStr = String(aVal).toLowerCase(), bStr = String(bVal).toLowerCase();
+        const aStr = String(aVal).toLowerCase(),
+          bStr = String(bVal).toLowerCase();
         if (aStr < bStr) return sortDirection === "asc" ? -1 : 1;
         if (aStr > bStr) return sortDirection === "asc" ? 1 : -1;
         return 0;
@@ -80,24 +126,35 @@ export default function DataTable({ columns, data, itemsPerPageOptions = [10, 25
     return result;
   }, [data, search, sortColumn, sortDirection, activeFilters]);
 
-  const totalPages = Math.max(1, Math.ceil(filteredData.length / itemsPerPage));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredData.length / itemsPerPage)
+  );
   const paginatedData = useMemo(() => {
     const start = (currentPage - 1) * itemsPerPage;
     return filteredData.slice(start, start + itemsPerPage);
   }, [filteredData, currentPage, itemsPerPage]);
 
-  const startEntry = filteredData.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0;
-  const endEntry = Math.min(currentPage * itemsPerPage, filteredData.length);
+  const startEntry =
+    filteredData.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0;
+  const endEntry = Math.min(
+    currentPage * itemsPerPage,
+    filteredData.length
+  );
 
-  const goToPage = (page: number) => { if (page >= 1 && page <= totalPages) setCurrentPage(page); };
+  const goToPage = (page: number) => {
+    if (page >= 1 && page <= totalPages) setCurrentPage(page);
+  };
 
   const getPageNumbers = () => {
     const pages: (number | string)[] = [];
-    if (totalPages <= 7) { for (let i = 1; i <= totalPages; i++) pages.push(i); }
-    else {
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
       pages.push(1);
       if (currentPage > 3) pages.push("...");
-      const s = Math.max(2, currentPage - 1), e = Math.min(totalPages - 1, currentPage + 1);
+      const s = Math.max(2, currentPage - 1),
+        e = Math.min(totalPages - 1, currentPage + 1);
       for (let i = s; i <= e; i++) pages.push(i);
       if (currentPage < totalPages - 2) pages.push("...");
       pages.push(totalPages);
@@ -105,133 +162,223 @@ export default function DataTable({ columns, data, itemsPerPageOptions = [10, 25
     return pages;
   };
 
-  const selectBaseStyle: React.CSSProperties = {
-    padding: "6px 10px", border: "1px solid #D9D4CE", borderRadius: 8, fontSize: 13,
-    backgroundColor: "#FFF", color: "#3D3832", cursor: "pointer", outline: "none",
+  /* Column width helper */
+  const getColWidth = (key: string) => {
+    const k = key.toLowerCase();
+    if (k === "subject" || k === "unit") return "20%";
+    if (k === "code" || k === "subjectcode") return "9%";
+    if (k === "year") return "7%";
+    if (k === "session" || k === "series") return "8%";
+    if (k === "component") return "8%";
+    if (k === "maxmark" || k === "max_mark" || k === "maxrawmark")
+      return "7%";
+    return "7%";
   };
+
+  /* Shared input/select base classes */
+  const inputBase =
+    "rounded-lg border border-[#D9D4CE] bg-white text-[13px] text-[#3D3832] outline-none transition-colors focus:border-[#A69888] focus:ring-2 focus:ring-[rgba(166,152,136,0.12)]";
 
   return (
     <div className="animate-fade-in-up" style={{ animationDelay: "0.3s", opacity: 0 }}>
-      {/* Filter row */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "10px 16px", alignItems: "center", marginTop: 20 }}>
-        {filterFields.map(ff => (
-          <div key={ff.key} style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <span style={{ fontSize: 12, color: "#8B8378", whiteSpace: "nowrap" }}>{ff.label}</span>
-            <select value={activeFilters[ff.key] || ""} onChange={(e) => setFilter(ff.key, e.target.value)}
-              style={{ ...selectBaseStyle, minWidth: 80, maxWidth: 130 }}
-              onFocus={(e) => { e.target.style.borderColor = "#A69888"; }}
-              onBlur={(e) => { e.target.style.borderColor = "#D9D4CE"; }}>
+      {/* ── Filter row ────────────────────────────── */}
+      <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2.5">
+        {filterFields.map((ff) => (
+          <div key={ff.key} className="flex items-center gap-1.5">
+            <span className="whitespace-nowrap text-xs text-[#8B8378]">
+              {ff.label}
+            </span>
+            <select
+              value={activeFilters[ff.key] || ""}
+              onChange={(e) => setFilter(ff.key, e.target.value)}
+              className={cn(inputBase, "min-w-[80px] max-w-[130px] px-2.5 py-1.5")}
+            >
               <option value="">全部</option>
-              {(filterOptions[ff.key] || []).map(v => <option key={v} value={v}>{v}</option>)}
+              {(filterOptions[ff.key] || []).map((v) => (
+                <option key={v} value={v}>
+                  {v}
+                </option>
+              ))}
             </select>
           </div>
         ))}
 
         {/* Text search */}
-        <div style={{ display: "flex", alignItems: "center", gap: 8, marginLeft: "auto", position: "relative" }}>
-          <Search size={15} style={{ color: "#B8B0A4", position: "absolute", left: 10 }} />
-          <input type="text" value={search} onChange={(e) => { setSearch(e.target.value); setCurrentPage(1); }} placeholder="搜索..."
-            style={{ padding: "7px 10px 7px 32px", border: "1px solid #D9D4CE", borderRadius: 8, fontSize: 13, backgroundColor: "#FFF", color: "#3D3832", width: 160, outline: "none" }}
-            onFocus={(e) => { e.target.style.borderColor = "#A69888"; e.target.style.boxShadow = "0 0 0 3px rgba(166,152,136,0.12)"; }}
-            onBlur={(e) => { e.target.style.borderColor = "#D9D4CE"; e.target.style.boxShadow = "none"; }} />
+        <div className="relative ml-auto flex items-center">
+          <Search
+            size={15}
+            className="pointer-events-none absolute left-2.5 text-[#B8B0A4]"
+          />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setCurrentPage(1);
+            }}
+            placeholder="搜索..."
+            className={cn(inputBase, "w-40 py-1.5 pl-8 pr-2.5")}
+          />
         </div>
       </div>
 
-      {/* Items per page */}
-      <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 10 }}>
-        <span style={{ fontSize: 12, color: "#A8A095" }}>每页</span>
-        <select value={itemsPerPage} onChange={(e) => { setItemsPerPage(Number(e.target.value)); setCurrentPage(1); }} style={{ ...selectBaseStyle, padding: "4px 8px" }}>
-          {itemsPerPageOptions.map(o => <option key={o} value={o}>{o}</option>)}
+      {/* ── Items per page ────────────────────────── */}
+      <div className="mt-2.5 flex items-center gap-2">
+        <span className="text-xs text-[#A8A095]">每页</span>
+        <select
+          value={itemsPerPage}
+          onChange={(e) => {
+            setItemsPerPage(Number(e.target.value));
+            setCurrentPage(1);
+          }}
+          className={cn(inputBase, "px-2 py-1")}
+        >
+          {itemsPerPageOptions.map((o) => (
+            <option key={o} value={o}>
+              {o}
+            </option>
+          ))}
         </select>
-        <span style={{ fontSize: 12, color: "#A8A095" }}>条</span>
-        <span style={{ fontSize: 12, color: "#A8A095", marginLeft: 12 }}>
-          {Object.values(activeFilters).some(v => v) || search ? `（已筛选 ${filteredData.length} 条）` : `共 ${filteredData.length} 条`}
+        <span className="text-xs text-[#A8A095]">条</span>
+        <span className="ml-3 text-xs text-[#A8A095]">
+          {Object.values(activeFilters).some((v) => v) || search
+            ? `（已筛选 ${filteredData.length} 条）`
+            : `共 ${filteredData.length} 条`}
         </span>
       </div>
 
-      {/* Table */}
-      <div style={{ marginTop: 10, borderRadius: 12, overflow: "hidden", border: "1px solid #E8E4DE", overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", tableLayout: "fixed" }}>
-          <colgroup>
-            {columns.map(col => {
-              // Assign proportional widths based on column content
-              // Normalize key to lowercase for matching
-              const k = col.key.toLowerCase();
-              let width = '7%';
-              // Subject name columns (widest — can have long names like "Mathematics Paper 01F")
-              if (k === 'subject' || k === 'unit') width = '20%';
-              // Subject code columns
-              else if (k === 'code' || k === 'subjectcode') width = '9%';
-              // Year column
-              else if (k === 'year') width = '7%';
-              // Session/series columns
-              else if (k === 'session' || k === 'series') width = '8%';
-              // Component/paper columns
-              else if (k === 'component') width = '8%';
-              // Max mark columns
-              else if (k === 'maxmark' || k === 'max_mark' || k === 'maxrawmark') width = '7%';
-              return <col key={col.key} style={{ width }} />;
-            })}
-          </colgroup>
-          <thead>
-            <tr style={{ background: "linear-gradient(135deg, #ECE7E0 0%, #E8E4DE 100%)" }}>
-              {columns.map(col => (
-                <th key={col.key} onClick={() => col.sortable !== false && handleSort(col.key)}
-                  style={{ padding: "11px 8px", color: "#7A6E5F", fontSize: 12, fontWeight: 600, textTransform: "uppercase", textAlign: "center", cursor: col.sortable !== false ? "pointer" : "default", whiteSpace: "nowrap", letterSpacing: "0.03em", userSelect: "none", borderBottom: "1px solid #D9D4CE" }}>
-                  <span style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 3 }}>
-                    {col.label}
-                    {sortColumn === col.key && (sortDirection === "asc" ? <ChevronUp size={13} /> : <ChevronDown size={13} />)}
-                  </span>
-                </th>
+      {/* ── Table (Card Container) ───────────────── */}
+      <div className="mt-2.5 overflow-hidden rounded-xl border border-[#E8E4DE] bg-white shadow-[0_1px_6px_rgba(61,56,50,0.04)]">
+        <div className="overflow-x-auto">
+          <Table>
+            <colgroup>
+              {columns.map((col) => (
+                <col key={col.key} style={{ width: getColWidth(col.key) }} />
               ))}
-            </tr>
-          </thead>
-          <tbody>
-            {paginatedData.map((row, idx) => (
-              <tr key={idx} className="data-row-hover"
-                style={{ backgroundColor: idx % 2 === 0 ? "rgba(255,255,255,0.8)" : "rgba(245,242,238,0.6)", borderBottom: "1px solid rgba(233,228,222,0.6)", transition: "background-color 0.2s ease" }}>
-                {columns.map(col => {
-                  const val = row[col.key];
-                  const display = val === null || val === undefined || val === '' ? '-' : String(val);
-                  // Subject name columns need overflow handling for long names
-                  const isSubjectName = ['subject', 'unit'].includes(col.key.toLowerCase());
-                  return (
-                    <td key={col.key}
-                      title={isSubjectName ? display : undefined}
-                      style={{
-                        padding: "9px 10px",
-                        fontSize: 13,
-                        color: val === null || val === undefined ? '#B8B0A4' : '#4A453F',
-                        whiteSpace: "nowrap",
-                        textAlign: "center",
-                        overflow: "hidden",
-                        textOverflow: isSubjectName ? "ellipsis" : undefined,
-                        maxWidth: isSubjectName ? "1px" : undefined, // force ellipsis to work with table-layout:fixed
-                      }}>
-                      {display}
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+            </colgroup>
+            <TableHeader>
+              <TableRow className="border-b border-[#D9D4CE] bg-gradient-to-br from-[#ECE7E0] to-[#E8E4DE] hover:bg-gradient-to-br">
+                {columns.map((col) => (
+                  <TableHead
+                    key={col.key}
+                    onClick={() =>
+                      col.sortable !== false && handleSort(col.key)
+                    }
+                    className={cn(
+                      "cursor-pointer select-none whitespace-nowrap px-2 py-2.5 text-center text-xs font-semibold uppercase tracking-wider text-[#7A6E5F]",
+                      col.sortable === false && "cursor-default"
+                    )}
+                  >
+                    <span className="inline-flex items-center justify-center gap-1">
+                      {col.label}
+                      {sortColumn === col.key &&
+                        (sortDirection === "asc" ? (
+                          <ChevronUp size={13} />
+                        ) : (
+                          <ChevronDown size={13} />
+                        ))}
+                    </span>
+                  </TableHead>
+                ))}
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {paginatedData.map((row, idx) => (
+                <TableRow
+                  key={idx}
+                  className={cn(
+                    "border-b border-[rgba(233,228,222,0.6)] transition-colors duration-200 hover:bg-[rgba(166,152,136,0.04)]",
+                    idx % 2 === 0
+                      ? "bg-[rgba(255,255,255,0.8)]"
+                      : "bg-[rgba(245,242,238,0.6)]"
+                  )}
+                >
+                  {columns.map((col) => {
+                    const val = row[col.key];
+                    const display =
+                      val === null || val === undefined || val === ""
+                        ? "-"
+                        : String(val);
+                    const isSubjectName =
+                      col.key.toLowerCase() === "subject" ||
+                      col.key.toLowerCase() === "unit";
+                    return (
+                      <TableCell
+                        key={col.key}
+                        title={isSubjectName ? display : undefined}
+                        className={cn(
+                          "whitespace-nowrap px-2.5 py-2 text-center text-[13px]",
+                          val === null || val === undefined
+                            ? "text-[#B8B0A4]"
+                            : "text-[#4A453F]",
+                          isSubjectName &&
+                            "max-w-[1px] overflow-hidden text-ellipsis"
+                        )}
+                      >
+                        {display}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
       </div>
 
-      {/* Pagination */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 12, flexWrap: "wrap", gap: 10 }}>
-        <span style={{ fontSize: 12, color: "#A8A095" }}>显示 {startEntry} 至 {endEntry} 条，共 {filteredData.length} 条</span>
-        <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-          <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}
-            style={{ padding: "5px 10px", border: "1px solid #D9D4CE", borderRadius: 8, fontSize: 12, backgroundColor: "#FFF", color: currentPage === 1 ? "#C4BDB3" : "#8B8378", cursor: currentPage === 1 ? "not-allowed" : "pointer" }}>上一页</button>
+      {/* ── Pagination ────────────────────────────── */}
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2.5">
+        <span className="text-xs text-[#A8A095]">
+          显示 {startEntry} 至 {endEntry} 条，共 {filteredData.length} 条
+        </span>
+        <div className="flex items-center gap-1">
+          <button
+            onClick={() => goToPage(currentPage - 1)}
+            disabled={currentPage === 1}
+            className={cn(
+              "rounded-lg border px-2.5 py-1.5 text-xs transition-colors",
+              currentPage === 1
+                ? "cursor-not-allowed border-[#E8E4DE] text-[#C4BDB3]"
+                : "border-[#D9D4CE] bg-white text-[#8B8378] hover:border-[#A69888] hover:text-[#8F7F6E]"
+            )}
+          >
+            上一页
+          </button>
           {getPageNumbers().map((page, idx) =>
-            typeof page === "string"
-              ? <span key={idx} style={{ padding: "5px 6px", fontSize: 13, color: "#C4BDB3" }}>...</span>
-              : <button key={page} onClick={() => goToPage(page)}
-                style={{ padding: "5px 10px", border: "1px solid", borderRadius: 8, fontSize: 12, backgroundColor: currentPage === page ? "rgba(166,152,136,0.12)" : "#FFF", borderColor: currentPage === page ? "rgba(166,152,136,0.35)" : "#D9D4CE", color: currentPage === page ? "#7A6E5F" : "#8B8378", cursor: "pointer", minWidth: 32 }}>{page}</button>
+            typeof page === "string" ? (
+              <span
+                key={idx}
+                className="px-1.5 py-1.5 text-sm text-[#C4BDB3]"
+              >
+                ...
+              </span>
+            ) : (
+              <button
+                key={page}
+                onClick={() => goToPage(page)}
+                className={cn(
+                  "min-w-[32px] rounded-lg border px-2.5 py-1.5 text-xs transition-colors",
+                  currentPage === page
+                    ? "border-[rgba(166,152,136,0.35)] bg-[rgba(166,152,136,0.12)] text-[#7A6E5F]"
+                    : "border-[#D9D4CE] bg-white text-[#8B8378] hover:border-[#A69888] hover:text-[#8F7F6E]"
+                )}
+              >
+                {page}
+              </button>
+            )
           )}
-          <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}
-            style={{ padding: "5px 10px", border: "1px solid #D9D4CE", borderRadius: 8, fontSize: 12, backgroundColor: "#FFF", color: currentPage === totalPages ? "#C4BDB3" : "#8B8378", cursor: currentPage === totalPages ? "not-allowed" : "pointer" }}>下一页</button>
+          <button
+            onClick={() => goToPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className={cn(
+              "rounded-lg border px-2.5 py-1.5 text-xs transition-colors",
+              currentPage === totalPages
+                ? "cursor-not-allowed border-[#E8E4DE] text-[#C4BDB3]"
+                : "border-[#D9D4CE] bg-white text-[#8B8378] hover:border-[#A69888] hover:text-[#8F7F6E]"
+            )}
+          >
+            下一页
+          </button>
         </div>
       </div>
     </div>

@@ -1,34 +1,55 @@
+import { BookOpen, Calculator, TrendingUp } from "lucide-react";
+
 export default function Footer() {
   return (
-    <footer
-      style={{
-        background: "linear-gradient(180deg, #F5F2EE 0%, #FAF8F5 100%)",
-        padding: "24px 16px",
-        textAlign: "center",
-        borderTop: "1px solid #E8E4DE",
-      }}
-    >
-      <p style={{ color: "#A8A095", fontSize: 13, margin: 0, letterSpacing: "0.02em" }}>
-        专为 GCSE & IGCSE 学子精心打造
-      </p>
-      <div style={{ marginTop: 10, display: "flex", justifyContent: "center", gap: 16 }}>
-        {["联系我们", "隐私声明", "免责声明"].map((text) => (
-          <span
-            key={text}
-            style={{ color: "#B8B0A4", fontSize: 12, cursor: "pointer", transition: "color 0.3s ease" }}
-            onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#8F7F6E"; }}
-            onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#B8B0A4"; }}
-          >
-            {text}
-          </span>
-        ))}
+    <footer className="bg-[#1E2435] border-t border-[rgba(217,212,206,0.15)]">
+      {/* Main footer content */}
+      <div className="mx-auto max-w-[1200px] px-5 py-8 md:py-10">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:items-start md:justify-between">
+          {/* Brand */}
+          <div className="text-center md:text-left">
+            <h3 className="text-sm font-bold tracking-wide text-[#E8E4DE]">
+              GradeMaster
+            </h3>
+            <p className="mt-1 text-xs leading-relaxed text-[#A8A095]">
+              专为 GCSE & A-Level 学子精心打造
+            </p>
+          </div>
+
+          {/* Quick links with icons */}
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            {[
+              { icon: <BookOpen size={14} />, label: "Paper 查询", href: "#/papers" },
+              { icon: <Calculator size={14} />, label: "等级预测", href: "#/calculator" },
+              { icon: <TrendingUp size={14} />, label: "A*率趋势", href: "#/statistics" },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="group flex items-center gap-1.5 text-xs text-[#7A756F] no-underline transition-colors duration-300 hover:text-[#C9A55A]"
+              >
+                <span className="transition-transform duration-300 group-hover:-translate-y-0.5">
+                  {item.icon}
+                </span>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="my-5 h-px w-full bg-[rgba(122,117,111,0.2)]" />
+
+        {/* Bottom row */}
+        <div className="flex flex-col items-center gap-2 text-center md:flex-row md:justify-between">
+          <p className="m-0 text-[11px] text-[#7A756F]">
+            数据来源：各考试局官方 | 仅供参考学习使用
+          </p>
+          <p className="m-0 text-[11px] text-[#7A756F]">
+            Created by Leo Liu
+          </p>
+        </div>
       </div>
-      <p style={{ color: "#C4BDB3", fontSize: 11, marginTop: 12 }}>
-        数据来源：各考试局官方 | 仅供参考学习使用
-      </p>
-      <p style={{ color: "#C4BDB3", fontSize: 11, marginTop: 8 }}>
-        Created by Leo Liu
-      </p>
     </footer>
   );
 }
