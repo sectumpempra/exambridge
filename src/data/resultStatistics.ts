@@ -20,9 +20,19 @@ function y(year: number, series: "june" | "november" | "march" | "summer" | "jan
   g9?: number, g8?: number, g7?: number, g6?: number, g5?: number,
   g4?: number, g3?: number, g2?: number, g1?: number, entries?: number): YearlyStats {
   const r: YearlyStats = { year, series, aStarRate: aStar, aRate: a, bRate: b, cRate: c, dRate: d, eRate: e, entries };
-  if (g9 !== undefined) r.grade9Rate = g9; if (g8 !== undefined) r.grade8Rate = g8; if (g7 !== undefined) r.grade7Rate = g7;
-  if (g6 !== undefined) r.grade6Rate = g6; if (g5 !== undefined) r.grade5Rate = g5; if (g4 !== undefined) r.grade4Rate = g4;
-  if (g3 !== undefined) r.grade3Rate = g3; if (g2 !== undefined) r.grade2Rate = g2; if (g1 !== undefined) r.grade1Rate = g1;
+  const gRates: (number | undefined)[] = [g9, g8, g7, g6, g5, g4, g3, g2, g1];
+  const keys: (keyof YearlyStats)[] = ['grade9Rate', 'grade8Rate', 'grade7Rate', 'grade6Rate', 'grade5Rate', 'grade4Rate', 'grade3Rate', 'grade2Rate', 'grade1Rate'];
+
+  let prev = 0;
+  for (let i = 0; i < gRates.length; i++) {
+    const v = gRates[i];
+    if (v !== undefined) {
+      // 9-1 累积率必须单调不减（值越大表示等级越低、包含学生越多）
+      const normalized = Math.max(v, prev);
+      (r as unknown as Record<string, unknown>)[keys[i]] = normalized;
+      prev = normalized;
+    }
+  }
   return r;
 }
 function s(code: string, name: string, board: string, level: "A-Level" | "IGCSE" | "GCSE" | "FSMQ", years: YearlyStats[]): SubjectStats {

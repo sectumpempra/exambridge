@@ -14,6 +14,8 @@ interface GraphCanvasProps {
   functions: FunctionEntry[];
 }
 
+const AXIS_MODE_CYCLE: AxisMode[] = ['number', 'pi', 'degree'];
+
 export default function GraphCanvas({ functions }: GraphCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,6 +28,7 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
   const isDragging = useRef(false);
   const lastMouse = useRef({ x: 0, y: 0 });
   const needsRenderRef = useRef(true);
+  const animIdRef = useRef<number | null>(null);
   const zoom = useCallback((factor: number) => {
     const { width, height } = sizeRef.current;
     const view = viewRef.current;
@@ -44,7 +47,6 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
     needsRenderRef.current = true;
   }, []);
 
-  const AXIS_MODE_CYCLE: AxisMode[] = ['number', 'pi', 'degree'];
   const cycleAxisMode = useCallback(() => {
     setAxisMode((prev) => {
       const idx = AXIS_MODE_CYCLE.indexOf(prev);
@@ -79,33 +81,38 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
     }
   }, [functions, tooltip]);
 
-  // Render loop: only request next frame when rendering is actually needed
+  // Render loop: request next frame only when needed
   useEffect(() => {
-    let animId: number | null = null;
     const loop = () => {
-      animId = null;
+      animIdRef.current = null;
       if (needsRenderRef.current) render();
     };
 
-    // Start loop
-    animId = requestAnimationFrame(loop);
-
-    // Check periodically if new render is needed (e.g. after mouse events set flag)
-    const checkInterval = setInterval(() => {
-      if (needsRenderRef.current && animId === null) {
-        animId = requestAnimationFrame(loop);
+    const requestRender = () => {
+      if (animIdRef.current === null) {
+        animIdRef.current = requestAnimationFrame(loop);
       }
-    }, 50);
+    };
+
+    requestRender();
 
     return () => {
-      clearInterval(checkInterval);
-      if (animId !== null) cancelAnimationFrame(animId);
+      if (animIdRef.current !== null) {
+        cancelAnimationFrame(animIdRef.current);
+        animIdRef.current = null;
+      }
     };
   }, [render]);
 
   useEffect(() => {
     needsRenderRef.current = true;
-  }, [functions]);
+    if (animIdRef.current === null) {
+      animIdRef.current = requestAnimationFrame(() => {
+        animIdRef.current = null;
+        if (needsRenderRef.current) render();
+      });
+    }
+  }, [functions, render]);
 
   useEffect(() => {
     const container = containerRef.current;

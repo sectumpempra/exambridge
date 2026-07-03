@@ -14,6 +14,7 @@ import AlevelEdexcelPage from "./pages/alevel/EdexcelPage";
 import AlevelCaiePage from "./pages/alevel/CaiePage";
 import AlevelAqaPage from "./pages/alevel/AqaPage";
 import AlevelOcrPage from "./pages/alevel/OcrPage";
+import AlevelWjecPage from "./pages/alevel/WjecPage";
 
 // GCSE pages
 import GcseHome from "./pages/gcse/Home";
@@ -34,6 +35,7 @@ export default function App() {
       <Route path="/alevel/caie" element={<AlevelCaiePage />} />
       <Route path="/alevel/aqa" element={<AlevelAqaPage />} />
       <Route path="/alevel/ocr" element={<AlevelOcrPage />} />
+      <Route path="/alevel/wjec" element={<AlevelWjecPage />} />
 
       {/* GCSE */}
       <Route path="/gcse" element={<GcseHome />} />

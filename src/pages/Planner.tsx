@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { QRCodeSVG } from "qrcode.react";
@@ -16,8 +16,8 @@ import {
   type SubjectCategory,
 } from "../data/examDates";
 import { usePlanner } from "../hooks/usePlanner";
-import type { PlannerConfig } from "../hooks/usePlanner";
-import { generateShareUrl } from "../utils/shareCode";
+import type { PlannerConfig, SelectedPaperGroup } from "../hooks/usePlanner";
+import { generateShareUrl, parseShareUrl, clearPlanUrl } from "../utils/shareCode";
 import { groupPapers, type PaperGroup } from "../utils/paperGroups";
 import { groupEdexcelALUnits, getUnitName, needsSubjectGrouping } from "../utils/subjectGroups";
 import { exportToExcel, exportToWord, exportToPDF } from "../utils/exportPlanner";
@@ -31,16 +31,6 @@ const NAV_LINKS = [
 ];
 
 const WEEKDAYS = ["日", "一", "二", "三", "四", "五", "六"];
-
-/** A selected paper group (e.g. "9709 Paper 1") containing all variants */
-interface SelectedPaperGroup {
-  subjectCode: string;
-  paperNum: string;
-  paperLabel: string;
-  board: string;
-  level: string;
-  variants: { code: string; component: string }[];
-}
 
 /** Generate past papers for a single variant/component */
 function generatePastPapersForVariant(subjectCode: string, component: string): string[] {
@@ -120,7 +110,7 @@ export default function Planner() {
   const [startDate, setStartDate] = useState(format(new Date(), "yyyy-MM-dd"));
   const [restDays, setRestDays] = useState<number[]>([0]);
   const [intensity, setIntensity] = useState<Intensity>("normal");
-  const [paperOverrides] = useState<Record<string, string>>({});
+  const [paperOverrides, setPaperOverrides] = useState<Record<string, string>>({});
   const [completedTasks, setCompletedTasks] = useState<Record<string, boolean>>({});
   const [collapsedWeeks, setCollapsedWeeks] = useState<Record<number, boolean>>({});
   // All subjects collapsed by default (true = collapsed)
@@ -131,6 +121,21 @@ export default function Planner() {
   const [shareUrl, setShareUrl] = useState("");
   const [showShare, setShowShare] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  // Parse shared plan from URL on mount
+  useEffect(() => {
+    const shared = parseShareUrl();
+    if (shared) {
+      if (shared.startDate) setStartDate(shared.startDate);
+      if (shared.restDays) setRestDays(shared.restDays);
+      if (shared.intensity) setIntensity(shared.intensity);
+      if (shared.paperOverrides) setPaperOverrides(shared.paperOverrides);
+      if (shared.selectedGroups && shared.selectedGroups.length > 0) {
+        setSelectedGroups(shared.selectedGroups);
+      }
+      clearPlanUrl();
+    }
+  }, []);
 
   // Available options
   const levels = Object.keys(plannerData);
@@ -207,6 +212,7 @@ export default function Planner() {
       startDate,
       selectedPapers,
       restDays, intensity, paperOverrides,
+      selectedGroups,
     };
     const map: Record<string, string[]> = {};
     for (const g of selectedGroups) {

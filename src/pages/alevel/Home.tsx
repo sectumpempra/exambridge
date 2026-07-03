@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { BookOpen, Award, BarChart3, TrendingUp } from "lucide-react";
+import { BookOpen, Award, BarChart3, TrendingUp, GraduationCap } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "首页", to: "/" },
@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "CAIE", to: "/alevel/caie" },
   { label: "AQA", to: "/alevel/aqa" },
   { label: "OCR", to: "/alevel/ocr" },
+  { label: "WJEC/Eduqas", to: "/alevel/wjec" },
   { label: "等级预测模拟器", to: "/calculator" },
   { label: "刷题规划", to: "/planner" },
 ];
@@ -46,6 +47,14 @@ const CARDS = [
     accent: "#9AAF9E",
     count: "701",
   },
+  {
+    board: "WJEC/Eduqas",
+    description: "威尔士 WJEC 与英格兰 Eduqas 的 A-Level 成绩统计数据，覆盖艺术、人文、科学等 71 门科目。",
+    to: "/alevel/wjec",
+    icon: GraduationCap,
+    accent: "#7B8FA0",
+    count: "439",
+  },
 ];
 
 export default function AlevelHome() {
@@ -59,7 +68,7 @@ export default function AlevelHome() {
               A-Level 分数线查询
             </h2>
             <p className="animate-fade-in-up" style={{ fontSize: 16, color: "#8B8378", lineHeight: 1.8, marginTop: 16, animationDelay: "0.2s", opacity: 0 }}>
-              免费浏览 Edexcel、CAIE、AQA、OCR 四大考试局的 A-Level 分数线数据。<br />
+              免费浏览 Edexcel、CAIE、AQA、OCR、WJEC/Eduqas 五大考试局的 A-Level 分数线数据。<br />
               下拉选择科目查看趋势图，筛选表格数据，或下载 CSV 离线分析。
             </p>
           </div>

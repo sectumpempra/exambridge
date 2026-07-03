@@ -1,5 +1,5 @@
 import type { FunctionEntry, FunctionMode, ViewState, TooltipData } from '../types';
-import { create, all } from 'mathjs';
+import { create, all, type EvalFunction } from 'mathjs';
 
 const math = create(all, {});
 
@@ -136,8 +136,9 @@ export function extractParams(expression: string): string[] {
   try {
     const node = math.parse(preprocessed);
     const symbols: Set<string> = new Set();
-    node.traverse((n: any) => {
-      if (n.isSymbolNode && !MATH_BUILTINS.has(n.name.toLowerCase())) symbols.add(n.name);
+    node.traverse((n) => {
+      const symbol = n as unknown as { isSymbolNode?: boolean; name?: string };
+      if (symbol.isSymbolNode && symbol.name && !MATH_BUILTINS.has(symbol.name.toLowerCase())) symbols.add(symbol.name);
     });
     return Array.from(symbols);
   } catch { return []; }
@@ -280,7 +281,7 @@ export function convertNumbersWithExisting(
 }
 
 // ==== COMPILATION ====
-export function compileExpression(expression: string, mode?: FunctionMode): any | null {
+export function compileExpression(expression: string, mode?: FunctionMode): EvalFunction | null {
   if (!expression || !expression.trim()) return null;
   const detectedMode = mode || detectMode(expression);
   const body = getExpressionBody(expression, detectedMode);
@@ -300,12 +301,14 @@ function parseDomainValue(val: string): number | null {
 
 // ==== EVALUATION ====
 export function evaluateCartesian(
-  compiled: any,
+  compiled: EvalFunction,
   x: number,
   params: Record<string, number>,
+  angleMode: 'number' | 'pi' | 'degree' = 'number',
 ): number | null {
   try {
-    const scope: Record<string, number> = { x, e: Math.E, pi: Math.PI, ...params };
+    const xRad = angleMode === 'degree' ? x * Math.PI / 180 : x;
+    const scope: Record<string, number> = { x: xRad, e: Math.E, pi: Math.PI, ...params };
     const result = compiled.evaluate(scope);
     if (typeof result !== 'number' || !isFinite(result)) return null;
     if (Math.abs(result) > 1e6) return null;
@@ -314,12 +317,14 @@ export function evaluateCartesian(
 }
 
 export function evaluatePolar(
-  compiled: any,
+  compiled: EvalFunction,
   theta: number,
   params: Record<string, number>,
+  angleMode: 'number' | 'pi' | 'degree' = 'number',
 ): number | null {
   try {
-    const scope: Record<string, number> = { theta, t: theta, e: Math.E, pi: Math.PI, ...params };
+    const thetaRad = angleMode === 'degree' ? theta * Math.PI / 180 : theta;
+    const scope: Record<string, number> = { theta: thetaRad, t: thetaRad, e: Math.E, pi: Math.PI, ...params };
     const result = compiled.evaluate(scope);
     if (typeof result !== 'number' || !isFinite(result)) return null;
     if (Math.abs(result) > 1e6) return null;
@@ -637,7 +642,7 @@ export function drawCartesianFunction(ctx: CanvasRenderingContext2D, entry: Func
     let prevPy: number | null = null;
     for (let i = 0; i <= n; i++) {
       const mx = minX + i * step;
-      const yVal = evaluateCartesian(compiled, mx, entry.params);
+      const yVal = evaluateCartesian(compiled, mx, entry.params, view.axisMode);
 
       // Method 1: defined ↔ undefined boundary (domain-limited functions)
       if (prevVal !== null && yVal !== null) {
@@ -753,7 +758,7 @@ export function drawCartesianFunction(ctx: CanvasRenderingContext2D, entry: Func
 
   for (let i = 0; i <= n; i++) {
     const mx = minX + i * step;
-    const yVal = evaluateCartesian(compiled, mx, entry.params);
+    const yVal = evaluateCartesian(compiled, mx, entry.params, view.axisMode);
     if (yVal === null) { prevY = null; continue; }
 
     const px = cx + mx * up;
@@ -807,7 +812,7 @@ export function drawPolarFunction(ctx: CanvasRenderingContext2D, entry: Function
 
   for (let i = 0; i <= n; i++) {
     const theta = thetaMin + i * dTheta;
-    const r = evaluatePolar(compiled, theta, entry.params);
+    const r = evaluatePolar(compiled, theta, entry.params, view.axisMode);
     if (r === null) { prevX = null; prevY = null; continue; }
 
     const mx = r * Math.cos(theta);
@@ -849,7 +854,7 @@ function findLabelPos(compiled: any, entry: FunctionEntry, w: number, h: number,
     const fractions = [0.25, 0.5, 0.125, 0.375, 0.75, 0.625];
     for (const f of fractions) {
       const theta = tMin + f * (tMax - tMin);
-      const r = evaluatePolar(compiled, theta, entry.params);
+      const r = evaluatePolar(compiled, theta, entry.params, view.axisMode);
       if (r === null) continue;
       const mx = r * Math.cos(theta);
       const my = r * Math.sin(theta);
@@ -870,7 +875,7 @@ function findLabelPos(compiled: any, entry: FunctionEntry, w: number, h: number,
   const xMax = dMax !== null ? Math.min(rx, dMax) : rx;
   for (const f of [0.85, 0.7, 0.5, 0.3, 0.15]) {
     const tx = xMin + (xMax - xMin) * f;
-    const yv = evaluateCartesian(compiled, tx, entry.params);
+    const yv = evaluateCartesian(compiled, tx, entry.params, view.axisMode);
     if (yv === null) continue;
     const px = cx0 + tx * up;
     const py = cy0 - yv * up;
@@ -1103,7 +1108,7 @@ export function findNearestPoint(mx: number, my: number, entries: FunctionEntry[
       let bestTheta = 0, bestR = 0, minGeoDist = Infinity;
       for (let i = 0; i <= 200; i++) {
         const theta = tMin + (i / 200) * (tMax - tMin);
-        const r = evaluatePolar(compiled, theta, entry.params);
+        const r = evaluatePolar(compiled, theta, entry.params, view.axisMode);
         if (r === null) continue;
         const px = r * Math.cos(theta);
         const py = r * Math.sin(theta);
@@ -1124,7 +1129,7 @@ export function findNearestPoint(mx: number, my: number, entries: FunctionEntry[
     }
 
     // Cartesian: find nearest point along vertical line at mouse x
-    const yVal = evaluateCartesian(compiled, mathX, entry.params);
+    const yVal = evaluateCartesian(compiled, mathX, entry.params, view.axisMode);
     if (yVal === null) continue;
     const [, canvasY] = mathToCanvas(mathX, yVal, w, h, view);
     const dist = Math.abs(canvasY - my);

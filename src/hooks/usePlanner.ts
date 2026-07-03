@@ -35,6 +35,15 @@ export interface WeekGroup {
   days: DailyTask[];
 }
 
+export interface SelectedPaperGroup {
+  subjectCode: string;
+  paperNum: string;
+  paperLabel: string;
+  board: string;
+  level: string;
+  variants: { code: string; component: string }[];
+}
+
 export interface PlannerConfig {
   startDate: string;
   selectedPapers: {
@@ -47,6 +56,7 @@ export interface PlannerConfig {
   restDays: number[];
   intensity: Intensity;
   paperOverrides: Record<string, string>;
+  selectedGroups?: SelectedPaperGroup[];
 }
 
 export interface PlannerResult {
