@@ -1,12 +1,12 @@
 import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowLeft, Clock, Calculator, FileText, TrendingUp, AlertCircle, BookOpen, ChevronDown, ChevronRight, GitCompareArrows } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { getPaperById, ALL_PAPERS } from "../../data/papers/paperMetadata";
 import { getBoundariesForPaper } from "../../data/papers/paperBoundaries";
 import { getSubjectStats } from "../../data/resultStatistics";
-import { getSyllabusForPaper } from "../../data/papers/paperSyllabus";
+import { loadSyllabus, type PaperSyllabus } from "../../data/papers/paperSyllabus";
 
 const NAV_LINKS = [
   { label: "首页", to: "/" },
@@ -22,8 +22,27 @@ export default function PaperDetailPage() {
   const { paperId } = useParams<{ paperId: string }>();
   const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
   const [comparePaperId, setComparePaperId] = useState("");
+  const [syllabus, setSyllabus] = useState<PaperSyllabus | null>(null);
+  const [syllabusLoading, setSyllabusLoading] = useState(false);
 
   const paper = paperId ? getPaperById(paperId) : undefined;
+
+  // Async load syllabus
+  useEffect(() => {
+    if (!paperId) {
+      setSyllabus(null);
+      return;
+    }
+    let cancelled = false;
+    setSyllabusLoading(true);
+    loadSyllabus(paperId).then((data) => {
+      if (!cancelled) {
+        setSyllabus(data || null);
+        setSyllabusLoading(false);
+      }
+    });
+    return () => { cancelled = true; };
+  }, [paperId]);
 
   if (!paper) {
     return (
@@ -44,7 +63,6 @@ export default function PaperDetailPage() {
   const boundaries = getBoundariesForPaper(paper.paperId);
   const subjectStats = getSubjectStats(paper.subjectCode, paper.board);
 
-  // Sort boundaries by year desc, then session
   const sortedBoundaries = [...boundaries].sort((a, b) => {
     const yearDiff = Number(b.year) - Number(a.year);
     if (yearDiff !== 0) return yearDiff;
@@ -52,12 +70,10 @@ export default function PaperDetailPage() {
     return (sessionOrder[a.session] || 99) - (sessionOrder[b.session] || 99);
   });
 
-  // Get grade columns from first boundary entry
   const gradeColumns = sortedBoundaries.length > 0
     ? Object.keys(sortedBoundaries[0].grades)
     : [];
 
-  // Get recent subject stats (last 3 entries)
   const recentStats = subjectStats
     ? [...subjectStats.years].sort((a, b) => b.year - a.year).slice(0, 5)
     : [];
@@ -123,7 +139,6 @@ export default function PaperDetailPage() {
               ))}
             </div>
 
-            {/* Description */}
             {paper.description && (
               <div style={{
                 marginTop: 16,
@@ -160,7 +175,7 @@ export default function PaperDetailPage() {
                     <col style={{ width: "12%" }} />
                     <col style={{ width: "14%" }} />
                     <col style={{ width: "10%" }} />
-                    {gradeColumns.map(() => <col key={Math.random()} style={{ width: `${64 / gradeColumns.length}%` }} />)}
+                    {gradeColumns.map((_g, i) => <col key={`gc-${i}`} style={{ width: `${64 / gradeColumns.length}%` }} />)}
                   </colgroup>
                   <thead>
                     <tr style={{ background: "linear-gradient(135deg, #ECE7E0 0%, #E8E4DE 100%)" }}>
@@ -201,7 +216,6 @@ export default function PaperDetailPage() {
               所属科目成绩统计
             </h2>
 
-            {/* Disclaimer */}
             <div style={{
               display: "flex", alignItems: "flex-start", gap: 8,
               padding: "10px 14px",
@@ -251,7 +265,7 @@ export default function PaperDetailPage() {
                         <td style={{ padding: "9px 8px", fontSize: 13, color: "#4A453F", textAlign: "center", textTransform: "capitalize" }}>{s.series}</td>
                         <td style={{ padding: "9px 8px", fontSize: 13, color: "#8F7F6E", fontWeight: 600, textAlign: "center" }}>{s.aStarRate}%</td>
                         <td style={{ padding: "9px 8px", fontSize: 13, color: "#4A453F", textAlign: "center" }}>{s.aRate}%</td>
-                        <td style={{ padding: "9px 8px", fontSize: 13, color: "#4A453F", textAlign: "center" }}>{s.bRate}%</td>
+                        <td style={{ padding: "9px 8px", fontSize: 20, color: "#4A453F", textAlign: "center" }}>{s.bRate}%</td>
                         <td style={{ padding: "9px 8px", fontSize: 13, color: "#4A453F", textAlign: "center" }}>{s.cRate}%</td>
                         <td style={{ padding: "9px 8px", fontSize: 13, color: "#4A453F", textAlign: "center" }}>
                           {s.entries ? s.entries.toLocaleString() : "-"}
@@ -265,19 +279,23 @@ export default function PaperDetailPage() {
           </div>
         </section>
 
-        {/* Syllabus Topics */}
-        {(() => {
-          const syllabus = paperId ? getSyllabusForPaper(paperId) : null;
-          if (!syllabus) return null;
-          return (
-            <section style={{ padding: "0 16px 32px" }}>
-              <div style={{ maxWidth: 900, margin: "0 auto" }}>
-                <h2 style={{ fontSize: 18, fontWeight: 600, color: "#3D3832", margin: "0 0 12px", display: "flex", alignItems: "center", gap: 8 }}>
-                  <BookOpen size={18} style={{ color: "#A69888" }} />
-                  考纲知识点
-                  <span style={{ fontSize: 12, color: "#A8A095", fontWeight: 400 }}>({syllabus.totalTopics} 个知识点)</span>
-                </h2>
+        {/* Syllabus Topics — async loaded */}
+        <section style={{ padding: "0 16px 32px" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: "#3D3832", margin: "0 0 12px", display: "flex", alignItems: "center", gap: 8 }}>
+              <BookOpen size={18} style={{ color: "#A69888" }} />
+              考纲知识点
+              {syllabus && <span style={{ fontSize: 12, color: "#A8A095", fontWeight: 400 }}>({syllabus.totalTopics} 个知识点)</span>}
+            </h2>
 
+            {syllabusLoading && (
+              <div style={{ padding: "24px", textAlign: "center", color: "#A8A095", fontSize: 13 }}>
+                加载考纲数据...
+              </div>
+            )}
+
+            {syllabus && (
+              <>
                 {syllabus.topics.map((topic) => {
                   const isExpanded = expandedTopic === topic.topicId;
                   return (
@@ -313,10 +331,16 @@ export default function PaperDetailPage() {
                     </div>
                   );
                 })}
+              </>
+            )}
+
+            {!syllabusLoading && !syllabus && (
+              <div style={{ padding: "24px", textAlign: "center", color: "#A8A095", fontSize: 13, background: "rgba(255,255,255,0.5)", borderRadius: 12, border: "1px solid #E8E4DE" }}>
+                暂无考纲数据
               </div>
-            </section>
-          );
-        })()}
+            )}
+          </div>
+        </section>
 
         {/* Compare CTA */}
         <section style={{ padding: "0 16px 48px" }}>

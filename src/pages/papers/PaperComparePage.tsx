@@ -1,10 +1,10 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { ArrowLeft, GitCompareArrows, Check, X, Minus, ChevronDown, ChevronRight, BarChart3 } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { ALL_PAPERS, getPaperById } from "../../data/papers/paperMetadata";
-import { comparePapers } from "../../data/papers/paperSyllabus";
+import { ALL_PAPERS } from "../../data/papers/paperMetadata";
+import { comparePapers, type ComparisonResult } from "../../data/papers/paperSyllabus";
 
 const NAV_LINKS = [
   { label: "首页", to: "/" },
@@ -30,16 +30,30 @@ const TYPE_LABELS: Record<string, string> = {
 export default function PaperComparePage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [expandedTopics, setExpandedTopics] = useState<Set<string>>(new Set());
+  const [comparison, setComparison] = useState<ComparisonResult | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const paperAId = searchParams.get("a") || "";
   const paperBId = searchParams.get("b") || "";
 
-  const paperA = useMemo(() => getPaperById(paperAId), [paperAId]);
-  const paperB = useMemo(() => getPaperById(paperBId), [paperBId]);
+  const paperA = useMemo(() => ALL_PAPERS.find((p) => p.paperId === paperAId), [paperAId]);
+  const paperB = useMemo(() => ALL_PAPERS.find((p) => p.paperId === paperBId), [paperBId]);
 
-  const comparison = useMemo(() => {
-    if (!paperAId || !paperBId || paperAId === paperBId) return null;
-    return comparePapers(paperAId, paperBId);
+  // Async compare
+  useEffect(() => {
+    if (!paperAId || !paperBId || paperAId === paperBId) {
+      setComparison(null);
+      return;
+    }
+    let cancelled = false;
+    setLoading(true);
+    comparePapers(paperAId, paperBId).then((result) => {
+      if (!cancelled) {
+        setComparison(result);
+        setLoading(false);
+      }
+    });
+    return () => { cancelled = true; };
   }, [paperAId, paperBId]);
 
   const availablePapers = useMemo(() => ALL_PAPERS.filter((p) => p.paperId !== paperAId), [paperAId]);
@@ -113,7 +127,6 @@ export default function PaperComparePage() {
               </select>
             </div>
 
-            {/* Paper info cards */}
             {paperA && paperB && (
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 12, marginTop: 16 }}>
                 {[
@@ -136,8 +149,17 @@ export default function PaperComparePage() {
           </div>
         </section>
 
+        {/* Loading */}
+        {loading && (
+          <section style={{ padding: "0 16px 48px" }}>
+            <div style={{ maxWidth: 960, margin: "0 auto", textAlign: "center", padding: "40px", color: "#A8A095" }}>
+              <div>正在对比考纲数据...</div>
+            </div>
+          </section>
+        )}
+
         {/* Results */}
-        {comparison && (
+        {comparison && !loading && (
           <>
             {/* Stats Summary */}
             <section style={{ padding: "0 16px 24px" }}>
@@ -203,7 +225,6 @@ export default function PaperComparePage() {
                         background: c.bg,
                       }}
                     >
-                      {/* Topic header row */}
                       <div
                         onClick={() => hasSubtopics && toggleExpand(topic.topicId)}
                         style={{
@@ -220,7 +241,6 @@ export default function PaperComparePage() {
                           </span>
                         )}
 
-                        {/* Status icon */}
                         <span style={{ flexShrink: 0 }}>
                           {topic.overlapType === "full" && <Check size={14} style={{ color: c.dot }} />}
                           {topic.overlapType === "partial" && <Minus size={14} style={{ color: c.dot }} />}
@@ -230,7 +250,9 @@ export default function PaperComparePage() {
                         <div style={{ flex: 1, minWidth: 0 }}>
                           <div style={{ fontSize: 13, fontWeight: 600, color: c.text }}>
                             {topic.topicName}
-                            <span style={{ fontSize: 10, color: "#A8A095", marginLeft: 8, fontWeight: 400 }}>{topic.category}</span>
+                            <span style={{ fontSize: 10, color: "#A8A095", fontWeight: 400, background: "rgba(166,152,136,0.12)", padding: "2px 8px", borderRadius: 6, marginLeft: 8 }}>
+                              {topic.category}
+                            </span>
                           </div>
                           <div style={{ fontSize: 11, color: "#8B8378", marginTop: 1 }}>
                             {TYPE_LABELS[topic.overlapType]}
@@ -259,7 +281,6 @@ export default function PaperComparePage() {
                         </span>
                       </div>
 
-                      {/* Expanded subtopics */}
                       {isExpanded && hasSubtopics && (
                         <div style={{ padding: "0 14px 12px 40px", fontSize: 12 }}>
                           {topic.commonSubtopics.length > 0 && (
