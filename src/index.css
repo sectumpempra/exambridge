@@ -236,18 +236,7 @@
 }
 
 /* Card details: collapsed by default, expanded via JS .expanded class */
-.hero-board-card .card-details {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.4s ease 0.1s;
-}
-
-.hero-board-card .card-details.expanded {
-  max-height: 400px;
-  opacity: 1;
-}
+/* card-details inline styles are controlled by React state in ExamBoardCard */
 
 /* ═══════════════════════════════════════════════════════════
    6. GLASSMORPHISM NAV (Sticky + blur)

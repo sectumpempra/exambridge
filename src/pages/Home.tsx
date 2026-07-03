@@ -198,7 +198,15 @@ function ExamBoardCard({ board }: { board: (typeof EXAM_BOARDS)[0] }) {
       <div style={{ fontSize: 12, color: "#A8A095", fontWeight: 500, marginBottom: 4 }}>{board.nameZh}</div>
       <div style={{ fontSize: 11, color: "#C4BDB3", letterSpacing: "0.05em", marginBottom: 12 }}>{board.levels}</div>
 
-      <div className={cn("card-details", isHovered && "expanded")}>
+      <div
+        className="card-details"
+        style={{
+          maxHeight: isHovered ? 400 : 0,
+          opacity: isHovered ? 1 : 0,
+          overflow: "hidden",
+          transition: "max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease 0.1s",
+        }}
+      >
         <div style={{ borderTop: "1px solid #E8E4DE", paddingTop: 12, marginTop: 6 }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 12 }}>
             <div>
