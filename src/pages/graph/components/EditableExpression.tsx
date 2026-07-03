@@ -7,6 +7,17 @@ interface EditableExpressionProps {
   onParamChange: (name: string, value: number) => void;
 }
 
+/** Simplify expression display when all params are at default values */
+function simplifyForDisplay(expression: string, params: Record<string, number>): string {
+  const { a = 1, b = 1, c = 0, d = 0 } = params;
+  if (a === 1 && b === 1 && c === 0 && d === 0) {
+    if (expression === 'a*sin(b*x+c)+d') return 'sin(x)';
+    if (expression === 'a*cos(b*x+c)+d') return 'cos(x)';
+    if (expression === 'a*tan(b*x+c)+d') return 'tan(x)';
+  }
+  return expression;
+}
+
 // ==== Unicode formatting ====
 const SUB_DIGIT: Record<string, string> = {
   '0': '\u2080', '1': '\u2081', '2': '\u2082', '3': '\u2083', '4': '\u2084',
@@ -292,7 +303,11 @@ export default function EditableExpression({ expression, params, mode, onParamCh
   const inputRef = useRef<HTMLInputElement>(null);
 
   const prefix = mode === 'polar' ? 'r = ' : 'y = ';
-  const segments = buildSegments(expression, params);
+  const displayExpr = simplifyForDisplay(expression, params);
+  // When simplified (e.g., sin(x)), no params are shown as editable
+  const segments = displayExpr === expression
+    ? buildSegments(expression, params)
+    : buildSegments(displayExpr, {});
 
   useEffect(() => {
     if (editingParam && inputRef.current) {

@@ -1,10 +1,40 @@
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
-import { ArrowLeft, GitCompareArrows, Check, X, Minus, ChevronDown, ChevronRight, BarChart3 } from "lucide-react";
+import { ArrowLeft, GitCompareArrows, Check, X, Minus, ChevronDown, ChevronRight, BarChart3, ArrowRight, Download, TrendingUp } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { ALL_PAPERS } from "../../data/papers/paperMetadata";
 import { comparePapers, type ComparisonResult } from "../../data/papers/paperSyllabus";
+
+/* ═══════════════════════════════════════════════════════════
+   HOT EXPANSION PATHS for Paper Compare page
+   ═══════════════════════════════════════════════════════════ */
+const HOT_PATHS = [
+  {
+    title: "A-Level → IGCSE 向下扩科",
+    from: { id: "CAIE-9709-P1", label: "CAIE 9709 P1 (A-Level)" },
+    to: { id: "CAIE-0580-P2", label: "CAIE 0580 P2 (IGCSE)" },
+    reason: "A-Level 数学教师快速掌握 IGCSE 数学基础内容",
+  },
+  {
+    title: "CAIE → Edexcel 跨局扩科",
+    from: { id: "CAIE-9709-P1", label: "CAIE 9709 P1" },
+    to: { id: "EDX-4MA1-P1H", label: "Edexcel 4MA1 P1H" },
+    reason: "CAIE 数学教师对比 Edexcel IGCSE 数学考纲差异",
+  },
+  {
+    title: "IGCSE 跨局对比",
+    from: { id: "CAIE-0580-P2", label: "CAIE 0580 P2" },
+    to: { id: "EDX-4MA1-P1H", label: "Edexcel 4MA1 P1H" },
+    reason: "同级 IGCSE 数学跨考试局考纲对比",
+  },
+  {
+    title: "A-Level Pure Math 内部对比",
+    from: { id: "CAIE-9709-P1", label: "CAIE 9709 P1 (Pure1)" },
+    to: { id: "CAIE-9709-P3", label: "CAIE 9709 P3 (Pure3)" },
+    reason: "Pure1 到 Pure3 的知识递进分析",
+  },
+];
 
 const NAV_LINKS = [
   { label: "首页", to: "/" },
@@ -146,6 +176,44 @@ export default function PaperComparePage() {
                 ))}
               </div>
             )}
+
+            {/* Hot expansion paths — shown when no papers selected */}
+            {!paperAId && !paperBId && (
+              <div style={{ marginTop: 24 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                  <TrendingUp size={16} style={{ color: "#B8A68A" }} />
+                  <span style={{ fontSize: 13, fontWeight: 600, color: "#3D3832" }}>热门扩科路径</span>
+                  <span style={{ fontSize: 11, color: "#A8A095" }}>点击快速开始对比</span>
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 10 }}>
+                  {HOT_PATHS.map((path) => (
+                    <button
+                      key={path.title}
+                      onClick={() => setSearchParams({ a: path.from.id, b: path.to.id })}
+                      style={{
+                        padding: "14px 16px",
+                        background: "rgba(255,255,255,0.8)",
+                        border: "1px solid #E8E4DE",
+                        borderRadius: 12,
+                        cursor: "pointer",
+                        textAlign: "left",
+                        transition: "all 0.2s ease",
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#A69888"; e.currentTarget.style.boxShadow = "0 2px 8px rgba(166,152,136,0.15)"; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#E8E4DE"; e.currentTarget.style.boxShadow = "none"; }}
+                    >
+                      <div style={{ fontSize: 12, fontWeight: 600, color: "#5A7A5E", marginBottom: 6 }}>{path.title}</div>
+                      <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "#3D3832", marginBottom: 4 }}>
+                        <span>{path.from.label}</span>
+                        <ArrowRight size={12} style={{ color: "#C4BDB3" }} />
+                        <span>{path.to.label}</span>
+                      </div>
+                      <div style={{ fontSize: 11, color: "#8B8378" }}>{path.reason}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -180,6 +248,27 @@ export default function PaperComparePage() {
                   ))}
                 </div>
 
+                {/* Overlap rate progress bar */}
+                <div style={{ marginTop: 14, padding: "12px 18px", background: "rgba(255,255,255,0.6)", border: "1px solid #E8E4DE", borderRadius: 12 }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: "#3D3832" }}>考纲重合度</span>
+                    <span style={{ fontSize: 14, fontWeight: 700, color: "#5A7A5E" }}>{comparison.overlapRate}%</span>
+                  </div>
+                  <div style={{ width: "100%", height: 8, background: "#E8E4DE", borderRadius: 4, overflow: "hidden" }}>
+                    <div style={{
+                      width: `${comparison.overlapRate}%`,
+                      height: "100%",
+                      background: `linear-gradient(90deg, #9AAF9E, #5A7A5E)`,
+                      borderRadius: 4,
+                      transition: "width 0.6s ease",
+                    }} />
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6, fontSize: 10, color: "#A8A095" }}>
+                    <span>差异大</span>
+                    <span>高度重合</span>
+                  </div>
+                </div>
+
                 {/* Category breakdown */}
                 {Object.keys(comparison.categoryStats).length > 0 && (
                   <div style={{ marginTop: 16, padding: "14px 18px", background: "rgba(255,255,255,0.6)", border: "1px solid #E8E4DE", borderRadius: 12 }}>
@@ -205,9 +294,41 @@ export default function PaperComparePage() {
             {/* Topic Comparison List */}
             <section style={{ padding: "0 16px 48px" }}>
               <div style={{ maxWidth: 960, margin: "0 auto" }}>
-                <h2 style={{ fontSize: 16, fontWeight: 600, color: "#3D3832", margin: "0 0 12px" }}>
-                  知识点详细对比
-                </h2>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                  <h2 style={{ fontSize: 16, fontWeight: 600, color: "#3D3832", margin: 0 }}>
+                    知识点详细对比
+                  </h2>
+                  <button
+                    onClick={() => {
+                      // Export comparison as CSV
+                      const rows: string[] = [];
+                      rows.push('"Topic","Category","Type","PaperA_Subtopics","PaperB_Subtopics"');
+                      comparison.topics.forEach(t => {
+                        const type = TYPE_LABELS[t.overlapType];
+                        const aSubs = t.onlyInA.concat(t.commonSubtopics).join('; ');
+                        const bSubs = t.onlyInB.concat(t.commonSubtopics).join('; ');
+                        rows.push(`"${t.topicName}","${t.category}","${type}","${aSubs}","${bSubs}"`);
+                      });
+                      const csv = '\uFEFF' + rows.join('\n');
+                      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                      const link = document.createElement('a');
+                      link.href = URL.createObjectURL(blob);
+                      link.download = `考纲对比_${paperA?.subjectCode || 'A'}_${paperB?.subjectCode || 'B'}.csv`;
+                      link.click();
+                    }}
+                    style={{
+                      display: "flex", alignItems: "center", gap: 4,
+                      padding: "6px 12px", fontSize: 12, color: "#5A7A5E",
+                      background: "rgba(90,122,94,0.08)", border: "1px solid rgba(90,122,94,0.2)",
+                      borderRadius: 8, cursor: "pointer", transition: "all 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(90,122,94,0.15)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(90,122,94,0.08)"; }}
+                  >
+                    <Download size={13} />
+                    导出 CSV
+                  </button>
+                </div>
 
                 {comparison.topics.map((topic) => {
                   const c = COLORS[topic.overlapType];

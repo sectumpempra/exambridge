@@ -9,10 +9,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="text-center md:text-left">
             <h3 className="text-sm font-bold tracking-wide text-[#E8E4DE]">
-              GradeMaster
+              ExamBridge
             </h3>
             <p className="mt-1 text-xs leading-relaxed text-[#A8A095]">
-              专为 GCSE & A-Level 学子精心打造
+              专为国际学校教师跨考试局扩科备课打造
             </p>
           </div>
 

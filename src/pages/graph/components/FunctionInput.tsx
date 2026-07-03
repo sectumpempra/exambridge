@@ -6,6 +6,13 @@ import { domainVariable } from '../lib/displayUtils';
 import EditableExpression from './EditableExpression';
 import ParamSlider from './ParamSlider';
 
+const PARAM_LABELS: Record<string, string> = {
+  a: "振幅 / 系数",
+  b: "频率 / 周期",
+  c: "相位偏移",
+  d: "垂直偏移",
+};
+
 interface FunctionInputProps {
   entry: FunctionEntry;
   index: number;
@@ -213,7 +220,7 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
           {paramNames.map((name) => {
             const range = entry.paramRanges[name] || { min: -10, max: 10, step: 0.1 };
             return (
-              <ParamSlider key={name} name={name} value={entry.params[name]} onChange={handleParamChange}
+              <ParamSlider key={name} name={name} label={PARAM_LABELS[name]} value={entry.params[name]} onChange={handleParamChange}
                 onRangeChange={handleParamRangeChange} min={range.min} max={range.max} step={range.step} />
             );
           })}

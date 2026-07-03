@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
-import { ZoomIn, ZoomOut, Maximize } from 'lucide-react';
-import type { FunctionEntry, ViewState, TooltipData, AxisMode } from '../types';
+import { ZoomIn, ZoomOut, Maximize, ListCollapse, List } from 'lucide-react';
+import type { FunctionEntry, ViewState, TooltipData, AxisMode, Point } from '../types';
 import {
   drawGrid,
   drawFunction,
@@ -12,11 +12,13 @@ import {
 
 interface GraphCanvasProps {
   functions: FunctionEntry[];
+  intersections?: Point[];
+  onClearIntersections?: () => void;
 }
 
 const AXIS_MODE_CYCLE: AxisMode[] = ['number', 'pi', 'degree'];
 
-export default function GraphCanvas({ functions }: GraphCanvasProps) {
+export default function GraphCanvas({ functions, intersections = [], onClearIntersections }: GraphCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const viewRef = useRef<ViewState>({ scale: 1, offsetX: 0, offsetY: 0, axisMode: 'number' });
@@ -25,14 +27,44 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ left: 0, top: 0 });
   const [axisMode, setAxisMode] = useState<AxisMode>('number');
+  const [showLegend, setShowLegend] = useState(true);
   const isDragging = useRef(false);
   const lastMouse = useRef({ x: 0, y: 0 });
   const needsRenderRef = useRef(true);
   const animIdRef = useRef<number | null>(null);
   const requestRenderRef = useRef<() => void>(() => {});
-  // Mouse raf throttling (bug 3.9): avoid findNearestPoint on every mousemove
   const mouseRafRef = useRef<number | null>(null);
   const pendingMouse = useRef<{ x: number; y: number } | null>(null);
+
+  // Auto-detect axis mode based on functions
+  useEffect(() => {
+    const visibleFuncs = functions.filter(f => f.visible && f.expression);
+    if (visibleFuncs.length === 0) return;
+
+    const exprs = visibleFuncs.map(f => f.expression.toLowerCase());
+    const hasTrig = exprs.some(e => /sin|cos|tan/.test(e));
+    const hasInverseTrig = exprs.some(e => /asin|acos|atan/.test(e));
+    const domainRange = visibleFuncs.some(f => {
+      const min = parseFloat(f.domainMin);
+      const max = parseFloat(f.domainMax);
+      return !isNaN(min) && !isNaN(max) && min >= -2 * Math.PI && max <= 2 * Math.PI;
+    });
+
+    let suggestedMode: AxisMode = 'number';
+    if (hasInverseTrig) {
+      suggestedMode = 'degree';
+    } else if (hasTrig && domainRange) {
+      suggestedMode = 'pi';
+    }
+
+    if (suggestedMode !== viewRef.current.axisMode) {
+      viewRef.current.axisMode = suggestedMode;
+      setAxisMode(suggestedMode);
+      needsRenderRef.current = true;
+      requestRenderRef.current();
+    }
+  }, [functions]);
+
   const zoom = useCallback((factor: number) => {
     const { width, height } = sizeRef.current;
     const view = viewRef.current;
@@ -64,6 +96,49 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
     });
   }, []);
 
+  // Draw intersections on canvas
+  const drawIntersections = useCallback((ctx: CanvasRenderingContext2D, width: number, height: number, view: ViewState) => {
+    if (intersections.length === 0) return;
+
+    const { scale, offsetX, offsetY } = view;
+    const step = 40 * scale;
+    const originX = width / 2 + offsetX;
+    const originY = height / 2 + offsetY;
+
+    for (const pt of intersections) {
+      const cx = originX + pt.x * step;
+      const cy = originY - pt.y * step;
+
+      // Only draw if within visible area
+      if (cx < -20 || cx > width + 20 || cy < -20 || cy > height + 20) continue;
+
+      // Draw crosshair marker
+      ctx.strokeStyle = '#e11d48';
+      ctx.lineWidth = 2;
+      const s = 6;
+      ctx.beginPath();
+      ctx.moveTo(cx - s, cy - s);
+      ctx.lineTo(cx + s, cy + s);
+      ctx.moveTo(cx + s, cy - s);
+      ctx.lineTo(cx - s, cy + s);
+      ctx.stroke();
+
+      // Draw circle around
+      ctx.strokeStyle = 'rgba(225, 29, 72, 0.4)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 10, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Draw coordinate label
+      ctx.fillStyle = '#e11d48';
+      ctx.font = 'bold 10px "Courier New", monospace';
+      ctx.textAlign = 'left';
+      const label = `(${pt.x.toFixed(2)}, ${pt.y.toFixed(2)})`;
+      ctx.fillText(label, cx + 12, cy - 8);
+    }
+  }, [intersections]);
+
   const render = useCallback(() => {
     needsRenderRef.current = false;
     const canvas = canvasRef.current;
@@ -82,13 +157,14 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
     }
 
     drawFunctionLabels(ctx, functions, width, height, view);
+    drawIntersections(ctx, width, height, view);
 
     if (tooltip) {
       drawHoverIndicator(ctx, tooltip, width, height, view);
     }
-  }, [functions, tooltip]);
+  }, [functions, tooltip, drawIntersections]);
 
-  // Render loop: request next frame only when needed
+  // Render loop
   useEffect(() => {
     const loop = () => {
       animIdRef.current = null;
@@ -101,10 +177,7 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
       }
     };
 
-    // Expose requestRender to event handlers and resize observer
     requestRenderRef.current = requestRender;
-
-    // Initial render: call directly (not via raf) to ensure it runs
     needsRenderRef.current = true;
     render();
 
@@ -129,8 +202,6 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
       const w = Math.round(rect.width);
       const h = Math.round(rect.height);
       const { width: oldW, height: oldH } = sizeRef.current;
-      // Only reset canvas dimensions if they actually changed
-      // (assigning canvas.width/height clears the canvas)
       if (w !== oldW || h !== oldH) {
         sizeRef.current = { width: w, height: h };
         canvas.width = w * dpr;
@@ -142,7 +213,6 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
       }
       needsRenderRef.current = true;
       requestRenderRef.current();
-      // Fallback: render directly in case raf doesn't fire (headless/background tab)
       render();
     };
 
@@ -152,13 +222,12 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
     return () => ro.disconnect();
   }, []);
 
-  // Keyboard shortcuts for zoom (laptops without scroll wheel)
+  // Keyboard shortcuts
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Only handle if canvas area is focused or no input is focused
       const target = e.target as HTMLElement;
       if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') return;
 
@@ -171,6 +240,9 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
       } else if (e.key === '0') {
         e.preventDefault();
         resetView();
+      } else if (e.key === 'l' || e.key === 'L') {
+        e.preventDefault();
+        setShowLegend(prev => !prev);
       }
     };
 
@@ -199,7 +271,6 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
         return;
       }
 
-      // raf throttling (bug 3.9): debounce tooltip hit-test to raf
       pendingMouse.current = { x, y };
       if (mouseRafRef.current === null) {
         mouseRafRef.current = requestAnimationFrame(() => {
@@ -270,6 +341,9 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
     resetView();
   }, [resetView]);
 
+  // Legend functions
+  const legendFuncs = functions.filter(f => f.visible && f.expression);
+
   return (
     <div
       ref={containerRef}
@@ -308,12 +382,53 @@ export default function GraphCanvas({ functions }: GraphCanvasProps) {
         >
           {axisMode === 'pi' ? 'π' : axisMode === 'degree' ? '°' : 'x'}
         </button>
+        <button
+          onClick={() => setShowLegend(!showLegend)}
+          className={`p-2 transition-colors border-t border-[#e5e5e5] ${
+            showLegend ? 'bg-black text-white' : 'hover:bg-[#f5f5f5] text-[#333]'
+          }`}
+          title="切换图例 (L)"
+        >
+          {showLegend ? <ListCollapse className="w-4 h-4" /> : <List className="w-4 h-4" />}
+        </button>
       </div>
+
+      {/* Function Legend */}
+      {showLegend && legendFuncs.length > 0 && (
+        <div className="absolute top-4 right-4 z-20 rounded-lg border border-[#e5e5e5] bg-white/95 p-3 shadow-sm max-w-[200px]">
+          <h4 className="mb-2 text-xs font-semibold text-[#333] uppercase tracking-wider">函数图例</h4>
+          <div className="space-y-1.5">
+            {legendFuncs.map((f) => (
+              <div key={f.id} className="flex items-center gap-2 text-xs">
+                <span className="h-2.5 w-2.5 rounded-full flex-shrink-0" style={{ background: f.color }} />
+                <span className="mono-num text-[#555] truncate" title={f.expression}>
+                  {f.mode === 'polar' ? 'r = ' : 'y = '}{f.expression}
+                </span>
+              </div>
+            ))}
+          </div>
+          {intersections.length > 0 && (
+            <div className="mt-2 pt-2 border-t border-[#e5e5e5]">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] text-[#e11d48] font-medium">
+                  {intersections.length} 个交点
+                </span>
+                <button
+                  onClick={onClearIntersections}
+                  className="text-[10px] text-[#999] hover:text-[#333] transition-colors"
+                >
+                  清除
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Keyboard shortcuts hint */}
       <div className="absolute bottom-3 left-4 z-10 pointer-events-none">
         <span className="text-[10px] text-[#bbb] mono-num">
-          +/- 缩放 &nbsp;|&nbsp; 0 重置 &nbsp;|&nbsp; 拖拽平移
+          +/- 缩放 &nbsp;|&nbsp; 0 重置 &nbsp;|&nbsp; L 图例 &nbsp;|&nbsp; 拖拽平移
         </span>
       </div>
 

@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 
 // Pages that appear on every route (header/footer) - keep eager
 import Home from "./pages/Home";
+import PWAInstallPrompt from "./components/PWAInstallPrompt";
 
 // Lazy-load all other pages to enable code splitting
 const About = lazy(() => import("./pages/About"));
@@ -56,6 +57,7 @@ function PageLoader() {
 export default function App() {
   return (
     <Suspense fallback={<PageLoader />}>
+      <PWAInstallPrompt />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

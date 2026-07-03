@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Search, FileText, Clock, Calculator, ChevronRight } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -16,7 +16,10 @@ const NAV_LINKS = [
 ];
 
 export default function PaperSearchPage() {
-  const [search, setSearch] = useState("");
+  const [searchParams] = useSearchParams();
+  const initialSearch = searchParams.get("search") || "";
+
+  const [search, setSearch] = useState(initialSearch);
   const [boardFilter, setBoardFilter] = useState("");
   const [qualFilter, setQualFilter] = useState("");
 

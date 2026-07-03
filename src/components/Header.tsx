@@ -61,14 +61,16 @@ export default function Header({ title: _headerTitle, links }: HeaderProps) {
               "transition-colors duration-300 group-hover:text-[#8F7F6E]"
             )}
           >
-            GradeMaster
+            ExamBridge
           </span>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-[clamp(16px,2.5vw,32px)] md:flex">
           {links.map((link) => {
-            const isActive = location.pathname === link.to;
+            const isActive =
+              location.pathname === link.to ||
+              (link.to !== "/" && location.pathname.startsWith(`${link.to}/`));
             return (
               <Link
                 key={link.to}

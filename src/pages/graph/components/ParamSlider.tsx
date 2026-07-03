@@ -3,6 +3,7 @@ import { Play, Pause, Settings2 } from 'lucide-react';
 
 interface ParamSliderProps {
   name: string;
+  label?: string;
   value: number;
   onChange: (name: string, value: number) => void;
   onRangeChange?: (name: string, min: number, max: number, step: number) => void;
@@ -13,6 +14,7 @@ interface ParamSliderProps {
 
 export default function ParamSlider({
   name,
+  label,
   value,
   onChange,
   onRangeChange,
@@ -119,6 +121,9 @@ export default function ParamSlider({
       {/* Main slider row */}
       <div className="flex items-center gap-2">
         <span className="text-xs font-semibold text-black w-4 flex-shrink-0">{name}</span>
+        {label && (
+          <span className="text-[10px] text-[#999] flex-shrink-0 mr-1">{label}</span>
+        )}
         <div className="flex-1 min-w-0">
           <input type="range" min={min} max={max} step={step} value={value} onChange={handleSliderChange} className="brutalist-slider" />
         </div>

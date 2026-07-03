@@ -1,6 +1,7 @@
 import path from "path"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
+import { VitePWA } from "vite-plugin-pwa"
 
 // Only load inspect plugin in development
 const inspectPlugin = (() => {
@@ -16,7 +17,82 @@ const inspectPlugin = (() => {
 // https://vite.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [react(), ...(inspectPlugin ? [inspectPlugin] : [])],
+  plugins: [
+    react(),
+    ...(inspectPlugin ? [inspectPlugin] : []),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['icons/*.png'],
+      manifest: {
+        name: 'GradeMaster A-Level备考管家',
+        short_name: 'GradeMaster',
+        description: 'A-Level备考管家 - 分数线查询、等级预测、刷题规划一站式平台',
+        theme_color: '#2C3E50',
+        background_color: '#F0EDE8',
+        display: 'standalone',
+        scope: '/',
+        start_url: '/',
+        orientation: 'portrait',
+        icons: [
+          {
+            src: '/icons/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/icons/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: '/icons/maskable-icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
+          },
+        ],
+        categories: ['education', 'productivity'],
+        lang: 'zh-CN',
+        dir: 'ltr',
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,png,svg,ico,json}'],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365, // 365 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'gstatic-fonts-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365, // 365 days
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+        ],
+      },
+      devOptions: {
+        enabled: false,
+      },
+    }),
+  ],
   server: {
     port: 3000,
   },
