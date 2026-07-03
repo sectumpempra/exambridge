@@ -1,75 +1,101 @@
 import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
+// Pages that appear on every route (header/footer) - keep eager
 import Home from "./pages/Home";
-import GradeCalculator from "./pages/GradeCalculator";
-import Planner from "./pages/Planner";
-import About from "./pages/About";
-import PersonalityTest from "./pages/PersonalityTest";
-import IdentitySelect from "./pages/IdentitySelect";
-import ResultStatisticsPage from "./pages/ResultStatisticsPage";
-import GraphPage from "./pages/graph/GraphPage";
-import PaperSearchPage from "./pages/papers/PaperSearchPage";
-import PaperDetailPage from "./pages/papers/PaperDetailPage";
-import PaperComparePage from "./pages/papers/PaperComparePage";
 
-// A-Level pages
-import AlevelHome from "./pages/alevel/Home";
-import AlevelEdexcelPage from "./pages/alevel/EdexcelPage";
-import AlevelCaiePage from "./pages/alevel/CaiePage";
-import AlevelAqaPage from "./pages/alevel/AqaPage";
-import AlevelOcrPage from "./pages/alevel/OcrPage";
-import AlevelWjecPage from "./pages/alevel/WjecPage";
+// Lazy-load all other pages to enable code splitting
+const About = lazy(() => import("./pages/About"));
+const ALevelHome = lazy(() => import("./pages/alevel/Home"));
+const ALevelCaiePage = lazy(() => import("./pages/alevel/CaiePage"));
+const ALevelEdexcelPage = lazy(() => import("./pages/alevel/EdexcelPage"));
+const ALevelAqaPage = lazy(() => import("./pages/alevel/AqaPage"));
+const ALevelOcrPage = lazy(() => import("./pages/alevel/OcrPage"));
+const ALevelWjecPage = lazy(() => import("./pages/alevel/WjecPage"));
+const GCSEHome = lazy(() => import("./pages/gcse/Home"));
+const GCSEEdexcelPage = lazy(() => import("./pages/gcse/EdexcelPage"));
+const GCSECaiePage = lazy(() => import("./pages/gcse/CaiePage"));
+const GCSEAqaPage = lazy(() => import("./pages/gcse/AqaPage"));
+const GCSEOcrPage = lazy(() => import("./pages/gcse/OcrPage"));
+const GradeCalculator = lazy(() => import("./pages/GradeCalculator"));
+const Planner = lazy(() => import("./pages/Planner"));
+const ResultStatisticsPage = lazy(() => import("./pages/ResultStatisticsPage"));
+const IdentitySelect = lazy(() => import("./pages/IdentitySelect"));
+const PersonalityTest = lazy(() => import("./pages/PersonalityTest"));
+const GraphPage = lazy(() => import("./pages/graph/GraphPage"));
+const PaperSearchPage = lazy(() => import("./pages/papers/PaperSearchPage"));
+const PaperDetailPage = lazy(() => import("./pages/papers/PaperDetailPage"));
+const PaperComparePage = lazy(() => import("./pages/papers/PaperComparePage"));
 
-// GCSE pages
-import GcseHome from "./pages/gcse/Home";
-import GcseCaiePage from "./pages/gcse/CaiePage";
-import GcseEdexcelPage from "./pages/gcse/EdexcelPage";
-import GcseOcrPage from "./pages/gcse/OcrPage";
-import GcseAqaPage from "./pages/gcse/AqaPage";
+// Loading fallback for lazy routes
+function PageLoader() {
+  return (
+    <div style={{
+      minHeight: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      background: "linear-gradient(180deg, #F0EDE8 0%, #F5F2EE 50%, #F0EDE8 100%)",
+    }}>
+      <div style={{ textAlign: "center", color: "#A8A095" }}>
+        <div style={{
+          width: 40, height: 40,
+          border: "3px solid #E8E4DE",
+          borderTop: "3px solid #A69888",
+          borderRadius: "50%",
+          animation: "spin 1s linear infinite",
+          margin: "0 auto 16px",
+        }} />
+        <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+        <div style={{ fontSize: 14 }}>加载中...</div>
+      </div>
+    </div>
+  );
+}
 
 export default function App() {
   return (
-    <Routes>
-      {/* Home */}
-      <Route path="/" element={<Home />} />
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
 
-      {/* A-Level */}
-      <Route path="/alevel" element={<AlevelHome />} />
-      <Route path="/alevel/edexcel" element={<AlevelEdexcelPage />} />
-      <Route path="/alevel/caie" element={<AlevelCaiePage />} />
-      <Route path="/alevel/aqa" element={<AlevelAqaPage />} />
-      <Route path="/alevel/ocr" element={<AlevelOcrPage />} />
-      <Route path="/alevel/wjec" element={<AlevelWjecPage />} />
+        {/* A-Level 分数线 */}
+        <Route path="/alevel" element={<ALevelHome />} />
+        <Route path="/alevel/caie" element={<ALevelCaiePage />} />
+        <Route path="/alevel/edexcel" element={<ALevelEdexcelPage />} />
+        <Route path="/alevel/aqa" element={<ALevelAqaPage />} />
+        <Route path="/alevel/ocr" element={<ALevelOcrPage />} />
+        <Route path="/alevel/wjec" element={<ALevelWjecPage />} />
 
-      {/* GCSE */}
-      <Route path="/gcse" element={<GcseHome />} />
-      <Route path="/gcse/caie" element={<GcseCaiePage />} />
-      <Route path="/gcse/edexcel" element={<GcseEdexcelPage />} />
-      <Route path="/gcse/ocr" element={<GcseOcrPage />} />
-      <Route path="/gcse/aqa" element={<GcseAqaPage />} />
+        {/* GCSE 分数线 */}
+        <Route path="/gcse" element={<GCSEHome />} />
+        <Route path="/gcse/edexcel" element={<GCSEEdexcelPage />} />
+        <Route path="/gcse/caie" element={<GCSECaiePage />} />
+        <Route path="/gcse/aqa" element={<GCSEAqaPage />} />
+        <Route path="/gcse/ocr" element={<GCSEOcrPage />} />
 
-      {/* Grade Calculator */}
-      <Route path="/calculator" element={<GradeCalculator />} />
+        {/* Calculator */}
+        <Route path="/calculator" element={<GradeCalculator />} />
 
-      {/* Planner */}
-      <Route path="/planner" element={<Planner />} />
+        {/* Planner */}
+        <Route path="/planner" element={<Planner />} />
 
-      {/* About */}
-      <Route path="/about" element={<About />} />
+        {/* Personality */}
+        <Route path="/personality" element={<IdentitySelect />} />
+        <Route path="/personality/test" element={<PersonalityTest key={window.location.search} />} />
 
-      {/* Personality Test */}
-      <Route path="/personality" element={<IdentitySelect />} />
-      <Route path="/personality/test" element={<PersonalityTest key={window.location.search} />} />
+        {/* Result Statistics */}
+        <Route path="/statistics" element={<ResultStatisticsPage />} />
 
-      {/* Result Statistics */}
-      <Route path="/statistics" element={<ResultStatisticsPage />} />
+        {/* Function Graph */}
+        <Route path="/graph" element={<GraphPage />} />
 
-      {/* Function Graph */}
-      <Route path="/graph" element={<GraphPage />} />
-
-      {/* Paper Query */}
-      <Route path="/papers" element={<PaperSearchPage />} />
-      <Route path="/papers/:paperId" element={<PaperDetailPage />} />
-      <Route path="/papers/compare" element={<PaperComparePage />} />
-    </Routes>
+        {/* Paper Query */}
+        <Route path="/papers" element={<PaperSearchPage />} />
+        <Route path="/papers/:paperId" element={<PaperDetailPage />} />
+        <Route path="/papers/compare" element={<PaperComparePage />} />
+      </Routes>
+    </Suspense>
   );
 }
