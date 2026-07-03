@@ -1,73 +1,144 @@
-# React + TypeScript + Vite
+# GradeMaster 备考管家
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 你的私人 A-Level / IGCSE / GCSE 备考管家，覆盖 CAIE / Edexcel / AQA / OCR / WJEC-Eduqas 五大考试局。
 
-Currently, two official plugins are available:
+**在线地址**：https://uhxiohmpvszfm.ok.kimi.link
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 功能概览
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| 功能 | 说明 |
+|------|------|
+| 分数线查询 | 五大考试局 A-Level / GCSE 分数线数据，支持按科目代码、年份、考试季筛选 |
+| Grade Statistics 趋势图 | 历年 A*-E / 9-1 各等级占比趋势，支持动态切换评分制 |
+| 等级预测模拟器 | 输入卷面分，自动计算 UMS 与预测等级 |
+| 刷题规划器 | 按强度（轻松/标准/密集）自动生成刷题日历，支持休息日设置与分享链接 |
+| 函数图像绘制器 | 支持直角坐标与极坐标、参数滑块、角度制/弧度制切换、渐近线标注 |
+| 学习人格测试 | 通过答题分析你的学习风格，给出备考建议 |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 数据覆盖
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **10,000+** 条分数线数据
+- **560+** 个科目
+- **1,146+** 份试卷
+- **5** 大考试局
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 支持考试局
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| 考试局 | A-Level | GCSE / IGCSE |
+|--------|---------|-------------|
+| CAIE | ✅ | ✅ |
+| Edexcel | ✅ | ✅ |
+| AQA | ✅ | ✅ |
+| OCR | ✅ | ✅ |
+| WJEC / Eduqas | ✅ | ✅ |
+
+---
+
+## 技术栈
+
+- **React 19** + **TypeScript** + **Vite**
+- **Tailwind CSS** + **shadcn/ui**
+- **Recharts**（趋势图）
+- **mathjs**（函数图像求值）
+- **Canvas API**（函数图像绘制）
+- **date-fns**（日期处理）
+- **LZString**（分享链接压缩）
+
+---
+
+## 本地开发
+
+```bash
+# 克隆仓库
+git clone https://github.com/sectumpempra/grademaster.git
+cd grademaster
+
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 构建生产版本
+npm run build
+
+# 类型检查
+npx tsc --noEmit
+
+# 代码检查（当前有 7 个 shadcn/ui Fast Refresh lint 警告，不影响功能）
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 项目结构
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+  App.tsx                    # 路由配置
+  data/
+    resultStatistics.ts      # Grade Statistics 数据（~3500 行）
+    edexcel.json / edexcel_al.json   # Edexcel 分数线
+    aqa.json / aqa_al.json           # AQA 分数线
+    caie.json / caie_al.json         # CAIE 分数线
+    ocr.json / ocr_al.json           # OCR 分数线
+    plannerData.json         # 刷题规划科目数据
+    examDates.ts             # 考试日期
+    examData.ts              # 强度配置
+    calculatorIndex.ts       # 计算器科目索引
+    personalityData.ts       # 人格测试题目
+  pages/
+    ResultStatisticsPage.tsx # 成绩统计趋势图
+    GradeCalculator.tsx      # 等级预测模拟器
+    Planner.tsx              # 刷题规划器
+    graph/                   # 函数图像绘制器
+      GraphPage.tsx
+      components/GraphCanvas.tsx
+      lib/graphRenderer.ts
+    alevel/                  # A-Level 分数线页面
+      Home.tsx / EdexcelPage.tsx / CaiePage.tsx / AqaPage.tsx / OcrPage.tsx / WjecPage.tsx
+    gcse/                    # GCSE 分数线页面
+      Home.tsx / EdexcelPage.tsx / CaiePage.tsx / AqaPage.tsx / OcrPage.tsx
+  hooks/
+    usePlanner.ts            # 刷题规划核心调度逻辑
+  utils/
+    gradeCalculation.ts      # UMS / 等级计算
+    shareCode.ts             # 分享链接生成与解析
+  components/
+    ui/                      # shadcn/ui 组件
+    BoardPage.tsx            # GCSE 分数线页面模板
+    ALevelBoardPage.tsx      # A-Level 分数线页面模板
+    DataTable.tsx            # 数据表格（筛选、排序、分页）
+    GradeChart.tsx           # 分数线趋势图
+    Header.tsx / Footer.tsx
+```
+
+---
+
+## 构建与部署
+
+```bash
+cd grademaster
+npm run build
+# 输出目录：dist/
+# 将 dist/ 文件夹部署到任意静态网站托管服务即可
+```
+
+---
+
+## 已知问题
+
+- 7 个 shadcn/ui 组件 Fast Refresh lint 警告（`badge`, `button-group`, `button`, `form`, `navigation-menu`, `sidebar`, `toggle`），不影响功能，后续计划修复
+- Edexcel IGCSE 目前只有 Grade Statistics 数据，Grade Boundaries 数据待补充
+
+---
+
+## 版权声明
+
+分数线数据来源于各考试局官方（CAIE、Pearson Edexcel、AQA、OCR、WJEC），仅供学习参考。版权归 respective owners 所有。
+
+Created by Leo Liu.
