@@ -26,6 +26,7 @@ export interface PaperResult extends PaperInput {
   normalizedScore: number;  // PUM (0-100) or UMS or GNS
   scoreType: "PUM" | "UMS" | "GNS" | "RAW";
   asA2Tag?: "AS" | "A2";
+  syllabusVersion?: string;
 }
 
 export interface AStarCheck {
@@ -48,6 +49,9 @@ export interface CalculationOutput {
   precision: PrecisionRating;
   completenessWarning?: string;
   nextGradeGap: number | null;
+  avgPum?: number;            // CAIE: average PUM across papers
+  totalScore: number;         // sum of raw scores
+  maxTotal: number;           // sum of max marks
 }
 
 export interface GradeBoundaryResult {
@@ -841,28 +845,48 @@ export interface CalcOptions {
   papers: PaperInput[];
   useWeighting: boolean;
   targetGradeScale: string;
+  /** Optional callback to check paper selection completeness */
+  completenessCheck?: (boardKey: string, subjectCode: string, selectedComponents: string[]) => string | undefined;
 }
 
 /**
  * Main entry point: run full grade calculation.
  */
 export function runGradeCalculation(options: CalcOptions): CalculationOutput {
-  const { boardKey, subjectCode, papers, useWeighting } = options;
+  const { boardKey, subjectCode, papers, useWeighting, completenessCheck } = options;
+
+  if (papers.length === 0) {
+    return {
+      papers: [], totalNormalized: 0, maxNormalized: 0, percentage: 0,
+      predictedGrade: "U", gradeResults: [], aStarCheck: null,
+      precision: { stars: "★★★★★", level: "最高", description: "精度无法评估" },
+      nextGradeGap: null, totalScore: 0, maxTotal: 0,
+    };
+  }
+
+  const isCAIE = boardKey.startsWith("CAIE");
+  const isAL = boardKey.includes("AL");
 
   // Step 1: Calculate normalized scores per paper
+  let totalScore = 0;
+  let maxTotal = 0;
+
   const results: PaperResult[] = papers.map(p => {
     const percentage = p.maxMark > 0 ? (p.score / p.maxMark) * 100 : 0;
     let normalizedScore: number;
     let scoreType: PaperResult["scoreType"];
 
-    if (boardKey.startsWith("CAIE")) {
-      const hasAStar = !boardKey.includes("AL");
+    totalScore += p.score;
+    maxTotal += p.maxMark;
+
+    if (isCAIE) {
+      const hasAStar = !isAL;
       normalizedScore = calculateCAIEPUM(p.score, p.maxMark, p.boundaries, hasAStar);
       scoreType = "PUM";
-    } else if (boardKey.includes("AL")) {
+    } else if (isAL) {
       normalizedScore = calculateUMS(p.score, p.maxMark, p.boundaries);
       scoreType = "UMS";
-    } else if (boardKey.includes("GCSE") && !boardKey.includes("CAIE")) {
+    } else if (boardKey.includes("GCSE") && !isCAIE) {
       normalizedScore = calculateGNS(p.score, p.maxMark, p.boundaries);
       scoreType = "GNS";
     } else {
@@ -871,6 +895,7 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
     }
 
     const asA2Tag = getASA2Tag(boardKey, subjectCode, p.component);
+    const syllabusVersion = detectSyllabusVersion(boardKey, subjectCode, p.component, p.series);
 
     return {
       ...p,
@@ -878,6 +903,7 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
       normalizedScore: Math.round(normalizedScore * 10) / 10,
       scoreType,
       asA2Tag,
+      syllabusVersion,
     };
   });
 
@@ -897,7 +923,7 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
     }
     totalNormalized = totalWeight > 0 ? totalWeighted / totalWeight : 0;
     maxNormalized = 100;
-  } else if (boardKey.includes("AL") && !boardKey.startsWith("CAIE")) {
+  } else if (isAL && !isCAIE) {
     // UMS: sum of all units
     totalNormalized = results.reduce((s, r) => s + r.normalizedScore, 0);
     maxNormalized = results.length * 100;
@@ -914,7 +940,7 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
 
   // Step 3: Grade mapping
   // For non-CAIE A-Level, use normalized percentage (0-100) instead of raw UMS sum
-  const gradeInput = (boardKey.includes("AL") && !boardKey.startsWith("CAIE"))
+  const gradeInput = (isAL && !isCAIE)
     ? percentage
     : totalNormalized;
   const { predictedGrade, gradeResults, nextGradeGap } = mapGrade(
@@ -923,25 +949,45 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
   );
 
   // Step 4: A* check
-  const aStarCheck = boardKey.includes("AL")
+  const aStarCheck = isAL
     ? checkAStar({ boardKey, subjectCode, papers: results, totalNormalized })
     : null;
 
+  // Override predicted grade with A* if eligible
+  const finalPredictedGrade = aStarCheck?.eligible ? "A*" : predictedGrade;
+
   // Step 5: Precision
   const precision = calculatePrecision(
-    results.map(r => ({ series: r.series, syllabusVersion: undefined }))
+    results.map(r => ({ series: r.series, syllabusVersion: r.syllabusVersion }))
   );
+
+  // Step 6: Extra metrics
+  const pumValues = results
+    .filter(r => r.scoreType === "PUM")
+    .map(r => r.normalizedScore);
+  const avgPum = pumValues.length > 0
+    ? Math.round((pumValues.reduce((a, b) => a + b, 0) / pumValues.length) * 10) / 10
+    : undefined;
+
+  // Step 7: Completeness check
+  const completenessWarning = completenessCheck
+    ? completenessCheck(boardKey, subjectCode, papers.map(p => p.component))
+    : undefined;
 
   return {
     papers: results,
     totalNormalized,
     maxNormalized,
     percentage,
-    predictedGrade,
+    predictedGrade: finalPredictedGrade,
     gradeResults,
     aStarCheck,
     precision,
     nextGradeGap,
+    avgPum,
+    totalScore: Math.round(totalScore * 10) / 10,
+    maxTotal,
+    completenessWarning,
   };
 }
 

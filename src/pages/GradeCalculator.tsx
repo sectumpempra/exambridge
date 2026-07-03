@@ -16,9 +16,7 @@ import {
 import { CATEGORY_NAMES, type SubjectCategory } from "../data/examDates";
 import { groupPapers, normalizeComponentDisplay } from "../utils/paperGroups";
 import {
-  calculateCAIEPUM, calculateUMS, calculateGNS,
-  checkAStar, getASA2Tag, calculatePrecision,
-  detectSyllabusVersion, getPaperWeight,
+  runGradeCalculation,
   type PrecisionRating, type AStarCheck,
 } from "../utils/gradeCalculation";
 
@@ -230,166 +228,48 @@ export default function GradeCalculator() {
     const selectedPapers = paperConfigs.filter(p => p.selected);
     if (selectedPapers.length === 0) return;
 
-    // Determine which calculation system to use
-    const isCAIE = selectedBoard.startsWith("CAIE");
     const isAL = selectedBoard.includes("AL");
-    const isGCSE91 = !isCAIE && !isAL && selectedBoard.includes("GCSE"); // Edexcel/OCR/AQA GCSE 9-1
+    const isCAIE = selectedBoard.startsWith("CAIE");
 
-    const papers: PaperResult[] = [];
-    let totalScore = 0;
-    let maxTotal = 0;
-
-    // Calculate normalized score per paper using the precise engine
-    for (const p of selectedPapers) {
-      const score = parseFloat(p.score) || 0;
+    // Build PaperInput[] for the engine
+    const engineInputs = selectedPapers.map(p => {
       const record = getRecord(selectedBoard, selectedCode, p.component, p.series);
       const maxMark = getMaxMark(record, meta);
       const boundaries = record ? getBoundaries(record, meta) : {};
-      totalScore += score;
-      maxTotal += maxMark;
-      const percentage = maxMark > 0 ? (score / maxMark) * 100 : 0;
+      return {
+        component: p.component,
+        label: p.label,
+        score: parseFloat(p.score) || 0,
+        maxMark,
+        series: p.series,
+        boundaries,
+      };
+    });
 
-      // Use the precise calculation engine
-      let normalizedScore: number;
-      let scoreType: "PUM" | "UMS" | "GNS" | "RAW";
+    // Call the unified calculation engine
+    const engineResult = runGradeCalculation({
+      boardKey: selectedBoard,
+      subjectCode: selectedCode,
+      papers: engineInputs,
+      useWeighting: true,
+      targetGradeScale: gradeConfig.labels.join("/"),
+      completenessCheck: getCompletenessWarning,
+    });
 
-      if (isCAIE) {
-        // CAIE uses PUM (A*-G for GCSE, A-E for AL at component level)
-        const hasAStar = !isAL; // IGCSE has A* at component; AL doesn't
-        normalizedScore = calculateCAIEPUM(score, maxMark, boundaries, hasAStar);
-        scoreType = "PUM";
-      } else if (isAL) {
-        // Edexcel/AQA/OCR A-Level use UMS
-        normalizedScore = calculateUMS(score, maxMark, boundaries);
-        scoreType = "UMS";
-      } else if (isGCSE91) {
-        // 9-1 GCSE uses GNS
-        normalizedScore = calculateGNS(score, maxMark, boundaries);
-        scoreType = "GNS";
-      } else {
-        normalizedScore = percentage;
-        scoreType = "RAW";
-      }
-
-      // AS/A2 tag
-      const asA2Tag = isAL ? getASA2Tag(selectedBoard, selectedCode, p.component) : undefined;
-
-      // Detect syllabus version
-      const syllabusVersion = detectSyllabusVersion(selectedBoard, selectedCode, p.component, p.series);
-
-      papers.push({
-        component: p.component, label: p.label, score,
-        maxMark, series: p.series, percentage,
-        pum: isCAIE ? Math.round(normalizedScore * 10) / 10 : undefined,
-        normalizedScore: Math.round(normalizedScore * 10) / 10,
-        scoreType,
-        asA2Tag,
-        syllabusVersion,
-      });
-    }
-
-    const percentage = maxTotal > 0 ? (totalScore / maxTotal) * 100 : 0;
-
-    // Check paper completeness
-    const selectedComponents = selectedPapers.map(p => p.component);
-    const completenessWarning = getCompletenessWarning(selectedBoard, selectedCode, selectedComponents);
-
-    // ── Normalized aggregation ──
-    let totalNormalized = 0;
-    let maxNormalized = 0;
-
-    if (isCAIE && isAL) {
-      // CAIE A-Level: apply official weighting factors
-      let totalWeighted = 0;
-      let totalWeight = 0;
-      for (const p of papers) {
-        const w = getPaperWeight(selectedBoard, selectedCode, p.component);
-        const effectiveWeight = w > 0 ? w : 1;
-        totalWeighted += (p.normalizedScore || 0) * effectiveWeight;
-        totalWeight += effectiveWeight;
-      }
-      totalNormalized = totalWeight > 0 ? totalWeighted / totalWeight : 0;
-      maxNormalized = 100;
-    } else if (isAL && !isCAIE) {
-      // UMS: sum of all units
-      totalNormalized = papers.reduce((s, p) => s + (p.normalizedScore || 0), 0);
-      maxNormalized = papers.length * 100;
-    } else {
-      // PUM/GNS: average across papers
-      totalNormalized = papers.reduce((s, p) => s + (p.normalizedScore || 0), 0) / papers.length;
-      maxNormalized = 100;
-    }
-
-    totalNormalized = Math.round(totalNormalized * 10) / 10;
-
-    // ── Grade mapping using normalized score ──
-    const gradeResults: GradeBoundaryResult[] = [];
-    let predictedGrade = "U";
-    let nextGradeGap: number | null = null;
-
-    if (isCAIE && !isAL) {
-      // CAIE GCSE: A*-G
-      const scale = [
-        { label: "A*", threshold: 90 }, { label: "A", threshold: 80 },
-        { label: "B", threshold: 70 }, { label: "C", threshold: 60 },
-        { label: "D", threshold: 50 }, { label: "E", threshold: 40 },
-        { label: "F", threshold: 30 }, { label: "G", threshold: 20 },
-      ];
-      for (const g of scale) {
-        gradeResults.push({ gradeLabel: g.label, fieldKey: g.label.toLowerCase().replace("*", "_star"), requiredTotal: g.threshold, achieved: totalNormalized >= g.threshold, gap: Math.round((totalNormalized - g.threshold) * 10) / 10 });
-      }
-      for (const g of scale) {
-        if (totalNormalized >= g.threshold) { predictedGrade = g.label; break; }
-      }
-      const next = [...scale].reverse().find(g => totalNormalized < g.threshold);
-      nextGradeGap = next ? Math.max(0, Math.ceil(next.threshold - totalNormalized)) : null;
-    } else if (isAL) {
-      // A-Level: A*-E (using normalized PUM/UMS)
-      // For UMS-based boards (non-CAIE), convert total UMS to percentage
-      const comparisonScore = (isAL && !isCAIE)
-        ? Math.round((totalNormalized / maxNormalized) * 100 * 10) / 10
-        : totalNormalized;
-      const scale = [
-        { label: "A*", threshold: 90 }, { label: "A", threshold: 80 },
-        { label: "B", threshold: 70 }, { label: "C", threshold: 60 },
-        { label: "D", threshold: 50 }, { label: "E", threshold: 40 },
-      ];
-      for (const g of scale) {
-        gradeResults.push({ gradeLabel: g.label, fieldKey: g.label.toLowerCase().replace("*", "_star"), requiredTotal: g.threshold, achieved: comparisonScore >= g.threshold, gap: Math.round((comparisonScore - g.threshold) * 10) / 10 });
-      }
-      for (const g of scale) {
-        if (comparisonScore >= g.threshold) { predictedGrade = g.label; break; }
-      }
-      const next = [...scale].reverse().find(g => comparisonScore < g.threshold);
-      nextGradeGap = next ? Math.max(0, Math.ceil(next.threshold - comparisonScore)) : null;
-    } else {
-      // 9-1 GCSE — 以下为近似参考阈值，实际 grade boundaries 每年浮动
-      // 建议查阅官方 PDF 获取精确合分标准
-      const scale = [
-        { label: "9", threshold: 90 }, { label: "8", threshold: 80 },
-        { label: "7", threshold: 70 }, { label: "6", threshold: 60 },
-        { label: "5", threshold: 50 }, { label: "4", threshold: 40 },
-        { label: "3", threshold: 30 }, { label: "2", threshold: 20 },
-        { label: "1", threshold: 10 },
-      ];
-      for (const g of scale) {
-        gradeResults.push({ gradeLabel: g.label, fieldKey: `grade${g.label}`, requiredTotal: g.threshold, achieved: totalNormalized >= g.threshold, gap: Math.round((totalNormalized - g.threshold) * 10) / 10 });
-      }
-      for (const g of scale) {
-        if (totalNormalized >= g.threshold) { predictedGrade = g.label; break; }
-      }
-      const next = [...scale].reverse().find(g => totalNormalized < g.threshold);
-      nextGradeGap = next ? Math.max(0, Math.ceil(next.threshold - totalNormalized)) : null;
-    }
-
-    // Also add raw-score based grade boundaries as reference (legacy method)
+    // Compute raw-score based grade boundaries as reference (UI-specific enhancement)
     const gradeFields = getGradeFields(selectedBoard);
-    const rawResults: { gf: typeof gradeFields[0]; requiredTotal: number; achieved: boolean; gap: number; hasData: boolean }[] = [];
+    const rawScoreRef = selectedPapers.map(p => {
+      const record = getRecord(selectedBoard, selectedCode, p.component, p.series);
+      return { record, score: parseFloat(p.score) || 0 };
+    });
+    const totalScore = engineResult.totalScore;
+
+    // Build raw-score grade results for display
+    const rawGradeResults: GradeBoundaryResult[] = [];
     for (const gf of gradeFields) {
       let requiredTotal = 0;
       let hasData = true;
-      for (const p of selectedPapers) {
-        const record = getRecord(selectedBoard, selectedCode, p.component, p.series);
+      for (const { record } of rawScoreRef) {
         if (!record) { hasData = false; break; }
         const boundaries = getBoundaries(record, meta);
         const val = boundaries[gf.fieldKey];
@@ -398,44 +278,49 @@ export default function GradeCalculator() {
       }
       if (hasData && requiredTotal > 0) {
         const gap = totalScore - requiredTotal;
-        const achieved = totalScore >= requiredTotal;
-        rawResults.push({ gf, requiredTotal: Math.round(requiredTotal), achieved, gap: Math.round(gap * 10) / 10, hasData: true });
-      } else {
-        rawResults.push({ gf, requiredTotal: 0, achieved: false, gap: 0, hasData: false });
+        rawGradeResults.push({
+          gradeLabel: gf.label,
+          fieldKey: gf.fieldKey,
+          requiredTotal: Math.round(requiredTotal),
+          achieved: totalScore >= requiredTotal,
+          gap: Math.round(gap * 10) / 10,
+        });
       }
     }
 
-    // A* check (only for A-Level)
-    const aStarCheck = isAL ? checkAStar({
-      boardKey: selectedBoard,
-      subjectCode: selectedCode,
-      papers: papers.map(p => ({
-        ...p,
-        normalizedScore: p.normalizedScore,
-        asA2Tag: p.asA2Tag,
-      })),
-      totalNormalized,
-    }) : null;
-
-    // Override predicted grade with A* if eligible
-    if (aStarCheck?.eligible) {
-      predictedGrade = "A*";
-    }
-
-    // Precision assessment
-    const precision = calculatePrecision(papers.map(p => ({ series: p.series, syllabusVersion: p.syllabusVersion })));
-
-    // Calculate average PUM for CAIE
-    const pumValues = papers.map(p => p.pum).filter((v): v is number => v !== undefined);
-    const avgPum = pumValues.length > 0 ? Math.round((pumValues.reduce((a, b) => a + b, 0) / pumValues.length) * 10) / 10 : undefined;
-
+    // Merge engine results into UI result type
     setResult({
-      totalScore: Math.round(totalScore * 10) / 10, maxTotal,
-      percentage: Math.round(percentage * 10) / 10,
-      predictedGrade, gradeResults, papers, nextGradeGap,
-      completenessWarning, avgPum,
-      aStarCheck, precision,
-      totalNormalized, maxNormalized,
+      totalScore: engineResult.totalScore,
+      maxTotal: engineResult.maxTotal,
+      percentage: engineResult.percentage,
+      predictedGrade: engineResult.predictedGrade,
+      gradeResults: engineResult.gradeResults.map(gr => ({
+        gradeLabel: gr.gradeLabel,
+        fieldKey: gr.gradeLabel.toLowerCase().replace("*", "_star"),
+        requiredTotal: gr.requiredTotal,
+        achieved: gr.achieved,
+        gap: gr.gap,
+      })),
+      papers: engineResult.papers.map(p => ({
+        component: p.component,
+        label: p.label,
+        score: p.score,
+        maxMark: p.maxMark,
+        series: p.series,
+        percentage: p.percentage,
+        pum: p.scoreType === "PUM" ? p.normalizedScore : undefined,
+        normalizedScore: p.normalizedScore,
+        scoreType: p.scoreType,
+        asA2Tag: p.asA2Tag,
+        syllabusVersion: p.syllabusVersion,
+      })),
+      nextGradeGap: engineResult.nextGradeGap,
+      completenessWarning: engineResult.completenessWarning,
+      avgPum: engineResult.avgPum,
+      aStarCheck: engineResult.aStarCheck,
+      precision: engineResult.precision,
+      totalNormalized: engineResult.totalNormalized,
+      maxNormalized: engineResult.maxNormalized,
       useUMS: isAL && !isCAIE,
     });
   }, [validateInputs, meta, selectedCode, gradeConfig, paperConfigs, selectedBoard]);
