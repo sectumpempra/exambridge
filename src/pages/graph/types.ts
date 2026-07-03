@@ -48,4 +48,5 @@ export interface PresetFunction {
   mode: FunctionMode;
   domainMin: string;
   domainMax: string;
+  category?: string;
 }

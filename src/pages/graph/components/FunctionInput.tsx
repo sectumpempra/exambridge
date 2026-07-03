@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { Eye, EyeOff, Trash2, Pencil, GitBranch } from 'lucide-react';
+import { Pencil, GitBranch } from 'lucide-react';
 import type { FunctionEntry } from '../types';
 import { extractParams, compileExpression, convertNumbersToParams, convertNumbersWithExisting } from '../lib/graphRenderer';
 import { domainVariable } from '../lib/displayUtils';
@@ -32,13 +32,10 @@ function normalizeTrailingConstant(expr: string): { expr: string; defaultValue?:
   return { expr };
 }
 
-export default function FunctionInput({ entry, index, onUpdate, onRemove }: FunctionInputProps) {
+export default function FunctionInput({ entry, index: _index, onUpdate, onRemove: _onRemove }: FunctionInputProps) {
   const [editingExpr, setEditingExpr] = useState(!entry.expression.trim());
   const [exprInput, setExprInput] = useState(entry.expression);
   const [error, setError] = useState('');
-
-  // Controlled sync: when expression changes externally, reset editing state
-  // Parent passes key={entry.id} to force remount on preset click
 
   const validateAndUpdate = useCallback((newExpr: string) => {
     setExprInput(newExpr);
@@ -48,7 +45,6 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
       let finalExpr = newExpr;
       let trailingDDefault: number | undefined;
 
-      // Check for trailing +number/-number and convert to +d (vertical shift)
       const normalized = normalizeTrailingConstant(newExpr);
       if (normalized.expr !== newExpr) {
         finalExpr = normalized.expr;
@@ -59,7 +55,6 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
       if (!compiled) { setError('表达式语法错误'); onUpdate(entry.id, { expression: newExpr }); return; }
 
       let finalParams = { ...entry.params };
-      // If normalizeTrailingConstant introduced d, use the original numeric value
       if (trailingDDefault !== undefined) {
         finalParams = { ...finalParams, d: trailingDDefault };
       }
@@ -67,26 +62,21 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
       const extractedParams = extractParams(finalExpr);
 
       if (extractedParams.length === 0) {
-        // No letter params at all: convert all numbers to params
         const converted = convertNumbersToParams(finalExpr);
         if (converted) {
           finalExpr = converted.expression;
           finalParams = converted.params;
-          // Preserve trailing d default if it was set
           if (trailingDDefault !== undefined) {
             finalParams = { ...finalParams, d: trailingDDefault };
           }
         } else {
-          // No params and no numbers to convert: clear old params (except d if set)
           finalParams = trailingDDefault !== undefined ? { d: trailingDDefault } : {};
         }
       } else {
-        // Has some letter params: keep them AND convert remaining numbers
         const mergedParams: Record<string, number> = {};
         for (const p of extractedParams) {
           mergedParams[p] = finalParams[p] ?? entry.params[p] ?? (p === 'd' ? 0 : 1);
         }
-        // Also convert standalone numbers to additional params
         const converted = convertNumbersWithExisting(finalExpr, extractedParams);
         if (converted) {
           finalExpr = converted.expression;
@@ -125,7 +115,7 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
     });
   }, [entry.id, entry.paramRanges, onUpdate]);
 
-  // Fixed order: a, b, c, d — always consistent regardless of expression
+  // Fixed order: a, b, c, d
   const ORDER = ['a', 'b', 'c', 'd'];
   const paramNames = Object.keys(entry.params).sort((a, b) => {
     const idxA = ORDER.indexOf(a);
@@ -139,10 +129,11 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
   const varLabel = domainVariable(entry.mode);
 
   return (
-    <div className="border border-[#e5e5e5] bg-white">
-      <div className="flex items-center gap-2 px-3 py-2 border-b border-[#e5e5e5]">
+    <div>
+      {/* Color picker + expression */}
+      <div className="flex items-center gap-2 mb-2">
         <label className="relative cursor-pointer flex-shrink-0">
-          <div className="w-3 h-3" style={{ backgroundColor: entry.color }} />
+          <div className="w-3 h-3 rounded-full" style={{ backgroundColor: entry.color }} />
           <input
             type="color"
             value={entry.color}
@@ -151,72 +142,57 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
             title="更换颜色"
           />
         </label>
-        <span className="text-xs font-medium text-[#6c6c6c]">函数 {index + 1}</span>
-        {entry.mode === 'polar' && <span className="text-[9px] font-medium text-white bg-[#4f46e5] px-1.5 py-0.5 uppercase tracking-wider">极坐标</span>}
-        <div className="flex-1" />
-        {/* Asymptote toggle — tan, cot, sec, csc, rational, exp, log, inverse trig */}
-        {(entry.expression.includes('tan(') ||
-          entry.expression.includes('cot(') ||
-          entry.expression.includes('sec(') ||
-          entry.expression.includes('csc(') ||
-          entry.expression.includes('atan(') ||
-          entry.expression.includes('asin(') ||
-          entry.expression.includes('acos(') ||
-          entry.expression.includes('/sin(') ||
-          entry.expression.includes('/cos(') ||
-          entry.expression.includes('/tan(') ||
-          entry.expression.includes('/x') ||
-          entry.expression.match(/\/\([^)]*x/) ||
-          entry.expression.match(/\^\s*\(/) ||
-          entry.expression.match(/\d+\^/) ||
-          entry.expression.match(/\be\^/) ||
-          entry.expression.match(/[a-zA-Z]\^x/) ||
-          entry.expression.includes('log(')) && (
-          <button
-            onClick={() => onUpdate(entry.id, { showAsymptotes: !entry.showAsymptotes })}
-            className="p-1 hover:bg-[#f0f0f0] transition-colors"
-            title={entry.showAsymptotes ? '隐藏渐近线' : '显示渐近线'}
-          >
-            <GitBranch className={`w-3.5 h-3.5 ${entry.showAsymptotes ? 'text-[#4f46e5]' : 'text-[#c0c0c0]'}`} />
-          </button>
-        )}
-        <button onClick={() => onUpdate(entry.id, { visible: !entry.visible })} className="p-1 hover:bg-[#f0f0f0] transition-colors">{entry.visible ? <Eye className="w-3.5 h-3.5 text-[#6c6c6c]" /> : <EyeOff className="w-3.5 h-3.5 text-[#c0c0c0]" />}</button>
-        <button onClick={() => onRemove(entry.id)} className="p-1 hover:bg-[#ffeaea] transition-colors" title="删除函数">
-          <Trash2 className="w-3.5 h-3.5 text-[#6c6c6c]" />
-        </button>
-      </div>
-
-      <div className="px-3 py-3">
         {entry.expression.trim() && !editingExpr ? (
-          <div className="flex items-baseline gap-2">
-            <EditableExpression expression={entry.expression} params={entry.params} mode={entry.mode} onParamChange={handleParamChange} />
-            <button onClick={() => setEditingExpr(true)} className="p-1 hover:bg-[#f0f0f0] transition-colors flex-shrink-0" title="编辑表达式"><Pencil className="w-3 h-3 text-[#bbb]" /></button>
+          <div className="flex items-baseline gap-2 flex-1 min-w-0">
+            <div className="flex-1 min-w-0">
+              <EditableExpression expression={entry.expression} params={entry.params} mode={entry.mode} onParamChange={handleParamChange} />
+            </div>
+            <button onClick={() => setEditingExpr(true)} className="p-1 hover:bg-[#f0f0f0] transition-colors flex-shrink-0" title="编辑表达式">
+              <Pencil className="w-3 h-3 text-[#bbb]" />
+            </button>
           </div>
         ) : (
-          <div className="flex items-baseline gap-1">
+          <div className="flex items-baseline gap-1 flex-1">
             <span className="text-sm text-[#6c6c6c] select-none">{entry.mode === 'polar' ? 'r = ' : 'y = '}</span>
-            <input type="text" value={exprInput} onChange={(e) => setExprInput(e.target.value)}
+            <input
+              type="text"
+              value={exprInput}
+              onChange={(e) => setExprInput(e.target.value)}
               onBlur={() => { if (exprInput === entry.expression && entry.expression.trim()) setEditingExpr(false); else validateAndUpdate(exprInput); }}
               onKeyDown={(e) => { if (e.key === 'Enter') validateAndUpdate(exprInput); if (e.key === 'Escape') { setExprInput(entry.expression); if (entry.expression.trim()) setEditingExpr(false); setError(''); } }}
-              autoFocus className="flex-1 bg-transparent text-sm border-b-2 border-[#4f46e5] focus:outline-none px-1 py-0.5 text-black mono-num"
-              placeholder="输入函数式，如 a*sin(x)+c" />
+              autoFocus
+              className="flex-1 bg-transparent text-sm border-b-2 border-[#4f46e5] focus:outline-none px-1 py-0.5 text-black mono-num"
+              placeholder="输入函数式，如 a*sin(x)+c"
+            />
           </div>
         )}
-
-        <div className="flex items-center gap-1.5 mt-2">
-          <input type="text" value={entry.domainMin} onChange={(e) => onUpdate(entry.id, { domainMin: e.target.value })} placeholder="-10"
-            className="w-10 text-[11px] text-center mono-num border-b border-[#ddd] focus:border-black focus:outline-none text-[#6c6c6c] py-0.5" />
-          <span className="text-[11px] text-[#999] select-none">{String.fromCharCode(8804)} {varLabel} {String.fromCharCode(8804)}</span>
-          <input type="text" value={entry.domainMax} onChange={(e) => onUpdate(entry.id, { domainMax: e.target.value })} placeholder="10"
-            className="w-10 text-[11px] text-center mono-num border-b border-[#ddd] focus:border-black focus:outline-none text-[#6c6c6c] py-0.5" />
-          {entry.mode === 'polar' && <span className="text-[10px] text-[#bbb]">默认 0 ~ 4π</span>}
-        </div>
-
-        {error && <div className="mt-1.5 text-xs text-red-600">{error}</div>}
       </div>
 
+      {/* Domain inputs */}
+      <div className="flex items-center gap-1.5 mb-2">
+        <input
+          type="text"
+          value={entry.domainMin}
+          onChange={(e) => onUpdate(entry.id, { domainMin: e.target.value })}
+          placeholder="-10"
+          className="w-10 text-[11px] text-center mono-num border-b border-[#ddd] focus:border-black focus:outline-none text-[#6c6c6c] py-0.5"
+        />
+        <span className="text-[11px] text-[#999] select-none">{String.fromCharCode(8804)} {varLabel} {String.fromCharCode(8804)}</span>
+        <input
+          type="text"
+          value={entry.domainMax}
+          onChange={(e) => onUpdate(entry.id, { domainMax: e.target.value })}
+          placeholder="10"
+          className="w-10 text-[11px] text-center mono-num border-b border-[#ddd] focus:border-black focus:outline-none text-[#6c6c6c] py-0.5"
+        />
+        {entry.mode === 'polar' && <span className="text-[10px] text-[#bbb]">默认 0 ~ 4π</span>}
+      </div>
+
+      {error && <div className="mb-2 text-xs text-red-600">{error}</div>}
+
+      {/* Param sliders */}
       {hasParams && (
-        <div className="px-3 pb-2 border-t border-[#f0f0f0]">
+        <div className="border-t border-[#f0f0f0] pt-2">
           {paramNames.map((name) => {
             const range = entry.paramRanges[name] || { min: -10, max: 10, step: 0.1 };
             return (
@@ -224,6 +200,36 @@ export default function FunctionInput({ entry, index, onUpdate, onRemove }: Func
                 onRangeChange={handleParamRangeChange} min={range.min} max={range.max} step={range.step} />
             );
           })}
+        </div>
+      )}
+
+      {/* Asymptote toggle */}
+      {(entry.expression.includes('tan(') ||
+        entry.expression.includes('cot(') ||
+        entry.expression.includes('sec(') ||
+        entry.expression.includes('csc(') ||
+        entry.expression.includes('atan(') ||
+        entry.expression.includes('asin(') ||
+        entry.expression.includes('acos(') ||
+        entry.expression.includes('/sin(') ||
+        entry.expression.includes('/cos(') ||
+        entry.expression.includes('/tan(') ||
+        entry.expression.includes('/x') ||
+        entry.expression.match(/\/\([^)]*x/) ||
+        entry.expression.match(/\^\s*\(/) ||
+        entry.expression.match(/\d+\^/) ||
+        entry.expression.match(/\be\^/) ||
+        entry.expression.match(/[a-zA-Z]\^x/) ||
+        entry.expression.includes('log(')) && (
+        <div className="mt-1">
+          <button
+            onClick={() => onUpdate(entry.id, { showAsymptotes: !entry.showAsymptotes })}
+            className="flex items-center gap-1 text-[10px] text-[#6c6c6c] hover:text-[#4f46e5] transition-colors"
+            title={entry.showAsymptotes ? '隐藏渐近线' : '显示渐近线'}
+          >
+            <GitBranch className={`w-3 h-3 ${entry.showAsymptotes ? 'text-[#4f46e5]' : 'text-[#c0c0c0]'}`} />
+            {entry.showAsymptotes ? '渐近线：显示' : '渐近线：隐藏'}
+          </button>
         </div>
       )}
     </div>

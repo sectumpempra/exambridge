@@ -205,9 +205,10 @@ function ExamBoardCard({ board }: { board: (typeof EXAM_BOARDS)[0] }) {
           opacity: isHovered ? 1 : 0,
           overflow: "hidden",
           transition: "max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease 0.1s",
+          pointerEvents: isHovered ? "auto" : "none",
         }}
       >
-        <div style={{ borderTop: "1px solid #E8E4DE", paddingTop: 12, marginTop: 6 }}>
+        <div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 12 }}>
             <div>
               <div style={{ fontSize: 18, fontWeight: 700, color: board.color }}>{board.subjects}+</div>
