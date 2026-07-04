@@ -16,6 +16,7 @@ import { NAV_LINKS } from "@/data/navLinks";
 
 // Add personality link for Home page only
 const HOME_NAV_LINKS = [...NAV_LINKS, { label: "人格测试", to: "/personality" }];
+// navLinks already includes "考纲对比" from NAV_LINKS
 
 /* ═══════════════════════════════════════════════════════════
    EXAM BOARDS (teacher perspective, features trimmed to 2)

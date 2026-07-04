@@ -1,0 +1,4902 @@
+{
+  "treeId": "math-alevel-fm",
+  "treeName": "A-Level Further Mathematics Knowledge Tree",
+  "version": "2.0.0",
+  "phase": "phase-2",
+  "description": "Complete A-Level Further Mathematics covering Pure, Statistics, Mechanics, and Decision Math (622 nodes)",
+  "metadata": {
+    "totalNodes": 622,
+    "leafNodes": 468,
+    "topModules": 102,
+    "maxDepth": 3,
+    "domains": [
+      "Further Pure Mathematics",
+      "Further Statistics",
+      "Further Mechanics",
+      "Decision Mathematics",
+      "Legacy",
+      "EDX-IAL",
+      "EDX-GCE"
+    ],
+    "subdomains": {
+      "Further Pure": 13,
+      "Further Statistics": 17,
+      "Further Mechanics": 10,
+      "Decision Math": 7,
+      "Legacy": 3,
+      "EDX-IAL": 47,
+      "EDX-GCE": 5
+    },
+    "createdBy": "agent-cluster",
+    "createdAt": "2026-07-04"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "name": "Domain",
+      "description": "大领域"
+    },
+    {
+      "level": 2,
+      "name": "Area",
+      "description": "子领域"
+    },
+    {
+      "level": 3,
+      "name": "Topic",
+      "description": "知识点"
+    },
+    {
+      "level": 4,
+      "name": "Skill",
+      "description": "细分技能"
+    }
+  ],
+  "tree": {
+    "nodeId": "ROOT-0001",
+    "nodeType": "root",
+    "name": "高数A-level知识点树",
+    "level": 0,
+    "domain": "Root",
+    "description": "A-Level Further Mathematics Knowledge Tree",
+    "children": [
+      {
+        "nodeId": "FPURE-0001",
+        "nodeType": "domain",
+        "name": "纯数-Algebra",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0002",
+            "nodeType": "area",
+            "name": "roots of polynomial equations",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0003",
+                "nodeType": "topic",
+                "name": "relations between roots and coefficient (degree 2)",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0004",
+                "nodeType": "topic",
+                "name": "relations between roots and coefficient (degree 3 4)",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0005",
+                "nodeType": "topic",
+                "name": "use substitution to obtain an equation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0006",
+            "nodeType": "area",
+            "name": "summation of series",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0007",
+                "nodeType": "topic",
+                "name": "use standard results for sigma r, r?, r?",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0008",
+                "nodeType": "topic",
+                "name": "method of difference",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0009",
+                "nodeType": "topic",
+                "name": "sum to infinity",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0010",
+            "nodeType": "area",
+            "name": "inequality",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0011",
+                "nodeType": "topic",
+                "name": "solve inequality (fraction)",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0012",
+                "nodeType": "topic",
+                "name": "solve inequality (modulus)",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0013",
+            "nodeType": "area",
+            "name": "coordinate geometry",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0014",
+                "nodeType": "topic",
+                "name": "simple loci involving distances from points",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0015",
+                "nodeType": "topic",
+                "name": "simple loci involving distances from x=a or y=b",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0016",
+            "nodeType": "area",
+            "name": "limits",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0017",
+                "nodeType": "topic",
+                "name": "use series expansion to find limits",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0018",
+            "nodeType": "area",
+            "name": "rational functions and graph",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0019",
+                "nodeType": "topic",
+                "name": "sketch graphs with oblique asymptotes",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0020",
+                "nodeType": "topic",
+                "name": "relationship between f(x) and 1/f(x)",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0021",
+                "nodeType": "topic",
+                "name": "relationship between f(x) and |f(x)|",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0022",
+                "nodeType": "topic",
+                "name": "relationship between f(x) and f(|x|)",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0023",
+        "nodeType": "domain",
+        "name": "纯数-Matrices",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0024",
+            "nodeType": "area",
+            "name": "basic",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0025",
+                "nodeType": "topic",
+                "name": "＋ － ×",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0026",
+                "nodeType": "topic",
+                "name": "zero matrix",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0027",
+                "nodeType": "topic",
+                "name": "identity matrix",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0028",
+                "nodeType": "topic",
+                "name": "2x2 determinant",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0029",
+                "nodeType": "topic",
+                "name": "3x3 determinant",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0030",
+                "nodeType": "topic",
+                "name": "2x2 inverse",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0031",
+                "nodeType": "topic",
+                "name": "3x3 inverse",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0032",
+                "nodeType": "topic",
+                "name": "(AB)-1=B-1A-1",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0033",
+                "nodeType": "topic",
+                "name": "transpose",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0034",
+            "nodeType": "area",
+            "name": "transformation",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0035",
+                "nodeType": "topic",
+                "name": "linear transformation and matrix representation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0036",
+                "nodeType": "topic",
+                "name": "geometrical transformation rotation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0037",
+                "nodeType": "topic",
+                "name": "geometrical transformation reflection",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0038",
+                "nodeType": "topic",
+                "name": "geometrical transformation enlargement",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0039",
+                "nodeType": "topic",
+                "name": "geometrical transformation stretch",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0040",
+                "nodeType": "topic",
+                "name": "geometrical transformation shear",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0041",
+                "nodeType": "topic",
+                "name": "combination of transformation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0042",
+                "nodeType": "topic",
+                "name": "AB means do B first then A",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0043",
+                "nodeType": "topic",
+                "name": "relationship between area scale factor and determinant",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0044",
+                "nodeType": "topic",
+                "name": "the inverse of a given transformation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0045",
+                "nodeType": "topic",
+                "name": "invariant point/line",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0046",
+                "nodeType": "topic",
+                "name": "3D transformation reflection and rotation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0047",
+            "nodeType": "area",
+            "name": "eigenvalue and eigenvector",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0048",
+                "nodeType": "topic",
+                "name": "characteristic equation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0049",
+                "nodeType": "topic",
+                "name": "find eigenvalue and eigenvector",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0050",
+                "nodeType": "topic",
+                "name": "reduction of symmetric matrices to diagonal form (PTAP)",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0051",
+                "nodeType": "topic",
+                "name": "express a square matrix in form QDQ-1",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0052",
+            "nodeType": "area",
+            "name": "application",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0053",
+                "nodeType": "topic",
+                "name": "use matrix to solve 3 linear simultaneous equations",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0054",
+                "nodeType": "topic",
+                "name": "failure of solution of 3 simultaneous linear equation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0055",
+        "nodeType": "domain",
+        "name": "纯数-Proof",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0056",
+            "nodeType": "area",
+            "name": "induction",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0057",
+                "nodeType": "topic",
+                "name": "summation of series",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0058",
+                "nodeType": "topic",
+                "name": "divisibility",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0059",
+                "nodeType": "topic",
+                "name": "recurrence relation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0060",
+                "nodeType": "topic",
+                "name": "matrix product",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0061",
+                "nodeType": "topic",
+                "name": "others",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0062",
+        "nodeType": "domain",
+        "name": "纯数-Coordinate systems",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0063",
+            "nodeType": "area",
+            "name": "parabola",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0064",
+                "nodeType": "topic",
+                "name": "cartesian equation and parametric equation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0065",
+                "nodeType": "topic",
+                "name": "graphs",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0066",
+                "nodeType": "topic",
+                "name": "focus and directrix",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0067",
+                "nodeType": "topic",
+                "name": "tangent and normal",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0068",
+            "nodeType": "area",
+            "name": "rectangular hyperbola",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0069",
+                "nodeType": "topic",
+                "name": "cartesian equation and parametric equation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0070",
+                "nodeType": "topic",
+                "name": "graphs",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0071",
+                "nodeType": "topic",
+                "name": "tangent and normal",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0072",
+            "nodeType": "area",
+            "name": "ellipse and hyperbola",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0073",
+                "nodeType": "topic",
+                "name": "cartesian equation and parametric equation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0074",
+                "nodeType": "topic",
+                "name": "graphs",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0075",
+                "nodeType": "topic",
+                "name": "focus, directrix and eccentricity",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0076",
+                "nodeType": "topic",
+                "name": "tangent and normal",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0077",
+                "nodeType": "topic",
+                "name": "simple loci problem",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0078",
+        "nodeType": "domain",
+        "name": "纯数-Polar coordinates",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0079",
+            "nodeType": "area",
+            "name": "polar",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0080",
+                "nodeType": "topic",
+                "name": "cartesian and polar coordinate",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0081",
+                "nodeType": "topic",
+                "name": "sketch simple polar curve",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0082",
+                "nodeType": "topic",
+                "name": "area of a sector",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0083",
+                "nodeType": "topic",
+                "name": "tangent parallel/perpendicular to x-axis",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0084",
+        "nodeType": "domain",
+        "name": "纯数-Differential equations",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0085",
+            "nodeType": "area",
+            "name": "first order",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0086",
+                "nodeType": "topic",
+                "name": "separation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0087",
+                "nodeType": "topic",
+                "name": "solve dy/dx+Py=Q",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0088",
+                "nodeType": "topic",
+                "name": "substitution",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0089",
+                "nodeType": "topic",
+                "name": "use de modelling in kinematics",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0090",
+            "nodeType": "area",
+            "name": "second order",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0091",
+                "nodeType": "topic",
+                "name": "complementary function",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0092",
+                "nodeType": "topic",
+                "name": "particular integral",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0093",
+                "nodeType": "topic",
+                "name": "boundary condition",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0094",
+                "nodeType": "topic",
+                "name": "substitution",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0095",
+                "nodeType": "topic",
+                "name": "simple harmonic motion",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0096",
+                "nodeType": "topic",
+                "name": "model damped oscillations",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0097",
+        "nodeType": "domain",
+        "name": "纯数-Maclaurin and taylor series",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0098",
+            "nodeType": "area",
+            "name": "maclaurin",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0099",
+                "nodeType": "topic",
+                "name": "3rd and higher order derivative",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0100",
+                "nodeType": "topic",
+                "name": "maclaurin series",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0101",
+            "nodeType": "area",
+            "name": "taylor series",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0102",
+                "nodeType": "topic",
+                "name": "taylor series",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0103",
+                "nodeType": "topic",
+                "name": "use taylor series to solve differential equation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0104",
+        "nodeType": "domain",
+        "name": "纯数-Vector",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0105",
+            "nodeType": "area",
+            "name": "vector product",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0106",
+                "nodeType": "topic",
+                "name": "|axb| area",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0107",
+                "nodeType": "topic",
+                "name": "a.bxc volume",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0108",
+                "nodeType": "topic",
+                "name": "axb=|a||b|sincxn",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0109",
+                "nodeType": "topic",
+                "name": "perpendicular",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0110",
+                "nodeType": "topic",
+                "name": "find the angle",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0111",
+            "nodeType": "area",
+            "name": "line",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0112",
+                "nodeType": "topic",
+                "name": "(r-a)xb=0",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0113",
+                "nodeType": "topic",
+                "name": "x-a/b=y-c/d=z-e/f=λ",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0114",
+                "nodeType": "topic",
+                "name": "find (use) the equation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0115",
+                "nodeType": "topic",
+                "name": "relationship between two lines: parallel",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0116",
+                "nodeType": "topic",
+                "name": "relationship between two lines: intersection",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0117",
+                "nodeType": "topic",
+                "name": "relationship between two lines: skew",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0118",
+            "nodeType": "area",
+            "name": "plane",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0119",
+                "nodeType": "topic",
+                "name": "ax+by+cz=d",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0120",
+                "nodeType": "topic",
+                "name": "r.n=p",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0121",
+                "nodeType": "topic",
+                "name": "r=a+λb+μc",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0122",
+            "nodeType": "area",
+            "name": "application",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0123",
+                "nodeType": "topic",
+                "name": "distance from a point to a plane",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0124",
+                "nodeType": "topic",
+                "name": "point intersection of line and plane",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0125",
+                "nodeType": "topic",
+                "name": "line of intersection of two planes",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0126",
+                "nodeType": "topic",
+                "name": "shortest distance between two skew lines",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0127",
+                "nodeType": "topic",
+                "name": "find equation for common perpendicular to 2 skew lines",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0128",
+                "nodeType": "topic",
+                "name": "angle between line and plane",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0129",
+                "nodeType": "topic",
+                "name": "angle between plane and plane",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0130",
+        "nodeType": "domain",
+        "name": "纯数-Hyperbolic function",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0131",
+            "nodeType": "area",
+            "name": "definition",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0132",
+                "nodeType": "topic",
+                "name": "exponential form of 6 hyperbolics",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0133",
+                "nodeType": "topic",
+                "name": "graph of 6 hyperbolics",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0134",
+                "nodeType": "topic",
+                "name": "prove and use identities",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0135",
+                "nodeType": "topic",
+                "name": "inverse hyperbolic functions",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0136",
+                "nodeType": "topic",
+                "name": "logarithmic form of inverse hyperbolic functions",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0137",
+        "nodeType": "domain",
+        "name": "纯数-Differentiation",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0138",
+            "nodeType": "area",
+            "name": "hyperbolic",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0139",
+                "nodeType": "topic",
+                "name": "differentiation of hyperbolic functions",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0140",
+                "nodeType": "topic",
+                "name": "differentiation of inverse trig. functions",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0141",
+                "nodeType": "topic",
+                "name": "differentiation of inverse hyperbolic functions",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0142",
+            "nodeType": "area",
+            "name": "implicit and parametric",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0143",
+                "nodeType": "topic",
+                "name": "find d2y/dx2",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0144",
+        "nodeType": "domain",
+        "name": "纯数-Integration",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0145",
+            "nodeType": "area",
+            "name": "hyperbolic and trigonometric",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0146",
+                "nodeType": "topic",
+                "name": "integration of hyperbolic functions",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0147",
+                "nodeType": "topic",
+                "name": "integration of inverse trigonometric functions",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0148",
+                "nodeType": "topic",
+                "name": "integration of inverse hyperbolic functions",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0149",
+                "nodeType": "topic",
+                "name": "integration using hyperbolic substitution",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0150",
+                "nodeType": "topic",
+                "name": "integration using trigonometric substitution",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0151",
+            "nodeType": "area",
+            "name": "reduction",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0152",
+                "nodeType": "topic",
+                "name": "reduction formula",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0153",
+            "nodeType": "area",
+            "name": "application",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0154",
+                "nodeType": "topic",
+                "name": "arc length cartesian",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0155",
+                "nodeType": "topic",
+                "name": "arc length parametric",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0156",
+                "nodeType": "topic",
+                "name": "arc length polar",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0157",
+                "nodeType": "topic",
+                "name": "surface of revolution cartesian",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0158",
+                "nodeType": "topic",
+                "name": "surface of revolution parametric",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0159",
+                "nodeType": "topic",
+                "name": "mean value of function",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0160",
+                "nodeType": "topic",
+                "name": "estimate area by using rectangles",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0161",
+                "nodeType": "topic",
+                "name": "improper integral",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0162",
+                "nodeType": "topic",
+                "name": "volume of revolution x-axis",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0163",
+                "nodeType": "topic",
+                "name": "volume of revolution y-axis",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0164",
+        "nodeType": "domain",
+        "name": "纯数-Complex number",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0165",
+            "nodeType": "area",
+            "name": "basic definition",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0166",
+                "nodeType": "topic",
+                "name": "real part and imaginary part",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0167",
+                "nodeType": "topic",
+                "name": "solve quadratic equations",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0168",
+                "nodeType": "topic",
+                "name": "modulus",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0169",
+                "nodeType": "topic",
+                "name": "argument",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0170",
+                "nodeType": "topic",
+                "name": "conjugate",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0171",
+                "nodeType": "topic",
+                "name": "＋ － ×",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0172",
+                "nodeType": "topic",
+                "name": "÷ (use conjugate)",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0173",
+                "nodeType": "topic",
+                "name": "square roots",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0174",
+            "nodeType": "area",
+            "name": "Argand diagram",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0175",
+                "nodeType": "topic",
+                "name": "represent in argand diagram",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0176",
+                "nodeType": "topic",
+                "name": "loci-circle",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0177",
+                "nodeType": "topic",
+                "name": "loci-perpendicular bisector",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0178",
+                "nodeType": "topic",
+                "name": "loci-half line",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0179",
+                "nodeType": "topic",
+                "name": "inequality",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0180",
+            "nodeType": "area",
+            "name": "modulus and argument form",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0181",
+                "nodeType": "topic",
+                "name": "find the form",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0182",
+                "nodeType": "topic",
+                "name": "multiplication and division of 2 complex number in m-a form",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0183",
+            "nodeType": "area",
+            "name": "exponential form",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0184",
+                "nodeType": "topic",
+                "name": "exponential form",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0185",
+            "nodeType": "area",
+            "name": "polynomial",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0186",
+                "nodeType": "topic",
+                "name": "find three roots for cubic equation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0187",
+                "nodeType": "topic",
+                "name": "find four roots for quartic equation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0188",
+            "nodeType": "area",
+            "name": "de moivre's theorem",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0189",
+                "nodeType": "topic",
+                "name": "prove de moivre's theorem",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0190",
+                "nodeType": "topic",
+                "name": "application to trigonometric identity",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0191",
+                "nodeType": "topic",
+                "name": "nth roots",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              },
+              {
+                "nodeId": "FPURE-0192",
+                "nodeType": "topic",
+                "name": "summation of series",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0193",
+            "nodeType": "area",
+            "name": "transformation",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0194",
+                "nodeType": "topic",
+                "name": "from z-plane to w-plane",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0195",
+            "nodeType": "area",
+            "name": "application",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0196",
+                "nodeType": "topic",
+                "name": "solve geometric problem",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0001",
+        "nodeType": "domain",
+        "name": "统计-Continuous random variables",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0002",
+            "nodeType": "area",
+            "name": "Continuous random variables and their probability density functions",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0003",
+                "nodeType": "topic",
+                "name": "calculate PDF",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0004",
+                "nodeType": "topic",
+                "name": "the mean and variance of a probability density function",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0005",
+            "nodeType": "area",
+            "name": "Cumulative distribution function",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0006",
+                "nodeType": "topic",
+                "name": "calculate CDF",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0007",
+                "nodeType": "topic",
+                "name": "finding the mode, median and quartiles of a continuous random variable",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0008",
+            "nodeType": "area",
+            "name": "Continuous uniform distribution",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0009",
+                "nodeType": "topic",
+                "name": "properties of a continuous uniform distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0010",
+        "nodeType": "domain",
+        "name": "统计-Geometric and negative binomial distributions",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0011",
+            "nodeType": "area",
+            "name": "mean and variance of a geometric distribution",
+            "level": 2,
+            "domain": "Further Statistics"
+          },
+          {
+            "nodeId": "FSTAT-0012",
+            "nodeType": "area",
+            "name": "mean and variance of a negative binomial distributions",
+            "level": 2,
+            "domain": "Further Statistics"
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0013",
+        "nodeType": "domain",
+        "name": "统计-Population and samples",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0014",
+            "nodeType": "area",
+            "name": "Populations, censuses and samples",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0015",
+                "nodeType": "topic",
+                "name": "advantages and disadvantages of taking a census",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0016",
+            "nodeType": "area",
+            "name": "Sampling",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0017",
+                "nodeType": "topic",
+                "name": "advantages and disadvantages of sampling",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0018",
+                "nodeType": "topic",
+                "name": "simple random sampling",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0019",
+                "nodeType": "topic",
+                "name": "other methods of sampling",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0020",
+                "nodeType": "topic",
+                "name": "non-random sampling",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0021",
+                "nodeType": "topic",
+                "name": "the concept of a statistic",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0022",
+                "nodeType": "topic",
+                "name": "the sampling distribution of a statistic",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0023",
+            "nodeType": "area",
+            "name": "Primary and secondary sources of data",
+            "level": 2,
+            "domain": "Further Statistics"
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0024",
+        "nodeType": "domain",
+        "name": "统计-Combinations of random variables",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0025",
+            "nodeType": "area",
+            "name": "Finding distribution of random variables",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0026",
+                "nodeType": "topic",
+                "name": "finding the distribution of random variables",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0027",
+        "nodeType": "domain",
+        "name": "统计-Hypothesis testing",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0028",
+            "nodeType": "area",
+            "name": "Basic concept of a hypothesis test",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0029",
+                "nodeType": "topic",
+                "name": "the significance level of an hypothesis test",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0030",
+                "nodeType": "topic",
+                "name": "one and two-tailed tests",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0031",
+            "nodeType": "area",
+            "name": "Concept of a hypothesis test",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0032",
+                "nodeType": "topic",
+                "name": "hypothesis tests for the proportion p of a binomial distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0033",
+                "nodeType": "topic",
+                "name": "hypothesis tests for the mean of a Poisson distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0034",
+                "nodeType": "topic",
+                "name": "hypothesis tests for the parameter p of a geometric distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0035",
+                "nodeType": "topic",
+                "name": "hypothesis tests for the proportion p of a binomial distribution using critical regions",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0036",
+                "nodeType": "topic",
+                "name": "hypothesis tests for the mean of a poisson distribution using critical regions",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0037",
+                "nodeType": "topic",
+                "name": "hypothesis tests for the parameter p of a geometric distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0038",
+                "nodeType": "topic",
+                "name": "hypothesis tests with the normal distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0039",
+            "nodeType": "area",
+            "name": "F-test",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0040",
+                "nodeType": "topic",
+                "name": "F-test",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0041",
+                "nodeType": "topic",
+                "name": "F-distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0042",
+            "nodeType": "area",
+            "name": "Non-parametric tests",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0043",
+                "nodeType": "topic",
+                "name": "Single-sample sign tests",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0044",
+                "nodeType": "topic",
+                "name": "Single-sample Wilcoxon signed-rank tests",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0045",
+                "nodeType": "topic",
+                "name": "Paired-sample sign tests",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0046",
+                "nodeType": "topic",
+                "name": "Wilcoxon matched-pairs signed-rank tests",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0047",
+                "nodeType": "topic",
+                "name": "Wilcoxon rank-sum tests",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0048",
+        "nodeType": "domain",
+        "name": "统计-Estimation, confidence intervals and tests",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0049",
+            "nodeType": "area",
+            "name": "Sampling distribution",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0050",
+                "nodeType": "topic",
+                "name": "concept of a statistic and sampling distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0051",
+                "nodeType": "topic",
+                "name": "estimation of population parameters using a sample",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0052",
+                "nodeType": "topic",
+                "name": "standard error of the mean",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0053",
+            "nodeType": "area",
+            "name": "Hypothesis tests",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0054",
+                "nodeType": "topic",
+                "name": "Central Limit Theorem",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0055",
+                "nodeType": "topic",
+                "name": "confidence intervals",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0056",
+                "nodeType": "topic",
+                "name": "hypothesis tests for the difference between two means",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0057",
+                "nodeType": "topic",
+                "name": "large samples",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0058",
+        "nodeType": "domain",
+        "name": "统计-Inference using normal and t-distributions",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0059",
+            "nodeType": "area",
+            "name": "Interpreting sample data using t-distribution",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0060",
+                "nodeType": "topic",
+                "name": "using t-distribution for paired samples",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0061",
+                "nodeType": "topic",
+                "name": "hypothesis testing on a sample mean using t-distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0062",
+                "nodeType": "topic",
+                "name": "using the t-distribution with two samples",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0063",
+                "nodeType": "topic",
+                "name": "comparison between paired and 2-sample t-tests",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0064",
+                "nodeType": "topic",
+                "name": "testing for a non-zero value of the difference of two means",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0065",
+                "nodeType": "topic",
+                "name": "hypothesis tests and confidence intervals",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0066",
+            "nodeType": "area",
+            "name": "Using normal distribution with two samples",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0067",
+                "nodeType": "topic",
+                "name": "using the normal distribution with two samples",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0068",
+                "nodeType": "topic",
+                "name": "tests with large samples",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0069",
+        "nodeType": "domain",
+        "name": "统计-Goodness of fit and contingency tables",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0070",
+            "nodeType": "area",
+            "name": "Goodness of fit",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0071",
+                "nodeType": "topic",
+                "name": "forming a hypothesis",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0072",
+                "nodeType": "topic",
+                "name": "degrees of freedom",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0073",
+                "nodeType": "topic",
+                "name": "the chi-squared family of distributions",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0074",
+                "nodeType": "topic",
+                "name": "testing your hypothesis",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0075",
+            "nodeType": "area",
+            "name": "General method for testing the goodness of fit",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0076",
+                "nodeType": "topic",
+                "name": "applying goodness-of-fit tests to discrete data",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0077",
+                "nodeType": "topic",
+                "name": "applying goodness-of-fit tests to continuous distributions",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0078",
+            "nodeType": "area",
+            "name": "Contingency tables",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0079",
+                "nodeType": "topic",
+                "name": "contingency tables",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0080",
+        "nodeType": "domain",
+        "name": "统计-Quality of tests",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0081",
+            "nodeType": "area",
+            "name": "Type I and Type II errors",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0082",
+                "nodeType": "topic",
+                "name": "find Type I and Type II errors using the normal distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0083",
+            "nodeType": "area",
+            "name": "The power function",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0084",
+                "nodeType": "topic",
+                "name": "calculate the size and power of a test",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0085",
+                "nodeType": "topic",
+                "name": "power function",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0086",
+        "nodeType": "domain",
+        "name": "统计-Probability generating functions",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0087",
+            "nodeType": "area",
+            "name": "Probabilities defined by a probability generating function",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0088",
+                "nodeType": "topic",
+                "name": "probabilities defined by a probability generating function",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0089",
+                "nodeType": "topic",
+                "name": "expectation and variance",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0090",
+                "nodeType": "topic",
+                "name": "sum of independent random variables",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0091",
+                "nodeType": "topic",
+                "name": "pgfs for some standard discrete probability distributions",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0092",
+        "nodeType": "domain",
+        "name": "统计-Moment generating function",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0093",
+            "nodeType": "area",
+            "name": "Moment generating function",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0094",
+                "nodeType": "topic",
+                "name": "definition and properties of an mgf",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0095",
+                "nodeType": "topic",
+                "name": "derivations of an mgf",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0096",
+                "nodeType": "topic",
+                "name": "sum of independent random variables",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "DEC-0001",
+        "nodeType": "domain",
+        "name": "Algorithms (D1)",
+        "level": 1,
+        "domain": "Decision Mathematics",
+        "children": [
+          {
+            "nodeId": "DEC-0002",
+            "nodeType": "area",
+            "name": "Flow chart",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0003",
+            "nodeType": "area",
+            "name": "Bubble sort",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0004",
+            "nodeType": "area",
+            "name": "Quick sort",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0005",
+            "nodeType": "area",
+            "name": "Binary search",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0006",
+            "nodeType": "area",
+            "name": "Basic",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0007",
+            "nodeType": "area",
+            "name": "Three bin packing algorithms",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          }
+        ]
+      },
+      {
+        "nodeId": "DEC-0008",
+        "nodeType": "domain",
+        "name": "Graphs and networks (D1)",
+        "level": 1,
+        "domain": "Decision Mathematics",
+        "children": [
+          {
+            "nodeId": "DEC-0009",
+            "nodeType": "area",
+            "name": "Use graphs and networks to create mathematical models",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0010",
+            "nodeType": "area",
+            "name": "Terminology in graph theory",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0011",
+            "nodeType": "area",
+            "name": "Special types of graph",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0012",
+            "nodeType": "area",
+            "name": "Use matrices to represent graphs and networks",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          }
+        ]
+      },
+      {
+        "nodeId": "DEC-0013",
+        "nodeType": "domain",
+        "name": "Algorithms on Graphs (D1)",
+        "level": 1,
+        "domain": "Decision Mathematics",
+        "children": [
+          {
+            "nodeId": "DEC-0014",
+            "nodeType": "area",
+            "name": "Kruskal's algorithm",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0015",
+            "nodeType": "area",
+            "name": "Prim's algorithm",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0016",
+            "nodeType": "area",
+            "name": "Distance matrix",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0017",
+            "nodeType": "area",
+            "name": "Nearest neighbour algorithm",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0018",
+            "nodeType": "area",
+            "name": "Dijkstra's algorithm",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          }
+        ]
+      },
+      {
+        "nodeId": "DEC-0019",
+        "nodeType": "domain",
+        "name": "Route inspection (D1)",
+        "level": 1,
+        "domain": "Decision Mathematics",
+        "children": [
+          {
+            "nodeId": "DEC-0020",
+            "nodeType": "area",
+            "name": "Eulerian Graphs",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0021",
+            "nodeType": "area",
+            "name": "Route inspecction algorithm",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          }
+        ]
+      },
+      {
+        "nodeId": "DEC-0022",
+        "nodeType": "domain",
+        "name": "The travelling salesman problem (D1)",
+        "level": 1,
+        "domain": "Decision Mathematics",
+        "children": [
+          {
+            "nodeId": "DEC-0023",
+            "nodeType": "area",
+            "name": "Classical travelling salesman problems",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0024",
+            "nodeType": "area",
+            "name": "Practical travelling salesman problems",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0025",
+            "nodeType": "area",
+            "name": "Using a minimum spanning tree to find an upper bound",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0026",
+            "nodeType": "area",
+            "name": "Using a minimum spanning tree to find an lower bound",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0027",
+            "nodeType": "area",
+            "name": "Using a nearest neighbour algorithm to find an upper bound",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          }
+        ]
+      },
+      {
+        "nodeId": "DEC-0028",
+        "nodeType": "domain",
+        "name": "Critical path analysis (D1)",
+        "level": 1,
+        "domain": "Decision Mathematics",
+        "children": [
+          {
+            "nodeId": "DEC-0029",
+            "nodeType": "area",
+            "name": "Activity network",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0030",
+            "nodeType": "area",
+            "name": "Dummies",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0031",
+            "nodeType": "area",
+            "name": "Forward and backward pass",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0032",
+            "nodeType": "area",
+            "name": "Critical activities",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0033",
+            "nodeType": "area",
+            "name": "Total float of activities",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0034",
+            "nodeType": "area",
+            "name": "Cascade(Gantt) chart",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0035",
+            "nodeType": "area",
+            "name": "Scheduling diagram",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          }
+        ]
+      },
+      {
+        "nodeId": "DEC-0036",
+        "nodeType": "domain",
+        "name": "Linear programming (D1)",
+        "level": 1,
+        "domain": "Decision Mathematics",
+        "children": [
+          {
+            "nodeId": "DEC-0037",
+            "nodeType": "area",
+            "name": "Fortunate a problem as linear programming problem",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0038",
+            "nodeType": "area",
+            "name": "Two-variable linear programming problem in graph",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0039",
+            "nodeType": "area",
+            "name": "Use objective line method to locate the optimal point",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0040",
+            "nodeType": "area",
+            "name": "Use vertex testing method to locate the optimal point",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          },
+          {
+            "nodeId": "DEC-0041",
+            "nodeType": "area",
+            "name": "Determine solutions that need integer values",
+            "level": 2,
+            "domain": "Decision Mathematics"
+          }
+        ]
+      },
+      {
+        "nodeId": "FMECH-0001",
+        "nodeType": "domain",
+        "name": "力学-Elastic strings and springs and elastic energy",
+        "level": 1,
+        "domain": "Further Mechanics",
+        "children": [
+          {
+            "nodeId": "FMECH-0002",
+            "nodeType": "area",
+            "name": "Hooke's law and equilibrium",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0003",
+                "nodeType": "topic",
+                "name": "T=kx",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0004",
+                "nodeType": "topic",
+                "name": "T=lambda x/l",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0005",
+                "nodeType": "topic",
+                "name": "lambda is the modulus of elasticity of a string or spring",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0006",
+            "nodeType": "area",
+            "name": "Hooke's law and dynamics",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0007",
+                "nodeType": "topic",
+                "name": "W=lambda x^2/2/l",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0008",
+                "nodeType": "topic",
+                "name": "the area under a force-distance graph is the work done in stretching an elastic string or spring",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0009",
+            "nodeType": "area",
+            "name": "elastic potential energy E.P.E",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0010",
+                "nodeType": "topic",
+                "name": "EPE=lambda x^2/2/l",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0011",
+            "nodeType": "area",
+            "name": "Conservation of KE, GPE, EPE",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0012",
+                "nodeType": "topic",
+                "name": "when no external forces other than gravity act on the particle",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FMECH-0013",
+        "nodeType": "domain",
+        "name": "力学-Elastic collisions in one dimension",
+        "level": 1,
+        "domain": "Further Mechanics",
+        "children": [
+          {
+            "nodeId": "FMECH-0014",
+            "nodeType": "area",
+            "name": "direction impact and Newton's law of restitution",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0015",
+                "nodeType": "topic",
+                "name": "coefficient of restitution e",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0016",
+                "nodeType": "topic",
+                "name": "range [0,1]",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0017",
+                "nodeType": "topic",
+                "name": "formula",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0018",
+            "nodeType": "area",
+            "name": "direct collision with a smooth plane",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0019",
+                "nodeType": "topic",
+                "name": "e = speed of rebound/speed of approach",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0020",
+            "nodeType": "area",
+            "name": "loss of kinetic energy",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0021",
+                "nodeType": "topic",
+                "name": "formula",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0022",
+            "nodeType": "area",
+            "name": "successive direct impacts",
+            "level": 2,
+            "domain": "Further Mechanics"
+          }
+        ]
+      },
+      {
+        "nodeId": "FMECH-0023",
+        "nodeType": "domain",
+        "name": "力学-Elastic collisions in two dimension",
+        "level": 1,
+        "domain": "Further Mechanics",
+        "children": [
+          {
+            "nodeId": "FMECH-0024",
+            "nodeType": "area",
+            "name": "Oblique impact with a fixed surface",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0025",
+                "nodeType": "topic",
+                "name": "use Newton's law of restitution",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0026",
+                "nodeType": "topic",
+                "name": "relation of angle and speed",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0027",
+                "nodeType": "topic",
+                "name": "vcosbeta=ucosalpha",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0028",
+                "nodeType": "topic",
+                "name": "vsinbeta=eusinalpha",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0029",
+                "nodeType": "topic",
+                "name": "(diagram needed)",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0030",
+            "nodeType": "area",
+            "name": "successive oblique impacts",
+            "level": 2,
+            "domain": "Further Mechanics"
+          },
+          {
+            "nodeId": "FMECH-0031",
+            "nodeType": "area",
+            "name": "oblique impact of smooth spheres",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0032",
+                "nodeType": "topic",
+                "name": "acts along the line of centres",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0033",
+                "nodeType": "topic",
+                "name": "the components of the velocities of the spheres perpendicular to the line of centres are unchanged",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0034",
+                "nodeType": "topic",
+                "name": "Newton's law of restitution",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0035",
+                "nodeType": "topic",
+                "name": "principle of conservation of momentum",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FMECH-0036",
+        "nodeType": "domain",
+        "name": "力学-Motion in a circle",
+        "level": 1,
+        "domain": "Further Mechanics",
+        "children": [
+          {
+            "nodeId": "FMECH-0037",
+            "nodeType": "area",
+            "name": "angular speed",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0038",
+                "nodeType": "topic",
+                "name": "v = rω",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0039",
+            "nodeType": "area",
+            "name": "Horizontal circle",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0040",
+                "nodeType": "topic",
+                "name": "Radial acceleration in circular motion",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0041",
+                "nodeType": "topic",
+                "name": "r=ω^2, v^2/r",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0042",
+                "nodeType": "topic",
+                "name": "model: motion on a disk",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0043",
+            "nodeType": "area",
+            "name": "Vertical circle",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0044",
+                "nodeType": "topic",
+                "name": "String problems",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0045",
+                "nodeType": "topic",
+                "name": "Ring problems",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0046",
+                "nodeType": "topic",
+                "name": "Spherical surface problems",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0047",
+                "nodeType": "topic",
+                "name": "Other problems",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0048",
+            "nodeType": "area",
+            "name": "3D cases",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0049",
+                "nodeType": "topic",
+                "name": "Conical pendulum model",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0050",
+                "nodeType": "topic",
+                "name": "Car model",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0051",
+                "nodeType": "topic",
+                "name": "Two strings model",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0052",
+                "nodeType": "topic",
+                "name": "Other problems",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FMECH-0053",
+        "nodeType": "domain",
+        "name": "力学-Centres of mass of plane figures",
+        "level": 1,
+        "domain": "Further Mechanics",
+        "children": [
+          {
+            "nodeId": "FMECH-0054",
+            "nodeType": "area",
+            "name": "Moment of a force",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0055",
+                "nodeType": "topic",
+                "name": "Centre of mass of a discrete mass distribution in one and two dimensions",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0056",
+            "nodeType": "area",
+            "name": "uniform plane figures, and of composite plane figures",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0057",
+                "nodeType": "topic",
+                "name": "use of an axis of symmetry",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0058",
+                "nodeType": "topic",
+                "name": "non-uniform composite plane figures/frameworks",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0059",
+            "nodeType": "area",
+            "name": "frameworks",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0060",
+                "nodeType": "topic",
+                "name": "shapes are referred to in the formulae book",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0061",
+            "nodeType": "area",
+            "name": "Equilibrium of a plane lamina or framework under the action of coplanar forces.",
+            "level": 2,
+            "domain": "Further Mechanics"
+          },
+          {
+            "nodeId": "FMECH-0062",
+            "nodeType": "area",
+            "name": "uniform and non-uniform rigid bodies and composite bodies",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0063",
+                "nodeType": "topic",
+                "name": "use of integration and/or symmetry",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0064",
+            "nodeType": "area",
+            "name": "Uniform solid of revolution",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0065",
+                "nodeType": "topic",
+                "name": "integration",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0066",
+            "nodeType": "area",
+            "name": "Equilibrium of rigid bodies under the action of coplanar forces.",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0067",
+                "nodeType": "topic",
+                "name": "**Calculus A level Mathematics and Further Mathematics required",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0068",
+                "nodeType": "topic",
+                "name": "suspension of a body from a fixed point",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0069",
+                "nodeType": "topic",
+                "name": "a rigid body placed on a horizontal or inclined plane.",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0070",
+            "nodeType": "area",
+            "name": "Toppling and sliding of a rigid body on a rough plane.",
+            "level": 2,
+            "domain": "Further Mechanics"
+          }
+        ]
+      },
+      {
+        "nodeId": "FMECH-0071",
+        "nodeType": "domain",
+        "name": "力学-Further dynamics",
+        "level": 1,
+        "domain": "Further Mechanics",
+        "children": [
+          {
+            "nodeId": "FMECH-0072",
+            "nodeType": "area",
+            "name": "Motion in one dimension with variable force",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0073",
+                "nodeType": "topic",
+                "name": "**Calculus A level Mathematics and Further Mathematics required",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0074",
+                "nodeType": "topic",
+                "name": "use the inverse square law",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0075",
+            "nodeType": "area",
+            "name": "Newton's law of gravitation",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0076",
+                "nodeType": "topic",
+                "name": "F=GM1M2/d^2",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0077",
+                "nodeType": "topic",
+                "name": "maximum height for a space shuttle",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0078",
+                "nodeType": "topic",
+                "name": "escape velocity",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0079",
+            "nodeType": "area",
+            "name": "Simple harmonic motion",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0080",
+                "nodeType": "topic",
+                "name": "Prove that a particle moves with simple harmonic motion in a given situation",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0081",
+                "nodeType": "topic",
+                "name": "x''= ?ω^2x",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0082",
+                "nodeType": "topic",
+                "name": "v^2 =ω^2 (a^2? x^2 ), T= 2π/ω",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0083",
+                "nodeType": "topic",
+                "name": "x=asinωt, x=acosωt",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0084",
+                "nodeType": "topic",
+                "name": "simple second order differential equations",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0085",
+                "nodeType": "topic",
+                "name": "simple pendulum",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0086",
+            "nodeType": "area",
+            "name": "To solve problems involving elastic springs and strings:",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0087",
+                "nodeType": "topic",
+                "name": "use Hooke's law to find the tension",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0088",
+                "nodeType": "topic",
+                "name": "use F = ma to obtain w",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0089",
+                "nodeType": "topic",
+                "name": "use information given in the question to obtain the amplitude.",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0090",
+            "nodeType": "area",
+            "name": "smooth HORIZONTAL surface attached to one end of an elastic SPRING:",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0091",
+                "nodeType": "topic",
+                "name": "move with S.H.M.",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0092",
+                "nodeType": "topic",
+                "name": "perform complete oscillations.",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0093",
+            "nodeType": "area",
+            "name": "smooth HORIZONTAL surface attached to one end of an elastic STRING:",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0094",
+                "nodeType": "topic",
+                "name": "move with S.H.M. while the string is taut",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0095",
+                "nodeType": "topic",
+                "name": "move with constant speed while the string is slack",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0096",
+            "nodeType": "area",
+            "name": "HANGING in equilibrium attached to one end of an elastic SPRING and displaced VERTICAL from its equilibrium position:",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0097",
+                "nodeType": "topic",
+                "name": "move with S.H.M.",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0098",
+                "nodeType": "topic",
+                "name": "perform complete oscillations",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0099",
+                "nodeType": "topic",
+                "name": "the centre of the oscillation will be the equilibrium position.",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0100",
+            "nodeType": "area",
+            "name": "HANGING in equilibrium attached to one end of an elastic STRING and displaced VERTICAL from its equilibrium position:",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0101",
+                "nodeType": "topic",
+                "name": "move with S.H.M. while the string is taut",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0102",
+                "nodeType": "topic",
+                "name": "perform complete oscillations if the amplitude is no greater than the equilibrium extension",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0103",
+                "nodeType": "topic",
+                "name": "if the amplitude is greater than the equilibrium extension the particle will move freely under gravity while the string is slack",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "LEG-0001",
+        "nodeType": "domain",
+        "name": "纯数-旧版知识点",
+        "level": 1,
+        "domain": "Legacy",
+        "children": [
+          {
+            "nodeId": "LEG-0002",
+            "nodeType": "area",
+            "name": "Matching (D1)",
+            "level": 2,
+            "domain": "Legacy"
+          },
+          {
+            "nodeId": "LEG-0003",
+            "nodeType": "area",
+            "name": "Matrix: linear space",
+            "level": 2,
+            "domain": "Legacy"
+          },
+          {
+            "nodeId": "LEG-0004",
+            "nodeType": "area",
+            "name": "Integration-centroid",
+            "level": 2,
+            "domain": "Legacy"
+          }
+        ]
+      },
+      {
+        "nodeId": "LEG-0005",
+        "nodeType": "domain",
+        "name": "统计-旧知识点",
+        "level": 1,
+        "domain": "Legacy",
+        "children": [
+          {
+            "nodeId": "LEG-0006",
+            "nodeType": "area",
+            "name": "Further work on distributions - Geometric and negative exponential distribution",
+            "level": 2,
+            "domain": "Legacy"
+          }
+        ]
+      },
+      {
+        "nodeId": "LEG-0007",
+        "nodeType": "domain",
+        "name": "力学-旧知识点",
+        "level": 1,
+        "domain": "Legacy",
+        "children": [
+          {
+            "nodeId": "LEG-0008",
+            "nodeType": "area",
+            "name": "Rotation of a rigid body",
+            "level": 2,
+            "domain": "Legacy"
+          },
+          {
+            "nodeId": "LEG-0009",
+            "nodeType": "area",
+            "name": "SHM (cie)",
+            "level": 2,
+            "domain": "Legacy"
+          }
+        ]
+      },
+      {
+        "nodeId": "FPURE-0197",
+        "nodeType": "domain",
+        "name": "纯数-Numerical solution",
+        "level": 1,
+        "domain": "Further Pure Mathematics",
+        "children": [
+          {
+            "nodeId": "FPURE-0198",
+            "nodeType": "area",
+            "name": "Newton-Raphson method",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0199",
+                "nodeType": "topic",
+                "name": "solve equations using the Newton-Raphson",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0200",
+            "nodeType": "area",
+            "name": "interval bisection",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0201",
+                "nodeType": "topic",
+                "name": "interval bisection",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0202",
+            "nodeType": "area",
+            "name": "linear interpolation",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0203",
+                "nodeType": "topic",
+                "name": "linear interpolation",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FPURE-0204",
+            "nodeType": "area",
+            "name": "Numerical integration",
+            "level": 2,
+            "domain": "Further Pure Mathematics",
+            "children": [
+              {
+                "nodeId": "FPURE-0205",
+                "nodeType": "topic",
+                "name": "mid-ordinate rule and Simpson's Rule",
+                "level": 3,
+                "domain": "Further Pure Mathematics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0097",
+        "nodeType": "domain",
+        "name": "统计-Correlation and Regression",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0098",
+            "nodeType": "area",
+            "name": "Spearman’s rank correlation coefficient",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0099",
+                "nodeType": "topic",
+                "name": "testing the hypothesis that a correlation coefficient is zero",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0100",
+                "nodeType": "topic",
+                "name": "testing the hypothesis that spearmans’s population rank correlation coefficient is zero",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0101",
+            "nodeType": "area",
+            "name": "Linear regression",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0102",
+                "nodeType": "topic",
+                "name": "The regression equation",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0103",
+        "nodeType": "domain",
+        "name": "统计-Permutations and combinations",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0104",
+            "nodeType": "area",
+            "name": "Binomial coefficients",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0105",
+                "nodeType": "topic",
+                "name": "calculate the binomial coefficients",
+                "level": 3,
+                "domain": "Further Statistics"
+              },
+              {
+                "nodeId": "FSTAT-0106",
+                "nodeType": "topic",
+                "name": "using binomial coefficients to calculate probabilities",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0107",
+        "nodeType": "domain",
+        "name": "统计-Discrete probability distributions",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0108",
+            "nodeType": "area",
+            "name": "Binomial distribution",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0109",
+                "nodeType": "topic",
+                "name": "recognise situations that give rise to a binomial distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0110",
+            "nodeType": "area",
+            "name": "Expectation and variance of B(n,p)",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0111",
+                "nodeType": "topic",
+                "name": "find mean and variance of a binomial distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0112",
+            "nodeType": "area",
+            "name": "Using binomial distribution",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0113",
+                "nodeType": "topic",
+                "name": "calculate probabilities using binomial distribution",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FSTAT-0114",
+            "nodeType": "area",
+            "name": "Binomial cumulative distribution function",
+            "level": 2,
+            "domain": "Further Statistics",
+            "children": [
+              {
+                "nodeId": "FSTAT-0115",
+                "nodeType": "topic",
+                "name": "use tables to find cumulative binomial probabilities",
+                "level": 3,
+                "domain": "Further Statistics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0116",
+        "nodeType": "domain",
+        "name": "统计-Normal distribution",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0117",
+            "nodeType": "area",
+            "name": "Using normal distribution as an approximation for binomial distribution",
+            "level": 2,
+            "domain": "Further Statistics"
+          },
+          {
+            "nodeId": "FSTAT-0118",
+            "nodeType": "area",
+            "name": "Using normal distribution as an approximation for Poisson distribution",
+            "level": 2,
+            "domain": "Further Statistics"
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0119",
+        "nodeType": "domain",
+        "name": "统计-Poisson distribution",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0120",
+            "nodeType": "area",
+            "name": "Exponential series",
+            "level": 2,
+            "domain": "Further Statistics"
+          },
+          {
+            "nodeId": "FSTAT-0121",
+            "nodeType": "area",
+            "name": "Poisson distribution",
+            "level": 2,
+            "domain": "Further Statistics"
+          },
+          {
+            "nodeId": "FSTAT-0122",
+            "nodeType": "area",
+            "name": "Poisson approximation of a binomial distribution",
+            "level": 2,
+            "domain": "Further Statistics"
+          },
+          {
+            "nodeId": "FSTAT-0123",
+            "nodeType": "area",
+            "name": "the normal approximation of a poisson distribution",
+            "level": 2,
+            "domain": "Further Statistics"
+          }
+        ]
+      },
+      {
+        "nodeId": "FMECH-0104",
+        "nodeType": "domain",
+        "name": "力学 - Projectile",
+        "level": 1,
+        "domain": "Further Mechanics",
+        "children": [
+          {
+            "nodeId": "FMECH-0105",
+            "nodeType": "area",
+            "name": "Motion in the vertical plane",
+            "level": 2,
+            "domain": "Further Mechanics"
+          },
+          {
+            "nodeId": "FMECH-0106",
+            "nodeType": "area",
+            "name": "The Cartesian equation of the trajectory",
+            "level": 2,
+            "domain": "Further Mechanics"
+          }
+        ]
+      },
+      {
+        "nodeId": "FMECH-0107",
+        "nodeType": "domain",
+        "name": "力学 - Equilibrium of a rigid body",
+        "level": 1,
+        "domain": "Further Mechanics",
+        "children": [
+          {
+            "nodeId": "FMECH-0108",
+            "nodeType": "area",
+            "name": "The moment of a force",
+            "level": 2,
+            "domain": "Further Mechanics"
+          },
+          {
+            "nodeId": "FMECH-0109",
+            "nodeType": "area",
+            "name": "Centres of mass",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0110",
+                "nodeType": "topic",
+                "name": "Centres of mass of rods and laminas",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0111",
+                "nodeType": "topic",
+                "name": "Centres of mass of solids",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          },
+          {
+            "nodeId": "FMECH-0112",
+            "nodeType": "area",
+            "name": "Objects in equilibrium",
+            "level": 2,
+            "domain": "Further Mechanics",
+            "children": [
+              {
+                "nodeId": "FMECH-0113",
+                "nodeType": "topic",
+                "name": "Ladder problems",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0114",
+                "nodeType": "topic",
+                "name": "Rod problems",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0115",
+                "nodeType": "topic",
+                "name": "Topple or sliding problems",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0116",
+                "nodeType": "topic",
+                "name": "Suspended problems",
+                "level": 3,
+                "domain": "Further Mechanics"
+              },
+              {
+                "nodeId": "FMECH-0117",
+                "nodeType": "topic",
+                "name": "Other problems",
+                "level": 3,
+                "domain": "Further Mechanics"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nodeId": "FMECH-0118",
+        "nodeType": "domain",
+        "name": "力学 - Circular motion",
+        "level": 1,
+        "domain": "Further Mechanics",
+        "children": [
+          {
+            "nodeId": "FMECH-0119",
+            "nodeType": "area",
+            "name": "Horizontal circle",
+            "level": 2,
+            "domain": "Further Mechanics"
+          },
+          {
+            "nodeId": "FMECH-0120",
+            "nodeType": "area",
+            "name": "3D cases",
+            "level": 2,
+            "domain": "Further Mechanics"
+          },
+          {
+            "nodeId": "FMECH-0121",
+            "nodeType": "area",
+            "name": "Vertical circles",
+            "level": 2,
+            "domain": "Further Mechanics"
+          }
+        ]
+      },
+      {
+        "nodeId": "FMECH-0122",
+        "nodeType": "domain",
+        "name": "力学 - Linear motion under a variable force",
+        "level": 1,
+        "domain": "Further Mechanics",
+        "children": [
+          {
+            "nodeId": "FMECH-0123",
+            "nodeType": "area",
+            "name": "acceleration w.r.t time",
+            "level": 2,
+            "domain": "Further Mechanics"
+          },
+          {
+            "nodeId": "FMECH-0124",
+            "nodeType": "area",
+            "name": "acceleration w.r.t displacement",
+            "level": 2,
+            "domain": "Further Mechanics"
+          }
+        ]
+      },
+      {
+        "nodeId": "FSTAT-0124",
+        "nodeType": "domain",
+        "name": "统计-Exponential distribution",
+        "level": 1,
+        "domain": "Further Statistics",
+        "children": [
+          {
+            "nodeId": "FSTAT-0125",
+            "nodeType": "area",
+            "name": "know the probability density function",
+            "level": 2,
+            "domain": "Further Statistics"
+          },
+          {
+            "nodeId": "FSTAT-0126",
+            "nodeType": "area",
+            "name": "know the cumulative distribution function",
+            "level": 2,
+            "domain": "Further Statistics"
+          },
+          {
+            "nodeId": "FSTAT-0127",
+            "nodeType": "area",
+            "name": "calculate probabilities for an exponential distribution",
+            "level": 2,
+            "domain": "Further Statistics"
+          },
+          {
+            "nodeId": "FSTAT-0128",
+            "nodeType": "area",
+            "name": "know proofs of mean, variance and standard deviation for an exponential distribution",
+            "level": 2,
+            "domain": "Further Statistics"
+          },
+          {
+            "nodeId": "FSTAT-0129",
+            "nodeType": "area",
+            "name": "understand the relationship between Poisson and Exponential",
+            "level": 2,
+            "domain": "Further Statistics"
+          }
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0001",
+        "nodeType": "area",
+        "name": "EDX-IAL M2 Projectile",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Projectile in Edexcel IAL M2 module",
+        "relatedNodes": [
+          "FMECH-0104"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0002",
+        "nodeType": "area",
+        "name": "EDX-IAL M2 Variable acceleration",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Variable acceleration in Edexcel IAL M2 module"
+      },
+      {
+        "nodeId": "EDXIAL-0003",
+        "nodeType": "area",
+        "name": "EDX-IAL M2 Centre of mass",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Centre of mass in Edexcel IAL M2 module",
+        "relatedNodes": [
+          "FMECH-0109"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0004",
+        "nodeType": "area",
+        "name": "EDX-IAL M2 Work and energy",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Work and energy in Edexcel IAL M2 module"
+      },
+      {
+        "nodeId": "EDXIAL-0005",
+        "nodeType": "area",
+        "name": "EDX-IAL M2 Impulses and collisions",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Impulses and collisions in Edexcel IAL M2 module"
+      },
+      {
+        "nodeId": "EDXIAL-0006",
+        "nodeType": "area",
+        "name": "EDX-IAL M2 Statics of rigid bodies",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Statics of rigid bodies in Edexcel IAL M2 module",
+        "relatedNodes": [
+          "LEG-0008"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0007",
+        "nodeType": "area",
+        "name": "EDX-IAL M3 Kinematics",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Kinematics in Edexcel IAL M3 module"
+      },
+      {
+        "nodeId": "EDXIAL-0008",
+        "nodeType": "area",
+        "name": "EDX-IAL M3 Elastic strings and springs",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Elastic strings and springs in Edexcel IAL M3 module",
+        "relatedNodes": [
+          "FMECH-0001"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0009",
+        "nodeType": "area",
+        "name": "EDX-IAL M3 Dynamics",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Dynamics in Edexcel IAL M3 module"
+      },
+      {
+        "nodeId": "EDXIAL-0010",
+        "nodeType": "area",
+        "name": "EDX-IAL M3 Circular motion",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Circular motion in Edexcel IAL M3 module",
+        "relatedNodes": [
+          "FMECH-0118"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0011",
+        "nodeType": "area",
+        "name": "EDX-IAL M3 Furher centres of mass",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Furher centres of mass in Edexcel IAL M3 module",
+        "relatedNodes": [
+          "FMECH-0109"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0012",
+        "nodeType": "area",
+        "name": "EDX-IAL M3 Statics of rigid body",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Statics of rigid body in Edexcel IAL M3 module",
+        "relatedNodes": [
+          "LEG-0008"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0013",
+        "nodeType": "area",
+        "name": "EDX-IAL S2 Binomial distribution",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Binomial distribution in Edexcel IAL S2 module",
+        "relatedNodes": [
+          "FSTAT-0108"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0014",
+        "nodeType": "area",
+        "name": "EDX-IAL S2  Poisson distribution",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Poisson distribution in Edexcel IAL S2 module",
+        "relatedNodes": [
+          "FSTAT-0121"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0015",
+        "nodeType": "area",
+        "name": "EDX-IAL S2  Approximations",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Approximations in Edexcel IAL S2 module",
+        "relatedNodes": [
+          "FPURE-0052",
+          "FPURE-0122",
+          "FPURE-0153"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0016",
+        "nodeType": "area",
+        "name": "EDX-IAL S2  Continuous random variables",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Continuous random variables in Edexcel IAL S2 module",
+        "relatedNodes": [
+          "FSTAT-0001"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0017",
+        "nodeType": "area",
+        "name": "EDX-IAL S2  Continuous uniform distribution",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Continuous uniform distribution in Edexcel IAL S2 module",
+        "relatedNodes": [
+          "FSTAT-0008"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0018",
+        "nodeType": "area",
+        "name": "EDX-IAL S2  Sampling and sampling distributions",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Sampling and sampling distributions in Edexcel IAL S2 module",
+        "relatedNodes": [
+          "FSTAT-0049",
+          "FSTAT-0050"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0019",
+        "nodeType": "area",
+        "name": "EDX-IAL S2  Hypothesis testing",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Hypothesis testing in Edexcel IAL S2 module",
+        "relatedNodes": [
+          "FSTAT-0027",
+          "FSTAT-0053"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0020",
+        "nodeType": "area",
+        "name": "EDX-IAL S3 Sampling",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Sampling in Edexcel IAL S3 module",
+        "relatedNodes": [
+          "FSTAT-0016"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0021",
+        "nodeType": "area",
+        "name": "EDX-IAL S3  Combinations of random variables",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Combinations of random variables in Edexcel IAL S3 module",
+        "relatedNodes": [
+          "FSTAT-0024"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0022",
+        "nodeType": "area",
+        "name": "EDX-IAL S3  Estimators and confidence intervals",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Estimators and confidence intervals in Edexcel IAL S3 module",
+        "relatedNodes": [
+          "FSTAT-0065"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0023",
+        "nodeType": "area",
+        "name": "EDX-IAL S3  Central limit theorem and testing the mean",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Central limit theorem and testing the mean in Edexcel IAL S3 module",
+        "relatedNodes": [
+          "FSTAT-0054"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0024",
+        "nodeType": "area",
+        "name": "EDX-IAL S3  Correlation",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Correlation in Edexcel IAL S3 module"
+      },
+      {
+        "nodeId": "EDXIAL-0025",
+        "nodeType": "area",
+        "name": "EDX-IAL S3  Goodness of fit and contingency tables",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": " Goodness of fit and contingency tables in Edexcel IAL S3 module",
+        "relatedNodes": [
+          "FSTAT-0069",
+          "FSTAT-0078",
+          "FSTAT-0079"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0026",
+        "nodeType": "area",
+        "name": "EDX-IAL FP1 Complex number",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Complex number in Edexcel IAL FP1 module",
+        "relatedNodes": [
+          "FPURE-0164"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0027",
+        "nodeType": "area",
+        "name": "EDX-IAL FP1 Roots of quadratic equations",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Roots of quadratic equations in Edexcel IAL FP1 module",
+        "relatedNodes": [
+          "FPURE-0167",
+          "FPURE-0187"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0028",
+        "nodeType": "area",
+        "name": "EDX-IAL FP1 Numerical solutions of equations",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Numerical solutions of equations in Edexcel IAL FP1 module",
+        "relatedNodes": [
+          "FPURE-0197",
+          "FPURE-0204"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0029",
+        "nodeType": "area",
+        "name": "EDX IAL FP1 Coordinate systems",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Coordinate systems in Edexcel IAL FP1 module",
+        "relatedNodes": [
+          "FPURE-0062",
+          "FPURE-0013"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0030",
+        "nodeType": "area",
+        "name": "EDX-IAL FP1 Matrices",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Matrices in Edexcel IAL FP1 module",
+        "relatedNodes": [
+          "FPURE-0023"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0031",
+        "nodeType": "area",
+        "name": "EDX-IAL FP1 Transformations using matrices",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Transformations using matrices in Edexcel IAL FP1 module",
+        "relatedNodes": [
+          "FPURE-0034",
+          "FPURE-0193",
+          "FPURE-0035"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0032",
+        "nodeType": "area",
+        "name": "EDX-IAL FP1 Series",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Series in Edexcel IAL FP1 module",
+        "relatedNodes": [
+          "FPURE-0101",
+          "FPURE-0102"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0033",
+        "nodeType": "area",
+        "name": "EDX-IAL FP1 Proof",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Proof in Edexcel IAL FP1 module",
+        "relatedNodes": [
+          "FPURE-0055"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0034",
+        "nodeType": "area",
+        "name": "EDX-IAL FP2 Inequalities",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Inequalities in Edexcel IAL FP2 module",
+        "relatedNodes": [
+          "FPURE-0010",
+          "FPURE-0179"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0035",
+        "nodeType": "area",
+        "name": "EDX-IAL FP2 Series",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Series in Edexcel IAL FP2 module",
+        "relatedNodes": [
+          "FPURE-0101",
+          "FPURE-0102"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0036",
+        "nodeType": "area",
+        "name": "EDX-IAL FP2 Complex numbers",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Complex numbers in Edexcel IAL FP2 module",
+        "relatedNodes": [
+          "FPURE-0164"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0037",
+        "nodeType": "area",
+        "name": "EDX-IAL FP2 Futher argand diagrams",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Futher argand diagrams in Edexcel IAL FP2 module",
+        "relatedNodes": [
+          "FPURE-0174",
+          "FPURE-0175"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0038",
+        "nodeType": "area",
+        "name": "EDX-IAL FP2 First order differential equations",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "First order differential equations in Edexcel IAL FP2 module",
+        "relatedNodes": [
+          "FMECH-0084"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0039",
+        "nodeType": "area",
+        "name": "EDX-IAL FP2 Second order differential equations",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Second order differential equations in Edexcel IAL FP2 module",
+        "relatedNodes": [
+          "FMECH-0084"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0040",
+        "nodeType": "area",
+        "name": "EDX-IAL FP2 Maclaurin and taylor series",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Maclaurin and taylor series in Edexcel IAL FP2 module",
+        "relatedNodes": [
+          "FPURE-0097",
+          "FPURE-0100"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0041",
+        "nodeType": "area",
+        "name": "EDX-IAL FP2 Polar coodinates",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Polar coodinates in Edexcel IAL FP2 module",
+        "relatedNodes": [
+          "FPURE-0078"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0042",
+        "nodeType": "area",
+        "name": "EDX-IAL FP3 Hyperbolic functions",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Hyperbolic functions in Edexcel IAL FP3 module",
+        "relatedNodes": [
+          "FPURE-0130",
+          "FPURE-0135"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0043",
+        "nodeType": "area",
+        "name": "EDX-IAL FP3 Furher coordinate systems",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Furher coordinate systems in Edexcel IAL FP3 module",
+        "relatedNodes": [
+          "FPURE-0062"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0044",
+        "nodeType": "area",
+        "name": "EDX-IAL FP3 Differentiation",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Differentiation in Edexcel IAL FP3 module",
+        "relatedNodes": [
+          "FPURE-0137"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0045",
+        "nodeType": "area",
+        "name": "EDX-IAL FP3 Integration",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Integration in Edexcel IAL FP3 module",
+        "relatedNodes": [
+          "FMECH-0065"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0046",
+        "nodeType": "area",
+        "name": "EDX-IAL FP3 Vectors",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Vectors in Edexcel IAL FP3 module",
+        "relatedNodes": [
+          "FPURE-0104"
+        ]
+      },
+      {
+        "nodeId": "EDXIAL-0047",
+        "nodeType": "area",
+        "name": "EDX-IAL FP3 Further matrix algebra",
+        "level": 1,
+        "domain": "EDX-IAL",
+        "description": "Further matrix algebra in Edexcel IAL FP3 module"
+      },
+      {
+        "nodeId": "EDXGCE-0001",
+        "nodeType": "area",
+        "name": "EDX-GCE CP",
+        "level": 1,
+        "domain": "EDX-GCE",
+        "children": [
+          {
+            "nodeId": "EDXGCE-0002",
+            "nodeType": "area",
+            "name": "Complex numbers",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0003",
+            "nodeType": "area",
+            "name": "Series",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0004",
+            "nodeType": "area",
+            "name": "Roots of polynomials",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0005",
+            "nodeType": "area",
+            "name": "Matrices",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0006",
+            "nodeType": "area",
+            "name": "Proof by induction",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0007",
+            "nodeType": "area",
+            "name": "Vectors",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0008",
+            "nodeType": "area",
+            "name": "Calculus",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0009",
+            "nodeType": "area",
+            "name": "Polar coordinate",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0010",
+            "nodeType": "area",
+            "name": "Hyperbolic functions",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0011",
+            "nodeType": "area",
+            "name": "Differential equations",
+            "level": 2,
+            "domain": "EDX-GCE"
+          }
+        ]
+      },
+      {
+        "nodeId": "EDXGCE-0012",
+        "nodeType": "area",
+        "name": "EDX GCE FP",
+        "level": 1,
+        "domain": "EDX-GCE",
+        "children": [
+          {
+            "nodeId": "EDXGCE-0013",
+            "nodeType": "area",
+            "name": "Vectors",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0014",
+            "nodeType": "area",
+            "name": "Conic sections",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0015",
+            "nodeType": "area",
+            "name": "Inequalities",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0016",
+            "nodeType": "area",
+            "name": "The t-formula",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0017",
+            "nodeType": "area",
+            "name": "Taylor series",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0018",
+            "nodeType": "area",
+            "name": "Methods in calculus",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0019",
+            "nodeType": "area",
+            "name": "Numerical methods",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0020",
+            "nodeType": "area",
+            "name": "Differential equation",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0021",
+            "nodeType": "area",
+            "name": "Number thoery",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0022",
+            "nodeType": "area",
+            "name": "Groups",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0023",
+            "nodeType": "area",
+            "name": "Complex numbers",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0024",
+            "nodeType": "area",
+            "name": "Recurrence relations",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0025",
+            "nodeType": "area",
+            "name": "Matrix algebra",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0026",
+            "nodeType": "area",
+            "name": "Integration techniques",
+            "level": 2,
+            "domain": "EDX-GCE"
+          }
+        ]
+      },
+      {
+        "nodeId": "EDXGCE-0027",
+        "nodeType": "area",
+        "name": "EDX GCE FM",
+        "level": 1,
+        "domain": "EDX-GCE",
+        "children": [
+          {
+            "nodeId": "EDXGCE-0028",
+            "nodeType": "area",
+            "name": "Momentum and impulse",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0029",
+            "nodeType": "area",
+            "name": "Work，energy and power",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0030",
+            "nodeType": "area",
+            "name": "Elastic strings and springs",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0031",
+            "nodeType": "area",
+            "name": "Circular motion",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0032",
+            "nodeType": "area",
+            "name": "Centre of mass",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0033",
+            "nodeType": "area",
+            "name": "Kinematics",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0034",
+            "nodeType": "area",
+            "name": "Dynamics",
+            "level": 2,
+            "domain": "EDX-GCE"
+          }
+        ]
+      },
+      {
+        "nodeId": "EDXGCE-0035",
+        "nodeType": "area",
+        "name": "EDX GCE FS",
+        "level": 1,
+        "domain": "EDX-GCE",
+        "children": [
+          {
+            "nodeId": "EDXGCE-0036",
+            "nodeType": "area",
+            "name": "Discrete random variables",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0037",
+            "nodeType": "area",
+            "name": "Poisson distributions",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0038",
+            "nodeType": "area",
+            "name": "Geometric and negative binomial distributions",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0039",
+            "nodeType": "area",
+            "name": "Hypothesis testing",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0040",
+            "nodeType": "area",
+            "name": "Central limit theorem",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0041",
+            "nodeType": "area",
+            "name": "Chi-squared tests",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0042",
+            "nodeType": "area",
+            "name": "Probability generating functions",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0043",
+            "nodeType": "area",
+            "name": "Quality of tests",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0044",
+            "nodeType": "area",
+            "name": "Linear regression",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0045",
+            "nodeType": "area",
+            "name": "Correlation",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0046",
+            "nodeType": "area",
+            "name": "Continuous distributions",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0047",
+            "nodeType": "area",
+            "name": "Combinations of random variables",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0048",
+            "nodeType": "area",
+            "name": "Estimation，confidence interval and z-test",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0049",
+            "nodeType": "area",
+            "name": "F-test",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0050",
+            "nodeType": "area",
+            "name": "Confidence intervals and t-test",
+            "level": 2,
+            "domain": "EDX-GCE"
+          }
+        ]
+      },
+      {
+        "nodeId": "EDXGCE-0051",
+        "nodeType": "area",
+        "name": "EDX GCE DM",
+        "level": 1,
+        "domain": "EDX-GCE",
+        "children": [
+          {
+            "nodeId": "EDXGCE-0052",
+            "nodeType": "area",
+            "name": "Algorithms",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0053",
+            "nodeType": "area",
+            "name": "Graphs and networks",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0054",
+            "nodeType": "area",
+            "name": "Algorithms on graphs",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0055",
+            "nodeType": "area",
+            "name": "Route inspection",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0056",
+            "nodeType": "area",
+            "name": "The travelling salesman problem",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0057",
+            "nodeType": "area",
+            "name": "Linear programming",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0058",
+            "nodeType": "area",
+            "name": "The simplex algorithm",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0059",
+            "nodeType": "area",
+            "name": "Critical path analysis",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0060",
+            "nodeType": "area",
+            "name": "Transportation problems",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0061",
+            "nodeType": "area",
+            "name": "Allocation problems",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0062",
+            "nodeType": "area",
+            "name": "Flows in networks",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0063",
+            "nodeType": "area",
+            "name": "Dynamic programming",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0064",
+            "nodeType": "area",
+            "name": "Game theory",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0065",
+            "nodeType": "area",
+            "name": "Recurrence relations",
+            "level": 2,
+            "domain": "EDX-GCE"
+          },
+          {
+            "nodeId": "EDXGCE-0066",
+            "nodeType": "area",
+            "name": "Decision analysis",
+            "level": 2,
+            "domain": "EDX-GCE"
+          }
+        ]
+      }
+    ]
+  }
+}

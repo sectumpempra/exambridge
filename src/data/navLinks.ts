@@ -6,4 +6,5 @@ export const NAV_LINKS = [
   { label: "刷题规划", to: "/planner" },
   { label: "A*率趋势", to: "/statistics" },
   { label: "函数画图", to: "/graph" },
+  { label: "考纲对比", to: "/knowledge-tree" },
 ];

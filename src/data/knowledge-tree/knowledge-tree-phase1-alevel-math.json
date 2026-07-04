@@ -1,0 +1,3408 @@
+{
+  "treeId": "math-alevel",
+  "treeName": "A-Level Mathematics Knowledge Tree",
+  "version": "2.0.0",
+  "phase": "phase-1",
+  "description": "Complete A-Level Mathematics covering Pure Math, Statistics, and Mechanics (595 nodes)",
+  "metadata": {
+    "totalNodes": 597,
+    "maxDepth": 4,
+    "domains": [
+      "Pure Mathematics",
+      "Statistics",
+      "Mechanics"
+    ],
+    "subdomains": {
+      "Pure": 13,
+      "Statistics": 17,
+      "Mechanics": 17
+    },
+    "createdBy": "agent-cluster",
+    "createdAt": "2026-07-04"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "name": "Domain",
+      "description": "大领域"
+    },
+    {
+      "level": 2,
+      "name": "Area",
+      "description": "子领域"
+    },
+    {
+      "level": 3,
+      "name": "Topic",
+      "description": "知识点"
+    },
+    {
+      "level": 4,
+      "name": "Skill",
+      "description": "细分技能"
+    }
+  ],
+  "nodes": [
+    {
+      "nodeId": "PURE",
+      "name": "Pure Mathematics",
+      "level": 1,
+      "children": [
+        {
+          "nodeId": "PURE-PROOF",
+          "name": "Proof",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-PROOF-001",
+              "name": "Proof by exhaustion",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-PROOF-001",
+                  "name": "Proof by exhaustion",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-PROOF-002",
+              "name": "Proof by deduction",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-PROOF-002",
+                  "name": "Proof by deduction",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-PROOF-003",
+              "name": "Disproof by counter example",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-PROOF-003",
+                  "name": "Disproof by counter example",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-PROOF-004",
+              "name": "Proof by contradiction",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-PROOF-004",
+                  "name": "Proof by contradiction",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-ALG",
+          "name": "Algebra",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-ALG-001",
+              "name": "Indices and surds",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-ALG-001",
+                  "name": "laws of indices for all rational exponents",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-002",
+                  "name": "use and manipulation of surds",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-ALG-002",
+              "name": "linear",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-ALG-003",
+                  "name": "solve inequality",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-004",
+                  "name": "solve simultaneous equation",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-ALG-003",
+              "name": "quadratics",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-ALG-005",
+                  "name": "discriminant",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-006",
+                  "name": "completed square form",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-007",
+                  "name": "solve equation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-008",
+                  "name": "solve inequality",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-009",
+                  "name": "represent linear and quadratic inequality graphically",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-010",
+                  "name": "solve simultaneous equation analytically",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-011",
+                  "name": "reduce to quadratic equation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-012",
+                  "name": "draw the graph",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-ALG-004",
+              "name": "reciprocal function",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-ALG-013",
+                  "name": "draw the graph",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-014",
+                  "name": "asymptote",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-ALG-005",
+              "name": "modulus function",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-ALG-015",
+                  "name": "solve equation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-016",
+                  "name": "solve inequality",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-ALG-006",
+              "name": "polynomials",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-ALG-017",
+                  "name": "expanding brackets and collecting like terms",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-018",
+                  "name": "long division",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-019",
+                  "name": "factor theorem",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-020",
+                  "name": "remainder theorem",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-021",
+                  "name": "draw the graph",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-ALG-007",
+              "name": "partial fraction",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-ALG-022",
+                  "name": "(ax+b)(cx+d)(ex+f)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-023",
+                  "name": "(ax+b)(cx+d)?",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-024",
+                  "name": "(ax+b)(cx?+d)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-025",
+                  "name": "more complicated",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-026",
+                  "name": "Improper fraction",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-ALG-008",
+              "name": "rational functions and graph",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-ALG-027",
+                  "name": "relationship between f(x) and |f(x)|",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-ALG-028",
+                  "name": "relationship between f(x) and f(|x|)",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-FUNC",
+          "name": "Function",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-FUNC-001",
+              "name": "basics",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-FUNC-001",
+                  "name": "expression, domain and range",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-FUNC-002",
+              "name": "composite function",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-FUNC-002",
+                  "name": "find composition of two functions",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-FUNC-003",
+                  "name": "\"range of composite function (new) (gf can only be formed when range of f is within the domain of g)\"",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-FUNC-003",
+              "name": "inverse function",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-FUNC-004",
+                  "name": "condition (check one to one)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-FUNC-005",
+                  "name": "find the inverse function",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-FUNC-006",
+                  "name": "find domain or range",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-FUNC-007",
+                  "name": "use f?1 f(x) = ff ?1(x) = x",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-FUNC-008",
+                  "name": "draw the graph (relationship)",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-FUNC-004",
+              "name": "transformation",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-FUNC-009",
+                  "name": "f(x)+a",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-FUNC-010",
+                  "name": "f(x+a)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-FUNC-011",
+                  "name": "f(ax)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-FUNC-012",
+                  "name": "af(x)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-FUNC-013",
+                  "name": "combination",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-COGEO",
+          "name": "Coordinate geometry",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-COGEO-001",
+              "name": "line",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COGEO-001",
+                  "name": "find the equation y=mx+c (also gradient)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COGEO-002",
+                  "name": "find the equation ax+by+c=0 or y-y1=m(x-x1)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COGEO-003",
+                  "name": "length of a line segment",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COGEO-004",
+                  "name": "midpoint",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COGEO-005",
+                  "name": "intersection of two lines",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COGEO-006",
+                  "name": "parallel and perpendicular",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-COGEO-002",
+              "name": "circle",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COGEO-007",
+                  "name": "equation and center/radius",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COGEO-008",
+                  "name": "properties",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COGEO-009",
+                  "name": "intersection of line and circle",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COGEO-010",
+                  "name": "use discriminant to solve problem involving circle",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-COGEO-003",
+              "name": "parametric equation",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COGEO-011",
+                  "name": "change between Cartesian and parametric form",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COGEO-012",
+                  "name": "change between Cartesian and parametric form",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-TRIG",
+          "name": "Trigonometry",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-TRIG-001",
+              "name": "circular measure",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-TRIG-001",
+                  "name": "radian measure",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-002",
+                  "name": "arc length",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-003",
+                  "name": "sector area",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-TRIG-002",
+              "name": "rules",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-TRIG-004",
+                  "name": "sine rule",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-005",
+                  "name": "cosine rule",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-006",
+                  "name": "area of a triangle",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-TRIG-003",
+              "name": "sin cos tan",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-TRIG-007",
+                  "name": "definition/graph of sin cos tan",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-008",
+                  "name": "transformation of the graph",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-009",
+                  "name": "exact value of 30° 45° 60°",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-010",
+                  "name": "solve simple trig.equation eg.sinx=0.5",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-011",
+                  "name": "solve complicated trig. equation eg. sin(x+30)=0.5",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-012",
+                  "name": "use of tanx=sinx/cosx and sin?x+cos?x=1 to prove identity",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-013",
+                  "name": "use identity to solve the equation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-014",
+                  "name": "arcsin arccos arctan",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-015",
+                  "name": "small angle of sin/cos",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-TRIG-004",
+              "name": "sec cosec cot",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-TRIG-016",
+                  "name": "relationship/definition of sec cosec cot",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-017",
+                  "name": "graphs",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-018",
+                  "name": "use relationship to solve the equations",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-019",
+                  "name": "use sec?x=1+tan?x and cosec?x=1+cot?x to solve equations",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-TRIG-005",
+              "name": "addition formula",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-TRIG-020",
+                  "name": "solve equation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-021",
+                  "name": "prove identity",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-TRIG-006",
+              "name": "double angle formula",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-TRIG-022",
+                  "name": "solve equation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-023",
+                  "name": "prove identity",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-TRIG-007",
+              "name": "asinx+bcosx to Rsin/cos(x+a)",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-TRIG-024",
+                  "name": "expression",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-025",
+                  "name": "find max/min value",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-026",
+                  "name": "the value of x when max/min occurs",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-TRIG-027",
+                  "name": "solve equation",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-TRIG-008",
+              "name": "real-life problems",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-TRIG-028",
+                  "name": "vectors, kinematics and forces",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-SERIES",
+          "name": "Series and sequence",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-SERIES-001",
+              "name": "arithmetic series",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-SERIES-001",
+                  "name": "l=a+(n-1)d",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-002",
+                  "name": "S=n(a+l)/2",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-003",
+                  "name": "application",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-SERIES-002",
+              "name": "geometric series",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-SERIES-004",
+                  "name": "l=ar^(n-1)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-005",
+                  "name": "sum of the first n terms",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-006",
+                  "name": "find sum to infinity",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-007",
+                  "name": "condition for sum to infinity",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-008",
+                  "name": "application",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-SERIES-003",
+              "name": "binomial expansion",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-SERIES-009",
+                  "name": "(a+b)^n, when n is a positive integer",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-010",
+                  "name": "(1+x)^n, when n is a rational number",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-011",
+                  "name": "(a+x)^n, when n is a rational number",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-012",
+                  "name": "condition |x|＜1",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-013",
+                  "name": "combination and estimation",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-SERIES-004",
+              "name": "sum notation",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-SERIES-014",
+                  "name": "sigma notation",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-SERIES-005",
+              "name": "sequence",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-SERIES-015",
+                  "name": "in/decreasing sequence",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-016",
+                  "name": "periodic sequence",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-SERIES-017",
+                  "name": "convergent sequence",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-EXPLG",
+          "name": "Exponential and logarithm",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-EXPLG-001",
+              "name": "logarithm",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-EXPLG-001",
+                  "name": "definition of logarithm",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-EXPLG-002",
+                  "name": "law of logarithm",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-EXPLG-003",
+                  "name": "change the base",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-EXPLG-004",
+                  "name": "graphs of log",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-EXPLG-002",
+              "name": "exponential",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-EXPLG-005",
+                  "name": "y=a^x, a＞1, graph",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-EXPLG-006",
+                  "name": "y=e^x, graph",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-EXPLG-007",
+                  "name": "exponential growth and decay",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-EXPLG-003",
+              "name": "natural logarithm",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-EXPLG-008",
+                  "name": "graphs",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-EXPLG-009",
+                  "name": "relationship between e and ln (inverse)",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-EXPLG-004",
+              "name": "calculation (solve)",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-EXPLG-010",
+                  "name": "solve equation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-EXPLG-011",
+                  "name": "solve inequality",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-EXPLG-005",
+              "name": "transform",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-EXPLG-012",
+                  "name": "transform a given relationship to linear form",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-DIFF",
+          "name": "Differentiation",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-DIFF-001",
+              "name": "gradient of a curve",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-DIFF-001",
+                  "name": "definition of derivative (lim)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-002",
+                  "name": "gradient of a curve at a point",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-DIFF-002",
+              "name": "basic rule",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-DIFF-003",
+                  "name": "use derivative of x to the power n",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-DIFF-003",
+              "name": "application",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-DIFF-004",
+                  "name": "tangent",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-005",
+                  "name": "normal",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-006",
+                  "name": "in/decreasing function",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-007",
+                  "name": "stationary point (3 situation)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-008",
+                  "name": "use 1st derivative to determine the nature of stationary point",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-009",
+                  "name": "use 2nd derivative to determine the nature of stationary point",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-010",
+                  "name": "use max/min point to sketch the graph",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-011",
+                  "name": "application of stationary point",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-DIFF-004",
+              "name": "chain rule",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-DIFF-012",
+                  "name": "chain rule",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-013",
+                  "name": "rate of change",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-014",
+                  "name": "application of rate of change",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-DIFF-005",
+              "name": "complicated rules",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-DIFF-015",
+                  "name": "product rule",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-016",
+                  "name": "quotient rule",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-017",
+                  "name": "derivative of e and ln",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-018",
+                  "name": "derivative of a^x",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-019",
+                  "name": "derivative of trigonometry",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-020",
+                  "name": "derivative of arctan",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DIFF-021",
+                  "name": "derivative of arcsin/arccos",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-DIFF-006",
+              "name": "parametric",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-DIFF-022",
+                  "name": "derivative of parametric function",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-DIFF-007",
+              "name": "implicit",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-DIFF-023",
+                  "name": "derivative of implicit function",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-INTG",
+          "name": "Integration",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-INTG-001",
+              "name": "indefinite integral",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-INTG-001",
+                  "name": "basic",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-002",
+                  "name": "reverse chain rule",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-003",
+                  "name": "find f(x) by using integral",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-INTG-002",
+              "name": "definite integral",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-INTG-004",
+                  "name": "basic calculation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-005",
+                  "name": "improper integral",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-006",
+                  "name": "area under the curve",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-007",
+                  "name": "area under x-axis (negative)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-008",
+                  "name": "area between two curves",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-009",
+                  "name": "volume of revolution x-axis",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-010",
+                  "name": "volume of revolution y-axis",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-011",
+                  "name": "parametric equation area or volume",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-INTG-003",
+              "name": "reverse differentiation",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-INTG-012",
+                  "name": "exp and log",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-013",
+                  "name": "trigonometry",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-014",
+                  "name": "f'(x)/f(x)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-015",
+                  "name": "f'(x)e to the power of f(x)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-016",
+                  "name": "f'(x)(f(x)) to the power n",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-INTG-004",
+              "name": "use trigonometry relationship",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-INTG-017",
+                  "name": "sin?x cos?x ,double angle formula",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-018",
+                  "name": "tan?x, tan?x=sec?x-1",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-019",
+                  "name": "sinx/cosx to the power 3, sin?x+cos?x=1",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-INTG-005",
+              "name": "partial fraction",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-INTG-020",
+                  "name": "partial fraction",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-021",
+                  "name": "improper partial fraction",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-INTG-006",
+              "name": "substitution",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-INTG-022",
+                  "name": "substitution",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-INTG-007",
+              "name": "by parts",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-INTG-023",
+                  "name": "by parts",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-INTG-008",
+              "name": "trapezium rule",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-INTG-024",
+                  "name": "use trapezium rule to estimate area",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-025",
+                  "name": "overestimate or underestimate",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-INTG-026",
+                  "name": "better approximation",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-DE",
+          "name": "Differential equations",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-DE-001",
+              "name": "formulate a DE",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-DE-001",
+                  "name": "use rate of change",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-DE-002",
+              "name": "solve DE",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-DE-002",
+                  "name": "use separation to find general solution",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DE-003",
+                  "name": "use separation to find particular solution",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-DE-004",
+                  "name": "real-life situation question",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-NUMSL",
+          "name": "Numerical solution",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-NUMSL-001",
+              "name": "find the range of a root",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-NUMSL-001",
+                  "name": "change of sign",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-NUMSL-002",
+              "name": "iterative formula",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-NUMSL-002",
+                  "name": "form the recurrence relations",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-NUMSL-003",
+                  "name": "find the root",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-NUMSL-004",
+                  "name": "draw associated cobweb and staircase diagrams",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-NUMSL-003",
+              "name": "Newton-Raphson method",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-NUMSL-005",
+                  "name": "solve equations using the Newton-Raphson",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-NUMSL-004",
+              "name": "numerical integration",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-NUMSL-006",
+                  "name": "mid-ordinate rule and Simpson's Rule",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-VEC",
+          "name": "Vector",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-VEC-001",
+              "name": "basic definition",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-VEC-001",
+                  "name": "notation in 2D and 3D",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-002",
+                  "name": "magnitude of a vector",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-003",
+                  "name": "unit vector",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-004",
+                  "name": "position vector",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-005",
+                  "name": "addition and subtract",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-006",
+                  "name": "multiplication by scalars",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-007",
+                  "name": "distance between two points in vector form",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-VEC-002",
+              "name": "straight line",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-VEC-008",
+                  "name": "find (use) the equation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-009",
+                  "name": "relationship between two lines: parallel",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-010",
+                  "name": "relationship between two lines: intersection",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-011",
+                  "name": "relationship between two lines: skew",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-VEC-003",
+              "name": "scalar product",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-VEC-012",
+                  "name": "perpendicular",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-013",
+                  "name": "find the angle",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-VEC-004",
+              "name": "plane",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-VEC-014",
+                  "name": "basic plane",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-015",
+                  "name": "point and plane",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-016",
+                  "name": "line and plane",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-VEC-017",
+                  "name": "plane and plane",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "PURE-COMP",
+          "name": "Complex number",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "PURE-COMP-001",
+              "name": "basic definition",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COMP-001",
+                  "name": "real part and imaginary part",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-002",
+                  "name": "solve quadratic equations",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-003",
+                  "name": "modulus",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-004",
+                  "name": "argument",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-005",
+                  "name": "conjugate",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-006",
+                  "name": "＋ － x",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-007",
+                  "name": "÷ (use conjugate)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-008",
+                  "name": "square roots",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-COMP-002",
+              "name": "Argand diagram",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COMP-009",
+                  "name": "represent in argand diagram",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-010",
+                  "name": "loci-circle",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-011",
+                  "name": "loci-perpendicular bisector",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-012",
+                  "name": "loci-half line",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-013",
+                  "name": "inequality",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-COMP-003",
+              "name": "modulus and argument form",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COMP-014",
+                  "name": "find the form",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-015",
+                  "name": "multiplication and division of 2 complex number in m-a form",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-COMP-004",
+              "name": "exponential form",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COMP-016",
+                  "name": "exponential form",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-COMP-005",
+              "name": "polynomial",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COMP-017",
+                  "name": "find three roots for cubic equation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-018",
+                  "name": "find four roots for quartic equation",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-COMP-006",
+              "name": "de moivre's theorem",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COMP-019",
+                  "name": "prove de moivre's theorem",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-020",
+                  "name": "application to trigonometric identity",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-021",
+                  "name": "nth roots",
+                  "level": 4
+                },
+                {
+                  "nodeId": "PURE-COMP-022",
+                  "name": "summation of series",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-COMP-007",
+              "name": "transformation",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COMP-023",
+                  "name": "from z-plane to w-plane",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "PURE-COMP-008",
+              "name": "application",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "PURE-COMP-024",
+                  "name": "solve geometric problem",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nodeId": "STAT",
+      "name": "Statistics",
+      "level": 1,
+      "children": [
+        {
+          "nodeId": "STAT-MOD",
+          "name": "Mathematical modelling",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-MOD-001",
+              "name": "Mathematical models",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-MOD-001",
+                  "name": "understand and know the advantages and disadvantages of mathematical models",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-MOD-002",
+              "name": "Designing a model",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-MOD-002",
+                  "name": "know the process of designing a model",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-MEAS",
+          "name": "Measures of location and spread",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-MEAS-001",
+              "name": "Types of data",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-MEAS-001",
+                  "name": "recognise different types of data",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-MEAS-002",
+              "name": "Measures of central tendency",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-MEAS-002",
+                  "name": "calculate mean, median, mode for given data",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-MEAS-003",
+                  "name": "calculate combining mean",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-MEAS-004",
+                  "name": "calculate mean, median, mode for frequency table",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-MEAS-005",
+                  "name": "estimate mean and find modal class for group data",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-MEAS-006",
+                  "name": "use interpolation to estimate median for group data",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-MEAS-003",
+              "name": "Other measures of location",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-MEAS-007",
+                  "name": "calculate percentiles for given data",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-MEAS-008",
+                  "name": "use interpolation to estimate percentiles for group data",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-MEAS-004",
+              "name": "Measures of spread",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-MEAS-009",
+                  "name": "calculate quartiles, range, interquartile range",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-MEAS-010",
+                  "name": "calculate variance and standard deviation for given data",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-MEAS-011",
+                  "name": "estimate variance and standard deviation for group data",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-MEAS-005",
+              "name": "Coding",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-MEAS-012",
+                  "name": "use coding to calculate mean, standard deviation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-MEAS-013",
+                  "name": "work with an assumed mean",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-MEAS-006",
+              "name": "Combined set of date",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-REPDT",
+          "name": "Representation of data",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-REPDT-001",
+              "name": "Looking at the data",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-REPDT-001",
+                  "name": "understand tally, extreme values, describing the shape of a distribution",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-REPDT-002",
+              "name": "Stem-and-leaf diagrams",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-REPDT-002",
+                  "name": "draw stem-and-leaf diagrams and back-to-back stem-and-leaf diagrams",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-REPDT-003",
+                  "name": "interpret stem-and-leaf diagrams and back-to-back stem-and-leaf diagrams",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-REPDT-003",
+              "name": "Box-and-whisker plots",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-REPDT-004",
+                  "name": "draw box-and-whisker plots",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-REPDT-005",
+                  "name": "interpret box-and-whisker plots to compare sets of data",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-REPDT-004",
+              "name": "Histograms",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-REPDT-006",
+                  "name": "draw histograms",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-REPDT-007",
+                  "name": "using histograms to calculate frequency",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-REPDT-005",
+              "name": "Skewness",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-REPDT-008",
+                  "name": "five methods to distinguish skewness",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-REPDT-006",
+              "name": "Cumulative frequency graphs",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-REPDT-009",
+                  "name": "draw cumulative frequency graphs",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-REPDT-010",
+                  "name": "use cumulative frequency graphs to estimate",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-REPDT-007",
+              "name": "Advantages and disadvantages of particular representations",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-PROB",
+          "name": "Probability",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-PROB-001",
+              "name": "Measuring probability",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PROB-001",
+                  "name": "understand outcomes, experiment, sample space, trial, event",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-PROB-002",
+              "name": "Estimating probability",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PROB-002",
+                  "name": "experimental estimation of probability",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-PROB-003",
+                  "name": "theoretical estimation of probability",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-PROB-004",
+                  "name": "complement of an event",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-PROB-005",
+                  "name": "Venn diagrams",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-PROB-003",
+              "name": "Expectation",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PROB-006",
+                  "name": "calculate expectation or expected frequency",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-PROB-004",
+              "name": "Probability of either one event or another",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PROB-007",
+                  "name": "use addition and multiplication of probabilities",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-PROB-008",
+                  "name": "mutually exclusive events",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-PROB-005",
+              "name": "Independent and dependent events",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PROB-009",
+                  "name": "independent events",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-PROB-010",
+                  "name": "tree diagrams",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-PROB-006",
+              "name": "Conditional probability",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PROB-011",
+                  "name": "use conditional probability formulae",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-CORR",
+          "name": "Correlation and Regression",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-CORR-001",
+              "name": "Correlation",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-CORR-001",
+                  "name": "calculate product-moment correlation coefficient",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-CORR-002",
+              "name": "Linear regression",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-CORR-002",
+                  "name": "find regression equation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-CORR-003",
+                  "name": "Spearman’s rank correlation coefficient",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-DRV",
+          "name": "Discrete random variables",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-DRV-001",
+              "name": "Discrete random variables",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-DRV-001",
+                  "name": "understand probability distribution, discrete random variable, expectation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-DRV-002",
+                  "name": "draw a probability distribution table",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-DRV-002",
+              "name": "Expectation and variance",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-DRV-003",
+                  "name": "calculate expectation and variance",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-DRV-004",
+                  "name": "solve problems involving discrete random variables",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-DRV-003",
+              "name": "Cumulative distribution function",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-DRV-005",
+                  "name": "make cumulative distribution function",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-PERM",
+          "name": "Permutations and combinations",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-PERM-001",
+              "name": "Factorials",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PERM-001",
+                  "name": "understand factorial",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-PERM-002",
+                  "name": "solve problems involving arrangements where there are restrictions",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-PERM-002",
+              "name": "Permutations",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PERM-003",
+                  "name": "understand permutation",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-PERM-003",
+              "name": "Combinations",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PERM-004",
+                  "name": "understand combination",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-PERM-005",
+                  "name": "solve problems involving selections where order matters, order doesn't matter, groupings",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-PERM-004",
+              "name": "Binomial coefficients",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PERM-006",
+                  "name": "calculate the binomial coefficients",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-PERM-005",
+              "name": "Using binomial coefficients to calculate probabilities",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-PERM-007",
+                  "name": "using binomial coefficients to calculate probabilities",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-DPD",
+          "name": "Discrete probability distributions",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-DPD-001",
+              "name": "Binomial distribution",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-DPD-001",
+                  "name": "recognise situations that give rise to a binomial distribution",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-DPD-002",
+              "name": "Expectation and variance of B(n,p)",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-DPD-002",
+                  "name": "find mean and variance of a binomial distribution",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-DPD-003",
+              "name": "Using binomial distribution",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-DPD-003",
+                  "name": "calculate probabilities using binomial distribution",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-DPD-004",
+              "name": "Binomial cumulative distribution function",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-DPD-004",
+                  "name": "use tables to find cumulative binomial probabilities",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-DPD-005",
+              "name": "Geometric distribution",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-DPD-005",
+                  "name": "calculate probabilities using the geometric distribution, including cumulative probabilities",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-DPD-006",
+                  "name": "know and be able to use the mean of a geometric distribution",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-DPD-006",
+              "name": "Discrete uniform distribution",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-DPD-007",
+                  "name": "calculate probabilities using the discrete uniform distribution",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-DPD-008",
+                  "name": "find the mean and variance of a discrete uniform distribution",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-EXPDS",
+          "name": "The exponential distribution",
+          "level": 2
+        },
+        {
+          "nodeId": "STAT-NORM",
+          "name": "Normal distribution",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-NORM-001",
+              "name": "Using normal distribution tables",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-NORM-001",
+                  "name": "use normal distribution as a model",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-NORM-002",
+              "name": "Normal curve",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-NORM-002",
+                  "name": "know the shape of a normal curve and the location of its line of symmetry",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-NORM-003",
+                  "name": "be able to standardise a normal variable",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-NORM-004",
+                  "name": "find probability from a normal distribution",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-NORM-003",
+              "name": "Modelling discrete situations",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-NORM-005",
+                  "name": "modelling discrete situations",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-NORM-004",
+              "name": "Using normal distribution as an approximation for binomial distribution",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-NORM-006",
+                  "name": "understand how and why a continuity correction is applied",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-POIS",
+          "name": "Poisson distribution",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-POIS-001",
+              "name": "Exponential series",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-POIS-001",
+                  "name": "exponential series",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-POIS-002",
+              "name": "Poisson distribution",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-POIS-002",
+                  "name": "the mean and variance of a Poisson distribution",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-POIS-003",
+                  "name": "the Poisson cumulative distribution function",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-POIS-004",
+                  "name": "conditions for a Poisson distribution",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "STAT-POIS-003",
+              "name": "Approximating distributions",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "STAT-POIS-005",
+                  "name": "the Poisson approximation of a binomial distribution",
+                  "level": 4
+                },
+                {
+                  "nodeId": "STAT-POIS-006",
+                  "name": "the normal approximation of a poisson distribution",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-HYPT",
+          "name": "Hypothesis testing",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-HYPT-001",
+              "name": "binomial test",
+              "level": 3
+            },
+            {
+              "nodeId": "STAT-HYPT-002",
+              "name": "normal test",
+              "level": 3
+            },
+            {
+              "nodeId": "STAT-HYPT-003",
+              "name": "Type I and Type II errors",
+              "level": 3
+            },
+            {
+              "nodeId": "STAT-HYPT-004",
+              "name": "Poisson test",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-LCRV",
+          "name": "Linear combination of random variables",
+          "level": 2
+        },
+        {
+          "nodeId": "STAT-CDRV",
+          "name": "Continuous random variables",
+          "level": 2
+        },
+        {
+          "nodeId": "STAT-SMPL",
+          "name": "Sampling",
+          "level": 2
+        },
+        {
+          "nodeId": "STAT-EST",
+          "name": "Estimation",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "STAT-EST-001",
+              "name": "Unbiased estimates of population mean and variance",
+              "level": 3
+            },
+            {
+              "nodeId": "STAT-EST-002",
+              "name": "Confidence intervals for population mean",
+              "level": 3
+            },
+            {
+              "nodeId": "STAT-EST-003",
+              "name": "Confidence intervals for population proportion",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "STAT-DATCL",
+          "name": "Data collection",
+          "level": 2
+        }
+      ]
+    },
+    {
+      "nodeId": "MECH",
+      "name": "Mechanics",
+      "level": 1,
+      "children": [
+        {
+          "nodeId": "MECH-MODA",
+          "name": "Modeling assumptions",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-MODA-001",
+              "name": "string is light and inextensible",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-MODA-001",
+                  "name": "Ignore the mass of the string and any stretching effect caused by the mass",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-MODA-002",
+              "name": "smooth and light pulley",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-MODA-002",
+                  "name": "tension is the same on either side of the pulley",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-MODA-003",
+              "name": "the mass is modeled as a particle",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-MODA-003",
+                  "name": "ignore the rotational effect of any external forces that are acting on it, and the effects of air resistance",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-KIN",
+          "name": "Kinematics of motion in a straight line",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-KIN-001",
+              "name": "scalar quantities and vector quantities",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-KIN-001",
+                  "name": "definitions of displacement, velocity and acceleration as vector quantities",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-002",
+                  "name": "distance and speed as scalar quantities (must be positive)",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-KIN-002",
+              "name": "S.I. system",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-KIN-003",
+                  "name": "kg, s, m, ...",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-KIN-003",
+              "name": "choose appropriate formulae for constant acceleration",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-KIN-004",
+                  "name": "SUVAT questions always give 3 conditions to solve the other 2 unknowns",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-005",
+                  "name": "a=(v-u)/t",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-006",
+                  "name": "v=u+at",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-007",
+                  "name": "s=ut+1/2at^2",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-008",
+                  "name": "s=vt-1/2at^2",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-009",
+                  "name": "v^2-u^2=2as",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-010",
+                  "name": "s=(u+v)/2*t",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-KIN-004",
+              "name": "displacement–time graphs",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-KIN-011",
+                  "name": "particularly for multistage problem",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-012",
+                  "name": "the gradient of a s-t graph represents velocity",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-KIN-005",
+              "name": "velocity–time graphs",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-KIN-013",
+                  "name": "particularly for multistage problem",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-014",
+                  "name": "the gradient of a v-t graph represents acceleration",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-015",
+                  "name": "the area under a v-t graph represents displacement",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-016",
+                  "name": "in a certain time period, same displacement means the same area",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-017",
+                  "name": "intersection (a,b) of v-t graph means at time=a, particles have the same velocity v=b",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-KIN-006",
+              "name": "differentiation and integration concerning displacement, velocity and acceleration",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-KIN-018",
+                  "name": "Calculus required",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-019",
+                  "name": "ds/dt=v, dv/dt=a",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-020",
+                  "name": "integrate a w.r.t t gives v, along with an unknown constant, which needs to be compute by a given (v0, t0)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-021",
+                  "name": "integrate v w.r.t t gives s, along with an unknown constant, which needs to be compute by a given (s0, t0)",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-KIN-007",
+              "name": "deceleration questions",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-KIN-022",
+                  "name": "deceleration would move back",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-KIN-023",
+                  "name": "projectile",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-FORC",
+          "name": "Forces and equilibrium",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-FORC-001",
+              "name": "Newton's second law",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-FORC-001",
+                  "name": "F=ma",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-FORC-002",
+              "name": "Kinds of forces in a given situation",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-FORC-002",
+                  "name": "Weight (W, G)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-003",
+                  "name": "Normal contact force (N, R)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-004",
+                  "name": "Tension and thrust (T)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-005",
+                  "name": "Friction (f)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-006",
+                  "name": "contact force between two surfaces",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-007",
+                  "name": "draw diagram",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-FORC-003",
+              "name": "resolving forces",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-FORC-008",
+                  "name": "in horizontal and vertical directions",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-009",
+                  "name": "in the directions parallel and perpendicular to the slope",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-010",
+                  "name": "in the directions parallel and perpendicular to the direction of motion",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-011",
+                  "name": "use trigonometry to transform between sin, cos and tan",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-FORC-004",
+              "name": "statics",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-FORC-012",
+                  "name": "being at rest or moving with constant velocity (no acceleration) mean equilibrium",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-013",
+                  "name": "the sum of the components in any direction is zero",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-014",
+                  "name": "limiting friction and limiting equilibrium, on the point of moving: Fmax=miuR",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-015",
+                  "name": "the vector sum of the forces acting is zero",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-FORC-005",
+              "name": "Newton’s third law",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-FORC-016",
+                  "name": "for every action there is an equal and opposite reaction",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-FORC-006",
+              "name": "Connected particles",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-FORC-017",
+                  "name": "cars and tow truck",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-018",
+                  "name": "pulley connecting particles hanging vertically",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-019",
+                  "name": "pulley connecting particles one on slope and the other vertical",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-020",
+                  "name": "pulley connecting particles both on slopes",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-021",
+                  "name": "pulley connecting particles on tables",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-FORC-022",
+                  "name": "Elevator, lifts",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-MOM",
+          "name": "Momentum and impulse",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-MOM-001",
+              "name": "definition of linear momentum",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-MOM-001",
+                  "name": "choose positive direction",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-MOM-002",
+              "name": "conservation of linear momentum",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-MOM-002",
+                  "name": "collisions",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-MOM-003",
+              "name": "as vector",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-VECM",
+          "name": "Vectors",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-VECM-001",
+              "name": "pre-knowledge",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-VECM-001",
+                  "name": "notation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-VECM-002",
+                  "name": "linear operation",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-VECM-003",
+                  "name": "i ? j form or as column vectors",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-VECM-004",
+                  "name": "equality",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-VECM-005",
+                  "name": "magnitude",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-VECM-002",
+              "name": "constant velocity: r=r0+vt",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-VECM-003",
+              "name": "constant acceleration: v=u+at",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-VECM-004",
+              "name": "forces as vectors: F=ma",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-VECM-005",
+              "name": "forces in equilibrium",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-VECM-006",
+                  "name": "vector sum=0",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-VECM-006",
+              "name": "resultant velocity",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-VECM-007",
+              "name": "relative velocity",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-VECM-008",
+              "name": "vector calculus",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-EWP",
+          "name": "Energy, work and power",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-EWP-001",
+              "name": "Work done by a force W=Fcos(theta)S",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-EWP-001",
+                  "name": "resolve the forces in the direction of motion",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-EWP-002",
+                  "name": "only the component force in the direction of motion do work",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-EWP-002",
+              "name": "Work done by a variable force",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-EWP-003",
+                  "name": "integration",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-EWP-003",
+              "name": "Gravitational potential energy and kinetic energy",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-EWP-004",
+                  "name": "definition of gravitational potential energy GPE=mgh",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-EWP-005",
+                  "name": "definition of kinetic energy KE=1/2mv^2",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-EWP-006",
+                  "name": "The principle of conservation of mechanical energy",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-EWP-004",
+              "name": "Work-energy principle",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-EWP-007",
+                  "name": "deltaKE=SIGMA(FS)=Wdone-Wloss",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-EWP-008",
+                  "name": "typical model",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-EWP-005",
+              "name": "Power",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-EWP-009",
+                  "name": "P=W/t, definition of power: the rate at which a force does work",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-EWP-010",
+                  "name": "P=Fv, relationship between power, force and velocity for a force acting in the direction of motion",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-EWP-011",
+                  "name": "typical models",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-MOMT",
+          "name": "Moments",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-MOMT-001",
+              "name": "Force could cause a body to rotate",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-MOMT-002",
+              "name": "Moment as integration",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-MOMT-003",
+              "name": "Moment is a measure of this turning effect",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-MOMT-001",
+                  "name": "Moment=Fdcostheta",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-MOMT-002",
+                  "name": "direction: clockwise or anti clockwise",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-MOMT-004",
+              "name": "Equilibrium of rigid bodies",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-MOMT-003",
+                  "name": "Equilibrium of forces",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-MOMT-004",
+                  "name": "Equilibrium of the moment about any turning point",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-MOMT-005",
+                  "name": "on the point of rotating about point P",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-MOMT-006",
+                  "name": "centre of mass of a uniform body (rod)",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-MOMT-005",
+              "name": "Centres of mass",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-CAIE-VA",
+          "name": "Velocity and acceleration",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-CAIE-VA-001",
+              "name": "Equations of constant acceleration (suvat)",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-CAIE-VA-002",
+              "name": "Velocity-time graphs",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-CAIE-VA-003",
+              "name": "Displacement-time graphs",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-CAIE-FEM",
+          "name": "Forces and equilibrium and motion",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-CAIE-FEM-001",
+              "name": "Force and motion in one dimension",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-CAIE-FEM-001",
+                  "name": "Horizontal motion",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-CAIE-FEM-002",
+                  "name": "Vertical motion",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-CAIE-FEM-002",
+              "name": "Forces in two dimensions",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-CAIE-FEM-003",
+                  "name": "Equilibrium",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-CAIE-FEM-004",
+                  "name": "Find resultant force and direction",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-CAIE-FEM-005",
+                  "name": "Non-equilibrium (slopes)",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-CAIE-FEM-006",
+                  "name": "Non-equilibrium (horizontal)",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-CAIE-FRIC",
+          "name": "Friction",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-CAIE-FRIC-001",
+              "name": "Friction in equilibrium",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-CAIE-FRIC-001",
+                  "name": "Limiting equilibrium",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-CAIE-FRIC-002",
+                  "name": "Not limiting equilibrium",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-CAIE-FRIC-002",
+              "name": "Friction in motion",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-CAIE-FRIC-003",
+                  "name": "Change of direction of friction",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-CAIE-FRIC-004",
+                  "name": "Not change of direction of friction",
+                  "level": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-CAIE-CONP",
+          "name": "Connected particles",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-CAIE-CONP-001",
+              "name": "Objects connected by rods",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-CAIE-CONP-002",
+              "name": "Objects connected by strings",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-CAIE-CONP-001",
+                  "name": "pulleys",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-CAIE-CONP-002",
+                  "name": "other types",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-CAIE-CONP-003",
+              "name": "Objects in moving lifts",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-CAIE-GMOT",
+          "name": "General motion in a straight line",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-CAIE-GMOT-001",
+              "name": "general motion",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-CAIE-MOMC",
+          "name": "Momentum",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-CAIE-MOMC-001",
+              "name": "Conservation of linear momentum",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-CAIE-WEP",
+          "name": "Work，energy and power",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-CAIE-WEP-001",
+              "name": "Work-energy principle",
+              "level": 3,
+              "children": [
+                {
+                  "nodeId": "MECH-CAIE-WEP-001",
+                  "name": "Conservative forces",
+                  "level": 4
+                },
+                {
+                  "nodeId": "MECH-CAIE-WEP-002",
+                  "name": "Non-conservative forces",
+                  "level": 4
+                }
+              ]
+            },
+            {
+              "nodeId": "MECH-CAIE-WEP-002",
+              "name": "Power",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-MOTD",
+          "name": "Motion in one，two and three dimensions",
+          "level": 2,
+          "children": [
+            {
+              "nodeId": "MECH-MOTD-001",
+              "name": "Constant acceleration",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-MOTD-002",
+              "name": "Variable acceleration",
+              "level": 3
+            },
+            {
+              "nodeId": "MECH-MOTD-003",
+              "name": "Projectiles",
+              "level": 3
+            }
+          ]
+        },
+        {
+          "nodeId": "MECH-PROJ",
+          "name": "Projectile",
+          "level": 2
+        },
+        {
+          "nodeId": "MECH-UCM",
+          "name": "Uniform circular motion",
+          "level": 2
+        }
+      ]
+    }
+  ]
+}

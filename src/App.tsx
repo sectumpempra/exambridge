@@ -28,6 +28,7 @@ const GraphPage = lazy(() => import("./pages/graph/GraphPage"));
 const PaperSearchPage = lazy(() => import("./pages/papers/PaperSearchPage"));
 const PaperDetailPage = lazy(() => import("./pages/papers/PaperDetailPage"));
 const PaperComparePage = lazy(() => import("./pages/papers/PaperComparePage"));
+const KnowledgeTreeComparePage = lazy(() => import("./pages/knowledge-tree/KnowledgeTreeComparePage"));
 
 // Loading fallback for lazy routes
 function PageLoader() {
@@ -99,6 +100,9 @@ export default function App() {
         <Route path="/papers" element={<PaperSearchPage />} />
         <Route path="/papers/:paperId" element={<PaperDetailPage />} />
         <Route path="/papers/compare" element={<PaperComparePage />} />
+
+        {/* Knowledge Tree Comparison */}
+        <Route path="/knowledge-tree" element={<KnowledgeTreeComparePage />} />
       </Routes>
     </Suspense>
   );
