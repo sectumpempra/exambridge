@@ -63,7 +63,9 @@ export default defineConfig({
         // SkipWaiting for immediate activation
         skipWaiting: true,
         // Don't pre-cache HTML — use NetworkFirst instead
+        // Exclude knowledge-tree JSON files (3.4MB+) from precache
         globPatterns: ['**/*.{js,css,png,svg,ico,json,webmanifest}'],
+        globIgnores: ['**/knowledge-tree/**/*.json', '**/knowledge-tree/**/syllabus/*.json'],
         runtimeCaching: [
           {
             // HTML pages: network first to always get latest

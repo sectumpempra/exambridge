@@ -37,27 +37,38 @@ export default function KnowledgeTreeComparePage() {
     loadKnowledgeTree().then(setTree).catch(console.error);
   }, []);
 
-  // Load overlap when selection changes
+  const subjectA = subjects.find((s) => s.code === codeA);
+  const subjectB = subjects.find((s) => s.code === codeB);
+
+  // Load overlap when selection changes — defined after subjectA/B are available
+  const [error, setError] = useState<string | null>(null);
+
   const compare = useCallback(async () => {
-    if (!codeA || !codeB || codeA === codeB) return;
+    if (!codeA || !codeB || codeA === codeB) {
+      setError("请选择两个不同的科目进行对比");
+      return;
+    }
     setLoading(true);
+    setError(null);
     try {
       const data = await loadOverlap(codeA, codeB);
-      setOverlap(data);
+      if (!data) {
+        setError(`暂无 ${subjectA?.name || codeA} 与 ${subjectB?.name || codeB} 的重合度数据，请尝试其他科目组合`);
+        setOverlap(null);
+      } else {
+        setOverlap(data);
+      }
     } catch (e) {
-      console.error(e);
+      setError("加载数据失败，请检查网络连接后重试");
       setOverlap(null);
     } finally {
       setLoading(false);
     }
-  }, [codeA, codeB]);
+  }, [codeA, codeB, subjectA, subjectB]);
 
   useEffect(() => {
     compare();
   }, [compare]);
-
-  const subjectA = subjects.find((s) => s.code === codeA);
-  const subjectB = subjects.find((s) => s.code === codeB);
 
   // Extract highlight sets from overlap
   const highlightSets = (() => {
@@ -146,6 +157,19 @@ export default function KnowledgeTreeComparePage() {
               loading={loading}
             />
           </div>
+
+          {/* Error message */}
+          {error && (
+            <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-6 text-center">
+              <p className="text-sm text-[#8B8378] mb-3">{error}</p>
+              <button
+                onClick={() => { setError(null); compare(); }}
+                className="px-4 py-2 text-xs font-medium text-white bg-[#8F7F6E] rounded-lg hover:bg-[#A69888] transition-colors"
+              >
+                重试
+              </button>
+            </div>
+          )}
 
           {/* Tabs */}
           {overlap && tree && (

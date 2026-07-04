@@ -55,7 +55,7 @@ export default function OverlapDashboard({ overlap, subjectAName, subjectBName, 
 
       {/* Big score */}
       <div className="px-6 py-6 text-center">
-        <div className="text-[56px] font-extrabold leading-none" style={{
+        <div className="text-[clamp(36px,8vw,56px)] font-extrabold leading-none" style={{
           background: "linear-gradient(135deg, #8F7F6E 0%, #B8A68A 50%, #A69888 100%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",

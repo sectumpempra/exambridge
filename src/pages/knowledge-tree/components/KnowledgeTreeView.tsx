@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import type { KnowledgeTreeNode } from "@/data/knowledge-tree/types";
-import { ChevronRight, ChevronDown, Search } from "lucide-react";
+import { ChevronRight, ChevronDown, Search, Folder } from "lucide-react";
 
 interface Props {
   nodes: KnowledgeTreeNode[];
@@ -51,15 +51,16 @@ function TreeNodeItem({
   const isAOnly = aOnlyNodes?.has(nodeId);
   const isBOnly = bOnlyNodes?.has(nodeId);
 
-  const indentColors = ["#8F7F6E", "#5A7AA0", "#6B8F5E", "#A08078"];
-  void indentColors[Math.min(depth, 3)]; // used for visual weight
+  const statusLabel = isAOnly ? "A独有" : isBOnly ? "B独有" : isHighlight ? "共同" : null;
+  const statusColor = isAOnly ? "#C75B2A" : isBOnly ? "#5A7AA0" : isHighlight ? "#5A7A5E" : null;
 
   return (
     <div>
       <div
-        className="flex items-center gap-1.5 py-1 px-1 rounded cursor-pointer transition-colors hover:bg-[#F5F2EE]"
+        className="flex items-center gap-1.5 py-1.5 px-1 rounded cursor-pointer transition-colors hover:bg-[#F5F2EE] min-h-[36px]"
         style={{ paddingLeft: `${depth * 16 + 4}px` }}
         onClick={() => hasChildren && setExpanded(!expanded)}
+        title={item.node.path.join(" > ")}
       >
         {hasChildren ? (
           expanded ? (
@@ -71,14 +72,10 @@ function TreeNodeItem({
           <span className="w-3.5 flex-shrink-0" />
         )}
 
-        {/* Status indicator */}
-        {(isHighlight || isAOnly || isBOnly) && (
-          <span
-            className="w-2 h-2 rounded-full flex-shrink-0"
-            style={{
-              backgroundColor: isAOnly ? "#C75B2A" : isBOnly ? "#5A7AA0" : "#5A7A5E",
-            }}
-          />
+        {hasChildren ? (
+          <Folder className="w-3.5 h-3.5 text-[#B8A68A] flex-shrink-0" />
+        ) : (
+          <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: statusColor || "#C4BDB3" }} />
         )}
 
         <span
@@ -90,9 +87,18 @@ function TreeNodeItem({
           {item.node.path[item.node.path.length - 1]}
         </span>
 
-        {item.node.level >= 3 && (
+        {item.node.level >= 3 && !hasChildren && (
           <span className="text-[10px] text-[#C4BDB3] ml-1 flex-shrink-0">
             {item.node.nodeId}
+          </span>
+        )}
+
+        {statusLabel && (
+          <span
+            className="ml-auto text-[9px] font-medium px-1.5 py-0.5 rounded-full flex-shrink-0"
+            style={{ color: statusColor || "#999", backgroundColor: `${statusColor}15` || "#f5f5f5" }}
+          >
+            {statusLabel}
           </span>
         )}
       </div>
@@ -114,35 +120,59 @@ function TreeNodeItem({
 
 export default function KnowledgeTreeView({ nodes, highlightNodes, aOnlyNodes, bOnlyNodes }: Props) {
   const [search, setSearch] = useState("");
+  const [allExpanded, setAllExpanded] = useState(false);
 
-  useMemo(() => buildHierarchy(nodes), [nodes]);
-
-  const filteredNodes = useMemo(() => {
+  // 5.6: Search keeps parent path — include matching nodes + all their ancestors
+  const searchFilteredNodes = useMemo(() => {
     if (!search.trim()) return nodes;
     const term = search.toLowerCase();
-    return nodes.filter(
-      (n) =>
+
+    // Find matching node IDs
+    const matchedIds = new Set<string>();
+    const nodeMap = new Map(nodes.map((n) => [n.nodeId, n]));
+
+    for (const n of nodes) {
+      if (
         n.nodeId.toLowerCase().includes(term) ||
         n.path.some((p) => p.toLowerCase().includes(term)) ||
         n.description.toLowerCase().includes(term)
-    );
+      ) {
+        matchedIds.add(n.nodeId);
+        // Walk up ancestors
+        let current = n;
+        while (current.parentNodeId && nodeMap.has(current.parentNodeId)) {
+          matchedIds.add(current.parentNodeId);
+          current = nodeMap.get(current.parentNodeId)!;
+        }
+      }
+    }
+
+    return nodes.filter((n) => matchedIds.has(n.nodeId));
   }, [nodes, search]);
 
-  const filteredTree = useMemo(() => buildHierarchy(filteredNodes), [filteredNodes]);
+  const tree = useMemo(() => buildHierarchy(searchFilteredNodes), [searchFilteredNodes]);
 
   return (
     <div className="rounded-2xl border border-[#E8E4DE] bg-white overflow-hidden">
       <div className="px-5 py-4 border-b border-[#E8E4DE] bg-gradient-to-r from-[#FAF8F5] to-white">
         <h3 className="text-sm font-semibold text-[#3D3832] mb-3">统一知识树</h3>
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[#C4BDB3]" />
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="搜索知识点..."
-            className="w-full pl-8 pr-3 py-2 text-xs border border-[#E8E4DE] rounded-lg focus:border-[#8F7F6E] focus:outline-none"
-          />
+        <div className="flex gap-2">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[#C4BDB3]" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="搜索知识点..."
+              className="w-full pl-8 pr-3 py-2 text-xs border border-[#E8E4DE] rounded-lg focus:border-[#8F7F6E] focus:outline-none"
+            />
+          </div>
+          <button
+            onClick={() => setAllExpanded(!allExpanded)}
+            className="px-3 py-2 text-[11px] text-[#8F7F6E] border border-[#E8E4DE] rounded-lg hover:bg-[#F5F2EE] transition-colors whitespace-nowrap"
+          >
+            {allExpanded ? "收起全部" : "展开全部"}
+          </button>
         </div>
         <div className="mt-2 flex items-center gap-3 text-[10px] text-[#8B8378]">
           <span>共 {nodes.length} 节点</span>
@@ -157,7 +187,7 @@ export default function KnowledgeTreeView({ nodes, highlightNodes, aOnlyNodes, b
       </div>
 
       <div className="p-3 max-h-[600px] overflow-y-auto custom-scroll">
-        {filteredTree.map((item) => (
+        {tree.map((item) => (
           <TreeNodeItem
             key={item.node.nodeId}
             item={item}
@@ -167,7 +197,7 @@ export default function KnowledgeTreeView({ nodes, highlightNodes, aOnlyNodes, b
             bOnlyNodes={bOnlyNodes}
           />
         ))}
-        {filteredTree.length === 0 && (
+        {tree.length === 0 && (
           <p className="text-center text-xs text-[#A8A095] py-8">未找到匹配的知识点</p>
         )}
       </div>

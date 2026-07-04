@@ -87,7 +87,7 @@ const CORE_FEATURES = [
   {
     title: "跨考试局考纲对比", desc: "同科目跨局对比 · 重合度分析",
     detail: "选择两个考试局的同类型科目或上下级科目，查看考纲重合度、差异知识点和试卷结构。",
-    icon: GitCompareArrows, accent: "#5A7A5E", to: "/papers", colSpan: 1,
+    icon: GitCompareArrows, accent: "#5A7A5E", to: "/knowledge-tree", colSpan: 1,
   },
   {
     title: "分数线对比查询", desc: "8,000+ 条数据 · 五大考试局",
