@@ -180,60 +180,51 @@ function ExpansionPathCard({ path }: { path: (typeof EXPANSION_PATHS)[0] }) {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   EXAM BOARD CARD (hover to expand, click button to navigate)
+   EXAM BOARD CARD (single flat card, no expand)
    ═══════════════════════════════════════════════════════════ */
 function ExamBoardCard({ board }: { board: (typeof EXAM_BOARDS)[0] }) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <div
-      className="hero-board-card scroll-reveal p-5"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <Link
+      to={`/alevel/${board.id}`}
+      className="hero-board-card scroll-reveal block no-underline text-inherit p-5"
     >
-      <div style={{ height: 3, borderRadius: 2, background: board.gradient, marginBottom: 16, opacity: 0.8 }} />
-      <div style={{ fontSize: 28, fontWeight: 800, color: board.color, letterSpacing: "0.04em", lineHeight: 1, marginBottom: 6 }}>
+      {/* Color bar */}
+      <div style={{ height: 3, borderRadius: 2, background: board.gradient, marginBottom: 14, opacity: 0.8 }} />
+
+      {/* Board short name */}
+      <div style={{ fontSize: 26, fontWeight: 800, color: board.color, letterSpacing: "0.04em", lineHeight: 1, marginBottom: 6 }}>
         {board.short}
       </div>
-      <div style={{ fontSize: 12, color: "#A8A095", fontWeight: 500, marginBottom: 4 }}>{board.nameZh}</div>
-      <div style={{ fontSize: 11, color: "#C4BDB3", letterSpacing: "0.05em", marginBottom: 12 }}>{board.levels}</div>
 
-      <div
-        className="card-details"
-        style={{
-          maxHeight: isHovered ? 400 : 0,
-          opacity: isHovered ? 1 : 0,
-          overflow: "hidden",
-          transition: "max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease 0.1s",
-          pointerEvents: isHovered ? "auto" : "none",
-        }}
-      >
+      {/* Chinese name + levels */}
+      <div style={{ fontSize: 12, color: "#A8A095", fontWeight: 500, marginBottom: 2 }}>{board.nameZh}</div>
+      <div style={{ fontSize: 11, color: "#C4BDB3", letterSpacing: "0.05em", marginBottom: 14 }}>{board.levels}</div>
+
+      {/* Stats: subjects + papers */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 14, paddingTop: 10, borderTop: "1px solid #E8E4DE" }}>
         <div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 12 }}>
-            <div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: board.color }}>{board.subjects}+</div>
-              <div style={{ fontSize: 10, color: "#A8A095" }}>科目</div>
-            </div>
-            <div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: board.color }}>{board.papers}+</div>
-              <div style={{ fontSize: 10, color: "#A8A095" }}>试卷</div>
-            </div>
-          </div>
-          {board.features.map((f, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 6, marginBottom: 6, fontSize: 11, color: "#8B8378", lineHeight: 1.4 }}>
-              <CheckCircle2 size={12} style={{ color: board.color, flexShrink: 0, marginTop: 1 }} />
-              {f}
-            </div>
-          ))}
-          <Link
-            to={`/alevel/${board.id}`}
-            style={{ display: "inline-flex", alignItems: "center", gap: 4, marginTop: 8, fontSize: 11, fontWeight: 600, color: board.color, padding: "6px 12px", borderRadius: 6, background: `${board.color}10`, border: `1px solid ${board.color}25`, textDecoration: "none" }}
-          >
-            浏览 {board.short} 科目 <ArrowRight size={12} />
-          </Link>
+          <div style={{ fontSize: 18, fontWeight: 700, color: board.color }}>{board.subjects}+</div>
+          <div style={{ fontSize: 10, color: "#A8A095" }}>科目</div>
+        </div>
+        <div>
+          <div style={{ fontSize: 18, fontWeight: 700, color: board.color }}>{board.papers}+</div>
+          <div style={{ fontSize: 10, color: "#A8A095" }}>试卷</div>
         </div>
       </div>
-    </div>
+
+      {/* Features */}
+      {board.features.map((f, i) => (
+        <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 6, marginBottom: 6, fontSize: 11, color: "#8B8378", lineHeight: 1.4 }}>
+          <CheckCircle2 size={12} style={{ color: board.color, flexShrink: 0, marginTop: 1 }} />
+          {f}
+        </div>
+      ))}
+
+      {/* CTA button */}
+      <div style={{ display: "inline-flex", alignItems: "center", gap: 4, marginTop: 10, fontSize: 11, fontWeight: 600, color: board.color, padding: "6px 12px", borderRadius: 6, background: `${board.color}10`, border: `1px solid ${board.color}25` }}>
+        浏览 {board.short} 科目 <ArrowRight size={12} />
+      </div>
+    </Link>
   );
 }
 
