@@ -20,22 +20,128 @@ export async function loadMapping(boardCode: string): Promise<SubjectMapping> {
   return res.json();
 }
 
-/** Load an overlap report between two subjects */
-export async function loadOverlap(codeA: string, codeB: string): Promise<OverlapData | null> {
-  // Try both naming conventions
-  const candidates = [
-    `${BASE}/${codeA.toLowerCase()}_vs_${codeB.toLowerCase()}.json`,
-    `${BASE}/${codeB.toLowerCase()}_vs_${codeA.toLowerCase()}.json`,
-    `${BASE}/${codeA}_vs_${codeB}.json`,
-    `${BASE}/${codeB}_vs_${codeA}.json`,
-  ];
-  for (const url of candidates) {
-    try {
-      const res = await fetch(url);
-      if (res.ok) return res.json();
-    } catch { /* try next */ }
+/** Real-time overlap calculation from two subject mappings */
+export async function calculateOverlap(codeA: string, codeB: string): Promise<OverlapData | null> {
+  const [mappingA, mappingB] = await Promise.all([
+    loadMapping(codeA).catch(() => null),
+    loadMapping(codeB).catch(() => null),
+  ]);
+  if (!mappingA || !mappingB) return null;
+
+  // Extract node sets: each node keeps its strongest match
+  const extractBestNodes = (mapping: SubjectMapping) => {
+    const best = new Map<string, { strength: string; topicName: string; topicId: string }>();
+    const weightMap: Record<string, number> = { exact: 1.0, strong: 0.7, partial: 0.3 };
+    for (const m of mapping.mappings) {
+      for (const node of m.mappedNodes) {
+        const existing = best.get(node.nodeId);
+        const newWeight = weightMap[node.matchStrength] || 0.3;
+        const oldWeight = existing ? (weightMap[existing.strength] || 0.3) : 0;
+        if (newWeight > oldWeight) {
+          best.set(node.nodeId, {
+            strength: node.matchStrength,
+            topicName: m.topicName,
+            topicId: m.topicId,
+          });
+        }
+      }
+    }
+    return best;
+  };
+
+  const nodesA = extractBestNodes(mappingA);
+  const nodesB = extractBestNodes(mappingB);
+
+  const setA = new Set(nodesA.keys());
+  const setB = new Set(nodesB.keys());
+  const intersection = new Set([...setA].filter((x) => setB.has(x)));
+  const union = new Set([...setA, ...setB]);
+
+  const weightMap: Record<string, number> = { exact: 1.0, strong: 0.7, partial: 0.3 };
+
+  // Weighted intersection: min weight for shared nodes
+  let weightedIntersection = 0;
+  let weightedUnion = 0;
+  for (const nodeId of union) {
+    const wA = nodesA.has(nodeId) ? (weightMap[nodesA.get(nodeId)!.strength] || 0.3) : 0;
+    const wB = nodesB.has(nodeId) ? (weightMap[nodesB.get(nodeId)!.strength] || 0.3) : 0;
+    weightedUnion += Math.max(wA, wB);
+    if (nodesA.has(nodeId) && nodesB.has(nodeId)) {
+      weightedIntersection += Math.min(wA, wB);
+    }
   }
-  return null;
+
+  // Build overlap data
+  const overlapData: OverlapData = {
+    version: "1.0-realtime",
+    comparison: {
+      A: `${mappingA.board} ${mappingA.subjectCode}`,
+      B: `${mappingB.board} ${mappingB.subjectCode}`,
+      topicCountA: mappingA.totalTopics,
+      topicCountB: mappingB.totalTopics,
+    },
+    summary: {
+      AtoB: {
+        name: `${mappingA.subjectCode} → ${mappingB.subjectCode}`,
+        unweighted: {
+          overlap: intersection.size,
+          total: setA.size || 1,
+          percentage: setA.size > 0 ? (intersection.size / setA.size) * 100 : 0,
+        },
+        weighted: {
+          overlap: weightedIntersection,
+          total: weightedUnion || 1,
+          percentage: weightedUnion > 0 ? (weightedIntersection / weightedUnion) * 100 : 0,
+        },
+      },
+      BtoA: {
+        name: `${mappingB.subjectCode} → ${mappingA.subjectCode}`,
+        unweighted: {
+          overlap: intersection.size,
+          total: setB.size || 1,
+          percentage: setB.size > 0 ? (intersection.size / setB.size) * 100 : 0,
+        },
+        weighted: {
+          overlap: weightedIntersection,
+          total: weightedUnion || 1,
+          percentage: weightedUnion > 0 ? (weightedIntersection / weightedUnion) * 100 : 0,
+        },
+      },
+      symmetric: {
+        unweighted: union.size > 0 ? (intersection.size / union.size) * 100 : 0,
+        weighted: weightedUnion > 0 ? (weightedIntersection / weightedUnion) * 100 : 0,
+      },
+    },
+    details: {
+      AtoB: mappingA.mappings.map((m) => ({
+        topicId: m.topicId,
+        topicName: m.topicName,
+        hasOverlap: m.mappedNodes.some((n) => setB.has(n.nodeId)),
+        overlappingTopicsB: m.mappedNodes
+          .filter((n) => setB.has(n.nodeId))
+          .map((n) => n.nodeId),
+        sharedNodes: m.mappedNodes.filter((n) => setB.has(n.nodeId)).map((n) => n.nodeId),
+        nodeCount: m.mappedNodes.length,
+      })),
+      BtoA: mappingB.mappings.map((m) => ({
+        topicId: m.topicId,
+        topicName: m.topicName,
+        hasOverlap: m.mappedNodes.some((n) => setA.has(n.nodeId)),
+        overlappingTopicsA: m.mappedNodes
+          .filter((n) => setA.has(n.nodeId))
+          .map((n) => n.nodeId),
+        sharedNodes: m.mappedNodes.filter((n) => setA.has(n.nodeId)).map((n) => n.nodeId),
+        nodeCount: m.mappedNodes.length,
+      })),
+    },
+  };
+
+  return overlapData;
+}
+
+/** Load a pre-calculated overlap report (fallback) */
+export async function loadOverlap(codeA: string, codeB: string): Promise<OverlapData | null> {
+  return calculateOverlap(codeA, codeB);
 }
 
 /** Load a syllabus file */
@@ -77,30 +183,21 @@ export async function listSubjects(): Promise<{ code: string; board: string; sub
 
 /** Build tree hierarchy for visualization */
 export function buildTreeHierarchy(nodes: import("./types").KnowledgeTreeNode[]) {
-  const nodeMap = new Map(nodes.map((n) => [n.nodeId, n]));
   const roots: TreeNode[] = [];
-  const treeNodeMap = new Map<string, TreeNode>();
+  const map = new Map<string, TreeNode>();
 
   interface TreeNode {
     node: import("./types").KnowledgeTreeNode;
     children: TreeNode[];
-    expanded: boolean;
   }
 
-  for (const node of nodes) {
-    if (!treeNodeMap.has(node.nodeId)) {
-      treeNodeMap.set(node.nodeId, { node, children: [], expanded: false });
-    }
+  for (const n of nodes) map.set(n.nodeId, { node: n, children: [] });
+  for (const n of nodes) {
+    const item = map.get(n.nodeId)!;
+    if (n.parentNodeId && map.has(n.parentNodeId)) {
+      map.get(n.parentNodeId)!.children.push(item);
+    } else if (n.level <= 1) roots.push(item);
   }
 
-  for (const node of nodes) {
-    const treeNode = treeNodeMap.get(node.nodeId)!;
-    if (node.parentNodeId && treeNodeMap.has(node.parentNodeId)) {
-      treeNodeMap.get(node.parentNodeId)!.children.push(treeNode);
-    } else if (node.level <= 1) {
-      roots.push(treeNode);
-    }
-  }
-
-  return { roots, nodeMap, treeNodeMap };
+  return { roots, map };
 }
