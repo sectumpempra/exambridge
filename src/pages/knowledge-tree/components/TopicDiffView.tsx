@@ -14,12 +14,6 @@ export default function TopicDiffView({ overlap, nodes, aOnlyNodes, bOnlyNodes }
   const nodeMap = new Map<string, KnowledgeTreeNode>();
   for (const n of nodes) nodeMap.set(n.nodeId, n);
 
-  const sharedSet = new Set<string>();
-  for (const nid of aOnlyNodes) sharedSet.add(nid);
-  for (const nid of bOnlyNodes) sharedSet.add(nid);
-  // Actually shared = nodes in both A and B, not in aOnly or bOnly
-  // Let me recalculate from overlap
-
   const resolve = (ids: string[]) =>
     ids
       .map((id) => nodeMap.get(id))

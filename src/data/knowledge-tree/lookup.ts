@@ -15665,11 +15665,19 @@ export function calculateOverlap(codeA: string, codeB: string): {
 
   const weight: Record<string, number> = { exact: 1.0, strong: 0.7, partial: 0.3, weak: 0.1 };
   let wInter = 0, wUnion = 0;
+  let wAtoB = 0, wTotalA = 0, wBtoA = 0, wTotalB = 0;
   for (const nid of union) {
     const wA = weight[nodesA[nid] || 'partial'] || 0.3;
     const wB = weight[nodesB[nid] || 'partial'] || 0.3;
     wUnion += Math.max(wA, wB);
-    if (nodesA[nid] && nodesB[nid]) wInter += Math.min(wA, wB);
+    if (nodesA[nid] && nodesB[nid]) {
+      const minW = Math.min(wA, wB);
+      wInter += minW;
+      wAtoB += minW;
+      wBtoA += minW;
+    }
+    if (nodesA[nid]) wTotalA += wA;
+    if (nodesB[nid]) wTotalB += wB;
   }
 
   const aOnly = [...setA].filter(x => !setB.has(x));
@@ -15690,12 +15698,12 @@ export function calculateOverlap(codeA: string, codeB: string): {
       AtoB: {
         name: `${codeA} → ${codeB}`,
         unweighted: { overlap: shared.length, total: setA.size, percentage: setA.size > 0 ? (shared.length / setA.size) * 100 : 0 },
-        weighted: { overlap: wInter, total: wUnion, percentage: wUnion > 0 ? (wInter / wUnion) * 100 : 0 },
+        weighted: { overlap: wAtoB, total: wTotalA, percentage: wTotalA > 0 ? (wAtoB / wTotalA) * 100 : 0 },
       },
       BtoA: {
         name: `${codeB} → ${codeA}`,
         unweighted: { overlap: shared.length, total: setB.size, percentage: setB.size > 0 ? (shared.length / setB.size) * 100 : 0 },
-        weighted: { overlap: wInter, total: wUnion, percentage: wUnion > 0 ? (wInter / wUnion) * 100 : 0 },
+        weighted: { overlap: wBtoA, total: wTotalB, percentage: wTotalB > 0 ? (wBtoA / wTotalB) * 100 : 0 },
       },
     },
     sharedNodes: shared,

@@ -3,23 +3,22 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import { VitePWA } from "vite-plugin-pwa"
 
-// Only load inspect plugin in development
-const inspectPlugin = (() => {
+// https://vite.dev/config/
+export default defineConfig(async () => {
+  // Only load inspect plugin in development
+  let inspectPlugin = null;
   if (process.env.NODE_ENV !== 'production') {
     try {
-      const { inspectAttr } = require('kimi-plugin-inspect-react');
-      return inspectAttr();
+      const mod = await import('kimi-plugin-inspect-react');
+      inspectPlugin = mod.inspectAttr?.();
     } catch { /* ignore if not installed */ }
   }
-  return null;
-})();
 
-// https://vite.dev/config/
-export default defineConfig({
-  base: '/',
-  plugins: [
-    react(),
-    ...(inspectPlugin ? [inspectPlugin] : []),
+  return {
+    base: '/',
+    plugins: [
+      react(),
+      ...(inspectPlugin ? [inspectPlugin] : []),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['icons/*.png'],
@@ -127,7 +126,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks(id) {
+        manualChunks(id: string) {
           // Node modules chunking
           if (id.includes('node_modules')) {
             // Math libraries → function graph
@@ -172,4 +171,5 @@ export default defineConfig({
     },
     chunkSizeWarningLimit: 500,
   },
+  };
 });

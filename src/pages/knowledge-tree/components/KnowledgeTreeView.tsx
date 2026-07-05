@@ -96,7 +96,7 @@ function TreeNodeItem({
         {statusLabel && (
           <span
             className="ml-auto text-[9px] font-medium px-1.5 py-0.5 rounded-full flex-shrink-0"
-            style={{ color: statusColor || "#999", backgroundColor: `${statusColor}15` || "#f5f5f5" }}
+            style={{ color: statusColor!, backgroundColor: `${statusColor!}15` }}
           >
             {statusLabel}
           </span>

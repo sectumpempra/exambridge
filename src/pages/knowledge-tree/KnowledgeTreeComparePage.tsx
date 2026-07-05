@@ -97,15 +97,26 @@ export default function KnowledgeTreeComparePage() {
             </div>
           </div>
 
+          {/* Same subject warning */}
+          {codeA && codeB && codeA === codeB && (
+            <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-6 text-center">
+              <p className="text-sm text-[#8B8378]">
+                请选择<span className="font-medium text-[#C75B2A]">两个不同的科目</span>进行对比
+              </p>
+            </div>
+          )}
+
           {/* Overlap dashboard */}
-          <div className="mb-6">
-            <OverlapDashboard
-              overlap={overlap}
-              subjectAName={subjectA?.name || codeA}
-              subjectBName={subjectB?.name || codeB}
-              loading={false}
-            />
-          </div>
+          {codeA !== codeB && (
+            <div className="mb-6">
+              <OverlapDashboard
+                overlap={overlap}
+                subjectAName={subjectA?.name || codeA}
+                subjectBName={subjectB?.name || codeB}
+                loading={false}
+              />
+            </div>
+          )}
 
           {/* Tabs */}
           {overlap && (
