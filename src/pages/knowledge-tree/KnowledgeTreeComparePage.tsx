@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useMemo } from "react";
 import { GitCompareArrows, FolderTree, Layers } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -6,8 +6,12 @@ import SubjectSelector from "./components/SubjectSelector";
 import OverlapDashboard from "./components/OverlapDashboard";
 import KnowledgeTreeView from "./components/KnowledgeTreeView";
 import TopicDiffView from "./components/TopicDiffView";
-import { listSubjects, loadOverlap, loadKnowledgeTree } from "@/data/knowledge-tree/loader";
-import type { OverlapData, KnowledgeTree } from "@/data/knowledge-tree/types";
+import {
+  listSubjects,
+  calculateOverlap,
+  getOverlapSets,
+  getTreeNodes,
+} from "@/data/knowledge-tree/loader";
 
 const NAV_LINKS = [
   { label: "首页", to: "/" },
@@ -19,83 +23,29 @@ const NAV_LINKS = [
 type TabKey = "tree" | "diff";
 
 export default function KnowledgeTreeComparePage() {
-  const [subjects, setSubjects] = useState<import("./components/SubjectSelector").SubjectOption[]>([]);
+  const subjects = useMemo(() => listSubjects(), []);
+  const allTreeNodes = useMemo(() => getTreeNodes(), []);
+
   const [codeA, setCodeA] = useState("CAIE-9709");
   const [codeB, setCodeB] = useState("Edexcel-9MA0");
-  const [overlap, setOverlap] = useState<OverlapData | null>(null);
-  const [tree, setTree] = useState<KnowledgeTree | null>(null);
-  const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<TabKey>("tree");
 
-  // Load subjects list
-  useEffect(() => {
-    listSubjects().then(setSubjects);
-  }, []);
+  // Calculate overlap synchronously
+  const overlap = useMemo(() => {
+    if (!codeA || !codeB || codeA === codeB) return null;
+    return calculateOverlap(codeA, codeB);
+  }, [codeA, codeB]);
 
-  // Load knowledge tree once
-  useEffect(() => {
-    loadKnowledgeTree().then(setTree).catch(console.error);
-  }, []);
+  // Calculate highlight sets
+  const highlightSets = useMemo(() => {
+    if (!codeA || !codeB || codeA === codeB) {
+      return { shared: new Set<string>(), aOnly: new Set<string>(), bOnly: new Set<string>() };
+    }
+    return getOverlapSets(codeA, codeB);
+  }, [codeA, codeB]);
 
   const subjectA = subjects.find((s) => s.code === codeA);
   const subjectB = subjects.find((s) => s.code === codeB);
-
-  // Load overlap when selection changes — defined after subjectA/B are available
-  const [error, setError] = useState<string | null>(null);
-
-  const compare = useCallback(async () => {
-    if (!codeA || !codeB || codeA === codeB) {
-      setError("请选择两个不同的科目进行对比");
-      return;
-    }
-    setLoading(true);
-    setError(null);
-    try {
-      const data = await loadOverlap(codeA, codeB);
-      if (!data) {
-        setError(`暂无 ${subjectA?.name || codeA} 与 ${subjectB?.name || codeB} 的重合度数据，请尝试其他科目组合`);
-        setOverlap(null);
-      } else {
-        setOverlap(data);
-      }
-    } catch (e) {
-      setError("加载数据失败，请检查网络连接后重试");
-      setOverlap(null);
-    } finally {
-      setLoading(false);
-    }
-  }, [codeA, codeB, subjectA, subjectB]);
-
-  useEffect(() => {
-    compare();
-  }, [compare]);
-
-  // Extract highlight sets from overlap
-  const highlightSets = (() => {
-    if (!overlap || !tree) return { shared: new Set<string>(), aOnly: new Set<string>(), bOnly: new Set<string>() };
-    const shared = new Set<string>();
-    const aOnly = new Set<string>();
-    const bOnly = new Set<string>();
-
-    for (const d of overlap.details.AtoB) {
-      if (d.hasOverlap) {
-        for (const nid of d.sharedNodes) shared.add(nid);
-      }
-    }
-    const bShared = new Set<string>();
-    for (const d of overlap.details.BtoA) {
-      if (d.hasOverlap) {
-        for (const nid of d.sharedNodes) bShared.add(nid);
-      }
-    }
-    for (const nid of shared) {
-      if (!bShared.has(nid)) aOnly.add(nid);
-    }
-    for (const nid of bShared) {
-      if (!shared.has(nid)) bOnly.add(nid);
-    }
-    return { shared, aOnly, bOnly };
-  })();
 
   const TABS: { key: TabKey; label: string; icon: React.ReactNode }[] = [
     { key: "tree", label: "知识树视图", icon: <FolderTree className="w-3.5 h-3.5" /> },
@@ -107,10 +57,7 @@ export default function KnowledgeTreeComparePage() {
       className="flex min-h-[100dvh] flex-col"
       style={{ background: "linear-gradient(180deg, #F0EDE8 0%, #F5F2EE 50%, #F0EDE8 100%)" }}
     >
-      <Header
-        title="考纲扩科对比"
-        links={NAV_LINKS}
-      />
+      <Header title="考纲扩科对比" links={NAV_LINKS} />
 
       <main className="flex-1 px-4 py-8">
         <div className="mx-auto max-w-6xl">
@@ -123,7 +70,9 @@ export default function KnowledgeTreeComparePage() {
               跨考试局考纲重合度分析
             </h1>
             <p className="mt-2 text-sm text-[#8B8378] leading-relaxed">
-              基于 1,670 节点统一知识树，覆盖 5 大考试局 19 个数学类科目的精确映射
+              基于 1,670 节点统一知识树，覆盖 5 大考试局 21 个数学类科目的精确映射
+              <br />
+              <span className="text-[#C75B2A] font-medium">任意两个科目均可实时对比</span>
             </p>
           </div>
 
@@ -154,25 +103,12 @@ export default function KnowledgeTreeComparePage() {
               overlap={overlap}
               subjectAName={subjectA?.name || codeA}
               subjectBName={subjectB?.name || codeB}
-              loading={loading}
+              loading={false}
             />
           </div>
 
-          {/* Error message */}
-          {error && (
-            <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-6 text-center">
-              <p className="text-sm text-[#8B8378] mb-3">{error}</p>
-              <button
-                onClick={() => { setError(null); compare(); }}
-                className="px-4 py-2 text-xs font-medium text-white bg-[#8F7F6E] rounded-lg hover:bg-[#A69888] transition-colors"
-              >
-                重试
-              </button>
-            </div>
-          )}
-
           {/* Tabs */}
-          {overlap && tree && (
+          {overlap && (
             <>
               <div className="mb-4 flex gap-1 rounded-xl border border-[#E8E4DE] bg-white p-1">
                 {TABS.map((tab) => (
@@ -193,7 +129,7 @@ export default function KnowledgeTreeComparePage() {
 
               {activeTab === "tree" && (
                 <KnowledgeTreeView
-                  nodes={tree.nodes}
+                  nodes={allTreeNodes}
                   highlightNodes={highlightSets.shared}
                   aOnlyNodes={highlightSets.aOnly}
                   bOnlyNodes={highlightSets.bOnly}
@@ -201,7 +137,12 @@ export default function KnowledgeTreeComparePage() {
               )}
 
               {activeTab === "diff" && (
-                <TopicDiffView overlap={overlap} nodes={tree.nodes} />
+                <TopicDiffView
+                  overlap={overlap}
+                  nodes={allTreeNodes}
+                  aOnlyNodes={highlightSets.aOnly}
+                  bOnlyNodes={highlightSets.bOnly}
+                />
               )}
             </>
           )}

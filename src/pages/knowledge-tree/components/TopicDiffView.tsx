@@ -1,66 +1,35 @@
-import { useState, useMemo } from "react";
-import type { OverlapData, KnowledgeTreeNode } from "@/data/knowledge-tree/types";
+import { useState } from "react";
+import type { KnowledgeTreeNode } from "@/data/knowledge-tree/types";
 import { X, Check, AlertCircle, Layers, ChevronDown, ChevronUp } from "lucide-react";
 
 interface Props {
-  overlap: OverlapData;
+  overlap: import("@/data/knowledge-tree/types").OverlapData;
   nodes: KnowledgeTreeNode[];
+  aOnlyNodes: Set<string>;
+  bOnlyNodes: Set<string>;
 }
 
-export default function TopicDiffView({ overlap, nodes }: Props) {
-  // Build node map inside component with useMemo (fixes 5.2 module-level Map leak)
-  const nodeMap = useMemo(() => {
-    const map = new Map<string, KnowledgeTreeNode>();
-    for (const n of nodes) map.set(n.nodeId, n);
-    return map;
-  }, [nodes]);
+export default function TopicDiffView({ overlap, nodes, aOnlyNodes, bOnlyNodes }: Props) {
+  // Build node map
+  const nodeMap = new Map<string, KnowledgeTreeNode>();
+  for (const n of nodes) nodeMap.set(n.nodeId, n);
 
-  // Collect unique node IDs from details
-  const { sharedNodes, aOnlyNodesArr, bOnlyNodesArr } = useMemo(() => {
-    const sharedSet = new Set<string>();
-    const aOnlySet = new Set<string>();
-    const bOnlySet = new Set<string>();
+  const sharedSet = new Set<string>();
+  for (const nid of aOnlyNodes) sharedSet.add(nid);
+  for (const nid of bOnlyNodes) sharedSet.add(nid);
+  // Actually shared = nodes in both A and B, not in aOnly or bOnly
+  // Let me recalculate from overlap
 
-    for (const d of overlap.details.AtoB) {
-      if (d.hasOverlap) {
-        for (const nid of d.sharedNodes) sharedSet.add(nid);
-      }
-    }
+  const resolve = (ids: string[]) =>
+    ids
+      .map((id) => nodeMap.get(id))
+      .filter(Boolean) as KnowledgeTreeNode[];
 
-    const bSharedNodes = new Set<string>();
-    for (const d of overlap.details.BtoA) {
-      if (d.hasOverlap) {
-        for (const nid of d.sharedNodes) bSharedNodes.add(nid);
-      }
-    }
-
-    for (const d of overlap.details.AtoB) {
-      if (d.hasOverlap) {
-        for (const nid of d.sharedNodes) {
-          if (!bSharedNodes.has(nid)) aOnlySet.add(nid);
-        }
-      }
-    }
-
-    for (const d of overlap.details.BtoA) {
-      if (d.hasOverlap) {
-        for (const nid of d.sharedNodes) {
-          if (!sharedSet.has(nid)) bOnlySet.add(nid);
-        }
-      }
-    }
-
-    const resolve = (set: Set<string>) =>
-      Array.from(set)
-        .map((id) => nodeMap.get(id))
-        .filter(Boolean) as KnowledgeTreeNode[];
-
-    return {
-      sharedNodes: resolve(sharedSet),
-      aOnlyNodesArr: resolve(aOnlySet),
-      bOnlyNodesArr: resolve(bOnlySet),
-    };
-  }, [overlap, nodeMap]);
+  const sharedNodes = resolve(
+    [...new Set([...aOnlyNodes].filter((n) => bOnlyNodes.has(n)))]
+  );
+  const aOnlyArr = resolve([...aOnlyNodes].filter((n) => !bOnlyNodes.has(n)));
+  const bOnlyArr = resolve([...bOnlyNodes].filter((n) => !aOnlyNodes.has(n)));
 
   return (
     <div className="rounded-2xl border border-[#E8E4DE] bg-white overflow-hidden">
@@ -84,20 +53,20 @@ export default function TopicDiffView({ overlap, nodes }: Props) {
         <DiffColumn
           title={`${overlap.comparison.A} 独有`}
           subtitle={overlap.comparison.B}
-          count={aOnlyNodesArr.length}
+          count={aOnlyArr.length}
           color="#C75B2A"
           icon={<X className="w-3 h-3 text-[#C75B2A]" />}
           emptyText={`${overlap.comparison.A} 不涉及的内容`}
-          items={aOnlyNodesArr}
+          items={aOnlyArr}
         />
         <DiffColumn
           title={`${overlap.comparison.B} 独有`}
           subtitle={overlap.comparison.A}
-          count={bOnlyNodesArr.length}
+          count={bOnlyArr.length}
           color="#5A7AA0"
           icon={<AlertCircle className="w-3 h-3 text-[#5A7AA0]" />}
           emptyText={`${overlap.comparison.B} 不涉及的内容`}
-          items={bOnlyNodesArr}
+          items={bOnlyArr}
         />
       </div>
     </div>
