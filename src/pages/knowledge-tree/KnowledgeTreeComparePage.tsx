@@ -36,13 +36,16 @@ export default function KnowledgeTreeComparePage() {
     return calculateOverlap(codeA, codeB);
   }, [codeA, codeB]);
 
-  // Calculate highlight sets
-  const highlightSets = useMemo(() => {
+  // Calculate overlap sets
+  const overlapSets = useMemo(() => {
     if (!codeA || !codeB || codeA === codeB) {
       return { shared: new Set<string>(), aOnly: new Set<string>(), bOnly: new Set<string>() };
     }
     return getOverlapSets(codeA, codeB);
   }, [codeA, codeB]);
+
+  // For convenience
+  const { shared: sharedSet, aOnly: aOnlySet, bOnly: bOnlySet } = overlapSets;
 
   const subjectA = subjects.find((s) => s.code === codeA);
   const subjectB = subjects.find((s) => s.code === codeB);
@@ -141,9 +144,9 @@ export default function KnowledgeTreeComparePage() {
               {activeTab === "tree" && (
                 <KnowledgeTreeView
                   nodes={allTreeNodes}
-                  highlightNodes={highlightSets.shared}
-                  aOnlyNodes={highlightSets.aOnly}
-                  bOnlyNodes={highlightSets.bOnly}
+                  highlightNodes={sharedSet}
+                  aOnlyNodes={aOnlySet}
+                  bOnlyNodes={bOnlySet}
                 />
               )}
 
@@ -151,8 +154,9 @@ export default function KnowledgeTreeComparePage() {
                 <TopicDiffView
                   overlap={overlap}
                   nodes={allTreeNodes}
-                  aOnlyNodes={highlightSets.aOnly}
-                  bOnlyNodes={highlightSets.bOnly}
+                  sharedNodes={sharedSet}
+                  aOnlyNodes={aOnlySet}
+                  bOnlyNodes={bOnlySet}
                 />
               )}
             </>
