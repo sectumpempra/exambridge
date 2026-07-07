@@ -1,0 +1,107 @@
+/** v3.2 Knowledge Tree Types */
+
+export interface KnowledgeTreeV32 {
+  version: string;
+  description: string;
+  nodes: KnowledgeTreeNodeV32[];
+}
+
+export interface KnowledgeTreeNodeV32 {
+  nodeId: string;
+  name: string;
+  level: number;
+  domain?: string;
+  area?: string;
+  parentNodeId?: string;
+  path: string[];
+  description?: string;
+  stage?: string[];
+  tags?: string[];
+}
+
+/** Mapped node reference inside a subtopic mapping */
+export interface MappedNode {
+  nodeId: string;
+  matchStrength: "exact" | "strong" | "partial" | "weak";
+  matchReason: string;
+}
+
+/** Subtopic-level mapping */
+export interface SubtopicMapping {
+  subtopicId: string;
+  subtopicName: string;
+  description?: string;
+  paperReference: string[] | null;
+  mappedNodes: MappedNode[];
+}
+
+/** Topic-level mapping */
+export interface TopicMapping {
+  topicId: string;
+  topicName: string;
+  paperReference: string[] | null;
+  subtopicMappings: SubtopicMapping[];
+}
+
+/** Paper structure metadata for A-Level subjects */
+export interface PaperStructure {
+  papers: string[];
+  compulsory?: string[];
+  applicationGroups?: string[][];
+  mutuallyExclusive?: string[][];
+  asOnly?: string[];
+  alevelOnly?: string[];
+}
+
+/** Full mapping file for a subject */
+export interface MappingFile {
+  board: string;
+  subjectCode: string;
+  subjectName: string;
+  level: string;
+  version: string;
+  totalTopics: number;
+  mappedTopics: number;
+  paperStructure?: PaperStructure;
+  mappings: TopicMapping[];
+}
+
+/** Subject info derived from mapping files */
+export interface SubjectInfoV32 {
+  code: string;       // e.g. "CAIE-9709"
+  board: string;      // e.g. "CAIE"
+  subjectCode: string; // e.g. "9709"
+  name: string;       // e.g. "A-Level Mathematics"
+  level: string;      // e.g. "A-Level"
+  hasPapers: boolean; // true if paperStructure exists
+  papers: string[];   // list of paper codes
+  isGCSE: boolean;
+}
+
+/** Paper selection for a subject */
+export interface PaperSelection {
+  subjectCode: string;
+  paper: string | null; // null = whole subject
+}
+
+/** Comparison mode */
+export type CompareMode = "subject-vs-subject" | "paper-vs-paper" | "paper-vs-subject";
+
+/** Overlap calculation result */
+export interface OverlapResultV32 {
+  subjectA: string;
+  subjectB: string;
+  paperA: string | null;
+  paperB: string | null;
+  mode: CompareMode;
+  unweighted: number;
+  weighted: number;
+  sharedNodes: string[];
+  aOnlyNodes: string[];
+  bOnlyNodes: string[];
+  sharedCount: number;
+  aTotal: number;
+  bTotal: number;
+  aName: string;
+  bName: string;
+}

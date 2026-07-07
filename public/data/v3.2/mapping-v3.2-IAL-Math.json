@@ -1,0 +1,2311 @@
+{
+  "board": "Edexcel",
+  "subjectCode": "IAL-Math",
+  "subjectName": "International A-Level Mathematics",
+  "level": "IAL",
+  "version": "3.2",
+  "totalTopics": 20,
+  "mappedTopics": 20,
+  "totalSubtopics": 65,
+  "mappedSubtopics": 65,
+  "paperStructure": {
+    "papers": [
+      "IAL-P1",
+      "IAL-P2",
+      "IAL-P3",
+      "IAL-P4"
+    ],
+    "compulsory": [
+      "IAL-P1",
+      "IAL-P2",
+      "IAL-P3",
+      "IAL-P4"
+    ]
+  },
+  "mappings": [
+    {
+      "topicId": "1",
+      "topicName": "Algebra and functions",
+      "paperReference": [
+        "P1",
+        "P3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "1.1",
+          "subtopicName": "Laws of indices for all rational am × an = am + n, am ÷ an = am − n, (am)n = amn",
+          "paperReference": [
+            "P1",
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-POW-IND",
+              "name": "Laws of Indices",
+              "path": [
+                "Number",
+                "Operations and Place Value",
+                "Powers and Roots",
+                "Laws of Indices"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to CAIE-9709: laws of indices"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.2",
+          "subtopicName": "Use and manipulation of surds. Students should be able to rationalise denominators.",
+          "paperReference": [
+            "P1",
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-IND-PROD",
+              "name": "Independent Events",
+              "path": [
+                "Probability",
+                "Combined and Conditional Probability",
+                "Independent and Dependent Events",
+                "Independent Events"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use addition and multiplication of probabilities"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.3",
+          "subtopicName": "Quadratic functions and their",
+          "paperReference": [
+            "P1",
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUN-MOD-TRANS",
+              "name": "Transformations of Functions",
+              "path": [
+                "Algebra and Functions",
+                "Functions",
+                "Modulus and Transformations",
+                "Transformations of Functions"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-0606: graphs of functions and their transformations"
+            },
+            {
+              "nodeId": "ALGF-GRAPH-TRANS-SING",
+              "name": "Single Transformations",
+              "path": [
+                "Algebra and Functions",
+                "Graphs",
+                "Graph Transformations",
+                "Single Transformations"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-0606: graphs of functions and their transformations"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.4",
+          "subtopicName": "The discriminant of a quadratic Need to know and to use",
+          "paperReference": [
+            "P1",
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-IND-PROD",
+              "name": "Independent Events",
+              "path": [
+                "Probability",
+                "Combined and Conditional Probability",
+                "Independent and Dependent Events",
+                "Independent Events"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use addition and multiplication of probabilities"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.5",
+          "subtopicName": "Completing the square. Solution of Solution of quadratic equations by factorisation, use of the",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-QUAD-FAC",
+              "name": "Solving Quadratics by Factorisation",
+              "path": [
+                "Algebra and Functions",
+                "Equations and Inequalities",
+                "Quadratic Equations",
+                "Solving Quadratics by Factorisation"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-0606: solving quadratic equations by factorisation, formula and completing the square"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "name": "Completing the Square",
+              "path": [
+                "Algebra and Functions",
+                "Equations and Inequalities",
+                "Quadratic Equations",
+                "Completing the Square"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-0606: solving quadratic equations by factorisation, formula and completing the square"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.6",
+          "subtopicName": "Solve simultaneous equations;",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-LIN-SOL",
+              "name": "Solving Linear Equations",
+              "path": [
+                "Algebra and Functions",
+                "Equations and Inequalities",
+                "Linear Equations",
+                "Solving Linear Equations"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to CAIE-9709: solving linear equations"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.7",
+          "subtopicName": "Interpret linear and quadratic For example,",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-LINE-EQN-POINT",
+              "name": "Equation from Point and Gradient",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Equation of a Straight Line",
+                "Equation from Point and Gradient"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            },
+            {
+              "nodeId": "COORD-LINE-REL-PERP",
+              "name": "Perpendicular Gradient",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Parallel and Perpendicular Lines",
+                "Perpendicular Gradient"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            },
+            {
+              "nodeId": "COORD-LINE-DIST-MID",
+              "name": "Midpoint and Distance",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Distance and Midpoint",
+                "Midpoint and Distance"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.8",
+          "subtopicName": "Represent linear and quadratic Represent linear and quadratic inequalities such as y > x + r",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-IND-PROD",
+              "name": "Independent Events",
+              "path": [
+                "Probability",
+                "Combined and Conditional Probability",
+                "Independent and Dependent Events",
+                "Independent Events"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use addition and multiplication of probabilities"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.9",
+          "subtopicName": "Solutions of linear and quadratic For example,",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-GRAPH-EXP-LOG",
+              "name": "Exponential and Logarithmic Graphs",
+              "path": [
+                "Algebra and Functions",
+                "Graphs",
+                "Exponential and Logarithmic Graphs",
+                "Exponential and Logarithmic Graphs"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: laws of logarithms and exponentials, solving equations"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.10",
+          "subtopicName": "Algebraic manipulation of Students should be able to use brackets. Factorisation of",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-IND-PROD",
+              "name": "Independent Events",
+              "path": [
+                "Probability",
+                "Combined and Conditional Probability",
+                "Independent and Dependent Events",
+                "Independent Events"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use addition and multiplication of probabilities"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.11",
+          "subtopicName": "Graphs of functions; sketching Functions to include simple cubic functions and the",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-ID",
+              "name": "Trigonometric Identities",
+              "path": [
+                "Trigonometry",
+                "Trigonometric Functions",
+                "Trigonometric Identities"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric identities, equations and reciprocal functions"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EQN",
+              "name": "Trigonometric Equations",
+              "path": [
+                "Trigonometry",
+                "Trigonometric Functions",
+                "Trigonometric Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric identities, equations and reciprocal functions"
+            },
+            {
+              "nodeId": "TRIG-FURTHER-SEC",
+              "name": "Sec, Cosec and Cot",
+              "path": [
+                "Trigonometry",
+                "Further Trigonometry",
+                "Sec, Cosec and Cot"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: trigonometric identities, equations and reciprocal functions"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.12",
+          "subtopicName": "Knowledge of the effect of simple Students should be able to apply one of these",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASIC-RAT-SOH",
+              "name": "SOH CAH TOA",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Trigonometric Ratios",
+                "SOH CAH TOA"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric ratios, sine and cosine rules"
+            },
+            {
+              "nodeId": "TRIG-BASIC-RULE-SINE",
+              "name": "Sine Rule",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Sine and Cosine Rules",
+                "Sine Rule"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric ratios, sine and cosine rules"
+            },
+            {
+              "nodeId": "TRIG-BASIC-RULE-COS",
+              "name": "Cosine Rule",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Sine and Cosine Rules",
+                "Cosine Rule"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric ratios, sine and cosine rules"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "1",
+      "topicName": "Proof",
+      "paperReference": [
+        "P2",
+        "P4"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "1.1",
+          "subtopicName": "Understand and use the structure of",
+          "paperReference": [
+            "P2",
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-AVG-CENT",
+              "name": "Measures of Central Tendency",
+              "path": [
+                "Statistics",
+                "Data Collection and Presentation",
+                "Averages and Spread",
+                "Measures of Central Tendency"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: understand and use measures of central tendency and variation"
+            },
+            {
+              "nodeId": "STAT-DATA-AVG-STD",
+              "name": "Standard Deviation and Quartiles",
+              "path": [
+                "Statistics",
+                "Data Collection and Presentation",
+                "Averages and Spread",
+                "Standard Deviation and Quartiles"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: understand and use measures of central tendency and variation"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.2",
+          "subtopicName": "Proof by exhaustion Proof by exhaustion.",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-DISC-BIN",
+              "name": "Binomial Distribution",
+              "path": [
+                "Probability",
+                "Probability Distributions",
+                "Discrete Distributions",
+                "Binomial Distribution"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: binomial and geometric distributions and their applications"
+            }
+          ]
+        },
+        {
+          "subtopicId": "1.3",
+          "subtopicName": "Disproof by counter example. Disproof by counter example – show that the statement",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APP-TAN",
+              "name": "Tangents and Normals",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Tangents and Normals"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-STATION",
+              "name": "Stationary Points",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Stationary Points"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-MAX",
+              "name": "Optimisation",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Optimisation"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "2",
+      "topicName": "Coordinate geometry in the (x, y) plane",
+      "paperReference": [
+        "P1"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "2.1",
+          "subtopicName": "Equation of a straight line, To include:",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-LINE-EQN-POINT",
+              "name": "Equation from Point and Gradient",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Equation of a Straight Line",
+                "Equation from Point and Gradient"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            },
+            {
+              "nodeId": "COORD-LINE-REL-PERP",
+              "name": "Perpendicular Gradient",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Parallel and Perpendicular Lines",
+                "Perpendicular Gradient"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            },
+            {
+              "nodeId": "COORD-LINE-DIST-MID",
+              "name": "Midpoint and Distance",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Distance and Midpoint",
+                "Midpoint and Distance"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            }
+          ]
+        },
+        {
+          "subtopicId": "2.2",
+          "subtopicName": "Conditions for two straight lines to",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-LINE-EQN-POINT",
+              "name": "Equation from Point and Gradient",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Equation of a Straight Line",
+                "Equation from Point and Gradient"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            },
+            {
+              "nodeId": "COORD-LINE-REL-PERP",
+              "name": "Perpendicular Gradient",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Parallel and Perpendicular Lines",
+                "Perpendicular Gradient"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            },
+            {
+              "nodeId": "COORD-LINE-DIST-MID",
+              "name": "Midpoint and Distance",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Distance and Midpoint",
+                "Midpoint and Distance"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "2",
+      "topicName": "Algebra and functions",
+      "paperReference": [
+        "P2",
+        "P4"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "2.1",
+          "subtopicName": "Simple algebraic division; use of Only division by (ax + b) or (ax – b) will be required, e.g.",
+          "paperReference": [
+            "P2",
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-POLY",
+              "name": "Polynomial and Rational Equations",
+              "path": [
+                "Algebra and Functions",
+                "Equations and Inequalities",
+                "Polynomial and Rational Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: polynomial equations, factor theorem, remainder theorem and partial fractions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "2",
+      "topicName": "Trigonometry",
+      "paperReference": [
+        "P3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "2.1",
+          "subtopicName": "Knowledge of secant, cosecant and Angles measured in both degrees and radians.",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASIC-RAT-SOH",
+              "name": "SOH CAH TOA",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Trigonometric Ratios",
+                "SOH CAH TOA"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric ratios, sine and cosine rules"
+            },
+            {
+              "nodeId": "TRIG-BASIC-RULE-SINE",
+              "name": "Sine Rule",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Sine and Cosine Rules",
+                "Sine Rule"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric ratios, sine and cosine rules"
+            },
+            {
+              "nodeId": "TRIG-BASIC-RULE-COS",
+              "name": "Cosine Rule",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Sine and Cosine Rules",
+                "Cosine Rule"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric ratios, sine and cosine rules"
+            }
+          ]
+        },
+        {
+          "subtopicId": "2.2",
+          "subtopicName": "Knowledge and use of",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-IND-PROD",
+              "name": "Independent Events",
+              "path": [
+                "Probability",
+                "Combined and Conditional Probability",
+                "Independent and Dependent Events",
+                "Independent Events"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use addition and multiplication of probabilities"
+            }
+          ]
+        },
+        {
+          "subtopicId": "2.3",
+          "subtopicName": "Knowledge and use of double angle To include application to half angles. Knowledge of the",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-ID",
+              "name": "Trigonometric Identities",
+              "path": [
+                "Trigonometry",
+                "Trigonometric Functions",
+                "Trigonometric Identities"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric identities, equations and reciprocal functions"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EQN",
+              "name": "Trigonometric Equations",
+              "path": [
+                "Trigonometry",
+                "Trigonometric Functions",
+                "Trigonometric Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric identities, equations and reciprocal functions"
+            },
+            {
+              "nodeId": "TRIG-FURTHER-SEC",
+              "name": "Sec, Cosec and Cot",
+              "path": [
+                "Trigonometry",
+                "Further Trigonometry",
+                "Sec, Cosec and Cot"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: trigonometric identities, equations and reciprocal functions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "3",
+      "topicName": "Trigonometry",
+      "paperReference": [
+        "P1"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "3.1",
+          "subtopicName": "The sine and cosine rules, and the Including the ambiguous case of the sine rule.",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASIC-RAT-SOH",
+              "name": "SOH CAH TOA",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Trigonometric Ratios",
+                "SOH CAH TOA"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric ratios, sine and cosine rules"
+            },
+            {
+              "nodeId": "TRIG-BASIC-RULE-SINE",
+              "name": "Sine Rule",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Sine and Cosine Rules",
+                "Sine Rule"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric ratios, sine and cosine rules"
+            },
+            {
+              "nodeId": "TRIG-BASIC-RULE-COS",
+              "name": "Cosine Rule",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Sine and Cosine Rules",
+                "Cosine Rule"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric ratios, sine and cosine rules"
+            }
+          ]
+        },
+        {
+          "subtopicId": "3.2",
+          "subtopicName": "Radian measure, including use for Use of the formulae s = rθ and A = 1 r2θ.",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-RAD",
+              "name": "Radians and Arcs",
+              "path": [
+                "Trigonometry",
+                "Trigonometric Functions",
+                "Radians and Arcs"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: radian measure, arc length and sector area"
+            }
+          ]
+        },
+        {
+          "subtopicId": "3.3",
+          "subtopicName": "Sine, cosine and tangent functions. Knowledge of graphs of curves with equations such as",
+          "paperReference": [
+            "P1"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CURVE-CIRC",
+              "name": "Circle Geometry",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Circle Geometry"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            },
+            {
+              "nodeId": "COORD-CURVE-PARA",
+              "name": "Parametric Equations",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Parametric Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "3",
+      "topicName": "Coordinate geometry in the (x, y) plane",
+      "paperReference": [
+        "P2",
+        "P4"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "3.1",
+          "subtopicName": "Coordinate geometry of the circle Students should be able to find the radius and the",
+          "paperReference": [
+            "P2",
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CURVE-CIRC",
+              "name": "Circle Geometry",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Circle Geometry"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            },
+            {
+              "nodeId": "COORD-CURVE-PARA",
+              "name": "Parametric Equations",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Parametric Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "3",
+      "topicName": "Exponential and logarithms",
+      "paperReference": [
+        "P3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "3.1",
+          "subtopicName": "The function ex and its graph. To include the graph of y = eax + b + c",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORCE-RES",
+              "name": "Resultant Forces and Equilibrium",
+              "path": [
+                "Mechanics",
+                "Forces and Equilibrium",
+                "Resultant Forces and Equilibrium"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: types of force, equilibrium and friction"
+            },
+            {
+              "nodeId": "VEC-2D-OPS-ADD",
+              "name": "Vector Addition and Scalar Multiplication",
+              "path": [
+                "Vectors",
+                "Vectors in 2D",
+                "Vector Operations",
+                "Vector Addition and Scalar Multiplication"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: types of force, equilibrium and friction"
+            },
+            {
+              "nodeId": "TRIG-BASIC-RAT-SOH",
+              "name": "SOH CAH TOA",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Trigonometric Ratios",
+                "SOH CAH TOA"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: types of force, equilibrium and friction"
+            }
+          ]
+        },
+        {
+          "subtopicId": "3.2",
+          "subtopicName": "The function ln x and its graph; ln x Solution of equations of the form eax + b = p and",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUN-NOT-DOM",
+              "name": "Domain and Range",
+              "path": [
+                "Algebra and Functions",
+                "Functions",
+                "Function Notation and Language",
+                "Domain and Range"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: function notation, composite, inverse, modulus and transformations"
+            },
+            {
+              "nodeId": "ALGF-FUN-COMP-INV",
+              "name": "Inverse Functions",
+              "path": [
+                "Algebra and Functions",
+                "Functions",
+                "Composite and Inverse Functions",
+                "Inverse Functions"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: function notation, composite, inverse, modulus and transformations"
+            },
+            {
+              "nodeId": "ALGF-FUN-MOD",
+              "name": "Modulus and Transformations",
+              "path": [
+                "Algebra and Functions",
+                "Functions",
+                "Modulus and Transformations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: function notation, composite, inverse, modulus and transformations"
+            }
+          ]
+        },
+        {
+          "subtopicId": "3.3",
+          "subtopicName": "Use logarithmic graphs to estimate Plot log y against log x and obtain a straight line where the",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-AVG-CENT",
+              "name": "Measures of Central Tendency",
+              "path": [
+                "Statistics",
+                "Data Collection and Presentation",
+                "Averages and Spread",
+                "Measures of Central Tendency"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use cumulative frequency graphs to estimate medians, quartiles and percentiles"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "4",
+      "topicName": "Differentiation",
+      "paperReference": [
+        "P1",
+        "P3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "4.1",
+          "subtopicName": "The derivative of f(x) as the dy",
+          "paperReference": [
+            "P1",
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CURVE-CIRC",
+              "name": "Circle Geometry",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Circle Geometry"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            },
+            {
+              "nodeId": "COORD-CURVE-PARA",
+              "name": "Parametric Equations",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Parametric Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            }
+          ]
+        },
+        {
+          "subtopicId": "4.2",
+          "subtopicName": "Differentiation of xn, and related The ability to differentiate expressions such as",
+          "paperReference": [
+            "P1",
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APP-TAN",
+              "name": "Tangents and Normals",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Tangents and Normals"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-STATION",
+              "name": "Stationary Points",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Stationary Points"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-MAX",
+              "name": "Optimisation",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Optimisation"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            }
+          ]
+        },
+        {
+          "subtopicId": "4.3",
+          "subtopicName": "Applications of differentiation to Use of differentiation to find equations of tangents and",
+          "paperReference": [
+            "P1",
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APP-TAN",
+              "name": "Tangents and Normals",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Tangents and Normals"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-STATION",
+              "name": "Stationary Points",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Stationary Points"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-MAX",
+              "name": "Optimisation",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Optimisation"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            }
+          ]
+        },
+        {
+          "subtopicId": "4.4",
+          "subtopicName": "Understand and use exponential Students should be familiar with terms such as ‘initial’,",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-AVG-CENT",
+              "name": "Measures of Central Tendency",
+              "path": [
+                "Statistics",
+                "Data Collection and Presentation",
+                "Averages and Spread",
+                "Measures of Central Tendency"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: understand and use measures of central tendency and variation"
+            },
+            {
+              "nodeId": "STAT-DATA-AVG-STD",
+              "name": "Standard Deviation and Quartiles",
+              "path": [
+                "Statistics",
+                "Data Collection and Presentation",
+                "Averages and Spread",
+                "Standard Deviation and Quartiles"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: understand and use measures of central tendency and variation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "4",
+      "topicName": "Sequences and series",
+      "paperReference": [
+        "P2"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "4.1",
+          "subtopicName": "Sequences, including those given",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SER-SEQ-LIN",
+              "name": "Linear Sequences",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Sequences",
+                "Linear Sequences"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            },
+            {
+              "nodeId": "ALGF-SER-AP-FORM",
+              "name": "Arithmetic Series Formulae",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Arithmetic Series",
+                "Arithmetic Series Formulae"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            },
+            {
+              "nodeId": "ALGF-SER-GP",
+              "name": "Geometric Series",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Geometric Series"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            }
+          ]
+        },
+        {
+          "subtopicId": "4.2",
+          "subtopicName": "Understand and work with The proof of the sum formula should be known.",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SER-SEQ-LIN",
+              "name": "Linear Sequences",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Sequences",
+                "Linear Sequences"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            },
+            {
+              "nodeId": "ALGF-SER-AP-FORM",
+              "name": "Arithmetic Series Formulae",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Arithmetic Series",
+                "Arithmetic Series Formulae"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            },
+            {
+              "nodeId": "ALGF-SER-GP",
+              "name": "Geometric Series",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Geometric Series"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            }
+          ]
+        },
+        {
+          "subtopicId": "4.3",
+          "subtopicName": "Increasing sequences, decreasing",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SER-SEQ-LIN",
+              "name": "Linear Sequences",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Sequences",
+                "Linear Sequences"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            },
+            {
+              "nodeId": "ALGF-SER-AP-FORM",
+              "name": "Arithmetic Series Formulae",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Arithmetic Series",
+                "Arithmetic Series Formulae"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            },
+            {
+              "nodeId": "ALGF-SER-GP",
+              "name": "Geometric Series",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Geometric Series"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            }
+          ]
+        },
+        {
+          "subtopicId": "4.4",
+          "subtopicName": "Understand and work with For example, given the sum of a series students should be",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SER-SEQ-LIN",
+              "name": "Linear Sequences",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Sequences",
+                "Linear Sequences"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            },
+            {
+              "nodeId": "ALGF-SER-AP-FORM",
+              "name": "Arithmetic Series Formulae",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Arithmetic Series",
+                "Arithmetic Series Formulae"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            },
+            {
+              "nodeId": "ALGF-SER-GP",
+              "name": "Geometric Series",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Geometric Series"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: arithmetic and geometric sequences and series"
+            }
+          ]
+        },
+        {
+          "subtopicId": "4.5",
+          "subtopicName": "Binomial expansion of (a + bx)n for n",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SER-BIN-POS",
+              "name": "Binomial Expansion for Positive Integers",
+              "path": [
+                "Algebra and Functions",
+                "Sequences and Series",
+                "Binomial Expansion",
+                "Binomial Expansion for Positive Integers"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-4PM1: binomial expansion for positive integer n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "4",
+      "topicName": "Binomial expansion",
+      "paperReference": [
+        "P4"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "4.1",
+          "subtopicName": "Binomial Series for any rational n. b",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-DISC-BIN",
+              "name": "Binomial Distribution",
+              "path": [
+                "Probability",
+                "Probability Distributions",
+                "Discrete Distributions",
+                "Binomial Distribution"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: expectation and variance of binomial and geometric distributions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "5",
+      "topicName": "Integration",
+      "paperReference": [
+        "P1",
+        "P3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "5.1",
+          "subtopicName": "Indefinite integration as the reverse Students should know that a constant of integration is",
+          "paperReference": [
+            "P1",
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APP-TAN",
+              "name": "Tangents and Normals",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Tangents and Normals"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-STATION",
+              "name": "Stationary Points",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Stationary Points"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-MAX",
+              "name": "Optimisation",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Optimisation"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            }
+          ]
+        },
+        {
+          "subtopicId": "5.2",
+          "subtopicName": "Integration of xn and related sums, (Excluding n = −1 and related sums, differences and",
+          "paperReference": [
+            "P1",
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CURVE-CIRC",
+              "name": "Circle Geometry",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Circle Geometry"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            },
+            {
+              "nodeId": "COORD-CURVE-PARA",
+              "name": "Parametric Equations",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Parametric Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "5",
+      "topicName": "Exponentials and logarithms",
+      "paperReference": [
+        "P2"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "5.1",
+          "subtopicName": "y = ax and its graph. a > 0, a ≠ 1",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-POW-IND",
+              "name": "Laws of Indices",
+              "path": [
+                "Number",
+                "Operations and Place Value",
+                "Powers and Roots",
+                "Laws of Indices"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: indices and surds"
+            },
+            {
+              "nodeId": "NUM-OPS-POW-SURD",
+              "name": "Surds and Roots",
+              "path": [
+                "Number",
+                "Operations and Place Value",
+                "Powers and Roots",
+                "Surds and Roots"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: indices and surds"
+            }
+          ]
+        },
+        {
+          "subtopicId": "5.2",
+          "subtopicName": "Laws of logarithms. To include",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-GRAPH-EXP-LOG",
+              "name": "Exponential and Logarithmic Graphs",
+              "path": [
+                "Algebra and Functions",
+                "Graphs",
+                "Exponential and Logarithmic Graphs",
+                "Exponential and Logarithmic Graphs"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: laws of logarithms and exponentials, solving equations"
+            }
+          ]
+        },
+        {
+          "subtopicId": "5.3",
+          "subtopicName": "The solution of equations of the Students may use the change of base formula.",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-IND-PROD",
+              "name": "Independent Events",
+              "path": [
+                "Probability",
+                "Combined and Conditional Probability",
+                "Independent and Dependent Events",
+                "Independent Events"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use addition and multiplication of probabilities"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "5",
+      "topicName": "Differentiation",
+      "paperReference": [
+        "P4"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "5.1",
+          "subtopicName": "Differentiation of simple functions The finding of equations of tangents and normals to curves",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-ID",
+              "name": "Trigonometric Identities",
+              "path": [
+                "Trigonometry",
+                "Trigonometric Functions",
+                "Trigonometric Identities"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric identities, equations and reciprocal functions"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EQN",
+              "name": "Trigonometric Equations",
+              "path": [
+                "Trigonometry",
+                "Trigonometric Functions",
+                "Trigonometric Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: trigonometric identities, equations and reciprocal functions"
+            },
+            {
+              "nodeId": "TRIG-FURTHER-SEC",
+              "name": "Sec, Cosec and Cot",
+              "path": [
+                "Trigonometry",
+                "Further Trigonometry",
+                "Sec, Cosec and Cot"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: trigonometric identities, equations and reciprocal functions"
+            }
+          ]
+        },
+        {
+          "subtopicId": "5.2",
+          "subtopicName": "Formation of simple differential Questions involving connected rates of change may be set.",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-GRAPH-EXP-LOG",
+              "name": "Exponential and Logarithmic Graphs",
+              "path": [
+                "Algebra and Functions",
+                "Graphs",
+                "Exponential and Logarithmic Graphs",
+                "Exponential and Logarithmic Graphs"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: laws of logarithms and exponentials, solving equations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "6",
+      "topicName": "Trigonometry",
+      "paperReference": [
+        "P2"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "6.1",
+          "subtopicName": "Knowledge and use of",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-IND-PROD",
+              "name": "Independent Events",
+              "path": [
+                "Probability",
+                "Combined and Conditional Probability",
+                "Independent and Dependent Events",
+                "Independent Events"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use addition and multiplication of probabilities"
+            }
+          ]
+        },
+        {
+          "subtopicId": "6.2",
+          "subtopicName": "Solution of simple trigonometric Students should be able to solve equations such as",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-3D-COMP",
+              "name": "3D Components and Lines",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "3D Components and Lines"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: vector algebra in 3d, scalar product, equations of lines"
+            },
+            {
+              "nodeId": "VEC-3D-DOT",
+              "name": "Scalar Product",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "Scalar Product"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: vector algebra in 3d, scalar product, equations of lines"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "6",
+      "topicName": "Numerical methods",
+      "paperReference": [
+        "P3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "6.1",
+          "subtopicName": "Location of roots of f(x) = 0 by",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DIST-CONT",
+              "name": "Continuous Random Variables",
+              "path": [
+                "Statistics",
+                "Statistical Distributions",
+                "Continuous Random Variables"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: mean, variance and median of continuous random variables"
+            },
+            {
+              "nodeId": "STAT-DIST-CONT-TRANS",
+              "name": "Transformations of Continuous Random Variables",
+              "path": [
+                "Statistics",
+                "Statistical Distributions",
+                "Continuous Random Variables",
+                "Transformations of Continuous Random Variables"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: mean, variance and median of continuous random variables"
+            }
+          ]
+        },
+        {
+          "subtopicId": "6.2",
+          "subtopicName": "Approximate solution of equations Solution of equations by use of iterative procedures, for",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "FURTHER-NUM-ROOT",
+              "name": "Locating Roots",
+              "path": [
+                "Discrete / Decision / Further",
+                "Numerical Methods",
+                "Locating Roots"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: numerical methods for solving equations"
+            },
+            {
+              "nodeId": "FURTHER-NUM-ITER",
+              "name": "Iterative Methods",
+              "path": [
+                "Discrete / Decision / Further",
+                "Numerical Methods",
+                "Iterative Methods"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: numerical methods for solving equations"
+            },
+            {
+              "nodeId": "FURTHER-NUM-INT",
+              "name": "Numerical Integration",
+              "path": [
+                "Discrete / Decision / Further",
+                "Numerical Methods",
+                "Numerical Integration"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: numerical methods for solving equations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "6",
+      "topicName": "Integration",
+      "paperReference": [
+        "P4"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "6.1",
+          "subtopicName": "Evaluation of volume of revolution. π ∫ y2 dx is required, but not π ∫ x2 dy.",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CURVE-CIRC",
+              "name": "Circle Geometry",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Circle Geometry"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            },
+            {
+              "nodeId": "COORD-CURVE-PARA",
+              "name": "Parametric Equations",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Parametric Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            }
+          ]
+        },
+        {
+          "subtopicId": "6.2",
+          "subtopicName": "Simple cases of integration by Students will be expected to use a substitution to find, e.g.",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-AVG-CENT",
+              "name": "Measures of Central Tendency",
+              "path": [
+                "Statistics",
+                "Data Collection and Presentation",
+                "Averages and Spread",
+                "Measures of Central Tendency"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: understand and use measures of central tendency and variation"
+            },
+            {
+              "nodeId": "STAT-DATA-AVG-STD",
+              "name": "Standard Deviation and Quartiles",
+              "path": [
+                "Statistics",
+                "Data Collection and Presentation",
+                "Averages and Spread",
+                "Standard Deviation and Quartiles"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: understand and use measures of central tendency and variation"
+            }
+          ]
+        },
+        {
+          "subtopicId": "6.3",
+          "subtopicName": "Simple cases of integration using Integration of rational expressions such as those arising",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-POLY",
+              "name": "Polynomial and Rational Equations",
+              "path": [
+                "Algebra and Functions",
+                "Equations and Inequalities",
+                "Polynomial and Rational Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: polynomial equations, factor theorem, remainder theorem and partial fractions"
+            }
+          ]
+        },
+        {
+          "subtopicId": "6.4",
+          "subtopicName": "Analytical solution of simple first General and particular solutions will be required.",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INT-DE",
+              "name": "Differential Equations",
+              "path": [
+                "Calculus",
+                "Integration",
+                "Differential Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: first order separable differential equations"
+            }
+          ]
+        },
+        {
+          "subtopicId": "6.5",
+          "subtopicName": "Use integration to find the area Students should be able to find the area under a curve given",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CURVE-CIRC",
+              "name": "Circle Geometry",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Circle Geometry"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            },
+            {
+              "nodeId": "COORD-CURVE-PARA",
+              "name": "Parametric Equations",
+              "path": [
+                "Coordinate Geometry",
+                "Curves and Circles",
+                "Parametric Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of circle, tangent and normal, parametric equations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "7",
+      "topicName": "Differentiation",
+      "paperReference": [
+        "P2"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "7.1",
+          "subtopicName": "Applications of differentiation to To include applications to curve sketching. Maxima and",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APP-TAN",
+              "name": "Tangents and Normals",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Tangents and Normals"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-STATION",
+              "name": "Stationary Points",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Stationary Points"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-MAX",
+              "name": "Optimisation",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Optimisation"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "7",
+      "topicName": "Vectors",
+      "paperReference": [
+        "P4"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "7.1",
+          "subtopicName": "Vectors in two and three",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-2D",
+              "name": "Motion in 2D",
+              "path": [
+                "Mechanics",
+                "Kinematics",
+                "Motion in 2D"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to AQA-7357: motion in two dimensions and projectiles"
+            },
+            {
+              "nodeId": "MECH-KIN-PROJ",
+              "name": "Projectiles",
+              "path": [
+                "Mechanics",
+                "Kinematics",
+                "Projectiles"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to AQA-7357: motion in two dimensions and projectiles"
+            }
+          ]
+        },
+        {
+          "subtopicId": "7.2",
+          "subtopicName": "Magnitude of a vector. Students should be able to find a unit vector in the direction",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-3D-COMP",
+              "name": "3D Components and Lines",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "3D Components and Lines"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: vector algebra in 3d, scalar product, equations of lines"
+            },
+            {
+              "nodeId": "VEC-3D-DOT",
+              "name": "Scalar Product",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "Scalar Product"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: vector algebra in 3d, scalar product, equations of lines"
+            }
+          ]
+        },
+        {
+          "subtopicId": "7.3",
+          "subtopicName": "Algebraic operations of vector",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-IND-PROD",
+              "name": "Independent Events",
+              "path": [
+                "Probability",
+                "Combined and Conditional Probability",
+                "Independent and Dependent Events",
+                "Independent Events"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use addition and multiplication of probabilities"
+            }
+          ]
+        },
+        {
+          "subtopicId": "7.4",
+          "subtopicName": "Position vectors. OB − OA = AB = b − a",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-AVG-CENT",
+              "name": "Measures of Central Tendency",
+              "path": [
+                "Statistics",
+                "Data Collection and Presentation",
+                "Averages and Spread",
+                "Measures of Central Tendency"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use cumulative frequency graphs to estimate medians, quartiles and percentiles"
+            }
+          ]
+        },
+        {
+          "subtopicId": "7.5",
+          "subtopicName": "The distance between two points. The distance d between two points",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB",
+              "name": "Combined and Conditional Probability",
+              "path": [
+                "Probability",
+                "Combined and Conditional Probability"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: evaluate probabilities by enumeration and permutations/combinations"
+            }
+          ]
+        },
+        {
+          "subtopicId": "7.6",
+          "subtopicName": "Vector equations of lines. To include the forms r = a + tb and r = c + t(d – c)",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-3D-COMP",
+              "name": "3D Components and Lines",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "3D Components and Lines"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: vector algebra in 3d, scalar product, equations of lines"
+            },
+            {
+              "nodeId": "VEC-3D-DOT",
+              "name": "Scalar Product",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "Scalar Product"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: vector algebra in 3d, scalar product, equations of lines"
+            }
+          ]
+        },
+        {
+          "subtopicId": "7.7",
+          "subtopicName": "The scalar product. Its use for Students should know that for",
+          "paperReference": [
+            "P4"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-3D-COMP",
+              "name": "3D Components and Lines",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "3D Components and Lines"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: vector algebra in 3d, scalar product, equations of lines"
+            },
+            {
+              "nodeId": "VEC-3D-DOT",
+              "name": "Scalar Product",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "Scalar Product"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: vector algebra in 3d, scalar product, equations of lines"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "8",
+      "topicName": "Integration",
+      "paperReference": [
+        "P2"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "8.1",
+          "subtopicName": "Evaluation of definite integrals.",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APP-TAN",
+              "name": "Tangents and Normals",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Tangents and Normals"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-STATION",
+              "name": "Stationary Points",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Stationary Points"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-APP-MAX",
+              "name": "Optimisation",
+              "path": [
+                "Calculus",
+                "Differentiation",
+                "Applications of Differentiation",
+                "Optimisation"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to CAIE-9709: applications of differentiation"
+            }
+          ]
+        },
+        {
+          "subtopicId": "8.2",
+          "subtopicName": "Interpretation of the definite Students will be expected to be able to evaluate the area of",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-LINE-EQN-POINT",
+              "name": "Equation from Point and Gradient",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Equation of a Straight Line",
+                "Equation from Point and Gradient"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            },
+            {
+              "nodeId": "COORD-LINE-REL-PERP",
+              "name": "Perpendicular Gradient",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Parallel and Perpendicular Lines",
+                "Perpendicular Gradient"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            },
+            {
+              "nodeId": "COORD-LINE-DIST-MID",
+              "name": "Midpoint and Distance",
+              "path": [
+                "Coordinate Geometry",
+                "Straight Lines",
+                "Distance and Midpoint",
+                "Midpoint and Distance"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: equation of straight line, gradient, parallel and perpendicular lines, distance and midpoint"
+            }
+          ]
+        },
+        {
+          "subtopicId": "8.3",
+          "subtopicName": "Approximation of area under a For example,",
+          "paperReference": [
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-AVG-CENT",
+              "name": "Measures of Central Tendency",
+              "path": [
+                "Statistics",
+                "Data Collection and Presentation",
+                "Averages and Spread",
+                "Measures of Central Tendency"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: use cumulative frequency graphs to estimate medians, quartiles and percentiles"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
