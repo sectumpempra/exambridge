@@ -35,6 +35,15 @@ export interface SubtopicMapping {
   mappedNodes: MappedNode[];
 }
 
+/** Exclusive subtopic item (for display) */
+export interface ExclusiveSubtopicItem {
+  subtopicId: string;
+  subtopicName: string;
+  description?: string;
+  topicName: string;
+  paperRef: string[] | null;
+}
+
 /** Topic-level mapping */
 export interface TopicMapping {
   topicId: string;

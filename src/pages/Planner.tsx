@@ -53,11 +53,11 @@ function generatePastPapersForVariant(subjectCode: string, component: string): s
   });
 }
 
-/** Get the nearest future exam date for a paper group (bug 3.15) */
-function getGroupNearestExamDate(level: string, board: string, variants: { code: string }[]): string {
+/** Get the nearest future exam date for a paper group. Returns null if no date found. */
+function getGroupNearestExamDate(level: string, board: string, variants: { code: string }[]): string | null {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  let nearest = "";
+  let nearest: string | null = null;
   let nearestDiff = Infinity;
   for (const v of variants) {
     const d = lookupExamDate(level, board, v.code);
@@ -70,23 +70,23 @@ function getGroupNearestExamDate(level: string, board: string, variants: { code:
   }
   // Fallback: if no future date found, return the latest available date
   if (!nearest) {
-    let latest = "";
+    let latest: string | null = null;
     for (const v of variants) {
       const d = lookupExamDate(level, board, v.code);
-      if (!latest || d > latest) latest = d;
+      if (d && (!latest || d > latest)) latest = d;
     }
     nearest = latest;
   }
-  return nearest || "2026-05-01";
+  return nearest;
 }
 
-/** Get exam date from EXAM_DATES */
-function lookupExamDate(level: string, board: string, paperCode: string): string {
+/** Get exam date from EXAM_DATES. Returns null if not found. */
+function lookupExamDate(level: string, board: string, paperCode: string): string | null {
   const boardKey = board === "Edexcel" && level === "A-Level" ? "Edexcel-IAL"
     : board === "Edexcel" && level === "GCSE" ? "Edexcel-GCSE"
     : `${board}-${level === "A-Level" ? "AL" : "GCSE"}`;
   const dates = EXAM_DATES[boardKey];
-  if (!dates) return "2026-10-01";
+  if (!dates) return null;
 
   // Try direct match first
   if (dates[paperCode]) return dates[paperCode];
@@ -118,7 +118,7 @@ function lookupExamDate(level: string, board: string, paperCode: string): string
   const baseCode = paperCode.split(/[/\s]/)[0];
   if (dates[baseCode]) return dates[baseCode];
 
-  return "2026-10-01";
+  return null;
 }
 
 export default function Planner() {
@@ -210,13 +210,15 @@ export default function Planner() {
 
   // Build planner config from selected groups
   const { config, pastPapersMap } = useMemo(() => {
-    const selectedPapers = selectedGroups.flatMap(g =>
-      g.variants.map(v => ({
+    const selectedPapers = selectedGroups.flatMap(g => {
+      const examDate = getGroupNearestExamDate(g.level, g.board, g.variants);
+      if (!examDate) return []; // Skip papers with no exam date
+      return g.variants.map(v => ({
         code: v.code, name: `${g.subjectCode} ${g.paperLabel}`,
         subjectCode: g.subjectCode, component: v.component,
-        examDate: getGroupNearestExamDate(g.level, g.board, g.variants),
-      }))
-    );
+        examDate,
+      }));
+    });
     const cfg: PlannerConfig = {
       startDate,
       selectedPapers,
@@ -253,9 +255,10 @@ export default function Planner() {
   const examGroups = useMemo(() =>
     selectedGroups.map(g => {
       const date = getGroupNearestExamDate(g.level, g.board, g.variants);
+      if (!date) return { label: `${g.subjectCode} ${g.paperLabel}`, date: "暂无日期", daysUntil: Infinity };
       const days = differenceInDays(parseLocalDate(date), new Date());
       return { label: `${g.subjectCode} ${g.paperLabel}`, date, daysUntil: days };
-    }).sort((a, b) => a.daysUntil - b.daysUntil),
+    }).filter(g => g.daysUntil !== Infinity).sort((a, b) => a.daysUntil - b.daysUntil),
   [selectedGroups]);
 
   const toggleRestDay = (d: number) => {
@@ -347,7 +350,7 @@ export default function Planner() {
                           {subject.paperGroups.map(group => {
                             const isSelected = selectedGroups.some(g => g.subjectCode === subject.code && g.paperNum === group.paperNum);
                             const examDate = getGroupNearestExamDate(selectedLevel, selectedBoard, group.papers);
-                            const daysUntil = differenceInDays(parseLocalDate(examDate), new Date());
+                            const daysUntil = examDate ? differenceInDays(parseLocalDate(examDate), new Date()) : null;
                             return (
                               <div key={`${subject.code}_${group.paperNum}`} onClick={() => togglePaperGroup(subject.code, group)}
                                 style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 14px", cursor: "pointer", background: isSelected ? "rgba(143,127,110,0.04)" : "transparent", borderLeft: isSelected ? "3px solid #8F7F6E" : "3px solid transparent" }}>
@@ -358,7 +361,7 @@ export default function Planner() {
                                   <div style={{ fontSize: 13, fontWeight: 600 }}>{group.label}</div>
                                   {group.description && <div style={{ fontSize: 10, color: "#A8A095" }}>{group.description}</div>}
                                 </div>
-                                <span style={{ fontSize: 10, color: daysUntil < 30 ? "#C17B5F" : "#A8A095" }}><CalendarDays size={10} style={{ display: "inline", marginRight: 2 }} />{examDate}</span>
+                                <span style={{ fontSize: 10, color: (daysUntil ?? Infinity) < 30 ? "#C17B5F" : "#A8A095" }}><CalendarDays size={10} style={{ display: "inline", marginRight: 2 }} />{examDate}</span>
                               </div>
                             );
                           })}
@@ -525,7 +528,7 @@ function EdexcelALSubjectList({
                 {group.units.map(unit => {
                   const isSelected = selectedGroups.some(g => g.subjectCode === unit.code);
                   const examDate = getGroupNearestExamDate(selectedLevel, selectedBoard, unit.papers);
-                  const daysUntil = differenceInDays(parseLocalDate(examDate), new Date());
+                  const daysUntil = examDate ? differenceInDays(parseLocalDate(examDate), new Date()) : null;
                   return (
                     <div key={unit.code} onClick={() => onToggleUnit(unit.code, unit.papers)}
                       style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 14px", cursor: "pointer", background: isSelected ? "rgba(143,127,110,0.04)" : "transparent", borderLeft: isSelected ? "3px solid #8F7F6E" : "3px solid transparent" }}>
@@ -539,7 +542,7 @@ function EdexcelALSubjectList({
                         <div style={{ fontSize: 11, color: "#A8A095" }}>{unit.name}</div>
                       </div>
                       {/* Exam date */}
-                      <span style={{ fontSize: 10, color: daysUntil < 30 ? "#C17B5F" : "#A8A095", flexShrink: 0 }}>
+                      <span style={{ fontSize: 10, color: (daysUntil ?? Infinity) < 30 ? "#C17B5F" : "#A8A095", flexShrink: 0 }}>
                         <CalendarDays size={10} style={{ display: "inline", marginRight: 2 }} />{examDate}
                       </span>
                     </div>

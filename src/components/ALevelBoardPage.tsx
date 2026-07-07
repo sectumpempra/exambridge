@@ -1,10 +1,6 @@
 import BoardPage from "./BoardPage";
 import type { ComponentProps } from "react";
 
-interface ALevelBoardPageProps extends ComponentProps<typeof BoardPage> {
-  // Inherits all BoardPage props; adds default csvSuffix="al"
-}
-
-export default function ALevelBoardPage(props: ALevelBoardPageProps) {
+export default function ALevelBoardPage(props: ComponentProps<typeof BoardPage>) {
   return <BoardPage {...props} csvSuffix={props.csvSuffix ?? "al"} />;
 }

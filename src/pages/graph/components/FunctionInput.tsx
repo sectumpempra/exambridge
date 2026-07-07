@@ -32,6 +32,7 @@ function normalizeTrailingConstant(expr: string): { expr: string; defaultValue?:
   return { expr };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function FunctionInput({ entry, index: _index, onUpdate, onRemove: _onRemove }: FunctionInputProps) {
   const [editingExpr, setEditingExpr] = useState(!entry.expression.trim());
   const [exprInput, setExprInput] = useState(entry.expression);

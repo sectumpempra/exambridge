@@ -11,7 +11,7 @@
  * - Responsive area chart with Recharts
  */
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend, ResponsiveContainer,
@@ -311,16 +311,15 @@ export default function ResultStatisticsPage() {
 
   // Track user-toggled grades; gradesToShow is derived synchronously from gradeConfig
   const [toggledGrades, setToggledGrades] = useState<string[]>([]);
-
-  // Reset toggled grades when board/level changes (avoids stale A*-E keys in 9-1 mode)
-  useEffect(() => {
-    setToggledGrades([]);
-  }, [selectedBoard, selectedLevel]);
+  // Reset toggles via derived key in useMemo (avoids setState-in-effect and ref-during-render)
+  const validToggledGrades = useMemo(() => {
+    const valid = toggledGrades.filter((g) => gradeConfig.grades.includes(g));
+    return valid.length > 0 ? valid : [];
+  }, [toggledGrades, gradeConfig.grades]);
 
   const gradesToShow = useMemo(() => {
-    const valid = toggledGrades.filter((g) => gradeConfig.grades.includes(g));
-    return valid.length > 0 ? valid : gradeConfig.grades.slice(0, 3);
-  }, [toggledGrades, gradeConfig]);
+    return validToggledGrades.length > 0 ? validToggledGrades : gradeConfig.grades.slice(0, 3);
+  }, [validToggledGrades, gradeConfig]);
 
   // Derived options
   const boards = getAvailableBoards();

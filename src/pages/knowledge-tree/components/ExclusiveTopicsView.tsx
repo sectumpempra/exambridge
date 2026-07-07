@@ -1,22 +1,15 @@
 import { FileText, AlertCircle } from "lucide-react";
-
-interface ExclusiveItem {
-  subtopicId: string;
-  subtopicName: string;
-  description?: string;
-  topicName: string;
-  paperRef: string[] | null;
-}
+import type { ExclusiveSubtopicItem } from "@/data/knowledge-tree/types-v3.2";
 
 interface Props {
   aName: string;
   bName: string;
-  aExclusive: ExclusiveItem[];
-  bExclusive: ExclusiveItem[];
+  aExclusive: ExclusiveSubtopicItem[];
+  bExclusive: ExclusiveSubtopicItem[];
 }
 
-function groupByPaper(items: ExclusiveItem[]) {
-  const groups = new Map<string | null, ExclusiveItem[]>();
+function groupByPaper(items: ExclusiveSubtopicItem[]) {
+  const groups = new Map<string | null, ExclusiveSubtopicItem[]>();
   for (const item of items) {
     const key = item.paperRef ? item.paperRef.join(", ") : null;
     if (!groups.has(key)) groups.set(key, []);
@@ -31,7 +24,7 @@ function ExclusiveList({
   accentColor,
 }: {
   title: string;
-  items: ExclusiveItem[];
+  items: ExclusiveSubtopicItem[];
   accentColor: string;
 }) {
   if (items.length === 0) {
@@ -91,7 +84,7 @@ function ExclusiveList({
   );
 }
 
-function ExclusiveItemRow({ item, index }: { item: ExclusiveItem; index: number }) {
+function ExclusiveItemRow({ item, index }: { item: ExclusiveSubtopicItem; index: number }) {
   return (
     <div className="px-4 py-3 hover:bg-[#FAF8F5] transition-colors">
       <div className="flex items-start gap-3">

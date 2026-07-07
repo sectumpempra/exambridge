@@ -304,6 +304,7 @@ export function evaluateCartesian(
   compiled: EvalFunction,
   x: number,
   params: Record<string, number>,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _angleMode?: 'number' | 'pi' | 'degree',
 ): number | null {
   try {
@@ -321,6 +322,7 @@ export function evaluatePolar(
   compiled: EvalFunction,
   theta: number,
   params: Record<string, number>,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _angleMode?: 'number' | 'pi' | 'degree',
 ): number | null {
   try {

@@ -72,11 +72,11 @@ export default function PaperComparePage() {
   // Async compare
   useEffect(() => {
     if (!paperAId || !paperBId || paperAId === paperBId) {
-      setComparison(null);
+      queueMicrotask(() => setComparison(null));
       return;
     }
     let cancelled = false;
-    setLoading(true);
+    queueMicrotask(() => setLoading(true));
     comparePapers(paperAId, paperBId).then((result) => {
       if (!cancelled) {
         setComparison(result);

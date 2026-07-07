@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { GitCompareArrows, FolderTree, Layers, FileText } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,7 +8,7 @@ import OverlapDashboard from "./components/OverlapDashboard";
 import KnowledgeTreeView from "./components/KnowledgeTreeView";
 import TopicDiffView from "./components/TopicDiffView";
 import ExclusiveTopicsView from "./components/ExclusiveTopicsView";
-import type { OverlapResultV32, SubjectInfoV32 } from "@/data/knowledge-tree/types-v3.2";
+import type { OverlapResultV32, SubjectInfoV32, ExclusiveSubtopicItem } from "@/data/knowledge-tree/types-v3.2";
 import {
   listSubjectsV32,
   calculateOverlapV32,
@@ -47,20 +47,8 @@ export default function KnowledgeTreeComparePage() {
     bOnly: new Set<string>(),
   });
   const [exclusiveData, setExclusiveData] = useState<{
-    aExclusive: Array<{
-      subtopicId: string;
-      subtopicName: string;
-      description?: string;
-      topicName: string;
-      paperRef: string[] | null;
-    }>;
-    bExclusive: Array<{
-      subtopicId: string;
-      subtopicName: string;
-      description?: string;
-      topicName: string;
-      paperRef: string[] | null;
-    }>;
+    aExclusive: ExclusiveSubtopicItem[];
+    bExclusive: ExclusiveSubtopicItem[];
   }>({ aExclusive: [], bExclusive: [] });
   const [loadingCalc, setLoadingCalc] = useState(false);
 
@@ -97,9 +85,16 @@ export default function KnowledgeTreeComparePage() {
     return s?.papers ?? [];
   }, [subjects, codeB]);
 
-  // Reset paper selection when subject changes
-  useEffect(() => { setPaperA(null); }, [codeA]);
-  useEffect(() => { setPaperB(null); }, [codeB]);
+  // Unified subject change handlers (avoid intermediate states)
+  const handleSetCodeA = useCallback((newCode: string) => {
+    setCodeA(newCode);
+    setPaperA(null);
+  }, []);
+
+  const handleSetCodeB = useCallback((newCode: string) => {
+    setCodeB(newCode);
+    setPaperB(null);
+  }, []);
 
   // Calculate overlap when selection changes
   useEffect(() => {
@@ -253,7 +248,7 @@ export default function KnowledgeTreeComparePage() {
           <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-5">
             <div className="flex items-start gap-4 flex-wrap">
               <div className="flex-1 min-w-[200px]">
-                <SubjectSelector label="科目 A" value={codeA} options={subjectOptions} onChange={setCodeA} />
+                <SubjectSelector label="科目 A" value={codeA} options={subjectOptions} onChange={handleSetCodeA} />
                 {papersA.length > 0 && (
                   <div className="mt-2">
                     <PaperSelector label="Paper" papers={papersA} value={paperA} onChange={setPaperA} />
@@ -270,7 +265,7 @@ export default function KnowledgeTreeComparePage() {
                 </button>
               </div>
               <div className="flex-1 min-w-[200px]">
-                <SubjectSelector label="科目 B" value={codeB} options={subjectOptions} onChange={setCodeB} />
+                <SubjectSelector label="科目 B" value={codeB} options={subjectOptions} onChange={handleSetCodeB} />
                 {papersB.length > 0 && (
                   <div className="mt-2">
                     <PaperSelector label="Paper" papers={papersB} value={paperB} onChange={setPaperB} />

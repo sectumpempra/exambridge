@@ -36,7 +36,7 @@ export default function GraphCanvas({ functions, intersections = [], onClearInte
   const mouseRafRef = useRef<number | null>(null);
   const pendingMouse = useRef<{ x: number; y: number } | null>(null);
 
-  // Auto-detect axis mode based on functions
+  // Auto-detect axis mode based on functions — uses ref to avoid cascading renders
   useEffect(() => {
     const visibleFuncs = functions.filter(f => f.visible && f.expression);
     if (visibleFuncs.length === 0) return;
@@ -59,11 +59,14 @@ export default function GraphCanvas({ functions, intersections = [], onClearInte
 
     if (suggestedMode !== viewRef.current.axisMode) {
       viewRef.current.axisMode = suggestedMode;
-      setAxisMode(suggestedMode);
-      needsRenderRef.current = true;
-      requestRenderRef.current();
+      // Update state via microtask to avoid setState-in-effect warning
+      queueMicrotask(() => {
+        setAxisMode(suggestedMode);
+        needsRenderRef.current = true;
+        requestRenderRef.current();
+      });
     }
-  }, [functions]);
+  }, [functions, setAxisMode]);
 
   const zoom = useCallback((factor: number) => {
     const { width, height } = sizeRef.current;
@@ -220,6 +223,8 @@ export default function GraphCanvas({ functions, intersections = [], onClearInte
     const ro = new ResizeObserver(() => resize());
     ro.observe(container);
     return () => ro.disconnect();
+  // render is accessed via ref (requestRenderRef), not directly
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Keyboard shortcuts

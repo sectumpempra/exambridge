@@ -4,6 +4,7 @@ import type {
   SubjectInfoV32,
   OverlapResultV32,
   CompareMode,
+  ExclusiveSubtopicItem,
 } from "./types-v3.2";
 
 const BASE = "/data/v3.2-new";
@@ -262,20 +263,8 @@ export async function findExclusiveSubtopics(
   paperA: string | null = null,
   paperB: string | null = null
 ): Promise<{
-  aExclusive: Array<{
-    subtopicId: string;
-    subtopicName: string;
-    description?: string;
-    topicName: string;
-    paperRef: string[] | null;
-  }>;
-  bExclusive: Array<{
-    subtopicId: string;
-    subtopicName: string;
-    description?: string;
-    topicName: string;
-    paperRef: string[] | null;
-  }>;
+  aExclusive: ExclusiveSubtopicItem[];
+  bExclusive: ExclusiveSubtopicItem[];
 }> {
   const [tree, mappings] = await Promise.all([
     loadKnowledgeTreeV32(),
@@ -338,7 +327,7 @@ export async function findExclusiveSubtopics(
         aExclusive.push({
           subtopicId: sm.subtopicId,
           subtopicName: sm.subtopicName,
-          description: (sm as any).description,
+          description: sm.description,
           topicName: topic.topicName,
           paperRef: sm.paperReference,
         });
@@ -367,7 +356,7 @@ export async function findExclusiveSubtopics(
         bExclusive.push({
           subtopicId: sm.subtopicId,
           subtopicName: sm.subtopicName,
-          description: (sm as any).description,
+          description: sm.description,
           topicName: topic.topicName,
           paperRef: sm.paperReference,
         });
@@ -393,7 +382,7 @@ export async function getTreeNodesV32(): Promise<
     nodeId: n.nodeId,
     path: n.path,
     level: n.level,
-    description: n.description,
+    description: n.description ?? "",
     parentNodeId: n.parentNodeId,
   }));
 }

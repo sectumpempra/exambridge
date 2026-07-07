@@ -187,15 +187,23 @@ export default function DataTable({
     1,
     Math.ceil(filteredData.length / itemsPerPage)
   );
+
+  // Clamp currentPage when totalPages changes (e.g., after filtering)
+  useEffect(() => {
+    setCurrentPage((page) => Math.min(Math.max(page, 1), totalPages));
+  }, [totalPages]);
+
+  const validPage = Math.min(Math.max(currentPage, 1), totalPages);
+
   const paginatedData = useMemo(() => {
-    const start = (currentPage - 1) * itemsPerPage;
+    const start = (validPage - 1) * itemsPerPage;
     return filteredData.slice(start, start + itemsPerPage);
-  }, [filteredData, currentPage, itemsPerPage]);
+  }, [filteredData, validPage, itemsPerPage]);
 
   const startEntry =
-    filteredData.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0;
+    filteredData.length > 0 ? (validPage - 1) * itemsPerPage + 1 : 0;
   const endEntry = Math.min(
-    currentPage * itemsPerPage,
+    validPage * itemsPerPage,
     filteredData.length
   );
 

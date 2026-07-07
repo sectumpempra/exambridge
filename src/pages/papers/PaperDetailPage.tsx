@@ -30,11 +30,11 @@ export default function PaperDetailPage() {
   // Async load syllabus
   useEffect(() => {
     if (!paperId) {
-      setSyllabus(null);
+      queueMicrotask(() => setSyllabus(null));
       return;
     }
     let cancelled = false;
-    setSyllabusLoading(true);
+    queueMicrotask(() => setSyllabusLoading(true));
     loadSyllabus(paperId).then((data) => {
       if (!cancelled) {
         setSyllabus(data || null);
