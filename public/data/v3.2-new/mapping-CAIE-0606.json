@@ -3,372 +3,195 @@
   "subjectCode": "0606",
   "subjectName": "IGCSE Additional Mathematics",
   "level": "IGCSE",
-  "version": "1.0",
-  "totalTopics": 9,
-  "mappedTopics": 9,
+  "version": "1.0-batch1",
+  "totalTopics": 4,
+  "mappedTopics": 4,
   "mappings": [
     {
       "topicId": "CAIE-0606-1",
-      "topicName": "Functions",
+      "topicName": "Functions and Algebra",
       "paperReference": null,
       "subtopicMappings": [
         {
           "subtopicId": "CAIE-0606-1.1",
-          "subtopicName": "Understand terms: function, domain, range, one-one, inverse, composition",
+          "subtopicName": "Recognise and use function notation, including mappings, inverse notation, composite notation and repeated-function notation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-NDR",
+              "nodeId": "ALGF-FUNC-DEFS-NOTN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-NDR"
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-NOTN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-COMP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVR in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-1.2",
-          "subtopicName": "Find domain and range of functions",
+          "subtopicName": "Use domain and range, determine when an inverse exists, and sketch the relationship between a function and its inverse.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-NDR",
+              "nodeId": "ALGF-FUNC-DEFS-DOMR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-NDR"
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-DOMR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-ONON",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-ONON in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVG in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-1.3",
-          "subtopicName": "Function notation; composite functions",
+          "subtopicName": "Use modulus graphs, function transformations and sketching of polynomial or reciprocal functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-NDR",
+              "nodeId": "ALGF-FUNC-GRAP-MODU",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-NDR"
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-MODU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-REFL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-REFL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "CAIE-0606-1.3.2",
+          "subtopicName": "Use modulus graphs, function transformations and sketching of polynomial or reciprocal functions.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-1.4",
-          "subtopicName": "Inverse functions; relationship between f and f^-1",
+          "subtopicName": "Find maximum or minimum values of quadratics by completing the square or differentiation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-INVER",
+              "nodeId": "ALGF-EQN-QUAD-COMP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-INVER"
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-1.5",
-          "subtopicName": "Graph transformations: f(x)+a, f(x+a), af(x), f(ax)",
+          "subtopicName": "Use discriminants to determine roots, tangency and intersections involving quadratic functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-TRANS",
+              "nodeId": "ALGF-EQN-QUAD-DISC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-TRANS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-10.1",
-          "subtopicName": "Sine rule, cosine rule; area of triangle",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-DISC in the expanded knowledge tree."
+            },
             {
-              "nodeId": "TRIG-BASIC-SCR",
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-SCR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-10.2",
-          "subtopicName": "Graphs of sin, cos, tan; amplitude, period",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-INTR in the expanded knowledge tree."
+            },
             {
-              "nodeId": "TRIG-FUNCT-SCTG",
+              "nodeId": "GEOM-COOR-CIRC-TANG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-FUNCT-SCTG"
+              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-0606-10.3",
-          "subtopicName": "Pythagorean identities: sin^2+cos^2=1; tan=sin/cos",
+          "subtopicId": "CAIE-0606-1.6",
+          "subtopicName": "Solve quadratic equations and inequalities using factorisation, completing the square, formulae and graphs.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "TRIG-IDENT-PYTHA",
+              "nodeId": "ALGF-EQN-QUAD-FACT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-IDENT-PYTHA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-10.4",
-          "subtopicName": "Solve trigonometric equations in given intervals",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FACT in the expanded knowledge tree."
+            },
             {
-              "nodeId": "TRIG-EQUAT-BASIC",
+              "nodeId": "ALGF-EQN-QUAD-FORM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-EQUAT-BASIC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-11.1",
-          "subtopicName": "Understand permutation; solve selection problems",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FORM in the expanded knowledge tree."
+            },
             {
-              "nodeId": "STAT-PC-PERMU",
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PC-PERMU"
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-0606-11.2",
-          "subtopicName": "Understand combination; solve selection problems",
+          "subtopicId": "CAIE-0606-1.7",
+          "subtopicName": "Use indices, surds, logarithms, exponentials and polynomial manipulation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PC-COMBI",
+              "nodeId": "NUM-POW-INDX-FRAC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PC-COMBI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-11.3",
-          "subtopicName": "Arrangements with restrictions and repetitions",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to NUM-POW-INDX-FRAC in the expanded knowledge tree."
+            },
             {
-              "nodeId": "STAT-PC-RESTR",
+              "nodeId": "NUM-POW-POWR-SURD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PC-RESTR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-12.1",
-          "subtopicName": "Arithmetic sequences; nth term; sum of n terms",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to NUM-POW-POWR-SURD in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-SEQUE-ARITH",
+              "nodeId": "ALGF-LOG-EXPO-EX",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-ARITH"
+              "matchReason": "Maps directly to ALGF-LOG-EXPO-EX in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-0606-12.2",
-          "subtopicName": "Geometric sequences; nth term; sum of n terms",
+          "subtopicId": "CAIE-0606-1.8",
+          "subtopicName": "Use algebraic division, factor theorem, remainder theorem or polynomial factors where specified.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-GEOME",
+              "nodeId": "ALGF-POLY-POLY-DIVL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-GEOME"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-12.3",
-          "subtopicName": "Sum to infinity of convergent geometric series",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-POLY-POLY-DIVL in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-SEQUE-SI",
+              "nodeId": "ALGF-POLY-POLY-FACT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-SI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-12.4",
-          "subtopicName": "Binomial expansion (positive integer n); Pascal's triangle",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-POLY-POLY-FACT in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-SEQUE-BPI",
+              "nodeId": "ALGF-POLY-POLY-CUBQ",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-BPI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-12.5",
-          "subtopicName": "Sigma notation for sums of series",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQUE-SIGMA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-SIGMA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-13.1",
-          "subtopicName": "Vector notation; addition, subtraction, scalar multiplication",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-BASIC-COLUM",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-BASIC-COLUM"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-13.2",
-          "subtopicName": "Magnitude of a vector; unit vectors",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-BASIC-MAGNI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-BASIC-MAGNI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-13.3",
-          "subtopicName": "Position vectors; vector geometry",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-POSIT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-POSIT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-14.1",
-          "subtopicName": "Derivative as gradient; limit of chords",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-CONCE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-CONCE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-14.2",
-          "subtopicName": "Differentiation of x^n; sums, differences, constant multiples",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-PR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-PR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-14.3",
-          "subtopicName": "Differentiation using chain rule (simple cases)",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-CHAIN",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to CALC-DIFFE-CHAIN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-14.4",
-          "subtopicName": "Tangents and normals to curves",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-TN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-TN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-14.5",
-          "subtopicName": "Stationary points: maxima, minima; second derivative",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-STATI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-STATI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-14.6",
-          "subtopicName": "Rates of change; practical problems",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-RATES",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to CALC-DIFFE-RATES"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-14.7",
-          "subtopicName": "Indefinite integration; reverse of differentiation",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-INDEF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-INDEF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-14.8",
-          "subtopicName": "Integration of x^n (n != -1)",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-PR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-PR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-14.9",
-          "subtopicName": "Definite integrals",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-DEFIN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-DEFIN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-14.10",
-          "subtopicName": "Area under a curve; area between curve and line",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-AC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-AC"
+              "matchReason": "Maps directly to ALGF-POLY-POLY-CUBQ in the expanded knowledge tree."
             }
           ]
         }
@@ -376,54 +199,106 @@
     },
     {
       "topicId": "CAIE-0606-2",
-      "topicName": "Quadratic functions",
+      "topicName": "Coordinate Geometry and Sequences",
       "paperReference": null,
       "subtopicMappings": [
         {
           "subtopicId": "CAIE-0606-2.1",
-          "subtopicName": "Sketch quadratic graphs; vertex; axis of symmetry",
+          "subtopicName": "Use coordinate geometry of straight lines and circles, including gradients, intersections and tangents.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-GRAPH",
+              "nodeId": "GEOM-COOR-LINE-GRAD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
+              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CIRC-CENT in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "CAIE-0606-2.1.2",
+          "subtopicName": "Use coordinate geometry of straight lines and circles, including gradients, intersections and tangents.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CIRC-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-2.2",
-          "subtopicName": "Completing the square; find vertex",
+          "subtopicName": "Use equations of tangents and normals, intersections of curves and coordinate geometry problem solving.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-CS",
+              "nodeId": "GEOM-COOR-LINE-POINT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-CS"
+              "matchReason": "Maps directly to GEOM-COOR-LINE-POINT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-CART-INTR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CART-INTR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-2.3",
-          "subtopicName": "Discriminant; nature of roots",
+          "subtopicName": "Use arithmetic and geometric sequences, nth terms and recursive definitions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-DISCR",
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-DISCR"
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-NTH in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-ARIT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-GEOM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-GEOM in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-2.4",
-          "subtopicName": "Solve quadratic equations; conditions for roots",
+          "subtopicName": "Use series sums, sigma notation and binomial coefficients where specified.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-QUADR",
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-QUADR"
+              "matchReason": "Maps directly to ALGF-SEQ-SERS-ARSM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-GESM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SERS-GESM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-BINO-COEF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-BINO-COEF in the expanded knowledge tree."
             }
           ]
         }
@@ -431,42 +306,128 @@
     },
     {
       "topicId": "CAIE-0606-3",
-      "topicName": "Factors of polynomials",
+      "topicName": "Trigonometry",
       "paperReference": null,
       "subtopicMappings": [
         {
           "subtopicId": "CAIE-0606-3.1",
-          "subtopicName": "Factor theorem; remainder theorem",
+          "subtopicName": "Use radians, exact values, trigonometric graphs and transformations.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-POLYN-DIVIS",
+              "nodeId": "TRIG-CIRC-RADI-DEFN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-POLYN-DIVIS"
+              "matchReason": "Maps directly to TRIG-CIRC-RADI-DEFN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-EXCT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-EXCT-EXCT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "CAIE-0606-3.1.2",
+          "subtopicName": "Use radians, exact values, trigonometric graphs and transformations.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-GRAP-PERD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-PERD in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-3.2",
-          "subtopicName": "Polynomial division; factorise cubics",
+          "subtopicName": "Use sine, cosine and tangent graphs, including amplitude, period, translations and intersections.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-POLYN-DIVIS",
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-POLYN-DIVIS"
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-COSN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-3.3",
-          "subtopicName": "Use factor/remainder theorem to solve problems",
+          "subtopicName": "Use trigonometric identities and solve trigonometric equations.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-POLYN-FR",
+              "nodeId": "TRIG-IDEN-IDEN-TANR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-POLYN-FR"
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-TANR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-PYTH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-PYTH in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-SIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-EQNS-SIMP in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "CAIE-0606-3.4",
+          "subtopicName": "Use compound-angle, double-angle or R-form transformations where specified.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-IDEN-ADDR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-ADDR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-DBLA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-DBLA in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-MULT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-EQNS-MULT in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "CAIE-0606-3.5",
+          "subtopicName": "Use non-right-angled triangle formulae, sine rule, cosine rule and area formula.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-SINR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-COSR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-AREA in the expanded knowledge tree."
             }
           ]
         }
@@ -474,245 +435,123 @@
     },
     {
       "topicId": "CAIE-0606-4",
-      "topicName": "Equations, inequalities and graphs",
+      "topicName": "Calculus",
       "paperReference": null,
       "subtopicMappings": [
         {
           "subtopicId": "CAIE-0606-4.1",
-          "subtopicName": "Simultaneous equations: linear and non-linear",
+          "subtopicName": "Understand gradient as a rate of change and use derivative notation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-SIMUL",
+              "nodeId": "CALC-DIFF-CONC-GRAD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-SIMUL"
+              "matchReason": "Maps directly to CALC-DIFF-CONC-GRAD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-RATE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-CONC-RATE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-NOTN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-CONC-NOTN in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-4.2",
-          "subtopicName": "Quadratic inequalities; graphical representation",
+          "subtopicName": "Differentiate powers and sums of elementary functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-QI",
+              "nodeId": "CALC-DIFF-RULE-POWR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-QI"
+              "matchReason": "Maps directly to CALC-DIFF-RULE-POWR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-SUMD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-RULE-SUMD in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-4.3",
-          "subtopicName": "Modulus function; |x|; equations and inequalities with |x|",
+          "subtopicName": "Apply differentiation to tangents, normals, stationary points and curve sketching.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-MODUL",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-FUNCT-MODUL"
+              "nodeId": "CALC-DIFF-APPL-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-TANG in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-TNOR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-PARI-TNOR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "CAIE-0606-4.3.2",
+          "subtopicName": "Apply differentiation to tangents, normals, stationary points and curve sketching.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-SKET",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-SKET in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "CAIE-0606-4.4",
-          "subtopicName": "Graphs of cubic, reciprocal, exponential functions",
+          "subtopicName": "Integrate as reverse differentiation and use constants of integration.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-GRAPH",
+              "nodeId": "CALC-INTE-CONC-REVD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
+              "matchReason": "Maps directly to CALC-INTE-CONC-REVD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-POWR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-INTE-RULE-POWR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-CONS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-INTE-APPL-CONS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-0606-4.1",
-          "subtopicName": "Linear and quadratic inequalities; graphical",
+          "subtopicId": "CAIE-0606-4.5",
+          "subtopicName": "Use definite integration for area and area between a curve and an axis.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-LI",
+              "nodeId": "CALC-INTE-CONC-DEFI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-LI"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "CAIE-0606-5",
-      "topicName": "Simultaneous equations",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "CAIE-0606-5.1",
-          "subtopicName": "Solve simultaneous equations in two unknowns: linear-nonlinear",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to CALC-INTE-CONC-DEFI in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-EQUAT-SIMUL",
+              "nodeId": "CALC-INTE-APPL-AREA",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-SIMUL"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "CAIE-0606-6",
-      "topicName": "Logarithmic and exponential functions",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "CAIE-0606-6.1",
-          "subtopicName": "Exponential functions; graphs of y = a^x",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to CALC-INTE-APPL-AREA in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-LOGEX-EF",
+              "nodeId": "CALC-INTE-APPL-BETW",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-LOGEX-EF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-6.2",
-          "subtopicName": "Logarithmic functions; relationship to exponentials",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-LOGEX-LF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-LOGEX-LF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-6.3",
-          "subtopicName": "Laws of logarithms",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-LOGEX-LAWS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-LOGEX-LAWS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-6.4",
-          "subtopicName": "Solve exponential/logarithmic equations",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-LOGEX-SE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-LOGEX-SE"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "CAIE-0606-7",
-      "topicName": "Straight-line graphs",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "CAIE-0606-7.1",
-          "subtopicName": "Equation of straight line; gradient; intercept",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "COG-LINES-EQUAT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-EQUAT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-7.2",
-          "subtopicName": "Parallel and perpendicular lines",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "COG-LINES-PP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-PP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-7.3",
-          "subtopicName": "Distance between points; midpoint",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "COG-LINES-DISTA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-DISTA"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "CAIE-0606-8",
-      "topicName": "Coordinate geometry of the circle",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "CAIE-0606-8.1",
-          "subtopicName": "Equation of circle; centre and radius",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "COG-CIRCL-EQUAT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-CIRCL-EQUAT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-8.2",
-          "subtopicName": "Circle properties; tangent perpendicular to radius",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "COG-CIRCL-PROPE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-CIRCL-PROPE"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "CAIE-0606-9",
-      "topicName": "Circular measure",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "CAIE-0606-9.1",
-          "subtopicName": "Radian measure; conversion between radians and degrees",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-RADIA-CONVE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-RADIA-CONVE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-0606-9.2",
-          "subtopicName": "Arc length and sector area in radians",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-RADIA-AS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-RADIA-AS"
+              "matchReason": "Maps directly to CALC-INTE-APPL-BETW in the expanded knowledge tree."
             }
           ]
         }

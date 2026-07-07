@@ -3,9 +3,9 @@
   "subjectCode": "4MA1",
   "subjectName": "International GCSE Mathematics A",
   "level": "IGCSE",
-  "version": "1.0",
-  "totalTopics": 9,
-  "mappedTopics": 9,
+  "version": "1.0-mvp",
+  "totalTopics": 6,
+  "mappedTopics": 6,
   "mappings": [
     {
       "topicId": "Edexcel-4MA1-1",
@@ -14,157 +14,425 @@
       "subtopicMappings": [
         {
           "subtopicId": "Edexcel-4MA1-1.1",
-          "subtopicName": "Integers: natural numbers, primes, factors, HCF, LCM, prime factorisation",
+          "subtopicName": "Understand and use integers, place value, directed numbers, the four operations, brackets and hierarchy of operations, and the terms odd, even, prime numbers, factors and multiples.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-INTEG",
+              "nodeId": "NUM-SYS-TYPE-INTG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-INTEG"
+              "matchReason": "Maps directly to NUM-SYS-TYPE-INTG in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-OPS-CALC-NEG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-OPS-CALC-NEG in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-OPS-CALC-FOUR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-OPS-CALC-FOUR in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-1.1.2",
+          "subtopicName": "Understand and use integers, place value, directed numbers, the four operations, brackets and hierarchy of operations, and the terms odd, even, prime numbers, factors and multiples.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-CALC-BIDM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-OPS-CALC-BIDM in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-SYS-TYPE-NAT",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "NUM-SYS-TYPE-PRIM",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-1.1.3",
+          "subtopicName": "Understand and use integers, place value, directed numbers, the four operations, brackets and hierarchy of operations, and the terms odd, even, prime numbers, factors and multiples.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-SYS-TYPE-FACT",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "NUM-OPS-CALC-BRAC",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-1.2",
-          "subtopicName": "Fractions: proper, improper, mixed numbers; equivalence; four operations",
+          "subtopicName": "Understand and use equivalent fractions, mixed numbers, common denominators, fractions of quantities, and operations with fractions and mixed numbers.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-FRACT",
+              "nodeId": "NUM-FRAC-FRAC-EQVF",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-FRACT"
+              "matchReason": "Maps directly to NUM-FRAC-FRAC-EQVF in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-MIXD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-FRAC-MIXD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-SIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-FRAC-SIMP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-1.2.2",
+          "subtopicName": "Understand and use equivalent fractions, mixed numbers, common denominators, fractions of quantities, and operations with fractions and mixed numbers.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-DECI-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-DECI-CONV in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-PROP",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-1.3",
-          "subtopicName": "Decimals: convert recurring decimals to fractions; ordering; four operations",
+          "subtopicName": "Use decimal notation, place value, order decimals, and convert decimals to fractions or percentages, including recurring decimals at Higher Tier.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-FRACT",
+              "nodeId": "NUM-FRAC-DECI-PLAC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-FRACT"
+              "matchReason": "Maps directly to NUM-FRAC-DECI-PLAC in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-DECI-ORDR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-DECI-ORDR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-DECI-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-DECI-CONV in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-1.4A",
-          "subtopicName": "Understand meaning of surds; simplify surds",
+          "subtopicId": "Edexcel-4MA1-1.3.2",
+          "subtopicName": "Use decimal notation, place value, order decimals, and convert decimals to fractions or percentages, including recurring decimals at Higher Tier.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-SI-SURDS",
+              "nodeId": "NUM-FRAC-DECI-RECR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-SURDS"
+              "matchReason": "Maps directly to NUM-FRAC-DECI-RECR in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-1.4B",
-          "subtopicName": "Manipulate surds including rationalising denominators",
+          "subtopicId": "Edexcel-4MA1-1.4",
+          "subtopicName": "Calculate squares, square roots, cubes and cube roots; use index notation and index laws; express integers as products of prime factors; manipulate surds.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-SI-SURDS",
+              "nodeId": "NUM-POW-POWR-SQRT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-SURDS"
+              "matchReason": "Maps directly to NUM-POW-POWR-SQRT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-POWR-CUBR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-POWR-CUBR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-INDX-POS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-INDX-POS in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-1.4C",
-          "subtopicName": "Use index laws to simplify and evaluate expressions with fractional, negative and zero powers",
+          "subtopicId": "Edexcel-4MA1-1.4.2",
+          "subtopicName": "Calculate squares, square roots, cubes and cube roots; use index notation and index laws; express integers as products of prime factors; manipulate surds.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-SI-IR",
+              "nodeId": "NUM-POW-POWR-SURD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-IR"
+              "matchReason": "Maps directly to NUM-POW-POWR-SURD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-INDX-ZERO",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "NUM-POW-INDX-FRAC",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-1.4.3",
+          "subtopicName": "Calculate squares, square roots, cubes and cube roots; use index notation and index laws; express integers as products of prime factors; manipulate surds.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-POWR-RATD",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-1.5",
-          "subtopicName": "Set language and notation: subsets, Venn diagrams, n(A), practical situations",
+          "subtopicName": "Understand set language and notation, universal and empty sets, complement of a set, Venn diagrams, subsets and number of elements in sets.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PROBA-VENN",
+              "nodeId": "NUM-SYS-SET-LANG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-VENN"
+              "matchReason": "Maps directly to NUM-SYS-SET-LANG in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-SYS-SET-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-SYS-SET-COMP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-SYS-SET-VENN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-SYS-SET-VENN in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-1.5.2",
+          "subtopicName": "Understand set language and notation, universal and empty sets, complement of a set, Venn diagrams, subsets and number of elements in sets.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-SYS-SET-UNIN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-SYS-SET-UNIN in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-1.6",
-          "subtopicName": "Percentages: repeated percentage change; compound interest problems",
+          "subtopicName": "Understand percentages, percentage increase and decrease, reverse percentages, compound interest and depreciation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-FRACT",
+              "nodeId": "NUM-FRAC-PERC-PART",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-FRACT"
+              "matchReason": "Maps directly to NUM-FRAC-PERC-PART in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-PERC-QTY",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-PERC-QTY in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-PERC-INDE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-PERC-INDE in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-1.6.2",
+          "subtopicName": "Understand percentages, percentage increase and decrease, reverse percentages, compound interest and depreciation.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-PERC-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-PERC-COMP in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-1.7",
-          "subtopicName": "Ratio and proportion: simplify, divide, proportional reasoning",
+          "subtopicName": "Use ratio notation, divide quantities in a ratio, evaluate unknown quantities by proportionality, and solve ratio and proportion problems.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-RP",
+              "nodeId": "NUM-RAT-RATI-SIMP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RP"
+              "matchReason": "Maps directly to NUM-RAT-RATI-SIMP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-SHAR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-SHAR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-PROP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-1.7.2",
+          "subtopicName": "Use ratio notation, divide quantities in a ratio, evaluate unknown quantities by proportionality, and solve ratio and proportion problems.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-DIRE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-DIRE in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-1.8",
-          "subtopicName": "Degree of accuracy: upper and lower bounds; solve problems with bounds",
+          "subtopicName": "Round to powers of 10, significant figures and decimal places; identify upper and lower bounds; use estimation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-BOUND",
+              "nodeId": "NUM-ACC-ROUN-POW10",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-BOUND"
+              "matchReason": "Maps directly to NUM-ACC-ROUN-POW10 in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-ACC-ROUN-SF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-ACC-ROUN-SF in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-ACC-ROUN-DP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-ACC-ROUN-DP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-1.8.2",
+          "subtopicName": "Round to powers of 10, significant figures and decimal places; identify upper and lower bounds; use estimation.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-BOUN-UPLO",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-ACC-BOUN-UPLO in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-ACC-ROUN-ESTM",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "NUM-ACC-BOUN-CALC",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-1.9",
-          "subtopicName": "Standard form: solve problems involving standard form",
+          "subtopicName": "Calculate with and interpret numbers in standard form.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-SI-SF",
+              "nodeId": "NUM-POW-STDF-CONV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-SF"
+              "matchReason": "Maps directly to NUM-POW-STDF-CONV in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-STDF-CALC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-STDF-CALC in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-STDF-INTP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-STDF-INTP in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-1.10",
-          "subtopicName": "Applying number: compound measures; speed, density, pressure; exchange rates",
+          "subtopicName": "Use and apply number in everyday situations, including metric units, time, money and currency conversion.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-RATES",
+              "nodeId": "GEOM-MENS-UNIT-LENG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RATES"
+              "matchReason": "Maps directly to GEOM-MENS-UNIT-LENG in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-MEAS-TIME-TIME",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-MEAS-TIME-TIME in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-MEAS-TIME-MONE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-MEAS-TIME-MONE in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-1.11",
-          "subtopicName": "Electronic calculators: efficient use; interpreting display",
+          "subtopicId": "Edexcel-4MA1-1.10.2",
+          "subtopicName": "Use and apply number in everyday situations, including metric units, time, money and currency conversion.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-INTEG",
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-PROP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-AREA",
               "matchStrength": "strong",
-              "matchReason": "Mapped to NUM-NOTAT-INTEG"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-VOLU",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-1.10.3",
+          "subtopicName": "Use and apply number in everyday situations, including metric units, time, money and currency conversion.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-UNIT-CAPA",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "NUM-MEAS-TIME-CLOCK",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "NUM-MEAS-TIME-ZONE",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         }
@@ -177,193 +445,259 @@
       "subtopicMappings": [
         {
           "subtopicId": "Edexcel-4MA1-2.1",
-          "subtopicName": "Use of symbols: index notation with fractional, negative and zero powers",
+          "subtopicName": "Understand that symbols may represent numbers, variables, expressions and formulas; use index notation and index laws.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-SI-IR",
+              "nodeId": "ALGF-EXP-NOTN-SYMB",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-IR"
+              "matchReason": "Maps directly to ALGF-EXP-NOTN-SYMB in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EXP-NOTN-GENR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EXP-NOTN-GENR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-INDX-POS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-INDX-POS in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-2.2A",
-          "subtopicName": "Expand product of two or more linear expressions",
+          "subtopicId": "Edexcel-4MA1-2.1.2",
+          "subtopicName": "Understand that symbols may represent numbers, variables, expressions and formulas; use index notation and index laws.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-EF",
+              "nodeId": "NUM-POW-INDX-NEG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-EF"
+              "matchReason": "Maps directly to NUM-POW-INDX-NEG in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-2.2B",
-          "subtopicName": "Factorise quadratic expressions",
+          "subtopicId": "Edexcel-4MA1-2.2",
+          "subtopicName": "Evaluate expressions, collect like terms, expand brackets, factorise, manipulate algebraic fractions and complete the square.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-EF",
+              "nodeId": "ALGF-EXP-NOTN-SUBS",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-EF"
+              "matchReason": "Maps directly to ALGF-EXP-NOTN-SUBS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-LIKE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EXP-MANI-LIKE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-EXP2",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EXP-MANI-EXP2 in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-2.2C",
-          "subtopicName": "Manipulate algebraic fractions (numeric, linear or quadratic numerator/denominator)",
+          "subtopicId": "Edexcel-4MA1-2.2.2",
+          "subtopicName": "Evaluate expressions, collect like terms, expand brackets, factorise, manipulate algebraic fractions and complete the square.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-RE",
+              "nodeId": "ALGF-EQN-QUAD-COMP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-RE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-2.2D",
-          "subtopicName": "Complete the square for a quadratic expression",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the MVP knowledge tree."
+            },
             {
-              "nodeId": "ALGF-QUADR-CS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-CS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-2.2E",
-          "subtopicName": "Use algebra to support and construct proofs",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-PROOF-ALGEB",
+              "nodeId": "ALGF-EXP-MANI-EXP1",
               "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-PROOF-ALGEB"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-2.2.3",
+          "subtopicName": "Evaluate expressions, collect like terms, expand brackets, factorise, manipulate algebraic fractions and complete the square.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-POLY-PART-APPL",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-2.3",
-          "subtopicName": "Change subject of formulae; subject appears twice or power of subject",
+          "subtopicName": "Use expressions and formulae, substitute values, derive formulae and change the subject of a formula, including harder cases.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-FORMU",
+              "nodeId": "ALGF-EXP-NOTN-FORM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-FORMU"
+              "matchReason": "Maps directly to ALGF-EXP-NOTN-FORM in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-SUBJ",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-LINE-SUBJ in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-SUB2",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-LINE-SUB2 in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-2.4",
-          "subtopicName": "Linear equations: solve including with fractional coefficients",
+          "subtopicName": "Solve linear equations and set up simple linear equations from given data.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-LINEA",
+              "nodeId": "ALGF-EQN-LINE-SOLV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-LINEA"
+              "matchReason": "Maps directly to ALGF-EQN-LINE-SOLV in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-FORM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-LINE-FORM in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-2.5",
-          "subtopicName": "Proportion: direct and inverse; y proportional to x, 1/x, x^2, 1/x^2, x^3, 1/x^3",
+          "subtopicName": "Set up and solve direct or inverse proportion problems and relate algebraic solutions to graphical representations.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-RP",
+              "nodeId": "NUM-RAT-RATI-DIRE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RP"
+              "matchReason": "Maps directly to NUM-RAT-RATI-DIRE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-PROP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-2.6",
-          "subtopicName": "Simultaneous linear equations: exact solution; interpret as intersection of lines",
+          "subtopicName": "Calculate exact solutions of simultaneous linear equations and interpret them graphically.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-SIMUL",
+              "nodeId": "ALGF-EQN-SIMU-LIN2",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-SIMUL"
+              "matchReason": "Maps directly to ALGF-EQN-SIMU-LIN2 in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-SIMU-ELIM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-SIMU-ELIM in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-INTR in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-2.7A",
-          "subtopicName": "Quadratic equations: solve by factorisation",
+          "subtopicId": "Edexcel-4MA1-2.7",
+          "subtopicName": "Solve quadratic equations by factorisation, quadratic formula or completing the square; form and solve quadratic equations; solve one linear and one quadratic simultaneous equation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-QUADR",
+              "nodeId": "ALGF-EQN-QUAD-FACT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-QUADR"
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FACT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FORM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FORM in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-2.7B",
-          "subtopicName": "Quadratic equations: solve using quadratic formula or completing the square",
+          "subtopicId": "Edexcel-4MA1-2.7.2",
+          "subtopicName": "Solve quadratic equations by factorisation, quadratic formula or completing the square; form and solve quadratic equations; solve one linear and one quadratic simultaneous equation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-QUADR",
+              "nodeId": "ALGF-EQN-SIMU-LINQ",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-QUADR"
+              "matchReason": "Maps directly to ALGF-EQN-SIMU-LINQ in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-2.7C",
-          "subtopicName": "Form and solve quadratic equations from data in context",
+          "subtopicId": "Edexcel-4MA1-2.8",
+          "subtopicName": "Understand and use inequalities, solve linear and quadratic inequalities, and identify regions on Cartesian graphs.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-QUADR",
+              "nodeId": "ALGF-EQN-INEQ-LINS",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-QUADR"
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-LINS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-NUMB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-NUMB in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-2.7D",
-          "subtopicName": "Simultaneous equations: one linear and one quadratic",
+          "subtopicId": "Edexcel-4MA1-2.8.2",
+          "subtopicName": "Understand and use inequalities, solve linear and quadratic inequalities, and identify regions on Cartesian graphs.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-SIMUL",
+              "nodeId": "ALGF-EQN-INEQ-REGN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-SIMUL"
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-REGN in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-2.8A",
-          "subtopicName": "Quadratic inequalities: solve and represent on number line",
+          "subtopicId": "Edexcel-4MA1-2.9",
+          "subtopicName": "Use algebra to support and construct proofs.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-QI",
+              "nodeId": "REAS-PROF-PROF-DEDU",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-QI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-2.8B",
-          "subtopicName": "Regions defined by linear inequalities; shading",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to REAS-PROF-PROF-DEDU in the MVP knowledge tree."
+            },
             {
-              "nodeId": "ALGF-EQUAT-LI",
+              "nodeId": "REAS-PROF-ARGM-LOGI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-LI"
+              "matchReason": "Maps directly to REAS-PROF-ARGM-LOGI in the MVP knowledge tree."
             }
           ]
         }
@@ -375,218 +709,233 @@
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-4MA1-3.1A",
-          "subtopicName": "Arithmetic sequences: common difference, nth term = a + (n-1)d",
+          "subtopicId": "Edexcel-4MA1-3.1",
+          "subtopicName": "Generate terms of sequences, use term-to-term and position-to-term definitions, find nth terms and use arithmetic series at Higher Tier.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-ARITH",
+              "nodeId": "ALGF-SEQ-SEQU-TERM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-ARITH"
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-TERM in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-NTH in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-ARIT in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-3.1B",
-          "subtopicName": "Sum of first n terms of arithmetic series",
+          "subtopicId": "Edexcel-4MA1-3.1.2",
+          "subtopicName": "Generate terms of sequences, use term-to-term and position-to-term definitions, find nth terms and use arithmetic series at Higher Tier.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-ARITH",
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-ARITH"
+              "matchReason": "Maps directly to ALGF-SEQ-SERS-ARSM in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-3.2A",
-          "subtopicName": "Function as mapping; function notation f(x) and f: x -> ...",
+          "subtopicId": "Edexcel-4MA1-3.2",
+          "subtopicName": "Understand function notation, domain and range, composite functions and inverse functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-NDR",
+              "nodeId": "ALGF-FUNC-DEFS-NOTN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-NDR"
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-NOTN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DOMR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-DOMR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-COMP in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-3.2B",
-          "subtopicName": "Domain and range; values to exclude from domain",
+          "subtopicId": "Edexcel-4MA1-3.2.2",
+          "subtopicName": "Understand function notation, domain and range, composite functions and inverse functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-NDR",
+              "nodeId": "ALGF-FUNC-COMP-INVR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-NDR"
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVR in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-3.2C",
-          "subtopicName": "Composite function fg; inverse function f^-1",
+          "subtopicId": "Edexcel-4MA1-3.3",
+          "subtopicName": "Interpret graphs, plot coordinates, find midpoints, draw conversion graphs, calculate gradients, and recognise equations of straight lines.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-COMPO",
+              "nodeId": "GEOM-COOR-CART-COOR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-COMPO"
+              "matchReason": "Maps directly to GEOM-COOR-CART-COOR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-CART-MIDP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CART-MIDP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-3.2C",
-          "subtopicName": "Inverse function f^-1",
+          "subtopicId": "Edexcel-4MA1-3.3.2",
+          "subtopicName": "Interpret graphs, plot coordinates, find midpoints, draw conversion graphs, calculate gradients, and recognise equations of straight lines.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-INVER",
+              "nodeId": "GEOM-COOR-LINE-YMXC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-INVER"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.3A",
-          "subtopicName": "Graphs: cubic, reciprocal, trigonometric (sin, cos, tan for any angle)",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the MVP knowledge tree."
+            },
             {
-              "nodeId": "ALGF-QUADR-GRAPH",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.3B",
-          "subtopicName": "Transformations: y=f(x)+a, y=f(ax), y=f(x+a), y=af(x) for linear, quadratic, sine, cosine",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNCT-TRANS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-TRANS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.3C",
-          "subtopicName": "Interpret and analyse transformations; write functions algebraically",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNCT-TRANS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-TRANS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.3D",
-          "subtopicName": "Find gradients of non-linear graphs by drawing tangent",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-QUADR-GRAPH",
+              "nodeId": "GEOM-COOR-CART-DIST",
               "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.3E",
-          "subtopicName": "Intersection points of linear and non-linear graphs; solutions of equations",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
             {
-              "nodeId": "ALGF-QUADR-GRAPH",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.3F",
-          "subtopicName": "Gradient of straight line from two points",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "COG-LINES-EQUAT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-EQUAT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.3G",
-          "subtopicName": "Equation of line parallel/perpendicular to a given line",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "COG-LINES-PP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-PP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.4A",
-          "subtopicName": "Calculus: concept of variable rate of change",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-CONCE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-CONCE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.4B",
-          "subtopicName": "Differentiate integer powers of x",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-PR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-PR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.4C",
-          "subtopicName": "Gradients, rates of change, stationary points (maxima/minima) by differentiation",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-STATI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-STATI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.4D",
-          "subtopicName": "Distinguish maxima and minima by considering graph shape",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-STATI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-STATI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-3.4E",
-          "subtopicName": "Apply calculus to linear kinematics and practical problems",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-RATES",
+              "nodeId": "GEOM-COOR-LINE-GENR",
               "matchStrength": "strong",
-              "matchReason": "Mapped to CALC-DIFFE-RATES"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-3.4",
+          "subtopicName": "Recognise, plot and draw graphs of linear, quadratic, cubic, reciprocal and trigonometric functions.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-LINR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-QUAD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-3.4.2",
+          "subtopicName": "Recognise, plot and draw graphs of linear, quadratic, cubic, reciprocal and trigonometric functions.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-3.5",
+          "subtopicName": "Apply transformations to graphs of functions and write transformed functions algebraically.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-VERT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-HORZ",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-HORZ in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-STRE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-STRE in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-3.5.2",
+          "subtopicName": "Apply transformations to graphs of functions and write transformed functions algebraically.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-TRAN-REFL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-REFL in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-3.6",
+          "subtopicName": "Find intersections of graphs and recognise that solutions correspond to the roots of related equations.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-INTR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FACT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FACT in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-3.7",
+          "subtopicName": "Understand variable rate of change, differentiate integer powers of x, determine gradients, stationary points, maxima and minima, and apply calculus to linear kinematics.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-RATE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-CONC-RATE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-POWR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-RULE-POWR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-3.7.2",
+          "subtopicName": "Understand variable rate of change, differentiate integer powers of x, determine gradients, stationary points, maxima and minima, and apply calculus to linear kinematics.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-KIN-SVAT-DSDT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-KIN-SVAT-DSDT in the MVP knowledge tree."
             }
           ]
         }
@@ -599,205 +948,425 @@
       "subtopicMappings": [
         {
           "subtopicId": "Edexcel-4MA1-4.1",
-          "subtopicName": "Angles, lines and triangles: angle properties; parallel lines; triangle types",
+          "subtopicName": "Use angle properties of intersecting lines, parallel lines, triangles and polygons.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-AP-AP",
+              "nodeId": "GEOM-SHAP-ANGL-POINT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-AP-AP"
+              "matchReason": "Maps directly to GEOM-SHAP-ANGL-POINT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-ANGL-LINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-ANGL-LINE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-ANGL-VERT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-ANGL-VERT in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-4.1.2",
+          "subtopicName": "Use angle properties of intersecting lines, parallel lines, triangles and polygons.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-ANGL-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-ANGL-PARA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-TRIA",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-4.2",
-          "subtopicName": "Polygons: interior and exterior angles; names of polygons",
+          "subtopicName": "Recognise and use properties of polygons, quadrilaterals, congruent shapes and regular polygons.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-AP-IE",
+              "nodeId": "GEOM-SHAP-TERM-POLY",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-AP-IE"
+              "matchReason": "Maps directly to GEOM-SHAP-TERM-POLY in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-TERM-QUAD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-CONG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SIMI-CONG in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-4.2.2",
+          "subtopicName": "Recognise and use properties of polygons, quadrilaterals, congruent shapes and regular polygons.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-ANGL-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-ANGL-PARA in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-4.3",
-          "subtopicName": "Symmetry: line and rotational symmetry",
+          "subtopicName": "Identify line symmetry and rotational symmetry.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-TRANS-BASIC",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to GEOM-TRANS-BASIC"
+              "nodeId": "GEOM-SHAP-SYMM-LINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SYMM-LINE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-SYMM-ROTA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SYMM-ROTA in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-4.4",
-          "subtopicName": "Measures: metric system; compound measures; time; money",
+          "subtopicName": "Use measures, time intervals, bearings, average speed, density and pressure.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-MENSU-AP",
+              "nodeId": "NUM-MEAS-TIME-TIME",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-MENSU-AP"
+              "matchReason": "Maps directly to NUM-MEAS-TIME-TIME in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-ANGT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-TERM-ANGT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATE-SPED",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATE-SPED in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-4.4.2",
+          "subtopicName": "Use measures, time intervals, bearings, average speed, density and pressure.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATE-DENS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATE-DENS in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-4.5",
-          "subtopicName": "Construction: perpendicular bisector, angle bisector, loci",
+          "subtopicName": "Construct triangles and two-dimensional shapes, perpendicular bisectors and angle bisectors; solve problems using scale drawings.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-CONST-RC",
+              "nodeId": "GEOM-CONS-CONS-TRIA",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-CONST-RC"
+              "matchReason": "Maps directly to GEOM-CONS-CONS-TRIA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-CONS-CONS-PERB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONS-CONS-PERB in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-CONS-CONS-ANGB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONS-CONS-ANGB in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-4.5.2",
+          "subtopicName": "Construct triangles and two-dimensional shapes, perpendicular bisectors and angle bisectors; solve problems using scale drawings.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-PROP in the MVP knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-4.6",
-          "subtopicName": "Circle properties: intersecting chords; cyclic quadrilateral; angle properties (centre, diameter, segment, alternate segment theorem)",
+          "subtopicName": "Recognise circle vocabulary and use chord, tangent and circle angle properties.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-CT-BASIC",
+              "nodeId": "GEOM-SHAP-CITH-TANG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-CT-BASIC"
+              "matchReason": "Maps directly to GEOM-SHAP-CITH-TANG in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-CHOR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-CITH-CHOR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-SEMI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-CITH-SEMI in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-4.6.2",
+          "subtopicName": "Recognise circle vocabulary and use chord, tangent and circle angle properties.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-CITH-CENT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-CITH-CENT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-SAME",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-4.7",
-          "subtopicName": "Geometrical reasoning: provide reasons using standard geometrical statements",
+          "subtopicName": "Give informal or formal geometrical reasons for numerical solutions in geometrical problems.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-AP-AP",
+              "nodeId": "REAS-PROF-ARGM-JUST",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-AP-AP"
+              "matchReason": "Maps directly to REAS-PROF-ARGM-JUST in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to REAS-PROF-ARGM-LOGI in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-4.8A",
-          "subtopicName": "Trigonometry: sin, cos, tan of obtuse angles; angles of elevation/depression",
+          "subtopicId": "Edexcel-4MA1-4.8",
+          "subtopicName": "Know and use Pythagoras' theorem, sine, cosine and tangent, obtuse-angle trigonometry, angles of elevation and depression, sine rule, cosine rule and area of a triangle.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "TRIG-BASIC-RA",
+              "nodeId": "TRIG-BASE-RATR-PYTH",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-RA"
+              "matchReason": "Maps directly to TRIG-BASE-RATR-PYTH in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-SINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-RATR-SINE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-SINR in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-4.8B",
-          "subtopicName": "Pythagoras' theorem in 2D and 3D",
+          "subtopicId": "Edexcel-4MA1-4.8.2",
+          "subtopicName": "Know and use Pythagoras' theorem, sine, cosine and tangent, obtuse-angle trigonometry, angles of elevation and depression, sine rule, cosine rule and area of a triangle.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "TRIG-BASIC-RA",
+              "nodeId": "TRIG-BASE-NONR-COSR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-RA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-4.8C",
-          "subtopicName": "Sine and cosine rules for any triangle",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to TRIG-BASE-NONR-COSR in the MVP knowledge tree."
+            },
             {
-              "nodeId": "TRIG-BASIC-SCR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-SCR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-4.8D",
-          "subtopicName": "Area of triangle = 1/2 ab sin C",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASIC-SCR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-SCR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-4.8E",
-          "subtopicName": "3D trigonometry; angle between line and plane",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASIC-RA",
+              "nodeId": "TRIG-BASE-RATR-COSN",
               "matchStrength": "strong",
-              "matchReason": "Mapped to TRIG-BASIC-RA"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-TANG",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-4.8.3",
+          "subtopicName": "Know and use Pythagoras' theorem, sine, cosine and tangent, obtuse-angle trigonometry, angles of elevation and depression, sine rule, cosine rule and area of a triangle.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-AREA",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-EXCT",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-4.8.4",
+          "subtopicName": "Know and use Pythagoras' theorem, sine, cosine and tangent, obtuse-angle trigonometry, angles of elevation and depression, sine rule, cosine rule and area of a triangle.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-SIMP",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-4.9",
-          "subtopicName": "Mensuration: perimeter and area of sectors of circles (radian measure excluded)",
+          "subtopicName": "Find perimeters, areas, circumferences, sectors and areas of plane shapes.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-MENSU-AP",
+              "nodeId": "GEOM-MENS-AREA-RECT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-MENSU-AP"
+              "matchReason": "Maps directly to GEOM-MENS-AREA-RECT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-AREA-TRIA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-AREA-TRIA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-CIRC-CIRC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-CIRC-CIRC in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-4.9.2",
+          "subtopicName": "Find perimeters, areas, circumferences, sectors and areas of plane shapes.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-CIRC-SECA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-CIRC-SECA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-AREA-PARA",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "GEOM-MENS-AREA-TRAP",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-4.9.3",
+          "subtopicName": "Find perimeters, areas, circumferences, sectors and areas of plane shapes.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-CIRC-AREA",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "GEOM-MENS-CIRC-ARCL",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-4.10",
-          "subtopicName": "3D shapes: surface area and volume of sphere and right circular cone",
+          "subtopicName": "Recognise solids and find surface area and volume of prisms, cuboids, cylinders, spheres, cones and related 3D shapes.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-MENSU-VS",
+              "nodeId": "GEOM-MENS-SOLI-CUBD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-MENSU-VS"
+              "matchReason": "Maps directly to GEOM-MENS-SOLI-CUBD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PRIS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-SOLI-PRIS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-CYLN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-SOLI-CYLN in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-4.11A",
-          "subtopicName": "Similarity: areas of similar figures in ratio of square of sides",
+          "subtopicId": "Edexcel-4MA1-4.10.2",
+          "subtopicName": "Recognise solids and find surface area and volume of prisms, cuboids, cylinders, spheres, cones and related 3D shapes.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-AP-AP",
+              "nodeId": "GEOM-MENS-SOLI-PYRA",
               "matchStrength": "strong",
-              "matchReason": "Mapped to GEOM-AP-AP"
+              "matchReason": "Cone and sphere are currently represented through adjacent solid-volume leaves in the compact MVP tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-SYMM-PLANE",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-4.11B",
-          "subtopicName": "Volumes of similar figures in ratio of cube of sides",
+          "subtopicId": "Edexcel-4MA1-4.11",
+          "subtopicName": "Understand and use similarity, including length, area and volume scale factors.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-MENSU-VS",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to GEOM-MENSU-VS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-4.11C",
-          "subtopicName": "Use area and volume ratios of similar figures in problem solving",
-          "paperReference": null,
-          "mappedNodes": [
+              "nodeId": "GEOM-SHAP-SIMI-SIML",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SIMI-SIML in the MVP knowledge tree."
+            },
             {
-              "nodeId": "GEOM-AP-AP",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to GEOM-AP-AP"
+              "nodeId": "GEOM-SHAP-SIMI-LENS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SIMI-LENS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SIMI-AREA in the MVP knowledge tree."
             }
           ]
         }
@@ -809,74 +1378,97 @@
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-4MA1-5.1A",
-          "subtopicName": "Vectors: magnitude and direction; vector notation including column vectors",
+          "subtopicId": "Edexcel-4MA1-5.1",
+          "subtopicName": "Understand vector notation, magnitude and direction; multiply vectors by scalars; add and subtract vectors; calculate the modulus of a vector; and apply vector methods for geometrical proofs.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "VEC-BASIC-COLUM",
+              "nodeId": "VECT-BASIC-NOTN-COLV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-BASIC-COLUM"
+              "matchReason": "Maps directly to VECT-BASIC-NOTN-COLV in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-MAGN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-BASIC-NOTN-MAGN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-BASIC-NOTN-ADDS in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-5.1B",
-          "subtopicName": "Multiply vectors by scalar; add and subtract vectors",
+          "subtopicId": "Edexcel-4MA1-5.1.2",
+          "subtopicName": "Understand vector notation, magnitude and direction; multiply vectors by scalars; add and subtract vectors; calculate the modulus of a vector; and apply vector methods for geometrical proofs.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "VEC-BASIC-COLUM",
+              "nodeId": "VECT-BASIC-NOTN-SCAL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-BASIC-COLUM"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-5.1C",
-          "subtopicName": "Calculate modulus (magnitude) of a vector",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to VECT-BASIC-NOTN-SCAL in the MVP knowledge tree."
+            },
             {
-              "nodeId": "VEC-BASIC-MAGNI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-BASIC-MAGNI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-5.1D",
-          "subtopicName": "Resultant of two or more vectors",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-BASIC-COLUM",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-BASIC-COLUM"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-5.1E",
-          "subtopicName": "Apply vector methods for simple geometrical proofs",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-BASIC-COLUM",
+              "nodeId": "VECT-BASIC-NOTN-POSV",
               "matchStrength": "strong",
-              "matchReason": "Mapped to VEC-BASIC-COLUM"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "VECT-GEOM-PROB-COLL",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-5.1.3",
+          "subtopicName": "Understand vector notation, magnitude and direction; multiply vectors by scalars; add and subtract vectors; calculate the modulus of a vector; and apply vector methods for geometrical proofs.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-GEOM-PROB-PARA",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "VECT-GEOM-PROB-RATI",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4MA1-5.2",
-          "subtopicName": "Transformation geometry: reflection, rotation, translation, enlargement (including negative scale factor)",
+          "subtopicName": "Understand rotations, reflections, translations and enlargements; construct and describe transformations.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-TRANS-BASIC",
+              "nodeId": "GEOM-CONS-TRAN-ROTA",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-TRANS-BASIC"
+              "matchReason": "Maps directly to GEOM-CONS-TRAN-ROTA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-REFL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONS-TRAN-REFL in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-TRAN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONS-TRAN-TRAN in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4MA1-5.2.2",
+          "subtopicName": "Understand rotations, reflections, translations and enlargements; construct and describe transformations.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONS-TRAN-ENLG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONS-TRAN-ENLG in the MVP knowledge tree."
             }
           ]
         }
@@ -888,239 +1480,231 @@
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-4MA1-6.1A",
-          "subtopicName": "Histograms: construct and interpret with unequal class intervals",
+          "subtopicId": "Edexcel-4MA1-6.1",
+          "subtopicName": "Use different methods of presenting data, tabulate data and interpret statistical diagrams, including histograms and cumulative frequency diagrams at Higher Tier.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-HISTO",
+              "nodeId": "STAT-DATA-CLAS-TALL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-HISTO"
+              "matchReason": "Maps directly to STAT-DATA-CLAS-TALL in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-BARCH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-DATA-REPR-BARCH in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-DATA-REPR-HIST in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.1B",
-          "subtopicName": "Cumulative frequency diagrams: construct from tabulated data",
+          "subtopicId": "Edexcel-4MA1-6.1.2",
+          "subtopicName": "Use different methods of presenting data, tabulate data and interpret statistical diagrams, including histograms and cumulative frequency diagrams at Higher Tier.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-CF",
+              "nodeId": "STAT-DATA-REPR-CUMF",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-CF"
+              "matchReason": "Maps directly to STAT-DATA-REPR-CUMF in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-DATA-CLAS-GROUP",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "STAT-DATA-CLAS-TWOW",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.1C",
-          "subtopicName": "Use cumulative frequency diagrams",
+          "subtopicId": "Edexcel-4MA1-6.1.3",
+          "subtopicName": "Use different methods of presenting data, tabulate data and interpret statistical diagrams, including histograms and cumulative frequency diagrams at Higher Tier.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-CF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-CF"
+              "nodeId": "STAT-DATA-CLAS-TYPE",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-PICT",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-PIE",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.1D",
-          "subtopicName": "Bar charts, pie charts, pictograms, scatter diagrams",
+          "subtopicId": "Edexcel-4MA1-6.1.4",
+          "subtopicName": "Use different methods of presenting data, tabulate data and interpret statistical diagrams, including histograms and cumulative frequency diagrams at Higher Tier.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-CHART",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-CHART"
+              "nodeId": "STAT-DATA-REPR-STEM",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.1E",
-          "subtopicName": "Stem-and-leaf diagrams",
+          "subtopicId": "Edexcel-4MA1-6.2",
+          "subtopicName": "Calculate and interpret mean, median, mode, range, estimated mean for grouped data, quartiles and interquartile range.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-SL",
+              "nodeId": "STAT-SUMM-CENT-MEAN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-SL"
+              "matchReason": "Maps directly to STAT-SUMM-CENT-MEAN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEDI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-SUMM-CENT-MEDI in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MODE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-SUMM-CENT-MODE in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.2A",
-          "subtopicName": "Estimate median from cumulative frequency diagram",
+          "subtopicId": "Edexcel-4MA1-6.2.2",
+          "subtopicName": "Calculate and interpret mean, median, mode, range, estimated mean for grouped data, quartiles and interquartile range.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-MEASU-CENTR",
+              "nodeId": "STAT-SUMM-CENT-IQR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-MEASU-CENTR"
+              "matchReason": "Maps directly to STAT-SUMM-CENT-IQR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-QUAR",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.2B",
-          "subtopicName": "Concept of measure of spread; interquartile range",
+          "subtopicId": "Edexcel-4MA1-6.3",
+          "subtopicName": "Understand probability language, probability scale, theoretical probability, Venn diagrams, sample spaces, complements, addition rule and expected frequency.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-MEASU-DISPE",
+              "nodeId": "PROB-BASIC-BASIC-SCALE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-MEASU-DISPE"
+              "matchReason": "Maps directly to PROB-BASIC-BASIC-SCALE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-BASIC-BASIC-SING",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-BASIC-BASIC-SING in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-COUNT-SAMPS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-COUNT-SAMPS in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.2C",
-          "subtopicName": "Find IQR from discrete data set; estimate from cumulative frequency",
+          "subtopicId": "Edexcel-4MA1-6.3.2",
+          "subtopicName": "Understand probability language, probability scale, theoretical probability, Venn diagrams, sample spaces, complements, addition rule and expected frequency.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-MEASU-DISPE",
+              "nodeId": "PROB-COMB-RULE-ADD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-MEASU-DISPE"
+              "matchReason": "Maps directly to PROB-COMB-RULE-ADD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-BASIC-BASIC-COMP",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "PROB-BASIC-BASIC-NOTN",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.2D",
-          "subtopicName": "Mean, median, mode, range; from lists and grouped data",
+          "subtopicId": "Edexcel-4MA1-6.3.3",
+          "subtopicName": "Understand probability language, probability scale, theoretical probability, Venn diagrams, sample spaces, complements, addition rule and expected frequency.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-MEASU-CENTR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-MEASU-CENTR"
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.3A",
-          "subtopicName": "Tree diagrams: draw and use",
+          "subtopicId": "Edexcel-4MA1-6.4",
+          "subtopicName": "Draw and use tree diagrams, determine probabilities of independent events and use simple conditional probability.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PROBA-TREE",
+              "nodeId": "PROB-COMB-RULE-TREE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-TREE"
+              "matchReason": "Maps directly to PROB-COMB-RULE-TREE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-INDE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-RULE-INDE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-COND",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-RULE-COND in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.3B",
-          "subtopicName": "Probability of two or more independent events",
+          "subtopicId": "Edexcel-4MA1-6.5",
+          "subtopicName": "Use scatter diagrams and correlation where data relationships are represented graphically.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PROBA-IME",
+              "nodeId": "STAT-DATA-REPR-SCAT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-IME"
+              "matchReason": "Maps directly to STAT-DATA-REPR-SCAT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-POSC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-BIVA-CORR-POSC in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-NEGC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-BIVA-CORR-NEGC in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4MA1-6.3C",
-          "subtopicName": "Simple conditional probability; combining events; with/without replacement",
+          "subtopicId": "Edexcel-4MA1-6.5.2",
+          "subtopicName": "Use scatter diagrams and correlation where data relationships are represented graphically.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PROBA-CONDI",
+              "nodeId": "STAT-BIVA-CORR-LOBF",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-CONDI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-6.3D",
-          "subtopicName": "Apply probability to simple problems",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-PROBA-BASIC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-BASIC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4MA1-6.3E",
-          "subtopicName": "Scatter diagrams; correlation; line of best fit",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DATA-SCATT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-SCATT"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-4MA1-Trigonometry",
-      "topicName": "Trigonometry",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "4MA1-TRIG-EV",
-          "subtopicName": "Know the exact values of sin, cos and tan for 0°, 30°, 45°, 60°, 90°",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASIC-EV",
-              "matchStrength": "exact",
-              "matchReason": "Edexcel 4MA1 Higher: exact trigonometric values"
-            }
-          ]
-        },
-        {
-          "subtopicId": "4MA1-TRIG-GR",
-          "subtopicName": "Recognise and sketch the graphs of y = sin x, y = cos x and y = tan x",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-FUNCT-SCTG",
-              "matchStrength": "exact",
-              "matchReason": "Edexcel 4MA1 Higher: trigonometric graphs"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-4MA1-Statistics",
-      "topicName": "Statistics",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "4MA1-STAT-BP",
-          "subtopicName": "Construct and interpret box plots (box-and-whisker diagrams)",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DATA-BP",
-              "matchStrength": "exact",
-              "matchReason": "Edexcel 4MA1 Higher: box plots"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-4MA1-Geometry-and-measure",
-      "topicName": "Geometry and measures",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "4MA1-GEO-DIST",
-          "subtopicName": "Calculate the distance between two points using the distance formula",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "COG-LINES-DISTA",
-              "matchStrength": "exact",
-              "matchReason": "Edexcel 4MA1 Higher: distance formula"
+              "matchReason": "Maps directly to STAT-BIVA-CORR-LOBF in the MVP knowledge tree."
             }
           ]
         }

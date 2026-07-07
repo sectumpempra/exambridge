@@ -3,252 +3,195 @@
   "subjectCode": "4PM1",
   "subjectName": "International GCSE Further Pure Mathematics",
   "level": "IGCSE",
-  "version": "1.0",
-  "totalTopics": 9,
-  "mappedTopics": 9,
+  "version": "1.0-batch1",
+  "totalTopics": 5,
+  "mappedTopics": 5,
   "mappings": [
     {
       "topicId": "Edexcel-4PM1-1",
-      "topicName": "Numbers, surds and indices",
+      "topicName": "Functions and Algebra",
       "paperReference": null,
       "subtopicMappings": [
         {
           "subtopicId": "Edexcel-4PM1-1.1",
-          "subtopicName": "Surds; indices; logarithms",
+          "subtopicName": "Recognise and use function notation, including mappings, inverse notation, composite notation and repeated-function notation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-SI-SURDS",
+              "nodeId": "ALGF-FUNC-DEFS-NOTN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-SURDS"
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-NOTN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-COMP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVR in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-1.2",
-          "subtopicName": "Quadratic equations; completing the square; discriminant",
+          "subtopicName": "Use domain and range, determine when an inverse exists, and sketch the relationship between a function and its inverse.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-QUADR",
+              "nodeId": "ALGF-FUNC-DEFS-DOMR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-QUADR"
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-DOMR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-ONON",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-ONON in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVG in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-1.3",
-          "subtopicName": "Simultaneous equations: linear and non-linear",
+          "subtopicName": "Use modulus graphs, function transformations and sketching of polynomial or reciprocal functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-SIMUL",
+              "nodeId": "ALGF-FUNC-GRAP-MODU",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-SIMUL"
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-MODU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-REFL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-REFL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4PM1-1.3.2",
+          "subtopicName": "Use modulus graphs, function transformations and sketching of polynomial or reciprocal functions.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-1.4",
-          "subtopicName": "Linear and quadratic inequalities",
+          "subtopicName": "Find maximum or minimum values of quadratics by completing the square or differentiation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-LI",
+              "nodeId": "ALGF-EQN-QUAD-COMP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-LI"
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-1.5",
-          "subtopicName": "Polynomial division; factor/remainder theorem",
+          "subtopicName": "Use discriminants to determine roots, tangency and intersections involving quadratic functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-POLYN-DIVIS",
+              "nodeId": "ALGF-EQN-QUAD-DISC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-POLYN-DIVIS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-10.1",
-          "subtopicName": "Complex numbers: definition; real/imaginary parts",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-DISC in the expanded knowledge tree."
+            },
             {
-              "nodeId": "COMPL-BASIC-DEFIN",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to COMPL-BASIC-DEFIN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-10.2",
-          "subtopicName": "Complex number operations; conjugate",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "COMPL-BASIC-CO",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to COMPL-BASIC-CO"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-10.3",
-          "subtopicName": "Argand diagram; modulus and argument; polar form",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "COMPL-GEOME-ARGAN",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to COMPL-GEOME-ARGAN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-1.1",
-          "subtopicName": "Linear equations; solving equations",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQUAT-LINEA",
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-LINEA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-1.1",
-          "subtopicName": "Expand and factorise algebraic expressions",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-INTR in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-MANIP-EF",
+              "nodeId": "GEOM-COOR-CIRC-TANG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-EF"
+              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4PM1-1.1",
-          "subtopicName": "Substitution into expressions",
+          "subtopicId": "Edexcel-4PM1-1.6",
+          "subtopicName": "Solve quadratic equations and inequalities using factorisation, completing the square, formulae and graphs.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-SUBST",
+              "nodeId": "ALGF-EQN-QUAD-FACT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-SUBST"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-1.1",
-          "subtopicName": "Change of subject of formulae",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FACT in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-MANIP-FORMU",
+              "nodeId": "ALGF-EQN-QUAD-FORM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-FORMU"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-1.2",
-          "subtopicName": "Completing the square",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FORM in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-QUADR-CS",
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-CS"
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4PM1-1.2",
-          "subtopicName": "Discriminant; nature of roots",
+          "subtopicId": "Edexcel-4PM1-1.7",
+          "subtopicName": "Use indices, surds, logarithms, exponentials and polynomial manipulation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-DISCR",
+              "nodeId": "NUM-POW-INDX-FRAC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-DISCR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-1.2",
-          "subtopicName": "Quadratic graphs; sketching",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to NUM-POW-INDX-FRAC in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-QUADR-GRAPH",
+              "nodeId": "NUM-POW-POWR-SURD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-1.3",
-          "subtopicName": "Quadratic inequalities",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to NUM-POW-POWR-SURD in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-EQUAT-QI",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-EQUAT-QI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-1.5",
-          "subtopicName": "Factor theorem; remainder theorem",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-POLYN-FR",
+              "nodeId": "ALGF-LOG-EXPO-EX",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-POLYN-FR"
+              "matchReason": "Maps directly to ALGF-LOG-EXPO-EX in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4PM1-1.5",
-          "subtopicName": "Polynomial equations (cubic)",
+          "subtopicId": "Edexcel-4PM1-1.8",
+          "subtopicName": "Use algebraic division, factor theorem, remainder theorem or polynomial factors where specified.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-POLYN",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-EQUAT-POLYN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-10.1",
-          "subtopicName": "Complex conjugate",
-          "paperReference": null,
-          "mappedNodes": [
+              "nodeId": "ALGF-POLY-POLY-DIVL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-POLY-POLY-DIVL in the expanded knowledge tree."
+            },
             {
-              "nodeId": "COMPL-BASIC-CONJU",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to COMPL-BASIC-CONJU"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-10.1",
-          "subtopicName": "Conjugate pairs for polynomial equations",
-          "paperReference": null,
-          "mappedNodes": [
+              "nodeId": "ALGF-POLY-POLY-FACT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-POLY-POLY-FACT in the expanded knowledge tree."
+            },
             {
-              "nodeId": "COMPL-BASIC-CR",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to COMPL-BASIC-CR"
+              "nodeId": "ALGF-POLY-POLY-CUBQ",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-POLY-POLY-CUBQ in the expanded knowledge tree."
             }
           ]
         }
@@ -256,54 +199,106 @@
     },
     {
       "topicId": "Edexcel-4PM1-2",
-      "topicName": "Equations and inequalities",
+      "topicName": "Coordinate Geometry and Sequences",
       "paperReference": null,
       "subtopicMappings": [
         {
           "subtopicId": "Edexcel-4PM1-2.1",
-          "subtopicName": "Functions: definition, domain, range",
+          "subtopicName": "Use coordinate geometry of straight lines and circles, including gradients, intersections and tangents.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-NDR",
+              "nodeId": "GEOM-COOR-LINE-GRAD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-NDR"
+              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CIRC-CENT in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4PM1-2.1.2",
+          "subtopicName": "Use coordinate geometry of straight lines and circles, including gradients, intersections and tangents.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CIRC-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-2.2",
-          "subtopicName": "Composite functions; inverse functions",
+          "subtopicName": "Use equations of tangents and normals, intersections of curves and coordinate geometry problem solving.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-COMPO",
+              "nodeId": "GEOM-COOR-LINE-POINT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-COMPO"
+              "matchReason": "Maps directly to GEOM-COOR-LINE-POINT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-CART-INTR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CART-INTR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-2.3",
-          "subtopicName": "Graph transformations",
+          "subtopicName": "Use arithmetic and geometric sequences, nth terms and recursive definitions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-TRANS",
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-TRANS"
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-NTH in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-ARIT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-GEOM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-GEOM in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4PM1-2.2",
-          "subtopicName": "Inverse functions",
+          "subtopicId": "Edexcel-4PM1-2.4",
+          "subtopicName": "Use series sums, sigma notation and binomial coefficients where specified.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-INVER",
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-INVER"
+              "matchReason": "Maps directly to ALGF-SEQ-SERS-ARSM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-GESM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SERS-GESM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-BINO-COEF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-BINO-COEF in the expanded knowledge tree."
             }
           ]
         }
@@ -311,54 +306,128 @@
     },
     {
       "topicId": "Edexcel-4PM1-3",
-      "topicName": "Coordinate geometry",
+      "topicName": "Trigonometry",
       "paperReference": null,
       "subtopicMappings": [
         {
           "subtopicId": "Edexcel-4PM1-3.1",
-          "subtopicName": "Coordinate geometry: straight lines; parallel/perpendicular",
+          "subtopicName": "Use radians, exact values, trigonometric graphs and transformations.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "COG-LINES-EQUAT",
+              "nodeId": "TRIG-CIRC-RADI-DEFN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-EQUAT"
+              "matchReason": "Maps directly to TRIG-CIRC-RADI-DEFN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-EXCT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-EXCT-EXCT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4PM1-3.1.2",
+          "subtopicName": "Use radians, exact values, trigonometric graphs and transformations.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-GRAP-PERD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-PERD in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-3.2",
-          "subtopicName": "Coordinate geometry of circles",
+          "subtopicName": "Use sine, cosine and tangent graphs, including amplitude, period, translations and intersections.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "COG-CIRCL-EQUAT",
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-CIRCL-EQUAT"
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-COSN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-3.3",
-          "subtopicName": "Distance and midpoint",
+          "subtopicName": "Use trigonometric identities and solve trigonometric equations.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "COG-LINES-DISTA",
+              "nodeId": "TRIG-IDEN-IDEN-TANR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-DISTA"
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-TANR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-PYTH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-PYTH in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-SIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-EQNS-SIMP in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4PM1-3.1",
-          "subtopicName": "Parallel and perpendicular lines",
+          "subtopicId": "Edexcel-4PM1-3.4",
+          "subtopicName": "Use compound-angle, double-angle or R-form transformations where specified.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "COG-LINES-PP",
+              "nodeId": "TRIG-IDEN-IDEN-ADDR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-PP"
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-ADDR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-DBLA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-DBLA in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-MULT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-EQNS-MULT in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4PM1-3.5",
+          "subtopicName": "Use non-right-angled triangle formulae, sine rule, cosine rule and area formula.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-SINR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-COSR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-AREA in the expanded knowledge tree."
             }
           ]
         }
@@ -366,90 +435,123 @@
     },
     {
       "topicId": "Edexcel-4PM1-4",
-      "topicName": "Trigonometry",
+      "topicName": "Calculus",
       "paperReference": null,
       "subtopicMappings": [
         {
           "subtopicId": "Edexcel-4PM1-4.1",
-          "subtopicName": "Sine rule, cosine rule, area of triangle",
+          "subtopicName": "Understand gradient as a rate of change and use derivative notation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "TRIG-BASIC-SCR",
+              "nodeId": "CALC-DIFF-CONC-GRAD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-SCR"
+              "matchReason": "Maps directly to CALC-DIFF-CONC-GRAD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-RATE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-CONC-RATE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-NOTN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-CONC-NOTN in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-4.2",
-          "subtopicName": "Trigonometric functions; graphs; identities",
+          "subtopicName": "Differentiate powers and sums of elementary functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "TRIG-FUNCT-SCTG",
+              "nodeId": "CALC-DIFF-RULE-POWR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-FUNCT-SCTG"
+              "matchReason": "Maps directly to CALC-DIFF-RULE-POWR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-SUMD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-RULE-SUMD in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-4.3",
-          "subtopicName": "Trig identities: sin^2+cos^2=1; tan=sin/cos",
+          "subtopicName": "Apply differentiation to tangents, normals, stationary points and curve sketching.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "TRIG-IDENT-PYTHA",
+              "nodeId": "CALC-DIFF-APPL-TANG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-IDENT-PYTHA"
+              "matchReason": "Maps directly to CALC-DIFF-APPL-TANG in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-TNOR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-PARI-TNOR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-4PM1-4.3.2",
+          "subtopicName": "Apply differentiation to tangents, normals, stationary points and curve sketching.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-SKET",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-SKET in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-4.4",
-          "subtopicName": "Solving trigonometric equations",
+          "subtopicName": "Integrate as reverse differentiation and use constants of integration.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "TRIG-EQUAT-BASIC",
+              "nodeId": "CALC-INTE-CONC-REVD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-EQUAT-BASIC"
+              "matchReason": "Maps directly to CALC-INTE-CONC-REVD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-POWR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-INTE-RULE-POWR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-CONS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-INTE-APPL-CONS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4PM1-4.2",
-          "subtopicName": "Right-angled trigonometry; Pythagoras",
+          "subtopicId": "Edexcel-4PM1-4.5",
+          "subtopicName": "Use definite integration for area and area between a curve and an axis.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "TRIG-BASIC-RA",
+              "nodeId": "CALC-INTE-CONC-DEFI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-RA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-4.2",
-          "subtopicName": "Exact trig values",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to CALC-INTE-CONC-DEFI in the expanded knowledge tree."
+            },
             {
-              "nodeId": "TRIG-BASIC-EV",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to TRIG-BASIC-EV"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-4.2",
-          "subtopicName": "Arc length and sector area",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-RADIA-AS",
+              "nodeId": "CALC-INTE-APPL-AREA",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-RADIA-AS"
+              "matchReason": "Maps directly to CALC-INTE-APPL-AREA in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-BETW",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-INTE-APPL-BETW in the expanded knowledge tree."
             }
           ]
         }
@@ -457,286 +559,72 @@
     },
     {
       "topicId": "Edexcel-4PM1-5",
-      "topicName": "Vectors",
+      "topicName": "Matrices and Transformations",
       "paperReference": null,
       "subtopicMappings": [
         {
           "subtopicId": "Edexcel-4PM1-5.1",
-          "subtopicName": "Vectors in 2D: position vectors; magnitude; unit vectors",
+          "subtopicName": "Use matrix notation, matrix addition, subtraction, scalar multiplication and multiplication.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "VEC-23-POSIT",
+              "nodeId": "ALGF-MATR-OPS-ADD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-POSIT"
+              "matchReason": "Maps directly to ALGF-MATR-OPS-ADD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-OPS-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-OPS-SCAL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-OPS-MULT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-OPS-MULT in the expanded knowledge tree."
             }
           ]
         },
         {
           "subtopicId": "Edexcel-4PM1-5.2",
-          "subtopicName": "Vector geometry; parallel; collinear",
+          "subtopicName": "Find determinants, recognise singular matrices and find inverse matrices.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "VEC-23-LE",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to VEC-23-LE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-5.1",
-          "subtopicName": "Unit vectors",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-UNIT",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to VEC-23-UNIT"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-4PM1-6",
-      "topicName": "Sequences and series",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-4PM1-6.1",
-          "subtopicName": "Binomial expansion; Pascal's triangle",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQUE-BPI",
+              "nodeId": "ALGF-MATR-INV-DET",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-BPI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-6.2",
-          "subtopicName": "Arithmetic series; nth term; sum",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-MATR-INV-DET in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-SEQUE-ARITH",
+              "nodeId": "ALGF-MATR-INV-SING",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-ARITH"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-6.3",
-          "subtopicName": "Geometric series; sum; sum to infinity",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-MATR-INV-SING in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-SEQUE-GEOME",
+              "nodeId": "ALGF-MATR-INV-INV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-GEOME"
+              "matchReason": "Maps directly to ALGF-MATR-INV-INV in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-4PM1-6.4",
-          "subtopicName": "Sigma notation",
+          "subtopicId": "Edexcel-4PM1-5.3",
+          "subtopicName": "Use matrices for two-dimensional transformations and composite transformations.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-SIGMA",
+              "nodeId": "ALGF-MATR-TRAN-2D",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-SIGMA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-6.2",
-          "subtopicName": "Sum to infinity of convergent GP",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-MATR-TRAN-2D in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-SEQUE-SI",
+              "nodeId": "ALGF-MATR-TRAN-COMP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-SI"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-4PM1-7",
-      "topicName": "Differentiation",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-4PM1-7.1",
-          "subtopicName": "Differentiation of x^n; polynomials",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-MATR-TRAN-COMP in the expanded knowledge tree."
+            },
             {
-              "nodeId": "CALC-DIFFE-PR",
+              "nodeId": "GEOM-CONS-TRAN-COMB",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-PR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-7.2",
-          "subtopicName": "Chain rule; product rule; quotient rule",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-CHAIN",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to CALC-DIFFE-CHAIN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-7.3",
-          "subtopicName": "Tangents and normals",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-TN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-TN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-7.4",
-          "subtopicName": "Stationary points; maxima, minima",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-STATI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-STATI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-7.1",
-          "subtopicName": "Concept of derivative as gradient",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-CONCE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-CONCE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-7.4",
-          "subtopicName": "Rates of change; practical problems",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-RATES",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to CALC-DIFFE-RATES"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-4PM1-8",
-      "topicName": "Integration",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-4PM1-8.1",
-          "subtopicName": "Integration of x^n",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-PR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-PR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-8.2",
-          "subtopicName": "Definite integrals",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-DEFIN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-DEFIN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-8.3",
-          "subtopicName": "Area under curve; between curve and line",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-AC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-AC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-8.1",
-          "subtopicName": "Indefinite integration; reverse of differentiation",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-INDEF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-INDEF"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-4PM1-9",
-      "topicName": "Matrices",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-4PM1-9.1",
-          "subtopicName": "Matrices: addition, subtraction, multiplication; determinants; inverses (2x2)",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-OPERA-ASM",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to MAT-OPERA-ASM"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-9.1",
-          "subtopicName": "Determinants; inverses (2x2)",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-OPERA-DETER",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to MAT-OPERA-DETER"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-4PM1-9.1",
-          "subtopicName": "Inverse of 2x2 matrix",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-OPERA-INVER",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to MAT-OPERA-INVER"
+              "matchReason": "Maps directly to GEOM-CONS-TRAN-COMB in the expanded knowledge tree."
             }
           ]
         }

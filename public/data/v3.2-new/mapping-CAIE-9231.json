@@ -3,9 +3,37 @@
   "subjectCode": "9231",
   "subjectName": "A-Level Further Mathematics",
   "level": "A-Level",
-  "version": "1.0",
+  "version": "1.0-mvp",
   "totalTopics": 4,
   "mappedTopics": 4,
+  "paperStructure": {
+    "papers": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "compulsory": [
+      "P1"
+    ],
+    "asOnly": [],
+    "alevelOnly": [
+      "P2"
+    ],
+    "applicationGroups": [
+      [
+        "P3"
+      ],
+      [
+        "P4"
+      ],
+      [
+        "P3",
+        "P4"
+      ]
+    ],
+    "mutuallyExclusive": []
+  },
   "mappings": [
     {
       "topicId": "CAIE-9231-1",
@@ -15,298 +43,211 @@
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "CAIE-9231-FP1.1",
-          "subtopicName": "De Moivre's theorem; powers and roots of complex numbers",
+          "subtopicId": "CAIE-9231-1.1",
+          "subtopicName": "recall and use the relations between the roots and coefficients of polynomial equations and use a substitution to obtain an equation whose roots are related to those of the original equation",
           "paperReference": [
             "P1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-ADVAN-DEMOI",
+              "nodeId": "ALGF-ROOT-ROOT-REL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-DEMOI"
+              "matchReason": "Maps directly to ALGF-ROOT-ROOT-REL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-ROOT-ROOT-SYMF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-ROOT-ROOT-SYMF in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-ROOT-ROOT-TRANS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-ROOT-ROOT-TRANS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP1.1",
-          "subtopicName": "nth roots of unity; geometric interpretation on Argand diagram",
+          "subtopicId": "CAIE-9231-1.2",
+          "subtopicName": "sketch graphs of simple rational functions and understand relationships between transformed graphs of functions",
           "paperReference": [
             "P1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-ADVAN-RU",
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-RU"
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-ASMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-ASMP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-VERT in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP1.1",
-          "subtopicName": "nth roots of complex numbers in polar form",
+          "subtopicId": "CAIE-9231-1.3",
+          "subtopicName": "use standard results for sums of powers, use the method of differences and determine convergence and sums to infinity",
           "paperReference": [
             "P1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-ADVAN-NR",
+              "nodeId": "CALC-SER-SUMS-SUMR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-NR"
+              "matchReason": "Maps directly to CALC-SER-SUMS-SUMR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-SUMS-DIFF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-SUMS-DIFF in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-SUMS-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-SUMS-CONV in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP1.1",
-          "subtopicName": "Exponential form e^(i*theta); Euler's relation",
+          "subtopicId": "CAIE-9231-1.4",
+          "subtopicName": "carry out matrix operations, find determinants and inverses, use matrices for transformations and solve invariant point and line problems",
           "paperReference": [
             "P1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-ADVAN-EXPON",
+              "nodeId": "ALGF-MATR-OPS-ADD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-EXPON"
+              "matchReason": "Maps directly to ALGF-MATR-OPS-ADD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-OPS-MULT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-OPS-MULT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-INV-DET",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-INV-DET in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP1.2",
-          "subtopicName": "Matrix operations; multiplication; properties",
+          "subtopicId": "CAIE-9231-1.4.2",
+          "subtopicName": "carry out matrix operations, find determinants and inverses, use matrices for transformations and solve invariant point and line problems",
           "paperReference": [
             "P1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-OPERA-ASM",
+              "nodeId": "ALGF-MATR-INV-INV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-OPERA-ASM"
+              "matchReason": "Maps directly to ALGF-MATR-INV-INV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-TRAN-2D",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-TRAN-2D in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-TRAN-INVPT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-TRAN-INVPT in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP1.2",
-          "subtopicName": "Determinant of 2x2 and 3x3 matrices",
+          "subtopicId": "CAIE-9231-1.5",
+          "subtopicName": "understand Cartesian and polar coordinates, sketch simple polar curves and use the polar area formula",
           "paperReference": [
             "P1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-OPERA-DETER",
+              "nodeId": "GEOM-POLR-POLR-CONV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-OPERA-DETER"
+              "matchReason": "Maps directly to GEOM-POLR-POLR-CONV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-POLR-POLR-SKET",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-POLR-POLR-SKET in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-POLR-POLR-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-POLR-POLR-AREA in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP1.2",
-          "subtopicName": "Inverse of 3x3 matrix; cofactor method",
+          "subtopicId": "CAIE-9231-1.6",
+          "subtopicName": "use equations of planes, vector products, scalar products, distances, angles and intersections involving lines and planes",
           "paperReference": [
             "P1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-OPERA-INVER",
+              "nodeId": "VECT-FURT-LINES-PLANE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-OPERA-INVER"
+              "matchReason": "Maps directly to VECT-FURT-LINES-PLANE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "VECT-FURT-PROD-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-PROD-SCAL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "VECT-FURT-PROD-VECT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-PROD-VECT in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP1.2",
-          "subtopicName": "Linear transformations; matrix representation in 2D",
+          "subtopicId": "CAIE-9231-1.6.2",
+          "subtopicName": "use equations of planes, vector products, scalar products, distances, angles and intersections involving lines and planes",
           "paperReference": [
             "P1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-TRANS-2D",
+              "nodeId": "VECT-FURT-LINES-INTER",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-TRANS-2D"
+              "matchReason": "Maps directly to VECT-FURT-LINES-INTER in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "VECT-FURT-LINES-DIST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-LINES-DIST in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP1.2",
-          "subtopicName": "Linear transformations in 3D",
+          "subtopicId": "CAIE-9231-1.7",
+          "subtopicName": "use the method of mathematical induction to establish a given result",
           "paperReference": [
             "P1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-TRANS-3D",
+              "nodeId": "REAS-PROF-PROF-DEDU",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-TRANS-3D"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1.3",
-          "subtopicName": "Summation of series; sigma notation; method of differences",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to REAS-PROF-PROF-DEDU in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-SEQUE-ARITH",
+              "nodeId": "REAS-PROF-ARGM-LOGI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-ARITH"
+              "matchReason": "Maps directly to REAS-PROF-ARGM-LOGI in the expanded knowledge tree."
             }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1.3",
-          "subtopicName": "Maclaurin series; standard expansions; use in approximations",
-          "paperReference": [
-            "P1"
           ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQUE-MACLA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-MACLA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1.4",
-          "subtopicName": "Vectors in 3D; vector and Cartesian equations of lines",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-LE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-LE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1.4",
-          "subtopicName": "Vector and Cartesian equations of planes",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-FURTH-PLANE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-FURTH-PLANE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1.4",
-          "subtopicName": "Scalar product; angle between lines/planes",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-SP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-SP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1.4",
-          "subtopicName": "Cross product; vector product",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-FURTH-CP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-FURTH-CP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1.4",
-          "subtopicName": "Scalar triple product; volume of parallelepiped/tetrahedron",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-FURTH-TP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-FURTH-TP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1.5",
-          "subtopicName": "Proof by induction; mathematical induction",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-PROOF-CONTR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-PROOF-CONTR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1",
-          "subtopicName": "Complex conjugate; conjugate roots",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COMPL-BASIC-CONJU",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-BASIC-CONJU"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1",
-          "subtopicName": "Conjugate pairs for real polynomial equations",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COMPL-BASIC-CR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-BASIC-CR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1",
-          "subtopicName": "Loci in Argand diagram",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COMPL-GEOME-LOCI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-GEOME-LOCI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP1",
-          "subtopicName": "Eigenvalues and eigenvectors; diagonalisation",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-TRANS-EIGEN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-TRANS-EIGEN"
-            }
-          ]
+          "description": "Mathematical induction is represented in the MVP reasoning branch as proof by deduction and logical argument."
         }
       ]
     },
@@ -318,212 +259,255 @@
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "CAIE-9231-FP2.1",
-          "subtopicName": "Hyperbolic functions: definitions, graphs, properties",
+          "subtopicId": "CAIE-9231-2.1",
+          "subtopicName": "understand definitions, graphs, identities and inverse forms of hyperbolic functions",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "HYP-DEFIN",
+              "nodeId": "CALC-HYP-HYP-DEFN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to HYP-DEFIN"
+              "matchReason": "Maps directly to CALC-HYP-HYP-DEFN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-HYP-HYP-GRAP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-HYP-HYP-GRAP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-HYP-HYP-IDEN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-HYP-HYP-IDEN in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.1",
-          "subtopicName": "Hyperbolic identities; Osborne's rule",
+          "subtopicId": "CAIE-9231-2.1.2",
+          "subtopicName": "understand definitions, graphs, identities and inverse forms of hyperbolic functions",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "HYP-IDENT",
+              "nodeId": "CALC-HYP-HYP-INVH",
               "matchStrength": "exact",
-              "matchReason": "Mapped to HYP-IDENT"
+              "matchReason": "Maps directly to CALC-HYP-HYP-INVH in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.1",
-          "subtopicName": "Differentiation and integration of hyperbolic functions",
+          "subtopicId": "CAIE-9231-2.2",
+          "subtopicName": "solve systems using matrix equations; use eigenvalues, eigenvectors, diagonalisation and the Cayley-Hamilton theorem",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "HYP-CALCU",
+              "nodeId": "ALGF-MATR-EIG-CHAR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to HYP-CALCU"
+              "matchReason": "Maps directly to ALGF-MATR-EIG-CHAR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-EIG-EVAL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-EIG-EVAL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-EIG-EVEC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-EIG-EVEC in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.2",
-          "subtopicName": "Further differentiation: implicit, parametric",
+          "subtopicId": "CAIE-9231-2.2.2",
+          "subtopicName": "solve systems using matrix equations; use eigenvalues, eigenvectors, diagonalisation and the Cayley-Hamilton theorem",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-DIFFE-IMPLI",
+              "nodeId": "ALGF-MATR-EIG-DIAG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-IMPLI"
+              "matchReason": "Maps directly to ALGF-MATR-EIG-DIAG in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-CAYL-THEO",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-CAYL-THEO in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.2",
-          "subtopicName": "Differentiation of inverse trigonometric functions",
+          "subtopicId": "CAIE-9231-2.3",
+          "subtopicName": "differentiate hyperbolic and inverse trigonometric functions, find second derivatives for implicit or parametric relations and derive Maclaurin series",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-DIFFE-SF",
+              "nodeId": "CALC-FDIFF-FDIFF-HYP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-SF"
+              "matchReason": "Maps directly to CALC-FDIFF-FDIFF-HYP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-INVTR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FDIFF-FDIFF-INVTR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-SECD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FDIFF-FDIFF-SECD in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.3",
-          "subtopicName": "Further integration: hyperbolic substitutions; reduction formulae",
+          "subtopicId": "CAIE-9231-2.3.2",
+          "subtopicName": "differentiate hyperbolic and inverse trigonometric functions, find second derivatives for implicit or parametric relations and derive Maclaurin series",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-INTEG-SUBST",
+              "nodeId": "CALC-SER-MACL-MACL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-SUBST"
+              "matchReason": "Maps directly to CALC-SER-MACL-MACL in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.3",
-          "subtopicName": "Integration by parts; repeated applications",
+          "subtopicId": "CAIE-9231-2.4",
+          "subtopicName": "integrate hyperbolic functions, use trigonometric or hyperbolic substitutions, reduction formulae, rectangle estimates, arc lengths and surface areas of revolution",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-INTEG-BP",
+              "nodeId": "CALC-FINT-FINT-HYP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-BP"
+              "matchReason": "Maps directly to CALC-FINT-FINT-HYP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-FINT-TRSUB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-FINT-TRSUB in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-FINT-HYSUB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-FINT-HYSUB in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.3",
-          "subtopicName": "Integration involving inverse trigonometric functions",
+          "subtopicId": "CAIE-9231-2.4.2",
+          "subtopicName": "integrate hyperbolic functions, use trigonometric or hyperbolic substitutions, reduction formulae, rectangle estimates, arc lengths and surface areas of revolution",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-INTEG-SF",
+              "nodeId": "CALC-FINT-FINT-REDU",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-SF"
+              "matchReason": "Maps directly to CALC-FINT-FINT-REDU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-APPL-ARCL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-APPL-ARCL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-APPL-SURF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-APPL-SURF in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.4",
-          "subtopicName": "Polar coordinates; equations of curves; sketching",
+          "subtopicId": "CAIE-9231-2.5",
+          "subtopicName": "understand and use de Moivre's theorem, multiple-angle formulae, powers of trigonometric functions, summation of series and nth roots of unity",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COG-POLAR-EQUAT",
+              "nodeId": "ALGF-CPLX-DEMO-THM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-POLAR-EQUAT"
+              "matchReason": "Maps directly to ALGF-CPLX-DEMO-THM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-DEMO-PROOF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-DEMO-PROOF in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-DEMO-MULTA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-DEMO-MULTA in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.4",
-          "subtopicName": "Area in polar coordinates; 1/2 integral r^2 d(theta)",
+          "subtopicId": "CAIE-9231-2.5.2",
+          "subtopicName": "understand and use de Moivre's theorem, multiple-angle formulae, powers of trigonometric functions, summation of series and nth roots of unity",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COG-POLAR-AREA",
+              "nodeId": "ALGF-CPLX-DEMO-SERIES",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-POLAR-AREA"
+              "matchReason": "Maps directly to ALGF-CPLX-DEMO-SERIES in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-ROOT-UNITY",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-ROOT-UNITY in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.4",
-          "subtopicName": "Conversion between polar and Cartesian",
+          "subtopicId": "CAIE-9231-2.6",
+          "subtopicName": "solve first and second order linear differential equations using integrating factors, complementary functions, particular integrals, substitutions and initial conditions",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COG-POLAR-CONVE",
+              "nodeId": "CALC-LDE-FIRST-IFAC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-POLAR-CONVE"
+              "matchReason": "Maps directly to CALC-LDE-FIRST-IFAC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-LDE-FIRST-GENS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-LDE-FIRST-GENS in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-LDE-SECOND-AUX",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-LDE-SECOND-AUX in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FP2.5",
-          "subtopicName": "First order differential equations; separable; integrating factor",
+          "subtopicId": "CAIE-9231-2.6.2",
+          "subtopicName": "solve first and second order linear differential equations using integrating factors, complementary functions, particular integrals, substitutions and initial conditions",
           "paperReference": [
             "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-DE-FOS",
+              "nodeId": "CALC-LDE-SECOND-CFPI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-FOS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP2.5",
-          "subtopicName": "Second order linear differential equations; auxiliary equation",
-          "paperReference": [
-            "P2"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to CALC-LDE-SECOND-CFPI in the expanded knowledge tree."
+            },
             {
-              "nodeId": "CALC-DE-SO",
+              "nodeId": "CALC-LDE-SYSTEM-SUBS",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-SO"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP2.6",
-          "subtopicName": "Numerical methods: Newton-Raphson; iterative methods",
-          "paperReference": [
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-NUMER-NR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-NUMER-NR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FP2",
-          "subtopicName": "Modelling with differential equations; SHM",
-          "paperReference": [
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DE-FORMA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-FORMA"
+              "matchReason": "Maps directly to CALC-LDE-SYSTEM-SUBS in the expanded knowledge tree."
             }
           ]
         }
@@ -537,128 +521,216 @@
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "CAIE-9231-FM.1",
-          "subtopicName": "Circular motion: angular speed; radial acceleration; conical pendulum",
+          "subtopicId": "CAIE-9231-3.1",
+          "subtopicName": "model projectile motion and use horizontal and vertical equations of motion, range, greatest height and the Cartesian trajectory equation",
           "paperReference": [
             "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FURTH-CIRCU",
+              "nodeId": "MECH-FURT-PROJ-MODEL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FURTH-CIRCU"
+              "matchReason": "Maps directly to MECH-FURT-PROJ-MODEL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-PROJ-HV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-PROJ-HV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-PROJ-RANGE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-PROJ-RANGE in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FM.1",
-          "subtopicName": "Motion in vertical circle; energy at highest/lowest point",
+          "subtopicId": "CAIE-9231-3.1.2",
+          "subtopicName": "model projectile motion and use horizontal and vertical equations of motion, range, greatest height and the Cartesian trajectory equation",
           "paperReference": [
             "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FURTH-CIRCU",
+              "nodeId": "MECH-FURT-PROJ-TRAJ",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FURTH-CIRCU"
+              "matchReason": "Maps directly to MECH-FURT-PROJ-TRAJ in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FM.2",
-          "subtopicName": "Simple harmonic motion; x'' = -omega^2 x; period; amplitude",
+          "subtopicId": "CAIE-9231-3.2",
+          "subtopicName": "calculate moments, centres of mass and solve rigid body equilibrium problems involving toppling or sliding",
           "paperReference": [
             "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FURTH-SHM",
+              "nodeId": "MECH-FURT-RIGD-MOMT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FURTH-SHM"
+              "matchReason": "Maps directly to MECH-FURT-RIGD-MOMT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-COM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-RIGD-COM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-RBAL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-RIGD-RBAL in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FM.2",
-          "subtopicName": "SHM with elastic strings/springs; Hooke's law",
+          "subtopicId": "CAIE-9231-3.2.2",
+          "subtopicName": "calculate moments, centres of mass and solve rigid body equilibrium problems involving toppling or sliding",
           "paperReference": [
             "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FURTH-SHM",
+              "nodeId": "MECH-FURT-RIGD-TOPS",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FURTH-SHM"
+              "matchReason": "Maps directly to MECH-FURT-RIGD-TOPS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FM.3",
-          "subtopicName": "Elastic strings and springs; Hooke's law; elastic potential energy",
+          "subtopicId": "CAIE-9231-3.3",
+          "subtopicName": "use angular speed, radial acceleration and solve horizontal and vertical circular motion problems",
           "paperReference": [
             "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FURTH-ELAST",
+              "nodeId": "MECH-FURT-CIRC-ANGS",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FURTH-ELAST"
+              "matchReason": "Maps directly to MECH-FURT-CIRC-ANGS in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-CIRC-RACC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-CIRC-RACC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-CIRC-HCIR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-CIRC-HCIR in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FM.4",
-          "subtopicName": "Collisions: direct impact; coefficient of restitution; loss of KE",
+          "subtopicId": "CAIE-9231-3.3.2",
+          "subtopicName": "use angular speed, radial acceleration and solve horizontal and vertical circular motion problems",
           "paperReference": [
             "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-MOMI-COLLI",
+              "nodeId": "MECH-FURT-CIRC-VCIR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-MOMEN-COLLI"
+              "matchReason": "Maps directly to MECH-FURT-CIRC-VCIR in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FM.4",
-          "subtopicName": "Successive impacts; impulse; Newton's law of restitution",
+          "subtopicId": "CAIE-9231-3.4",
+          "subtopicName": "use Hooke's law, modulus of elasticity, elastic potential energy and energy methods for strings and springs",
           "paperReference": [
             "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-MOMI-IMPUL",
+              "nodeId": "MECH-FURT-ELAS-HOOK",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-MOMEN-IMPUL"
+              "matchReason": "Maps directly to MECH-FURT-ELAS-HOOK in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-ELAS-EPE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-ELAS-EPE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-ELAS-EFOR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-ELAS-EFOR in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FM.5",
-          "subtopicName": "Centre of mass: discrete; uniform lamina; composite bodies",
+          "subtopicId": "CAIE-9231-3.4.2",
+          "subtopicName": "use Hooke's law, modulus of elasticity, elastic potential energy and energy methods for strings and springs",
           "paperReference": [
             "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FURTH-CM-COMPO",
+              "nodeId": "MECH-FURT-ELAS-EPRO",
               "matchStrength": "exact",
-              "matchReason": "Redirected from MECH-FURTH-CM to leaf node"
+              "matchReason": "Maps directly to MECH-FURT-ELAS-EPRO in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FM.5",
-          "subtopicName": "Equilibrium of rigid body; suspension; inclined plane",
+          "subtopicId": "CAIE-9231-3.5",
+          "subtopicName": "solve linear motion under a variable force by setting up and solving differential equations",
           "paperReference": [
             "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FURTH-CM-SUSP",
+              "nodeId": "MECH-FURT-VARF-DEQ",
               "matchStrength": "exact",
-              "matchReason": "Redirected from MECH-FURTH-CM to leaf node"
+              "matchReason": "Maps directly to MECH-FURT-VARF-DEQ in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-VARF-VVDX",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-VARF-VVDX in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFFEQ-FODE-SEPV in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "CAIE-9231-3.6",
+          "subtopicName": "use Newton's experimental law, coefficient of restitution and conservation of momentum for direct and oblique impact",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-IMP-REST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-REST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-MOMI-LINM-CONS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-MOMI-LINM-CONS in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-IMP-DIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-DIMP in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "CAIE-9231-3.6.2",
+          "subtopicName": "use Newton's experimental law, coefficient of restitution and conservation of momentum for direct and oblique impact",
+          "paperReference": [
+            "P3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-IMP-OIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-OIMP in the expanded knowledge tree."
             }
           ]
         }
@@ -666,358 +738,169 @@
     },
     {
       "topicId": "CAIE-9231-4",
-      "topicName": "Further Statistics",
+      "topicName": "Further Probability & Statistics",
       "paperReference": [
         "P4"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "CAIE-9231-FS.1",
-          "subtopicName": "Poisson distribution; P(X=r) = e^-lambda * lambda^r / r!; mean=variance=lambda",
+          "subtopicId": "CAIE-9231-4.1",
+          "subtopicName": "use piecewise probability density functions, expected values of functions, cumulative distribution functions and related variables",
           "paperReference": [
             "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-DISTR-POISS",
+              "nodeId": "PROB-DIST-CRV-PDF",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DISTR-POISS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FS.1",
-          "subtopicName": "Normal approximation to Poisson; continuity correction",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to PROB-DIST-CRV-PDF in the expanded knowledge tree."
+            },
             {
-              "nodeId": "STAT-NORMA-AP",
+              "nodeId": "PROB-DIST-CRV-MEAN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-NORMA-AP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FS.2",
-          "subtopicName": "Continuous random variables; PDF; CDF; F'(x) = f(x)",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to PROB-DIST-CRV-MEAN in the expanded knowledge tree."
+            },
             {
-              "nodeId": "STAT-CRV-PC",
+              "nodeId": "PROB-DIST-CRV-PROB",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-PC"
+              "matchReason": "Maps directly to PROB-DIST-CRV-PROB in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FS.2",
-          "subtopicName": "Mean and variance of continuous RV; E(X), E(X^2)",
+          "subtopicId": "CAIE-9231-4.2",
+          "subtopicName": "use t-tests, pooled estimates, paired and two-sample tests, normal tests and confidence intervals for means and differences of means",
           "paperReference": [
             "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-CRV-MV",
+              "nodeId": "STAT-INF2-TDIST-TTEST",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-MV"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FS.2",
-          "subtopicName": "Continuous uniform distribution; mean and variance",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to STAT-INF2-TDIST-TTEST in the expanded knowledge tree."
+            },
             {
-              "nodeId": "STAT-CRV-CU",
+              "nodeId": "STAT-INF2-TDIST-PAIR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-CU"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FS.3",
-          "subtopicName": "Hypothesis testing; null and alternative hypotheses",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to STAT-INF2-TDIST-PAIR in the expanded knowledge tree."
+            },
             {
-              "nodeId": "STAT-HYPOT-TESTS",
+              "nodeId": "STAT-INF2-TDIST-TWO",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-HYPOT-TESTS"
+              "matchReason": "Maps directly to STAT-INF2-TDIST-TWO in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FS.3",
-          "subtopicName": "Chi-squared tests: goodness of fit; contingency tables",
+          "subtopicId": "CAIE-9231-4.2.2",
+          "subtopicName": "use t-tests, pooled estimates, paired and two-sample tests, normal tests and confidence intervals for means and differences of means",
           "paperReference": [
             "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-HYPOT-CS",
+              "nodeId": "STAT-INF2-TDIST-TCI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-HYPOT-CS"
+              "matchReason": "Maps directly to STAT-INF2-TDIST-TCI in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FS.3",
-          "subtopicName": "Confidence intervals for population mean; large samples",
+          "subtopicId": "CAIE-9231-4.3",
+          "subtopicName": "use chi-squared tests for goodness of fit and independence in contingency tables",
           "paperReference": [
             "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-HYPOT-CI",
+              "nodeId": "STAT-INF2-CHISQ-GOF",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-HYPOT-CI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "CAIE-9231-FS.4",
-          "subtopicName": "Linear combinations of random variables; E(aX+bY), Var(aX+bY)",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to STAT-INF2-CHISQ-GOF in the expanded knowledge tree."
+            },
             {
-              "nodeId": "STAT-DR-LC",
+              "nodeId": "STAT-INF2-CHISQ-INDEP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DR-LC"
+              "matchReason": "Maps directly to STAT-INF2-CHISQ-INDEP in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "CAIE-9231-FS.4",
-          "subtopicName": "Sum/difference of independent normal variables",
+          "subtopicId": "CAIE-9231-4.4",
+          "subtopicName": "use non-parametric tests including sign tests, Wilcoxon signed-rank tests and Wilcoxon rank-sum tests",
           "paperReference": [
             "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-CRV-MV",
+              "nodeId": "STAT-INF2-NONP-SIGN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-MV"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "CAIE-9231-Mechanics",
-      "topicName": "Mechanics",
-      "paperReference": [
-        "P3"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "9231-P3-RV",
-          "subtopicName": "Relative velocity: relative position, velocity and acceleration of two particles; closest distance; collision course conditions. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to STAT-INF2-NONP-SIGN in the expanded knowledge tree."
+            },
             {
-              "nodeId": "MECH-FURTH-RV",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 3: Mechanics (relative velocity)"
+              "nodeId": "STAT-INF2-NONP-WSR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-NONP-WSR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-INF2-NONP-WRS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-NONP-WRS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "9231-P3-CM",
-          "subtopicName": "Motion in a circle: angular velocity, acceleration towards centre; motion in a vertical circle using conservation of energy. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-VC",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 3: Mechanics (circular motion)"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9231-P3-EC",
-          "subtopicName": "Elastic collisions in one dimension: coefficient of restitution; direct collision of two spheres; loss of kinetic energy; successive collisions. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-EC1D",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 3: Mechanics (elastic collisions)"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9231-P3-WE",
-          "subtopicName": "Work-energy principle; conservation of energy including kinetic, gravitational potential and elastic potential energy. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-WEP",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 3: Mechanics (work and energy)"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9231-P3-IMP",
-          "subtopicName": "Impulse of a force acting for a time; vector nature of impulse and momentum. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-IV",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 3: Mechanics (impulse as vector)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "CAIE-9231-Statistics",
-      "topicName": "Statistics",
-      "paperReference": [
-        "P4"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "9231-P4-CRV",
-          "subtopicName": "Linear combinations of random variables: E(aX+bY), Var(aX+bY) for independent random variables. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
+          "subtopicId": "CAIE-9231-4.4.2",
+          "subtopicName": "use non-parametric tests including sign tests, Wilcoxon signed-rank tests and Wilcoxon rank-sum tests",
           "paperReference": [
             "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-FURTH-CRV",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 4: Statistics (combinations of RVs)"
+              "nodeId": "STAT-INF2-NONP-MED",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-NONP-MED in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "9231-P4-MGF",
-          "subtopicName": "Moment generating functions and their use in finding the mean, variance and distribution of random variables. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
+          "subtopicId": "CAIE-9231-4.5",
+          "subtopicName": "construct and use probability generating functions, including mean, variance and sums of independent random variables",
           "paperReference": [
             "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-FURTH-MGF",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 4: Statistics (moment generating functions)"
+              "nodeId": "PROB-PGF-PGF-CONC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-PGF-PGF-CONC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-PGF-PGF-DIST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-PGF-PGF-DIST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-PGF-PGF-MEAN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-PGF-PGF-MEAN in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "9231-P4-CS",
-          "subtopicName": "Chi-squared tests: goodness of fit; contingency tables. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
+          "subtopicId": "CAIE-9231-4.5.2",
+          "subtopicName": "construct and use probability generating functions, including mean, variance and sums of independent random variables",
           "paperReference": [
             "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-FURTH-GOF",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 4: Statistics (chi-squared)"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9231-P4-ERR",
-          "subtopicName": "Type I and Type II errors; power of a test. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-ERRORS",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 4: Statistics (hypothesis testing errors)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "CAIE-9231-Further-Pure",
-      "topicName": "Further Pure",
-      "paperReference": [
-        "P1"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "9231-P1-POL",
-          "subtopicName": "Polar coordinates: tangents to polar curves. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COG-POLAR-TANG",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 1: Further Pure (polar coordinates)"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9231-P1-SER",
-          "subtopicName": "Maclaurin and Taylor series; series expansions of compound functions. [Based on CAIE 9231 syllabus - PDF unavailable for verbatim text]",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQUE-SERIES",
-              "matchStrength": "strong",
-              "matchReason": "CAIE 9231 Paper 1: Further Pure (series)"
+              "nodeId": "PROB-PGF-PGF-SUMS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-PGF-PGF-SUMS in the expanded knowledge tree."
             }
           ]
         }
       ]
     }
-  ],
-  "paperStructure": {
-    "papers": [
-      "P1",
-      "P2",
-      "P3",
-      "P4"
-    ],
-    "compulsory": [
-      "P1",
-      "P2"
-    ],
-    "asOnly": [
-      "P1"
-    ],
-    "alevelOnly": [
-      "P2"
-    ],
-    "applicationGroups": [
-      [
-        "P3",
-        "P4"
-      ]
-    ],
-    "mutuallyExclusive": []
-  }
+  ]
 }

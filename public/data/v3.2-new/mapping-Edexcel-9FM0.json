@@ -3,660 +3,351 @@
   "subjectCode": "9FM0",
   "subjectName": "A-Level Further Mathematics",
   "level": "A-Level",
-  "version": "1.0",
-  "totalTopics": 4,
-  "mappedTopics": 4,
+  "version": "1.0-mvp",
+  "totalTopics": 5,
+  "mappedTopics": 5,
+  "paperStructure": {
+    "papers": [
+      "CorePure1",
+      "CorePure2",
+      "3A",
+      "3B",
+      "3C",
+      "3D",
+      "4A",
+      "4B",
+      "4C",
+      "4D"
+    ],
+    "compulsory": [
+      "CorePure1",
+      "CorePure2"
+    ],
+    "asOnly": [],
+    "alevelOnly": [
+      "CorePure1",
+      "CorePure2"
+    ],
+    "applicationGroups": [
+      [
+        "3A",
+        "4A"
+      ],
+      [
+        "3A",
+        "4B"
+      ],
+      [
+        "3A",
+        "4C"
+      ],
+      [
+        "3A",
+        "4D"
+      ],
+      [
+        "3B",
+        "4B"
+      ],
+      [
+        "3B",
+        "4C"
+      ],
+      [
+        "3B",
+        "4D"
+      ],
+      [
+        "3C",
+        "4C"
+      ],
+      [
+        "3C",
+        "4D"
+      ],
+      [
+        "3D",
+        "4D"
+      ]
+    ],
+    "mutuallyExclusive": []
+  },
   "mappings": [
     {
       "topicId": "Edexcel-9FM0-1",
       "topicName": "Core Pure Mathematics",
       "paperReference": [
-        "Core Pure 2",
-        "Core Pure 1"
+        "CorePure1",
+        "CorePure2"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9FM0-CP.1",
-          "subtopicName": "Proof by contradiction (including proof of the irrationality of √2 and the infinity of primes, and application to unfamiliar proofs).",
+          "subtopicId": "Edexcel-9FM0-1.1",
+          "subtopicName": "Construct proofs using mathematical induction in contexts including sums of series, divisibility and powers of matrices.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-PROOF-CONTR",
+              "nodeId": "REAS-PROF-PROF-DEDU",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-PROOF-CONTR"
+              "matchReason": "Maps directly to REAS-PROF-PROF-DEDU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-CAYL-POWR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-CAYL-POWR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-SUMS-SUMR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-SUMS-SUMR in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "Complex numbers: real/imaginary parts; conjugate; equality",
+          "subtopicId": "Edexcel-9FM0-1.2",
+          "subtopicName": "Solve polynomial equations with complex roots and use complex number operations, conjugates, Argand diagrams, modulus-argument form, loci, de Moivre's theorem and roots of unity.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-BASIC-DEFIN",
+              "nodeId": "ALGF-CPLX-BASIC-CART",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-BASIC-DEFIN"
+              "matchReason": "Maps directly to ALGF-CPLX-BASIC-CART in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-BASIC-CONJ",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-BASIC-CONJ in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-BASIC-ARGD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-BASIC-ARGD in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "Cartesian form operations: +, -, x, /",
+          "subtopicId": "Edexcel-9FM0-1.2.2",
+          "subtopicName": "Solve polynomial equations with complex roots and use complex number operations, conjugates, Argand diagrams, modulus-argument form, loci, de Moivre's theorem and roots of unity.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-BASIC-CO",
+              "nodeId": "ALGF-CPLX-POLAR-CONV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-BASIC-CO"
+              "matchReason": "Maps directly to ALGF-CPLX-POLAR-CONV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-ROOT-LOCI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-ROOT-LOCI in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-DEMO-THM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-DEMO-THM in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "Conjugate; conjugate roots of polynomials",
+          "subtopicId": "Edexcel-9FM0-1.3",
+          "subtopicName": "Use matrix operations, transformations, determinants, inverses, simultaneous equations, eigenvalues, eigenvectors, diagonalisation and Cayley-Hamilton theorem.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-BASIC-CONJU",
+              "nodeId": "ALGF-MATR-OPS-MULT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-BASIC-CONJU"
+              "matchReason": "Maps directly to ALGF-MATR-OPS-MULT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-TRAN-2D",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-TRAN-2D in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-INV-DET",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-INV-DET in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "Argand diagram; geometric representation",
+          "subtopicId": "Edexcel-9FM0-1.3.2",
+          "subtopicName": "Use matrix operations, transformations, determinants, inverses, simultaneous equations, eigenvalues, eigenvectors, diagonalisation and Cayley-Hamilton theorem.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-GEOME-ARGAN",
+              "nodeId": "ALGF-MATR-INV-INV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-GEOME-ARGAN"
+              "matchReason": "Maps directly to ALGF-MATR-INV-INV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-EIG-EVAL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-EIG-EVAL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-EIG-DIAG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-EIG-DIAG in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "Modulus and argument; polar form",
+          "subtopicId": "Edexcel-9FM0-1.4",
+          "subtopicName": "Use roots and coefficients, transformed-root polynomial equations, summation formulae, method of differences, Maclaurin series and further algebraic inequalities.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-GEOME-MA",
+              "nodeId": "ALGF-ROOT-ROOT-REL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-GEOME-MA"
+              "matchReason": "Maps directly to ALGF-ROOT-ROOT-REL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-ROOT-ROOT-TRANS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-ROOT-ROOT-TRANS in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-SUMS-SUMR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-SUMS-SUMR in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "Polar form multiplication and division",
+          "subtopicId": "Edexcel-9FM0-1.4.2",
+          "subtopicName": "Use roots and coefficients, transformed-root polynomial equations, summation formulae, method of differences, Maclaurin series and further algebraic inequalities.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-GEOME-PO",
+              "nodeId": "CALC-SER-SUMS-DIFF",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-GEOME-PO"
+              "matchReason": "Maps directly to CALC-SER-SUMS-DIFF in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-MACL-MACL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-MACL-MACL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-MODU",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-MODU in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "De Moivre's theorem; powers of complex numbers",
+          "subtopicId": "Edexcel-9FM0-1.5",
+          "subtopicName": "Use further calculus including volumes of revolution, improper integrals, mean value of a function, inverse trigonometric differentiation and trigonometric substitution.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-ADVAN-DEMOI",
+              "nodeId": "CALC-INTE-APPL-VOLR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-DEMOI"
+              "matchReason": "Maps directly to CALC-INTE-APPL-VOLR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-APPL-IMPR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-APPL-IMPR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-APPL-MEAN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-APPL-MEAN in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "nth roots of complex numbers; solving z^n = a",
+          "subtopicId": "Edexcel-9FM0-1.5.2",
+          "subtopicName": "Use further calculus including volumes of revolution, improper integrals, mean value of a function, inverse trigonometric differentiation and trigonometric substitution.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-ADVAN-NR",
+              "nodeId": "CALC-FDIFF-FDIFF-INVTR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-NR"
+              "matchReason": "Maps directly to CALC-FDIFF-FDIFF-INVTR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-FINT-TRSUB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-FINT-TRSUB in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "nth roots of unity; geometric interpretation",
+          "subtopicId": "Edexcel-9FM0-1.6",
+          "subtopicName": "Use 3D lines and planes, scalar products, vector products, intersections, distances, polar coordinates, hyperbolic functions and differential equations.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-ADVAN-RU",
+              "nodeId": "VECT-FURT-LINES-LINE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-RU"
+              "matchReason": "Maps directly to VECT-FURT-LINES-LINE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "VECT-FURT-LINES-PLANE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-LINES-PLANE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "VECT-FURT-PROD-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-PROD-SCAL in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "Loci in Argand diagram; |z-a|=|z-b|; arg(z-a)=alpha",
+          "subtopicId": "Edexcel-9FM0-1.6.2",
+          "subtopicName": "Use 3D lines and planes, scalar products, vector products, intersections, distances, polar coordinates, hyperbolic functions and differential equations.",
           "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
+            "CorePure1",
+            "CorePure2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-GEOME-LOCI",
+              "nodeId": "GEOM-POLR-POLR-CONV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-GEOME-LOCI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.2",
-          "subtopicName": "Exponential form e^(i*theta)",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to GEOM-POLR-POLR-CONV in the expanded knowledge tree."
+            },
             {
-              "nodeId": "COMPL-ADVAN-EXPON",
+              "nodeId": "CALC-HYP-HYP-DEFN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-EXPON"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.3",
-          "subtopicName": "Matrix operations: +, -, x; multiplication",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to CALC-HYP-HYP-DEFN in the expanded knowledge tree."
+            },
             {
-              "nodeId": "MAT-OPERA-ASM",
+              "nodeId": "CALC-LDE-FIRST-IFAC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-OPERA-ASM"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.3",
-          "subtopicName": "Determinant of 2x2 and 3x3 matrices",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-OPERA-DETER",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-OPERA-DETER"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.3",
-          "subtopicName": "Inverse of 2x2 and 3x3 matrices; singular matrices",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-OPERA-INVER",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-OPERA-INVER"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.3",
-          "subtopicName": "Linear transformations in 2D; matrix representation",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-TRANS-2D",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-TRANS-2D"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.3",
-          "subtopicName": "Linear transformations in 3D",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-TRANS-3D",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-TRANS-3D"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.3",
-          "subtopicName": "Eigenvalues and eigenvectors; diagonalisation",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-TRANS-EIGEN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-TRANS-EIGEN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.3",
-          "subtopicName": "Invariant points and lines; transformations",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-TRANS-2D",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-TRANS-2D"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.4",
-          "subtopicName": "Decompose rational functions into partial fractions (denominators not more complicated than squared linear terms and with no more than 3 terms, numerators constant or linear).",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-POLYN-PF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-POLYN-PF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.4",
-          "subtopicName": "Maclaurin series; series expansions of standard functions",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQUE-MACLA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-MACLA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.4",
-          "subtopicName": "Taylor series; validity of series expansions",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQUE-MACLA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-MACLA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.4",
-          "subtopicName": "Simplify rational expressions including by factorising and cancelling, and algebraic division (by linear expressions only).",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-MANIP-RE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-RE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.5",
-          "subtopicName": "Carry out simple cases of integration by substitution and integration by parts; understand these methods as the inverse processes of the chain and product rules respectively.",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-SUBST",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-SUBST"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.5",
-          "subtopicName": "Carry out simple cases of integration by substitution and integration by parts; understand these methods as the inverse processes of the chain and product rules respectively.",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-BP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-BP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.5",
-          "subtopicName": "Integrate using partial fractions that are linear in the denominator.",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-PF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-PF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.5",
-          "subtopicName": "Differentiation of inverse trig functions",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-SF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-SF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.5",
-          "subtopicName": "Integrate e^(kx), 1/x, sin(kx), cos(kx) and related sums, differences and constant multiples.",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-SF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-SF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.6",
-          "subtopicName": "Use vectors to solve problems in pure mathematics and in context, including forces and kinematics.",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-LE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-LE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.6",
-          "subtopicName": "Vector equation of plane; Cartesian form; normal vector",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-FURTH-PLANE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-FURTH-PLANE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.6",
-          "subtopicName": "Use vectors to solve problems in pure mathematics and in context, including forces and kinematics.",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-SP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-SP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.6",
-          "subtopicName": "Cross (vector) product; area of parallelogram/triangle",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-FURTH-CP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-FURTH-CP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.6",
-          "subtopicName": "Scalar triple product; volume of parallelepiped",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-FURTH-TP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-FURTH-TP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.7",
-          "subtopicName": "Polar coordinates; equations of curves; sketching",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COG-POLAR-EQUAT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-POLAR-EQUAT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.7",
-          "subtopicName": "Area enclosed by polar curve; 1/2 r^2 d(theta)",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COG-POLAR-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-POLAR-AREA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.7",
-          "subtopicName": "Conversion between polar and Cartesian coordinates",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COG-POLAR-CONVE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-POLAR-CONVE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.8",
-          "subtopicName": "Hyperbolic functions: sinh, cosh, tanh; definitions and graphs",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "HYP-DEFIN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to HYP-DEFIN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.8",
-          "subtopicName": "Hyperbolic identities: cosh^2 - sinh^2 = 1; Osborne's rule",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "HYP-IDENT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to HYP-IDENT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.8",
-          "subtopicName": "Differentiation and integration of hyperbolic functions",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "HYP-CALCU",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to HYP-CALCU"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.8",
-          "subtopicName": "Carry out simple cases of integration by substitution and integration by parts; understand these methods as the inverse processes of the chain and product rules respectively.",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-SUBST",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-SUBST"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.9",
-          "subtopicName": "Evaluate the analytical solution of simple first order differential equations with separable variables, including finding particular solutions.",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DE-FOS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-FOS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.9",
-          "subtopicName": "Second order linear differential equations; auxiliary equation; complementary function; particular integral",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DE-SO",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-SO"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-CP.9",
-          "subtopicName": "Construct simple differential equations in pure mathematics and in context.",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DE-FORMA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-FORMA"
+              "matchReason": "Maps directly to CALC-LDE-FIRST-IFAC in the expanded knowledge tree."
             }
           ]
         }
@@ -664,78 +355,278 @@
     },
     {
       "topicId": "Edexcel-9FM0-2",
-      "topicName": "Further Pure Mathematics 1",
+      "topicName": "Further Pure Mathematics Options",
       "paperReference": [
-        "FP1"
+        "3A",
+        "4A"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9FM0-FP1.1",
-          "subtopicName": "Further complex numbers; De Moivre's theorem; products and sums",
+          "subtopicId": "Edexcel-9FM0-2.1",
+          "subtopicName": "Use t-formulae, Taylor series, Leibniz theorem, L'Hospital's rule, Weierstrass substitution, series solutions of differential equations and conic sections.",
           "paperReference": [
-            "FP1"
+            "3A"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-ADVAN-DEMOI",
+              "nodeId": "TRIG-IDEN-IDEN-TANR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-DEMOI"
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-TANR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-MACL-TAYL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-MACL-TAYL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-LEIB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FDIFF-FDIFF-LEIB in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-FP1.2",
-          "subtopicName": "Further series; nth roots of unity; summation of series",
+          "subtopicId": "Edexcel-9FM0-2.1.2",
+          "subtopicName": "Use t-formulae, Taylor series, Leibniz theorem, L'Hospital's rule, Weierstrass substitution, series solutions of differential equations and conic sections.",
           "paperReference": [
-            "FP1"
+            "3A"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-MACLA",
+              "nodeId": "CALC-FINT-FINT-TRSUB",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-MACLA"
+              "matchReason": "Maps directly to CALC-FINT-FINT-TRSUB in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-LDE-SYSTEM-SER",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-LDE-SYSTEM-SER in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-CONI-CONI-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONI-CONI-PARA in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-FP1.3",
-          "subtopicName": "Carry out simple cases of integration by substitution and integration by parts; understand these methods as the inverse processes of the chain and product rules respectively.",
+          "subtopicId": "Edexcel-9FM0-2.2",
+          "subtopicName": "Use further vectors, numerical differential equations, Simpson's rule and advanced inequalities.",
           "paperReference": [
-            "FP1"
+            "3A"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-INTEG-SUBST",
+              "nodeId": "VECT-FURT-PROD-VECT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-SUBST"
+              "matchReason": "Maps directly to VECT-FURT-PROD-VECT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "VECT-FURT-PROD-TRIP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-PROD-TRIP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "NUMM-ODE-FDM-ODE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUMM-ODE-FDM-ODE in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-FP1.4",
-          "subtopicName": "Work with sequences including those given by a formula for the nth term and those generated by a simple relation of the form x(n+1) = f(xn); increasing sequences; decreasing sequences; periodic sequences.",
+          "subtopicId": "Edexcel-9FM0-2.2.2",
+          "subtopicName": "Use further vectors, numerical differential equations, Simpson's rule and advanced inequalities.",
           "paperReference": [
-            "FP1"
+            "3A"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-RECUR",
+              "nodeId": "NUMM-NINT-SIMP-ESTM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-RECUR"
+              "matchReason": "Maps directly to NUMM-NINT-SIMP-ESTM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-MODU",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-MODU in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-FP1.5",
-          "subtopicName": "Proof by contradiction (including proof of the irrationality of √2 and the infinity of primes, and application to unfamiliar proofs).",
+          "subtopicId": "Edexcel-9FM0-2.3",
+          "subtopicName": "Use groups, reduction formulae, arc length, surface area of revolution, advanced matrix algebra, complex transformations and number theory.",
           "paperReference": [
-            "FP1"
+            "4A"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-PROOF-CONTR",
+              "nodeId": "REAS-PROF-ARGM-LOGI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-PROOF-CONTR"
+              "matchReason": "Maps directly to REAS-PROF-ARGM-LOGI in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-FINT-REDU",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-FINT-REDU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-APPL-ARCL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-APPL-ARCL in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-9FM0-2.3.2",
+          "subtopicName": "Use groups, reduction formulae, arc length, surface area of revolution, advanced matrix algebra, complex transformations and number theory.",
+          "paperReference": [
+            "4A"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FINT-APPL-SURF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-APPL-SURF in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-EIG-DIAG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-EIG-DIAG in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-ROOT-LOCI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-ROOT-LOCI in the expanded knowledge tree."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9FM0-3",
+      "topicName": "Further Statistics Options",
+      "paperReference": [
+        "3B",
+        "4B"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "Edexcel-9FM0-3.1",
+          "subtopicName": "Use discrete probability distributions, Poisson, binomial, geometric and negative binomial distributions, hypothesis testing, central limit theorem, chi-squared tests and probability generating functions.",
+          "paperReference": [
+            "3B"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DRVD-DRVB-EXPV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DRVD-DRVB-EXPV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-DIST-POIS-MODE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DIST-POIS-MODE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-DIST-GEOM-MODE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DIST-GEOM-MODE in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-9FM0-3.1.2",
+          "subtopicName": "Use discrete probability distributions, Poisson, binomial, geometric and negative binomial distributions, hypothesis testing, central limit theorem, chi-squared tests and probability generating functions.",
+          "paperReference": [
+            "3B"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-NBIN-MODE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DIST-NBIN-MODE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-EST-ESTI-CLT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-EST-ESTI-CLT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-PGF-PGF-CONC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-PGF-PGF-CONC in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-9FM0-3.2",
+          "subtopicName": "Use quality of tests, Type I and Type II errors, size, power and power functions.",
+          "paperReference": [
+            "3B"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-ERRS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-TEST-HYPO-ERRS in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-SIGL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-TEST-HYPO-SIGL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-CRIT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-TEST-HYPO-CRIT in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-9FM0-3.3",
+          "subtopicName": "Use least squares regression, residuals, continuous probability distributions, PMCC, Spearman rank correlation, normal combinations, estimators, confidence intervals, normal, chi-squared, F and t tests.",
+          "paperReference": [
+            "4B"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-CORR-REG-LSR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-CORR-REG-LSR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-CORR-REG-RESID",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-CORR-REG-RESID in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-DIST-CRV-PDF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DIST-CRV-PDF in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "Edexcel-9FM0-3.3.2",
+          "subtopicName": "Use least squares regression, residuals, continuous probability distributions, PMCC, Spearman rank correlation, normal combinations, estimators, confidence intervals, normal, chi-squared, F and t tests.",
+          "paperReference": [
+            "4B"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-CORR-REG-PMCC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-CORR-REG-PMCC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-CORR-REG-SPEAR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-CORR-REG-SPEAR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-INF2-TDIST-TTEST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-TDIST-TTEST in the expanded knowledge tree."
             }
           ]
         }
@@ -743,480 +634,186 @@
     },
     {
       "topicId": "Edexcel-9FM0-4",
-      "topicName": "Further Mechanics 1",
+      "topicName": "Further Mechanics Options",
       "paperReference": [
-        "FM1"
+        "3C",
+        "4C"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9FM0-FM1.1",
-          "subtopicName": "Elastic collisions; coefficient of restitution; direct impact",
+          "subtopicId": "Edexcel-9FM0-4.1",
+          "subtopicName": "Use momentum, impulse, work, energy, power, elastic strings and springs, Hooke's law and elastic collisions in one and two dimensions.",
           "paperReference": [
-            "FM1"
+            "3C"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-MOMI-COLLI",
+              "nodeId": "MECH-FURT-IMP-IMPL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-MOMEN-COLLI"
+              "matchReason": "Maps directly to MECH-FURT-IMP-IMPL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-MOMI-LINM-CONS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-MOMI-LINM-CONS in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-ENER-WORK-CONS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-ENER-WORK-CONS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-FM1.2",
-          "subtopicName": "Understand and use addition of forces; resultant forces; dynamics for motion in a plane.",
+          "subtopicId": "Edexcel-9FM0-4.1.2",
+          "subtopicName": "Use momentum, impulse, work, energy, power, elastic strings and springs, Hooke's law and elastic collisions in one and two dimensions.",
           "paperReference": [
-            "FM1"
+            "3C"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-MOMI-IMPUL",
+              "nodeId": "MECH-FURT-ELAS-HOOK",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-MOMEN-IMPUL"
+              "matchReason": "Maps directly to MECH-FURT-ELAS-HOOK in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-ELAS-EPE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-ELAS-EPE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-IMP-OIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-OIMP in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-FM1.3",
-          "subtopicName": "Understand and use fundamental quantities and units in the SI system.",
+          "subtopicId": "Edexcel-9FM0-4.2",
+          "subtopicName": "Use circular motion, vertical circles, centres of mass, moments and rigid-body equilibrium.",
           "paperReference": [
-            "FM1"
+            "4C"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-ENERG-WORK",
+              "nodeId": "MECH-FURT-CIRC-ANGS",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-ENERG-WORK"
+              "matchReason": "Maps directly to MECH-FURT-CIRC-ANGS in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-CIRC-RACC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-CIRC-RACC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-CIRC-VCIR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-CIRC-VCIR in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-FM1.4",
-          "subtopicName": "Understand and use Newton's second law for motion in a straight line.",
+          "subtopicId": "Edexcel-9FM0-4.2.2",
+          "subtopicName": "Use circular motion, vertical circles, centres of mass, moments and rigid-body equilibrium.",
           "paperReference": [
-            "FM1"
+            "4C"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-ENERG-CONSE",
+              "nodeId": "MECH-FURT-RIGD-COM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-ENERG-CONSE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-FM1.5",
-          "subtopicName": "Simple harmonic motion; SHM equations",
-          "paperReference": [
-            "FM1"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to MECH-FURT-RIGD-COM in the expanded knowledge tree."
+            },
             {
-              "nodeId": "MECH-FURTH-SHM",
+              "nodeId": "MECH-FURT-RIGD-MOMT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FURTH-SHM"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-FM1.6",
-          "subtopicName": "Circular motion; radial acceleration; conical pendulum",
-          "paperReference": [
-            "FM1"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to MECH-FURT-RIGD-MOMT in the expanded knowledge tree."
+            },
             {
-              "nodeId": "MECH-FURTH-CIRCU",
+              "nodeId": "MECH-FURT-RIGD-RBAL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FURTH-CIRCU"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FM1-4",
-          "subtopicName": "Direct impact of elastic spheres. Newton's law of restitution. Loss of kinetic energy due to impact. Successive direct impacts of spheres and/or a sphere with a smooth plane surface.",
-          "paperReference": [
-            "FM1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-EC1D",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4C: Further Mechanics 1, Section 4.1-4.2"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FM1-3.2",
-          "subtopicName": "Problems using the work-energy principle involving kinetic energy, potential energy and elastic energy may be set.",
-          "paperReference": [
-            "FM1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-WEP",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4C: Further Mechanics 1, Section 3.2"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FM1-5",
-          "subtopicName": "Oblique impact of smooth elastic spheres and a smooth sphere with a fixed surface. Problems may be set in vector form.",
-          "paperReference": [
-            "FM1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-IV",
-              "matchStrength": "strong",
-              "matchReason": "Paper 4C: Further Mechanics 1, Section 5.1 (vector form impulse)"
+              "matchReason": "Maps directly to MECH-FURT-RIGD-RBAL in the expanded knowledge tree."
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-9FM0-6",
-      "topicName": "Further Statistics 1",
+      "topicId": "Edexcel-9FM0-5",
+      "topicName": "Decision Mathematics Options",
       "paperReference": [
-        "FS1"
+        "3D",
+        "4D"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9FM0-FS1.1",
-          "subtopicName": "Poisson distribution; mean and variance; Poisson as approximation to binomial",
+          "subtopicId": "Edexcel-9FM0-5.1",
+          "subtopicName": "Use graph terminology, algorithms, minimum spanning trees, shortest paths, route inspection and travelling salesperson methods.",
           "paperReference": [
-            "FS1"
+            "3D"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-DISTR-POISS",
+              "nodeId": "DISC-GRAPH-GRAPH-TERM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DISTR-POISS"
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-TERM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-ALGO-ALGO-SORT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-SORT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-MST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-MST in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-FS1.2",
-          "subtopicName": "Continuous random variables; PDF and CDF",
+          "subtopicId": "Edexcel-9FM0-5.1.2",
+          "subtopicName": "Use graph terminology, algorithms, minimum spanning trees, shortest paths, route inspection and travelling salesperson methods.",
           "paperReference": [
-            "FS1"
+            "3D"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-CRV-PC",
+              "nodeId": "DISC-GRAPH-GRAPH-SHOR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-PC"
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-SHOR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-TRAV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-TRAV in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-FS1.3",
-          "subtopicName": "Mean, variance, mode, median of continuous RV",
+          "subtopicId": "Edexcel-9FM0-5.2",
+          "subtopicName": "Use matching, network flow, allocation, critical path analysis, dynamic programming and linear programming techniques.",
           "paperReference": [
-            "FS1"
+            "4D"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-CRV-MV",
+              "nodeId": "DISC-ALGO-ALGO-MATCH",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-MV"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-FS1.4",
-          "subtopicName": "Continuous uniform (rectangular) distribution",
-          "paperReference": [
-            "FS1"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-MATCH in the expanded knowledge tree."
+            },
             {
-              "nodeId": "STAT-CRV-CU",
+              "nodeId": "DISC-ALGO-ALGO-FLOW",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-CU"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-FS1.5",
-          "subtopicName": "Understand and apply the language of statistical hypothesis testing, developed through a binomial model: null hypothesis, alternative hypothesis, significance level, test statistic, 1-tail test, 2-tail test, critical value, critical region, acceptance region, p-value.",
-          "paperReference": [
-            "FS1"
-          ],
-          "mappedNodes": [
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-FLOW in the expanded knowledge tree."
+            },
             {
-              "nodeId": "STAT-HYPOT-TESTS",
+              "nodeId": "DISC-ALGO-ALGO-LP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-HYPOT-TESTS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-FS1.5",
-          "subtopicName": "Chi-squared contingency tables; degrees of freedom",
-          "paperReference": [
-            "FS1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-HYPOT-CS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-HYPOT-CS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-FS1.5",
-          "subtopicName": "Confidence intervals for mean; t-distribution",
-          "paperReference": [
-            "FS1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-HYPOT-CI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-HYPOT-CI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FS1-6",
-          "subtopicName": "Goodness of fit tests and Contingency Tables. Applications to include the discrete uniform, binomial, Poisson and geometric distributions. The use of sum((O_i - E_i)^2 / E_i) as an approximate chi-squared statistic.",
-          "paperReference": [
-            "FS1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-GOF",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4B: Further Statistics 1, Section 6.1"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FS1-7",
-          "subtopicName": "Probability generating functions: definitions, derivations and applications. Use of the probability generating function for the negative binomial, geometric, binomial and Poisson distributions. Use to find the mean and variance. G_{X+Y}(t) = G_X(t) x G_Y(t).",
-          "paperReference": [
-            "FS1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-PGF",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4B: Further Statistics 1, Section 7.1-7.3"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FS1-8",
-          "subtopicName": "Type I and Type II errors. Calculation of the probability of a Type I or Type II error. Use of Type I and Type II errors and power function to indicate effectiveness of statistical tests.",
-          "paperReference": [
-            "FS1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-ERRORS",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4B: Further Statistics 1, Section 8.1"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FS1-8.2",
-          "subtopicName": "Size and Power of Test. The power function.",
-          "paperReference": [
-            "FS1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-POWER",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4B: Further Statistics 1, Section 8.1 (power)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-9FM0-Further-Mechanics-2",
-      "topicName": "Further Mechanics 2",
-      "paperReference": [
-        "FM2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "9FM0-FM2-1.2",
-          "subtopicName": "Motion of a particle in a vertical circle. Radial and tangential acceleration in circular motion. Kinetic and potential energy and the conservation of energy principle applied to motion in a vertical circle.",
-          "paperReference": [
-            "FM2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-VC",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4C: Further Mechanics 2, Section 1.2"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FM2-2.2",
-          "subtopicName": "Centre of mass of uniform plane figures, and of composite plane figures. Centre of mass of composite frameworks. Equilibrium of a plane lamina or framework under the action of coplanar forces.",
-          "paperReference": [
-            "FM2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-CM-COMPO",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4C: Further Mechanics 2, Section 2.2"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FM2-3.2",
-          "subtopicName": "Equilibrium of rigid bodies under the action of coplanar forces. To include (i) suspension of a body from a fixed point, (ii) a rigid body placed on a horizontal or inclined plane.",
-          "paperReference": [
-            "FM2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-CM-SUSP",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4C: Further Mechanics 2, Section 3.2"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FM2-3.1",
-          "subtopicName": "Centre of mass of uniform and non-uniform rigid bodies and composite bodies. Problems which involve the use of integration and/or symmetry to determine the centre of mass.",
-          "paperReference": [
-            "FM2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-CM-SOLID",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4C: Further Mechanics 2, Section 3.1"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FM2-3.3",
-          "subtopicName": "Toppling and sliding of a rigid body on a rough plane.",
-          "paperReference": [
-            "FM2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-STAT",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4C: Further Mechanics 2, Section 3.3"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FM2-4.1",
-          "subtopicName": "Newton's laws of motion, for a particle moving in one dimension, when the applied force is variable. Problems may involve the law of gravitation, i.e. the inverse square law.",
-          "paperReference": [
-            "FM2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-WDVF",
-              "matchStrength": "strong",
-              "matchReason": "Paper 4C: Further Mechanics 2, Section 4.1 (variable force)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-9FM0-Further-Statistics-2",
-      "topicName": "Further Statistics 2",
-      "paperReference": [
-        "FS2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "9FM0-FS2-4",
-          "subtopicName": "Distribution of linear combinations of independent Normal random variables. If X ~ N(mu_x, sigma_x^2) and Y ~ N(mu_y, sigma_y^2) independently, then aX +/- bY ~ N(a*mu_x +/- b*mu_y, a^2*sigma_x^2 + b^2*sigma_y^2).",
-          "paperReference": [
-            "FS2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-CRV",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4B: Further Statistics 2, Section 4.1"
-            }
-          ]
-        },
-        {
-          "subtopicId": "9FM0-FS2-5.1",
-          "subtopicName": "Concepts of standard error, estimator, bias. The sample mean and the sample variance as unbiased estimates. Quality of estimators.",
-          "paperReference": [
-            "FS2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-SD",
-              "matchStrength": "exact",
-              "matchReason": "Paper 4B: Further Statistics 2, Section 5.1"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-9FM0-Further-Pure",
-      "topicName": "Further Pure",
-      "paperReference": [
-        "Core Pure 2",
-        "Core Pure 1"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "9FM0-CP-4",
-          "subtopicName": "Maclaurin series of a function including the general term. Recognise and use the Maclaurin series for e^x, ln(1+x), sin x, cos x, and (1+x)^n.",
-          "paperReference": [
-            "Core Pure 1",
-            "Core Pure 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQUE-SERIES",
-              "matchStrength": "strong",
-              "matchReason": "Core Pure Mathematics: series expansions"
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-LP in the expanded knowledge tree."
             }
           ]
         }
       ]
     }
-  ],
-  "paperStructure": {
-    "papers": [
-      "Core Pure 1",
-      "Core Pure 2",
-      "FP1",
-      "FP2",
-      "FS1",
-      "FS2",
-      "FM1",
-      "FM2",
-      "D1",
-      "D2"
-    ],
-    "compulsory": [
-      "Core Pure 1",
-      "Core Pure 2"
-    ],
-    "asOnly": [],
-    "alevelOnly": [
-      "Core Pure 2"
-    ],
-    "applicationGroups": [],
-    "mutuallyExclusive": []
-  }
+  ]
 }

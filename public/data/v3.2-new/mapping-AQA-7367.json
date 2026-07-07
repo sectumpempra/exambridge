@@ -3,30 +3,284 @@
   "subjectCode": "7367",
   "subjectName": "A-Level Further Mathematics",
   "level": "A-Level",
-  "version": "1.0",
-  "totalTopics": 12,
-  "mappedTopics": 12,
+  "version": "1.0-batch3",
+  "totalTopics": 4,
+  "mappedTopics": 4,
+  "paperStructure": {
+    "papers": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "compulsory": [
+      "P1",
+      "P2"
+    ],
+    "asOnly": [],
+    "alevelOnly": [
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "applicationGroups": [
+      [
+        "P3"
+      ],
+      [
+        "P3"
+      ],
+      [
+        "P3"
+      ]
+    ],
+    "mutuallyExclusive": []
+  },
   "mappings": [
     {
       "topicId": "AQA-7367-1",
-      "topicName": "Proof",
+      "topicName": "Further Pure Mathematics",
       "paperReference": [
-        "Paper 1",
-        "Paper 2"
+        "P1",
+        "P2"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-7367-CP.1",
-          "subtopicName": "Proof by contradiction (including proof of the irrationality of √2 and the infinity of primes, and application to unfamiliar proofs).",
+          "subtopicId": "AQA-7367-1.1",
+          "subtopicName": "Use mathematical induction, proof, complex numbers, Argand diagrams, loci, de Moivre's theorem and roots of unity.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P1",
+            "P2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-PROOF-CONTR",
+              "nodeId": "REAS-PROF-PROF-DEDU",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-PROOF-CONTR"
+              "matchReason": "Maps directly to REAS-PROF-PROF-DEDU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-BASIC-ARGD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-BASIC-ARGD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-ROOT-LOCI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-ROOT-LOCI in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.1.2",
+          "subtopicName": "Use mathematical induction, proof, complex numbers, Argand diagrams, loci, de Moivre's theorem and roots of unity.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-DEMO-THM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-DEMO-THM in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.2",
+          "subtopicName": "Use matrices, determinants, inverses, transformations, eigenvalues, eigenvectors and diagonalisation.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-OPS-MULT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-OPS-MULT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-INV-DET",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-INV-DET in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-TRAN-2D",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-TRAN-2D in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.2.2",
+          "subtopicName": "Use matrices, determinants, inverses, transformations, eigenvalues, eigenvectors and diagonalisation.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-EIG-DIAG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-EIG-DIAG in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.3",
+          "subtopicName": "Use roots of polynomial equations, summation, series, method of differences and Maclaurin or Taylor series.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-ROOT-ROOT-REL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-ROOT-ROOT-REL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-SUMS-SUMR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-SUMS-SUMR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-SUMS-DIFF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-SUMS-DIFF in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.3.2",
+          "subtopicName": "Use roots of polynomial equations, summation, series, method of differences and Maclaurin or Taylor series.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-SER-MACL-MACL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-MACL-MACL in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.4",
+          "subtopicName": "Use polar coordinates, hyperbolic functions and advanced trigonometric or inverse functions.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-POLR-POLR-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-POLR-POLR-CONV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-POLR-POLR-SKET",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-POLR-POLR-SKET in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-HYP-HYP-DEFN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-HYP-HYP-DEFN in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.4.2",
+          "subtopicName": "Use polar coordinates, hyperbolic functions and advanced trigonometric or inverse functions.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-HYP-HYP-IDEN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-HYP-HYP-IDEN in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.5",
+          "subtopicName": "Use advanced differentiation, integration, reduction formulae, arc length, surface area and differential equations.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-INVTR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FDIFF-FDIFF-INVTR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-FINT-REDU",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-FINT-REDU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-APPL-ARCL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-APPL-ARCL in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.5.2",
+          "subtopicName": "Use advanced differentiation, integration, reduction formulae, arc length, surface area and differential equations.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SECOND-CFPI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-LDE-SECOND-CFPI in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.6",
+          "subtopicName": "Use three-dimensional vectors, scalar products, vector products, lines, planes, intersections and distances.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-LINES-LINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-LINES-LINE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "VECT-FURT-LINES-PLANE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-LINES-PLANE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "VECT-FURT-PROD-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-PROD-SCAL in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7367-1.6.2",
+          "subtopicName": "Use three-dimensional vectors, scalar products, vector products, lines, planes, intersections and distances.",
+          "paperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-PROD-VECT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-PROD-VECT in the expanded knowledge tree."
             }
           ]
         }
@@ -34,174 +288,122 @@
     },
     {
       "topicId": "AQA-7367-2",
-      "topicName": "Complex numbers",
+      "topicName": "Further Mechanics",
       "paperReference": [
-        "Paper 1",
-        "Paper 2"
+        "P3"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "Complex numbers: real/imaginary parts; conjugate; equality",
+          "subtopicId": "AQA-7367-2.1",
+          "subtopicName": "Use momentum, impulse, restitution and direct or oblique collision models.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-BASIC-DEFIN",
+              "nodeId": "MECH-FURT-IMP-IMPL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-BASIC-DEFIN"
+              "matchReason": "Maps directly to MECH-FURT-IMP-IMPL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-IMP-REST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-REST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-IMP-DIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-DIMP in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "Cartesian operations: +, -, x, /",
+          "subtopicId": "AQA-7367-2.1.2",
+          "subtopicName": "Use momentum, impulse, restitution and direct or oblique collision models.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-BASIC-CO",
+              "nodeId": "MECH-FURT-IMP-OIMP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-BASIC-CO"
+              "matchReason": "Maps directly to MECH-FURT-IMP-OIMP in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "Conjugate; conjugate roots of polynomials with real coefficients",
+          "subtopicId": "AQA-7367-2.2",
+          "subtopicName": "Use projectile motion, circular motion, work, energy, power and variable-force models.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-BASIC-CONJU",
+              "nodeId": "MECH-FURT-PROJ-HV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-BASIC-CONJU"
+              "matchReason": "Maps directly to MECH-FURT-PROJ-HV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-CIRC-RACC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-CIRC-RACC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-ENER-WORK-CONS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-ENER-WORK-CONS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "Argand diagram; geometric representation",
+          "subtopicId": "AQA-7367-2.2.2",
+          "subtopicName": "Use projectile motion, circular motion, work, energy, power and variable-force models.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-GEOME-ARGAN",
+              "nodeId": "MECH-FURT-VARF-DEQ",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-GEOME-ARGAN"
+              "matchReason": "Maps directly to MECH-FURT-VARF-DEQ in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "Modulus and argument; polar form",
+          "subtopicId": "AQA-7367-2.3",
+          "subtopicName": "Use rigid body equilibrium, centres of mass, moments, elastic strings and springs.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-GEOME-MA",
+              "nodeId": "MECH-FURT-RIGD-MOMT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-GEOME-MA"
+              "matchReason": "Maps directly to MECH-FURT-RIGD-MOMT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-COM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-RIGD-COM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-ELAS-HOOK",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-ELAS-HOOK in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "Polar form multiplication and division",
+          "subtopicId": "AQA-7367-2.3.2",
+          "subtopicName": "Use rigid body equilibrium, centres of mass, moments, elastic strings and springs.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COMPL-GEOME-PO",
+              "nodeId": "MECH-FURT-ELAS-EPE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-GEOME-PO"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "De Moivre's theorem; powers of complex numbers",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COMPL-ADVAN-DEMOI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-DEMOI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "nth roots of complex numbers; solving z^n = a",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COMPL-ADVAN-NR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-NR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "nth roots of unity; geometric interpretation",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COMPL-ADVAN-RU",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-RU"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "Loci in Argand diagram; |z-a|=k, |z-a|=|z-b|, arg(z-a)=alpha",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COMPL-GEOME-LOCI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-GEOME-LOCI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.2",
-          "subtopicName": "Exponential form e^(i*theta); Euler's relation",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COMPL-ADVAN-EXPON",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COMPL-ADVAN-EXPON"
+              "matchReason": "Maps directly to MECH-FURT-ELAS-EPE in the expanded knowledge tree."
             }
           ]
         }
@@ -209,113 +411,122 @@
     },
     {
       "topicId": "AQA-7367-3",
-      "topicName": "Matrices",
+      "topicName": "Further Statistics",
       "paperReference": [
-        "Paper 1",
-        "Paper 2"
+        "P3"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-7367-CP.3",
-          "subtopicName": "Matrix operations: +, -, x; properties",
+          "subtopicId": "AQA-7367-3.1",
+          "subtopicName": "Use discrete and continuous random variables, probability density functions and probability generating functions.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-OPERA-ASM",
+              "nodeId": "PROB-DRVD-DRVB-DIST",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-OPERA-ASM"
+              "matchReason": "Maps directly to PROB-DRVD-DRVB-DIST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-DIST-CRV-PDF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DIST-CRV-PDF in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-PGF-PGF-CONC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-PGF-PGF-CONC in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.3",
-          "subtopicName": "Determinant of 2x2 and 3x3 matrices; singular matrices",
+          "subtopicId": "AQA-7367-3.1.2",
+          "subtopicName": "Use discrete and continuous random variables, probability density functions and probability generating functions.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-OPERA-DETER",
+              "nodeId": "PROB-PGF-PGF-MEAN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-OPERA-DETER"
+              "matchReason": "Maps directly to PROB-PGF-PGF-MEAN in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.3",
-          "subtopicName": "Inverse of 2x2 and 3x3 matrices; cofactor method",
+          "subtopicId": "AQA-7367-3.2",
+          "subtopicName": "Use standard statistical distributions, estimation, confidence intervals and hypothesis tests.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-OPERA-INVER",
+              "nodeId": "PROB-DIST-POIS-PROB",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-OPERA-INVER"
+              "matchReason": "Maps directly to PROB-DIST-POIS-PROB in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-EST-ESTI-CLT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-EST-ESTI-CLT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-INF2-TDIST-TTEST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-TDIST-TTEST in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.3",
-          "subtopicName": "Linear transformations in 2D; matrix representation; invariant points/lines",
+          "subtopicId": "AQA-7367-3.2.2",
+          "subtopicName": "Use standard statistical distributions, estimation, confidence intervals and hypothesis tests.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-TRANS-2D",
+              "nodeId": "STAT-INF2-TDIST-TCI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-TRANS-2D"
+              "matchReason": "Maps directly to STAT-INF2-TDIST-TCI in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.3",
-          "subtopicName": "Linear transformations in 3D",
+          "subtopicId": "AQA-7367-3.3",
+          "subtopicName": "Use chi-squared tests, correlation, regression and non-parametric tests where specified.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-TRANS-3D",
+              "nodeId": "STAT-INF2-CHISQ-GOF",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-TRANS-3D"
+              "matchReason": "Maps directly to STAT-INF2-CHISQ-GOF in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-INF2-CHISQ-INDEP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-CHISQ-INDEP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-CORR-REG-PMCC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-CORR-REG-PMCC in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.3",
-          "subtopicName": "Eigenvalues and eigenvectors; diagonalisation; Cayley-Hamilton",
+          "subtopicId": "AQA-7367-3.3.2",
+          "subtopicName": "Use chi-squared tests, correlation, regression and non-parametric tests where specified.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MAT-TRANS-EIGEN",
+              "nodeId": "STAT-INF2-NONP-SIGN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MAT-TRANS-EIGEN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "7367-C4",
-          "subtopicName": "Find invariant points and lines for a linear transformation.",
-          "paperReference": [
-            "Paper 1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MAT-TRANS-IL",
-              "matchStrength": "exact",
-              "matchReason": "C4"
+              "matchReason": "Maps directly to STAT-INF2-NONP-SIGN in the expanded knowledge tree."
             }
           ]
         }
@@ -323,966 +534,126 @@
     },
     {
       "topicId": "AQA-7367-4",
-      "topicName": "Further algebra and functions",
+      "topicName": "Discrete and Decision Mathematics",
       "paperReference": [
-        "Paper 1",
-        "Paper 2"
+        "P3"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-7367-CP.4",
-          "subtopicName": "Decompose rational functions into partial fractions (denominators not more complicated than squared linear terms and with no more than 3 terms, numerators constant or linear).",
+          "subtopicId": "AQA-7367-4.1",
+          "subtopicName": "Use graph terminology, Eulerian and Hamiltonian properties, planarity, trees and network algorithms.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-POLYN-PF",
+              "nodeId": "DISC-GRAPH-GRAPH-TERM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-POLYN-PF"
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-TERM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-MST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-MST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-SHOR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-SHOR in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.4",
-          "subtopicName": "Maclaurin series; standard expansions; Taylor series; validity",
+          "subtopicId": "AQA-7367-4.1.2",
+          "subtopicName": "Use graph terminology, Eulerian and Hamiltonian properties, planarity, trees and network algorithms.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-MACLA",
+              "nodeId": "DISC-GRAPH-GRAPH-TRAV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-MACLA"
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-TRAV in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.4",
-          "subtopicName": "Understand and work with arithmetic sequences and series, including the formulae for nth term and the sum to n terms.",
+          "subtopicId": "AQA-7367-4.2",
+          "subtopicName": "Use algorithms, sorting, matching, network flows and linear programming.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-ARITH",
+              "nodeId": "DISC-ALGO-ALGO-SORT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-ARITH"
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-SORT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-ALGO-ALGO-MATCH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-MATCH in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-ALGO-ALGO-FLOW",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-FLOW in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "7367-D5-6",
-          "subtopicName": "Find the Maclaurin series of a function including the general term. Recognise and use the Maclaurin series for e^x, ln(1+x), sin x, cos x, and (1+x)^n.",
+          "subtopicId": "AQA-7367-4.2.2",
+          "subtopicName": "Use algorithms, sorting, matching, network flows and linear programming.",
           "paperReference": [
-            "Paper 1"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-SERIES",
+              "nodeId": "DISC-ALGO-ALGO-LP",
               "matchStrength": "exact",
-              "matchReason": "D5, D6"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-5",
-      "topicName": "Further calculus",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "AQA-7367-CP.5",
-          "subtopicName": "Carry out simple cases of integration by substitution and integration by parts; understand these methods as the inverse processes of the chain and product rules respectively.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-SUBST",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-SUBST"
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-LP in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.5",
-          "subtopicName": "Carry out simple cases of integration by substitution and integration by parts; understand these methods as the inverse processes of the chain and product rules respectively.",
+          "subtopicId": "AQA-7367-4.3",
+          "subtopicName": "Use critical path analysis, cascade charts, resource levelling and zero-sum game theory.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-INTEG-BP",
+              "nodeId": "DISC-PROJ-PROJ-CPA",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-BP"
+              "matchReason": "Maps directly to DISC-PROJ-PROJ-CPA in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-PROJ-PROJ-GANT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-PROJ-PROJ-GANT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-PROJ-PROJ-RESL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-PROJ-PROJ-RESL in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-7367-CP.5",
-          "subtopicName": "Integrate using partial fractions that are linear in the denominator.",
+          "subtopicId": "AQA-7367-4.3.2",
+          "subtopicName": "Use critical path analysis, cascade charts, resource levelling and zero-sum game theory.",
           "paperReference": [
-            "Paper 1",
-            "Paper 2"
+            "P3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-INTEG-PF",
+              "nodeId": "DISC-PROJ-PROJ-GAME",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-PF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.5",
-          "subtopicName": "Differentiation of inverse trigonometric functions",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-SF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-SF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.5",
-          "subtopicName": "Integrate e^(kx), 1/x, sin(kx), cos(kx) and related sums, differences and constant multiples.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-SF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-SF"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-6",
-      "topicName": "Further vectors",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "AQA-7367-CP.6",
-          "subtopicName": "Use vectors to solve problems in pure mathematics and in context, including forces and kinematics.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-LE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-LE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.6",
-          "subtopicName": "Vector equation of plane; r = a + sb + tc; r . n = d; Cartesian form",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-FURTH-PLANE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-FURTH-PLANE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.6",
-          "subtopicName": "Use vectors to solve problems in pure mathematics and in context, including forces and kinematics.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-SP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-SP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.6",
-          "subtopicName": "Cross (vector) product; area of parallelogram/triangle",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-FURTH-CP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-FURTH-CP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.6",
-          "subtopicName": "Scalar triple product; volume of parallelepiped/tetrahedron",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-FURTH-TP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-FURTH-TP"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-7",
-      "topicName": "Polar coordinates",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "AQA-7367-CP.7",
-          "subtopicName": "Polar coordinates; equations of curves; sketching",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COG-POLAR-EQUAT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-POLAR-EQUAT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.7",
-          "subtopicName": "Area enclosed by polar curve; 1/2 r^2 d(theta)",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COG-POLAR-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-POLAR-AREA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.7",
-          "subtopicName": "Conversion between polar and Cartesian coordinates",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COG-POLAR-CONVE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-POLAR-CONVE"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-8",
-      "topicName": "Hyperbolic functions",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "AQA-7367-CP.8",
-          "subtopicName": "Hyperbolic functions: sinh, cosh, tanh; definitions and graphs",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "HYP-DEFIN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to HYP-DEFIN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.8",
-          "subtopicName": "Hyperbolic identities: cosh^2 - sinh^2 = 1; Osborne's rule",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "HYP-IDENT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to HYP-IDENT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.8",
-          "subtopicName": "Differentiation and integration of hyperbolic functions; inverse hyperbolic",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "HYP-CALCU",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to HYP-CALCU"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-9",
-      "topicName": "Differential equations",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "AQA-7367-CP.9",
-          "subtopicName": "Evaluate the analytical solution of simple first order differential equations with separable variables, including finding particular solutions.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DE-FOS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-FOS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.9",
-          "subtopicName": "Second order linear DEs; auxiliary equation; complementary function; particular integral",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DE-SO",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-SO"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-CP.9",
-          "subtopicName": "Construct simple differential equations in pure mathematics and in context.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DE-FORMA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-FORMA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "7367-I9",
-          "subtopicName": "Analyse and interpret models of situations with one independent variable and two dependent variables as a pair of coupled 1st order simultaneous equations and be able to solve them, for example predator-prey models.",
-          "paperReference": [
-            "Paper 1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DE-SIMUL",
-              "matchStrength": "exact",
-              "matchReason": "I9"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-10",
-      "topicName": "Further Mechanics",
-      "paperReference": [
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "AQA-7367-FM.1",
-          "subtopicName": "Further mechanics: circular motion; radial acceleration; conical pendulum; vertical circle",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-CIRCU",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FURTH-CIRCU"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FM.2",
-          "subtopicName": "Simple harmonic motion; x'' = -omega^2 x; period; amplitude; elastic strings/springs",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-SHM",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FURTH-SHM"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FM.3",
-          "subtopicName": "Elastic strings and springs; Hooke's law; elastic potential energy",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-ELAST",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FURTH-ELAST"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FM.4",
-          "subtopicName": "Elastic collisions; coefficient of restitution; direct impact; successive impacts",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-MOMI-COLLI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-MOMEN-COLLI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FM.5",
-          "subtopicName": "Centres of mass: discrete; uniform lamina; composite bodies; equilibrium",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-CM-COMPO",
-              "matchStrength": "exact",
-              "matchReason": "Redirected from MECH-FURTH-CM to leaf node"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-11",
-      "topicName": "Further Statistics",
-      "paperReference": [
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "AQA-7367-FS.1",
-          "subtopicName": "Poisson distribution; mean=variance=lambda; Poisson as approximation to binomial",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DISTR-POISS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DISTR-POISS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FS.2",
-          "subtopicName": "Continuous random variables; PDF; CDF; F'(x) = f(x)",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-CRV-PC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-PC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FS.3",
-          "subtopicName": "Mean, variance, mode, median of continuous RV",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-CRV-MV",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-MV"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FS.4",
-          "subtopicName": "Continuous uniform (rectangular) distribution; mean and variance",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-CRV-CU",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-CU"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FS.5",
-          "subtopicName": "Understand and apply the language of statistical hypothesis testing, developed through a binomial model: null hypothesis, alternative hypothesis, significance level, test statistic, 1-tail test, 2-tail test, critical value, critical region, acceptance region, p-value.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-HYPOT-TESTS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-HYPOT-TESTS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FS.5",
-          "subtopicName": "Chi-squared tests: goodness of fit; contingency tables; degrees of freedom",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-HYPOT-CS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-HYPOT-CS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FS.5",
-          "subtopicName": "Confidence intervals for mean; large samples; t-distribution",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-HYPOT-CI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-HYPOT-CI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FS.6",
-          "subtopicName": "Understand and use simple, discrete probability distributions.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DR-LC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DR-LC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-12",
-      "topicName": "Decision Mathematics",
-      "paperReference": [
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "AQA-7367-FD.1",
-          "subtopicName": "Decision maths: algorithms; sorting; searching",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "DEC-ALGOR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to DEC-ALGOR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FD.2",
-          "subtopicName": "Graph theory; networks; shortest path; minimum spanning tree",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "DEC-GRAPH",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to DEC-GRAPH"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FD.3",
-          "subtopicName": "Linear programming; graphical method; simplex",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "DEC-LP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to DEC-LP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7367-FD.4",
-          "subtopicName": "Critical path analysis; Gantt charts; scheduling",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "DEC-CP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to DEC-CP"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-Momentum-and-collisi",
-      "topicName": "Momentum and collisions",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "7367-MB2",
-          "subtopicName": "Coefficient of restitution and Newton's Experimental Law. Use in direct collisions and impacts with a fixed smooth surface.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-EC1D",
-              "matchStrength": "exact",
-              "matchReason": "MB2"
-            }
-          ]
-        },
-        {
-          "subtopicId": "7367-MB3",
-          "subtopicName": "Impulse and its relation to momentum. Use of Ft = mv - mu. Problems which require resolving.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-IV",
-              "matchStrength": "exact",
-              "matchReason": "MB3"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-Work,-energy-and-pow",
-      "topicName": "Work, energy and power",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "7367-MC1-3",
-          "subtopicName": "Work done by a force acting in the direction of motion or directly opposing the motion. Use of WD = Fd cos(theta). Gravitational potential energy. Kinetic energy. Use in conservation of energy problems.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-WEP",
-              "matchStrength": "exact",
-              "matchReason": "MC1, MC2, MC3"
-            }
-          ]
-        },
-        {
-          "subtopicId": "7367-MC5",
-          "subtopicName": "Work done by a variable force. Use of WD = integral of F dx. Use in conservation of energy problems.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-WDVF",
-              "matchStrength": "exact",
-              "matchReason": "MC5"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-Circular-motion",
-      "topicName": "Circular motion",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "7367-MD6",
-          "subtopicName": "Circular motion in a vertical plane. Includes conditions to complete vertical circles. Use of conservation of energy in this context.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-VC",
-              "matchStrength": "exact",
-              "matchReason": "MD6"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-Centres-of-mass-and-",
-      "topicName": "Centres of mass and moments",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "7367-ME2",
-          "subtopicName": "Centre of mass for a composite body.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-CM-COMPO",
-              "matchStrength": "exact",
-              "matchReason": "ME2"
-            }
-          ]
-        },
-        {
-          "subtopicId": "7367-ME5",
-          "subtopicName": "Conditions for sliding and toppling. Problems including suspension and on an inclined plane.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-CM-SUSP",
-              "matchStrength": "exact",
-              "matchReason": "ME5"
-            }
-          ]
-        },
-        {
-          "subtopicId": "7367-ME3-4",
-          "subtopicName": "Centre of mass of a lamina by integration. Centres of mass of bodies formed by rotating a region about the x-axis.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-CM-SOLID",
-              "matchStrength": "exact",
-              "matchReason": "ME3, ME4"
-            }
-          ]
-        },
-        {
-          "subtopicId": "7367-ME6",
-          "subtopicName": "Determine the forces acting on a rigid body in equilibrium. Use of moments and couples.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FURTH-STAT",
-              "matchStrength": "strong",
-              "matchReason": "ME6 (equilibrium with friction)"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-Type-I-and-Type-II-e",
-      "topicName": "Type I and Type II errors",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "7367-SC1",
-          "subtopicName": "Understand Type I and Type II errors and define in context. Calculate the probability of making a Type I error from tests based on a Poisson or Binomial distribution. Calculate probability of making Type I error from tests based on a normal distribution.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-ERRORS",
-              "matchStrength": "exact",
-              "matchReason": "SC1"
-            }
-          ]
-        },
-        {
-          "subtopicId": "7367-SC2",
-          "subtopicName": "Understand the power of a test. Calculations of P(Type II error) and power for a test for tests based on a normal, Binomial or a Poisson distribution.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-POWER",
-              "matchStrength": "exact",
-              "matchReason": "SC2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-Continuous-random-va",
-      "topicName": "Continuous random variables",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "7367-SD8",
-          "subtopicName": "Know that if X and Y are independent (discrete or continuous) random variables then E(X+Y) = E(X) + E(Y) and Var(X+Y) = Var(X) + Var(Y).",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-CRV",
-              "matchStrength": "exact",
-              "matchReason": "SD8"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7367-Chi-squared-tests-fo",
-      "topicName": "Chi squared tests for association",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "7367-SE5",
-          "subtopicName": "Knowledge of when and how to apply Yates' correction.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-YC",
-              "matchStrength": "exact",
-              "matchReason": "SE5"
-            }
-          ]
-        },
-        {
-          "subtopicId": "7367-SE2-3",
-          "subtopicName": "Use of (O_i - E_i)^2 / E_i as an approximate chi-squared statistic with appropriate degrees of freedom. Know and use the convention that all E_i should be greater than 5.",
-          "paperReference": [
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-FURTH-GOF",
-              "matchStrength": "strong",
-              "matchReason": "SE2, SE3, SE4"
+              "matchReason": "Maps directly to DISC-PROJ-PROJ-GAME in the expanded knowledge tree."
             }
           ]
         }
       ]
     }
-  ],
-  "paperStructure": {
-    "papers": [
-      "Paper 1",
-      "Paper 2"
-    ],
-    "compulsory": [
-      "Paper 1",
-      "Paper 2"
-    ],
-    "asOnly": [],
-    "alevelOnly": [],
-    "applicationGroups": [],
-    "mutuallyExclusive": []
-  }
+  ]
 }

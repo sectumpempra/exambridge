@@ -1,226 +1,292 @@
 {
   "board": "Edexcel",
   "subjectCode": "IAL",
-  "subjectName": "International Advanced Level Mathematics",
+  "subjectName": "International Advanced Level Mathematics, Further Mathematics and Pure Mathematics",
   "level": "A-Level",
-  "version": "1.0",
-  "totalTopics": 6,
-  "mappedTopics": 6,
+  "version": "1.0-batch4",
+  "totalTopics": 5,
+  "mappedTopics": 5,
+  "paperStructure": {
+    "papers": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "FP1",
+      "FP2",
+      "FP3",
+      "S1",
+      "S2",
+      "S3",
+      "M1",
+      "M2",
+      "M3",
+      "D1"
+    ],
+    "compulsory": [],
+    "asOnly": [
+      "P1",
+      "P2",
+      "FP1",
+      "S1",
+      "M1",
+      "D1"
+    ],
+    "alevelOnly": [
+      "P3",
+      "P4",
+      "FP2",
+      "FP3",
+      "S2",
+      "S3",
+      "M2",
+      "M3"
+    ],
+    "applicationGroups": [
+      [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      [
+        "D1"
+      ]
+    ],
+    "mutuallyExclusive": []
+  },
   "mappings": [
     {
       "topicId": "Edexcel-IAL-1",
-      "topicName": "Pure Mathematics 1",
+      "topicName": "Pure Mathematics Units P1-P4",
       "paperReference": [
-        "P1"
+        "P1",
+        "P2",
+        "P3",
+        "P4"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-IAL-P1.1.1",
-          "subtopicName": "Laws of indices for all rational exponents",
+          "subtopicId": "Edexcel-IAL-1.1",
+          "subtopicName": "Use proof, algebraic manipulation, quadratics, inequalities, functions and transformations.",
           "paperReference": [
-            "P1"
+            "P1",
+            "P2",
+            "P3",
+            "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "NUM-SI-IR",
+              "nodeId": "REAS-PROF-PROF-DEDU",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-IR"
+              "matchReason": "Maps directly to REAS-PROF-PROF-DEDU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P1.1.2",
-          "subtopicName": "Use and manipulation of surds; rationalise denominators",
+          "subtopicId": "Edexcel-IAL-1.1.2",
+          "subtopicName": "Use proof, algebraic manipulation, quadratics, inequalities, functions and transformations.",
           "paperReference": [
-            "P1"
+            "P1",
+            "P2",
+            "P3",
+            "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "NUM-SI-SURDS",
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-SURDS"
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-VERT in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P1.1.3-1.5",
-          "subtopicName": "Quadratic functions, graphs, discriminant, completing the square",
+          "subtopicId": "Edexcel-IAL-1.2",
+          "subtopicName": "Use coordinate geometry, circles, trigonometry, radians, identities and equations.",
           "paperReference": [
-            "P1"
+            "P1",
+            "P2",
+            "P3",
+            "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-GRAPH",
+              "nodeId": "GEOM-COOR-LINE-YMXC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
+              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CIRC-CENT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-CIRC-RADI-CONV in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P1.1.6",
-          "subtopicName": "Simultaneous equations; analytical solution by substitution",
+          "subtopicId": "Edexcel-IAL-1.2.2",
+          "subtopicName": "Use coordinate geometry, circles, trigonometry, radians, identities and equations.",
           "paperReference": [
-            "P1"
+            "P1",
+            "P2",
+            "P3",
+            "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-SIMUL",
+              "nodeId": "TRIG-IDEN-EQNS-SIMP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-SIMUL"
+              "matchReason": "Maps directly to TRIG-IDEN-EQNS-SIMP in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P1.1.7-1.9",
-          "subtopicName": "Linear and quadratic inequalities; graphical interpretation",
+          "subtopicId": "Edexcel-IAL-1.3",
+          "subtopicName": "Use sequences, series, binomial expansion, exponentials and logarithms.",
           "paperReference": [
-            "P1"
+            "P1",
+            "P2",
+            "P3",
+            "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-LI",
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-LI"
+              "matchReason": "Maps directly to ALGF-SEQ-SERS-ARSM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-INFI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SERS-INFI in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-BINO-RATN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-BINO-RATN in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P1.1.10",
-          "subtopicName": "Algebraic manipulation of polynomials; factorisation",
+          "subtopicId": "Edexcel-IAL-1.3.2",
+          "subtopicName": "Use sequences, series, binomial expansion, exponentials and logarithms.",
           "paperReference": [
-            "P1"
+            "P1",
+            "P2",
+            "P3",
+            "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-EF",
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-EF"
+              "matchReason": "Maps directly to ALGF-LOG-LOGR-LAWS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P1.1.11",
-          "subtopicName": "Graphs of functions; sketching curves; reciprocal functions; asymptotes",
+          "subtopicId": "Edexcel-IAL-1.4",
+          "subtopicName": "Differentiate and integrate standard functions, including applications and numerical methods.",
           "paperReference": [
-            "P1"
+            "P1",
+            "P2",
+            "P3",
+            "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-GRAPH",
+              "nodeId": "CALC-DIFF-RULE-CHAI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
+              "matchReason": "Maps directly to CALC-DIFF-RULE-CHAI in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-PART",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-INTE-RULE-PART in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P1.1.12",
-          "subtopicName": "Transformations: y=af(x), y=f(x)+a, y=f(x+a), y=f(ax)",
+          "subtopicId": "Edexcel-IAL-1.4.2",
+          "subtopicName": "Differentiate and integrate standard functions, including applications and numerical methods.",
           "paperReference": [
-            "P1"
+            "P1",
+            "P2",
+            "P3",
+            "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-TRANS",
+              "nodeId": "NUMM-NINT-TRAP-ESTM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-TRANS"
+              "matchReason": "Maps directly to NUMM-NINT-TRAP-ESTM in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P1.2.1-2.2",
-          "subtopicName": "Equation of straight line; parallel/perpendicular",
+          "subtopicId": "Edexcel-IAL-1.5",
+          "subtopicName": "Use vectors, parametric equations, differential equations and further calculus applications.",
           "paperReference": [
-            "P1"
+            "P1",
+            "P2",
+            "P3",
+            "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COG-LINES-EQUAT",
+              "nodeId": "VECT-SPAC-THRD-IJK",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-EQUAT"
+              "matchReason": "Maps directly to VECT-SPAC-THRD-IJK in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-PARM-PARM-DEFS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-PARM-PARM-DEFS in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFFEQ-FODE-SEPV in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P1.3.1",
-          "subtopicName": "Sine and cosine rules; area of triangle = 1/2 ab sin C",
+          "subtopicId": "Edexcel-IAL-1.5.2",
+          "subtopicName": "Use vectors, parametric equations, differential equations and further calculus applications.",
           "paperReference": [
-            "P1"
+            "P1",
+            "P2",
+            "P3",
+            "P4"
           ],
           "mappedNodes": [
             {
-              "nodeId": "TRIG-BASIC-SCR",
+              "nodeId": "CALC-INTE-APPL-VOLR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-SCR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P1.3.2",
-          "subtopicName": "Radian measure; arc length; sector area",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-RADIA-CONVE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-RADIA-CONVE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P1.3.3",
-          "subtopicName": "Sine, cosine, tangent functions; graphs, symmetries, periodicity",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-FUNCT-SCTG",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-FUNCT-SCTG"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P1.4.1-4.2",
-          "subtopicName": "Derivative as gradient of tangent; differentiation of x^n",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-PR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-PR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P1.4.3",
-          "subtopicName": "Applications: gradients, tangents, normals",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-TN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-TN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P1.5.1-5.2",
-          "subtopicName": "Indefinite integration as reverse of differentiation; x^n",
-          "paperReference": [
-            "P1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-PR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-PR"
+              "matchReason": "Maps directly to CALC-INTE-APPL-VOLR in the expanded knowledge tree."
             }
           ]
         }
@@ -228,176 +294,178 @@
     },
     {
       "topicId": "Edexcel-IAL-2",
-      "topicName": "Pure Mathematics 2",
+      "topicName": "Further Pure Mathematics Units FP1-FP3",
       "paperReference": [
-        "P2"
+        "FP1",
+        "FP2",
+        "FP3"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-IAL-P2.1.1-1.3",
-          "subtopicName": "Proof: exhaustion; disproof by counter-example",
+          "subtopicId": "Edexcel-IAL-2.1",
+          "subtopicName": "Use complex numbers, Argand diagrams, modulus-argument form, roots and de Moivre's theorem.",
           "paperReference": [
-            "P2"
+            "FP1",
+            "FP2",
+            "FP3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-PROOF-EXHAU",
+              "nodeId": "ALGF-CPLX-BASIC-ARGD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-PROOF-EXHAU"
+              "matchReason": "Maps directly to ALGF-CPLX-BASIC-ARGD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-POLAR-MODA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-POLAR-MODA in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-ROOT-NTH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-ROOT-NTH in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P2.2.1",
-          "subtopicName": "Algebraic division; factor theorem; remainder theorem",
+          "subtopicId": "Edexcel-IAL-2.1.2",
+          "subtopicName": "Use complex numbers, Argand diagrams, modulus-argument form, roots and de Moivre's theorem.",
           "paperReference": [
-            "P2"
+            "FP1",
+            "FP2",
+            "FP3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-POLYN-DIVIS",
+              "nodeId": "ALGF-CPLX-DEMO-THM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-POLYN-DIVIS"
+              "matchReason": "Maps directly to ALGF-CPLX-DEMO-THM in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P2.3.1",
-          "subtopicName": "Coordinate geometry of circle; properties",
+          "subtopicId": "Edexcel-IAL-2.2",
+          "subtopicName": "Use matrices, transformations, determinants, inverses, eigenvalues and diagonalisation.",
           "paperReference": [
-            "P2"
+            "FP1",
+            "FP2",
+            "FP3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COG-CIRCL-EQUAT",
+              "nodeId": "ALGF-MATR-OPS-MULT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-CIRCL-EQUAT"
+              "matchReason": "Maps directly to ALGF-MATR-OPS-MULT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-TRAN-2D",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-TRAN-2D in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-INV-INV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-INV-INV in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P2.4.1-4.2",
-          "subtopicName": "Arithmetic sequences and series; nth term; sum",
+          "subtopicId": "Edexcel-IAL-2.2.2",
+          "subtopicName": "Use matrices, transformations, determinants, inverses, eigenvalues and diagonalisation.",
           "paperReference": [
-            "P2"
+            "FP1",
+            "FP2",
+            "FP3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-ARITH",
+              "nodeId": "ALGF-MATR-EIG-DIAG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-ARITH"
+              "matchReason": "Maps directly to ALGF-MATR-EIG-DIAG in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P2.4.3",
-          "subtopicName": "Increasing, decreasing, periodic sequences",
+          "subtopicId": "Edexcel-IAL-2.3",
+          "subtopicName": "Use roots of polynomials, series, polar coordinates, conics and hyperbolic functions.",
           "paperReference": [
-            "P2"
+            "FP1",
+            "FP2",
+            "FP3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-ARITH",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-SEQUE-ARITH"
+              "nodeId": "ALGF-ROOT-ROOT-REL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-ROOT-ROOT-REL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-MACL-MACL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-MACL-MACL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-POLR-POLR-SKET",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-POLR-POLR-SKET in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P2.4.4",
-          "subtopicName": "Geometric sequences and series; sum to infinity; |r|<1",
+          "subtopicId": "Edexcel-IAL-2.3.2",
+          "subtopicName": "Use roots of polynomials, series, polar coordinates, conics and hyperbolic functions.",
           "paperReference": [
-            "P2"
+            "FP1",
+            "FP2",
+            "FP3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-GEOME",
+              "nodeId": "CALC-HYP-HYP-DEFN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-GEOME"
+              "matchReason": "Maps directly to CALC-HYP-HYP-DEFN in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P2.4.5",
-          "subtopicName": "Binomial expansion (a+bx)^n for positive integer n",
+          "subtopicId": "Edexcel-IAL-2.4",
+          "subtopicName": "Use advanced vectors, further integration, reduction formulae and linear differential equations.",
           "paperReference": [
-            "P2"
+            "FP1",
+            "FP2",
+            "FP3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-BPI",
+              "nodeId": "VECT-FURT-PROD-VECT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-BPI"
+              "matchReason": "Maps directly to VECT-FURT-PROD-VECT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-FINT-REDU",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-FINT-REDU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-APPL-SURF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-APPL-SURF in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P2.5.1-5.3",
-          "subtopicName": "y=a^x; laws of logarithms; solve a^x=b",
+          "subtopicId": "Edexcel-IAL-2.4.2",
+          "subtopicName": "Use advanced vectors, further integration, reduction formulae and linear differential equations.",
           "paperReference": [
-            "P2"
+            "FP1",
+            "FP2",
+            "FP3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-LOGEX-EF",
+              "nodeId": "CALC-LDE-SECOND-CFPI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-LOGEX-EF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P2.6.1-6.2",
-          "subtopicName": "tan=sin/cos; sin^2+cos^2=1; solve trig equations",
-          "paperReference": [
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-IDENT-PYTHA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-IDENT-PYTHA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P2.7.1",
-          "subtopicName": "Maxima, minima, stationary points; increasing/decreasing",
-          "paperReference": [
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-STATI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-STATI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P2.8.1-8.2",
-          "subtopicName": "Definite integrals; area under curve; area between curves",
-          "paperReference": [
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-DEFIN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-DEFIN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P2.8.3",
-          "subtopicName": "Trapezium rule for area approximation",
-          "paperReference": [
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-TRAPE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-TRAPE"
+              "matchReason": "Maps directly to CALC-LDE-SECOND-CFPI in the expanded knowledge tree."
             }
           ]
         }
@@ -405,218 +473,136 @@
     },
     {
       "topicId": "Edexcel-IAL-3",
-      "topicName": "Pure Mathematics 3",
+      "topicName": "Statistics Units S1-S3",
       "paperReference": [
-        "P3"
+        "S1",
+        "S2",
+        "S3"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-IAL-P3.1.1",
-          "subtopicName": "Simplification of rational expressions; algebraic division",
+          "subtopicId": "Edexcel-IAL-3.1",
+          "subtopicName": "Use data presentation, probability rules, discrete random variables and standard distributions.",
           "paperReference": [
-            "P3"
+            "S1",
+            "S2",
+            "S3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-RE",
+              "nodeId": "STAT-DATA-REPR-HIST",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-RE"
+              "matchReason": "Maps directly to STAT-DATA-REPR-HIST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-COND",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-RULE-COND in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-DRVD-DRVB-EXPV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DRVD-DRVB-EXPV in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P3.1.2",
-          "subtopicName": "Function definition; domain, range; composition; inverse",
+          "subtopicId": "Edexcel-IAL-3.1.2",
+          "subtopicName": "Use data presentation, probability rules, discrete random variables and standard distributions.",
           "paperReference": [
-            "P3"
+            "S1",
+            "S2",
+            "S3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-NDR",
+              "nodeId": "PROB-DIST-BINO-PROB",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-NDR"
+              "matchReason": "Maps directly to PROB-DIST-BINO-PROB in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P3.1.3",
-          "subtopicName": "Modulus function |ax+b|; |f(x)| and f(|x|) graphs",
+          "subtopicId": "Edexcel-IAL-3.2",
+          "subtopicName": "Use normal, Poisson, continuous random variables, estimation and hypothesis testing.",
           "paperReference": [
-            "P3"
+            "S1",
+            "S2",
+            "S3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-MODUL",
+              "nodeId": "PROB-DIST-NORM-STAN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-MODUL"
+              "matchReason": "Maps directly to PROB-DIST-NORM-STAN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-DIST-POIS-PROB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DIST-POIS-PROB in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-DIST-CRV-PDF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DIST-CRV-PDF in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P3.1.4",
-          "subtopicName": "Combined transformations: y=2f(3x), y=f(-x)+1",
+          "subtopicId": "Edexcel-IAL-3.2.2",
+          "subtopicName": "Use normal, Poisson, continuous random variables, estimation and hypothesis testing.",
           "paperReference": [
-            "P3"
+            "S1",
+            "S2",
+            "S3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNCT-CT",
+              "nodeId": "STAT-TEST-HYPO-SIGL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-CT"
+              "matchReason": "Maps directly to STAT-TEST-HYPO-SIGL in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P3.2.1-2.2",
-          "subtopicName": "sec, cosec, cot; arcsin, arccos, arctan; graphs",
+          "subtopicId": "Edexcel-IAL-3.3",
+          "subtopicName": "Use correlation, regression, t-tests, chi-squared tests and confidence intervals.",
           "paperReference": [
-            "P3"
+            "S1",
+            "S2",
+            "S3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "TRIG-FUNCT-SCC",
+              "nodeId": "STAT-CORR-REG-PMCC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-FUNCT-SCC"
+              "matchReason": "Maps directly to STAT-CORR-REG-PMCC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-INF2-TDIST-TTEST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-TDIST-TTEST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-INF2-CHISQ-GOF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-CHISQ-GOF in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P3.2.2",
-          "subtopicName": "sec^2=1+tan^2; cosec^2=1+cot^2",
+          "subtopicId": "Edexcel-IAL-3.3.2",
+          "subtopicName": "Use correlation, regression, t-tests, chi-squared tests and confidence intervals.",
           "paperReference": [
-            "P3"
+            "S1",
+            "S2",
+            "S3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "TRIG-IDENT-PYTHA",
+              "nodeId": "STAT-INF2-TDIST-TCI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-IDENT-PYTHA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P3.2.3",
-          "subtopicName": "Double angle; compound angle; a*cos+b*sin = r*cos(theta+-alpha)",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-IDENT-COMPO",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-IDENT-COMPO"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P3.3.1-3.2",
-          "subtopicName": "e^x and ln x; graphs; ln x as inverse of e^x",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-LOGEX-EF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-LOGEX-EF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P3.3.3",
-          "subtopicName": "Logarithmic graphs; y=ax^n and y=kb^x",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-LOGEX-LL",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-LOGEX-LL"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P3.4.1-4.2",
-          "subtopicName": "Differentiation of e^(kx), ln(kx), sin(kx), cos(kx), tan(kx); product/quotient/chain rules",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-SF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-SF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P3.4.3",
-          "subtopicName": "dy/dx = 1/(dx/dy); implicit differentiation",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFFE-IMPLI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-IMPLI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P3.4.4",
-          "subtopicName": "Exponential growth and decay models",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-LOGEX-GD",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-LOGEX-GD"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P3.5.1",
-          "subtopicName": "Integration of e^(kx), 1/x, sin(kx), cos(kx)",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-SF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-SF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P3.5.2",
-          "subtopicName": "Integration by recognition; f'(x)/f(x) type",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-RECOG",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-RECOG"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P3.6.1-6.2",
-          "subtopicName": "Location of roots by sign change; iterative methods",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-NUMER-RL",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-NUMER-RL"
+              "matchReason": "Maps directly to STAT-INF2-TDIST-TCI in the expanded knowledge tree."
             }
           ]
         }
@@ -624,218 +610,136 @@
     },
     {
       "topicId": "Edexcel-IAL-4",
-      "topicName": "Pure Mathematics 4",
+      "topicName": "Mechanics Units M1-M3",
       "paperReference": [
-        "P4"
+        "M1",
+        "M2",
+        "M3"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-IAL-P4.1.1",
-          "subtopicName": "Proof by contradiction; irrationality of sqrt(2); infinity of primes",
+          "subtopicId": "Edexcel-IAL-4.1",
+          "subtopicName": "Use kinematics, forces, equilibrium, Newton's laws and connected-particle dynamics.",
           "paperReference": [
-            "P4"
+            "M1",
+            "M2",
+            "M3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-PROOF-CONTR",
+              "nodeId": "MECH-KIN-LINE-CONST",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-PROOF-CONTR"
+              "matchReason": "Maps directly to MECH-KIN-LINE-CONST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-PRIN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FORC-EQUI-PRIN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-N2L",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-DYN-NEWT-N2L in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P4.2.1",
-          "subtopicName": "Partial fractions; denominators with repeated linear terms",
+          "subtopicId": "Edexcel-IAL-4.1.2",
+          "subtopicName": "Use kinematics, forces, equilibrium, Newton's laws and connected-particle dynamics.",
           "paperReference": [
-            "P4"
+            "M1",
+            "M2",
+            "M3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-POLYN-PF",
+              "nodeId": "MECH-DYN-NEWT-CONP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-POLYN-PF"
+              "matchReason": "Maps directly to MECH-DYN-NEWT-CONP in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P4.3.1",
-          "subtopicName": "Parametric equations of curves; conversion to Cartesian",
+          "subtopicId": "Edexcel-IAL-4.2",
+          "subtopicName": "Use momentum, impulse, collisions, work, energy and power.",
           "paperReference": [
-            "P4"
+            "M1",
+            "M2",
+            "M3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "COG-PARAM-CONVE",
+              "nodeId": "MECH-MOMI-LINM-CONS",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-PARAM-CONVE"
+              "matchReason": "Maps directly to MECH-MOMI-LINM-CONS in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-IMP-IMPL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-IMPL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-ENER-WORK-CONS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-ENER-WORK-CONS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P4.4.1",
-          "subtopicName": "Binomial series for any rational n; |x|<|b/a|",
+          "subtopicId": "Edexcel-IAL-4.2.2",
+          "subtopicName": "Use momentum, impulse, collisions, work, energy and power.",
           "paperReference": [
-            "P4"
+            "M1",
+            "M2",
+            "M3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-BR",
+              "nodeId": "MECH-ENER-POWR-PFV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-BR"
+              "matchReason": "Maps directly to MECH-ENER-POWR-PFV in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P4.5.1",
-          "subtopicName": "Differentiation of functions defined parametrically or implicitly",
+          "subtopicId": "Edexcel-IAL-4.3",
+          "subtopicName": "Use projectiles, circular motion, centres of mass, rigid bodies and elastic strings.",
           "paperReference": [
-            "P4"
+            "M1",
+            "M2",
+            "M3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-DIFFE-PARAM",
+              "nodeId": "MECH-FURT-PROJ-HV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-PARAM"
+              "matchReason": "Maps directly to MECH-FURT-PROJ-HV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-CIRC-RACC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-CIRC-RACC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-COM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-RIGD-COM in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-P4.5.2",
-          "subtopicName": "Formation of differential equations; connected rates of change",
+          "subtopicId": "Edexcel-IAL-4.3.2",
+          "subtopicName": "Use projectiles, circular motion, centres of mass, rigid bodies and elastic strings.",
           "paperReference": [
-            "P4"
+            "M1",
+            "M2",
+            "M3"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-DE-FORMA",
+              "nodeId": "MECH-FURT-ELAS-HOOK",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-FORMA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P4.6.1",
-          "subtopicName": "Volume of revolution; parametric equations",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-VR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-VR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P4.6.2",
-          "subtopicName": "Integration by substitution and by parts",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-SUBST",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-SUBST"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P4.6.3",
-          "subtopicName": "Integration using partial fractions",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-PF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-PF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P4.6.4",
-          "subtopicName": "First order separable differential equations; general/particular solution",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DE-FOS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DE-FOS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P4.6.5",
-          "subtopicName": "Area under curve given parametric equations",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTEG-AC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-AC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P4.7.1-7.4",
-          "subtopicName": "Vectors in 2D and 3D; magnitude; position vectors",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-POSIT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-POSIT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P4.7.5",
-          "subtopicName": "Distance between two points in 3D",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "COG-LINES-DISTA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-DISTA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P4.7.6",
-          "subtopicName": "Vector equation of line r=a+tb; parallel, intersecting, skew",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-LE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-LE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-P4.7.7",
-          "subtopicName": "Scalar product; angle between lines; perpendicularity",
-          "paperReference": [
-            "P4"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VEC-23-SP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-23-SP"
+              "matchReason": "Maps directly to MECH-FURT-ELAS-HOOK in the expanded knowledge tree."
             }
           ]
         }
@@ -843,332 +747,88 @@
     },
     {
       "topicId": "Edexcel-IAL-5",
-      "topicName": "Mechanics 1",
+      "topicName": "Decision Mathematics Unit D1",
       "paperReference": [
-        "M1"
+        "D1"
       ],
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-IAL-M1.1.1",
-          "subtopicName": "Mathematical modelling: particle, lamina, rigid body, rod, string, etc.",
+          "subtopicId": "Edexcel-IAL-5.1",
+          "subtopicName": "Use graph terminology, route inspection, travelling salesperson, shortest paths and minimum spanning trees.",
           "paperReference": [
-            "M1"
+            "D1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FORCE-DIAGR",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to MECH-FORCE-DIAGR"
+              "nodeId": "DISC-GRAPH-GRAPH-TERM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-TERM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-SHOR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-SHOR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-MST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-MST in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-M1.2.1-2.2",
-          "subtopicName": "Vectors in mechanics: magnitude, direction, resultant; displacement, velocity, acceleration, forces",
+          "subtopicId": "Edexcel-IAL-5.1.2",
+          "subtopicName": "Use graph terminology, route inspection, travelling salesperson, shortest paths and minimum spanning trees.",
           "paperReference": [
-            "M1"
+            "D1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-VECTO-DV",
+              "nodeId": "DISC-GRAPH-GRAPH-TRAV",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-VECTO-DV"
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-TRAV in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-M1.3.1",
-          "subtopicName": "Motion with constant acceleration; graphs",
+          "subtopicId": "Edexcel-IAL-5.2",
+          "subtopicName": "Use sorting, matching, linear programming, critical path analysis and resource scheduling.",
           "paperReference": [
-            "M1"
+            "D1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-KINEM-CA",
+              "nodeId": "DISC-ALGO-ALGO-SORT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-KINEM-CA"
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-SORT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-ALGO-ALGO-MATCH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-MATCH in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-ALGO-ALGO-LP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-LP in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-IAL-M1.4.1-4.2",
-          "subtopicName": "Newton's laws; connected particles; smooth pulleys",
+          "subtopicId": "Edexcel-IAL-5.2.2",
+          "subtopicName": "Use sorting, matching, linear programming, critical path analysis and resource scheduling.",
           "paperReference": [
-            "M1"
+            "D1"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FORCE-NL",
+              "nodeId": "DISC-PROJ-PROJ-CPA",
               "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FORCE-NL"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-M1.4.3",
-          "subtopicName": "Momentum and impulse; impulse-momentum principle; conservation",
-          "paperReference": [
-            "M1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-MOMI-IMPUL",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-MOMEN-IMPUL"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-M1.4.4",
-          "subtopicName": "Coefficient of friction; F=mu*R",
-          "paperReference": [
-            "M1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FORCE-FRICT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FORCE-FRICT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-M1.5.1-5.2",
-          "subtopicName": "Statics: forces as vectors; resolution; equilibrium",
-          "paperReference": [
-            "M1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FORCE-EQUIL",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FORCE-EQUIL"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-M1.5.3",
-          "subtopicName": "Coefficient of friction in equilibrium; F<=mu*R",
-          "paperReference": [
-            "M1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FORCE-FRICT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-FORCE-FRICT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-M1.6.1",
-          "subtopicName": "Moment of a force; equilibrium of coplanar parallel forces",
-          "paperReference": [
-            "M1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-MOMT-CALCU",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to MECH-MOMEN-CALCU"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-IAL-6",
-      "topicName": "Statistics 1",
-      "paperReference": [
-        "S1"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-IAL-S1.1.1",
-          "subtopicName": "Mathematical modelling in probability and statistics",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-HYPOT-SAMPL",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to STAT-HYPOT-SAMPL"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-S1.2.1",
-          "subtopicName": "Histograms, stem-leaf, box plots",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DATA-HISTO",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-HISTO"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-S1.2.2-2.3",
-          "subtopicName": "Measures of location and dispersion; variance, std dev, percentiles",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-MEASU-CENTR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-MEASU-CENTR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-S1.2.4",
-          "subtopicName": "Skewness; concepts of outliers",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-MEASU-SKEWN",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-MEASU-SKEWN"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-S1.3.1-3.4",
-          "subtopicName": "Probability; sample space; conditional; independent; tree/Venn diagrams",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-PROBA-BASIC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-BASIC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-S1.4.1-4.2",
-          "subtopicName": "Linear regression; least squares; explanatory/response variables",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-CORR-LS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-LS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-S1.4.3",
-          "subtopicName": "Product moment correlation coefficient; use and interpretation",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-CORR-PMCC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-CR-PMCC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-S1.5.1-5.2",
-          "subtopicName": "Discrete random variable; probability function; CDF",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DR-DISTR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DR-DISTR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-S1.5.3",
-          "subtopicName": "E(X), Var(X); E(aX+b), Var(aX+b)",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DR-EV",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DR-EV"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-S1.5.4",
-          "subtopicName": "Discrete uniform distribution; mean and variance",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DR-UNIFO",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DR-UNIFO"
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-IAL-S1.6.1",
-          "subtopicName": "Normal distribution; mean, variance; use of tables; standardisation",
-          "paperReference": [
-            "S1"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-NORMA-TABLE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-NORMA-TABLE"
+              "matchReason": "Maps directly to DISC-PROJ-PROJ-CPA in the expanded knowledge tree."
             }
           ]
         }
       ]
     }
-  ],
-  "paperStructure": {
-    "papers": [
-      "P1",
-      "P2",
-      "P3",
-      "P4",
-      "M1",
-      "S1"
-    ],
-    "compulsory": [
-      "P1",
-      "P2",
-      "P3",
-      "P4"
-    ],
-    "asOnly": [
-      "P1",
-      "P2"
-    ],
-    "alevelOnly": [
-      "P3",
-      "P4"
-    ],
-    "applicationGroups": [
-      [
-        "M1",
-        "S1"
-      ]
-    ],
-    "mutuallyExclusive": []
-  }
+  ]
 }

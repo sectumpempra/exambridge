@@ -3,9 +3,9 @@
   "subjectCode": "8300",
   "subjectName": "GCSE Mathematics",
   "level": "GCSE",
-  "version": "1.0",
-  "totalTopics": 6,
-  "mappedTopics": 6,
+  "version": "1.1-statement-level",
+  "totalTopics": 9,
+  "mappedTopics": 9,
   "mappings": [
     {
       "topicId": "AQA-8300-1",
@@ -13,182 +13,428 @@
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-8300-N1",
-          "subtopicName": "Integers: place value, ordering, four operations; factors, multiples, primes, HCF, LCM; prime factorisation",
+          "subtopicId": "AQA-8300-1.1",
+          "subtopicName": "Identify and use natural numbers, integers, prime numbers, square numbers, cube numbers, common factors, common multiples, rational and irrational numbers, and reciprocals.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-INTEG",
+              "nodeId": "NUM-SYS-TYPE-NAT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-INTEG"
+              "matchReason": "Maps directly to NUM-SYS-TYPE-NAT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-SYS-TYPE-INTG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-SYS-TYPE-INTG in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-SYS-TYPE-PRIM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-SYS-TYPE-PRIM in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-N2",
-          "subtopicName": "Fractions, decimals, percentages: equivalence, conversion, four operations",
+          "subtopicId": "AQA-8300-1.1.2",
+          "subtopicName": "Identify and use natural numbers, integers, prime numbers, square numbers, cube numbers, common factors, common multiples, rational and irrational numbers, and reciprocals.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-FRACT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-FRACT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-N3",
-          "subtopicName": "Understand and use the laws of indices for all rational exponents.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-SI-IR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-IR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-N4",
-          "subtopicName": "Percentages: increase/decrease, reverse, compound interest, growth/decay",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-NOTAT-FRACT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-FRACT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-N5",
-          "subtopicName": "Fractions: improper, mixed numbers, equivalent; four operations",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-NOTAT-FRACT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-FRACT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-N6",
-          "subtopicName": "Ratio: simplify, divide in ratio; direct/inverse proportion (including powers)",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-NOTAT-RP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-N7",
-          "subtopicName": "Fraction/decimal/percentage/ratio equivalence",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-NOTAT-FRACT",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-FRACT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-N8",
-          "subtopicName": "Compound measures: speed, distance, time; density; pressure",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-NOTAT-RATES",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RATES"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-N9",
-          "subtopicName": "Standard form; calculations in standard form",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-SI-SF",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-SF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-N10",
-          "subtopicName": "Upper and lower bounds; limits of accuracy",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-NOTAT-BOUND",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-BOUND"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-N11",
-          "subtopicName": "Factors, multiples, primes; HCF, LCM; product of primes",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-NOTAT-INTEG",
+              "nodeId": "NUM-SYS-TYPE-FACT",
               "matchStrength": "strong",
-              "matchReason": "Mapped to NUM-NOTAT-INTEG"
+              "matchReason": "HCF and LCM are represented by the broader factors and multiples leaf in the MVP tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-N12",
-          "subtopicName": "Use and manipulate surds, including rationalising the denominator.",
+          "subtopicId": "AQA-8300-1.2",
+          "subtopicName": "Understand and use set language, notation and Venn diagrams to describe sets.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-SI-SURDS",
+              "nodeId": "NUM-SYS-SET-LANG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-SI-SURDS"
+              "matchReason": "Maps directly to NUM-SYS-SET-LANG in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-SYS-SET-VENN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-SYS-SET-VENN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-SYS-SET-UNIN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-SYS-SET-UNIN in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-N13",
-          "subtopicName": "Recurring decimals; convert between fractions and recurring decimals",
+          "subtopicId": "AQA-8300-1.3",
+          "subtopicName": "Calculate with squares, square roots, cubes, cube roots, and other powers and roots of numbers.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-INTEG",
+              "nodeId": "NUM-POW-POWR-SQRT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-POWR-SQRT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-POWR-CUBR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-POWR-CUBR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-INDX-POS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-INDX-POS in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.4",
+          "subtopicName": "Use fractions, decimals and percentages; recognise equivalence and convert between these forms.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-FRAC-EQVF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-FRAC-EQVF in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-SIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-FRAC-SIMP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-DECI-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-DECI-CONV in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.4.2",
+          "subtopicName": "Use fractions, decimals and percentages; recognise equivalence and convert between these forms.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-DECI-PLAC",
               "matchStrength": "strong",
-              "matchReason": "Mapped to NUM-NOTAT-INTEG"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "NUM-FRAC-DECI-RECR",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-MIXD",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-N14",
-          "subtopicName": "Direct and inverse proportion: algebraic representations including powers",
+          "subtopicId": "AQA-8300-1.5",
+          "subtopicName": "Order quantities by magnitude and demonstrate familiarity with the symbols =, !=, >, <, >= and <=.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-RP",
+              "nodeId": "NUM-FRAC-DECI-ORDR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RP"
+              "matchReason": "Maps directly to NUM-FRAC-DECI-ORDR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-LINS",
+              "matchStrength": "partial",
+              "matchReason": "Ordering and inequality symbols support later linear inequality work."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-N15",
-          "subtopicName": "Compound measures; rates of change from graphs",
+          "subtopicId": "AQA-8300-1.6",
+          "subtopicName": "Use the four operations for calculations with integers, fractions and decimals, including correct ordering of operations and use of brackets.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-RATES",
+              "nodeId": "NUM-OPS-CALC-FOUR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RATES"
+              "matchReason": "Maps directly to NUM-OPS-CALC-FOUR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-OPS-CALC-BIDM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-OPS-CALC-BIDM in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-OPS-CALC-BRAC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-OPS-CALC-BRAC in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.6.2",
+          "subtopicName": "Use the four operations for calculations with integers, fractions and decimals, including correct ordering of operations and use of brackets.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-CALC-NEG",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.7",
+          "subtopicName": "Understand and use indices and the rules of indices, including positive, zero, negative and fractional indices.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-INDX-POS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-INDX-POS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-INDX-ZERO",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-INDX-ZERO in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-INDX-NEG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-INDX-NEG in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.7.2",
+          "subtopicName": "Understand and use indices and the rules of indices, including positive, zero, negative and fractional indices.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-INDX-FRAC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-INDX-FRAC in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.8",
+          "subtopicName": "Use standard form A x 10^n where n is a positive or negative integer and 1 <= A < 10.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-STDF-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-STDF-CONV in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-STDF-CALC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-STDF-CALC in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-STDF-INTP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-STDF-INTP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.8.2",
+          "subtopicName": "Use standard form A x 10^n where n is a positive or negative integer and 1 <= A < 10.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-ROUN-POW10",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.9",
+          "subtopicName": "Round values to a specified degree of accuracy, make estimates, and round answers to a reasonable degree of accuracy in context.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-ROUN-DP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-ACC-ROUN-DP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-ACC-ROUN-SF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-ACC-ROUN-SF in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-ACC-ROUN-ESTM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-ACC-ROUN-ESTM in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.10",
+          "subtopicName": "Give upper and lower bounds for data rounded to a specified accuracy.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-BOUN-UPLO",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-ACC-BOUN-UPLO in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-ACC-BOUN-CALC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-ACC-BOUN-CALC in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.11",
+          "subtopicName": "Understand and use ratio and proportion to give ratios in simplest form, divide a quantity in a given ratio, and use proportional reasoning in context.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-SIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-SIMP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-SHAR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-SHAR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-PROP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.12",
+          "subtopicName": "Use common measures of rate and solve problems involving average speed, density, pressure, flow rates and other compound measures.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATE-SPED",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATE-SPED in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATE-DENS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATE-DENS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATE-PRES",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATE-PRES in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.12.2",
+          "subtopicName": "Use common measures of rate and solve problems involving average speed, density, pressure, flow rates and other compound measures.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATE-FLOW",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATE-FLOW in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.13",
+          "subtopicName": "Calculate percentages, percentage increase or decrease, reverse percentages, repeated percentage change, and simple or compound interest.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-PERC-QTY",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-PERC-QTY in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-PERC-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-PERC-COMP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-FRAC-PERC-INDE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-FRAC-PERC-INDE in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.13.2",
+          "subtopicName": "Calculate percentages, percentage increase or decrease, reverse percentages, repeated percentage change, and simple or compound interest.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-PERC-PART",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.14",
+          "subtopicName": "Calculate with time, including seconds, minutes, hours, days, weeks, months, years, 24-hour and 12-hour clocks, timetables and time zones.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-MEAS-TIME-TIME",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-MEAS-TIME-TIME in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-MEAS-TIME-CLOCK",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-MEAS-TIME-CLOCK in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-MEAS-TIME-ZONE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-MEAS-TIME-ZONE in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.15",
+          "subtopicName": "Calculate with money and convert from one currency to another.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-MEAS-TIME-MONE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-MEAS-TIME-MONE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATE-SPED",
+              "matchStrength": "weak",
+              "matchReason": "Currency conversion is a rate-style proportional calculation; the MVP tree does not have a separate exchange-rate leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-1.16",
+          "subtopicName": "Manipulate surds, including simplifying surds and rationalising a denominator.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-POWR-SURD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-POWR-SURD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-POWR-RATD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-POWR-RATD in the MVP knowledge tree."
             }
           ]
         }
@@ -196,234 +442,451 @@
     },
     {
       "topicId": "AQA-8300-2",
-      "topicName": "Algebra",
+      "topicName": "Algebra and graphs",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-8300-A1",
-          "subtopicName": "Understand and use graphs of functions; sketch curves defined by simple equations including polynomials, the modulus of a linear function, y = a/x and y = a/x² (including their vertical and horizontal asymptotes); interpret algebraic solution of equations graphically; use intersection points of graphs to solve equations.",
+          "subtopicId": "AQA-8300-2.1",
+          "subtopicName": "Know that letters can be used to represent generalised numbers and substitute numbers into expressions and formulas.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-SUBST",
+              "nodeId": "ALGF-EXP-NOTN-GENR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-SUBST"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A2",
-          "subtopicName": "Manipulate polynomials algebraically, including expanding brackets and collecting like terms, factorisation and simple algebraic division; use of the factor theorem.",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EXP-NOTN-GENR in the MVP knowledge tree."
+            },
             {
-              "nodeId": "ALGF-MANIP-EF",
+              "nodeId": "ALGF-EXP-NOTN-SUBS",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-EF"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A3",
-          "subtopicName": "Linear equations; unknown on both sides; fractional coefficients",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EXP-NOTN-SUBS in the MVP knowledge tree."
+            },
             {
-              "nodeId": "ALGF-EQUAT-LINEA",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-LINEA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A4",
-          "subtopicName": "Solve simultaneous equations in two variables by elimination and by substitution, including one linear and one quadratic equation.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQUAT-SIMUL",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-SIMUL"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A5",
-          "subtopicName": "Work with quadratic functions and their graphs; the discriminant of a quadratic function, including the conditions for real and repeated roots; completing the square; solution of quadratic equations including solving quadratic equations in a function of the unknown.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQUAT-QUADR",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-QUADR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A6",
-          "subtopicName": "Solve linear and quadratic inequalities in a single variable and interpret such inequalities graphically, including inequalities with brackets and fractions. Express solutions through correct use of 'and' and 'or', or through set notation.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQUAT-LI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-LI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A7",
-          "subtopicName": "Solve linear and quadratic inequalities in a single variable and interpret such inequalities graphically.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQUAT-QI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-QI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A8",
-          "subtopicName": "Solve simultaneous equations in two variables by elimination and by substitution, including one linear and one quadratic equation.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQUAT-SIMUL",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-SIMUL"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A9",
-          "subtopicName": "Understand and work with arithmetic sequences and series, including the formulae for nth term and the sum to n terms.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQUE-ARITH",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-ARITH"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A10",
-          "subtopicName": "Understand and work with geometric sequences and series including the formulae for the nth term and the sum of a finite geometric series; the sum to infinity of a convergent geometric series, including the use of |r| < 1; modulus notation.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQUE-GEOME",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-SEQUE-GEOME"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A11",
-          "subtopicName": "Understand and use the definition of a function; domain and range of functions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNCT-NDR",
+              "nodeId": "ALGF-EXP-NOTN-SYMB",
               "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-FUNCT-NDR"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-A12",
-          "subtopicName": "Work with quadratic functions and their graphs",
+          "subtopicId": "AQA-8300-2.1.2",
+          "subtopicName": "Know that letters can be used to represent generalised numbers and substitute numbers into expressions and formulas.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-GRAPH",
+              "nodeId": "ALGF-EXP-NOTN-FORM",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.2",
+          "subtopicName": "Simplify expressions by collecting like terms, expand products of algebraic expressions and factorise.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-MANI-LIKE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A13",
-          "subtopicName": "Understand the effect of simple transformations on the graph of y = f(x) including sketching associated graphs: y = af(x), y = f(x) + a, y = f(x + a), y = f(ax), and combinations of these transformations.",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EXP-MANI-LIKE in the MVP knowledge tree."
+            },
             {
-              "nodeId": "ALGF-FUNCT-TRANS",
+              "nodeId": "ALGF-EXP-MANI-EXP1",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-FUNCT-TRANS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-A14",
-          "subtopicName": "Understand and use proportional relationships and their graphs.",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-EXP-MANI-EXP1 in the MVP knowledge tree."
+            },
             {
-              "nodeId": "ALGF-MANIP-FORMU",
+              "nodeId": "ALGF-EXP-MANI-EXP2",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-FORMU"
+              "matchReason": "Maps directly to ALGF-EXP-MANI-EXP2 in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-A15",
-          "subtopicName": "Work with sequences including those given by a formula for the nth term and those generated by a simple relation of the form x(n+1) = f(xn); increasing sequences; decreasing sequences; periodic sequences.",
+          "subtopicId": "AQA-8300-2.2.2",
+          "subtopicName": "Simplify expressions by collecting like terms, expand products of algebraic expressions and factorise.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQUE-RECUR",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-SEQUE-RECUR"
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EXP-MANI-FACT in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-A16",
-          "subtopicName": "Solve equations from graphs; find approximate solutions graphically",
+          "subtopicId": "AQA-8300-2.3",
+          "subtopicName": "Manipulate algebraic fractions, including simplifying, adding, subtracting, multiplying and dividing algebraic fractions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-LINEA",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-EQUAT-LINEA"
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EXP-MANI-FACT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-APPL",
+              "matchStrength": "partial",
+              "matchReason": "The MVP tree represents rational expression work more strongly in A-Level partial-fraction/rational-expression nodes."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-A17",
-          "subtopicName": "Simplify rational expressions including by factorising and cancelling, and algebraic division (by linear expressions only).",
+          "subtopicId": "AQA-8300-2.4",
+          "subtopicName": "Construct expressions, equations and formulas; solve linear equations; solve simultaneous linear equations; and change the subject of formulas.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-RE",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-MANIP-RE"
+              "nodeId": "ALGF-EQN-LINE-FORM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-LINE-FORM in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-SOLV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-LINE-SOLV in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-SIMU-LIN2",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-SIMU-LIN2 in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-A18",
-          "subtopicName": "Work with quadratic functions and their graphs",
+          "subtopicId": "AQA-8300-2.4.2",
+          "subtopicName": "Construct expressions, equations and formulas; solve linear equations; solve simultaneous linear equations; and change the subject of formulas.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-GRAPH",
+              "nodeId": "ALGF-EQN-LINE-SUBJ",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-LINE-SUBJ in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-SUB2",
               "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "ALGF-EQN-SIMU-ELIM",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-A19",
-          "subtopicName": "Work with quadratic functions and their graphs; the discriminant of a quadratic function, including the conditions for real and repeated roots; completing the square; solution of quadratic equations including solving quadratic equations in a function of the unknown.",
+          "subtopicId": "AQA-8300-2.5",
+          "subtopicName": "Solve quadratic equations by factorisation, completing the square and the quadratic formula; solve simultaneous equations where one equation is linear and one is quadratic.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-QUADR",
+              "nodeId": "ALGF-EQN-QUAD-FACT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FACT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FORM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FORM in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.5.2",
+          "subtopicName": "Solve quadratic equations by factorisation, completing the square and the quadratic formula; solve simultaneous equations where one equation is linear and one is quadratic.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-SIMU-LINQ",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-SIMU-LINQ in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.6",
+          "subtopicName": "Represent, interpret and solve inequalities, including linear inequalities and quadratic inequalities.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-LINS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-LINS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-NUMB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-NUMB in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.6.2",
+          "subtopicName": "Represent, interpret and solve inequalities, including linear inequalities and quadratic inequalities.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-REGN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-REGN in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.7",
+          "subtopicName": "Continue sequences, recognise patterns, and find and use nth terms of linear, simple quadratic and simple cubic sequences.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-TERM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-TERM in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-NTH in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
               "matchStrength": "strong",
-              "matchReason": "Mapped to ALGF-EQUAT-QUADR"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.7.2",
+          "subtopicName": "Continue sequences, recognise patterns, and find and use nth terms of linear, simple quadratic and simple cubic sequences.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.8",
+          "subtopicName": "Use and interpret graphs in practical situations including travel graphs, conversion graphs and distance-time graphs.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-LINR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Graph interpretation in context is a modelling skill."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.9",
+          "subtopicName": "Construct tables of values, draw, recognise and interpret graphs of linear, quadratic, reciprocal, cubic and trigonometric functions.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-LINR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-QUAD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.9.2",
+          "subtopicName": "Construct tables of values, draw, recognise and interpret graphs of linear, quadratic, reciprocal, cubic and trigonometric functions.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.10",
+          "subtopicName": "Recognise, sketch and interpret graphs of functions and solve associated equations graphically.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-INTR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-QUAD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.10.2",
+          "subtopicName": "Recognise, sketch and interpret graphs of functions and solve associated equations graphically.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-RATE",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-POWR",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.10.3",
+          "subtopicName": "Recognise, sketch and interpret graphs of functions and solve associated equations graphically.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-KIN-SVAT-DSDT",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.11",
+          "subtopicName": "Understand function notation, domain and range, composite functions and inverse functions.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-DEFS-NOTN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-NOTN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DOMR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-DOMR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-COMP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.11.2",
+          "subtopicName": "Understand function notation, domain and range, composite functions and inverse functions.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVR in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.12",
+          "subtopicName": "Apply transformations to graphs of functions, including translations, stretches and reflections.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-VERT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-HORZ",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-HORZ in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-STRE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-STRE in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.12.2",
+          "subtopicName": "Apply transformations to graphs of functions, including translations, stretches and reflections.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-TRAN-REFL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-REFL in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.13",
+          "subtopicName": "Understand direct and inverse proportion and relate algebraic solutions to graphical representations.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-DIRE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-DIRE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-RAT-RATI-PROP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-2.14",
+          "subtopicName": "Use algebraic and geometrical reasoning to support arguments and proofs.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: explicit or equivalent IGCSE coverage."
             }
           ]
         }
@@ -431,114 +894,86 @@
     },
     {
       "topicId": "AQA-8300-3",
-      "topicName": "Ratio, proportion and rates of change",
+      "topicName": "Coordinate geometry",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-8300-R1",
-          "subtopicName": "Ratio: equivalence; divide in ratio; compare; scale factors; maps",
+          "subtopicId": "AQA-8300-3.1",
+          "subtopicName": "Use and interpret Cartesian coordinates in two dimensions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-RP",
+              "nodeId": "GEOM-COOR-CART-COOR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RP"
+              "matchReason": "Maps directly to GEOM-COOR-CART-COOR in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-R2",
-          "subtopicName": "Direct/inverse proportion; algebraic and graphical; including powers",
+          "subtopicId": "AQA-8300-3.2",
+          "subtopicName": "Draw straight-line graphs for linear equations and interpret equations of linear graphs.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-RP",
+              "nodeId": "GEOM-COOR-LINE-YMXC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-R3",
-          "subtopicName": "Percentages: change, reverse, compound interest; growth and decay",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the MVP knowledge tree."
+            },
             {
-              "nodeId": "NUM-NOTAT-FRACT",
+              "nodeId": "GEOM-COOR-LINE-GENR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-FRACT"
+              "matchReason": "Maps directly to GEOM-COOR-LINE-GENR in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-R4",
-          "subtopicName": "Compound measures; speed/distance/time; density; pressure",
+          "subtopicId": "AQA-8300-3.3",
+          "subtopicName": "Find the gradient of a straight line, including from the coordinates of two points.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-RATES",
+              "nodeId": "GEOM-COOR-LINE-GRAD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RATES"
+              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-R5",
-          "subtopicName": "Proportion: recipes, currency conversion, best buy",
+          "subtopicId": "AQA-8300-3.4",
+          "subtopicName": "Calculate the length of a line segment and find the coordinates of the midpoint of a line segment.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-RP",
+              "nodeId": "GEOM-COOR-CART-DIST",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-R6",
-          "subtopicName": "Distance-time graphs; velocity-time graphs; gradient = speed/acceleration; area = distance",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to GEOM-COOR-CART-DIST in the MVP knowledge tree."
+            },
             {
-              "nodeId": "NUM-NOTAT-RATES",
+              "nodeId": "GEOM-COOR-CART-MIDP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to NUM-NOTAT-RATES"
+              "matchReason": "Maps directly to GEOM-COOR-CART-MIDP in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-R7",
-          "subtopicName": "Interpret gradient at point on curve; estimate area under curve",
+          "subtopicId": "AQA-8300-3.5",
+          "subtopicName": "Find equations of straight lines, including parallel and perpendicular lines.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "NUM-NOTAT-RATES",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to NUM-NOTAT-RATES"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-R8",
-          "subtopicName": "Growth and decay; compound interest formula; iterative processes",
-          "paperReference": null,
-          "mappedNodes": [
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the MVP knowledge tree."
+            },
             {
-              "nodeId": "NUM-NOTAT-FRACT",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to NUM-NOTAT-FRACT"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-R9",
-          "subtopicName": "Scale factors; area/volume ratios of similar shapes",
-          "paperReference": null,
-          "mappedNodes": [
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the MVP knowledge tree."
+            },
             {
-              "nodeId": "NUM-NOTAT-RP",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to NUM-NOTAT-RP"
+              "nodeId": "GEOM-SHAP-ANGL-PARA",
+              "matchStrength": "partial",
+              "matchReason": "Parallel/perpendicular line relationships are represented through angle and gradient geometry in the MVP tree."
             }
           ]
         }
@@ -546,222 +981,228 @@
     },
     {
       "topicId": "AQA-8300-4",
-      "topicName": "Geometry and measures",
+      "topicName": "Geometry",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-8300-G1",
-          "subtopicName": "Angles: point, line, parallel lines; vertically opposite; triangle, quadrilateral",
+          "subtopicId": "AQA-8300-4.1",
+          "subtopicName": "Use and interpret geometrical terms and the vocabulary of triangles, quadrilaterals, polygons, nets, solids and circles.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-AP-AP",
+              "nodeId": "GEOM-SHAP-TERM-ANGT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-AP-AP"
+              "matchReason": "Maps directly to GEOM-SHAP-TERM-ANGT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-TRIA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-TERM-TRIA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-TERM-QUAD in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-G2",
-          "subtopicName": "Properties of triangles and quadrilaterals; congruence; similarity",
+          "subtopicId": "AQA-8300-4.1.2",
+          "subtopicName": "Use and interpret geometrical terms and the vocabulary of triangles, quadrilaterals, polygons, nets, solids and circles.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-AP-AP",
+              "nodeId": "GEOM-SHAP-TERM-POLY",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-AP-AP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G3",
-          "subtopicName": "Interior and exterior angles of polygons; angle sum",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to GEOM-SHAP-TERM-POLY in the MVP knowledge tree."
+            },
             {
-              "nodeId": "GEOM-AP-IE",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-AP-IE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G4",
-          "subtopicName": "Units; area and perimeter of 2D shapes; compound shapes",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENSU-AP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-MENSU-AP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G5",
-          "subtopicName": "Volume and surface area: prisms, cylinders, spheres, cones, pyramids",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENSU-VS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-MENSU-VS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G6",
-          "subtopicName": "Transformations: reflection, rotation, translation, enlargement",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-TRANS-BASIC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-TRANS-BASIC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G7",
-          "subtopicName": "Enlargement with negative/fractional scale factor",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-TRANS-BASIC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-TRANS-BASIC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G8",
-          "subtopicName": "Constructions: perpendicular bisector, angle bisector, perpendicular from point",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-CONST-RC",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-CONST-RC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G9",
-          "subtopicName": "Loci: regions; construction problems; bearings",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-CONST-LOCI",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-CONST-LOCI"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G10",
-          "subtopicName": "Area of circle; circumference; arc length; sector area; compound shapes",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENSU-AP",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-MENSU-AP"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G11",
-          "subtopicName": "Volume of sphere, cone, pyramid; surface area; compound solids",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENSU-VS",
-              "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-MENSU-VS"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G12",
-          "subtopicName": "Similar triangles; area/volume scale factors for similar shapes",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-AP-AP",
+              "nodeId": "GEOM-SHAP-SIMI-CONG",
               "matchStrength": "strong",
-              "matchReason": "Mapped to GEOM-AP-AP"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-G13",
-          "subtopicName": "Circle theorems: angle in semicircle; cyclic quad; alternate segment; tangent properties",
+          "subtopicId": "AQA-8300-4.2",
+          "subtopicName": "Measure and draw lines and angles; construct triangles; draw, use and interpret nets.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-CT-BASIC",
+              "nodeId": "GEOM-CONS-CONS-MEAS",
               "matchStrength": "exact",
-              "matchReason": "Mapped to GEOM-CT-BASIC"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G14",
-          "subtopicName": "Understand and use the definitions of sine, cosine and tangent for all arguments.",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to GEOM-CONS-CONS-MEAS in the MVP knowledge tree."
+            },
             {
-              "nodeId": "TRIG-BASIC-RA",
+              "nodeId": "GEOM-CONS-CONS-TRIA",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-RA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-8300-G15",
-          "subtopicName": "Understand and use the definitions of sine, cosine and tangent for all arguments; the sine and cosine rules; the area of a triangle in the form ½absinC. Work with radian measure, including use for arc length and area of sector.",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to GEOM-CONS-CONS-TRIA in the MVP knowledge tree."
+            },
             {
-              "nodeId": "TRIG-BASIC-SCR",
+              "nodeId": "GEOM-CONS-CONS-PERB",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-SCR"
+              "matchReason": "Maps directly to GEOM-CONS-CONS-PERB in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-G16",
-          "subtopicName": "Add vectors diagrammatically and perform the algebraic operations of vector addition and multiplication by scalars, and understand their geometrical interpretations.",
+          "subtopicId": "AQA-8300-4.2.2",
+          "subtopicName": "Measure and draw lines and angles; construct triangles; draw, use and interpret nets.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "VEC-BASIC-COLUM",
+              "nodeId": "GEOM-CONS-CONS-ANGB",
               "matchStrength": "exact",
-              "matchReason": "Mapped to VEC-BASIC-COLUM"
+              "matchReason": "Maps directly to GEOM-CONS-CONS-ANGB in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-G17",
-          "subtopicName": "Add vectors diagrammatically and perform the algebraic operations of vector addition and multiplication by scalars, and understand their geometrical interpretations.",
+          "subtopicId": "AQA-8300-4.3",
+          "subtopicName": "Draw and interpret scale drawings and use and interpret three-figure bearings.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "VEC-BASIC-COLUM",
+              "nodeId": "GEOM-CONS-CONS-MEAS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONS-CONS-MEAS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-ANGT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-TERM-ANGT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-SIMP",
+              "matchStrength": "partial",
+              "matchReason": "Scale drawings are represented through ratio and proportional reasoning in the MVP tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-4.4",
+          "subtopicName": "Calculate lengths of similar shapes and use relationships between lengths, areas and volumes of similar shapes and solids.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SIMI-SIML",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SIMI-SIML in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-LENS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SIMI-LENS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SIMI-AREA in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-4.5",
+          "subtopicName": "Recognise line symmetry and order of rotational symmetry in two dimensions and symmetry properties of solids.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SYMM-LINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SYMM-LINE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-SYMM-ROTA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SYMM-ROTA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-SYMM-PLANE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-SYMM-PLANE in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-4.6",
+          "subtopicName": "Calculate unknown angles using angle properties at a point, on a straight line, in triangles, quadrilaterals, polygons and parallel lines.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-ANGL-POINT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-ANGL-POINT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-ANGL-LINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-ANGL-LINE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-ANGL-VERT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-ANGL-VERT in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-4.6.2",
+          "subtopicName": "Calculate unknown angles using angle properties at a point, on a straight line, in triangles, quadrilaterals, polygons and parallel lines.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-ANGL-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-ANGL-PARA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-JUST",
               "matchStrength": "strong",
-              "matchReason": "Mapped to VEC-BASIC-COLUM"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-G18",
-          "subtopicName": "Plans and elevations; 3D solids from 2D representations",
+          "subtopicId": "AQA-8300-4.7",
+          "subtopicName": "Calculate unknown angles using circle theorems, including angle in a semicircle, tangent-radius, angle at centre, angles in the same segment, cyclic quadrilaterals and alternate segment theorem.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "GEOM-MENSU-VS",
+              "nodeId": "GEOM-SHAP-CITH-SEMI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-CITH-SEMI in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-CITH-TANG in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-CENT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-CITH-CENT in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-4.7.2",
+          "subtopicName": "Calculate unknown angles using circle theorems, including angle in a semicircle, tangent-radius, angle at centre, angles in the same segment, cyclic quadrilaterals and alternate segment theorem.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-CITH-SAME",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-SHAP-CITH-SAME in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-CHOR",
               "matchStrength": "strong",
-              "matchReason": "Mapped to GEOM-MENSU-VS"
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
             }
           ]
         }
@@ -769,78 +1210,159 @@
     },
     {
       "topicId": "AQA-8300-5",
-      "topicName": "Probability",
+      "topicName": "Mensuration",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-8300-P1",
-          "subtopicName": "Understand and use mutually exclusive and independent events when calculating probabilities. Link to discrete and continuous distributions.",
+          "subtopicId": "AQA-8300-5.1",
+          "subtopicName": "Use metric units of mass, length, area, volume and capacity in practical situations and convert quantities into larger or smaller units.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PROBA-BASIC",
+              "nodeId": "GEOM-MENS-UNIT-LENG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-BASIC"
+              "matchReason": "Maps directly to GEOM-MENS-UNIT-LENG in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-UNIT-AREA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-VOLU",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-UNIT-VOLU in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-P2",
-          "subtopicName": "Understand and use conditional probability, including the use of tree diagrams, Venn diagrams, two-way tables.",
+          "subtopicId": "AQA-8300-5.1.2",
+          "subtopicName": "Use metric units of mass, length, area, volume and capacity in practical situations and convert quantities into larger or smaller units.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PROBA-VENN",
+              "nodeId": "GEOM-MENS-UNIT-CAPA",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-VENN"
+              "matchReason": "Maps directly to GEOM-MENS-UNIT-CAPA in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-P3",
-          "subtopicName": "Understand and use conditional probability, including the use of tree diagrams, Venn diagrams, two-way tables.",
+          "subtopicId": "AQA-8300-5.2",
+          "subtopicName": "Carry out calculations involving perimeter and area of rectangles, triangles, parallelograms and trapezia.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PROBA-TREE",
+              "nodeId": "GEOM-MENS-AREA-RECT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-TREE"
+              "matchReason": "Maps directly to GEOM-MENS-AREA-RECT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-AREA-TRIA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-AREA-TRIA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-AREA-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-AREA-PARA in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-P4",
-          "subtopicName": "Understand and use conditional probability, including the use of tree diagrams, Venn diagrams, two-way tables. Understand and use the conditional probability formula P(A|B) = P(A ∩ B)/P(B).",
+          "subtopicId": "AQA-8300-5.2.2",
+          "subtopicName": "Carry out calculations involving perimeter and area of rectangles, triangles, parallelograms and trapezia.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PROBA-CONDI",
+              "nodeId": "GEOM-MENS-AREA-TRAP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-CONDI"
+              "matchReason": "Maps directly to GEOM-MENS-AREA-TRAP in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-P5",
-          "subtopicName": "Understand and use mutually exclusive and independent events when calculating probabilities.",
+          "subtopicId": "AQA-8300-5.3",
+          "subtopicName": "Carry out calculations involving circumference and area of a circle, arc length and sector area.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PROBA-IME",
+              "nodeId": "GEOM-MENS-CIRC-CIRC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-PROBA-IME"
+              "matchReason": "Maps directly to GEOM-MENS-CIRC-CIRC in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-CIRC-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-CIRC-AREA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-CIRC-ARCL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-CIRC-ARCL in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-P6",
-          "subtopicName": "Understand and use mutually exclusive and independent events when calculating probabilities. Link to discrete and continuous distributions.",
+          "subtopicId": "AQA-8300-5.3.2",
+          "subtopicName": "Carry out calculations involving circumference and area of a circle, arc length and sector area.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-PROBA-BASIC",
+              "nodeId": "GEOM-MENS-CIRC-SECA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-CIRC-SECA in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-5.4",
+          "subtopicName": "Carry out calculations and solve problems involving surface area and volume of cuboids, prisms, cylinders, spheres, pyramids and cones.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-SOLI-CUBD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-SOLI-CUBD in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PRIS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-SOLI-PRIS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-CYLN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-MENS-SOLI-CYLN in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-5.4.2",
+          "subtopicName": "Carry out calculations and solve problems involving surface area and volume of cuboids, prisms, cylinders, spheres, pyramids and cones.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-SOLI-PYRA",
               "matchStrength": "strong",
-              "matchReason": "Mapped to STAT-PROBA-BASIC"
+              "matchReason": "Cone and sphere are currently represented in the broader solid-shape branch by adjacent 3D volume leaves."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-5.5",
+          "subtopicName": "Carry out calculations and solve problems involving compound shapes and parts of shapes, compound solids and parts of solids.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-AREA-RECT",
+              "matchStrength": "partial",
+              "matchReason": "Compound shape work uses component area and perimeter skills."
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PRIS",
+              "matchStrength": "partial",
+              "matchReason": "Compound solid work uses surface-area and volume skills."
             }
           ]
         }
@@ -848,114 +1370,569 @@
     },
     {
       "topicId": "AQA-8300-6",
+      "topicName": "Trigonometry",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "AQA-8300-6.1",
+          "subtopicName": "Know and use Pythagoras' theorem.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-RATR-PYTH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-RATR-PYTH in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-6.2",
+          "subtopicName": "Know and use sine, cosine and tangent ratios for acute angles in calculations involving sides and angles of a right-angled triangle.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-RATR-SINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-RATR-SINE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-COSN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-RATR-COSN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-RATR-TANG in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-6.3",
+          "subtopicName": "Know exact values of sine, cosine and tangent for standard angles.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-EXCT-EXCT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-EXCT-EXCT in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-6.4",
+          "subtopicName": "Recognise, sketch and interpret sine, cosine and tangent graphs and solve trigonometric equations.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-COSN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-TANG in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-6.4.2",
+          "subtopicName": "Recognise, sketch and interpret sine, cosine and tangent graphs and solve trigonometric equations.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-EQNS-SIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-EQNS-SIMP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-6.5",
+          "subtopicName": "Use the sine and cosine rules and the formula for the area of a triangle in calculations involving any triangle.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-SINR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-COSR in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-AREA in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-6.6",
+          "subtopicName": "Carry out calculations and solve problems in three dimensions using Pythagoras' theorem and trigonometry.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-RATR-PYTH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-RATR-PYTH in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-SINE",
+              "matchStrength": "strong",
+              "matchReason": "3D trigonometry applies the same right-angled trigonometric ratios in spatial contexts."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "AQA-8300-7",
+      "topicName": "Transformations and vectors",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "AQA-8300-7.1",
+          "subtopicName": "Recognise, describe and draw reflections, rotations, enlargements and translations, including combinations of transformations.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONS-TRAN-REFL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONS-TRAN-REFL in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-ROTA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONS-TRAN-ROTA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-ENLG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONS-TRAN-ENLG in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-7.1.2",
+          "subtopicName": "Recognise, describe and draw reflections, rotations, enlargements and translations, including combinations of transformations.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONS-TRAN-TRAN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONS-TRAN-TRAN in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-7.2",
+          "subtopicName": "Describe a translation using a vector, add and subtract vectors and multiply a vector by a scalar.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-COLV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-BASIC-NOTN-COLV in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-BASIC-NOTN-ADDS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-BASIC-NOTN-SCAL in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-7.3",
+          "subtopicName": "Calculate the magnitude of a vector.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-MAGN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-BASIC-NOTN-MAGN in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-7.4",
+          "subtopicName": "Use position vectors and vector methods to reason and solve geometrical problems, including parallel vectors, collinearity, ratio and similarity.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-POSV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-BASIC-NOTN-POSV in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "VECT-GEOM-PROB-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-GEOM-PROB-PARA in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "VECT-GEOM-PROB-COLL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-GEOM-PROB-COLL in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-7.4.2",
+          "subtopicName": "Use position vectors and vector methods to reason and solve geometrical problems, including parallel vectors, collinearity, ratio and similarity.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-GEOM-PROB-RATI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-GEOM-PROB-RATI in the MVP knowledge tree."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "AQA-8300-8",
+      "topicName": "Probability",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "AQA-8300-8.1",
+          "subtopicName": "Understand and use the probability scale from 0 to 1, probability notation, probability of a single event and probability of an event not occurring.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-BASIC-BASIC-SCALE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-BASIC-BASIC-SCALE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-BASIC-BASIC-NOTN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-BASIC-BASIC-NOTN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-BASIC-BASIC-SING",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-BASIC-BASIC-SING in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-8.1.2",
+          "subtopicName": "Understand and use the probability scale from 0 to 1, probability notation, probability of a single event and probability of an event not occurring.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-BASIC-BASIC-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-BASIC-BASIC-COMP in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-INDE",
+              "matchStrength": "strong",
+              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-8.2",
+          "subtopicName": "Understand relative frequency as an estimate of probability and calculate expected frequencies.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-BASIC-BASIC-SING",
+              "matchStrength": "partial",
+              "matchReason": "Relative frequency is represented through basic probability in the MVP tree."
+            },
+            {
+              "nodeId": "PROB-BASIC-BASIC-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-BASIC-BASIC-COMP in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-8.3",
+          "subtopicName": "Calculate the probability of combined events using sample space diagrams, Venn diagrams and tree diagrams.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-COUNT-SAMPS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-COUNT-SAMPS in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-RULE-VENN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-TREE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-RULE-TREE in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-8.3.2",
+          "subtopicName": "Calculate the probability of combined events using sample space diagrams, Venn diagrams and tree diagrams.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-RULE-ADD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-RULE-ADD in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-8.4",
+          "subtopicName": "Calculate conditional probability using Venn diagrams, tree diagrams and tables.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-RULE-COND",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-RULE-COND in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-RULE-VENN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-TREE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-RULE-TREE in the MVP knowledge tree."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "AQA-8300-9",
       "topicName": "Statistics",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-8300-S1",
-          "subtopicName": "Interpret diagrams for single-variable data, including understanding that area in a histogram represents frequency. Connect to probability distributions.",
+          "subtopicId": "AQA-8300-9.1",
+          "subtopicName": "Classify and tabulate statistical data.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-CHART",
+              "nodeId": "STAT-DATA-CLAS-TYPE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-CHART"
+              "matchReason": "Maps directly to STAT-DATA-CLAS-TYPE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-DATA-CLAS-TALL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-DATA-CLAS-TALL in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-DATA-CLAS-TWOW",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-DATA-CLAS-TWOW in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-S2",
-          "subtopicName": "Interpret diagrams for single-variable data, including understanding that area in a histogram represents frequency.",
+          "subtopicId": "AQA-8300-9.2",
+          "subtopicName": "Read, interpret and draw inferences from tables and statistical diagrams and compare sets of data.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-SL",
+              "nodeId": "STAT-DATA-REPR-BARCH",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-SL"
+              "matchReason": "Maps directly to STAT-DATA-REPR-BARCH in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-PIE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-DATA-REPR-PIE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEAN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-SUMM-CENT-MEAN in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-S3",
-          "subtopicName": "Interpret measures of central tendency and variation, extending to standard deviation. Be able to calculate standard deviation, including from summary statistics.",
+          "subtopicId": "AQA-8300-9.2.2",
+          "subtopicName": "Read, interpret and draw inferences from tables and statistical diagrams and compare sets of data.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-MEASU-CENTR",
+              "nodeId": "STAT-SUMM-CENT-MEDI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-MEASU-CENTR"
+              "matchReason": "Maps directly to STAT-SUMM-CENT-MEDI in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-S4",
-          "subtopicName": "Interpret measures of central tendency and variation, extending to standard deviation. Be able to calculate standard deviation, including from summary statistics.",
+          "subtopicId": "AQA-8300-9.3",
+          "subtopicName": "Calculate mean, median, mode, quartiles, range and interquartile range, including estimates for grouped data.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-MEASU-CENTR",
+              "nodeId": "STAT-SUMM-CENT-MEAN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-MEASU-CENTR"
+              "matchReason": "Maps directly to STAT-SUMM-CENT-MEAN in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEDI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-SUMM-CENT-MEDI in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MODE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-SUMM-CENT-MODE in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-S5",
-          "subtopicName": "Interpret scatter diagrams and regression lines for bivariate data. Understand informal interpretation of correlation. Understand that correlation does not imply causation.",
+          "subtopicId": "AQA-8300-9.3.2",
+          "subtopicName": "Calculate mean, median, mode, quartiles, range and interquartile range, including estimates for grouped data.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-SCATT",
+              "nodeId": "STAT-SUMM-CENT-IQR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-SCATT"
+              "matchReason": "Maps directly to STAT-SUMM-CENT-IQR in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-S6",
-          "subtopicName": "Interpret diagrams for single-variable data, including understanding that area in a histogram represents frequency. Connect to probability distributions.",
+          "subtopicId": "AQA-8300-9.4",
+          "subtopicName": "Draw and interpret bar charts, pie charts, pictograms, stem-and-leaf diagrams and frequency distributions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-HISTO",
+              "nodeId": "STAT-DATA-REPR-BARCH",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-HISTO"
+              "matchReason": "Maps directly to STAT-DATA-REPR-BARCH in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-PIE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-DATA-REPR-PIE in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-PICT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-DATA-REPR-PICT in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-S7",
-          "subtopicName": "Interpret diagrams for single-variable data.",
+          "subtopicId": "AQA-8300-9.4.2",
+          "subtopicName": "Draw and interpret bar charts, pie charts, pictograms, stem-and-leaf diagrams and frequency distributions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-CF",
+              "nodeId": "STAT-DATA-REPR-STEM",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-CF"
+              "matchReason": "Maps directly to STAT-DATA-REPR-STEM in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-S8",
-          "subtopicName": "Recognise and interpret possible outliers in data sets and statistical diagrams.",
+          "subtopicId": "AQA-8300-9.5",
+          "subtopicName": "Draw and interpret scatter diagrams; understand positive, negative and zero correlation; draw and use a straight line of best fit.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-BP",
+              "nodeId": "STAT-DATA-REPR-SCAT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to STAT-DATA-BP"
+              "matchReason": "Maps directly to STAT-DATA-REPR-SCAT in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-POSC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-BIVA-CORR-POSC in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-NEGC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-BIVA-CORR-NEGC in the MVP knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "AQA-8300-S9",
-          "subtopicName": "Interpret measures of central tendency and variation, extending to standard deviation.",
+          "subtopicId": "AQA-8300-9.5.2",
+          "subtopicName": "Draw and interpret scatter diagrams; understand positive, negative and zero correlation; draw and use a straight line of best fit.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "STAT-MEASU-DISPE",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to STAT-MEASU-DISPE"
+              "nodeId": "STAT-BIVA-CORR-LOBF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-BIVA-CORR-LOBF in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-9.6",
+          "subtopicName": "Draw and interpret cumulative frequency tables and diagrams and estimate median, percentiles, quartiles and interquartile range.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-CUMF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-DATA-REPR-CUMF in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEDI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-SUMM-CENT-MEDI in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-QUAR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-SUMM-CENT-QUAR in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-9.6.2",
+          "subtopicName": "Draw and interpret cumulative frequency tables and diagrams and estimate median, percentiles, quartiles and interquartile range.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-SUMM-CENT-IQR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-SUMM-CENT-IQR in the MVP knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-8300-9.7",
+          "subtopicName": "Draw and interpret histograms and calculate with frequency density.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-DATA-REPR-HIST in the MVP knowledge tree."
+            },
+            {
+              "nodeId": "STAT-DATA-CLAS-GROUP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-DATA-CLAS-GROUP in the MVP knowledge tree."
             }
           ]
         }

@@ -2,133 +2,196 @@
   "board": "OCR",
   "subjectCode": "6993",
   "subjectName": "FSMQ Additional Mathematics",
-  "level": "GCSE",
-  "version": "1.0",
-  "totalTopics": 6,
-  "mappedTopics": 6,
+  "level": "FSMQ",
+  "version": "1.0-batch1",
+  "totalTopics": 5,
+  "mappedTopics": 5,
   "mappings": [
     {
       "topicId": "OCR-6993-1",
-      "topicName": "Algebra",
+      "topicName": "Functions and Algebra",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-6993-1",
-          "subtopicName": "Algebra: manipulation, expanding brackets, factorising",
+          "subtopicId": "OCR-6993-1.1",
+          "subtopicName": "Recognise and use function notation, including mappings, inverse notation, composite notation and repeated-function notation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-EF",
+              "nodeId": "ALGF-FUNC-DEFS-NOTN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-EF"
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-NOTN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-COMP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVR in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1",
-          "subtopicName": "Quadratic equations; completing the square; discriminant",
+          "subtopicId": "OCR-6993-1.2",
+          "subtopicName": "Use domain and range, determine when an inverse exists, and sketch the relationship between a function and its inverse.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-QUADR",
+              "nodeId": "ALGF-FUNC-DEFS-DOMR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-QUADR"
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-DOMR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-ONON",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-DEFS-ONON in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVG in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1",
-          "subtopicName": "Simultaneous equations: linear and non-linear",
+          "subtopicId": "OCR-6993-1.3",
+          "subtopicName": "Use modulus graphs, function transformations and sketching of polynomial or reciprocal functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-SIMUL",
+              "nodeId": "ALGF-FUNC-GRAP-MODU",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-SIMUL"
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-MODU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-REFL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-TRAN-REFL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1",
-          "subtopicName": "Inequalities: linear and quadratic",
+          "subtopicId": "OCR-6993-1.3.2",
+          "subtopicName": "Use modulus graphs, function transformations and sketching of polynomial or reciprocal functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-LI",
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-LI"
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1",
-          "subtopicName": "Linear equations; change of subject",
+          "subtopicId": "OCR-6993-1.4",
+          "subtopicName": "Find maximum or minimum values of quadratics by completing the square or differentiation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQUAT-LINEA",
+              "nodeId": "ALGF-EQN-QUAD-COMP",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-EQUAT-LINEA"
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1",
-          "subtopicName": "Substitution into expressions and formulae",
+          "subtopicId": "OCR-6993-1.5",
+          "subtopicName": "Use discriminants to determine roots, tangency and intersections involving quadratic functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-SUBST",
+              "nodeId": "ALGF-EQN-QUAD-DISC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-SUBST"
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-DISC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-FUNC-GRAP-INTR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1",
-          "subtopicName": "Manipulation of formulae; change of subject",
+          "subtopicId": "OCR-6993-1.6",
+          "subtopicName": "Solve quadratic equations and inequalities using factorisation, completing the square, formulae and graphs.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MANIP-FORMU",
+              "nodeId": "ALGF-EQN-QUAD-FACT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-MANIP-FORMU"
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FACT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FORM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-QUAD-FORM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1",
-          "subtopicName": "Completing the square for quadratic expressions",
+          "subtopicId": "OCR-6993-1.7",
+          "subtopicName": "Use indices, surds, logarithms, exponentials and polynomial manipulation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-CS",
+              "nodeId": "NUM-POW-INDX-FRAC",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-CS"
+              "matchReason": "Maps directly to NUM-POW-INDX-FRAC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "NUM-POW-POWR-SURD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUM-POW-POWR-SURD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-EX",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-LOG-EXPO-EX in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1",
-          "subtopicName": "Discriminant; nature of roots",
+          "subtopicId": "OCR-6993-1.8",
+          "subtopicName": "Use algebraic division, factor theorem, remainder theorem or polynomial factors where specified.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "ALGF-QUADR-DISCR",
+              "nodeId": "ALGF-POLY-POLY-DIVL",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-DISCR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-1",
-          "subtopicName": "Quadratic graphs; sketching; vertex",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to ALGF-POLY-POLY-DIVL in the expanded knowledge tree."
+            },
             {
-              "nodeId": "ALGF-QUADR-GRAPH",
+              "nodeId": "ALGF-POLY-POLY-FACT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to ALGF-QUADR-GRAPH"
+              "matchReason": "Maps directly to ALGF-POLY-POLY-FACT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-CUBQ",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-POLY-POLY-CUBQ in the expanded knowledge tree."
             }
           ]
         }
@@ -136,54 +199,106 @@
     },
     {
       "topicId": "OCR-6993-2",
-      "topicName": "Coordinate geometry",
+      "topicName": "Coordinate Geometry and Sequences",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-6993-2",
-          "subtopicName": "Coordinate geometry: straight lines; gradient; y=mx+c",
+          "subtopicId": "OCR-6993-2.1",
+          "subtopicName": "Use coordinate geometry of straight lines and circles, including gradients, intersections and tangents.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "COG-LINES-EQUAT",
+              "nodeId": "GEOM-COOR-LINE-GRAD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-EQUAT"
+              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CIRC-CENT in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-2",
-          "subtopicName": "Parallel and perpendicular lines",
+          "subtopicId": "OCR-6993-2.1.2",
+          "subtopicName": "Use coordinate geometry of straight lines and circles, including gradients, intersections and tangents.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "COG-LINES-PP",
+              "nodeId": "GEOM-COOR-CIRC-TANG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-PP"
+              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-2",
-          "subtopicName": "Equation of circle",
+          "subtopicId": "OCR-6993-2.2",
+          "subtopicName": "Use equations of tangents and normals, intersections of curves and coordinate geometry problem solving.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "COG-CIRCL-EQUAT",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to COG-CIRCL-EQUAT"
+              "nodeId": "GEOM-COOR-LINE-POINT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-LINE-POINT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-COOR-CART-INTR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-COOR-CART-INTR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-TANG in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-2",
-          "subtopicName": "Distance between two points; midpoint",
+          "subtopicId": "OCR-6993-2.3",
+          "subtopicName": "Use arithmetic and geometric sequences, nth terms and recursive definitions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "COG-LINES-DISTA",
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
               "matchStrength": "exact",
-              "matchReason": "Mapped to COG-LINES-DISTA"
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-NTH in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-ARIT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-GEOM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SEQU-GEOM in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-6993-2.4",
+          "subtopicName": "Use series sums, sigma notation and binomial coefficients where specified.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SERS-ARSM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-GESM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-SERS-GESM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-SEQ-BINO-COEF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-BINO-COEF in the expanded knowledge tree."
             }
           ]
         }
@@ -195,86 +310,124 @@
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-6993-3",
-          "subtopicName": "Trigonometry: sine rule, cosine rule; area of triangle",
+          "subtopicId": "OCR-6993-3.1",
+          "subtopicName": "Use radians, exact values, trigonometric graphs and transformations.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "TRIG-BASIC-SCR",
+              "nodeId": "TRIG-CIRC-RADI-DEFN",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-SCR"
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-3",
-          "subtopicName": "Trigonometric identities; solving trig equations",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to TRIG-CIRC-RADI-DEFN in the expanded knowledge tree."
+            },
             {
-              "nodeId": "TRIG-IDENT-PYTHA",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to TRIG-IDENT-PYTHA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-3",
-          "subtopicName": "Radian measure",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-RADIA-CONVE",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to TRIG-RADIA-CONVE"
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-3",
-          "subtopicName": "Right-angled trigonometry; Pythagoras",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASIC-RA",
+              "nodeId": "TRIG-FUNC-EXCT-EXCT",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-BASIC-RA"
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-3",
-          "subtopicName": "Exact trig values for 30, 45, 60 degrees",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to TRIG-FUNC-EXCT-EXCT in the expanded knowledge tree."
+            },
             {
-              "nodeId": "TRIG-BASIC-EV",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to TRIG-BASIC-EV"
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-3",
-          "subtopicName": "Solving trigonometric equations in given intervals",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-EQUAT-BASIC",
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-EQUAT-BASIC"
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-3",
-          "subtopicName": "Arc length and sector area in radians",
+          "subtopicId": "OCR-6993-3.1.2",
+          "subtopicName": "Use radians, exact values, trigonometric graphs and transformations.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "TRIG-RADIA-AS",
+              "nodeId": "TRIG-FUNC-GRAP-PERD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to TRIG-RADIA-AS"
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-PERD in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-6993-3.2",
+          "subtopicName": "Use sine, cosine and tangent graphs, including amplitude, period, translations and intersections.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-COSN in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-FUNC-GRAP-TANG in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-6993-3.3",
+          "subtopicName": "Use trigonometric identities and solve trigonometric equations.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-IDEN-TANR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-TANR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-PYTH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-PYTH in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-SIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-EQNS-SIMP in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-6993-3.4",
+          "subtopicName": "Use compound-angle, double-angle or R-form transformations where specified.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-IDEN-ADDR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-ADDR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-DBLA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-IDEN-DBLA in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-MULT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-IDEN-EQNS-MULT in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-6993-3.5",
+          "subtopicName": "Use non-right-angled triangle formulae, sine rule, cosine rule and area formula.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-SINR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-COSR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to TRIG-BASE-NONR-AREA in the expanded knowledge tree."
             }
           ]
         }
@@ -286,105 +439,119 @@
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-6993-4",
-          "subtopicName": "Differentiation of polynomials; gradient of curve",
+          "subtopicId": "OCR-6993-4.1",
+          "subtopicName": "Understand gradient as a rate of change and use derivative notation.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "CALC-DIFFE-PR",
+              "nodeId": "CALC-DIFF-CONC-GRAD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-PR"
+              "matchReason": "Maps directly to CALC-DIFF-CONC-GRAD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-RATE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-CONC-RATE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-NOTN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-CONC-NOTN in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-4",
-          "subtopicName": "Tangents and normals; stationary points",
+          "subtopicId": "OCR-6993-4.2",
+          "subtopicName": "Differentiate powers and sums of elementary functions.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "CALC-DIFFE-TN",
+              "nodeId": "CALC-DIFF-RULE-POWR",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-TN"
+              "matchReason": "Maps directly to CALC-DIFF-RULE-POWR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-SUMD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-RULE-SUMD in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-4",
-          "subtopicName": "Integration of polynomials",
+          "subtopicId": "OCR-6993-4.3",
+          "subtopicName": "Apply differentiation to tangents, normals, stationary points and curve sketching.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "CALC-INTEG-PR",
+              "nodeId": "CALC-DIFF-APPL-TANG",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-PR"
+              "matchReason": "Maps directly to CALC-DIFF-APPL-TANG in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-TNOR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-PARI-TNOR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-4",
-          "subtopicName": "Definite integrals; area under curve",
+          "subtopicId": "OCR-6993-4.3.2",
+          "subtopicName": "Apply differentiation to tangents, normals, stationary points and curve sketching.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "CALC-INTEG-AC",
+              "nodeId": "CALC-DIFF-APPL-SKET",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-AC"
+              "matchReason": "Maps directly to CALC-DIFF-APPL-SKET in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-4",
-          "subtopicName": "Concept of derivative as gradient; rate of change",
+          "subtopicId": "OCR-6993-4.4",
+          "subtopicName": "Integrate as reverse differentiation and use constants of integration.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "CALC-DIFFE-CONCE",
+              "nodeId": "CALC-INTE-CONC-REVD",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-DIFFE-CONCE"
+              "matchReason": "Maps directly to CALC-INTE-CONC-REVD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-POWR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-INTE-RULE-POWR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-CONS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-INTE-APPL-CONS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-4",
-          "subtopicName": "Definite integrals; area under curve",
+          "subtopicId": "OCR-6993-4.5",
+          "subtopicName": "Use definite integration for area and area between a curve and an axis.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "CALC-INTEG-DEFIN",
+              "nodeId": "CALC-INTE-CONC-DEFI",
               "matchStrength": "exact",
-              "matchReason": "Mapped to CALC-INTEG-DEFIN"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "OCR-6993-5",
-      "topicName": "Matrices",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "OCR-6993-5",
-          "subtopicName": "Matrices: 2x2 operations; determinants; inverses",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Maps directly to CALC-INTE-CONC-DEFI in the expanded knowledge tree."
+            },
             {
-              "nodeId": "MAT-OPERA-ASM",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to MAT-OPERA-ASM"
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-5",
-          "subtopicName": "Matrix transformations in 2D",
-          "paperReference": null,
-          "mappedNodes": [
+              "nodeId": "CALC-INTE-APPL-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-INTE-APPL-AREA in the expanded knowledge tree."
+            },
             {
-              "nodeId": "MAT-TRANS-2D",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to MAT-TRANS-2D"
+              "nodeId": "CALC-INTE-APPL-BETW",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-INTE-APPL-BETW in the expanded knowledge tree."
             }
           ]
         }
@@ -392,30 +559,79 @@
     },
     {
       "topicId": "OCR-6993-6",
-      "topicName": "Kinematics",
+      "topicName": "Numerical Methods and Enumeration",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-6993-6",
-          "subtopicName": "Kinematics: constant acceleration; suvat; velocity-time graphs",
+          "subtopicId": "OCR-6993-6.1",
+          "subtopicName": "Use enumeration, systematic listing and counting methods.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "MECH-KINEM-CA",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to MECH-KINEM-CA"
+              "nodeId": "PROB-COMB-COUNT-ENUM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-COUNT-ENUM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-COUNT-SAMPS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-COUNT-SAMPS in the expanded knowledge tree."
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-6",
-          "subtopicName": "Displacement-time and velocity-time graphs",
+          "subtopicId": "OCR-6993-6.2",
+          "subtopicName": "Use binomial coefficients and simple combinatorial arguments.",
           "paperReference": null,
           "mappedNodes": [
             {
-              "nodeId": "MECH-KINEM-GRAPH",
-              "matchStrength": "strong",
-              "matchReason": "Mapped to MECH-KINEM-GRAPH"
+              "nodeId": "ALGF-SEQ-BINO-COEF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-SEQ-BINO-COEF in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-COMB-COUNT-COMB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-COMB-COUNT-COMB in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-6993-6.3",
+          "subtopicName": "Use iterative numerical methods and interpret convergence.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-ITER-FORM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUMM-ROOT-ITER-FORM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUMM-ROOT-ITER-CONV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-COBW",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUMM-ROOT-ITER-COBW in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-6993-6.4",
+          "subtopicName": "Use the trapezium rule or numerical integration where specified.",
+          "paperReference": null,
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-NINT-TRAP-ESTM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUMM-NINT-TRAP-ESTM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "NUMM-NINT-TRAP-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to NUMM-NINT-TRAP-AREA in the expanded knowledge tree."
             }
           ]
         }
