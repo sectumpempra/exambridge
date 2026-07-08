@@ -132,6 +132,8 @@ export const BOARD_META: Record<string, BoardMeta> = {
     maxMarkField: "maxMark",
     gradeConfig: BOARD_GRADE_CONFIG["Edexcel-GCSE"],
     fieldMap: { grade9: "grade9", grade8: "grade8", grade7: "grade7", grade6: "grade6", grade5: "grade5", grade4: "grade4", grade3: "grade3", grade2: "grade2", grade1: "grade1" },
+    yearField: "year",
+    sessionFieldAlt: "session",
   },
   "OCR-GCSE": {
     key: "OCR-GCSE",
@@ -144,6 +146,8 @@ export const BOARD_META: Record<string, BoardMeta> = {
     maxMarkField: "maxMark",
     gradeConfig: BOARD_GRADE_CONFIG["OCR-GCSE"],
     fieldMap: { grade9: "grade9", grade8: "grade8", grade7: "grade7", grade6: "grade6", grade5: "grade5", grade4: "grade4", grade3: "grade3", grade2: "grade2", grade1: "grade1" },
+    yearField: "year",
+    sessionFieldAlt: "session",
   },
   "AQA-GCSE": {
     key: "AQA-GCSE",
@@ -156,6 +160,8 @@ export const BOARD_META: Record<string, BoardMeta> = {
     maxMarkField: "maxMark",
     gradeConfig: BOARD_GRADE_CONFIG["AQA-GCSE"],
     fieldMap: { grade9: "grade9", grade8: "grade8", grade7: "grade7", grade6: "grade6", grade5: "grade5", grade4: "grade4", grade3: "grade3", grade2: "grade2", grade1: "grade1" },
+    yearField: "year",
+    sessionFieldAlt: "session",
   },
   "Edexcel-AL": {
     key: "Edexcel-AL",
@@ -255,11 +261,24 @@ function canonicalizeEdexcelGCSEComp(code: string, component: string): string {
   return component.replace(/Paper\s+0+(\d)/, "Paper $1");
 }
 
+/**
+ * Normalize raw-data component names to canonical config IDs.
+ * E.g. "Mathematics Paper 1F" → "P1F"
+ */
+function normalizeComponent(boardKey: string, comp: string): string {
+  if (boardKey === "Edexcel-GCSE" || boardKey === "AQA-GCSE") {
+    const m = comp.match(/Paper\s+(\d[A-Za-z]*)/);
+    if (m) return `P${m[1]}`;
+  }
+  return comp;
+}
+
 /** Index shape: dataKey -> subjectCode -> component -> series -> record */
 export type DataIndex = Record<string, Record<string, Record<string, Record<string, Record<string, string | number>>>>>;
 
 function buildIndex(records: Record<string, string | number>[], meta: BoardMeta): Record<string, Record<string, Record<string, Record<string, string | number>>>> {
   const idx: Record<string, Record<string, Record<string, Record<string, string | number>>>> = {};
+  const seenKeys = new Set<string>();
   for (const r of records) {
     const code = String(r[meta.codeField] ?? "");
     let comp = String(r[meta.compField] ?? "");
@@ -277,8 +296,17 @@ function buildIndex(records: Record<string, string | number>[], meta: BoardMeta)
     comp = remapComponent(code, comp);
     // Canonicalize Edexcel GCSE component names (remove leading zeros)
     comp = canonicalizeEdexcelGCSEComp(code, comp);
+    // Normalize to canonical config IDs (e.g. "Mathematics Paper 1F" → "P1F")
+    comp = normalizeComponent(meta.key, comp);
     if (!idx[code]) idx[code] = {};
     if (!idx[code][comp]) idx[code][comp] = {};
+    // P1-1: Detect duplicate keys (same subjectCode + component + series)
+    const key = `${meta.key}/${code}/${comp}/${series}`;
+    if (seenKeys.has(key)) {
+      console.warn(`[calculatorIndex] Duplicate record skipped: ${key}`);
+      continue;
+    }
+    seenKeys.add(key);
     idx[code][comp][series] = r;
   }
   return idx;
