@@ -247,6 +247,8 @@ export default function Home() {
   const handleSearch = () => {
     if (searchQuery.trim()) {
       navigate(`/papers?search=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      navigate('/knowledge-tree');
     }
   };
 

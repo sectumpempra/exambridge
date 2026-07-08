@@ -7,6 +7,9 @@ import type {
   ExclusiveSubtopicItem,
 } from "./types-v3.2";
 
+// Import knowledge tree directly (bundled at build time)
+import knowledgeTreeData from "./knowledge-tree.json";
+
 const BASE = "/data/v3.2-new";
 
 // Mapping file list (derived from actual files)
@@ -39,12 +42,10 @@ let cachedTree: KnowledgeTreeV32 | null = null;
 let cachedMappings: Map<string, MappingFile> | null = null;
 let cachedSubjects: SubjectInfoV32[] | null = null;
 
-/** Load the knowledge tree */
+/** Load the knowledge tree (bundled at build time) */
 export async function loadKnowledgeTreeV32(): Promise<KnowledgeTreeV32> {
   if (cachedTree) return cachedTree;
-  const res = await fetch(`${BASE}/knowledge-tree.json`);
-  if (!res.ok) throw new Error("Failed to load knowledge tree");
-  cachedTree = await res.json();
+  cachedTree = knowledgeTreeData as KnowledgeTreeV32;
   return cachedTree!;
 }
 

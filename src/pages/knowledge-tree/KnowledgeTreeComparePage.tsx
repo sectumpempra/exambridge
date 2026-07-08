@@ -235,7 +235,7 @@ export default function KnowledgeTreeComparePage() {
               跨考试局考纲重合度分析
             </h1>
             <p className="mt-2 text-sm text-[#8B8378] leading-relaxed">
-              基于 <strong className="text-[#3D3832]">345 节点</strong> 统一知识树，覆盖{" "}
+              基于 <strong className="text-[#3D3832]">812 节点</strong> 统一知识树，覆盖{" "}
               <strong className="text-[#3D3832]">5 大考试局 21 个数学类科目</strong> 的精确映射
               <br />
               支持 <strong className="text-[#C75B2A]">整科对比</strong>、{" "}
