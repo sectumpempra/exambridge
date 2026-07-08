@@ -251,6 +251,11 @@ export default function Planner() {
 
   const { weeks, totalTasks } = usePlanner(config, pastPapersMap);
 
+  // Detect groups missing exam dates
+  const missingDateGroups = useMemo(() =>
+    selectedGroups.filter(g => !getGroupNearestExamDate(g.level, g.board, g.variants)),
+  [selectedGroups]);
+
   // Exam countdown (one entry per selected group, not per variant)
   const examGroups = useMemo(() =>
     selectedGroups.map(g => {
@@ -430,7 +435,27 @@ export default function Planner() {
               )}
 
               {weeks.length === 0 ? (
-                <div className={`${CARD_CLS} text-center py-15`}><BookOpen size={32} style={{ color: "#C4BDB3", marginBottom: 12 }} /><p style={{ fontSize: 15, color: "#8B8378", margin: 0 }}>请先选择科目和 Paper</p></div>
+                <div className={`${CARD_CLS} text-center py-15`}>
+                  <BookOpen size={32} style={{ color: "#C4BDB3", marginBottom: 12 }} />
+                  {selectedGroups.length === 0 ? (
+                    <p style={{ fontSize: 15, color: "#8B8378", margin: 0 }}>请先选择科目和 Paper</p>
+                  ) : missingDateGroups.length > 0 ? (
+                    <div>
+                      <p style={{ fontSize: 15, color: "#C75B2A", margin: "0 0 8px" }}>
+                        以下 {missingDateGroups.length} 个 Paper 暂无考试日期，规划器无法生成计划
+                      </p>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
+                        {missingDateGroups.map(g => (
+                          <span key={g.subjectCode + g.paperLabel} style={{ fontSize: 12, color: "#8B8378", background: "#F0EDE8", padding: "2px 8px", borderRadius: 6 }}>
+                            {g.subjectCode} {g.paperLabel}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <p style={{ fontSize: 15, color: "#8B8378", margin: 0 }}>所有休息日被覆盖，无法生成计划</p>
+                  )}
+                </div>
               ) : (weeks.map(week => (
                 <div key={week.weekNum} className={CARD_CLS}>
                   <div onClick={() => setCollapsedWeeks(prev => ({ ...prev, [week.weekNum]: !prev[week.weekNum] }))} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", paddingBottom: 8, borderBottom: "1px solid #F0EDE8" }}>

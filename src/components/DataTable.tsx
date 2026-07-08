@@ -213,11 +213,11 @@ export default function DataTable({
       for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
       pages.push(1);
-      if (currentPage > 3) pages.push("...");
-      const s = Math.max(2, currentPage - 1),
-        e = Math.min(totalPages - 1, currentPage + 1);
+      if (validPage > 3) pages.push("...");
+      const s = Math.max(2, validPage - 1),
+        e = Math.min(totalPages - 1, validPage + 1);
       for (let i = s; i <= e; i++) pages.push(i);
-      if (currentPage < totalPages - 2) pages.push("...");
+      if (validPage < totalPages - 2) pages.push("...");
       pages.push(totalPages);
     }
     return pages;

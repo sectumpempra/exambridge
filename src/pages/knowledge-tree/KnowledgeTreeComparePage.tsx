@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
-import { GitCompareArrows, FolderTree, Layers, FileText } from "lucide-react";
+import { GitCompareArrows, FolderTree, Layers, FileText, AlertCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SubjectSelector from "./components/SubjectSelector";
@@ -52,6 +52,7 @@ export default function KnowledgeTreeComparePage() {
     bExclusive: ExclusiveSubtopicItem[];
   }>({ aExclusive: [], bExclusive: [] });
   const [loadingCalc, setLoadingCalc] = useState(false);
+  const [calcError, setCalcError] = useState<string | null>(null);
 
   // Initial data load
   useEffect(() => {
@@ -97,17 +98,32 @@ export default function KnowledgeTreeComparePage() {
     setPaperB(null);
   }, []);
 
-  // Calculate overlap when selection changes
+  // Derived: is this a valid comparison?
+  const isValidComparison = useMemo(
+    () => Boolean(codeA && codeB && codeA !== codeB),
+    [codeA, codeB]
+  );
+
+  // Empty sets for invalid comparison state
+  const emptyOverlapSets = useMemo(
+    () => ({ shared: new Set<string>(), aOnly: new Set<string>(), bOnly: new Set<string>() }),
+    []
+  );
+
+  // Effective data for rendering (no setState in effect for invalid state)
+  const effectiveOverlapResult = isValidComparison ? overlapResult : null;
+  const effectiveOverlapSets = isValidComparison ? overlapSets : emptyOverlapSets;
+  const effectiveExclusiveData = isValidComparison
+    ? exclusiveData
+    : { aExclusive: [] as ExclusiveSubtopicItem[], bExclusive: [] as ExclusiveSubtopicItem[] };
+
+  // Calculate overlap only when comparison is valid
   useEffect(() => {
-    if (!codeA || !codeB || codeA === codeB) {
-      setOverlapResult(null);
-      setOverlapSets({ shared: new Set(), aOnly: new Set(), bOnly: new Set() });
-      setExclusiveData({ aExclusive: [], bExclusive: [] });
-      return;
-    }
+    if (!isValidComparison) return;
 
     let cancelled = false;
     setLoadingCalc(true);
+    setCalcError(null);
 
     async function calc() {
       try {
@@ -120,15 +136,16 @@ export default function KnowledgeTreeComparePage() {
         setOverlapResult(result);
         setOverlapSets(sets);
         setExclusiveData(exclusive);
-      } catch (e) {
-        console.error("Overlap calculation error:", e);
+      } catch {
+        if (!cancelled) setCalcError("计算失败，请稍后重试");
       } finally {
         if (!cancelled) setLoadingCalc(false);
       }
     }
+
     calc();
     return () => { cancelled = true; };
-  }, [codeA, codeB, paperA, paperB]);
+  }, [isValidComparison, codeA, codeB, paperA, paperB]);
 
   const subjectOptions = useMemo(
     () =>
@@ -148,7 +165,7 @@ export default function KnowledgeTreeComparePage() {
   const displayA = paperA ? `${subjectA?.name || codeA} ${paperA}` : subjectA?.name || codeA;
   const displayB = paperB ? `${subjectB?.name || codeB} ${paperB}` : subjectB?.name || codeB;
 
-  const { shared: sharedSet, aOnly: aOnlySet, bOnly: bOnlySet } = overlapSets;
+  const { shared: sharedSet, aOnly: aOnlySet, bOnly: bOnlySet } = effectiveOverlapSets;
 
   const TABS: { key: TabKey; label: string; icon: React.ReactNode }[] = [
     { key: "tree", label: "知识树视图", icon: <FolderTree className="w-3.5 h-3.5" /> },
@@ -157,33 +174,33 @@ export default function KnowledgeTreeComparePage() {
   ];
 
   const overlapData = useMemo(() => {
-    if (!overlapResult) return null;
+    if (!effectiveOverlapResult) return null;
     return {
       version: "3.2",
       comparison: {
-        A: overlapResult.aName,
-        B: overlapResult.bName,
-        topicCountA: overlapResult.aTotal,
-        topicCountB: overlapResult.bTotal,
+        A: effectiveOverlapResult.aName,
+        B: effectiveOverlapResult.bName,
+        topicCountA: effectiveOverlapResult.aTotal,
+        topicCountB: effectiveOverlapResult.bTotal,
       },
       summary: {
         symmetric: {
-          weighted: overlapResult.weighted,
-          unweighted: overlapResult.unweighted,
+          weighted: effectiveOverlapResult.weighted,
+          unweighted: effectiveOverlapResult.unweighted,
         },
         AtoB: {
           name: displayA,
-          weighted: { overlap: overlapResult.sharedCount, total: overlapResult.aTotal, percentage: overlapResult.aTotal > 0 ? (overlapResult.sharedCount / overlapResult.aTotal) * 100 : 0 },
-          unweighted: { overlap: overlapResult.sharedCount, total: overlapResult.aTotal, percentage: overlapResult.aTotal > 0 ? (overlapResult.sharedCount / overlapResult.aTotal) * 100 : 0 },
+          weighted: { overlap: effectiveOverlapResult.sharedCount, total: effectiveOverlapResult.aTotal, percentage: effectiveOverlapResult.aTotal > 0 ? (effectiveOverlapResult.sharedCount / effectiveOverlapResult.aTotal) * 100 : 0 },
+          unweighted: { overlap: effectiveOverlapResult.sharedCount, total: effectiveOverlapResult.aTotal, percentage: effectiveOverlapResult.aTotal > 0 ? (effectiveOverlapResult.sharedCount / effectiveOverlapResult.aTotal) * 100 : 0 },
         },
         BtoA: {
           name: displayB,
-          weighted: { overlap: overlapResult.sharedCount, total: overlapResult.bTotal, percentage: overlapResult.bTotal > 0 ? (overlapResult.sharedCount / overlapResult.bTotal) * 100 : 0 },
-          unweighted: { overlap: overlapResult.sharedCount, total: overlapResult.bTotal, percentage: overlapResult.bTotal > 0 ? (overlapResult.sharedCount / overlapResult.bTotal) * 100 : 0 },
+          weighted: { overlap: effectiveOverlapResult.sharedCount, total: effectiveOverlapResult.bTotal, percentage: effectiveOverlapResult.bTotal > 0 ? (effectiveOverlapResult.sharedCount / effectiveOverlapResult.bTotal) * 100 : 0 },
+          unweighted: { overlap: effectiveOverlapResult.sharedCount, total: effectiveOverlapResult.bTotal, percentage: effectiveOverlapResult.bTotal > 0 ? (effectiveOverlapResult.sharedCount / effectiveOverlapResult.bTotal) * 100 : 0 },
         },
       },
       details: {
-        AtoB: overlapResult.sharedNodes.map((nid) => ({
+        AtoB: effectiveOverlapResult.sharedNodes.map((nid) => ({
           topicId: nid,
           topicName: nid,
           hasOverlap: true,
@@ -191,7 +208,7 @@ export default function KnowledgeTreeComparePage() {
           sharedNodes: [nid],
           nodeCount: 1,
         })),
-        BtoA: overlapResult.sharedNodes.map((nid) => ({
+        BtoA: effectiveOverlapResult.sharedNodes.map((nid) => ({
           topicId: nid,
           topicName: nid,
           hasOverlap: true,
@@ -201,7 +218,7 @@ export default function KnowledgeTreeComparePage() {
         })),
       },
     };
-  }, [overlapResult, displayA, displayB]);
+  }, [effectiveOverlapResult, displayA, displayB]);
 
   if (loadingData) {
     return (
@@ -275,34 +292,47 @@ export default function KnowledgeTreeComparePage() {
               </div>
             </div>
 
-            {overlapResult && (
+            {effectiveOverlapResult && (
               <div className="mt-4 pt-3 border-t border-[#E8E4DE]">
                 <div className="flex items-center gap-2">
                   <span className="text-[11px] text-[#8B8378]">对比模式：</span>
                   <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-[#F5F2EE] text-[#3D3832]">
-                    {overlapResult.mode === "subject-vs-subject" && "整科 vs 整科"}
-                    {overlapResult.mode === "paper-vs-paper" && "Paper vs Paper"}
-                    {overlapResult.mode === "paper-vs-subject" && `${paperA ? displayA : displayB} vs 整科`}
+                    {effectiveOverlapResult.mode === "subject-vs-subject" && "整科 vs 整科"}
+                    {effectiveOverlapResult.mode === "paper-vs-paper" && "Paper vs Paper"}
+                    {effectiveOverlapResult.mode === "paper-vs-subject" && `${paperA ? displayA : displayB} vs 整科`}
                   </span>
                 </div>
               </div>
             )}
           </div>
 
-          {codeA && codeB && codeA === codeB && !paperA && !paperB && (
-            <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-6 text-center">
-              <p className="text-sm text-[#8B8378]">
-                请选择<span className="font-medium text-[#C75B2A]">两个不同的科目</span>进行对比
-              </p>
+          {/* Invalid comparison: same subject */}
+          {!isValidComparison && (
+            <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-6">
+              <div className="flex items-center justify-center gap-2 text-[#8B8378]">
+                <AlertCircle className="w-4 h-4 text-[#C4BDB3]" />
+                <p className="text-sm">
+                  请选择<span className="font-medium text-[#C75B2A]">两个不同的科目/考试局</span>进行比较
+                </p>
+              </div>
             </div>
           )}
 
-          {codeA !== codeB && (
+          {/* Calculation error */}
+          {calcError && isValidComparison && (
+            <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-6 text-center">
+              <p className="text-sm text-[#C75B2A]">{calcError}</p>
+            </div>
+          )}
+
+          {/* Overlap dashboard */}
+          {isValidComparison && (
             <div className="mb-6">
               <OverlapDashboard overlap={overlapData} subjectAName={displayA} subjectBName={displayB} loading={loadingCalc} />
             </div>
           )}
 
+          {/* Tabs */}
           {overlapData && (
             <>
               <div className="mb-4 flex gap-1 rounded-xl border border-[#E8E4DE] bg-white p-1">
@@ -330,8 +360,8 @@ export default function KnowledgeTreeComparePage() {
                 <ExclusiveTopicsView
                   aName={displayA}
                   bName={displayB}
-                  aExclusive={exclusiveData.aExclusive}
-                  bExclusive={exclusiveData.bExclusive}
+                  aExclusive={effectiveExclusiveData.aExclusive}
+                  bExclusive={effectiveExclusiveData.bExclusive}
                 />
               )}
             </>
