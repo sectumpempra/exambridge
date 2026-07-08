@@ -188,11 +188,7 @@ export default function DataTable({
     Math.ceil(filteredData.length / itemsPerPage)
   );
 
-  // Clamp currentPage when totalPages changes (e.g., after filtering)
-  useEffect(() => {
-    setCurrentPage((page) => Math.min(Math.max(page, 1), totalPages));
-  }, [totalPages]);
-
+  // Derive valid page from currentPage and totalPages (no effect needed)
   const validPage = Math.min(Math.max(currentPage, 1), totalPages);
 
   const paginatedData = useMemo(() => {

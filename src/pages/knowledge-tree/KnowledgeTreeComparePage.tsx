@@ -9,6 +9,7 @@ import KnowledgeTreeView from "./components/KnowledgeTreeView";
 import TopicDiffView from "./components/TopicDiffView";
 import ExclusiveTopicsView from "./components/ExclusiveTopicsView";
 import type { OverlapResultV32, SubjectInfoV32, ExclusiveSubtopicItem } from "@/data/knowledge-tree/types-v3.2";
+import type { KnowledgeTreeNode } from "@/data/knowledge-tree/types";
 import {
   listSubjectsV32,
   calculateOverlapV32,
@@ -29,7 +30,7 @@ type TabKey = "tree" | "diff" | "exclusive";
 export default function KnowledgeTreeComparePage() {
   // Data loading state
   const [subjects, setSubjects] = useState<SubjectInfoV32[]>([]);
-  const [treeNodes, setTreeNodes] = useState<any[]>([]);
+  const [treeNodes, setTreeNodes] = useState<KnowledgeTreeNode[]>([]);
   const [loadingData, setLoadingData] = useState(true);
 
   // Selection state

@@ -120,7 +120,7 @@ export default function PWAInstallPrompt() {
               textOverflow: "ellipsis",
             }}
           >
-            安装 GradeMaster
+            安装 ExamBridge
           </div>
           <div
             style={{

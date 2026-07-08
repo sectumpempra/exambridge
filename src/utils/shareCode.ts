@@ -30,8 +30,8 @@ export function generateShareUrl(config: PlannerConfig): string {
   const json = JSON.stringify(config);
   const compressed = LZString.compressToEncodedURIComponent(json);
   const hash = window.location.hash || "#/planner";
-  const path = hash.split("?")[0]; // preserve hash path only
-  return `${window.location.origin}${window.location.pathname}#${path}?plan=${compressed}`;
+  const hashPath = hash.split("?")[0].replace(/^#/, "") || "/planner";
+  return `${window.location.origin}${window.location.pathname}#${hashPath}?plan=${compressed}`;
 }
 
 /** Parse config from URL (HashRouter safe).

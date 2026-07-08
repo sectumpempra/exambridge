@@ -6,11 +6,12 @@ import type {
   CompareMode,
   ExclusiveSubtopicItem,
 } from "./types-v3.2";
+import type { KnowledgeTreeNode } from "./types";
 
 // Import knowledge tree directly (bundled at build time)
 import knowledgeTreeData from "./knowledge-tree.json";
 
-const BASE = "/data/v3.2-new";
+const BASE = `${import.meta.env.BASE_URL}data/v3.2-new`.replace(/\/+$/, "");
 
 // Mapping file list (derived from actual files)
 const MAPPING_FILES: string[] = [
@@ -369,23 +370,18 @@ export async function findExclusiveSubtopics(
 }
 
 /** Get tree nodes for display */
-export async function getTreeNodesV32(): Promise<
-  {
-    nodeId: string;
-    path: string[];
-    level: number;
-    description?: string;
-    parentNodeId?: string;
-  }[]
-> {
+export async function getTreeNodesV32(): Promise<KnowledgeTreeNode[]> {
   const tree = await loadKnowledgeTreeV32();
   return tree.nodes.map((n) => ({
     nodeId: n.nodeId,
+    name: n.name,
     path: n.path,
     level: n.level,
     description: n.description ?? "",
+    domain: n.domain,
     parentNodeId: n.parentNodeId,
-  }));
+    childNodeIds: [],
+  })) as KnowledgeTreeNode[];
 }
 
 /** Build tree hierarchy for visualization */
