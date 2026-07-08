@@ -2,11 +2,13 @@
  * Grade Calculation Engine
  * Implements precise PUM/UMS/GNS calculation, A* determination, and precision assessment
  * per the four major exam boards (CAIE, Edexcel, AQA, OCR)
- * 
+ *
  * Weighting factors sourced from:
  * - CAIE: 206341-syllabus-component-weighting-factors.pdf
  * - Syllabus version data from official CAIE syllabus documents
  */
+
+import { getAwardRule, getTotalMaxUMS, getA2MaxUMS, getAThresholdUMS, getAStarA2ThresholdUMS } from "@/data/award-rules";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -679,42 +681,71 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
     };
   }
 
-  // Edexcel IAL
+  // Edexcel IAL (with award-rule configuration)
   if (boardKey === "Edexcel-AL") {
+    const rule = getAwardRule(subjectCode);
+    if (rule) {
+      // Use configured award rule
+      const totalMax = getTotalMaxUMS(rule);
+      const a2Max = getA2MaxUMS(rule);
+      const aThreshold = getAThresholdUMS(rule);
+      const a2Threshold = getAStarA2ThresholdUMS(rule);
+
+      // A2 papers: match by component ID
+      const a2Papers = papers.filter(p => rule.a2Components.includes(p.component));
+      const a2UMS = a2Papers.reduce((s, p) => s + p.normalizedScore, 0);
+
+      const totalMet = totalNormalized >= aThreshold;
+      const a2Met = a2Papers.length === 0 ? false : a2UMS >= a2Threshold;
+
+      // Math special rule: Core 34 (P3+P4) >= 180
+      if (rule.mathCore34Threshold && rule.mathCore34Threshold > 0) {
+        const p3p4 = papers
+          .filter(p => p.component === "P3" || p.component === "P4")
+          .reduce((s, p) => s + p.normalizedScore, 0);
+        const core34Met = p3p4 >= rule.mathCore34Threshold;
+        const eligible = totalMet && core34Met;
+        return {
+          eligible,
+          totalMet,
+          a2Met: core34Met,
+          totalThreshold: aThreshold,
+          a2Threshold: rule.mathCore34Threshold,
+          details: [
+            `总 UMS: ${totalNormalized.toFixed(0)} / ${totalMax} (A 需 ≥ ${aThreshold}) ${totalMet ? "✅" : "❌"}`,
+            `Core 34 (P3+P4) UMS: ${p3p4.toFixed(0)} (需 ≥ ${rule.mathCore34Threshold}) ${core34Met ? "✅" : "❌"}`,
+            ...(eligible ? ["满足 Edexcel 数学 A* 条件 ✅"] : ["未达到 A* 条件 ❌"]),
+          ],
+        };
+      }
+
+      const eligible = totalMet && a2Met;
+      return {
+        eligible,
+        totalMet,
+        a2Met,
+        totalThreshold: aThreshold,
+        a2Threshold: a2Threshold,
+        details: [
+          `总 UMS: ${totalNormalized.toFixed(0)} / ${totalMax} (A 需 ≥ ${aThreshold}) ${totalMet ? "✅" : "❌"}`,
+          `A2 UMS: ${a2UMS.toFixed(0)} / ${a2Max} (需 ≥ ${a2Threshold}) ${a2Met ? "✅" : "❌"}`,
+          ...(eligible ? ["满足 Edexcel A* 条件 ✅"] : ["未达到 A* 条件 ❌"]),
+        ],
+      };
+    }
+
+    // Fallback: legacy heuristic (no award rule configured)
     const is6Unit = papers.length >= 5;
     const totalMax = is6Unit ? 600 : 400;
     const aThreshold = totalMax * 0.8;
     const a2Max = is6Unit ? 300 : 200;
     const a2Threshold = a2Max * 0.9;
 
-    // Use asA2Tag (computed by getASA2Tag) for consistent A2/AS classification
     const a2Papers = papers.filter(p => p.asA2Tag === "A2");
     const a2UMS = a2Papers.reduce((s, p) => s + p.normalizedScore, 0);
 
     const totalMet = totalNormalized >= aThreshold;
     const a2Met = a2Papers.length === 0 ? false : a2UMS >= a2Threshold;
-
-    // Math special rule: Core 34 (P3+P4) >= 180
-    const isMath = subjectCode.startsWith("WMA");
-    if (isMath && a2Papers.length >= 2) {
-      const p3p4 = a2Papers
-        .filter(p => /^WMA(?:0[34]|1[34])$/.test(p.component))
-        .reduce((s, p) => s + p.normalizedScore, 0);
-      const core34Met = p3p4 >= 180;
-      const eligible = totalMet && core34Met;
-      return {
-        eligible,
-        totalMet,
-        a2Met: core34Met,
-        totalThreshold: aThreshold,
-        a2Threshold: 180,
-        details: [
-          `总 UMS: ${totalNormalized.toFixed(0)} / ${totalMax} (A 需 ≥ ${aThreshold}) ${totalMet ? "✅" : "❌"}`,
-          `Core 34 (P3+P4) UMS: ${p3p4.toFixed(0)} (需 ≥ 180) ${core34Met ? "✅" : "❌"}`,
-          ...(eligible ? ["满足 Edexcel 数学 A* 条件 ✅"] : ["未达到 A* 条件 ❌"]),
-        ],
-      };
-    }
 
     const eligible = totalMet && a2Met;
     return {
