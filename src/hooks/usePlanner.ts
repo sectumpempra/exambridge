@@ -3,15 +3,22 @@ import { format, addDays, differenceInDays } from "date-fns";
 import { INTENSITY_CONFIG } from "../data/examData";
 import type { Intensity } from "../data/examData";
 
-/** Parse a date-only string as local time (avoid UTC offset issues).
- *  Exported for use in Planner.tsx (bug 3.14: parseISO timezone drift).
- */
+/** Parse a date-only string as local time (avoid UTC offset issues). */
 export function parseLocalDate(dateStr: string): Date {
   if (dateStr.length === 10) {
-    // "YYYY-MM-DD" → append "T00:00:00" for local-time parsing
     return new Date(dateStr + "T00:00:00");
   }
   return new Date(dateStr);
+}
+
+/** A logical exam event: one subject + one paper label + its exam date + selected variants.
+ *  This is the scheduling unit (not individual variant codes). */
+export interface ExamEvent {
+  subjectCode: string;
+  paperLabel: string;
+  paperName: string; // e.g. "CAIE-9709 P1"
+  examDate: string;
+  variants: { code: string; component: string }[];
 }
 
 export interface DailyTask {
@@ -19,6 +26,7 @@ export interface DailyTask {
   dateLabel: string;
   isRestDay: boolean;
   isExamDay: boolean;
+  isWeekend: boolean;
   papers: TaskPaper[];
 }
 
@@ -37,30 +45,12 @@ export interface WeekGroup {
   days: DailyTask[];
 }
 
-export interface SelectedPaperGroup {
-  subjectCode: string;
-  paperNum: string;
-  paperLabel: string;
-  board: string;
-  level: string;
-  variants: { code: string; component: string }[];
-}
-
 export interface PlannerConfig {
   startDate: string;
-  selectedPapers: {
-    code: string;
-    name: string;
-    subjectCode: string;
-    component: string;
-    examDate: string;
-  }[];
+  events: ExamEvent[];
   restDays: number[];
   intensity: Intensity;
   paperOverrides: Record<string, string>;
-  selectedGroups?: SelectedPaperGroup[];
-  level?: string;
-  board?: string;
 }
 
 export interface PlannerResult {
@@ -69,83 +59,114 @@ export interface PlannerResult {
   totalDays: number;
 }
 
+/** Group selected papers into ExamEvents by subjectCode + paperLabel.
+ *  Each event has one exam date (nearest across all its variants). */
+export function buildExamEvents(
+  selectedGroups: Array<{
+    subjectCode: string;
+    paperLabel: string;
+    board: string;
+    level: string;
+    variants: { code: string; component: string }[];
+  }>,
+  getGroupNearestExamDate: (level: string, board: string, variants: { code: string }[]) => string | null
+): ExamEvent[] {
+  return selectedGroups
+    .map(g => {
+      const examDate = getGroupNearestExamDate(g.level, g.board, g.variants);
+      if (!examDate) return null;
+      return {
+        subjectCode: g.subjectCode,
+        paperLabel: g.paperLabel,
+        paperName: `${g.subjectCode} ${g.paperLabel}`,
+        examDate,
+        variants: g.variants,
+      };
+    })
+    .filter((e): e is ExamEvent => e !== null);
+}
+
 export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, string[]>): PlannerResult {
   return useMemo(() => {
-    const { startDate, selectedPapers, restDays, intensity, paperOverrides } = config;
-    if (selectedPapers.length === 0) return { weeks: [], totalTasks: 0, totalDays: 0 };
+    const { startDate, events, restDays, intensity, paperOverrides } = config;
+    if (events.length === 0) return { weeks: [], totalTasks: 0, totalDays: 0 };
 
     const start = parseLocalDate(startDate);
     const papersPerWeek = INTENSITY_CONFIG[intensity].papersPerWeek;
 
-    // Build exam date map
-    const examDateMap = new Map<string, string>();
-    selectedPapers.forEach(p => { examDateMap.set(p.code, p.examDate); });
-
     // Find end date (latest exam + 1 day)
     let endDate = start;
-    examDateMap.forEach(dateStr => {
-      const d = parseLocalDate(dateStr);
+    for (const ev of events) {
+      const d = parseLocalDate(ev.examDate);
       if (d > endDate) endDate = d;
-    });
+    }
     endDate = addDays(endDate, 1);
     const totalDays = differenceInDays(endDate, start) + 1;
 
-    // Track paper index and weekly counts per paper NAME (not per variant code)
-    // so all variants of the same paper share one slot per week
+    // Track paper index and weekly counts per event (not per variant)
     const paperIndex = new Map<string, number>();
-    selectedPapers.forEach(p => { if (!paperIndex.has(p.name)) paperIndex.set(p.name, 0); });
+    events.forEach(ev => { paperIndex.set(ev.paperName, 0); });
 
     // Build day-by-day
     const weeks: WeekGroup[] = [];
     let currentWeek: DailyTask[] = [];
     let weeklyCounts = new Map<string, number>();
-    selectedPapers.forEach(p => { if (!weeklyCounts.has(p.name)) weeklyCounts.set(p.name, 0); });
+    events.forEach(ev => { weeklyCounts.set(ev.paperName, 0); });
 
     for (let d = 0; d < totalDays; d++) {
       const date = addDays(start, d);
       const dateStr = format(date, "yyyy-MM-dd");
       const dayOfWeek = date.getDay();
+      const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
       const isRest = restDays.includes(dayOfWeek);
 
       // Check exam day
-      const isExam = Array.from(examDateMap.values()).some(ed => ed === dateStr);
+      const isExam = events.some(ev => ev.examDate === dateStr);
 
       // Reset weekly counts on Monday
       if (dayOfWeek === 1 && d > 0 && currentWeek.length > 0) {
         weeks.push({ weekNum: weeks.length + 1, weekLabel: `第 ${weeks.length + 1} 周`, days: currentWeek });
         currentWeek = [];
         weeklyCounts = new Map<string, number>();
-        selectedPapers.forEach(p => { if (!weeklyCounts.has(p.name)) weeklyCounts.set(p.name, 0); });
+        events.forEach(ev => { weeklyCounts.set(ev.paperName, 0); });
       }
 
       const tasks: TaskPaper[] = [];
 
-      if (!isRest) {
-        for (const paper of selectedPapers) {
-          const examDate = examDateMap.get(paper.code);
-          if (!examDate) continue;
-          const daysUntilExam = differenceInDays(parseLocalDate(examDate), date);
-          if (daysUntilExam <= 0) continue;
+      // Per-subject rest tracking: rest days only affect same subject
+      const restedSubjects = new Set<string>();
 
-          // Count per paper name (all variants share the weekly quota)
-          const count = weeklyCounts.get(paper.name) ?? 0;
-          if (count < papersPerWeek) {
-            const pastPapers = pastPapersMap[paper.name] ?? pastPapersMap[paper.code] ?? [];
-            const idx = paperIndex.get(paper.name) ?? 0;
+      for (const ev of events) {
+        const daysUntilExam = differenceInDays(parseLocalDate(ev.examDate), date);
+        if (daysUntilExam <= 0) continue;
 
-            if (idx < pastPapers.length) {
-              const pastPaper = paperOverrides[paper.name] || paperOverrides[paper.code] || pastPapers[idx];
-              tasks.push({
-                paperCode: paper.code,
-                paperName: paper.name,
-                subjectCode: paper.subjectCode,
-                pastPaper,
-                completed: false,
-                dayOffset: d,
-              });
-              paperIndex.set(paper.name, idx + 1);
-              weeklyCounts.set(paper.name, count + 1);
-            }
+        // P1-3: Rest days only affect same subject
+        if (isRest && restedSubjects.has(ev.subjectCode)) continue;
+        if (isRest) {
+          restedSubjects.add(ev.subjectCode);
+          continue; // Skip this subject on rest day, but allow other subjects
+        }
+
+        // Count per event (all variants share the weekly quota)
+        const count = weeklyCounts.get(ev.paperName) ?? 0;
+        if (count < papersPerWeek) {
+          const pastPapers = pastPapersMap[ev.paperName] ?? [];
+          const idx = paperIndex.get(ev.paperName) ?? 0;
+
+          if (idx < pastPapers.length) {
+            const pastPaper = paperOverrides[ev.paperName] || pastPapers[idx];
+            // Use first variant's code as the paper code
+            const variantCode = ev.variants[0]?.code ?? ev.paperName;
+            tasks.push({
+              paperCode: variantCode,
+              paperName: ev.paperName,
+              subjectCode: ev.subjectCode,
+              pastPaper,
+              completed: false,
+              dayOffset: d,
+            });
+            paperIndex.set(ev.paperName, idx + 1);
+            weeklyCounts.set(ev.paperName, count + 1);
           }
         }
       }
@@ -153,8 +174,9 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
       currentWeek.push({
         date: dateStr,
         dateLabel: format(date, "MM-dd EEE"),
-        isRestDay: isRest,
+        isRestDay: isRest && tasks.length === 0,
         isExamDay: isExam,
+        isWeekend,
         papers: tasks,
       });
     }

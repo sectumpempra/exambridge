@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { QRCodeSVG } from "qrcode.react";
 import { format, differenceInDays } from "date-fns";
-import { parseLocalDate } from "../hooks/usePlanner";
+import { parseLocalDate, buildExamEvents } from "../hooks/usePlanner";
 import {
   BookOpen, Settings, Share2, Clock, Check, ChevronDown, ChevronUp,
   Copy, CheckCheck, FileSpreadsheet, FileText, FileDown, GraduationCap,
@@ -17,7 +17,18 @@ import {
   type SubjectCategory,
 } from "../data/examDates";
 import { usePlanner } from "../hooks/usePlanner";
-import type { PlannerConfig, SelectedPaperGroup } from "../hooks/usePlanner";
+import type { PlannerConfig } from "../hooks/usePlanner";
+
+/** UI-level type: a selected paper group in the planner */
+interface SelectedPaperGroup {
+  subjectCode: string;
+  subjectName?: string;
+  paperLabel: string;
+  paperNum?: string;       // numeric paper number for sorting
+  level: string;
+  board: string;
+  variants: { code: string; component: string; name?: string }[];
+}
 import { generateShareUrl, parseShareUrl, clearPlanUrl } from "../utils/shareCode";
 import { groupPapers, type PaperGroup } from "../utils/paperGroups";
 import { groupEdexcelALUnits, getUnitName, needsSubjectGrouping } from "../utils/subjectGroups";
@@ -128,9 +139,17 @@ export default function Planner() {
   useEffect(() => { if (initialShared) clearPlanUrl(); }, [initialShared]);
 
   const [studentName, setStudentName] = useState("");
-  const [selectedLevel, setSelectedLevel] = useState(initialShared?.level ?? "A-Level");
-  const [selectedBoard, setSelectedBoard] = useState(initialShared?.board ?? "CAIE");
-  const [selectedGroups, setSelectedGroups] = useState<SelectedPaperGroup[]>(initialShared?.selectedGroups ?? []);
+  // Backward-compatible loading from old share URLs (may contain level/board/selectedGroups)
+  const oldShared = initialShared as unknown as Record<string, unknown> | null;
+  const [selectedLevel, setSelectedLevel] = useState<string>(
+    (oldShared?.level as string) ?? "A-Level"
+  );
+  const [selectedBoard, setSelectedBoard] = useState<string>(
+    (oldShared?.board as string) ?? "CAIE"
+  );
+  const [selectedGroups, setSelectedGroups] = useState<SelectedPaperGroup[]>(
+    (oldShared?.selectedGroups as SelectedPaperGroup[]) ?? []
+  );
   const [startDate, setStartDate] = useState(initialShared?.startDate ?? format(new Date(), "yyyy-MM-dd"));
   const [restDays, setRestDays] = useState<number[]>(initialShared?.restDays ?? [0]);
   const [intensity, setIntensity] = useState<Intensity>(initialShared?.intensity ?? "normal");
@@ -210,33 +229,22 @@ export default function Planner() {
 
   // Build planner config from selected groups
   const { config, pastPapersMap } = useMemo(() => {
-    const selectedPapers = selectedGroups.flatMap(g => {
-      const examDate = getGroupNearestExamDate(g.level, g.board, g.variants);
-      if (!examDate) return []; // Skip papers with no exam date
-      return g.variants.map(v => ({
-        code: v.code, name: `${g.subjectCode} ${g.paperLabel}`,
-        subjectCode: g.subjectCode, component: v.component,
-        examDate,
-      }));
-    });
+    // P1-3: Group variants into ExamEvents (one per subjectCode + paperLabel)
+    const events = buildExamEvents(selectedGroups, getGroupNearestExamDate);
     const cfg: PlannerConfig = {
       startDate,
-      selectedPapers,
-      restDays, intensity, paperOverrides,
-      selectedGroups,
-      level: selectedLevel,
-      board: selectedBoard,
+      events,
+      restDays,
+      intensity,
+      paperOverrides,
     };
     const map: Record<string, string[]> = {};
     for (const g of selectedGroups) {
-      // Merge all variants' past papers under the paper group name
-      // so scheduling is per-paper (not per-variant)
       const name = `${g.subjectCode} ${g.paperLabel}`;
       const allPapers: string[] = [];
       for (const v of g.variants) {
         allPapers.push(...generatePastPapersForVariant(g.subjectCode, v.component));
       }
-      // Sort newest first
       const so: Record<string, number> = { w: 0, s: 1, m: 2 };
       allPapers.sort((a, b) => {
         const pa = a.split("_"), pb = b.split("_");
@@ -247,7 +255,7 @@ export default function Planner() {
       map[name] = allPapers;
     }
     return { config: cfg, pastPapersMap: map };
-  }, [selectedGroups, startDate, restDays, intensity, paperOverrides, selectedLevel, selectedBoard]);
+  }, [selectedGroups, startDate, restDays, intensity, paperOverrides]);
 
   const { weeks, totalTasks } = usePlanner(config, pastPapersMap);
 
