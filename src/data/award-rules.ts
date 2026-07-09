@@ -18,7 +18,9 @@ export interface AwardRule {
   unitCount: 4 | 6;
   /** UMS per unit (IAL = 100) */
   unitMaxUMS: number;
-  /** Which component IDs count as A2 (rest are AS) */
+  /** Number of A2 units (for threshold calc). Defaults to a2Components.length if omitted. */
+  a2UnitCount?: number;
+  /** Which component IDs count as A2 (rest are AS). Used for paper matching. */
   a2Components: string[];
   /** Grade boundaries as percentage of total UMS */
   gradeBoundaries: Record<string, number>;
@@ -48,12 +50,14 @@ export const IAL_AWARD_RULES: Record<string, AwardRule> = {
     mathCore34Threshold: 180, // P3+P4 ≥ 180 UMS
   },
   // ── IAL Further Mathematics (6 units) ──
+  // A2 = FP2 + FP3 + one option (3 A2 units total)
   YFM01: {
     subjectCode: "YFM01",
     name: "IAL Further Mathematics",
     unitCount: 6,
     unitMaxUMS: 100,
-    a2Components: ["FP2", "FP3"], // A2 = FP2 + FP3 + 3 options (all non-FP1)
+    a2UnitCount: 3, // A2 = 3 units × 100 UMS = 300; threshold = 300 × 0.9 = 270
+    a2Components: ["FP2", "FP3"],
     gradeBoundaries: { A: 0.8, B: 0.7, C: 0.6, D: 0.5, E: 0.4 },
     aStarRule: " proportional",
     aStarA2ThresholdPct: 0.9,
@@ -73,19 +77,33 @@ export const IAL_AWARD_RULES: Record<string, AwardRule> = {
   },
 };
 
+/** Map from 3-letter subject prefix (as used by calculatorIndex / GradeCalculator) to qualification code. */
+const PREFIX_TO_QUAL_CODE: Record<string, string> = {
+  WMA: "YMA01", // IAL Mathematics
+  WFM: "YFM01", // IAL Further Mathematics
+  WPM: "YPM01", // IAL Pure Mathematics
+};
+
 /**
  * Get award rule for a subject code.
+ * Supports both qualification codes ("YMA01") and 3-letter prefixes ("WMA").
  * Returns null if no specific rule is configured (fallback to generic 4-unit logic).
  */
 export function getAwardRule(subjectCode: string): AwardRule | null {
-  return IAL_AWARD_RULES[subjectCode] || null;
+  // Direct lookup by qualification code
+  const direct = IAL_AWARD_RULES[subjectCode];
+  if (direct) return direct;
+  // Prefix lookup (e.g. "WMA" → "YMA01")
+  const qualCode = PREFIX_TO_QUAL_CODE[subjectCode];
+  if (qualCode) return IAL_AWARD_RULES[qualCode] || null;
+  return null;
 }
 
 /**
  * Check if a subject has a configured award rule.
  */
 export function hasAwardRule(subjectCode: string): boolean {
-  return subjectCode in IAL_AWARD_RULES;
+  return subjectCode in IAL_AWARD_RULES || subjectCode in PREFIX_TO_QUAL_CODE;
 }
 
 /**
@@ -97,9 +115,12 @@ export function getTotalMaxUMS(rule: AwardRule): number {
 
 /**
  * Calculate A2 UMS max for a rule.
+ * Uses explicit a2UnitCount if set (needed for FM where a2Components.length ≠ actual A2 count),
+ * otherwise falls back to a2Components.length.
  */
 export function getA2MaxUMS(rule: AwardRule): number {
-  return rule.a2Components.length * rule.unitMaxUMS;
+  const a2Count = rule.a2UnitCount ?? rule.a2Components.length;
+  return a2Count * rule.unitMaxUMS;
 }
 
 /**

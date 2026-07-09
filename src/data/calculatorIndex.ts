@@ -263,10 +263,12 @@ function canonicalizeEdexcelGCSEComp(code: string, component: string): string {
 
 /**
  * Normalize raw-data component names to canonical config IDs.
- * E.g. "Mathematics Paper 1F" → "P1F"
+ * AQA-GCSE: "Mathematics Paper 1F" → "P1F" (config uses short IDs)
+ * Edexcel-GCSE: keep original (config uses full names like "Mathematics Paper 1H")
  */
 function normalizeComponent(boardKey: string, comp: string): string {
-  if (boardKey === "Edexcel-GCSE" || boardKey === "AQA-GCSE") {
+  // Only AQA-GCSE uses short component IDs in subjects_config
+  if (boardKey === "AQA-GCSE") {
     const m = comp.match(/Paper\s+(\d[A-Za-z]*)/);
     if (m) return `P${m[1]}`;
   }
@@ -278,7 +280,6 @@ export type DataIndex = Record<string, Record<string, Record<string, Record<stri
 
 function buildIndex(records: Record<string, string | number>[], meta: BoardMeta): Record<string, Record<string, Record<string, Record<string, string | number>>>> {
   const idx: Record<string, Record<string, Record<string, Record<string, string | number>>>> = {};
-  const seenKeys = new Set<string>();
   for (const r of records) {
     const code = String(r[meta.codeField] ?? "");
     let comp = String(r[meta.compField] ?? "");
@@ -300,14 +301,20 @@ function buildIndex(records: Record<string, string | number>[], meta: BoardMeta)
     comp = normalizeComponent(meta.key, comp);
     if (!idx[code]) idx[code] = {};
     if (!idx[code][comp]) idx[code][comp] = {};
-    // P1-1: Detect duplicate keys (same subjectCode + component + series)
-    const key = `${meta.key}/${code}/${comp}/${series}`;
-    if (seenKeys.has(key)) {
-      console.warn(`[calculatorIndex] Duplicate record skipped: ${key}`);
-      continue;
+    // P0-3: Handle duplicates by max_mark discriminator (keep the one with higher max_mark)
+    // Instead of silently skipping, we merge duplicate (code, comp, series) records.
+    const existing = idx[code][comp][series];
+    if (existing) {
+      const existingMax = Number(existing[meta.maxMarkField] ?? 0);
+      const newMax = Number(r[meta.maxMarkField] ?? 0);
+      // Keep the record with higher max_mark; if equal, keep the existing one
+      if (newMax > existingMax) {
+        idx[code][comp][series] = r;
+      }
+      // If newMax <= existingMax, silently keep existing (no data loss)
+    } else {
+      idx[code][comp][series] = r;
     }
-    seenKeys.add(key);
-    idx[code][comp][series] = r;
   }
   return idx;
 }

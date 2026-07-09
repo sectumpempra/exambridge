@@ -133,19 +133,14 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
 
       const tasks: TaskPaper[] = [];
 
-      // Per-subject rest tracking: rest days only affect same subject
-      const restedSubjects = new Set<string>();
-
+      // P1-3: Rest day = no practice tasks assigned (simple global rest semantics)
+      if (isRest) {
+        // Rest day: skip all practice paper allocation
+        // (exam day tasks are handled separately via isExam flag)
+      } else {
       for (const ev of events) {
         const daysUntilExam = differenceInDays(parseLocalDate(ev.examDate), date);
         if (daysUntilExam <= 0) continue;
-
-        // P1-3: Rest days only affect same subject
-        if (isRest && restedSubjects.has(ev.subjectCode)) continue;
-        if (isRest) {
-          restedSubjects.add(ev.subjectCode);
-          continue; // Skip this subject on rest day, but allow other subjects
-        }
 
         // Count per event (all variants share the weekly quota)
         const count = weeklyCounts.get(ev.paperName) ?? 0;
@@ -170,6 +165,7 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
           }
         }
       }
+      } // end if (!isRest)
 
       currentWeek.push({
         date: dateStr,
