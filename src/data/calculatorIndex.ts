@@ -233,17 +233,13 @@ export interface SubjectConfig {
 
 // ── Build lookup indexes ─────────────────────────────────────────────
 
-/** Component remapping: OCR option codes → canonical paper numbers */
-const COMPONENT_REMAP: Record<string, Record<string, string>> = {
-  // OCR 6993 FSMQ: Y533/Y534/Y535 are all Paper 1 (01) options
-  "6993": { "Y533": "01", "Y534": "01", "Y535": "01" },
-};
-
-function remapComponent(code: string, component: string): string {
-  const remaps = COMPONENT_REMAP[code];
-  if (remaps) {
-    return remaps[component] ?? component;
-  }
+/** P1-3: Removed COMPONENT_REMAP for OCR 6993.
+ *  Previously Y533/Y534/Y535 were remapped to "01", causing:
+ *  - Y533 (maxMark 60) and Y534 (maxMark 40) to conflict under "01"
+ *  - config says 01 maxMark=100, but merge kept 60
+ *  Y533/Y534 now stay as independent components; config update needed to expose them.
+ */
+function remapComponent(_code: string, component: string): string {
   return component;
 }
 
@@ -261,25 +257,54 @@ function canonicalizeEdexcelGCSEComp(code: string, component: string): string {
   return component.replace(/Paper\s+0+(\d)/, "Paper $1");
 }
 
+/** Per-subject component aliases: raw data unit name → canonical config ID */
+const COMPONENT_ALIASES: Record<string, Record<string, string>> = {
+  // Edexcel GCSE: short ID configs
+  "1MA1": { "Mathematics Paper 1F": "P1F", "Mathematics Paper 2F": "P2F", "Mathematics Paper 1H": "P1H", "Mathematics Paper 2H": "P2H", "Mathematics Paper 3F": "P3F", "Mathematics Paper 3H": "P3H" },
+  "1EN0": { "English Language Paper 1": "P1", "English Language Paper 2": "P2" },
+  "1ET0": { "English Literature Paper 1": "P1", "English Literature Paper 2": "P2" },
+  "1BI0": { "Biology Paper 1F": "P1F", "Biology Paper 1H": "P1H", "Biology Paper 2F": "P2F" },
+  "1CH0": { "Chemistry Paper 1F": "P1F", "Chemistry Paper 1H": "P1H", "Chemistry Paper 2F": "P2F" },
+  "1PH0": { "Physics Paper 1F": "P1F", "Physics Paper 1H": "P1H", "Physics Paper 2F": "P2F" },
+};
+
 /**
  * Normalize raw-data component names to canonical config IDs.
- * AQA-GCSE: "Mathematics Paper 1F" → "P1F" (config uses short IDs)
- * Edexcel-GCSE: keep original (config uses full names like "Mathematics Paper 1H")
+ * Uses per-subject aliases first, then falls back to pattern matching.
  */
-function normalizeComponent(boardKey: string, comp: string): string {
-  // Only AQA-GCSE uses short component IDs in subjects_config
+function normalizeComponent(boardKey: string, code: string, comp: string): string {
+  // 1. Per-subject aliases (Edexcel GCSE short IDs)
+  const aliases = COMPONENT_ALIASES[code];
+  if (aliases && aliases[comp]) return aliases[comp];
+
+  // 2. AQA-GCSE: "Mathematics Paper 1F" → "P1F"
   if (boardKey === "AQA-GCSE") {
     const m = comp.match(/Paper\s+(\d[A-Za-z]*)/);
     if (m) return `P${m[1]}`;
   }
+
   return comp;
 }
 
-/** Index shape: dataKey -> subjectCode -> component -> series -> record */
-export type DataIndex = Record<string, Record<string, Record<string, Record<string, Record<string, string | number>>>>>;
+/** Single variant record */
+export type VariantRecord = Record<string, string | number>;
 
-function buildIndex(records: Record<string, string | number>[], meta: BoardMeta): Record<string, Record<string, Record<string, Record<string, string | number>>>> {
-  const idx: Record<string, Record<string, Record<string, Record<string, string | number>>>> = {};
+/** component -> series -> VariantRecord[] */
+export interface SubjectIndex {
+  [component: string]: {
+    [series: string]: VariantRecord[];
+  };
+}
+
+/** dataKey -> subjectCode -> SubjectIndex */
+export interface DataIndex {
+  [dataKey: string]: {
+    [subjectCode: string]: SubjectIndex;
+  };
+}
+
+function buildIndex(records: VariantRecord[], meta: BoardMeta): Record<string, SubjectIndex> {
+  const idx: Record<string, SubjectIndex> = {};
   for (const r of records) {
     const code = String(r[meta.codeField] ?? "");
     let comp = String(r[meta.compField] ?? "");
@@ -298,24 +323,29 @@ function buildIndex(records: Record<string, string | number>[], meta: BoardMeta)
     // Canonicalize Edexcel GCSE component names (remove leading zeros)
     comp = canonicalizeEdexcelGCSEComp(code, comp);
     // Normalize to canonical config IDs (e.g. "Mathematics Paper 1F" → "P1F")
-    comp = normalizeComponent(meta.key, comp);
+    comp = normalizeComponent(meta.key, code, comp);
     if (!idx[code]) idx[code] = {};
     if (!idx[code][comp]) idx[code][comp] = {};
-    // P0-3: Handle duplicates by max_mark discriminator (keep the one with higher max_mark)
-    // Instead of silently skipping, we merge duplicate (code, comp, series) records.
-    const existing = idx[code][comp][series];
-    if (existing) {
-      const existingMax = Number(existing[meta.maxMarkField] ?? 0);
-      const newMax = Number(r[meta.maxMarkField] ?? 0);
-      // Keep the record with higher max_mark; if equal, keep the existing one
-      if (newMax > existingMax) {
-        idx[code][comp][series] = r;
+    if (!idx[code][comp][series]) idx[code][comp][series] = [];
+    idx[code][comp][series].push(r);
+  }
+
+  // P0-1: Warn on conflicting duplicates (same code/comp/series but different boundaries)
+  for (const [code, compMap] of Object.entries(idx)) {
+    for (const [comp, seriesMap] of Object.entries(compMap)) {
+      for (const [series, variants] of Object.entries(seriesMap)) {
+        if (variants.length > 1) {
+          // Check if boundaries differ
+          const firstMarks = JSON.stringify(meta.gradeConfig.fields.map(f => variants[0][f]));
+          const hasDiff = variants.some(v => JSON.stringify(meta.gradeConfig.fields.map(f => v[f])) !== firstMarks);
+          if (hasDiff) {
+            console.warn(`[calculatorIndex] Conflicting duplicates: ${meta.key}/${code}/${comp}/${series} has ${variants.length} variants with different boundaries. Using first variant.`);
+          }
+        }
       }
-      // If newMax <= existingMax, silently keep existing (no data loss)
-    } else {
-      idx[code][comp][series] = r;
     }
   }
+
   return idx;
 }
 
@@ -337,8 +367,9 @@ export const SUBJECTS_CONFIG = subjectsConfig as Record<string, SubjectConfig>;
 // ── Edexcel AL Merged Subject Groupings ─────────────────────────────
 // WMA (Pure) + WME (Mechanics) + WST (Statistics) + WDM (Decision) → Mathematics
 const EDEXCEL_AL_MATH_MERGE: Record<string, { name: string; prefixes: string[] }> = {
+  // P0-3: WFM removed — YFM01 requires 6 units (FP1-3 + 3 options) but data only has WFM01-03.
+  // WMA kept: YMA01 is a valid 4-unit award with WMA11-14.
   "WMA": { name: "Mathematics", prefixes: ["WMA", "WME", "WST", "WDM"] },
-  "WFM": { name: "Further Mathematics", prefixes: ["WFM"] },
 };
 
 /** Check if an Edexcel AL subjectCode is a merged math subject */
@@ -398,20 +429,34 @@ export function getAvailableSeries(
   });
 }
 
-/** Get record for specific (board, subject, component, series) */
+/** Get first record for specific (board, subject, component, series).
+ *  P0-1: Index now stores Record[] per series; this returns the first variant for compatibility. */
 export function getRecord(
   boardKey: string,
   subjectCode: string,
   component: string,
   series: string
 ): Record<string, string | number> | null {
+  const variants = getRecordAll(boardKey, subjectCode, component, series);
+  return variants.length > 0 ? variants[0] : null;
+}
+
+/** Get all record variants for (board, subject, component, series).
+ *  P0-1: Returns all variants when duplicates exist. */
+export function getRecordAll(
+  boardKey: string,
+  subjectCode: string,
+  component: string,
+  series: string
+): Record<string, string | number>[] {
   const meta = BOARD_META[boardKey];
-  if (!meta) return null;
+  if (!meta) return [];
   const idx = DATA_INDEX[meta.dataKey];
-  if (!idx) return null;
+  if (!idx) return [];
+
+  const all: Record<string, string | number>[] = [];
 
   // Edexcel AL: subjectCode may be a 3-letter prefix, search all matching codes
-  // Supports merged subjects: "WMA" → search WMA + WME + WST + WDM codes
   if (boardKey === "Edexcel-AL" && subjectCode.length === 3) {
     const searchPrefixes = isEdexcelALMathMerge(subjectCode)
       ? getEdexcelALMergePrefixes(subjectCode)
@@ -419,14 +464,14 @@ export function getRecord(
     for (const sp of searchPrefixes) {
       for (const [code, compMap] of Object.entries(idx)) {
         if (code.startsWith(sp) && compMap?.[component]?.[series]) {
-          return compMap[component][series];
+          all.push(...compMap[component][series]);
         }
       }
     }
-    return null;
+    return all;
   }
 
-  return idx[subjectCode]?.[component]?.[series] ?? null;
+  return idx[subjectCode]?.[component]?.[series] ?? [];
 }
 
 /** Extract max mark from record */

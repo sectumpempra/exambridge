@@ -384,6 +384,38 @@ const AS_A2_RULES: Record<string, Record<string, (comp: string) => "AS" | "A2" |
   },
 };
 
+/** Edexcel IAL AS/A2 classification by unit label pattern.
+ *  Replaces the previous heuristic (lastDigit <= 2) which misclassified F2, M2, S2 as AS.
+ *  P1/P2 → AS, P3/P4 → A2; F1/M1/S1/D1 → AS; F2/F3/M2/M3/S2/S3 → A2.
+ */
+function getEdexcelIAL_ASA2(component: string): "AS" | "A2" | undefined {
+  // Pure Math (WMA)
+  if (/\bP1\b/.test(component) && !/\bP1\d/.test(component)) return "AS";
+  if (/\bP2\b/.test(component)) return "AS";
+  if (/\bP3\b/.test(component)) return "A2";
+  if (/\bP4\b/.test(component)) return "A2";
+
+  // Further Pure (WFM)
+  if (/\bF1\b/.test(component)) return "AS";
+  if (/\bF2\b/.test(component)) return "A2";
+  if (/\bF3\b/.test(component)) return "A2";
+
+  // Mechanics (WME)
+  if (/\bM1\b/.test(component)) return "AS";
+  if (/\bM2\b/.test(component)) return "A2";
+  if (/\bM3\b/.test(component)) return "A2";
+
+  // Statistics (WST)
+  if (/\bS1\b/.test(component)) return "AS";
+  if (/\bS2\b/.test(component)) return "A2";
+  if (/\bS3\b/.test(component)) return "A2";
+
+  // Decision (WDM)
+  if (/\bD1\b/.test(component)) return "AS";
+
+  return undefined;
+}
+
 /**
  * Tag each paper as AS or A2 based on board + subject + component rules.
  */
@@ -401,12 +433,9 @@ export function getASA2Tag(
     }
   }
 
-  // Edexcel AL heuristic
+  // Edexcel IAL: classify by unit code extracted from component label
   if (boardKey === "Edexcel-AL") {
-    const unitNum = parseInt(component.match(/\d+/)?.[0] ?? "0");
-    const lastDigit = unitNum % 10;
-    if (lastDigit <= 2) return "AS";
-    return "A2";
+    return getEdexcelIAL_ASA2(component);
   }
 
   // AQA AL heuristic

@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { Toaster } from "sonner";
 
 // Pages that appear on every route (header/footer) - keep eager
 import Home from "./pages/Home";
@@ -104,6 +105,7 @@ export default function App() {
         {/* Knowledge Tree Comparison */}
         <Route path="/knowledge-tree" element={<KnowledgeTreeComparePage />} />
       </Routes>
+      <Toaster position="top-right" richColors />
     </Suspense>
   );
 }

@@ -64,24 +64,28 @@ export const IAL_AWARD_RULES: Record<string, AwardRule> = {
     aStarTotalThresholdPct: 0.8,
   },
   // ── IAL Pure Mathematics (4 units) ──
-  YPM01: {
-    subjectCode: "YPM01",
-    name: "IAL Pure Mathematics",
-    unitCount: 4,
-    unitMaxUMS: 100,
-    a2Components: ["P3", "P4"],
-    gradeBoundaries: { A: 0.8, B: 0.7, C: 0.6, D: 0.5, E: 0.4 },
-    aStarRule: " proportional",
-    aStarA2ThresholdPct: 0.9,
-    aStarTotalThresholdPct: 0.8,
-  },
+  // P1-2: YPM01 disabled — no WPM prefix in subjects_config or data.
+  // Re-enable when Pure Mathematics units are added to the dataset.
+  // YPM01: {
+  //   subjectCode: "YPM01",
+  //   name: "IAL Pure Mathematics",
+  //   unitCount: 4,
+  //   unitMaxUMS: 100,
+  //   a2Components: ["P3", "P4"],
+  //   gradeBoundaries: { A: 0.8, B: 0.7, C: 0.6, D: 0.5, E: 0.4 },
+  //   aStarRule: " proportional",
+  //   aStarA2ThresholdPct: 0.9,
+  //   aStarTotalThresholdPct: 0.8,
+  // },
 };
 
 /** Map from 3-letter subject prefix (as used by calculatorIndex / GradeCalculator) to qualification code. */
 const PREFIX_TO_QUAL_CODE: Record<string, string> = {
-  WMA: "YMA01", // IAL Mathematics
-  WFM: "YFM01", // IAL Further Mathematics
-  WPM: "YPM01", // IAL Pure Mathematics
+  WMA: "YMA01", // IAL Mathematics (valid 4-unit)
+  // P0-3: WFM disabled — no complete 6-unit data path for YFM01.
+  // WFM: "YFM01",
+  // P1-2: WPM disabled — no data path for YPM01.
+  // WPM: "YPM01",
 };
 
 /**
