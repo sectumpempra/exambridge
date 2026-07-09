@@ -257,7 +257,12 @@ function canonicalizeEdexcelGCSEComp(code: string, component: string): string {
   return component.replace(/Paper\s+0+(\d)/, "Paper $1");
 }
 
-/** Per-subject component aliases: raw data unit name → canonical config ID */
+/** Per-subject component aliases: raw data unit name → canonical config ID.
+ *  P1: Hard-coded for current known subjects. Future refactor should move this into
+ *  subjects_config.json component metadata, e.g.:
+ *    "P1F": { "maxMark": 80, "label": "Mathematics Paper 1F", "dataAliases": ["Mathematics Paper 1F", "Mathematics Paper 01F"] }
+ *  and generate the alias map at build/load time.
+ */
 const COMPONENT_ALIASES: Record<string, Record<string, string>> = {
   // Edexcel GCSE: short ID configs
   "1MA1": { "Mathematics Paper 1F": "P1F", "Mathematics Paper 2F": "P2F", "Mathematics Paper 1H": "P1H", "Mathematics Paper 2H": "P2H", "Mathematics Paper 3F": "P3F", "Mathematics Paper 3H": "P3H" },
@@ -335,13 +340,45 @@ function buildIndex(records: VariantRecord[], meta: BoardMeta): Record<string, S
     for (const [comp, seriesMap] of Object.entries(compMap)) {
       for (const [series, variants] of Object.entries(seriesMap)) {
         if (variants.length > 1) {
-          // Check if boundaries differ
           const firstMarks = JSON.stringify(meta.gradeConfig.fields.map(f => variants[0][f]));
           const hasDiff = variants.some(v => JSON.stringify(meta.gradeConfig.fields.map(f => v[f])) !== firstMarks);
           if (hasDiff) {
             console.warn(`[calculatorIndex] Conflicting duplicates: ${meta.key}/${code}/${comp}/${series} has ${variants.length} variants with different boundaries. Using first variant.`);
           }
         }
+      }
+    }
+  }
+
+  // P0: OCR 6993 — merge Y533/Y534/Y535 into a derived "01" record per series.
+  // Config exposes 6993/01 (maxMark 100) but raw data has Y533(60)/Y534(40)/Y535(40).
+  // We create a derived record with highest maxMark and highest boundaries per grade.
+  if (idx["6993"]) {
+    const d6993 = idx["6993"];
+    const yComps = ["Y533", "Y534", "Y535"].filter(c => d6993[c]);
+    if (yComps.length > 0 && !d6993["01"]) {
+      d6993["01"] = {};
+    }
+    if (yComps.length > 0) {
+      // Collect all series from Y components
+      const allSeries = new Set<string>();
+      for (const yc of yComps) {
+        Object.keys(d6993[yc]).forEach(s => allSeries.add(s));
+      }
+      for (const series of allSeries) {
+        const allRecords: VariantRecord[] = [];
+        for (const yc of yComps) {
+          if (d6993[yc][series]) allRecords.push(...d6993[yc][series]);
+        }
+        if (allRecords.length === 0) continue;
+        // Derive: highest maxMark, highest boundary per grade
+        const derived: VariantRecord = { ...allRecords[0] };
+        derived[meta.maxMarkField] = Math.max(...allRecords.map(r => Number(r[meta.maxMarkField] ?? 0)));
+        for (const f of meta.gradeConfig.fields) {
+          derived[f] = Math.max(...allRecords.map(r => Number(r[f] ?? 0)));
+        }
+        derived._derived = "OCR 6993 Y533/Y534/Y535 merged";
+        d6993["01"][series] = [derived];
       }
     }
   }
@@ -429,6 +466,30 @@ export function getAvailableSeries(
   });
 }
 
+/** Get number of variants for (board, subject, component, series).
+ *  P0: Used by calculator UI to show variant selector when > 1. */
+export function getRecordVariantCount(
+  boardKey: string,
+  subjectCode: string,
+  component: string,
+  series: string
+): number {
+  return getRecordAll(boardKey, subjectCode, component, series).length;
+}
+
+/** Get a specific variant record by index.
+ *  P0: Replaces getRecord() for variant-aware calculator paths. */
+export function getRecordAt(
+  boardKey: string,
+  subjectCode: string,
+  component: string,
+  series: string,
+  variantIndex: number = 0
+): Record<string, string | number> | null {
+  const variants = getRecordAll(boardKey, subjectCode, component, series);
+  return variants.length > variantIndex ? variants[variantIndex] : null;
+}
+
 /** Get first record for specific (board, subject, component, series).
  *  P0-1: Index now stores Record[] per series; this returns the first variant for compatibility. */
 export function getRecord(
@@ -437,8 +498,7 @@ export function getRecord(
   component: string,
   series: string
 ): Record<string, string | number> | null {
-  const variants = getRecordAll(boardKey, subjectCode, component, series);
-  return variants.length > 0 ? variants[0] : null;
+  return getRecordAt(boardKey, subjectCode, component, series, 0);
 }
 
 /** Get all record variants for (board, subject, component, series).

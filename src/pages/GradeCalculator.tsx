@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import {
   BOARD_META, BOARD_GRADE_CONFIG,
-  getAvailableSeries, getRecord, getMaxMark, getBoundaries,
+  getAvailableSeries, getRecordAt, getRecordVariantCount, getMaxMark, getBoundaries,
   getComponentLabel,
   getSubjectsForBoard, getComponentsForSubject,
   formatSeries,
@@ -27,6 +27,7 @@ interface PaperConfig {
   score: string;
   label: string;
   selected: boolean;
+  variantIndex: number; // P0: selected variant when multiple boundary rows exist
 }
 
 interface PaperResult {
@@ -141,6 +142,7 @@ export default function GradeCalculator() {
         score: "",
         label: getComponentLabel(boardKey, code, comp),
         selected: false, // default all unselected
+        variantIndex: 0,
       };
     });
   }, []);
@@ -202,7 +204,7 @@ export default function GradeCalculator() {
         valid = false;
         return;
       }
-      const record = getRecord(selectedBoard, selectedCode, p.component, p.series);
+      const record = getRecordAt(selectedBoard, selectedCode, p.component, p.series, p.variantIndex);
       const maxMark = getMaxMark(record, meta);
       if (maxMark > 0 && score > maxMark) {
         newErrors[`score-${i}`] = `不能超过满分 ${maxMark}`;
@@ -215,9 +217,9 @@ export default function GradeCalculator() {
   }, [meta, selectedBoard, selectedCode, paperConfigs]);
 
   // ── Get max mark ─────────────────────────────────────────────────
-  const getPaperMaxMark = useCallback((component: string, series: string): number => {
+  const getPaperMaxMark = useCallback((component: string, series: string, variantIndex: number = 0): number => {
     if (!meta || !selectedCode) return 0;
-    const record = getRecord(selectedBoard, selectedCode, component, series);
+    const record = getRecordAt(selectedBoard, selectedCode, component, series, variantIndex);
     return getMaxMark(record, meta);
   }, [meta, selectedBoard, selectedCode]);
 
@@ -232,8 +234,9 @@ export default function GradeCalculator() {
     const isCAIE = selectedBoard.startsWith("CAIE");
 
     // Build PaperInput[] for the engine
+    // P0: Use variant-aware getRecordAt so users get the selected boundary row
     const engineInputs = selectedPapers.map(p => {
-      const record = getRecord(selectedBoard, selectedCode, p.component, p.series);
+      const record = getRecordAt(selectedBoard, selectedCode, p.component, p.series, p.variantIndex);
       const maxMark = getMaxMark(record, meta);
       const boundaries = record ? getBoundaries(record, meta) : {};
       return {
@@ -467,11 +470,19 @@ export default function GradeCalculator() {
                                         <label style={{ fontSize: 11, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 4 }}>
                                           <Calendar size={10} style={{ display: "inline", marginRight: 3, verticalAlign: "middle" }} />考试年份
                                         </label>
-                                        <select value={p.series} onChange={e => updatePaper(i, { series: e.target.value })} className="w-full cursor-pointer rounded-lg border border-[#D9D4CE] bg-white px-2.5 py-1.5 text-[13px] text-[#3D3832] outline-none">
+                                        <select value={p.series} onChange={e => updatePaper(i, { series: e.target.value, variantIndex: 0 })} className="w-full cursor-pointer rounded-lg border border-[#D9D4CE] bg-white px-2.5 py-1.5 text-[13px] text-[#3D3832] outline-none">
                                           {availableSeries.sort(sortSeriesNewestFirst).map(s => (
                                             <option key={s} value={s}>{formatSeries(s)}</option>
                                           ))}
                                         </select>
+                                        {(() => {
+                                          const vCount = p.series ? getRecordVariantCount(selectedBoard, selectedCode, p.component, p.series) : 1;
+                                          return vCount > 1 ? (
+                                            <span style={{ color: "#C17B5F", fontSize: 11, marginTop: 2, display: "block" }}>
+                                              ⚠️ 该年份有 {vCount} 组不同分数线，当前使用第 {p.variantIndex + 1} 组
+                                            </span>
+                                          ) : null;
+                                        })()}
                                         {errors[`series-${i}`] && <span style={{ color: "#C17B5F", fontSize: 11, marginTop: 2, display: "block" }}>{errors[`series-${i}`]}</span>}
                                       </div>
                                       <div>
@@ -488,7 +499,7 @@ export default function GradeCalculator() {
                                   )}
                                   {/* Boundaries preview */}
                                   {p.selected && p.series && meta && (
-                                    <ComponentBoundariesPreview boardKey={selectedBoard} subjectCode={selectedCode} component={p.component} series={p.series} meta={meta} />
+                                    <ComponentBoundariesPreview boardKey={selectedBoard} subjectCode={selectedCode} component={p.component} series={p.series} meta={meta} variantIndex={p.variantIndex} />
                                   )}
                                 </div>
                               );
@@ -695,10 +706,10 @@ export default function GradeCalculator() {
 
 // ── Sub-components ───────────────────────────────────────────────────
 
-function ComponentBoundariesPreview({ boardKey, subjectCode, component, series, meta }: {
-  boardKey: string; subjectCode: string; component: string; series: string; meta: BoardMeta;
+function ComponentBoundariesPreview({ boardKey, subjectCode, component, series, meta, variantIndex = 0 }: {
+  boardKey: string; subjectCode: string; component: string; series: string; meta: BoardMeta; variantIndex?: number;
 }) {
-  const record = getRecord(boardKey, subjectCode, component, series);
+  const record = getRecordAt(boardKey, subjectCode, component, series, variantIndex);
   if (!record) return null;
   const boundaries = getBoundaries(record, meta);
   const entries = Object.entries(boundaries).filter(([, v]) => v > 0);

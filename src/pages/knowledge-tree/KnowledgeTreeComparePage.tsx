@@ -122,8 +122,13 @@ export default function KnowledgeTreeComparePage() {
     if (!isValidComparison) return;
 
     let cancelled = false;
-    setLoadingCalc(true);
-    setCalcError(null);
+    // Defer setState to avoid synchronous setState-in-effect lint warning
+    queueMicrotask(() => {
+      if (!cancelled) {
+        setLoadingCalc(true);
+        setCalcError(null);
+      }
+    });
 
     async function calc() {
       try {

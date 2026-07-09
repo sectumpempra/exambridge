@@ -50,19 +50,21 @@ export const IAL_AWARD_RULES: Record<string, AwardRule> = {
     mathCore34Threshold: 180, // P3+P4 ≥ 180 UMS
   },
   // ── IAL Further Mathematics (6 units) ──
-  // A2 = FP2 + FP3 + one option (3 A2 units total)
-  YFM01: {
-    subjectCode: "YFM01",
-    name: "IAL Further Mathematics",
-    unitCount: 6,
-    unitMaxUMS: 100,
-    a2UnitCount: 3, // A2 = 3 units × 100 UMS = 300; threshold = 300 × 0.9 = 270
-    a2Components: ["FP2", "FP3"],
-    gradeBoundaries: { A: 0.8, B: 0.7, C: 0.6, D: 0.5, E: 0.4 },
-    aStarRule: " proportional",
-    aStarA2ThresholdPct: 0.9,
-    aStarTotalThresholdPct: 0.8,
-  },
+  // P1: INACTIVE — YFM01 requires 6 units (FP1 + FP2 + FP3 + 3 options from applied).
+  // Current data only has WFM01-03 (3 FP units). No resolver path from PREFIX_TO_QUAL_CODE.
+  // To activate: add WME/WST/WDM option units to Edexcel AL data and enable WFM → YFM01 lookup.
+  // YFM01: {
+  //   subjectCode: "YFM01",
+  //   name: "IAL Further Mathematics",
+  //   unitCount: 6,
+  //   unitMaxUMS: 100,
+  //   a2UnitCount: 3,
+  //   a2Components: ["FP2", "FP3"],
+  //   gradeBoundaries: { A: 0.8, B: 0.7, C: 0.6, D: 0.5, E: 0.4 },
+  //   aStarRule: " proportional",
+  //   aStarA2ThresholdPct: 0.9,
+  //   aStarTotalThresholdPct: 0.8,
+  // },
   // ── IAL Pure Mathematics (4 units) ──
   // P1-2: YPM01 disabled — no WPM prefix in subjects_config or data.
   // Re-enable when Pure Mathematics units are added to the dataset.

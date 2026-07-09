@@ -389,29 +389,29 @@ const AS_A2_RULES: Record<string, Record<string, (comp: string) => "AS" | "A2" |
  *  P1/P2 → AS, P3/P4 → A2; F1/M1/S1/D1 → AS; F2/F3/M2/M3/S2/S3 → A2.
  */
 function getEdexcelIAL_ASA2(component: string): "AS" | "A2" | undefined {
-  // Pure Math (WMA)
-  if (/\bP1\b/.test(component) && !/\bP1\d/.test(component)) return "AS";
-  if (/\bP2\b/.test(component)) return "AS";
-  if (/\bP3\b/.test(component)) return "A2";
-  if (/\bP4\b/.test(component)) return "A2";
+  // Pure Math (WMA) — by unit code pattern first, then display label
+  if (/\bWMA11\b/.test(component) || /\bP1\b/.test(component) && !/\bP1\d/.test(component) || /\bPure Mathematics 1\b/.test(component)) return "AS";
+  if (/\bWMA12\b/.test(component) || /\bP2\b/.test(component) || /\bPure Maths P2\b/.test(component) || /\bCore Mathematics C12\b/.test(component)) return "AS";
+  if (/\bWMA13\b/.test(component) || /\bP3\b/.test(component) || /\bPure Maths P3\b/.test(component)) return "A2";
+  if (/\bWMA14\b/.test(component) || /\bP4\b/.test(component) || /\bPure Maths P4\b/.test(component) || /\bCore Mathematics C34\b/.test(component)) return "A2";
 
   // Further Pure (WFM)
-  if (/\bF1\b/.test(component)) return "AS";
-  if (/\bF2\b/.test(component)) return "A2";
-  if (/\bF3\b/.test(component)) return "A2";
+  if (/\bWFM01\b/.test(component) || /\bF1\b/.test(component)) return "AS";
+  if (/\bWFM02\b/.test(component) || /\bF2\b/.test(component)) return "A2";
+  if (/\bWFM03\b/.test(component) || /\bF3\b/.test(component)) return "A2";
 
   // Mechanics (WME)
-  if (/\bM1\b/.test(component)) return "AS";
-  if (/\bM2\b/.test(component)) return "A2";
-  if (/\bM3\b/.test(component)) return "A2";
+  if (/\bWME01\b/.test(component) || /\bM1\b/.test(component)) return "AS";
+  if (/\bWME02\b/.test(component) || /\bM2\b/.test(component)) return "A2";
+  if (/\bWME03\b/.test(component) || /\bM3\b/.test(component)) return "A2";
 
   // Statistics (WST)
-  if (/\bS1\b/.test(component)) return "AS";
-  if (/\bS2\b/.test(component)) return "A2";
-  if (/\bS3\b/.test(component)) return "A2";
+  if (/\bWST01\b/.test(component) || /\bS1\b/.test(component)) return "AS";
+  if (/\bWST02\b/.test(component) || /\bS2\b/.test(component)) return "A2";
+  if (/\bWST03\b/.test(component) || /\bS3\b/.test(component)) return "A2";
 
   // Decision (WDM)
-  if (/\bD1\b/.test(component)) return "AS";
+  if (/\bWDM01\b/.test(component) || /\bD1\b/.test(component)) return "AS";
 
   return undefined;
 }
