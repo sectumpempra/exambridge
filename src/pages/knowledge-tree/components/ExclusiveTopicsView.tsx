@@ -1,5 +1,6 @@
-import { FileText, AlertCircle } from "lucide-react";
+import { FileText, AlertCircle, FileSpreadsheet } from "lucide-react";
 import type { ExclusiveSubtopicItem } from "@/data/knowledge-tree/types-v3.2";
+import { exportExclusiveTopicsToExcel } from "@/utils/exportExclusiveTopics";
 
 interface Props {
   aName: string;
@@ -122,14 +123,32 @@ export default function ExclusiveTopicsView({ aName, bName, aExclusive, bExclusi
     );
   }
 
+  const hasAnyExclusive = aExclusive.length > 0 || bExclusive.length > 0;
+
+  const handleExport = () => {
+    exportExclusiveTopicsToExcel({ aName, bName, aExclusive, bExclusive });
+  };
+
   return (
     <div className="space-y-4">
-      <div className="flex items-center gap-2 mb-4">
-        <FileText className="w-4 h-4 text-[#8F7F6E]" />
-        <h3 className="text-sm font-semibold text-[#3D3832]">独有知识点（考纲原文）</h3>
-        <span className="text-[11px] text-[#A8A095]">
-          基于知识树节点交集识别，非文本匹配
-        </span>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <FileText className="w-4 h-4 text-[#8F7F6E]" />
+          <h3 className="text-sm font-semibold text-[#3D3832]">独有知识点（考纲原文）</h3>
+          <span className="text-[11px] text-[#A8A095]">
+            基于知识树节点交集识别，非文本匹配
+          </span>
+        </div>
+        {hasAnyExclusive && (
+          <button
+            onClick={handleExport}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-[#D9D4CE] bg-white px-3 py-1.5 text-xs font-medium text-[#5A7AA0] shadow-sm transition-all hover:bg-[#F5F2EE] hover:shadow active:scale-[0.98]"
+            title="导出独有知识点 Excel"
+          >
+            <FileSpreadsheet size={14} />
+            导出 Excel
+          </button>
+        )}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
