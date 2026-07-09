@@ -343,7 +343,7 @@ function buildIndex(records: VariantRecord[], meta: BoardMeta): Record<string, S
           const firstMarks = JSON.stringify(meta.gradeConfig.fields.map(f => variants[0][f]));
           const hasDiff = variants.some(v => JSON.stringify(meta.gradeConfig.fields.map(f => v[f])) !== firstMarks);
           if (hasDiff) {
-            console.warn(`[calculatorIndex] Conflicting duplicates: ${meta.key}/${code}/${comp}/${series} has ${variants.length} variants with different boundaries. Using first variant.`);
+            console.warn(`[calculatorIndex] Multiple variants: ${meta.key}/${code}/${comp}/${series} has ${variants.length} boundary rows. Use variant selector in calculator UI or check data source.`);
           }
         }
       }
@@ -371,13 +371,15 @@ function buildIndex(records: VariantRecord[], meta: BoardMeta): Record<string, S
           if (d6993[yc][series]) allRecords.push(...d6993[yc][series]);
         }
         if (allRecords.length === 0) continue;
-        // Derive: highest maxMark, highest boundary per grade
+        // Derive: sum of maxMarks, max boundary per grade
+        // OCR 6993 01 = Y533(60) + Y534(40) route, so maxMark = 60+40 = 100
         const derived: VariantRecord = { ...allRecords[0] };
-        derived[meta.maxMarkField] = Math.max(...allRecords.map(r => Number(r[meta.maxMarkField] ?? 0)));
+        derived[meta.maxMarkField] = allRecords.reduce((sum, r) => sum + Number(r[meta.maxMarkField] ?? 0), 0);
         for (const f of meta.gradeConfig.fields) {
           derived[f] = Math.max(...allRecords.map(r => Number(r[f] ?? 0)));
         }
-        derived._derived = "OCR 6993 Y533/Y534/Y535 merged";
+        derived._derived = "OCR 6993 Y533+Y534=100";
+        derived._approximate = 1;
         d6993["01"][series] = [derived];
       }
     }
@@ -499,6 +501,31 @@ export function getRecord(
   series: string
 ): Record<string, string | number> | null {
   return getRecordAt(boardKey, subjectCode, component, series, 0);
+}
+
+/** Generate a human-readable label for a variant record.
+ *  P0: Used by variant selector UI when multiple boundary rows exist.
+ */
+export function getVariantLabel(
+  record: Record<string, string | number>,
+  meta: BoardMeta,
+  index: number
+): string {
+  const maxMark = Number(record[meta.maxMarkField] ?? 0);
+  // Build boundary summary from highest 3 grades
+  const topGrades = meta.gradeConfig.labels.slice(0, 3);
+  const topFields = meta.gradeConfig.fields.slice(0, 3);
+  const boundaryParts: string[] = [];
+  for (let i = 0; i < topGrades.length; i++) {
+    const val = Number(record[topFields[i]] ?? 0);
+    if (val > 0) boundaryParts.push(`${topGrades[i]}=${val}`);
+  }
+  const boundaryStr = boundaryParts.join(" ");
+  const derived = record._derived as string | undefined;
+  if (derived) {
+    return `方案 ${index + 1} (${maxMark}分${boundaryStr ? " " + boundaryStr : ""})`;
+  }
+  return `方案 ${index + 1} (${maxMark}分${boundaryStr ? " " + boundaryStr : ""})`;
 }
 
 /** Get all record variants for (board, subject, component, series).

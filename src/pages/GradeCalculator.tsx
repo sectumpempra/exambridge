@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import {
   BOARD_META, BOARD_GRADE_CONFIG,
-  getAvailableSeries, getRecordAt, getRecordVariantCount, getMaxMark, getBoundaries,
+  getAvailableSeries, getRecordAt, getRecordAll, getRecordVariantCount, getVariantLabel, getMaxMark, getBoundaries,
   getComponentLabel,
   getSubjectsForBoard, getComponentsForSubject,
   formatSeries,
@@ -444,8 +444,9 @@ export default function GradeCalculator() {
                           <div style={{ padding: "10px 14px", display: "flex", flexDirection: "column", gap: 10 }}>
                             {groupPaperIndices.map(p => {
                               const i = p.idx;
-                              const maxMark = getPaperMaxMark(p.component, p.series);
+                              const maxMark = getPaperMaxMark(p.component, p.series, p.variantIndex);
                               const availableSeries = getAvailableSeries(selectedBoard, selectedCode, p.component);
+                              const variantCount = p.series ? getRecordVariantCount(selectedBoard, selectedCode, p.component, p.series) : 1;
                               return (
                                 <div key={p.component} style={{
                                   padding: 12, borderRadius: 10,
@@ -475,13 +476,27 @@ export default function GradeCalculator() {
                                             <option key={s} value={s}>{formatSeries(s)}</option>
                                           ))}
                                         </select>
-                                        {(() => {
-                                          const vCount = p.series ? getRecordVariantCount(selectedBoard, selectedCode, p.component, p.series) : 1;
-                                          return vCount > 1 ? (
-                                            <span style={{ color: "#C17B5F", fontSize: 11, marginTop: 2, display: "block" }}>
-                                              ⚠️ 该年份有 {vCount} 组不同分数线，当前使用第 {p.variantIndex + 1} 组
-                                            </span>
-                                          ) : null;
+                                        {/* P0: Variant selector when multiple boundary rows exist */}
+                                        {variantCount > 1 && meta && (() => {
+                                          const variants = getRecordAll(selectedBoard, selectedCode, p.component, p.series);
+                                          return (
+                                            <div style={{ marginTop: 4 }}>
+                                              <label style={{ fontSize: 11, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 2 }}>
+                                                分数线方案
+                                              </label>
+                                              <select
+                                                value={p.variantIndex}
+                                                onChange={e => updatePaper(i, { variantIndex: parseInt(e.target.value) })}
+                                                className="w-full cursor-pointer rounded-lg border border-[#D9D4CE] bg-white px-2.5 py-1 text-[12px] text-[#3D3832] outline-none"
+                                              >
+                                                {variants.map((v, idx) => (
+                                                  <option key={idx} value={idx}>
+                                                    {getVariantLabel(v, meta, idx)}
+                                                  </option>
+                                                ))}
+                                              </select>
+                                            </div>
+                                          );
                                         })()}
                                         {errors[`series-${i}`] && <span style={{ color: "#C17B5F", fontSize: 11, marginTop: 2, display: "block" }}>{errors[`series-${i}`]}</span>}
                                       </div>
