@@ -1,7 +1,7 @@
 # ExamBridge 开发交接文档
 
 > 生成时间：2026-07-10
-> 最新提交：`77419fa` (main 分支)
+> 最新提交：`77419fa` + P0-4/P0-6/P1-1 fixes (main 分支)
 > 仓库：https://github.com/sectumpempra/exambridge
 
 ---
@@ -57,6 +57,9 @@ e09e175 fix(postfix-eval): P0/P1/P2 bug fixes from evaluation
 - ✅ Exact duplicate 去重使用 fieldMap 读取实际字段
 - ✅ OCR 6993 从 calculator 入口和 subject dropdown 隐藏
 - ✅ nextGradeGap 取最近更高等级（不是最高）
+- ✅ **P0-4**: C12/C34 按 200 UMS 计算（`qualification-rules.ts` + `getUnitMaxUMS()`）
+- ✅ **P0-6**: Edexcel IAL 科学科 per-unit UMS（Physics/Chemistry/Biology 100/100/50/100/100/50）
+- ✅ **P1-1**: 资格验证扩展到 CAIE 9709（需 P1+P3+2applied）和所有 AL 科目（最少 2 单元）
 
 ### Planner
 - ✅ 休息日语义改为全局休息（rest day 不分配任何刷题任务）
@@ -75,16 +78,12 @@ e09e175 fix(postfix-eval): P0/P1/P2 bug fixes from evaluation
 
 ### P0：阻断级（影响等级预测正确性）
 
-| # | 问题 | 影响 | 修复方向 |
-|---|------|------|----------|
-| P0-4 | C12/C34 仍按 100 UMS 计算（实际各 200 UMS） | 旧规格总分、A 阈值、A* 条件全错 | 新建 `UnitRule.maxUMS`，PaperInput 添加 maxUMS，calculateUMS 显式接收 |
-| P0-6 | Edexcel 科学科 per-unit UMS 未实现（Physics 120/120/60/120/120/60） | 总等级和 IA2 A* 合计错误 | 同上，需要 qualification-rules.ts |
+> P0-4 / P0-6 已修复 ✅（见第 3 节）
 
 ### P1：重要（影响用户体验或特定场景）
 
 | # | 问题 | 影响 | 修复方向 |
 |---|------|------|----------|
-| P1-1 | validateQualificationRoute 只验证 WMA，其它科目默认 valid | CAIE 9709 选 1 个 paper 仍输出等级 | 扩展 qualification gating 到所有科目；无规则时降级为 component estimate |
 | P1-2 | Planner Edexcel IAL 仍按 unit code 分组 | 6 个 Math units 形成 6 个"科目"，12 套/周 | ExamEvent 增加 qualificationId，配额按 qualificationId |
 | P1-3 | Planner 无 daily cap | 多科目时一天 8+ 套卷 | 增加 maxTasksPerDay + 跨日负载均衡 |
 | P1-6 | GCSE 完整组件配置未补齐 | AQA/Edexcel GCSE 多数科目只有 1 个 component | 补全 route config 或降级为 component estimate |
@@ -123,6 +122,19 @@ Detect spec family first (hasAnyOld/hasAnyNew)
   → Mixed: reject
 ```
 
+### Per-Unit UMS Rules (qualification-rules.ts)
+```
+getUnitMaxUMS(boardKey, subjectCode, component)
+  → C12/C34: 200 UMS (combined units)
+  → IAL science practicals: 50 UMS
+  → Default: 100 UMS
+
+calculateUMS(raw, maxMark, boundaries, unitMaxUMS)
+  → unitMaxUMS from getUnitMaxUMS() instead of hardcoded 100
+
+maxNormalized = sum of per-unit maxUMS (not papers.length × 100)
+```
+
 ---
 
 ## 6. 关键文件清单
@@ -131,6 +143,7 @@ Detect spec family first (hasAnyOld/hasAnyNew)
 |------|------|
 | `src/utils/gradeCalculation.ts` | 计算引擎（PUM/UMS/GNS/A*）+ validateQualificationRoute |
 | `src/data/award-rules.ts` | IAL award rule 配置（YMA01） |
+| `src/data/qualification-rules.ts` | **P0-4/P0-6**: Per-unit maxUMS 规则（C12/C34=200, science UMS） |
 | `src/data/calculatorIndex.ts` | 数据索引 + component aliases + getRecordAll/At |
 | `src/pages/GradeCalculator.tsx` | Calculator UI + variant selector |
 | `src/hooks/usePlanner.ts` | Planner 调度引擎 |
@@ -148,8 +161,8 @@ Detect spec family first (hasAnyOld/hasAnyNew)
 5. **优先处理**：P0-4（per-unit UMS）是最大 correctness gap
 
 ### 推荐的下一步修复顺序
-1. P0-4/P0-6：建立 `qualification-rules.ts` + `UnitRule.maxUMS`
-2. P1-1：扩展 qualification gating 到所有科目
-3. P1-2/P1-3：Planner qualificationId + daily cap
-4. P1-6：补全 GCSE component config
-5. P2：清理 6993 source 数据
+1. ✅ P0-4/P0-6：建立 `qualification-rules.ts` + `UnitRule.maxUMS`（已完成）
+2. ✅ P1-1：扩展 qualification gating 到所有科目（已完成）
+3. **P1-2/P1-3**：Planner qualificationId + daily cap
+4. **P1-6**：补全 GCSE component config
+5. **P2**：清理 6993 source 数据

@@ -8,7 +8,8 @@
  * - Syllabus version data from official CAIE syllabus documents
  */
 
-import { getAwardRule, getTotalMaxUMS, getA2MaxUMS, getAThresholdUMS, getAStarA2ThresholdUMS } from "@/data/award-rules";
+import { getAwardRule, getAThresholdUMS } from "@/data/award-rules";
+import { getUnitMaxUMS, getTotalMaxUMSForPapers } from "@/data/qualification-rules";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -599,7 +600,54 @@ export function validateQualificationRoute(
     return { valid: true };
   }
 
-  // Default: no specific validation
+  // ── CAIE A-Level Mathematics (9709) ──
+  // P1-1: Needs P1 + P3 + 2 applied for A-Level; P1 + 1 applied minimum for AS estimate
+  if (boardKey === "CAIE-AL" && subjectCode === "9709") {
+    const hasP1 = components.some(c => c.startsWith("1"));
+    const hasP3 = components.some(c => c.startsWith("3"));
+    const appliedCount = components.filter(c =>
+      c.startsWith("4") || c.startsWith("5") || c.startsWith("6") || c.startsWith("7") || c.startsWith("8") || c.startsWith("9")
+    ).length;
+
+    if (!hasP1) {
+      return {
+        valid: false,
+        reason: "CAIE 9709 必须包含 P1 (Paper 1)",
+        missing: ["P1"],
+      };
+    }
+
+    // Full A-Level: P1 + P3 + 2 applied = 4 papers
+    if (hasP1 && hasP3 && appliedCount >= 2 && components.length >= 4) {
+      return { valid: true };
+    }
+
+    // AS estimate: P1 + 1 applied = 2 papers minimum
+    if (hasP1 && appliedCount >= 1 && components.length >= 2) {
+      return { valid: true };
+    }
+
+    return {
+      valid: false,
+      reason: `CAIE 9709 不完整：P1 ✓, P3 ${hasP3 ? "✓" : "✗"}, applied ${appliedCount} 个 (需 ≥1 for AS, ≥2 for A-Level)`,
+      missing: [!hasP3 ? "P3 (A-Level 必修)" : "", appliedCount < 1 ? "至少 1 个 applied" : ""].filter(Boolean),
+    };
+  }
+
+  // ── Generic fallback ──
+  // P1-1: For A-Level subjects without specific rules, enforce a minimum paper count
+  // to prevent single-paper grade predictions. Degrades to component estimate when invalid.
+  if (boardKey.includes("AL")) {
+    const minPapers = 2; // Minimum for any AS/A-Level estimate
+    if (components.length < minPapers) {
+      return {
+        valid: false,
+        reason: `${subjectCode} 需至少 ${minPapers} 个单元才能评定等级，当前 ${components.length} 个`,
+        missing: ["请选择更多单元"],
+      };
+    }
+  }
+
   return { valid: true };
 }
 
@@ -863,10 +911,10 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
     const rule = getAwardRule(subjectCode);
     if (rule) {
       // Use configured award rule
-      const totalMax = getTotalMaxUMS(rule);
-      const a2Max = getA2MaxUMS(rule);
       const aThreshold = getAThresholdUMS(rule);
-      const a2Threshold = getAStarA2ThresholdUMS(rule);
+
+      // P0-4: Calculate actual max UMS from per-unit rules (C12/C34 = 200, etc.)
+      const totalMax = papers.reduce((s, p) => s + getUnitMaxUMS(boardKey, subjectCode, p.component), 0);
 
       // P0-3: Incomplete route — do not output qualification grade if not enough papers
       const minRequired = rule.minPapersForQualification ?? rule.unitCount;
@@ -876,7 +924,7 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
           totalMet: false,
           a2Met: false,
           totalThreshold: aThreshold,
-          a2Threshold: a2Threshold,
+          a2Threshold: 0,
           details: [
             `已选 ${papers.length} 个单元，YMA01 需要 ${minRequired} 个单元才能评定等级`,
             `当前仅显示各单元 UMS，不做资格等级预测`,
@@ -888,6 +936,9 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
       // A2 papers: use getASA2Tag (handles descriptive component names like "Mathematics: Pure Maths P3 (New)")
       const a2Papers = papers.filter(p => getASA2Tag(boardKey, subjectCode, p.component) === "A2");
       const a2UMS = a2Papers.reduce((s, p) => s + p.normalizedScore, 0);
+      // P0-4: Actual A2 max UMS from per-unit rules (applied units + C34/P3P4)
+      const a2Max = a2Papers.reduce((s, p) => s + getUnitMaxUMS(boardKey, subjectCode, p.component), 0);
+      const a2Threshold = a2Max * rule.aStarA2ThresholdPct;
 
       const totalMet = totalNormalized >= aThreshold;
       const a2Met = a2Papers.length === 0 ? false : a2UMS >= a2Threshold;
@@ -1115,7 +1166,9 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
       normalizedScore = calculateCAIEPUM(p.score, p.maxMark, p.boundaries, hasAStar);
       scoreType = "PUM";
     } else if (isAL) {
-      normalizedScore = calculateUMS(p.score, p.maxMark, p.boundaries);
+      // P0-4/P0-6: Use per-unit maxUMS from qualification rules
+      const unitMaxUMS = getUnitMaxUMS(boardKey, subjectCode, p.component);
+      normalizedScore = calculateUMS(p.score, p.maxMark, p.boundaries, unitMaxUMS);
       scoreType = "UMS";
     } else if (boardKey.includes("GCSE") && !isCAIE) {
       normalizedScore = calculateGNS(p.score, p.maxMark, p.boundaries);
@@ -1155,9 +1208,9 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
     totalNormalized = totalWeight > 0 ? totalWeighted / totalWeight : 0;
     maxNormalized = 100;
   } else if (isAL && !isCAIE) {
-    // UMS: sum of all units
+    // P0-4: UMS sum — use actual per-unit maxUMS instead of assuming 100 each
     totalNormalized = results.reduce((s, r) => s + r.normalizedScore, 0);
-    maxNormalized = results.length * 100;
+    maxNormalized = getTotalMaxUMSForPapers(boardKey, subjectCode, papers.map(p => p.component));
   } else {
     // PUM/GNS: average across papers
     totalNormalized = results.reduce((s, r) => s + r.normalizedScore, 0) / results.length;
