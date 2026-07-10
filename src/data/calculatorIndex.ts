@@ -350,40 +350,9 @@ function buildIndex(records: VariantRecord[], meta: BoardMeta): Record<string, S
     }
   }
 
-  // P0: OCR 6993 — merge Y533/Y534/Y535 into a derived "01" record per series.
-  // Config exposes 6993/01 (maxMark 100) but raw data has Y533(60)/Y534(40)/Y535(40).
-  // We create a derived record with highest maxMark and highest boundaries per grade.
-  if (idx["6993"]) {
-    const d6993 = idx["6993"];
-    const yComps = ["Y533", "Y534", "Y535"].filter(c => d6993[c]);
-    if (yComps.length > 0 && !d6993["01"]) {
-      d6993["01"] = {};
-    }
-    if (yComps.length > 0) {
-      // Collect all series from Y components
-      const allSeries = new Set<string>();
-      for (const yc of yComps) {
-        Object.keys(d6993[yc]).forEach(s => allSeries.add(s));
-      }
-      for (const series of allSeries) {
-        const allRecords: VariantRecord[] = [];
-        for (const yc of yComps) {
-          if (d6993[yc][series]) allRecords.push(...d6993[yc][series]);
-        }
-        if (allRecords.length === 0) continue;
-        // Derive: sum of maxMarks, max boundary per grade
-        // OCR 6993 01 = Y533(60) + Y534(40) route, so maxMark = 60+40 = 100
-        const derived: VariantRecord = { ...allRecords[0] };
-        derived[meta.maxMarkField] = allRecords.reduce((sum, r) => sum + Number(r[meta.maxMarkField] ?? 0), 0);
-        for (const f of meta.gradeConfig.fields) {
-          derived[f] = Math.max(...allRecords.map(r => Number(r[f] ?? 0)));
-        }
-        derived._derived = "OCR 6993 Y533+Y534=100";
-        derived._approximate = 1;
-        d6993["01"][series] = [derived];
-      }
-    }
-  }
+  // P0-2: OCR 6993 — no derived hack. Y533/Y534/Y535 are Further Maths components,
+  // not 6993 FSMQ. 6993/01 must come from official OCR grade-boundary data (maxMark=100, A-E).
+  // Until valid 6993/01 data is imported, the calculator entry is hidden in getComponentsForSubject.
 
   return idx;
 }
@@ -541,7 +510,7 @@ export function getRecordAll(
   const idx = DATA_INDEX[meta.dataKey];
   if (!idx) return [];
 
-  const all: Record<string, string | number>[] = [];
+  let all: Record<string, string | number>[] = [];
 
   // Edexcel AL: subjectCode may be a 3-letter prefix, search all matching codes
   if (boardKey === "Edexcel-AL" && subjectCode.length === 3) {
@@ -555,10 +524,26 @@ export function getRecordAll(
         }
       }
     }
-    return all;
+  } else {
+    all = idx[subjectCode]?.[component]?.[series] ?? [];
   }
 
-  return idx[subjectCode]?.[component]?.[series] ?? [];
+  // P0-4: Dedupe exact duplicates (same maxMark and all boundaries)
+  // so they don't appear as multiple identical selector options.
+  if (all.length > 1 && meta) {
+    const seen = new Set<string>();
+    const deduped: Record<string, string | number>[] = [];
+    for (const r of all) {
+      const key = meta.gradeConfig.fields.map(f => String(r[f] ?? "")).join("|") + "|" + String(r[meta.maxMarkField] ?? "");
+      if (!seen.has(key)) {
+        seen.add(key);
+        deduped.push(r);
+      }
+    }
+    return deduped;
+  }
+
+  return all;
 }
 
 /** Extract max mark from record */
@@ -745,6 +730,9 @@ export function getComponentsForSubject(boardKey: string, subjectCode: string): 
     }
     return [...new Set(comps)].sort((a, b) => a.localeCompare(b));
   }
+
+  // P0-2: Hide OCR 6993 calculator entry until valid 01 data is imported
+  if (boardKey === "OCR-GCSE" && subjectCode === "6993") return [];
 
   const cfg = SUBJECTS_CONFIG[`${prefix}${subjectCode}`];
   if (!cfg) return [];

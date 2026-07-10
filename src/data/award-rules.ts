@@ -1,12 +1,14 @@
 /**
  * Award Rule Configuration for Edexcel IAL A/A* Calculation
  *
- * Edexcel IAL uses a modular system where each unit is worth 100 UMS.
- * A* rules differ between 4-unit and 6-unit qualifications:
- *   - 4-unit: Total ≥ 320 (80%), A2 units ≥ 180 (90% of 200)
- *   - 6-unit: Total ≥ 480 (80%), A2 units ≥ 270 (90% of 300)
+ * YMA01 (IAL Mathematics): 6 units, 600 UMS total.
+ *   A = 480/600, A* = total ≥ 480 AND P3+P4 ≥ 180/200.
+ *   Valid combination: P1 + P2 + P3 + P4 + 2 applied (M/S/D).
  *
- * A2 units are the higher-numbered units in each qualification.
+ * YFM01 (IAL Further Maths): 6 units, 600 UMS total. INACTIVE (data incomplete).
+ *
+ * Unit max UMS is normally 100, but science practicals are 60 and some theory units are 120.
+ * Per-unit UMS should come from qualification-rules.ts, not assumed here.
  */
 
 export interface AwardRule {
@@ -14,40 +16,46 @@ export interface AwardRule {
   subjectCode: string;
   /** Human-readable name */
   name: string;
-  /** Number of units: 4 or 6 */
-  unitCount: 4 | 6;
-  /** UMS per unit (IAL = 100) */
+  /** Number of units required for the full qualification */
+  unitCount: number;
+  /** Default UMS per unit (fallback when per-unit metadata unavailable) */
   unitMaxUMS: number;
+  /** Total qualification max UMS (e.g. 600 for YMA01). Overrides unitCount * unitMaxUMS. */
+  qualificationMaxUMS?: number;
   /** Number of A2 units (for threshold calc). Defaults to a2Components.length if omitted. */
   a2UnitCount?: number;
-  /** Which component IDs count as A2 (rest are AS). Used for paper matching. */
+  /** Which component IDs count as A2. Used for paper matching. */
   a2Components: string[];
   /** Grade boundaries as percentage of total UMS */
   gradeBoundaries: Record<string, number>;
-  /** A* calculation method */
-  aStarRule: " proportional";
-  /** A* requires A2 average ≥ this percentage */
-  aStarA2ThresholdPct: number;
-  /** A* requires total ≥ this percentage */
+  /** A* requires total ≥ this percentage of qualification max UMS */
   aStarTotalThresholdPct: number;
+  /** A* requires A2 average ≥ this percentage of A2 max UMS */
+  aStarA2ThresholdPct: number;
   /** Math special: Core 34 (P3+P4) must ≥ this UMS (0 = no special rule) */
   mathCore34Threshold?: number;
+  /** Minimum number of selected papers to output a qualification grade */
+  minPapersForQualification?: number;
 }
 
 /** IAL Award Rules database */
 export const IAL_AWARD_RULES: Record<string, AwardRule> = {
-  // ── IAL Mathematics (4 units) ──
+  // ── IAL Mathematics (6 units, 600 UMS) ──
+  // P0-1: Was incorrectly modeled as 4 units / 400 UMS.
+  // Pearson IAL Mathematics is P1+P2+P3+P4 + 2 applied units = 6 units.
+  // A = 480/600. A* = total ≥ 480 AND P3+P4 ≥ 180.
   YMA01: {
     subjectCode: "YMA01",
     name: "IAL Mathematics",
-    unitCount: 4,
+    unitCount: 6,
     unitMaxUMS: 100,
+    qualificationMaxUMS: 600,
     a2Components: ["P3", "P4"],
     gradeBoundaries: { A: 0.8, B: 0.7, C: 0.6, D: 0.5, E: 0.4 },
-    aStarRule: " proportional",
     aStarA2ThresholdPct: 0.9,
     aStarTotalThresholdPct: 0.8,
     mathCore34Threshold: 180, // P3+P4 ≥ 180 UMS
+    minPapersForQualification: 6,
   },
   // ── IAL Further Mathematics (6 units) ──
   // P1: INACTIVE — YFM01 requires 6 units (FP1 + FP2 + FP3 + 3 options from applied).
@@ -114,9 +122,10 @@ export function hasAwardRule(subjectCode: string): boolean {
 
 /**
  * Calculate total UMS max for a rule.
+ * Uses explicit qualificationMaxUMS if set, otherwise unitCount * unitMaxUMS.
  */
 export function getTotalMaxUMS(rule: AwardRule): number {
-  return rule.unitCount * rule.unitMaxUMS;
+  return rule.qualificationMaxUMS ?? rule.unitCount * rule.unitMaxUMS;
 }
 
 /**

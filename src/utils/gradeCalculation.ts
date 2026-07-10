@@ -720,8 +720,24 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
       const aThreshold = getAThresholdUMS(rule);
       const a2Threshold = getAStarA2ThresholdUMS(rule);
 
+      // P0-3: Incomplete route — do not output qualification grade if not enough papers
+      const minRequired = rule.minPapersForQualification ?? rule.unitCount;
+      if (papers.length < minRequired) {
+        return {
+          eligible: false,
+          totalMet: false,
+          a2Met: false,
+          totalThreshold: aThreshold,
+          a2Threshold: a2Threshold,
+          details: [
+            `已选 ${papers.length} 个单元，YMA01 需要 ${minRequired} 个单元才能评定等级`,
+            `当前仅显示各单元 UMS，不做资格等级预测`,
+            "请选择完整的 P1+P2+P3+P4+2 applied 组合",
+          ],
+        };
+      }
+
       // A2 papers: use getASA2Tag (handles descriptive component names like "Mathematics: Pure Maths P3 (New)")
-      // Do NOT use rule.a2Components.includes(p.component) — component values are descriptive labels, not short codes
       const a2Papers = papers.filter(p => getASA2Tag(boardKey, subjectCode, p.component) === "A2");
       const a2UMS = a2Papers.reduce((s, p) => s + p.normalizedScore, 0);
 
@@ -729,10 +745,14 @@ export function checkAStar(params: AStarParams): AStarCheck | null {
       const a2Met = a2Papers.length === 0 ? false : a2UMS >= a2Threshold;
 
       // Math special rule: Core 34 (P3+P4) >= 180
-      // Detect P3/P4 by checking component label patterns (unit codes WMA13/WMA14 or descriptive names)
+      // P1-1: Include Core Mathematics C34 in the match (old spec)
       if (rule.mathCore34Threshold && rule.mathCore34Threshold > 0) {
         const p3p4 = papers
-          .filter(p => /\bP3\b|\bWMA13\b|\bPure Maths P3\b/.test(p.component) || /\bP4\b|\bWMA14\b|\bPure Maths P4\b/.test(p.component))
+          .filter(p =>
+            /\bP3\b|\bWMA13\b|\bPure Maths P3\b/.test(p.component) ||
+            /\bP4\b|\bWMA14\b|\bPure Maths P4\b/.test(p.component) ||
+            /\bCore Mathematics C34\b/.test(p.component)
+          )
           .reduce((s, p) => s + p.normalizedScore, 0);
         const core34Met = p3p4 >= rule.mathCore34Threshold;
         const eligible = totalMet && core34Met;

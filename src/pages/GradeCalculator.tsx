@@ -479,6 +479,18 @@ export default function GradeCalculator() {
                                         {/* P0: Variant selector when multiple boundary rows exist */}
                                         {variantCount > 1 && meta && (() => {
                                           const variants = getRecordAll(selectedBoard, selectedCode, p.component, p.series);
+                                          // P0-4: Check if variants have business identity (derived, tier, region, etc.)
+                                          const hasIdentity = variants.some(v =>
+                                            v._derived || v._tier || v._region || v._route || v._sourceRowId
+                                          );
+                                          if (!hasIdentity && variantCount > 1) {
+                                            // Unidentified conflicting variants — don't let user guess
+                                            return (
+                                              <span style={{ color: "#C17B5F", fontSize: 11, marginTop: 2, display: "block" }}>
+                                                ⚠️ 该考季存在 {variantCount} 组边界数据冲突，身份标识缺失，暂不可选择。请等待数据核验。
+                                              </span>
+                                            );
+                                          }
                                           return (
                                             <div style={{ marginTop: 4 }}>
                                               <label style={{ fontSize: 11, color: "#8B8378", fontWeight: 500, display: "block", marginBottom: 2 }}>

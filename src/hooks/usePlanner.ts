@@ -103,15 +103,28 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
     endDate = addDays(endDate, 1);
     const totalDays = differenceInDays(endDate, start) + 1;
 
-    // Track paper index and weekly counts per event (not per variant)
+    // P1-3: weekly quota key is subjectCode ("每周每科"), not paperName
+    // Collect events per subject for round-robin allocation
+    const subjectEvents = new Map<string, ExamEvent[]>();
+    for (const ev of events) {
+      const list = subjectEvents.get(ev.subjectCode) ?? [];
+      list.push(ev);
+      subjectEvents.set(ev.subjectCode, list);
+    }
+
+    // Track paper index per paperName and weekly counts per subjectCode
     const paperIndex = new Map<string, number>();
     events.forEach(ev => { paperIndex.set(ev.paperName, 0); });
+
+    // Round-robin pointer per subject
+    const subjectRrIndex = new Map<string, number>();
+    subjectEvents.forEach((_, sc) => { subjectRrIndex.set(sc, 0); });
 
     // Build day-by-day
     const weeks: WeekGroup[] = [];
     let currentWeek: DailyTask[] = [];
     let weeklyCounts = new Map<string, number>();
-    events.forEach(ev => { weeklyCounts.set(ev.paperName, 0); });
+    subjectEvents.forEach((_, sc) => { weeklyCounts.set(sc, 0); });
 
     for (let d = 0; d < totalDays; d++) {
       const date = addDays(start, d);
@@ -128,7 +141,7 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
         weeks.push({ weekNum: weeks.length + 1, weekLabel: `第 ${weeks.length + 1} 周`, days: currentWeek });
         currentWeek = [];
         weeklyCounts = new Map<string, number>();
-        events.forEach(ev => { weeklyCounts.set(ev.paperName, 0); });
+        subjectEvents.forEach((_, sc) => { weeklyCounts.set(sc, 0); });
       }
 
       const tasks: TaskPaper[] = [];
@@ -136,33 +149,42 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
       // P1-3: Rest day = no practice tasks assigned (simple global rest semantics)
       if (isRest) {
         // Rest day: skip all practice paper allocation
-        // (exam day tasks are handled separately via isExam flag)
       } else {
-      for (const ev of events) {
-        const daysUntilExam = differenceInDays(parseLocalDate(ev.examDate), date);
-        if (daysUntilExam <= 0) continue;
+      // P1-3: weekly quota per subjectCode, round-robin within subject
+      for (const [subjectCode, sEvents] of subjectEvents) {
+        const scCount = weeklyCounts.get(subjectCode) ?? 0;
+        if (scCount >= papersPerWeek) continue;
 
-        // Count per event (all variants share the weekly quota)
-        const count = weeklyCounts.get(ev.paperName) ?? 0;
-        if (count < papersPerWeek) {
+        // Round-robin pick one paper from this subject's events
+        const rrIdx = subjectRrIndex.get(subjectCode) ?? 0;
+        let allocated = false;
+        for (let attempt = 0; attempt < sEvents.length; attempt++) {
+          const ev = sEvents[(rrIdx + attempt) % sEvents.length];
+          const daysUntilExam = differenceInDays(parseLocalDate(ev.examDate), date);
+          if (daysUntilExam <= 0) continue;
+
           const pastPapers = pastPapersMap[ev.paperName] ?? [];
-          const idx = paperIndex.get(ev.paperName) ?? 0;
+          const pIdx = paperIndex.get(ev.paperName) ?? 0;
+          if (pIdx >= pastPapers.length) continue;
 
-          if (idx < pastPapers.length) {
-            const pastPaper = paperOverrides[ev.paperName] || pastPapers[idx];
-            // Use first variant's code as the paper code
-            const variantCode = ev.variants[0]?.code ?? ev.paperName;
-            tasks.push({
-              paperCode: variantCode,
-              paperName: ev.paperName,
-              subjectCode: ev.subjectCode,
-              pastPaper,
-              completed: false,
-              dayOffset: d,
-            });
-            paperIndex.set(ev.paperName, idx + 1);
-            weeklyCounts.set(ev.paperName, count + 1);
-          }
+          const pastPaper = paperOverrides[ev.paperName] || pastPapers[pIdx];
+          const variantCode = ev.variants[0]?.code ?? ev.paperName;
+          tasks.push({
+            paperCode: variantCode,
+            paperName: ev.paperName,
+            subjectCode: ev.subjectCode,
+            pastPaper,
+            completed: false,
+            dayOffset: d,
+          });
+          paperIndex.set(ev.paperName, pIdx + 1);
+          subjectRrIndex.set(subjectCode, (rrIdx + attempt + 1) % sEvents.length);
+          weeklyCounts.set(subjectCode, scCount + 1);
+          allocated = true;
+          break;
+        }
+        if (!allocated) {
+          subjectRrIndex.set(subjectCode, 0); // reset if none available
         }
       }
       } // end if (!isRest)
