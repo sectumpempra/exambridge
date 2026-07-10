@@ -478,47 +478,41 @@ export function validateQualificationRoute(
   subjectCode: string,
   components: string[]
 ): QualificationStatus {
-  // Edexcel IAL Mathematics (YMA01 new spec)
+  // Edexcel IAL Mathematics (YMA01)
   if (boardKey === "Edexcel-AL" && (subjectCode === "WMA" || subjectCode === "YMA01")) {
-    const rule = getAwardRule("YMA01");
-    if (!rule) return { valid: true }; // no rule = no gate
+    // P0-2/P0-3: First detect spec family, then validate with family-specific rules.
+    // Do NOT share a single minPapersForQualification gate.
 
-    // Count check
-    if (components.length < (rule.minPapersForQualification ?? rule.unitCount)) {
-      return {
-        valid: false,
-        reason: `已选 ${components.length} 个单元，YMA01 需要 ${rule.minPapersForQualification ?? rule.unitCount} 个单元才能评定等级`,
-        missing: [`还需 ${(rule.minPapersForQualification ?? rule.unitCount) - components.length} 个单元`],
-      };
-    }
-
-    // Core check: must have P1, P2, P3, P4
+    // Detect unit presence
     const hasP1 = components.some(c => /\bP1\b|\bWMA11\b|\bPure Mathematics 1\b/.test(c));
     const hasP2 = components.some(c => /\bP2\b|\bWMA12\b|\bPure Maths P2\b/.test(c));
     const hasP3 = components.some(c => /\bP3\b|\bWMA13\b|\bPure Maths P3\b/.test(c));
     const hasP4 = components.some(c => /\bP4\b|\bWMA14\b|\bPure Maths P4\b/.test(c));
-    const missingCore: string[] = [];
-    if (!hasP1) missingCore.push("P1");
-    if (!hasP2) missingCore.push("P2");
-    if (!hasP3) missingCore.push("P3");
-    if (!hasP4) missingCore.push("P4");
-
-    // Old spec detection (C12/C34)
     const hasC12 = components.some(c => /\bC12\b|\bCore Mathematics C12\b/.test(c));
     const hasC34 = components.some(c => /\bC34\b|\bCore Mathematics C34\b/.test(c));
-    const hasNewCore = hasP1 && hasP2 && hasP3 && hasP4;
-    const hasOldCore = hasC12 || hasC34;
 
-    if (hasOldCore && hasNewCore) {
+    // Detect applied units (by short codes)
+    const unitSet = new Set<string>();
+    for (const c of components) {
+      const m = c.match(/\b(WMA1[1-4]|WFM0[1-3]|WME0[1-3]|WST0[1-3]|WDM01|P[1-4]|F[1-3]|M[1-3]|S[1-3]|D1|C12|C34)\b/);
+      if (m) unitSet.add(m[1]);
+    }
+
+    // P0-3: Any new unit in old route / any old unit in new route = mixed spec
+    const hasAnyNew = hasP1 || hasP2 || hasP3 || hasP4;
+    const hasAnyOld = hasC12 || hasC34;
+
+    if (hasAnyOld && hasAnyNew) {
       return {
         valid: false,
-        reason: "新旧规格混选：新规格 P1-P4 与旧规格 C12/C34 不可同时用于 YMA01",
-        missing: ["请选择完整的新规格 P1-P4+2applied 或旧规格路线"],
+        reason: "新旧规格混选：C12/C34 与 P1-P4 不能同时选择",
+        missing: ["请选择完整的新规格 P1-P4+applied 或旧规格 C12+C34+applied"],
       };
     }
 
-    if (hasOldCore) {
-      // Old spec route: C12 + C34 + 2 applied; note C12 counts as 200 UMS
+    // ── Old spec route ──
+    if (hasAnyOld) {
+      // Must have both C12 and C34
       if (!hasC12 || !hasC34) {
         return {
           valid: false,
@@ -526,21 +520,32 @@ export function validateQualificationRoute(
           missing: [!hasC12 ? "C12" : "", !hasC34 ? "C34" : ""].filter(Boolean),
         };
       }
-      // Applied check for old spec
-      const appliedCount = components.filter(c =>
-        /\bM1\b|\bM2\b|\bS1\b|\bS2\b|\bD1\b/.test(c) && !/\bP[1-4]\b/.test(c)
-      ).length;
-      if (appliedCount < 2) {
+      // Must reject any P1-P4 new units
+      if (hasAnyNew) {
+        return { valid: false, reason: "旧规格路线不可包含 P1-P4", missing: ["请移除 P1-P4 单元"] };
+      }
+      // Old spec: C12 + C34 + exactly 2 applied = 4 components
+      const appliedUnits = Array.from(unitSet).filter(u => /^(WME|WST|WDM|M|S|D)/.test(u));
+      if (appliedUnits.length !== 2) {
         return {
           valid: false,
-          reason: `旧规格路线需要 2 个 applied units（M/S/D），当前只有 ${appliedCount} 个`,
-          missing: ["还需 " + (2 - appliedCount) + " 个 applied unit"],
+          reason: `旧规格路线需要恰好 2 个 applied units，当前 ${appliedUnits.length} 个`,
+          missing: appliedUnits.length < 2 ? ["还需 " + (2 - appliedUnits.length) + " 个 applied"] : ["请移除多余的 applied units"],
         };
+      }
+      if (components.length !== 4) {
+        return { valid: false, reason: "旧规格路线恰好需要 4 个组件（C12+C34+2applied）", missing: [] };
       }
       return { valid: true };
     }
 
-    // New spec core requirement
+    // ── New spec route ──
+    // P0-5: Must have exactly P1+P2+P3+P4 + one official allowed applied pair
+    const missingCore: string[] = [];
+    if (!hasP1) missingCore.push("P1");
+    if (!hasP2) missingCore.push("P2");
+    if (!hasP3) missingCore.push("P3");
+    if (!hasP4) missingCore.push("P4");
     if (missingCore.length > 0) {
       return {
         valid: false,
@@ -549,15 +554,45 @@ export function validateQualificationRoute(
       };
     }
 
-    // New spec applied check
-    const appliedCount = components.filter(c =>
-      /\bM1\b|\bM2\b|\bS1\b|\bS2\b|\bD1\b/.test(c) && !/\bP[1-4]\b/.test(c)
-    ).length;
-    if (appliedCount < 2) {
+    // Must reject any C12/C34
+    if (hasAnyOld) {
+      return { valid: false, reason: "新规格路线不可包含 C12/C34", missing: ["请移除 C12/C34"] };
+    }
+
+    // Extract applied units (non-pure, non-C12/C34)
+    const appliedCodes = Array.from(unitSet).filter(u =>
+      /^(WME|WST|WDM|M|S|D)/.test(u)
+    );
+
+    // Official allowed applied pairs
+    const allowedPairs = [
+      ["M1", "M2"], ["S1", "S2"], ["M1", "S1"],
+      ["M1", "D1"], ["S1", "D1"],
+    ];
+    const isValidAppliedPair = appliedCodes.length === 2 && allowedPairs.some(
+      pair => appliedCodes.includes(pair[0]) && appliedCodes.includes(pair[1])
+    );
+
+    if (!isValidAppliedPair) {
       return {
         valid: false,
-        reason: `YMA01 需要 2 个 applied units（M/S/D），当前只有 ${appliedCount} 个`,
-        missing: ["还需 " + (2 - appliedCount) + " 个 applied unit"],
+        reason: appliedCodes.length === 0
+          ? "YMA01 新规格需要 2 个 applied units（M/S/D）"
+          : appliedCodes.length === 1
+            ? `YMA01 需要恰好 2 个 applied units，当前只有 ${appliedCodes[0]}`
+            : appliedCodes.length === 2
+              ? `非法 applied 组合: ${appliedCodes.join("+")}。允许: M1+M2, S1+S2, M1+S1, M1+D1, S1+D1`
+              : `YMA01 新规格恰好需要 6 个单元（P1-P4+2applied），当前 ${components.length} 个`,
+        missing: appliedCodes.length < 2 ? ["请选择 applied pair"] : ["请选择合法的 applied pair"],
+      };
+    }
+
+    // Exactly 6 components
+    if (components.length !== 6) {
+      return {
+        valid: false,
+        reason: `YMA01 新规格恰好需要 6 个单元（P1+P2+P3+P4+2applied），当前 ${components.length} 个`,
+        missing: [],
       };
     }
 
@@ -1234,10 +1269,13 @@ function mapGrade(
     const next = scale.find(g => totalNormalized < g.threshold);
     nextGradeGap = next ? Math.ceil(next.threshold - totalNormalized) : null;
   } else if (boardKey.includes("AL")) {
+    // P0-1: A-Level base scale does NOT include A*.
+    // A* can ONLY be awarded by board-specific checkAStar() promotion.
+    // This prevents A* when total>=90% but A2/P3P4 conditions fail.
     const scale = [
-      { label: "A*", threshold: 90 }, { label: "A", threshold: 80 },
-      { label: "B", threshold: 70 }, { label: "C", threshold: 60 },
-      { label: "D", threshold: 50 }, { label: "E", threshold: 40 },
+      { label: "A", threshold: 80 }, { label: "B", threshold: 70 },
+      { label: "C", threshold: 60 }, { label: "D", threshold: 50 },
+      { label: "E", threshold: 40 },
     ];
     for (const g of scale) {
       gradeResults.push({ gradeLabel: g.label, requiredTotal: g.threshold, achieved: totalNormalized >= g.threshold, gap: Math.round((totalNormalized - g.threshold) * 10) / 10 });
@@ -1245,8 +1283,19 @@ function mapGrade(
     for (const g of scale) {
       if (totalNormalized >= g.threshold) { predictedGrade = g.label; break; }
     }
-    const next = scale.find(g => totalNormalized < g.threshold);
-    nextGradeGap = next ? Math.ceil(next.threshold - totalNormalized) : null;
+    // P1-4: nextGradeGap = nearest higher grade, not highest grade
+    const higherGrades = scale.filter(g => totalNormalized < g.threshold);
+    if (higherGrades.length > 0) {
+      // Find the one with smallest gap (nearest higher grade)
+      const nearest = higherGrades.reduce((best, g) => {
+        const gap = g.threshold - totalNormalized;
+        const bestGap = best.threshold - totalNormalized;
+        return gap < bestGap ? g : best;
+      });
+      nextGradeGap = Math.ceil(nearest.threshold - totalNormalized);
+    } else {
+      nextGradeGap = null;
+    }
   } else {
     const scale = [
       { label: "9", threshold: 90 }, { label: "8", threshold: 80 },

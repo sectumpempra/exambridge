@@ -211,15 +211,20 @@ export default function GradeCalculator() {
         valid = false;
       }
 
-      // P0-3: Block calculation if selected series has unidentified conflicting variants
+      // P0-3/P1-5: Block calculation if selected series has unidentified conflicting variants
+      // Identity key must be present AND unique across variants.
       if (p.series) {
         const variants = getRecordAll(selectedBoard, selectedCode, p.component, p.series);
         if (variants.length > 1) {
-          const hasIdentity = variants.every(v =>
-            v._derived || v._tier || v._region || v._route || v._sourceRowId
+          const identityKeys = variants.map(v =>
+            String(v._derived ?? v._tier ?? v._region ?? v._route ?? v._sourceRowId ?? "")
           );
-          if (!hasIdentity) {
-            newErrors[`series-${i}`] = "该考季数据存在冲突且无法区分，暂不可计算";
+          const hasIdentity = identityKeys.every(k => k.length > 0);
+          const isUnique = new Set(identityKeys).size === identityKeys.length;
+          if (!hasIdentity || !isUnique) {
+            newErrors[`series-${i}`] = !hasIdentity
+              ? "该考季数据存在冲突且无法区分，暂不可计算"
+              : "该考季数据冲突标识重复，暂不可计算";
             valid = false;
           }
         }
