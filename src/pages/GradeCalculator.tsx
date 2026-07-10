@@ -58,18 +58,18 @@ interface CalculationResult {
   totalScore: number;
   maxTotal: number;
   percentage: number;
-  predictedGrade: string;
+  predictedGrade: string | null;  // null = route invalid, no qualification grade
   gradeResults: GradeBoundaryResult[];
   papers: PaperResult[];
   nextGradeGap: number | null;
   completenessWarning?: string;
-  avgPum?: number; // average PUM across papers for CAIE
-  // New fields from gradeCalculation engine
+  avgPum?: number;
   aStarCheck: AStarCheck | null;
   precision: PrecisionRating;
-  totalNormalized: number;      // weighted PUM/UMS/GNS total
-  maxNormalized: number;        // max possible normalized score
-  useUMS?: boolean;             // whether this board uses UMS
+  totalNormalized: number;
+  maxNormalized: number;
+  useUMS?: boolean;
+  qualificationStatus: import("../utils/gradeCalculation").QualificationStatus;
 }
 
 // ── Board groups ─────────────────────────────────────────────────────
@@ -210,6 +210,20 @@ export default function GradeCalculator() {
         newErrors[`score-${i}`] = `不能超过满分 ${maxMark}`;
         valid = false;
       }
+
+      // P0-3: Block calculation if selected series has unidentified conflicting variants
+      if (p.series) {
+        const variants = getRecordAll(selectedBoard, selectedCode, p.component, p.series);
+        if (variants.length > 1) {
+          const hasIdentity = variants.every(v =>
+            v._derived || v._tier || v._region || v._route || v._sourceRowId
+          );
+          if (!hasIdentity) {
+            newErrors[`series-${i}`] = "该考季数据存在冲突且无法区分，暂不可计算";
+            valid = false;
+          }
+        }
+      }
     });
 
     setErrors(newErrors);
@@ -289,6 +303,7 @@ export default function GradeCalculator() {
       completenessWarning: engineResult.completenessWarning,
       avgPum: engineResult.avgPum,
       aStarCheck: engineResult.aStarCheck,
+      qualificationStatus: engineResult.qualificationStatus,
       precision: engineResult.precision,
       totalNormalized: engineResult.totalNormalized,
       maxNormalized: engineResult.maxNormalized,
@@ -571,11 +586,24 @@ export default function GradeCalculator() {
               </div>
 
               {/* Main Result Card */}
-              <div style={{ padding: 32, borderRadius: 16, background: "linear-gradient(135deg, #8F7F6E, #A69888)", color: "#FFF", textAlign: "center", boxShadow: "0 8px 32px rgba(143,127,110,0.25)" }}>
+              <div style={{ padding: 32, borderRadius: 16, background: result.predictedGrade ? "linear-gradient(135deg, #8F7F6E, #A69888)" : "linear-gradient(135deg, #B8A99A, #C9B8A8)", color: "#FFF", textAlign: "center", boxShadow: "0 8px 32px rgba(143,127,110,0.25)" }}>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 8 }}>
-                  <Award size={28} /><span style={{ fontSize: 18, fontWeight: 600, opacity: 0.9 }}>预测等级</span>
+                  <Award size={28} /><span style={{ fontSize: 18, fontWeight: 600, opacity: 0.9 }}>
+                    {result.predictedGrade ? "预测等级" : "单元 UMS 汇总"}
+                  </span>
                 </div>
-                <div style={{ fontSize: 64, fontWeight: 800, letterSpacing: "0.05em", margin: "8px 0" }}>{result.predictedGrade}</div>
+                {result.predictedGrade ? (
+                  <div style={{ fontSize: 64, fontWeight: 800, letterSpacing: "0.05em", margin: "8px 0" }}>{result.predictedGrade}</div>
+                ) : (
+                  <div style={{ fontSize: 18, fontWeight: 600, margin: "16px 0", padding: "12px 24px", borderRadius: 10, background: "rgba(255,255,255,0.15)", display: "inline-block" }}>
+                    {result.qualificationStatus.reason || "不可评定资格等级"}
+                    {result.qualificationStatus.missing && result.qualificationStatus.missing.length > 0 && (
+                      <div style={{ fontSize: 13, marginTop: 6, opacity: 0.85 }}>
+                        缺少: {result.qualificationStatus.missing.join(", ")}
+                      </div>
+                    )}
+                  </div>
+                )}
                 <div style={{ fontSize: 16, opacity: 0.85 }}>总分 {result.totalScore} / {result.maxTotal} &nbsp;&middot;&nbsp; {result.percentage}%</div>
                 {/* Normalized score display */}
                 <div style={{ marginTop: 8, fontSize: 14, opacity: 0.8 }}>
@@ -693,7 +721,7 @@ export default function GradeCalculator() {
                         }}>
                           <td style={{ padding: "10px 14px", fontSize: 14, color: "#3D3832" }}>
                             {gr.gradeLabel}
-                            {gr.gradeLabel === result.predictedGrade && (
+                            {result.predictedGrade && gr.gradeLabel === result.predictedGrade && (
                               <span style={{ marginLeft: 8, padding: "2px 8px", borderRadius: 6, background: "linear-gradient(135deg, #8F7F6E, #A69888)", color: "#FFF", fontSize: 11, fontWeight: 600 }}>预测</span>
                             )}
                           </td>

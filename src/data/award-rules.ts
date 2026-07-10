@@ -91,7 +91,7 @@ export const IAL_AWARD_RULES: Record<string, AwardRule> = {
 
 /** Map from 3-letter subject prefix (as used by calculatorIndex / GradeCalculator) to qualification code. */
 const PREFIX_TO_QUAL_CODE: Record<string, string> = {
-  WMA: "YMA01", // IAL Mathematics (valid 4-unit)
+  WMA: "YMA01", // IAL Mathematics (6 units, 600 UMS)
   // P0-3: WFM disabled — no complete 6-unit data path for YFM01.
   // WFM: "YFM01",
   // P1-2: WPM disabled — no data path for YPM01.

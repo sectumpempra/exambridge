@@ -40,16 +40,25 @@ export interface AStarCheck {
   details: string[];       // human-readable check details
 }
 
+export interface QualificationStatus {
+  valid: boolean;
+  /** Human-readable reason when invalid */
+  reason?: string;
+  /** Missing required components */
+  missing?: string[];
+}
+
 export interface CalculationOutput {
   papers: PaperResult[];
   totalNormalized: number;    // weighted total (PUM/UMS/GNS)
   maxNormalized: number;      // max possible
   percentage: number;
-  predictedGrade: string;
+  predictedGrade: string | null;  // null = qualification route invalid
   gradeResults: GradeBoundaryResult[];
   aStarCheck: AStarCheck | null;
   precision: PrecisionRating;
   completenessWarning?: string;
+  qualificationStatus: QualificationStatus;
   nextGradeGap: number | null;
   avgPum?: number;            // CAIE: average PUM across papers
   totalScore: number;         // sum of raw scores
@@ -453,6 +462,110 @@ export function getASA2Tag(
   }
 
   return undefined;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 0. Qualification Route Validation
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Validate selected components form a legitimate qualification route.
+ * P0-1: Route invalid → predictedGrade = null, no A*-E displayed.
+ * P0-2: YMA01 must have P1/P2/P3/P4 + 2 valid applied units; no old/new mix.
+ */
+export function validateQualificationRoute(
+  boardKey: string,
+  subjectCode: string,
+  components: string[]
+): QualificationStatus {
+  // Edexcel IAL Mathematics (YMA01 new spec)
+  if (boardKey === "Edexcel-AL" && (subjectCode === "WMA" || subjectCode === "YMA01")) {
+    const rule = getAwardRule("YMA01");
+    if (!rule) return { valid: true }; // no rule = no gate
+
+    // Count check
+    if (components.length < (rule.minPapersForQualification ?? rule.unitCount)) {
+      return {
+        valid: false,
+        reason: `已选 ${components.length} 个单元，YMA01 需要 ${rule.minPapersForQualification ?? rule.unitCount} 个单元才能评定等级`,
+        missing: [`还需 ${(rule.minPapersForQualification ?? rule.unitCount) - components.length} 个单元`],
+      };
+    }
+
+    // Core check: must have P1, P2, P3, P4
+    const hasP1 = components.some(c => /\bP1\b|\bWMA11\b|\bPure Mathematics 1\b/.test(c));
+    const hasP2 = components.some(c => /\bP2\b|\bWMA12\b|\bPure Maths P2\b/.test(c));
+    const hasP3 = components.some(c => /\bP3\b|\bWMA13\b|\bPure Maths P3\b/.test(c));
+    const hasP4 = components.some(c => /\bP4\b|\bWMA14\b|\bPure Maths P4\b/.test(c));
+    const missingCore: string[] = [];
+    if (!hasP1) missingCore.push("P1");
+    if (!hasP2) missingCore.push("P2");
+    if (!hasP3) missingCore.push("P3");
+    if (!hasP4) missingCore.push("P4");
+
+    // Old spec detection (C12/C34)
+    const hasC12 = components.some(c => /\bC12\b|\bCore Mathematics C12\b/.test(c));
+    const hasC34 = components.some(c => /\bC34\b|\bCore Mathematics C34\b/.test(c));
+    const hasNewCore = hasP1 && hasP2 && hasP3 && hasP4;
+    const hasOldCore = hasC12 || hasC34;
+
+    if (hasOldCore && hasNewCore) {
+      return {
+        valid: false,
+        reason: "新旧规格混选：新规格 P1-P4 与旧规格 C12/C34 不可同时用于 YMA01",
+        missing: ["请选择完整的新规格 P1-P4+2applied 或旧规格路线"],
+      };
+    }
+
+    if (hasOldCore) {
+      // Old spec route: C12 + C34 + 2 applied; note C12 counts as 200 UMS
+      if (!hasC12 || !hasC34) {
+        return {
+          valid: false,
+          reason: "旧规格路线不完整：必须同时选择 C12 和 C34",
+          missing: [!hasC12 ? "C12" : "", !hasC34 ? "C34" : ""].filter(Boolean),
+        };
+      }
+      // Applied check for old spec
+      const appliedCount = components.filter(c =>
+        /\bM1\b|\bM2\b|\bS1\b|\bS2\b|\bD1\b/.test(c) && !/\bP[1-4]\b/.test(c)
+      ).length;
+      if (appliedCount < 2) {
+        return {
+          valid: false,
+          reason: `旧规格路线需要 2 个 applied units（M/S/D），当前只有 ${appliedCount} 个`,
+          missing: ["还需 " + (2 - appliedCount) + " 个 applied unit"],
+        };
+      }
+      return { valid: true };
+    }
+
+    // New spec core requirement
+    if (missingCore.length > 0) {
+      return {
+        valid: false,
+        reason: `YMA01 新规格缺少必修单元: ${missingCore.join(", ")}`,
+        missing: missingCore,
+      };
+    }
+
+    // New spec applied check
+    const appliedCount = components.filter(c =>
+      /\bM1\b|\bM2\b|\bS1\b|\bS2\b|\bD1\b/.test(c) && !/\bP[1-4]\b/.test(c)
+    ).length;
+    if (appliedCount < 2) {
+      return {
+        valid: false,
+        reason: `YMA01 需要 2 个 applied units（M/S/D），当前只有 ${appliedCount} 个`,
+        missing: ["还需 " + (2 - appliedCount) + " 个 applied unit"],
+      };
+    }
+
+    return { valid: true };
+  }
+
+  // Default: no specific validation
+  return { valid: true };
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -940,7 +1053,8 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
   if (papers.length === 0) {
     return {
       papers: [], totalNormalized: 0, maxNormalized: 0, percentage: 0,
-      predictedGrade: "U", gradeResults: [], aStarCheck: null,
+      predictedGrade: null, gradeResults: [], aStarCheck: null,
+      qualificationStatus: { valid: false, reason: "未选择任何试卷" },
       precision: { stars: "★★★★★", level: "最高", description: "精度无法评估" },
       nextGradeGap: null, totalScore: 0, maxTotal: 0,
     };
@@ -1020,23 +1134,37 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
     ? Math.round((totalNormalized / maxNormalized) * 1000) / 10
     : 0;
 
-  // Step 3: Grade mapping
-  // For non-CAIE A-Level, use normalized percentage (0-100) instead of raw UMS sum
-  const gradeInput = (isAL && !isCAIE)
-    ? percentage
-    : totalNormalized;
-  const { predictedGrade, gradeResults, nextGradeGap } = mapGrade(
-    boardKey,
-    gradeInput,
+  // P0-1: Validate qualification route BEFORE grade mapping
+  const qualificationStatus = validateQualificationRoute(
+    boardKey, subjectCode, papers.map(p => p.component)
   );
 
-  // Step 4: A* check
-  const aStarCheck = isAL
-    ? checkAStar({ boardKey, subjectCode, papers: results, totalNormalized })
-    : null;
+  let predictedGrade: string | null = null;
+  let gradeResults: GradeBoundaryResult[] = [];
+  let nextGradeGap: number | null = null;
+  let aStarCheck: AStarCheck | null = null;
 
-  // Override predicted grade with A* if eligible
-  const finalPredictedGrade = aStarCheck?.eligible ? "A*" : predictedGrade;
+  if (qualificationStatus.valid) {
+    // Step 3: Grade mapping (only for valid routes)
+    const gradeInput = (isAL && !isCAIE)
+      ? percentage
+      : totalNormalized;
+    const gradeMapped = mapGrade(boardKey, gradeInput);
+    predictedGrade = gradeMapped.predictedGrade;
+    gradeResults = gradeMapped.gradeResults;
+    nextGradeGap = gradeMapped.nextGradeGap;
+
+    // Step 4: A* check
+    if (isAL) {
+      aStarCheck = checkAStar({ boardKey, subjectCode, papers: results, totalNormalized });
+      if (aStarCheck?.eligible) {
+        predictedGrade = "A*";
+      }
+    }
+  } else {
+    // Route invalid: skip grade mapping and A* check
+    // predictedGrade remains null, gradeResults empty
+  }
 
   // Step 5: Precision
   const precision = calculatePrecision(
@@ -1061,9 +1189,10 @@ export function runGradeCalculation(options: CalcOptions): CalculationOutput {
     totalNormalized,
     maxNormalized,
     percentage,
-    predictedGrade: finalPredictedGrade,
+    predictedGrade,
     gradeResults,
     aStarCheck,
+    qualificationStatus,
     precision,
     nextGradeGap,
     avgPum,

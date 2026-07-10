@@ -233,11 +233,8 @@ export interface SubjectConfig {
 
 // ── Build lookup indexes ─────────────────────────────────────────────
 
-/** P1-3: Removed COMPONENT_REMAP for OCR 6993.
- *  Previously Y533/Y534/Y535 were remapped to "01", causing:
- *  - Y533 (maxMark 60) and Y534 (maxMark 40) to conflict under "01"
- *  - config says 01 maxMark=100, but merge kept 60
- *  Y533/Y534 now stay as independent components; config update needed to expose them.
+/** P1-3: COMPONENT_REMAP removed. No per-code remapping is currently active.
+ *  If needed in future, add entries here with clear comments explaining the mapping.
  */
 function remapComponent(_code: string, component: string): string {
   return component;
@@ -376,7 +373,7 @@ export const SUBJECTS_CONFIG = subjectsConfig as Record<string, SubjectConfig>;
 // WMA (Pure) + WME (Mechanics) + WST (Statistics) + WDM (Decision) → Mathematics
 const EDEXCEL_AL_MATH_MERGE: Record<string, { name: string; prefixes: string[] }> = {
   // P0-3: WFM removed — YFM01 requires 6 units (FP1-3 + 3 options) but data only has WFM01-03.
-  // WMA kept: YMA01 is a valid 4-unit award with WMA11-14.
+  // WMA kept: YMA01 is a 6-unit award (P1-P4 + 2 applied); WMA11-14 are the pure units.
   "WMA": { name: "Mathematics", prefixes: ["WMA", "WME", "WST", "WDM"] },
 };
 
@@ -529,12 +526,15 @@ export function getRecordAll(
   }
 
   // P0-4: Dedupe exact duplicates (same maxMark and all boundaries)
-  // so they don't appear as multiple identical selector options.
+  // P1-2: Use fieldMap to read actual data fields, not canonical names.
+  // Edexcel AL fieldMap: a_star -> "a*", so r["a*"] not r["a_star"].
   if (all.length > 1 && meta) {
     const seen = new Set<string>();
     const deduped: Record<string, string | number>[] = [];
     for (const r of all) {
-      const key = meta.gradeConfig.fields.map(f => String(r[f] ?? "")).join("|") + "|" + String(r[meta.maxMarkField] ?? "");
+      const key = meta.gradeConfig.fields
+        .map(f => String(r[meta.fieldMap[f] ?? f] ?? ""))
+        .join("|") + "|" + String(r[meta.maxMarkField] ?? "");
       if (!seen.has(key)) {
         seen.add(key);
         deduped.push(r);
@@ -646,6 +646,9 @@ export function getSubjectsForBoard(boardKey: string): { code: string; name: str
   // Deduplicate by code
   const deduped = subjects.filter((s, i, arr) => arr.findIndex(x => x.code === s.code) === i);
 
+  // P2-1: Hide OCR 6993 from subject dropdown (invalid data: Y533/Y534/Y535 belong to Further Maths)
+  const filtered = deduped.filter(s => !(boardKey === "OCR-GCSE" && s.code === "6993"));
+
   // Apply name overrides and group Edexcel AL by subject prefix
   const overrides = SUBJECT_NAME_OVERRIDES[boardKey];
   if (overrides) {
@@ -663,7 +666,7 @@ export function getSubjectsForBoard(boardKey: string): { code: string; name: str
       }
 
       // Then: add non-math subjects
-      for (const s of deduped) {
+      for (const s of filtered) {
         const prefix3 = s.code.substring(0, 3);
         // Skip if this prefix is part of a merged math subject
         const isInMerge = Object.values(EDEXCEL_AL_MATH_MERGE).some(m => m.prefixes.includes(prefix3));
@@ -685,7 +688,7 @@ export function getSubjectsForBoard(boardKey: string): { code: string; name: str
       });
     } else {
       // Just override names
-      for (const s of deduped) {
+      for (const s of filtered) {
         const overrideName = overrides[s.code];
         if (overrideName) s.name = overrideName;
       }
@@ -694,7 +697,7 @@ export function getSubjectsForBoard(boardKey: string): { code: string; name: str
 
   // Sort by category order, then by code
   const catOrder: Record<string, number> = { math: 0, physics: 1, chemistry: 2, economics: 3, biology: 4, cs: 5, other: 99 };
-  return deduped.sort((a, b) => {
+  return filtered.sort((a, b) => {
     const oa = catOrder[a.category] ?? 99;
     const ob = catOrder[b.category] ?? 99;
     if (oa !== ob) return oa - ob;
