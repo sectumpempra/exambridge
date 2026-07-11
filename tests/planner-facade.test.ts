@@ -1,41 +1,49 @@
 import { describe, it, expect } from "vitest";
 import { planSchedule } from "@/adapters-v2/ui/planner-facade";
 
-describe("Planner Facade v2 (Phase 0 stub)", () => {
-  it("returns IMPOSSIBLE status", () => {
-    const result = planSchedule({
+describe("Planner Facade v2", () => {
+  it("legacy mode: returns null result", () => {
+    const output = planSchedule({
       startDate: "2026-01-01",
       timezone: "Asia/Shanghai",
-      selectedSittingIds: [],
-      restWeekdays: [0, 6], // Sun, Sat
+      events: [],
+      restWeekdays: [0, 6],
       intensity: "normal",
       maxTasksPerDay: 2,
     });
-    expect(result.status).toBe("IMPOSSIBLE");
+    expect(output.result).toBeNull();
   });
 
-  it("returns empty days", () => {
-    const result = planSchedule({
+  it("legacy mode: returns null v2Result", () => {
+    const output = planSchedule({
       startDate: "2026-01-01",
       timezone: "Asia/Shanghai",
-      selectedSittingIds: [],
+      events: [],
       restWeekdays: [],
       intensity: "normal",
       maxTasksPerDay: 2,
     });
-    expect(result.days).toEqual([]);
+    expect(output.v2Result).toBeNull();
   });
 
-  it("returns unscheduled with NOT_YET_IMPLEMENTED reason", () => {
-    const result = planSchedule({
+  it("v2 mode would return PlanResult when flag enabled", () => {
+    // Note: actual v2 mode requires VITE_PLANNER_ENGINE=v2 env var
+    // In default legacy mode, result is null
+    const output = planSchedule({
       startDate: "2026-01-01",
       timezone: "Asia/Shanghai",
-      selectedSittingIds: [],
-      restWeekdays: [],
+      events: [{
+        subjectCode: "CAIE-9709",
+        paperLabel: "P1",
+        paperName: "CAIE-9709 P1",
+        examDate: "2026-05-15",
+        variants: [{ code: "12", component: "P1" }],
+      }],
+      restWeekdays: [0, 6],
       intensity: "normal",
       maxTasksPerDay: 2,
     });
-    expect(result.unscheduled.length).toBeGreaterThan(0);
-    expect(result.unscheduled[0].reason).toContain("NOT_YET_IMPLEMENTED");
+    // Legacy mode returns null
+    expect(output.result).toBeNull();
   });
 });

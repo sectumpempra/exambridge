@@ -36,8 +36,26 @@
 - Calculator Facade: v2/shadow/legacy 三模式，singleton Catalog
 - 102 tests passing (9 test files)
 
+### Phase 3 ✅
+- Planner Core v2 引擎: `planSchedule()` 纯函数，无 React/随机数
+- 确定性 9 步排程算法:
+  1. Sort sittings by examDate → qualificationId → paperId
+  2. Generate weekly intensity targets (low=1, normal=2, high=3)
+  3. Enumerate valid days (before exam, after start, not rest day)
+  4. Pick sitting with earliest exam + lowest completion ratio
+  5. Assign to lowest-load valid day
+  6. Round-robin across papers within same qualification
+  7. No PastPaperRef reuse
+  8. Optimize uniform distribution
+  9. Report unscheduled with reasons
+- 7 种未排原因: NO_AVAILABLE_DAY, DAILY_CAPACITY_EXHAUSTED, NO_PAST_PAPER_AVAILABLE, EXAM_ALREADY_PASSED, MISSING_EXAM_DATE, AMBIGUOUS_SITTING, INVALID_CONFIGURATION
+- 本地日历语义: 字符串日期比较，避免 UTC 歧义
+- qualificationId 分组（非三字符前缀）
+- maxTasksPerDay 硬上限
+- Facade: legacy/v2 双模式，legacy-to-v2 ExamEvent adapter
+- 123 tests passing (10 test files)
+
 ### 后续 Phase 计划
-- **Phase 3**: Planner v2
 - **Phase 4**: Paper/Knowledge 数据访问迁移
 - **Phase 5**: 逐 board 扩展及清理
 
