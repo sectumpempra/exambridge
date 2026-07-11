@@ -11,15 +11,23 @@
 
 ## Phase 进展
 
-### Phase 0 (进行中)
+### Phase 0 ✅
 - Vitest 已安装
 - 目录结构已创建 (`src/domain-v2/`, `src/adapters-v2/`, `tests/`, `scripts/`, `generated/`)
 - Feature flag 系统已建立
 - V2 facade 空壳已创建
 - Characterization fixtures 已建立
 
+### Phase 1 ✅
+- Zod schemas: 14 entity types (Board, Qualification, Specification, Unit, Paper, PaperVariant, Sitting, BoundarySet, AwardRoute, GradingScale, AggregationPolicy, GradePolicy, AStarPolicy, CalculationPolicy)
+- Stable ID generator: deterministic, readable, case-fixed
+- YMA01 ETL adapter: parseRaw → normalize → link → validate
+- Catalog query interface: get/list/resolve + boundary lookup
+- ETL pipeline with 6 invariants (all passing)
+- Generated: `catalog.json`, `manifest.json`, `qa-report.json`
+- 59 tests passing (6 test files)
+
 ### 后续 Phase 计划
-- **Phase 1**: Catalog 基础 (schema, ETL, QA)
 - **Phase 2**: Calculator v2 首个纵切片 (Pearson Edexcel IAL Mathematics YMA01)
 - **Phase 3**: Planner v2
 - **Phase 4**: Paper/Knowledge 数据访问迁移
