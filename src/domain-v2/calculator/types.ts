@@ -86,6 +86,12 @@ export interface CalculationResult {
   nextGrade?: { grade: string; gap: number; scale: "RAW" | "UMS" | "PUM" | "GNS" };
   warnings: DomainWarning[];
   errors: DomainError[];
-  explanation: string[];
+  explanation: ExplanationStep[];
   sources: SourceRef[];
+}
+
+export interface ExplanationStep {
+  step: number;
+  title: string;
+  details: string[];
 }

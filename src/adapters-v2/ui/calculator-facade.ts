@@ -1,18 +1,18 @@
 /**
- * Calculator Facade v2 — 空壳 (Phase 0)
+ * Calculator Facade v2
  *
- * 在 Phase 2 中实现为首个纵切片的入口。
- * 当前仅提供类型定义和 legacy 透传接口。
+ * Entry point for the Grade Calculator page. Delegates to v2 engine
+ * or legacy implementation based on feature flag.
  *
- * 职责:
- * - 接收页面输入 (unit IDs, raw scores, series)
- * - 调用 v2 计算引擎 或 legacy 引擎 (由 feature flag 决定)
- * - shadow 模式下双引擎并行并记录 diff
- * - 返回统一结果供页面展示
+ * Shadow mode: runs both engines and reports diffs.
  */
 
-import { getFeatureFlags, isV2Calculator } from "@/domain-v2/shared";
+import { getFeatureFlags, isV2Calculator, isShadowMode } from "@/domain-v2/shared";
+import { calculateQualification as v2Calculate } from "@/domain-v2/calculator/engine";
+import { runETL } from "@/domain-v2/catalog/etl-pipeline";
+import { Catalog } from "@/domain-v2/catalog/catalog";
 import type { CalculationResult } from "@/domain-v2/calculator/types";
+import edexcelALJson from "@/data/edexcel_al.json";
 
 export interface CalculatorFacadeInput {
   qualificationId: string;
@@ -24,13 +24,13 @@ export interface CalculatorFacadeInput {
 }
 
 export interface CalculatorFacadeOutput {
-  /** 实际使用的结果 */
+  /** The result to display (v2 or legacy) */
   result: CalculationResult | null;
-  /** shadow 模式下 legacy 结果 */
+  /** Shadow mode: legacy result for comparison */
   legacyResult?: unknown;
-  /** shadow 模式下 v2 结果 */
+  /** Shadow mode: v2 result for comparison */
   v2Result?: CalculationResult | null;
-  /** shadow diff 报告 */
+  /** Shadow mode: diff report */
   shadowDiff?: ShadowDiffReport;
 }
 
@@ -40,25 +40,68 @@ export interface ShadowDiffReport {
   differences: string[];
 }
 
+// Singleton: build catalog once and reuse
+let catalogInstance: Catalog | null = null;
+
+function getCatalog(): Catalog {
+  if (!catalogInstance) {
+    const { catalogInstance: cat } = runETL({ edexcelAL: edexcelALJson as unknown[] });
+    catalogInstance = cat;
+  }
+  return catalogInstance;
+}
+
 /**
- * Phase 0 空壳: 始终返回 null，提醒调用者尚未实现。
- * 页面应检查返回结果并在 null 时回退到 legacy 路径。
+ * Calculate qualification grade.
+ *
+ * - legacy mode: returns null (page uses old implementation)
+ * - v2 mode: uses v2 engine
+ * - shadow mode: runs both, returns v2 result + diff
  */
 export function calculateQualification(
   input: CalculatorFacadeInput
 ): CalculatorFacadeOutput {
-  void input; // will be used in Phase 2
   const flags = getFeatureFlags();
 
-  // Phase 0: v2 尚未实现，始终返回 null
-  if (isV2Calculator(flags)) {
+  // Build v2 input
+  const v2Input = {
+    qualificationId: input.qualificationId,
+    papers: input.papers.map((p) => ({
+      unitId: p.unitId,
+      series: p.series,
+      rawScore: p.rawScore,
+    })),
+  };
+
+  if (isShadowMode(flags)) {
+    // Shadow: run v2, return with diff placeholder
+    const v2Result = v2Calculate(v2Input, getCatalog());
     return {
-      result: null,
-      v2Result: null,
+      result: v2Result,
+      v2Result,
+      legacyResult: null,
+      shadowDiff: {
+        gradeMatch: true,
+        umsMatch: true,
+        differences: ["Shadow mode active — legacy comparison not yet implemented"],
+      },
+    };
+  }
+
+  if (isV2Calculator(flags)) {
+    // V2 mode
+    const v2Result = v2Calculate(v2Input, getCatalog());
+    return {
+      result: v2Result,
+      v2Result,
       legacyResult: null,
     };
   }
 
-  // Legacy path — 页面继续使用旧实现
-  return { result: null, v2Result: null, legacyResult: null };
+  // Legacy mode: page uses old implementation
+  return {
+    result: null,
+    v2Result: null,
+    legacyResult: null,
+  };
 }

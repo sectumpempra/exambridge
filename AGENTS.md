@@ -27,8 +27,16 @@
 - Generated: `catalog.json`, `manifest.json`, `qa-report.json`
 - 59 tests passing (6 test files)
 
+### Phase 2 ✅
+- Calculator Core v2 引擎: `calculateQualification()` 主协调器
+- Pearson UMS 策略: 分段线性插值，E boundary 以下 = 0 UMS
+- Route 验证器: 7 种 SelectionRule 原语 (REQUIRE_ALL, EXACTLY_N_FROM, AT_LEAST_N_FROM, ONE_OF_GROUPS, MUTUALLY_EXCLUSIVE, TOTAL_UNIT_COUNT, NO_DUPLICATES)
+- Grade Mapper: 从高到低评估阈值，nextGrade 指向紧邻更高等级
+- A* Checker: 独立于 grade mapping，评估 AStarPolicy 的所有条件
+- Calculator Facade: v2/shadow/legacy 三模式，singleton Catalog
+- 102 tests passing (9 test files)
+
 ### 后续 Phase 计划
-- **Phase 2**: Calculator v2 首个纵切片 (Pearson Edexcel IAL Mathematics YMA01)
 - **Phase 3**: Planner v2
 - **Phase 4**: Paper/Knowledge 数据访问迁移
 - **Phase 5**: 逐 board 扩展及清理

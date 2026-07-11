@@ -1,2 +1,6 @@
-// Phase 0: Types only. Implementation in Phase 2.
 export * from "./types";
+export { calculateQualification } from "./engine";
+export { calculateUMS } from "./policies/pearson-ums";
+export { validateRoute } from "./route-validator";
+export { mapGrade } from "./grade-mapper";
+export { checkAStar } from "./astar-checker";
