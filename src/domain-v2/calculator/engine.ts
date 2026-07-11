@@ -25,6 +25,7 @@ import type {
   ExplanationStep,
 } from "./types";
 import { calculateUMS } from "./policies/pearson-ums";
+import { calculatePUM } from "./policies/caie-pum";
 import { validateRoute } from "./route-validator";
 import { mapGrade } from "./grade-mapper";
 import { checkAStar } from "./astar-checker";
@@ -154,27 +155,51 @@ export function calculateQualification(
         `分数 ${paper.rawScore} 超过最大值 ${maxMark} (单元 ${unit.code})`);
     }
 
-    // Calculate UMS
-    const umsMax = unit.umsMax ?? 100;
-    const umsResult = calculateUMS({
-      rawScore: paper.rawScore,
-      maxMark,
-      umsMax,
-      boundarySet: boundary,
-    });
+    // Calculate normalized score (UMS for Pearson, PUM for CAIE)
+    const boardCode = catalog.rawCatalog.boards.find((b) => b.id === qual.boardId)?.code ?? "";
+    let normalizedScore: number;
+    let normalizedMax: number;
+    let scoreType: "RAW" | "UMS" | "PUM" | "GNS";
+    let grade: string;
+
+    if (boardCode === "CAIE") {
+      // CAIE: use PUM (Percentage Uniform Mark)
+      const pumResult = calculatePUM({
+        rawScore: paper.rawScore,
+        maxMark,
+        boundarySet: boundary,
+      });
+      normalizedScore = pumResult.pum;
+      normalizedMax = 100;
+      scoreType = "PUM";
+      grade = pumResult.grade;
+    } else {
+      // Pearson: use UMS
+      const umsMax = unit.umsMax ?? 100;
+      const umsResult = calculateUMS({
+        rawScore: paper.rawScore,
+        maxMark,
+        umsMax,
+        boundarySet: boundary,
+      });
+      normalizedScore = umsResult.ums;
+      normalizedMax = umsMax;
+      scoreType = "UMS";
+      grade = umsResult.grade;
+    }
 
     paperResults.push({
       unitId: paper.unitId,
       rawScore: paper.rawScore,
       maxMark,
-      normalizedScore: umsResult.ums,
-      normalizedMax: umsMax,
-      scoreType: "UMS",
-      grade: umsResult.grade,
+      normalizedScore,
+      normalizedMax,
+      scoreType,
+      grade,
     });
 
-    totalNormalized += umsResult.ums;
-    totalNormalizedMax += umsMax;
+    totalNormalized += normalizedScore;
+    totalNormalizedMax += normalizedMax;
   }
 
   // ── Step 8: Aggregate and map grade ──

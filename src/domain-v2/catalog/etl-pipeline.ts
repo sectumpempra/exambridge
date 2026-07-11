@@ -2,13 +2,15 @@
  * ETL Pipeline — Build canonical catalog from legacy data files.
  *
  * Steps: parseRaw → normalize → link → validate
- * Phase 1: Only YMA01 (Pearson Edexcel IAL Mathematics)
+ * Phase 1: YMA01 (Pearson Edexcel IAL Mathematics)
+ * Phase 5: CAIE 9709 (A-Level Mathematics)
  */
 
 import type { ExamCatalog } from "./schema";
 import { ExamCatalogSchema } from "./schema";
 import { Catalog } from "./catalog";
 import { buildYMA01Catalog } from "@/adapters-v2/legacy-data/yma01-etl";
+import { buildCAIE9709Catalog } from "@/adapters-v2/legacy-data/caie-9709-etl";
 
 export interface ETLResult {
   catalog: ExamCatalog;
@@ -52,23 +54,54 @@ export interface QAReport {
 
 /**
  * Run the full ETL pipeline for all supported qualifications.
- * Phase 1: Only YMA01.
+ * Phase 1: YMA01. Phase 5: CAIE 9709.
  */
 export function runETL(legacyData: Record<string, unknown[]>): ETLResult {
   const allWarnings: Array<{ code: string; message: string }> = [];
   const allErrors: Array<{ code: string; message: string }> = [];
 
-  // ── Step 1-3: Parse, Normalize, Link ──
-  const { catalog, warnings, errors } = buildYMA01Catalog(legacyData.edexcelAL ?? []);
-  allWarnings.push(...warnings);
-  allErrors.push(...errors);
+  // ── Build individual catalogs ──
+  const { catalog: yma01Catalog, warnings: yma01Warnings, errors: yma01Errors } =
+    buildYMA01Catalog(legacyData.edexcelAL ?? []);
+  allWarnings.push(...yma01Warnings);
+  allErrors.push(...yma01Errors);
+
+  // Only build CAIE catalog if data is provided
+  const caieAL = legacyData.caieAL ?? [];
+  const caiePartial = caieAL.length > 0
+    ? buildCAIE9709Catalog(caieAL)
+    : null;
+  if (caiePartial) {
+    allWarnings.push(...caiePartial.warnings);
+    allErrors.push(...caiePartial.errors);
+  }
+
+  // ── Merge catalogs ──
+  const mergedCatalog: ExamCatalog = {
+    schemaVersion: "1.0.0",
+    generatedAt: new Date().toISOString(),
+    boards: [...yma01Catalog.boards, ...(caiePartial?.catalogPartial.boards ?? [])],
+    qualifications: [...yma01Catalog.qualifications, ...(caiePartial?.catalogPartial.qualifications ?? [])],
+    specifications: [...yma01Catalog.specifications, ...(caiePartial?.catalogPartial.specifications ?? [])],
+    units: [...yma01Catalog.units, ...(caiePartial?.catalogPartial.units ?? [])],
+    papers: [...yma01Catalog.papers, ...(caiePartial?.catalogPartial.papers ?? [])],
+    paperVariants: [...yma01Catalog.paperVariants, ...(caiePartial?.catalogPartial.paperVariants ?? [])],
+    sittings: [...yma01Catalog.sittings],
+    boundarySets: [...yma01Catalog.boundarySets, ...(caiePartial?.catalogPartial.boundarySets ?? [])],
+    routes: [...yma01Catalog.routes, ...(caiePartial?.catalogPartial.routes ?? [])],
+    gradingScales: [...yma01Catalog.gradingScales, ...(caiePartial?.catalogPartial.gradingScales ?? [])],
+    aggregationPolicies: [...yma01Catalog.aggregationPolicies, ...(caiePartial?.catalogPartial.aggregationPolicies ?? [])],
+    gradePolicies: [...yma01Catalog.gradePolicies, ...(caiePartial?.catalogPartial.gradePolicies ?? [])],
+    aStarPolicies: [...yma01Catalog.aStarPolicies],
+    calculationPolicies: [...yma01Catalog.calculationPolicies, ...(caiePartial?.catalogPartial.calculationPolicies ?? [])],
+  };
 
   // ── Step 4: Validate ──
-  const qaReport = validateCatalog(catalog);
+  const qaReport = validateCatalog(mergedCatalog);
   allErrors.push(...qaReport.blockingErrors.map((e) => ({ code: e.code, message: e.message })));
 
   // Schema validation
-  const schemaResult = ExamCatalogSchema.safeParse(catalog);
+  const schemaResult = ExamCatalogSchema.safeParse(mergedCatalog);
   if (!schemaResult.success) {
     allErrors.push({
       code: "SCHEMA_VALIDATION_FAILED",
@@ -80,34 +113,34 @@ export function runETL(legacyData: Record<string, unknown[]>): ETLResult {
 
   // ── Build Manifest ──
   const manifest: CatalogManifest = {
-    schemaVersion: catalog.schemaVersion,
-    generatedAt: catalog.generatedAt,
-    sourceHashes: {}, // TODO: compute SHA-256 of source files
+    schemaVersion: mergedCatalog.schemaVersion,
+    generatedAt: mergedCatalog.generatedAt,
+    sourceHashes: {},
     entityCounts: {
-      boards: catalog.boards.length,
-      qualifications: catalog.qualifications.length,
-      specifications: catalog.specifications.length,
-      units: catalog.units.length,
-      papers: catalog.papers.length,
-      paperVariants: catalog.paperVariants.length,
-      sittings: catalog.sittings.length,
-      boundarySets: catalog.boundarySets.length,
-      routes: catalog.routes.length,
-      gradingScales: catalog.gradingScales.length,
-      aggregationPolicies: catalog.aggregationPolicies.length,
-      gradePolicies: catalog.gradePolicies.length,
-      aStarPolicies: catalog.aStarPolicies.length,
-      calculationPolicies: catalog.calculationPolicies.length,
+      boards: mergedCatalog.boards.length,
+      qualifications: mergedCatalog.qualifications.length,
+      specifications: mergedCatalog.specifications.length,
+      units: mergedCatalog.units.length,
+      papers: mergedCatalog.papers.length,
+      paperVariants: mergedCatalog.paperVariants.length,
+      sittings: mergedCatalog.sittings.length,
+      boundarySets: mergedCatalog.boundarySets.length,
+      routes: mergedCatalog.routes.length,
+      gradingScales: mergedCatalog.gradingScales.length,
+      aggregationPolicies: mergedCatalog.aggregationPolicies.length,
+      gradePolicies: mergedCatalog.gradePolicies.length,
+      aStarPolicies: mergedCatalog.aStarPolicies.length,
+      calculationPolicies: mergedCatalog.calculationPolicies.length,
     },
-    supportedQualifications: catalog.qualifications
+    supportedQualifications: mergedCatalog.qualifications
       .filter((q) => q.status === "verified")
       .map((q) => q.id),
   };
 
-  const catalogInstance = new Catalog(catalog);
+  const catalogInstance = new Catalog(mergedCatalog);
 
   return {
-    catalog,
+    catalog: mergedCatalog,
     catalogInstance,
     manifest,
     qaReport,

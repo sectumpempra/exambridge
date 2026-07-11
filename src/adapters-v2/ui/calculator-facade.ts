@@ -13,6 +13,7 @@ import { runETL } from "@/domain-v2/catalog/etl-pipeline";
 import { Catalog } from "@/domain-v2/catalog/catalog";
 import type { CalculationResult } from "@/domain-v2/calculator/types";
 import edexcelALJson from "@/data/edexcel_al.json";
+import caieALJson from "@/data/caie_al.json";
 
 export interface CalculatorFacadeInput {
   qualificationId: string;
@@ -45,7 +46,10 @@ let catalogInstance: Catalog | null = null;
 
 function getCatalog(): Catalog {
   if (!catalogInstance) {
-    const { catalogInstance: cat } = runETL({ edexcelAL: edexcelALJson as unknown[] });
+    const { catalogInstance: cat } = runETL({
+      edexcelAL: edexcelALJson as unknown[],
+      caieAL: caieALJson as unknown[],
+    });
     catalogInstance = cat;
   }
   return catalogInstance;

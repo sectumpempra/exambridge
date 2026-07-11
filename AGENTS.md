@@ -72,8 +72,23 @@
   - comparePapers: same qualification, same unit
 - 150 tests passing (12 test files)
 
-### 后续 Phase 计划
-- **Phase 5**: 逐 board 扩展及清理
+### Phase 5 ✅
+- CAIE 9709 ETL adapter: parseRaw → normalize → link → validate
+  - Component code mapping (11-69 → Paper 1-6)
+  - Component-specific series for boundary disambiguation
+  - 2 routes: AS (P1 + 1 applied, 2 papers), A-Level (P1+P3 + 2 applied, 4 papers)
+- CAIE PUM calculation policy: piece-wise linear, A=80%, B=70%, ..., E=40%
+- Multi-qualification ETL pipeline: YMA01 + CAIE 9709 merged catalog
+- Calculator engine auto-detects board (Pearson→UMS, CAIE→PUM)
+- 174 tests passing (14 test files)
+
+### 已完成全部 5 个 Phase
+- Phase 0: Safety Net (vitest, feature flags, facade stubs)
+- Phase 1: Catalog Foundation (schema, ETL, QA)
+- Phase 2: Calculator v2 — YMA01 (UMS, route validation, A*)
+- Phase 3: Planner v2 (deterministic scheduling)
+- Phase 4: Knowledge Tree + Paper Adapter v2
+- Phase 5: CAIE 9709 (PUM, multi-qualification)
 
 ## 约束
 
