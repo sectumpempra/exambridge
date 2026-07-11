@@ -55,8 +55,24 @@
 - Facade: legacy/v2 双模式，legacy-to-v2 ExamEvent adapter
 - 123 tests passing (10 test files)
 
+### Phase 4 ✅
+- Knowledge Tree Loader v2:
+  - Zod schemas: KnowledgeTree, MappingFile, KnowledgeManifest, SubjectInfo, OverlapResult
+  - Manifest builder script: scans mapping dir, generates manifest.json (34 mappings, 522 nodes)
+  - Runtime loader: loadKnowledgeManifest, loadKnowledgeTree, loadMapping, listKnowledgeSubjects
+  - Cache: in-flight Promise dedup, clearKnowledgeCache() for testing
+  - Tree validator: nodeId uniqueness, parent existence, cycle detection, path consistency
+  - Mapping validator: nodeId existence in tree, topic count checks
+  - Overlap calculator: pure function, Jaccard (weighted/unweighted), coverage, stable sorted output
+- Paper Catalog Adapter v2:
+  - searchPapers: by board, qualification, subjectCode, text search, paperType
+  - getPaperDetail: paper + variants + qualification name
+  - listPaperBoundaries: with series filter
+  - listExamSittings: with date range filter
+  - comparePapers: same qualification, same unit
+- 150 tests passing (12 test files)
+
 ### 后续 Phase 计划
-- **Phase 4**: Paper/Knowledge 数据访问迁移
 - **Phase 5**: 逐 board 扩展及清理
 
 ## 约束
