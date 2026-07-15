@@ -1,0 +1,1838 @@
+{
+  "mappingMetadata": {
+    "sourceSyllabus": "1MA1 (Edexcel GCSE Mathematics)",
+    "targetKnowledgeTree": "GCSE Mathematics Knowledge Tree",
+    "treeVersion": "1.0.0",
+    "createdAt": "2025-01-15",
+    "description": "Mapping of Edexcel 1MA1 GCSE Mathematics syllabus topics to GCSE Knowledge Tree nodes"
+  },
+  "topicMappings": [
+    {
+      "topicId": "N",
+      "topicName": "Number",
+      "topicWeightingFoundation": "22-28%",
+      "topicWeightingHigher": "12-18%",
+      "subtopicMappings": [
+        {
+          "subtopicId": "N1",
+          "subtopicName": "Order integers, decimals and fractions",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-NC-TYPES-INT",
+              "relevance": "primary",
+              "reason": "Ordering positive and negative integers"
+            },
+            {
+              "nodeId": "NUM-NC-OPS-CMP",
+              "relevance": "primary",
+              "reason": "Using comparison symbols =, ≠, <, >, ≤, ≥"
+            },
+            {
+              "nodeId": "NUM-RAT-CONV-ALL",
+              "relevance": "secondary",
+              "reason": "Ordering decimals and fractions"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N2",
+          "subtopicName": "Four operations",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-CALC-ALL",
+              "relevance": "primary",
+              "reason": "Four operations on integers, decimals and fractions"
+            },
+            {
+              "nodeId": "NUM-NC-TYPES-INT",
+              "relevance": "secondary",
+              "reason": "Operations with positive and negative integers"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N3",
+          "subtopicName": "Operations relationships and priority",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-CALC-ALL",
+              "relevance": "primary",
+              "reason": "Priority of operations, brackets, powers, roots and reciprocals"
+            },
+            {
+              "nodeId": "NUM-NC-TYPES-REC",
+              "relevance": "secondary",
+              "reason": "Reciprocals"
+            },
+            {
+              "nodeId": "NUM-PR-POW-ALL",
+              "relevance": "secondary",
+              "reason": "Powers in order of operations"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N4",
+          "subtopicName": "Prime numbers, factors and multiples",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-NC-TYPES-PRM",
+              "relevance": "primary",
+              "reason": "Prime numbers and prime factorisation"
+            },
+            {
+              "nodeId": "NUM-NC-OPS-FCM",
+              "relevance": "primary",
+              "reason": "HCF, LCM, common factors and multiples"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N5",
+          "subtopicName": "Systematic listing strategies",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-NC-OPS-FCM",
+              "relevance": "primary",
+              "reason": "Systematic listing strategies"
+            },
+            {
+              "nodeId": "PROB-DIAG-POS",
+              "relevance": "secondary",
+              "reason": "Product rule for counting (Higher)"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N6",
+          "subtopicName": "Powers and roots",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-PR-POW-ALL",
+              "relevance": "primary",
+              "reason": "Positive integer powers and associated real roots"
+            },
+            {
+              "nodeId": "NUM-PR-ROOT-ALL",
+              "relevance": "primary",
+              "reason": "Square roots, cube roots"
+            },
+            {
+              "nodeId": "NUM-NC-TYPES-SQC",
+              "relevance": "secondary",
+              "reason": "Powers of 2, 3, 4, 5"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N7",
+          "subtopicName": "Calculate with roots and indices",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-IND-PNZ-ALL",
+              "relevance": "primary",
+              "reason": "Integer indices"
+            },
+            {
+              "nodeId": "ALG-IND-FRAC-ALL",
+              "relevance": "primary",
+              "reason": "Fractional indices (Higher)"
+            },
+            {
+              "nodeId": "ALG-IND-RULE-ALL",
+              "relevance": "primary",
+              "reason": "Rules of indices"
+            },
+            {
+              "nodeId": "NUM-PR-ROOT-ALL",
+              "relevance": "secondary",
+              "reason": "Calculating with roots"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N8",
+          "subtopicName": "Calculate with fractions and π",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-CALC-ALL",
+              "relevance": "primary",
+              "reason": "Calculating exactly with fractions"
+            },
+            {
+              "nodeId": "ALG-FRAC-MAN-ALL",
+              "relevance": "primary",
+              "reason": "Surds and algebraic fractions (Higher)"
+            },
+            {
+              "nodeId": "MENS-CIRC-CA",
+              "relevance": "secondary",
+              "reason": "Multiples of π"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N9",
+          "subtopicName": "Standard form",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-PR-SF-ALL",
+              "relevance": "primary",
+              "reason": "Standard form A×10ⁿ calculations"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N10",
+          "subtopicName": "Fractions, decimals and percentages conversion",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-CONV-ALL",
+              "relevance": "primary",
+              "reason": "Converting between terminating decimals and fractions"
+            },
+            {
+              "nodeId": "NUM-RAT-REC-ALL",
+              "relevance": "primary",
+              "reason": "Recurring decimals to fractions (Higher)"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N11",
+          "subtopicName": "Fractions in ratio problems",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RP-RAT-ALL",
+              "relevance": "primary",
+              "reason": "Working with fractions in ratio problems"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N12",
+          "subtopicName": "Fractions and percentages as operators",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-PCT-CALC-QTY",
+              "relevance": "primary",
+              "reason": "Percentages as operators"
+            },
+            {
+              "nodeId": "NUM-OPS-CALC-ALL",
+              "relevance": "secondary",
+              "reason": "Fractions as operators"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N13",
+          "subtopicName": "Standard units",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-APP-DAT-UNT",
+              "relevance": "primary",
+              "reason": "Standard units of mass, length, time, money"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N14",
+          "subtopicName": "Estimation",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-CHK-ALL",
+              "relevance": "primary",
+              "reason": "Estimation and checking calculations"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N15",
+          "subtopicName": "Rounding and accuracy",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-ROUND-SF",
+              "relevance": "primary",
+              "reason": "Rounding to significant figures"
+            },
+            {
+              "nodeId": "NUM-ACC-ROUND-DP",
+              "relevance": "primary",
+              "reason": "Rounding to decimal places"
+            },
+            {
+              "nodeId": "NUM-ACC-BND-ALL",
+              "relevance": "secondary",
+              "reason": "Error intervals due to truncation/rounding"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "N16",
+          "subtopicName": "Limits of accuracy",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-BND-ALL",
+              "relevance": "primary",
+              "reason": "Upper and lower bounds (Higher)"
+            }
+          ],
+          "higherOnly": false
+        }
+      ]
+    },
+    {
+      "topicId": "A",
+      "topicName": "Algebra",
+      "topicWeightingFoundation": "17-23%",
+      "topicWeightingHigher": "27-33%",
+      "subtopicMappings": [
+        {
+          "subtopicId": "A1",
+          "subtopicName": "Algebraic manipulation",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-FEF-EXP-ALL",
+              "relevance": "primary",
+              "reason": "Algebraic notation: ab, 3y, a², a³, a²b, a/b, brackets"
+            },
+            {
+              "nodeId": "ALG-IND-RULE-ALL",
+              "relevance": "secondary",
+              "reason": "Coefficients as fractions"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A2",
+          "subtopicName": "Substitution",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-FEF-EXP-ALL",
+              "relevance": "primary",
+              "reason": "Substituting numerical values into formulae and expressions"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A3",
+          "subtopicName": "Algebraic vocabulary",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-FEF",
+              "relevance": "primary",
+              "reason": "Expressions, equations, formulae, identities, inequalities, terms and factors"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A4",
+          "subtopicName": "Simplify and manipulate algebraic expressions",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-FEF-EXP-ALL",
+              "relevance": "primary",
+              "reason": "Expanding brackets, multiplying over brackets"
+            },
+            {
+              "nodeId": "ALG-FEF-FAC-CF",
+              "relevance": "primary",
+              "reason": "Taking out common factors"
+            },
+            {
+              "nodeId": "ALG-FEF-FAC-GP",
+              "relevance": "primary",
+              "reason": "Factorising quadratics, expanding binomials"
+            },
+            {
+              "nodeId": "ALG-FRAC-MAN-ALL",
+              "relevance": "secondary",
+              "reason": "Simplifying algebraic fractions (Higher)"
+            },
+            {
+              "nodeId": "ALG-IND-RULE-ALL",
+              "relevance": "secondary",
+              "reason": "Laws of indices in simplification"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A5",
+          "subtopicName": "Standard formulae",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-FEF-EXP-ALL",
+              "relevance": "primary",
+              "reason": "Using and interpreting standard mathematical formulae"
+            },
+            {
+              "nodeId": "ALG-EQN-LIN-ALL",
+              "relevance": "secondary",
+              "reason": "Rearranging formulae to change the subject"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A6",
+          "subtopicName": "Equations and identities",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-FEF",
+              "relevance": "primary",
+              "reason": "Difference between equation and identity; equivalence and proofs (Higher)"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A7",
+          "subtopicName": "Functions",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-FUNC-NOT-ALL",
+              "relevance": "primary",
+              "reason": "Functions with inputs and outputs"
+            },
+            {
+              "nodeId": "ALG-FUNC-INV-ALL",
+              "relevance": "primary",
+              "reason": "Inverse functions (Higher)"
+            },
+            {
+              "nodeId": "ALG-FUNC-COMP-ALL",
+              "relevance": "primary",
+              "reason": "Composite functions (Higher)"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A8",
+          "subtopicName": "Coordinates",
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CART-GRD",
+              "relevance": "primary",
+              "reason": "Coordinates in all four quadrants"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A9",
+          "subtopicName": "Straight line graphs",
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CART-EQN",
+              "relevance": "primary",
+              "reason": "Plotting straight-line graphs, y=mx+c"
+            },
+            {
+              "nodeId": "COORD-CART-PAR",
+              "relevance": "primary",
+              "reason": "Parallel and perpendicular lines (Higher)"
+            },
+            {
+              "nodeId": "COORD-CART-GRD",
+              "relevance": "secondary",
+              "reason": "Gradient of a line"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A10",
+          "subtopicName": "Gradients and intercepts",
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CART-GRD",
+              "relevance": "primary",
+              "reason": "Gradients and intercepts graphically and algebraically"
+            },
+            {
+              "nodeId": "COORD-CART-EQN",
+              "relevance": "secondary",
+              "reason": "y=mx+c form"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A11",
+          "subtopicName": "Quadratic functions",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-EQN-QUAD-ALL",
+              "relevance": "primary",
+              "reason": "Roots, intercepts, turning points of quadratics"
+            },
+            {
+              "nodeId": "ALG-FUNC-TURN",
+              "relevance": "primary",
+              "reason": "Turning points by completing the square (Higher)"
+            },
+            {
+              "nodeId": "ALG-FUNC-ROOT",
+              "relevance": "secondary",
+              "reason": "Roots of functions"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A12",
+          "subtopicName": "Recognise and sketch graphs",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-FUNC-TYP-ALL",
+              "relevance": "primary",
+              "reason": "Linear, quadratic, cubic functions"
+            },
+            {
+              "nodeId": "ALG-FUNC-EXP",
+              "relevance": "primary",
+              "reason": "Exponential y=kˣ"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAPH",
+              "relevance": "primary",
+              "reason": "Trig functions sin x, cos x, tan x (Higher)"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A13",
+          "subtopicName": "Graph transformations",
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-TRANS-REF",
+              "relevance": "primary",
+              "reason": "Reflections of functions"
+            },
+            {
+              "nodeId": "VEC-TRANS-TRAN",
+              "relevance": "primary",
+              "reason": "Translations of functions"
+            }
+          ],
+          "higherOnly": true
+        },
+        {
+          "subtopicId": "A14",
+          "subtopicName": "Graphs in real contexts",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-GRAPH-TRV",
+              "relevance": "primary",
+              "reason": "Graphs in real contexts"
+            },
+            {
+              "nodeId": "ALG-GRAPH-DST",
+              "relevance": "primary",
+              "reason": "Kinematic problems: distance-time, velocity-time"
+            },
+            {
+              "nodeId": "ALG-GRAPH-DRAW",
+              "relevance": "secondary",
+              "reason": "Drawing graphs from data"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A15",
+          "subtopicName": "Gradients and areas under graphs",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-GRAPH-GRAD",
+              "relevance": "primary",
+              "reason": "Gradients of graphs (Higher, no calculus)"
+            },
+            {
+              "nodeId": "ALG-GRAPH-AREA",
+              "relevance": "primary",
+              "reason": "Areas under graphs (Higher)"
+            },
+            {
+              "nodeId": "ALG-GRAPH-DST",
+              "relevance": "secondary",
+              "reason": "Distance-time, velocity-time contexts"
+            }
+          ],
+          "higherOnly": true
+        },
+        {
+          "subtopicId": "A16",
+          "subtopicName": "Equation of a circle",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SYM-CHD",
+              "relevance": "primary",
+              "reason": "Circle with centre at origin"
+            },
+            {
+              "nodeId": "COORD-CART-EQN",
+              "relevance": "secondary",
+              "reason": "Equation of tangent at a given point (Higher)"
+            }
+          ],
+          "higherOnly": true
+        },
+        {
+          "subtopicId": "A17",
+          "subtopicName": "Solve linear equations",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-EQN-LIN-ALL",
+              "relevance": "primary",
+              "reason": "Solve linear equations algebraically"
+            },
+            {
+              "nodeId": "ALG-GRAPH-TRV",
+              "relevance": "secondary",
+              "reason": "Approximate solutions using a graph"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A18",
+          "subtopicName": "Solve quadratic equations",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-EQN-QUAD-ALL",
+              "relevance": "primary",
+              "reason": "Factorising (Foundation); factorising, completing square, formula (Higher)"
+            },
+            {
+              "nodeId": "ALG-FUNC-ROOT",
+              "relevance": "secondary",
+              "reason": "Approximate solutions using a graph"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A19",
+          "subtopicName": "Simultaneous equations",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-EQN-SIM-ALL",
+              "relevance": "primary",
+              "reason": "Linear/linear (Foundation)"
+            },
+            {
+              "nodeId": "ALG-EQN-MIX-ALL",
+              "relevance": "primary",
+              "reason": "Linear/quadratic (Higher)"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A20",
+          "subtopicName": "Iteration",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-EQN-QUAD-ALL",
+              "relevance": "primary",
+              "reason": "Approximate solutions using iteration (Higher)"
+            }
+          ],
+          "higherOnly": true
+        },
+        {
+          "subtopicId": "A21",
+          "subtopicName": "Form and solve equations from contexts",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-EQN-LIN-ALL",
+              "relevance": "primary",
+              "reason": "Translate situations into equations and solve"
+            },
+            {
+              "nodeId": "ALG-EQN-QUAD-ALL",
+              "relevance": "secondary",
+              "reason": "Derive and solve equations"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A22",
+          "subtopicName": "Solve inequalities",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-INEQ-LIN-ALL",
+              "relevance": "primary",
+              "reason": "Linear inequalities in one variable, number line representation"
+            },
+            {
+              "nodeId": "ALG-INEQ-GRAPH-ALL",
+              "relevance": "primary",
+              "reason": "Two variables, quadratic, set notation (Higher)"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A23",
+          "subtopicName": "Generate sequence terms",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-SEQ-CON-ALL",
+              "relevance": "primary",
+              "reason": "Generate terms from term-to-term or position-to-term rule"
+            },
+            {
+              "nodeId": "ALG-SEQ-RULE-ALL",
+              "relevance": "secondary",
+              "reason": "Term-to-term rules"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A24",
+          "subtopicName": "Recognise sequences",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-SEQ-RULE-ALL",
+              "relevance": "primary",
+              "reason": "Triangular, square, cube, Fibonacci sequences"
+            },
+            {
+              "nodeId": "ALG-SEQ-REL-ALL",
+              "relevance": "primary",
+              "reason": "Arithmetic and geometric progressions, quadratic sequences"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "A25",
+          "subtopicName": "nth term of sequences",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-SEQ-NTH-ALL",
+              "relevance": "primary",
+              "reason": "nth term of linear (Foundation) and quadratic (Higher) sequences"
+            }
+          ],
+          "higherOnly": false
+        }
+      ]
+    },
+    {
+      "topicId": "R",
+      "topicName": "Ratio, proportion and rates of change",
+      "topicWeightingFoundation": "22-28%",
+      "topicWeightingHigher": "17-23%",
+      "subtopicMappings": [
+        {
+          "subtopicId": "R1",
+          "subtopicName": "Convert between units",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-APP-DAT-UNT",
+              "relevance": "primary",
+              "reason": "Convert between related standard and compound units"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R2",
+          "subtopicName": "Scale factors and diagrams",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MEAS-SCA",
+              "relevance": "primary",
+              "reason": "Scale diagrams and maps"
+            },
+            {
+              "nodeId": "NUM-RP-RAT-ALL",
+              "relevance": "secondary",
+              "reason": "Scale factors"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R3",
+          "subtopicName": "Express as fraction",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-CONV-ALL",
+              "relevance": "primary",
+              "reason": "Express one quantity as a fraction of another"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R4",
+          "subtopicName": "Ratio notation",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RP-RAT-ALL",
+              "relevance": "primary",
+              "reason": "Ratio notation, reduction to simplest form"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R5",
+          "subtopicName": "Divide in a ratio",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RP-RAT-ALL",
+              "relevance": "primary",
+              "reason": "Divide a quantity in a given ratio"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R6",
+          "subtopicName": "Multiplicative relationship",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RP-RAT-ALL",
+              "relevance": "primary",
+              "reason": "Multiplicative relationship as ratio or fraction"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R7",
+          "subtopicName": "Proportion as equality of ratios",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RP-PROP-ALL",
+              "relevance": "primary",
+              "reason": "Proportion as equality of ratios"
+            },
+            {
+              "nodeId": "ALG-PROP-EXP-ALL",
+              "relevance": "secondary",
+              "reason": "Algebraic representation of proportion"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R8",
+          "subtopicName": "Ratios to fractions and linear functions",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RP-RAT-ALL",
+              "relevance": "primary",
+              "reason": "Relate ratios to fractions and linear functions"
+            },
+            {
+              "nodeId": "COORD-CART-EQN",
+              "relevance": "secondary",
+              "reason": "Connection to linear functions"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R9",
+          "subtopicName": "Percentages",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-PCT-CALC-QTY",
+              "relevance": "primary",
+              "reason": "Percentage of a quantity"
+            },
+            {
+              "nodeId": "NUM-PCT-CALC-EXP",
+              "relevance": "primary",
+              "reason": "Express as percentage, compare percentages"
+            },
+            {
+              "nodeId": "NUM-PCT-CHG-ALL",
+              "relevance": "primary",
+              "reason": "Percentage change, simple interest"
+            },
+            {
+              "nodeId": "NUM-PCT-REV-ALL",
+              "relevance": "secondary",
+              "reason": "Original value problems"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R10",
+          "subtopicName": "Direct and inverse proportion",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RP-PROP-ALL",
+              "relevance": "primary",
+              "reason": "Direct and inverse proportion problems"
+            },
+            {
+              "nodeId": "ALG-PROP-EXP-ALL",
+              "relevance": "secondary",
+              "reason": "Algebraic representations"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R11",
+          "subtopicName": "Compound units",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RP-RATE-SPD",
+              "relevance": "primary",
+              "reason": "Speed, rates of pay, unit pricing"
+            },
+            {
+              "nodeId": "NUM-RP-RATE-MEA",
+              "relevance": "primary",
+              "reason": "Density and pressure"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R12",
+          "subtopicName": "Compare lengths, areas and volumes",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SIM-LEN",
+              "relevance": "primary",
+              "reason": "Comparing using ratio notation"
+            },
+            {
+              "nodeId": "GEOM-SIM-AREA",
+              "relevance": "primary",
+              "reason": "Links to similarity and scale factors"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R13",
+          "subtopicName": "Inverse proportion equations",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RP-PROP-ALL",
+              "relevance": "primary",
+              "reason": "Construct equations for direct and inverse proportion (Higher)"
+            },
+            {
+              "nodeId": "ALG-PROP-EXP-ALL",
+              "relevance": "secondary",
+              "reason": "Algebraic representation"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R14",
+          "subtopicName": "Gradient as rate of change",
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CART-GRD",
+              "relevance": "primary",
+              "reason": "Gradient of straight line as rate of change"
+            },
+            {
+              "nodeId": "ALG-PROP-EXP-ALL",
+              "relevance": "secondary",
+              "reason": "Direct and inverse proportion graphs"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "R15",
+          "subtopicName": "Instantaneous rate of change",
+          "mappedNodes": [
+            {
+              "nodeId": "ALG-GRAPH-GRAD",
+              "relevance": "primary",
+              "reason": "Gradient at point on curve as instantaneous rate of change (Higher)"
+            },
+            {
+              "nodeId": "ALG-DIFF-GRAD",
+              "relevance": "secondary",
+              "reason": "Average and instantaneous rate of change (Higher)"
+            }
+          ],
+          "higherOnly": true
+        },
+        {
+          "subtopicId": "R16",
+          "subtopicName": "Growth and decay",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-APP-FIN-CI",
+              "relevance": "primary",
+              "reason": "Compound interest"
+            },
+            {
+              "nodeId": "NUM-APP-EXP-ALL",
+              "relevance": "primary",
+              "reason": "Growth and decay problems"
+            }
+          ],
+          "higherOnly": false
+        }
+      ]
+    },
+    {
+      "topicId": "G",
+      "topicName": "Geometry and measures",
+      "topicWeightingFoundation": "12-18%",
+      "topicWeightingHigher": "17-23%",
+      "subtopicMappings": [
+        {
+          "subtopicId": "G1",
+          "subtopicName": "Geometric terms and notation",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-VOC-LINE",
+              "relevance": "primary",
+              "reason": "Points, lines, vertices, edges, planes, parallel, perpendicular"
+            },
+            {
+              "nodeId": "GEOM-VOC-ANG",
+              "relevance": "primary",
+              "reason": "Right angles, polygons, regular polygons"
+            },
+            {
+              "nodeId": "GEOM-VOC-SHAPE",
+              "relevance": "secondary",
+              "reason": "Standard conventions for triangles"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G2",
+          "subtopicName": "Constructions",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MEAS-CON",
+              "relevance": "primary",
+              "reason": "Perpendicular bisector, bisecting an angle, constructions"
+            },
+            {
+              "nodeId": "GEOM-MEAS-TRI",
+              "relevance": "secondary",
+              "reason": "Construct figures and solve loci problems"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G3",
+          "subtopicName": "Angle properties",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-ANG",
+              "relevance": "primary",
+              "reason": "Angles at a point, on straight line, vertically opposite, alternate/corresponding angles, polygon angles"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G4",
+          "subtopicName": "Quadrilaterals and plane figures",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-VOC-SHAPE",
+              "relevance": "primary",
+              "reason": "Properties of special quadrilaterals and triangles"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G5",
+          "subtopicName": "Congruence criteria",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SIM-CON",
+              "relevance": "primary",
+              "reason": "SSS, SAS, ASA, RHS congruence criteria"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G6",
+          "subtopicName": "Geometric proofs",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-ANG",
+              "relevance": "primary",
+              "reason": "Angle facts, congruence, similarity to derive results"
+            },
+            {
+              "nodeId": "TRIG-RAT-PYTH",
+              "relevance": "secondary",
+              "reason": "Including Pythagoras' theorem"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G7",
+          "subtopicName": "Transformations",
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-TRANS-ROT",
+              "relevance": "primary",
+              "reason": "Rotation"
+            },
+            {
+              "nodeId": "VEC-TRANS-REF",
+              "relevance": "primary",
+              "reason": "Reflection"
+            },
+            {
+              "nodeId": "VEC-TRANS-TRAN",
+              "relevance": "primary",
+              "reason": "Translation"
+            },
+            {
+              "nodeId": "VEC-TRANS-ENL",
+              "relevance": "primary",
+              "reason": "Enlargement including fractional (and negative Higher) scale factors"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G8",
+          "subtopicName": "Combined transformations",
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-TRANS-ROT",
+              "relevance": "primary",
+              "reason": "Combinations of rotations, reflections, translations (Higher)"
+            },
+            {
+              "nodeId": "VEC-TRANS-REF",
+              "relevance": "secondary",
+              "reason": "Changes and invariance"
+            },
+            {
+              "nodeId": "VEC-TRANS-TRAN",
+              "relevance": "secondary",
+              "reason": "Changes and invariance"
+            }
+          ],
+          "higherOnly": true
+        },
+        {
+          "subtopicId": "G9",
+          "subtopicName": "Circle definitions",
+          "mappedNodes": [
+            {
+              "nodeId": "MENS-CIRC-CA",
+              "relevance": "primary",
+              "reason": "Centre, radius, chord, diameter, circumference, tangent, arc, sector, segment"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G10",
+          "subtopicName": "Circle theorems",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SYM-CHD",
+              "relevance": "primary",
+              "reason": "Circle theorems concerning angles, radii, tangents and chords (Higher)"
+            },
+            {
+              "nodeId": "GEOM-SYM-TAN",
+              "relevance": "primary",
+              "reason": "Tangent properties"
+            },
+            {
+              "nodeId": "GEOM-SYM-PER",
+              "relevance": "secondary",
+              "reason": "Perpendicular bisector of chord"
+            }
+          ],
+          "higherOnly": true
+        },
+        {
+          "subtopicId": "G11",
+          "subtopicName": "Problems on coordinate axes",
+          "mappedNodes": [
+            {
+              "nodeId": "COORD-CART",
+              "relevance": "primary",
+              "reason": "Solve geometrical problems on coordinate axes"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G12",
+          "subtopicName": "3D shape properties",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-VOC-SHAPE",
+              "relevance": "primary",
+              "reason": "Faces, surfaces, edges, vertices of 3D shapes"
+            },
+            {
+              "nodeId": "MENS-VOL-PRISM",
+              "relevance": "secondary",
+              "reason": "Cubes, cuboids, prisms, cylinders, pyramids, cones, spheres"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G13",
+          "subtopicName": "Plans and elevations",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-VOC-SHAPE",
+              "relevance": "primary",
+              "reason": "Plans and elevations of 3D shapes"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G14",
+          "subtopicName": "Standard units of measure",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-APP-DAT-UNT",
+              "relevance": "primary",
+              "reason": "Standard units of measure"
+            },
+            {
+              "nodeId": "GEOM-MEAS-LINE",
+              "relevance": "secondary",
+              "reason": "Related measurement concepts"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G15",
+          "subtopicName": "Measure line segments and angles",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MEAS-LINE",
+              "relevance": "primary",
+              "reason": "Measure line segments and angles"
+            },
+            {
+              "nodeId": "GEOM-MEAS-SCA",
+              "relevance": "secondary",
+              "reason": "Scale drawings and bearings"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G16",
+          "subtopicName": "Area and volume formulae",
+          "mappedNodes": [
+            {
+              "nodeId": "MENS-PERI-TRI",
+              "relevance": "primary",
+              "reason": "Area of triangles"
+            },
+            {
+              "nodeId": "MENS-PERI-PARA",
+              "relevance": "primary",
+              "reason": "Area of parallelograms"
+            },
+            {
+              "nodeId": "MENS-PERI-TRAP",
+              "relevance": "primary",
+              "reason": "Area of trapezia"
+            },
+            {
+              "nodeId": "MENS-VOL-PRISM",
+              "relevance": "primary",
+              "reason": "Volume of cuboids and right prisms"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G17",
+          "subtopicName": "Circles, spheres, pyramids and cones",
+          "mappedNodes": [
+            {
+              "nodeId": "MENS-CIRC-CA",
+              "relevance": "primary",
+              "reason": "Circumference and area of circle"
+            },
+            {
+              "nodeId": "MENS-VOL-SPH",
+              "relevance": "primary",
+              "reason": "Surface area and volume of spheres, pyramids, cones"
+            },
+            {
+              "nodeId": "MENS-PERI-COMP",
+              "relevance": "secondary",
+              "reason": "Perimeters and areas including circles"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G18",
+          "subtopicName": "Arcs and sectors",
+          "mappedNodes": [
+            {
+              "nodeId": "MENS-CIRC-ARC",
+              "relevance": "primary",
+              "reason": "Arc lengths, angles and areas of sectors of circles"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G19",
+          "subtopicName": "Congruence and similarity",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SIM-LEN",
+              "relevance": "primary",
+              "reason": "Similar figures - lengths"
+            },
+            {
+              "nodeId": "GEOM-SIM-AREA",
+              "relevance": "primary",
+              "reason": "Relationships between lengths, areas, volumes (Higher)"
+            },
+            {
+              "nodeId": "GEOM-SIM-CON",
+              "relevance": "secondary",
+              "reason": "Congruence concepts"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G20",
+          "subtopicName": "Pythagoras and trigonometry",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-RAT-PYTH",
+              "relevance": "primary",
+              "reason": "Pythagoras theorem"
+            },
+            {
+              "nodeId": "TRIG-RAT-SCT",
+              "relevance": "primary",
+              "reason": "Sin, cos, tan for right-angled triangles"
+            },
+            {
+              "nodeId": "TRIG-2D",
+              "relevance": "secondary",
+              "reason": "2D problems (Foundation); general triangles 2D and 3D (Higher)"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G21",
+          "subtopicName": "Exact trig values",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-RAT-SCT",
+              "relevance": "primary",
+              "reason": "Exact values of sin, cos, tan for standard angles"
+            },
+            {
+              "nodeId": "TRIG-FUNC-PROP",
+              "relevance": "secondary",
+              "reason": "Trig function properties"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G22",
+          "subtopicName": "Sine and cosine rules",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-NON-SIN",
+              "relevance": "primary",
+              "reason": "Sine rule (Higher)"
+            },
+            {
+              "nodeId": "TRIG-NON-COS",
+              "relevance": "primary",
+              "reason": "Cosine rule (Higher)"
+            }
+          ],
+          "higherOnly": true
+        },
+        {
+          "subtopicId": "G23",
+          "subtopicName": "Area of triangle",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-NON-AREA",
+              "relevance": "primary",
+              "reason": "Area = ½ab sin C (Higher)"
+            }
+          ],
+          "higherOnly": true
+        },
+        {
+          "subtopicId": "G24",
+          "subtopicName": "Translations as 2D vectors",
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-VEC-REP",
+              "relevance": "primary",
+              "reason": "Describe translations as 2D vectors"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "G25",
+          "subtopicName": "Vector operations",
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-VEC-ADD",
+              "relevance": "primary",
+              "reason": "Addition and subtraction of vectors"
+            },
+            {
+              "nodeId": "VEC-VEC-SCAL",
+              "relevance": "primary",
+              "reason": "Multiplication by scalar"
+            },
+            {
+              "nodeId": "VEC-VEC-REP",
+              "relevance": "primary",
+              "reason": "Diagrammatic and column representations"
+            },
+            {
+              "nodeId": "VEC-VEC-COP",
+              "relevance": "secondary",
+              "reason": "Vectors for geometric arguments and proofs (Higher)"
+            }
+          ],
+          "higherOnly": false
+        }
+      ]
+    },
+    {
+      "topicId": "P",
+      "topicName": "Probability",
+      "topicWeightingFoundation": "shared with Statistics",
+      "topicWeightingHigher": "shared with Statistics",
+      "subtopicMappings": [
+        {
+          "subtopicId": "P1",
+          "subtopicName": "Record and describe probability experiments",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-PROB-REL",
+              "relevance": "primary",
+              "reason": "Record, describe and analyse frequency of outcomes using tables and frequency trees"
+            },
+            {
+              "nodeId": "PROB-DIAG-TBL",
+              "relevance": "secondary",
+              "reason": "Frequency tables"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "P2",
+          "subtopicName": "Expected outcomes",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-PROB-EXP",
+              "relevance": "primary",
+              "reason": "Randomness, fairness, equally likely events, expected outcomes"
+            },
+            {
+              "nodeId": "PROB-PROB-SCL",
+              "relevance": "secondary",
+              "reason": "Probability scale"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "P3",
+          "subtopicName": "Theoretical probability",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-PROB-SCL",
+              "relevance": "primary",
+              "reason": "Relative expected frequencies to theoretical probability; 0-1 scale"
+            },
+            {
+              "nodeId": "PROB-PROB-REL",
+              "relevance": "secondary",
+              "reason": "Relative frequency"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "P4",
+          "subtopicName": "Exhaustive and mutually exclusive events",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-PROB-COMP",
+              "relevance": "primary",
+              "reason": "Probabilities of exhaustive outcomes sum to one; mutually exclusive events"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "P5",
+          "subtopicName": "Empirical and theoretical probability",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-PROB-REL",
+              "relevance": "primary",
+              "reason": "Empirical unbiased samples tend towards theoretical probability with increasing sample size"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "P6",
+          "subtopicName": "Systematic enumeration",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIAG-TBL",
+              "relevance": "primary",
+              "reason": "Tables and grids"
+            },
+            {
+              "nodeId": "PROB-DIAG-VEN",
+              "relevance": "primary",
+              "reason": "Venn diagrams"
+            },
+            {
+              "nodeId": "PROB-DIAG-TREE",
+              "relevance": "primary",
+              "reason": "Tree diagrams"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "P7",
+          "subtopicName": "Possibility spaces",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIAG-POS",
+              "relevance": "primary",
+              "reason": "Theoretical possibility spaces for single and combined experiments"
+            },
+            {
+              "nodeId": "PROB-PROB-SIM",
+              "relevance": "secondary",
+              "reason": "Theoretical probabilities"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "P8",
+          "subtopicName": "Independent and dependent events",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-PROB-SIM",
+              "relevance": "primary",
+              "reason": "Independent and dependent combined events"
+            },
+            {
+              "nodeId": "PROB-DIAG-TREE",
+              "relevance": "secondary",
+              "reason": "Tree diagrams"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "P9",
+          "subtopicName": "Conditional probability",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-PROB-COND",
+              "relevance": "primary",
+              "reason": "Conditional probabilities (Higher)"
+            },
+            {
+              "nodeId": "PROB-DIAG-TREE",
+              "relevance": "secondary",
+              "reason": "Tree diagrams"
+            },
+            {
+              "nodeId": "PROB-DIAG-VEN",
+              "relevance": "secondary",
+              "reason": "Venn diagrams"
+            },
+            {
+              "nodeId": "PROB-DIAG-TBL",
+              "relevance": "secondary",
+              "reason": "Two-way tables"
+            }
+          ],
+          "higherOnly": true
+        }
+      ]
+    },
+    {
+      "topicId": "S",
+      "topicName": "Statistics",
+      "topicWeightingFoundation": "shared with Probability",
+      "topicWeightingHigher": "shared with Probability",
+      "subtopicMappings": [
+        {
+          "subtopicId": "S1",
+          "subtopicName": "Sampling",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-COLL",
+              "relevance": "primary",
+              "reason": "Infer properties of populations from a sample; limitations of sampling"
+            },
+            {
+              "nodeId": "STAT-DATA-REST",
+              "relevance": "secondary",
+              "reason": "Restrictions on conclusions"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "S2",
+          "subtopicName": "Tables, charts and diagrams",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DIAG-BAR",
+              "relevance": "primary",
+              "reason": "Bar charts"
+            },
+            {
+              "nodeId": "STAT-DIAG-PIE",
+              "relevance": "primary",
+              "reason": "Pie charts"
+            },
+            {
+              "nodeId": "STAT-DIAG-PIC",
+              "relevance": "primary",
+              "reason": "Pictograms"
+            },
+            {
+              "nodeId": "STAT-HIST-FREQ",
+              "relevance": "secondary",
+              "reason": "Frequency tables"
+            },
+            {
+              "nodeId": "STAT-DATA-COLL",
+              "relevance": "secondary",
+              "reason": "Tables and line graphs for time series"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "S3",
+          "subtopicName": "Histograms and cumulative frequency",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-HIST-EQ",
+              "relevance": "primary",
+              "reason": "Histograms with equal class intervals (Higher)"
+            },
+            {
+              "nodeId": "STAT-HIST-UEQ",
+              "relevance": "primary",
+              "reason": "Histograms with unequal class intervals (Higher)"
+            },
+            {
+              "nodeId": "STAT-HIST-CUM",
+              "relevance": "primary",
+              "reason": "Cumulative frequency graphs (Higher)"
+            }
+          ],
+          "higherOnly": true
+        },
+        {
+          "subtopicId": "S4",
+          "subtopicName": "Analyse distributions",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-MDR",
+              "relevance": "primary",
+              "reason": "Mean, median, mode, range"
+            },
+            {
+              "nodeId": "STAT-DATA-COMP",
+              "relevance": "primary",
+              "reason": "Compare distributions"
+            },
+            {
+              "nodeId": "STAT-HIST-PCT",
+              "relevance": "primary",
+              "reason": "Quartiles, IQR (Higher)"
+            },
+            {
+              "nodeId": "STAT-DIAG-BOX",
+              "relevance": "primary",
+              "reason": "Box plots (Higher)"
+            },
+            {
+              "nodeId": "STAT-DATA-MEAN",
+              "relevance": "secondary",
+              "reason": "Estimated mean"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "S5",
+          "subtopicName": "Describe a population",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-COMP",
+              "relevance": "primary",
+              "reason": "Apply statistics to describe a population"
+            }
+          ],
+          "higherOnly": false
+        },
+        {
+          "subtopicId": "S6",
+          "subtopicName": "Scatter graphs",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-SCAT-COR",
+              "relevance": "primary",
+              "reason": "Scatter graphs, correlation"
+            },
+            {
+              "nodeId": "STAT-SCAT-LINE",
+              "relevance": "primary",
+              "reason": "Lines of best fit, interpolation and extrapolation"
+            }
+          ],
+          "higherOnly": false
+        }
+      ]
+    }
+  ],
+  "statistics": {
+    "totalSyllabusSubtopics": 97,
+    "mappedSubtopics": 97,
+    "unmappedSubtopics": 0,
+    "mappingRate": "100.0%",
+    "totalKnowledgeTreeNodes": 377,
+    "mappedKnowledgeTreeNodes": 127,
+    "unmappedKnowledgeTreeNodes": 250,
+    "nodeCoverageRate": "33.7%",
+    "totalMappingEntries": 206,
+    "higherOnlySubtopics": 11,
+    "domainCoverage": {
+      "Number": {
+        "mapped": 27,
+        "total": 80,
+        "coverage": "33.8%"
+      },
+      "Algebra and Graphs": {
+        "mapped": 32,
+        "total": 85,
+        "coverage": "37.6%"
+      },
+      "Coordinate Geometry": {
+        "mapped": 4,
+        "total": 12,
+        "coverage": "33.3%"
+      },
+      "Geometry": {
+        "mapped": 14,
+        "total": 60,
+        "coverage": "23.3%"
+      },
+      "Mensuration": {
+        "mapped": 8,
+        "total": 24,
+        "coverage": "33.3%"
+      },
+      "Trigonometry": {
+        "mapped": 8,
+        "total": 28,
+        "coverage": "28.6%"
+      },
+      "Vectors and Transformations": {
+        "mapped": 8,
+        "total": 23,
+        "coverage": "34.8%"
+      },
+      "Probability": {
+        "mapped": 10,
+        "total": 25,
+        "coverage": "40.0%"
+      },
+      "Statistics": {
+        "mapped": 16,
+        "total": 39,
+        "coverage": "41.0%"
+      },
+      "Matrix": {
+        "mapped": 0,
+        "total": 1,
+        "coverage": "0.0%"
+      }
+    }
+  },
+  "unmappedDomains": {
+    "Matrix": "Matrix operations are not part of the Edexcel 1MA1 GCSE Mathematics syllabus",
+    "Differentiation (ALG-DIFF)": "Calculus/differentiation is not assessed in 1MA1; gradients are estimated geometrically",
+    "Logarithms (ALG-LOG)": "Logarithms are not part of the 1MA1 syllabus",
+    "Set Notation depth (NUM-SN)": "Set notation is covered in probability contexts (Venn diagrams) but not as a standalone topic in 1MA1"
+  }
+}

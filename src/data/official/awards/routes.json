@@ -1,0 +1,149 @@
+{
+  "routes": [
+    {
+      "id": "award:aqa:7357:linear",
+      "board": "AQA",
+      "qualificationCode": "7357",
+      "level": "A-Level",
+      "specificationVersion": "7357-2017",
+      "routeType": "linear",
+      "routeKey": "7357-linear",
+      "components": [
+        { "code": "7357/1", "inputKind": "raw", "maxRawMark": 100, "weightingFactor": 1 },
+        { "code": "7357/2", "inputKind": "raw", "maxRawMark": 100, "weightingFactor": 1 },
+        { "code": "7357/3", "inputKind": "raw", "maxRawMark": 100, "weightingFactor": 1 }
+      ],
+      "maximumMarkAfterWeighting": 300,
+      "roundingRule": "none",
+      "grades": ["A*", "A", "B", "C", "D", "E"],
+      "sourceUrl": "https://filestore.aqa.org.uk/resources/mathematics/specifications/AQA-7357-SP-2017.PDF",
+      "publishedAt": "2018-01-31",
+      "accessedAt": "2026-07-13",
+      "sourceRowId": "AQA-7357-SP-2017-V1.3-P8-P9",
+      "sourceDocumentHash": "6bb4bb826ad2363804a95248a4993b2e147e1a5c4673194e2088dab8754fc6ed",
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "award:ocr:h240:linear",
+      "board": "OCR",
+      "qualificationCode": "H240",
+      "level": "A-Level",
+      "specificationVersion": "H240-version-3",
+      "routeType": "linear",
+      "routeKey": "h240-linear",
+      "components": [
+        { "code": "H240/01", "inputKind": "raw", "maxRawMark": 100, "weightingFactor": 1 },
+        { "code": "H240/02", "inputKind": "raw", "maxRawMark": 100, "weightingFactor": 1 },
+        { "code": "H240/03", "inputKind": "raw", "maxRawMark": 100, "weightingFactor": 1 }
+      ],
+      "maximumMarkAfterWeighting": 300,
+      "roundingRule": "none",
+      "grades": ["A*", "A", "B", "C", "D", "E"],
+      "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+      "publishedAt": "2025-10",
+      "accessedAt": "2026-07-13",
+      "sourceRowId": "OCR-H240-SPEC-V3-P2",
+      "sourceDocumentHash": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "award:caie:9709:2023-2025:as:S1",
+      "board": "CAIE",
+      "qualificationCode": "9709",
+      "level": "AS-Level",
+      "specificationVersion": "9709-2023-2025",
+      "routeType": "same-series",
+      "routeKey": "9709-as-pure-pure",
+      "optionCode": "S1",
+      "components": [
+        { "code": "9709/11", "inputKind": "raw", "maxRawMark": 75, "weightingFactor": 1 },
+        { "code": "9709/21", "inputKind": "raw", "maxRawMark": 50, "weightingFactor": 1 }
+      ],
+      "maximumMarkAfterWeighting": 125,
+      "roundingRule": "none",
+      "grades": ["a", "b", "c", "d", "e"],
+      "sourceUrl": "https://www.cambridgeinternational.org/Images/597421-2023-2025-syllabus.pdf",
+      "publishedAt": "2020-09",
+      "accessedAt": "2026-07-13",
+      "sourceRowId": "CAIE-9709-SYLLABUS-2023-2025-P10-P12-AS-P1-P2",
+      "sourceDocumentHash": "3a7a37692399f47ff5e0d94cc41f9dd33d3b99467ce83aa4bad28c6136f96256",
+      "supportingSources": [
+        {
+          "sourceUrl": "https://www.cambridgeinternational.org/Images/740340-mathematics-9709-june-2025-grade-threshold-table.pdf",
+          "publishedAt": "2025-08-12",
+          "accessedAt": "2026-07-13",
+          "sourceRowId": "CAIE-9709-2025-JUNE-P2-ROW-S1",
+          "sourceDocumentHash": "97d20864ca653e7a772eddc9950ecc1dc55b2ed6e506d72f181786707bd025c3"
+        }
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "award:caie:9709:2023-2025:al:same-series:AX",
+      "board": "CAIE",
+      "qualificationCode": "9709",
+      "level": "A-Level",
+      "specificationVersion": "9709-2023-2025",
+      "routeType": "same-series",
+      "routeKey": "9709-al-mechanics-statistics",
+      "optionCode": "AX",
+      "components": [
+        { "code": "9709/11", "inputKind": "raw", "maxRawMark": 75, "weightingFactor": 1 },
+        { "code": "9709/31", "inputKind": "raw", "maxRawMark": 75, "weightingFactor": 1 },
+        { "code": "9709/41", "inputKind": "raw", "maxRawMark": 50, "weightingFactor": 1 },
+        { "code": "9709/51", "inputKind": "raw", "maxRawMark": 50, "weightingFactor": 1 }
+      ],
+      "maximumMarkAfterWeighting": 250,
+      "roundingRule": "none",
+      "grades": ["A*", "A", "B", "C", "D", "E"],
+      "sourceUrl": "https://www.cambridgeinternational.org/Images/597421-2023-2025-syllabus.pdf",
+      "publishedAt": "2020-09",
+      "accessedAt": "2026-07-13",
+      "sourceRowId": "CAIE-9709-SYLLABUS-2023-2025-P10-P13-A-LEVEL-LINEAR-P1-P3-P4-P5",
+      "sourceDocumentHash": "3a7a37692399f47ff5e0d94cc41f9dd33d3b99467ce83aa4bad28c6136f96256",
+      "supportingSources": [
+        {
+          "sourceUrl": "https://www.cambridgeinternational.org/Images/740340-mathematics-9709-june-2025-grade-threshold-table.pdf",
+          "publishedAt": "2025-08-12",
+          "accessedAt": "2026-07-13",
+          "sourceRowId": "CAIE-9709-2025-JUNE-P2-ROW-AX",
+          "sourceDocumentHash": "97d20864ca653e7a772eddc9950ecc1dc55b2ed6e506d72f181786707bd025c3"
+        }
+      ],
+      "verificationStatus": "verified"
+    },
+    {
+      "id": "award:caie:9709:2023-2025:al:staged:DX",
+      "board": "CAIE",
+      "qualificationCode": "9709",
+      "level": "A-Level",
+      "specificationVersion": "9709-2023-2025",
+      "routeType": "staged",
+      "routeKey": "9709-al-staged-statistics",
+      "optionCode": "DX",
+      "components": [
+        { "code": "9709/31", "inputKind": "raw", "maxRawMark": 75, "weightingFactor": 1 },
+        { "code": "9709/51", "inputKind": "raw", "maxRawMark": 50, "weightingFactor": 1 },
+        { "code": "9709/84", "inputKind": "carried-forward", "maxRawMark": 125, "weightingFactor": 1 }
+      ],
+      "maximumMarkAfterWeighting": 250,
+      "roundingRule": "official-carry-forward",
+      "grades": ["A*", "A", "B", "C", "D", "E"],
+      "sourceUrl": "https://www.cambridgeinternational.org/Images/597421-2023-2025-syllabus.pdf",
+      "publishedAt": "2020-09",
+      "accessedAt": "2026-07-13",
+      "sourceRowId": "CAIE-9709-SYLLABUS-2023-2025-P11-P13-A-LEVEL-STAGED-P3-P5-CARRY-FORWARD",
+      "sourceDocumentHash": "3a7a37692399f47ff5e0d94cc41f9dd33d3b99467ce83aa4bad28c6136f96256",
+      "supportingSources": [
+        {
+          "sourceUrl": "https://www.cambridgeinternational.org/Images/740340-mathematics-9709-june-2025-grade-threshold-table.pdf",
+          "publishedAt": "2025-08-12",
+          "accessedAt": "2026-07-13",
+          "sourceRowId": "CAIE-9709-2025-JUNE-P2-ROW-DX",
+          "sourceDocumentHash": "97d20864ca653e7a772eddc9950ecc1dc55b2ed6e506d72f181786707bd025c3"
+        }
+      ],
+      "verificationStatus": "verified"
+    }
+  ]
+}

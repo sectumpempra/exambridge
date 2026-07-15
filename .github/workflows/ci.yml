@@ -1,0 +1,50 @@
+name: release-gate
+
+on:
+  pull_request:
+  push:
+    branches: [main, agent/release-hardening]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Audit canonical data and Award routes
+        run: pnpm data:audit
+      - name: Enforce unit and module coverage
+        run: pnpm test:coverage
+      - name: Audit production dependencies
+        run: pnpm audit --prod --audit-level moderate
+      - name: Typecheck, lint, test, build and enforce bundle budgets
+        run: pnpm check
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: release-gate-evidence
+          if-no-files-found: ignore
+          path: |
+            generated/data-quality-report.json
+            coverage/coverage-summary.json
+            coverage/index.html
+            playwright-report/
+            test-results/

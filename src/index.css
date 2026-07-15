@@ -1,0 +1,486 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn/ui semantic tokens */
+    --background: 30 15% 94%;
+    --foreground: 30 8% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 8% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 8% 20%;
+    --primary: 25 20% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 25 15% 92%;
+    --secondary-foreground: 30 8% 20%;
+    --muted: 30 10% 90%;
+    --muted-foreground: 30 8% 45%;
+    --accent: 25 15% 92%;
+    --accent-foreground: 30 8% 20%;
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 12% 85%;
+    --input: 30 12% 85%;
+    --ring: 25 20% 55%;
+    --radius: 0.625rem;
+
+    /* Component-level semantic aliases */
+    /* Surfaces */
+    --surface-primary: #FFFFFF;
+    --surface-secondary: #F5F2EE;
+    --surface-tertiary: #ECE7E0;
+
+    /* Content */
+    --content-primary: #3D3832;
+    --content-secondary: #5A554F;
+    --content-tertiary: #625C54;
+    --content-quaternary: #6E675E;
+    --content-inverse: #FFFFFF;
+
+    /* Interaction */
+    --interactive-primary: #A69888;
+    --interactive-primary-hover: #675A4D;
+    --interactive-primary-active: #7A6E5F;
+    --interactive-primary-disabled: #D9D4CE;
+    --interactive-secondary: #F0EDE8;
+    --interactive-secondary-hover: #E8E4DE;
+
+    /* Borders */
+    --border-default: #D9D4CE;
+    --border-hover: #C9C0B3;
+    --border-active: #A69888;
+
+    /* Status */
+    --status-success: #456348;
+    --status-success-bg: rgba(154, 175, 158, 0.15);
+    --status-warning: #8A7A5E;
+    --status-warning-bg: rgba(184, 166, 138, 0.15);
+    --status-error: #8F6860;
+    --status-error-bg: rgba(191, 168, 160, 0.15);
+    --status-info: #5A7A8E;
+    --status-info-bg: rgba(148, 168, 184, 0.15);
+
+    /* Dark section */
+    --surface-dark: #1E2435;
+    --surface-dark-card: #232838;
+    --content-dark-primary: #E8E4DE;
+    --content-dark-secondary: #6E675E;
+    --content-dark-tertiary: #7A756F;
+    --interactive-dark: #C9A55A;
+
+    /* Morandi color palette */
+    --morandi-bg: #F0EDE8;
+    --morandi-card: #FFFFFF;
+    --morandi-primary: #A69888;
+    --morandi-primary-dark: #675A4D;
+    --morandi-text: #3D3832;
+    --morandi-text-muted: #625C54;
+    --morandi-border: #D9D4CE;
+    --morandi-gold: #6E5C40;
+    --morandi-green: #506D58;
+    --morandi-blue: #526B7E;
+    --morandi-rose: #775E55;
+    --morandi-sage: #A3AD9A;
+
+    /* FrontierVUE inspired dark section */
+    --fv-dark: #1a1f2e;
+    --fv-dark-card: #232838;
+    --fv-gold: #c9a55a;
+  }
+
+  body {
+    font-family: 'Noto Sans SC', 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--morandi-bg);
+    color: var(--morandi-text);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   1. BASIC FADE ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.78s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backface-visibility: hidden;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.72s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   2. SCROLL-TRIGGERED ANIMATIONS (Intersection Observer)
+   ═══════════════════════════════════════════════════════════ */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition: opacity 0.78s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.78s cubic-bezier(0.16, 1, 0.3, 1);
+  backface-visibility: hidden;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-reveal-delay-1 { transition-delay: 0.1s; }
+.scroll-reveal-delay-2 { transition-delay: 0.2s; }
+.scroll-reveal-delay-3 { transition-delay: 0.3s; }
+.scroll-reveal-delay-4 { transition-delay: 0.4s; }
+.scroll-reveal-delay-5 { transition-delay: 0.5s; }
+
+/* Stagger children */
+.scroll-stagger > .scroll-reveal:nth-child(1) { transition-delay: 0.05s; }
+.scroll-stagger > .scroll-reveal:nth-child(2) { transition-delay: 0.15s; }
+.scroll-stagger > .scroll-reveal:nth-child(3) { transition-delay: 0.25s; }
+.scroll-stagger > .scroll-reveal:nth-child(4) { transition-delay: 0.35s; }
+.scroll-stagger > .scroll-reveal:nth-child(5) { transition-delay: 0.45s; }
+.scroll-stagger > .scroll-reveal:nth-child(6) { transition-delay: 0.55s; }
+
+/* ═══════════════════════════════════════════════════════════
+   3. TEXT REVEAL ANIMATION (FrontierVUE style)
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.text-reveal {
+  display: inline-block;
+  opacity: 0;
+  animation: textReveal 0.82s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backface-visibility: hidden;
+}
+
+.hero-kicker {
+  opacity: 0;
+  animation: heroKickerIn 0.66s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+@keyframes heroKickerIn {
+  from { opacity: 0; transform: translate3d(0, 8px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.text-reveal-delay-1 { animation-delay: 0.1s; }
+.text-reveal-delay-2 { animation-delay: 0.2s; }
+.text-reveal-delay-3 { animation-delay: 0.3s; }
+.text-reveal-delay-4 { animation-delay: 0.4s; }
+
+/* ═══════════════════════════════════════════════════════════
+   4. COUNT-UP NUMBER ANIMATION
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes countGlow {
+  0%, 100% { text-shadow: 0 0 0px transparent; }
+  50% { text-shadow: 0 0 20px rgba(184, 166, 138, 0.3); }
+}
+
+.count-up-number {
+  font-variant-numeric: tabular-nums;
+  animation: countGlow 2s ease-in-out;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   5. HERO EXAM BOARD CARDS (single flat card)
+   ═══════════════════════════════════════════════════════════ */
+
+.hero-board-card {
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, var(--morandi-card) 0%, #F8F5F0 100%);
+  border: 1px solid var(--morandi-border);
+}
+
+.hero-board-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(61, 56, 50, 0.12);
+  border-color: #C9C0B3;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   6. GLASSMORPHISM NAV (Sticky + blur)
+   ═══════════════════════════════════════════════════════════ */
+
+.nav-glass {
+  background: rgba(240, 237, 232, 0.85);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  border-bottom: 1px solid rgba(217, 212, 206, 0.5);
+  transition: all 0.3s ease;
+}
+
+.nav-glass.scrolled {
+  background: rgba(240, 237, 232, 0.95);
+  box-shadow: 0 1px 20px rgba(61, 56, 50, 0.08);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   7. DARK SECTION (FrontierVUE Question Bank style)
+   ═══════════════════════════════════════════════════════════ */
+
+.section-dark {
+  background: linear-gradient(135deg, #1e2435 0%, #252d3d 50%, #1e2435 100%);
+  color: #e8e4de;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-dark::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201, 165, 90, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.section-dark .section-label {
+  color: var(--fv-gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   8. STEP FLOW (01→02→03 with connector line)
+   ═══════════════════════════════════════════════════════════ */
+
+.step-flow {
+  position: relative;
+}
+
+.step-flow::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--morandi-border) 0%, var(--morandi-primary) 50%, var(--morandi-border) 100%);
+  z-index: 0;
+}
+
+.step-item {
+  position: relative;
+  z-index: 1;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--morandi-primary) 0%, var(--morandi-gold) 100%);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(166, 152, 136, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   9. STAT CARD (Big number + label)
+   ═══════════════════════════════════════════════════════════ */
+
+.stat-card {
+  text-align: center;
+  padding: 24px;
+}
+
+.stat-number {
+  font-size: clamp(24px, 3.2vw, 38px);
+  font-weight: 800;
+  background: linear-gradient(135deg, #675A4D 0%, #6E5C40 50%, #A69888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--morandi-text-muted);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   10. MARQUEE (University logos scrolling)
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ═══════════════════════════════════════════════════════════
+    11. CTA BANNER (Sticky bottom)
+    ═══════════════════════════════════════════════════════════ */
+
+.cta-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: linear-gradient(135deg, #1e2435 0%, #252d3d 100%);
+  color: #e8e4de;
+  padding: 12px 24px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-banner.visible {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════════
+    12. Glass card - light Morandi version (enhanced)
+    ═══════════════════════════════════════════════════════════ */
+
+.glass-card {
+  background: var(--morandi-card);
+  border: 1px solid var(--morandi-border);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(61, 56, 50, 0.06);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  box-shadow: 0 8px 28px rgba(61, 56, 50, 0.1);
+  transform: translateY(-3px);
+  border-color: #C9C0B3;
+}
+
+/* Morandi gradient text */
+.morandi-gradient-text {
+  background: linear-gradient(135deg, #675A4D 0%, #A69888 50%, #6E5C40 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══════════════════════════════════════════════════════════
+    13. Scrollbar
+    ═══════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E8E4DE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #716A61;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A69888;
+}
+
+/* Table hover */
+.data-row-hover:hover {
+  background-color: rgba(166, 152, 136, 0.06) !important;
+}
+
+/* Nav link underline */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #A69888, #6E5C40);
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+    14. Floating decoration (paper plane, etc.)
+    ═══════════════════════════════════════════════════════════ */
+
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -6px, 0); }
+}
+
+.float-anim {
+  animation: float 3.2s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}

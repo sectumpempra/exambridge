@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync ExamBridge from the GitHub production build
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=deploy
+Group=deploy
+ExecStart=/var/www/exambridge/shared/sync-gh-pages.sh

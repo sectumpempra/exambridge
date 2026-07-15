@@ -1,0 +1,662 @@
+{
+  "board": "Edexcel",
+  "subjectCode": "S3",
+  "subjectName": "Statistics 3",
+  "level": "IAL",
+  "version": "3.2",
+  "totalTopics": 6,
+  "mappedTopics": 6,
+  "totalSubtopics": 15,
+  "mappedSubtopics": 15,
+  "paperStructure": {
+    "papers": [
+      "S3"
+    ],
+    "compulsory": [
+      "S3"
+    ]
+  },
+  "mappings": [
+    {
+      "topicId": "1",
+      "topicName": "Combinations of random variables",
+      "paperReference": [
+        "S3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "1.1",
+          "subtopicName": "Distribution of linear combinations If X ∼ N(μ , σ 2) and Y∼ N(μ , σ 2) independently, then",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DIST-LINEAR",
+              "name": "Linear Combinations of Random Variables",
+              "path": [
+                "Statistics",
+                "Statistical Distributions",
+                "Linear Combinations of Random Variables"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: linear combinations of independent random variables"
+            },
+            {
+              "nodeId": "STAT-DIST-LINEAR-NORM",
+              "name": "Linear Combinations of Independent Normal Variables",
+              "path": [
+                "Statistics",
+                "Statistical Distributions",
+                "Linear Combinations of Random Variables",
+                "Linear Combinations of Independent Normal Variables"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: linear combinations of independent random variables"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "2",
+      "topicName": "Sampling",
+      "paperReference": [
+        "S3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "2.1",
+          "subtopicName": "Methods for collecting data. Simple",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-LIN",
+              "name": "Linear Equations",
+              "path": [
+                "Algebra and Functions",
+                "Equations and Inequalities",
+                "Linear Equations"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: complex numbers"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD",
+              "name": "Quadratic Equations",
+              "path": [
+                "Algebra and Functions",
+                "Equations and Inequalities",
+                "Quadratic Equations"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: complex numbers"
+            },
+            {
+              "nodeId": "ALGF-EQN-SIM",
+              "name": "Simultaneous Equations",
+              "path": [
+                "Algebra and Functions",
+                "Equations and Inequalities",
+                "Simultaneous Equations"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: complex numbers"
+            }
+          ]
+        },
+        {
+          "subtopicId": "2.2",
+          "subtopicName": "Other methods of sampling: The circumstances in which they might be used. Their",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASIC-RULE",
+              "name": "Sine and Cosine Rules",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "Sine and Cosine Rules"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: numerical methods"
+            },
+            {
+              "nodeId": "TRIG-BASIC-3D",
+              "name": "3D Trigonometry",
+              "path": [
+                "Trigonometry",
+                "Basic Trigonometry",
+                "3D Trigonometry"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: numerical methods"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAPH",
+              "name": "Graphs of Trigonometric Functions",
+              "path": [
+                "Trigonometry",
+                "Trigonometric Functions",
+                "Graphs of Trigonometric Functions"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: numerical methods"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "3",
+      "topicName": "Estimation, confidence intervals and tests",
+      "paperReference": [
+        "S3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "3.1",
+          "subtopicName": "Concepts of standard error, The sample mean, x, and the sample variance,",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-EST-BIAS",
+              "name": "Estimator Properties",
+              "path": [
+                "Statistics",
+                "Estimation and Confidence",
+                "Estimator Properties"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: unbiased estimators of population mean and variance"
+            },
+            {
+              "nodeId": "STAT-EST-BIAS-CHECK",
+              "name": "Bias and Consistency of Estimators",
+              "path": [
+                "Statistics",
+                "Estimation and Confidence",
+                "Estimator Properties",
+                "Bias and Consistency of Estimators"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: unbiased estimators of population mean and variance"
+            }
+          ]
+        },
+        {
+          "subtopicId": "3.2",
+          "subtopicName": "The distribution of the sample mean σ2",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-POIS",
+              "name": "Poisson Distribution",
+              "path": [
+                "Probability",
+                "Probability Distributions",
+                "Poisson Distribution"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: mean and variance of poisson distribution"
+            },
+            {
+              "nodeId": "STAT-DIST-POIS",
+              "name": "Poisson Distribution",
+              "path": [
+                "Statistics",
+                "Statistical Distributions",
+                "Poisson Distribution"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: mean and variance of poisson distribution"
+            }
+          ]
+        },
+        {
+          "subtopicId": "3.3",
+          "subtopicName": "Concept of a confidence interval Link with hypothesis tests.",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-BIN",
+              "name": "Binomial Hypothesis Tests",
+              "path": [
+                "Statistics",
+                "Hypothesis Testing",
+                "Binomial Hypothesis Tests"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: estimation and confidence intervals"
+            },
+            {
+              "nodeId": "STAT-TEST-NORM",
+              "name": "Normal Hypothesis Tests",
+              "path": [
+                "Statistics",
+                "Hypothesis Testing",
+                "Normal Hypothesis Tests"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: estimation and confidence intervals"
+            },
+            {
+              "nodeId": "STAT-TEST-CHI",
+              "name": "Chi-Squared Tests",
+              "path": [
+                "Statistics",
+                "Hypothesis Testing",
+                "Chi-Squared Tests"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: estimation and confidence intervals"
+            }
+          ]
+        },
+        {
+          "subtopicId": "3.4",
+          "subtopicName": "Confidence limits for a Normal Students will be expected to know how to apply the Normal",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-BIN",
+              "name": "Binomial Hypothesis Tests",
+              "path": [
+                "Statistics",
+                "Hypothesis Testing",
+                "Binomial Hypothesis Tests"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: estimation and confidence intervals"
+            },
+            {
+              "nodeId": "STAT-TEST-NORM",
+              "name": "Normal Hypothesis Tests",
+              "path": [
+                "Statistics",
+                "Hypothesis Testing",
+                "Normal Hypothesis Tests"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: estimation and confidence intervals"
+            },
+            {
+              "nodeId": "STAT-TEST-CHI",
+              "name": "Chi-Squared Tests",
+              "path": [
+                "Statistics",
+                "Hypothesis Testing",
+                "Chi-Squared Tests"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: estimation and confidence intervals"
+            }
+          ]
+        },
+        {
+          "subtopicId": "3.5",
+          "subtopicName": "Hypothesis tests for the mean of a X −µ",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-NORM",
+              "name": "Normal Hypothesis Tests",
+              "path": [
+                "Statistics",
+                "Hypothesis Testing",
+                "Normal Hypothesis Tests"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: hypothesis tests for population mean using normal distribution"
+            },
+            {
+              "nodeId": "STAT-TEST",
+              "name": "Hypothesis Testing",
+              "path": [
+                "Statistics",
+                "Hypothesis Testing"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to CAIE-9709: hypothesis tests for population mean using normal distribution"
+            }
+          ]
+        },
+        {
+          "subtopicId": "3.6",
+          "subtopicName": "Use of Central Limit theorem to X −µ",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-BASIC-DIAG",
+              "name": "Diagrams and Counting",
+              "path": [
+                "Probability",
+                "Basic Probability",
+                "Diagrams and Counting"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: central limit theorem and chi-squared tests"
+            },
+            {
+              "nodeId": "PROB-BASIC-EXP",
+              "name": "Experimental Probability",
+              "path": [
+                "Probability",
+                "Basic Probability",
+                "Experimental Probability"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: central limit theorem and chi-squared tests"
+            },
+            {
+              "nodeId": "PROB-COMB-IND",
+              "name": "Independent and Dependent Events",
+              "path": [
+                "Probability",
+                "Combined and Conditional Probability",
+                "Independent and Dependent Events"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: central limit theorem and chi-squared tests"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "3",
+      "topicName": "Estimation, confidence intervals and tests",
+      "paperReference": [
+        "S3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "3.7",
+          "subtopicName": "Hypothesis test for the difference",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-2D-POS",
+              "name": "Position Vectors",
+              "path": [
+                "Vectors",
+                "Vectors in 2D",
+                "Position Vectors"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: discrete probability distributions"
+            },
+            {
+              "nodeId": "VEC-2D-MAG",
+              "name": "Magnitude and Direction",
+              "path": [
+                "Vectors",
+                "Vectors in 2D",
+                "Magnitude and Direction"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: discrete probability distributions"
+            },
+            {
+              "nodeId": "VEC-2D-GEO",
+              "name": "Vectors in Geometry",
+              "path": [
+                "Vectors",
+                "Vectors in 2D",
+                "Vectors in Geometry"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: discrete probability distributions"
+            }
+          ]
+        },
+        {
+          "subtopicId": "3.8",
+          "subtopicName": "Use of large sample results to (X −Y)−(µ −µ )",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-ENERGY-POW",
+              "name": "Power",
+              "path": [
+                "Mechanics",
+                "Work, Energy and Power",
+                "Power"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: motion in a circle"
+            },
+            {
+              "nodeId": "MECH-MOM-IMP",
+              "name": "Impulse and Momentum",
+              "path": [
+                "Mechanics",
+                "Momentum and Impulse",
+                "Impulse and Momentum"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: motion in a circle"
+            },
+            {
+              "nodeId": "MECH-MOM-COL",
+              "name": "Collisions",
+              "path": [
+                "Mechanics",
+                "Momentum and Impulse",
+                "Collisions"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: motion in a circle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "4",
+      "topicName": "Goodness of fit and contingency tables",
+      "paperReference": [
+        "S3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "4.1",
+          "subtopicName": "The null and alternative hypotheses. Applications to include the discrete uniform, binomial,",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-3D-COMP",
+              "name": "3D Components and Lines",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "3D Components and Lines"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: poisson and binomial distributions"
+            },
+            {
+              "nodeId": "VEC-3D-DOT",
+              "name": "Scalar Product",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "Scalar Product"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: poisson and binomial distributions"
+            },
+            {
+              "nodeId": "VEC-3D-PLANE",
+              "name": "Planes and Vector Geometry",
+              "path": [
+                "Vectors",
+                "Vectors in 3D",
+                "Planes and Vector Geometry"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: poisson and binomial distributions"
+            }
+          ]
+        },
+        {
+          "subtopicId": "4.2",
+          "subtopicName": "Degrees of freedom. Students will be expected to determine the degrees of",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-CIRC-HORIZ",
+              "name": "Horizontal Circular Motion",
+              "path": [
+                "Mechanics",
+                "Circular Motion",
+                "Horizontal Circular Motion"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: centres of mass"
+            },
+            {
+              "nodeId": "MECH-CIRC-VERT",
+              "name": "Vertical Circular Motion",
+              "path": [
+                "Mechanics",
+                "Circular Motion",
+                "Vertical Circular Motion"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: centres of mass"
+            },
+            {
+              "nodeId": "MECH-STAT-MOM",
+              "name": "Moments",
+              "path": [
+                "Mechanics",
+                "Statics and Rigid Bodies",
+                "Moments"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: centres of mass"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "5",
+      "topicName": "Regression and correlation",
+      "paperReference": [
+        "S3"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "5.1",
+          "subtopicName": "Spearman’s rank correlation Numerical questions involving ties will not be set. Some",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DIST-BIN",
+              "name": "Binomial Distribution",
+              "path": [
+                "Statistics",
+                "Statistical Distributions",
+                "Binomial Distribution"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: correlation"
+            },
+            {
+              "nodeId": "STAT-DIST-NORM",
+              "name": "Normal Distribution",
+              "path": [
+                "Statistics",
+                "Statistical Distributions",
+                "Normal Distribution"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: correlation"
+            },
+            {
+              "nodeId": "STAT-DIST-POIS",
+              "name": "Poisson Distribution",
+              "path": [
+                "Statistics",
+                "Statistical Distributions",
+                "Poisson Distribution"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: correlation"
+            }
+          ]
+        },
+        {
+          "subtopicId": "5.2",
+          "subtopicName": "Testing the hypothesis that a Use of tables for Spearman’s and product moment",
+          "paperReference": [
+            "S3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VEC-MECH-FORCE",
+              "name": "Resultant Forces",
+              "path": [
+                "Vectors",
+                "Vectors in Mechanics",
+                "Resultant Forces"
+              ],
+              "matchStrength": "exact",
+              "matchReason": "Analogous to Edexcel-9FM0: hypothesis testing (discrete)"
+            },
+            {
+              "nodeId": "VEC-MECH-KIN",
+              "name": "Kinematic Vectors",
+              "path": [
+                "Vectors",
+                "Vectors in Mechanics",
+                "Kinematic Vectors"
+              ],
+              "matchStrength": "strong",
+              "matchReason": "Analogous to Edexcel-9FM0: hypothesis testing (discrete)"
+            },
+            {
+              "nodeId": "PROB-BASIC-SCALE",
+              "name": "Probability Concepts",
+              "path": [
+                "Probability",
+                "Basic Probability",
+                "Probability Concepts"
+              ],
+              "matchStrength": "partial",
+              "matchReason": "Analogous to Edexcel-9FM0: hypothesis testing (discrete)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

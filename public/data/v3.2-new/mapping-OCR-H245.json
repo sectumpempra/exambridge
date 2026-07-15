@@ -1,0 +1,712 @@
+{
+  "board": "OCR",
+  "subjectCode": "H245",
+  "subjectName": "A-Level Further Mathematics A",
+  "level": "A-Level",
+  "version": "1.0-batch3",
+  "totalTopics": 5,
+  "mappedTopics": 5,
+  "paperStructure": {
+    "papers": [
+      "PureCore1",
+      "PureCore2",
+      "Stats",
+      "Mech",
+      "Discrete",
+      "AdditionalPure"
+    ],
+    "compulsory": [
+      "PureCore1",
+      "PureCore2"
+    ],
+    "asOnly": [],
+    "alevelOnly": [
+      "PureCore1",
+      "PureCore2",
+      "Stats",
+      "Mech",
+      "Discrete",
+      "AdditionalPure"
+    ],
+    "applicationGroups": [
+      [
+        "Mech"
+      ],
+      [
+        "Stats"
+      ],
+      [
+        "Discrete"
+      ]
+    ],
+    "mutuallyExclusive": []
+  },
+  "mappings": [
+    {
+      "topicId": "OCR-H245-1",
+      "topicName": "Further Pure Mathematics",
+      "paperReference": [
+        "PureCore1",
+        "PureCore2"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "OCR-H245-1.1",
+          "subtopicName": "Use mathematical induction, proof, complex numbers, Argand diagrams, loci, de Moivre's theorem and roots of unity.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to REAS-PROF-PROF-DEDU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-BASIC-ARGD",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-BASIC-ARGD in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-CPLX-ROOT-LOCI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-ROOT-LOCI in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.1.2",
+          "subtopicName": "Use mathematical induction, proof, complex numbers, Argand diagrams, loci, de Moivre's theorem and roots of unity.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-DEMO-THM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-CPLX-DEMO-THM in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.2",
+          "subtopicName": "Use matrices, determinants, inverses, transformations, eigenvalues, eigenvectors and diagonalisation.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-OPS-MULT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-OPS-MULT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-INV-DET",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-INV-DET in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "ALGF-MATR-TRAN-2D",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-TRAN-2D in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.2.2",
+          "subtopicName": "Use matrices, determinants, inverses, transformations, eigenvalues, eigenvectors and diagonalisation.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-EIG-DIAG",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-MATR-EIG-DIAG in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.3",
+          "subtopicName": "Use roots of polynomial equations, summation, series, method of differences and Maclaurin or Taylor series.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-ROOT-ROOT-REL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to ALGF-ROOT-ROOT-REL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-SUMS-SUMR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-SUMS-SUMR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-SER-SUMS-DIFF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-SUMS-DIFF in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.3.2",
+          "subtopicName": "Use roots of polynomial equations, summation, series, method of differences and Maclaurin or Taylor series.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-SER-MACL-MACL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-SER-MACL-MACL in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.4",
+          "subtopicName": "Use polar coordinates, hyperbolic functions and advanced trigonometric or inverse functions.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-POLR-POLR-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-POLR-POLR-CONV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-POLR-POLR-SKET",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-POLR-POLR-SKET in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-HYP-HYP-DEFN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-HYP-HYP-DEFN in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.4.2",
+          "subtopicName": "Use polar coordinates, hyperbolic functions and advanced trigonometric or inverse functions.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-HYP-HYP-IDEN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-HYP-HYP-IDEN in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.5",
+          "subtopicName": "Use advanced differentiation, integration, reduction formulae, arc length, surface area and differential equations.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-INVTR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FDIFF-FDIFF-INVTR in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-FINT-REDU",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-FINT-REDU in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-FINT-APPL-ARCL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FINT-APPL-ARCL in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.5.2",
+          "subtopicName": "Use advanced differentiation, integration, reduction formulae, arc length, surface area and differential equations.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SECOND-CFPI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-LDE-SECOND-CFPI in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.6",
+          "subtopicName": "Use three-dimensional vectors, scalar products, vector products, lines, planes, intersections and distances.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-LINES-LINE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-LINES-LINE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "VECT-FURT-LINES-PLANE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-LINES-PLANE in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "VECT-FURT-PROD-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-PROD-SCAL in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-1.6.2",
+          "subtopicName": "Use three-dimensional vectors, scalar products, vector products, lines, planes, intersections and distances.",
+          "paperReference": [
+            "PureCore1",
+            "PureCore2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-PROD-VECT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to VECT-FURT-PROD-VECT in the expanded knowledge tree."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H245-2",
+      "topicName": "Further Mechanics",
+      "paperReference": [
+        "Mech"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "OCR-H245-2.1",
+          "subtopicName": "Use momentum, impulse, restitution and direct or oblique collision models.",
+          "paperReference": [
+            "Mech"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-IMP-IMPL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-IMPL in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-IMP-REST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-REST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-IMP-DIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-DIMP in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-2.1.2",
+          "subtopicName": "Use momentum, impulse, restitution and direct or oblique collision models.",
+          "paperReference": [
+            "Mech"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-IMP-OIMP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-IMP-OIMP in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-2.2",
+          "subtopicName": "Use projectile motion, circular motion, work, energy, power and variable-force models.",
+          "paperReference": [
+            "Mech"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-PROJ-HV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-PROJ-HV in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-CIRC-RACC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-CIRC-RACC in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-ENER-WORK-CONS",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-ENER-WORK-CONS in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-2.2.2",
+          "subtopicName": "Use projectile motion, circular motion, work, energy, power and variable-force models.",
+          "paperReference": [
+            "Mech"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-VARF-DEQ",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-VARF-DEQ in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-2.3",
+          "subtopicName": "Use rigid body equilibrium, centres of mass, moments, elastic strings and springs.",
+          "paperReference": [
+            "Mech"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-RIGD-MOMT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-RIGD-MOMT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-COM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-RIGD-COM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "MECH-FURT-ELAS-HOOK",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-ELAS-HOOK in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-2.3.2",
+          "subtopicName": "Use rigid body equilibrium, centres of mass, moments, elastic strings and springs.",
+          "paperReference": [
+            "Mech"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-ELAS-EPE",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to MECH-FURT-ELAS-EPE in the expanded knowledge tree."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H245-3",
+      "topicName": "Further Statistics",
+      "paperReference": [
+        "Stats"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "OCR-H245-3.1",
+          "subtopicName": "Use discrete and continuous random variables, probability density functions and probability generating functions.",
+          "paperReference": [
+            "Stats"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DRVD-DRVB-DIST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DRVD-DRVB-DIST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-DIST-CRV-PDF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DIST-CRV-PDF in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "PROB-PGF-PGF-CONC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-PGF-PGF-CONC in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-3.1.2",
+          "subtopicName": "Use discrete and continuous random variables, probability density functions and probability generating functions.",
+          "paperReference": [
+            "Stats"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-PGF-PGF-MEAN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-PGF-PGF-MEAN in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-3.2",
+          "subtopicName": "Use standard statistical distributions, estimation, confidence intervals and hypothesis tests.",
+          "paperReference": [
+            "Stats"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-POIS-PROB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to PROB-DIST-POIS-PROB in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-EST-ESTI-CLT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-EST-ESTI-CLT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-INF2-TDIST-TTEST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-TDIST-TTEST in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-3.2.2",
+          "subtopicName": "Use standard statistical distributions, estimation, confidence intervals and hypothesis tests.",
+          "paperReference": [
+            "Stats"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-INF2-TDIST-TCI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-TDIST-TCI in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-3.3",
+          "subtopicName": "Use chi-squared tests, correlation, regression and non-parametric tests where specified.",
+          "paperReference": [
+            "Stats"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-INF2-CHISQ-GOF",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-CHISQ-GOF in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-INF2-CHISQ-INDEP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-CHISQ-INDEP in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "STAT-CORR-REG-PMCC",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-CORR-REG-PMCC in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-3.3.2",
+          "subtopicName": "Use chi-squared tests, correlation, regression and non-parametric tests where specified.",
+          "paperReference": [
+            "Stats"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-INF2-NONP-SIGN",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to STAT-INF2-NONP-SIGN in the expanded knowledge tree."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H245-4",
+      "topicName": "Discrete and Decision Mathematics",
+      "paperReference": [
+        "Discrete"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "OCR-H245-4.1",
+          "subtopicName": "Use graph terminology, Eulerian and Hamiltonian properties, planarity, trees and network algorithms.",
+          "paperReference": [
+            "Discrete"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-TERM",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-TERM in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-MST",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-MST in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-SHOR",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-SHOR in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-4.1.2",
+          "subtopicName": "Use graph terminology, Eulerian and Hamiltonian properties, planarity, trees and network algorithms.",
+          "paperReference": [
+            "Discrete"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-TRAV",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-TRAV in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-4.2",
+          "subtopicName": "Use algorithms, sorting, matching, network flows and linear programming.",
+          "paperReference": [
+            "Discrete"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-SORT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-SORT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-ALGO-ALGO-MATCH",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-MATCH in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-ALGO-ALGO-FLOW",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-FLOW in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-4.2.2",
+          "subtopicName": "Use algorithms, sorting, matching, network flows and linear programming.",
+          "paperReference": [
+            "Discrete"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-LP",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-ALGO-ALGO-LP in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-4.3",
+          "subtopicName": "Use critical path analysis, cascade charts, resource levelling and zero-sum game theory.",
+          "paperReference": [
+            "Discrete"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-CPA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-PROJ-PROJ-CPA in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-PROJ-PROJ-GANT",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-PROJ-PROJ-GANT in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "DISC-PROJ-PROJ-RESL",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-PROJ-PROJ-RESL in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-4.3.2",
+          "subtopicName": "Use critical path analysis, cascade charts, resource levelling and zero-sum game theory.",
+          "paperReference": [
+            "Discrete"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-GAME",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to DISC-PROJ-PROJ-GAME in the expanded knowledge tree."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H245-5",
+      "topicName": "Additional Further Pure Options",
+      "paperReference": [
+        "AdditionalPure"
+      ],
+      "subtopicMappings": [
+        {
+          "subtopicId": "OCR-H245-5.1",
+          "subtopicName": "Use conic sections, further calculus, recurrence or series methods and additional algebraic structures.",
+          "paperReference": [
+            "AdditionalPure"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONI-CONI-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONI-CONI-PARA in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "GEOM-CONI-CONI-ELLI",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to GEOM-CONI-CONI-ELLI in the expanded knowledge tree."
+            },
+            {
+              "nodeId": "CALC-LDE-SYSTEM-SER",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-LDE-SYSTEM-SER in the expanded knowledge tree."
+            }
+          ]
+        },
+        {
+          "subtopicId": "OCR-H245-5.1.2",
+          "subtopicName": "Use conic sections, further calculus, recurrence or series methods and additional algebraic structures.",
+          "paperReference": [
+            "AdditionalPure"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-LEIB",
+              "matchStrength": "exact",
+              "matchReason": "Maps directly to CALC-FDIFF-FDIFF-LEIB in the expanded knowledge tree."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
