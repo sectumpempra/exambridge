@@ -58,5 +58,13 @@ self.addEventListener("fetch", (event) => {
 
   if (url.pathname.startsWith("/data/") || url.pathname.startsWith("/knowledge-tree/")) {
     event.respondWith(staleWhileRevalidate(event.request));
+    return;
+  }
+
+  if (/\.(?:js|css|png|svg|ico|webmanifest|woff2?)$/i.test(url.pathname)) {
+    event.respondWith(caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
+      if (response.ok) caches.open(SHELL_CACHE).then((cache) => cache.put(event.request, response.clone()));
+      return response;
+    })));
   }
 });

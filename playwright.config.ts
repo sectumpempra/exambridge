@@ -17,9 +17,9 @@ export default defineConfig({
     { name: "mobile-375", use: { ...devices["iPhone 13"], browserName: "chromium" } },
   ],
   webServer: {
-    command: "./node_modules/.bin/vinext build && node scripts/clean-server-public.mjs && ./node_modules/.bin/vinext start",
+    command: "node scripts/serve-static.mjs",
     url: "http://127.0.0.1:3000",
     reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
+    timeout: 30_000,
   },
 });
