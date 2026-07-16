@@ -45,7 +45,7 @@ jobs:
         run: pnpm security:scan
       - name: Build static production site
         run: pnpm build:static
-      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm exec playwright install --with-deps chromium firefox webkit
       - name: Core end-to-end tests
         run: pnpm test:e2e
       - uses: gitleaks/gitleaks-action@v2
