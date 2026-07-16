@@ -29,6 +29,7 @@ function annotateRows(
       _sourceUrl: sourceUrl,
       _accessedAt: ACCESSED_AT,
       _extractionMethod: status === "verified" ? "official-pdf" : "legacy-import",
+      _publicationStatus: status === "verified" ? "verified-active" : "legacy-visible",
     };
     // Only verified rows receive a stable business identity. Giving legacy
     // conflicts a synthetic identity would incorrectly make them calculable.
@@ -36,6 +37,20 @@ function annotateRows(
     return annotated;
   });
 }
+
+function hasMonotonicThresholds(row: GradeBoundaryRow): boolean {
+  let previous = Infinity;
+  for (const field of ["a_star", "a", "b", "c", "d", "e", "f", "g"]) {
+    const value = row[field];
+    if (value === null || value === undefined || value === 0) continue;
+    const numeric = Number(value);
+    if (!Number.isFinite(numeric) || numeric < 0 || numeric > Number(row.maxMark) || numeric > previous) return false;
+    previous = numeric;
+  }
+  return true;
+}
+
+export const QUARANTINED_CAIE_LEGACY_DATA = asRows(caieGcseData).filter((row) => !hasMonotonicThresholds(row));
 
 /** Data sources used by the live board routes after replacing stale math rows. */
 export const MERGED_AQA_GCSE_DATA: GradeBoundaryRow[] = [
@@ -49,7 +64,7 @@ export const MERGED_AQA_A_LEVEL_DATA: GradeBoundaryRow[] = [
 ];
 
 export const MERGED_CAIE_GCSE_DATA: GradeBoundaryRow[] = [
-  ...annotateRows(asRows(caieGcseData).filter(row =>
+  ...annotateRows(asRows(caieGcseData).filter(row => hasMonotonicThresholds(row) &&
     !(String(row.series) === "m-2026" && ["0580", "0606"].includes(String(row.subjectCode)))
   ), "unverified", CAIE_SOURCE),
   ...annotateRows(asRows(officialCaieGcse2026Math), "verified", CAIE_SOURCE),

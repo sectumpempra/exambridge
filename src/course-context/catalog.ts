@@ -31,6 +31,7 @@ function capability(status: FeatureAvailability["status"], verificationStatus: F
 function boundariesHref(board: string, level: string): string | undefined {
   const boardSlug = board.startsWith("Edexcel") ? "edexcel" : slug(board.split("/")[0]);
   if (!["caie", "edexcel", "aqa", "ocr"].includes(boardSlug)) return undefined;
+  if (boardSlug === "ocr" && /fsmq/i.test(level)) return "/fsmq/ocr";
   return `/${level === "A-Level" ? "alevel" : "gcse"}/${boardSlug}`;
 }
 
@@ -88,15 +89,35 @@ function displayPreference(entry: CourseContextEntry): number {
 
 /** One user-facing card per qualification code while retaining every raw entry in COURSE_CATALOG. */
 export function getDisplayCourseCatalog(status: CourseLifecycleStatus): CourseContextEntry[] {
-  const selected = new Map<string, CourseContextEntry>();
+  const grouped = new Map<string, CourseContextEntry[]>();
   for (const entry of COURSE_CATALOG) {
     if (entry.lifecycleStatus !== status) continue;
     const board = entry.boardName.startsWith("Edexcel") ? "pearson" : entry.boardName;
     const key = `${board}|${entry.subjectCode}`;
-    const current = selected.get(key);
-    if (!current || displayPreference(entry) > displayPreference(current)) selected.set(key, entry);
+    grouped.set(key, [...(grouped.get(key) ?? []), entry]);
   }
-  return [...selected.values()].sort((a, b) => a.label.localeCompare(b.label, "en-GB", { numeric: true }));
+  const statusRank = { unavailable: 0, partial: 1, available: 2 } as const;
+  const verificationRank = { unverified: 0, mixed: 1, verified: 2 } as const;
+  const selected = [...grouped.values()].map((aliases) => {
+    const representative = [...aliases].sort((a, b) => displayPreference(b) - displayPreference(a))[0];
+    const capabilities = Object.fromEntries((Object.keys(representative.capabilities) as CourseFeature[]).map((feature) => {
+      const strongest = [...aliases]
+        .map((entry) => entry.capabilities[feature])
+        .sort((a, b) => statusRank[b.status] - statusRank[a.status] || verificationRank[b.verificationStatus] - verificationRank[a.verificationStatus])[0];
+      return [feature, strongest];
+    })) as CourseContextEntry["capabilities"];
+    const calculatorSource = [...aliases].sort((a, b) => statusRank[b.capabilities.calculator.status] - statusRank[a.capabilities.calculator.status])[0];
+    return {
+      ...representative,
+      capabilities,
+      plannerLevel: representative.plannerLevel ?? aliases.find((entry) => entry.plannerLevel)?.plannerLevel,
+      plannerBoard: representative.plannerBoard ?? aliases.find((entry) => entry.plannerBoard)?.plannerBoard,
+      knowledgeTreeCode: representative.knowledgeTreeCode ?? aliases.find((entry) => entry.knowledgeTreeCode)?.knowledgeTreeCode,
+      calculatorBoardKey: representative.calculatorBoardKey ?? aliases.find((entry) => entry.calculatorBoardKey)?.calculatorBoardKey,
+      gradeCalculation: calculatorSource.gradeCalculation,
+    } satisfies CourseContextEntry;
+  });
+  return selected.sort((a, b) => a.label.localeCompare(b.label, "en-GB", { numeric: true }));
 }
 const BY_QUALIFICATION = new Map(COURSE_CATALOG.map((entry) => [entry.qualificationId, entry]));
 
@@ -122,6 +143,7 @@ export function withCourseContext(href: string, context: CourseContext | null): 
 
 export function courseMatchesRoute(entry: CourseContextEntry, pathname: string): boolean {
   const lower = pathname.toLowerCase();
+  if (lower.startsWith("/fsmq")) return /fsmq/i.test(entry.level) && entry.boardName === "OCR";
   if (lower.startsWith("/alevel") && entry.level !== "A-Level") return false;
   if (lower.startsWith("/gcse") && !["GCSE", "IGCSE"].includes(entry.level)) return false;
   const boardSegment = lower.split("/")[2];

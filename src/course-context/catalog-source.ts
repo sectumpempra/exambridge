@@ -10,6 +10,7 @@ export { toCalculatorFeature } from "./types";
 import { classifySubject, normalizeCourseSubjectName } from "./subjectCategory";
 import { getGradeCalculationAvailability } from "@/domain-v2/awards/catalog";
 import type { GradeCalculationAvailability } from "@/domain-v2/awards/schema";
+import ocrOfficialStatistics from "@/data/official/ocr-results-statistics.json";
 
 const ACCESSED_AT = "2026-07-15";
 const AWARD_QUALIFICATION_KEYS = new Set(["AQA|7357", "OCR|H240", "CAIE|9709"]);
@@ -111,6 +112,13 @@ const KNOWLEDGE_CODES = new Set([
   "AQA-8365", "AQA-7357", "AQA-7367", "OCR-J560", "OCR-H240",
   "OCR-H640", "OCR-H245", "OCR-6993", "WJEC-3300",
 ]);
+const PAST_PAPER_READY_CODES = new Set([
+  "CAIE|0580", "CAIE|0606", "CAIE|9231", "CAIE|9709",
+  "Edexcel|1MA1", "Edexcel UK|1MA1", "Edexcel UK|9MA0", "Edexcel UK|9FM0", "OCR|H240",
+]);
+const OCR_OFFICIAL_SUBJECT_NAMES = new Map(
+  [...ocrOfficialStatistics.gcse, ...ocrOfficialStatistics.aLevel].map((row) => [row.code, row.name]),
+);
 
 function slug(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -134,6 +142,7 @@ function capability(
 function boundariesHref(board: string, level: string): string | undefined {
   const boardSlug = board.startsWith("Edexcel") ? "edexcel" : slug(board.split("/")[0]);
   if (!["caie", "edexcel", "aqa", "ocr"].includes(boardSlug)) return undefined;
+  if (boardSlug === "ocr" && /fsmq/i.test(level)) return "/fsmq/ocr";
   const levelSlug = normalizeLevel(level) === "A-Level" ? "alevel" : "gcse";
   return `/${levelSlug}/${boardSlug}`;
 }
@@ -201,6 +210,12 @@ function buildCatalog(): CourseContextEntry[] {
       statistics: current?.statistics ?? false, papers: true,
       syllabusVersion: paper.syllabusVersion,
     });
+  }
+
+  // A course with audited Question Paper assets is Paper-capable even when a
+  // standalone PaperMetadata detail page has not yet been authored.
+  for (const course of courses.values()) {
+    if (PAST_PAPER_READY_CODES.has(`${course.board}|${course.code}`)) course.papers = true;
   }
 
   // Preserve the official subject identity for the qualifications supported by
@@ -365,9 +380,13 @@ function buildCatalog(): CourseContextEntry[] {
           : latestYear
             ? `仅有历史成绩记录，最近为 ${latestYear}`
             : "仅见于历史工具或组件数据，尚无近期资格记录";
-    const normalizedName = course.board === "AQA" && lifecycleStatus === "current"
+    const cleanedName = course.board === "AQA" && lifecycleStatus === "current"
       ? course.name.replace(/\s+Adv(?=\s|\(|$)/gi, "").replace(/^D&t:/i, "Design & Technology:")
       : course.name;
+    const sourcedName = course.board === "OCR" && cleanedName === course.code
+      ? OCR_OFFICIAL_SUBJECT_NAMES.get(course.code) ?? cleanedName
+      : cleanedName;
+    const normalizedName = normalizeCourseSubjectName(course.board, course.code, sourcedName);
     const gradeCalculation: GradeCalculationAvailability = isLegacyWma
       ? { status: "official", routeIds: ["legacy:edexcel:ial:wma"] }
       : AWARD_QUALIFICATION_KEYS.has(`${course.board}|${course.code}`)

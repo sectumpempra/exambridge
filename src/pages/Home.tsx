@@ -242,7 +242,7 @@ export default function Home() {
                       <span className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ color: task.accent, background: task.surface }}>
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </span>
-                      <span className={status === "当前课程可用" ? "rounded-full bg-[#edf3ed] px-2.5 py-1 text-[10px] font-medium text-[#456348]" : "rounded-full bg-[#f2efeb] px-2.5 py-1 text-[10px] text-[#817970]"}>
+                      <span className={status === "当前课程可用" ? "rounded-full bg-[#edf3ed] px-2.5 py-1 text-[10px] font-medium text-[#456348]" : "rounded-full bg-[#f2efeb] px-2.5 py-1 text-[10px] font-medium text-[#625c54]"}>
                         {status}
                       </span>
                     </div>

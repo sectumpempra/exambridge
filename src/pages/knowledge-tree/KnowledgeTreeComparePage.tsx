@@ -87,11 +87,11 @@ export default function KnowledgeTreeComparePage() {
     queueMicrotask(() => {
       if (subjectA) {
         setCodeA(subjectA.code);
-        setPaperA(requestedPaperA && subjectA.papers.includes(requestedPaperA) ? requestedPaperA : null);
+        setPaperA(requestedPaperA && subjectA.paperComparisonReady && subjectA.papers.includes(requestedPaperA) ? requestedPaperA : null);
       }
       if (subjectB) {
         setCodeB(subjectB.code);
-        setPaperB(requestedPaperB && subjectB.papers.includes(requestedPaperB) ? requestedPaperB : null);
+        setPaperB(requestedPaperB && subjectB.paperComparisonReady && subjectB.papers.includes(requestedPaperB) ? requestedPaperB : null);
       }
     });
   }, [subjects, requestedCodeA, requestedCodeB, requestedPaperA, requestedPaperB]);
@@ -116,6 +116,12 @@ export default function KnowledgeTreeComparePage() {
     return s?.papers ?? [];
   }, [subjects, codeB]);
 
+  const subjectA = subjects.find((s) => s.code === codeA);
+  const subjectB = subjects.find((s) => s.code === codeB);
+  const paperComparisonBlocked = Boolean(
+    (paperA && !subjectA?.paperComparisonReady) || (paperB && !subjectB?.paperComparisonReady)
+  );
+
   // Unified subject change handlers (avoid intermediate states)
   const handleSetCodeA = useCallback((newCode: string) => {
     setCodeA(newCode);
@@ -129,8 +135,8 @@ export default function KnowledgeTreeComparePage() {
 
   // Derived: is this a valid comparison?
   const isValidComparison = useMemo(
-    () => isKnowledgeComparisonValid(codeA, codeB, paperA, paperB),
-    [codeA, codeB, paperA, paperB]
+    () => !paperComparisonBlocked && isKnowledgeComparisonValid(codeA, codeB, paperA, paperB),
+    [codeA, codeB, paperA, paperB, paperComparisonBlocked]
   );
   const comparisonPrompt = useMemo(
     () => getKnowledgeComparisonPrompt(codeA, codeB, paperA, paperB),
@@ -197,9 +203,6 @@ export default function KnowledgeTreeComparePage() {
     [subjects]
   );
 
-  const subjectA = subjects.find((s) => s.code === codeA);
-  const subjectB = subjects.find((s) => s.code === codeB);
-
   const displayA = paperA ? `${subjectA?.name || codeA} ${paperA}` : subjectA?.name || codeA;
   const displayB = paperB ? `${subjectB?.name || codeB} ${paperB}` : subjectB?.name || codeB;
 
@@ -250,7 +253,7 @@ export default function KnowledgeTreeComparePage() {
             </h1>
             <p className="mt-2 text-sm text-[#625C54] leading-relaxed">
               基于 <strong className="text-[#3D3832]">812 节点</strong> 统一知识树，覆盖{" "}
-              <strong className="text-[#3D3832]">5 大考试局 21 个数学类科目</strong> 的精确映射
+              <strong className="text-[#3D3832]">5 大考试局 21 个数学类科目</strong> 的候选映射
               <br />
               支持 <strong className="text-[#A9471F]">跨考试局整科对比</strong>、{" "}
               <strong className="text-[#A9471F]">同课程或跨课程 Paper 对比</strong> 及{" "}
@@ -266,7 +269,8 @@ export default function KnowledgeTreeComparePage() {
                 <SubjectSelector label="科目 A" value={codeA} options={subjectOptions} onChange={handleSetCodeA} />
                 {papersA.length > 0 && (
                   <div className="mt-2">
-                    <PaperSelector label="Paper" papers={papersA} value={paperA} onChange={setPaperA} />
+                    <PaperSelector label="Paper" papers={papersA} value={paperA} onChange={setPaperA} disabled={!subjectA?.paperComparisonReady} />
+                    {!subjectA?.paperComparisonReady && <p className="mt-1 text-[10px] text-[#9a684d]">Paper 级映射待核验，暂不提供百分比对比</p>}
                   </div>
                 )}
               </div>
@@ -283,7 +287,8 @@ export default function KnowledgeTreeComparePage() {
                 <SubjectSelector label="科目 B" value={codeB} options={subjectOptions} onChange={handleSetCodeB} />
                 {papersB.length > 0 && (
                   <div className="mt-2">
-                    <PaperSelector label="Paper" papers={papersB} value={paperB} onChange={setPaperB} />
+                    <PaperSelector label="Paper" papers={papersB} value={paperB} onChange={setPaperB} disabled={!subjectB?.paperComparisonReady} />
+                    {!subjectB?.paperComparisonReady && <p className="mt-1 text-[10px] text-[#9a684d]">Paper 级映射待核验，暂不提供百分比对比</p>}
                   </div>
                 )}
               </div>
@@ -312,6 +317,12 @@ export default function KnowledgeTreeComparePage() {
                   {comparisonPrompt}
                 </p>
               </div>
+            </div>
+          )}
+
+          {paperComparisonBlocked && (
+            <div className="mb-6 rounded-2xl border border-[#e6cdbf] bg-[#fff8f3] p-5 text-center text-sm text-[#8a5c45]">
+              Paper 级映射尚未达到完整且已复核的发布标准，本次不会计算或展示相似度。
             </div>
           )}
 

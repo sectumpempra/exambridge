@@ -16,6 +16,7 @@ export default defineConfig({
         "src/domain-v2/awards/**": { lines: 95, branches: 90 },
         "src/domain-v2/calculator/**": { lines: 95, branches: 90 },
         "src/adapters-v2/legacy-data/**": { lines: 95, branches: 90 },
+        "src/domain-v2/past-papers/**": { lines: 80, branches: 70 },
       },
     },
   },

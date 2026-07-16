@@ -72,6 +72,9 @@ export interface MappingFile {
   totalTopics: number;
   mappedTopics: number;
   paperStructure?: PaperStructure;
+  sourceUrl?: string;
+  syllabusVersion?: string;
+  verificationStatus?: "verified" | "candidate" | "rejected";
   mappings: TopicMapping[];
 }
 
@@ -85,6 +88,17 @@ export interface SubjectInfoV32 {
   hasPapers: boolean; // true if paperStructure exists
   papers: string[];   // list of paper codes
   isGCSE: boolean;
+  paperMappingCoverage: number;
+  paperComparisonReady: boolean;
+}
+
+export interface PaperMappingReadiness {
+  ready: boolean;
+  coverage: number;
+  referencedSubtopics: number;
+  totalSubtopics: number;
+  invalidReferences: string[];
+  reason?: string;
 }
 
 /** Paper selection for a subject */

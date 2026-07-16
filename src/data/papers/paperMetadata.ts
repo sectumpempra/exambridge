@@ -22,9 +22,15 @@ export interface PaperMetadata {
   syllabusVersion: string;
   variantCodes: string[]; // 对应的 component/variant codes（用于匹配分数线数据）
   description: string;    // 简要描述
-  sourceUrl?: string;
-  verificationStatus?: "verified" | "mixed" | "unverified";
+  effectiveFrom: number;
+  effectiveTo?: number;
+  sourceUrl: string;
+  verificationStatus: "verified" | "mixed" | "unverified";
 }
+
+const CAMBRIDGE_9709_SOURCE = "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf";
+const CAMBRIDGE_0580_SOURCE = "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf";
+const PEARSON_4MA1_SOURCE = "https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-mathematics-a-2016.html";
 
 // CAIE A-Level Mathematics (9709) - 6 Papers
 const CAIE_9709_PAPERS: PaperMetadata[] = [
@@ -43,9 +49,10 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     gradingSystem: "A*-E",
     calculatorAllowed: true,
     paperType: "Written",
-    syllabusVersion: "2020-2025",
+    syllabusVersion: "2026-2027",
     variantCodes: ["11", "12", "13", "15"],
-    description: "Quadratics, functions, coordinate geometry, circular measure, trigonometry, series, differentiation, integration. Includes China zone variant (15)."
+    description: "Quadratics, functions, coordinate geometry, circular measure, trigonometry, series, differentiation, integration. Includes China zone variant (15).",
+    effectiveFrom: 2026, effectiveTo: 2027, sourceUrl: CAMBRIDGE_9709_SOURCE, verificationStatus: "verified",
   },
   {
     paperId: "CAIE-9709-P2",
@@ -62,9 +69,10 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     gradingSystem: "A*-E",
     calculatorAllowed: true,
     paperType: "Written",
-    syllabusVersion: "2020-2025",
+    syllabusVersion: "2026-2027",
     variantCodes: ["21", "22", "23", "25"],
-    description: "Algebra, logarithmic and exponential functions, trigonometry, differentiation, integration, numerical solutions of equations. (AS only) Includes China zone variant (25)."
+    description: "Algebra, logarithmic and exponential functions, trigonometry, differentiation, integration, numerical solutions of equations. (AS only) Includes China zone variant (25).",
+    effectiveFrom: 2026, effectiveTo: 2027, sourceUrl: CAMBRIDGE_9709_SOURCE, verificationStatus: "verified",
   },
   {
     paperId: "CAIE-9709-P3",
@@ -81,9 +89,10 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     gradingSystem: "A*-E",
     calculatorAllowed: true,
     paperType: "Written",
-    syllabusVersion: "2020-2025",
+    syllabusVersion: "2026-2027",
     variantCodes: ["31", "32", "33", "35"],
-    description: "Algebra, logarithmic and exponential functions, trigonometry, differentiation, integration, numerical solutions of equations, vectors, differential equations, complex numbers. Includes China zone variant (35)."
+    description: "Algebra, logarithmic and exponential functions, trigonometry, differentiation, integration, numerical solutions of equations, vectors, differential equations, complex numbers. Includes China zone variant (35).",
+    effectiveFrom: 2026, effectiveTo: 2027, sourceUrl: CAMBRIDGE_9709_SOURCE, verificationStatus: "verified",
   },
   {
     paperId: "CAIE-9709-P4",
@@ -100,9 +109,10 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     gradingSystem: "A*-E",
     calculatorAllowed: true,
     paperType: "Written",
-    syllabusVersion: "2020-2025",
+    syllabusVersion: "2026-2027",
     variantCodes: ["41", "42", "43", "45"],
-    description: "Forces and equilibrium, kinematics of motion in a straight line, momentum, Newton's laws of motion, energy, work and power. Includes China zone variant (45)."
+    description: "Forces and equilibrium, kinematics of motion in a straight line, momentum, Newton's laws of motion, energy, work and power. Includes China zone variant (45).",
+    effectiveFrom: 2026, effectiveTo: 2027, sourceUrl: CAMBRIDGE_9709_SOURCE, verificationStatus: "verified",
   },
   {
     paperId: "CAIE-9709-P5",
@@ -119,9 +129,10 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     gradingSystem: "A*-E",
     calculatorAllowed: true,
     paperType: "Written",
-    syllabusVersion: "2020-2025",
+    syllabusVersion: "2026-2027",
     variantCodes: ["51", "52", "53", "55"],
-    description: "Representation of data, permutations and combinations, probability, discrete random variables, the normal distribution. Includes China zone variant (55)."
+    description: "Representation of data, permutations and combinations, probability, discrete random variables, the normal distribution. Includes China zone variant (55).",
+    effectiveFrom: 2026, effectiveTo: 2027, sourceUrl: CAMBRIDGE_9709_SOURCE, verificationStatus: "verified",
   },
   {
     paperId: "CAIE-9709-P6",
@@ -138,9 +149,10 @@ const CAIE_9709_PAPERS: PaperMetadata[] = [
     gradingSystem: "A*-E",
     calculatorAllowed: true,
     paperType: "Written",
-    syllabusVersion: "2020-2025",
+    syllabusVersion: "2026-2027",
     variantCodes: ["61", "62", "63", "65"],
-    description: "The Poisson distribution, linear combinations of random variables, continuous random variables, sampling and estimation, hypothesis tests. Includes China zone variant (65)."
+    description: "The Poisson distribution, linear combinations of random variables, continuous random variables, sampling and estimation, hypothesis tests. Includes China zone variant (65).",
+    effectiveFrom: 2026, effectiveTo: 2027, sourceUrl: CAMBRIDGE_9709_SOURCE, verificationStatus: "verified",
   },
 ];
 
@@ -154,16 +166,17 @@ const CAIE_0580_PAPERS: PaperMetadata[] = [
     subjectName: "Mathematics",
     paperNumber: "2",
     paperName: "Mathematics (Extended) Paper 2",
-    duration: "1h 30m",
-    durationMinutes: 90,
-    maxMarks: 70,
-    weightPercent: 35,
+    duration: "2h",
+    durationMinutes: 120,
+    maxMarks: 100,
+    weightPercent: 50,
     gradingSystem: "A*-E",
-    calculatorAllowed: true,
+    calculatorAllowed: false,
     paperType: "Written",
-    syllabusVersion: "2020-2025",
-    variantCodes: ["21", "22"],
-    description: "Short-answer questions. Number, algebra, shape and space, statistics and probability. Covers Extended syllabus.",
+    syllabusVersion: "2025-2027",
+    variantCodes: ["21", "22", "23"],
+    description: "Non-calculator short-answer and structured questions covering the Extended syllabus.",
+    effectiveFrom: 2025, effectiveTo: 2027, sourceUrl: CAMBRIDGE_0580_SOURCE, verificationStatus: "verified",
   },
   {
     paperId: "CAIE-0580-P4",
@@ -173,16 +186,17 @@ const CAIE_0580_PAPERS: PaperMetadata[] = [
     subjectName: "Mathematics",
     paperNumber: "4",
     paperName: "Mathematics (Extended) Paper 4",
-    duration: "2h 30m",
-    durationMinutes: 150,
-    maxMarks: 130,
-    weightPercent: 65,
+    duration: "2h",
+    durationMinutes: 120,
+    maxMarks: 100,
+    weightPercent: 50,
     gradingSystem: "A*-E",
     calculatorAllowed: true,
     paperType: "Written",
-    syllabusVersion: "2020-2025",
-    variantCodes: ["41", "42"],
-    description: "Structured questions. Number, algebra, shape and space, statistics and probability. Covers Extended syllabus with more in-depth problem solving.",
+    syllabusVersion: "2025-2027",
+    variantCodes: ["41", "42", "43"],
+    description: "Calculator short-answer and structured questions covering the Extended syllabus.",
+    effectiveFrom: 2025, effectiveTo: 2027, sourceUrl: CAMBRIDGE_0580_SOURCE, verificationStatus: "verified",
   },
 ];
 
@@ -206,6 +220,7 @@ const EDEXCEL_4MA1_PAPERS: PaperMetadata[] = [
     syllabusVersion: "2017-2025",
     variantCodes: ["1H"],
     description: "Number, algebra, geometry, statistics. Higher tier covers grades 4-9. Calculator allowed throughout.",
+    effectiveFrom: 2017, sourceUrl: PEARSON_4MA1_SOURCE, verificationStatus: "mixed",
   },
   {
     paperId: "EDX-4MA1-P2H",
@@ -225,6 +240,7 @@ const EDEXCEL_4MA1_PAPERS: PaperMetadata[] = [
     syllabusVersion: "2017-2025",
     variantCodes: ["2H"],
     description: "Number, algebra, geometry, statistics. Higher tier covers grades 4-9. Calculator allowed throughout. Focuses on problem-solving and reasoning.",
+    effectiveFrom: 2017, sourceUrl: PEARSON_4MA1_SOURCE, verificationStatus: "mixed",
   },
 ];
 
@@ -256,6 +272,7 @@ const EDEXCEL_IAL_MATH_PAPERS: PaperMetadata[] = [
   syllabusVersion: "2018 specification",
   variantCodes: [unitCode],
   description: `Pearson Edexcel IAL Mathematics ${unitCode} unit. Final awards use UMS and a validated six-unit route.`,
+  effectiveFrom: 2018,
   sourceUrl: "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
   verificationStatus: "verified",
 }));

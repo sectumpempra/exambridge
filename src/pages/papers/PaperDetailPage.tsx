@@ -155,6 +155,10 @@ export default function PaperDetailPage() {
                 {paper.description}
               </div>
             )}
+            <div style={{ marginTop: 12, padding: "12px 16px", borderRadius: 10, border: "1px solid #d7e0da", background: "#f4f8f5", fontSize: 12, color: "#4f6256", lineHeight: 1.6 }}>
+              当前结构适用于 {paper.effectiveFrom}{paper.effectiveTo ? `–${paper.effectiveTo}` : " 起"} 年考纲；历史分数线按表格中的年份和当年满分解释。{" "}
+              <a href={paper.sourceUrl} target="_blank" rel="noreferrer" style={{ color: "#3f5d50", fontWeight: 600 }}>查看官方考纲</a>
+            </div>
           </div>
         </section>
 
@@ -279,7 +283,7 @@ export default function PaperDetailPage() {
                         <td style={{ padding: "9px 8px", fontSize: 13, color: "#4A453F", textAlign: "center", textTransform: "capitalize" }}>{s.series}</td>
                         <td style={{ padding: "9px 8px", fontSize: 13, color: "#675A4D", fontWeight: 600, textAlign: "center" }}>{s.aStarRate}%</td>
                         <td style={{ padding: "9px 8px", fontSize: 13, color: "#4A453F", textAlign: "center" }}>{s.aRate}%</td>
-                        <td style={{ padding: "9px 8px", fontSize: 20, color: "#4A453F", textAlign: "center" }}>{s.bRate}%</td>
+                        <td style={{ padding: "9px 8px", fontSize: 13, color: "#4A453F", textAlign: "center" }}>{s.bRate}%</td>
                         <td style={{ padding: "9px 8px", fontSize: 13, color: "#4A453F", textAlign: "center" }}>{s.cRate}%</td>
                         <td style={{ padding: "9px 8px", fontSize: 13, color: "#4A453F", textAlign: "center" }}>
                           {s.entries ? s.entries.toLocaleString() : "-"}

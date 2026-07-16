@@ -30,8 +30,39 @@ const AQA_PREFIX_NAMES: Record<string, string> = {
   PS: "Psychology",
 };
 
+const EXACT_CODE_NAMES: Record<string, string> = {
+  "AQA|8461": "Biology",
+  "AQA|8462": "Chemistry",
+  "AQA|8463": "Physics",
+  "AQA|8700": "English Language",
+  "AQA|8702": "English Literature",
+  "Edexcel|1BI0": "Biology",
+  "Edexcel|1CH0": "Chemistry",
+  "Edexcel|1EN0": "English Language",
+  "Edexcel|1ET0": "English Literature",
+  "Edexcel|1PH0": "Physics",
+  "Edexcel|4MA1": "International GCSE Mathematics A",
+  "Edexcel|4PM1": "International GCSE Further Pure Mathematics",
+  "Edexcel|YLA0": "Pearson International A-Level qualification YLA0",
+  "Edexcel|YLA1": "Pearson International A-Level qualification YLA1",
+};
+
+const EDEXCEL_IAL_PREFIX_NAMES: Record<string, string> = {
+  WAA: "Arabic", WAC: "Accounting", WBI: "Biology", WBS: "Business", WCH: "Chemistry",
+  WDM: "Decision Mathematics", WEC: "Economics", WEN: "English Language", WET: "English Literature",
+  WFM: "Further Pure Mathematics", WFR: "French", WGE: "Geography", WGK: "Greek", WGN: "German",
+  WHI: "History", WIT: "Information Technology", WMA: "Pure Mathematics", WME: "Mechanics",
+  WPH: "Physics", WPS: "Psychology", WST: "Statistics",
+  WSP: "Spanish",
+};
+
 export function normalizeCourseSubjectName(board: string, code: string, name: string): string {
   if (board === "AQA" && AQA_PREFIX_NAMES[code] && (!name || name === code)) return AQA_PREFIX_NAMES[code];
+  if (EXACT_CODE_NAMES[`${board}|${code}`] && (!name || name === code)) return EXACT_CODE_NAMES[`${board}|${code}`];
+  if (board.startsWith("Edexcel") && (!name || name === code)) {
+    const prefixName = EDEXCEL_IAL_PREFIX_NAMES[code.slice(0, 3).toUpperCase()];
+    if (prefixName) return `${prefixName} Unit ${Number(code.slice(-2)) || code.slice(-2)}`;
+  }
   return name || code;
 }
 

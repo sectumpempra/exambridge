@@ -14,6 +14,8 @@ export interface YearlyStats {
   grade9Rate?: number; grade8Rate?: number; grade7Rate?: number; grade6Rate?: number;
   grade5Rate?: number; grade4Rate?: number; grade3Rate?: number; grade2Rate?: number; grade1Rate?: number;
   entries?: number;
+  rawGradeRates?: Partial<Record<"grade9Rate" | "grade8Rate" | "grade7Rate" | "grade6Rate" | "grade5Rate" | "grade4Rate" | "grade3Rate" | "grade2Rate" | "grade1Rate", number>>;
+  normalizationIssues?: string[];
 }
 export interface SubjectStats { code: string; name: string; board: string; level: "A-Level" | "IGCSE" | "GCSE" | "FSMQ"; years: YearlyStats[]; }
 
@@ -26,14 +28,22 @@ function y(year: number, series: "june" | "november" | "march" | "summer" | "jan
   const keys: (keyof YearlyStats)[] = ['grade9Rate', 'grade8Rate', 'grade7Rate', 'grade6Rate', 'grade5Rate', 'grade4Rate', 'grade3Rate', 'grade2Rate', 'grade1Rate'];
 
   let prev = 0;
+  const rawGradeRates: YearlyStats["rawGradeRates"] = {};
+  const normalizationIssues: string[] = [];
   for (let i = 0; i < gRates.length; i++) {
     const v = gRates[i];
     if (v !== undefined) {
       // 9-1 累积率必须单调不减（值越大表示等级越低、包含学生越多）
+      rawGradeRates[keys[i] as keyof NonNullable<YearlyStats["rawGradeRates"]>] = v;
       const normalized = Math.max(v, prev);
+      if (normalized !== v) normalizationIssues.push(`${String(keys[i])}: raw ${v}, normalized ${normalized}`);
       (r as unknown as Record<string, unknown>)[keys[i]] = normalized;
       prev = normalized;
     }
+  }
+  if (normalizationIssues.length) {
+    r.rawGradeRates = rawGradeRates;
+    r.normalizationIssues = normalizationIssues;
   }
   return r;
 }
@@ -44,6 +54,7 @@ function s(code: string, name: string, board: string, level: "A-Level" | "IGCSE"
     years = years.map(year => {
       if (year.entries !== undefined || year.grade9Rate === undefined) return year;
       const repaired = { ...year, entries: year.grade9Rate };
+      repaired.normalizationIssues = [...(year.normalizationIssues ?? []), "legacy entries value migrated from grade9Rate"];
       delete repaired.grade9Rate;
       delete repaired.grade8Rate;
       delete repaired.grade7Rate;
@@ -787,6 +798,23 @@ export const ALL_SUBJECT_STATS: SubjectStats[] = [
   ...WJEC_EDUQAS_A_LEVEL_SUBJECTS,
   ...WJEC_EDUQAS_GCSE_SUBJECTS,
 ];
+
+/** Raw rows requiring source review. They remain traceable and are never
+ * silently overwritten; the UI labels any normalized value derived from them. */
+export const RESULT_STATISTICS_NORMALIZATION_CANDIDATES = ALL_SUBJECT_STATS.flatMap((subject) =>
+  subject.years
+    .filter((year) => (year.normalizationIssues?.length ?? 0) > 0)
+    .map((year) => ({
+      board: subject.board,
+      level: subject.level,
+      subjectCode: subject.code,
+      year: year.year,
+      series: year.series,
+      rawGradeRates: year.rawGradeRates,
+      normalizedGradeRates: Object.fromEntries(Object.keys(year.rawGradeRates ?? {}).map((key) => [key, (year as unknown as Record<string, unknown>)[key]])),
+      reasons: year.normalizationIssues ?? [],
+    })),
+);
 
 export function isNineToOne(board: string, level: string): boolean {
   const k = `${board}|${level}`;

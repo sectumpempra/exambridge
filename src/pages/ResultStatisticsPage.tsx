@@ -352,6 +352,9 @@ export default function ResultStatisticsPage() {
     if (!currentStats) return [];
     return buildChartData(currentStats, gradesToShow);
   }, [currentStats, gradesToShow]);
+  const normalizationIssueCount = useMemo(() => currentStats?.years.reduce(
+    (count, year) => count + (year.normalizationIssues?.length ?? 0), 0,
+  ) ?? 0, [currentStats]);
 
   // Latest stats
   const latest = useMemo(() => {
@@ -478,6 +481,11 @@ export default function ResultStatisticsPage() {
 
           {currentStats ? (
             <>
+              {normalizationIssueCount > 0 && (
+                <div role="status" style={{ marginBottom: 16, padding: "10px 14px", borderRadius: 10, border: "1px solid rgba(193,123,95,0.25)", background: "rgba(193,123,95,0.08)", color: "#7c513e", fontSize: 12, lineHeight: 1.6 }}>
+                  该历史序列有 {normalizationIssueCount} 项原始累计率异常；图表使用保留审计记录的规范化值，原始值未被覆盖。
+                </div>
+              )}
               {/* Stat Cards */}
               {latest && (
                 <div

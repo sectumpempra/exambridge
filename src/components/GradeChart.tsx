@@ -252,10 +252,10 @@ export default function GradeChart({
       </h3>
 
       <div style={{ display: "flex", gap: 20, marginTop: 20, flexWrap: "wrap", alignItems: "center" }}>
-        {!lockedCode ? <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        {!lockedCode ? <div style={{ display: "flex", minWidth: 0, maxWidth: "100%", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
           <label style={LABEL_STYLE}>科目代码：</label>
           <select aria-label="科目代码" value={selectedCode} onChange={e => { setSelectedCode(e.target.value); setSelectedComponent(""); }}
-            style={{ ...SELECT_STYLE, minWidth: 240 }}
+            style={{ ...SELECT_STYLE, width: 240, maxWidth: "100%", minWidth: 0 }}
             onFocus={e => { e.target.style.borderColor = "#A69888"; }}
             onBlur={e => { e.target.style.borderColor = "#D9D4CE"; }}>
             <option value="">请选择...</option>
@@ -278,10 +278,10 @@ export default function GradeChart({
         </div> : <span className="rounded-lg bg-[#e9eef0] px-3 py-2 font-mono text-sm font-bold text-[#3d5661]">资格代码 {selectedCode}</span>}
 
         {showComponentFilter && componentField && (
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <div style={{ display: "flex", minWidth: 0, maxWidth: "100%", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
             <label style={LABEL_STYLE}>{displayLabel}</label>
             <select aria-label={displayLabel} value={selectedComponent} onChange={e => setSelectedComponent(e.target.value)}
-              style={{ ...SELECT_STYLE, minWidth: 180 }}
+              style={{ ...SELECT_STYLE, width: 180, maxWidth: "100%", minWidth: 0 }}
               onFocus={e => { e.target.style.borderColor = "#A69888"; }}
               onBlur={e => { e.target.style.borderColor = "#D9D4CE"; }}>
               <option value="">全部</option>

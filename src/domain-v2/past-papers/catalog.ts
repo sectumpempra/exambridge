@@ -64,6 +64,21 @@ export interface PastPaperSet {
   companions: PastPaperAsset[];
 }
 
+export type PastPaperCatalogMaturity = "catalogued" | "metadata-ready" | "past-paper-ready" | "verified";
+
+export function getPastPaperCatalogMaturity(catalog: PastPaperCatalog): PastPaperCatalogMaturity {
+  if (catalog.assets.length === 0) return "catalogued";
+  const questionPapers = catalog.assets.filter((asset) => asset.materialType === "question-paper");
+  if (questionPapers.length === 0) return "metadata-ready";
+  const publicQuestions = questionPapers.filter((asset) => asset.accessStatus === "public" && asset.linkStatus.status !== "broken");
+  if (publicQuestions.length === 0) return "metadata-ready";
+  const fullyPaired = publicQuestions.every((question) => catalog.assets.some((asset) =>
+    asset.paperSetId === question.paperSetId && asset.materialType === "mark-scheme" && asset.linkStatus.status !== "broken"
+  ));
+  const humanVerified = catalog.assets.every((asset) => asset.provenance.verifiedBy === "human");
+  return fullyPaired && humanVerified ? "verified" : "past-paper-ready";
+}
+
 export function buildPastPaperSets(catalog: PastPaperCatalog, componentCodes?: readonly string[]): PastPaperSet[] {
   const allowed = componentCodes?.length ? new Set(componentCodes.map((code) => code.toUpperCase())) : undefined;
   const questionPapers = catalog.assets.filter((asset) =>

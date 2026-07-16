@@ -3,6 +3,7 @@ import { ExternalLink, FileCheck2, FileDown, Library, LockKeyhole, ShieldCheck }
 import {
   assetHref,
   buildPastPaperSets,
+  getPastPaperCatalogMaturity,
   resolvePastPaperCatalogKey,
   usePastPaperCatalogs,
   type PastPaperAsset,
@@ -16,14 +17,18 @@ const SERIES_LABEL: Record<PastPaperAsset["series"], string> = {
   specimen: "Specimen",
 };
 
+const MATERIAL_LABEL: Record<PastPaperAsset["materialType"], string> = {
+  "question-paper": "试卷",
+  "mark-scheme": "评分标准",
+  "examiner-report": "考官报告",
+  insert: "附录",
+  "data-booklet": "数据手册",
+  audio: "音频",
+  "source-file": "源文件",
+};
+
 function companionLabel(asset: PastPaperAsset): string {
-  return {
-    "examiner-report": "考官报告",
-    insert: "附录",
-    "data-booklet": "数据手册",
-    audio: "音频",
-    "source-file": "源文件",
-  }[asset.materialType] ?? "配套材料";
+  return MATERIAL_LABEL[asset.materialType];
 }
 
 function AssetLink({ asset, children }: { asset: PastPaperAsset; children: ReactNode }) {
@@ -71,6 +76,8 @@ export default function PastPaperLibrary({
   const seriesOptions = [...new Set(allSets.map((set) => set.series))];
   const components = [...new Set(allSets.map((set) => set.componentCode).filter((value): value is string => Boolean(value)))].sort();
   const seriesMaterials = catalog?.assets.filter((asset) => asset.materialType === "examiner-report" && !asset.paperSetId) ?? [];
+  const maturity = catalog ? getPastPaperCatalogMaturity(catalog) : undefined;
+  const maturityLabel = maturity && ({ catalogued: "仅目录", "metadata-ready": "元数据已整理", "past-paper-ready": "已有试卷", verified: "试卷与评分标准已核验" } as const)[maturity];
 
   if (!catalogKey) return null;
 
@@ -81,6 +88,7 @@ export default function PastPaperLibrary({
           <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-[#506d58]"><Library size={15} /> Past papers</span>
           <h2 id={`past-paper-title-${catalogKey}`} className="mb-0 mt-2 text-xl font-bold text-[#334a3b]">历年真题与材料</h2>
           <p className="mb-0 mt-2 max-w-2xl text-xs leading-5 text-[#5f7064]">{catalog?.accessNote ?? "正在读取已核验目录…"}</p>
+          {maturityLabel && <span className="mt-2 inline-flex rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-[#506d58]">成熟度：{maturityLabel}</span>}
         </div>
         {catalog && <a href={catalog.sourcePageUrl} target="_blank" rel="noreferrer" className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-[#496454] px-3.5 py-2.5 text-xs font-semibold text-white no-underline hover:bg-[#3b5445]"><ExternalLink size={14} /> 官方材料入口</a>}
       </div>

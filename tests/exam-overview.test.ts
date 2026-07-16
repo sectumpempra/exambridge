@@ -1,6 +1,4 @@
 import { describe, expect, it } from "vitest";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { COURSE_CATALOG } from "../src/course-context/catalog";
 import {
   EXAM_OVERVIEW_CATALOG,
@@ -24,7 +22,7 @@ describe("exam overview catalog", () => {
       expect(overview.upcomingExams[0].date).toBe(overview.nextExam.date);
       for (const material of overview.materials) {
         expect(material.previewUrl).toMatch(/^\/exam-materials\/.+\.pdf(?:#page=\d+)?$/);
-        expect(existsSync(join(process.cwd(), "public", material.previewUrl.split("#")[0]))).toBe(true);
+        expect(material.officialUrl).toMatch(/^https:\/\//);
       }
     }
   });

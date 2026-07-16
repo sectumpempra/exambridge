@@ -41,7 +41,7 @@ export default function OcrPage() {
   return (
     <BoardPage
       boardName="OCR"
-      note="数据来源于 OCR 官方，仅作学习参考。含 Mathematics (J560)、FSMQ Additional Mathematics (6993, A*-E)、Biology A (J257)、Chemistry A (J258)、Physics A (J259)、English Language (J351)、English Literature (J352)。版权归 OCR 所有。"
+      note="数据来源于 OCR 官方，仅作学习参考。此页采用 GCSE 9–1 等级体系；FSMQ Additional Mathematics 6993 请使用独立 FSMQ 页面。版权归 OCR 所有。"
       columns={COLUMNS}
       data={ocrData as Record<string, string | number>[]}
       gradeFields={GRADES}
