@@ -1,0 +1,1209 @@
+{
+  "schemaVersion": "1.0.0",
+  "qualificationVersionId": "Edexcel-1MA1:2015",
+  "reviewMethod": "kimi-independent-point-review",
+  "reviewedAt": "2026-07-16",
+  "requestedModelId": "kimi-k2.7-code-highspeed",
+  "responseModelId": "kimi-k2.7-code-highspeed",
+  "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+  "codexCorrections": [
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G9",
+      "action": "removed-overmapped-circle-theorems",
+      "replacementNodeId": "GEOM-SHAP-TERM",
+      "reason": "Foundation G9 assesses circle vocabulary, not Higher-tier circle theorems."
+    }
+  ],
+  "pointReviews": [
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "ALGF-EQN-INEQ-LINS (solving linear inequalities) is not the correct node for ordering symbols; it relates to solving inequalities, not comparing numbers.",
+        "NUM-FRAC-FRAC-EQVF covers equivalent fractions, not ordering fractions.",
+        "No node is mapped for ordering fractions or for the equality/inequality symbols themselves."
+      ],
+      "recommendation": "Remove ALGF-EQN-INEQ-LINS; add nodes for ordering fractions and for use of equality/inequality symbols if available, otherwise leave the mapping as broad number-comparison nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; mapping captures the four operations on integers, decimals, fractions and mixed numbers including negatives."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Inverse operations and reciprocals are explicitly required by N3 but are not represented in the mapped nodes.",
+        "Mapped powers/roots nodes are limited to square and cube roots, whereas the specification also refers to higher roots."
+      ],
+      "recommendation": "Add or replace nodes to cover inverse operations and reciprocals, and broaden roots coverage where possible."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Product notation and the unique factorisation theorem are not separately represented in the catalogue, but the mapped prime/factor nodes cover the bulk of the statement."
+      ],
+      "recommendation": "No change required unless finer-grained nodes for product notation and unique factorisation become available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Systematic listing is mapped to PROB-COMB-COUNT-ENUM, which is rooted in probability counting; this narrows the context although no general 'systematic listing' node exists in the catalogue."
+      ],
+      "recommendation": "Retain current mapping; create a broader systematic-listing node if the catalogue is expanded."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Higher roots beyond square and cube are required but not individually represented in the catalogue."
+      ],
+      "recommendation": "No change required; the generic powers/roots nodes provide acceptable coverage."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; integer-index work is covered by the mapped indices and roots nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N8",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Equivalent fractions and simplifying fractions do not capture exact arithmetic with fractions.",
+        "Working with multiples of pi is not represented in any mapped node."
+      ],
+      "recommendation": "Remap to nodes covering exact arithmetic with fractions and exact values involving pi, or add such nodes to the catalogue."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; standard form conversion, calculation and interpretation are mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; ratio-proportion and fraction nodes cover fractions in ratio problems."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N12",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Fractions as operators are not represented; only percentage-operator nodes are mapped."
+      ],
+      "recommendation": "Add a node for fractions as operators, or broaden the fraction node mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; standard units of length, area, volume, capacity, time and money are mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N14",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N15",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; rounding to decimal places/significant figures and error intervals are mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N16",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Foundation N16 is stated as 'apply and interpret limits of accuracy'; the mapped upper/lower-bound nodes align with the Higher-tier elaboration but are the closest available nodes."
+      ],
+      "recommendation": "Retain current mapping; add a generic 'limits of accuracy' node if the catalogue is refined."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; substitution into formulae and expressions is mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The single generalised-numbers node covers the broad vocabulary requirement; finer-grained nodes for equations, identities, inequalities, terms and factors are not available."
+      ],
+      "recommendation": "No change required unless the catalogue introduces finer vocabulary nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; the mapped manipulation, expansion, factorisation, surd and index nodes cover the statement."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; formulae use and rearrangement are mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The distinction between equation and identity is not represented by a specific node in the catalogue."
+      ],
+      "recommendation": "Retain current mapping; add an equation/identity distinction node if the catalogue is expanded."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; function definition and notation nodes map the inputs/outputs interpretation."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; linear graphs, y=mx+c and point-gradient forms are mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; gradient and linear-graph nodes cover gradients and intercepts."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; quadratic graphs and solving by factorisation cover roots, intercepts and turning points."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; linear, quadratic, cubic and reciprocal graph nodes are mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A14",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The simple kinematic context (distance, speed, acceleration) is not represented by a mechanics/kinematics node; only graph-interpretation and modelling-output nodes are mapped."
+      ],
+      "recommendation": "Consider adding kinematics nodes to the catalogue or map to MECH-KIN-* nodes if appropriate; otherwise retain."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A17",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; linear equation solving and graph-intersection nodes cover algebraic and graphical solutions."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A18",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; factorising and graphical approximation are well matched."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A19",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A21",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; modelling abstraction and output nodes are reasonable for the formulation/interpretation aspects."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A22",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A23",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A24",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "NUM-POW-POWR-SURD is semantically wrong for sequences with a surd common ratio; the surd case remains a geometric-sequence concept, not a roots/surds concept."
+      ],
+      "recommendation": "Remove NUM-POW-POWR-SURD and retain only ALGF-SEQ-SEQU-ARIT and ALGF-SEQ-SEQU-GEOM."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A25",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "ALGF-FUNC-GRAP-QUAD (quadratic graphs) is a weak fit for deducing the nth term of quadratic sequences; the nth-term work belongs under ALGF-SEQ-SEQU-NTH."
+      ],
+      "recommendation": "Remove ALGF-FUNC-GRAP-QUAD and rely on ALGF-SEQ-SEQU-NTH for both linear and quadratic nth terms."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "NUM-RAT-RATI-PROP (proportional reasoning) is only a weak proxy for 'express one quantity as a fraction of another'; no exact canonical node exists."
+      ],
+      "recommendation": "Retain with weak fit or create a more specific fraction-as-operator node; if forced to choose from existing nodes, NUM-FRAC-FRAC may be closer."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R14",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R16",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "NUM-FRAC-PERC-COMP (comparing quantities by percentage) is a poor fit for compound interest; compound interest is repeated percentage change and is better represented by NUM-FRAC-PERC-INDE or a dedicated compound-interest node."
+      ],
+      "recommendation": "Replace NUM-FRAC-PERC-COMP with NUM-FRAC-PERC-INDE or create a compound-interest node under percentages."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; note that 'draw diagrams from written description' is not explicitly covered by the selected nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Relation is marked 'exact' but the specification also requires solving loci problems and knowing that the perpendicular distance from a point to a line is the shortest distance, neither of which is captured by the selected construction nodes."
+      ],
+      "recommendation": "Change relation to 'partial' and add nodes for loci and perpendicular distance if available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G9",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated circle-vocabulary leaf exists; the corrected mapping intentionally uses the broader geometry-terms branch."
+      ],
+      "recommendation": "Retain the corrected broader mapping and exclude it from exact leaf similarity."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G11",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped node 'Coordinates in two dimensions' is too broad; 'solve geometrical problems on coordinate axes' is not precisely represented in the supplied catalog."
+      ],
+      "recommendation": "Map to a more specific coordinate-geometry problem-solving node if one exists; otherwise retain as an acceptable broad fit."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G12",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The supplied catalog lacks nodes for cones and spheres.",
+        "Mapped nodes are volume/mensuration nodes and do not explicitly cover face, edge, surface and vertex properties."
+      ],
+      "recommendation": "Add canonical nodes for cones, spheres and 3D-shape properties, or retain the partial mapping with a clear note."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G13",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node is supplied; the supplied catalog does not contain a node for plans and elevations of 3D shapes."
+      ],
+      "recommendation": "Introduce a 'Plans and elevations' canonical node or leave the point explicitly unmapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G14",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped nodes cover length, area, volume and capacity units but omit mass, time, money and other measures mentioned in the official statement."
+      ],
+      "recommendation": "Retain the partial mapping; consider using a broader units-of-measure parent node if available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G15",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped nodes cover measuring line segments and angles but do not cover maps, scale drawings or bearings.",
+        "'Angle types' is only loosely related to measuring angles in geometric figures."
+      ],
+      "recommendation": "Add canonical nodes for bearings and scale drawings, or retain the partial mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G16",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G17",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The supplied catalog lacks nodes for spheres, cones and composite solids; the mapping only covers circle circumference/area and pyramids."
+      ],
+      "recommendation": "Add missing solid nodes or retain the partial mapping with a note."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G18",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G19",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G20",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G21",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G24",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Relation is declared 'partial' but the combination of translation and column-vector nodes closely matches the official statement; relation should be 'exact'."
+      ],
+      "recommendation": "Change relation to 'exact'."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G25",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Frequency trees are not represented in the supplied catalog.",
+        "The two-way-tables node is more about data classification than recording probability-experiment frequencies."
+      ],
+      "recommendation": "Add a frequency-tree canonical node or retain the partial mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped nodes (single-event probability and complement) do not capture randomness, fairness, equally likely events or expected outcomes of multiple future experiments."
+      ],
+      "recommendation": "Map to a broader probability-concepts node or add missing nodes for expected outcomes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapping is incomplete: no node for relative expected frequencies or for the link between empirical and theoretical probability."
+      ],
+      "recommendation": "Retain the partial mapping; add a node for relative frequency if needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P5",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped node 'Single event probability' does not represent the convergence of empirical unbiased samples to theoretical probability distributions with increasing sample size."
+      ],
+      "recommendation": "Add a node for empirical sampling and limit behaviour, or leave unmapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P8",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The conditional-probability node covers dependent events, but there is no explicit node for the assumptions underlying combined events."
+      ],
+      "recommendation": "Retain the mapping; clarify that dependent events are addressed via conditional probability."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapping covers population/sample and bias but lacks a node for inferring population properties from a sample."
+      ],
+      "recommendation": "Retain the partial mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Vertical line charts and time-series graphs are not represented in the supplied catalog."
+      ],
+      "recommendation": "Add missing diagram nodes or retain the partial mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapping covers only central tendency and range; graphical representation, quartiles, inter-quartile range, outliers and other spread measures are not mapped."
+      ],
+      "recommendation": "Expand the mapping to include quartiles, inter-quartile range and outlier nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S5",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The population/sample node alone does not cover applying statistics to describe a population."
+      ],
+      "recommendation": "Add or map to a 'describing populations' node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A15",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapping captures only straight-line gradient and velocity-time area; distance-time graphs, financial contexts and gradients/areas of quadratic and other non-linear graphs are not represented."
+      ],
+      "recommendation": "Expand the mapping to include distance-time and general rate-of-change nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A16",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A20",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R15",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source content at [PAGE 28] R15 is supported.",
+        "No canonical node in the supplied catalog represents the pre-calculus interpretation of average and instantaneous rate of change via gradients of chords and tangents; calculus-based nodes are explicitly excluded by the syllabus statement.",
+        "The point is therefore unmapped."
+      ],
+      "recommendation": "Add or request a canonical node for non-calculus instantaneous/average rate of change using chords and tangents before mapping; until then leave as unmapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The mapping uses individual circle-theorem sub-nodes and proof by deduction but omits the parent GEOM-SHAP-CITH (Circle Theorems) node."
+      ],
+      "recommendation": "Consider adding the parent GEOM-SHAP-CITH node to better represent the collective 'standard circle theorems' content."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G22",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G23",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P9",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source [PAGE 31] P9 requires conditional probabilities to be calculated and interpreted through expected frequencies with two-way tables, tree diagrams and Venn diagrams.",
+        "The mapping covers conditional probability, tree diagrams and Venn diagrams but does not represent the expected-frequency/two-way-table approach."
+      ],
+      "recommendation": "Add a canonical node for expected-frequency representations of conditional probability, including two-way tables, or document the representation gap."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Histograms and cumulative frequency graphs are mapped correctly; equal/unequal class intervals and grouped-data nuances are covered only by generic nodes."
+      ],
+      "recommendation": "Retain mapping; add more specific histogram nodes if the catalog is extended."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-APP3-FORMULAE",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Appendix 3 formulas (curved surface area of a cone, surface area and volume of a sphere, volume of a cone) are supported by [PAGE 53].",
+        "The catalog lacks exact cone and sphere nodes, so the mapping is to the broad GEOM-MENS-SOLI (Surface Area and Volume) node."
+      ],
+      "recommendation": "If exact cone and sphere nodes are added to the catalog, remap to those; otherwise the broader mapping is acceptable but should be flagged."
+    }
+  ],
+  "missingOfficialPoints": [],
+  "duplicatePointIds": [],
+  "overallIssues": [
+    {
+      "severity": "medium",
+      "issue": "A small number of Number points map weakly or include clearly inappropriate nodes: N1 includes a linear-inequalities node for ordering symbols, N8 omits multiples of pi, and N12 omits fractions as operators. These should be remapped or have catalogue gaps filled.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-N1",
+        "OFFICIAL-Edexcel-1MA1-N8",
+        "OFFICIAL-Edexcel-1MA1-N12"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "All points correctly use paperApplicability 'not-specified', which matches the specification statement that content is assessed across all three papers. No fixed paper allocation is claimed.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-N1",
+        "OFFICIAL-Edexcel-1MA1-N2",
+        "OFFICIAL-Edexcel-1MA1-N3",
+        "OFFICIAL-Edexcel-1MA1-N4",
+        "OFFICIAL-Edexcel-1MA1-N5",
+        "OFFICIAL-Edexcel-1MA1-N6",
+        "OFFICIAL-Edexcel-1MA1-N7",
+        "OFFICIAL-Edexcel-1MA1-N8",
+        "OFFICIAL-Edexcel-1MA1-N9",
+        "OFFICIAL-Edexcel-1MA1-N10",
+        "OFFICIAL-Edexcel-1MA1-N11",
+        "OFFICIAL-Edexcel-1MA1-N12",
+        "OFFICIAL-Edexcel-1MA1-N13",
+        "OFFICIAL-Edexcel-1MA1-N14",
+        "OFFICIAL-Edexcel-1MA1-N15",
+        "OFFICIAL-Edexcel-1MA1-N16",
+        "OFFICIAL-Edexcel-1MA1-A1",
+        "OFFICIAL-Edexcel-1MA1-A2",
+        "OFFICIAL-Edexcel-1MA1-A3",
+        "OFFICIAL-Edexcel-1MA1-A4",
+        "OFFICIAL-Edexcel-1MA1-A5",
+        "OFFICIAL-Edexcel-1MA1-A6",
+        "OFFICIAL-Edexcel-1MA1-A7",
+        "OFFICIAL-Edexcel-1MA1-A8",
+        "OFFICIAL-Edexcel-1MA1-A9",
+        "OFFICIAL-Edexcel-1MA1-A10",
+        "OFFICIAL-Edexcel-1MA1-A11",
+        "OFFICIAL-Edexcel-1MA1-A12",
+        "OFFICIAL-Edexcel-1MA1-A14",
+        "OFFICIAL-Edexcel-1MA1-A17"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Some canonical-node gaps exist (e.g. ordering fractions, equality/inequality symbols, inverse operations/reciprocals, fractions as operators, equation-vs-identity distinction, kinematic graph contexts), causing otherwise well-aligned points to be mapped to broader or adjacent nodes.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-N1",
+        "OFFICIAL-Edexcel-1MA1-N3",
+        "OFFICIAL-Edexcel-1MA1-N12",
+        "OFFICIAL-Edexcel-1MA1-A6",
+        "OFFICIAL-Edexcel-1MA1-A14"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Several mappings use semantically incorrect canonical nodes for specific sub-skills (surd common ratios mapped to surds, quadratic nth terms mapped to quadratic graphs, compound interest mapped to percentage comparison).",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-A24",
+        "OFFICIAL-Edexcel-1MA1-A25",
+        "OFFICIAL-Edexcel-1MA1-R16"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "G2 relation is marked exact but omits loci and the perpendicular-distance property; R3 has only a weak proxy node available.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-G2",
+        "OFFICIAL-Edexcel-1MA1-R3"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The supplied canonical catalog is missing nodes for several official content areas, leading to unmapped or partial mappings for plans and elevations, frequency trees, vertical line charts, time-series graphs, spheres, cones, composite solids, bearings, scale drawings, empirical sampling convergence, and descriptive statistics.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-G12",
+        "OFFICIAL-Edexcel-1MA1-G13",
+        "OFFICIAL-Edexcel-1MA1-G15",
+        "OFFICIAL-Edexcel-1MA1-G17",
+        "OFFICIAL-Edexcel-1MA1-P1",
+        "OFFICIAL-Edexcel-1MA1-P2",
+        "OFFICIAL-Edexcel-1MA1-P5",
+        "OFFICIAL-Edexcel-1MA1-S2",
+        "OFFICIAL-Edexcel-1MA1-S4",
+        "OFFICIAL-Edexcel-1MA1-S5"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Some relation values are inconsistent with mapping quality: G24 is labelled 'partial' but the mapping is exact; several 'partial' labels are appropriate but should be distinguished from genuinely weak fits.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-G24",
+        "OFFICIAL-Edexcel-1MA1-P2",
+        "OFFICIAL-Edexcel-1MA1-P5",
+        "OFFICIAL-Edexcel-1MA1-S5"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Assessment depth is uniformly declared as 'application'; the official specification does not prescribe per-statement assessment depth, so this cannot be independently verified.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-G11",
+        "OFFICIAL-Edexcel-1MA1-G12",
+        "OFFICIAL-Edexcel-1MA1-G13",
+        "OFFICIAL-Edexcel-1MA1-G14",
+        "OFFICIAL-Edexcel-1MA1-G15",
+        "OFFICIAL-Edexcel-1MA1-G16",
+        "OFFICIAL-Edexcel-1MA1-G17",
+        "OFFICIAL-Edexcel-1MA1-G18",
+        "OFFICIAL-Edexcel-1MA1-G19",
+        "OFFICIAL-Edexcel-1MA1-G20",
+        "OFFICIAL-Edexcel-1MA1-G21",
+        "OFFICIAL-Edexcel-1MA1-G24",
+        "OFFICIAL-Edexcel-1MA1-G25",
+        "OFFICIAL-Edexcel-1MA1-P1",
+        "OFFICIAL-Edexcel-1MA1-P2",
+        "OFFICIAL-Edexcel-1MA1-P3",
+        "OFFICIAL-Edexcel-1MA1-P4",
+        "OFFICIAL-Edexcel-1MA1-P5",
+        "OFFICIAL-Edexcel-1MA1-P6",
+        "OFFICIAL-Edexcel-1MA1-P7",
+        "OFFICIAL-Edexcel-1MA1-P8",
+        "OFFICIAL-Edexcel-1MA1-S1",
+        "OFFICIAL-Edexcel-1MA1-S2",
+        "OFFICIAL-Edexcel-1MA1-S4",
+        "OFFICIAL-Edexcel-1MA1-S5",
+        "OFFICIAL-Edexcel-1MA1-S6",
+        "OFFICIAL-Edexcel-1MA1-A13",
+        "OFFICIAL-Edexcel-1MA1-A15",
+        "OFFICIAL-Edexcel-1MA1-A16",
+        "OFFICIAL-Edexcel-1MA1-A20"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The canonical catalog lacks a node for the pre-calculus interpretation of average and instantaneous rates of change using gradients of chords and tangents (R15), leaving that point unmapped.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-R15"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "P9 mapping omits the expected-frequency/two-way-table representation of conditional probability required by the source.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-P9"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "G10 maps only to individual circle-theorem sub-nodes and proof by deduction; the parent Circle Theorems node is not included.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-G10"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "APP3-FORMULAE maps cone and sphere formulae only to the broad Surface Area and Volume node because cone and sphere nodes are absent from the catalog.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-APP3-FORMULAE"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Several content statements shared between Foundation and Higher tiers are mapped with relation 'exact', but the Higher-tier statement adds requirements not captured by the canonical nodes. The index should either split by tier or downgrade these relations to 'partial'.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-A19",
+        "OFFICIAL-Edexcel-1MA1-G19",
+        "OFFICIAL-Edexcel-1MA1-G20",
+        "OFFICIAL-Edexcel-1MA1-G25",
+        "OFFICIAL-Edexcel-1MA1-N10"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Higher-only graphing and function requirements are represented only partially, omitting key canonical concepts such as exponential and trigonometric graphs, inverse/composite functions, completing the square for turning points, and quadratic nth-term expressions.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-A7",
+        "OFFICIAL-Edexcel-1MA1-A11",
+        "OFFICIAL-Edexcel-1MA1-A12",
+        "OFFICIAL-Edexcel-1MA1-A14",
+        "OFFICIAL-Edexcel-1MA1-A25"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Additional partial mappings understate the official statement: algebraic fractions and ax^2+bx+c factorisation (A4), algebraic proofs (A6), negative scale factors (G7), composite solids (G17), simple interest/original value problems (R9), general iterative processes (R16), vertical line charts/time series (S2), and quartiles/IQR/box plots (S4).",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-A4",
+        "OFFICIAL-Edexcel-1MA1-A6",
+        "OFFICIAL-Edexcel-1MA1-G7",
+        "OFFICIAL-Edexcel-1MA1-G17",
+        "OFFICIAL-Edexcel-1MA1-R9",
+        "OFFICIAL-Edexcel-1MA1-R16",
+        "OFFICIAL-Edexcel-1MA1-S2",
+        "OFFICIAL-Edexcel-1MA1-S4"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Circle definitions/properties (G9) are mapped to circle-theorem canonical nodes under a 'broader' relation, which conflates G9 with the separate theorem/proof statement G10.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-G9",
+        "OFFICIAL-Edexcel-1MA1-G10"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The supplied canonical catalogue lacks nodes for plans and elevations of 3D shapes (G13) and for instantaneous rate of change via gradients of chords/tangents without calculus (R15). These are documented as unmapped and therefore do not count as missing official points, but they indicate ontology incompleteness.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-1MA1-G13",
+        "OFFICIAL-Edexcel-1MA1-R15"
+      ]
+    }
+  ]
+}

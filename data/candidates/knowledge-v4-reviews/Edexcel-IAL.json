@@ -1,0 +1,2868 @@
+{
+  "schemaVersion": "1.0.0",
+  "qualificationVersionId": "Edexcel-IAL:2018",
+  "reviewMethod": "kimi-independent-point-review",
+  "reviewedAt": "2026-07-16",
+  "requestedModelId": "kimi-k2.7-code-highspeed",
+  "responseModelId": "kimi-k2.7-code-highspeed",
+  "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+  "codexCorrections": [
+    {
+      "action": "reclassified-ontology-granularity",
+      "affectedPointIds": ["OFFICIAL-Edexcel-IAL-M2-1.4"],
+      "reason": "The official point is present with a page reference and explicit unmapped reason; the missing dedicated vector-calculus leaf is a granularity warning, not missing syllabus accounting."
+    }
+  ],
+  "pointReviews": [
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapping omits NUM-POW-INDX-ZERO; rational exponents include zero, so coverage is incomplete.",
+        "Relation 'broader' is reasonable because several index nodes are needed."
+      ],
+      "recommendation": "Add NUM-POW-INDX-ZERO or annotate that zero index is covered within the rational-exponent requirement."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.6",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source text only states 'Solve simultaneous equations; analytical solution by substitution' without specifying one-linear/one-quadratic pairs, so ALGF-EQN-SIMU-LINQ is an assumption."
+      ],
+      "recommendation": "Retain ALGF-EQN-SIMU-SUBS; either remove LINQ or add a caveat that the simultaneous system type is not detailed in the cited source."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.8",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The relation is labelled 'narrower', but ALGF-EQN-INEQ-REGN is an exact match for representing inequalities graphically, including shading and line conventions."
+      ],
+      "recommendation": "Change relation to 'exact'."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-1.12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-2.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Only the gradient node is mapped; parallel/perpendicular line conditions are not explicitly represented in the canonical catalog, so fit is weak."
+      ],
+      "recommendation": "Retain as a placeholder; add a custom or more specific node if the catalog is extended."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-3.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P1-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-1.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-2.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The Remainder Theorem is required by the source but is not separately represented in the mapped nodes."
+      ],
+      "recommendation": "Add a Remainder Theorem node if available, or annotate the mapping to show that the division node also covers remainder work."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-4.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source covers both nth-term formulae and recurrence relations x_{n+1}=f(x_n); the mapped node TERM covers term-to-term rules but not explicit nth-term formulae.",
+        "Relation 'exact' is incorrect because coverage is incomplete."
+      ],
+      "recommendation": "Add ALGF-SEQ-SEQU-NTH and change relation to 'broader' or 'partial'."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-4.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The canonical catalog has no dedicated nodes for increasing, decreasing or periodic sequences, so the general Sequences node is a weak fit."
+      ],
+      "recommendation": "Retain as the best available node; flag a catalog gap for monotonic/periodic sequence concepts."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-4.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-4.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-6.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.26 does not match the supplied specification layout (P2 section 6.1 appears on p.25)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.25."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-6.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.26 does not match the supplied specification layout (P2 section 6.2 appears on p.25)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.25."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-7.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.26 does not match the supplied specification layout (P2 section 7.1 appears on p.25)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.25."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-8.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.26 does not match the supplied specification layout (P2 section 8.1 appears on p.25)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.25."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-8.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.26 does not match the supplied specification layout (P2 section 8.2 appears on p.25)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.25."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P2-8.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.26 does not match the supplied specification layout (P2 section 8.3 appears on p.25)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.25."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-1.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.29 does not match the supplied specification layout (P3 section 1.1 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-1.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.29 does not match the supplied specification layout (P3 section 1.2 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-1.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.29 does not match the supplied specification layout (P3 section 1.3 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-1.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.29 does not match the supplied specification layout (P3 section 1.4 appears on p.23).",
+        "Mapped to the coarse parent transformation node; finer combined-transformation nodes are not available in the catalog."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-2.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.29 does not match the supplied specification layout (P3 section 2.1 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-2.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.29 does not match the supplied specification layout (P3 section 2.2 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-2.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.30 does not match the supplied specification layout (P3 section 2.3 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-3.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.30 does not match the supplied specification layout (P3 section 3.1 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-3.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.30 does not match the supplied specification layout (P3 section 3.2 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-3.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.30 does not match the supplied specification layout (P3 section 3.3 appears on p.23).",
+        "No dedicated canonical node for logarithmic graph estimation of model parameters; current mapping is indirect."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23 and add or map to a dedicated logarithmic-linearisation node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-4.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.30 does not match the supplied specification layout (P3 section 4.1 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-4.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.30 does not match the supplied specification layout (P3 section 4.2 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-4.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.30 does not match the supplied specification layout (P3 section 4.3 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-4.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.30 does not match the supplied specification layout (P3 section 4.4 appears on p.23)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.23."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-5.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.31 does not match the supplied specification layout (P3 section 5.1 appears on p.24)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.24."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-5.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.31 does not match the supplied specification layout (P3 section 5.2 appears on p.24)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.24."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-6.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.31 does not match the supplied specification layout (P3 section 6.1 appears on p.24)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.24."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P3-6.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.31 does not match the supplied specification layout (P3 section 6.2 appears on p.24)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.24."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-1.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source page locator p.33 does not match the supplied specification layout (P4 section 1.1 appears on p.27)."
+      ],
+      "recommendation": "Correct sourceReference page number to p.27."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change; mapping is appropriate and correctly excludes quadratic denominators."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-6.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-6.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-6.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-6.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-6.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-7.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-7.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-7.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-7.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-7.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-7.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-P4-7.7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-1.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Relation declared as 'narrower' but canonical node ALGF-CPLX-BASIC (Complex Number Forms and Operations) is broader than the syllabus point; relation should be 'partial' or 'broader'."
+      ],
+      "recommendation": "Change relation value to 'partial' or 'broader' to reflect that the node is wider than sum/product/quotient alone."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-1.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-1.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Relation declared as 'narrower' but canonical node ALGF-CPLX-ROOT-POLY (Complex roots of polynomials) is broader than quadratic roots; relation should be 'partial' or 'broader'."
+      ],
+      "recommendation": "Change relation value to 'partial' or 'broader' to reflect that the node covers all polynomial roots, not only quadratics."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-1.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-1.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-2.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Interval bisection maps acceptably to NUMM-ROOT-SIGN-LOC and Newton-Raphson to NUMM-ROOT-NEWR-APPL; linear interpolation has no dedicated node but the supplied root-finding nodes are the best available fit."
+      ],
+      "recommendation": "No change; mapping is the best available given the canonical catalog."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-4.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped to generic conic-section nodes (parabola/hyperbola) and a generic tangents/normals node; the official bullet is specifically about the parabola y²=4ax and rectangular hyperbola xy=c², so the fit is acceptable rather than exact."
+      ],
+      "recommendation": "Retain the mapping as acceptable; refine if more specific canonical nodes for these curves become available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-5.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-5.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-6.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-6.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-6.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-6.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Selected nodes cover inverse matrices and determinants but do not represent the determinant as an area scale factor in transformations, which is part of the official bullet."
+      ],
+      "recommendation": "Add a canonical node for determinant as area scale factor, or retain the mapping with a note that this sub-skill is not represented."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-7.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP1-8.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Proof by mathematical induction is an explicit FP1 requirement but has no corresponding canonical node in the supplied catalog."
+      ],
+      "recommendation": "Extend the canonical catalog with a proof-by-induction node, or retain the unmapped flag."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-1.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The selected nodes cover modulus and quadratic inequalities well, but the official bullet also includes broader algebraic inequalities/inequations (e.g. rational expressions) that are not fully represented."
+      ],
+      "recommendation": "Add or use a broader algebraic-inequalities node, or accept the current mapping with a coverage note."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-3.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-3.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Elementary z-plane to w-plane transformations (e.g. w=z², w=(az+b)/(cz+d)) are required by the official FP2 specification but are not represented in the supplied canonical catalog."
+      ],
+      "recommendation": "Add a complex-transformations/z-plane-to-w-plane node, or retain the unmapped flag."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-4.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Selected nodes cover separable equations, formation and particular solutions, but do not represent the official requirement to sketch members of the family of solution curves."
+      ],
+      "recommendation": "Add a solution-curve-sketching node or retain the mapping with a coverage note."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-6.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Third and higher order derivatives as an explicit syllabus objective have no dedicated canonical node in the supplied catalog."
+      ],
+      "recommendation": "Add a higher-order derivatives node, or retain the unmapped flag."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-6.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-6.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-6.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-7.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP2-7.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-1.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Selected nodes cover definitions, graphs and identities of hyperbolic functions, but the official bullet also requires solving equations such as a cosh x + b sinh x = c, which is not represented."
+      ],
+      "recommendation": "Add a solving-hyperbolic-equations node or retain the mapping with a coverage note."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Relation marked partial because the parametric aspect is split across conic and generic parametric nodes; fit is acceptable."
+      ],
+      "recommendation": "Retain mapping; consider creating a conic parametric node for tighter fit."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-2.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial relation because no dedicated tangents/normals-to-conics node exists; generic tangent node plus conic nodes provide acceptable coverage."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-2.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Simple conic loci problems are mapped only to the ellipse/hyperbola conic nodes, which is a weak fit; no canonical loci node exists in the catalog."
+      ],
+      "recommendation": "Add a conic-loci canonical node or downgrade relation to weak."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-4.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Integration of inverse trigonometric and inverse hyperbolic functions has no dedicated canonical node; coverage via hyperbolic integration and by-parts is only partial."
+      ],
+      "recommendation": "Add a dedicated integration-of-inverse-functions node or mark relation weak."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-4.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-4.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-4.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial relation because the single point covers several vector-geometry subtopics; the mapped line/plane/intersection/distance nodes collectively provide acceptable coverage."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-6.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-6.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial relation because matrix products are also required to represent combinations; mapped nodes together provide acceptable coverage."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-6.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The transpose of a matrix and the identity (AB)^T = B^T A^T are not represented by any canonical node in the supplied catalog."
+      ],
+      "recommendation": "Add a matrix-transpose canonical node and map this point there."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-6.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-6.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-6.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial relation because inverse-of-transformation coverage is split across inverse-matrix and composite-transformation nodes; acceptable combined coverage."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-6.7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-FP3-6.8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial relation because mechanical modelling terminology is mapped to generic modelling-assumption/abstraction nodes; acceptable coverage."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial relation because magnitude, direction and resultant are split across vector magnitude, direction and addition nodes; acceptable combined coverage."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial relation because vector applications to displacement/velocity/acceleration/force are spread across vector basics, unit vectors and vector nature of force nodes; acceptable coverage."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial relation because constant-acceleration motion spans formulae and several graph/area nodes; acceptable combined coverage."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial relation because Newton's laws and the concept of force are distributed across force, N2L and N3L nodes; acceptable coverage."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial relation because simple applications cover connected particles, vertical motion and inclined planes separately; acceptable combined coverage."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-4.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The impulse-momentum principle is not represented by a dedicated canonical node; only linear momentum definition, conservation and direct impact are mapped."
+      ],
+      "recommendation": "Retain the mapping but add or select an impulse-momentum node if one is created."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-4.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M1-6.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-1.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-1.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No supplied canonical node covers differentiation and integration of a vector function with respect to time."
+      ],
+      "recommendation": "Add a canonical node for vector calculus in kinematics and map this point to it."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-2.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-4.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The specification requires successive impacts of up to three particles or particles and a plane, but the mapped node only covers a single direct impact."
+      ],
+      "recommendation": "Add or map to a node covering successive/multi-stage impacts."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M2-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-3.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-4.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-M3-5.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "MECH-FURT-RIGD-TOPS is not directly supported: the source only mentions suspension from a fixed point and rigid bodies on horizontal/inclined planes, not toppling or sliding.",
+        "MECH-FURT-RIGD-RBAL fits the source content, but the overall mapping is only partial."
+      ],
+      "recommendation": "Remove or downgrade MECH-FURT-RIGD-TOPS; retain RBAL for equilibrium of rigid bodies."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-2.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-2.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node exists for skewness or for outliers as a distinct concept."
+      ],
+      "recommendation": "Leave unmapped or add new canonical nodes for skewness and outliers."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-3.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-3.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "STAT-CORR-REG is a broad parent node; more specific child nodes for explanatory/response variables and extrapolation are not available."
+      ],
+      "recommendation": "Retain mapping; add more specific nodes if the catalog is extended."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-5.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source also requires the cumulative distribution function, which is not represented by a separate canonical node."
+      ],
+      "recommendation": "Add a canonical node for cumulative distribution functions of discrete random variables."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-5.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node exists for the discrete uniform distribution."
+      ],
+      "recommendation": "Leave unmapped or add a discrete uniform distribution node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S1-6.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-1.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-2.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The cumulative distribution function is required by the source but is not represented by a separate canonical node."
+      ],
+      "recommendation": "Add a canonical node for cumulative distribution functions of continuous random variables."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-2.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The relationship f(x) = F'(x) between density and distribution functions is not captured by the mapped node."
+      ],
+      "recommendation": "Add a canonical node for the density-distribution relationship or map to a broader continuous random variables node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-2.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source requires both mean and variance of continuous random variables, but only a mean node is available."
+      ],
+      "recommendation": "Add a canonical node for variance of continuous random variables."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-2.5",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source requires median, mode and quartiles of continuous random variables, none of which are represented by separate canonical nodes."
+      ],
+      "recommendation": "Add canonical nodes for median, mode and quartiles of continuous random variables."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-3.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node exists for the continuous uniform (rectangular) distribution."
+      ],
+      "recommendation": "Leave unmapped or add a continuous uniform distribution node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-3.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source also requires normal approximation to the Poisson distribution, which is not represented by a separate canonical node."
+      ],
+      "recommendation": "Add a canonical node for normal approximation to the Poisson distribution."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-4.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source also mentions census, sampling unit and sampling frame, none of which are represented by separate canonical nodes."
+      ],
+      "recommendation": "Add canonical nodes for census, sampling unit and sampling frame."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-4.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source concerns a statistic and its sampling distribution, but STAT-EST-ESTI is a general estimation node that does not specifically cover these concepts."
+      ],
+      "recommendation": "Add canonical nodes for statistic and sampling distribution."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node STAT-TEST-HYPO-NULL captures the null/alternative hypotheses element, but the official point additionally covers the concept and interpretation of a hypothesis test and the refinement of mathematical models, so the fit is partial rather than exact."
+      ],
+      "recommendation": "Retain mapping but record the broader scope of the official requirement."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-4.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-4.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S2-4.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-1.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The official point requires the distribution of linear combinations of independent Normal random variables, but no canonical node covers this general result."
+      ],
+      "recommendation": "Add a canonical node for linear combinations of independent Normal random variables or map to a broader distribution-properties node if one is created."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node STAT-ENQ-SAMP-RAND covers simple random sampling and the use of random numbers; the broader heading 'Methods for collecting data' is not separately catalogued."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Stratified, systematic and quota sampling methods are not represented by separate canonical nodes; the parent STAT-ENQ-SAMP node is the best available fit."
+      ],
+      "recommendation": "Retain mapping; consider adding finer-grained sampling-method nodes if required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Nodes STAT-EST-ESTI-UNBI and STAT-EST-ESTI-SMEAN cover unbiased estimation and the sample-mean distribution, but separate canonical nodes for standard error, estimator and bias are absent."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-3.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The official point requires the concept and interpretation of a confidence interval, but no canonical node covers confidence intervals."
+      ],
+      "recommendation": "Add a canonical node for confidence intervals and their interpretation."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-3.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The official point requires confidence limits for a Normal mean with known variance, but no canonical node covers confidence intervals."
+      ],
+      "recommendation": "Add a canonical node for Normal-mean confidence intervals with known variance."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-3.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-3.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-3.7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node STAT-TEST-HYPO-MEAN covers hypothesis tests for a population mean but does not specifically represent the two-sample Normal test with known variances."
+      ],
+      "recommendation": "Retain mapping; create a more specific node if two-sample tests need to be distinguished."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-3.8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node STAT-EST-ESTI-CLT covers large-sample results but does not specifically represent the two-sample case with unknown population variances."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node STAT-INF2-CHISQ-GOF covers the whole chi-squared goodness-of-fit procedure; degrees of freedom, parameter estimation and cell-combining rules are narrower sub-topics not separately catalogued."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-S3-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The testing of zero correlation is split across STAT-CORR-REG-SPEAR and STAT-CORR-REG-PMCC because the point covers both Spearman and product-moment coefficients."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node DISC-ALGO-ALGO is broader than the point, which focuses specifically on general algorithmic ideas and implementation from flow charts or text."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-1.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node DISC-ALGO-ALGO-SORT covers only bubble sort and quick sort; the official point additionally requires bin packing and binary search, which are not captured by the mapped node."
+      ],
+      "recommendation": "Add canonical nodes for bin packing and binary search, or map to a broader algorithms node that explicitly includes them."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node DISC-GRAPH-GRAPH-TRAV covers travelling-salesperson problems generally; the practical/classical distinction in the official point is narrower."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-3.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node DISC-GRAPH-GRAPH-MST covers minimum spanning trees but not their specific use to determine upper and lower bounds for the travelling salesperson problem."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-3.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node DISC-GRAPH-GRAPH-TRAV covers route inspection and travelling salesperson problems broadly; the nearest-neighbour algorithm is a narrower sub-topic not separately catalogued."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node DISC-PROJ-PROJ-CPA covers critical path analysis broadly; completion of precedence tables is a narrower sub-skill."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node DISC-PROJ-PROJ-CPA covers critical path analysis broadly; earliest/latest event and activity times are narrower sub-topics."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-4.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial node fit: total float, Gantt charts and scheduling are spread across DISC-PROJ-PROJ-GANT and DISC-PROJ-PROJ-RESL; no single node captures all three related concepts."
+      ],
+      "recommendation": "Retain the mapping; consider refining the catalog to include a dedicated total-float/scheduling node if assessed separately."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Narrower relation is appropriate because graphical solution methods are a sub-topic of linear programming and the catalog has no separate graphical-LP node."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-IAL-D1-5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Narrower relation is appropriate because integer-valued LP solutions are a sub-topic of linear programming and the catalog has no separate integer-LP node."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.15",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99.",
+        "Catalog lacks a dedicated continuous CDF node; mapping to PROB-DIST-CRV-CONC and PROB-DIST-CRV-PROB is reasonable but partial."
+      ],
+      "recommendation": "Correct source page to p.99; retain node mapping as the closest available fit."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.16",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99.",
+        "General expectation E(X) is mapped across discrete and continuous expectation/mean nodes because the catalog has no single generic expectation node."
+      ],
+      "recommendation": "Correct source page to p.99; retain dual mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.17",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99.",
+        "No canonical node exists for expectation of a function of a random variable E[g(X)]; mapping to PROB-DRVD-DRVB-EXPV is broader than ideal and omits the continuous case."
+      ],
+      "recommendation": "Correct source page to p.99; consider adding a generic E[g(X)] node or accept the broader fit."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.18",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99.",
+        "No canonical node exists for general variance Var(X); mapping to PROB-DRVD-DRVB-VARI is broader than ideal and omits the continuous case."
+      ],
+      "recommendation": "Correct source page to p.99; consider adding a generic variance node or accept the broader fit."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.19",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99."
+      ],
+      "recommendation": "Correct source page to p.99; retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.20",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99."
+      ],
+      "recommendation": "Correct source page to p.99; retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.21",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99."
+      ],
+      "recommendation": "Correct source page to p.99; retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.22",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99.",
+        "Population mean parameter μ is mapped to STAT-ENQ-SAMP-POP and STAT-SUMM-CENT-MEAN; no dedicated population-mean parameter node exists."
+      ],
+      "recommendation": "Correct source page to p.99; retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.23",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99.",
+        "Population variance parameter σ² is mapped to STAT-EST-ESTI-VARI, which is oriented towards estimation rather than the underlying parameter; no dedicated population-variance parameter node exists."
+      ],
+      "recommendation": "Correct source page to p.99; consider adding a population variance parameter node or accept the weak fit."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.24",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99."
+      ],
+      "recommendation": "Correct source page to p.99; retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.25",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99."
+      ],
+      "recommendation": "Correct source page to p.99; retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.26",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99."
+      ],
+      "recommendation": "Correct source page to p.99; retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.27",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99.",
+        "Standard normal PDF notation ϕ is partially mapped to PROB-DIST-NORM-STAN and PROB-DIST-CRV-PDF; no dedicated standard-normal-PDF node exists."
+      ],
+      "recommendation": "Correct source page to p.99; retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.28",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99.",
+        "No canonical node exists for the standard normal CDF Φ; mapping to PROB-DIST-NORM-STAN is broader than ideal."
+      ],
+      "recommendation": "Correct source page to p.99; consider adding a standard normal CDF node or accept the broader fit."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.29",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99."
+      ],
+      "recommendation": "Correct source page to p.99; retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.30",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99."
+      ],
+      "recommendation": "Correct source page to p.99; retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-IAL-10.31",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference cites p.98, but the supplied specification places probability/statistics notation items 10.15-10.31 on p.99.",
+        "No canonical node for covariance Cov(X,Y) exists in the supplied catalog."
+      ],
+      "recommendation": "Correct source page to p.99; consider adding a covariance node if this notation is assessed, otherwise leave unmapped."
+    }
+  ],
+  "missingOfficialPoints": [],
+  "duplicatePointIds": [],
+  "overallIssues": [
+    {
+      "severity": "medium",
+      "issue": "Incorrect relation labelling and missing canonical-node coverage for some syllabus points.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-P1-1.8",
+        "OFFICIAL-Edexcel-IAL-P2-4.1"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Mappings rely on general or partially matched nodes where more specific nodes are missing or omitted.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-P1-1.1",
+        "OFFICIAL-Edexcel-IAL-P1-1.6",
+        "OFFICIAL-Edexcel-IAL-P1-2.2",
+        "OFFICIAL-Edexcel-IAL-P2-2.1",
+        "OFFICIAL-Edexcel-IAL-P2-4.3"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Source reference page numbers are inconsistent with the supplied official specification PDF for P2 sections 6–8, all P3 sections and P4 section 1.1. The section identifiers and content are correct, but the locators need updating.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-P2-6.1",
+        "OFFICIAL-Edexcel-IAL-P2-6.2",
+        "OFFICIAL-Edexcel-IAL-P2-7.1",
+        "OFFICIAL-Edexcel-IAL-P2-8.1",
+        "OFFICIAL-Edexcel-IAL-P2-8.2",
+        "OFFICIAL-Edexcel-IAL-P2-8.3",
+        "OFFICIAL-Edexcel-IAL-P3-1.1",
+        "OFFICIAL-Edexcel-IAL-P3-1.2",
+        "OFFICIAL-Edexcel-IAL-P3-1.3",
+        "OFFICIAL-Edexcel-IAL-P3-1.4",
+        "OFFICIAL-Edexcel-IAL-P3-2.1",
+        "OFFICIAL-Edexcel-IAL-P3-2.2",
+        "OFFICIAL-Edexcel-IAL-P3-2.3",
+        "OFFICIAL-Edexcel-IAL-P3-3.1",
+        "OFFICIAL-Edexcel-IAL-P3-3.2",
+        "OFFICIAL-Edexcel-IAL-P3-3.3",
+        "OFFICIAL-Edexcel-IAL-P3-4.1",
+        "OFFICIAL-Edexcel-IAL-P3-4.2",
+        "OFFICIAL-Edexcel-IAL-P3-4.3",
+        "OFFICIAL-Edexcel-IAL-P3-4.4",
+        "OFFICIAL-Edexcel-IAL-P3-5.1",
+        "OFFICIAL-Edexcel-IAL-P3-5.2",
+        "OFFICIAL-Edexcel-IAL-P3-6.1",
+        "OFFICIAL-Edexcel-IAL-P3-6.2",
+        "OFFICIAL-Edexcel-IAL-P4-1.1"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "No dedicated canonical node exists for logarithmic graph estimation of parameters (y=ax^n and y=kb^x); the point is mapped to broader logarithm-law and exponential-model nodes.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-P3-3.3"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Inconsistent relation terminology: 'narrower' is used for mappings where the canonical node is broader than the syllabus point (FP1-1.2 and FP1-1.4). The convention should make the direction of breadth explicit or use 'partial'/'broader'.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-FP1-1.2",
+        "OFFICIAL-Edexcel-IAL-FP1-1.4"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The supplied canonical catalog lacks nodes for several explicit specification topics: proof by mathematical induction (FP1), elementary z-plane to w-plane transformations (FP2), and third/higher-order derivatives (FP2). These points are correctly flagged unmapped but cannot be validated as fully mapped.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-FP1-8.1",
+        "OFFICIAL-Edexcel-IAL-FP2-3.4",
+        "OFFICIAL-Edexcel-IAL-FP2-6.1"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Some candidate mappings rely on broader canonical nodes that do not capture every sub-skill in the official bullet, e.g. generic conic sections for specific parabola/rectangular-hyperbola tangents, determinant nodes that omit the area-scale-factor interpretation, and hyperbolic-function nodes that omit equation solving.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-FP1-4.4",
+        "OFFICIAL-Edexcel-IAL-FP1-6.4",
+        "OFFICIAL-Edexcel-IAL-FP2-4.1",
+        "OFFICIAL-Edexcel-IAL-FP3-1.1"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The supplied canonical-node catalog lacks a matrix-transpose node, leaving OFFICIAL-Edexcel-IAL-FP3-6.3 unmapped despite the official specification explicitly requiring transposes and the identity (AB)^T = B^T A^T.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-FP3-6.3"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Two FP3 points have weak or only partial node coverage because no dedicated canonical nodes exist for conic loci (2.4) or integration of inverse trigonometric/hyperbolic functions (4.2).",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-FP3-2.4",
+        "OFFICIAL-Edexcel-IAL-FP3-4.2"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The canonical node catalog has no node for differentiation and integration of a vector with respect to time, leaving M2-1.4 unmapped despite being explicit in the specification.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-M2-1.4"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Successive impacts (M2-4.3) are mapped to a single direct-impact node, which is narrower than the specification requirement.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-M2-4.3"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The impulse-momentum principle in M1-4.3 is not represented by a dedicated canonical node, resulting in a partial mapping.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-M1-4.3"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Canonical catalog lacks nodes for skewness and outliers, causing unmapped S1-2.4.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-S1-2.4"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Canonical catalog lacks nodes for discrete and continuous uniform distributions, causing unmapped S1-5.4 and S2-3.1.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-S1-5.4",
+        "OFFICIAL-Edexcel-IAL-S2-3.1"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Cumulative distribution functions and the density-distribution relationship are not separately represented, weakening S1-5.2, S2-2.2 and S2-2.3.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-S1-5.2",
+        "OFFICIAL-Edexcel-IAL-S2-2.2",
+        "OFFICIAL-Edexcel-IAL-S2-2.3"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Variance, median, mode, quartiles and normal approximation to Poisson for continuous random variables are missing from the catalog, weakening several S2 points.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-S2-2.4",
+        "OFFICIAL-Edexcel-IAL-S2-2.5",
+        "OFFICIAL-Edexcel-IAL-S2-3.2"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "M3-5.2 maps to a toppling/sliding node that is not explicitly supported by the source text.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-M3-5.2"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The canonical catalog lacks nodes for three Edexcel IAL S3 requirements: linear combinations of independent Normal random variables (S3-1.1), the concept and interpretation of confidence intervals (S3-3.3), and confidence limits for a Normal mean with known variance (S3-3.4). These are genuine specification requirements that cannot be mapped precisely with the current node set.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-S3-1.1",
+        "OFFICIAL-Edexcel-IAL-S3-3.3",
+        "OFFICIAL-Edexcel-IAL-S3-3.4"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "D1-1.2 is mapped to DISC-ALGO-ALGO-SORT, which only covers bubble sort and quick sort. The official point also requires bin packing and binary search, so significant content is not captured.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-D1-1.2"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Several S3 and D1 points map to broader parent nodes because the required finer-grained sub-topics are not separately catalogued (e.g. sampling methods, chi-squared degrees of freedom, two-sample Normal tests, TSP bounds, CPA sub-tasks). The mappings are acceptable but partial.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-S3-2.2",
+        "OFFICIAL-Edexcel-IAL-S3-3.1",
+        "OFFICIAL-Edexcel-IAL-S3-3.7",
+        "OFFICIAL-Edexcel-IAL-S3-3.8",
+        "OFFICIAL-Edexcel-IAL-S3-4.2",
+        "OFFICIAL-Edexcel-IAL-S3-5.2",
+        "OFFICIAL-Edexcel-IAL-D1-1.1",
+        "OFFICIAL-Edexcel-IAL-D1-3.2",
+        "OFFICIAL-Edexcel-IAL-D1-3.3",
+        "OFFICIAL-Edexcel-IAL-D1-3.4",
+        "OFFICIAL-Edexcel-IAL-D1-4.2",
+        "OFFICIAL-Edexcel-IAL-D1-4.3"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Source references for Appendix 7 probability/statistics notation items 10.15-10.31 cite p.98, but the supplied specification text places these items on p.99. The item numbers are correct and the content is source-supported, but the page locator should be corrected.",
+      "affectedPointIds": [
+        "OFFICIAL-IAL-10.15",
+        "OFFICIAL-IAL-10.16",
+        "OFFICIAL-IAL-10.17",
+        "OFFICIAL-IAL-10.18",
+        "OFFICIAL-IAL-10.19",
+        "OFFICIAL-IAL-10.20",
+        "OFFICIAL-IAL-10.21",
+        "OFFICIAL-IAL-10.22",
+        "OFFICIAL-IAL-10.23",
+        "OFFICIAL-IAL-10.24",
+        "OFFICIAL-IAL-10.25",
+        "OFFICIAL-IAL-10.26",
+        "OFFICIAL-IAL-10.27",
+        "OFFICIAL-IAL-10.28",
+        "OFFICIAL-IAL-10.29",
+        "OFFICIAL-IAL-10.30",
+        "OFFICIAL-IAL-10.31"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The canonical node catalog lacks precise nodes for several generic statistical notation concepts (E[g(X)], Var(X), population variance parameter σ², standard normal CDF Φ, and covariance Cov(X,Y)), resulting in broader, partial or unmapped fits. These are catalog gaps rather than candidate errors.",
+      "affectedPointIds": [
+        "OFFICIAL-IAL-10.17",
+        "OFFICIAL-IAL-10.18",
+        "OFFICIAL-IAL-10.23",
+        "OFFICIAL-IAL-10.28",
+        "OFFICIAL-IAL-10.31"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "D1-4.4 combines total float, Gantt (cascade) charts and scheduling into one point; the current catalog split across DISC-PROJ-PROJ-GANT and DISC-PROJ-PROJ-RESL is acceptable but partial.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-D1-4.4"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The canonical node catalog lacks dedicated leaves for several represented official syllabus topics. These points are documented in the candidate index with an unmappedReason rather than a canonical mapping, so they are not absent as official points, but the catalog gaps reduce granularity and may affect downstream assessment construction.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-FP1-8.1",
+        "OFFICIAL-Edexcel-IAL-FP2-3.4",
+        "OFFICIAL-Edexcel-IAL-FP2-6.1",
+        "OFFICIAL-Edexcel-IAL-M2-1.4",
+        "OFFICIAL-Edexcel-IAL-S1-2.4",
+        "OFFICIAL-Edexcel-IAL-S1-5.4",
+        "OFFICIAL-Edexcel-IAL-S2-3.1",
+        "OFFICIAL-Edexcel-IAL-S3-1.1",
+        "OFFICIAL-Edexcel-IAL-S3-3.3",
+        "OFFICIAL-Edexcel-IAL-S3-3.4",
+        "OFFICIAL-IAL-10.31"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Source-reference formatting is inconsistent across the candidate index, mixing page-section styles (e.g. 'p.20 P1.3 1.1', 'P2 section 6.1 (p.26)', 'FP1.3 Unit content, p.39, 2.1'). This hinders automated traceability back to the official specification.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-IAL-P1-1.1",
+        "OFFICIAL-Edexcel-IAL-P2-6.1",
+        "OFFICIAL-Edexcel-IAL-FP1-2.1"
+      ]
+    }
+  ]
+}

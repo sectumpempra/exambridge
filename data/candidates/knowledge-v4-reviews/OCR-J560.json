@@ -1,0 +1,1747 @@
+{
+  "schemaVersion": "1.0.0",
+  "qualificationVersionId": "OCR-J560:Version 2.0",
+  "reviewMethod": "kimi-independent-point-review",
+  "reviewedAt": "2026-07-16",
+  "requestedModelId": "kimi-k2.7-code-highspeed",
+  "responseModelId": "kimi-k2.7-code-highspeed",
+  "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+  "codexCorrections": [
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.02a",
+      "action": "removed-incorrect-scatter-node",
+      "reason": "Scatter diagrams belong to 12.03c, not categorical and numerical charts in 12.02a."
+    },
+    {
+      "action": "excluded-non-knowledge-front-matter",
+      "sourceReference": "pp.11-12",
+      "reason": "Calculator/formula policies are assessment metadata and sketch-versus-plot wording is general guidance rather than a numbered assessable content point."
+    }
+  ],
+  "pointReviews": [
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2b-UNITS-01",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mass units and some compound-unit conversions are not represented by dedicated canonical nodes.",
+        "The broad statement covers several unit types, so the mapping is necessarily partial."
+      ],
+      "recommendation": "Retain mapping; add mass and compound-unit nodes to the canonical catalog if finer granularity is required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.02a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Odd/even and place value are not represented by dedicated canonical nodes."
+      ],
+      "recommendation": "Retain mapping; consider adding odd/even and place-value nodes to the catalog."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.02b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.02c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.03a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.04a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated inverse-operations node exists; mapping captures the operations and roots whose inverses are used."
+      ],
+      "recommendation": "Retain mapping; create an inverse-operations node if more precision is needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.01b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The parent Fractions node is broader than the specific arithmetic skills listed."
+      ],
+      "recommendation": "Retain mapping; add more specific fraction-arithmetic child nodes if available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.01c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The parent Fractions node is broader than the specific fraction-of-a-quantity skills listed."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.02a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.02b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Decimal addition, subtraction and multiplication are mapped to the generic four-operations node."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.02c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Decimal division is mapped to the generic four-operations node."
+      ],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.03a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.03b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.03c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.04a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Ordering fractions and percentages is not represented by a dedicated canonical node; only the decimal-ordering node is used."
+      ],
+      "recommendation": "Retain mapping; consider adding ordering-fractions and ordering-percentages nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.04b",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Comparison symbols (<, >, ≤, ≥) have no dedicated canonical node.",
+        "Mapping to decimal ordering and linear-inequality solving is a poor semantic fit for a statement that only introduces symbols."
+      ],
+      "recommendation": "Flag as a catalog gap; do not claim an exact node fit until a comparison-symbols node exists."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.01b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.01c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.02a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.02b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.03a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Exact calculations with multiples of π are not represented by a dedicated canonical node."
+      ],
+      "recommendation": "Retain mapping; add an exact-pi node if finer granularity is required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.03b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-4.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-4.01b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-4.01c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.01b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.01c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.01d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.02a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.02b",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The canonical catalog has no dedicated inverse-proportion node. Mapping inverse proportion to ALGF-FUNC-GRAP-RECP (reciprocal graphs) is only loosely related, and NUM-RAT-RATI-PROP is a generic proportional-reasoning node that does not capture the inverse relationship."
+      ],
+      "recommendation": "Add a dedicated NUM-RAT-RATI-INVR node to the catalog, or retain the current fallback mapping and flag the semantic gap."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.03a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01e",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01f",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01g",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated algebraic-fractions node exists in the catalog; ALGF-EXP-MANI is a broad algebraic-manipulation node that does not specifically cover simplifying and manipulating algebraic fractions."
+      ],
+      "recommendation": "Add a dedicated algebraic-fractions node, or map to the most specific rational-functions node available and flag the unmapped content."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.02a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.02b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.02c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.02c' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.02d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.02d' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.02e",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.02e' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.03a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.03a' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.03b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.03b' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.03c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.03c' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.03d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.03d' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.03e",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.03e' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.04a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.04a' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.04b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.04b' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.05a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-6.05a' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.06a",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set.",
+        "The Higher-tier requirement to find the nth term of a quadratic sequence is not mapped to a dedicated quadratic-sequences node; the canonical catalog appears to lack such a node."
+      ],
+      "recommendation": "Standardise the syllabusPointId and add or map to a dedicated quadratic-sequences node; otherwise flag the unmapped Higher-tier content."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.06b",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set.",
+        "Triangular, square, cube and Fibonacci special sequences are not represented by dedicated canonical nodes; only arithmetic and geometric progression nodes are used."
+      ],
+      "recommendation": "Standardise the syllabusPointId and add dedicated canonical nodes for the remaining special sequences, or explicitly flag the unmapped content."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-7.01a' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-7.01b' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "SyllabusPointId prefix 'OFFICIAL-J560-' is inconsistent with the 'OFFICIAL-OCR-J560-' prefix used for other points in this set."
+      ],
+      "recommendation": "Standardise the syllabusPointId to 'OFFICIAL-OCR-J560-7.01c' for consistency."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping to ALGF-LOG-EXPO-AX; the node describes y=a^x which is the same family as the specification's y=k^x for positive k."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01e",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Candidate relation coded as 'partial' but the three canonical nodes (TRIG-FUNC-GRAP-SINE, TRIG-FUNC-GRAP-COSN, TRIG-FUNC-GRAP-TANG) correspond exactly to the three graphs required."
+      ],
+      "recommendation": "Change relation to exact or acceptable; retain the three canonical nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01f",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping to GEOM-COOR-CIRC-CENT."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.02a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain the mapped nodes; the set adequately covers gradient/intercept, y=mx+c, equations through points and inequality regions."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.02b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated perpendicular-lines node exists in the supplied catalog; the candidate uses the straight-line and circle-tangent nodes as the closest matches."
+      ],
+      "recommendation": "Retain current mapping; consider requesting a perpendicular-lines node if the catalog is extended."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.03a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain vertical/horizontal translation and reflection nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.04a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain the mapped set; it covers real-world graph interpretation and direct/inverse proportion graphs."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.04b",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The specification addresses gradients of generic real-world graphs (distance-time, velocity-time, financial). Using MECH-KIN-LINE-STGR and MECH-KIN-LINE-VTGR imports a mechanics context that is not intrinsic to the GCSE graphs statement, making the fit weaker than the 'partial' relation suggests."
+      ],
+      "recommendation": "Retain GEOM-COOR-LINE-GRAD and NUM-RAT-RATE-SPED as primary fits; use the kinematics nodes only as secondary cross-references and flag the contextual mismatch."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.04c",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The specification requires calculating/estimating areas under graphs generally (distance-time, velocity-time, financial). MECH-KIN-LINE-AREA is narrowly the area under a velocity-time graph, so the mapping is weaker than partial."
+      ],
+      "recommendation": "Use MECH-KIN-LINE-AREA as a secondary cross-reference only; a generic 'area under a graph' node would be needed for an exact fit."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Candidate relation is given as 'broader', which is not one of the canonical node-fit values (exact/acceptable/weak/wrong/unmapped)."
+      ],
+      "recommendation": "Recode relation to acceptable; keep GEOM-SHAP-TERM as the broad matching node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain GEOM-SHAP-TERM-ANGT and GEOM-SHAP-TERM-TRIA."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain the polygon, quadrilateral and triangle term nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Cone and sphere terms in the specification are not represented by separate nodes in the supplied catalog."
+      ],
+      "recommendation": "Retain current mapping and note the catalog gap for cone and sphere solids."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01e",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Correctly flagged as unmapped; no canonical node exists for drawing diagrams from written descriptions."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01f",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The specification also requires use of compasses to construct circles, which is not captured by GEOM-CONS-CONS-MEAS."
+      ],
+      "recommendation": "Retain the measuring node and note the missing compass/circle-construction node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01g",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain the coordinate and transformation nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.02a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping to GEOM-CONS-CONS-PERB."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.02b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping to GEOM-CONS-CONS-ANGB."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.02c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Correctly flagged as unmapped; the supplied catalog has no node for perpendicular from a point to a line or perpendicular at a point."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.02d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Correctly flagged as unmapped; no locus/equidistant node exists in the supplied catalog."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.03a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain angle-at-a-point and reasoning/proof nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.03b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping to GEOM-SHAP-ANGL-LINE."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.03c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain vertically-opposite and parallel-line angle nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.03d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain the triangle/polygon term nodes and the justification node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.04a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain triangle terms and justification node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.04b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain quadrilateral terms and justification node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.04c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain line and rotational symmetry nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Correctly flagged as unmapped; the supplied catalog lacks a dedicated circle-vocabulary node for centre, radius, chord, diameter, tangent, arc, sector and segment."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping to GEOM-SHAP-CITH-CENT."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping to GEOM-SHAP-CITH-SEMI."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; source text and canonical node align exactly."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05e",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Canonical node 'Chord and tangent length properties' is broader than the specific theorem 'a radius or diameter bisects a chord iff it is perpendicular to the chord'; relation should be acceptable rather than exact."
+      ],
+      "recommendation": "Change relation to acceptable and retain the node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05f",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; source text and canonical node align exactly."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05g",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; source text and canonical node align exactly."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05h",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; source text and canonical node align exactly."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.06a",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Canonical mapping covers cube, cuboid, prism, cylinder and pyramid only; cone and sphere are not represented in the catalogue."
+      ],
+      "recommendation": "Keep current nodes and flag cone/sphere content as unmapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.06b",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Plans and elevations of 3D solids are not represented in the canonical node catalogue."
+      ],
+      "recommendation": "Retain the unmapped flag; consider adding a plans/elevations node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-9.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; source text and canonical node align exactly."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.01b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; source text and canonical node align exactly."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.01c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep dual-node mapping; translation by column vector is reasonably represented by both transformation and column-vector nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.01d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; source text and canonical node align exactly."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.02a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; congruent triangles are covered by the congruent shapes node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.02b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep narrower relation; applying congruence in calculations is a sub-use of the congruent shapes node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.03a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep partial mapping; vector arithmetic and geometric proof are reasonably split across operations and vector-geometry nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.03b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; source text and canonical node align exactly."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.04a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; similar triangles are covered by the similar shapes node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.04b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep partial mapping; whole-number, fractional and negative enlargements are split across the enlargement and negative-scale-factor nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.04c",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Volume scale-factor aspect of similar shapes has no dedicated canonical node; only length and area scale-factor nodes are mapped."
+      ],
+      "recommendation": "Keep length and area nodes and flag the volume scale-factor aspect as uncovered."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.01a",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mass and time unit conversions are not covered by the mapped nodes; only length, area, volume/capacity and money are represented."
+      ],
+      "recommendation": "Add or map mass and time unit nodes if they exist in the catalogue."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.01b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep partial mapping; speed, density and pressure each have a corresponding rate node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.01c",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Bearings are not represented in the canonical catalogue; only the ratio/scale aspect is mapped."
+      ],
+      "recommendation": "Retain the ratio node and flag bearings as unmapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.02a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; perimeter of rectilinear shapes is covered by the rectangles area/perimeter node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.02b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep partial mapping; circumference and arc length each have a corresponding circle node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.02c",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Perimeter of composite shapes is broader than the area/perimeter of rectangles node used."
+      ],
+      "recommendation": "Keep as a broad/acceptable mapping; use a more specific composite-shape node if available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.03a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep partial mapping; basic triangle area and the 1/2 ab sin C formula are each represented."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.03b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; source text and canonical node align exactly."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.03c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep mapping; source text and canonical node align exactly."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.03d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep partial mapping; circle area and sector area each have a corresponding node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.03e",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Area of composite shapes is broader than the area/perimeter of rectangles node used."
+      ],
+      "recommendation": "Keep as a broad/acceptable mapping; use a more specific composite-shape node if available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.04a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep partial mapping; cuboids, prisms and cylinders each have a corresponding solid node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.04b",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official 10.04b specifies surface area and volume of cones and spheres, but the canonical catalog has no dedicated cone or sphere leaf nodes.",
+        "Mapped to the broad GEOM-MENS-SOLI parent, which is acceptable but loses the content specificity of the source statement."
+      ],
+      "recommendation": "Add dedicated cone and sphere leaf nodes under GEOM-MENS-SOLI and remap 10.04b with relation 'narrower' or 'exact' as appropriate."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.04c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.05a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.05b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The point covers all three trigonometric ratios and is correctly represented across the three ratio leaf nodes."
+      ],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.05c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.05d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.05e",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.01b",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official 11.01b explicitly requires recording and analysing relative frequency from repeated experiments, but no canonical node covers relative frequency or experimental probability.",
+        "The declared relation is 'partial' despite no canonical node being assigned; this is inconsistent with the supplied unmappedReason."
+      ],
+      "recommendation": "Add a relative-frequency/experimental-probability node under PROB-BASIC and remap; until then set relation to 'unmapped'."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.01c",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official 11.01c explicitly links relative frequency to theoretical probability, but no canonical node represents this concept.",
+        "The declared relation is 'partial' despite no canonical node being assigned; this is inconsistent with the supplied unmappedReason."
+      ],
+      "recommendation": "Add a node for the relationship between relative frequency and theoretical probability and remap; until then set relation to 'unmapped'."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.01d",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "PROB-BASIC-BASIC-COMP (complement of an event) is not part of official 11.01d; complements are addressed in 11.02e.",
+        "Simple combined events and expected frequencies are not well represented by basic single-event and independent-event nodes alone."
+      ],
+      "recommendation": "Remove PROB-BASIC-BASIC-COMP and consider adding or using a combined-events/expected-outcomes node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Set-language and Venn-diagram nodes are located under Number in the catalog, whereas the official context is probability; the mapping is semantically acceptable but cross-strand."
+      ],
+      "recommendation": "No action required; consider whether probability-specific Venn notation nodes would improve precision."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02e",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapping spans the addition-law and mutually-exclusive-events nodes, which together cover the official content."
+      ],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02f",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapping spans multiplication, conditional and independent-event nodes, which together cover the official content."
+      ],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.01a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Population, random sampling and bias are correctly represented by three separate leaf nodes."
+      ],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.02a",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Vertical line charts and time-series line graphs have no dedicated canonical leaf; the incorrect scatter node has been removed."
+      ],
+      "recommendation": "Retain the corrected partial mapping and exclude the missing granularity from exact similarity."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.02b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Histograms and cumulative frequency graphs together cover the official grouped-data content."
+      ],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.03a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Summary statistics, quartiles, interquartile range and box plots are correctly represented by the mapped nodes."
+      ],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.03b",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official 12.03b concerns graphical misrepresentation in statistical diagrams, but the mapped REAS-PROF-ARGM-CRIT node is a general mathematical-argument critique node.",
+        "The mapping is weak because it loses the data-interpretation and graphical-representation domain of the source statement."
+      ],
+      "recommendation": "Add a statistics-specific graphical-misrepresentation or data-critique node and remap."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.03c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Scatter diagrams, types of correlation and line of best fit are correctly represented by the mapped nodes."
+      ],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.03d",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official 12.03d explicitly requires identifying outliers, but the canonical catalog has no outlier node.",
+        "The declared relation is 'partial' despite no canonical node being assigned; this is inconsistent with the supplied unmappedReason."
+      ],
+      "recommendation": "Add an outliers node under STAT-SUMM or STAT-DATA and remap; until then set relation to 'unmapped'."
+    }
+  ],
+  "missingOfficialPoints": [],
+  "duplicatePointIds": [],
+  "overallIssues": [
+    {
+      "severity": "medium",
+      "issue": "The canonical node catalog lacks dedicated nodes for several foundational concepts (odd/even, place value, comparison symbols, ordering fractions and percentages, mass units, exact multiples of π), so some points map acceptably but incompletely.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-1.02a",
+        "OFFICIAL-OCR-J560-2.04a",
+        "OFFICIAL-OCR-J560-2.04b",
+        "OFFICIAL-OCR-J560-2b-UNITS-01",
+        "OFFICIAL-OCR-J560-3.03a"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Several points must use broad parent nodes (e.g. Fractions, Four operations) because more specific child nodes are unavailable; the fit is acceptable but less precise.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-1.04a",
+        "OFFICIAL-OCR-J560-2.01b",
+        "OFFICIAL-OCR-J560-2.01c",
+        "OFFICIAL-OCR-J560-2.02b",
+        "OFFICIAL-OCR-J560-2.02c"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The canonical node catalog lacks dedicated nodes for inverse proportion, algebraic fractions, quadratic sequences, and several special sequences (triangular, square, cube, Fibonacci). As a result, some syllabus points are mapped to broader or only loosely related nodes, weakening semantic precision.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-5.02b",
+        "OFFICIAL-OCR-J560-6.01g",
+        "OFFICIAL-J560-6.06a",
+        "OFFICIAL-J560-6.06b"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Inconsistent syllabusPointId prefix: points from 6.02c onwards use 'OFFICIAL-J560-' instead of 'OFFICIAL-OCR-J560-' used for the preceding points. This is a data-quality issue that should be standardised.",
+      "affectedPointIds": [
+        "OFFICIAL-J560-6.02c",
+        "OFFICIAL-J560-6.02d",
+        "OFFICIAL-J560-6.02e",
+        "OFFICIAL-J560-6.03a",
+        "OFFICIAL-J560-6.03b",
+        "OFFICIAL-J560-6.03c",
+        "OFFICIAL-J560-6.03d",
+        "OFFICIAL-J560-6.03e",
+        "OFFICIAL-J560-6.04a",
+        "OFFICIAL-J560-6.04b",
+        "OFFICIAL-J560-6.05a",
+        "OFFICIAL-J560-6.06a",
+        "OFFICIAL-J560-6.06b",
+        "OFFICIAL-J560-7.01a",
+        "OFFICIAL-J560-7.01b",
+        "OFFICIAL-J560-7.01c"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Canonical node catalog gaps prevent exact mapping for several official points: drawing diagrams from written descriptions (8.01e), perpendicular from a point to a line/perpendicular at a point (8.02c), loci and equidistant points (8.02d), and circle nomenclature (8.05a). Cone and sphere solids (8.01d) and compass/circle construction (8.01f) are also not represented.",
+      "affectedPointIds": [
+        "OFFICIAL-J560-8.01e",
+        "OFFICIAL-J560-8.02c",
+        "OFFICIAL-J560-8.02d",
+        "OFFICIAL-J560-8.05a",
+        "OFFICIAL-J560-8.01d",
+        "OFFICIAL-J560-8.01f"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Two graph-interpretation points use mechanics-context nodes for general GCSE graph skills, creating a weak contextual fit: gradients/rates of change (7.04b) and area under graphs (7.04c).",
+      "affectedPointIds": [
+        "OFFICIAL-J560-7.04b",
+        "OFFICIAL-J560-7.04c"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Relation coding inconsistencies: 7.01e uses 'partial' despite an exact/acceptable node fit; 8.01a uses 'broader' which is not a valid node-fit value.",
+      "affectedPointIds": [
+        "OFFICIAL-J560-7.01e",
+        "OFFICIAL-J560-8.01a"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The canonical catalogue lacks nodes for several specification elements (mass units, time units, bearings, plans/elevations, cone/sphere solids, volume scale factors), causing partial or unmapped mappings for otherwise valid statements.",
+      "affectedPointIds": [
+        "OFFICIAL-J560-8.06a",
+        "OFFICIAL-J560-8.06b",
+        "OFFICIAL-OCR-J560-9.04c",
+        "OFFICIAL-OCR-J560-10.01a",
+        "OFFICIAL-OCR-J560-10.01c"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "One relation is over-claimed as exact when the canonical node is broader than the specific theorem.",
+      "affectedPointIds": [
+        "OFFICIAL-J560-8.05e"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Composite perimeter and area statements are mapped to a rectangle node that is broader than the statement; this is acceptable but not exact.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-10.02c",
+        "OFFICIAL-OCR-J560-10.03e"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The canonical catalog lacks leaf nodes for relative frequency/experimental probability and the relationship between relative frequency and theoretical probability, leaving 11.01b and 11.01c unmapped.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-11.01b",
+        "OFFICIAL-OCR-J560-11.01c"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The canonical catalog lacks nodes for outlier identification and graphical misrepresentation, forcing weak or unmapped mappings for 12.03b and 12.03d.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-12.03b",
+        "OFFICIAL-OCR-J560-12.03d"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Official 12.02a also covers vertical line charts and line graphs for time-series data, but no corresponding canonical leaf nodes exist; only bar charts, pie charts and pictograms are currently mapped.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-12.02a"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Unmapped points are declared with relation 'partial' while supplying an unmappedReason; relation should be 'unmapped' until a canonical node is assigned.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-11.01b",
+        "OFFICIAL-OCR-J560-11.01c",
+        "OFFICIAL-OCR-J560-12.03d"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Point 11.01d maps to PROB-BASIC-BASIC-COMP (complement of an event), which is not part of the official 11.01d content (complements are addressed in 11.02e).",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-11.01d"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The canonical catalog lacks separate leaf nodes for cones and spheres; 10.04b is mapped to the broad Surface Area and Volume parent node.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-10.04b"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Inconsistent candidate ID namespace: a contiguous block of entries drops the 'OCR' prefix from 'OFFICIAL-OCR-J560' to 'OFFICIAL-J560' and then reverts. This breaks identifier uniformity and risks merge/join errors.",
+      "affectedPointIds": [
+        "OFFICIAL-J560-6.02c",
+        "OFFICIAL-J560-6.02d",
+        "OFFICIAL-J560-6.02e",
+        "OFFICIAL-J560-6.03a",
+        "OFFICIAL-J560-6.03b",
+        "OFFICIAL-J560-6.03c",
+        "OFFICIAL-J560-6.03d",
+        "OFFICIAL-J560-6.03e",
+        "OFFICIAL-J560-6.04a",
+        "OFFICIAL-J560-6.04b",
+        "OFFICIAL-J560-6.05a",
+        "OFFICIAL-J560-6.06a",
+        "OFFICIAL-J560-6.06b",
+        "OFFICIAL-J560-7.01a",
+        "OFFICIAL-J560-7.01b",
+        "OFFICIAL-J560-7.01c",
+        "OFFICIAL-J560-7.01d",
+        "OFFICIAL-J560-7.01e",
+        "OFFICIAL-J560-7.01f",
+        "OFFICIAL-J560-7.02a",
+        "OFFICIAL-J560-7.02b",
+        "OFFICIAL-J560-7.03a",
+        "OFFICIAL-J560-7.04a",
+        "OFFICIAL-J560-7.04b",
+        "OFFICIAL-J560-7.04c",
+        "OFFICIAL-J560-8.01a",
+        "OFFICIAL-J560-8.01b",
+        "OFFICIAL-J560-8.01c",
+        "OFFICIAL-J560-8.01d",
+        "OFFICIAL-J560-8.01e",
+        "OFFICIAL-J560-8.01f",
+        "OFFICIAL-J560-8.01g",
+        "OFFICIAL-J560-8.02a",
+        "OFFICIAL-J560-8.02b",
+        "OFFICIAL-J560-8.02c",
+        "OFFICIAL-J560-8.02d",
+        "OFFICIAL-J560-8.03a",
+        "OFFICIAL-J560-8.03b",
+        "OFFICIAL-J560-8.03c",
+        "OFFICIAL-J560-8.03d",
+        "OFFICIAL-J560-8.04a",
+        "OFFICIAL-J560-8.04b",
+        "OFFICIAL-J560-8.04c",
+        "OFFICIAL-J560-8.05a",
+        "OFFICIAL-J560-8.05b",
+        "OFFICIAL-J560-8.05c",
+        "OFFICIAL-J560-8.05d",
+        "OFFICIAL-J560-8.05e",
+        "OFFICIAL-J560-8.05f",
+        "OFFICIAL-J560-8.05g",
+        "OFFICIAL-J560-8.05h",
+        "OFFICIAL-J560-8.06a",
+        "OFFICIAL-J560-8.06b",
+        "OFFICIAL-J560-9.01a"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Canonical ontology gaps: several official points contain sub-requirements that are explicitly noted as unmapped because no dedicated canonical node exists (e.g., loci, perpendicular from a point to a line, plans and elevations, circle vocabulary, relative frequency and experimental probability, outliers, drawing diagrams from descriptions). These official points are present in the index but are not fully backed by ontology leaves.",
+      "affectedPointIds": [
+        "OFFICIAL-J560-8.01e",
+        "OFFICIAL-J560-8.02c",
+        "OFFICIAL-J560-8.02d",
+        "OFFICIAL-J560-8.05a",
+        "OFFICIAL-J560-8.06b",
+        "OFFICIAL-OCR-J560-11.01b",
+        "OFFICIAL-OCR-J560-11.01c",
+        "OFFICIAL-OCR-J560-12.03d"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Source-reference formatting is inconsistent: most entries use 'p.X / ref' but a large contiguous block uses 'J560 p.X ref', complicating automated parsing and traceability.",
+      "affectedPointIds": [
+        "OFFICIAL-J560-6.02c",
+        "OFFICIAL-J560-6.02d",
+        "OFFICIAL-J560-6.02e",
+        "OFFICIAL-J560-6.03a",
+        "OFFICIAL-J560-6.03b",
+        "OFFICIAL-J560-6.03c",
+        "OFFICIAL-J560-6.03d",
+        "OFFICIAL-J560-6.03e",
+        "OFFICIAL-J560-6.04a",
+        "OFFICIAL-J560-6.04b",
+        "OFFICIAL-J560-6.05a",
+        "OFFICIAL-J560-6.06a",
+        "OFFICIAL-J560-6.06b",
+        "OFFICIAL-J560-7.01a",
+        "OFFICIAL-J560-7.01b",
+        "OFFICIAL-J560-7.01c",
+        "OFFICIAL-J560-7.01d",
+        "OFFICIAL-J560-7.01e",
+        "OFFICIAL-J560-7.01f",
+        "OFFICIAL-J560-7.02a",
+        "OFFICIAL-J560-7.02b",
+        "OFFICIAL-J560-7.03a",
+        "OFFICIAL-J560-7.04a",
+        "OFFICIAL-J560-7.04b",
+        "OFFICIAL-J560-7.04c",
+        "OFFICIAL-J560-8.01a",
+        "OFFICIAL-J560-8.01b",
+        "OFFICIAL-J560-8.01c",
+        "OFFICIAL-J560-8.01d",
+        "OFFICIAL-J560-8.01e",
+        "OFFICIAL-J560-8.01f",
+        "OFFICIAL-J560-8.01g",
+        "OFFICIAL-J560-8.02a",
+        "OFFICIAL-J560-8.02b",
+        "OFFICIAL-J560-8.02c",
+        "OFFICIAL-J560-8.02d",
+        "OFFICIAL-J560-8.03a",
+        "OFFICIAL-J560-8.03b",
+        "OFFICIAL-J560-8.03c",
+        "OFFICIAL-J560-8.03d",
+        "OFFICIAL-J560-8.04a",
+        "OFFICIAL-J560-8.04b",
+        "OFFICIAL-J560-8.04c",
+        "OFFICIAL-J560-8.05a",
+        "OFFICIAL-J560-8.05b",
+        "OFFICIAL-J560-8.05c",
+        "OFFICIAL-J560-8.05d",
+        "OFFICIAL-J560-8.05e",
+        "OFFICIAL-J560-8.05f",
+        "OFFICIAL-J560-8.05g",
+        "OFFICIAL-J560-8.05h",
+        "OFFICIAL-J560-8.06a",
+        "OFFICIAL-J560-8.06b",
+        "OFFICIAL-J560-9.01a"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Narrow or mismatched canonical coverage for some mensuration and ratio topics: composite perimeter is mapped to a rectangle-area node, composite area to a rectangle-area node, scale drawings/bearings to ratio simplification only, and cones/spheres/composite solids to a generic solids node. These partial mappings do not fully reflect the official scope and lack documented reasons for the omitted sub-skills.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-J560-10.01c",
+        "OFFICIAL-OCR-J560-10.02c",
+        "OFFICIAL-OCR-J560-10.03e",
+        "OFFICIAL-OCR-J560-10.04b"
+      ]
+    }
+  ]
+}

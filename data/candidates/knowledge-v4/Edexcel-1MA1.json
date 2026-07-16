@@ -1,0 +1,1665 @@
+{
+  "schemaVersion": "4.0.0",
+  "qualificationVersionId": "Edexcel-1MA1:2015",
+  "board": "Edexcel",
+  "subjectCode": "1MA1",
+  "subjectName": "GCSE Mathematics",
+  "level": "GCSE",
+  "syllabusVersion": "2015",
+  "effectiveFrom": "2015-09-01",
+  "sources": [
+    {
+      "url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+      "title": "Pearson Edexcel GCSE Mathematics 1MA1 specification",
+      "documentVersion": "2015",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+      "sourceType": "official"
+    }
+  ],
+  "reviewStatus": "candidate",
+  "review": {
+    "generatedAt": "2026-07-16",
+    "promptVersion": "knowledge-v4-3-chunked",
+    "requestedModelId": "kimi-k2.7-code-highspeed",
+    "responseModelId": "kimi-k2.7-code-highspeed"
+  },
+  "declaredPapers": [
+    "1MA1/1F or 1MA1/1H",
+    "1MA1/2F or 1MA1/2H",
+    "1MA1/3F or 1MA1/3H",
+    "Paper 1: 1MA1/1F or 1MA1/1H (non-calculator)",
+    "Paper 2: 1MA1/2F or 1MA1/2H (calculator)",
+    "Paper 3: 1MA1/3F or 1MA1/3H (calculator)",
+    "Paper 1",
+    "Paper 2",
+    "Paper 3"
+  ],
+  "syllabusPoints": [
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N1",
+      "sourceReference": "p.17 N1",
+      "canonicalNodeIds": [
+        "NUM-SYS-TYPE-INTG",
+        "NUM-FRAC-DECI-ORDR",
+        "NUM-FRAC-FRAC-EQVF",
+        "ALGF-EQN-INEQ-LINS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Ordering integers, decimals and fractions; inequality symbols. Mapped across number types and inequality nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N2",
+      "sourceReference": "p.17 N2",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-FOUR",
+        "NUM-OPS-CALC-NEG",
+        "NUM-FRAC-FRAC-PROP",
+        "NUM-FRAC-FRAC-MIXD",
+        "NUM-FRAC-DECI-PLAC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Four operations on integers, decimals, fractions and mixed numbers including negatives; place value."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N3",
+      "sourceReference": "p.17 N3",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-BIDM",
+        "NUM-OPS-CALC-BRAC",
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Inverse operations and priority of operations including brackets, powers, roots and reciprocals."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N4",
+      "sourceReference": "p.17 N4",
+      "canonicalNodeIds": [
+        "NUM-SYS-TYPE-PRIM",
+        "NUM-SYS-TYPE-FACT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Prime numbers, factors, multiples, HCF, LCM, prime factorisation, product notation and unique factorisation theorem."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N5",
+      "sourceReference": "p.17 N5",
+      "canonicalNodeIds": [
+        "PROB-COMB-COUNT-ENUM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Systematic listing strategies."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N6",
+      "sourceReference": "p.17 N6",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR",
+        "NUM-POW-INDX-POS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Positive integer powers and associated real roots; recognise powers of 2, 3, 4, 5."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N7",
+      "sourceReference": "p.17 N7",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR",
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-INDX-ZERO"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculate with roots and integer indices."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N8",
+      "sourceReference": "p.17 N8",
+      "canonicalNodeIds": [
+        "NUM-FRAC-FRAC-EQVF",
+        "NUM-FRAC-FRAC-SIMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculate exactly with fractions and multiples of pi."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N9",
+      "sourceReference": "p.17 N9",
+      "canonicalNodeIds": [
+        "NUM-POW-STDF-CONV",
+        "NUM-POW-STDF-CALC",
+        "NUM-POW-STDF-INTP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Standard form A x 10^n with 1 <= A < 10 and integer n."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N10",
+      "sourceReference": "p.17 N10",
+      "canonicalNodeIds": [
+        "NUM-FRAC-DECI-CONV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Work interchangeably with terminating decimals and corresponding fractions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N11",
+      "sourceReference": "p.17 N11",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-PROP",
+        "NUM-FRAC-FRAC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Identify and work with fractions in ratio problems."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N12",
+      "sourceReference": "p.17 N12",
+      "canonicalNodeIds": [
+        "NUM-FRAC-PERC-QTY",
+        "NUM-FRAC-PERC-PART"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpret fractions and percentages as operators."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N13",
+      "sourceReference": "p.18 N13",
+      "canonicalNodeIds": [
+        "GEOM-MENS-UNIT-LENG",
+        "GEOM-MENS-UNIT-AREA",
+        "GEOM-MENS-UNIT-VOLU",
+        "GEOM-MENS-UNIT-CAPA",
+        "NUM-MEAS-TIME-MONE",
+        "NUM-MEAS-TIME-TIME"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Standard units including compound measures and decimal quantities."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N14",
+      "sourceReference": "p.18 N14",
+      "canonicalNodeIds": [
+        "NUM-ACC-ROUN-ESTM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Estimate answers and check calculations using approximation and estimation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N15",
+      "sourceReference": "p.18 N15",
+      "canonicalNodeIds": [
+        "NUM-ACC-ROUN-DP",
+        "NUM-ACC-ROUN-SF",
+        "NUM-ACC-BOUN-ERR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Round to appropriate accuracy; error intervals using inequality notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-N16",
+      "sourceReference": "p.18 N16",
+      "canonicalNodeIds": [
+        "NUM-ACC-BOUN-UPLO",
+        "NUM-ACC-BOUN-CALC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Apply and interpret limits of accuracy."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A1",
+      "sourceReference": "p.18 A1",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-SYMB"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Algebraic notation conventions: ab, 3y, a^2, a^3, a^2b, a/b, fractional coefficients, brackets."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A2",
+      "sourceReference": "p.18 A2",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-SUBS",
+        "ALGF-EXP-NOTN-FORM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Substitute numerical values into formulae and expressions including scientific formulae."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A3",
+      "sourceReference": "p.18 A3",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-GENR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vocabulary of expressions, equations, formulae, identities, inequalities, terms and factors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A4",
+      "sourceReference": "p.18 A4",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI-LIKE",
+        "ALGF-EXP-MANI-EXP1",
+        "ALGF-EXP-MANI-EXP2",
+        "ALGF-EXP-MANI-FACT",
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-POWR-SURD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Simplify and manipulate algebraic expressions including surds, expanding, factorising quadratics and laws of indices."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A5",
+      "sourceReference": "p.18 A5",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-FORM",
+        "ALGF-EQN-LINE-SUBJ"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use standard formulae and rearrange to change the subject."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A6",
+      "sourceReference": "p.18 A6",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-DEDU",
+        "REAS-PROF-ARGM-JUST"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Distinguish equation and identity; argue equivalence and construct algebraic arguments."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A7",
+      "sourceReference": "p.18 A7",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-DEFS-DEFN",
+        "ALGF-FUNC-DEFS-NOTN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpret simple expressions as functions with inputs and outputs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A8",
+      "sourceReference": "p.19 A8",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-COOR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Work with coordinates in all four quadrants."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A9",
+      "sourceReference": "p.19 A9",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-COOR-LINE-POINT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Plot straight-line graphs; identify parallel lines; find equation through points or with given gradient."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A10",
+      "sourceReference": "p.19 A10",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-GRAD",
+        "ALGF-FUNC-GRAP-LINR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Identify and interpret gradients and intercepts of linear functions graphically and algebraically."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A11",
+      "sourceReference": "p.19 A11",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-EQN-QUAD-FACT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Roots, intercepts and turning points of quadratics graphically; deduce roots algebraically."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A12",
+      "sourceReference": "p.19 A12",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-FUNC-GRAP-CUBC",
+        "ALGF-FUNC-GRAP-RECP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recognise, sketch and interpret graphs of linear, quadratic, simple cubic and reciprocal functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A14",
+      "sourceReference": "p.19 A14",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-INTR",
+        "ALGF-FUNC-GRAP-RECP",
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Plot and interpret graphs in real contexts including reciprocal and non-standard functions; simple kinematic problems."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A17",
+      "sourceReference": "p.19 A17",
+      "canonicalNodeIds": [
+        "ALGF-EQN-LINE-SOLV",
+        "ALGF-FUNC-GRAP-INTR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Solve linear equations algebraically including unknown on both sides; approximate solutions using a graph."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A18",
+      "sourceReference": "p.19 A18",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-FACT",
+        "ALGF-FUNC-GRAP-INTR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Solve quadratic equations by factorising; approximate solutions using a graph."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A19",
+      "sourceReference": "p.19 A19",
+      "canonicalNodeIds": [
+        "ALGF-EQN-SIMU-LIN2"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Solve two linear simultaneous equations in two variables algebraically; approximate solutions using a graph."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A21",
+      "sourceReference": "p.19 A21",
+      "canonicalNodeIds": [
+        "ALGF-EQN-LINE-FORM",
+        "REAS-MODL-MODL-ABST",
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Translate situations into algebraic expressions/formulae; derive, solve and interpret equations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A22",
+      "sourceReference": "p.19 A22",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-LINS",
+        "ALGF-EQN-INEQ-NUMB"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Solve linear inequalities in one variable and represent the solution set on a number line."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A23",
+      "sourceReference": "pp.20,27",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-TERM",
+        "ALGF-SEQ-SEQU-NTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and Higher both list this point with identical wording."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A24",
+      "sourceReference": "pp.20,27",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-ARIT",
+        "ALGF-SEQ-SEQU-GEOM",
+        "NUM-POW-POWR-SURD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Higher text additionally includes r being a surd and 'other sequences'; surd extension mapped to NUM-POW-POWR-SURD."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A25",
+      "sourceReference": "pp.20,27",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-NTH",
+        "ALGF-FUNC-GRAP-QUAD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation requires linear nth term only; Higher adds quadratic nth term."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R1",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "GEOM-MENS-UNIT-LENG",
+        "GEOM-MENS-UNIT-AREA",
+        "GEOM-MENS-UNIT-VOLU",
+        "GEOM-MENS-UNIT-CAPA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers standard and compound unit conversions in numerical and algebraic contexts."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R2",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-LENS",
+        "GEOM-CONS-CONS-MEAS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Scale factors, scale diagrams and maps; mapped to length scale factors and measuring/scale drawings."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R3",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-PROP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "No exact node for 'express one quantity as a fraction of another'; proportional reasoning used as closest fit."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R4",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-SIMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Ratio notation and simplification."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R5",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-SHAR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Dividing a quantity in a given part:part or part:whole ratio."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R6",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-PROP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Expressing multiplicative relationships as ratio or fraction."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R7",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-PROP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Proportion as equality of ratios."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R8",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-PROP",
+        "ALGF-FUNC-GRAP-LINR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Links ratios to fractions and linear functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R9",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "NUM-FRAC-PERC-PART",
+        "NUM-FRAC-PERC-QTY",
+        "NUM-FRAC-PERC-COMP",
+        "NUM-FRAC-PERC-INDE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Broad percentage content including percentage change, original value and simple interest."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R10",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-DIRE",
+        "NUM-RAT-RATI-PROP",
+        "ALGF-FUNC-GRAP-RECP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Direct and inverse proportion with graphical and algebraic representations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R11",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATE-SPED",
+        "NUM-RAT-RATE-DENS",
+        "NUM-RAT-RATE-PRES"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Compound units: speed, rates of pay, unit pricing, density and pressure."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R12",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-LENS",
+        "GEOM-SHAP-SIMI-AREA",
+        "GEOM-MENS-UNIT-LENG",
+        "GEOM-MENS-UNIT-AREA",
+        "GEOM-MENS-UNIT-VOLU"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Comparing lengths, areas and volumes using ratio notation and linking to similarity."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R13",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-DIRE",
+        "NUM-RAT-RATI-PROP",
+        "ALGF-FUNC-GRAP-RECP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Inverse proportion equivalence and interpreting direct/inverse proportion equations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R14",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-GRAD",
+        "NUM-RAT-RATI-DIRE",
+        "ALGF-FUNC-GRAP-RECP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Gradient as rate of change and direct/inverse proportion graphs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R16",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-GROW",
+        "NUM-FRAC-PERC-COMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Growth/decay and compound interest problems."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G1",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-ANGT",
+        "GEOM-SHAP-TERM-TRIA",
+        "GEOM-SHAP-TERM-QUAD",
+        "GEOM-SHAP-TERM-POLY",
+        "GEOM-SHAP-SYMM-LINE",
+        "GEOM-SHAP-SYMM-ROTA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Broad geometrical terms and notation including symmetry."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G2",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS-PERB",
+        "GEOM-CONS-CONS-ANGB"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Ruler and compass constructions including perpendicular bisector, perpendicular from/at point, angle bisector."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G3",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-ANGL-POINT",
+        "GEOM-SHAP-ANGL-LINE",
+        "GEOM-SHAP-ANGL-VERT",
+        "GEOM-SHAP-ANGL-PARA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Angle properties including parallel lines and triangle angle sum."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G4",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-TRIA",
+        "GEOM-SHAP-TERM-QUAD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Properties and definitions of special quadrilaterals and triangles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G5",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-CONG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Congruence criteria SSS, SAS, ASA, RHS."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G6",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-CONG",
+        "GEOM-SHAP-SIMI-SIML",
+        "TRIG-BASE-RATR-PYTH"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Derive results including Pythagoras' theorem and isosceles triangle base angles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G7",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "GEOM-CONS-TRAN-REFL",
+        "GEOM-CONS-TRAN-ROTA",
+        "GEOM-CONS-TRAN-TRAN",
+        "GEOM-CONS-TRAN-ENLG",
+        "GEOM-SHAP-SIMI-CONG",
+        "GEOM-SHAP-SIMI-SIML"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Congruent and similar shapes via transformations including fractional scale factors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G9",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Point is restricted to circle definitions and vocabulary; the broader geometry-terms branch is used because no dedicated circle-vocabulary leaf exists."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G11",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-COOR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Solve geometrical problems on coordinate axes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G12",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "GEOM-MENS-SOLI-CUBD",
+        "GEOM-MENS-SOLI-PRIS",
+        "GEOM-MENS-SOLI-CYLN",
+        "GEOM-MENS-SOLI-PYRA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Properties of faces, surfaces, edges and vertices of 3D solids."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G13",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No matching canonical node for plans and elevations of 3D shapes.",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Plans and elevations of 3D shapes not represented in supplied node catalog."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G14",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "GEOM-MENS-UNIT-LENG",
+        "GEOM-MENS-UNIT-AREA",
+        "GEOM-MENS-UNIT-VOLU",
+        "GEOM-MENS-UNIT-CAPA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Standard units of measure and related concepts."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G15",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS-MEAS",
+        "GEOM-SHAP-TERM-ANGT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Measuring line segments and angles; maps, scale drawings and bearings."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G16",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA-TRIA",
+        "GEOM-MENS-AREA-PARA",
+        "GEOM-MENS-AREA-TRAP",
+        "GEOM-MENS-SOLI-CUBD",
+        "GEOM-MENS-SOLI-PRIS",
+        "GEOM-MENS-SOLI-CYLN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Area of triangles, parallelograms, trapezia and volume of cuboids/prisms/cylinders."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G17",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "GEOM-MENS-CIRC-CIRC",
+        "GEOM-MENS-CIRC-AREA",
+        "GEOM-MENS-SOLI-PYRA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Circles, spheres, pyramids, cones and composite solids; catalog lacks spheres and cones."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G18",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "GEOM-MENS-CIRC-ARCL",
+        "GEOM-MENS-CIRC-SECA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Arc lengths and sector areas."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G19",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-CONG",
+        "GEOM-SHAP-SIMI-SIML",
+        "GEOM-SHAP-SIMI-LENS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Congruence, similarity and length relationships in similar figures."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G20",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-PYTH",
+        "TRIG-BASE-RATR-SINE",
+        "TRIG-BASE-RATR-COSN",
+        "TRIG-BASE-RATR-TANG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Pythagoras' theorem and trigonometric ratios in right-angled triangles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G21",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-EXCT-EXCT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Exact trigonometric values for standard angles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G24",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-COLV",
+        "GEOM-CONS-TRAN-TRAN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Translations described as 2D vectors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G25",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-ADDS",
+        "VECT-BASIC-NOTN-SCAL",
+        "VECT-BASIC-NOTN-COLV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vector addition, subtraction, scalar multiplication and representations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P1",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "PROB-COMB-COUNT-SAMPS",
+        "STAT-DATA-CLAS-TWOW"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Record and analyse probability experiments using tables and frequency trees."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P2",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SING",
+        "PROB-BASIC-BASIC-COMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Randomness, fairness, equally likely events and expected outcomes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P3",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SCALE",
+        "PROB-BASIC-BASIC-SING"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Relative expected frequencies and theoretical probability on 0-1 scale."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P4",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-MUTX",
+        "PROB-COMB-RULE-ADD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Exhaustive and mutually exclusive events summing to one."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P5",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SING"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Empirical unbiased samples tend to theoretical probability with increasing sample size."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P6",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "PROB-COMB-COUNT-ENUM",
+        "PROB-COMB-RULE-VENN",
+        "PROB-COMB-RULE-TREE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Systematic enumeration using tables, grids, Venn and tree diagrams."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P7",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "PROB-COMB-COUNT-SAMPS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Theoretical possibility spaces for equally likely outcomes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P8",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-INDE",
+        "PROB-COMB-RULE-TREE",
+        "PROB-COMB-RULE-COND"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Independent and dependent combined events including tree diagrams and assumptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S1",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-POP",
+        "STAT-ENQ-SAMP-BIAS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Infer population properties from sample with awareness of limitations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S2",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-BARCH",
+        "STAT-DATA-REPR-PIE",
+        "STAT-DATA-REPR-PICT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Tables, bar charts, pie charts, pictograms; vertical line charts and time-series graphs not in catalog."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S4",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-MEAN",
+        "STAT-SUMM-CENT-MEDI",
+        "STAT-SUMM-CENT-MODE",
+        "STAT-SUMM-CENT-RANG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Analyse distributions graphically and via central tendency and spread including outliers."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S5",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-POP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Apply statistics to describe a population."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S6",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-SCAT",
+        "STAT-BIVA-CORR-POSC",
+        "STAT-BIVA-CORR-NEGC",
+        "STAT-BIVA-CORR-ZEROC",
+        "STAT-BIVA-CORR-LOBF"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Scatter graphs, correlation, causation, line of best fit, interpolation and extrapolation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A13",
+      "sourceReference": "p.26",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-TRAN-VERT",
+        "ALGF-FUNC-TRAN-HORZ",
+        "ALGF-FUNC-TRAN-REFL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Translations and reflections of a given function."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A15",
+      "sourceReference": "p.27",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-VTGR",
+        "MECH-KIN-LINE-AREA",
+        "GEOM-COOR-LINE-GRAD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Gradients and areas under graphs in distance-time, velocity-time and financial contexts."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A16",
+      "sourceReference": "p.27",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CIRC-CENT",
+        "GEOM-COOR-CIRC-TANG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Equation of circle with centre at origin and tangent at a given point."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-A20",
+      "sourceReference": "p.27",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-ITER-FORM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Approximate solutions using iteration."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-R15",
+      "sourceReference": "[PAGE 28] R15",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node in the supplied catalog for interpreting gradients of chords and tangents as instantaneous rate of change without calculus; calculus-based nodes are excluded by the syllabus point.",
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Pre-calculus instantaneous rate of change is not represented in the catalog."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G8",
+      "sourceReference": "[PAGE 29] G8",
+      "canonicalNodeIds": [
+        "GEOM-CONS-TRAN-COMB"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Direct match to combined transformations and invariance."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G10",
+      "sourceReference": "[PAGE 29] G10",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-SEMI",
+        "GEOM-SHAP-CITH-TANG",
+        "GEOM-SHAP-CITH-CENT",
+        "GEOM-SHAP-CITH-SAME",
+        "GEOM-SHAP-CITH-CYCL",
+        "GEOM-SHAP-CITH-ALTS",
+        "GEOM-SHAP-CITH-CHOR",
+        "REAS-PROF-PROF-DEDU"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Standard circle theorems and proving related results mapped to theorem-specific nodes and proof."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G22",
+      "sourceReference": "[PAGE 30] G22",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-SINR",
+        "TRIG-BASE-NONR-COSR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Direct match to sine rule and cosine rule nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-G23",
+      "sourceReference": "[PAGE 30] G23",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Direct match to the area formula node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-P9",
+      "sourceReference": "[PAGE 31] P9",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-COND",
+        "PROB-COMB-RULE-TREE",
+        "PROB-COMB-RULE-VENN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Conditional probability via expected frequencies and diagrams mapped to conditional, tree and Venn nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-S3",
+      "sourceReference": "[PAGE 32] S3",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-HIST",
+        "STAT-DATA-REPR-CUMF",
+        "STAT-DATA-CLAS-GROUP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Histograms and cumulative frequency graphs for grouped/continuous data mapped to corresponding diagram nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-1MA1-APP3-FORMULAE",
+      "sourceReference": "[PAGE 53] Appendix 3: Mathematical formulae",
+      "canonicalNodeIds": [
+        "GEOM-MENS-SOLI"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Chunk 4 contains only appendices and assessment administration; per instructions the front matter, assessment administration and transferable skills have been ignored.",
+        "Only Appendix 3 (mathematical formulae provided in relevant examination questions) is treated as official subject content in this chunk.",
+        "The supplied canonical catalog contains no exact nodes for cones or spheres, so the point is mapped to the broader Surface Area and Volume node."
+      ]
+    }
+  ]
+}

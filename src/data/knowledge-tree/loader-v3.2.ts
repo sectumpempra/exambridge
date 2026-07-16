@@ -136,6 +136,8 @@ export async function listSubjectsV32(): Promise<SubjectInfoV32[]> {
       isGCSE,
       paperMappingCoverage: readiness.coverage,
       paperComparisonReady: readiness.ready,
+      comparisonReady: m.verificationStatus === "verified",
+      verificationStatus: m.verificationStatus ?? "candidate",
     });
   }
   subjects.sort((a, b) => {
@@ -225,6 +227,9 @@ export async function calculateOverlapV32(
   const mA = mappings.get(codeA);
   const mB = mappings.get(codeB);
   if (!mA || !mB) return null;
+  if (mA.verificationStatus !== "verified" || mB.verificationStatus !== "verified") {
+    throw new Error("Subject-level mapping is not owner-approved");
+  }
   if ((paperA && !getPaperMappingReadiness(mA).ready) || (paperB && !getPaperMappingReadiness(mB).ready)) {
     throw new Error("Paper-level mapping is not verified");
   }

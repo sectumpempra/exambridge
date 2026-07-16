@@ -1,0 +1,2061 @@
+{
+  "schemaVersion": "1.0.0",
+  "qualificationVersionId": "CAIE-9709:2026-2027",
+  "reviewMethod": "kimi-independent-point-review",
+  "reviewedAt": "2026-07-16",
+  "requestedModelId": "kimi-k2.7-code-highspeed",
+  "responseModelId": "kimi-k2.7-code-highspeed",
+  "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+  "codexCorrections": [
+    {
+      "action": "excluded-non-assessable-prior-knowledge",
+      "sourceReference": "p.18, Prior knowledge",
+      "reason": "The section states assumed entry knowledge rather than an assessable 9709 syllabus point."
+    },
+    {
+      "action": "reclassified-ontology-granularity",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-P2-2.1.3",
+        "OFFICIAL-CAIE-9709-P2-2.3.2",
+        "OFFICIAL-CAIE-9709-P2-2.2.4"
+      ],
+      "reason": "All three official points are represented by partial/broader mappings or an explicit unmapped reason, which satisfies the V4 accounting contract."
+    }
+  ],
+  "pointReviews": [
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed quadratics content on p.19."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed functions content on p.19."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed coordinate-geometry content on p.20."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed circular-measure content on p.20."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed trigonometry content on p.21."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed series content on pp.21-22."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed differentiation content on p.22."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed integration content on p.22."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-2.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial fractions (ALGF-POLY-PART-LINL and ALGF-POLY-PART-REPL) are not in Paper 2 Algebra; they belong to Paper 3 (3.1)."
+      ],
+      "recommendation": "Remove ALGF-POLY-PART-LINL and ALGF-POLY-PART-REPL from this point and map them under OFFICIAL-CAIE-9709-3.1 instead."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed logarithmic/exponential content on pp.23-24."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-2.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed trigonometry content on p.24."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-2.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed differentiation content on p.24."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-2.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed integration content on p.25."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-2.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed numerical-solution content on p.25."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed algebra content on p.26."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed logarithmic/exponential content on p.27."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-3.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; consider adding reciprocal-trigonometric-function graph nodes (TRIG-FUNC-ADVN-SECA, TRIG-FUNC-ADVN-COSE, TRIG-FUNC-ADVN-COTA, TRIG-FUNC-ADVN-GRAP) which are also required in Paper 3."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-3.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "CALC-FDIFF-FDIFF-INVTR is too broad: only the derivative of tan^-1 x is required in Paper 3, not derivatives of sin^-1 x or cos^-1 x."
+      ],
+      "recommendation": "Replace CALC-FDIFF-FDIFF-INVTR with a narrower node or annotate that only tan^-1 x is required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-3.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed integration content on pp.28-29."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-3.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed numerical-solution content on p.29."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-3.7",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "VECT-FURT-PROD-VECT (vector product) is explicitly excluded from Paper 3.",
+        "VECT-FURT-LINES-PLANE (equations of planes) is not required in Paper 3.",
+        "VECT-FURT-LINES-DIST covers shortest distances between skew lines/common perpendiculars, which are explicitly excluded."
+      ],
+      "recommendation": "Remove VECT-FURT-PROD-VECT, VECT-FURT-LINES-PLANE and VECT-FURT-LINES-DIST; retain only the 3D vector, line and scalar-product nodes required by p.29-30."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-3.8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed differential-equations content on p.30."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-3.9",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "ALGF-CPLX-ROOT-NTH is too broad: only square roots of complex numbers are required in Paper 3."
+      ],
+      "recommendation": "Narrow ALGF-CPLX-ROOT-NTH to square-root coverage only, or replace with a square-root-specific node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed forces-and-equilibrium content on p.31."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed kinematics content on p.32."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "MECH-FURT-IMP-REST (coefficient of restitution) is explicitly excluded from Paper 4."
+      ],
+      "recommendation": "Remove MECH-FURT-IMP-REST from this point; retain only linear momentum, conservation and direct-impact nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed Newton's-laws content on p.33."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed energy/work/power content on pp.33-34."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed representation-of-data content on pp.34-35."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; verify individual nodes against the detailed permutations-and-combinations content on p.35."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Topic-level heading mapped from content overview; the set of probability-rule nodes is appropriate but the relation is broader and assessmentDepth 'knowledge' may understate the application depth of the detailed 5.3 bullets."
+      ],
+      "recommendation": "Retain with broader relation but consider raising assessmentDepth to 'application' when sub-bullets are added."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Topic-level heading; PROB-DRVD-DRVB-LINX (linear transformations) is not explicitly required in 5.4, and assessmentDepth 'knowledge' may understate the application depth of E(X)/Var(X)/binomial/geometric work."
+      ],
+      "recommendation": "Review whether to retain PROB-DRVD-DRVB-LINX for 5.4 or move it to 6.2; raise assessmentDepth if sub-bullets are included."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Topic-level heading; mapping does not cover normal approximation to the Poisson distribution, which is required in 6.1, because no dedicated canonical node exists in the supplied catalog."
+      ],
+      "recommendation": "Retain but note the missing normal-approximation-to-Poisson coverage; add a suitable node if the catalog is extended."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Topic-level heading; linear-combination coverage is represented only by discrete-random-variable transformation/variance nodes and distribution nodes, which is acceptable but not ideal for independent sums of arbitrary random variables."
+      ],
+      "recommendation": "Retain but consider adding a dedicated linear-combinations node if available; raise assessmentDepth to 'application' for sub-bullets."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Topic-level heading; variance, median and percentiles of continuous random variables are required in 6.3 but have no dedicated canonical nodes in the supplied catalog."
+      ],
+      "recommendation": "Retain and note incomplete coverage; extend mapping if suitable nodes are added."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Topic-level heading; confidence intervals for a population mean and for a population proportion are required in 6.4 but have no dedicated canonical nodes in the supplied catalog."
+      ],
+      "recommendation": "Retain and note missing confidence-interval coverage; add suitable nodes if the catalog is extended."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.1.a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.1.b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.1.c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.1.d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.1.e",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.2.a",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official bullet requires understanding the terms 'inverse function' and 'composition of functions' as well as function/domain/range/one-one; the mapping omits ALGF-FUNC-COMP-INVR and ALGF-FUNC-COMP-COMP."
+      ],
+      "recommendation": "Add ALGF-FUNC-COMP-INVR and ALGF-FUNC-COMP-COMP to this bullet or retain them only if later bullets are treated as covering the terminology."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.2.b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.2.c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.2.d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.2.e",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official bullet explicitly includes 'simple combinations' of transformations; the mapping omits ALGF-FUNC-TRAN-COMB."
+      ],
+      "recommendation": "Add ALGF-FUNC-TRAN-COMB to cover combined transformations."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.3.a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.3.b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.3.c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.3.d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.3.e",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.4.a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.4.b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.5.a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.5.b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.5.c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.5.d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.5.e",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.6.a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.6.b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.6.c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.6.d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.7.a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Relation is marked partial but the selected canonical nodes collectively cover gradient as a limit and derivative notation (including second derivative) for this official bullet."
+      ],
+      "recommendation": "Review relation metadata; exact is more appropriate."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.7.b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.7.c",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed; partial relation is reasonable because gradients are treated under derivative concepts."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.7.d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Relation is marked partial but the selected nodes cover stationary points, their nature and curve sketching exactly."
+      ],
+      "recommendation": "Review relation metadata; exact is more appropriate."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.8.a",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed; constant multiples, sums and differences are implicit in integration techniques."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.8.b",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.8.c",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official bullet includes simple improper integrals, but the supplied catalog has no dedicated node for improper integrals and CALC-INTE-CONC-DEFI does not explicitly cover them."
+      ],
+      "recommendation": "Add or broaden a canonical node for improper integrals to capture the full official requirement."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-1.8.d",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Relation is marked partial but the selected area and volume-of-revolution nodes cover the official bullet exactly."
+      ],
+      "recommendation": "Review relation metadata; exact is more appropriate."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.1.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official bullet requires both the factor theorem and the remainder theorem, but only ALGF-POLY-POLY-FACT is mapped; the supplied catalog has no Remainder theorem node."
+      ],
+      "recommendation": "Add a Remainder theorem canonical node or broaden the polynomial factors node to include remainder theorem."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.2.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.2.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official bullet requires logarithmic transformation of a relationship to linear form (log-linear modelling); the supplied catalog has no canonical node for this."
+      ],
+      "recommendation": "Add a canonical node for logarithmic reduction to linear form / log-linear modelling."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.3.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Official bullet requires the R-form identity a cos θ + b sin θ = R sin/cos(θ ± α); the supplied catalog has no canonical node for this harmonic form."
+      ],
+      "recommendation": "Add a canonical node for the R-form (harmonic form) identity."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.6.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.6.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P2-2.6.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.1.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The mapped canonical node ALGF-POLY-POLY-FACT covers the factor theorem only; the remainder theorem required by the official point is not represented in the supplied catalog."
+      ],
+      "recommendation": "Add a canonical node for the remainder theorem or map to a broader polynomial-theorem node if available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.1.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.1.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.2.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.2.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The supplied canonical catalog contains no node for logarithmic transformation of a relationship to linear form (log-linear modelling) to determine constants from gradient and/or intercept."
+      ],
+      "recommendation": "Add a canonical node covering reduction to linear form via logarithms and map this point to it."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.3.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The R-form expression a cos θ + b sin θ = R sin/cos(θ ± α) required by the official point is not represented by a separate canonical node in the supplied catalog."
+      ],
+      "recommendation": "Add a canonical node for the R-form trigonometric expression or map to a broader harmonic-form node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.4.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The mapped node CALC-FDIFF-FDIFF-INVTR covers derivatives of all inverse trigonometric functions, but the official point requires only the derivative of tan^−1 x; sin^−1 x and cos^−1 x derivatives are excluded."
+      ],
+      "recommendation": "Confirm the broader node is acceptable, or split out a tan^−1 derivative node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.5.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The integral of 1/(x^2 + a^2) required by the official point is not represented by a separate canonical node in the supplied catalog."
+      ],
+      "recommendation": "Add a canonical node for integrals yielding inverse tangent or map to a broader integration-techniques node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.5.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The official point requires recognition of the general k f'(x)/f(x) integrand form; the mapped nodes CALC-INTE-RULE-LOGR and CALC-INTE-RULE-TRIG cover specific cases but do not fully represent the general recognition skill."
+      ],
+      "recommendation": "Consider adding a canonical node for integrating f'(x)/f(x) or broaden CALC-INTE-RULE-LOGR to explicitly include this form."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.5.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.5.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.6.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.6.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.6.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.7.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.7.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.7.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.7.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.7.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.7.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.8.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.8.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.8.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.8.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node specifically targets interpreting the solution of a first-order separable differential equation in context.",
+        "Mapped node REAS-MODL-MODL-OUTP is a generic modelling output node, so the relation is only partial."
+      ],
+      "recommendation": "Add or map to a domain-specific differential-equation interpretation node under CALC-DIFFEQ, or retain REAS-MODL-MODL-OUTP as an acceptable generic mapping with the partial relation."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.9.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.9.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped node ALGF-CPLX-BASIC-CART covers Cartesian form only, not the required arithmetic operations in Cartesian form.",
+        "No canonical child node exists for addition, subtraction, multiplication or division of complex numbers in Cartesian form.",
+        "Relation declared as 'exact' overstates the semantic fit."
+      ],
+      "recommendation": "Map to the parent ALGF-CPLX-BASIC and request a new canonical node for Cartesian-form complex arithmetic; change relation to partial or weak."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.9.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.9.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.9.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.9.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; relation 'narrower' is appropriate because the canonical node covers nth roots while the source requires only square roots."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.9.7",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node captures the geometrical effects of conjugation, addition or subtraction of complex numbers.",
+        "ARGD and POLAR-MULT only partially cover the geometry of multiplication and division."
+      ],
+      "recommendation": "Request a new canonical node for geometrical effects of complex operations, or retain the current partial mapping with a note that coverage is incomplete."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P3-3.9.8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P4-4.0.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P4-4.1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P4-4.1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P4-4.1.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P4-4.1.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P4-4.1.5",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node covers the smooth-contact model or its limitations.",
+        "MECH-FORC-EQUI-FRIC only addresses frictional force, not the absence-of-friction smooth model."
+      ],
+      "recommendation": "Add a canonical node for the smooth-contact model and its limitations, or additionally map to REAS-MODL-MODL-ASSM for the modelling-assumption aspect."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P4-4.1.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-P4-4.1.7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.2.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.2.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.4.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Relation declared as partial, but the mapped nodes MECH-DYN-NEWT-N2L, MECH-DYN-NEWT-TENS and MECH-DYN-NEWT-FRIC correspond directly to the source requirement."
+      ],
+      "recommendation": "Change relation to exact."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.4.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.5.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-4.5.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.1.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The selected canonical node STAT-DATA-REPR is the parent category for statistical diagrams; the official text requires selecting a suitable presentation and discussing advantages/disadvantages, which is broader than drawing or interpreting specific diagrams. The broader relation is acknowledged but the node fit is less precise."
+      ],
+      "recommendation": "Accept the broader mapping; consider whether a more specific node for data-presentation selection exists in future catalog updates."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.1.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.1.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.1.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.3.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.3.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-5.5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.1.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.1.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.1.5",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The official point covers normal approximation to the Poisson distribution with continuity correction. No dedicated canonical node exists for this specific approximation, so PROB-DIST-NORM-MODE is used as a broader fit."
+      ],
+      "recommendation": "Retain the broader mapping; add a specific canonical node for normal approximation to Poisson if the catalog is revised."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.3.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The selected nodes cover probabilities and mean from a probability density function, but the official text also requires variance, median and other percentiles. The partial relation is acknowledged because canonical nodes for continuous-random-variable variance and percentiles are absent."
+      ],
+      "recommendation": "Retain the partial mapping; consider adding canonical nodes for continuous random variable variance and percentiles."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.4.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.4.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped. STAT-ENQ-SAMP-BIAS correctly captures 'explain why a sampling method may be unsatisfactory'; the random-numbers note is ancillary."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.4.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped. STAT-EST-ESTI-SMEAN exactly matches the sample-mean-as-random-variable requirement."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.4.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "PROB-DIST-NORM-MODE is a generic normal-distribution node; the bullet is specifically about the sampling distribution of the sample mean being normal. STAT-EST-ESTI-SMEAN alone is the closer fit, though the combined mapping is acceptable."
+      ],
+      "recommendation": "Retain mapping but note that the core concept is the sampling distribution of the mean, not merely the normal model."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.4.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped. STAT-EST-ESTI-CLT exactly covers the informal CLT requirement."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.4.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped. The pair of nodes exactly covers unbiased estimates of population mean and variance."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.4.7",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The candidate relation value 'broader' is not in the accepted nodeFit vocabulary (exact/acceptable/weak/wrong/unmapped).",
+        "STAT-EST-ESTI is the broad parent of estimation; no dedicated confidence-interval node exists in the catalog, so the fit is acceptable rather than exact."
+      ],
+      "recommendation": "Use 'acceptable' for nodeFit and avoid the 'broader' label in the relation field."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.4.8",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The candidate relation value 'broader' is not in the accepted nodeFit vocabulary (exact/acceptable/weak/wrong/unmapped).",
+        "STAT-EST-ESTI is the broad parent of estimation; no dedicated large-sample confidence-interval-for-proportion node exists, so the fit is acceptable rather than exact."
+      ],
+      "recommendation": "Use 'acceptable' for nodeFit and avoid the 'broader' label in the relation field."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.5.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped. The selected hypothesis-test concept nodes jointly cover the terminology in the bullet."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.5.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped. STAT-TEST-HYPO-BINO and STAT-TEST-HYPO-POIS exactly match the binomial/Poisson single-observation test requirement."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.5.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped. STAT-TEST-HYPO-MEAN exactly covers hypothesis tests for a population mean."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.5.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped. STAT-TEST-HYPO-ERRS exactly covers understanding Type I and Type II error terms."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9709-6.5.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped. STAT-TEST-HYPO-ERRS exactly covers calculation of Type I/II error probabilities."
+    }
+  ],
+  "missingOfficialPoints": [],
+  "duplicatePointIds": [],
+  "overallIssues": [
+    {
+      "severity": "medium",
+      "issue": "Several candidate points over-map to canonical nodes that are outside the 9709 syllabus for the stated paper (e.g., partial fractions in Paper 2, vector product/planes/shortest distances in Paper 3, coefficient of restitution in Paper 4).",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-2.1",
+        "OFFICIAL-CAIE-9709-3.4",
+        "OFFICIAL-CAIE-9709-3.7",
+        "OFFICIAL-CAIE-9709-3.9",
+        "OFFICIAL-CAIE-9709-4.3"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The source reference used for these topic-heading points is p.9 of the syllabus (content overview). Detailed node alignment should be confirmed against the subject-content pages (pp.19-39).",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-1.1",
+        "OFFICIAL-CAIE-9709-1.2",
+        "OFFICIAL-CAIE-9709-1.3",
+        "OFFICIAL-CAIE-9709-1.4",
+        "OFFICIAL-CAIE-9709-1.5",
+        "OFFICIAL-CAIE-9709-1.6",
+        "OFFICIAL-CAIE-9709-1.7",
+        "OFFICIAL-CAIE-9709-1.8",
+        "OFFICIAL-CAIE-9709-2.1",
+        "OFFICIAL-CAIE-9709-2.2",
+        "OFFICIAL-CAIE-9709-2.3",
+        "OFFICIAL-CAIE-9709-2.4",
+        "OFFICIAL-CAIE-9709-2.5",
+        "OFFICIAL-CAIE-9709-2.6",
+        "OFFICIAL-CAIE-9709-3.1",
+        "OFFICIAL-CAIE-9709-3.2",
+        "OFFICIAL-CAIE-9709-3.3",
+        "OFFICIAL-CAIE-9709-3.4",
+        "OFFICIAL-CAIE-9709-3.5",
+        "OFFICIAL-CAIE-9709-3.6",
+        "OFFICIAL-CAIE-9709-3.7",
+        "OFFICIAL-CAIE-9709-3.8",
+        "OFFICIAL-CAIE-9709-3.9",
+        "OFFICIAL-CAIE-9709-4.1",
+        "OFFICIAL-CAIE-9709-4.2",
+        "OFFICIAL-CAIE-9709-4.3",
+        "OFFICIAL-CAIE-9709-4.4",
+        "OFFICIAL-CAIE-9709-4.5",
+        "OFFICIAL-CAIE-9709-5.1",
+        "OFFICIAL-CAIE-9709-5.2"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Topic-level points 5.3-6.5 are mapped only from the content-overview heading and use assessmentDepth 'knowledge'. This may understate the application depth required by the detailed sub-bullets and produces broader/partial relations.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-5.3",
+        "OFFICIAL-CAIE-9709-5.4",
+        "OFFICIAL-CAIE-9709-6.1",
+        "OFFICIAL-CAIE-9709-6.2",
+        "OFFICIAL-CAIE-9709-6.3",
+        "OFFICIAL-CAIE-9709-6.4"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Some detailed points omit closely related canonical nodes: 1.2.a omits inverse-function and composition terminology, and 1.2.e omits combined transformations.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-1.2.a",
+        "OFFICIAL-CAIE-9709-1.2.e"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Required content that has no dedicated node in the supplied catalog is not fully mapped: normal approximation to Poisson (6.1), continuous random variable variance/median/percentiles (6.3), and confidence intervals for mean and proportion (6.4).",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-6.1",
+        "OFFICIAL-CAIE-9709-6.3",
+        "OFFICIAL-CAIE-9709-6.4"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The supplied canonical catalog is missing nodes for several explicitly required Pure Mathematics 2 concepts: remainder theorem, R-form (a cos θ + b sin θ = R sin/cos(θ ± α)), and logarithmic reduction to linear form. These gaps leave parts of the official syllabus unmapped.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-P2-2.1.3",
+        "OFFICIAL-CAIE-9709-P2-2.3.2",
+        "OFFICIAL-CAIE-9709-P2-2.2.4"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Paper 1 integration bullet 1.8.c includes simple improper integrals, but no canonical node explicitly covers improper integrals within the supplied catalog.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-1.8.c"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Several Paper 1 points are labelled partial although the selected canonical nodes collectively match the official bullet (e.g. 1.7.a, 1.7.d, 1.8.d). Relation metadata should be reviewed for consistency.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-1.7.a",
+        "OFFICIAL-CAIE-9709-1.7.d",
+        "OFFICIAL-CAIE-9709-1.8.d"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Several official syllabus requirements are not represented by distinct canonical nodes in the supplied catalog: remainder theorem (3.1.3), logarithmic transformation to linear form (3.2.4), R-form trigonometric expression (3.3.2), and integral of 1/(x^2 + a^2) (3.5.1). These gaps produce partial or unmapped node fits despite correct source support and paper allocation.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-P3-3.1.3",
+        "OFFICIAL-CAIE-9709-P3-3.2.4",
+        "OFFICIAL-CAIE-9709-P3-3.3.2",
+        "OFFICIAL-CAIE-9709-P3-3.5.1"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "One mapped canonical node (CALC-FDIFF-FDIFF-INVTR) is broader than the official requirement, which specifies only the derivative of tan^−1 x and excludes sin^−1 x and cos^−1 x derivatives.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-P3-3.4.1"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The general k f'(x)/f(x) integrand recognition in 3.5.4 is distributed across reciprocal-function and trigonometric integration nodes rather than captured by a single canonical node.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-P3-3.5.4"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The canonical node catalog lacks specific nodes for several source requirements, leading to weak or partial mappings: interpreting differential-equation solutions in context, complex-number arithmetic in Cartesian form, geometrical effects of complex operations, and the smooth-contact model with its limitations.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-P3-3.8.4",
+        "OFFICIAL-CAIE-9709-P3-3.9.2",
+        "OFFICIAL-CAIE-9709-P3-3.9.7",
+        "OFFICIAL-CAIE-9709-P4-4.1.5"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Syllabus point IDs for Paper 4 topics 4.2-4.5 omit the 'P4' prefix used elsewhere, creating an inconsistent naming convention.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-4.2.1",
+        "OFFICIAL-CAIE-9709-4.2.2",
+        "OFFICIAL-CAIE-9709-4.2.3",
+        "OFFICIAL-CAIE-9709-4.2.4",
+        "OFFICIAL-CAIE-9709-4.3.1",
+        "OFFICIAL-CAIE-9709-4.3.2",
+        "OFFICIAL-CAIE-9709-4.4.1",
+        "OFFICIAL-CAIE-9709-4.4.2",
+        "OFFICIAL-CAIE-9709-4.4.3",
+        "OFFICIAL-CAIE-9709-4.4.4",
+        "OFFICIAL-CAIE-9709-4.5.1"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "One point (4.4.1) declares a partial relation although the mapped canonical nodes cover the source requirement exactly.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-4.4.1"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Three candidate points use broader or partial canonical-node mappings because the catalog lacks sufficiently specific nodes for data-presentation selection, normal approximation to Poisson, and continuous-random-variable variance/percentiles. The official specification text supports the source references and paper allocations for all supplied points.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-5.1.1",
+        "OFFICIAL-CAIE-9709-6.1.5",
+        "OFFICIAL-CAIE-9709-6.3.2"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Two points (6.4.7 and 6.4.8) use the relation value 'broader', which is outside the required nodeFit vocabulary (exact/acceptable/weak/wrong/unmapped). This should be normalised to 'acceptable' for reporting consistency.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-6.4.7",
+        "OFFICIAL-CAIE-9709-6.4.8"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The canonical catalog lacks dedicated nodes for confidence intervals and for sampling distributions of the mean, so 6.4.4, 6.4.7 and 6.4.8 rely on broader or adjacent nodes. This is the best available fit but introduces some semantic imprecision.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-6.4.4",
+        "OFFICIAL-CAIE-9709-6.4.7",
+        "OFFICIAL-CAIE-9709-6.4.8"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Momentum section (4.3) is mapped to Further Mechanics impulse and coefficient-of-restitution nodes that are explicitly excluded from the 9709 syllabus ('Knowledge of impulse and the coefficient of restitution is not required').",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-4.3",
+        "OFFICIAL-CAIE-9709-4.3.2",
+        "OFFICIAL-CAIE-9709-P4-4.3.2"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Several detailed syllabus skills lack precise canonical leaves, forcing reliance on broad, partial, or unmapped annotations (e.g., logarithmic linearisation, confidence intervals for mean/proportion, normal approximation to Poisson, variance of continuous random variables, remainder theorem, smooth-contact model, inverse-tan integral). The official points are represented, but the ontology granularity is insufficient for exact mapping.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-P2-2.2.4",
+        "OFFICIAL-CAIE-9709-P3-3.2.4",
+        "OFFICIAL-CAIE-9709-P2-2.1.3",
+        "OFFICIAL-CAIE-9709-P3-3.1.3",
+        "OFFICIAL-CAIE-9709-P4-4.1.5",
+        "OFFICIAL-CAIE-9709-P3-3.5.1",
+        "OFFICIAL-CAIE-9709-6.3.2",
+        "OFFICIAL-CAIE-9709-6.1.5",
+        "OFFICIAL-CAIE-9709-6.4.7",
+        "OFFICIAL-CAIE-9709-6.4.8"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Inconsistent identifier naming conventions: Paper 2/3/4 leaf points use a 'P2-'/'P3-'/'P4-' prefix, whereas Paper 4.2-4.5, Paper 5 and Paper 6 leaf points omit the prefix.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9709-4.2.1",
+        "OFFICIAL-CAIE-9709-5.1.1",
+        "OFFICIAL-CAIE-9709-6.1.1"
+      ]
+    }
+  ]
+}

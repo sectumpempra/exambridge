@@ -1,0 +1,659 @@
+{
+  "schemaVersion": "1.0.0",
+  "qualificationVersionId": "OCR-6993:Version 2.0",
+  "reviewMethod": "kimi-independent-point-review",
+  "reviewedAt": "2026-07-16",
+  "requestedModelId": "kimi-k2.7-code-highspeed",
+  "responseModelId": "kimi-k2.7-code-highspeed",
+  "sourceSha256": "d682352b907c422bd5d994153bd5440b3146913e92e9a7524148515109f8cb3f",
+  "codexCorrections": [
+    {
+      "action": "accepted-narrower-representations",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-6993-NM4",
+        "OFFICIAL-OCR-6993-NM5",
+        "OFFICIAL-OCR-6993-NM6"
+      ],
+      "reason": "KnowledgeMappingV4 explicitly permits the narrower relation; each point has a page reference, a canonical parent concept and a granularity note."
+    }
+  ],
+  "pointReviews": [
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Function-notation node captures f(x) but the broader algebraic vocabulary (constant, coefficient, identity, index, etc.) is only loosely covered by the use-of-symbols node."
+      ],
+      "recommendation": "Retain mapping; consider adding a broader algebraic-notation parent if granularity allows."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source requires addition, subtraction, multiplication and division of polynomials, but the mapped nodes only cover division by linear/quadratic expressions and cubic/quartic polynomials.",
+        "No node is mapped for general polynomial addition, subtraction or multiplication."
+      ],
+      "recommendation": "Add the ALGF-POLY-POLY parent node or equivalent broader polynomial-operations node, and retain division nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Quadratic solving is mapped only to factorisation; the official point permits any solution method."
+      ],
+      "recommendation": "Consider broadening the quadratic mapping to the Quadratic Equations parent node if available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-AL11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EN1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EN2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EN3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EN4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EN5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EN6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CG1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CG2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CG3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CG4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped to parent graph nodes; more specific linear, quadratic, cubic and trigonometric graph nodes exist in the canonical catalog."
+      ],
+      "recommendation": "Retain current mapping but consider adding specific graph-type child nodes for finer granularity."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CG5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CG6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CG7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CG8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-PT1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-PT2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-PT3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-PT4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-PT5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-PT6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. PT6 maps acceptably to trigonometric modelling and Pythagoras nodes; the modelling node is a parent but appropriate for applied 2D/3D problems."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Differentiating kx^n and sums is well covered by the power rule and constant-multiple/sum/difference nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Direct match to derivative-as-gradient and derivative-as-rate-of-change concept nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Gradient at a point links naturally to the derivative-as-gradient concept and the tangents application node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact match to the tangents and normals application node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact match to the stationary points node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Determining the nature of stationary points is covered within the stationary points node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact match to curve sketching with derivatives."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Inclusion of the parent CALC-INTE-RULE node is redundant alongside the specific CALC-INTE-RULE-POWR node."
+      ],
+      "recommendation": "Keep, but consider removing the redundant parent node CALC-INTE-RULE."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact match to integration as reverse differentiation."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact matches to indefinite and definite integral concept nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Evaluating definite integrals is directly covered by the definite integrals node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact match to area under a curve."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact match to area between curves."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA14",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Variable-acceleration kinematics is comprehensively mapped to the calculus-in-kinematics displacement/velocity/acceleration nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-CA15",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Inclusion of the parent CALC-KIN-SVAT node is redundant alongside the specific MECH-KIN-LINE-CONST node."
+      ],
+      "recommendation": "Keep, but consider removing the redundant parent node CALC-KIN-SVAT."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-NM1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact match to locating roots by sign change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-NM2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Simple iterative methods are adequately represented by the iteration formulae node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-NM3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Failure of sign-change methods and iteration convergence together cover recognition of method failure."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-NM4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The specification requires using a chord to estimate the gradient of a tangent, a numerical technique. The canonical node CALC-DIFF-CONC-LIMT ('gradient as a limit') captures the underlying concept but not the chord-based estimation procedure itself."
+      ],
+      "recommendation": "Review. The current fit is acceptable only because no dedicated numerical-gradient-estimation node exists, but the mapping is weak."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-NM5",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The specification requires improving an estimate for the gradient of a curve at a point. The canonical node CALC-DIFF-CONC-LIMT relates to refining estimates through limits conceptually, but does not specifically represent improving a chord-based numerical estimate."
+      ],
+      "recommendation": "Review. The current fit is acceptable only because no dedicated numerical-gradient-estimation node exists, but the mapping is weak."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-NM6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Rectangular-strip estimation is appropriately mapped to the numerical integration parent node in the absence of a dedicated rectangular-strip node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-NM7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Direct match to trapezium rule estimate and approximate area under a curve nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-NM8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Over/under-estimate for the trapezium rule directly matches the corresponding node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-NM9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapping uses broad parent nodes (NUMM-ROOT, NUMM-NINT, REAS-MODL-MODL) rather than specific technique nodes."
+      ],
+      "recommendation": "Keep, but prefer more specific child nodes where the applied context is known."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EL1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact match to the graph and properties of a to the x node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EL2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact match to logarithms as inverse functions."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EL3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Exact match to laws of logarithms."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EL4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Reduction to linear form is adequately represented by the combination of logarithm laws and exponential models nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EL5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep. Estimating parameters from log-linear graphs is reasonably mapped to exponential models and line-of-best-fit nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EL6",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Source reference Page 18, EL6 is supported, but the official specification rendering for EL6 is garbled/broken (the equation form and condition are not cleanly legible in the supplied text), so the exact wording of the point cannot be independently verified.",
+        "The mapping to ALGF-LOG-LOGR-EQNS (Exponential and logarithmic equations) is semantically appropriate for an EL6 item about solving exponential equations, but the claimed 'exact' relation rests on an unclear source line."
+      ],
+      "recommendation": "Verify the exact official wording of EL6 from a clean source; retain the node mapping if the point concerns solving exponential/logarithmic equations."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-6993-EL7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    }
+  ],
+  "missingOfficialPoints": [],
+  "duplicatePointIds": [],
+  "overallIssues": [
+    {
+      "severity": "medium",
+      "issue": "AL3 is under-mapped: the source requires all polynomial operations (addition, subtraction, multiplication and division), but only division and degree-specific nodes are mapped.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-6993-AL3"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "CG4 uses parent graph nodes; more specific child nodes for linear, polynomial and trigonometric graphs are available and would improve granularity.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-6993-CG4"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "NM4 and NM5 (chord-based gradient estimation and improving estimates) have weak canonical node fits because the catalog lacks dedicated numerical-gradient-estimation nodes. They are currently mapped to the limit-concept node CALC-DIFF-CONC-LIMT, which captures the underlying idea but not the specified numerical procedure.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-6993-NM4",
+        "OFFICIAL-OCR-6993-NM5"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Several points include redundant parent nodes alongside specific child nodes (e.g., CA8 includes CALC-INTE-RULE with CALC-INTE-RULE-POWR; CA15 includes CALC-KIN-SVAT with MECH-KIN-LINE-CONST). These are not incorrect but reduce precision.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-6993-CA8",
+        "OFFICIAL-OCR-6993-CA15"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "NM9 is mapped to broad parent nodes. This is acceptable for a generic 'apply numerical methods in context' statement, but more specific child nodes should be used when the contextual technique is identifiable.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-6993-NM9"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The supplied official specification text renders Page 18, EL6 with broken equation formatting, creating uncertainty about the precise point wording.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-6993-EL6"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Three Numerical Methods syllabus points rely solely on a 'narrower' canonical mapping, leaving their full official scope unrepresented and creating a coverage gap in numerical differentiation and numerical integration.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-6993-NM4",
+        "OFFICIAL-OCR-6993-NM5",
+        "OFFICIAL-OCR-6993-NM6"
+      ]
+    }
+  ]
+}

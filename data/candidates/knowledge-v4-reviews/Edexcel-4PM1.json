@@ -1,0 +1,569 @@
+{
+  "schemaVersion": "1.0.0",
+  "qualificationVersionId": "Edexcel-4PM1:2017",
+  "reviewMethod": "kimi-independent-point-review",
+  "reviewedAt": "2026-07-16",
+  "requestedModelId": "kimi-k2.7-code-highspeed",
+  "responseModelId": "kimi-k2.7-code-highspeed",
+  "sourceSha256": "4d13a0fb7002e472c58ac3e136e3edb2ca33f9866597c75e871dbd5f06dcf5a6",
+  "pointReviews": [
+    {
+      "syllabusPointId": "Edexcel-4PM1-OVERVIEW-NUM",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-OVERVIEW-ALGC",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "High-level descriptor maps to top-level Algebra and Functions and Calculus domain nodes, which is acceptable for an overview statement."
+      ],
+      "recommendation": "Retain; use finer-grained nodes for detailed point mapping."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-OVERVIEW-ALGM",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-OVERVIEW-GRPH",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-OVERVIEW-GEOM",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Overview maps to GEOM-SHAP and GEOM-CONS which together cover shapes, angles and transformations."
+      ],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-OVERVIEW-VECT",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Descriptor combines vectors and rates of change; CALC-DIFF-CONC-RATE captures rates of change only at derivative-concept level."
+      ],
+      "recommendation": "Retain; if a kinematics/rates-of-change application node exists, consider adding it."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-OVERVIEW-COOR",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-OVERVIEW-TRIG",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-1.A",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Spec focuses on shapes of a^x and log_b x graphs; inverse-function node is acceptable but not explicitly required."
+      ],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-1.B",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Parent nodes NUM-POW-INDX and ALGF-LOG-LOGR are broader than the specific laws, change of base and a^x=b equations listed."
+      ],
+      "recommendation": "Retain; use child nodes for finer indexing if available."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-1.C",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node NUM-POW-POWR-SURD covers surds generally; the spec limits manipulation to very simple cases."
+      ],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "Edexcel-4PM1-1.D",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-2.A",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-2.B",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-2.C",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "ALGF-ROOT nodes are general polynomial-root relations but correctly cover quadratic roots and symmetric functions."
+      ],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-3.A",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-3.B",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "ALGF-POLY-POLY-CUBQ is broader than factorising provided cubics; remainder theorem aspect is not separately captured."
+      ],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-3.C",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "ALGF-POLY-POLY-CUBQ is broader than the specified cubic-with-rational-root case but acceptable."
+      ],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-3.D",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-3.E",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Linear programming node is in Discrete and Decision Mathematics rather than algebra, but the spec explicitly mentions simple linear programming."
+      ],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-4.A",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node set includes general reciprocal graphs and asymptotes; spec restricts rational functions to linear denominators and asymptotes parallel to axes."
+      ],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-4.B",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-5.A",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated sigma-notation node exists; mapping to the Series parent is reasonable but broad."
+      ],
+      "recommendation": "Consider adding a dedicated sigma-notation node or retain broad mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-5.B",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-6.A",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-7.A",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "VECT-GEOM-PROB-PARA adequately covers the equality-of-coefficients condition for non-parallel vectors."
+      ],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-7.B",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Spec requires components and resolved parts using i and j; the catalog has no dedicated components/resolved-parts node, so the mapping to unit-vector and direction nodes is only partial."
+      ],
+      "recommendation": "Add a dedicated vector components or resolved-parts node, or flag a catalog gap."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-7.C",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-7.D",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-7.E",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-7.F",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-8.A",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-8.B",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Canonical catalog only contains a midpoint node (GEOM-COOR-CART-MIDP), not a general internal-division-in-ratio-m:n node. The midpoint is a special case but does not fully capture the official requirement."
+      ],
+      "recommendation": "Retain mapping but flag for catalog enrichment with a general section-formula node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-8.C",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-8.D",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-8.E",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated canonical node exists for parallel/perpendicular line conditions; mapping to GEOM-COOR-LINE-GRAD is a proxy. The relationship is derivable from gradient but not explicitly represented."
+      ],
+      "recommendation": "Retain as best available; consider adding a parallel/perpendicular lines node to the catalog."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-9.A",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-9.B",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-9.C",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-9.D",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-9.E",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-9.F",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-9.G",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-10.A",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-10.B",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-10.C",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The official requirement includes angles between a line and a plane and between two planes in three dimensions. The canonical catalog lacks dedicated nodes for these 3D geometric relationships, so TRIG-APPL-MODE is only a broad proxy."
+      ],
+      "recommendation": "Retain as best available; consider adding 3D trigonometry/line-plane and plane-plane angle nodes to the catalog."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-10.D",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-10.E",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-10.F",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-10.G",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4PM1-10.H",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    }
+  ],
+  "missingOfficialPoints": [],
+  "duplicatePointIds": [],
+  "overallIssues": [
+    {
+      "severity": "medium",
+      "issue": "The canonical node catalog lacks exact nodes for some specification elements (sigma notation; vector components/resolved parts), so supplied mappings use broader or adjacent nodes.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-4PM1-5.A",
+        "OFFICIAL-Edexcel-4PM1-7.B"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "High-level overview points naturally map to broad domain nodes. This is acceptable for domain descriptors but should not be relied upon for fine-grained assessment mapping.",
+      "affectedPointIds": [
+        "Edexcel-4PM1-OVERVIEW-NUM",
+        "Edexcel-4PM1-OVERVIEW-ALGC",
+        "Edexcel-4PM1-OVERVIEW-ALGM",
+        "Edexcel-4PM1-OVERVIEW-GRPH",
+        "Edexcel-4PM1-OVERVIEW-GEOM",
+        "Edexcel-4PM1-OVERVIEW-VECT",
+        "Edexcel-4PM1-OVERVIEW-COOR",
+        "Edexcel-4PM1-OVERVIEW-TRIG"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Canonical catalog is missing a node for the general section formula / point dividing a line in a given ratio m:n. Only a midpoint node exists, which is insufficient for official point 8.B.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-4PM1-8.B"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Canonical catalog lacks a dedicated node for conditions for two straight lines to be parallel or perpendicular; current mapping relies only on the gradient node.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-4PM1-8.E"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Canonical catalog lacks dedicated nodes for 3D trigonometric relationships such as angles between a line and a plane and between two planes, which are required by official point 10.C.",
+      "affectedPointIds": [
+        "OFFICIAL-Edexcel-4PM1-10.C"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Inconsistent candidate ID naming convention: Topic 1 and the eight overview points use the prefix 'Edexcel-4PM1-', whereas all Topics 2–10 use the prefix 'OFFICIAL-Edexcel-4PM1-'. This inconsistency complicates automated lookup and aggregation because the same logical identifier pattern is represented under two different namespaces.",
+      "affectedPointIds": [
+        "Edexcel-4PM1-OVERVIEW-NUM",
+        "Edexcel-4PM1-OVERVIEW-ALGC",
+        "Edexcel-4PM1-OVERVIEW-ALGM",
+        "Edexcel-4PM1-OVERVIEW-GRPH",
+        "Edexcel-4PM1-OVERVIEW-GEOM",
+        "Edexcel-4PM1-OVERVIEW-VECT",
+        "Edexcel-4PM1-OVERVIEW-COOR",
+        "Edexcel-4PM1-OVERVIEW-TRIG",
+        "Edexcel-4PM1-1.A",
+        "Edexcel-4PM1-1.B",
+        "Edexcel-4PM1-1.C",
+        "Edexcel-4PM1-1.D"
+      ]
+    }
+  ]
+}

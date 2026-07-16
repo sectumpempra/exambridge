@@ -90,6 +90,9 @@ export interface SubjectInfoV32 {
   isGCSE: boolean;
   paperMappingCoverage: number;
   paperComparisonReady: boolean;
+  /** Exact comparisons are only safe after owner-approved/verified review. */
+  comparisonReady: boolean;
+  verificationStatus: "verified" | "candidate" | "rejected";
 }
 
 export interface PaperMappingReadiness {

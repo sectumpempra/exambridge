@@ -1,0 +1,3259 @@
+{
+  "schemaVersion": "1.0.0",
+  "qualificationVersionId": "OCR-H640:Version 3",
+  "reviewMethod": "kimi-independent-point-review",
+  "reviewedAt": "2026-07-16",
+  "requestedModelId": "kimi-k2.7-code-highspeed",
+  "responseModelId": "kimi-k2.7-code-highspeed",
+  "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+  "codexCorrections": [
+    {
+      "reviewedAt": "2026-07-16",
+      "reason": "Corrected the p.53 probability source locator from Mu1 to the preceding starred item. Excluded pre-release teaching activities, prior-knowledge statements, assessment administration and accessibility appendices from syllabus-point accounting because they are qualification metadata rather than mathematical knowledge outcomes."
+    }
+  ],
+  "pointReviews": [
+    {
+      "syllabusPointId": "OFFICIAL-H640-1c-1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Broad aims statement mapped only to high-level reasoning/modelling/problem-solving nodes; acceptable as a cross-cutting requirement."
+      ],
+      "recommendation": "Keep as a cross-cutting overarching requirement."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2a-1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "High-level Pure summary omits graphs, sequences and logarithms from the node mapping."
+      ],
+      "recommendation": "Refine node mapping to include ALGF-SEQ and ALGF-LOG, or split into finer points; paper allocation is correct."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2a-2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2a-3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Technology-use statement covers graphing, spreadsheets, statistics, mechanics and CAS, but mapped nodes (using diagrams and iteration convergence) are too narrow and omit most strands."
+      ],
+      "recommendation": "Map to broader technology nodes if available, or treat as a metadata statement; do not treat narrow nodes as exhaustive."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH-GRAPH",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH-SPREAD",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Spreadsheet use covers tables of values, numerical methods, statistics and mechanics; mapping only to iteration convergence and trapezium rule is incomplete."
+      ],
+      "recommendation": "Add nodes for statistical and mechanical spreadsheet modelling, or broaden the mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH-STAT",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH-MECH",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH-CAS",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-CALC",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "This is assessment administration (calculator requirements and examination advice), not a syllabus content point; the relation field claims exact while the point is unmapped."
+      ],
+      "recommendation": "Retain as metadata only; do not include in assessable content mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-EXACT",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-PROVE",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-SHOW",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-VERIFY",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-FIND",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Command-word convention (find/solve/calculate) is not a content node; relation field claims exact while the point is unmapped."
+      ],
+      "recommendation": "Record as assessment convention/metadata, not as a canonical content point."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-DETERMINE",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Determine is a general command requiring justification; mapping specifically to reasoned-estimate node is too narrow."
+      ],
+      "recommendation": "Map to a broader reasoning/problem-solving node or treat as assessment convention."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-STATE",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Command-word convention (state/write down) is not a content node; relation field claims exact while the point is unmapped."
+      ],
+      "recommendation": "Record as assessment convention/metadata."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-DETAILED",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Instruction to show detailed reasoning is an assessment rubric rather than a content outcome; mapping to logical deduction alone is reductive."
+      ],
+      "recommendation": "Treat as assessment convention or map to a broad proof/reasoning node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-HENCE",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Command-word convention (hence) is not a content node; relation field claims exact while the point is unmapped."
+      ],
+      "recommendation": "Record as assessment convention/metadata."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-HENCEOO",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Command-word convention (hence or otherwise) is not a content node; relation field claims exact while the point is unmapped."
+      ],
+      "recommendation": "Record as assessment convention/metadata."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-RESULT",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Permissive phrase (you may use the result) is not a content node; relation field claims exact while the point is unmapped."
+      ],
+      "recommendation": "Record as assessment convention/metadata."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-PLOT",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-SKETCH",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-DRAW",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT1.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT1.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT1.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT1.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT1.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped to REAS-MODL-MODL-OUTP (interpreting model outputs) but the official OT2.3 concerns interpreting and communicating solutions of problems, not model outputs.",
+        "Relation is marked 'exact' but the semantic fit is only acceptable."
+      ],
+      "recommendation": "Change relation to 'acceptable' and consider a problem-solving interpretation node if available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The official statement is a general claim about numerical methods, but the mapped nodes are specific (fixed-point iteration convergence and trapezium-rule estimation).",
+        "Relation 'broader' is appropriate but the chosen nodes are too narrow to cover the source."
+      ],
+      "recommendation": "Retain 'broader' relation but add or use a general numerical-methods problem-solving node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.5",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped node REAS-PROB-PSOL-ESTM covers reasoned estimates but does not fully capture evaluating limitations of solutions.",
+        "Relation 'exact' overstates the match."
+      ],
+      "recommendation": "Change relation to 'acceptable' and, if possible, include a node for evaluating limitations/accuracy."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.6",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped to the parent REAS-PROB-PSOL; the official OT2.6 explicitly describes the problem-solving cycle, which is more specific than the generic parent node.",
+        "Relation 'exact' overstates the match."
+      ],
+      "recommendation": "Change relation to 'acceptable' and use a problem-solving-cycle node if one exists."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT3.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT3.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped to REAS-MODL-MODL-ASSM (modelling assumptions) but the official OT3.4 also covers refining models by considering outputs and evaluating appropriateness.",
+        "Relation 'exact' overstates the match."
+      ],
+      "recommendation": "Change relation to 'acceptable' and broaden the mapped nodes to include model evaluation/refinement."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT3.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mp1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial mapping: the proof-methods nodes cover deduction and exhaustion but do not cover the full 'structure of proof' statement."
+      ],
+      "recommendation": "Accept as partial mapping; retain relation 'partial'."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Ma1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial mapping: the chosen nodes cover symbols and function definition but do not cover all listed vocabulary (coefficient, identity, index, term, variable, unknown)."
+      ],
+      "recommendation": "Accept as partial mapping; retain relation 'partial'."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-ASSUMED-LINEAR-EQN",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "This is an assumed-knowledge item with no official reference code; the candidate ID is synthetic."
+      ],
+      "recommendation": "Accept but mark as assumed knowledge and not an examined focus."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-ASSUMED-CHANGE-SUBJECT",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "This is an assumed-knowledge item with no official reference code; the candidate ID is synthetic.",
+        "Partial mapping covers repeated-subject cases but the node set is otherwise acceptable."
+      ],
+      "recommendation": "Accept as partial mapping and mark as assumed knowledge."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Ma2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial mapping: covers factorising, completing the square, formula and quadratics in a function, but does not include the graphical method explicitly listed in the source."
+      ],
+      "recommendation": "Accept as partial mapping; retain relation 'partial'."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Ma7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial mapping: nodes cover linear inequalities and regions, which is acceptable for the official content."
+      ],
+      "recommendation": "Accept as partial mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Accept as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial mapping: the four index nodes cover positive, zero, negative and fractional indices, which is acceptable for all rational exponents."
+      ],
+      "recommendation": "Accept as partial mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Partial mapping: the three index nodes cover negative, fractional and zero indices as required."
+      ],
+      "recommendation": "Accept as partial mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a14",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a15",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a16",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mf1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Polynomial add/subtract/multiply are spread across generic expression-manipulation nodes; a dedicated polynomial node would give a tighter fit."
+      ],
+      "recommendation": "Consider adding ALGF-POLY-POLY if a more specific mapping is required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-MC1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped to the broad parent ALGF-FUNC-GRAP; the specification statement is more general than any single sub-node, but the mapping lacks granularity."
+      ],
+      "recommendation": "Retain but consider whether a finer-grained graph-sketching node is available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-MC7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C8",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Combined function transformations are mapped only to the parent ALGF-FUNC-TRAN node; no distinct canonical node for combined function transformations exists, so the fit is acceptable but less specific."
+      ],
+      "recommendation": "Retain parent mapping; only refine if a dedicated combined-function-transformations node is added to the catalog."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-ASSUMED-YMXC",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mg1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mg8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; mapping is well supported."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; the three circle-theorem nodes jointly cover the specification content."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g14",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Parametric form of a circle would be better represented by a dedicated parametric-curves node; the current split between circle and parametric-definitions nodes is acceptable."
+      ],
+      "recommendation": "Retain current mapping; add a more specific parametric-circle node if the catalog is expanded."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g15",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g16",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Ms1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; binomial-coefficient and combination nodes together cover the notation."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s9",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated sigma-notation node exists in the catalog; mapping to the generic series node is reasonable but imprecise."
+      ],
+      "recommendation": "Add a sigma-notation node under sequences and series, or retain the current parent mapping with a narrower relation."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s10",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The canonical catalog lacks nodes for increasing, decreasing and periodic sequences, so the generic sequences node is too broad."
+      ],
+      "recommendation": "Introduce dedicated monotonicity and periodicity sub-nodes, or explicitly flag the weak fit."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s14",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s15",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s16",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s17",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-ASSUMED-RIGHT-TRIG",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required; assumed prior knowledge is correctly mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mt1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The specification outcome concerns unit-circle definitions of trigonometric ratios for any angle, which is not well represented by the Circular-measure node."
+      ],
+      "recommendation": "Add a dedicated unit-circle trigonometric-definitions node, or remap to the broader trigonometric-functions node if one is introduced."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-ASSUMED-EXACT-TRIG",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mt8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t12",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped to parent node TRIG-CIRC because no dedicated small-angle-approximation node exists in the catalog; coverage is imprecise despite the honest broader relation."
+      ],
+      "recommendation": "Accept with note; create or request a dedicated small-angle-approximations canonical node if greater precision is required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t14",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t15",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mt16",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t17",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t18",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t19",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t20",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Claimed relation is exact but the mapped node REAS-PROF-PROF-DEDU is a generic proof-by-deduction node, not specific to trigonometric functions or identities."
+      ],
+      "recommendation": "Downgrade relation to acceptable/partial and consider mapping to TRIG-IDEN-IDEN or a future trigonometric-proof node for content specificity."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t21",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mc1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change required."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain mapping; multiple derivative-concept nodes reasonably cover this point."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain; power-rule plus first-principles nodes adequately cover the point."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c6",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Canonical catalogue has no dedicated second-derivative node; mapping to the broad CALC-DIFF parent loses specificity."
+      ],
+      "recommendation": "Add a dedicated second-derivative canonical node, or explicitly annotate that CALC-DIFF is an interim coarse mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mc10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain; differentiation rules plus first-principles nodes jointly cover the point."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c14",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c15",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c16",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c17",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Concavity is not represented by a dedicated canonical node; CALC-DIFF-APPL-INFL is the closest available but is inflection-oriented rather than concavity-oriented."
+      ],
+      "recommendation": "Introduce a dedicated concavity/canonical node, or keep the weak mapping with a clear note that it is broader than the target concept."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c18",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mc19",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c20",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c21",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c22",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c23",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mc24",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c25",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain; parent integral-concepts node is acceptable given the absence of a dedicated limit-of-a-sum node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c26",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c27",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c28",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c29",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c30",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c31",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c32",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Retain as-is."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c33",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "c33 concerns interpreting differential-equation solutions and their limitations, but the mapping uses only generic modelling nodes (REAS-MODL-MODL-OUTP, REAS-MODL-MODL-ASSM).",
+        "No reference is made to CALC-DIFFEQ-FODE-* nodes, so the semantic fit is only acceptable."
+      ],
+      "recommendation": "Add CALC-DIFFEQ-FODE-GENS or CALC-DIFFEQ-FODE-PART to the mapping and keep the modelling nodes as secondary."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Me1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-e2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-e3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-e4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-e5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mc34",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c35",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Me6",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Me6 is a broad contextual problem-solving outcome, but it is mapped only to the root numerical-methods node (NUMM).",
+        "The mapping does not indicate which specific numerical-method topics are intended."
+      ],
+      "recommendation": "Keep NUMM as a broad parent and add the relevant leaf nodes (root finding, numerical integration, etc.) that may be applied in context."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mv1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mv1 is mapped to the generic vector-notation node (VECT-BASIC-NOTN).",
+        "The outcome is specifically about 2-D vector language, which is broader than notation alone."
+      ],
+      "recommendation": "Retain VECT-BASIC-NOTN and consider adding VECT-BASIC-NOTN-COLV and VECT-BASIC-NOTN-UNIT to capture the 2-D terminology."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-v2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-v3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-v4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-v5",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "v5 concerns distance between points represented by position vectors, but the mapping mixes a coordinate-geometry distance node with a position-vector node.",
+        "No dedicated 2-D vector-distance leaf exists in the catalog."
+      ],
+      "recommendation": "Map primarily to VECT-BASIC-NOTN-POSV and GEOM-COOR-CART-DIST, or add a 2-D vector-distance node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-v6",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "v6 is a broad problem-solving outcome using vectors in pure mathematics and in contexts including forces.",
+        "The mapping to VECT-GEOM-PROB and MECH-FORC-FORC-VECN is acceptable but does not cover all contextual applications."
+      ],
+      "recommendation": "Retain the current nodes as acceptable broad coverage."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mv7",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mv7 extends 2-D vector work to three dimensions but is mapped only to the parent 3-D vectors node (VECT-SPAC-THRD).",
+        "A more precise mapping would include the relevant 3-D operation and notation leaf nodes."
+      ],
+      "recommendation": "Add VECT-SPAC-THRD-IJK, VECT-SPAC-THRD-MAG3 and VECT-SPAC-THRD-OPER to reflect the extension of v2-v6 into 3-D."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mp21",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p22",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "p22 focuses on informal inferences from samples and recognising that different samples produce different conclusions.",
+        "The mapping to STAT-EST-ESTI-UNBI and STAT-EST-ESTI-SMEAN is too formal: those nodes concern unbiased estimates and the sample-mean distribution, not informal sampling variability."
+      ],
+      "recommendation": "Revise mapping to STAT-ENQ-SAMP-POP and consider adding a sampling-variability or informal-inference node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p23",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p24",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "p24 lists several named sampling techniques (opportunity, systematic, stratified, quota, cluster, self-selected) but the catalog has no dedicated leaf nodes for most of them.",
+        "Mapping to the parent STAT-ENQ-SAMP is acceptable but loses specificity."
+      ],
+      "recommendation": "Add leaf nodes for the individual sampling techniques or retain the parent mapping with a note that the catalog is incomplete."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p25",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "p25 is about selecting and evaluating sampling techniques in context, including bias and practicalities.",
+        "The mapping to STAT-ENQ-SAMP-BIAS and the parent STAT-ENQ-SAMP is acceptable but does not fully cover evaluation of technique choice."
+      ],
+      "recommendation": "Retain current mapping and add technique-specific nodes if they become available."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MD1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "MD1 covers data types and a range of single-variable diagrams, some of which (dot plot, frequency chart) have no dedicated canonical nodes.",
+        "Mapping to STAT-DATA-CLAS-TYPE and the parent STAT-DATA-REPR is acceptable but partial."
+      ],
+      "recommendation": "Add missing diagram-type leaf nodes under STAT-DATA-REPR or keep the partial parent mapping with a catalog-gap note."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No change."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "D4 concerns describing frequency-distribution shape (symmetrical, unimodal, bimodal, skewed).",
+        "No canonical leaf node exists for distribution-shape vocabulary."
+      ],
+      "recommendation": "Create a new node under Summary Statistics or Data Handling for describing distribution shape."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MD5",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "MD5 concerns the idea that sample diagrams become more representative of theoretical distributions as sample size increases.",
+        "No canonical node covers sampling variability or convergence of empirical distributions."
+      ],
+      "recommendation": "Add a node under Statistical Enquiry or Estimation for sampling variability and large-sample representativeness."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D6",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "D6 covers scatter diagrams, regression lines and best-fit models, interpolation and extrapolation.",
+        "The mapping is acceptable but partial because regression-line calculation is excluded by the specification while interpretation is required."
+      ],
+      "recommendation": "Retain STAT-DATA-REPR-SCAT and STAT-BIVA-CORR-LOBF; ensure the regression-calculation node is not included."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D7",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "D7 concerns recognising distinct sub-populations and outliers in scatter diagrams.",
+        "No canonical node exists for scatter-diagram sub-groups or visual outlier detection in bivariate data."
+      ],
+      "recommendation": "Add a node under Bivariate Data for scatter-diagram structure and visual outliers."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D8",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "D8 is about describing correlation and understanding that correlation does not imply causation.",
+        "The mapping includes STAT-BIVA-CORR-LOBF (line of best fit), which is not part of D8."
+      ],
+      "recommendation": "Remove STAT-BIVA-CORR-LOBF and keep only the correlation-direction nodes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D9",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "D9 is a broad selecting/critiquing outcome covering data presentation techniques including time-series graphs.",
+        "The declared relation is 'narrower', but STAT-DATA-REPR is a parent/related set, so the relation should be 'broader' or 'partial'."
+      ],
+      "recommendation": "Change relation to 'broader' or 'partial' and add a time-series node if available."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MD10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped nodes cover mean, median and mode but omit weighted mean and midrange specified in MD10."
+      ],
+      "recommendation": "Acceptable mapping; consider a weighted-mean node if the catalog is extended."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Relation is labelled 'broader' but the mapped nodes (range, quartiles, IQR) exactly match the measures listed in D11."
+      ],
+      "recommendation": "Change relation to 'exact'; otherwise no action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MD12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D13",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node exists for outlier identification using the 2-sd or 1.5×IQR rules."
+      ],
+      "recommendation": "Retain unmapped flag; this is a catalog coverage gap."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D14",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node exists for cleaning data, missing data or errors."
+      ],
+      "recommendation": "Retain unmapped flag; this is a catalog coverage gap."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-Mu1-prob",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Corrected to the starred probability item on p.53; retain the mapping."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-star-complement",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-star-expected-frequency",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node exists for expected frequency calculated from probability."
+      ],
+      "recommendation": "Retain unmapped flag; this is a catalog coverage gap."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-star-diagrams",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped nodes cover tree diagrams, sample-space diagrams and Venn diagrams; 'appropriate diagrams' is broader but acceptable."
+      ],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-Mu1-events",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MR1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapped to the same node as MR1; relation 'narrower' is appropriate because R2 covers only identification of p and notation."
+      ],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R5",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node exists for expected frequencies associated with the binomial distribution."
+      ],
+      "recommendation": "Retain unmapped flag; this is a catalog coverage gap."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Spec covers probability functions and the term 'discrete random variable'; mapped nodes cover distribution tables and discrete random variables."
+      ],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Discrete uniform distribution is not separately mapped, but the distribution node covers numerical probabilities for simple finite distributions."
+      ],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MR8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MH1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Multiple nodes cover the hypothesis-testing language; relation 'broader' is acceptable because the point encompasses several distinct concepts."
+      ],
+      "recommendation": "No action needed."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MH7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MH10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "STAT-CORR-REG-SPEAR is named Spearman, whereas the specification says learners need not know the names of particular rank correlation coefficients; the concept mapping is, however, acceptable."
+      ],
+      "recommendation": "No action required; retain mapping but note the conceptual level."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-Mp31",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-p32",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-p33",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "unmapped",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The canonical node catalog contains no node for SI fundamental quantities and units (metre, second, kilogram), so the point is correctly flagged as unmapped."
+      ],
+      "recommendation": "Add a canonical node for SI base quantities/units, or retain the unmapped flag."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-p34",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The outcome concerns derived SI quantities and units (velocity, acceleration, force, weight), but the mapping uses kinematics/force/mass concept nodes rather than units/quantities nodes."
+      ],
+      "recommendation": "Map to a dedicated derived quantities/units node when one exists; until then the current mapping is the best available."
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-p35",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-Mk1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Mapping covers distance/displacement, speed/velocity and acceleration but does not capture relative velocity; no dedicated relative-velocity node exists in the catalog."
+      ],
+      "recommendation": "No action required; add a relative-velocity node if the catalog is extended."
+    },
+    {
+      "syllabusPointId": "OCR-H640-k2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-k3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-k4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-k5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-k6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-k7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-k8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-Mk9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated 2-D kinematics node exists; mapping to position vector and 1-D kinematic concept nodes is the best available approximation."
+      ],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-k10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-k11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-k12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-My1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-y2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-y3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No action required."
+    },
+    {
+      "syllabusPointId": "OCR-H640-y4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-y5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-MF1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No canonical node exists for gravitational acceleration; mapping to 'MECH-DYN-NEWT-MASS' (Mass and weight) is a weak semantic fit for the variation and modelling of g."
+      ],
+      "recommendation": "Flag the ontology gap; retain a weak mapping or add a dedicated gravitational-acceleration node."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-MF6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F8",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F9",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F10",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F11",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F12",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-Mn1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Newton's first law is not represented by any canonical node; the mapping only covers the second and third laws."
+      ],
+      "recommendation": "Flag the ontology gap; consider adding a Newton's first law node or accept partial coverage."
+    },
+    {
+      "syllabusPointId": "OCR-H640-n2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-n3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-n4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-n5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-n6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-n7",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-MF13",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F14",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F15",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OCR-H640-F16",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-SETN",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-MISC",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-OPER",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-FUNC",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-EXPL",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "No changes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-TRIG",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Acceptable mapping of notation appendix; no action needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-VECT",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Acceptable mapping of notation appendix; no action needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-PROB",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Acceptable broad mapping of probability and statistics notation; no action needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-MECH",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Acceptable mapping of mechanics notation appendix; no action needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-QUAD",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Exact mapping; no action needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-INDI",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Exact mapping; no action needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-LOGS",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Exact mapping; no action needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-COOR",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "The source section 'Coordinate Geometry' is broader than the mapped node GEOM-COOR-LINE (straight lines), though the listed formulae are all straight-line related."
+      ],
+      "recommendation": "Consider retaining as acceptable or adding broader coordinate-geometry nodes if available."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-SEQU",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Exact mapping; no action needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-TRIG",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node mapping is incomplete: §5d also lists Pythagorean identities, double-angle formulae and the tan addition formula, which are not covered by the mapped sine-rule, cosine-rule and area nodes.",
+        "Relation was declared 'exact' but should be 'partial' or 'acceptable' because the mapped nodes do not cover all listed formulae."
+      ],
+      "recommendation": "Add canonical nodes for trigonometric identities (e.g. TRIG-IDEN-IDEN-PYTH, TRIG-IDEN-IDEN-DBLA, TRIG-IDEN-IDEN-ADDR) and change relation to partial."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-MENS",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Node mapping is incomplete: §5d also lists arc length, sector area, trapezium area and volume of a prism, which are not covered by the mapped circle circumference/area nodes.",
+        "Relation was declared 'exact' but should be 'partial' or 'acceptable' because the mapped nodes do not cover all listed formulae."
+      ],
+      "recommendation": "Add canonical nodes for arc length, sector area, trapezium area and prism volume, and change relation to partial."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-PYTH",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Exact mapping; no action needed."
+    }
+  ],
+  "missingOfficialPoints": [],
+  "duplicatePointIds": [],
+  "overallIssues": [
+    {
+      "severity": "medium",
+      "issue": "Several command-word and assessment-administration candidates are marked with relation 'exact' while having no canonical-node mapping; they should be recorded as metadata, not as assessable content points.",
+      "affectedPointIds": [
+        "OFFICIAL-H640-2c-CALC",
+        "OFFICIAL-H640-2d-CMD-FIND",
+        "OFFICIAL-H640-2d-CMD-STATE",
+        "OFFICIAL-H640-2d-CMD-HENCE",
+        "OFFICIAL-H640-2d-CMD-HENCEOO",
+        "OFFICIAL-H640-2d-CMD-RESULT"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "The broad technology-use summary and the spreadsheet point map to overly narrow numerical-methods nodes, missing statistical, mechanical and CAS strands.",
+      "affectedPointIds": [
+        "OFFICIAL-H640-2c-TECH",
+        "OFFICIAL-H640-2c-TECH-SPREAD"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The Pure mathematics high-level summary omits graphs, sequences and logarithms from its node mapping.",
+      "affectedPointIds": [
+        "OFFICIAL-H640-2a-1"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Several overarching-theme points overstate their node fit as 'exact' when the chosen canonical node is only acceptable or weak for the official statement (e.g. OT2.3, OT2.4, OT2.5, OT2.6, OT3.4).",
+      "affectedPointIds": [
+        "OFFICIAL-H640-2e-OT2.3",
+        "OFFICIAL-H640-2e-OT2.4",
+        "OFFICIAL-H640-2e-OT2.5",
+        "OFFICIAL-H640-2e-OT2.6",
+        "OFFICIAL-H640-2e-OT3.4"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Assumed-knowledge points have synthetic candidate IDs because the official specification does not assign them reference codes; their content is supported but should be flagged as assumed knowledge.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-ASSUMED-LINEAR-EQN",
+        "OFFICIAL-OCR-H640-ASSUMED-CHANGE-SUBJECT"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "All reviewed points leave paper applicability as 'not-specified'. For pure content this is consistent with the specification (pure is assessed on 01, 02 and 03), but it provides no component-level granularity.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-a14",
+        "OFFICIAL-OCR-H640-a15",
+        "OFFICIAL-OCR-H640-a16",
+        "OFFICIAL-OCR-H640-Mf1",
+        "OFFICIAL-OCR-H640-f2",
+        "OFFICIAL-OCR-H640-f3",
+        "OFFICIAL-OCR-H640-f4",
+        "OFFICIAL-OCR-H640-f5",
+        "OFFICIAL-OCR-H640-f6",
+        "OFFICIAL-OCR-H640-f7",
+        "OFFICIAL-OCR-H640-f8",
+        "OFFICIAL-OCR-H640-MC1",
+        "OFFICIAL-OCR-H640-C2",
+        "OFFICIAL-OCR-H640-C3",
+        "OFFICIAL-OCR-H640-C4",
+        "OFFICIAL-OCR-H640-C5",
+        "OFFICIAL-OCR-H640-C6",
+        "OFFICIAL-OCR-H640-MC7",
+        "OFFICIAL-OCR-H640-C8",
+        "OFFICIAL-OCR-H640-C9",
+        "OFFICIAL-OCR-H640-ASSUMED-YMXC",
+        "OFFICIAL-OCR-H640-Mg1",
+        "OFFICIAL-OCR-H640-g2",
+        "OFFICIAL-OCR-H640-g3",
+        "OFFICIAL-OCR-H640-g4",
+        "OFFICIAL-OCR-H640-g5",
+        "OFFICIAL-OCR-H640-g6",
+        "OFFICIAL-OCR-H640-g7",
+        "OFFICIAL-OCR-H640-Mg8",
+        "OFFICIAL-OCR-H640-g9"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "A small number of mappings rely on broad parent nodes or split polynomial operations across generic expression-manipulation nodes, reducing semantic precision.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-Mf1",
+        "OFFICIAL-OCR-H640-MC1",
+        "OFFICIAL-OCR-H640-C8"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Weak semantic fit for unit-circle definitions of sine, cosine and tangent (Mt1) because the catalog has no dedicated node; the Circular-measure node is an imprecise proxy.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-Mt1"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Sigma notation (s9) and sequence monotonicity/periodicity (s10) are mapped to generic sequence/series nodes because sufficiently granular canonical nodes are absent.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-s9",
+        "OFFICIAL-OCR-H640-s10"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Two points rely on broad or generic canonical nodes because more specific nodes are absent from the catalog: t12 (small-angle approximations mapped to TRIG-CIRC) and t20 (trigonometric proofs mapped to REAS-PROF-PROF-DEDU).",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-t12",
+        "OFFICIAL-OCR-H640-t20"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Canonical catalogue lacks dedicated nodes for second derivative (c6) and concavity (c17), forcing coarse mappings that reduce semantic precision.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-c6",
+        "OFFICIAL-OCR-H640-c17"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Several statistics and sampling points can only be mapped to broad parent nodes or are unmapped because the canonical catalog lacks leaf nodes for distribution shape, sampling variability, sampling techniques, scatter-diagram subgroups/outliers, and time-series presentation.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-p22",
+        "OFFICIAL-OCR-H640-p24",
+        "OFFICIAL-OCR-H640-p25",
+        "OCR-H640-OFFICIAL-MD1",
+        "OCR-H640-OFFICIAL-D4",
+        "OCR-H640-OFFICIAL-MD5",
+        "OCR-H640-OFFICIAL-D6",
+        "OCR-H640-OFFICIAL-D7",
+        "OCR-H640-OFFICIAL-D9"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The relation value for D9 is incorrectly declared as 'narrower' when the mapped node is a parent/related set; it should be 'broader' or 'partial'.",
+      "affectedPointIds": [
+        "OCR-H640-OFFICIAL-D9"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "c33 is mapped only to generic modelling nodes and omits the differential-equation context that is central to the official outcome.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-c33"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Broad vector and numerical-methods problem-solving outcomes are mapped only to parent nodes; more precise leaf-node coverage would improve semantic fit.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-Me6",
+        "OFFICIAL-OCR-H640-Mv1",
+        "OFFICIAL-OCR-H640-v6",
+        "OFFICIAL-OCR-H640-Mv7"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Canonical node catalog lacks nodes for several valid specification points: outlier identification rules (2-sd and 1.5×IQR), data cleaning (missing data/errors), and expected frequency for events and for binomial distributions.",
+      "affectedPointIds": [
+        "OCR-H640-OFFICIAL-D13",
+        "OCR-H640-OFFICIAL-D14",
+        "OCR-H640-OFFICIAL-star-expected-frequency",
+        "OCR-H640-OFFICIAL-R5"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Relation metadata inaccuracy: D11 is labelled 'broader' but the mapped nodes exactly match the spread measures listed in the official text (range, percentiles/quartiles, interquartile range).",
+      "affectedPointIds": [
+        "OCR-H640-OFFICIAL-D11"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The canonical node catalog lacks nodes for SI base quantities/units and derived quantities/units, leaving OCR-H640-OFFICIAL-p33 unmapped and OCR-H640-OFFICIAL-p34 weakly mapped to concept nodes.",
+      "affectedPointIds": [
+        "OCR-H640-OFFICIAL-p33",
+        "OCR-H640-OFFICIAL-p34"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "STAT-CORR-REG-SPEAR is named Spearman, whereas the specification only requires the generic concept of a rank correlation coefficient; the mapping is conceptually acceptable.",
+      "affectedPointIds": [
+        "OCR-H640-OFFICIAL-MH10"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "OCR-H640-F2 (acceleration due to gravity) is weakly mapped because the canonical catalog lacks a gravitational-acceleration node; 'Mass and weight' does not adequately cover the variation and constancy of g.",
+      "affectedPointIds": [
+        "OCR-H640-F2"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "OCR-H640-Mn1 (Newton's three laws) is only partially covered by existing nodes because no canonical node for Newton's first law exists.",
+      "affectedPointIds": [
+        "OCR-H640-Mn1"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Appendix notation points rely on broad parent nodes because fine-grained notation leaf nodes are absent from the catalog.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-5c-SETN",
+        "OFFICIAL-OCR-H640-5c-MISC",
+        "OFFICIAL-OCR-H640-5c-OPER",
+        "OFFICIAL-OCR-H640-5c-FUNC",
+        "OFFICIAL-OCR-H640-5c-EXPL"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Two §5d formula/identity points (TRIG and MENS) have incomplete canonical-node coverage and incorrectly declare an 'exact' relation, omitting several identities and mensuration formulae explicitly listed in the specification.",
+      "affectedPointIds": [
+        "OFFICIAL-OCR-H640-5d-TRIG",
+        "OFFICIAL-OCR-H640-5d-MENS"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Pre-release large data set (2b) is entirely absent from the candidate index, leaving a significant statistics teaching/assessment feature unmapped.",
+      "affectedPointIds": []
+    },
+    {
+      "severity": "medium",
+      "issue": "Several statistics/data-handling points are recorded only as unmapped because the ontology lacks relevant canonical nodes (distribution shape, sample-diagram convergence, scatter-diagram subgroups/outliers, outlier identification rules, data cleaning, expected binomial frequencies, expected frequency from probability, SI fundamental units). This indicates ontology gaps in data literacy and measurement foundations.",
+      "affectedPointIds": [
+        "OCR-H640-OFFICIAL-D4",
+        "OCR-H640-OFFICIAL-MD5",
+        "OCR-H640-OFFICIAL-D7",
+        "OCR-H640-OFFICIAL-D13",
+        "OCR-H640-OFFICIAL-D14",
+        "OCR-H640-OFFICIAL-R5",
+        "OCR-H640-OFFICIAL-star-expected-frequency",
+        "OCR-H640-OFFICIAL-p33"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Assessment/administrative sections and some formula-sheet identities in 5d are not explicitly represented; this is likely intentional for a content index but means the index is not a complete specification map.",
+      "affectedPointIds": []
+    },
+    {
+      "severity": "low",
+      "issue": "Inconsistent identifier prefixes are used across the candidate index (e.g. OFFICIAL-H640-, OFFICIAL-OCR-H640-, OCR-H640-OFFICIAL-, OCR-H640-), which may complicate automated merging and validation even though no IDs are duplicated.",
+      "affectedPointIds": [
+        "OFFICIAL-H640-2a-1",
+        "OFFICIAL-OCR-H640-Ma1",
+        "OCR-H640-OFFICIAL-MD1",
+        "OCR-H640-Mk1"
+      ]
+    }
+  ]
+}

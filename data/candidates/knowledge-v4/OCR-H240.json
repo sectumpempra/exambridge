@@ -1,0 +1,5180 @@
+{
+  "schemaVersion": "4.0.0",
+  "qualificationVersionId": "OCR-H240:Version 3",
+  "board": "OCR",
+  "subjectCode": "H240",
+  "subjectName": "A-Level Mathematics A",
+  "level": "A-Level",
+  "syllabusVersion": "Version 3",
+  "effectiveFrom": "2017-09-01",
+  "sources": [
+    {
+      "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+      "title": "OCR A Level Mathematics A H240 specification",
+      "documentVersion": "Version 3",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+      "sourceType": "official"
+    }
+  ],
+  "reviewStatus": "candidate",
+  "review": {
+    "generatedAt": "2026-07-16",
+    "promptVersion": "knowledge-v4-3-chunked",
+    "requestedModelId": "kimi-k2.7-code-highspeed",
+    "responseModelId": "kimi-k2.7-code-highspeed"
+  },
+  "declaredPapers": [
+    "01",
+    "02",
+    "03"
+  ],
+  "syllabusPoints": [
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT1.1",
+      "sourceReference": "OT1.1 [PAGE 18]",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-LOGI",
+        "REAS-PROF-ARGM-SYMB"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on constructing mathematical arguments; maps to logical deduction and precise-symbol nodes as the point is broader than either alone."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT1.2",
+      "sourceReference": "OT1.2 [PAGE 18]",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-SYMB"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on mathematical language and syntax."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT1.3",
+      "sourceReference": "OT1.3 [PAGE 18]",
+      "canonicalNodeIds": [
+        "NUM-SYS-SET-LANG",
+        "NUM-SYS-SET-UNIN",
+        "NUM-SYS-SET-COMP",
+        "NUM-SYS-SET-VENN"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on set-theory language and symbols applied to inequalities and probability."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT1.4",
+      "sourceReference": "OT1.4 [PAGE 18]",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-DEFS-DEFN",
+        "ALGF-FUNC-DEFS-DOMR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on function definitions, domain and range."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT1.5",
+      "sourceReference": "OT1.5 [PAGE 18]",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-CRIT",
+        "REAS-PROF-ARGM-JUST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on critiquing and justifying mathematical arguments and methods."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT2.1",
+      "sourceReference": "OT2.1 [PAGE 18]",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-STRC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching problem-solving theme on recognising mathematical structure."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT2.2",
+      "sourceReference": "OT2.2 [PAGE 18]",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-UNST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on solving unstructured problems including in context."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT2.3",
+      "sourceReference": "OT2.3 [PAGE 18]",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on interpreting solutions in context; closest node is interpreting model outputs, though the point is broader than modelling alone."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT2.4",
+      "sourceReference": "OT2.4 [PAGE 18]",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-ITER-CONV",
+        "NUMM-NINT-TRAP-ESTM"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on numerical methods permitting solutions to required accuracy; mapped to representative numerical-method nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT2.5",
+      "sourceReference": "OT2.5 [PAGE 18]",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-ESTM",
+        "NUMM-ROOT-SIGN-FAIL"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on evaluating accuracy and limitations of solutions including numerical methods."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT2.6",
+      "sourceReference": "OT2.6 [PAGE 18]",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on the mathematical problem-solving/modelling cycle."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT2.7",
+      "sourceReference": "OT2.7 [PAGE 18]",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-DIAG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching theme on using and constructing diagrams to solve problems including mechanics."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT3.1",
+      "sourceReference": "OT3.1 [PAGE 19]",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ABST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching modelling theme on abstraction and simplifying assumptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT3.2",
+      "sourceReference": "OT3.2 [PAGE 19]",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-INPT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching modelling theme on using model inputs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT3.3",
+      "sourceReference": "OT3.3 [PAGE 19]",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching modelling theme on interpreting model outputs in context."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT3.4",
+      "sourceReference": "OT3.4 [PAGE 19]",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching modelling theme on refining models and evaluating appropriateness; mapped to modelling-assumptions node as the closest available."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-OT3.5",
+      "sourceReference": "OT3.5 [PAGE 19]",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Overarching modelling theme on understanding and using modelling assumptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.01a",
+      "sourceReference": "1.01a [PAGE 20]",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-DEDU",
+        "REAS-PROF-PROF-EXHA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 proof content: structure of proof, proof by deduction and proof by exhaustion."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.01b",
+      "sourceReference": "1.01b [PAGE 20]",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-LOGI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 proof content: logical connectives and associated language; mapped to logical-deduction node as the closest available."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.01c",
+      "sourceReference": "1.01c [PAGE 20]",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-COUN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 proof content: disproof by counter example."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.01d",
+      "sourceReference": "1.01d [PAGE 20]",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-CONT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-2 proof content: proof by contradiction, including irrationality of root 2 and infinity of primes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02a",
+      "sourceReference": "1.02a [PAGE 21]",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-ZERO",
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-INDX-FRAC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 content: laws of indices for all rational exponents including negative and zero indices."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02b",
+      "sourceReference": "1.02b [PAGE 21]",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SURD",
+        "NUM-POW-POWR-RATD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 content: use and manipulation of surds including rationalising the denominator."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02c",
+      "sourceReference": "1.02c [PAGE 21]",
+      "canonicalNodeIds": [
+        "ALGF-EQN-SIMU-LINQ",
+        "ALGF-EQN-SIMU-SUBS",
+        "ALGF-EQN-SIMU-ELIM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 content: simultaneous equations in two variables, including one linear and one quadratic, by elimination and substitution."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02d",
+      "sourceReference": "1.02d [PAGE 22]",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-DISC",
+        "ALGF-FUNC-GRAP-QUAD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 content: quadratic functions, their graphs and discriminant conditions for real and repeated roots."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02e",
+      "sourceReference": "1.02e [PAGE 22]",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-COMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 content: completing the square for the quadratic polynomial ax^2 + bx + c."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02f",
+      "sourceReference": "1.02f [PAGE 22]",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-FACT",
+        "ALGF-EQN-QUAD-FORM",
+        "ALGF-EQN-QUAD-FUNC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 content: solving quadratic equations including equations quadratic in a function of the unknown."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02g",
+      "sourceReference": "1.02g [PAGE 23]",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-LINS",
+        "ALGF-EQN-INEQ-QUAD",
+        "ALGF-EQN-INEQ-REGN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 content: solving linear and quadratic inequalities in a single variable and interpreting them graphically."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02h",
+      "sourceReference": "1.02h [PAGE 23]",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-SETN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 content: expressing solutions using 'and'/'or', set notation and interval notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02i",
+      "sourceReference": "1.02i [PAGE 23]",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-REGN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stage-1 content: representing linear and quadratic inequalities such as y > x + 1 and y > ax^2 + bx + c graphically."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02j",
+      "sourceReference": "p.24, 1.02j",
+      "canonicalNodeIds": [
+        "ALGF-POLY-POLY-FACT",
+        "ALGF-POLY-POLY-DIVL",
+        "ALGF-EXP-MANI-FACT",
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-FUNC-GRAP-CUBC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.24, 1.02j",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Covers polynomial manipulation, factor theorem and simple algebraic division."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02k",
+      "sourceReference": "p.24, 1.02k",
+      "canonicalNodeIds": [
+        "ALGF-POLY-POLY-DIVL",
+        "ALGF-POLY-POLY-FACT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.24, 1.02k",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Rational-expression simplification is not separately catalogued; mapped to division and factor-theorem nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02l",
+      "sourceReference": "p.24, 1.02l",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-MODU",
+        "ALGF-FUNC-GRAP-MODU"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.24, 1.02l",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Modulus equations/inequalities and modulus graphing are both required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02m",
+      "sourceReference": "p.25, 1.02m",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.25, 1.02m",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "General graphs-of-functions statement including plotting versus sketching."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02n",
+      "sourceReference": "p.25, 1.02n",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-FUNC-GRAP-CUBC",
+        "ALGF-FUNC-GRAP-QUAR",
+        "CALC-DIFF-APPL-STAT",
+        "CALC-DIFF-APPL-SKET"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.25, 1.02n",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Sketching polynomials up to degree 4 including repeated roots and stationary points."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02o",
+      "sourceReference": "p.25, 1.02o",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-RECP",
+        "ALGF-FUNC-GRAP-ASMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.25, 1.02o",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Reciprocal graphs and their asymptotes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02p",
+      "sourceReference": "p.25, 1.02p",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-INTR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.25, 1.02p",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Interpreting algebraic solutions through graphs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02q",
+      "sourceReference": "p.25, 1.02q",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-INTR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.25, 1.02q",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Using intersections of different function types to solve equations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02r",
+      "sourceReference": "p.25, 1.02r",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-PROP",
+        "NUM-RAT-RATI-DIRE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.25, 1.02r",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Proportional relationships and their graphical representations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02s",
+      "sourceReference": "p.25, 1.02s",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-MODU"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.25, 1.02s",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Modulus of a linear function only."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02t",
+      "sourceReference": "p.25, 1.02t",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-MODU"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.25, 1.02t",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Graphical solution of modulus equations and inequalities."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02u",
+      "sourceReference": "p.26, 1.02u",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-DEFS-DEFN",
+        "ALGF-FUNC-DEFS-DOMR",
+        "ALGF-FUNC-DEFS-ONON",
+        "ALGF-FUNC-DEFS-NOTN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.26, 1.02u",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Definition of a function, domain/range, one-one/many-one and notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02v",
+      "sourceReference": "p.26, 1.02v",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-COMP-INVR",
+        "ALGF-FUNC-COMP-INVG",
+        "ALGF-FUNC-COMP-COMP",
+        "ALGF-FUNC-COMP-RANG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.26, 1.02v",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Inverse and composite functions, existence condition and range restrictions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02w",
+      "sourceReference": "p.26, 1.02w",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-TRAN-VERT",
+        "ALGF-FUNC-TRAN-HORZ",
+        "ALGF-FUNC-TRAN-STRE",
+        "ALGF-FUNC-TRAN-REFL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.26, 1.02w",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Single transformations of y=f(x)."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02x",
+      "sourceReference": "p.26, 1.02x",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-TRAN-VERT",
+        "ALGF-FUNC-TRAN-HORZ",
+        "ALGF-FUNC-TRAN-STRE",
+        "ALGF-FUNC-TRAN-REFL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.26, 1.02x",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "No dedicated catalog node for combined transformations; mapped to individual transformation nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02y",
+      "sourceReference": "p.27, 1.02y",
+      "canonicalNodeIds": [
+        "ALGF-POLY-PART-LINL",
+        "ALGF-POLY-PART-REPL",
+        "ALGF-POLY-PART-APPL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.27, 1.02y",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Partial fractions with denominators up to squared linear terms and at most three terms."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.02z",
+      "sourceReference": "p.27, 1.02z",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL",
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.27, 1.02z",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Function modelling including assumptions, limitations, refinements and comparisons."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.03a",
+      "sourceReference": "p.28, 1.03a",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-COOR-LINE-POINT",
+        "GEOM-COOR-LINE-GENR",
+        "GEOM-COOR-CART-MIDP",
+        "GEOM-COOR-CART-DIST",
+        "GEOM-COOR-CART-INTR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.28, 1.03a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Straight-line equations, midpoint, distance and intersection."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.03b",
+      "sourceReference": "p.28, 1.03b",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-GRAD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.28, 1.03b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Parallel and perpendicular gradient conditions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.03c",
+      "sourceReference": "p.28, 1.03c",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE",
+        "REAS-MODL-MODL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.28, 1.03c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Straight-line models in context including average rates of change."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.03d",
+      "sourceReference": "p.29, 1.03d",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CIRC-CENT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.29, 1.03d",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Circle equation in centre-radius form."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.03e",
+      "sourceReference": "p.29, 1.03e",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CIRC-EXPN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.29, 1.03e",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Completing the square to find centre and radius."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.03f",
+      "sourceReference": "p.29, 1.03f",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-SEMI",
+        "GEOM-SHAP-CITH-TANG",
+        "GEOM-COOR-CIRC-CHRD",
+        "GEOM-COOR-CIRC-TANG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.29, 1.03f",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Circle properties applied in coordinate geometry and intersection checks."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.03g",
+      "sourceReference": "p.29, 1.03g",
+      "canonicalNodeIds": [
+        "GEOM-PARM-PARM-DEFS",
+        "GEOM-PARM-PARM-CART"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.29, 1.03g",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Parametric equations of curves and conversion to/from Cartesian form."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.03h",
+      "sourceReference": "p.30, 1.03h",
+      "canonicalNodeIds": [
+        "GEOM-PARM-PARM-MODE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.30, 1.03h",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Parametric modelling in a variety of contexts."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04a",
+      "sourceReference": "p.30, 1.04a",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-BINO-POSI",
+        "ALGF-SEQ-BINO-COEF",
+        "ALGF-SEQ-BINO-PASC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.30, 1.04a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Binomial expansion for positive integer n, factorial and combination notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04b",
+      "sourceReference": "p.30, 1.04b",
+      "canonicalNodeIds": [
+        "PROB-DIST-BINO-MODE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.30, 1.04b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Link between binomial expansion and binomial probabilities."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04c",
+      "sourceReference": "p.30, 1.04c",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-BINO-RATN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.30, 1.04c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Binomial expansion for any rational n, including approximation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04d",
+      "sourceReference": "p.30, 1.04d",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-BINO-RATN"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.30, 1.04d",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Validity condition |bx/a|<1 for rational binomial expansion."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04e",
+      "sourceReference": "p.31, 1.04e",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-TERM",
+        "ALGF-SEQ-SEQU-NTH"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.31, 1.04e",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Sequences defined by nth-term formula or recurrence relation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04f",
+      "sourceReference": "p.31, 1.04f",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.31, 1.04f",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Catalog lacks separate nodes for increasing/decreasing/periodic sequences and for sequence/series distinctions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04g",
+      "sourceReference": "p.31, 1.04g",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SERS"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.31, 1.04g",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Sigma notation for sums is not separately catalogued; mapped to the Series parent node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04h",
+      "sourceReference": "p.31, 1.04h",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-ARIT",
+        "ALGF-SEQ-SERS-ARSM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.31, 1.04h",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Arithmetic sequences and series including nth term and sum formulae."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04i",
+      "sourceReference": "p.32, 1.04i",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-GEOM",
+        "ALGF-SEQ-SERS-GESM",
+        "ALGF-SEQ-SERS-CONV"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.32, 1.04i",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Geometric sequences and series, finite sum and convergence/divergence."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04j",
+      "sourceReference": "p.32, 1.04j",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SERS-INFI"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.32, 1.04j",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Sum to infinity of a convergent geometric series with |r|<1."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.04k",
+      "sourceReference": "p.32, 1.04k",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL",
+        "ALGF-LOG-EXPO-MODE",
+        "ALGF-LOG-LOGR-EQNS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.32, 1.04k",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Sequences and series in modelling contexts including growth/decay and interest problems."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05a",
+      "sourceReference": "p.33, 1.05a",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-GRAP-SINE",
+        "TRIG-FUNC-GRAP-COSN",
+        "TRIG-FUNC-GRAP-TANG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.33, 1.05a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Definitions of sin, cos and tan for all arguments."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05b",
+      "sourceReference": "p.33, 1.05b",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-SINR",
+        "TRIG-BASE-NONR-COSR",
+        "TRIG-BASE-NONR-AMB"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.33, 1.05b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Sine and cosine rules, including bearings and the ambiguous case."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05c",
+      "sourceReference": "p.33, 1.05c",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.33, 1.05c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Area of a triangle using 1/2 ab sin C."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05d",
+      "sourceReference": "p.33, 1.05d",
+      "canonicalNodeIds": [
+        "TRIG-CIRC-RADI-CONV",
+        "TRIG-CIRC-RADI-ARCL",
+        "TRIG-CIRC-RADI-SECA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.33, 1.05d",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Radian measure, arc length and sector area."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05e",
+      "sourceReference": "p.33, 1.05e",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node covers small-angle approximations for sine, cosine and tangent.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.33, 1.05e",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Standard small-angle approximations in radians are required but not catalogued separately."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05f",
+      "sourceReference": "p.34, 1.05f",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-GRAP-SINE",
+        "TRIG-FUNC-GRAP-COSN",
+        "TRIG-FUNC-GRAP-TANG",
+        "TRIG-FUNC-EXCT-EXCT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.34, 1.05f",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Trigonometric graphs, symmetries, periodicities and exact values in degrees."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05g",
+      "sourceReference": "p.34, 1.05g",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-EXCT-EXCT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.34, 1.05g",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Exact values in radians for standard angles and multiples."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05h",
+      "sourceReference": "p.34, 1.05h",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-ADVN-SECA",
+        "TRIG-FUNC-ADVN-COSE",
+        "TRIG-FUNC-ADVN-COTA",
+        "TRIG-FUNC-EXCT-INVS",
+        "TRIG-FUNC-EXCT-INVC",
+        "TRIG-FUNC-EXCT-INVT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.34, 1.05h",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Definitions of secant, cosecant, cotangent and inverse trigonometric functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05i",
+      "sourceReference": "p.34, 1.05i",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-ADVN-GRAP",
+        "TRIG-FUNC-EXCT-INVS",
+        "TRIG-FUNC-EXCT-INVC",
+        "TRIG-FUNC-EXCT-INVT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.34, 1.05i",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Graphs, ranges and domains of reciprocal and inverse trigonometric functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05j",
+      "sourceReference": "p.34, 1.05j",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-IDEN-TANR",
+        "TRIG-IDEN-IDEN-PYTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.34, 1.05j",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "tan θ = sin θ/cos θ and sin²θ + cos²θ = 1."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05k",
+      "sourceReference": "p.34, 1.05k",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-IDEN-PYTH",
+        "TRIG-FUNC-ADVN-SECA",
+        "TRIG-FUNC-ADVN-COSE",
+        "TRIG-FUNC-ADVN-COTA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.34, 1.05k",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "1 + tan²θ = sec²θ and 1 + cot²θ = cosec²θ."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05l",
+      "sourceReference": "p.35, 1.05l",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-IDEN-DBLA",
+        "TRIG-IDEN-IDEN-ADDR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.35, 1.05l",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Double-angle and addition formulae and their uses."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05m",
+      "sourceReference": "p.35, 1.05m",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-JUST"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.35, 1.05m",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Geometrical proofs of addition/double-angle formulae; no dedicated catalog node, mapped to general justifying-methods node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05n",
+      "sourceReference": "p.35, 1.05n",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-IDEN-ADDR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.35, 1.05n",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Harmonic form a cos θ + b sin θ = R cos(θ±α) or R sin(θ±α) is not separately catalogued; mapped to addition-formulae parent."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05o",
+      "sourceReference": "p.35, 1.05o",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-EQNS-SIMP",
+        "TRIG-IDEN-EQNS-QUAD",
+        "TRIG-IDEN-EQNS-MULT",
+        "TRIG-IDEN-EQNS-INTR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.35, 1.05o",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Solving trigonometric equations in intervals, including quadratic and multiple-angle cases."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05p",
+      "sourceReference": "p.36, 1.05p",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-DEDU"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.36, 1.05p",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Constructing proofs involving trigonometric functions and identities."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.05q",
+      "sourceReference": "p.36, 1.05q",
+      "canonicalNodeIds": [
+        "TRIG-APPL-MODE-WAVE",
+        "TRIG-APPL-MODE-VECT",
+        "TRIG-APPL-MODE-MECH",
+        "TRIG-APPL-MODE-KINE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.36, 1.05q",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Trigonometric functions applied to vectors, kinematics, forces and periodic contexts."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.06a",
+      "sourceReference": "p.36, 1.06a",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-AX",
+        "ALGF-LOG-EXPO-EX"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.36, 1.06a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Exponential functions a^x and e^x and their graphs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.06b",
+      "sourceReference": "p.36, 1.06b",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-EXPL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "01",
+          "02",
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.36, 1.06b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Gradient of e^(kx); formal differentiation of e^x is covered in 1.07j."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.06c",
+      "sourceReference": "p.37 OCR 1.06c",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-INVR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Defines log_a x as inverse of a^x; maps directly to logarithms as inverse functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.06d",
+      "sourceReference": "p.37 OCR 1.06d",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-LN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Know and use ln x and its graph."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.06e",
+      "sourceReference": "p.37 OCR 1.06e",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-INVR",
+        "ALGF-LOG-EXPO-EX"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "ln x as inverse of e^x; also links to exponential function e^x."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.06f",
+      "sourceReference": "p.37 OCR 1.06f",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-LAWS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Laws of logarithms including product, quotient and power rules."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.06g",
+      "sourceReference": "p.38 OCR 1.06g",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-EQNS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Solve exponential equations of form a^x = b."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.06h",
+      "sourceReference": "p.38 OCR 1.06h",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-EQNS",
+        "ALGF-LOG-EXPO-MODE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Logarithmic graphs to estimate parameters in y=ax^n and y=kb^x; no exact node for log-linear/log-log reduction, mapped to closest equation/modelling nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.06i",
+      "sourceReference": "p.38 OCR 1.06i",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-MODE",
+        "ALGF-LOG-EXPO-GROW"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Exponential growth/decay and modelling contexts."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07a",
+      "sourceReference": "p.39 OCR 1.07a",
+      "canonicalNodeIds": [
+        "CALC-DIFF-CONC-GRAD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Derivative as gradient of tangent."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07b",
+      "sourceReference": "p.39 OCR 1.07b",
+      "canonicalNodeIds": [
+        "CALC-DIFF-CONC-LIMT",
+        "CALC-DIFF-CONC-RATE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Gradient as limit of chord and rate of change; includes notation equivalence."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07c",
+      "sourceReference": "p.39 OCR 1.07c",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-SKET"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sketch gradient function; curve sketching node is broader."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07d",
+      "sourceReference": "p.39 OCR 1.07d",
+      "canonicalNodeIds": [
+        "CALC-DIFF-CONC-NOTN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Second derivatives and notation equivalence; no dedicated second-derivative node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07e",
+      "sourceReference": "p.39 OCR 1.07e",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-INFL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Second derivative as rate of change of gradient; linked to concavity/inflection node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07f",
+      "sourceReference": "p.39 OCR 1.07f",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-INFL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Convex/concave sections and points of inflection using second derivative."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07g",
+      "sourceReference": "p.40 OCR 1.07g",
+      "canonicalNodeIds": [
+        "CALC-DIFF-CONC-LIMT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Differentiation from first principles for small positive integer powers."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07h",
+      "sourceReference": "p.40 OCR 1.07h",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-TRIG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "First principles for sin x and cos x; standard differentiation node does not cover first-principles proof."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07i",
+      "sourceReference": "p.40 OCR 1.07i",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-POWR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Differentiate x^n for rational n."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07j",
+      "sourceReference": "p.40 OCR 1.07j",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-EXPL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Differentiate e^(kx) and a^(kx)."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07k",
+      "sourceReference": "p.40 OCR 1.07k",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-TRIG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Differentiate sin kx, cos kx, tan kx."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07l",
+      "sourceReference": "p.40 OCR 1.07l",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-LOGR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Derivative of ln x."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07m",
+      "sourceReference": "p.40 OCR 1.07m",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-TANG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Equations of tangents and normals."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07n",
+      "sourceReference": "p.40 OCR 1.07n",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-STAT",
+        "CALC-DIFF-APPL-MAXM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Classify stationary points as maxima or minima."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07o",
+      "sourceReference": "p.40 OCR 1.07o",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-INCR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Identify increasing/decreasing functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07p",
+      "sourceReference": "p.40 OCR 1.07p",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-INFL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Find points of inflection, including stationary and non-stationary."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07q",
+      "sourceReference": "p.41 OCR 1.07q",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-PROD",
+        "CALC-DIFF-RULE-QUOT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Product rule and quotient rule."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07r",
+      "sourceReference": "p.41 OCR 1.07r",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-CHAI",
+        "CALC-DIFF-APPL-RATC",
+        "CALC-DIFF-PARI-INVR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Chain rule, connected rates of change and inverse functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07s",
+      "sourceReference": "p.41 OCR 1.07s",
+      "canonicalNodeIds": [
+        "CALC-DIFF-PARI-IMPL",
+        "CALC-DIFF-PARI-PARM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Implicit and parametric differentiation for first derivative."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.07t",
+      "sourceReference": "p.41 OCR 1.07t",
+      "canonicalNodeIds": [
+        "CALC-DIFFEQ-FODE-SETU"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Construct simple differential equations in pure and applied contexts."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08a",
+      "sourceReference": "p.42 OCR 1.08a",
+      "canonicalNodeIds": [
+        "CALC-INTE-CONC-FTCL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Fundamental theorem of calculus and indefinite/definite terminology."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08b",
+      "sourceReference": "p.42 OCR 1.08b",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-POWR",
+        "CALC-INTE-APPL-CONS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Integrate x^n and find constant of integration."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08c",
+      "sourceReference": "p.42 OCR 1.08c",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-EXPL",
+        "CALC-INTE-RULE-LOGR",
+        "CALC-INTE-RULE-TRIG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Integrate e^(kx), 1/x, sin kx, cos kx and related sums."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08d",
+      "sourceReference": "p.42 OCR 1.08d",
+      "canonicalNodeIds": [
+        "CALC-INTE-CONC-DEFI"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Evaluate definite integrals."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08e",
+      "sourceReference": "p.42 OCR 1.08e",
+      "canonicalNodeIds": [
+        "CALC-INTE-APPL-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Area between curve and x-axis including below-axis regions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08f",
+      "sourceReference": "p.42 OCR 1.08f",
+      "canonicalNodeIds": [
+        "CALC-INTE-APPL-BETW"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Area between two curves; includes parametric curves which are not explicitly covered by the node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08g",
+      "sourceReference": "p.43 OCR 1.08g",
+      "canonicalNodeIds": [
+        "CALC-INTE-CONC-DEFI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Integration as limit of a sum; mapped to definite integral concept as closest available."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08h",
+      "sourceReference": "p.43 OCR 1.08h",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-SUBS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Integration by substitution including inspection and finding substitutions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08i",
+      "sourceReference": "p.44 OCR 1.08i",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-PART"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Integration by parts including multiple applications and ln x."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08j",
+      "sourceReference": "p.44 OCR 1.08j",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-PFR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Integrate using partial fractions with linear denominators."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08k",
+      "sourceReference": "p.44 OCR 1.08k",
+      "canonicalNodeIds": [
+        "CALC-DIFFEQ-FODE-SEPV",
+        "CALC-DIFFEQ-FODE-GENS",
+        "CALC-DIFFEQ-FODE-PART"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "First order differential equations with separable variables, general and particular solutions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.08l",
+      "sourceReference": "p.45 OCR 1.08l",
+      "canonicalNodeIds": [
+        "CALC-LDE-FIRST-MODE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpret differential equation solutions in context including limitations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.09a",
+      "sourceReference": "p.45 OCR 1.09a",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-SIGN-LOC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Locate roots by sign change including bounds."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.09b",
+      "sourceReference": "p.45 OCR 1.09b",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-SIGN-FAIL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understand failure of sign change methods."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.09c",
+      "sourceReference": "p.46 OCR 1.09c",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-ITER-FORM",
+        "NUMM-ROOT-ITER-COBW",
+        "NUMM-ROOT-ITER-STAIR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Simple iterative methods with cobweb and staircase diagrams."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.09d",
+      "sourceReference": "p.46 OCR 1.09d",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-NEWR-APPL",
+        "NUMM-ROOT-ITER-FORM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Newton-Raphson and recurrence relations x_{n+1}=g(x_n)."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.09e",
+      "sourceReference": "p.46 OCR 1.09e",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-ITER-CONV",
+        "NUMM-ROOT-NEWR-FAIL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Convergence condition and failure of iterative methods."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.09f",
+      "sourceReference": "p.46 OCR 1.09f",
+      "canonicalNodeIds": [
+        "NUMM-NINT-TRAP-ESTM",
+        "NUMM-NINT-TRAP-OVER"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Trapezium rule, rectangles, bounds and over/under-estimates."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.09g",
+      "sourceReference": "p.47 OCR 1.09g",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node covers the contextual application of numerical methods across root-finding and integration in the supplied catalog.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Contextual problem solving using numerical methods; no matching node in catalog."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.10a",
+      "sourceReference": "p.47 OCR 1.10a",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-COLV",
+        "VECT-BASIC-NOTN-UNIT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vectors in two dimensions including notation and scalar/vector distinction."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.10b",
+      "sourceReference": "p.47 OCR 1.10b",
+      "canonicalNodeIds": [
+        "VECT-SPAC-THRD-IJK"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vectors in three dimensions using i, j, k notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.10c",
+      "sourceReference": "p.47 OCR 1.10c",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-MAGN",
+        "VECT-BASIC-NOTN-DIRN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Magnitude and direction of vectors; 3D direction excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.10d",
+      "sourceReference": "p.48 OCR 1.10d",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-ADDS",
+        "VECT-BASIC-NOTN-SCAL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vector addition diagrammatically and algebraic operations including scalar multiplication."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.10e",
+      "sourceReference": "p.48 OCR 1.10e",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-POSV",
+        "VECT-BASIC-NOTN-UNIT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Position vectors and related terminology including unit vectors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.10f",
+      "sourceReference": "p.48 OCR 1.10f",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-DIST",
+        "VECT-SPAC-THRD-DIST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Distance between two points represented by position vectors in 2D and 3D."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.10g",
+      "sourceReference": "p.48 OCR 1.10g",
+      "canonicalNodeIds": [
+        "VECT-GEOM-PROB-PARA",
+        "MECH-FORC-FORC-VECN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use vectors to solve problems in pure mathematics and contexts including forces; mapped to vector geometry and vector nature of force."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-1.10h",
+      "sourceReference": "p.48 OCR 1.10h",
+      "canonicalNodeIds": [
+        "CALC-KIN-SVAT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vectors in kinematics; mapped to calculus in kinematics node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.01a",
+      "sourceReference": "p.49 OCR 2.01a",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-POP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understand population and sample terminology."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.01b",
+      "sourceReference": "p.49 OCR 2.01b",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-BIAS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use samples to make informal inferences; no dedicated inference node in sampling section, mapped to bias/critique node as closest."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.01c",
+      "sourceReference": "p.49 OCR 2.01c",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-RAND"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sampling techniques including simple random and opportunity sampling."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.01d",
+      "sourceReference": "p.49 OCR 2.01d",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-BIAS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Select or critique sampling techniques and recognise different samples lead to different conclusions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.02a",
+      "sourceReference": "page 50 / OCR Ref. 2.02a",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-BARCH",
+        "STAT-DATA-REPR-STEM",
+        "STAT-DATA-REPR-BOXW",
+        "STAT-DATA-REPR-CUMF",
+        "STAT-DATA-REPR-HIST"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 50 / OCR Ref. 2.02a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Covers interpretation of several single-variable diagrams; dot plots and vertical line charts lack dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.02b",
+      "sourceReference": "page 50 / OCR Ref. 2.02b",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-HIST"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 50 / OCR Ref. 2.02b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Area-as-frequency and links to distributions; no node for advantages/disadvantages of diagrams."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.02c",
+      "sourceReference": "page 50 / OCR Ref. 2.02c",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-SCAT",
+        "STAT-BIVA-CORR-LOBF"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 50 / OCR Ref. 2.02c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Interpret scatter diagrams and regression lines; calculation of regression-line equations is excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.02d",
+      "sourceReference": "page 50 / OCR Ref. 2.02d",
+      "canonicalNodeIds": [
+        "STAT-BIVA-CORR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 50 / OCR Ref. 2.02d",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Informal interpretation of correlation; mapped to the correlation parent node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.02e",
+      "sourceReference": "page 50 / OCR Ref. 2.02e",
+      "canonicalNodeIds": [
+        "STAT-BIVA-CORR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 50 / OCR Ref. 2.02e",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Specific correlation-versus-causation distinction is not represented by a dedicated node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.02f",
+      "sourceReference": "page 51 / OCR Ref. 2.02f",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-MEAN",
+        "STAT-SUMM-CENT-MEDI",
+        "STAT-SUMM-CENT-MODE",
+        "STAT-SUMM-CENT-QUAR",
+        "STAT-SUMM-CENT-IQR",
+        "STAT-SUMM-CENT-STDV"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 51 / OCR Ref. 2.02f",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Includes variance and distribution comparison; no separate variance node in the catalog."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.02g",
+      "sourceReference": "page 51 / OCR Ref. 2.02g",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-MEAN",
+        "STAT-SUMM-CENT-STDV",
+        "STAT-SUMM-CENT-ESTM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 51 / OCR Ref. 2.02g",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Calculator statistical functions and grouped-data estimates lack dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.02h",
+      "sourceReference": "page 52 / OCR Ref. 2.02h",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-IQR",
+        "STAT-SUMM-CENT-STDV",
+        "STAT-DATA-REPR-BOXW"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 52 / OCR Ref. 2.02h",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Outlier recognition in data sets and diagrams; no dedicated outlier node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.02i",
+      "sourceReference": "page 52 / OCR Ref. 2.02i",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 52 / OCR Ref. 2.02i",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Selecting or critiquing presentation techniques maps only to the statistical-diagrams parent."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.02j",
+      "sourceReference": "page 52 / OCR Ref. 2.02j",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node covers data cleaning, missing data, errors and outliers.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 52 / OCR Ref. 2.02j",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "No matching canonical node for data-cleaning skills."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.03a",
+      "sourceReference": "page 52 / OCR Ref. 2.03a",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-MUTX",
+        "PROB-COMB-RULE-INDE",
+        "PROB-BASIC-BASIC-NOTN"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 52 / OCR Ref. 2.03a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Includes probability notation and links to distributions beyond the rule nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.03b",
+      "sourceReference": "page 53 / OCR Ref. 2.03b",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-TREE",
+        "PROB-COMB-RULE-VENN",
+        "PROB-COMB-COUNT-SAMPS"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 53 / OCR Ref. 2.03b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Appropriate diagrams for probability calculations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.03c",
+      "sourceReference": "page 53 / OCR Ref. 2.03c",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-COND",
+        "PROB-COMB-RULE-ADD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 53 / OCR Ref. 2.03c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Conditional probability with set notation and the addition rule for unions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.03d",
+      "sourceReference": "page 53 / OCR Ref. 2.03d",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-COND"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 53 / OCR Ref. 2.03d",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Conditional probability from first principles; using the formula to find P(A|B) from P(B|A) is excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.03e",
+      "sourceReference": "page 53 / OCR Ref. 2.03e",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 53 / OCR Ref. 2.03e",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Probability modelling and critiquing modelling assumptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.04a",
+      "sourceReference": "page 54 / OCR Ref. 2.04a",
+      "canonicalNodeIds": [
+        "PROB-DRVD-DRVB-DIST"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 54 / OCR Ref. 2.04a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Simple finite discrete distributions; calculation of mean and variance is excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.04b",
+      "sourceReference": "page 54 / OCR Ref. 2.04b",
+      "canonicalNodeIds": [
+        "PROB-DIST-BINO-MODE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 54 / OCR Ref. 2.04b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Binomial distribution as a model."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.04c",
+      "sourceReference": "page 54 / OCR Ref. 2.04c",
+      "canonicalNodeIds": [
+        "PROB-DIST-BINO-PROB",
+        "PROB-DIST-BINO-MODE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 54 / OCR Ref. 2.04c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Calculator binomial probabilities and contextual identification of conditions/assumptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.04d",
+      "sourceReference": "page 54 / OCR Ref. 2.04d",
+      "canonicalNodeIds": [
+        "PROB-DIST-BINO-NORM",
+        "PROB-DIST-NORM-MODE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 54 / OCR Ref. 2.04d",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Mean and variance formulae np and npq for choosing a normal approximation to binomial."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.04e",
+      "sourceReference": "page 55 / OCR Ref. 2.04e",
+      "canonicalNodeIds": [
+        "PROB-DIST-NORM-MODE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 55 / OCR Ref. 2.04e",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Normal distribution as a continuous model."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.04f",
+      "sourceReference": "page 55 / OCR Ref. 2.04f",
+      "canonicalNodeIds": [
+        "PROB-DIST-NORM-STAN",
+        "PROB-DIST-NORM-INV",
+        "PROB-DIST-NORM-TABLE"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 55 / OCR Ref. 2.04f",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Probability and inverse-normal calculations with standard normal transformation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.04g",
+      "sourceReference": "page 55 / OCR Ref. 2.04g",
+      "canonicalNodeIds": [
+        "PROB-DIST-NORM-MODE",
+        "STAT-DATA-REPR-HIST",
+        "CALC-DIFF-APPL-INFL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 55 / OCR Ref. 2.04g",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Empirical rule and inflection points; equation of the normal curve is excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.04h",
+      "sourceReference": "page 55 / OCR Ref. 2.04h",
+      "canonicalNodeIds": [
+        "PROB-DIST"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 55 / OCR Ref. 2.04h",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Selecting an appropriate distribution with reasoning; explicit normal-approximation calculations excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.05a",
+      "sourceReference": "page 56 / OCR Ref. 2.05a",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-NULL",
+        "STAT-TEST-HYPO-TAIL",
+        "STAT-TEST-HYPO-SIGL",
+        "STAT-TEST-HYPO-CRIT"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 56 / OCR Ref. 2.05a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Hypothesis-testing terminology developed through a binomial model."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.05b",
+      "sourceReference": "page 57 / OCR Ref. 2.05b",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-BINO"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 57 / OCR Ref. 2.05b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Hypothesis test for a proportion in a binomial distribution with contextual interpretation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.05c",
+      "sourceReference": "page 57 / OCR Ref. 2.05c",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-SIGL",
+        "STAT-ENQ-SAMP-POP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 57 / OCR Ref. 2.05c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Significance level as probability of incorrectly rejecting H0; sample-to-population inference."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.05d",
+      "sourceReference": "page 58 / OCR Ref. 2.05d",
+      "canonicalNodeIds": [
+        "STAT-EST-ESTI-SMEAN",
+        "PROB-DIST-NORM-MODE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 58 / OCR Ref. 2.05d",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Distribution of the sample mean for normal populations; proof is excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.05e",
+      "sourceReference": "page 58 / OCR Ref. 2.05e",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-MEAN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 58 / OCR Ref. 2.05e",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Hypothesis test for the mean of a normal distribution with known/given/assumed variance."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.05f",
+      "sourceReference": "page 59 / OCR Ref. 2.05f",
+      "canonicalNodeIds": [
+        "STAT-CORR-REG-PMCC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 59 / OCR Ref. 2.05f",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Pearson product-moment correlation coefficient as a measure of linear closeness."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-2.05g",
+      "sourceReference": "page 59 / OCR Ref. 2.05g",
+      "canonicalNodeIds": [
+        "STAT-CORR-REG-PMCC",
+        "STAT-TEST-HYPO"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "02"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 59 / OCR Ref. 2.05g",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Hypothesis tests using a given PMCC; calculation of correlation coefficients is excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.01a",
+      "sourceReference": "page 60 / OCR Ref. 3.01a",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node covers SI base quantities and units in mechanics.",
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 60 / OCR Ref. 3.01a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "SI base units m, s, kg not matched by a dedicated mechanics-units node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.01b",
+      "sourceReference": "page 60 / OCR Ref. 3.01b",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node covers derived quantities and units in mechanics.",
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 60 / OCR Ref. 3.01b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Derived units for velocity, acceleration, force and weight not matched by a dedicated node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.01c",
+      "sourceReference": "page 60 / OCR Ref. 3.01c",
+      "canonicalNodeIds": [
+        "MECH-FURT-RIGD-MOMT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 60 / OCR Ref. 3.01c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Unit of moment; the node focuses on moments of forces rather than units."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.02a",
+      "sourceReference": "page 60 / OCR Ref. 3.02a",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-DIST",
+        "MECH-KIN-LINE-ACCL"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 60 / OCR Ref. 3.02a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Kinematics language and scalar/vector distinction."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.02b",
+      "sourceReference": "page 61 / OCR Ref. 3.02b",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-STGR",
+        "MECH-KIN-LINE-VTGR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 61 / OCR Ref. 3.02b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Use and interpretation of kinematics graphs for straight-line motion."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.02c",
+      "sourceReference": "page 61 / OCR Ref. 3.02c",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-STGR",
+        "MECH-KIN-LINE-VTGR",
+        "MECH-KIN-LINE-AREA"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 61 / OCR Ref. 3.02c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Gradient/area relationships for displacement-time and velocity-time graphs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.02d",
+      "sourceReference": "page 61 / OCR Ref. 3.02d",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-CONST"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 61 / OCR Ref. 3.02d",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Derivation of constant-acceleration formulae is explicitly required; proof depth assigned."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.02e",
+      "sourceReference": "page 61 / OCR Ref. 3.02e",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-CONST",
+        "VECT-BASIC-NOTN-COLV",
+        "VECT-BASIC-NOTN-UNIT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 61 / OCR Ref. 3.02e",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Vector extension of suvat equations using column or i,j notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.02f",
+      "sourceReference": "page 62 / OCR Ref. 3.02f",
+      "canonicalNodeIds": [
+        "CALC-KIN-SVAT-DSDT",
+        "CALC-KIN-SVAT-DVDT",
+        "CALC-KIN-SVAT-INTV",
+        "CALC-KIN-SVAT-INTS"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 62 / OCR Ref. 3.02f",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Differentiation and integration in one-dimensional kinematics."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.02g",
+      "sourceReference": "page 62 / OCR Ref. 3.02g",
+      "canonicalNodeIds": [
+        "CALC-KIN-SVAT-DSDT",
+        "CALC-KIN-SVAT-DVDT",
+        "CALC-KIN-SVAT-INTV",
+        "CALC-KIN-SVAT-INTS",
+        "VECT-BASIC-NOTN-COLV",
+        "VECT-BASIC-NOTN-UNIT"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 62 / OCR Ref. 3.02g",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Vector extension of calculus in kinematics."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.02h",
+      "sourceReference": "page 63 / OCR Ref. 3.02h",
+      "canonicalNodeIds": [
+        "MECH-FURT-PROJ-MODEL",
+        "MECH-DYN-NEWT-VERT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 63 / OCR Ref. 3.02h",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Gravity modelled as a constant acceleration vector in a vertical plane."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.02i",
+      "sourceReference": "page 63 / OCR Ref. 3.02i",
+      "canonicalNodeIds": [
+        "MECH-FURT-PROJ-HV",
+        "MECH-FURT-PROJ-RANGE",
+        "MECH-FURT-PROJ-TRAJ"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 63 / OCR Ref. 3.02i",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Projectile model, range, greatest height and cartesian trajectory; inclined plane and resistive forces excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03a",
+      "sourceReference": "page 64 / OCR Ref. 3.03a",
+      "canonicalNodeIds": [
+        "MECH-FORC-FORC-VECN",
+        "MECH-FORC-FORC-DIAG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 64 / OCR Ref. 3.03a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Vector nature of force and force diagrams in at most two dimensions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03b",
+      "sourceReference": "page 64 / OCR Ref. 3.03b",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-PRIN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 64 / OCR Ref. 3.03b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Newton's first law and completing force diagrams for equilibrium."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03c",
+      "sourceReference": "page 65 / OCR Ref. 3.03c",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-N2L"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 65 / OCR Ref. 3.03c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Newton's second law for straight-line motion of bodies under constant forces."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03d",
+      "sourceReference": "page 65 / OCR Ref. 3.03d",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-N2L",
+        "VECT-BASIC-NOTN-COLV",
+        "VECT-BASIC-NOTN-UNIT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 65 / OCR Ref. 3.03d",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Newton's second law with forces expressed as two-dimensional vectors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03e",
+      "sourceReference": "page 65 / OCR Ref. 3.03e",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-N2L",
+        "MECH-FORC-FORC-COMP",
+        "MECH-FORC-EQUI-RESV",
+        "MECH-DYN-NEWT-INCL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 65 / OCR Ref. 3.03e",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Resolving forces and motion on inclined planes in two dimensions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03f",
+      "sourceReference": "page 66 / OCR Ref. 3.03f",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-MASS",
+        "MECH-DYN-NEWT-VERT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 66 / OCR Ref. 3.03f",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Weight W=mg and straight-line motion under gravity."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03g",
+      "sourceReference": "page 66 / OCR Ref. 3.03g",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-MASS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "eligible",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "page 66 / OCR Ref. 3.03g",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Gravitational acceleration g and its value in SI units; inverse-square law is excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03h",
+      "sourceReference": "p.67 3.03h",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-N3L"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.67 3.03h",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Newton's third law maps directly to the dedicated node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03i",
+      "sourceReference": "p.67 3.03i",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-NORM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.67 3.03i",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Normal reaction force has a direct matching node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03j",
+      "sourceReference": "p.67 3.03j",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.67 3.03j",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "No exact node for the smooth-contact model; mapped to the general modelling-assumptions node as a specific instance."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03k",
+      "sourceReference": "p.67 3.03k",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-CONP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.67 3.03k",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Connected particles and smooth pulleys map directly to the connected-particles node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03l",
+      "sourceReference": "p.67 3.03l",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-N3L",
+        "MECH-FORC-EQUI-RESV"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.67 3.03l",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Combines Newton's third law with resolving forces in two dimensions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03m",
+      "sourceReference": "p.67 3.03m",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-PRIN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.67 3.03m",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Equilibrium condition on resolved components maps directly to the principle-of-equilibrium node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03n",
+      "sourceReference": "p.68 3.03n",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-RESV",
+        "VECT-BASIC-NOTN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.68 3.03n",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "2-D vector equilibrium problems combine resolving forces with vector notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03o",
+      "sourceReference": "p.68 3.03o",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-CONP"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.68 3.03o",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Advanced connected-particle and pulley problems requiring resolving are a narrower application of connected particles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03p",
+      "sourceReference": "p.68 3.03p",
+      "canonicalNodeIds": [
+        "MECH-FORC-FORC-RESL",
+        "MECH-FORC-FORC-COMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.68 3.03p",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Resultants and components of forces are covered by the resultants and components nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03q",
+      "sourceReference": "p.69 3.03q",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-N2L",
+        "VECT-BASIC-NOTN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.69 3.03q",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "2-D dynamics under variable forces combines Newton's second law with vector methods."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03r",
+      "sourceReference": "p.70 3.03r",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-FRIC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.70 3.03r",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Frictional force concept maps directly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03s",
+      "sourceReference": "p.70 3.03s",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-NORM",
+        "MECH-FORC-EQUI-FRIC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.70 3.03s",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Contact force split into normal and frictional components maps to both relevant nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03t",
+      "sourceReference": "p.70 3.03t",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-LIMF",
+        "MECH-FORC-EQUI-COEF"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.70 3.03t",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Coefficient of friction and limiting friction are covered by the two dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03u",
+      "sourceReference": "p.70 3.03u",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-PRIN",
+        "MECH-FORC-EQUI-LIMF"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.70 3.03u",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Static/limiting equilibrium on rough surfaces combines equilibrium principles with limiting friction."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.03v",
+      "sourceReference": "p.70 3.03v",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-FRIC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.70 3.03v",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Motion on a rough surface maps directly to the dynamics-with-friction node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.04a",
+      "sourceReference": "p.71 3.04a",
+      "canonicalNodeIds": [
+        "MECH-FURT-RIGD-MOMT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.71 3.04a",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Moment of a force has a direct node; note the catalog path is labelled Further Mechanics but the content is in the standard A-Level specification."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.04b",
+      "sourceReference": "p.71 3.04b",
+      "canonicalNodeIds": [
+        "MECH-FURT-RIGD-RBAL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.71 3.04b",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Rigid-body equilibrium conditions map directly to the rigid-body-equilibrium node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H240-3.04c",
+      "sourceReference": "p.71 3.04c",
+      "canonicalNodeIds": [
+        "MECH-FURT-RIGD-MOMT",
+        "MECH-FURT-RIGD-RBAL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "03"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+            "title": "OCR A Level Mathematics A H240 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.71 3.04c",
+            "accessedAt": "2026-07-16",
+            "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Simple static contexts involving moments use both moments and rigid-body-equilibrium nodes."
+      ]
+    }
+  ]
+}

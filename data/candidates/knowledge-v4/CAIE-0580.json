@@ -1,0 +1,2420 @@
+{
+  "schemaVersion": "4.0.0",
+  "qualificationVersionId": "CAIE-0580:2025-2027",
+  "board": "CAIE",
+  "subjectCode": "0580",
+  "subjectName": "IGCSE Mathematics",
+  "level": "IGCSE",
+  "syllabusVersion": "2025-2027",
+  "effectiveFrom": "2025-01-01",
+  "sources": [
+    {
+      "url": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
+      "title": "Cambridge IGCSE Mathematics 0580 syllabus",
+      "documentVersion": "2025-2027",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "627f8e5dab21605f95b9aceec4a2dcdddf91dce5767d6938d647b38041c6d363",
+      "sourceType": "official"
+    }
+  ],
+  "reviewStatus": "candidate",
+  "review": {
+    "generatedAt": "2026-07-16",
+    "promptVersion": "knowledge-v4-3-chunked",
+    "requestedModelId": "kimi-k2.7-code-highspeed",
+    "responseModelId": "kimi-k2.7-code-highspeed"
+  },
+  "declaredPapers": [
+    "Paper 1",
+    "Paper 2",
+    "Paper 3",
+    "Paper 4",
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "syllabusPoints": [
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-C1.1",
+      "sourceReference": "p.12, Core subject content 1 Number, C1.1 Types of number",
+      "canonicalNodeIds": [
+        "NUM-SYS-TYPE-NAT",
+        "NUM-SYS-TYPE-INTG",
+        "NUM-SYS-TYPE-PRIM",
+        "NUM-SYS-TYPE-FACT",
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Official point requires identifying and using natural numbers, integers, prime numbers, square numbers, cube numbers, common factors, common multiples, rational/irrational numbers and reciprocals.",
+        "Mapped square/cube numbers to the powers-and-roots nodes for squares/square roots and cubes/cube roots; factors/multiples node covers common factors and common multiples.",
+        "C1.1 is Core content and is also examinable in the Extended tier because Extended includes all Core content.",
+        "The syllabus does not fix individual topics to specific papers, only to tiers (Core: Papers 1 and 3; Extended: Papers 2 and 4).",
+        "Ignored illustrative examples in the Notes and examples column (number/word conversion, prime factorisation, HCF, LCM) as non-syllabus content."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.2",
+      "sourceReference": "p.13 C1.2",
+      "canonicalNodeIds": [
+        "NUM-SYS-SET-LANG",
+        "NUM-SYS-SET-VENN",
+        "NUM-SYS-SET-UNIN",
+        "NUM-SYS-SET-COMP"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Venn diagrams limited to two sets; mapped to set-language, Venn-diagram, union/intersection and complement nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.3",
+      "sourceReference": "p.13 C1.3",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR",
+        "NUM-POW-INDX-POS"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes recall of squares/cubes and roots; other powers/roots covered by positive-integer indices node."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.4",
+      "sourceReference": "p.13 C1.4",
+      "canonicalNodeIds": [
+        "NUM-FRAC-FRAC-PROP",
+        "NUM-FRAC-FRAC-MIXD",
+        "NUM-FRAC-FRAC-EQVF",
+        "NUM-FRAC-FRAC-SIMP",
+        "NUM-FRAC-DECI-PLAC",
+        "NUM-FRAC-DECI-CONV",
+        "NUM-FRAC-PERC-PART"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers language/notation, equivalence and conversion between fractions, decimals and percentages; recurring-decimal conversion is excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.5",
+      "sourceReference": "p.13 C1.5",
+      "canonicalNodeIds": [
+        "NUM-FRAC-DECI-ORDR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Ordering node covers decimal ordering; inequality symbols also link to inequality notation not captured here."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.6",
+      "sourceReference": "p.14 C1.6",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-FOUR",
+        "NUM-OPS-CALC-NEG",
+        "NUM-OPS-CALC-BIDM",
+        "NUM-OPS-CALC-BRAC"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes four operations, directed numbers, order of operations and brackets across integers, fractions and decimals."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.7",
+      "sourceReference": "p.14 C1.7",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-ZERO",
+        "NUM-POW-INDX-NEG"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Integer indices only (positive, zero, negative) and rules of indices; fractional indices are Extended."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.8",
+      "sourceReference": "p.14 C1.8",
+      "canonicalNodeIds": [
+        "NUM-POW-STDF-CONV",
+        "NUM-POW-STDF-CALC",
+        "NUM-POW-STDF-INTP"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Note states Core standard-form calculations appear on Paper 3, but conversion/interpretation are not paper-fixed."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.9",
+      "sourceReference": "p.14 C1.9",
+      "canonicalNodeIds": [
+        "NUM-ACC-ROUN-DP",
+        "NUM-ACC-ROUN-SF",
+        "NUM-ACC-ROUN-POW10",
+        "NUM-ACC-ROUN-ESTM"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Combines rounding to decimal places/significant figures/powers of ten and estimation."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.10",
+      "sourceReference": "p.14 C1.10",
+      "canonicalNodeIds": [
+        "NUM-ACC-BOUN-UPLO"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Only upper/lower bounds for rounded data; bounds of calculated results are excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.11",
+      "sourceReference": "p.15 C1.11",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-SIMP",
+        "NUM-RAT-RATI-SHAR",
+        "NUM-RAT-RATI-PROP"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers simplest form, sharing in a ratio and proportional reasoning in context."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.12",
+      "sourceReference": "p.15 C1.12",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATE-SPED",
+        "NUM-RAT-RATE-DENS",
+        "NUM-RAT-RATE-PRES",
+        "NUM-RAT-RATE-FLOW"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes common and other rate measures; required formulas are given in questions."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.13",
+      "sourceReference": "p.15 C1.13",
+      "canonicalNodeIds": [
+        "NUM-FRAC-PERC-QTY",
+        "NUM-FRAC-PERC-COMP",
+        "NUM-FRAC-PERC-INDE",
+        "NUM-FRAC-PERC-PART"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers percentage of quantity, one quantity as percentage of another, increase/decrease and simple/compound interest."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.14",
+      "sourceReference": "p.16 C1.14",
+      "canonicalNodeIds": [],
+      "unmappedReason": "no-suitable-canonical-node",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculator efficiency, entering values and interpreting displays are not represented by a specific canonical node."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.15",
+      "sourceReference": "p.16 C1.15",
+      "canonicalNodeIds": [
+        "NUM-MEAS-TIME-TIME",
+        "NUM-MEAS-TIME-CLOCK",
+        "NUM-MEAS-TIME-ZONE"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes time-unit calculations, 12/24-hour clocks and timetables/time zones."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.16",
+      "sourceReference": "p.16 C1.16",
+      "canonicalNodeIds": [
+        "NUM-MEAS-TIME-MONE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Money calculations are covered; currency conversion has no dedicated node."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.17",
+      "sourceReference": "p.16 C1.17",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C1.18",
+      "sourceReference": "p.16 C1.18",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.1",
+      "sourceReference": "p.17 C2.1",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-GENR",
+        "ALGF-EXP-NOTN-SUBS",
+        "ALGF-EXP-NOTN-FORM"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Letters as generalised numbers, substitution and formulas."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.2",
+      "sourceReference": "p.17 C2.2",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI-LIKE",
+        "ALGF-EXP-MANI-EXP1",
+        "ALGF-EXP-MANI-EXP2",
+        "ALGF-EXP-MANI-FACT"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Collecting like terms, expanding single and paired brackets, and full factorisation."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.3",
+      "sourceReference": "p.17 C2.3",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.4",
+      "sourceReference": "p.17 C2.4",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-ZERO",
+        "NUM-POW-INDX-NEG"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Algebraic integer indices (positive, zero, negative); logarithms are not required."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.5",
+      "sourceReference": "p.17 C2.5",
+      "canonicalNodeIds": [
+        "ALGF-EQN-LINE-FORM",
+        "ALGF-EQN-LINE-SOLV",
+        "ALGF-EQN-SIMU-LIN2",
+        "ALGF-EQN-LINE-SUBJ"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Constructing linear expressions/equations, solving linear equations, two linear simultaneous equations and changing the subject."
+      ]
+    },
+    {
+      "syllabusPointId": "UNRESOLVED-24",
+      "sourceReference": "p.18 C2.6",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-LINS",
+        "ALGF-EQN-INEQ-NUMB"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Represent and interpret inequalities on a number line; solving linear inequalities is implied."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.7",
+      "sourceReference": "p.18 C2.7",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-TERM",
+        "ALGF-SEQ-SEQU-NTH",
+        "ALGF-SEQ-SEQU-ARIT"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Term-to-term rules and nth terms for linear, simple quadratic and simple cubic sequences."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.8",
+      "sourceReference": "p.18 C2.8",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.9",
+      "sourceReference": "p.18 C2.9",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Practical graphs (travel/conversion) and drawing from data; linear-graph node covers interpretation, modelling node covers context."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.10",
+      "sourceReference": "p.19 C2.10",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-FUNC-GRAP-RECP",
+        "ALGF-FUNC-GRAP-INTR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Linear, quadratic and reciprocal graphs; solving associated equations graphically."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.11",
+      "sourceReference": "p.19 C2.11",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "ALGF-FUNC-GRAP-QUAD"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recognise, sketch and interpret linear and quadratic graphs; turning points not required."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.12",
+      "sourceReference": "p.19 C2.12",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C2.13",
+      "sourceReference": "p.19 C2.13",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C3.1",
+      "sourceReference": "p.20 C3.1",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-COOR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use and interpret Cartesian coordinates in two dimensions."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C3.2",
+      "sourceReference": "p.20 C3.2",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-COOR-LINE-GENR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Drawing straight-line graphs from linear equations, chiefly y = mx + c."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C3.3",
+      "sourceReference": "p.20 C3.3",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-GRAD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Gradient from a grid only."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C3.4",
+      "sourceReference": "p.20 C3.4",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C3.5",
+      "sourceReference": "p.20 C3.5",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-COOR-LINE-GRAD"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Obtain/interpret equation y = mx + c and vertical lines x = k; give simplified form."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C3.6",
+      "sourceReference": "p.20 C3.6",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-SHAP-ANGL-PARA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Parallel line gradient/equation linked to equal gradients; no dedicated parallel-lines coordinate-geometry node."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C3.7",
+      "sourceReference": "p.20 C3.7",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C4.1",
+      "sourceReference": "p.21-22 C4.1",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-ANGT",
+        "GEOM-SHAP-TERM-TRIA",
+        "GEOM-SHAP-TERM-QUAD",
+        "GEOM-SHAP-TERM-POLY",
+        "GEOM-SHAP-SIMI-CONG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers geometrical terms, triangles, quadrilaterals, polygons, nets, solids and circle vocabulary; nets and circle vocabulary have no specific nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C4.2",
+      "sourceReference": "p.22 C4.2",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS-MEAS",
+        "GEOM-CONS-CONS-TRIA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Measure/draw lines and angles, construct triangles; nets are not represented by a specific node."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C4.3",
+      "sourceReference": "p.23 C4.3",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS-MEAS",
+        "GEOM-SHAP-TERM-ANGT",
+        "NUM-RAT-RATI-SIMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Scale drawings and three-figure bearings; bearings and scale-drawing nodes are absent from the catalog."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C4.4",
+      "sourceReference": "p.23 C4.4",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-SIML",
+        "GEOM-SHAP-SIMI-LENS"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculate lengths of similar shapes using length scale factors."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C4.5",
+      "sourceReference": "p.23 C4.5",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SYMM-LINE",
+        "GEOM-SHAP-SYMM-ROTA"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Line symmetry and order of rotational symmetry in 2D."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C4.6",
+      "sourceReference": "p.23 C4.6",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-ANGL-POINT",
+        "GEOM-SHAP-ANGL-LINE",
+        "GEOM-SHAP-ANGL-VERT",
+        "GEOM-SHAP-ANGL-PARA",
+        "GEOM-SHAP-TERM-POLY"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Angle properties at a point, on a straight line, vertically opposite, parallel lines, triangles/quadrilaterals and regular polygons; polygon angle properties only partly covered."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C4.7",
+      "sourceReference": "p.24 C4.7",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-SEMI",
+        "GEOM-SHAP-CITH-TANG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Only angle in a semicircle and tangent-radius theorem are required at Core."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C4.8",
+      "sourceReference": "p.24 C4.8",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C5.1",
+      "sourceReference": "p.25 C5.1",
+      "canonicalNodeIds": [
+        "GEOM-MENS-UNIT-LENG",
+        "GEOM-MENS-UNIT-AREA",
+        "GEOM-MENS-UNIT-VOLU",
+        "GEOM-MENS-UNIT-CAPA"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Metric units of length, area, volume, capacity and conversions between them."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C5.2",
+      "sourceReference": "p.25 C5.2",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA-RECT",
+        "GEOM-MENS-AREA-TRIA",
+        "GEOM-MENS-AREA-PARA",
+        "GEOM-MENS-AREA-TRAP"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Perimeter and area of rectangle, triangle, parallelogram and trapezium."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C5.3",
+      "sourceReference": "p.25 C5.3",
+      "canonicalNodeIds": [
+        "GEOM-MENS-CIRC-CIRC",
+        "GEOM-MENS-CIRC-AREA",
+        "GEOM-MENS-CIRC-ARCL",
+        "GEOM-MENS-CIRC-SECA"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Circumference, area of a circle, arc length and sector area as fractions of circle measures."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C5.4",
+      "sourceReference": "p.25 C5.4",
+      "canonicalNodeIds": [
+        "GEOM-MENS-SOLI-CUBD",
+        "GEOM-MENS-SOLI-PRIS",
+        "GEOM-MENS-SOLI-CYLN",
+        "GEOM-MENS-SOLI-PYRA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes sphere and cone as well as cuboid, prism, cylinder, pyramid; sphere/cone nodes are absent from the catalog."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C5.5",
+      "sourceReference": "p.26 C5.5",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA",
+        "GEOM-MENS-SOLI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Compound shapes/parts and compound solids/parts; mapped to parent mensuration nodes because no compound-shape nodes exist."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C6.1",
+      "sourceReference": "p.27 C6.1",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-PYTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Know and use Pythagoras' theorem."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C6.2",
+      "sourceReference": "p.27 C6.2",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-SINE",
+        "TRIG-BASE-RATR-COSN",
+        "TRIG-BASE-RATR-TANG",
+        "TRIG-BASE-RATR-PYTH"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sine, cosine and tangent ratios for acute angles and 2D problem solving including Pythagoras."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C6.3",
+      "sourceReference": "p.27 C6.3",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C6.4",
+      "sourceReference": "p.27 C6.4",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C6.5",
+      "sourceReference": "p.27 C6.5",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C6.6",
+      "sourceReference": "p.27 C6.6",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C7.1",
+      "sourceReference": "p.28 C7.1",
+      "canonicalNodeIds": [
+        "GEOM-CONS-TRAN-REFL",
+        "GEOM-CONS-TRAN-ROTA",
+        "GEOM-CONS-TRAN-ENLG",
+        "GEOM-CONS-TRAN-TRAN"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Reflections, rotations, enlargements (positive and fractional scale factors) and translations by column vectors; combinations excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C7.2",
+      "sourceReference": "p.28 C7.2",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C7.3",
+      "sourceReference": "p.28 C7.3",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-C7.4",
+      "sourceReference": "p.28 C7.4",
+      "canonicalNodeIds": [],
+      "unmappedReason": "extended-content-only",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Placeholder for Extended content only; no Core mapping."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-C8.1",
+      "sourceReference": "p.29",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SCALE",
+        "PROB-BASIC-BASIC-SING",
+        "PROB-BASIC-BASIC-COMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Probability notation explicitly excluded in official notes; mapped to complement rather than formal notation node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-C8.2",
+      "sourceReference": "p.29",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SING"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Relative frequency and expected frequency are not represented by specific canonical nodes; mapped to the broader single-event probability node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-C8.3",
+      "sourceReference": "p.29",
+      "canonicalNodeIds": [
+        "PROB-COMB-COUNT-SAMPS",
+        "PROB-COMB-RULE-VENN",
+        "PROB-COMB-RULE-TREE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Combined events with replacement only; Venn diagrams limited to two sets."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-C9.1",
+      "sourceReference": "p.30",
+      "canonicalNodeIds": [
+        "STAT-DATA-CLAS-TYPE",
+        "STAT-DATA-CLAS-TALL",
+        "STAT-DATA-CLAS-TWOW"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Classify and tabulate statistical data including tally and two-way tables."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-C9.2",
+      "sourceReference": "p.30",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-BARCH",
+        "STAT-DATA-REPR-PIE",
+        "STAT-SUMM-CENT-MEAN",
+        "STAT-SUMM-CENT-MEDI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Restrictions on drawing conclusions are not specifically represented; mapped to interpretation and comparison nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-C9.3",
+      "sourceReference": "p.30",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-MEAN",
+        "STAT-SUMM-CENT-MEDI",
+        "STAT-SUMM-CENT-MODE",
+        "STAT-SUMM-CENT-RANG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Individual data only; grouped data excluded at Core tier."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-C9.4",
+      "sourceReference": "p.30",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-BARCH",
+        "STAT-DATA-REPR-PIE",
+        "STAT-DATA-REPR-PICT",
+        "STAT-DATA-REPR-STEM",
+        "STAT-DATA-CLAS-GROUP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes composite and dual bar charts; stem-and-leaf diagrams require ordered data with a key."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-C9.5",
+      "sourceReference": "p.31",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-SCAT",
+        "STAT-BIVA-CORR-POSC",
+        "STAT-BIVA-CORR-NEGC",
+        "STAT-BIVA-CORR-ZEROC",
+        "STAT-BIVA-CORR-LOBF"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Line of best fit drawn by inspection across full data set with roughly even point distribution."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.1",
+      "sourceReference": "p.32",
+      "canonicalNodeIds": [
+        "NUM-SYS-TYPE-NAT",
+        "NUM-SYS-TYPE-INTG",
+        "NUM-SYS-TYPE-PRIM",
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR",
+        "NUM-SYS-TYPE-FACT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Rational/irrational numbers and reciprocals are listed in the syllabus but lack specific canonical nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.2",
+      "sourceReference": "p.32",
+      "canonicalNodeIds": [
+        "NUM-SYS-SET-LANG",
+        "NUM-SYS-SET-VENN",
+        "NUM-SYS-SET-UNIN",
+        "NUM-SYS-SET-COMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Venn diagrams limited to two or three sets; standard set notation listed."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.3",
+      "sourceReference": "p.32",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR",
+        "NUM-POW-INDX-POS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes recall of squares/cubes and roots up to specified values."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.4",
+      "sourceReference": "p.33",
+      "canonicalNodeIds": [
+        "NUM-FRAC-FRAC-PROP",
+        "NUM-FRAC-FRAC-MIXD",
+        "NUM-FRAC-DECI-PLAC",
+        "NUM-FRAC-FRAC-EQVF",
+        "NUM-FRAC-DECI-CONV",
+        "NUM-FRAC-DECI-RECR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes recurring decimal notation and conversion between recurring decimals and fractions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.5",
+      "sourceReference": "p.33",
+      "canonicalNodeIds": [
+        "NUM-FRAC-DECI-ORDR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use of equality and inequality symbols."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.6",
+      "sourceReference": "p.33",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-FOUR",
+        "NUM-OPS-CALC-BIDM",
+        "NUM-OPS-CALC-BRAC",
+        "NUM-OPS-CALC-NEG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Four operations with integers, fractions and decimals including correct order of operations and brackets."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.7",
+      "sourceReference": "p.33",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-ZERO",
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-INDX-FRAC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Positive, zero, negative and fractional indices including rules of indices."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.8",
+      "sourceReference": "p.33",
+      "canonicalNodeIds": [
+        "NUM-POW-STDF-CONV",
+        "NUM-POW-STDF-CALC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Standard form A x 10^n with 1 <= A < 10 and n positive or negative integer."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.9",
+      "sourceReference": "p.34",
+      "canonicalNodeIds": [
+        "NUM-ACC-ROUN-DP",
+        "NUM-ACC-ROUN-SF",
+        "NUM-ACC-ROUN-ESTM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Rounding to decimal places and significant figures; estimation in context."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.10",
+      "sourceReference": "p.34",
+      "canonicalNodeIds": [
+        "NUM-ACC-BOUN-UPLO",
+        "NUM-ACC-BOUN-CALC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Upper and lower bounds for rounded data and for results of calculations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.11",
+      "sourceReference": "p.34",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-SIMP",
+        "NUM-RAT-RATI-SHAR",
+        "NUM-RAT-RATI-PROP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Ratio in simplest form, dividing a quantity in a ratio, proportional reasoning in context."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.12",
+      "sourceReference": "p.35",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATE-SPED",
+        "NUM-RAT-RATE-DENS",
+        "NUM-RAT-RATE-PRES"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Flow rates, fuel consumption, exchange rates, hourly rates and population density lack specific nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.13",
+      "sourceReference": "p.35",
+      "canonicalNodeIds": [
+        "NUM-FRAC-PERC-QTY",
+        "NUM-FRAC-PERC-PART",
+        "NUM-FRAC-PERC-COMP",
+        "NUM-FRAC-PERC-INDE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Simple and compound interest and reverse percentages are not represented by specific nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.14",
+      "sourceReference": "p.35",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-FOUR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculator efficiency, appropriate entry and interpretation of display; no dedicated calculator-use node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.15",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "NUM-MEAS-TIME-TIME",
+        "NUM-MEAS-TIME-CLOCK",
+        "NUM-MEAS-TIME-ZONE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Time calculations across units, 12/24-hour clocks, timetables and time zones."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.16",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "NUM-MEAS-TIME-MONE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Money calculations and currency conversion."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.17",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-GROW"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Exponential growth and decay including depreciation and population change; knowledge of e not required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E1.18",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SURD",
+        "NUM-POW-POWR-RATD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Simplifying surds and rationalising denominators."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.1",
+      "sourceReference": "p.37",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-GENR",
+        "ALGF-EXP-NOTN-SUBS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Letters as generalised numbers and substitution into expressions and formulas."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.2",
+      "sourceReference": "p.37",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI-LIKE",
+        "ALGF-EXP-MANI-EXP1",
+        "ALGF-EXP-MANI-EXP2",
+        "ALGF-EXP-MANI-FACT",
+        "ALGF-EQN-QUAD-COMP",
+        "ALGF-POLY-POLY-CUBQ"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes expanding products of more than two brackets, factorising including cubics, and completing the square."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.3",
+      "sourceReference": "p.37",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI-FACT",
+        "ALGF-POLY-PART-APPL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "No dedicated algebraic-fractions node; partial fractions node is a broader A-level analogue."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.4",
+      "sourceReference": "p.38",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-ZERO",
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-INDX-FRAC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Indices including solving simple exponential equations; logarithms not required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.5",
+      "sourceReference": "p.38",
+      "canonicalNodeIds": [
+        "ALGF-EQN-LINE-FORM",
+        "ALGF-EQN-LINE-SOLV",
+        "ALGF-EQN-SIMU-LIN2",
+        "ALGF-EQN-SIMU-LINQ",
+        "ALGF-EQN-QUAD-FACT",
+        "ALGF-EQN-QUAD-COMP",
+        "ALGF-EQN-QUAD-FORM",
+        "ALGF-EQN-LINE-SUBJ",
+        "ALGF-EQN-LINE-SUB2"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes fractional equations with linear denominators and changing subject where subject appears twice or with powers/roots."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.6",
+      "sourceReference": "p.39",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-NUMB",
+        "ALGF-EQN-INEQ-LINS",
+        "ALGF-EQN-INEQ-REGN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Linear inequalities in one variable and in two variables graphically; linear programming not included."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.7",
+      "sourceReference": "p.39",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-TERM",
+        "ALGF-SEQ-SEQU-NTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Linear, quadratic, cubic and exponential sequences and simple combinations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.8",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-DIRE",
+        "NUM-RAT-RATI-PROP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Direct and inverse proportion including linear, square, square root, cube and cube root proportion."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.9",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "CALC-DIFF-CONC-RATE",
+        "CALC-KIN-SVAT-DSDT",
+        "MECH-KIN-LINE-STGR",
+        "MECH-KIN-LINE-VTGR",
+        "MECH-KIN-LINE-AREA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Practical graphs, rate of change and kinematics including distance as area under speed-time graph."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.10",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-FUNC-GRAP-CUBC",
+        "ALGF-FUNC-GRAP-RECP",
+        "ALGF-LOG-EXPO-AX",
+        "ALGF-FUNC-GRAP-INTR",
+        "ALGF-LOG-EXPO-GROW"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Graphs of ax^n and ab^x+c; solving associated equations graphically including intersections of line and curve."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.11",
+      "sourceReference": "p.41",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-FUNC-GRAP-CUBC",
+        "ALGF-FUNC-GRAP-RECP",
+        "ALGF-LOG-EXPO-AX"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sketching and interpreting linear, quadratic, cubic, reciprocal and exponential graphs; asymptotes and turning points."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.12",
+      "sourceReference": "p.41",
+      "canonicalNodeIds": [
+        "CALC-DIFF-CONC-GRAD",
+        "CALC-DIFF-RULE-POWR",
+        "CALC-DIFF-RULE-SUMD",
+        "CALC-DIFF-APPL-STAT",
+        "CALC-DIFF-APPL-MAXM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Differentiation of ax^n and simple sums; stationary points and discriminating maxima/minima; points of inflection excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-0580-E2.13",
+      "sourceReference": "p.42",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-DEFS-DEFN",
+        "ALGF-FUNC-DEFS-DOMR",
+        "ALGF-FUNC-DEFS-NOTN",
+        "ALGF-FUNC-COMP-COMP",
+        "ALGF-FUNC-COMP-INVR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Function notation, domain and range, inverse functions and composite functions; domains/ranges of composite functions excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-3.1",
+      "sourceReference": "p.43 E3.1",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-COOR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers use and interpretation of Cartesian coordinates in two dimensions."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-3.2",
+      "sourceReference": "p.43 E3.2",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-COOR-LINE-GENR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Drawing straight-line graphs from linear equations, including general form."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-3.3",
+      "sourceReference": "p.43 E3.3",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-GRAD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes finding the gradient of a line and calculating it from two points."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-3.4",
+      "sourceReference": "p.43 E3.4",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-DIST",
+        "GEOM-COOR-CART-MIDP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculates length and midpoint of a line segment."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-3.5",
+      "sourceReference": "p.43 E3.5",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-COOR-LINE-GENR",
+        "GEOM-COOR-LINE-POINT",
+        "GEOM-COOR-LINE-GRAD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpret and obtain equations in different forms and identify gradient/y-intercept."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-3.6",
+      "sourceReference": "p.44 E3.6",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-SHAP-ANGL-PARA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Parallel line equations rely on equal gradients; no dedicated parallel-line coordinate geometry node exists."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-3.7",
+      "sourceReference": "p.44 E3.7",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-COOR-CART-MIDP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Perpendicular gradient relationship and perpendicular bisector are not separately represented; midpoint node used for bisector aspect."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-4.1",
+      "sourceReference": "pp.45-46 E4.1",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-ANGT",
+        "GEOM-SHAP-TERM-TRIA",
+        "GEOM-SHAP-TERM-QUAD",
+        "GEOM-SHAP-TERM-POLY",
+        "GEOM-SHAP-SIMI-CONG",
+        "GEOM-SHAP-SIMI-LENS",
+        "GEOM-SHAP-ANGL-PARA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Broad vocabulary point; terms such as point, vertex, line, plane, bearing, nets, solids and circle vocabulary lack specific nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-4.2",
+      "sourceReference": "p.47 E4.2",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS-MEAS",
+        "GEOM-CONS-CONS-TRIA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers measuring/drawing lines and angles and triangle construction. Nets are not represented in the node catalog; perpendicular/angle bisectors are explicitly excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-4.3",
+      "sourceReference": "p.47 E4.3",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS-MEAS",
+        "NUM-RAT-RATI-SIMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Scale drawings and three-figure bearings; bearings are not represented by a dedicated node."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-4.4",
+      "sourceReference": "p.47 E4.4",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-SIML",
+        "GEOM-SHAP-SIMI-LENS",
+        "GEOM-SHAP-SIMI-AREA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Length and area scale factors are represented; volume scale factor and similarity proofs are not separately represented."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-4.5",
+      "sourceReference": "p.47 E4.5",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SYMM-LINE",
+        "GEOM-SHAP-SYMM-ROTA",
+        "GEOM-SHAP-SYMM-PLANE",
+        "GEOM-SHAP-SYMM-AXIS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers line/rotational symmetry in 2D and planes/axes of symmetry in solids."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-4.6",
+      "sourceReference": "p.48 E4.6",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-ANGL-POINT",
+        "GEOM-SHAP-ANGL-LINE",
+        "GEOM-SHAP-ANGL-VERT",
+        "GEOM-SHAP-ANGL-PARA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Angle properties at a point, on a line, vertically opposite and parallel lines are covered. Triangle/quadrilateral angle sums and polygon angle properties are not represented by dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-4.7",
+      "sourceReference": "p.48 E4.7",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-SEMI",
+        "GEOM-SHAP-CITH-TANG",
+        "GEOM-SHAP-CITH-CENT",
+        "GEOM-SHAP-CITH-SAME",
+        "GEOM-SHAP-CITH-CYCL",
+        "GEOM-SHAP-CITH-ALTS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "All six listed circle theorems are represented by dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-4.8",
+      "sourceReference": "p.48 E4.8",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-CHOR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Equal chords and tangent length properties are covered; perpendicular bisector of a chord is not separately represented."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-5.1",
+      "sourceReference": "p.49 E5.1",
+      "canonicalNodeIds": [
+        "GEOM-MENS-UNIT-LENG",
+        "GEOM-MENS-UNIT-AREA",
+        "GEOM-MENS-UNIT-VOLU",
+        "GEOM-MENS-UNIT-CAPA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Metric units and conversions for length, area, volume and capacity."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-5.2",
+      "sourceReference": "p.49 E5.2",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA-RECT",
+        "GEOM-MENS-AREA-TRIA",
+        "GEOM-MENS-AREA-PARA",
+        "GEOM-MENS-AREA-TRAP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Perimeter and area calculations for rectangle, triangle, parallelogram and trapezium."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-5.3",
+      "sourceReference": "p.49 E5.3",
+      "canonicalNodeIds": [
+        "GEOM-MENS-CIRC-CIRC",
+        "GEOM-MENS-CIRC-AREA",
+        "GEOM-MENS-CIRC-ARCL",
+        "GEOM-MENS-CIRC-SECA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Circumference, area, arc length and sector area of circles."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-5.4",
+      "sourceReference": "p.49 E5.4",
+      "canonicalNodeIds": [
+        "GEOM-MENS-SOLI-CUBD",
+        "GEOM-MENS-SOLI-PRIS",
+        "GEOM-MENS-SOLI-CYLN",
+        "GEOM-MENS-SOLI-PYRA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Surface area and volume of cuboids, prisms, cylinders and pyramids are represented; sphere and cone are not represented by dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-5.5",
+      "sourceReference": "p.50 E5.5",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA",
+        "GEOM-MENS-SOLI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Compound shapes and parts of shapes/solids; mapped to parent area and volume nodes because compound-shape problem solving is not separately represented."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-6.1",
+      "sourceReference": "p.51 E6.1",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-PYTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Know and use Pythagoras theorem."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-6.2",
+      "sourceReference": "p.51 E6.2",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-SINE",
+        "TRIG-BASE-RATR-COSN",
+        "TRIG-BASE-RATR-TANG",
+        "TRIG-BASE-RATR-PYTH"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Right-angled triangle ratios and 2D problem solving are covered. Angles of elevation/depression and perpendicular distance are not represented by dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-6.3",
+      "sourceReference": "p.51 E6.3",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-EXCT-EXCT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Exact trigonometric values for standard angles."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-6.4",
+      "sourceReference": "p.51 E6.4",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-GRAP-SINE",
+        "TRIG-FUNC-GRAP-COSN",
+        "TRIG-FUNC-GRAP-TANG",
+        "TRIG-IDEN-EQNS-SIMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recognise and sketch sin/cos/tan graphs and solve simple trigonometric equations over 0-360 degrees."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-6.5",
+      "sourceReference": "p.52 E6.5",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-SINR",
+        "TRIG-BASE-NONR-COSR",
+        "TRIG-BASE-NONR-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sine rule, cosine rule and area formula for any triangle."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-6.6",
+      "sourceReference": "p.52 E6.6",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-PYTH",
+        "TRIG-BASE-RATR-SINE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "3D Pythagoras/trigonometry and angle between a line and a plane are not represented by dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-7.1",
+      "sourceReference": "p.53 E7.1",
+      "canonicalNodeIds": [
+        "GEOM-CONS-TRAN-REFL",
+        "GEOM-CONS-TRAN-ROTA",
+        "GEOM-CONS-TRAN-ENLG",
+        "GEOM-CONS-TRAN-TRAN",
+        "GEOM-CONS-TRAN-COMB",
+        "GEOM-CONS-TRAN-NEGS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Reflections, rotations, enlargements (including fractional/negative scale factors), translations and combinations."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-7.2",
+      "sourceReference": "p.53 E7.2",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-COLV",
+        "VECT-BASIC-NOTN-ADDS",
+        "VECT-BASIC-NOTN-SCAL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vector notation, addition, subtraction and scalar multiplication in two dimensions."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-7.3",
+      "sourceReference": "p.53 E7.3",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-MAGN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculate magnitude of a column vector."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-7.4",
+      "sourceReference": "p.53 E7.4",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-POSV",
+        "VECT-GEOM-PROB-SEGM",
+        "VECT-GEOM-PROB-PARA",
+        "VECT-GEOM-PROB-COLL",
+        "VECT-GEOM-PROB-RATI",
+        "GEOM-SHAP-SIMI-SIML"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Position vectors, directed line segments and vector reasoning including parallel vectors, collinearity, ratio and similarity."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-8.1",
+      "sourceReference": "p.54 E8.1",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SCALE",
+        "PROB-BASIC-BASIC-NOTN",
+        "PROB-BASIC-BASIC-SING",
+        "PROB-BASIC-BASIC-COMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Probability scale, notation, single events and complement."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-8.2",
+      "sourceReference": "p.54 E8.2",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SING"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Relative frequency as an estimate of probability and expected frequencies are not represented by dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-8.3",
+      "sourceReference": "p.54 E8.3",
+      "canonicalNodeIds": [
+        "PROB-COMB-COUNT-SAMPS",
+        "PROB-COMB-RULE-VENN",
+        "PROB-COMB-RULE-TREE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Combined events using sample space, Venn and tree diagrams."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-8.4",
+      "sourceReference": "p.54 E8.4",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-COND"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Conditional probability calculated from diagrams/tables without formal P(A|B) notation."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-9.1",
+      "sourceReference": "p.55 E9.1",
+      "canonicalNodeIds": [
+        "STAT-DATA-CLAS-TYPE",
+        "STAT-DATA-CLAS-TALL",
+        "STAT-DATA-CLAS-TWOW"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Classify and tabulate statistical data."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-9.2",
+      "sourceReference": "p.55 E9.2",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR",
+        "STAT-SUMM-CENT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpret tables/diagrams and compare data sets. Restrictions on drawing conclusions are not represented by a dedicated node."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-9.3",
+      "sourceReference": "p.55 E9.3",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-MEAN",
+        "STAT-SUMM-CENT-MEDI",
+        "STAT-SUMM-CENT-MODE",
+        "STAT-SUMM-CENT-QUAR",
+        "STAT-SUMM-CENT-RANG",
+        "STAT-SUMM-CENT-IQR",
+        "STAT-SUMM-CENT-ESTM",
+        "STAT-DATA-CLAS-GROUP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Averages, spread, grouped-data mean estimate and modal class."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-9.4",
+      "sourceReference": "p.55 E9.4",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-BARCH",
+        "STAT-DATA-REPR-PIE",
+        "STAT-DATA-REPR-PICT",
+        "STAT-DATA-REPR-STEM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Bar, pie, pictogram and stem-and-leaf diagrams; simple frequency distributions are not separately represented."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-9.5",
+      "sourceReference": "p.56 E9.5",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-SCAT",
+        "STAT-BIVA-CORR-POSC",
+        "STAT-BIVA-CORR-NEGC",
+        "STAT-BIVA-CORR-ZEROC",
+        "STAT-BIVA-CORR-LOBF"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Scatter diagrams, correlation types and line of best fit."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-9.6",
+      "sourceReference": "p.56 E9.6",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-CUMF",
+        "STAT-SUMM-CENT-MEDI",
+        "STAT-SUMM-CENT-QUAR",
+        "STAT-SUMM-CENT-IQR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Cumulative frequency tables/diagrams and estimation of median, percentiles, quartiles and interquartile range."
+      ]
+    },
+    {
+      "syllabusPointId": "CAIE-0580-9.7",
+      "sourceReference": "p.56 E9.7",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-HIST",
+        "STAT-DATA-CLAS-GROUP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Histograms and frequency density calculations for grouped data."
+      ]
+    }
+  ]
+}

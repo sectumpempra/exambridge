@@ -1,0 +1,2352 @@
+{
+  "schemaVersion": "4.0.0",
+  "qualificationVersionId": "OCR-J560:Version 2.0",
+  "board": "OCR",
+  "subjectCode": "J560",
+  "subjectName": "GCSE Mathematics",
+  "level": "GCSE",
+  "syllabusVersion": "Version 2.0",
+  "effectiveFrom": "2015-09-01",
+  "sources": [
+    {
+      "url": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+      "title": "OCR GCSE Mathematics J560 specification",
+      "documentVersion": "Version 2.0",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+      "sourceType": "official"
+    }
+  ],
+  "reviewStatus": "candidate",
+  "review": {
+    "generatedAt": "2026-07-16",
+    "promptVersion": "knowledge-v4-3-chunked",
+    "requestedModelId": "kimi-k2.7-code-highspeed",
+    "responseModelId": "kimi-k2.7-code-highspeed"
+  },
+  "declaredPapers": [
+    "J560/01",
+    "J560/02",
+    "J560/03",
+    "J560/04",
+    "J560/05",
+    "J560/06",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06"
+  ],
+  "syllabusPoints": [
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2b-UNITS-01",
+      "sourceReference": "J560 specification p.11, 'Units and measures'",
+      "canonicalNodeIds": [
+        "GEOM-MENS-UNIT-LENG",
+        "GEOM-MENS-UNIT-AREA",
+        "GEOM-MENS-UNIT-VOLU",
+        "GEOM-MENS-UNIT-CAPA",
+        "NUM-MEAS-TIME-TIME",
+        "NUM-MEAS-TIME-CLOCK",
+        "NUM-MEAS-TIME-MONE",
+        "GEOM-CONS-CONS-MEAS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "This is the only explicit content requirement present in the supplied chunk; the detailed numbered content statements begin later in the specification.",
+        "The statement covers time, money, angle (degrees), metric/compound units and the practical use of rulers/protractors, so it is mapped to several unit and measurement nodes rather than a single node.",
+        "The specification states that any topic area may be assessed on any component at the relevant tier, so no fixed paper allocation is assigned."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.01a",
+      "sourceReference": "p.13 / 1.01a",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-FOUR",
+        "NUM-OPS-CALC-NEG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Maps directly to integer four-operation and directed-number nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.02a",
+      "sourceReference": "p.13 / 1.02a",
+      "canonicalNodeIds": [
+        "NUM-SYS-TYPE-PRIM",
+        "NUM-SYS-TYPE-FACT",
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Place value is required but not represented by a dedicated canonical node; other vocabulary maps cleanly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.02b",
+      "sourceReference": "p.13 / 1.02b",
+      "canonicalNodeIds": [
+        "NUM-SYS-TYPE-PRIM",
+        "NUM-SYS-TYPE-FACT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Prime identification and prime-factor decomposition are covered by the primes and factors/multiples nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.02c",
+      "sourceReference": "p.14 / 1.02c",
+      "canonicalNodeIds": [
+        "NUM-SYS-TYPE-FACT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "HCF and LCM via listing and prime factorisation sit within factors and multiples."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.03a",
+      "sourceReference": "p.14 / 1.03a",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-BIDM",
+        "NUM-OPS-CALC-BRAC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Order-of-operations and bracket-use nodes match the statement."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-1.04a",
+      "sourceReference": "p.14 / 1.04a",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-FOUR",
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "No dedicated inverse-operations node; mapping captures the operations whose inverses are used."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.01a",
+      "sourceReference": "p.15 / 2.01a",
+      "canonicalNodeIds": [
+        "NUM-FRAC-FRAC-EQVF",
+        "NUM-FRAC-FRAC-MIXD",
+        "NUM-FRAC-FRAC-SIMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Equivalent fractions and mixed-number conversion map to the corresponding fraction nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.01b",
+      "sourceReference": "p.15 / 2.01b",
+      "canonicalNodeIds": [
+        "NUM-FRAC-FRAC"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "The parent Fractions node is broader than the listed calculation skills."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.01c",
+      "sourceReference": "p.15 / 2.01c",
+      "canonicalNodeIds": [
+        "NUM-FRAC-FRAC"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Fraction-of-a-quantity and expressing one quantity as a fraction of another are narrower than the general Fractions node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.02a",
+      "sourceReference": "p.16 / 2.02a",
+      "canonicalNodeIds": [
+        "NUM-FRAC-DECI-CONV",
+        "NUM-FRAC-DECI-PLAC",
+        "NUM-FRAC-DECI-RECR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Terminating and recurring decimal-fraction conversions are covered exactly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.02b",
+      "sourceReference": "p.16 / 2.02b",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-FOUR"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Decimal addition, subtraction and multiplication are instances of the four operations node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.02c",
+      "sourceReference": "p.16 / 2.02c",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-FOUR"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Division of decimals by whole numbers or decimals sits under four operations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.03a",
+      "sourceReference": "p.16 / 2.03a",
+      "canonicalNodeIds": [
+        "NUM-FRAC-PERC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Conversions between fractions, decimals and percentages are covered by the Percentages parent node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.03b",
+      "sourceReference": "p.17 / 2.03b",
+      "canonicalNodeIds": [
+        "NUM-FRAC-PERC-PART",
+        "NUM-FRAC-PERC-QTY",
+        "NUM-FRAC-PERC-COMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Percentage-as-parts-per-hundred, percentage-of-a-quantity and comparing by percentage map exactly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.03c",
+      "sourceReference": "p.17 / 2.03c",
+      "canonicalNodeIds": [
+        "NUM-FRAC-PERC-INDE",
+        "NUM-FRAC-PERC-QTY"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Percentage change, original-value problems and multiplier representation are covered."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.04a",
+      "sourceReference": "p.17 / 2.04a",
+      "canonicalNodeIds": [
+        "NUM-FRAC-DECI-ORDR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "The node covers ordering decimals; ordering fractions and percentages is not separately catalogued."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-2.04b",
+      "sourceReference": "p.17 / 2.04b",
+      "canonicalNodeIds": [
+        "NUM-FRAC-DECI-ORDR",
+        "ALGF-EQN-INEQ-LINS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Comparison symbols have no dedicated node; closest coverage is ordering decimals and linear inequalities."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.01a",
+      "sourceReference": "p.18 / 3.01a",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-INDX-FRAC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Positive, negative and fractional indices are mapped to their respective nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.01b",
+      "sourceReference": "p.18 / 3.01b",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR",
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-FRAC",
+        "NUM-ACC-ROUN-ESTM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers calculation of powers and roots, fractional powers, and estimation of powers and roots."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.01c",
+      "sourceReference": "p.18 / 3.01c",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "The laws of indices are captured by the parent Indices node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.02a",
+      "sourceReference": "p.19 / 3.02a",
+      "canonicalNodeIds": [
+        "NUM-POW-STDF-CONV",
+        "NUM-POW-STDF-INTP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpretation, ordering and conversion of standard form are covered."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.02b",
+      "sourceReference": "p.19 / 3.02b",
+      "canonicalNodeIds": [
+        "NUM-POW-STDF-CALC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculator and non-calculator calculations in standard form map to the calculating node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.03a",
+      "sourceReference": "p.19 / 3.03a",
+      "canonicalNodeIds": [
+        "NUM-FRAC-FRAC",
+        "NUM-POW-POWR-SURD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Exact calculations with fractions and surds are covered; exact multiples of pi have no separate node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-3.03b",
+      "sourceReference": "p.19 / 3.03b",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SURD",
+        "NUM-POW-POWR-RATD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Simplifying surds and rationalising denominators map exactly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-4.01a",
+      "sourceReference": "p.20 / 4.01a",
+      "canonicalNodeIds": [
+        "NUM-ACC-ROUN-DP",
+        "NUM-ACC-ROUN-SF",
+        "NUM-ACC-ROUN-POW10"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Rounding to decimal places, significant figures and powers of ten is covered."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-4.01b",
+      "sourceReference": "p.20 / 4.01b",
+      "canonicalNodeIds": [
+        "NUM-ACC-ROUN-ESTM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Estimation of calculations by suitable approximation maps directly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-4.01c",
+      "sourceReference": "p.21 / 4.01c",
+      "canonicalNodeIds": [
+        "NUM-ACC-BOUN-UPLO",
+        "NUM-ACC-BOUN-CALC",
+        "NUM-ACC-BOUN-ERR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Error intervals, upper/lower bounds and bounds of discrete/continuous quantities are covered."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.01a",
+      "sourceReference": "p.21 / 5.01a",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-SIMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Equivalent ratios and 1:n form map to simplifying ratios."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.01b",
+      "sourceReference": "p.22 / 5.01b",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-SHAR",
+        "NUM-RAT-RATI-PROP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Dividing a quantity in a given ratio and finding one quantity from another are covered."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.01c",
+      "sourceReference": "p.22 / 5.01c",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI",
+        "NUM-FRAC-FRAC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpreting a part:part ratio as a fraction of the whole links ratio and fractions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.01d",
+      "sourceReference": "p.22 / 5.01d",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-PROP",
+        "ALGF-FUNC-GRAP-LINR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Ratio/proportion problem solving and the link to linear functions are partially covered."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.02a",
+      "sourceReference": "p.23 / 5.02a",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-DIRE",
+        "NUM-RAT-RATI-PROP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Direct proportion including powers and roots is covered; power/root proportion is broader than the direct-proportion node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.02b",
+      "sourceReference": "p.23 / 5.02b",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-PROP",
+        "ALGF-FUNC-GRAP-RECP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "No dedicated inverse-proportion node; proportional reasoning and reciprocal graphs provide the closest coverage."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-5.03a",
+      "sourceReference": "p.24 / 5.03a",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-GROW",
+        "NUM-FRAC-PERC-INDE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Repeated percentage change, compound interest and exponential growth/decay formulae are covered."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01a",
+      "sourceReference": "p.24 / 6.01a",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-SYMB",
+        "REAS-PROF-PROF-DEDU"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Algebraic vocabulary, identity/equation distinction and proof construction are partially mapped."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01b",
+      "sourceReference": "p.24 / 6.01b",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI-LIKE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Collecting like terms maps directly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01c",
+      "sourceReference": "p.25 / 6.01c",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Simplifying algebraic products and quotients is narrower than the general algebraic manipulation node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01d",
+      "sourceReference": "p.25 / 6.01d",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI-EXP1",
+        "ALGF-EXP-MANI-EXP2"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Single bracket, two binomials and more than two binomials expansions are covered."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01e",
+      "sourceReference": "p.25 / 6.01e",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI-FACT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Common factors and quadratics factorisation map to the factorisation node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01f",
+      "sourceReference": "p.25 / 6.01f",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-COMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Completing the square on a quadratic expression maps directly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.01g",
+      "sourceReference": "p.26 / 6.01g",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "No dedicated algebraic-fractions node; mapped to the broader algebraic manipulation node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.02a",
+      "sourceReference": "p.26 / 6.02a",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-FORM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formulating expressions and formulae from contexts maps directly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-6.02b",
+      "sourceReference": "p.26 / 6.02b",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-SUBS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Substituting positive or negative numbers into formulae and expressions maps directly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.02c",
+      "sourceReference": "J560 p.27 6.02c",
+      "canonicalNodeIds": [
+        "ALGF-EQN-LINE-SUBJ",
+        "ALGF-EQN-LINE-SUB2"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation column covers subject appearing once; Higher column adds subject appearing twice, powers and reciprocals."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.02d",
+      "sourceReference": "J560 p.27 6.02d",
+      "canonicalNodeIds": [
+        "GEOM-MENS-CIRC-CIRC",
+        "GEOM-MENS-CIRC-AREA",
+        "TRIG-BASE-RATR-PYTH",
+        "TRIG-BASE-RATR-SINE",
+        "TRIG-BASE-RATR-COSN",
+        "TRIG-BASE-RATR-TANG",
+        "ALGF-EQN-QUAD-FORM",
+        "TRIG-BASE-NONR-SINR",
+        "TRIG-BASE-NONR-COSR",
+        "TRIG-BASE-NONR-AREA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Spans circle formulae, Pythagoras, right-angled trigonometry, quadratic formula and non-right-angled triangle formulae."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.02e",
+      "sourceReference": "J560 p.28 6.02e",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-CONST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Uses the constant acceleration (SUVAT) equations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.03a",
+      "sourceReference": "J560 p.28 6.03a",
+      "canonicalNodeIds": [
+        "ALGF-EQN-LINE-SOLV",
+        "ALGF-EQN-LINE-FORM",
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Initial/foundation content covers solving, forming and contextual interpretation of linear equations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.03b",
+      "sourceReference": "J560 p.28 6.03b",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-FACT",
+        "ALGF-EQN-QUAD-FORM",
+        "ALGF-EQN-QUAD-COMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation adds knowledge of the formula; Higher adds rearrangement, completing the square and formula use."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.03c",
+      "sourceReference": "J560 p.29 6.03c",
+      "canonicalNodeIds": [
+        "ALGF-EQN-SIMU-LIN2",
+        "ALGF-EQN-SIMU-LINQ"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Initial content is two linear simultaneous equations; Higher adds one linear/one quadratic."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.03d",
+      "sourceReference": "J560 p.29 6.03d",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-FUNC-GRAP-INTR",
+        "ALGF-EQN-SIMU-LIN2"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Uses graphs to approximate roots/solutions and recognises intersection meaning."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.03e",
+      "sourceReference": "J560 p.29 6.03e",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-SIGN-LOC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Higher-tier sign-change methods (decimal search/interval bisection)."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.04a",
+      "sourceReference": "J560 p.30 6.04a",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-LINS",
+        "ALGF-EQN-INEQ-NUMB",
+        "ALGF-EQN-INEQ-QUAD",
+        "ALGF-EQN-INEQ-SETN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers linear inequalities on a number line; Higher adds quadratic inequalities and set notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.04b",
+      "sourceReference": "J560 p.30 6.04b",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-REGN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Linear inequalities in two variables represented graphically."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.05a",
+      "sourceReference": "J560 p.31 6.05a",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-DEFS-DEFN",
+        "ALGF-FUNC-COMP-INVR",
+        "ALGF-FUNC-COMP-COMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Function machines/inverse/composite interpreted without formal notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.06a",
+      "sourceReference": "J560 p.31 6.06a",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-TERM",
+        "ALGF-SEQ-SEQU-NTH",
+        "ALGF-SEQ-SEQU-ARIT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers term-to-term, position-to-term, nth-term rules including arithmetic and quadratic sequences."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-6.06b",
+      "sourceReference": "J560 p.32 6.06b",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-ARIT",
+        "ALGF-SEQ-SEQU-GEOM",
+        "ALGF-SEQ-SEQU-NTH"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recognises special sequences; Fibonacci/other special cases have no dedicated node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01a",
+      "sourceReference": "J560 p.32 7.01a",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-COOR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Coordinates in all four quadrants."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01b",
+      "sourceReference": "J560 p.32 7.01b",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-POLY-POLY-CUBQ",
+        "ALGF-FUNC-GRAP-RECP",
+        "ALGF-LOG-EXPO-AX"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Progresses from linear/quadratic tables to other polynomials, reciprocals and exponentials."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01c",
+      "sourceReference": "J560 p.32 7.01c",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-POLY-POLY-CUBQ",
+        "ALGF-FUNC-GRAP-RECP",
+        "ALGF-EQN-QUAD-FACT",
+        "ALGF-EQN-QUAD-COMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes sketching simple polynomials/reciprocals, quadratic intercepts/turning points and roots."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01d",
+      "sourceReference": "J560 p.32 7.01d",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-AX"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Exponential graphs y = k^x for positive k."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01e",
+      "sourceReference": "J560 p.33 7.01e",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-GRAP-SINE",
+        "TRIG-FUNC-GRAP-COSN",
+        "TRIG-FUNC-GRAP-TANG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recognition and sketching of the three trigonometric graphs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.01f",
+      "sourceReference": "J560 p.33 7.01f",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CIRC-CENT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Circle centred at the origin."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.02a",
+      "sourceReference": "J560 p.33 7.02a",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-GRAD",
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-COOR-LINE-POINT",
+        "ALGF-EQN-INEQ-REGN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers gradient/intercept, equations of lines and graphical inequality regions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.02b",
+      "sourceReference": "J560 p.33 7.02b",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-COOR-CIRC-TANG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Parallel/perpendicular line equations and tangent to a circle; no dedicated perpendicular-lines node exists."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.03a",
+      "sourceReference": "J560 p.34 7.03a",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-TRAN-VERT",
+        "ALGF-FUNC-TRAN-HORZ",
+        "ALGF-FUNC-TRAN-REFL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Translations and reflections of graphs without function notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.04a",
+      "sourceReference": "J560 p.34 7.04a",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-OUTP",
+        "NUM-RAT-RATI-DIRE",
+        "NUM-RAT-RATI-PROP",
+        "ALGF-FUNC-GRAP-RECP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Real-world graphs and direct/inverse proportion graphs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.04b",
+      "sourceReference": "J560 p.35 7.04b",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-GRAD",
+        "MECH-KIN-LINE-STGR",
+        "MECH-KIN-LINE-VTGR",
+        "NUM-RAT-RATE-SPED"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Rates of change from gradients; instantaneous rate/chords/tangents are not separately represented."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-7.04c",
+      "sourceReference": "J560 p.35 7.04c",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-AREA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Estimating areas under graphs in context; no general numerical-area node exists."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01a",
+      "sourceReference": "J560 p.35 8.01a",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Basic geometrical terms for points, lines, planes, parallel and perpendicular."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01b",
+      "sourceReference": "J560 p.35 8.01b",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-ANGT",
+        "GEOM-SHAP-TERM-TRIA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Angle types and triangle side/angle labelling conventions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01c",
+      "sourceReference": "J560 p.36 8.01c",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-POLY",
+        "GEOM-SHAP-TERM-QUAD",
+        "GEOM-SHAP-TERM-TRIA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vocabulary for polygons, quadrilaterals and triangles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01d",
+      "sourceReference": "J560 p.36 8.01d",
+      "canonicalNodeIds": [
+        "GEOM-MENS-SOLI-CUBD",
+        "GEOM-MENS-SOLI-PRIS",
+        "GEOM-MENS-SOLI-CYLN",
+        "GEOM-MENS-SOLI-PYRA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recognition of common 3D solids; cone and sphere are not in the supplied node catalogue."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01e",
+      "sourceReference": "J560 p.36 8.01e",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for drawing diagrams from written descriptions.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "General diagram-drawing skill with no matching node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01f",
+      "sourceReference": "J560 p.36 8.01f",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS-MEAS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Ruler/protractor use maps to measuring; compasses/circle construction is not represented."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.01g",
+      "sourceReference": "J560 p.36 8.01g",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-COOR",
+        "GEOM-CONS-TRAN-TRAN",
+        "GEOM-CONS-TRAN-REFL",
+        "GEOM-CONS-TRAN-ROTA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Coordinates used in geometry and transformations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.02a",
+      "sourceReference": "J560 p.36 8.02a",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS-PERB"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Perpendicular bisector and midpoint construction."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.02b",
+      "sourceReference": "J560 p.36 8.02b",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS-ANGB"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Angle bisector construction."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.02c",
+      "sourceReference": "J560 p.37 8.02c",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for perpendicular from a point to a line or perpendicular at a point.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Construction skill not represented in the node catalogue."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.02d",
+      "sourceReference": "J560 p.37 8.02d",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for loci or equidistant points.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Loci constructions and real-world problems have no matching node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.03a",
+      "sourceReference": "J560 p.37 8.03a",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-ANGL-POINT",
+        "REAS-PROF-ARGM-JUST",
+        "REAS-PROF-PROF-DEDU"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Angle sum at a point and simple/formal proof applications."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.03b",
+      "sourceReference": "J560 p.37 8.03b",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-ANGL-LINE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Angles on a straight line sum to 180 degrees."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.03c",
+      "sourceReference": "J560 p.37 8.03c",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-ANGL-VERT",
+        "GEOM-SHAP-ANGL-PARA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vertically opposite, alternate and corresponding angles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.03d",
+      "sourceReference": "J560 p.38 8.03d",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-TRIA",
+        "GEOM-SHAP-TERM-POLY",
+        "REAS-PROF-ARGM-JUST"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interior/exterior angle sums and regular polygon angles, with proof applications."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.04a",
+      "sourceReference": "J560 p.38 8.04a",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-TRIA",
+        "REAS-PROF-ARGM-JUST"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Properties of triangles used in simple and formal proofs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.04b",
+      "sourceReference": "J560 p.38 8.04b",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-QUAD",
+        "REAS-PROF-ARGM-JUST"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Properties of quadrilaterals used in simple and formal proofs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.04c",
+      "sourceReference": "J560 p.38 8.04c",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SYMM-LINE",
+        "GEOM-SHAP-SYMM-ROTA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Reflectional and rotational symmetry of polygons."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05a",
+      "sourceReference": "J560 p.39 8.05a",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for circle vocabulary (centre, radius, chord, diameter, tangent, arc, sector, segment).",
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Nomenclature only; no matching vocabulary node exists."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05b",
+      "sourceReference": "J560 p.39 8.05b",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-CENT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Angle at centre theorem, proved and applied."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05c",
+      "sourceReference": "J560 p.39 8.05c",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-SEMI"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Angle in a semicircle theorem, proved and applied."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05d",
+      "sourceReference": "J560 p.39 8.05d",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-SAME"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Angles in the same segment theorem, proved and applied."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05e",
+      "sourceReference": "J560 p.39 8.05e",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-CHOR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Perpendicular bisector of chord theorem, proved and applied."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05f",
+      "sourceReference": "J560 p.39 8.05f",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-TANG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Tangent-radius theorem, proved and applied."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05g",
+      "sourceReference": "J560 p.40 8.05g",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-ALTS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Alternate segment theorem, proved and applied."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.05h",
+      "sourceReference": "J560 p.40 8.05h",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-CYCL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Cyclic quadrilateral opposite angles theorem, proved and applied."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.06a",
+      "sourceReference": "J560 p.40 8.06a",
+      "canonicalNodeIds": [
+        "GEOM-MENS-SOLI-CUBD",
+        "GEOM-MENS-SOLI-PRIS",
+        "GEOM-MENS-SOLI-CYLN",
+        "GEOM-MENS-SOLI-PYRA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recognition and properties of common 3D solids; cone and sphere not in catalogue."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-8.06b",
+      "sourceReference": "J560 p.40 8.06b",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for plans and elevations of 3D solids.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpreting and constructing plans/elevations is not represented."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-J560-9.01a",
+      "sourceReference": "J560 p.40 9.01a",
+      "canonicalNodeIds": [
+        "GEOM-CONS-TRAN-REFL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Reflections, including identifying mirror lines x=a, y=b and y=±x at Higher."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.01b",
+      "sourceReference": "J560 p.41 / 9.01b",
+      "canonicalNodeIds": [
+        "GEOM-CONS-TRAN-ROTA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Rotation of shapes through multiples of 90 degrees about a centre. Mapping to canonical rotations node is exact. Depth inferred from command verbs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.01c",
+      "sourceReference": "J560 p.41 / 9.01c",
+      "canonicalNodeIds": [
+        "GEOM-CONS-TRAN-TRAN",
+        "VECT-BASIC-NOTN-COLV"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Translation described by column vector spans both transformation and vector notation nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.01d",
+      "sourceReference": "J560 p.41 / 9.01d",
+      "canonicalNodeIds": [
+        "GEOM-CONS-TRAN-COMB"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sequences of isometric transformations and invariance map to combined transformations node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.02a",
+      "sourceReference": "J560 p.41 / 9.02a",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-CONG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Identifying and proving congruent triangles maps to congruent shapes node. Higher tier proof cases raise depth to reasoning."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.02b",
+      "sourceReference": "J560 p.41 / 9.02b",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-CONG"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Applying congruent triangles in calculations and simple proofs is an application of the congruence node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.03a",
+      "sourceReference": "J560 p.42 / 9.03a",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-ADDS",
+        "VECT-BASIC-NOTN-SCAL",
+        "VECT-GEOM-PROB"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vector arithmetic and use in geometric arguments/proofs spans vector operations and vector geometry problem nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.03b",
+      "sourceReference": "J560 p.42 / 9.03b",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-COLV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Representing 2D vectors as column vectors maps exactly to the column vectors node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.04a",
+      "sourceReference": "J560 p.42 / 9.04a",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-SIML"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Identifying and proving similar triangles maps to similar shapes node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.04b",
+      "sourceReference": "J560 p.42 / 9.04b",
+      "canonicalNodeIds": [
+        "GEOM-CONS-TRAN-ENLG",
+        "GEOM-CONS-TRAN-NEGS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Enlargement with whole-number, fractional and negative scale factors spans enlargement and negative scale factor nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-9.04c",
+      "sourceReference": "J560 p.42 / 9.04c",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-LENS",
+        "GEOM-SHAP-SIMI-AREA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Similarity involving lengths, areas and volumes maps to length and area scale factor nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.01a",
+      "sourceReference": "J560 p.43 / 10.01a",
+      "canonicalNodeIds": [
+        "GEOM-MENS-UNIT-LENG",
+        "GEOM-MENS-UNIT-AREA",
+        "GEOM-MENS-UNIT-VOLU",
+        "GEOM-MENS-UNIT-CAPA",
+        "NUM-MEAS-TIME-MONE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use and conversion of standard units for length, area, volume/capacity, mass, time and money spans multiple unit nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.01b",
+      "sourceReference": "J560 p.43 / 10.01b",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATE-SPED",
+        "NUM-RAT-RATE-DENS",
+        "NUM-RAT-RATE-PRES"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Compound units speed, density and pressure map directly to the corresponding rate nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.01c",
+      "sourceReference": "J560 p.43 / 10.01c",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-SIMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Scale of maps and scale drawings relate to ratio/simplifying ratios; bearings have no direct canonical node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.02a",
+      "sourceReference": "J560 p.43 / 10.02a",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA-RECT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Perimeter of rectilinear shapes maps to area and perimeter of rectangles node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.02b",
+      "sourceReference": "J560 p.43 / 10.02b",
+      "canonicalNodeIds": [
+        "GEOM-MENS-CIRC-CIRC",
+        "GEOM-MENS-CIRC-ARCL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Circumference and arc length map to the corresponding circle mensuration nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.02c",
+      "sourceReference": "J560 p.44 / 10.02c",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA-RECT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Perimeter of composite shapes maps broadly to area/perimeter of rectangles node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.03a",
+      "sourceReference": "J560 p.44 / 10.03a",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA-TRIA",
+        "TRIG-BASE-NONR-AREA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Area of triangle including 1/2 ab sin C spans basic triangle area and sine-area formula nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.03b",
+      "sourceReference": "J560 p.44 / 10.03b",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA-PARA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Area of parallelogram/rectangle maps exactly to the parallelograms node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.03c",
+      "sourceReference": "J560 p.44 / 10.03c",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA-TRAP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Area of trapezium maps exactly to the trapezia node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.03d",
+      "sourceReference": "J560 p.44 / 10.03d",
+      "canonicalNodeIds": [
+        "GEOM-MENS-CIRC-AREA",
+        "GEOM-MENS-CIRC-SECA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Area of circle and sector area map to the corresponding circle nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.03e",
+      "sourceReference": "J560 p.44 / 10.03e",
+      "canonicalNodeIds": [
+        "GEOM-MENS-AREA-RECT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Area of composite shapes maps broadly to area/perimeter of rectangles node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.04a",
+      "sourceReference": "J560 p.44 / 10.04a",
+      "canonicalNodeIds": [
+        "GEOM-MENS-SOLI-CUBD",
+        "GEOM-MENS-SOLI-PRIS",
+        "GEOM-MENS-SOLI-CYLN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Surface area and volume of cuboids, prisms and cylinders map to the corresponding solid nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.04b",
+      "sourceReference": "J560 p.45 / 10.04b",
+      "canonicalNodeIds": [
+        "GEOM-MENS-SOLI"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Cones and spheres are not represented by specific leaf nodes; mapped to the surface area and volume parent node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.04c",
+      "sourceReference": "J560 p.45 / 10.04c",
+      "canonicalNodeIds": [
+        "GEOM-MENS-SOLI-PYRA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Surface area and volume of pyramids map exactly to the pyramids node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.05a",
+      "sourceReference": "J560 p.45 / 10.05a",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-PYTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Pythagoras theorem maps exactly to the Pythagoras node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.05b",
+      "sourceReference": "J560 p.45 / 10.05b",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-SINE",
+        "TRIG-BASE-RATR-COSN",
+        "TRIG-BASE-RATR-TANG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Trigonometric ratios in right-angled triangles span the three ratio nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.05c",
+      "sourceReference": "J560 p.45 / 10.05c",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-EXCT-EXCT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Exact trigonometric values at standard angles map exactly to the exact values node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.05d",
+      "sourceReference": "J560 p.46 / 10.05d",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-SINR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sine rule maps exactly to the sine rule node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-10.05e",
+      "sourceReference": "J560 p.46 / 10.05e",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-COSR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Cosine rule maps exactly to the cosine rule node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.01a",
+      "sourceReference": "J560 p.46 / 11.01a",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SCALE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Probability scale and likelihood language map exactly to the probability scale node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.01b",
+      "sourceReference": "J560 p.46 / 11.01b",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for relative frequency or experimental probability.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recording and analysing relative frequency from repeated experiments is not matched by a specific canonical node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.01c",
+      "sourceReference": "J560 p.46 / 11.01c",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for relative frequency approaching theoretical probability.",
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Relationship between relative frequency and theoretical probability is not matched by a specific canonical node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.01d",
+      "sourceReference": "J560 p.47 / 11.01d",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SING",
+        "PROB-BASIC-BASIC-COMP",
+        "PROB-COMB-RULE-INDE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Equally likely outcomes, combined events and expected frequencies span several basic probability nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02a",
+      "sourceReference": "J560 p.47 / 11.02a",
+      "canonicalNodeIds": [
+        "PROB-COMB-COUNT-SAMPS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sample spaces map exactly to the sample spaces node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02b",
+      "sourceReference": "J560 p.48 / 11.02b",
+      "canonicalNodeIds": [
+        "PROB-COMB-COUNT-ENUM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Systematic listing and product rule map to the enumeration of outcomes node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02c",
+      "sourceReference": "J560 p.48 / 11.02c",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-VENN",
+        "NUM-SYS-SET-LANG",
+        "NUM-SYS-SET-VENN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Venn diagrams and set notation span probability Venn diagrams and set language/Venn diagram nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02d",
+      "sourceReference": "J560 p.48 / 11.02d",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-TREE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Tree diagrams map exactly to the tree diagrams node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02e",
+      "sourceReference": "J560 p.48 / 11.02e",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-ADD",
+        "PROB-COMB-RULE-MUTX"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Addition law for mutually exclusive events spans addition rule and mutually exclusive events nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-11.02f",
+      "sourceReference": "J560 p.49 / 11.02f",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-MULT",
+        "PROB-COMB-RULE-COND",
+        "PROB-COMB-RULE-INDE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Multiplication law and conditional probability span multiplication, conditional and independent events nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.01a",
+      "sourceReference": "J560 p.49 / 12.01a",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-POP",
+        "STAT-ENQ-SAMP-RAND",
+        "STAT-ENQ-SAMP-BIAS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Populations, samples, random sampling and bias span the sampling data collection nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.02a",
+      "sourceReference": "J560 p.50 / 12.02a",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-BARCH",
+        "STAT-DATA-REPR-PIE",
+        "STAT-DATA-REPR-PICT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Charts for categorical and numerical data map to bar charts, pie charts and pictograms; no dedicated vertical-line or time-series line-graph leaf exists."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.02b",
+      "sourceReference": "J560 p.50 / 12.02b",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-HIST",
+        "STAT-DATA-REPR-CUMF"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Histograms and cumulative frequency graphs for grouped data map to the corresponding diagram nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.03a",
+      "sourceReference": "J560 p.51 / 12.03a",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-MEAN",
+        "STAT-SUMM-CENT-MEDI",
+        "STAT-SUMM-CENT-MODE",
+        "STAT-SUMM-CENT-RANG",
+        "STAT-SUMM-CENT-QUAR",
+        "STAT-SUMM-CENT-IQR",
+        "STAT-DATA-REPR-BOXW"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Summary statistics including grouped estimates, box plots and comparisons span several averages/spread and box plot nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.03b",
+      "sourceReference": "J560 p.51 / 12.03b",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-CRIT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Graphical misrepresentation maps partially to critiquing mathematical arguments node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.03c",
+      "sourceReference": "J560 p.52 / 12.03c",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-SCAT",
+        "STAT-BIVA-CORR-POSC",
+        "STAT-BIVA-CORR-NEGC",
+        "STAT-BIVA-CORR-ZEROC",
+        "STAT-BIVA-CORR-LOBF"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Scatter diagrams, correlation, causation and line of best fit span scatter diagram and correlation nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-J560-12.03d",
+      "sourceReference": "J560 p.52 / 12.03d",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for identifying or handling outliers.",
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Outlier identification in data and on scatter graphs is not matched by a specific canonical node."
+      ]
+    }
+  ]
+}
