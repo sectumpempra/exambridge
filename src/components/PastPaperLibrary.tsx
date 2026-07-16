@@ -42,6 +42,21 @@ function companionLabel(asset: PastPaperAsset): string {
   return MATERIAL_LABEL[asset.materialType];
 }
 
+function accessBadge(asset: PastPaperAsset): string {
+  if (asset.accessStatus === "account-required" || asset.distributionStatus === "restricted") return "需官方账号";
+  if (asset.accessStatus === "not-published") return "尚未发布";
+  if (asset.accessStatus === "removed") return "官方已下架";
+  if (asset.accessStatus === "public") return "官方公开";
+  return "访问状态待核验";
+}
+
+function distributionLabel(asset: PastPaperAsset): string {
+  if (asset.distributionStatus === "link-only") return "官方链接";
+  if (asset.distributionStatus === "hosting-permitted") return "本站授权文件";
+  if (asset.distributionStatus === "restricted") return "官方账号材料";
+  return "发布方式待核验";
+}
+
 function AssetLink({ asset, children }: { asset: PastPaperAsset; children: ReactNode }) {
   const href = assetHref(asset);
   if (!href) {
@@ -135,8 +150,8 @@ export default function PastPaperLibrary({
           <div className="mt-4 space-y-2">
             {visibleSets.map((set) => <article key={set.id} className="flex flex-col justify-between gap-3 rounded-2xl border border-[#d9e1dc] bg-white/85 p-4 sm:flex-row sm:items-center">
               <div>
-                <div className="flex flex-wrap items-center gap-2"><strong className="text-sm text-[#33483a]">{set.title}</strong><span className="rounded-full bg-[#edf3ef] px-2 py-0.5 text-[10px] font-semibold text-[#53705e]">官方公开</span></div>
-                <span className="mt-1 block text-[11px] text-[#748078]">{set.year} {SERIES_LABEL[set.series]} · 组件 {set.componentCode ?? "全卷"} · {set.questionPaper.distributionStatus === "link-only" ? "官方链接" : "本站授权文件"}</span>
+                <div className="flex flex-wrap items-center gap-2"><strong className="text-sm text-[#33483a]">{set.title}</strong><span className="rounded-full bg-[#edf3ef] px-2 py-0.5 text-[10px] font-semibold text-[#53705e]">{accessBadge(set.questionPaper)}</span></div>
+                <span className="mt-1 block text-[11px] text-[#748078]">{set.year} {SERIES_LABEL[set.series]} · 组件 {set.componentCode ?? "全卷"} · {distributionLabel(set.questionPaper)}</span>
               </div>
               <div className="flex flex-wrap gap-2"><AssetLink asset={set.questionPaper}>下载试卷</AssetLink>{set.markScheme && <AssetLink asset={set.markScheme}>评分标准</AssetLink>}{set.companions.map((asset) => <AssetLink key={asset.id} asset={asset}>{companionLabel(asset)}</AssetLink>)}</div>
             </article>)}

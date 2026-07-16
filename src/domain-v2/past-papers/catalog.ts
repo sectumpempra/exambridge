@@ -18,9 +18,9 @@ const cache = new Map<string, Promise<PastPaperCatalog>>();
 
 function normalizedBoard(board: string): "CAIE" | "Edexcel" | "OCR" | undefined {
   const normalized = board.toLowerCase();
+  if (normalized.includes("ocr")) return "OCR";
   if (normalized.includes("cambridge") || normalized === "caie") return "CAIE";
   if (normalized.includes("pearson") || normalized.includes("edexcel")) return "Edexcel";
-  if (normalized.includes("ocr")) return "OCR";
   return undefined;
 }
 

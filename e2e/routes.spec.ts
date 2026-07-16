@@ -153,6 +153,14 @@ test("verified past-paper links and October IAL series appear in the course over
   await expect(firstPaper).toBeVisible();
   await expect(firstPaper).toHaveAttribute("href", /^https:\/\/qualifications\.pearson\.com\/content\/dam\/pdf\//);
   await expect(page.getByRole("link", { name: "评分标准" }).first()).toBeVisible();
+
+  await page.getByLabel("筛选真题年份").selectOption("2025");
+  await page.getByLabel("筛选真题考季").selectOption("june");
+  const restrictedSet = page.locator("article").filter({ hasText: "2025 June · 组件 WDM11" });
+  await expect(restrictedSet).toContainText("需官方账号");
+  await expect(restrictedSet).toContainText("官方账号材料");
+  await expect(restrictedSet).not.toContainText("官方公开");
+  await expect(restrictedSet).not.toContainText("本站授权文件");
 });
 
 test("WJEC course exposes statistics but not boundary or calculator actions", async ({ page }) => {

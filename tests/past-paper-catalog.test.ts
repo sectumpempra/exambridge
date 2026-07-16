@@ -84,6 +84,7 @@ describe("past-paper catalog resolution and loading", () => {
     expect(resolvePastPaperCatalogKey("Cambridge International", "9709/12")).toBe("caie-9709");
     expect(resolvePastPaperCatalogKey("Pearson Edexcel", "wma11")).toBe("pearson-yma01");
     expect(resolvePastPaperCatalogKey("OCR", "h240")).toBe("ocr-h240");
+    expect(resolvePastPaperCatalogKey("Cambridge OCR", "H240")).toBe("ocr-h240");
     expect(resolvePastPaperCatalogKey("Unknown", "9709")).toBeUndefined();
     expect(getPastPaperCatalogRegistryEntry("missing")).toBeUndefined();
   });
