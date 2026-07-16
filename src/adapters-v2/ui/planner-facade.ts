@@ -43,8 +43,8 @@ export interface PlannerFacadeOutput {
 /**
  * Convert legacy ExamEvents to PlanRequest.
  *
- * Each ExamEvent becomes a SittingRef. Past paper pool is built from
- * available paper IDs (minimal — real data would come from catalog).
+ * Each ExamEvent becomes a SittingRef. Past papers must come from the
+ * audited catalog; the facade never invents historical sittings.
  */
 function buildPlanRequest(input: PlannerFacadeInput): PlanRequest {
   const sittings: SittingRef[] = input.events.map((e, idx) => {
@@ -65,8 +65,7 @@ function buildPlanRequest(input: PlannerFacadeInput): PlanRequest {
     };
   });
 
-  // Build minimal past paper pool if not provided
-  const pool = input.pastPaperPool ?? buildMinimalPaperPool(sittings);
+  const pool = input.pastPaperPool ?? {};
 
   return {
     startDate: input.startDate,
@@ -77,33 +76,6 @@ function buildPlanRequest(input: PlannerFacadeInput): PlanRequest {
     maxTasksPerDay: input.maxTasksPerDay,
     pastPaperPool: pool,
   };
-}
-
-/** Build a minimal past paper pool from sitting refs. */
-function buildMinimalPaperPool(sittings: SittingRef[]): Record<string, PastPaperRef[]> {
-  const pool: Record<string, PastPaperRef[]> = {};
-
-  for (const s of sittings) {
-    if (!pool[s.paperId]) {
-      pool[s.paperId] = [];
-    }
-    // Generate a few synthetic past papers
-    const year = parseInt(s.examDate.substring(0, 4));
-    for (let i = 1; i <= 3; i++) {
-      const py = year - i;
-      const id = `pp:${s.paperId}:${py}-june`;
-      if (!pool[s.paperId].some((p) => p.id === id)) {
-        pool[s.paperId].push({
-          id,
-          paperId: s.paperId,
-          series: `${py}-june`,
-          year: String(py),
-        });
-      }
-    }
-  }
-
-  return pool;
 }
 
 /**

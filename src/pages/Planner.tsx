@@ -22,7 +22,8 @@ import {
   type PlannerExamDateResolution,
 } from "../data/plannerExamDates";
 import { usePlanner } from "../hooks/usePlanner";
-import type { PlannerConfig } from "../hooks/usePlanner";
+import type { PlannerConfig, PracticePaperOption } from "../hooks/usePlanner";
+import { assetHref, buildPastPaperSets, resolvePastPaperCatalogKey, usePastPaperCatalogs } from "../domain-v2/past-papers";
 
 /** UI-level type: a selected paper group in the planner */
 interface SelectedPaperGroup {
@@ -40,25 +41,6 @@ import { groupEdexcelALUnits, getUnitName, needsSubjectGrouping } from "../utils
 import { exportToExcel, exportToWord, exportToPDF } from "../utils/exportPlanner";
 
 const WEEKDAYS = ["日", "一", "二", "三", "四", "五", "六"];
-
-/** Generate past papers for a single variant/component */
-function generatePastPapersForVariant(subjectCode: string, component: string): string[] {
-  const years = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
-  const papers: string[] = [];
-  for (const year of years) {
-    const series = year >= 2023 ? ["s", "m", "w"] : ["s", "w"];
-    for (const ser of series) {
-      papers.push(`${subjectCode}_${ser}_${year}_${component}`);
-    }
-  }
-  const so: Record<string, number> = { w: 0, s: 1, m: 2 };
-  return papers.sort((a, b) => {
-    const pa = a.split("_"), pb = b.split("_");
-    const yA = parseInt(pa[2]), yB = parseInt(pb[2]);
-    if (yB !== yA) return yB - yA;
-    return (so[pa[1]] ?? 3) - (so[pb[1]] ?? 3);
-  });
-}
 
 /** Get the nearest future exam date for a paper group. Returns null if no date found. */
 function getGroupNearestExamDate(level: string, board: string, variants: { code: string }[]): string | null {
@@ -116,6 +98,13 @@ export default function Planner() {
   const [shareUrl, setShareUrl] = useState("");
   const [showShare, setShowShare] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  const selectedCatalogKeys = useMemo(() => [...new Set(
+    selectedGroups
+      .map((group) => resolvePastPaperCatalogKey(group.board, group.subjectCode))
+      .filter((key): key is string => Boolean(key))
+  )], [selectedGroups]);
+  const { catalogs: pastPaperCatalogs, loading: pastPaperCatalogsLoading } = usePastPaperCatalogs(selectedCatalogKeys);
 
   useEffect(() => {
     if (initialShared || !entry || entry.capabilities.planner.status === "unavailable" || !entry.plannerLevel || !entry.plannerBoard) return;
@@ -213,24 +202,29 @@ export default function Planner() {
       paperOverrides,
       maxTasksPerDay: 3,
     };
-    const map: Record<string, string[]> = {};
+    const map: Record<string, PracticePaperOption[]> = {};
     for (const g of selectedGroups) {
       const name = `${g.subjectCode} ${g.paperLabel}`;
-      const allPapers: string[] = [];
-      for (const v of g.variants) {
-        allPapers.push(...generatePastPapersForVariant(g.subjectCode, v.component));
+      const key = resolvePastPaperCatalogKey(g.board, g.subjectCode);
+      const catalog = key ? pastPaperCatalogs.get(key) : undefined;
+      if (!catalog) {
+        map[name] = [];
+        continue;
       }
-      const so: Record<string, number> = { w: 0, s: 1, m: 2 };
-      allPapers.sort((a, b) => {
-        const pa = a.split("_"), pb = b.split("_");
-        const yA = parseInt(pa[2]), yB = parseInt(pb[2]);
-        if (yB !== yA) return yB - yA;
-        return (so[pa[1]] ?? 3) - (so[pb[1]] ?? 3);
-      });
-      map[name] = allPapers;
+      const componentCodes = g.variants
+        .flatMap((variant) => [variant.component, variant.code])
+        .map((value) => value.split("/").pop() ?? value);
+      map[name] = buildPastPaperSets(catalog, componentCodes).map((set) => ({
+        id: set.id,
+        title: set.title,
+        questionPaperUrl: assetHref(set.questionPaper),
+        markSchemeUrl: set.markScheme ? assetHref(set.markScheme) : undefined,
+        sourcePageUrl: catalog.sourcePageUrl,
+        accessStatus: set.questionPaper.accessStatus,
+      }));
     }
     return { config: cfg, pastPapersMap: map };
-  }, [selectedGroups, startDate, restDays, intensity, paperOverrides]);
+  }, [selectedGroups, startDate, restDays, intensity, paperOverrides, pastPaperCatalogs]);
 
   const { weeks, totalTasks } = usePlanner(config, pastPapersMap);
 
@@ -238,6 +232,9 @@ export default function Planner() {
   const missingDateGroups = useMemo(() =>
     selectedGroups.filter(g => !getGroupNearestExamDate(g.level, g.board, g.variants)),
   [selectedGroups]);
+  const missingMaterialGroups = useMemo(() => selectedGroups.filter((group) =>
+    (pastPapersMap[`${group.subjectCode} ${group.paperLabel}`] ?? []).length === 0
+  ), [selectedGroups, pastPapersMap]);
 
   // Exam countdown (one entry per selected group, not per variant)
   const examGroups = useMemo(() =>
@@ -420,7 +417,9 @@ export default function Planner() {
                 </div>
               )}
 
-              {weeks.length === 0 ? (
+              {pastPaperCatalogsLoading && selectedGroups.length > 0 ? (
+                <div className={`${CARD_CLS} text-center py-15`}><p style={{ fontSize: 15, color: "#625C54", margin: 0 }}>正在加载已核验真题目录…</p></div>
+              ) : weeks.length === 0 ? (
                 <div className={`${CARD_CLS} text-center py-15`}>
                   <BookOpen size={32} style={{ color: "#716A61", marginBottom: 12 }} />
                   {selectedGroups.length === 0 ? (
@@ -438,6 +437,8 @@ export default function Planner() {
                         ))}
                       </div>
                     </div>
+                  ) : missingMaterialGroups.length > 0 ? (
+                    <div><p style={{ fontSize: 15, color: "#725b3e", margin: "0 0 6px" }}>所选 Paper 暂无已核验真题</p><p style={{ fontSize: 12, lineHeight: 1.6, color: "#74695c", margin: 0 }}>规划器不会再生成虚拟年份名称。逐份官方链接通过审核后会自动进入计划。</p></div>
                   ) : (
                     <p style={{ fontSize: 15, color: "#625C54", margin: 0 }}>所有休息日被覆盖，无法生成计划</p>
                   )}
@@ -454,6 +455,7 @@ export default function Planner() {
                   {!collapsedWeeks[week.weekNum] && (<div style={{ display: "flex", flexDirection: "column", gap: 1, marginTop: 8 }}>{week.days.map(day => <DayRow key={day.date} day={day} completedTasks={completedTasks} onToggleComplete={key => setCompletedTasks(p => ({ ...p, [key]: !p[key] }))} />)}</div>)}
                 </div>
               )))}
+              {!pastPaperCatalogsLoading && weeks.length > 0 && missingMaterialGroups.length > 0 && <div className={CARD_CLS} style={{ borderColor: "rgba(166,152,136,0.35)", background: "rgba(255,250,244,0.9)" }}><p style={{ fontSize: 13, fontWeight: 600, color: "#725b3e", margin: "0 0 6px" }}>部分 Paper 尚无已核验真题</p><p style={{ fontSize: 12, lineHeight: 1.6, color: "#74695c", margin: 0 }}>{missingMaterialGroups.map((group) => `${group.subjectCode} ${group.paperLabel}`).join("、")}。这些 Paper 暂不生成虚拟任务。</p></div>}
             </div>
           </div>
         </div>
@@ -487,6 +489,8 @@ function DayRow({ day, completedTasks, onToggleComplete }: {
                   <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
                     <span style={{ fontSize: 12, fontWeight: 600, color: "#675A4D" }}>{p.paperCode}</span>
                     <span style={{ fontSize: 12, color: "#4A453F", fontWeight: 500 }}>{p.pastPaper}</span>
+                    {p.questionPaperUrl && <a href={p.questionPaperUrl} target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 3, color: "#486b58", fontSize: 11, fontWeight: 600, textDecoration: "none" }}><FileDown size={11} /> 试卷</a>}
+                    {p.markSchemeUrl && <a href={p.markSchemeUrl} target="_blank" rel="noreferrer" style={{ color: "#5d6f64", fontSize: 11, fontWeight: 600, textDecoration: "none" }}>评分标准</a>}
                   </div>
                 </div>
               </div>

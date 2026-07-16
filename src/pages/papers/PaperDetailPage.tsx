@@ -9,6 +9,7 @@ import { getSubjectStats } from "../../data/resultStatistics";
 import { loadSyllabus, type PaperSyllabus } from "../../data/papers/paperSyllabus";
 import { buildKnowledgeComparisonHref } from "../../data/papers/knowledgeComparison";
 import { COURSE_CATALOG, createCourseContext, withCourseContext } from "../../course-context/catalog";
+import PastPaperLibrary from "../../components/PastPaperLibrary";
 
 export default function PaperDetailPage() {
   const { paperId } = useParams<{ paperId: string }>();
@@ -154,6 +155,18 @@ export default function PaperDetailPage() {
                 {paper.description}
               </div>
             )}
+          </div>
+        </section>
+
+        <section style={{ padding: "0 16px 24px" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <PastPaperLibrary
+              board={paper.board}
+              subjectCode={paper.subjectCode}
+              componentCodes={paper.variantCodes}
+              paperCodes={[paper.paperNumber]}
+              compact
+            />
           </div>
         </section>
 

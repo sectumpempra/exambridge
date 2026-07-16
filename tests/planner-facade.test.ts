@@ -27,7 +27,7 @@ describe("Planner Facade v2", () => {
     expect(output.v2Result).toBeNull();
   });
 
-  it("v2 mode would return PlanResult when flag enabled", () => {
+  it("v2 mode does not synthesize historical papers when no audited pool is supplied", () => {
     vi.stubEnv("VITE_PLANNER_ENGINE", "v2");
     const output = planSchedule({
       startDate: "2026-01-01",
@@ -45,7 +45,8 @@ describe("Planner Facade v2", () => {
     });
     expect(output.result).not.toBeNull();
     expect(output.v2Result).toBe(output.result);
-    expect(output.result?.scheduledTaskCount).toBeGreaterThan(0);
+    expect(output.result?.scheduledTaskCount).toBe(0);
+    expect(output.result?.unscheduled.some((item) => item.reason === "NO_PAST_PAPER_AVAILABLE")).toBe(true);
   });
 
   it("uses a supplied past-paper pool without synthesizing replacements", () => {

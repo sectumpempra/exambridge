@@ -12,6 +12,28 @@ ExamBridge 区分官方修正版、历史导入记录和隔离冲突。页面可
 | Pearson Edexcel | GCSE/IGCSE/GCE/IAL 历史边界 | 计算器仅开放已定义完整 IAL Mathematics award route 的数据 |
 | WJEC/Eduqas | 成绩统计 | 当前不提供分数线，界面不得暗示完整覆盖 |
 
+## 历年真题目录试点
+
+真题目录只保存核验过的最小化元数据和官方入口。`accessStatus` 描述用户能否在
+考试局网站访问，`distributionStatus` 单独描述 ExamBridge 是否有权托管；“官方公开”
+不能自动推导为“允许本站镜像”。访问日期为 2026-07-16。
+
+| 目录 | 官方来源 | 当前发布范围 |
+| --- | --- | --- |
+| Cambridge 9709 | [官方 Past papers 页面](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level-mathematics-9709/past-papers/) | 官网公开选编的 2024 June Question Paper、Mark Scheme 与 Examiner Report；仅官方链接 |
+| Cambridge 0580 | [官方 Past papers 页面](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-mathematics-0580/past-papers/) | 官网公开选编的 2024 June Question Paper、Mark Scheme 与 Examiner Report；仅官方链接 |
+| Pearson 4MA1 | [官方 Course materials 页面](https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-mathematics-a-2016.coursematerials.html) | 先发布官方材料入口；动态逐份记录仍在候选审核 |
+| Pearson YMA01 | [官方 Course materials 页面](https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.coursematerials.html) | 先发布官方材料入口；动态逐份记录仍在候选审核 |
+| Cambridge 9231 | [官方 Past papers 页面](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level-further-mathematics-9231/past-papers/) | 2024 June 组件 11、21、31、41 的 Question Paper、Mark Scheme 与考季 Examiner Report；仅官方链接 |
+| Cambridge 0606 | [官方 Past papers 页面](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-additional-mathematics-0606/past-papers/) | 2024 June 组件 11、21 的 Question Paper、Mark Scheme 与考季 Examiner Report；仅官方链接 |
+| Pearson 9MA0 | [官方 Course materials 页面](https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.coursematerials.html) | 2024 June 9MA0/31 Statistics 的 Question Paper、Mark Scheme 与 Examiner Report；仅官方链接 |
+| Pearson 9FM0 | [官方 Course materials 页面](https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.coursematerials.html) | 2024 June 9FM0/4D Decision Mathematics 2 的 Question Paper、Mark Scheme 与 Examiner Report；仅官方链接 |
+| Pearson 1MA1 | [官方 Course materials 页面](https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html) | 2024 November 1MA1/1H 的 Question Paper、Mark Scheme 与 Examiner Report；仅官方链接 |
+| OCR H240 | [官方 Assessment 页面](https://www.ocr.org.uk/qualifications/as-a-level-gce/mathematics-a-h230-h240-from-2017/assessment/) | 2024 June H240/01、02、03 的 Question Paper、Mark Scheme 与各卷 Examiner Report；仅官方链接 |
+
+Cambridge 页面明确说明公开页面只是选编，注册学校可通过 School Support Hub 获取更多内容；
+受限内容不进入公开目录。Pearson 最近材料可能要求注册中心账号，目录必须保留实际访问状态。
+
 ## 已验证整体资格路线
 
 以下来源只用于对应的精确路线、考季和 option/component 组合，访问日期均为 2026-07-13：
@@ -38,6 +60,11 @@ ExamBridge 区分官方修正版、历史导入记录和隔离冲突。页面可
 `pnpm data:audit` 生成 `generated/data-quality-report.json`，检查 JSON 可解析性、已核验记录主键、阈值范围和次序、成绩统计 entries，并列出历史冲突及所有内容 SHA-256。冲突若无法通过 tier、region、route、option code 或官方行标识区分，会被隔离且不能进入计算器。
 
 Award 专项审计还检查路线 ID 唯一、考试局与资格代码匹配、组成 Paper 与权重、官方来源 URL/发布日期/访问日期/原始行标识/文档哈希、整体门槛单调性、CAIE option 与 supporting threshold 对应关系，以及生成预估的输入清单哈希和内容哈希。
+
+真题专项审计生成 `generated/past-paper-audit-report.json`，检查课程文件是否列入索引、
+资产 ID 是否唯一、公开文件是否有目标地址、来源域名是否属于对应考试局，以及任何本站托管
+记录是否同时具备持久化路径和明确的再分发依据。候选差异写入
+`generated/past-paper-update-report.json`，不会自动提升为正式数据。
 
 同一命令也会重建 `src/course-context/courseCatalog.generated.json`。课程目录审计检查 ID 唯一、qualification/specification 兼容、功能声明完整、不可用原因存在、WJEC/Eduqas 限制，以及计算器能力必须为已核验状态。
 

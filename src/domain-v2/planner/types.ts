@@ -15,6 +15,11 @@ export interface PastPaperRef {
   variantId?: string;   // canonical variant ID
   series: string;       // e.g. "2024-june"
   year: string;         // e.g. "2024"
+  title?: string;
+  questionPaperUrl?: string;
+  markSchemeUrl?: string;
+  sourcePageUrl?: string;
+  accessStatus?: "public" | "account-required" | "not-published" | "removed" | "unknown";
 }
 
 export interface SittingRef {

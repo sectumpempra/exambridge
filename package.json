@@ -8,16 +8,16 @@
   },
   "scripts": {
     "dev": "vinext dev",
-    "build": "node scripts/build-course-catalog.mjs && node scripts/build-award-estimates.mjs && node scripts/clean-dist.mjs && vinext build && node scripts/clean-server-public.mjs",
-    "build:static": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && vite build --config vite.static.config.ts",
+    "build": "node scripts/build-course-catalog.mjs && node scripts/build-award-estimates.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-past-papers.mjs && node scripts/clean-dist.mjs && vinext build && node scripts/clean-server-public.mjs",
+    "build:static": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-past-papers.mjs && vite build --config vite.static.config.ts",
     "start": "vinext start",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
-    "data:build": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs",
-    "data:audit": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/audit-data.mjs",
+    "data:build": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs",
+    "data:audit": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-past-papers.mjs && node scripts/audit-data.mjs",
     "lint": "eslint app src tests e2e --ignore-pattern dist --ignore-pattern .next",
-    "check": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/audit-data.mjs && tsc --noEmit && eslint app src tests e2e --ignore-pattern dist --ignore-pattern .next && vitest run && node scripts/clean-dist.mjs && vinext build && node scripts/clean-server-public.mjs && node scripts/check-build-budgets.mjs"
+    "check": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-past-papers.mjs && node scripts/audit-data.mjs && tsc --noEmit && eslint app src tests e2e --ignore-pattern dist --ignore-pattern .next && vitest run && node scripts/clean-dist.mjs && vinext build && node scripts/clean-server-public.mjs && node scripts/check-build-budgets.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

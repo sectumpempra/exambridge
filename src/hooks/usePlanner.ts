@@ -36,8 +36,22 @@ export interface TaskPaper {
   paperName: string;
   subjectCode: string;
   pastPaper: string;
+  pastPaperAssetId?: string;
+  questionPaperUrl?: string;
+  markSchemeUrl?: string;
+  sourcePageUrl?: string;
+  accessStatus?: "public" | "account-required" | "not-published" | "removed" | "unknown";
   completed: boolean;
   dayOffset: number;
+}
+
+export interface PracticePaperOption {
+  id: string;
+  title: string;
+  questionPaperUrl?: string;
+  markSchemeUrl?: string;
+  sourcePageUrl?: string;
+  accessStatus: "public" | "account-required" | "not-published" | "removed" | "unknown";
 }
 
 export interface WeekGroup {
@@ -102,7 +116,7 @@ function getQualificationId(board: string, level: string, subjectCode: string): 
   return `${board}-${level}-${code}`;
 }
 
-export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, string[]>): PlannerResult {
+export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, Array<string | PracticePaperOption>>): PlannerResult {
   return useMemo(() => {
     const { startDate, events, restDays, intensity, paperOverrides } = config;
     const maxTasksPerDay = Math.max(1, config.maxTasksPerDay ?? 3);
@@ -185,13 +199,19 @@ export function usePlanner(config: PlannerConfig, pastPapersMap: Record<string, 
           const pIdx = paperIndex.get(ev.paperName) ?? 0;
           if (pIdx >= pastPapers.length) continue;
 
-          const pastPaper = paperOverrides[ev.paperName] || pastPapers[pIdx];
+          const selectedPastPaper = paperOverrides[ev.paperName] || pastPapers[pIdx];
+          const pastPaper = typeof selectedPastPaper === "string" ? selectedPastPaper : selectedPastPaper.title;
           const variantCode = ev.variants[0]?.code ?? ev.paperName;
           tasks.push({
             paperCode: variantCode,
             paperName: ev.paperName,
             subjectCode: ev.subjectCode,
             pastPaper,
+            pastPaperAssetId: typeof selectedPastPaper === "string" ? undefined : selectedPastPaper.id,
+            questionPaperUrl: typeof selectedPastPaper === "string" ? undefined : selectedPastPaper.questionPaperUrl,
+            markSchemeUrl: typeof selectedPastPaper === "string" ? undefined : selectedPastPaper.markSchemeUrl,
+            sourcePageUrl: typeof selectedPastPaper === "string" ? undefined : selectedPastPaper.sourcePageUrl,
+            accessStatus: typeof selectedPastPaper === "string" ? undefined : selectedPastPaper.accessStatus,
             completed: false,
             dayOffset: d,
           });
