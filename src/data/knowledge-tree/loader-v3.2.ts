@@ -48,7 +48,7 @@ export async function loadKnowledgeManifestV32(): Promise<KnowledgeManifestV32> 
 export function getPaperMappingReadiness(mapping: MappingFile): PaperMappingReadiness {
   const declared = new Set(mapping.paperStructure?.papers ?? []);
   const subtopics = mapping.mappings.flatMap((topic) => topic.subtopicMappings);
-  const referenced = subtopics.filter((subtopic) => Array.isArray(subtopic.paperReference) && subtopic.paperReference.length > 0);
+  const referenced = subtopics.filter((subtopic) => subtopic.paperApplicabilityKind === "fixed" && Array.isArray(subtopic.paperReference) && subtopic.paperReference.length > 0);
   const invalidReferences = [...new Set(referenced.flatMap((subtopic) => subtopic.paperReference ?? []).filter((paper) => !declared.has(paper)))];
   const coverage = subtopics.length > 0 ? referenced.length / subtopics.length : 0;
   const ready = mapping.verificationStatus === "verified"

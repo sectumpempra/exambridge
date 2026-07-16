@@ -257,7 +257,7 @@ export default function KnowledgeTreeComparePage() {
             </h1>
             <p className="mt-2 text-sm text-[#625C54] leading-relaxed">
               基于 <strong className="text-[#3D3832]">812 节点</strong> 统一知识树，覆盖{" "}
-              <strong className="text-[#3D3832]">5 大考试局 21 个数学类科目</strong> 的候选映射
+              <strong className="text-[#3D3832]">5 大考试局 21 个数学类科目</strong> 的{hasPublishedMappings ? "已批准映射" : "候选映射"}
               <br />
               支持 <strong className="text-[#A9471F]">跨考试局整科对比</strong>、{" "}
               <strong className="text-[#A9471F]">同课程或跨课程 Paper 对比</strong> 及{" "}

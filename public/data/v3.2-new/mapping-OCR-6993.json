@@ -3,635 +3,1315 @@
   "subjectCode": "6993",
   "subjectName": "FSMQ Additional Mathematics",
   "level": "FSMQ",
-  "version": "1.0-batch1",
-  "totalTopics": 5,
-  "mappedTopics": 5,
+  "version": "4.0.0-knowledge-v4-20260716",
+  "sourceSchemaVersion": "4.0.0",
+  "qualificationVersionId": "OCR-6993:Version 2.0",
+  "syllabusVersion": "Version 2.0",
+  "effectiveFrom": "2026-06-01",
+  "sourceUrl": "https://www.ocr.org.uk/Images/457916-specification-from-2018-.pdf",
+  "sources": [
+    {
+      "url": "https://www.ocr.org.uk/Images/457916-specification-from-2018-.pdf",
+      "title": "Cambridge OCR Level 3 FSMQ Additional Mathematics 6993 specification",
+      "documentVersion": "Version 2.0",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "d682352b907c422bd5d994153bd5440b3146913e92e9a7524148515109f8cb3f",
+      "sourceType": "official"
+    }
+  ],
+  "approval": {
+    "approvedAt": "2026-07-16",
+    "approvalBatch": "knowledge-v4-20260716"
+  },
+  "verificationStatus": "verified",
+  "totalTopics": 8,
+  "mappedTopics": 8,
+  "paperStructure": {
+    "papers": [
+      "Paper 1 (01)",
+      "Paper 1"
+    ]
+  },
   "mappings": [
     {
-      "topicId": "OCR-6993-1",
-      "topicName": "Functions and Algebra",
+      "topicId": "OCR-6993-ALGF",
+      "topicName": "Algebra and Functions",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-6993-1.1",
-          "subtopicName": "Recognise and use function notation, including mappings, inverse notation, composite notation and repeated-function notation.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-AL1",
+          "subtopicName": "Page 12, AL1",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-NOTN-SYMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL1"
+            },
             {
               "nodeId": "ALGF-FUNC-DEFS-NOTN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-DEFS-NOTN in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-COMP-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-COMP-COMP in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-COMP-INVR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVR in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL1"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1.2",
-          "subtopicName": "Use domain and range, determine when an inverse exists, and sketch the relationship between a function and its inverse.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-AL2",
+          "subtopicName": "Page 12, AL2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNC-DEFS-DOMR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-DEFS-DOMR in the expanded knowledge tree."
+              "nodeId": "ALGF-EXP-MANI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL2"
             },
             {
-              "nodeId": "ALGF-FUNC-DEFS-ONON",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-DEFS-ONON in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-COMP-INVG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVG in the expanded knowledge tree."
+              "nodeId": "NUM-POW-POWR-SURD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL2"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1.3",
-          "subtopicName": "Use modulus graphs, function transformations and sketching of polynomial or reciprocal functions.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-AL3",
+          "subtopicName": "Page 12, AL3",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNC-GRAP-MODU",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-MODU in the expanded knowledge tree."
+              "nodeId": "ALGF-POLY-POLY-DIVL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL3"
             },
             {
-              "nodeId": "ALGF-FUNC-TRAN-REFL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-REFL in the expanded knowledge tree."
+              "nodeId": "ALGF-POLY-POLY-DIVQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL3"
             },
             {
-              "nodeId": "ALGF-FUNC-GRAP-CUBC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the expanded knowledge tree."
+              "nodeId": "ALGF-POLY-POLY-CUBQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL3"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1.3.2",
-          "subtopicName": "Use modulus graphs, function transformations and sketching of polynomial or reciprocal functions.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-AL4",
+          "subtopicName": "Page 12, AL4",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "nodeId": "ALGF-POLY-POLY-FACT",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 12, AL4"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1.4",
-          "subtopicName": "Find maximum or minimum values of quadratics by completing the square or differentiation.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-AL5",
+          "subtopicName": "Page 12, AL5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "ALGF-EQN-QUAD-COMP",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-APPL-STAT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 12, AL5"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-1.5",
-          "subtopicName": "Use discriminants to determine roots, tangency and intersections involving quadratic functions.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-AL6",
+          "subtopicName": "Page 12, AL6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQN-QUAD-DISC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-DISC in the expanded knowledge tree."
+              "nodeId": "ALGF-EQN-LINE-SOLV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL6"
             },
-            {
-              "nodeId": "ALGF-FUNC-GRAP-INTR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-INTR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-CIRC-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-1.6",
-          "subtopicName": "Solve quadratic equations and inequalities using factorisation, completing the square, formulae and graphs.",
-          "paperReference": null,
-          "mappedNodes": [
             {
               "nodeId": "ALGF-EQN-QUAD-FACT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-FACT in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL6"
             },
             {
-              "nodeId": "ALGF-EQN-QUAD-FORM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-FORM in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-INEQ-QUAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-1.7",
-          "subtopicName": "Use indices, surds, logarithms, exponentials and polynomial manipulation.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-POW-INDX-FRAC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-FRAC in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "NUM-POW-POWR-SURD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-POWR-SURD in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-LOG-EXPO-EX",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-EXPO-EX in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-1.8",
-          "subtopicName": "Use algebraic division, factor theorem, remainder theorem or polynomial factors where specified.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-POLY-POLY-DIVL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-POLY-POLY-DIVL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-POLY-POLY-FACT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-POLY-POLY-FACT in the expanded knowledge tree."
+              "nodeId": "ALGF-EQN-SIMU-LIN2",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL6"
             },
             {
               "nodeId": "ALGF-POLY-POLY-CUBQ",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-POLY-POLY-CUBQ in the expanded knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "OCR-6993-2",
-      "topicName": "Coordinate Geometry and Sequences",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "OCR-6993-2.1",
-          "subtopicName": "Use coordinate geometry of straight lines and circles, including gradients, intersections and tangents.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-LINE-GRAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-LINE-YMXC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-CIRC-CENT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CIRC-CENT in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL6"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-2.1.2",
-          "subtopicName": "Use coordinate geometry of straight lines and circles, including gradients, intersections and tangents.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-AL7",
+          "subtopicName": "Page 12, AL7",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "GEOM-COOR-CIRC-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the expanded knowledge tree."
+              "nodeId": "ALGF-EQN-INEQ-LINS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL7"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL7"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-2.2",
-          "subtopicName": "Use equations of tangents and normals, intersections of curves and coordinate geometry problem solving.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-AL8",
+          "subtopicName": "Page 12, AL8",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "GEOM-COOR-LINE-POINT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-POINT in the expanded knowledge tree."
+              "nodeId": "ALGF-EQN-INEQ-LINS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL8"
             },
             {
-              "nodeId": "GEOM-COOR-CART-INTR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CART-INTR in the expanded knowledge tree."
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL8"
             },
             {
-              "nodeId": "CALC-DIFF-APPL-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-TANG in the expanded knowledge tree."
+              "nodeId": "ALGF-EQN-INEQ-REGN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL8"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-2.3",
-          "subtopicName": "Use arithmetic and geometric sequences, nth terms and recursive definitions.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-AL9",
+          "subtopicName": "Page 12, AL9",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "nodeId": "ALGF-EQN-INEQ-REGN",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SEQU-NTH in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-SEQ-SEQU-ARIT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SEQU-ARIT in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-SEQ-SEQU-GEOM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SEQU-GEOM in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 12, AL9"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-2.4",
-          "subtopicName": "Use series sums, sigma notation and binomial coefficients where specified.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-AL10",
+          "subtopicName": "Page 12, AL10",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQ-SERS-ARSM",
+              "nodeId": "ALGF-SEQ-SEQU-TERM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SERS-ARSM in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 12, AL10"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-AL11",
+          "subtopicName": "Page 12, AL11",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-TERM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL11"
             },
             {
-              "nodeId": "ALGF-SEQ-SERS-GESM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SERS-GESM in the expanded knowledge tree."
+              "nodeId": "REAS-MODL-MODL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 12, AL11"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-EN1",
+          "subtopicName": "Page 13, EN1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-BINO-POSI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 13, EN1"
             },
             {
               "nodeId": "ALGF-SEQ-BINO-COEF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 13, EN1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CG4",
+          "subtopicName": "Page 14, CG4",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG4"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-AX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CG6",
+          "subtopicName": "Page 14, CG6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-REGN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG6"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-ABST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-EL1",
+          "subtopicName": "Page 18, EL1",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-AX",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-BINO-COEF in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 18, EL1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-EL2",
+          "subtopicName": "Page 18, EL2",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-INVR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 18, EL2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-EL3",
+          "subtopicName": "Page 18, EL3",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 18, EL3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-EL4",
+          "subtopicName": "Page 18, EL4",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 18, EL4"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 18, EL4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-EL5",
+          "subtopicName": "Page 18, EL5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 18, EL5"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-LOBF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 18, EL5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-EL6",
+          "subtopicName": "Page 18, EL6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-EQNS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 18, EL6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-EL7",
+          "subtopicName": "Page 18, EL7",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-GROW",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 18, EL7"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "OCR-6993-3",
-      "topicName": "Trigonometry",
+      "topicId": "OCR-6993-PROB",
+      "topicName": "Probability",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-6993-3.1",
-          "subtopicName": "Use radians, exact values, trigonometric graphs and transformations.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-EN2",
+          "subtopicName": "Page 13, EN2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "TRIG-CIRC-RADI-DEFN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-CIRC-RADI-DEFN in the expanded knowledge tree."
+              "nodeId": "PROB-COMB-RULE-TREE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 13, EN2"
             },
             {
-              "nodeId": "TRIG-FUNC-EXCT-EXCT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-EXCT-EXCT in the expanded knowledge tree."
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 13, EN2"
             },
             {
-              "nodeId": "TRIG-FUNC-GRAP-SINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the expanded knowledge tree."
+              "nodeId": "STAT-DATA-CLAS-TWOW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 13, EN2"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 13, EN2"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-3.1.2",
-          "subtopicName": "Use radians, exact values, trigonometric graphs and transformations.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-EN3",
+          "subtopicName": "Page 13, EN3",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "TRIG-FUNC-GRAP-PERD",
+              "nodeId": "PROB-COMB-RULE-MULT",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-PERD in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 13, EN3"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-3.2",
-          "subtopicName": "Use sine, cosine and tangent graphs, including amplitude, period, translations and intersections.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-EN4",
+          "subtopicName": "Page 13, EN4",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "nodeId": "PROB-COMB-COUNT-PERM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 13, EN4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-EN5",
+          "subtopicName": "Page 13, EN5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-COUNT-COMB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 13, EN5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-EN6",
+          "subtopicName": "Page 13, EN6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-COUNT-ENUM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 13, EN6"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-MULT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 13, EN6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-6993-GEOM",
+      "topicName": "Geometry and Mensuration",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CG1",
+          "subtopicName": "Page 14, CG1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CART-DIST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 14, CG1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CG2",
+          "subtopicName": "Page 14, CG2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CART-MIDP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 14, CG2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CG3",
+          "subtopicName": "Page 14, CG3",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 14, CG3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CG5",
+          "subtopicName": "Page 14, CG5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG5"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG5"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG5"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-REGN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-6993-DISC",
+      "topicName": "Discrete Mathematics",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CG7",
+          "subtopicName": "Page 14, CG7",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-LP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG7"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-REGN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 14, CG7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CG8",
+          "subtopicName": "Page 14, CG8",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-LP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 14, CG8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-6993-TRIG",
+      "topicName": "TRIG",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-PT1",
+          "subtopicName": "Page 15, PT1",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-RATR-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT1"
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-COSN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT1"
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT1"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT1"
             },
             {
               "nodeId": "TRIG-FUNC-GRAP-COSN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-COSN in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT1"
             },
             {
               "nodeId": "TRIG-FUNC-GRAP-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-TANG in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT1"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-3.3",
-          "subtopicName": "Use trigonometric identities and solve trigonometric equations.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-PT2",
+          "subtopicName": "Page 15, PT2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT2"
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT2"
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-AMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-PT3",
+          "subtopicName": "Page 15, PT3",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "TRIG-IDEN-IDEN-TANR",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-IDEN-TANR in the expanded knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; Page 15, PT3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-PT4",
+          "subtopicName": "Page 15, PT4",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
             {
               "nodeId": "TRIG-IDEN-IDEN-PYTH",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-IDEN-PYTH in the expanded knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; Page 15, PT4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-PT5",
+          "subtopicName": "Page 15, PT5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
             {
               "nodeId": "TRIG-IDEN-EQNS-SIMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-EQNS-SIMP in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT5"
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-INTR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT5"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-3.4",
-          "subtopicName": "Use compound-angle, double-angle or R-form transformations where specified.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-PT6",
+          "subtopicName": "Page 15, PT6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "TRIG-IDEN-IDEN-ADDR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-IDEN-ADDR in the expanded knowledge tree."
+              "nodeId": "TRIG-BASE-RATR-PYTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT6"
             },
             {
-              "nodeId": "TRIG-IDEN-IDEN-DBLA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-IDEN-DBLA in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-IDEN-EQNS-MULT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-EQNS-MULT in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-3.5",
-          "subtopicName": "Use non-right-angled triangle formulae, sine rule, cosine rule and area formula.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASE-NONR-SINR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-SINR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-NONR-COSR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-COSR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-NONR-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-AREA in the expanded knowledge tree."
+              "nodeId": "TRIG-APPL-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 15, PT6"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "OCR-6993-4",
+      "topicId": "OCR-6993-CALC",
       "topicName": "Calculus",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-6993-4.1",
-          "subtopicName": "Understand gradient as a rate of change and use derivative notation.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-CONC-GRAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-CONC-GRAD in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-CONC-RATE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-CONC-RATE in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-CONC-NOTN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-CONC-NOTN in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-4.2",
-          "subtopicName": "Differentiate powers and sums of elementary functions.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-CA1",
+          "subtopicName": "Page 16, CA1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "CALC-DIFF-RULE-POWR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-RULE-POWR in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA1"
             },
             {
               "nodeId": "CALC-DIFF-RULE-SUMD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-RULE-SUMD in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA1"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-4.3",
-          "subtopicName": "Apply differentiation to tangents, normals, stationary points and curve sketching.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-CA2",
+          "subtopicName": "Page 16, CA2",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA2"
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-RATE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CA3",
+          "subtopicName": "Page 16, CA3",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CA4",
+          "subtopicName": "Page 16, CA4",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "CALC-DIFF-APPL-TANG",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-TANG in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-PARI-TNOR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-PARI-TNOR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-APPL-STAT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 16, CA4"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-4.3.2",
-          "subtopicName": "Apply differentiation to tangents, normals, stationary points and curve sketching.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-CA5",
+          "subtopicName": "Page 16, CA5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 16, CA5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CA6",
+          "subtopicName": "Page 16, CA6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Page 16, CA6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CA7",
+          "subtopicName": "Page 16, CA7",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "CALC-DIFF-APPL-SKET",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-SKET in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 16, CA7"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-4.4",
-          "subtopicName": "Integrate as reverse differentiation and use constants of integration.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-CA8",
+          "subtopicName": "Page 16, CA8",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-POWR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA8"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CA9",
+          "subtopicName": "Page 16, CA9",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "CALC-INTE-CONC-REVD",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-CONC-REVD in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-POWR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-POWR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-INTE-APPL-CONS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-APPL-CONS in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 16, CA9"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-4.5",
-          "subtopicName": "Use definite integration for area and area between a curve and an axis.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-CA10",
+          "subtopicName": "Page 16, CA10",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-CONC-INDI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA10"
+            },
+            {
+              "nodeId": "CALC-INTE-CONC-DEFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA10"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CA11",
+          "subtopicName": "Page 16, CA11",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "CALC-INTE-CONC-DEFI",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-CONC-DEFI in the expanded knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; Page 16, CA11"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CA12",
+          "subtopicName": "Page 16, CA12",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
             {
               "nodeId": "CALC-INTE-APPL-AREA",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-APPL-AREA in the expanded knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; Page 16, CA12"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CA13",
+          "subtopicName": "Page 16, CA13",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
             {
               "nodeId": "CALC-INTE-APPL-BETW",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-APPL-BETW in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 16, CA13"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-CA14",
+          "subtopicName": "Page 16, CA14",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-KIN-SVAT-DSDT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA14"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-DVDT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA14"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-INTV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA14"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-INTS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA14"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-NM4",
+          "subtopicName": "Page 17, NM4",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-LIMT",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; Page 17, NM4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-NM5",
+          "subtopicName": "Page 17, NM5",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-LIMT",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; Page 17, NM5"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "OCR-6993-6",
-      "topicName": "Numerical Methods and Enumeration",
+      "topicId": "OCR-6993-MECH",
+      "topicName": "Mechanics",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-6993-6.1",
-          "subtopicName": "Use enumeration, systematic listing and counting methods.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-CA15",
+          "subtopicName": "Page 16, CA15",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "PROB-COMB-COUNT-ENUM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-COUNT-ENUM in the expanded knowledge tree."
+              "nodeId": "MECH-KIN-LINE-CONST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA15"
             },
             {
-              "nodeId": "PROB-COMB-COUNT-SAMPS",
+              "nodeId": "CALC-KIN-SVAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 16, CA15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-6993-NUMM",
+      "topicName": "NUMM",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-NM1",
+          "subtopicName": "Page 17, NM1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-SIGN-LOC",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-COUNT-SAMPS in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 17, NM1"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-6.2",
-          "subtopicName": "Use binomial coefficients and simple combinatorial arguments.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQ-BINO-COEF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-BINO-COEF in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "PROB-COMB-COUNT-COMB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-COUNT-COMB in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-6993-6.3",
-          "subtopicName": "Use iterative numerical methods and interpret convergence.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-NM2",
+          "subtopicName": "Page 17, NM2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "NUMM-ROOT-ITER-FORM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-ROOT-ITER-FORM in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "NUMM-ROOT-ITER-CONV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-ROOT-ITER-CONV in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "NUMM-ROOT-ITER-COBW",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-ROOT-ITER-COBW in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 17, NM2"
             }
           ]
         },
         {
-          "subtopicId": "OCR-6993-6.4",
-          "subtopicName": "Use the trapezium rule or numerical integration where specified.",
-          "paperReference": null,
+          "subtopicId": "OFFICIAL-OCR-6993-NM3",
+          "subtopicName": "Page 17, NM3",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-SIGN-FAIL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 17, NM3"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-CONV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 17, NM3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-NM6",
+          "subtopicName": "Page 17, NM6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-NINT",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; Page 17, NM6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-NM7",
+          "subtopicName": "Page 17, NM7",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "NUMM-NINT-TRAP-ESTM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-NINT-TRAP-ESTM in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 17, NM7"
             },
             {
               "nodeId": "NUMM-NINT-TRAP-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 17, NM7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-NM8",
+          "subtopicName": "Page 17, NM8",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-NINT-TRAP-OVER",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-NINT-TRAP-AREA in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Page 17, NM8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-6993-NM9",
+          "subtopicName": "Page 17, NM9",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 17, NM9"
+            },
+            {
+              "nodeId": "NUMM-NINT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 17, NM9"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 17, NM9"
             }
           ]
         }

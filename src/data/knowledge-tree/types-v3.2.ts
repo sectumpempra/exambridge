@@ -32,6 +32,8 @@ export interface SubtopicMapping {
   subtopicName: string;
   description?: string;
   paperReference: string[] | null;
+  paperApplicabilityKind?: "fixed" | "eligible" | "not-specified";
+  eligiblePaperReference?: string[];
   mappedNodes: MappedNode[];
 }
 
@@ -75,6 +77,11 @@ export interface MappingFile {
   sourceUrl?: string;
   syllabusVersion?: string;
   verificationStatus?: "verified" | "candidate" | "rejected";
+  sourceSchemaVersion?: "4.0.0";
+  qualificationVersionId?: string;
+  effectiveFrom?: string;
+  effectiveTo?: string;
+  approval?: { approvedAt: string; approvalBatch: string };
   mappings: TopicMapping[];
 }
 

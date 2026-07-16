@@ -3,1351 +3,2852 @@
   "subjectCode": "9MA0",
   "subjectName": "A-Level Mathematics",
   "level": "A-Level",
-  "version": "1.0-mvp",
+  "version": "4.0.0-knowledge-v4-20260716",
+  "sourceSchemaVersion": "4.0.0",
+  "qualificationVersionId": "Edexcel-9MA0:2017",
+  "syllabusVersion": "2017",
+  "effectiveFrom": "2017-09-01",
+  "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+  "sources": [
+    {
+      "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+      "title": "Pearson Edexcel A Level Mathematics 9MA0 specification",
+      "documentVersion": "2017",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "b008c50064090bab5c3e26e1f3c97778d21b492d5b839219f73eca11828ecef8",
+      "sourceType": "official"
+    }
+  ],
+  "approval": {
+    "approvedAt": "2026-07-16",
+    "approvalBatch": "knowledge-v4-20260716"
+  },
+  "verificationStatus": "verified",
   "totalTopics": 12,
-  "mappedTopics": 12,
+  "mappedTopics": 11,
   "paperStructure": {
     "papers": [
+      "Paper 1: Pure Mathematics 1 (9MA0/01)",
+      "Paper 2: Pure Mathematics 2 (9MA0/02)",
+      "Paper 3: Statistics and Mechanics (9MA0/03)",
       "Paper 1",
       "Paper 2",
-      "Paper 3"
-    ],
-    "compulsory": [
-      "Paper 1",
-      "Paper 2",
-      "Paper 3"
-    ],
-    "asOnly": [],
-    "alevelOnly": [
-      "Paper 1",
-      "Paper 2",
-      "Paper 3"
-    ],
-    "applicationGroups": [],
-    "mutuallyExclusive": []
+      "Paper 3",
+      "Paper 1: Pure Mathematics 1",
+      "Paper 2: Pure Mathematics 2",
+      "Paper 3: Statistics and Mechanics",
+      "9MA0/01",
+      "9MA0/02",
+      "9MA0/03"
+    ]
   },
   "mappings": [
     {
-      "topicId": "Edexcel-9MA0-1",
-      "topicName": "Proof",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
+      "topicId": "Edexcel-9MA0-REAS",
+      "topicName": "REAS",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9MA0-1.1",
-          "subtopicName": "Understand and use the structure of mathematical proof and methods including proof by deduction, proof by exhaustion, disproof by counterexample and proof by contradiction.",
+          "subtopicId": "OFFICIAL-OT1.1",
+          "subtopicName": "p.12 OT1.1",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.12 OT1.1"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-SYMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.12 OT1.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT1.2",
+          "subtopicName": "p.12 OT1.2",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-ARGM-SYMB",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; p.12 OT1.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT1.5",
+          "subtopicName": "p.12 OT1.5",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-ARGM-CRIT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.12 OT1.5"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-JUST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.12 OT1.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT2.1",
+          "subtopicName": "p.13 OT2.1",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROB-PSOL-STRC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 OT2.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT2.2",
+          "subtopicName": "p.13 OT2.2",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROB-PSOL-UNST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 OT2.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT2.3",
+          "subtopicName": "p.13 OT2.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 OT2.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT2.5",
+          "subtopicName": "p.13 OT2.5",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROB-PSOL-ESTM",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; p.13 OT2.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT2.7",
+          "subtopicName": "p.13 OT2.7",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROB-PSOL-DIAG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.13 OT2.7"
+            },
+            {
+              "nodeId": "MECH-FORC-FORC-DIAG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.13 OT2.7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT3.1",
+          "subtopicName": "p.13 OT3.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ABST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 OT3.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT3.2",
+          "subtopicName": "p.13 OT3.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-INPT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 OT3.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT3.3",
+          "subtopicName": "p.13 OT3.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 OT3.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT3.4",
+          "subtopicName": "p.13 OT3.4",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.13 OT3.4"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.13 OT3.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OT3.5",
+          "subtopicName": "p.13 OT3.5",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 OT3.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-1.1",
+          "subtopicName": "p.15, Topic 1 Proof, 1.1",
+          "description": "Assessment depth: proof",
           "paperReference": [
             "Paper 1",
             "Paper 2"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "REAS-PROF-PROF-DEDU",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-PROF-PROF-DEDU in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.15, Topic 1 Proof, 1.1"
             },
             {
               "nodeId": "REAS-PROF-PROF-EXHA",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-PROF-PROF-EXHA in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.15, Topic 1 Proof, 1.1"
             },
             {
               "nodeId": "REAS-PROF-PROF-COUN",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-PROF-PROF-COUN in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.15, Topic 1 Proof, 1.1"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-CONT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15, Topic 1 Proof, 1.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-1.1.2",
-          "subtopicName": "Understand and use the structure of mathematical proof and methods including proof by deduction, proof by exhaustion, disproof by counterexample and proof by contradiction.",
+          "subtopicId": "OFFICIAL-9MA0-2.11",
+          "subtopicName": "p.20, Topic 2 Algebra and functions, 2.11",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 1",
             "Paper 2"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "REAS-PROF-PROF-CONT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-PROF-PROF-CONT in the MVP knowledge tree."
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20, Topic 2 Algebra and functions, 2.11"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20, Topic 2 Algebra and functions, 2.11"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-4.6",
+          "subtopicName": "p.22, Topic 4 Sequences and series, 4.6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22, Topic 4 Sequences and series, 4.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-5.8",
+          "subtopicName": "p.24, Topic 5 Trigonometry, 5.8",
+          "description": "Assessment depth: proof",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, Topic 5 Trigonometry, 5.8"
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, Topic 5 Trigonometry, 5.8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-8.8",
+          "subtopicName": "p.30 8.8",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30 8.8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-3.3",
+          "subtopicName": "Page 37, section 3.3",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 3.3"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 3.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-4.3",
+          "subtopicName": "Page 38, section 4.3",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 38, section 4.3"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 38, section 4.3"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 38, section 4.3"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-9MA0-2",
-      "topicName": "Algebra and functions",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
+      "topicId": "Edexcel-9MA0-NUM",
+      "topicName": "Number",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9MA0-2.1",
-          "subtopicName": "Understand and use laws of indices, surds, quadratics, simultaneous equations, inequalities, polynomials, rational expressions, functions and graph transformations.",
+          "subtopicId": "OFFICIAL-OT1.3",
+          "subtopicName": "p.12 OT1.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-SYS-SET-LANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.12 OT1.3"
+            },
+            {
+              "nodeId": "NUM-SYS-SET-UNIN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.12 OT1.3"
+            },
+            {
+              "nodeId": "NUM-SYS-SET-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.12 OT1.3"
+            },
+            {
+              "nodeId": "NUM-SYS-SET-VENN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.12 OT1.3"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-SETN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.12 OT1.3"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.12 OT1.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-2.1",
+          "subtopicName": "p.16, Topic 2 Algebra and functions, 2.1",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 1",
             "Paper 2"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "NUM-POW-INDX-FRAC",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-FRAC in the MVP knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; p.16, Topic 2 Algebra and functions, 2.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-2.2",
+          "subtopicName": "p.16, Topic 2 Algebra and functions, 2.2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
             {
               "nodeId": "NUM-POW-POWR-SURD",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-POWR-SURD in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.16, Topic 2 Algebra and functions, 2.2"
             },
             {
-              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "nodeId": "NUM-POW-POWR-RATD",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.16, Topic 2 Algebra and functions, 2.2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9MA0-ALGF",
+      "topicName": "Algebra and Functions",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OT1.4",
+          "subtopicName": "p.12 OT1.4",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DEFN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.12 OT1.4"
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DOMR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.12 OT1.4"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-2.1.3",
-          "subtopicName": "Understand and use laws of indices, surds, quadratics, simultaneous equations, inequalities, polynomials, rational expressions, functions and graph transformations.",
+          "subtopicId": "OFFICIAL-9MA0-2.3",
+          "subtopicName": "p.16, Topic 2 Algebra and functions, 2.3",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 1",
             "Paper 2"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "ALGF-EQN-QUAD-DISC",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.16, Topic 2 Algebra and functions, 2.3"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.16, Topic 2 Algebra and functions, 2.3"
             },
             {
               "nodeId": "ALGF-EQN-QUAD-FACT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.16, Topic 2 Algebra and functions, 2.3"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.16, Topic 2 Algebra and functions, 2.3"
             },
             {
               "nodeId": "ALGF-EQN-QUAD-FUNC",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.16, Topic 2 Algebra and functions, 2.3"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.16, Topic 2 Algebra and functions, 2.3"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-2.1.4",
-          "subtopicName": "Understand and use laws of indices, surds, quadratics, simultaneous equations, inequalities, polynomials, rational expressions, functions and graph transformations.",
+          "subtopicId": "OFFICIAL-9MA0-2.4",
+          "subtopicName": "p.16, Topic 2 Algebra and functions, 2.4",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 1",
             "Paper 2"
           ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-GRAP-MODU",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "ALGF-POLY-POLY-DIVL",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "ALGF-POLY-POLY-CUBQ",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-2.1.2",
-          "subtopicName": "Understand and use laws of indices, surds, quadratics, simultaneous equations, inequalities, polynomials, rational expressions, functions and graph transformations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "ALGF-EQN-SIMU-LINQ",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-SIMU-LINQ in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.16, Topic 2 Algebra and functions, 2.4"
             },
             {
-              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "nodeId": "ALGF-EQN-SIMU-SUBS",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.16, Topic 2 Algebra and functions, 2.4"
             },
             {
-              "nodeId": "ALGF-POLY-POLY-FACT",
+              "nodeId": "ALGF-EQN-SIMU-ELIM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-POLY-POLY-FACT in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.16, Topic 2 Algebra and functions, 2.4"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-2.2",
-          "subtopicName": "Understand and use graphs of functions, composite functions, inverse functions, transformations, partial fractions and functions in modelling.",
+          "subtopicId": "OFFICIAL-9MA0-2.5",
+          "subtopicName": "p.17, Topic 2 Algebra and functions, 2.5",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 1",
             "Paper 2"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "nodeId": "ALGF-EQN-INEQ-LINS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17, Topic 2 Algebra and functions, 2.5"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17, Topic 2 Algebra and functions, 2.5"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-SETN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17, Topic 2 Algebra and functions, 2.5"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-REGN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17, Topic 2 Algebra and functions, 2.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-2.6",
+          "subtopicName": "p.17, Topic 2 Algebra and functions, 2.6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-POLY-POLY-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17, Topic 2 Algebra and functions, 2.6"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-DIVL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17, Topic 2 Algebra and functions, 2.6"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-CUBQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17, Topic 2 Algebra and functions, 2.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-2.7",
+          "subtopicName": "p.18, Topic 2 Algebra and functions, 2.7",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18, Topic 2 Algebra and functions, 2.7"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18, Topic 2 Algebra and functions, 2.7"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18, Topic 2 Algebra and functions, 2.7"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-MODU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18, Topic 2 Algebra and functions, 2.7"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-ASMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18, Topic 2 Algebra and functions, 2.7"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18, Topic 2 Algebra and functions, 2.7"
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18, Topic 2 Algebra and functions, 2.7"
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-DIRE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18, Topic 2 Algebra and functions, 2.7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-2.8",
+          "subtopicName": "p.19, Topic 2 Algebra and functions, 2.8",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DOMR",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-QUAD in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.8"
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-ONON",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.8"
             },
             {
               "nodeId": "ALGF-FUNC-COMP-COMP",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-COMP-COMP in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.8"
             },
             {
               "nodeId": "ALGF-FUNC-COMP-INVR",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVR in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.8"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.8"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-2.2.3",
-          "subtopicName": "Understand and use graphs of functions, composite functions, inverse functions, transformations, partial fractions and functions in modelling.",
+          "subtopicId": "OFFICIAL-9MA0-2.9",
+          "subtopicName": "p.19, Topic 2 Algebra and functions, 2.9",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 1",
             "Paper 2"
           ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-DEFS-DEFN",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "ALGF-FUNC-DEFS-DOMR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "ALGF-FUNC-DEFS-ONON",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-2.2.4",
-          "subtopicName": "Understand and use graphs of functions, composite functions, inverse functions, transformations, partial fractions and functions in modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-GRAP-INTR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "ALGF-POLY-PART-REPL",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "ALGF-POLY-PART-QUAD",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-2.2.2",
-          "subtopicName": "Understand and use graphs of functions, composite functions, inverse functions, transformations, partial fractions and functions in modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "ALGF-FUNC-TRAN-VERT",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-VERT in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.9"
             },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-HORZ",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.9"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-STRE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.9"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-REFL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.9"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-2.10",
+          "subtopicName": "p.19, Topic 2 Algebra and functions, 2.10",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
             {
               "nodeId": "ALGF-POLY-PART-LINL",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-POLY-PART-LINL in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.10"
             },
             {
-              "nodeId": "REAS-MODL-MODL-OUTP",
+              "nodeId": "ALGF-POLY-PART-REPL",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-MODL-MODL-OUTP in the MVP knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-9MA0-3",
-      "topicName": "Coordinate geometry in the (x,y) plane",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-9MA0-3.1",
-          "subtopicName": "Understand and use equations of straight lines and circles, parametric equations of curves and parametric modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-LINE-YMXC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.10"
             },
             {
-              "nodeId": "GEOM-COOR-LINE-POINT",
+              "nodeId": "ALGF-POLY-PART-APPL",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-POINT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-CIRC-CENT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CIRC-CENT in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.19, Topic 2 Algebra and functions, 2.10"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-3.1.3",
-          "subtopicName": "Understand and use equations of straight lines and circles, parametric equations of curves and parametric modelling.",
+          "subtopicId": "OFFICIAL-9MA0-4.1",
+          "subtopicName": "p.21, Topic 4 Sequences and series, 4.1",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 1",
             "Paper 2"
           ],
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-CART-COOR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "GEOM-COOR-CART-DIST",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "GEOM-COOR-LINE-GENR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-3.1.2",
-          "subtopicName": "Understand and use equations of straight lines and circles, parametric equations of curves and parametric modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-CIRC-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-PARM-PARM-DEFS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-PARM-PARM-DEFS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-PARM-PARM-MODE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-PARM-PARM-MODE in the MVP knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-9MA0-4",
-      "topicName": "Sequences and series",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-9MA0-4.1",
-          "subtopicName": "Use binomial expansion for positive integer and rational powers, sequences, sigma notation, arithmetic and geometric series and modelling with sequences and series.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "ALGF-SEQ-BINO-POSI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-BINO-POSI in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21, Topic 4 Sequences and series, 4.1"
             },
             {
               "nodeId": "ALGF-SEQ-BINO-RATN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-BINO-RATN in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21, Topic 4 Sequences and series, 4.1"
             },
-            {
-              "nodeId": "ALGF-SEQ-SEQU-TERM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SEQU-TERM in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-4.1.3",
-          "subtopicName": "Use binomial expansion for positive integer and rational powers, sequences, sigma notation, arithmetic and geometric series and modelling with sequences and series.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
             {
               "nodeId": "ALGF-SEQ-BINO-COEF",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21, Topic 4 Sequences and series, 4.1"
             },
             {
-              "nodeId": "ALGF-SEQ-SERS-ARSM",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "nodeId": "ALGF-SEQ-BINO-PASC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21, Topic 4 Sequences and series, 4.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-4.1.2",
-          "subtopicName": "Use binomial expansion for positive integer and rational powers, sequences, sigma notation, arithmetic and geometric series and modelling with sequences and series.",
+          "subtopicId": "OFFICIAL-9MA0-4.2",
+          "subtopicName": "p.22, Topic 4 Sequences and series, 4.2",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 1",
             "Paper 2"
           ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-TERM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22, Topic 4 Sequences and series, 4.2"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22, Topic 4 Sequences and series, 4.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-4.3",
+          "subtopicName": "p.22, Topic 4 Sequences and series, 4.3",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SERS",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; p.22, Topic 4 Sequences and series, 4.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-4.4",
+          "subtopicName": "p.22, Topic 4 Sequences and series, 4.4",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "ALGF-SEQ-SEQU-ARIT",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SEQU-ARIT in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.22, Topic 4 Sequences and series, 4.4"
             },
+            {
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22, Topic 4 Sequences and series, 4.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-4.5",
+          "subtopicName": "p.22, Topic 4 Sequences and series, 4.5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
             {
               "nodeId": "ALGF-SEQ-SEQU-GEOM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SEQU-GEOM in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.22, Topic 4 Sequences and series, 4.5"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-GESM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22, Topic 4 Sequences and series, 4.5"
             },
             {
               "nodeId": "ALGF-SEQ-SERS-INFI",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SERS-INFI in the MVP knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-9MA0-5",
-      "topicName": "Trigonometry",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-9MA0-5.1",
-          "subtopicName": "Use sine, cosine and tangent definitions, sine and cosine rules, radians, trigonometric graphs, exact values, reciprocal functions, identities, compound-angle formulae and trigonometric equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASE-NONR-SINR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-SINR in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.22, Topic 4 Sequences and series, 4.5"
             },
             {
-              "nodeId": "TRIG-BASE-NONR-COSR",
+              "nodeId": "ALGF-SEQ-SERS-CONV",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-COSR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-CIRC-RADI-DEFN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-CIRC-RADI-DEFN in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.22, Topic 4 Sequences and series, 4.5"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-5.1.3",
-          "subtopicName": "Use sine, cosine and tangent definitions, sine and cosine rules, radians, trigonometric graphs, exact values, reciprocal functions, identities, compound-angle formulae and trigonometric equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-CIRC-RADI-CONV",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "TRIG-CIRC-RADI-ARCL",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "TRIG-CIRC-RADI-SECA",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-5.1.4",
-          "subtopicName": "Use sine, cosine and tangent definitions, sine and cosine rules, radians, trigonometric graphs, exact values, reciprocal functions, identities, compound-angle formulae and trigonometric equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-FUNC-EXCT-EXCT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "TRIG-FUNC-GRAP-COSN",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "TRIG-FUNC-ADVN-COSE",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-5.1.5",
-          "subtopicName": "Use sine, cosine and tangent definitions, sine and cosine rules, radians, trigonometric graphs, exact values, reciprocal functions, identities, compound-angle formulae and trigonometric equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-FUNC-ADVN-COTA",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "TRIG-IDEN-IDEN-DBLA",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "TRIG-IDEN-IDEN-TANR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-5.1.6",
-          "subtopicName": "Use sine, cosine and tangent definitions, sine and cosine rules, radians, trigonometric graphs, exact values, reciprocal functions, identities, compound-angle formulae and trigonometric equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-IDEN-EQNS-SIMP",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-5.1.2",
-          "subtopicName": "Use sine, cosine and tangent definitions, sine and cosine rules, radians, trigonometric graphs, exact values, reciprocal functions, identities, compound-angle formulae and trigonometric equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-FUNC-GRAP-SINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-FUNC-ADVN-SECA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-ADVN-SECA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-IDEN-IDEN-ADDR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-IDEN-ADDR in the MVP knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-9MA0-6",
-      "topicName": "Exponentials and logarithms",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-9MA0-6.1",
-          "subtopicName": "Use exponential and logarithmic functions, laws of logarithms, exponential equations, logarithmic graphs and exponential growth and decay modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-6.1",
+          "subtopicName": "p.25 6.1",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "ALGF-LOG-EXPO-AX",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-EXPO-AX in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 6.1"
             },
             {
               "nodeId": "ALGF-LOG-EXPO-EX",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-EXPO-EX in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-LOG-LOGR-LAWS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-LOGR-LAWS in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 6.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-6.1.3",
-          "subtopicName": "Use exponential and logarithmic functions, laws of logarithms, exponential equations, logarithmic graphs and exponential growth and decay modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-6.2",
+          "subtopicName": "p.25 6.2",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 6.2"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-EXPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 6.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-6.3",
+          "subtopicName": "p.25 6.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "ALGF-LOG-LOGR-INVR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 6.3"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-LN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 6.3"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-EQNS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 6.3"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-6.1.2",
-          "subtopicName": "Use exponential and logarithmic functions, laws of logarithms, exponential equations, logarithmic graphs and exponential growth and decay modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-6.4",
+          "subtopicName": "p.25 6.4",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25 6.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-6.5",
+          "subtopicName": "p.25 6.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "ALGF-LOG-LOGR-EQNS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-LOGR-EQNS in the MVP knowledge tree."
-            },
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.25 6.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-6.6",
+          "subtopicName": "p.25 6.6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 6.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-6.7",
+          "subtopicName": "p.26 6.7",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
             {
               "nodeId": "ALGF-LOG-EXPO-GROW",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-EXPO-GROW in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26 6.7"
             },
             {
               "nodeId": "ALGF-LOG-EXPO-MODE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-EXPO-MODE in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26 6.7"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26 6.7"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-9MA0-7",
-      "topicName": "Differentiation",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
+      "topicId": "Edexcel-9MA0-NUMM",
+      "topicName": "NUMM",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9MA0-7.1",
-          "subtopicName": "Understand derivatives as gradients and rates of change; differentiate powers, exponentials, logarithms and trigonometric functions; use product, quotient and chain rules, implicit and parametric differentiation, tangents, normals and modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
+          "subtopicId": "OFFICIAL-OT2.4",
+          "subtopicName": "p.13 OT2.4",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "CALC-DIFF-CONC-GRAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-CONC-GRAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-CONC-RATE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-CONC-RATE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-RULE-POWR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-RULE-POWR in the MVP knowledge tree."
+              "nodeId": "NUMM",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; p.13 OT2.4"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-7.1.3",
-          "subtopicName": "Understand derivatives as gradients and rates of change; differentiate powers, exponentials, logarithms and trigonometric functions; use product, quotient and chain rules, implicit and parametric differentiation, tangents, normals and modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-APPL-STAT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-DIFF-APPL-TANG",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-DIFF-PARI-IMPL",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-7.1.4",
-          "subtopicName": "Understand derivatives as gradients and rates of change; differentiate powers, exponentials, logarithms and trigonometric functions; use product, quotient and chain rules, implicit and parametric differentiation, tangents, normals and modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-RULE-LOGR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-DIFF-RULE-PROD",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-DIFF-RULE-QUOT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-7.1.5",
-          "subtopicName": "Understand derivatives as gradients and rates of change; differentiate powers, exponentials, logarithms and trigonometric functions; use product, quotient and chain rules, implicit and parametric differentiation, tangents, normals and modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-RULE-TRIG",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-7.1.2",
-          "subtopicName": "Understand derivatives as gradients and rates of change; differentiate powers, exponentials, logarithms and trigonometric functions; use product, quotient and chain rules, implicit and parametric differentiation, tangents, normals and modelling.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-RULE-EXPL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-RULE-EXPL in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-RULE-CHAI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-RULE-CHAI in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-PARI-PARM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-PARI-PARM in the MVP knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-9MA0-8",
-      "topicName": "Integration",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-9MA0-8.1",
-          "subtopicName": "Use integration as reverse differentiation and the fundamental theorem of calculus; integrate powers, exponentials, reciprocal and trigonometric functions; use substitution, parts, partial fractions, definite integrals, areas and differential equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTE-CONC-FTCL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-CONC-FTCL in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-POWR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-POWR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-EXPL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-EXPL in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-8.1.3",
-          "subtopicName": "Use integration as reverse differentiation and the fundamental theorem of calculus; integrate powers, exponentials, reciprocal and trigonometric functions; use substitution, parts, partial fractions, definite integrals, areas and differential equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTE-CONC-REVD",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-INTE-CONC-DEFI",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-LOGR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-8.1.4",
-          "subtopicName": "Use integration as reverse differentiation and the fundamental theorem of calculus; integrate powers, exponentials, reciprocal and trigonometric functions; use substitution, parts, partial fractions, definite integrals, areas and differential equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTE-RULE-PFR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-TRID",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-TRIG",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-8.1.5",
-          "subtopicName": "Use integration as reverse differentiation and the fundamental theorem of calculus; integrate powers, exponentials, reciprocal and trigonometric functions; use substitution, parts, partial fractions, definite integrals, areas and differential equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTE-APPL-AREA",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-INTE-APPL-BETW",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-8.1.2",
-          "subtopicName": "Use integration as reverse differentiation and the fundamental theorem of calculus; integrate powers, exponentials, reciprocal and trigonometric functions; use substitution, parts, partial fractions, definite integrals, areas and differential equations.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTE-RULE-SUBS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-SUBS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-PART",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-PART in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFFEQ-FODE-SEPV in the MVP knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-9MA0-9",
-      "topicName": "Numerical methods",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-9MA0-9.1",
-          "subtopicName": "Locate roots by sign changes, use iterative methods, Newton-Raphson and the trapezium rule.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-9.1",
+          "subtopicName": "p.30 9.1",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "NUMM-ROOT-SIGN-LOC",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-ROOT-SIGN-LOC in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.30 9.1"
             },
+            {
+              "nodeId": "NUMM-ROOT-SIGN-FAIL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30 9.1"
+            },
+            {
+              "nodeId": "NUMM-ROOT-SIGN-CONT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30 9.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-9.2",
+          "subtopicName": "p.30 9.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
             {
               "nodeId": "NUMM-ROOT-ITER-FORM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-ROOT-ITER-FORM in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.30 9.2"
             },
+            {
+              "nodeId": "NUMM-ROOT-ITER-COBW",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30 9.2"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-STAIR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30 9.2"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30 9.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-9.3",
+          "subtopicName": "p.30 9.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
             {
               "nodeId": "NUMM-ROOT-NEWR-APPL",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-ROOT-NEWR-APPL in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-9.1.3",
-          "subtopicName": "Locate roots by sign changes, use iterative methods, Newton-Raphson and the trapezium rule.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
+              "matchReason": "Owner-approved V4 exact relation; p.30 9.3"
+            },
             {
-              "nodeId": "NUMM-ROOT-ITER-CONV",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "nodeId": "NUMM-ROOT-NEWR-FAIL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30 9.3"
+            },
+            {
+              "nodeId": "NUMM-ROOT-NEWR-GEOM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30 9.3"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-9.1.2",
-          "subtopicName": "Locate roots by sign changes, use iterative methods, Newton-Raphson and the trapezium rule.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-9.4",
+          "subtopicName": "p.31 9.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "NUMM-NINT-TRAP-ESTM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-NINT-TRAP-ESTM in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.31 9.4"
+            },
+            {
+              "nodeId": "NUMM-NINT-TRAP-OVER",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 9.4"
+            },
+            {
+              "nodeId": "NUMM-NINT-TRAP-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 9.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-9.5",
+          "subtopicName": "p.31 9.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.31 9.5"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-9MA0-10",
-      "topicName": "Vectors",
-      "paperReference": [
-        "Paper 1",
-        "Paper 2"
-      ],
+      "topicId": "Edexcel-9MA0-UNMAPPED",
+      "topicName": "Explicitly Unmapped",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9MA0-10.1",
-          "subtopicName": "Use vectors in two and three dimensions, magnitude, direction, vector operations and position vectors.",
+          "subtopicId": "OFFICIAL-OT2.6",
+          "subtopicName": "p.13 OT2.6",
+          "description": "No canonical node represents the problem-solving cycle as a whole; available nodes cover only sub-skills.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-5.2",
+          "subtopicName": "p.23, Topic 5 Trigonometry, 5.2",
+          "description": "No canonical node in the supplied catalog covers small-angle approximations of sin, cos and tan.",
           "paperReference": [
             "Paper 1",
             "Paper 2"
           ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M6.1",
+          "subtopicName": "p.40, Topic 6 Quantities and units in mechanics, 6.1",
+          "description": "No dedicated canonical leaf represents the full SI quantities-and-units requirement for mechanics.",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": []
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9MA0-STAT",
+      "topicName": "Statistics",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-9MA0-LDS",
+          "subtopicName": "p.14, Use of data in statistics",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-ENQ-SAMP-LDS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.14, Use of data in statistics"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-1.1",
+          "subtopicName": "p.34 1.1",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-ENQ-SAMP-POP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34 1.1"
+            },
+            {
+              "nodeId": "STAT-ENQ-SAMP-RAND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34 1.1"
+            },
+            {
+              "nodeId": "STAT-ENQ-SAMP-BIAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34 1.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-2.1",
+          "subtopicName": "p.34 2.1",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34 2.1"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-BOXW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34 2.1"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-CUMF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34 2.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-2.2",
+          "subtopicName": "p.35 2.2",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-SCAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.2"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-LOBF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.2"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-POSC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.2"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-NEGC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.2"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-ZEROC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-2.3",
+          "subtopicName": "p.35 2.3",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-SUMM-CENT-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.3"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEDI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.3"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.3"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-RANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.3"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-STDV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.3"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-QUAR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.3"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-IQR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.3"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-CODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.3"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-ESTM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 2.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-2.4",
+          "subtopicName": "Page 36, section 2.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-BOXW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 2.4"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-SCAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 2.4"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 2.4"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEDI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 2.4"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 2.4"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-RANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 2.4"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-QUAR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 2.4"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-IQR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 2.4"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-STDV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 2.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-5.1",
+          "subtopicName": "Page 38, section 5.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-NULL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 38, section 5.1"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-TAIL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 38, section 5.1"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-SIGL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 38, section 5.1"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-CRIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 38, section 5.1"
+            },
+            {
+              "nodeId": "STAT-CORR-REG-PMCC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 38, section 5.1"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-BINO",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 38, section 5.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-5.2",
+          "subtopicName": "Page 39, section 5.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-BINO",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 39, section 5.2"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-NULL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 39, section 5.2"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-SIGL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 39, section 5.2"
+            },
+            {
+              "nodeId": "STAT-ENQ-SAMP-POP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 39, section 5.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-5.3",
+          "subtopicName": "Page 39, section 5.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 39, section 5.3"
+            },
+            {
+              "nodeId": "STAT-EST-ESTI-SMEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 39, section 5.3"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 39, section 5.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9MA0-GEOM",
+      "topicName": "Geometry and Mensuration",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-9MA0-3.1",
+          "subtopicName": "p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.1"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.1"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-POINT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.1"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-GENR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-3.2",
+          "subtopicName": "p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.2"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-EXPN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.2"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.2"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-CHRD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.2"
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-SEMI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.2"
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20, Topic 3 Coordinate geometry in the (x,y) plane, 3.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-3.3",
+          "subtopicName": "p.21, Topic 3 Coordinate geometry in the (x,y) plane, 3.3",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-PARM-PARM-DEFS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21, Topic 3 Coordinate geometry in the (x,y) plane, 3.3"
+            },
+            {
+              "nodeId": "GEOM-PARM-PARM-CART",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21, Topic 3 Coordinate geometry in the (x,y) plane, 3.3"
+            },
+            {
+              "nodeId": "GEOM-PARM-PARM-DOMN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21, Topic 3 Coordinate geometry in the (x,y) plane, 3.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-3.4",
+          "subtopicName": "p.21, Topic 3 Coordinate geometry in the (x,y) plane, 3.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "Paper 1",
+            "Paper 2",
+            "Paper 3"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-PARM-PARM-MODE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21, Topic 3 Coordinate geometry in the (x,y) plane, 3.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9MA0-TRIG",
+      "topicName": "TRIG",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-9MA0-5.1",
+          "subtopicName": "p.23, Topic 5 Trigonometry, 5.1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23, Topic 5 Trigonometry, 5.1"
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23, Topic 5 Trigonometry, 5.1"
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23, Topic 5 Trigonometry, 5.1"
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-AMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23, Topic 5 Trigonometry, 5.1"
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-ARCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23, Topic 5 Trigonometry, 5.1"
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-SECA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23, Topic 5 Trigonometry, 5.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-5.3",
+          "subtopicName": "p.23, Topic 5 Trigonometry, 5.3",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.3"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.3"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.3"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-PERD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.3"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-EXCT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-5.4",
+          "subtopicName": "p.23, Topic 5 Trigonometry, 5.4",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-ADVN-SECA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COSE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COTA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-GRAP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23, Topic 5 Trigonometry, 5.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-5.5",
+          "subtopicName": "p.24, Topic 5 Trigonometry, 5.5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-IDEN-TANR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24, Topic 5 Trigonometry, 5.5"
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-PYTH",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24, Topic 5 Trigonometry, 5.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-5.6",
+          "subtopicName": "p.24, Topic 5 Trigonometry, 5.6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-IDEN-ADDR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, Topic 5 Trigonometry, 5.6"
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-DBLA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, Topic 5 Trigonometry, 5.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-5.7",
+          "subtopicName": "p.24, Topic 5 Trigonometry, 5.7",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-EQNS-SIMP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24, Topic 5 Trigonometry, 5.7"
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24, Topic 5 Trigonometry, 5.7"
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-MULT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24, Topic 5 Trigonometry, 5.7"
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-INTR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24, Topic 5 Trigonometry, 5.7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-9MA0-5.9",
+          "subtopicName": "p.24, Topic 5 Trigonometry, 5.9",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 1",
+            "Paper 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-APPL-MODE-WAVE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, Topic 5 Trigonometry, 5.9"
+            },
+            {
+              "nodeId": "TRIG-APPL-MODE-VECT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, Topic 5 Trigonometry, 5.9"
+            },
+            {
+              "nodeId": "TRIG-APPL-MODE-MECH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, Topic 5 Trigonometry, 5.9"
+            },
+            {
+              "nodeId": "TRIG-APPL-MODE-KINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, Topic 5 Trigonometry, 5.9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9MA0-CALC",
+      "topicName": "Calculus",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-7.1",
+          "subtopicName": "pp.26-27 7.1",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.26-27 7.1"
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-RATE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.26-27 7.1"
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-LIMT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.26-27 7.1"
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-NOTN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.26-27 7.1"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-SKET",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.26-27 7.1"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.26-27 7.1"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-INFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.26-27 7.1"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-POWR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.26-27 7.1"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.26-27 7.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-7.2",
+          "subtopicName": "p.27 7.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-POWR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 7.2"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-EXPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 7.2"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-LOGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 7.2"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 7.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-7.3",
+          "subtopicName": "p.27 7.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 7.3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 7.3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-MAXM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 7.3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-INFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 7.3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-INCR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 7.3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-SKET",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 7.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-7.4",
+          "subtopicName": "p.28 7.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-PROD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.4"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-QUOT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.4"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-CHAI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.4"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-RATC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.4"
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-INVR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-SECA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COSE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COTA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-7.5",
+          "subtopicName": "p.28 7.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-PARI-IMPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.5"
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-PARM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.5"
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-TNOR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 7.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-7.6",
+          "subtopicName": "p.28 7.6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SETU",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.28 7.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-8.1",
+          "subtopicName": "p.28 8.1",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-CONC-FTCL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.28 8.1"
+            },
+            {
+              "nodeId": "CALC-INTE-CONC-REVD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.28 8.1"
+            },
+            {
+              "nodeId": "CALC-INTE-CONC-INDI",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.28 8.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-8.2",
+          "subtopicName": "p.28 8.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-POWR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 8.2"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-EXPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 8.2"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-LOGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 8.2"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 8.2"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-TRID",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 8.2"
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-CONS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 8.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-8.3",
+          "subtopicName": "p.29 8.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-CONC-DEFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 8.3"
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 8.3"
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-BETW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 8.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-8.4",
+          "subtopicName": "p.29 8.4",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-CONC-DEFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 8.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-8.5",
+          "subtopicName": "p.29 8.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-SUBS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.29 8.5"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-PART",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.29 8.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-8.6",
+          "subtopicName": "p.29 8.6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-PFR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 8.6"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-LINL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 8.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-8.7",
+          "subtopicName": "p.30 8.7",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30 8.7"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-PART",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30 8.7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M7.4",
+          "subtopicName": "p.41, Topic 7 Kinematics, 7.4",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-KIN-SVAT-DSDT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.4"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-DVDT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.4"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-INTV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.4"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-INTS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9MA0-VECT",
+      "topicName": "Vectors",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-10.1",
+          "subtopicName": "p.31 10.1",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "VECT-BASIC-NOTN-COLV",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-COLV in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "VECT-BASIC-NOTN-MAGN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-MAGN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "VECT-BASIC-NOTN-ADDS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-ADDS in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-10.1.2",
-          "subtopicName": "Use vectors in two and three dimensions, magnitude, direction, vector operations and position vectors.",
-          "paperReference": [
-            "Paper 1",
-            "Paper 2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-BASIC-NOTN-POSV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-POSV in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.31 10.1"
             },
             {
               "nodeId": "VECT-SPAC-THRD-IJK",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-SPAC-THRD-IJK in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.31 10.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-10.2",
+          "subtopicName": "p.31 10.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-MAGN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 10.2"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-DIRN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 10.2"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-UNIT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 10.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-10.3",
+          "subtopicName": "p.31 10.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 10.3"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 10.3"
+            },
+            {
+              "nodeId": "VECT-GEOM-PROB-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 10.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-10.4",
+          "subtopicName": "p.31 10.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-POSV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.31 10.4"
+            },
+            {
+              "nodeId": "GEOM-COOR-CART-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.31 10.4"
+            },
+            {
+              "nodeId": "VECT-SPAC-THRD-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.31 10.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-10.5",
+          "subtopicName": "p.32 10.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-GEOM-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32 10.5"
+            },
+            {
+              "nodeId": "MECH-FORC-FORC-VECN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32 10.5"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-9MA0-11",
-      "topicName": "Statistics",
-      "paperReference": [
-        "Paper 3"
-      ],
+      "topicId": "Edexcel-9MA0-PROB",
+      "topicName": "Probability",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9MA0-11.1",
-          "subtopicName": "Use sampling, statistical diagrams, measures of location and spread, probability, correlation, regression, normal distribution and hypothesis testing.",
-          "paperReference": [
-            "Paper 3"
-          ],
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-3.1",
+          "subtopicName": "Page 36, section 3.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "STAT-ENQ-SAMP-POP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-ENQ-SAMP-POP in the MVP knowledge tree."
+              "nodeId": "PROB-COMB-RULE-MUTX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.1"
             },
             {
-              "nodeId": "STAT-ENQ-SAMP-RAND",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-ENQ-SAMP-RAND in the MVP knowledge tree."
+              "nodeId": "PROB-COMB-RULE-INDE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.1"
             },
             {
-              "nodeId": "STAT-DATA-REPR-HIST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-HIST in the MVP knowledge tree."
+              "nodeId": "PROB-COMB-RULE-TREE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.1"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.1"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.1"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-11.1.4",
-          "subtopicName": "Use sampling, statistical diagrams, measures of location and spread, probability, correlation, regression, normal distribution and hypothesis testing.",
-          "paperReference": [
-            "Paper 3"
-          ],
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-3.2",
+          "subtopicName": "Page 36, section 3.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
-            {
-              "nodeId": "STAT-DATA-REPR-BOXW",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "STAT-DATA-REPR-CUMF",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-STDV",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-11.1.5",
-          "subtopicName": "Use sampling, statistical diagrams, measures of location and spread, probability, correlation, regression, normal distribution and hypothesis testing.",
-          "paperReference": [
-            "Paper 3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "PROB-DIST-NORM-STAN",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "PROB-DIST-NORM-TABLE",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "PROB-DIST-NORM-INV",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-11.1.6",
-          "subtopicName": "Use sampling, statistical diagrams, measures of location and spread, probability, correlation, regression, normal distribution and hypothesis testing.",
-          "paperReference": [
-            "Paper 3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-TEST-HYPO-TAIL",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "STAT-TEST-HYPO-SIGL",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "STAT-TEST-HYPO-CRIT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-11.1.2",
-          "subtopicName": "Use sampling, statistical diagrams, measures of location and spread, probability, correlation, regression, normal distribution and hypothesis testing.",
-          "paperReference": [
-            "Paper 3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-SUMM-CENT-MEAN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEAN in the MVP knowledge tree."
-            },
             {
               "nodeId": "PROB-COMB-RULE-COND",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-COND in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.2"
             },
             {
-              "nodeId": "STAT-BIVA-CORR-LOBF",
-              "matchStrength": "weak",
-              "matchReason": "The compact MVP tree has correlation and best-fit coverage; PMCC is represented by the broader correlation branch."
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.2"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-TREE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.2"
+            },
+            {
+              "nodeId": "STAT-DATA-CLAS-TWOW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.2"
+            },
+            {
+              "nodeId": "PROB-BASIC-BASIC-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.2"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-ADD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.2"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-MULT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 36, section 3.2"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-11.1.3",
-          "subtopicName": "Use sampling, statistical diagrams, measures of location and spread, probability, correlation, regression, normal distribution and hypothesis testing.",
-          "paperReference": [
-            "Paper 3"
-          ],
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-4.1",
+          "subtopicName": "Page 37, section 4.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DRVD-DRVB-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.1"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.1"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-4.2",
+          "subtopicName": "Page 37, section 4.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "PROB-DIST-NORM-MODE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-NORM-MODE in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.2"
             },
             {
-              "nodeId": "STAT-TEST-HYPO-NULL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-TEST-HYPO-NULL in the MVP knowledge tree."
+              "nodeId": "PROB-DIST-NORM-STAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.2"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-TABLE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.2"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-INV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.2"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-NORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.2"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.2"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.2"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-STDV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Page 37, section 4.2"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-9MA0-12",
+      "topicId": "Edexcel-9MA0-MECH",
       "topicName": "Mechanics",
-      "paperReference": [
-        "Paper 3"
-      ],
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9MA0-12.1",
-          "subtopicName": "Use kinematics, forces, Newton's laws, variable acceleration, connected particles, friction, moments and modelling assumptions.",
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M7.1",
+          "subtopicName": "p.41, Topic 7 Kinematics, 7.1",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 3"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "MECH-KIN-LINE-DIST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-KIN-LINE-DIST in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "MECH-KIN-LINE-VTGR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-KIN-LINE-VTGR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "MECH-DYN-NEWT-N2L",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-DYN-NEWT-N2L in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-12.1.3",
-          "subtopicName": "Use kinematics, forces, Newton's laws, variable acceleration, connected particles, friction, moments and modelling assumptions.",
-          "paperReference": [
-            "Paper 3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FORC-FORC-DIAG",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "MECH-FORC-FORC-RESL",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "MECH-FORC-EQUI-PRIN",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9MA0-12.1.4",
-          "subtopicName": "Use kinematics, forces, Newton's laws, variable acceleration, connected particles, friction, moments and modelling assumptions.",
-          "paperReference": [
-            "Paper 3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FORC-EQUI-N3L",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.1"
             },
             {
               "nodeId": "MECH-KIN-LINE-SPED",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.1"
             },
             {
               "nodeId": "MECH-KIN-LINE-ACCL",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-12.1.5",
-          "subtopicName": "Use kinematics, forces, Newton's laws, variable acceleration, connected particles, friction, moments and modelling assumptions.",
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M7.2",
+          "subtopicName": "p.41, Topic 7 Kinematics, 7.2",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 3"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "MECH-KIN-LINE-STGR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.2"
             },
             {
-              "nodeId": "MECH-KIN-LINE-CONST",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "nodeId": "MECH-KIN-LINE-VTGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.2"
             },
             {
-              "nodeId": "MECH-DYN-NEWT-MASS",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "nodeId": "MECH-KIN-LINE-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.2"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-12.1.6",
-          "subtopicName": "Use kinematics, forces, Newton's laws, variable acceleration, connected particles, friction, moments and modelling assumptions.",
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M7.3",
+          "subtopicName": "p.41, Topic 7 Kinematics, 7.3",
+          "description": "Assessment depth: application",
           "paperReference": [
             "Paper 3"
           ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-CONST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.3"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.3"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-SCAL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M7.5",
+          "subtopicName": "p.41, Topic 7 Kinematics, 7.5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "MECH-DYN-NEWT-VERT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.5"
             },
             {
-              "nodeId": "MECH-DYN-NEWT-INCL",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "nodeId": "MECH-FURT-PROJ-MODEL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.5"
             },
             {
-              "nodeId": "MECH-DYN-NEWT-CONP",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent A-Level syllabus coverage maps to this MVP leaf."
+              "nodeId": "MECH-FURT-PROJ-HV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 7 Kinematics, 7.5"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9MA0-12.1.2",
-          "subtopicName": "Use kinematics, forces, Newton's laws, variable acceleration, connected particles, friction, moments and modelling assumptions.",
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M8.1",
+          "subtopicName": "p.41, Topic 8 Forces and Newton's laws, 8.1",
+          "description": "Assessment depth: knowledge",
           "paperReference": [
             "Paper 3"
           ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-FORC-VECN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 8 Forces and Newton's laws, 8.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M8.2",
+          "subtopicName": "p.41, Topic 8 Forces and Newton's laws, 8.2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-N2L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 8 Forces and Newton's laws, 8.2"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-RESV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 8 Forces and Newton's laws, 8.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M8.3",
+          "subtopicName": "p.41, Topic 8 Forces and Newton's laws, 8.3",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-MASS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 8 Forces and Newton's laws, 8.3"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41, Topic 8 Forces and Newton's laws, 8.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M8.4",
+          "subtopicName": "p.42, Topic 8 Forces and Newton's laws, 8.4",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-N3L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 8 Forces and Newton's laws, 8.4"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-PRIN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 8 Forces and Newton's laws, 8.4"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-CONP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 8 Forces and Newton's laws, 8.4"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-RESV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 8 Forces and Newton's laws, 8.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M8.5",
+          "subtopicName": "p.42, Topic 8 Forces and Newton's laws, 8.5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "MECH-FORC-FORC-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FORC-FORC-COMP in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 8 Forces and Newton's laws, 8.5"
             },
+            {
+              "nodeId": "MECH-FORC-FORC-RESL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 8 Forces and Newton's laws, 8.5"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-N2L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 8 Forces and Newton's laws, 8.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M8.6",
+          "subtopicName": "p.42, Topic 8 Forces and Newton's laws, 8.6",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
             {
               "nodeId": "MECH-FORC-EQUI-FRIC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FORC-EQUI-FRIC in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 8 Forces and Newton's laws, 8.6"
             },
             {
-              "nodeId": "REAS-MODL-MODL-ASSM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-MODL-MODL-ASSM in the MVP knowledge tree."
+              "nodeId": "MECH-FORC-EQUI-LIMF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 8 Forces and Newton's laws, 8.6"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-COEF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 8 Forces and Newton's laws, 8.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9MA0-P3-M9.1",
+          "subtopicName": "p.42, Topic 9 Moments, 9.1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "Paper 3"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-RIGD-MOMT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 9 Moments, 9.1"
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-RBAL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42, Topic 9 Moments, 9.1"
             }
           ]
         }

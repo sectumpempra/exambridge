@@ -3,733 +3,3598 @@
   "subjectCode": "7357",
   "subjectName": "A-Level Mathematics",
   "level": "A-Level",
-  "version": "1.0-batch2",
-  "totalTopics": 5,
-  "mappedTopics": 5,
+  "version": "4.0.0-knowledge-v4-20260716",
+  "sourceSchemaVersion": "4.0.0",
+  "qualificationVersionId": "AQA-7357:1.3",
+  "syllabusVersion": "1.3",
+  "effectiveFrom": "2017-09-01",
+  "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7357/specification/subject-content",
+  "sources": [
+    {
+      "url": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7357/specification/subject-content",
+      "title": "AQA A-level Mathematics 7357 specification",
+      "documentVersion": "1.3",
+      "locator": "official subject-content pages 11-25",
+      "accessedAt": "2026-07-16",
+      "sha256": "6bb4bb826ad2363804a95248a4993b2e147e1a5c4673194e2088dab8754fc6ed",
+      "sourceType": "official"
+    }
+  ],
+  "approval": {
+    "approvedAt": "2026-07-16",
+    "approvalBatch": "knowledge-v4-20260716"
+  },
+  "verificationStatus": "verified",
+  "totalTopics": 10,
+  "mappedTopics": 10,
   "paperStructure": {
     "papers": [
       "P1",
       "P2",
       "P3"
-    ],
-    "compulsory": [
-      "P1",
-      "P2",
-      "P3"
-    ],
-    "asOnly": [],
-    "alevelOnly": [
-      "P1",
-      "P2",
-      "P3"
-    ],
-    "applicationGroups": [
-      [
-        "P3"
-      ],
-      [
-        "P3"
-      ]
-    ],
-    "mutuallyExclusive": []
+    ]
   },
   "mappings": [
     {
-      "topicId": "AQA-7357-1",
-      "topicName": "Proof, Algebra and Functions",
-      "paperReference": [
-        "P1",
-        "P2"
-      ],
+      "topicId": "AQA-7357-REAS",
+      "topicName": "REAS",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-7357-1.1",
-          "subtopicName": "Use proof, mathematical argument and modelling conventions.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
+          "subtopicId": "AQA-7357-OT1.1",
+          "subtopicName": "Official specification page 11 · OT1.1",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "REAS-PROF-PROF-DEDU",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-PROF-PROF-DEDU in the expanded knowledge tree."
+              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.1"
             },
             {
-              "nodeId": "REAS-PROF-ARGM-LOGI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-PROF-ARGM-LOGI in the expanded knowledge tree."
+              "nodeId": "REAS-PROF-ARGM-SYMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.1"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.1"
             },
             {
               "nodeId": "REAS-MODL-MODL-ASSM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-MODL-MODL-ASSM in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-1.2",
-          "subtopicName": "Work with algebraic expressions, quadratics, inequalities, functions and transformations.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.1"
+            },
             {
               "nodeId": "ALGF-EXP-MANI-FACT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-FACT in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.1"
             },
             {
               "nodeId": "ALGF-EQN-QUAD-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.1"
             },
             {
               "nodeId": "ALGF-EQN-INEQ-QUAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.1"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-1.2.2",
-          "subtopicName": "Work with algebraic expressions, quadratics, inequalities, functions and transformations.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
+          "subtopicId": "AQA-7357-OT1.2",
+          "subtopicName": "Official specification page 11 · OT1.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNC-TRAN-VERT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-VERT in the expanded knowledge tree."
+              "nodeId": "REAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.2"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-1.3",
-          "subtopicName": "Use polynomials, partial fractions, binomial expansion, sequences and series.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
+          "subtopicId": "AQA-7357-OT1.3",
+          "subtopicName": "Official specification page 11 · OT1.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-POLY-POLY-DIVL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-POLY-POLY-DIVL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-POLY-PART-LINL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-POLY-PART-LINL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-SEQ-BINO-RATN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-BINO-RATN in the expanded knowledge tree."
+              "nodeId": "REAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.3"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-1.3.2",
-          "subtopicName": "Use polynomials, partial fractions, binomial expansion, sequences and series.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
+          "subtopicId": "AQA-7357-OT1.4",
+          "subtopicName": "Official specification page 11 · OT1.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-SEQ-SERS-INFI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SERS-INFI in the expanded knowledge tree."
+              "nodeId": "REAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.4"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-1.4",
-          "subtopicName": "Use exponentials, logarithms and associated equations or modelling contexts.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
+          "subtopicId": "AQA-7357-OT1.5",
+          "subtopicName": "Official specification page 11 · OT1.5",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-LOG-EXPO-EX",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-EXPO-EX in the expanded knowledge tree."
+              "nodeId": "REAS-PROF-ARGM-JUST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.5"
             },
             {
-              "nodeId": "ALGF-LOG-LOGR-LAWS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-LOGR-LAWS in the expanded knowledge tree."
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.5"
             },
             {
-              "nodeId": "ALGF-LOG-LOGR-EQNS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-LOGR-EQNS in the expanded knowledge tree."
+              "nodeId": "REAS-PROF-PROF-EXHA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.5"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-CONT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.5"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-CRIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.5"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-COUN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.5"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.5"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT1.5"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-1.4.2",
-          "subtopicName": "Use exponentials, logarithms and associated equations or modelling contexts.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
+          "subtopicId": "AQA-7357-OT2.1",
+          "subtopicName": "Official specification page 11 · OT2.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-LOG-EXPO-MODE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-EXPO-MODE in the expanded knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7357-2",
-      "topicName": "Coordinate Geometry, Trigonometry and Vectors",
-      "paperReference": [
-        "P1",
-        "P2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "AQA-7357-2.1",
-          "subtopicName": "Use coordinate geometry of straight lines and circles.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-LINE-GRAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-LINE-YMXC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-CIRC-CENT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CIRC-CENT in the expanded knowledge tree."
+              "nodeId": "REAS-PROB-PSOL-STRC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT2.1"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-2.1.2",
-          "subtopicName": "Use coordinate geometry of straight lines and circles.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
+          "subtopicId": "AQA-7357-OT2.2",
+          "subtopicName": "Official specification page 11 · OT2.2",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "GEOM-COOR-CIRC-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the expanded knowledge tree."
+              "nodeId": "REAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 11 · OT2.2"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-2.2",
-          "subtopicName": "Use radians, trigonometric graphs, identities, equations and compound-angle formulae.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
+          "subtopicId": "AQA-7357-OT2.3",
+          "subtopicName": "Official specification page 12 · OT2.3",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "TRIG-CIRC-RADI-CONV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-CIRC-RADI-CONV in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-FUNC-GRAP-SINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-IDEN-IDEN-ADDR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-IDEN-ADDR in the expanded knowledge tree."
+              "nodeId": "REAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.3"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-2.2.2",
-          "subtopicName": "Use radians, trigonometric graphs, identities, equations and compound-angle formulae.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
+          "subtopicId": "AQA-7357-OT2.4",
+          "subtopicName": "Official specification page 12 · OT2.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "TRIG-IDEN-EQNS-MULT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-EQNS-MULT in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-2.3",
-          "subtopicName": "Use vectors in two and three dimensions including magnitude, direction and geometric applications.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-BASIC-NOTN-ADDS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-ADDS in the expanded knowledge tree."
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.4"
             },
             {
-              "nodeId": "VECT-BASIC-NOTN-MAGN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-MAGN in the expanded knowledge tree."
+              "nodeId": "REAS-PROF-PROF-EXHA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.4"
             },
             {
-              "nodeId": "VECT-SPAC-THRD-IJK",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-SPAC-THRD-IJK in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-2.3.2",
-          "subtopicName": "Use vectors in two and three dimensions including magnitude, direction and geometric applications.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-GEOM-PROB-PARA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-GEOM-PROB-PARA in the expanded knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "AQA-7357-3",
-      "topicName": "Calculus and Numerical Methods",
-      "paperReference": [
-        "P1",
-        "P2"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "AQA-7357-3.1",
-          "subtopicName": "Differentiate elementary functions using product, quotient, chain, implicit and parametric methods.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-RULE-CHAI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-RULE-CHAI in the expanded knowledge tree."
+              "nodeId": "REAS-PROF-PROF-CONT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.4"
             },
             {
-              "nodeId": "CALC-DIFF-RULE-PROD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-RULE-PROD in the expanded knowledge tree."
+              "nodeId": "REAS-PROF-PROF-COUN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.4"
             },
-            {
-              "nodeId": "CALC-DIFF-PARI-IMPL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-PARI-IMPL in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-3.1.2",
-          "subtopicName": "Differentiate elementary functions using product, quotient, chain, implicit and parametric methods.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-PARI-PARM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-PARI-PARM in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-3.2",
-          "subtopicName": "Apply differentiation to tangents, normals, stationary points, rates of change and curve sketching.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-APPL-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-TANG in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-APPL-STAT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-APPL-RATC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-RATC in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-3.2.2",
-          "subtopicName": "Apply differentiation to tangents, normals, stationary points, rates of change and curve sketching.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-APPL-SKET",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-SKET in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-3.3",
-          "subtopicName": "Integrate using standard rules, substitution, parts, partial fractions and definite integration.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTE-RULE-EXPL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-EXPL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-SUBS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-SUBS in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-PART",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-PART in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-3.3.2",
-          "subtopicName": "Integrate using standard rules, substitution, parts, partial fractions and definite integration.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTE-CONC-DEFI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-CONC-DEFI in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-3.4",
-          "subtopicName": "Use integration for area, differential equations and numerical methods.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
-          "mappedNodes": [
             {
               "nodeId": "CALC-INTE-APPL-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-APPL-AREA in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.4"
             },
             {
               "nodeId": "CALC-DIFFEQ-FODE-SEPV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFFEQ-FODE-SEPV in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.4"
             },
             {
               "nodeId": "NUMM-ROOT-ITER-CONV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-ROOT-ITER-CONV in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.4"
+            },
+            {
+              "nodeId": "NUMM-NINT-TRAP-ESTM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.4"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-3.4.2",
-          "subtopicName": "Use integration for area, differential equations and numerical methods.",
-          "paperReference": [
-            "P1",
-            "P2"
-          ],
+          "subtopicId": "AQA-7357-OT2.6",
+          "subtopicName": "Official specification page 12 · OT2.6",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "NUMM-NINT-TRAP-ESTM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-NINT-TRAP-ESTM in the expanded knowledge tree."
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.6"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.6"
+            },
+            {
+              "nodeId": "REAS-PROB-PSOL-UNST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.6"
+            },
+            {
+              "nodeId": "REAS-PROB-PSOL-DIAG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.6"
+            },
+            {
+              "nodeId": "REAS-PROB-PSOL-STRC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.6"
+            },
+            {
+              "nodeId": "REAS-PROB-PSOL-ESTM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-OT2.7",
+          "subtopicName": "Official specification page 12 · OT2.7",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROB-PSOL-DIAG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.7"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.7"
+            },
+            {
+              "nodeId": "REAS-PROB-PSOL-UNST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.7"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.7"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-OT3.1",
+          "subtopicName": "Official specification page 12 · OT3.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.1"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-INPT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.1"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-OT3.2",
+          "subtopicName": "Official specification page 12 · OT3.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-INPT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-OT3.3",
+          "subtopicName": "Official specification page 12 · OT3.3",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.3"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-INPT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-OT3.4",
+          "subtopicName": "Official specification page 12 · OT3.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.4"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.4"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-INPT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-OT3.5",
+          "subtopicName": "Official specification page 12 · OT3.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.5"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.5"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.5"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-EX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.5"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.5"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-EQNS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT3.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-A1",
+          "subtopicName": "Official specification page 12 · A1",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · A1"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-EXHA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · A1"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-CONT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · A1"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-COUN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · A1"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · A1"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · A1"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "AQA-7357-4",
-      "topicName": "Statistics",
-      "paperReference": [
-        "P3"
-      ],
+      "topicId": "AQA-7357-CALC",
+      "topicName": "Calculus",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-7357-4.1",
-          "subtopicName": "Use sampling, data presentation, statistical diagrams, summary statistics and correlation.",
-          "paperReference": [
-            "P3"
-          ],
+          "subtopicId": "AQA-7357-OT2.5",
+          "subtopicName": "Official specification page 12 · OT2.5",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "STAT-ENQ-SAMP-RAND",
+              "nodeId": "CALC-INTE-APPL-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.5"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.5"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-CONV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.5"
+            },
+            {
+              "nodeId": "NUMM-NINT-TRAP-ESTM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 12 · OT2.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-G1",
+          "subtopicName": "Official specification page 18 · G1",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-RATE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G1"
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-LIMT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G1"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-SKET",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G1"
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G1"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-INFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G1"
+            },
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-SECD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G1"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G1"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-G2",
+          "subtopicName": "Official specification page 18 · G2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-SUMD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-G3",
+          "subtopicName": "Official specification page 18 · G3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-INCR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-MAXM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-INFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-RATC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G3"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-SKET",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-G4",
+          "subtopicName": "Official specification page 18 · G4",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G4"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-RATC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G4"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-CHAI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G4"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-PROD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G4"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-QUOT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G4"
+            },
+            {
+              "nodeId": "CALC-HYP-HYP-INVH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G4"
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-IMPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G4"
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-PARM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · G4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-G5",
+          "subtopicName": "Official specification page 19 · G5",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G5"
+            },
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-HYP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G5"
+            },
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-INVTR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-G6",
+          "subtopicName": "Official specification page 19 · G6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-FIRST-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G6"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SETU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G6"
+            },
+            {
+              "nodeId": "CALC-LDE-SECOND-SHM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G6"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G6"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-GENS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G6"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-PART",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G6"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-EX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G6"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · G6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-H1",
+          "subtopicName": "Official specification page 19 · H1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-CONC-FTCL",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-ENQ-SAMP-RAND in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; Official specification page 19 · H1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-H2",
+          "subtopicName": "Official specification page 19 · H2",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-SUMD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-H3",
+          "subtopicName": "Official specification page 19 · H3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-APPL-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H3"
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-BETW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H3"
+            },
+            {
+              "nodeId": "CALC-INTE-CONC-DEFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-H4",
+          "subtopicName": "Official specification page 19 · H4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-LIMT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H4"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-SUMD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H4"
+            },
+            {
+              "nodeId": "CALC-INTE-CONC-REVD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H4"
+            },
+            {
+              "nodeId": "CALC-INTE-CONC-FTCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H4"
+            },
+            {
+              "nodeId": "CALC-INTE-CONC-INDI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H4"
+            },
+            {
+              "nodeId": "CALC-INTE-CONC-DEFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H4"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-EXPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H4"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-SUBS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-H5",
+          "subtopicName": "Official specification page 19 · H5",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FINT-FINT-REDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H5"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-CHAI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H5"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-PROD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H5"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-SUBS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H5"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-PART",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H5"
+            },
+            {
+              "nodeId": "CALC-HYP-HYP-INVH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H5"
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-IMPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H5"
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-PARM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-H6",
+          "subtopicName": "Official specification page 19 · H6",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-PFR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H6"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-EXPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H6"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-SUBS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H6"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-PART",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H6"
+            },
+            {
+              "nodeId": "CALC-INTE-CONC-DEFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 19 · H6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-H7",
+          "subtopicName": "Official specification page 20 · H7",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H7"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-PART",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H7"
+            },
+            {
+              "nodeId": "CALC-LDE-FIRST-PART",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H7"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-GENS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H7"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SETU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H7"
+            },
+            {
+              "nodeId": "CALC-LDE-FIRST-IFAC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H7"
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H7"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-CONV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-H8",
+          "subtopicName": "Official specification page 20 · H8",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-GENS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H8"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-PART",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H8"
+            },
+            {
+              "nodeId": "CALC-LDE-SYSTEM-SER",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H8"
+            },
+            {
+              "nodeId": "CALC-LDE-FIRST-GENS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H8"
+            },
+            {
+              "nodeId": "CALC-LDE-FIRST-PART",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H8"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SETU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H8"
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H8"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · H8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "AQA-7357-ALGF",
+      "topicName": "Algebra and Functions",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "AQA-7357-B1",
+          "subtopicName": "Official specification page 13 · B1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-B2",
+          "subtopicName": "Official specification page 13 · B2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-B3",
+          "subtopicName": "Official specification page 13 · B3",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B3"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-DISC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B3"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B3"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B3"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B3"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FUNC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B3"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B3"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-B4",
+          "subtopicName": "Official specification page 13 · B4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-SIMU-LINQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B4"
+            },
+            {
+              "nodeId": "ALGF-EQN-SIMU-LIN2",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-B5",
+          "subtopicName": "Official specification page 13 · B5",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-SETN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B5"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B5"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B5"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B5"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-B6",
+          "subtopicName": "Official specification page 13 · B6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-POLY-POLY-DIVL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B6"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B6"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-LIKE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B6"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-DIVQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B6"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B6"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B6"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B6"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-B7",
+          "subtopicName": "Official specification page 13 · B7",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B7"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B7"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-MODU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B7"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-ASMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B7"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-MODU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B7"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B7"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B7"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 13 · B7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-B8",
+          "subtopicName": "Official specification page 14 · B8",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B8"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B8"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B8"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-RANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-B9",
+          "subtopicName": "Official specification page 14 · B9",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B9"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-B10",
+          "subtopicName": "Official specification page 14 · B10",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-POLY-PART-LINL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B10"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-REPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B10"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-APPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B10"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B10"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B10"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-DIVL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B10"
+            },
+            {
+              "nodeId": "ALGF-SEQ-BINO-RATN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B10"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-INFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B10"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-B11",
+          "subtopicName": "Official specification page 14 · B11",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · B11"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-D1",
+          "subtopicName": "Official specification page 15 · D1",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-BINO-POSI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D1"
+            },
+            {
+              "nodeId": "ALGF-SEQ-BINO-RATN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D1"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-DIVL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D1"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-LINL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D1"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-INFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-D2",
+          "subtopicName": "Official specification page 15 · D2",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-D3",
+          "subtopicName": "Official specification page 15 · D3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D3"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-GESM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D3"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-INFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D3"
+            },
+            {
+              "nodeId": "ALGF-CPLX-DEMO-SERIES",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-D4",
+          "subtopicName": "Official specification page 15 · D4",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D4"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D4"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D4"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-GESM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D4"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-INFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D4"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-DIVL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D4"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-LINL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D4"
+            },
+            {
+              "nodeId": "ALGF-SEQ-BINO-RATN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-D5",
+          "subtopicName": "Official specification page 15 · D5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SERS-GESM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D5"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-INFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D5"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-GEOM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D5"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D5"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D5"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-CONV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D5"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-DIVL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D5"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-LINL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-D6",
+          "subtopicName": "Official specification page 15 · D6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-TERM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D6"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D6"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D6"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-GEOM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D6"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D6"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-GESM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D6"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-DIVL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D6"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-LINL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · D6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-F1",
+          "subtopicName": "Official specification page 17 · F1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F1"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F1"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F1"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F1"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F1"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F1"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F1"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-F2",
+          "subtopicName": "Official specification page 17 · F2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-F3",
+          "subtopicName": "Official specification page 17 · F3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F3"
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DEFN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F3"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F3"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F3"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F3"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-F4",
+          "subtopicName": "Official specification page 17 · F4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-F5",
+          "subtopicName": "Official specification page 17 · F5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-LINE-SOLV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F5"
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-FORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F5"
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-SUBJ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F5"
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-SUB2",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F5"
+            },
+            {
+              "nodeId": "ALGF-EQN-SIMU-LIN2",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F5"
+            },
+            {
+              "nodeId": "ALGF-EQN-SIMU-LINQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F5"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-EX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F5"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · F5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-F6",
+          "subtopicName": "Official specification page 18 · F6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · F6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-F7",
+          "subtopicName": "Official specification page 18 · F7",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-GROW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · F7"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · F7"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-EX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · F7"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · F7"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-EQNS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 18 · F7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "AQA-7357-GEOM",
+      "topicName": "Geometry and Mensuration",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "AQA-7357-C1",
+          "subtopicName": "Official specification page 14 · C1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C1"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C1"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-POINT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C1"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-GENR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C1"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C1"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-C2",
+          "subtopicName": "Official specification page 14 · C2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C2"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-CHRD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C2"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C2"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-EXPN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C2"
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C2"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C2"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 14 · C2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-C3",
+          "subtopicName": "Official specification page 14 · C3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-PARM-PARM-CART",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; Official specification page 14 · C3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-C4",
+          "subtopicName": "Official specification page 15 · C4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-PARM-PARM-DEFS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · C4"
+            },
+            {
+              "nodeId": "GEOM-PARM-PARM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · C4"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-EX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · C4"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · C4"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-EQNS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · C4"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 15 · C4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "AQA-7357-TRIG",
+      "topicName": "TRIG",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "AQA-7357-E1",
+          "subtopicName": "Official specification page 16 · E1",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-CIRC-RADI-DEFN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E1"
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-ARCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E1"
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-SECA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-E2",
+          "subtopicName": "Official specification page 16 · E2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-E3",
+          "subtopicName": "Official specification page 16 · E3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E3"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E3"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E3"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E3"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E3"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-E4",
+          "subtopicName": "Official specification page 16 · E4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E4"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-E5",
+          "subtopicName": "Official specification page 16 · E5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-E6",
+          "subtopicName": "Official specification page 16 · E6",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 16 · E6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-E7",
+          "subtopicName": "Official specification page 17 · E7",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-EQNS-MULT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E7"
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-SIMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E7"
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E7"
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-CONV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E7"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E7"
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-ADDR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-E8",
+          "subtopicName": "Official specification page 17 · E8",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-EQNS-MULT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E8"
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-CONV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E8"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E8"
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-ADDR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-E9",
+          "subtopicName": "Official specification page 17 · E9",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-APPL-MODE-VECT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E9"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E9"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E9"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E9"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-SECA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E9"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COSE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E9"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-EX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E9"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 17 · E9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "AQA-7357-NUMM",
+      "topicName": "NUMM",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "AQA-7357-I1",
+          "subtopicName": "Official specification page 20 · I1",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-SIGN-LOC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I1"
+            },
+            {
+              "nodeId": "NUMM-ROOT-SIGN-FAIL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I1"
+            },
+            {
+              "nodeId": "NUMM-ROOT-SIGN-CONT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-I2",
+          "subtopicName": "Official specification page 20 · I2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-ITER-COBW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I2"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-STAIR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I2"
+            },
+            {
+              "nodeId": "NUMM-ROOT-NEWR-APPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I2"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-EX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I2"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I2"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-EQNS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I2"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-I3",
+          "subtopicName": "Official specification page 20 · I3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-NINT-TRAP-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I3"
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I3"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I3"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-CONV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I3"
+            },
+            {
+              "nodeId": "NUMM-NINT-TRAP-ESTM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-I4",
+          "subtopicName": "Official specification page 20 · I4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-SIGN-LOC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I4"
+            },
+            {
+              "nodeId": "NUMM-ROOT-SIGN-FAIL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I4"
+            },
+            {
+              "nodeId": "NUMM-ROOT-SIGN-CONT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I4"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-FORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I4"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-CONV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I4"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-COBW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I4"
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I4"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · I4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "AQA-7357-VECT",
+      "topicName": "Vectors",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "AQA-7357-J1",
+          "subtopicName": "Official specification page 20 · J1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-COLV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · J1"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-UNIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · J1"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-POSV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · J1"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · J1"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-SCAL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · J1"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-MAGN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · J1"
+            },
+            {
+              "nodeId": "VECT-SPAC-THRD-IJK",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · J1"
+            },
+            {
+              "nodeId": "VECT-GEOM-PROB-PARA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 20 · J1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-J2",
+          "subtopicName": "Official specification page 21 · J2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-SPAC-THRD-MAG3",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J2"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-MAGN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J2"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-DIRN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J2"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J2"
+            },
+            {
+              "nodeId": "VECT-SPAC-THRD-IJK",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J2"
+            },
+            {
+              "nodeId": "VECT-GEOM-PROB-PARA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-J3",
+          "subtopicName": "Official specification page 21 · J3",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-SCAL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J3"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-J4",
+          "subtopicName": "Official specification page 21 · J4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-SPAC-THRD-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-J5",
+          "subtopicName": "Official specification page 21 · J5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-GEOM-PROB-PARA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J5"
+            },
+            {
+              "nodeId": "VECT-GEOM-PROB-COLL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J5"
+            },
+            {
+              "nodeId": "VECT-FURT-PROD-VECT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J5"
+            },
+            {
+              "nodeId": "STAT-ENQ-SAMP-RAND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J5"
             },
             {
               "nodeId": "STAT-DATA-REPR-HIST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-HIST in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J5"
             },
             {
               "nodeId": "STAT-SUMM-CENT-STDV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-STDV in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-4.1.2",
-          "subtopicName": "Use sampling, data presentation, statistical diagrams, summary statistics and correlation.",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J5"
+            },
             {
               "nodeId": "STAT-BIVA-CORR-LOBF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-BIVA-CORR-LOBF in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-4.2",
-          "subtopicName": "Use probability rules, conditional probability, discrete random variables and standard distributions.",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "PROB-COMB-RULE-COND",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-COND in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "PROB-DRVD-DRVB-EXPV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DRVD-DRVB-EXPV in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "PROB-DIST-BINO-PROB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-BINO-PROB in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-4.2.2",
-          "subtopicName": "Use probability rules, conditional probability, discrete random variables and standard distributions.",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "PROB-DIST-NORM-STAN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-NORM-STAN in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-4.3",
-          "subtopicName": "Use statistical hypothesis testing and normal/binomial/Poisson models where specified.",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-TEST-HYPO-NULL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-TEST-HYPO-NULL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "STAT-TEST-HYPO-SIGL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-TEST-HYPO-SIGL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "STAT-TEST-HYPO-BINO",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-TEST-HYPO-BINO in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-4.3.2",
-          "subtopicName": "Use statistical hypothesis testing and normal/binomial/Poisson models where specified.",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "PROB-DIST-POIS-PROB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-POIS-PROB in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · J5"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "AQA-7357-5",
-      "topicName": "Mechanics",
-      "paperReference": [
-        "P3"
-      ],
+      "topicId": "AQA-7357-STAT",
+      "topicName": "Statistics",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "AQA-7357-5.1",
-          "subtopicName": "Use quantities, units, kinematics, graphs and constant-acceleration formulae.",
-          "paperReference": [
-            "P3"
-          ],
+          "subtopicId": "AQA-7357-K1",
+          "subtopicName": "Official specification page 21 · K1",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "MECH-KIN-LINE-DIST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-KIN-LINE-DIST in the expanded knowledge tree."
+              "nodeId": "STAT-ENQ-SAMP-POP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · K1"
+            },
+            {
+              "nodeId": "STAT-ENQ-SAMP-RAND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · K1"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · K1"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-STDV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · K1"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-LOBF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · K1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-L1",
+          "subtopicName": "Official specification page 21 · L1",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · L1"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-CUMF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 21 · L1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-L2",
+          "subtopicName": "Official specification page 22 · L2",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-BIVA-CORR-POSC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L2"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-NEGC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L2"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-ZEROC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L2"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-LOBF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L2"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-SCAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L2"
+            },
+            {
+              "nodeId": "STAT-ENQ-SAMP-RAND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L2"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L2"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-STDV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-L3",
+          "subtopicName": "Official specification page 22 · L3",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-SUMM-CENT-STDV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-L4",
+          "subtopicName": "Official specification page 22 · L4",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-PICT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L4"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-STEM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L4"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L4"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-SCAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L4"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-BARCH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L4"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-PIE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L4"
+            },
+            {
+              "nodeId": "STAT-ENQ-SAMP-RAND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L4"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-STDV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · L4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-O1",
+          "subtopicName": "Official specification page 23 · O1",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-SIGL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O1"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-NULL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O1"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-CRIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O1"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-BINO",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O1"
+            },
+            {
+              "nodeId": "PROB-DIST-POIS-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-O2",
+          "subtopicName": "Official specification page 23 · O2",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-SIGL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O2"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-BINO",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O2"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-POIS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O2"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O2"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-NULL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O2"
+            },
+            {
+              "nodeId": "PROB-DIST-POIS-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-O3",
+          "subtopicName": "Official specification page 23 · O3",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-BINO",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O3"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-POIS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O3"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O3"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-NULL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O3"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-SIGL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O3"
+            },
+            {
+              "nodeId": "PROB-DIST-POIS-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · O3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "AQA-7357-PROB",
+      "topicName": "Probability",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "AQA-7357-M1",
+          "subtopicName": "Official specification page 22 · M1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-RULE-MUTX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M1"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-INDE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M1"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M1"
+            },
+            {
+              "nodeId": "PROB-DIST-GEOM-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M1"
+            },
+            {
+              "nodeId": "PROB-DIST-POIS-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M1"
+            },
+            {
+              "nodeId": "PROB-BASIC-BASIC-SING",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M1"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-COND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M1"
+            },
+            {
+              "nodeId": "PROB-DRVD-DRVB-EXPV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-M2",
+          "subtopicName": "Official specification page 22 · M2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-NORM-TABLE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M2"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-TREE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-M3",
+          "subtopicName": "Official specification page 22 · M3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-BINO-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M3"
+            },
+            {
+              "nodeId": "PROB-DIST-GEOM-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M3"
+            },
+            {
+              "nodeId": "PROB-DIST-POIS-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M3"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M3"
+            },
+            {
+              "nodeId": "PROB-DIST-GEOM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M3"
+            },
+            {
+              "nodeId": "PROB-DIST-GEOM-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 22 · M3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-N1",
+          "subtopicName": "Official specification page 23 · N1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DRVD-DRVB-VARI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N1"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N1"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N1"
+            },
+            {
+              "nodeId": "PROB-DRVD-DRVB-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N1"
+            },
+            {
+              "nodeId": "PROB-DRVD-DRVB-EXPV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N1"
+            },
+            {
+              "nodeId": "PROB-DIST-CRV-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N1"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-COND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N1"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-STAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-N2",
+          "subtopicName": "Official specification page 23 · N2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N2"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N2"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N2"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-NORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N2"
+            },
+            {
+              "nodeId": "PROB-DIST-NBIN-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N2"
+            },
+            {
+              "nodeId": "PROB-DIST-GEOM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N2"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-COND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N2"
+            },
+            {
+              "nodeId": "PROB-DRVD-DRVB-EXPV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-N3",
+          "subtopicName": "Official specification page 23 · N3",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N3"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N3"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N3"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-NORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N3"
+            },
+            {
+              "nodeId": "PROB-DIST-NBIN-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N3"
+            },
+            {
+              "nodeId": "PROB-DIST-GEOM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N3"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-NULL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N3"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-SIGL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 23 · N3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "AQA-7357-MECH",
+      "topicName": "Mechanics",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "AQA-7357-P1",
+          "subtopicName": "Official specification page 24 · P1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-ACCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · P1"
+            },
+            {
+              "nodeId": "MECH-ENER-POWR-PFV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · P1"
+            },
+            {
+              "nodeId": "MECH-FURT-VARF-VVDX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · P1"
             },
             {
               "nodeId": "MECH-KIN-LINE-SPED",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-KIN-LINE-SPED in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · P1"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-MASS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · P1"
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-MOMT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · P1"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · P1"
             },
             {
               "nodeId": "MECH-KIN-LINE-VTGR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-KIN-LINE-VTGR in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · P1"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-5.1.2",
-          "subtopicName": "Use quantities, units, kinematics, graphs and constant-acceleration formulae.",
-          "paperReference": [
-            "P3"
-          ],
+          "subtopicId": "AQA-7357-Q1",
+          "subtopicName": "Official specification page 24 · Q1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q1"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-SPED",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q1"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-ACCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-Q2",
+          "subtopicName": "Official specification page 24 · Q2",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q2"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q2"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-SPED",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q2"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-STGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q2"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-VTGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q2"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-ACCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q2"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q2"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-Q3",
+          "subtopicName": "Official specification page 24 · Q3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "MECH-KIN-LINE-CONST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-KIN-LINE-CONST in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "AQA-7357-5.2",
-          "subtopicName": "Model forces, equilibrium, friction, Newton's laws and connected-particle dynamics.",
-          "paperReference": [
-            "P3"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FORC-FORC-DIAG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FORC-FORC-DIAG in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q3"
             },
             {
-              "nodeId": "MECH-FORC-EQUI-PRIN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FORC-EQUI-PRIN in the expanded knowledge tree."
+              "nodeId": "MECH-KIN-LINE-ACCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q3"
             },
             {
-              "nodeId": "MECH-FORC-EQUI-FRIC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FORC-EQUI-FRIC in the expanded knowledge tree."
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q3"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q3"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q3"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q3"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-5.2.2",
-          "subtopicName": "Model forces, equilibrium, friction, Newton's laws and connected-particle dynamics.",
-          "paperReference": [
-            "P3"
-          ],
+          "subtopicId": "AQA-7357-Q4",
+          "subtopicName": "Official specification page 24 · Q4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "MECH-DYN-NEWT-CONP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-DYN-NEWT-CONP in the expanded knowledge tree."
+              "nodeId": "MECH-KIN-LINE-ACCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q4"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q4"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-SPED",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q4"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-STGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q4"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-VTGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q4"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-CONST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q4"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q4"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q4"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-5.3",
-          "subtopicName": "Use moments, projectiles, momentum, work, energy and power where specified.",
-          "paperReference": [
-            "P3"
-          ],
+          "subtopicId": "AQA-7357-Q5",
+          "subtopicName": "Official specification page 24 · Q5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "MECH-FURT-RIGD-MOMT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-RIGD-MOMT in the expanded knowledge tree."
+              "nodeId": "MECH-DYN-NEWT-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q5"
+            },
+            {
+              "nodeId": "MECH-FURT-PROJ-MODEL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q5"
             },
             {
               "nodeId": "MECH-FURT-PROJ-HV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-PROJ-HV in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "MECH-MOMI-LINM-CONS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-MOMI-LINM-CONS in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · Q5"
             }
           ]
         },
         {
-          "subtopicId": "AQA-7357-5.3.2",
-          "subtopicName": "Use moments, projectiles, momentum, work, energy and power where specified.",
-          "paperReference": [
-            "P3"
-          ],
+          "subtopicId": "AQA-7357-R1",
+          "subtopicName": "Official specification page 24 · R1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "MECH-ENER-WORK-CONS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-ENER-WORK-CONS in the expanded knowledge tree."
+              "nodeId": "MECH-FORC-EQUI-N3L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · R1"
+            },
+            {
+              "nodeId": "MECH-FORC-FORC-DIAG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · R1"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-PRIN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · R1"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-FRIC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · R1"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-CONP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 24 · R1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-R2",
+          "subtopicName": "Official specification page 25 · R2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-ACCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R2"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-N2L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R2"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R2"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-SPED",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R2"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-STGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R2"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-VTGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R2"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R2"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-MAGN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-R3",
+          "subtopicName": "Official specification page 25 · R3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-ACCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R3"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-CONST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R3"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R3"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R3"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R3"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R3"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-R4",
+          "subtopicName": "Official specification page 25 · R4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-RESV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R4"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-N3L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R4"
+            },
+            {
+              "nodeId": "MECH-FORC-FORC-VECN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R4"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-CONP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R4"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R4"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-MAGN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R4"
+            },
+            {
+              "nodeId": "VECT-SPAC-THRD-IJK",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R4"
+            },
+            {
+              "nodeId": "VECT-GEOM-PROB-PARA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-R5",
+          "subtopicName": "Official specification page 25 · R5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-INCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R5"
+            },
+            {
+              "nodeId": "MECH-FORC-FORC-RESL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R5"
+            },
+            {
+              "nodeId": "MECH-FORC-FORC-DIAG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R5"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-PRIN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R5"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-FRIC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R5"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-CONP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-R6",
+          "subtopicName": "Official specification page 25 · R6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-LIMF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R6"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-COEF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R6"
+            },
+            {
+              "nodeId": "MECH-FURT-PROJ-MODEL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R6"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-FRIC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R6"
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-MOMT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · R6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "AQA-7357-S1",
+          "subtopicName": "Official specification page 25 · S1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-RIGD-MOMT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; Official specification page 25 · S1"
             }
           ]
         }

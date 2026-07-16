@@ -3,709 +3,4395 @@
   "subjectCode": "H240",
   "subjectName": "A-Level Mathematics A",
   "level": "A-Level",
-  "version": "1.0-batch2",
-  "totalTopics": 5,
-  "mappedTopics": 5,
+  "version": "4.0.0-knowledge-v4-20260716",
+  "sourceSchemaVersion": "4.0.0",
+  "qualificationVersionId": "OCR-H240:Version 3",
+  "syllabusVersion": "Version 3",
+  "effectiveFrom": "2017-09-01",
+  "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+  "sources": [
+    {
+      "url": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+      "title": "OCR A Level Mathematics A H240 specification",
+      "documentVersion": "Version 3",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+      "sourceType": "official"
+    }
+  ],
+  "approval": {
+    "approvedAt": "2026-07-16",
+    "approvalBatch": "knowledge-v4-20260716"
+  },
+  "verificationStatus": "verified",
+  "totalTopics": 12,
+  "mappedTopics": 11,
   "paperStructure": {
     "papers": [
-      "Pure",
-      "Stats",
-      "Mech"
-    ],
-    "compulsory": [
-      "Pure",
-      "Stats",
-      "Mech"
-    ],
-    "asOnly": [],
-    "alevelOnly": [
-      "Pure",
-      "Stats",
-      "Mech"
-    ],
-    "applicationGroups": [
-      [
-        "Stats"
-      ],
-      [
-        "Mech"
-      ]
-    ],
-    "mutuallyExclusive": []
+      "01",
+      "02",
+      "03"
+    ]
   },
   "mappings": [
     {
-      "topicId": "OCR-H240-1",
-      "topicName": "Proof, Algebra and Functions",
-      "paperReference": [
-        "Pure"
-      ],
+      "topicId": "OCR-H240-REAS",
+      "topicName": "REAS",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-H240-1.1",
-          "subtopicName": "Use proof, mathematical argument and modelling conventions.",
-          "paperReference": [
-            "Pure"
-          ],
+          "subtopicId": "OFFICIAL-OCR-H240-OT1.1",
+          "subtopicName": "OT1.1 [PAGE 18]",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; OT1.1 [PAGE 18]"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-SYMB",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; OT1.1 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT1.2",
+          "subtopicName": "OT1.2 [PAGE 18]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-ARGM-SYMB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT1.2 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT1.5",
+          "subtopicName": "OT1.5 [PAGE 18]",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-ARGM-CRIT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT1.5 [PAGE 18]"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-JUST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT1.5 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT2.1",
+          "subtopicName": "OT2.1 [PAGE 18]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROB-PSOL-STRC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT2.1 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT2.2",
+          "subtopicName": "OT2.2 [PAGE 18]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROB-PSOL-UNST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT2.2 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT2.3",
+          "subtopicName": "OT2.3 [PAGE 18]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; OT2.3 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT2.5",
+          "subtopicName": "OT2.5 [PAGE 18]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROB-PSOL-ESTM",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; OT2.5 [PAGE 18]"
+            },
+            {
+              "nodeId": "NUMM-ROOT-SIGN-FAIL",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; OT2.5 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT2.6",
+          "subtopicName": "OT2.6 [PAGE 18]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT2.6 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT2.7",
+          "subtopicName": "OT2.7 [PAGE 18]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROB-PSOL-DIAG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT2.7 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT3.1",
+          "subtopicName": "OT3.1 [PAGE 19]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ABST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT3.1 [PAGE 19]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT3.2",
+          "subtopicName": "OT3.2 [PAGE 19]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-INPT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT3.2 [PAGE 19]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT3.3",
+          "subtopicName": "OT3.3 [PAGE 19]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT3.3 [PAGE 19]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT3.4",
+          "subtopicName": "OT3.4 [PAGE 19]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; OT3.4 [PAGE 19]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT3.5",
+          "subtopicName": "OT3.5 [PAGE 19]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT3.5 [PAGE 19]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.01a",
+          "subtopicName": "1.01a [PAGE 20]",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "REAS-PROF-PROF-DEDU",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-PROF-PROF-DEDU in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; 1.01a [PAGE 20]"
             },
             {
-              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "nodeId": "REAS-PROF-PROF-EXHA",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-PROF-ARGM-LOGI in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "REAS-MODL-MODL-ASSM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-MODL-MODL-ASSM in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; 1.01a [PAGE 20]"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-1.2",
-          "subtopicName": "Work with algebraic expressions, quadratics, inequalities, functions and transformations.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-1.01b",
+          "subtopicName": "1.01b [PAGE 20]",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-ARGM-LOGI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; 1.01b [PAGE 20]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.01c",
+          "subtopicName": "1.01c [PAGE 20]",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-PROF-COUN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.01c [PAGE 20]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.01d",
+          "subtopicName": "1.01d [PAGE 20]",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-PROF-CONT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.01d [PAGE 20]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02z",
+          "subtopicName": "p.27, 1.02z",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EXP-MANI-FACT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-FACT in the expanded knowledge tree."
+              "nodeId": "REAS-MODL-MODL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27, 1.02z"
             },
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27, 1.02z"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.04k",
+          "subtopicName": "p.32, 1.04k",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32, 1.04k"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32, 1.04k"
+            },
+            {
+              "nodeId": "ALGF-LOG-LOGR-EQNS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32, 1.04k"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05m",
+          "subtopicName": "p.35, 1.05m",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-ARGM-JUST",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; p.35, 1.05m"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05p",
+          "subtopicName": "p.36, 1.05p",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; p.36, 1.05p"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.03e",
+          "subtopicName": "page 53 / OCR Ref. 2.03e",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 53 / OCR Ref. 2.03e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03j",
+          "subtopicName": "p.67 3.03j",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-ASSM",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.67 3.03j"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H240-NUM",
+      "topicName": "Number",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT1.3",
+          "subtopicName": "OT1.3 [PAGE 18]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-SYS-SET-LANG",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; OT1.3 [PAGE 18]"
+            },
+            {
+              "nodeId": "NUM-SYS-SET-UNIN",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; OT1.3 [PAGE 18]"
+            },
+            {
+              "nodeId": "NUM-SYS-SET-COMP",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; OT1.3 [PAGE 18]"
+            },
+            {
+              "nodeId": "NUM-SYS-SET-VENN",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; OT1.3 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02a",
+          "subtopicName": "1.02a [PAGE 21]",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-INDX-POS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02a [PAGE 21]"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-ZERO",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02a [PAGE 21]"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-NEG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02a [PAGE 21]"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-FRAC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02a [PAGE 21]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02b",
+          "subtopicName": "1.02b [PAGE 21]",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-POWR-SURD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02b [PAGE 21]"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-RATD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02b [PAGE 21]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02r",
+          "subtopicName": "p.25, 1.02r",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25, 1.02r"
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-DIRE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25, 1.02r"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H240-ALGF",
+      "topicName": "Algebra and Functions",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-OT1.4",
+          "subtopicName": "OT1.4 [PAGE 18]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DEFN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT1.4 [PAGE 18]"
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DOMR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; OT1.4 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02c",
+          "subtopicName": "1.02c [PAGE 21]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-SIMU-LINQ",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02c [PAGE 21]"
+            },
+            {
+              "nodeId": "ALGF-EQN-SIMU-SUBS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02c [PAGE 21]"
+            },
+            {
+              "nodeId": "ALGF-EQN-SIMU-ELIM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02c [PAGE 21]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02d",
+          "subtopicName": "1.02d [PAGE 22]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-QUAD-DISC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02d [PAGE 22]"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02d [PAGE 22]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02e",
+          "subtopicName": "1.02e [PAGE 22]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
             {
               "nodeId": "ALGF-EQN-QUAD-COMP",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; 1.02e [PAGE 22]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02f",
+          "subtopicName": "1.02f [PAGE 22]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-QUAD-FACT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02f [PAGE 22]"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FORM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02f [PAGE 22]"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FUNC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02f [PAGE 22]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02g",
+          "subtopicName": "1.02g [PAGE 23]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-LINS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02g [PAGE 23]"
             },
             {
               "nodeId": "ALGF-EQN-INEQ-QUAD",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; 1.02g [PAGE 23]"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-REGN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02g [PAGE 23]"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-1.2.2",
-          "subtopicName": "Work with algebraic expressions, quadratics, inequalities, functions and transformations.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-1.02h",
+          "subtopicName": "1.02h [PAGE 23]",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-SETN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02h [PAGE 23]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02i",
+          "subtopicName": "1.02i [PAGE 23]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-REGN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 1.02i [PAGE 23]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02j",
+          "subtopicName": "p.24, 1.02j",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-FUNC-TRAN-VERT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-VERT in the expanded knowledge tree."
+              "nodeId": "ALGF-POLY-POLY-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, 1.02j"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-DIVL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, 1.02j"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, 1.02j"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, 1.02j"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, 1.02j"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-1.3",
-          "subtopicName": "Use polynomials, partial fractions, binomial expansion, sequences and series.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-1.02k",
+          "subtopicName": "p.24, 1.02k",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
               "nodeId": "ALGF-POLY-POLY-DIVL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-POLY-POLY-DIVL in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, 1.02k"
             },
             {
-              "nodeId": "ALGF-POLY-PART-LINL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-POLY-PART-LINL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-SEQ-BINO-RATN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-BINO-RATN in the expanded knowledge tree."
+              "nodeId": "ALGF-POLY-POLY-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, 1.02k"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-1.3.2",
-          "subtopicName": "Use polynomials, partial fractions, binomial expansion, sequences and series.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-1.02l",
+          "subtopicName": "p.24, 1.02l",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-MODU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, 1.02l"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-MODU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24, 1.02l"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02m",
+          "subtopicName": "p.25, 1.02m",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25, 1.02m"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02n",
+          "subtopicName": "p.25, 1.02n",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25, 1.02n"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25, 1.02n"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25, 1.02n"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25, 1.02n"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-SKET",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25, 1.02n"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02o",
+          "subtopicName": "p.25, 1.02o",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25, 1.02o"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-ASMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25, 1.02o"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02p",
+          "subtopicName": "p.25, 1.02p",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25, 1.02p"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02q",
+          "subtopicName": "p.25, 1.02q",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25, 1.02q"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02s",
+          "subtopicName": "p.25, 1.02s",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-MODU",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25, 1.02s"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02t",
+          "subtopicName": "p.25, 1.02t",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-MODU",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25, 1.02t"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02u",
+          "subtopicName": "p.26, 1.02u",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DEFN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02u"
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DOMR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02u"
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-ONON",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02u"
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-NOTN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02u"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02v",
+          "subtopicName": "p.26, 1.02v",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02v"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02v"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02v"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-RANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02v"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02w",
+          "subtopicName": "p.26, 1.02w",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02w"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-HORZ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02w"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-STRE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02w"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-REFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02w"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02x",
+          "subtopicName": "p.26, 1.02x",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02x"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-HORZ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02x"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-STRE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02x"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-REFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26, 1.02x"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.02y",
+          "subtopicName": "p.27, 1.02y",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-POLY-PART-LINL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27, 1.02y"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-REPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27, 1.02y"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-APPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27, 1.02y"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.04a",
+          "subtopicName": "p.30, 1.04a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-BINO-POSI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30, 1.04a"
+            },
+            {
+              "nodeId": "ALGF-SEQ-BINO-COEF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30, 1.04a"
+            },
+            {
+              "nodeId": "ALGF-SEQ-BINO-PASC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30, 1.04a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.04c",
+          "subtopicName": "p.30, 1.04c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-BINO-RATN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30, 1.04c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.04d",
+          "subtopicName": "p.30, 1.04d",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-BINO-RATN",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.30, 1.04d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.04e",
+          "subtopicName": "p.31, 1.04e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-TERM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.31, 1.04e"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.31, 1.04e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.04f",
+          "subtopicName": "p.31, 1.04f",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; p.31, 1.04f"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.04g",
+          "subtopicName": "p.31, 1.04g",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SERS",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; p.31, 1.04g"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.04h",
+          "subtopicName": "p.31, 1.04h",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.31, 1.04h"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-ARSM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.31, 1.04h"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.04i",
+          "subtopicName": "p.32, 1.04i",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-GEOM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32, 1.04i"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-GESM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32, 1.04i"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SERS-CONV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32, 1.04i"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.04j",
+          "subtopicName": "p.32, 1.04j",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
               "nodeId": "ALGF-SEQ-SERS-INFI",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SERS-INFI in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.32, 1.04j"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-1.4",
-          "subtopicName": "Use exponentials, logarithms and associated equations or modelling contexts.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-1.06a",
+          "subtopicName": "p.36, 1.06a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
+              "nodeId": "ALGF-LOG-EXPO-AX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.36, 1.06a"
+            },
+            {
               "nodeId": "ALGF-LOG-EXPO-EX",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-EXPO-EX in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-LOG-LOGR-LAWS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-LOGR-LAWS in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-LOG-LOGR-EQNS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-LOGR-EQNS in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.36, 1.06a"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-1.4.2",
-          "subtopicName": "Use exponentials, logarithms and associated equations or modelling contexts.",
-          "paperReference": [
-            "Pure"
-          ],
+          "subtopicId": "OFFICIAL-OCR-H240-1.06c",
+          "subtopicName": "p.37 OCR 1.06c",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-INVR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.37 OCR 1.06c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.06d",
+          "subtopicName": "p.37 OCR 1.06d",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-LN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.37 OCR 1.06d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.06e",
+          "subtopicName": "p.37 OCR 1.06e",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-INVR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.37 OCR 1.06e"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-EX",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.37 OCR 1.06e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.06f",
+          "subtopicName": "p.37 OCR 1.06f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-LAWS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.37 OCR 1.06f"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.06g",
+          "subtopicName": "p.38 OCR 1.06g",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-EQNS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.38 OCR 1.06g"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.06h",
+          "subtopicName": "p.38 OCR 1.06h",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-LOGR-EQNS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.38 OCR 1.06h"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.38 OCR 1.06h"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.06i",
+          "subtopicName": "p.38 OCR 1.06i",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "ALGF-LOG-EXPO-MODE",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-LOG-EXPO-MODE in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.38 OCR 1.06i"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-GROW",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.38 OCR 1.06i"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "OCR-H240-2",
-      "topicName": "Coordinate Geometry, Trigonometry and Vectors",
-      "paperReference": [
-        "Pure"
-      ],
+      "topicId": "OCR-H240-NUMM",
+      "topicName": "NUMM",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-H240-2.1",
-          "subtopicName": "Use coordinate geometry of straight lines and circles.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-OT2.4",
+          "subtopicName": "OT2.4 [PAGE 18]",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-ITER-CONV",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; OT2.4 [PAGE 18]"
+            },
+            {
+              "nodeId": "NUMM-NINT-TRAP-ESTM",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; OT2.4 [PAGE 18]"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.09a",
+          "subtopicName": "p.45 OCR 1.09a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-SIGN-LOC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.45 OCR 1.09a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.09b",
+          "subtopicName": "p.45 OCR 1.09b",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-SIGN-FAIL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.45 OCR 1.09b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.09c",
+          "subtopicName": "p.46 OCR 1.09c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-ITER-FORM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.46 OCR 1.09c"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-COBW",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.46 OCR 1.09c"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-STAIR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.46 OCR 1.09c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.09d",
+          "subtopicName": "p.46 OCR 1.09d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-NEWR-APPL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.46 OCR 1.09d"
+            },
+            {
+              "nodeId": "NUMM-ROOT-ITER-FORM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.46 OCR 1.09d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.09e",
+          "subtopicName": "p.46 OCR 1.09e",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-ITER-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.46 OCR 1.09e"
+            },
+            {
+              "nodeId": "NUMM-ROOT-NEWR-FAIL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.46 OCR 1.09e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.09f",
+          "subtopicName": "p.46 OCR 1.09f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-NINT-TRAP-ESTM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.46 OCR 1.09f"
+            },
+            {
+              "nodeId": "NUMM-NINT-TRAP-OVER",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.46 OCR 1.09f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H240-GEOM",
+      "topicName": "Geometry and Mensuration",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.03a",
+          "subtopicName": "p.28, 1.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28, 1.03a"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-POINT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28, 1.03a"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-GENR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28, 1.03a"
+            },
+            {
+              "nodeId": "GEOM-COOR-CART-MIDP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28, 1.03a"
+            },
+            {
+              "nodeId": "GEOM-COOR-CART-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28, 1.03a"
+            },
+            {
+              "nodeId": "GEOM-COOR-CART-INTR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28, 1.03a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.03b",
+          "subtopicName": "p.28, 1.03b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
               "nodeId": "GEOM-COOR-LINE-GRAD",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.28, 1.03b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.03c",
+          "subtopicName": "p.28, 1.03c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-LINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28, 1.03c"
             },
             {
-              "nodeId": "GEOM-COOR-LINE-YMXC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the expanded knowledge tree."
-            },
+              "nodeId": "REAS-MODL-MODL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28, 1.03c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.03d",
+          "subtopicName": "p.29, 1.03d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
             {
               "nodeId": "GEOM-COOR-CIRC-CENT",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CIRC-CENT in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.29, 1.03d"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-2.1.2",
-          "subtopicName": "Use coordinate geometry of straight lines and circles.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-1.03e",
+          "subtopicName": "p.29, 1.03e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CIRC-EXPN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.29, 1.03e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.03f",
+          "subtopicName": "p.29, 1.03f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-CITH-SEMI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29, 1.03f"
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29, 1.03f"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-CHRD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29, 1.03f"
+            },
             {
               "nodeId": "GEOM-COOR-CIRC-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CIRC-TANG in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29, 1.03f"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-2.2",
-          "subtopicName": "Use radians, trigonometric graphs, identities, equations and compound-angle formulae.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-1.03g",
+          "subtopicName": "p.29, 1.03g",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
-              "nodeId": "TRIG-CIRC-RADI-CONV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-CIRC-RADI-CONV in the expanded knowledge tree."
+              "nodeId": "GEOM-PARM-PARM-DEFS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29, 1.03g"
             },
             {
-              "nodeId": "TRIG-FUNC-GRAP-SINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-IDEN-IDEN-ADDR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-IDEN-ADDR in the expanded knowledge tree."
+              "nodeId": "GEOM-PARM-PARM-CART",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29, 1.03g"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-2.2.2",
-          "subtopicName": "Use radians, trigonometric graphs, identities, equations and compound-angle formulae.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-1.03h",
+          "subtopicName": "p.30, 1.03h",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
-              "nodeId": "TRIG-IDEN-EQNS-MULT",
+              "nodeId": "GEOM-PARM-PARM-MODE",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-EQNS-MULT in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.30, 1.03h"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-2.3",
-          "subtopicName": "Use vectors in two and three dimensions including magnitude, direction and geometric applications.",
-          "paperReference": [
-            "Pure"
-          ],
+          "subtopicId": "OFFICIAL-OCR-H240-1.10f",
+          "subtopicName": "p.48 OCR 1.10f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "nodeId": "GEOM-COOR-CART-DIST",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-ADDS in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.48 OCR 1.10f"
             },
             {
-              "nodeId": "VECT-BASIC-NOTN-MAGN",
+              "nodeId": "VECT-SPAC-THRD-DIST",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-MAGN in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "VECT-SPAC-THRD-IJK",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-SPAC-THRD-IJK in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-H240-2.3.2",
-          "subtopicName": "Use vectors in two and three dimensions including magnitude, direction and geometric applications.",
-          "paperReference": [
-            "Pure"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-GEOM-PROB-PARA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-GEOM-PROB-PARA in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.48 OCR 1.10f"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "OCR-H240-3",
-      "topicName": "Calculus and Numerical Methods",
-      "paperReference": [
-        "Pure"
-      ],
+      "topicId": "OCR-H240-PROB",
+      "topicName": "Probability",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-H240-3.1",
-          "subtopicName": "Differentiate elementary functions using product, quotient, chain, implicit and parametric methods.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-1.04b",
+          "subtopicName": "p.30, 1.04b",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-DIFF-RULE-CHAI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-RULE-CHAI in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-RULE-PROD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-RULE-PROD in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFF-PARI-IMPL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-PARI-IMPL in the expanded knowledge tree."
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30, 1.04b"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-3.1.2",
-          "subtopicName": "Differentiate elementary functions using product, quotient, chain, implicit and parametric methods.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-2.03a",
+          "subtopicName": "page 52 / OCR Ref. 2.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-DIFF-PARI-PARM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-PARI-PARM in the expanded knowledge tree."
+              "nodeId": "PROB-COMB-RULE-MUTX",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 52 / OCR Ref. 2.03a"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-INDE",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 52 / OCR Ref. 2.03a"
+            },
+            {
+              "nodeId": "PROB-BASIC-BASIC-NOTN",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 52 / OCR Ref. 2.03a"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-3.2",
-          "subtopicName": "Apply differentiation to tangents, normals, stationary points, rates of change and curve sketching.",
-          "paperReference": [
-            "Pure"
+          "subtopicId": "OFFICIAL-OCR-H240-2.03b",
+          "subtopicName": "page 53 / OCR Ref. 2.03b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
           ],
           "mappedNodes": [
             {
-              "nodeId": "CALC-DIFF-APPL-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-TANG in the expanded knowledge tree."
+              "nodeId": "PROB-COMB-RULE-TREE",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 53 / OCR Ref. 2.03b"
             },
             {
-              "nodeId": "CALC-DIFF-APPL-STAT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-STAT in the expanded knowledge tree."
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 53 / OCR Ref. 2.03b"
             },
             {
-              "nodeId": "CALC-DIFF-APPL-RATC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-RATC in the expanded knowledge tree."
+              "nodeId": "PROB-COMB-COUNT-SAMPS",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 53 / OCR Ref. 2.03b"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-3.2.2",
-          "subtopicName": "Apply differentiation to tangents, normals, stationary points, rates of change and curve sketching.",
-          "paperReference": [
-            "Pure"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-APPL-SKET",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFF-APPL-SKET in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-H240-3.3",
-          "subtopicName": "Integrate using standard rules, substitution, parts, partial fractions and definite integration.",
-          "paperReference": [
-            "Pure"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTE-RULE-EXPL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-EXPL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-SUBS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-SUBS in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-INTE-RULE-PART",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-RULE-PART in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-H240-3.3.2",
-          "subtopicName": "Integrate using standard rules, substitution, parts, partial fractions and definite integration.",
-          "paperReference": [
-            "Pure"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTE-CONC-DEFI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-CONC-DEFI in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-H240-3.4",
-          "subtopicName": "Use integration for area, differential equations and numerical methods.",
-          "paperReference": [
-            "Pure"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-INTE-APPL-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-APPL-AREA in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-DIFFEQ-FODE-SEPV in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "NUMM-ROOT-ITER-CONV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-ROOT-ITER-CONV in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-H240-3.4.2",
-          "subtopicName": "Use integration for area, differential equations and numerical methods.",
-          "paperReference": [
-            "Pure"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "NUMM-NINT-TRAP-ESTM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-NINT-TRAP-ESTM in the expanded knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "OCR-H240-4",
-      "topicName": "Statistics",
-      "paperReference": [
-        "Stats"
-      ],
-      "subtopicMappings": [
-        {
-          "subtopicId": "OCR-H240-4.1",
-          "subtopicName": "Use sampling, data presentation, statistical diagrams, summary statistics and correlation.",
-          "paperReference": [
-            "Stats"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-ENQ-SAMP-RAND",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-ENQ-SAMP-RAND in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "STAT-DATA-REPR-HIST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-HIST in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-STDV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-STDV in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-H240-4.1.2",
-          "subtopicName": "Use sampling, data presentation, statistical diagrams, summary statistics and correlation.",
-          "paperReference": [
-            "Stats"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-BIVA-CORR-LOBF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-BIVA-CORR-LOBF in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-H240-4.2",
-          "subtopicName": "Use probability rules, conditional probability, discrete random variables and standard distributions.",
-          "paperReference": [
-            "Stats"
+          "subtopicId": "OFFICIAL-OCR-H240-2.03c",
+          "subtopicName": "page 53 / OCR Ref. 2.03c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
           ],
           "mappedNodes": [
             {
               "nodeId": "PROB-COMB-RULE-COND",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-COND in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 53 / OCR Ref. 2.03c"
             },
             {
-              "nodeId": "PROB-DRVD-DRVB-EXPV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DRVD-DRVB-EXPV in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "PROB-DIST-BINO-PROB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-BINO-PROB in the expanded knowledge tree."
+              "nodeId": "PROB-COMB-RULE-ADD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 53 / OCR Ref. 2.03c"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-4.2.2",
-          "subtopicName": "Use probability rules, conditional probability, discrete random variables and standard distributions.",
-          "paperReference": [
-            "Stats"
+          "subtopicId": "OFFICIAL-OCR-H240-2.03d",
+          "subtopicName": "page 53 / OCR Ref. 2.03d",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-RULE-COND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 53 / OCR Ref. 2.03d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.04a",
+          "subtopicName": "page 54 / OCR Ref. 2.04a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DRVD-DRVB-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 54 / OCR Ref. 2.04a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.04b",
+          "subtopicName": "page 54 / OCR Ref. 2.04b",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; page 54 / OCR Ref. 2.04b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.04c",
+          "subtopicName": "page 54 / OCR Ref. 2.04c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-BINO-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 54 / OCR Ref. 2.04c"
+            },
+            {
+              "nodeId": "PROB-DIST-BINO-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 54 / OCR Ref. 2.04c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.04d",
+          "subtopicName": "page 54 / OCR Ref. 2.04d",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-BINO-NORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 54 / OCR Ref. 2.04d"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 54 / OCR Ref. 2.04d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.04e",
+          "subtopicName": "page 55 / OCR Ref. 2.04e",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-NORM-MODE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; page 55 / OCR Ref. 2.04e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.04f",
+          "subtopicName": "page 55 / OCR Ref. 2.04f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
           ],
           "mappedNodes": [
             {
               "nodeId": "PROB-DIST-NORM-STAN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-NORM-STAN in the expanded knowledge tree."
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 55 / OCR Ref. 2.04f"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-INV",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 55 / OCR Ref. 2.04f"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-TABLE",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 55 / OCR Ref. 2.04f"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-4.3",
-          "subtopicName": "Use statistical hypothesis testing and normal/binomial/Poisson models where specified.",
-          "paperReference": [
-            "Stats"
+          "subtopicId": "OFFICIAL-OCR-H240-2.04g",
+          "subtopicName": "page 55 / OCR Ref. 2.04g",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-TEST-HYPO-NULL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-TEST-HYPO-NULL in the expanded knowledge tree."
+              "nodeId": "PROB-DIST-NORM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 55 / OCR Ref. 2.04g"
             },
             {
-              "nodeId": "STAT-TEST-HYPO-SIGL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-TEST-HYPO-SIGL in the expanded knowledge tree."
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 55 / OCR Ref. 2.04g"
             },
             {
-              "nodeId": "STAT-TEST-HYPO-BINO",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-TEST-HYPO-BINO in the expanded knowledge tree."
+              "nodeId": "CALC-DIFF-APPL-INFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 55 / OCR Ref. 2.04g"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-4.3.2",
-          "subtopicName": "Use statistical hypothesis testing and normal/binomial/Poisson models where specified.",
-          "paperReference": [
-            "Stats"
+          "subtopicId": "OFFICIAL-OCR-H240-2.04h",
+          "subtopicName": "page 55 / OCR Ref. 2.04h",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
           ],
           "mappedNodes": [
             {
-              "nodeId": "PROB-DIST-POIS-PROB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-POIS-PROB in the expanded knowledge tree."
+              "nodeId": "PROB-DIST",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 55 / OCR Ref. 2.04h"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "OCR-H240-5",
-      "topicName": "Mechanics",
-      "paperReference": [
-        "Mech"
-      ],
+      "topicId": "OCR-H240-TRIG",
+      "topicName": "TRIG",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-H240-5.1",
-          "subtopicName": "Use quantities, units, kinematics, graphs and constant-acceleration formulae.",
-          "paperReference": [
-            "Mech"
+          "subtopicId": "OFFICIAL-OCR-H240-1.05a",
+          "subtopicName": "p.33, 1.05a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-KIN-LINE-DIST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-KIN-LINE-DIST in the expanded knowledge tree."
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33, 1.05a"
             },
             {
-              "nodeId": "MECH-KIN-LINE-SPED",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-KIN-LINE-SPED in the expanded knowledge tree."
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33, 1.05a"
             },
             {
-              "nodeId": "MECH-KIN-LINE-VTGR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-KIN-LINE-VTGR in the expanded knowledge tree."
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33, 1.05a"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-5.1.2",
-          "subtopicName": "Use quantities, units, kinematics, graphs and constant-acceleration formulae.",
-          "paperReference": [
-            "Mech"
+          "subtopicId": "OFFICIAL-OCR-H240-1.05b",
+          "subtopicName": "p.33, 1.05b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-KIN-LINE-CONST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-KIN-LINE-CONST in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-H240-5.2",
-          "subtopicName": "Model forces, equilibrium, friction, Newton's laws and connected-particle dynamics.",
-          "paperReference": [
-            "Mech"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "MECH-FORC-FORC-DIAG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FORC-FORC-DIAG in the expanded knowledge tree."
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33, 1.05b"
             },
             {
-              "nodeId": "MECH-FORC-EQUI-PRIN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FORC-EQUI-PRIN in the expanded knowledge tree."
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33, 1.05b"
             },
             {
-              "nodeId": "MECH-FORC-EQUI-FRIC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FORC-EQUI-FRIC in the expanded knowledge tree."
+              "nodeId": "TRIG-BASE-NONR-AMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33, 1.05b"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-5.2.2",
-          "subtopicName": "Model forces, equilibrium, friction, Newton's laws and connected-particle dynamics.",
-          "paperReference": [
-            "Mech"
+          "subtopicId": "OFFICIAL-OCR-H240-1.05c",
+          "subtopicName": "p.33, 1.05c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-DYN-NEWT-CONP",
+              "nodeId": "TRIG-BASE-NONR-AREA",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-DYN-NEWT-CONP in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.33, 1.05c"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-5.3",
-          "subtopicName": "Use moments, projectiles, momentum, work, energy and power where specified.",
-          "paperReference": [
-            "Mech"
+          "subtopicId": "OFFICIAL-OCR-H240-1.05d",
+          "subtopicName": "p.33, 1.05d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-CIRC-RADI-CONV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33, 1.05d"
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-ARCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33, 1.05d"
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-SECA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33, 1.05d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05f",
+          "subtopicName": "p.34, 1.05f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05f"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05f"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05f"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-EXCT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05f"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05g",
+          "subtopicName": "p.34, 1.05g",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-EXCT-EXCT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.34, 1.05g"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05h",
+          "subtopicName": "p.34, 1.05h",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-ADVN-SECA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05h"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COSE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05h"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COTA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05h"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05h"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05h"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05h"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05i",
+          "subtopicName": "p.34, 1.05i",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-ADVN-GRAP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05i"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05i"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05i"
+            },
+            {
+              "nodeId": "TRIG-FUNC-EXCT-INVT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05i"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05j",
+          "subtopicName": "p.34, 1.05j",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-IDEN-TANR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.34, 1.05j"
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-PYTH",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.34, 1.05j"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05k",
+          "subtopicName": "p.34, 1.05k",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-IDEN-PYTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05k"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-SECA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05k"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COSE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05k"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COTA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34, 1.05k"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05l",
+          "subtopicName": "p.35, 1.05l",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-IDEN-DBLA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35, 1.05l"
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-ADDR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35, 1.05l"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05n",
+          "subtopicName": "p.35, 1.05n",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-IDEN-ADDR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; p.35, 1.05n"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05o",
+          "subtopicName": "p.35, 1.05o",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-IDEN-EQNS-SIMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35, 1.05o"
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35, 1.05o"
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-MULT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35, 1.05o"
+            },
+            {
+              "nodeId": "TRIG-IDEN-EQNS-INTR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35, 1.05o"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05q",
+          "subtopicName": "p.36, 1.05q",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-APPL-MODE-WAVE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.36, 1.05q"
+            },
+            {
+              "nodeId": "TRIG-APPL-MODE-VECT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.36, 1.05q"
+            },
+            {
+              "nodeId": "TRIG-APPL-MODE-MECH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.36, 1.05q"
+            },
+            {
+              "nodeId": "TRIG-APPL-MODE-KINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.36, 1.05q"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H240-UNMAPPED",
+      "topicName": "Explicitly Unmapped",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.05e",
+          "subtopicName": "p.33, 1.05e",
+          "description": "No canonical node covers small-angle approximations for sine, cosine and tangent.",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.09g",
+          "subtopicName": "p.47 OCR 1.09g",
+          "description": "No canonical node covers the contextual application of numerical methods across root-finding and integration in the supplied catalog.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.02j",
+          "subtopicName": "page 52 / OCR Ref. 2.02j",
+          "description": "No canonical node covers data cleaning, missing data, errors and outliers.",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.01a",
+          "subtopicName": "page 60 / OCR Ref. 3.01a",
+          "description": "No canonical node covers SI base quantities and units in mechanics.",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.01b",
+          "subtopicName": "page 60 / OCR Ref. 3.01b",
+          "description": "No canonical node covers derived quantities and units in mechanics.",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": []
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H240-CALC",
+      "topicName": "Calculus",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.06b",
+          "subtopicName": "p.36, 1.06b",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "01",
+            "02",
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-EXPL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.36, 1.06b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07a",
+          "subtopicName": "p.39 OCR 1.07a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-GRAD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.39 OCR 1.07a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07b",
+          "subtopicName": "p.39 OCR 1.07b",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-LIMT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.39 OCR 1.07b"
+            },
+            {
+              "nodeId": "CALC-DIFF-CONC-RATE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.39 OCR 1.07b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07c",
+          "subtopicName": "p.39 OCR 1.07c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-SKET",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.39 OCR 1.07c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07d",
+          "subtopicName": "p.39 OCR 1.07d",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-NOTN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.39 OCR 1.07d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07e",
+          "subtopicName": "p.39 OCR 1.07e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-INFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.39 OCR 1.07e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07f",
+          "subtopicName": "p.39 OCR 1.07f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-INFL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.39 OCR 1.07f"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07g",
+          "subtopicName": "p.40 OCR 1.07g",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-CONC-LIMT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 OCR 1.07g"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07h",
+          "subtopicName": "p.40 OCR 1.07h",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.40 OCR 1.07h"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07i",
+          "subtopicName": "p.40 OCR 1.07i",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-POWR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 OCR 1.07i"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07j",
+          "subtopicName": "p.40 OCR 1.07j",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-EXPL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 OCR 1.07j"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07k",
+          "subtopicName": "p.40 OCR 1.07k",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-TRIG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 OCR 1.07k"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07l",
+          "subtopicName": "p.40 OCR 1.07l",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-LOGR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 OCR 1.07l"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07m",
+          "subtopicName": "p.40 OCR 1.07m",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 OCR 1.07m"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07n",
+          "subtopicName": "p.40 OCR 1.07n",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-STAT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 OCR 1.07n"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-MAXM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 OCR 1.07n"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07o",
+          "subtopicName": "p.40 OCR 1.07o",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-INCR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 OCR 1.07o"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07p",
+          "subtopicName": "p.40 OCR 1.07p",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-APPL-INFL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 OCR 1.07p"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07q",
+          "subtopicName": "p.41 OCR 1.07q",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-PROD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.41 OCR 1.07q"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-QUOT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.41 OCR 1.07q"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07r",
+          "subtopicName": "p.41 OCR 1.07r",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-CHAI",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.41 OCR 1.07r"
+            },
+            {
+              "nodeId": "CALC-DIFF-APPL-RATC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.41 OCR 1.07r"
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-INVR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.41 OCR 1.07r"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07s",
+          "subtopicName": "p.41 OCR 1.07s",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-PARI-IMPL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.41 OCR 1.07s"
+            },
+            {
+              "nodeId": "CALC-DIFF-PARI-PARM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.41 OCR 1.07s"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.07t",
+          "subtopicName": "p.41 OCR 1.07t",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SETU",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.41 OCR 1.07t"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08a",
+          "subtopicName": "p.42 OCR 1.08a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-CONC-FTCL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.42 OCR 1.08a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08b",
+          "subtopicName": "p.42 OCR 1.08b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-POWR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.42 OCR 1.08b"
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-CONS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.42 OCR 1.08b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08c",
+          "subtopicName": "p.42 OCR 1.08c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-EXPL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.42 OCR 1.08c"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-LOGR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.42 OCR 1.08c"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-TRIG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.42 OCR 1.08c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08d",
+          "subtopicName": "p.42 OCR 1.08d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-CONC-DEFI",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.42 OCR 1.08d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08e",
+          "subtopicName": "p.42 OCR 1.08e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-APPL-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.42 OCR 1.08e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08f",
+          "subtopicName": "p.42 OCR 1.08f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-APPL-BETW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42 OCR 1.08f"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08g",
+          "subtopicName": "p.43 OCR 1.08g",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-CONC-DEFI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.43 OCR 1.08g"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08h",
+          "subtopicName": "p.43 OCR 1.08h",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-SUBS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.43 OCR 1.08h"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08i",
+          "subtopicName": "p.44 OCR 1.08i",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-PART",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.44 OCR 1.08i"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08j",
+          "subtopicName": "p.44 OCR 1.08j",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-PFR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.44 OCR 1.08j"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08k",
+          "subtopicName": "p.44 OCR 1.08k",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.44 OCR 1.08k"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-GENS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.44 OCR 1.08k"
+            },
+            {
+              "nodeId": "CALC-DIFFEQ-FODE-PART",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.44 OCR 1.08k"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.08l",
+          "subtopicName": "p.45 OCR 1.08l",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-FIRST-MODE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.45 OCR 1.08l"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.10h",
+          "subtopicName": "p.48 OCR 1.10h",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-KIN-SVAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.48 OCR 1.10h"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.02f",
+          "subtopicName": "page 62 / OCR Ref. 3.02f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-KIN-SVAT-DSDT",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 62 / OCR Ref. 3.02f"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-DVDT",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 62 / OCR Ref. 3.02f"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-INTV",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 62 / OCR Ref. 3.02f"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-INTS",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 62 / OCR Ref. 3.02f"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.02g",
+          "subtopicName": "page 62 / OCR Ref. 3.02g",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-KIN-SVAT-DSDT",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 62 / OCR Ref. 3.02g"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-DVDT",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 62 / OCR Ref. 3.02g"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-INTV",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 62 / OCR Ref. 3.02g"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-INTS",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 62 / OCR Ref. 3.02g"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-COLV",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 62 / OCR Ref. 3.02g"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-UNIT",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 62 / OCR Ref. 3.02g"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H240-VECT",
+      "topicName": "Vectors",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.10a",
+          "subtopicName": "p.47 OCR 1.10a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-COLV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.47 OCR 1.10a"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-UNIT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.47 OCR 1.10a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.10b",
+          "subtopicName": "p.47 OCR 1.10b",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-SPAC-THRD-IJK",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.47 OCR 1.10b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.10c",
+          "subtopicName": "p.47 OCR 1.10c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-MAGN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.47 OCR 1.10c"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-DIRN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.47 OCR 1.10c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.10d",
+          "subtopicName": "p.48 OCR 1.10d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.48 OCR 1.10d"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.48 OCR 1.10d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.10e",
+          "subtopicName": "p.48 OCR 1.10e",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-POSV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.48 OCR 1.10e"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-UNIT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.48 OCR 1.10e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-1.10g",
+          "subtopicName": "p.48 OCR 1.10g",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-GEOM-PROB-PARA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.48 OCR 1.10g"
+            },
+            {
+              "nodeId": "MECH-FORC-FORC-VECN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.48 OCR 1.10g"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H240-STAT",
+      "topicName": "Statistics",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.01a",
+          "subtopicName": "p.49 OCR 2.01a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-ENQ-SAMP-POP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.49 OCR 2.01a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.01b",
+          "subtopicName": "p.49 OCR 2.01b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-ENQ-SAMP-BIAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.49 OCR 2.01b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.01c",
+          "subtopicName": "p.49 OCR 2.01c",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-ENQ-SAMP-RAND",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.49 OCR 2.01c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.01d",
+          "subtopicName": "p.49 OCR 2.01d",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-ENQ-SAMP-BIAS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.49 OCR 2.01d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.02a",
+          "subtopicName": "page 50 / OCR Ref. 2.02a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-BARCH",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 50 / OCR Ref. 2.02a"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-STEM",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 50 / OCR Ref. 2.02a"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-BOXW",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 50 / OCR Ref. 2.02a"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-CUMF",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 50 / OCR Ref. 2.02a"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 50 / OCR Ref. 2.02a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.02b",
+          "subtopicName": "page 50 / OCR Ref. 2.02b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-HIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 50 / OCR Ref. 2.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.02c",
+          "subtopicName": "page 50 / OCR Ref. 2.02c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-SCAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 50 / OCR Ref. 2.02c"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-LOBF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 50 / OCR Ref. 2.02c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.02d",
+          "subtopicName": "page 50 / OCR Ref. 2.02d",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-BIVA-CORR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 50 / OCR Ref. 2.02d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.02e",
+          "subtopicName": "page 50 / OCR Ref. 2.02e",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-BIVA-CORR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 50 / OCR Ref. 2.02e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.02f",
+          "subtopicName": "page 51 / OCR Ref. 2.02f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-SUMM-CENT-MEAN",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 51 / OCR Ref. 2.02f"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEDI",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 51 / OCR Ref. 2.02f"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MODE",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 51 / OCR Ref. 2.02f"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-QUAR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 51 / OCR Ref. 2.02f"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-IQR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 51 / OCR Ref. 2.02f"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-STDV",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 51 / OCR Ref. 2.02f"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.02g",
+          "subtopicName": "page 51 / OCR Ref. 2.02g",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-SUMM-CENT-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 51 / OCR Ref. 2.02g"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-STDV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 51 / OCR Ref. 2.02g"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-ESTM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 51 / OCR Ref. 2.02g"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.02h",
+          "subtopicName": "page 52 / OCR Ref. 2.02h",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-SUMM-CENT-IQR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 52 / OCR Ref. 2.02h"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-STDV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 52 / OCR Ref. 2.02h"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-BOXW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 52 / OCR Ref. 2.02h"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.02i",
+          "subtopicName": "page 52 / OCR Ref. 2.02i",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 52 / OCR Ref. 2.02i"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.05a",
+          "subtopicName": "page 56 / OCR Ref. 2.05a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-NULL",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 56 / OCR Ref. 2.05a"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-TAIL",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 56 / OCR Ref. 2.05a"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-SIGL",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 56 / OCR Ref. 2.05a"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-CRIT",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 56 / OCR Ref. 2.05a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.05b",
+          "subtopicName": "page 57 / OCR Ref. 2.05b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-BINO",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; page 57 / OCR Ref. 2.05b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.05c",
+          "subtopicName": "page 57 / OCR Ref. 2.05c",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-SIGL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 57 / OCR Ref. 2.05c"
+            },
+            {
+              "nodeId": "STAT-ENQ-SAMP-POP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 57 / OCR Ref. 2.05c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.05d",
+          "subtopicName": "page 58 / OCR Ref. 2.05d",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-EST-ESTI-SMEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 58 / OCR Ref. 2.05d"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 58 / OCR Ref. 2.05d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.05e",
+          "subtopicName": "page 58 / OCR Ref. 2.05e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-MEAN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; page 58 / OCR Ref. 2.05e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.05f",
+          "subtopicName": "page 59 / OCR Ref. 2.05f",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-CORR-REG-PMCC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; page 59 / OCR Ref. 2.05f"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-2.05g",
+          "subtopicName": "page 59 / OCR Ref. 2.05g",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "02"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-CORR-REG-PMCC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 59 / OCR Ref. 2.05g"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 59 / OCR Ref. 2.05g"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-H240-MECH",
+      "topicName": "Mechanics",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.01c",
+          "subtopicName": "page 60 / OCR Ref. 3.01c",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
           ],
           "mappedNodes": [
             {
               "nodeId": "MECH-FURT-RIGD-MOMT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-RIGD-MOMT in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "MECH-FURT-PROJ-HV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-PROJ-HV in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "MECH-MOMI-LINM-CONS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-MOMI-LINM-CONS in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 60 / OCR Ref. 3.01c"
             }
           ]
         },
         {
-          "subtopicId": "OCR-H240-5.3.2",
-          "subtopicName": "Use moments, projectiles, momentum, work, energy and power where specified.",
-          "paperReference": [
-            "Mech"
+          "subtopicId": "OFFICIAL-OCR-H240-3.02a",
+          "subtopicName": "page 60 / OCR Ref. 3.02a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-ENER-WORK-CONS",
+              "nodeId": "MECH-KIN-LINE-DIST",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 60 / OCR Ref. 3.02a"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-ACCL",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 60 / OCR Ref. 3.02a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.02b",
+          "subtopicName": "page 61 / OCR Ref. 3.02b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-STGR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 61 / OCR Ref. 3.02b"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-VTGR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 61 / OCR Ref. 3.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.02c",
+          "subtopicName": "page 61 / OCR Ref. 3.02c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-STGR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 61 / OCR Ref. 3.02c"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-VTGR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 61 / OCR Ref. 3.02c"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-AREA",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 61 / OCR Ref. 3.02c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.02d",
+          "subtopicName": "page 61 / OCR Ref. 3.02d",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-CONST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 61 / OCR Ref. 3.02d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.02e",
+          "subtopicName": "page 61 / OCR Ref. 3.02e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-CONST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 61 / OCR Ref. 3.02e"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-COLV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 61 / OCR Ref. 3.02e"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-UNIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 61 / OCR Ref. 3.02e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.02h",
+          "subtopicName": "page 63 / OCR Ref. 3.02h",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-PROJ-MODEL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 63 / OCR Ref. 3.02h"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 63 / OCR Ref. 3.02h"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.02i",
+          "subtopicName": "page 63 / OCR Ref. 3.02i",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-PROJ-HV",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 63 / OCR Ref. 3.02i"
+            },
+            {
+              "nodeId": "MECH-FURT-PROJ-RANGE",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 63 / OCR Ref. 3.02i"
+            },
+            {
+              "nodeId": "MECH-FURT-PROJ-TRAJ",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; page 63 / OCR Ref. 3.02i"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03a",
+          "subtopicName": "page 64 / OCR Ref. 3.03a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-FORC-VECN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 64 / OCR Ref. 3.03a"
+            },
+            {
+              "nodeId": "MECH-FORC-FORC-DIAG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 64 / OCR Ref. 3.03a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03b",
+          "subtopicName": "page 64 / OCR Ref. 3.03b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-PRIN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 64 / OCR Ref. 3.03b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03c",
+          "subtopicName": "page 65 / OCR Ref. 3.03c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-N2L",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-ENER-WORK-CONS in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; page 65 / OCR Ref. 3.03c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03d",
+          "subtopicName": "page 65 / OCR Ref. 3.03d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-N2L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 65 / OCR Ref. 3.03d"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-COLV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 65 / OCR Ref. 3.03d"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-UNIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 65 / OCR Ref. 3.03d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03e",
+          "subtopicName": "page 65 / OCR Ref. 3.03e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-N2L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 65 / OCR Ref. 3.03e"
+            },
+            {
+              "nodeId": "MECH-FORC-FORC-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 65 / OCR Ref. 3.03e"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-RESV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 65 / OCR Ref. 3.03e"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-INCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 65 / OCR Ref. 3.03e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03f",
+          "subtopicName": "page 66 / OCR Ref. 3.03f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-MASS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 66 / OCR Ref. 3.03f"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 66 / OCR Ref. 3.03f"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03g",
+          "subtopicName": "page 66 / OCR Ref. 3.03g",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "03"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-MASS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; page 66 / OCR Ref. 3.03g"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03h",
+          "subtopicName": "p.67 3.03h",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-N3L",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.67 3.03h"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03i",
+          "subtopicName": "p.67 3.03i",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-NORM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.67 3.03i"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03k",
+          "subtopicName": "p.67 3.03k",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-CONP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.67 3.03k"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03l",
+          "subtopicName": "p.67 3.03l",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-N3L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67 3.03l"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-RESV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67 3.03l"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03m",
+          "subtopicName": "p.67 3.03m",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-PRIN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.67 3.03m"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03n",
+          "subtopicName": "p.68 3.03n",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-RESV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68 3.03n"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68 3.03n"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03o",
+          "subtopicName": "p.68 3.03o",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-CONP",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.68 3.03o"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03p",
+          "subtopicName": "p.68 3.03p",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-FORC-RESL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68 3.03p"
+            },
+            {
+              "nodeId": "MECH-FORC-FORC-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68 3.03p"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03q",
+          "subtopicName": "p.69 3.03q",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-N2L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.69 3.03q"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.69 3.03q"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03r",
+          "subtopicName": "p.70 3.03r",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-FRIC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.70 3.03r"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03s",
+          "subtopicName": "p.70 3.03s",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-NORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70 3.03s"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-FRIC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70 3.03s"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03t",
+          "subtopicName": "p.70 3.03t",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-LIMF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70 3.03t"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-COEF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70 3.03t"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03u",
+          "subtopicName": "p.70 3.03u",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FORC-EQUI-PRIN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70 3.03u"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-LIMF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70 3.03u"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.03v",
+          "subtopicName": "p.70 3.03v",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-FRIC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.70 3.03v"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.04a",
+          "subtopicName": "p.71 3.04a",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-RIGD-MOMT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.71 3.04a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.04b",
+          "subtopicName": "p.71 3.04b",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-RIGD-RBAL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.71 3.04b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-H240-3.04c",
+          "subtopicName": "p.71 3.04c",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "03"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-RIGD-MOMT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71 3.04c"
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-RBAL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71 3.04c"
             }
           ]
         }

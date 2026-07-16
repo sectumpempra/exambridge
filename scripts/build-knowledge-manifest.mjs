@@ -18,9 +18,10 @@ for (const file of mappingFiles) {
   const mapping = JSON.parse(bytes.toString("utf8"));
   const papers = new Set(mapping.paperStructure?.papers ?? []);
   const subtopics = mapping.mappings.flatMap((topic) => topic.subtopicMappings ?? []);
-  const referenced = subtopics.filter((subtopic) => Array.isArray(subtopic.paperReference) && subtopic.paperReference.length > 0);
+  const referenced = subtopics.filter((subtopic) => subtopic.paperApplicabilityKind === "fixed" && Array.isArray(subtopic.paperReference) && subtopic.paperReference.length > 0);
   const invalidReferences = [...new Set(referenced.flatMap((subtopic) => subtopic.paperReference).filter((paper) => !papers.has(paper)))];
   const coverage = subtopics.length ? referenced.length / subtopics.length : 0;
+  const paperComparisonReady = papers.size > 0 && coverage === 1 && invalidReferences.length === 0;
   const verificationStatus = mapping.verificationStatus ?? "candidate";
   const fingerprint = sha256(Buffer.from(JSON.stringify(subtopics.map((subtopic) => ({
     paperReference: subtopic.paperReference,
@@ -28,7 +29,9 @@ for (const file of mappingFiles) {
   })))));
 
   if (verificationStatus === "verified") {
-    if (papers.size && coverage !== 1) failures.push(`${file}: verified Paper mapping coverage is ${(coverage * 100).toFixed(1)}%`);
+    if (mapping.sourceSchemaVersion !== "4.0.0" || !mapping.approval?.approvedAt || !mapping.approval?.approvalBatch) {
+      failures.push(`${file}: verified mapping lacks V4 owner-approval provenance`);
+    }
     if (invalidReferences.length) failures.push(`${file}: unknown Paper references ${invalidReferences.join(", ")}`);
     const duplicate = verifiedFingerprints.get(fingerprint);
     if (duplicate) failures.push(`${file}: verified mapping duplicates ${duplicate}`);
@@ -42,10 +45,13 @@ for (const file of mappingFiles) {
     syllabusVersion: mapping.syllabusVersion ?? null,
     sourceUrl: mapping.sourceUrl ?? null,
     verificationStatus,
+    sourceSchemaVersion: mapping.sourceSchemaVersion ?? null,
+    approval: mapping.approval ?? null,
     sha256: sha256(bytes),
     topicCount: mapping.mappings.length,
     subtopicCount: subtopics.length,
     paperMappingCoverage: coverage,
+    paperComparisonReady,
     invalidReferences,
     fingerprint,
   });

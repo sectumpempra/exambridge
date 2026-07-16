@@ -58,6 +58,18 @@ describe("audit remediation release invariants", () => {
     expect(pruning).toContain('publicationPolicy: "owner-approved-only"');
   });
 
+  it("publishes only V4 owner-approved projections with the recorded approval batch", () => {
+    const manifest = JSON.parse(readFileSync("public/data/v3.2-new/manifest.json", "utf8"));
+    expect(manifest.mappings).toHaveLength(21);
+    expect(manifest.mappings.every((entry: { verificationStatus: string }) => entry.verificationStatus === "verified")).toBe(true);
+    expect(manifest.mappings.every((entry: { sourceSchemaVersion: string }) => entry.sourceSchemaVersion === "4.0.0")).toBe(true);
+    expect(manifest.mappings.every((entry: { approval: { approvedAt: string; approvalBatch: string } }) =>
+      entry.approval.approvedAt === "2026-07-16" && entry.approval.approvalBatch === "knowledge-v4-20260716"
+    )).toBe(true);
+    expect(manifest.mappings.filter((entry: { paperComparisonReady: boolean }) => entry.paperComparisonReady).map((entry: { id: string }) => entry.id).sort())
+      .toEqual(["CAIE-9231", "CAIE-9709", "OCR-6993"]);
+  });
+
   it("audits all 812 canonical knowledge nodes and records an explicit zero-migration decision", () => {
     const ontology = JSON.parse(readFileSync("generated/knowledge-ontology-audit-report.json", "utf8"));
     const semantics = JSON.parse(readFileSync("generated/knowledge-node-semantics-v4.json", "utf8"));
@@ -74,7 +86,7 @@ describe("audit remediation release invariants", () => {
     expect(migration).toMatchObject({ migrationRequired: false, migrations: [], pendingCandidates: [] });
   });
 
-  it("keeps all 21 point-reviewed mappings complete and candidate-only until owner approval", () => {
+  it("keeps all 21 point-reviewed mappings complete and owner-approved with provenance", () => {
     const report = JSON.parse(readFileSync("generated/knowledge-point-review-report.json", "utf8"));
     expect(report).toMatchObject({
       expectedCourseCount: 21,
@@ -89,15 +101,18 @@ describe("audit remediation release invariants", () => {
       expect(summary.missingOfficialPointCount, `${summary.id} missing official points`).toBe(0);
       expect(summary.highIssueCount, `${summary.id} high-severity review issues`).toBe(0);
       expect(summary.duplicatePointCount, `${summary.id} duplicate reviews`).toBe(0);
-      const mapping = JSON.parse(readFileSync(`data/candidates/knowledge-v4/${summary.id}.json`, "utf8"));
+      const mapping = JSON.parse(readFileSync(`data/active/knowledge-v4/${summary.id}.json`, "utf8"));
       expect(KnowledgeMappingV4Schema.safeParse(mapping).success, `${summary.id} V4 schema`).toBe(true);
-      expect(mapping.reviewStatus, `${summary.id} activation status`).toBe("candidate");
+      expect(mapping.reviewStatus, `${summary.id} activation status`).toBe("owner-approved");
+      expect(mapping.review).toMatchObject({ approvedAt: "2026-07-16", approvalBatch: "knowledge-v4-20260716" });
     }
   });
 
   it("requires explicit approval provenance before a V4 mapping can become owner-approved", () => {
-    const mapping = JSON.parse(readFileSync("data/candidates/knowledge-v4/CAIE-0580.json", "utf8"));
+    const mapping = JSON.parse(readFileSync("data/active/knowledge-v4/CAIE-0580.json", "utf8"));
     mapping.reviewStatus = "owner-approved";
+    delete mapping.review.approvedAt;
+    delete mapping.review.approvalBatch;
     expect(KnowledgeMappingV4Schema.safeParse(mapping).success).toBe(false);
     mapping.review.approvedAt = "2026-07-16";
     mapping.review.approvalBatch = "owner-review-20260716";
@@ -105,7 +120,7 @@ describe("audit remediation release invariants", () => {
   });
 
   it("rejects contradictory V4 point state, dates and Kimi provenance", () => {
-    const original = JSON.parse(readFileSync("data/candidates/knowledge-v4/CAIE-0580.json", "utf8"));
+    const original = JSON.parse(readFileSync("data/active/knowledge-v4/CAIE-0580.json", "utf8"));
 
     const missingReason = structuredClone(original);
     missingReason.syllabusPoints[0].canonicalNodeIds = [];

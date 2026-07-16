@@ -3,1936 +3,2246 @@
   "subjectCode": "1MA1",
   "subjectName": "GCSE Mathematics",
   "level": "GCSE",
-  "version": "1.1-statement-level",
-  "totalTopics": 9,
-  "mappedTopics": 9,
+  "version": "4.0.0-knowledge-v4-20260716",
+  "sourceSchemaVersion": "4.0.0",
+  "qualificationVersionId": "Edexcel-1MA1:2015",
+  "syllabusVersion": "2015",
+  "effectiveFrom": "2015-09-01",
+  "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+  "sources": [
+    {
+      "url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+      "title": "Pearson Edexcel GCSE Mathematics 1MA1 specification",
+      "documentVersion": "2015",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+      "sourceType": "official"
+    }
+  ],
+  "approval": {
+    "approvedAt": "2026-07-16",
+    "approvalBatch": "knowledge-v4-20260716"
+  },
+  "verificationStatus": "verified",
+  "totalTopics": 11,
+  "mappedTopics": 10,
+  "paperStructure": {
+    "papers": [
+      "1MA1/1F or 1MA1/1H",
+      "1MA1/2F or 1MA1/2H",
+      "1MA1/3F or 1MA1/3H",
+      "Paper 1: 1MA1/1F or 1MA1/1H (non-calculator)",
+      "Paper 2: 1MA1/2F or 1MA1/2H (calculator)",
+      "Paper 3: 1MA1/3F or 1MA1/3H (calculator)",
+      "Paper 1",
+      "Paper 2",
+      "Paper 3"
+    ]
+  },
   "mappings": [
     {
-      "topicId": "Edexcel-1MA1-1",
+      "topicId": "Edexcel-1MA1-NUM",
       "topicName": "Number",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-1MA1-1.1",
-          "subtopicName": "Identify and use natural numbers, integers, prime numbers, square numbers, cube numbers, common factors, common multiples, rational and irrational numbers, and reciprocals.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N1",
+          "subtopicName": "p.17 N1",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
-            {
-              "nodeId": "NUM-SYS-TYPE-NAT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-TYPE-NAT in the MVP knowledge tree."
-            },
             {
               "nodeId": "NUM-SYS-TYPE-INTG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-TYPE-INTG in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N1"
             },
-            {
-              "nodeId": "NUM-SYS-TYPE-PRIM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-TYPE-PRIM in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.1.2",
-          "subtopicName": "Identify and use natural numbers, integers, prime numbers, square numbers, cube numbers, common factors, common multiples, rational and irrational numbers, and reciprocals.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-SYS-TYPE-FACT",
-              "matchStrength": "strong",
-              "matchReason": "HCF and LCM are represented by the broader factors and multiples leaf in the MVP tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.2",
-          "subtopicName": "Understand and use set language, notation and Venn diagrams to describe sets.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-SYS-SET-LANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-SET-LANG in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-SYS-SET-VENN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-SET-VENN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-SYS-SET-UNIN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-SET-UNIN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.3",
-          "subtopicName": "Calculate with squares, square roots, cubes, cube roots, and other powers and roots of numbers.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-POW-POWR-SQRT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-POWR-SQRT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-POW-POWR-CUBR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-POWR-CUBR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-POW-INDX-POS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-POS in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.4",
-          "subtopicName": "Use fractions, decimals and percentages; recognise equivalence and convert between these forms.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-FRAC-FRAC-EQVF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-FRAC-EQVF in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-FRAC-FRAC-SIMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-FRAC-SIMP in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-FRAC-DECI-CONV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-DECI-CONV in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.4.2",
-          "subtopicName": "Use fractions, decimals and percentages; recognise equivalence and convert between these forms.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-FRAC-DECI-PLAC",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "NUM-FRAC-DECI-RECR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "NUM-FRAC-FRAC-MIXD",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.5",
-          "subtopicName": "Order quantities by magnitude and demonstrate familiarity with the symbols =, !=, >, <, >= and <=.",
-          "paperReference": null,
-          "mappedNodes": [
             {
               "nodeId": "NUM-FRAC-DECI-ORDR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-DECI-ORDR in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N1"
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-EQVF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N1"
             },
             {
               "nodeId": "ALGF-EQN-INEQ-LINS",
               "matchStrength": "partial",
-              "matchReason": "Ordering and inequality symbols support later linear inequality work."
+              "matchReason": "Owner-approved V4 partial relation; p.17 N1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-1.6",
-          "subtopicName": "Use the four operations for calculations with integers, fractions and decimals, including correct ordering of operations and use of brackets.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N2",
+          "subtopicName": "p.17 N2",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "NUM-OPS-CALC-FOUR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-OPS-CALC-FOUR in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N2"
             },
             {
+              "nodeId": "NUM-OPS-CALC-NEG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N2"
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-PROP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N2"
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-MIXD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N2"
+            },
+            {
+              "nodeId": "NUM-FRAC-DECI-PLAC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N3",
+          "subtopicName": "p.17 N3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
               "nodeId": "NUM-OPS-CALC-BIDM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-OPS-CALC-BIDM in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N3"
             },
             {
               "nodeId": "NUM-OPS-CALC-BRAC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-OPS-CALC-BRAC in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.6.2",
-          "subtopicName": "Use the four operations for calculations with integers, fractions and decimals, including correct ordering of operations and use of brackets.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-OPS-CALC-NEG",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.7",
-          "subtopicName": "Understand and use indices and the rules of indices, including positive, zero, negative and fractional indices.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-POW-INDX-POS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-POS in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N3"
             },
             {
-              "nodeId": "NUM-POW-INDX-ZERO",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-ZERO in the MVP knowledge tree."
+              "nodeId": "NUM-POW-POWR-SQRT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N3"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-CUBR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N4",
+          "subtopicName": "p.17 N4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-SYS-TYPE-PRIM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N4"
+            },
+            {
+              "nodeId": "NUM-SYS-TYPE-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N6",
+          "subtopicName": "p.17 N6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-POWR-SQRT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N6"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-CUBR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N6"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-POS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N7",
+          "subtopicName": "p.17 N7",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-POWR-SQRT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N7"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-CUBR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N7"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-POS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N7"
             },
             {
               "nodeId": "NUM-POW-INDX-NEG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-NEG in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N7"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-ZERO",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N7"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-1.7.2",
-          "subtopicName": "Understand and use indices and the rules of indices, including positive, zero, negative and fractional indices.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N8",
+          "subtopicName": "p.17 N8",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "NUM-POW-INDX-FRAC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-FRAC in the MVP knowledge tree."
+              "nodeId": "NUM-FRAC-FRAC-EQVF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N8"
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-SIMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N8"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-1.8",
-          "subtopicName": "Use standard form A x 10^n where n is a positive or negative integer and 1 <= A < 10.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N9",
+          "subtopicName": "p.17 N9",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "NUM-POW-STDF-CONV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-STDF-CONV in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N9"
             },
             {
               "nodeId": "NUM-POW-STDF-CALC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-STDF-CALC in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N9"
             },
             {
               "nodeId": "NUM-POW-STDF-INTP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-STDF-INTP in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N9"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-1.8.2",
-          "subtopicName": "Use standard form A x 10^n where n is a positive or negative integer and 1 <= A < 10.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N10",
+          "subtopicName": "p.17 N10",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "NUM-ACC-ROUN-POW10",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+              "nodeId": "NUM-FRAC-DECI-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.17 N10"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-1.9",
-          "subtopicName": "Round values to a specified degree of accuracy, make estimates, and round answers to a reasonable degree of accuracy in context.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N11",
+          "subtopicName": "p.17 N11",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "NUM-ACC-ROUN-DP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-ACC-ROUN-DP in the MVP knowledge tree."
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N11"
             },
             {
-              "nodeId": "NUM-ACC-ROUN-SF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-ACC-ROUN-SF in the MVP knowledge tree."
+              "nodeId": "NUM-FRAC-FRAC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N11"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N12",
+          "subtopicName": "p.17 N12",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-PERC-QTY",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N12"
             },
+            {
+              "nodeId": "NUM-FRAC-PERC-PART",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 N12"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N14",
+          "subtopicName": "p.18 N14",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
             {
               "nodeId": "NUM-ACC-ROUN-ESTM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-ACC-ROUN-ESTM in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.18 N14"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-1.10",
-          "subtopicName": "Give upper and lower bounds for data rounded to a specified accuracy.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N15",
+          "subtopicName": "p.18 N15",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-ROUN-DP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N15"
+            },
+            {
+              "nodeId": "NUM-ACC-ROUN-SF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N15"
+            },
+            {
+              "nodeId": "NUM-ACC-BOUN-ERR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N15"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N16",
+          "subtopicName": "p.18 N16",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "NUM-ACC-BOUN-UPLO",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-ACC-BOUN-UPLO in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N16"
             },
             {
               "nodeId": "NUM-ACC-BOUN-CALC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-ACC-BOUN-CALC in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N16"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-1.11",
-          "subtopicName": "Understand and use ratio and proportion to give ratios in simplest form, divide a quantity in a given ratio, and use proportional reasoning in context.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R3",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R4",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "NUM-RAT-RATI-SIMP",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATI-SIMP in the MVP knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; p.20"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R5",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
             {
               "nodeId": "NUM-RAT-RATI-SHAR",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATI-SHAR in the MVP knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; p.20"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R6",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
             {
               "nodeId": "NUM-RAT-RATI-PROP",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATI-PROP in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.20"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-1.12",
-          "subtopicName": "Use common measures of rate and solve problems involving average speed, density, pressure, flow rates and other compound measures.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R7",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "NUM-RAT-RATE-SPED",
+              "nodeId": "NUM-RAT-RATI-PROP",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATE-SPED in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.20"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R8",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
             },
             {
-              "nodeId": "NUM-RAT-RATE-DENS",
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R9",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-PERC-PART",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATE-DENS in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.20"
             },
-            {
-              "nodeId": "NUM-RAT-RATE-PRES",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATE-PRES in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.12.2",
-          "subtopicName": "Use common measures of rate and solve problems involving average speed, density, pressure, flow rates and other compound measures.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-RAT-RATE-FLOW",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATE-FLOW in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.13",
-          "subtopicName": "Calculate percentages, percentage increase or decrease, reverse percentages, repeated percentage change, and simple or compound interest.",
-          "paperReference": null,
-          "mappedNodes": [
             {
               "nodeId": "NUM-FRAC-PERC-QTY",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-PERC-QTY in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.20"
             },
             {
               "nodeId": "NUM-FRAC-PERC-COMP",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-PERC-COMP in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.20"
             },
             {
               "nodeId": "NUM-FRAC-PERC-INDE",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-PERC-INDE in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.20"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-1.13.2",
-          "subtopicName": "Calculate percentages, percentage increase or decrease, reverse percentages, repeated percentage change, and simple or compound interest.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R10",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
           "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-FRAC-PERC-PART",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.14",
-          "subtopicName": "Calculate with time, including seconds, minutes, hours, days, weeks, months, years, 24-hour and 12-hour clocks, timetables and time zones.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-MEAS-TIME-TIME",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-MEAS-TIME-TIME in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-MEAS-TIME-CLOCK",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-MEAS-TIME-CLOCK in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-MEAS-TIME-ZONE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-MEAS-TIME-ZONE in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.15",
-          "subtopicName": "Calculate with money and convert from one currency to another.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-MEAS-TIME-MONE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-MEAS-TIME-MONE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-RAT-RATE-SPED",
-              "matchStrength": "weak",
-              "matchReason": "Currency conversion is a rate-style proportional calculation; the MVP tree does not have a separate exchange-rate leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-1.16",
-          "subtopicName": "Manipulate surds, including simplifying surds and rationalising a denominator.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-POW-POWR-SURD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-POWR-SURD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-POW-POWR-RATD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-POWR-RATD in the MVP knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-1MA1-2",
-      "topicName": "Algebra and graphs",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-1MA1-2.1",
-          "subtopicName": "Know that letters can be used to represent generalised numbers and substitute numbers into expressions and formulas.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EXP-NOTN-GENR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-NOTN-GENR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EXP-NOTN-SUBS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-NOTN-SUBS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EXP-NOTN-SYMB",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.1.2",
-          "subtopicName": "Know that letters can be used to represent generalised numbers and substitute numbers into expressions and formulas.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EXP-NOTN-FORM",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.2",
-          "subtopicName": "Simplify expressions by collecting like terms, expand products of algebraic expressions and factorise.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EXP-MANI-LIKE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-LIKE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EXP-MANI-EXP1",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-EXP1 in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EXP-MANI-EXP2",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-EXP2 in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.2.2",
-          "subtopicName": "Simplify expressions by collecting like terms, expand products of algebraic expressions and factorise.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EXP-MANI-FACT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-FACT in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.3",
-          "subtopicName": "Manipulate algebraic fractions, including simplifying, adding, subtracting, multiplying and dividing algebraic fractions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EXP-MANI-FACT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-FACT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-POLY-PART-APPL",
-              "matchStrength": "partial",
-              "matchReason": "The MVP tree represents rational expression work more strongly in A-Level partial-fraction/rational-expression nodes."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.4",
-          "subtopicName": "Construct expressions, equations and formulas; solve linear equations; solve simultaneous linear equations; and change the subject of formulas.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-LINE-FORM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-LINE-FORM in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-LINE-SOLV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-LINE-SOLV in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-SIMU-LIN2",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-SIMU-LIN2 in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.4.2",
-          "subtopicName": "Construct expressions, equations and formulas; solve linear equations; solve simultaneous linear equations; and change the subject of formulas.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-LINE-SUBJ",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-LINE-SUBJ in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-LINE-SUB2",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "ALGF-EQN-SIMU-ELIM",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.5",
-          "subtopicName": "Solve quadratic equations by factorisation, completing the square and the quadratic formula; solve simultaneous equations where one equation is linear and one is quadratic.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-QUAD-FACT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-FACT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-QUAD-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-QUAD-FORM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-FORM in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.5.2",
-          "subtopicName": "Solve quadratic equations by factorisation, completing the square and the quadratic formula; solve simultaneous equations where one equation is linear and one is quadratic.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-SIMU-LINQ",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-SIMU-LINQ in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.6",
-          "subtopicName": "Represent, interpret and solve inequalities, including linear inequalities and quadratic inequalities.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-INEQ-LINS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-LINS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-INEQ-QUAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-INEQ-NUMB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-NUMB in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.6.2",
-          "subtopicName": "Represent, interpret and solve inequalities, including linear inequalities and quadratic inequalities.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-INEQ-REGN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-REGN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.7",
-          "subtopicName": "Continue sequences, recognise patterns, and find and use nth terms of linear, simple quadratic and simple cubic sequences.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQ-SEQU-TERM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SEQU-TERM in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-SEQ-SEQU-NTH",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SEQU-NTH in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-SEQ-SEQU-ARIT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.7.2",
-          "subtopicName": "Continue sequences, recognise patterns, and find and use nth terms of linear, simple quadratic and simple cubic sequences.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQ-SERS-ARSM",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.8",
-          "subtopicName": "Use and interpret graphs in practical situations including travel graphs, conversion graphs and distance-time graphs.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-GRAP-LINR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-LINR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-LINE-GRAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "REAS-MODL-MODL-OUTP",
-              "matchStrength": "partial",
-              "matchReason": "Graph interpretation in context is a modelling skill."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.9",
-          "subtopicName": "Construct tables of values, draw, recognise and interpret graphs of linear, quadratic, reciprocal, cubic and trigonometric functions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-GRAP-LINR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-LINR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-GRAP-QUAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-QUAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-GRAP-CUBC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.9.2",
-          "subtopicName": "Construct tables of values, draw, recognise and interpret graphs of linear, quadratic, reciprocal, cubic and trigonometric functions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-GRAP-RECP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.10",
-          "subtopicName": "Recognise, sketch and interpret graphs of functions and solve associated equations graphically.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-GRAP-INTR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-INTR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-GRAP-QUAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-QUAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-GRAP-CUBC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.10.2",
-          "subtopicName": "Recognise, sketch and interpret graphs of functions and solve associated equations graphically.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-APPL-STAT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-DIFF-CONC-RATE",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-DIFF-RULE-POWR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.10.3",
-          "subtopicName": "Recognise, sketch and interpret graphs of functions and solve associated equations graphically.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-KIN-SVAT-DSDT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.11",
-          "subtopicName": "Understand function notation, domain and range, composite functions and inverse functions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-DEFS-NOTN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-DEFS-NOTN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-DEFS-DOMR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-DEFS-DOMR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-COMP-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-COMP-COMP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.11.2",
-          "subtopicName": "Understand function notation, domain and range, composite functions and inverse functions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-COMP-INVR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVR in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.12",
-          "subtopicName": "Apply transformations to graphs of functions, including translations, stretches and reflections.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-TRAN-VERT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-VERT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-TRAN-HORZ",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-HORZ in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-TRAN-STRE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-STRE in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.12.2",
-          "subtopicName": "Apply transformations to graphs of functions, including translations, stretches and reflections.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-TRAN-REFL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-REFL in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.13",
-          "subtopicName": "Understand direct and inverse proportion and relate algebraic solutions to graphical representations.",
-          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "NUM-RAT-RATI-DIRE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATI-DIRE in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
             },
             {
               "nodeId": "NUM-RAT-RATI-PROP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATI-PROP in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
             },
             {
               "nodeId": "ALGF-FUNC-GRAP-RECP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-2.14",
-          "subtopicName": "Use algebraic and geometrical reasoning to support arguments and proofs.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "REAS-PROF-PROF-DEDU",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: explicit or equivalent IGCSE coverage."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-1MA1-3",
-      "topicName": "Coordinate geometry",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-1MA1-3.1",
-          "subtopicName": "Use and interpret Cartesian coordinates in two dimensions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-CART-COOR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CART-COOR in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-3.2",
-          "subtopicName": "Draw straight-line graphs for linear equations and interpret equations of linear graphs.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-LINE-YMXC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-LINE-GENR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GENR in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-3.3",
-          "subtopicName": "Find the gradient of a straight line, including from the coordinates of two points.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-LINE-GRAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-3.4",
-          "subtopicName": "Calculate the length of a line segment and find the coordinates of the midpoint of a line segment.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-CART-DIST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CART-DIST in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-CART-MIDP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CART-MIDP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-3.5",
-          "subtopicName": "Find equations of straight lines, including parallel and perpendicular lines.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-LINE-YMXC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-LINE-GRAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-ANGL-PARA",
               "matchStrength": "partial",
-              "matchReason": "Parallel/perpendicular line relationships are represented through angle and gradient geometry in the MVP tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-1MA1-4",
-      "topicName": "Geometry",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-1MA1-4.1",
-          "subtopicName": "Use and interpret geometrical terms and the vocabulary of triangles, quadrilaterals, polygons, nets, solids and circles.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-SHAP-TERM-ANGT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-TERM-ANGT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-TERM-TRIA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-TERM-TRIA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-TERM-QUAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-TERM-QUAD in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 partial relation; p.20"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-4.1.2",
-          "subtopicName": "Use and interpret geometrical terms and the vocabulary of triangles, quadrilaterals, polygons, nets, solids and circles.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R11",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "GEOM-SHAP-TERM-POLY",
+              "nodeId": "NUM-RAT-RATE-SPED",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-TERM-POLY in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.20"
             },
             {
-              "nodeId": "GEOM-SHAP-SIMI-CONG",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+              "nodeId": "NUM-RAT-RATE-DENS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20"
+            },
+            {
+              "nodeId": "NUM-RAT-RATE-PRES",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-4.2",
-          "subtopicName": "Measure and draw lines and angles; construct triangles; draw, use and interpret nets.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R13",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "GEOM-CONS-CONS-MEAS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-CONS-MEAS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-CONS-CONS-TRIA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-CONS-TRIA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-CONS-CONS-PERB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-CONS-PERB in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-4.2.2",
-          "subtopicName": "Measure and draw lines and angles; construct triangles; draw, use and interpret nets.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-CONS-CONS-ANGB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-CONS-ANGB in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-4.3",
-          "subtopicName": "Draw and interpret scale drawings and use and interpret three-figure bearings.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-CONS-CONS-MEAS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-CONS-MEAS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-TERM-ANGT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-TERM-ANGT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-RAT-RATI-SIMP",
+              "nodeId": "NUM-RAT-RATI-DIRE",
               "matchStrength": "partial",
-              "matchReason": "Scale drawings are represented through ratio and proportional reasoning in the MVP tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-4.4",
-          "subtopicName": "Calculate lengths of similar shapes and use relationships between lengths, areas and volumes of similar shapes and solids.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-SHAP-SIMI-SIML",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SIMI-SIML in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 partial relation; p.21"
             },
             {
-              "nodeId": "GEOM-SHAP-SIMI-LENS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SIMI-LENS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-SIMI-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SIMI-AREA in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-4.5",
-          "subtopicName": "Recognise line symmetry and order of rotational symmetry in two dimensions and symmetry properties of solids.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-SHAP-SYMM-LINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SYMM-LINE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-SYMM-ROTA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SYMM-ROTA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-SYMM-PLANE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SYMM-PLANE in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-4.6",
-          "subtopicName": "Calculate unknown angles using angle properties at a point, on a straight line, in triangles, quadrilaterals, polygons and parallel lines.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-SHAP-ANGL-POINT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-ANGL-POINT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-ANGL-LINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-ANGL-LINE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-ANGL-VERT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-ANGL-VERT in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-4.6.2",
-          "subtopicName": "Calculate unknown angles using angle properties at a point, on a straight line, in triangles, quadrilaterals, polygons and parallel lines.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-SHAP-ANGL-PARA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-ANGL-PARA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "REAS-PROF-ARGM-JUST",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "REAS-PROF-ARGM-LOGI",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-4.7",
-          "subtopicName": "Calculate unknown angles using circle theorems, including angle in a semicircle, tangent-radius, angle at centre, angles in the same segment, cyclic quadrilaterals and alternate segment theorem.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-SHAP-CITH-SEMI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-CITH-SEMI in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-CITH-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-CITH-TANG in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-CITH-CENT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-CITH-CENT in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-4.7.2",
-          "subtopicName": "Calculate unknown angles using circle theorems, including angle in a semicircle, tangent-radius, angle at centre, angles in the same segment, cyclic quadrilaterals and alternate segment theorem.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-SHAP-CITH-SAME",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-CITH-SAME in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-CITH-CHOR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-1MA1-5",
-      "topicName": "Mensuration",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-1MA1-5.1",
-          "subtopicName": "Use metric units of mass, length, area, volume and capacity in practical situations and convert quantities into larger or smaller units.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-UNIT-LENG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-UNIT-LENG in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-UNIT-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-UNIT-AREA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-UNIT-VOLU",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-UNIT-VOLU in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-5.1.2",
-          "subtopicName": "Use metric units of mass, length, area, volume and capacity in practical situations and convert quantities into larger or smaller units.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-UNIT-CAPA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-UNIT-CAPA in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-5.2",
-          "subtopicName": "Carry out calculations involving perimeter and area of rectangles, triangles, parallelograms and trapezia.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-AREA-RECT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-AREA-RECT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-AREA-TRIA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-AREA-TRIA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-AREA-PARA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-AREA-PARA in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-5.2.2",
-          "subtopicName": "Carry out calculations involving perimeter and area of rectangles, triangles, parallelograms and trapezia.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-AREA-TRAP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-AREA-TRAP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-5.3",
-          "subtopicName": "Carry out calculations involving circumference and area of a circle, arc length and sector area.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-CIRC-CIRC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-CIRC-CIRC in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-CIRC-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-CIRC-AREA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-CIRC-ARCL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-CIRC-ARCL in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-5.3.2",
-          "subtopicName": "Carry out calculations involving circumference and area of a circle, arc length and sector area.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-CIRC-SECA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-CIRC-SECA in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-5.4",
-          "subtopicName": "Carry out calculations and solve problems involving surface area and volume of cuboids, prisms, cylinders, spheres, pyramids and cones.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-SOLI-CUBD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-SOLI-CUBD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-SOLI-PRIS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-SOLI-PRIS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-SOLI-CYLN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-SOLI-CYLN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-5.4.2",
-          "subtopicName": "Carry out calculations and solve problems involving surface area and volume of cuboids, prisms, cylinders, spheres, pyramids and cones.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-SOLI-PYRA",
-              "matchStrength": "strong",
-              "matchReason": "Cone and sphere are currently represented in the broader solid-shape branch by adjacent 3D volume leaves."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-5.5",
-          "subtopicName": "Carry out calculations and solve problems involving compound shapes and parts of shapes, compound solids and parts of solids.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-AREA-RECT",
+              "nodeId": "NUM-RAT-RATI-PROP",
               "matchStrength": "partial",
-              "matchReason": "Compound shape work uses component area and perimeter skills."
+              "matchReason": "Owner-approved V4 partial relation; p.21"
             },
             {
-              "nodeId": "GEOM-MENS-SOLI-PRIS",
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
               "matchStrength": "partial",
-              "matchReason": "Compound solid work uses surface-area and volume skills."
+              "matchReason": "Owner-approved V4 partial relation; p.21"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-1MA1-6",
-      "topicName": "Trigonometry",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-1MA1-6.1",
-          "subtopicName": "Know and use Pythagoras' theorem.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASE-RATR-PYTH",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-RATR-PYTH in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-6.2",
-          "subtopicName": "Know and use sine, cosine and tangent ratios for acute angles in calculations involving sides and angles of a right-angled triangle.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASE-RATR-SINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-RATR-SINE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-RATR-COSN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-RATR-COSN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-RATR-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-RATR-TANG in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-6.3",
-          "subtopicName": "Know exact values of sine, cosine and tangent for standard angles.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-FUNC-EXCT-EXCT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-EXCT-EXCT in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-6.4",
-          "subtopicName": "Recognise, sketch and interpret sine, cosine and tangent graphs and solve trigonometric equations.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-FUNC-GRAP-SINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-FUNC-GRAP-COSN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-COSN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-FUNC-GRAP-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-TANG in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-6.4.2",
-          "subtopicName": "Recognise, sketch and interpret sine, cosine and tangent graphs and solve trigonometric equations.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-IDEN-EQNS-SIMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-EQNS-SIMP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-6.5",
-          "subtopicName": "Use the sine and cosine rules and the formula for the area of a triangle in calculations involving any triangle.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASE-NONR-SINR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-SINR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-NONR-COSR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-COSR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-NONR-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-AREA in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-6.6",
-          "subtopicName": "Carry out calculations and solve problems in three dimensions using Pythagoras' theorem and trigonometry.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASE-RATR-PYTH",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-RATR-PYTH in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-RATR-SINE",
-              "matchStrength": "strong",
-              "matchReason": "3D trigonometry applies the same right-angled trigonometric ratios in spatial contexts."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-1MA1-7",
-      "topicName": "Transformations and vectors",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "Edexcel-1MA1-7.1",
-          "subtopicName": "Recognise, describe and draw reflections, rotations, enlargements and translations, including combinations of transformations.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-CONS-TRAN-REFL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-TRAN-REFL in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-CONS-TRAN-ROTA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-TRAN-ROTA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-CONS-TRAN-ENLG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-TRAN-ENLG in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-7.1.2",
-          "subtopicName": "Recognise, describe and draw reflections, rotations, enlargements and translations, including combinations of transformations.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-CONS-TRAN-TRAN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-TRAN-TRAN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-7.2",
-          "subtopicName": "Describe a translation using a vector, add and subtract vectors and multiply a vector by a scalar.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-BASIC-NOTN-COLV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-COLV in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "VECT-BASIC-NOTN-ADDS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-ADDS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "VECT-BASIC-NOTN-SCAL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-SCAL in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-7.3",
-          "subtopicName": "Calculate the magnitude of a vector.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-BASIC-NOTN-MAGN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-MAGN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-7.4",
-          "subtopicName": "Use position vectors and vector methods to reason and solve geometrical problems, including parallel vectors, collinearity, ratio and similarity.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-BASIC-NOTN-POSV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-POSV in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "VECT-GEOM-PROB-PARA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-GEOM-PROB-PARA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "VECT-GEOM-PROB-COLL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-GEOM-PROB-COLL in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-7.4.2",
-          "subtopicName": "Use position vectors and vector methods to reason and solve geometrical problems, including parallel vectors, collinearity, ratio and similarity.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-GEOM-PROB-RATI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-GEOM-PROB-RATI in the MVP knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "Edexcel-1MA1-8",
+      "topicId": "Edexcel-1MA1-PROB",
       "topicName": "Probability",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-1MA1-8.1",
-          "subtopicName": "Understand and use the probability scale from 0 to 1, probability notation, probability of a single event and probability of an event not occurring.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N5",
+          "subtopicName": "p.17 N5",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "PROB-BASIC-BASIC-SCALE",
+              "nodeId": "PROB-COMB-COUNT-ENUM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-BASIC-BASIC-SCALE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "PROB-BASIC-BASIC-NOTN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-BASIC-BASIC-NOTN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "PROB-BASIC-BASIC-SING",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-BASIC-BASIC-SING in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.17 N5"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-8.1.2",
-          "subtopicName": "Understand and use the probability scale from 0 to 1, probability notation, probability of a single event and probability of an event not occurring.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-P1",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "PROB-BASIC-BASIC-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-BASIC-BASIC-COMP in the MVP knowledge tree."
+              "nodeId": "PROB-COMB-COUNT-SAMPS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             },
             {
-              "nodeId": "PROB-COMB-RULE-INDE",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+              "nodeId": "STAT-DATA-CLAS-TWOW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-8.2",
-          "subtopicName": "Understand relative frequency as an estimate of probability and calculate expected frequencies.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-P2",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "PROB-BASIC-BASIC-SING",
               "matchStrength": "partial",
-              "matchReason": "Relative frequency is represented through basic probability in the MVP tree."
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             },
             {
               "nodeId": "PROB-BASIC-BASIC-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-BASIC-BASIC-COMP in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-8.3",
-          "subtopicName": "Calculate the probability of combined events using sample space diagrams, Venn diagrams and tree diagrams.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-P3",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-BASIC-BASIC-SCALE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
+            },
+            {
+              "nodeId": "PROB-BASIC-BASIC-SING",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-P4",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-RULE-MUTX",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-ADD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-P5",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-BASIC-BASIC-SING",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-P6",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-COUNT-ENUM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-TREE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-P7",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "PROB-COMB-COUNT-SAMPS",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-COUNT-SAMPS in the MVP knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; p.23"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-P8",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
             {
-              "nodeId": "PROB-COMB-RULE-VENN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-VENN in the MVP knowledge tree."
+              "nodeId": "PROB-COMB-RULE-INDE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             },
             {
               "nodeId": "PROB-COMB-RULE-TREE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-TREE in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-8.3.2",
-          "subtopicName": "Calculate the probability of combined events using sample space diagrams, Venn diagrams and tree diagrams.",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
+            },
             {
-              "nodeId": "PROB-COMB-RULE-ADD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-ADD in the MVP knowledge tree."
+              "nodeId": "PROB-COMB-RULE-COND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-8.4",
-          "subtopicName": "Calculate conditional probability using Venn diagrams, tree diagrams and tables.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-P9",
+          "subtopicName": "[PAGE 31] P9",
+          "description": "Assessment depth: reasoning",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "PROB-COMB-RULE-COND",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-COND in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "PROB-COMB-RULE-VENN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-VENN in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 31] P9"
             },
             {
               "nodeId": "PROB-COMB-RULE-TREE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-TREE in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 31] P9"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 31] P9"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-1MA1-9",
+      "topicId": "Edexcel-1MA1-GEOM",
+      "topicName": "Geometry and Mensuration",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-N13",
+          "subtopicName": "p.18 N13",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-UNIT-LENG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N13"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N13"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-VOLU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N13"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-CAPA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N13"
+            },
+            {
+              "nodeId": "NUM-MEAS-TIME-MONE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N13"
+            },
+            {
+              "nodeId": "NUM-MEAS-TIME-TIME",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 N13"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A8",
+          "subtopicName": "p.19 A8",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CART-COOR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19 A8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A10",
+          "subtopicName": "p.19 A10",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A10"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A10"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R1",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-UNIT-LENG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-VOLU",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-CAPA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R2",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SIMI-LENS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
+            },
+            {
+              "nodeId": "GEOM-CONS-CONS-MEAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R12",
+          "subtopicName": "p.20",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SIMI-LENS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-LENG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-VOLU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.20"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R14",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-DIRE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G1",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-TERM-ANGT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-TRIA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-POLY",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-SYMM-LINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-SYMM-ROTA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G2",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONS-CONS-PERB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-CONS-CONS-ANGB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G3",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-ANGL-POINT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-ANGL-LINE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-ANGL-VERT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-ANGL-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G4",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-TERM-TRIA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G5",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SIMI-CONG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G6",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SIMI-CONG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-SIML",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-PYTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G7",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONS-TRAN-REFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-ROTA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-TRAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-ENLG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-CONG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-SIML",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G9",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-TERM",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; p.21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G11",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CART-COOR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G12",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-SOLI-CUBD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PRIS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-CYLN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PYRA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G14",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-UNIT-LENG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-VOLU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-CAPA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G15",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONS-CONS-MEAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-ANGT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G16",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-AREA-TRIA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-AREA-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-AREA-TRAP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-CUBD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PRIS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-CYLN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G17",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-CIRC-CIRC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-CIRC-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PYRA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G18",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-CIRC-ARCL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-MENS-CIRC-SECA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G19",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SIMI-CONG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-SIML",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-LENS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A16",
+          "subtopicName": "p.27",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CIRC-CENT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.27"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.27"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G8",
+          "subtopicName": "[PAGE 29] G8",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONS-TRAN-COMB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; [PAGE 29] G8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G10",
+          "subtopicName": "[PAGE 29] G10",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-CITH-SEMI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 29] G10"
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 29] G10"
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-CENT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 29] G10"
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-SAME",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 29] G10"
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-CYCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 29] G10"
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-ALTS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 29] G10"
+            },
+            {
+              "nodeId": "GEOM-SHAP-CITH-CHOR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 29] G10"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 29] G10"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-APP3-FORMULAE",
+          "subtopicName": "[PAGE 53] Appendix 3: Mathematical formulae",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-SOLI",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; [PAGE 53] Appendix 3: Mathematical formulae"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-1MA1-ALGF",
+      "topicName": "Algebra and Functions",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A1",
+          "subtopicName": "p.18 A1",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-NOTN-SYMB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 A1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A2",
+          "subtopicName": "p.18 A2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-NOTN-SUBS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A2"
+            },
+            {
+              "nodeId": "ALGF-EXP-NOTN-FORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A3",
+          "subtopicName": "p.18 A3",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-NOTN-GENR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 A3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A4",
+          "subtopicName": "p.18 A4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-MANI-LIKE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A4"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-EXP1",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A4"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-EXP2",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A4"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A4"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-POS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A4"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-NEG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A4"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-SURD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A5",
+          "subtopicName": "p.18 A5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-NOTN-FORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A5"
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-SUBJ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A7",
+          "subtopicName": "p.18 A7",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DEFN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A7"
+            },
+            {
+              "nodeId": "ALGF-FUNC-DEFS-NOTN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A9",
+          "subtopicName": "p.19 A9",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A9"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A9"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-POINT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A9"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A11",
+          "subtopicName": "p.19 A11",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A11"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A11"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A12",
+          "subtopicName": "p.19 A12",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A12"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A12"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-CUBC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A12"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A12"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A14",
+          "subtopicName": "p.19 A14",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A14"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A14"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A14"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A17",
+          "subtopicName": "p.19 A17",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-LINE-SOLV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A17"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A17"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A18",
+          "subtopicName": "p.19 A18",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-QUAD-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A18"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A18"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A19",
+          "subtopicName": "p.19 A19",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-SIMU-LIN2",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19 A19"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A21",
+          "subtopicName": "p.19 A21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-LINE-FORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A21"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-ABST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A21"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A22",
+          "subtopicName": "p.19 A22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-LINS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A22"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-NUMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 A22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A23",
+          "subtopicName": "pp.20,27",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-TERM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; pp.20,27"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; pp.20,27"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A24",
+          "subtopicName": "pp.20,27",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.20,27"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-GEOM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.20,27"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-SURD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.20,27"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A25",
+          "subtopicName": "pp.20,27",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.20,27"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; pp.20,27"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R16",
+          "subtopicName": "p.21",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-GROW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            },
+            {
+              "nodeId": "NUM-FRAC-PERC-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.21"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A13",
+          "subtopicName": "p.26",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-HORZ",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-REFL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-1MA1-REAS",
+      "topicName": "REAS",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A6",
+          "subtopicName": "p.18 A6",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A6"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-JUST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.18 A6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-1MA1-UNMAPPED",
+      "topicName": "Explicitly Unmapped",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G13",
+          "subtopicName": "p.22",
+          "description": "No matching canonical node for plans and elevations of 3D shapes.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-R15",
+          "subtopicName": "[PAGE 28] R15",
+          "description": "No canonical node in the supplied catalog for interpreting gradients of chords and tangents as instantaneous rate of change without calculus; calculus-based nodes are excluded by the syllabus point.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-1MA1-TRIG",
+      "topicName": "TRIG",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G20",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-RATR-PYTH",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-SINE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-COSN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-TANG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G21",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-EXCT-EXCT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G22",
+          "subtopicName": "[PAGE 30] G22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; [PAGE 30] G22"
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; [PAGE 30] G22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G23",
+          "subtopicName": "[PAGE 30] G23",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; [PAGE 30] G23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-1MA1-VECT",
+      "topicName": "Vectors",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G24",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-COLV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-TRAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-G25",
+          "subtopicName": "p.22",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-COLV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-1MA1-STAT",
       "topicName": "Statistics",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-1MA1-9.1",
-          "subtopicName": "Classify and tabulate statistical data.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-S1",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-CLAS-TYPE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-CLAS-TYPE in the MVP knowledge tree."
+              "nodeId": "STAT-ENQ-SAMP-POP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             },
             {
-              "nodeId": "STAT-DATA-CLAS-TALL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-CLAS-TALL in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-DATA-CLAS-TWOW",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-CLAS-TWOW in the MVP knowledge tree."
+              "nodeId": "STAT-ENQ-SAMP-BIAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-9.2",
-          "subtopicName": "Read, interpret and draw inferences from tables and statistical diagrams and compare sets of data.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-S2",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "STAT-DATA-REPR-BARCH",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-BARCH in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             },
             {
               "nodeId": "STAT-DATA-REPR-PIE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-PIE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-MEAN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEAN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-9.2.2",
-          "subtopicName": "Read, interpret and draw inferences from tables and statistical diagrams and compare sets of data.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-SUMM-CENT-MEDI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEDI in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-9.3",
-          "subtopicName": "Calculate mean, median, mode, quartiles, range and interquartile range, including estimates for grouped data.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-SUMM-CENT-MEAN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEAN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-MEDI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEDI in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-MODE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MODE in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-9.3.2",
-          "subtopicName": "Calculate mean, median, mode, quartiles, range and interquartile range, including estimates for grouped data.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-SUMM-CENT-IQR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-IQR in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-9.4",
-          "subtopicName": "Draw and interpret bar charts, pie charts, pictograms, stem-and-leaf diagrams and frequency distributions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DATA-REPR-BARCH",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-BARCH in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-DATA-REPR-PIE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-PIE in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             },
             {
               "nodeId": "STAT-DATA-REPR-PICT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-PICT in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-9.4.2",
-          "subtopicName": "Draw and interpret bar charts, pie charts, pictograms, stem-and-leaf diagrams and frequency distributions.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-S4",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-REPR-STEM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-STEM in the MVP knowledge tree."
+              "nodeId": "STAT-SUMM-CENT-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEDI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-RANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-9.5",
-          "subtopicName": "Draw and interpret scatter diagrams; understand positive, negative and zero correlation; draw and use a straight line of best fit.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-S5",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-ENQ-SAMP-POP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-S6",
+          "subtopicName": "p.23",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "STAT-DATA-REPR-SCAT",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-SCAT in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.23"
             },
             {
               "nodeId": "STAT-BIVA-CORR-POSC",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-BIVA-CORR-POSC in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.23"
             },
             {
               "nodeId": "STAT-BIVA-CORR-NEGC",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-BIVA-CORR-NEGC in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-9.5.2",
-          "subtopicName": "Draw and interpret scatter diagrams; understand positive, negative and zero correlation; draw and use a straight line of best fit.",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchReason": "Owner-approved V4 exact relation; p.23"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-ZEROC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23"
+            },
             {
               "nodeId": "STAT-BIVA-CORR-LOBF",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-BIVA-CORR-LOBF in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.23"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-1MA1-9.6",
-          "subtopicName": "Draw and interpret cumulative frequency tables and diagrams and estimate median, percentiles, quartiles and interquartile range.",
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-S3",
+          "subtopicName": "[PAGE 32] S3",
+          "description": "Assessment depth: application",
           "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DATA-REPR-CUMF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-CUMF in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-MEDI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEDI in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-QUAR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-QUAR in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-9.6.2",
-          "subtopicName": "Draw and interpret cumulative frequency tables and diagrams and estimate median, percentiles, quartiles and interquartile range.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-SUMM-CENT-IQR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-IQR in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-1MA1-9.7",
-          "subtopicName": "Draw and interpret histograms and calculate with frequency density.",
-          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "STAT-DATA-REPR-HIST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-HIST in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 32] S3"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-CUMF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 32] S3"
             },
             {
               "nodeId": "STAT-DATA-CLAS-GROUP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; [PAGE 32] S3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-1MA1-MECH",
+      "topicName": "Mechanics",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A15",
+          "subtopicName": "p.27",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-VTGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-1MA1-NUMM",
+      "topicName": "NUMM",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-1MA1-A20",
+          "subtopicName": "p.27",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-ITER-FORM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-CLAS-GROUP in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.27"
             }
           ]
         }

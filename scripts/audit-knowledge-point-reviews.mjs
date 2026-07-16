@@ -4,6 +4,7 @@ import { createServer } from "vite";
 
 const root = process.cwd();
 const candidateDirectory = resolve(root, "data/candidates/knowledge-v4");
+const activeDirectory = resolve(root, "data/active/knowledge-v4");
 const reviewDirectory = resolve(root, "data/candidates/knowledge-v4-reviews");
 const reportPath = resolve(root, "generated/knowledge-point-review-report.json");
 const expectedIds = [
@@ -23,19 +24,21 @@ const server = await createServer({
 });
 
 try {
+  const mappingDirectory = await readdir(activeDirectory).then(() => activeDirectory).catch(() => candidateDirectory);
   const { KnowledgeMappingV4Schema } = await server.ssrLoadModule("/src/domain-v2/knowledge-tree/v4-schema.ts");
-  const candidateFiles = new Set(await readdir(candidateDirectory).catch(() => []));
+  const candidateFiles = new Set(await readdir(mappingDirectory).catch(() => []));
   const reviewFiles = new Set(await readdir(reviewDirectory).catch(() => []));
   for (const id of expectedIds) {
     const file = `${id}.json`;
     if (!candidateFiles.has(file)) { failures.push(`${id}: missing mapping candidate`); continue; }
     if (!reviewFiles.has(file)) { failures.push(`${id}: missing point-review file`); continue; }
-    const candidateParse = KnowledgeMappingV4Schema.safeParse(JSON.parse(await readFile(resolve(candidateDirectory, file), "utf8")));
+    const candidateParse = KnowledgeMappingV4Schema.safeParse(JSON.parse(await readFile(resolve(mappingDirectory, file), "utf8")));
     if (!candidateParse.success) {
       failures.push(`${id}: invalid mapping candidate: ${candidateParse.error.issues.map((issue) => `${issue.path.join(".")} ${issue.message}`).join("; ")}`);
       continue;
     }
     const candidate = candidateParse.data;
+    if (mappingDirectory === activeDirectory && candidate.reviewStatus !== "owner-approved") failures.push(`${id}: active mapping is not owner-approved`);
     const review = JSON.parse(await readFile(resolve(reviewDirectory, file), "utf8"));
     if (review.qualificationVersionId !== candidate.qualificationVersionId) failures.push(`${id}: review qualificationVersionId mismatch`);
     const isAqa = id.startsWith("AQA-");
