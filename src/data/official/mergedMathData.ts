@@ -50,7 +50,9 @@ function hasMonotonicThresholds(row: GradeBoundaryRow): boolean {
   return true;
 }
 
-export const QUARANTINED_CAIE_LEGACY_DATA = asRows(caieGcseData).filter((row) => !hasMonotonicThresholds(row));
+export const ARCHIVED_CAIE_LEGACY_DATA = asRows(caieGcseData).filter((row) => !hasMonotonicThresholds(row));
+/** @deprecated Kept as a compatibility alias; these rows are permanently archived, not pending review. */
+export const QUARANTINED_CAIE_LEGACY_DATA = ARCHIVED_CAIE_LEGACY_DATA;
 
 /** Data sources used by the live board routes after replacing stale math rows. */
 export const MERGED_AQA_GCSE_DATA: GradeBoundaryRow[] = [

@@ -79,10 +79,20 @@ export function getPastPaperCatalogMaturity(catalog: PastPaperCatalog): PastPape
   return fullyPaired && humanVerified ? "verified" : "past-paper-ready";
 }
 
-export function buildPastPaperSets(catalog: PastPaperCatalog, componentCodes?: readonly string[]): PastPaperSet[] {
+export function buildPastPaperSets(
+  catalog: PastPaperCatalog,
+  componentCodes?: readonly string[],
+  options: { forPlanning?: boolean } = {},
+): PastPaperSet[] {
   const allowed = componentCodes?.length ? new Set(componentCodes.map((code) => code.toUpperCase())) : undefined;
   const questionPapers = catalog.assets.filter((asset) =>
     asset.materialType === "question-paper" && (!allowed || (asset.componentCode && allowed.has(asset.componentCode.toUpperCase())))
+    && (!options.forPlanning || (
+      asset.accessStatus === "public"
+      && asset.linkStatus.status !== "broken"
+      && asset.provenance.verifiedBy === "human"
+      && asset.syllabusApplicability === "current"
+    ))
   );
 
   return questionPapers.map((questionPaper) => ({

@@ -19,9 +19,9 @@ describe("course catalog", () => {
 
   it("only exposes verified official calculator awards", () => {
     const available = COURSE_CATALOG.filter((entry) => entry.capabilities.calculator.status === "available");
-    expect(available).toHaveLength(4);
-    expect(available.map(entry => `${entry.boardName}:${entry.subjectCode}`)).toEqual([
-      "AQA:7357", "CAIE:9709", "Edexcel:WMA", "OCR:H240",
+    expect(available).toHaveLength(5);
+    expect(available.map(entry => `${entry.boardName}:${entry.subjectCode}`).sort()).toEqual([
+      "AQA:7357", "CAIE:9709", "Edexcel:WMA", "OCR:6993", "OCR:H240",
     ]);
     expect(available.every(entry => entry.capabilities.calculator.verificationStatus === "verified")).toBe(true);
   });

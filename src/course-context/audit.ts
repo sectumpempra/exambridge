@@ -17,6 +17,10 @@ export function auditCourseCatalog(catalog: CourseContextEntry[]): CourseCatalog
     const entry = parsed.data;
     if (ids.has(entry.qualificationId)) errors.push(`duplicate qualificationId: ${entry.qualificationId}`);
     ids.add(entry.qualificationId);
+    if (entry.subjectName.trim() === entry.subjectCode.trim()) {
+      errors.push(`${entry.qualificationId}: subject name must not be a bare code`);
+    }
+    if (!entry.lifecycleEvidence.trim()) errors.push(`${entry.qualificationId}: lifecycle evidence is required`);
     if (entry.lifecycleStatus === "current" && (entry.lastObservedYear ?? 0) < 2024
       && entry.capabilities.examOverview.status === "unavailable"
       && !entry.lifecycleEvidence.includes("官方现行科目目录")) {
@@ -36,6 +40,9 @@ export function auditCourseCatalog(catalog: CourseContextEntry[]): CourseCatalog
       if (!availability) errors.push(`${entry.qualificationId}: missing ${feature}`);
       if (availability?.status === "unavailable" && !availability.reason) errors.push(`${entry.qualificationId}: unavailable ${feature} needs a reason`);
       if (availability?.status !== "unavailable" && !availability.href) errors.push(`${entry.qualificationId}: ${feature} needs an href`);
+      if (availability?.status === "available" && availability.verificationStatus === "unverified") {
+        errors.push(`${entry.qualificationId}: available ${feature} cannot be unverified`);
+      }
     }
     if (entry.boardName === "WJEC/Eduqas" && Object.entries(entry.capabilities).some(
       ([feature, availability]) => feature !== "statistics" && availability.status !== "unavailable",

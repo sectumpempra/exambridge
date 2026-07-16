@@ -307,7 +307,7 @@ export interface DataIndex {
   };
 }
 
-export interface QuarantinedBoundaryConflict {
+export interface ArchivedBoundaryConflict {
   boardKey: string;
   subjectCode: string;
   component: string;
@@ -316,8 +316,10 @@ export interface QuarantinedBoundaryConflict {
   reason: "missing-identity" | "duplicate-identity";
 }
 
-/** Conflicting rows excluded from qualification predictions. */
-export const QUARANTINED_BOUNDARY_CONFLICTS: QuarantinedBoundaryConflict[] = [];
+/** Unverifiable legacy conflicts are permanently excluded from predictions. */
+export const ARCHIVED_BOUNDARY_CONFLICTS: ArchivedBoundaryConflict[] = [];
+/** @deprecated Compatibility alias. */
+export const QUARANTINED_BOUNDARY_CONFLICTS = ARCHIVED_BOUNDARY_CONFLICTS;
 
 function buildIndex(records: VariantRecord[], meta: BoardMeta): Record<string, SubjectIndex> {
   const idx: Record<string, SubjectIndex> = {};
@@ -365,7 +367,7 @@ function buildIndex(records: VariantRecord[], meta: BoardMeta): Record<string, S
           const hasIdentity = identities.every(Boolean);
           const uniqueIdentity = new Set(identities).size === identities.length;
           if (!hasIdentity || !uniqueIdentity) {
-            QUARANTINED_BOUNDARY_CONFLICTS.push({
+            ARCHIVED_BOUNDARY_CONFLICTS.push({
               boardKey: meta.key,
               subjectCode: code,
               component: comp,

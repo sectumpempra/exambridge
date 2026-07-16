@@ -329,12 +329,12 @@ export default function GradeCalculator() {
   const hasEmptyScore = paperConfigs.filter(p => p.selected).some(p => p.score === "");
   const awardCourseCandidate = sharedCourse ?? entry;
   const qualificationChoices = useMemo(() => {
-    const supported = new Set(["AQA:7357", "OCR:H240", "CAIE:9709"]);
+    const supported = new Set(["AQA:7357", "OCR:H240", "OCR:6993", "CAIE:9709"]);
     return [...new Map(COURSE_CATALOG
       .filter((course) => supported.has(`${course.boardName}:${course.subjectCode}`) && course.gradeCalculation.status !== "unavailable")
       .map((course) => [`${course.boardName}:${course.subjectCode}`, course])).values()];
   }, []);
-  const awardQualification = awardCourseCandidate && ["AQA:7357", "OCR:H240", "CAIE:9709"].includes(`${awardCourseCandidate.boardName}:${awardCourseCandidate.subjectCode}`) && awardCourseCandidate.gradeCalculation.status !== "unavailable"
+  const awardQualification = awardCourseCandidate && ["AQA:7357", "OCR:H240", "OCR:6993", "CAIE:9709"].includes(`${awardCourseCandidate.boardName}:${awardCourseCandidate.subjectCode}`) && awardCourseCandidate.gradeCalculation.status !== "unavailable"
     ? awardCourseCandidate
     : null;
 

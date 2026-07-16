@@ -30,6 +30,7 @@ describe("past-paper catalog", () => {
       "ocr-h240",
     ]);
     expect(catalogs.every((catalog) => catalog.release.status === "approved")).toBe(true);
+    expect(catalogs.every((catalog) => catalog.coverage.map((entry) => entry.year).join(",") === "2021,2022,2023,2024,2025")).toBe(true);
   });
 
   it("publishes only official links unless redistribution is explicitly permitted", () => {
@@ -65,6 +66,10 @@ describe("past-paper catalog", () => {
     const sets = catalogs.flatMap((catalog) => buildPastPaperSets(catalog));
     expect(sets).toHaveLength(22);
     expect(sets.every((set) => set.markScheme?.materialType === "mark-scheme")).toBe(true);
+  });
+
+  it("does not schedule papers until current-syllabus compatibility is verified", () => {
+    expect(catalogs.flatMap((catalog) => buildPastPaperSets(catalog, undefined, { forPlanning: true }))).toEqual([]);
   });
 
   it("requires model and prompt provenance on candidate catalogs", () => {

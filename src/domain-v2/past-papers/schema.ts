@@ -65,8 +65,25 @@ const PastPaperReleaseSchema = z.object({
   approvedBy: z.literal("human"),
 });
 
-export const PastPaperCatalogSchema = z.object({
-  schemaVersion: z.literal("1.0.0"),
+export const PastPaperCoverageSchema = z.object({
+  year: z.number().int().min(2021).max(2025),
+  scope: z.literal("year-summary"),
+  status: z.enum([
+    "complete",
+    "partial",
+    "account-required",
+    "not-held",
+    "not-published",
+    "removed",
+    "review-required",
+  ]),
+  sourcePageUrl: z.string().url(),
+  verifiedAt: IsoDateSchema,
+  note: z.string().min(1),
+});
+
+const PastPaperCatalogBaseSchema = z.object({
+  schemaVersion: z.literal("1.1.0"),
   key: z.string().min(1),
   board: z.string().min(1),
   qualificationCode: z.string().min(1),
@@ -76,11 +93,28 @@ export const PastPaperCatalogSchema = z.object({
   sourcePageUrl: z.string().url(),
   restrictedSourceUrl: z.string().url().optional(),
   accessNote: z.string().min(1),
-  release: PastPaperReleaseSchema,
+  coverage: z.array(PastPaperCoverageSchema).length(5),
   assets: z.array(PastPaperAssetSchema),
 });
 
-export const PastPaperCatalogCandidateSchema = PastPaperCatalogSchema.extend({
+function validateCoverage(catalog: z.infer<typeof PastPaperCatalogBaseSchema>, context: z.RefinementCtx) {
+  const years = catalog.coverage.map((entry) => entry.year);
+  if (new Set(years).size !== years.length || ![2021, 2022, 2023, 2024, 2025].every((year) => years.includes(year))) {
+    context.addIssue({ code: "custom", path: ["coverage"], message: "Coverage must account for every year from 2021 through 2025 exactly once." });
+  }
+  for (const entry of catalog.coverage) {
+    const publicAssets = catalog.assets.filter((asset) => asset.year === entry.year && asset.accessStatus === "public");
+    if (entry.status === "complete" && publicAssets.length === 0) {
+      context.addIssue({ code: "custom", path: ["coverage"], message: `${entry.year} cannot be complete without public assets.` });
+    }
+  }
+}
+
+export const PastPaperCatalogSchema = PastPaperCatalogBaseSchema.extend({
+  release: PastPaperReleaseSchema,
+}).superRefine(validateCoverage);
+
+export const PastPaperCatalogCandidateSchema = PastPaperCatalogBaseSchema.extend({
   release: z.object({
     status: z.literal("candidate"),
     generatedAt: IsoDateSchema,
@@ -89,9 +123,10 @@ export const PastPaperCatalogCandidateSchema = PastPaperCatalogSchema.extend({
     responseModelId: z.string().min(1),
     promptVersion: z.string().min(1),
   }),
-});
+}).superRefine(validateCoverage);
 
 export type PastPaperAsset = z.infer<typeof PastPaperAssetSchema>;
 export type PastPaperCatalog = z.infer<typeof PastPaperCatalogSchema>;
 export type PastPaperCatalogCandidate = z.infer<typeof PastPaperCatalogCandidateSchema>;
 export type PastPaperMaterialType = z.infer<typeof PastPaperMaterialTypeSchema>;
+export type PastPaperCoverage = z.infer<typeof PastPaperCoverageSchema>;

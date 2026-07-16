@@ -13,7 +13,7 @@ import type { GradeCalculationAvailability } from "@/domain-v2/awards/schema";
 import ocrOfficialStatistics from "@/data/official/ocr-results-statistics.json";
 
 const ACCESSED_AT = "2026-07-15";
-const AWARD_QUALIFICATION_KEYS = new Set(["AQA|7357", "OCR|H240", "CAIE|9709"]);
+const AWARD_QUALIFICATION_KEYS = new Set(["AQA|7357", "OCR|H240", "OCR|6993", "CAIE|9709"]);
 // Cambridge's live subject directories were checked on 2026-07-15. These
 // codes supplement the recent-results rule for active subjects whose local
 // statistics import is intentionally incomplete.
@@ -404,7 +404,7 @@ function buildCatalog(): CourseContextEntry[] {
         ? capability("available", "verified", "/papers")
         : capability("unavailable", "unverified", undefined, "Paper 详情库尚未覆盖"),
       syllabus: knowledgeTreeCode && !isWjec
-        ? capability("available", "mixed", "/knowledge-tree")
+        ? capability("partial", "mixed", "/knowledge-tree", "课程映射处于候选复核阶段；精确相似度暂不可用")
         : capability("unavailable", "unverified", undefined, "知识树尚未覆盖"),
       calculator: toCalculatorFeature(gradeCalculation),
       planner: course.planner && !isWjec

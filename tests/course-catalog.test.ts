@@ -60,7 +60,7 @@ describe("course grade calculation capability", () => {
       expect(generated?.lastObservedYear, source.qualificationId).toBe(source.lastObservedYear);
     }
     expect(GENERATED_CATALOG.filter(entry => entry.capabilities.calculator.status === "available"))
-      .toHaveLength(4);
+      .toHaveLength(5);
   });
 
   it("rejects unknown official route IDs and verified estimated capabilities", () => {

@@ -57,11 +57,15 @@ const EDEXCEL_IAL_PREFIX_NAMES: Record<string, string> = {
 };
 
 export function normalizeCourseSubjectName(board: string, code: string, name: string): string {
-  if (board === "AQA" && AQA_PREFIX_NAMES[code] && (!name || name === code)) return AQA_PREFIX_NAMES[code];
-  if (EXACT_CODE_NAMES[`${board}|${code}`] && (!name || name === code)) return EXACT_CODE_NAMES[`${board}|${code}`];
-  if (board.startsWith("Edexcel") && (!name || name === code)) {
+  const isBareCode = !name || name.trim().toLowerCase() === code.trim().toLowerCase();
+  if (board === "AQA" && AQA_PREFIX_NAMES[code] && isBareCode) return AQA_PREFIX_NAMES[code];
+  if (EXACT_CODE_NAMES[`${board}|${code}`] && isBareCode) return EXACT_CODE_NAMES[`${board}|${code}`];
+  if (board.startsWith("Edexcel") && isBareCode) {
     const prefixName = EDEXCEL_IAL_PREFIX_NAMES[code.slice(0, 3).toUpperCase()];
     if (prefixName) return `${prefixName} Unit ${Number(code.slice(-2)) || code.slice(-2)}`;
+  }
+  if (isBareCode && /^[A-Za-z]+$/.test(code)) {
+    return code.charAt(0).toUpperCase() + code.slice(1).toLowerCase();
   }
   return name || code;
 }

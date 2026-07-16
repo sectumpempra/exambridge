@@ -27,6 +27,16 @@ const MATERIAL_LABEL: Record<PastPaperAsset["materialType"], string> = {
   "source-file": "源文件",
 };
 
+const COVERAGE_LABEL = {
+  complete: "完整核验",
+  partial: "部分收录",
+  "account-required": "需官方账号",
+  "not-held": "未举行",
+  "not-published": "未发布",
+  removed: "官方已下架",
+  "review-required": "待逐项核验",
+} as const;
+
 function companionLabel(asset: PastPaperAsset): string {
   return MATERIAL_LABEL[asset.materialType];
 }
@@ -101,6 +111,12 @@ export default function PastPaperLibrary({
           <span className="inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1"><ShieldCheck size={12} /> 人工核验至 {catalog.release.verifiedAt}</span>
           <span className="rounded-full bg-white px-2.5 py-1">默认仅跳转官方文件</span>
           <span className="rounded-full bg-[#f4eee2] px-2.5 py-1 text-[#795f39]">旧卷与当前考纲适用性需复核</span>
+        </div>
+        <div className="mt-3" aria-label="2021 至 2025 真题目录覆盖状态">
+          <span className="text-[11px] font-semibold text-[#506d58]">2021–2025 覆盖核验</span>
+          <div className="mt-1.5 flex flex-wrap gap-1.5">
+            {catalog.coverage.map((entry) => <span key={entry.year} title={entry.note} className="rounded-full bg-white px-2.5 py-1 text-[10px] text-[#5b6d61]">{entry.year} · {COVERAGE_LABEL[entry.status]}</span>)}
+          </div>
         </div>
 
         {allSets.length > 0 ? <>

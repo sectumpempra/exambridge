@@ -244,7 +244,7 @@ export default function Planner() {
         .flatMap((variant) => [variant.component, variant.code])
         .map((value) => value.split("/").pop() ?? value);
       const plan = paperPlans.find((item) => item.paperGroupId === paperGroupId(g));
-      map[name] = buildPastPaperSets(catalog, componentCodes)
+      map[name] = buildPastPaperSets(catalog, componentCodes, { forPlanning: true })
         .filter((set) => !plan?.allowedSeries?.length || plan.allowedSeries.includes(set.series))
         .filter((set) => !plan?.allowedVariants?.length || (set.componentCode && plan.allowedVariants.includes(set.componentCode)))
         .map((set) => ({

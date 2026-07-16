@@ -27,7 +27,7 @@ try {
   const assetIds = new Set();
   const summaries = [];
 
-  if (index.schemaVersion !== "1.0.0" || !Array.isArray(index.catalogs)) failures.push("past-paper index has an invalid schemaVersion or catalogs list");
+  if (index.schemaVersion !== "1.1.0" || !Array.isArray(index.catalogs)) failures.push("past-paper index has an invalid schemaVersion or catalogs list");
   const files = new Set((await readdir(dataDirectory)).filter((name) => name.endsWith(".json") && name !== "index.json"));
 
   for (const entry of index.catalogs ?? []) {
@@ -52,7 +52,22 @@ try {
         if (!hosts.includes(host)) failures.push(`${asset.id} uses an unapproved host: ${host}`);
       }
     }
-    summaries.push({ key: catalog.key, assets: catalog.assets.length, questionPapers, verifiedAt: catalog.release.verifiedAt });
+    for (const year of [2021, 2022, 2023, 2024, 2025]) {
+      const coverage = catalog.coverage.find((entry) => entry.year === year);
+      if (!coverage) failures.push(`${entry.file} does not account for ${year}`);
+      if (coverage?.status === "complete") {
+        const questions = catalog.assets.filter((asset) => asset.year === year && asset.materialType === "question-paper" && asset.accessStatus === "public");
+        const unpaired = questions.filter((question) => !catalog.assets.some((asset) => asset.paperSetId === question.paperSetId && asset.materialType === "mark-scheme" && asset.accessStatus === "public"));
+        if (questions.length === 0 || unpaired.length > 0) failures.push(`${entry.file} marks ${year} complete without fully paired public QP/MS records`);
+      }
+    }
+    summaries.push({
+      key: catalog.key,
+      assets: catalog.assets.length,
+      questionPapers,
+      coverage: Object.fromEntries(catalog.coverage.map((entry) => [entry.year, entry.status])),
+      verifiedAt: catalog.release.verifiedAt,
+    });
     files.delete(entry.file);
   }
 

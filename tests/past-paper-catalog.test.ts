@@ -33,7 +33,7 @@ const baseAsset = (overrides: Partial<PastPaperAsset> = {}): PastPaperAsset => (
 });
 
 const baseCatalog = (assets: PastPaperAsset[]): PastPaperCatalog => ({
-  schemaVersion: "1.0.0",
+  schemaVersion: "1.1.0",
   key: "test",
   board: "CAIE",
   qualificationCode: "9709",
@@ -43,6 +43,14 @@ const baseCatalog = (assets: PastPaperAsset[]): PastPaperCatalog => ({
   sourcePageUrl: "https://example.com/official",
   accessNote: "Official links only",
   release: { status: "approved", approvedAt: "2026-07-16", verifiedAt: "2026-07-16", approvedBy: "human" },
+  coverage: [2021, 2022, 2023, 2024, 2025].map((year) => ({
+    year,
+    scope: "year-summary" as const,
+    status: "review-required" as const,
+    sourcePageUrl: "https://example.com/official",
+    verifiedAt: "2026-07-16",
+    note: "Awaiting complete sitting-level review",
+  })),
   assets,
 });
 
@@ -104,6 +112,8 @@ describe("past-paper maturity, grouping and distribution", () => {
     expect(buildPastPaperSets(catalog)[0]).toMatchObject({ markScheme: { id: "ms" }, companions: [{ id: "er" }] });
     expect(buildPastPaperSets(catalog, ["22"]).map((set) => set.id)).toEqual(["set-old"]);
     expect(buildPastPaperSets(catalog, ["99"])).toEqual([]);
+    expect(buildPastPaperSets(catalog, undefined, { forPlanning: true })).toHaveLength(2);
+    expect(buildPastPaperSets(baseCatalog([{ ...question, syllabusApplicability: "review-required" }]), undefined, { forPlanning: true })).toEqual([]);
   });
 
   it("only returns a download target allowed by the distribution policy", () => {
@@ -128,5 +138,12 @@ describe("past-paper schemas", () => {
     expect(PastPaperCatalogSchema.safeParse(approved).success).toBe(true);
     expect(PastPaperCatalogCandidateSchema.safeParse({ ...approved, release: { status: "candidate", generatedAt: "2026-07-16", sourceRun: "run-1", requestedModelId: "kimi-k2.7-code-highspeed", responseModelId: "kimi-k2.7-code-highspeed", promptVersion: "1" } }).success).toBe(true);
     expect(PastPaperCatalogCandidateSchema.safeParse(approved).success).toBe(false);
+  });
+
+  it("requires an honest 2021–2025 coverage accounting", () => {
+    const missingYear = { ...baseCatalog([]), coverage: baseCatalog([]).coverage.slice(1) };
+    expect(PastPaperCatalogSchema.safeParse(missingYear).success).toBe(false);
+    const falseComplete = { ...baseCatalog([]), coverage: baseCatalog([]).coverage.map((entry) => entry.year === 2025 ? { ...entry, status: "complete" as const } : entry) };
+    expect(PastPaperCatalogSchema.safeParse(falseComplete).success).toBe(false);
   });
 });
