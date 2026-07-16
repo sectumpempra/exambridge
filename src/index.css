@@ -484,3 +484,18 @@
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
 }
+
+/* Core pages must never force the document wider than the viewport. Wide data
+   tables keep their own horizontal scroll container. */
+html, body, #root { max-width: 100%; overflow-x: clip; }
+main, section, article { min-width: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+  .animate-fade-in-up { opacity: 1 !important; transform: none !important; }
+}
