@@ -33,12 +33,25 @@ const baseAsset = (overrides: Partial<PastPaperAsset> = {}): PastPaperAsset => (
 });
 
 const baseCatalog = (assets: PastPaperAsset[]): PastPaperCatalog => ({
-  schemaVersion: "1.1.0",
+  schemaVersion: "1.2.0",
   key: "test",
   board: "CAIE",
   qualificationCode: "9709",
   subjectCode: "9709",
   qualificationName: "Mathematics",
+  qualificationVersion: {
+    id: "test:2025",
+    syllabusVersion: "2025",
+    effectiveFrom: "2025-01-01",
+    source: {
+      url: "https://example.com/specification.pdf",
+      title: "Official specification",
+      documentVersion: "2025",
+      locator: "cover",
+      accessedAt: "2026-07-16",
+      sha256: "a".repeat(64),
+    },
+  },
   aliases: [],
   sourcePageUrl: "https://example.com/official",
   accessNote: "Official links only",
@@ -50,6 +63,16 @@ const baseCatalog = (assets: PastPaperAsset[]): PastPaperCatalog => ({
     sourcePageUrl: "https://example.com/official",
     verifiedAt: "2026-07-16",
     note: "Awaiting complete sitting-level review",
+  })),
+  sittings: [2021, 2022, 2023, 2024, 2025].map((year) => ({
+    year,
+    series: "june" as const,
+    scope: "series-summary" as const,
+    expected: true,
+    status: "review-required" as const,
+    sourcePageUrl: "https://example.com/official",
+    verifiedAt: "2026-07-16",
+    note: "Awaiting complete paper-level review",
   })),
   assets,
 });
@@ -112,8 +135,17 @@ describe("past-paper maturity, grouping and distribution", () => {
     expect(buildPastPaperSets(catalog)[0]).toMatchObject({ markScheme: { id: "ms" }, companions: [{ id: "er" }] });
     expect(buildPastPaperSets(catalog, ["22"]).map((set) => set.id)).toEqual(["set-old"]);
     expect(buildPastPaperSets(catalog, ["99"])).toEqual([]);
-    expect(buildPastPaperSets(catalog, undefined, { forPlanning: true })).toHaveLength(2);
+    expect(buildPastPaperSets(catalog, undefined, { forPlanning: true })).toHaveLength(1);
+    expect(buildPastPaperSets(baseCatalog([question]), undefined, { forPlanning: true })).toEqual([]);
     expect(buildPastPaperSets(baseCatalog([{ ...question, syllabusApplicability: "review-required" }]), undefined, { forPlanning: true })).toEqual([]);
+  });
+
+  it("accepts Pearson IAL October papers and preserves their series in planner sets", () => {
+    const octoberQuestion = baseAsset({ ...question, id: "q-oct", paperSetId: "set-oct", paperCode: "WMA11/01", componentCode: "WMA11", series: "october" });
+    const octoberMarkScheme = baseAsset({ ...markScheme, id: "ms-oct", paperSetId: "set-oct", paperCode: "WMA11/01", componentCode: "WMA11", series: "october" });
+    expect(PastPaperAssetSchema.safeParse(octoberQuestion).success).toBe(true);
+    expect(buildPastPaperSets(baseCatalog([octoberQuestion, octoberMarkScheme]), ["WMA11"], { forPlanning: true }))
+      .toMatchObject([{ id: "set-oct", series: "october", componentCode: "WMA11" }]);
   });
 
   it("only returns a download target allowed by the distribution policy", () => {
@@ -136,7 +168,7 @@ describe("past-paper schemas", () => {
   it("separates approved active catalogs from model-generated candidates", () => {
     const approved = baseCatalog([]);
     expect(PastPaperCatalogSchema.safeParse(approved).success).toBe(true);
-    expect(PastPaperCatalogCandidateSchema.safeParse({ ...approved, release: { status: "candidate", generatedAt: "2026-07-16", sourceRun: "run-1", requestedModelId: "kimi-k2.7-code-highspeed", responseModelId: "kimi-k2.7-code-highspeed", promptVersion: "1" } }).success).toBe(true);
+    expect(PastPaperCatalogCandidateSchema.safeParse({ ...approved, release: { status: "candidate", generatedAt: "2026-07-16", sourceRun: "run-1", requestedModelId: "k3", responseModelId: "k3", promptVersion: "1" } }).success).toBe(true);
     expect(PastPaperCatalogCandidateSchema.safeParse(approved).success).toBe(false);
   });
 

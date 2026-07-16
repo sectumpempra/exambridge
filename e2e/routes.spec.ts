@@ -143,6 +143,18 @@ test("course context survives feature navigation and a share URL", async ({ page
   await secondPage.close();
 });
 
+test("verified past-paper links and October IAL series appear in the course overview", async ({ page }) => {
+  await openExamOverviewCourse(page, "WMA", /Edexcel.*WMA.*International A-Level Mathematics/i);
+  await expect(page.getByRole("heading", { name: "历年真题与材料" })).toBeVisible();
+  await page.getByLabel("筛选真题年份").selectOption("2024");
+  await page.getByLabel("筛选真题考季").selectOption("october");
+  await expect(page.getByLabel("2024 年逐考季可用状态")).toContainText("October");
+  const firstPaper = page.getByRole("link", { name: "下载试卷" }).first();
+  await expect(firstPaper).toBeVisible();
+  await expect(firstPaper).toHaveAttribute("href", /^https:\/\/qualifications\.pearson\.com\/content\/dam\/pdf\//);
+  await expect(page.getByRole("link", { name: "评分标准" }).first()).toBeVisible();
+});
+
 test("WJEC course exposes statistics but not boundary or calculator actions", async ({ page }) => {
   await page.goto("/#/courses");
   await waitForPwaControl(page);

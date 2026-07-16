@@ -13,6 +13,7 @@ const SERIES_LABEL: Record<PastPaperAsset["series"], string> = {
   january: "January",
   march: "March",
   june: "June",
+  october: "October",
   november: "November",
   specimen: "Specimen",
 };
@@ -85,6 +86,8 @@ export default function PastPaperLibrary({
   const years = [...new Set(allSets.map((set) => String(set.year)))].sort().reverse();
   const seriesOptions = [...new Set(allSets.map((set) => set.series))];
   const components = [...new Set(allSets.map((set) => set.componentCode).filter((value): value is string => Boolean(value)))].sort();
+  const sittingYear = year === "all" ? 2025 : Number(year);
+  const visibleSittings = catalog?.sittings.filter((entry) => entry.year === sittingYear) ?? [];
   const seriesMaterials = catalog?.assets.filter((asset) => asset.materialType === "examiner-report" && !asset.paperSetId) ?? [];
   const maturity = catalog ? getPastPaperCatalogMaturity(catalog) : undefined;
   const maturityLabel = maturity && ({ catalogued: "仅目录", "metadata-ready": "元数据已整理", "past-paper-ready": "已有试卷", verified: "试卷与评分标准已核验" } as const)[maturity];
@@ -115,9 +118,13 @@ export default function PastPaperLibrary({
         <div className="mt-3" aria-label="2021 至 2025 真题目录覆盖状态">
           <span className="text-[11px] font-semibold text-[#506d58]">2021–2025 覆盖核验</span>
           <div className="mt-1.5 flex flex-wrap gap-1.5">
-            {catalog.coverage.map((entry) => <span key={entry.year} title={entry.note} className="rounded-full bg-white px-2.5 py-1 text-[10px] text-[#5b6d61]">{entry.year} · {COVERAGE_LABEL[entry.status]}</span>)}
+            {catalog.coverage.map((entry) => <button type="button" key={entry.year} title={entry.note} onClick={() => setYear(String(entry.year))} className={`rounded-full border-0 px-2.5 py-1 text-[10px] text-[#5b6d61] ${year === String(entry.year) ? "bg-[#dce9e1] font-semibold" : "bg-white"}`}>{entry.year} · {COVERAGE_LABEL[entry.status]}</button>)}
           </div>
         </div>
+        {visibleSittings.length > 0 && <div className="mt-3 rounded-2xl bg-white/65 px-3 py-2.5" aria-label={`${sittingYear} 年逐考季可用状态`}>
+          <span className="text-[11px] font-semibold text-[#506d58]">{sittingYear} 逐考季状态{year === "all" ? "（选择年份查看其他年份）" : ""}</span>
+          <div className="mt-1.5 flex flex-wrap gap-1.5">{visibleSittings.map((entry) => <span key={`${entry.year}-${entry.series}`} title={entry.note} className="rounded-full bg-[#f4f7f5] px-2.5 py-1 text-[10px] text-[#5b6d61]">{SERIES_LABEL[entry.series]} · {COVERAGE_LABEL[entry.status]}{entry.expected ? "" : " · 补充考季"}</span>)}</div>
+        </div>}
 
         {allSets.length > 0 ? <>
           <div className="mt-4 grid gap-2 sm:grid-cols-3">

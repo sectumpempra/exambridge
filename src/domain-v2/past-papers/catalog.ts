@@ -92,6 +92,14 @@ export function buildPastPaperSets(
       && asset.linkStatus.status !== "broken"
       && asset.provenance.verifiedBy === "human"
       && asset.syllabusApplicability === "current"
+      && catalog.assets.some((companion) =>
+        companion.paperSetId === asset.paperSetId
+        && companion.materialType === "mark-scheme"
+        && companion.accessStatus === "public"
+        && companion.linkStatus.status !== "broken"
+        && companion.provenance.verifiedBy === "human"
+        && companion.syllabusApplicability === "current"
+      )
     ))
   );
 
