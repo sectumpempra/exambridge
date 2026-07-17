@@ -44,6 +44,9 @@ describe("deployment safety contract", () => {
     expect(sync).toContain("new release health check failed; previous current symlink restored");
     expect(sync).toContain("EXAMBRIDGE_KEEP_RELEASES");
     expect(sync).toContain("release-records");
+    expect(sync).toContain("normalize_release_permissions");
+    expect(sync).toContain("os.chmod(directory, 0o755)");
+    expect(sync).toContain("os.chmod(path, 0o644)");
     expect(rollback).toContain("target release has no trusted verification record");
     expect(rollback).toContain("original current symlink restored");
   });
