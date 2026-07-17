@@ -6,7 +6,7 @@ umask 027
 base="${EXAMBRIDGE_BASE:-/var/www/exambridge}"
 repo="${EXAMBRIDGE_REPO:-sectumpempra/exambridge}"
 branch="${EXAMBRIDGE_BRANCH:-gh-pages}"
-health_url="${EXAMBRIDGE_HEALTH_URL:-http://127.0.0.1/index.html}"
+health_url="${EXAMBRIDGE_HEALTH_URL:-https://exambridge.cn/index.html}"
 keep_releases="${EXAMBRIDGE_KEEP_RELEASES:-3}"
 min_pdf_count="${EXAMBRIDGE_MIN_PDF_COUNT:-}"
 expected_materials_owner="${EXAMBRIDGE_MATERIALS_OWNER:-deploy}"

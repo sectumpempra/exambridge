@@ -37,6 +37,10 @@ describe("deployment safety contract", () => {
   });
 
   it("serves PWA metadata and release provenance with explicit safe headers", () => {
+    expect(nginx).toContain("listen 443 ssl");
+    expect(nginx).toContain("return 301 https://exambridge.cn$request_uri");
+    expect(nginx).toContain("/etc/letsencrypt/live/exambridge.cn/fullchain.pem");
+    expect(sync).toContain('EXAMBRIDGE_HEALTH_URL:-https://exambridge.cn/index.html');
     expect(nginx).toContain("location = /sw.js");
     expect(nginx).toContain('Cache-Control "no-cache, no-store, must-revalidate" always');
     expect(nginx).toContain("location = /manifest.webmanifest");

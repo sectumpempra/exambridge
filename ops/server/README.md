@@ -60,7 +60,7 @@ Do not disable strict SSH host-key checking to obtain this inventory.
 1. Run `node scripts/test-deployment-replica.mjs` from the repository. It must pass every success, refusal and rollback scenario.
 2. Copy the approved scripts to `shared`, keep them owned by `deploy`, and install the reviewed systemd units.
 3. Run the sync script with `EXAMBRIDGE_DRY_RUN=1`. This downloads the immutable gh-pages commit, validates the archive and provenance, verifies the persistent-directory guards, and exits without changing `current`.
-4. Run `nginx -t` before reloading Nginx. The repository template makes `sw.js`, the web manifest and release provenance exact locations, so missing provenance cannot fall back to the SPA.
+4. Merge the reviewed Nginx template with the effective Certbot-managed site, then run `nginx -t` before reloading Nginx. The template redirects port 80 to the canonical HTTPS origin, uses the verified `/etc/letsencrypt/live/exambridge.cn/` certificate paths, and makes `sw.js`, the web manifest and release provenance exact locations, so missing provenance cannot fall back to the SPA. Do not overwrite an effective HTTPS server block with an HTTP-only file.
 5. Start one sync manually and verify the systemd journal, `current`, `gh-pages.sha`, the release record, public health response and persistent PDF count.
 6. Only then enable the timer.
 
@@ -86,4 +86,4 @@ The rollback command refuses releases without a matching local verification reco
 - security headers present on all of the above
 - `/exam-materials/`: no directory listing
 
-HSTS must also be present in the effective HTTPS server block; a header emitted only over port 80 has no effect. Keep the CSP in report-only mode until browser-console and representative-traffic results have been reviewed. Enforce it only in a separate approved change.
+HSTS must remain in the effective HTTPS server block; a header emitted only over port 80 has no effect. The sync service checks the public HTTPS origin so that a valid local file behind a broken redirect, certificate or public route cannot be promoted as healthy. Keep the CSP in report-only mode until browser-console and representative-traffic results have been reviewed. Enforce it only in a separate approved change.

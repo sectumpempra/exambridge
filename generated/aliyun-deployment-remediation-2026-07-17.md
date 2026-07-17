@@ -64,16 +64,24 @@
 - ESLint：通过。
 - 静态生产构建、数据审计、PWA precache、bundle budget 和 release provenance：通过。
 
+## 已完成的生产只读核验
+
+- 已通过阿里云控制台确认新加坡轻量应用服务器 `Ubuntu-hkps`、实例 ID 和公网 IP。
+- 已在 Workbench 内读取 SSH ED25519 公钥指纹，并与公网扫描值精确匹配。
+- 已确认实际调度是 `deploy` 用户每两分钟 cron；systemd 模板仅位于 shared，尚未安装。
+- 已记录 current SHA、旧同步脚本 hash、release 列表、Nginx 生效配置、Certbot 状态和证书有效期。
+- 已核对持久化目录为 `deploy:deploy`、107 份 PDF、约 110 MB，当前 release 通过软链接访问。
+- 已确认实例没有快照，UFW 未启用，阿里云防火墙将 22/80/443 和 ICMP 对 `0.0.0.0/0` 开放。
+- 完整证据和风险分级见 `generated/aliyun-deployment-readonly-audit-2026-07-17.md`。
+
 ## 尚未执行的生产步骤
 
 以下内容没有在本轮执行，因此不能声称生产服务器已经整改：
 
-- 核验 SSH ED25519 主机指纹并登录服务器。
-- 读取实际 systemd timer/service、同步脚本、Nginx 完整配置和证书续期状态。
-- 核对真实持久化目录的 canonical path、属主、权限、PDF 数量、大小和文件系统。
+- 创建阿里云实例快照并确定 SSH 22 的来源限制策略。
 - 创建 marker 和最低 PDF 数量 guard。
 - 安装新脚本、systemd unit 或 Nginx 配置。
 - 在服务器副本目录 dry-run、失败切换和人工回滚。
 - 重新加载 Nginx 或启动新同步任务。
 
-在上述只读盘点和 dry-run 被批准之前，production 推送与服务器模板安装继续保持阻断。
+在快照、写操作窗口和 dry-run 被批准之前，production 推送与服务器模板安装继续保持阻断。
