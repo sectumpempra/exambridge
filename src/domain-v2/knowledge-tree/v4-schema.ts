@@ -85,4 +85,3 @@ export const KnowledgeMappingV4Schema = z.object({
 export type SourceEvidence = z.infer<typeof SourceEvidenceSchema>;
 export type SyllabusPointMapping = z.infer<typeof SyllabusPointMappingSchema>;
 export type KnowledgeMappingV4 = z.infer<typeof KnowledgeMappingV4Schema>;
-

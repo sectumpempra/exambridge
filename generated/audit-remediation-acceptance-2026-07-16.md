@@ -1,7 +1,9 @@
 # ExamBridge 审计整改验收报告
 
-日期：2026-07-16  
-分支：`repair/audit-p0-p1-20260716`  
+日期：2026-07-16
+
+分支：`repair/audit-p0-p1-20260716`
+
 基线：`github/production` `ea00d53`
 
 ## 交付结论

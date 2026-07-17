@@ -19,4 +19,3 @@ await writeFile(resolve(outputDirectory, "manifest.json"), `${JSON.stringify({
   publicationPolicy: "owner-approved-only",
 }, null, 2)}\n`);
 console.log(`Static knowledge publication: ${approved.length} approved mappings; ${sourceManifest.mappings.length - approved.length} candidates excluded.`);
-
