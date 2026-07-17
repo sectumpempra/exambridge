@@ -1,4 +1,4 @@
-import { readdir, readFile, stat } from "node:fs/promises";
+import { lstat, readdir, readFile, stat } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { gzipSync } from "node:zlib";
 
@@ -14,6 +14,12 @@ async function walk(directory) {
 }
 
 const failures = [];
+try {
+  await lstat(join(root, "exam-materials"));
+  failures.push("release artifact must not contain an exam-materials path");
+} catch (error) {
+  if (error?.code !== "ENOENT") throw error;
+}
 const files = await walk(root);
 for (const file of files) {
   const path = relative(root, file);

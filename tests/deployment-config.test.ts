@@ -7,6 +7,9 @@ describe("deployment safety contract", () => {
   const nginx = readFileSync("ops/nginx/exambridge.conf", "utf8");
   const workflow = readFileSync(".github/workflows/deploy.yml", "utf8");
   const provenance = readFileSync("scripts/build-release-provenance.mjs", "utf8");
+  const packageJson = readFileSync("package.json", "utf8");
+  const pruneMaterials = readFileSync("scripts/prune-static-exam-materials.mjs", "utf8");
+  const staticBudget = readFileSync("scripts/check-static-build-budget.mjs", "utf8");
 
   it("downloads an immutable gh-pages commit and verifies release provenance", () => {
     expect(sync).toContain('archive_url="https://codeload.github.com/${repo}/tar.gz/${sha}"');
@@ -24,6 +27,15 @@ describe("deployment safety contract", () => {
     expect(sync).toContain("persistent PDF count changed during staging");
     expect(sync).toContain("persistent PDF count dropped below the last verified release");
     expect(sync).toContain("persistent materials changed; previous current symlink restored");
+  });
+
+  it("excludes the persistent materials mount point from release artifacts", () => {
+    expect(packageJson).toContain("node scripts/prune-static-exam-materials.mjs");
+    expect(packageJson.indexOf("prune-static-exam-materials.mjs"))
+      .toBeLessThan(packageJson.indexOf("build-sw-precache.mjs"));
+    expect(pruneMaterials).toContain("dist-static/exam-materials");
+    expect(pruneMaterials).toContain("recursive: true");
+    expect(staticBudget).toContain("release artifact must not contain an exam-materials path");
   });
 
   it("uses a staged switch with health rollback and release retention", () => {
