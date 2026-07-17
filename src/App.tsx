@@ -22,6 +22,7 @@ const GCSEEdexcelPage = lazy(() => import("./pages/gcse/EdexcelPage"));
 const GCSECaiePage = lazy(() => import("./pages/gcse/CaiePage"));
 const GCSEAqaPage = lazy(() => import("./pages/gcse/AqaPage"));
 const GCSEOcrPage = lazy(() => import("./pages/gcse/OcrPage"));
+const OcrFsmqPage = lazy(() => import("./pages/fsmq/OcrFsmqPage"));
 const GradeCalculator = lazy(() => import("./pages/GradeCalculator"));
 const Planner = lazy(() => import("./pages/Planner"));
 const ResultStatisticsPage = lazy(() => import("./pages/ResultStatisticsPage"));
@@ -98,6 +99,7 @@ export default function App() {
         <Route path="/gcse/caie" element={page("CAIE IGCSE 分数线", <GCSECaiePage />)} />
         <Route path="/gcse/aqa" element={page("AQA GCSE 分数线", <GCSEAqaPage />)} />
         <Route path="/gcse/ocr" element={page("OCR GCSE 分数线", <GCSEOcrPage />)} />
+        <Route path="/fsmq/ocr" element={page("OCR FSMQ 分数线", <OcrFsmqPage />)} />
 
         {/* Calculator */}
         <Route path="/calculator" element={page("等级预测", <GradeCalculator />)} />

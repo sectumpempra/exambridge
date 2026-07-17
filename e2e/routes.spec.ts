@@ -4,15 +4,16 @@ import AxeBuilder from "@axe-core/playwright";
 
 const routes = [
   "/", "/about", "/courses", "/exam-overview", "/results", "/tools", "/alevel", "/alevel/caie", "/alevel/edexcel", "/alevel/aqa", "/alevel/ocr", "/alevel/wjec",
-  "/gcse", "/gcse/edexcel", "/gcse/caie", "/gcse/aqa", "/gcse/ocr", "/calculator", "/planner", "/personality",
+  "/gcse", "/gcse/edexcel", "/gcse/caie", "/gcse/aqa", "/gcse/ocr", "/fsmq/ocr", "/calculator", "/planner", "/personality",
   "/statistics", "/graph", "/papers", "/knowledge-tree",
 ];
 
-async function openAwardCourse(page: Page, query: string, courseName: RegExp) {
+async function openAwardCourse(page: Page, query: string, _courseName: RegExp) {
+  void _courseName;
   await page.goto("/#/courses");
   await waitForPwaControl(page);
   await page.getByPlaceholder("搜索科目名称或代码").fill(query);
-  await page.getByRole("button", { name: courseName }).click();
+  await page.getByRole("button", { name: new RegExp(`资格代码\\s*${query}`) }).first().click();
   await page.getByRole("link", { name: /等级预测.*可用.*已核验/ }).click();
 }
 
@@ -118,8 +119,13 @@ test("course context survives feature navigation and a share URL", async ({ page
   await expect(page).toHaveURL(/#\/papers\?.*course=/);
   await expect(page.getByText(/EDX-WMA-P1|Pure Mathematics 1/).first()).toBeVisible();
 
-  if ((page.viewportSize()?.width ?? 1024) < 768) await page.getByRole("button", { name: "打开菜单" }).click();
-  await page.getByRole("link", { name: "考纲对比", exact: true }).filter({ visible: true }).first().click();
+  if ((page.viewportSize()?.width ?? 1024) < 768) {
+    await page.getByRole("button", { name: "打开菜单" }).click();
+    await page.getByRole("link", { name: "考纲对比", exact: true }).filter({ visible: true }).click();
+  } else {
+    await page.getByRole("button", { name: "试卷与考纲" }).hover();
+    await page.getByRole("menuitem", { name: /^考纲对比/ }).click();
+  }
   await expect(page).toHaveURL(/#\/knowledge-tree\?.*course=/);
   await expect(page.getByText(/Edexcel · WMA/).first()).toBeVisible();
 
@@ -135,6 +141,26 @@ test("course context survives feature navigation and a share URL", async ({ page
   await waitForPwaControl(secondPage);
   await expect(secondPage.getByText(/Edexcel · WMA/).first()).toBeVisible();
   await secondPage.close();
+});
+
+test("verified past-paper links and October IAL series appear in the course overview", async ({ page }) => {
+  await openExamOverviewCourse(page, "WMA", /Edexcel.*WMA.*International A-Level Mathematics/i);
+  await expect(page.getByRole("heading", { name: "历年真题与材料" })).toBeVisible();
+  await page.getByLabel("筛选真题年份").selectOption("2024");
+  await page.getByLabel("筛选真题考季").selectOption("october");
+  await expect(page.getByLabel("2024 年逐考季可用状态")).toContainText("October");
+  const firstPaper = page.getByRole("link", { name: "下载试卷" }).first();
+  await expect(firstPaper).toBeVisible();
+  await expect(firstPaper).toHaveAttribute("href", /^https:\/\/qualifications\.pearson\.com\/content\/dam\/pdf\//);
+  await expect(page.getByRole("link", { name: "评分标准" }).first()).toBeVisible();
+
+  await page.getByLabel("筛选真题年份").selectOption("2025");
+  await page.getByLabel("筛选真题考季").selectOption("june");
+  const restrictedSet = page.locator("article").filter({ hasText: "2025 June · 组件 WDM11" });
+  await expect(restrictedSet).toContainText("需官方账号");
+  await expect(restrictedSet).toContainText("官方账号材料");
+  await expect(restrictedSet).not.toContainText("官方公开");
+  await expect(restrictedSet).not.toContainText("本站授权文件");
 });
 
 test("WJEC course exposes statistics but not boundary or calculator actions", async ({ page }) => {
@@ -279,11 +305,11 @@ test("course center filters by subject category and explains internal AQA codes"
   await page.goto("/#/courses");
   await waitForPwaControl(page);
   await page.getByRole("button", { name: "数学类", exact: true }).click();
-  await expect(page.getByRole("button", { name: /MA · Mathematics/ }).first()).toBeVisible();
-  await expect(page.getByRole("button", { name: /AC · Accounting/ })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /7357 Mathematics/ }).first()).toBeVisible();
+  await expect(page.getByRole("button", { name: /7127 Accounting/ })).toHaveCount(0);
   await page.getByRole("button", { name: "会计类", exact: true }).click();
   await page.getByPlaceholder("搜索科目名称或代码").fill("AC");
-  await expect(page.getByRole("button", { name: /AQA.*AC · Accounting/ })).toBeVisible();
+  await expect(page.getByRole("button", { name: /AQA.*7127.*Accounting/ })).toBeVisible();
 });
 
 test("primary navigation is keyboard reachable", async ({ page }) => {
@@ -304,4 +330,52 @@ test("table filters follow browser back navigation", async ({ page }) => {
   await expect(page).toHaveURL(/edexcel-al_filter_year=/);
   await page.goBack();
   await expect(year).toHaveValue("");
+});
+
+test("knowledge tree expand all changes the visible node set and restores it", async ({ page }) => {
+  await page.goto("/#/knowledge-tree");
+  await waitForPwaControl(page);
+  const expand = page.getByRole("button", { name: "展开全部" });
+  await expect(expand).toBeVisible();
+  const treeButtons = page.locator('button[aria-expanded]');
+  const before = await treeButtons.count();
+  await expand.click();
+  await expect(page.getByRole("button", { name: "收起全部" })).toBeVisible();
+  expect(await treeButtons.count()).toBeGreaterThan(before);
+  await page.getByRole("button", { name: "收起全部" }).click();
+  await expect(page.getByRole("button", { name: "展开全部" })).toBeVisible();
+  expect(await treeButtons.count()).toBe(before);
+});
+
+test("core pages do not overflow the viewport at supported widths", async ({ page }) => {
+  for (const width of [320, 360, 390, 768]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const route of ["/exam-overview", "/gcse/caie", "/papers/compare"]) {
+      await page.goto(`/#${route}`);
+      await waitForPwaControl(page);
+      await expect.poll(() => page.evaluate(() => document.body.scrollWidth <= document.body.clientWidth)).toBe(true);
+    }
+  }
+});
+
+test("precache supports an offline refresh after the first visit", async ({ page, context }) => {
+  await page.goto("/#/courses");
+  await waitForPwaControl(page);
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  await context.setOffline(true);
+  await page.reload({ waitUntil: "domcontentloaded" });
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  await expect(page.locator("body")).not.toContainText("Application error");
+});
+
+test("personality progress is versioned and can be resumed", async ({ page }) => {
+  await page.goto("/#/personality/test?mode=student");
+  await waitForPwaControl(page);
+  await page.getByRole("button", { name: "开始诊断" }).click();
+  await page.getByRole("button").filter({ hasText: /^A/ }).first().click();
+  await page.waitForTimeout(350);
+  await page.reload();
+  await expect(page.getByRole("button", { name: /继续上次（第 2 题）/ })).toBeVisible();
+  await page.getByRole("button", { name: /继续上次/ }).click();
+  await expect(page.getByText("第 2 / 20 题", { exact: true })).toBeVisible();
 });

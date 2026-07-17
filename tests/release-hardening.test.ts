@@ -5,7 +5,7 @@ import { compileExpression, extractParams, GRAPH_LIMITS } from "../src/pages/gra
 import {
   getSubjectsForBoard,
   isVerifiedCalculatorSubject,
-  QUARANTINED_BOUNDARY_CONFLICTS,
+  ARCHIVED_BOUNDARY_CONFLICTS,
 } from "../src/data/calculatorIndex";
 import { CanonicalBoundaryRecordSchema, ResultStatisticRecordSchema } from "../src/data/canonical/types";
 
@@ -43,9 +43,9 @@ describe("strict calculator release policy", () => {
     expect(getSubjectsForBoard("CAIE-AL")).toEqual([]);
   });
 
-  it("quarantines ambiguous boundary groups instead of selecting one", () => {
-    expect(QUARANTINED_BOUNDARY_CONFLICTS.length).toBeGreaterThan(0);
-    expect(QUARANTINED_BOUNDARY_CONFLICTS.every((item) => item.variantCount > 1)).toBe(true);
+  it("archives ambiguous legacy groups instead of selecting one", () => {
+    expect(ARCHIVED_BOUNDARY_CONFLICTS.length).toBeGreaterThan(0);
+    expect(ARCHIVED_BOUNDARY_CONFLICTS.every((item) => item.variantCount > 1)).toBe(true);
   });
 });
 

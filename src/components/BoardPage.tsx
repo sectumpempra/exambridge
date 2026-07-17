@@ -53,6 +53,9 @@ export default function BoardPage({
   const urlStateKey = `${boardName.toLowerCase().replace(/\s+/g, "-")}${csvSuffix ? `-${csvSuffix}` : ""}`;
   const compatibleEntry = entry && courseMatchesRoute(entry, location.pathname) && entry.capabilities.boundaries.status !== "unavailable" ? entry : undefined;
   const initialFilters = compatibleEntry && filterFields.some((field) => field.key === codeField) ? { [codeField]: compatibleEntry.subjectCode } : undefined;
+  const provenanceColumns = data.some((row) => "_verificationStatus" in row)
+    ? [...columns, { key: "_verificationStatus", label: "核验状态", sortable: false }, { key: "_sourceUrl", label: "来源", sortable: false }]
+    : columns;
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "linear-gradient(180deg, #F0EDE8 0%, #F5F2EE 50%, #F0EDE8 100%)" }}>
@@ -87,7 +90,7 @@ export default function BoardPage({
               <p style={{ fontSize: 13, color: "#6E675E", marginTop: 6 }}>{note}</p>
             </div>
 
-            <DataTable key={compatibleEntry?.qualificationId ?? "no-course"} columns={columns} data={data} filterFields={filterFields} initialFilters={initialFilters} urlStateKey={urlStateKey} onFilteredDataChange={setFilteredData} />
+            <DataTable key={compatibleEntry?.qualificationId ?? "no-course"} columns={provenanceColumns} data={data} filterFields={filterFields} initialFilters={initialFilters} urlStateKey={urlStateKey} onFilteredDataChange={setFilteredData} />
 
             <div className={`mt-5 flex items-center gap-2.5 flex-wrap ${otherLevelPath ? "justify-between" : "justify-end"}`}>
               {otherLevelPath && (

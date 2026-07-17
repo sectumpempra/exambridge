@@ -1,0 +1,2533 @@
+{
+  "schemaVersion": "4.0.0",
+  "qualificationVersionId": "Edexcel-8MA0:2017",
+  "board": "Edexcel",
+  "subjectCode": "8MA0",
+  "subjectName": "AS-Level Mathematics",
+  "level": "AS-Level",
+  "syllabusVersion": "2017",
+  "effectiveFrom": "2017-09-01",
+  "sources": [
+    {
+      "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+      "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+      "documentVersion": "2017",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+      "sourceType": "official"
+    }
+  ],
+  "reviewStatus": "owner-approved",
+  "review": {
+    "generatedAt": "2026-07-16",
+    "promptVersion": "knowledge-v4-3-chunked",
+    "requestedModelId": "kimi-k2.7-code-highspeed",
+    "responseModelId": "kimi-k2.7-code-highspeed",
+    "reviewedAt": "2026-07-16",
+    "approvedAt": "2026-07-16",
+    "approvalBatch": "knowledge-v4-20260716"
+  },
+  "declaredPapers": [
+    "8MA0/01",
+    "8MA0/02"
+  ],
+  "syllabusPoints": [
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT1.1",
+      "sourceReference": "p. 11",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-LOGI",
+        "REAS-PROF-ARGM-SYMB"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Constructing mathematical arguments, logical deduction, precise symbolic statements and connecting language; diagrams/graph aspects are not separately represented in the canonical nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT1.2",
+      "sourceReference": "p. 11",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-SYMB"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understanding and using mathematical language and syntax maps directly to precise use of symbols."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT1.3",
+      "sourceReference": "p. 11",
+      "canonicalNodeIds": [
+        "NUM-SYS-SET-LANG",
+        "ALGF-EQN-INEQ-SETN"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Set-theory language plus application to inequalities; mapped to set-language and set-notation-for-solution-sets nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT1.5",
+      "sourceReference": "p. 11",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-CRIT",
+        "REAS-PROF-ARGM-JUST"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Comprehending and critiquing proofs, justifications and methods maps to critiquing arguments and justifying methods/formulae."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT2.1",
+      "sourceReference": "p. 11",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-STRC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recognising underlying mathematical structure maps directly to the corresponding node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT2.2",
+      "sourceReference": "p. 11",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-UNST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Constructing extended arguments for unstructured problems maps directly to the corresponding node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT2.3",
+      "sourceReference": "p. 11",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpreting and communicating solutions in context maps to interpreting model outputs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT2.5",
+      "sourceReference": "p. 11",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-ESTM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Evaluating accuracy and limitations through reasoned estimates maps directly to the corresponding node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT2.6",
+      "sourceReference": "p. 12",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "The problem-solving cycle is broader than the modelling-cycle node but is the closest match."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT2.7",
+      "sourceReference": "p. 12",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-DIAG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understanding, interpreting and constructing diagrams maps directly to using diagrams."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT3.1",
+      "sourceReference": "p. 12",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ABST",
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Translating a context into a model with simplifying assumptions maps to abstraction/simplification and modelling assumptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT3.2",
+      "sourceReference": "p. 12",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-INPT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Using a model with suitable inputs maps directly to using model inputs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT3.3",
+      "sourceReference": "p. 12",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpreting model outputs in context maps directly to interpreting model outputs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT3.4",
+      "sourceReference": "p. 12",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Refining and evaluating a model's appropriateness is captured at the broader modelling-cycle level."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-OT3.5",
+      "sourceReference": "p. 12",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understanding and using modelling assumptions maps directly to the corresponding node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-8MA0-LDS",
+      "sourceReference": "p. 13",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-LDS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p. 13",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Large data set familiarity is required for statistics assessment in Paper 2."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-1.1",
+      "sourceReference": "p.14",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-DEDU",
+        "REAS-PROF-PROF-EXHA",
+        "REAS-PROF-PROF-COUN",
+        "REAS-PROF-ARGM-LOGI"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.14",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Official point 1.1 covers proof structure and the three named methods; worked examples are illustrative only."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-2.1",
+      "sourceReference": "p.14",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX",
+        "NUM-POW-INDX-FRAC",
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-INDX-ZERO"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.14",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Includes laws for all rational exponents and equivalence of a^(m/n) with the nth root of a^m."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-2.2",
+      "sourceReference": "p.14",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SURD",
+        "NUM-POW-POWR-RATD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.14",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Surd simplification and rationalising denominators."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-2.3",
+      "sourceReference": "p.15",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-EQN-QUAD-DISC",
+        "ALGF-EQN-QUAD-COMP",
+        "ALGF-EQN-QUAD-FACT",
+        "ALGF-EQN-QUAD-FORM",
+        "ALGF-EQN-QUAD-FUNC"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.15",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Single official point covering quadratic graphs, discriminant, completing the square and solution methods including quadratics in a function."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-2.4",
+      "sourceReference": "p.15",
+      "canonicalNodeIds": [
+        "ALGF-EQN-SIMU-LINQ",
+        "ALGF-EQN-SIMU-SUBS",
+        "ALGF-EQN-SIMU-ELIM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.15",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "One linear and one quadratic equation solved by elimination or substitution."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-2.5",
+      "sourceReference": "p.15",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-LINS",
+        "ALGF-EQN-INEQ-QUAD",
+        "ALGF-EQN-INEQ-REGN",
+        "ALGF-EQN-INEQ-SETN"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.15",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Includes linear and quadratic inequalities, graphical interpretation, set notation and graphical representation of two-variable inequalities."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-2.6",
+      "sourceReference": "p.16",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI-EXP2",
+        "ALGF-EXP-MANI-FACT",
+        "ALGF-POLY-POLY-DIVL",
+        "ALGF-POLY-POLY-FACT",
+        "ALGF-POLY-POLY-CUBQ"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.16",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Covers polynomial expansion, collecting terms, factorisation, division by linear expressions and the factor theorem."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-2.7",
+      "sourceReference": "p.16",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-CUBC",
+        "ALGF-FUNC-GRAP-QUAR",
+        "ALGF-FUNC-GRAP-RECP",
+        "ALGF-FUNC-GRAP-ASMP",
+        "ALGF-FUNC-GRAP-INTR",
+        "NUM-RAT-RATI-DIRE"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.16",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Includes sketching polynomials, reciprocal curves, asymptotes, using intersections to solve equations and direct proportion."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-2.8",
+      "sourceReference": "p.16",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-TRAN-VERT",
+        "ALGF-FUNC-TRAN-HORZ",
+        "ALGF-FUNC-TRAN-STRE"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.16",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "The four simple transformations are interpreted as translations and stretches."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-3.1",
+      "sourceReference": "p.17",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-GRAD",
+        "GEOM-COOR-LINE-POINT",
+        "GEOM-COOR-LINE-GENR",
+        "GEOM-COOR-LINE-YMXC"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.17",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Covers all listed line forms, parallel/perpendicular conditions and straight-line modelling contexts."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-3.2",
+      "sourceReference": "p.17",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CIRC-CENT",
+        "GEOM-COOR-CIRC-EXPN",
+        "GEOM-COOR-CIRC-TANG",
+        "GEOM-COOR-CIRC-CHRD",
+        "GEOM-SHAP-CITH-SEMI"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.17",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Circle geometry including both equation forms, completing the square and the three stated geometrical properties."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-4.1",
+      "sourceReference": "p.17",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-BINO-POSI",
+        "ALGF-SEQ-BINO-COEF",
+        "ALGF-SEQ-BINO-PASC",
+        "PROB-DIST-BINO-MODE"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.17",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Positive integer n only; includes factorial and combination notation and link to binomial probabilities."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-5.1",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-SINR",
+        "TRIG-BASE-NONR-COSR",
+        "TRIG-BASE-NONR-AREA",
+        "TRIG-BASE-NONR-AMB"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.18",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Definitions for all arguments and unit-circle introduction are not separately noded; sine/cosine rules, area formula and ambiguous case are mapped."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-5.2",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-GRAP-SINE",
+        "TRIG-FUNC-GRAP-COSN",
+        "TRIG-FUNC-GRAP-TANG",
+        "TRIG-FUNC-GRAP-PERD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.18",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Graphs, symmetries and periodicity of the three trigonometric functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-5.3",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-IDEN-TANR",
+        "TRIG-IDEN-IDEN-PYTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.18",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "The two core Pythagorean identities."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-5.4",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-EQNS-SIMP",
+        "TRIG-IDEN-EQNS-QUAD",
+        "TRIG-IDEN-EQNS-MULT",
+        "TRIG-IDEN-EQNS-INTR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.18",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Solving trigonometric equations in a given interval, including quadratic-type and multiple-angle equations, answers in degrees."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-6.1",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-AX",
+        "ALGF-LOG-EXPO-EX"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.18",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Graphs and properties of a^x and e^x."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-6.2",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-MODE",
+        "CALC-DIFF-RULE-EXPL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.18",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Gradient property of e^(kx) mapped to differentiation of exponentials; suitability of exponential models mapped to exponential modelling."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-6.3",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-INVR",
+        "ALGF-LOG-LOGR-LN",
+        "ALGF-LOG-LOGR-EQNS"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.19",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Inverse relationships of log_a x and a^x, ln x and e^x, plus solving simple exponential/logarithmic equations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-6.4",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-LAWS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.19",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Laws of logarithms including log_a a = 1 and negative/fractional multipliers."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-6.5",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-EQNS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.19",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Solving a^x = b; the change-of-base technique is not separately represented in the node catalog."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-6.6",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No supplied canonical node covers estimation of model parameters using logarithmic graphs (log-log or log-linear plots).",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.19",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Official point 6.6 has no matching node in the supplied catalog."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-6.7",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-GROW",
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.19",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Exponential growth/decay modelling includes consideration of limitations and refinements of models."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-7.1",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "CALC-DIFF-CONC-GRAD",
+        "CALC-DIFF-CONC-RATE",
+        "CALC-DIFF-CONC-LIMT",
+        "CALC-DIFF-CONC-NOTN",
+        "CALC-DIFF-RULE-POWR",
+        "CALC-DIFF-APPL-STAT",
+        "CALC-DIFF-APPL-SKET",
+        "CALC-DIFF-APPL-INCR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.20",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Includes derivative-as-gradient, rate of change, limit definition, sketching the gradient function, second derivatives and first-principles differentiation; some aspects lack dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-7.2",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-POWR",
+        "CALC-DIFF-RULE-SUMD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.20",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Differentiation of x^n for rational n and constant multiples, sums and differences."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-7.3",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-TANG",
+        "CALC-DIFF-APPL-STAT",
+        "CALC-DIFF-APPL-MAXM",
+        "CALC-DIFF-APPL-INCR",
+        "CALC-DIFF-APPL-SKET"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.20",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Applications of differentiation to gradients, tangents, normals, stationary points, maxima/minima and increasing/decreasing intervals."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-8.1",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "CALC-INTE-CONC-FTCL",
+        "CALC-INTE-CONC-REVD",
+        "CALC-INTE-CONC-INDI"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.21",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Fundamental theorem, integration as reverse differentiation and constant of integration."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-8.2",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-POWR",
+        "CALC-INTE-APPL-CONS"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.21",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Integration of x^n (n not -1), sums/differences/constant multiples and finding a curve from its derivative and a point."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-8.3",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "CALC-INTE-CONC-DEFI",
+        "CALC-INTE-APPL-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.21",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Definite integrals and area under/between curves and lines."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-9.1",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-COLV",
+        "VECT-BASIC-NOTN-UNIT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.21",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Two-dimensional vectors using column vectors and i, j unit vectors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-9.2",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-MAGN",
+        "VECT-BASIC-NOTN-DIRN",
+        "VECT-BASIC-NOTN-UNIT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.21",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Magnitude, direction, component form and unit vectors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-9.3",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-ADDS",
+        "VECT-BASIC-NOTN-SCAL",
+        "VECT-GEOM-PROB-PARA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.21",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Vector addition (diagrammatic and algebraic), scalar multiplication, triangle/parallelogram laws and parallel vectors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-9.4",
+      "sourceReference": "p.21",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-POSV",
+        "GEOM-COOR-CART-DIST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.21",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Position vectors and distance between points represented by position vectors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P1-9.5",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "VECT-GEOM-PROB-SEGM",
+        "VECT-GEOM-PROB-RATI",
+        "VECT-GEOM-PROB-COLL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/01"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.22",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Problem solving in pure mathematics and in context, including forces; force-context applications have no dedicated pure-vector node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P2-1.1",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-POP",
+        "STAT-ENQ-SAMP-BIAS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.23",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Population and sample concepts, informal inference and census versus sample advantages/disadvantages."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P2-1.2",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-RAND",
+        "STAT-ENQ-SAMP-BIAS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.23",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Simple random, stratified, systematic, quota and opportunity/convenience sampling; only random sampling and bias have dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P2-1.3",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-BIAS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.23",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Selecting and critiquing sampling techniques; awareness that different samples can yield different conclusions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-P2-2.1",
+      "sourceReference": "p.23",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-HIST",
+        "STAT-DATA-REPR-BOXW",
+        "STAT-DATA-REPR-CUMF",
+        "PROB-DIST-CRV-CONC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.23",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Histograms, box plots, cumulative frequency diagrams and link to probability distributions; frequency polygons have no dedicated node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-2.2a",
+      "sourceReference": "p.24, 2.2 (scatter diagrams and regression lines)",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-SCAT",
+        "STAT-BIVA-CORR-LOBF"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.24, 2.2 (scatter diagrams and regression lines)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Interpret scatter diagrams and regression lines; regression calculations are excluded. Distinct-population sections are not separately represented."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-2.2b",
+      "sourceReference": "p.24, 2.2 (informal interpretation of correlation)",
+      "canonicalNodeIds": [
+        "STAT-BIVA-CORR",
+        "STAT-BIVA-CORR-POSC",
+        "STAT-BIVA-CORR-NEGC",
+        "STAT-BIVA-CORR-ZEROC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.24, 2.2 (informal interpretation of correlation)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Informal correlation vocabulary mapped to correlation nodes; strength descriptors such as strong/weak are not separately represented."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-2.2c",
+      "sourceReference": "p.24, 2.2 (correlation does not imply causation)",
+      "canonicalNodeIds": [
+        "STAT-BIVA-CORR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.24, 2.2 (correlation does not imply causation)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "The correlation-versus-causation distinction has no dedicated node; mapped to the parent correlation node only."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-2.3a",
+      "sourceReference": "p.24, 2.3 (central tendency, variation, percentiles and coding)",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT",
+        "STAT-SUMM-CENT-MEAN",
+        "STAT-SUMM-CENT-MEDI",
+        "STAT-SUMM-CENT-MODE",
+        "STAT-SUMM-CENT-STDV",
+        "STAT-SUMM-CENT-RANG",
+        "STAT-SUMM-CENT-QUAR",
+        "STAT-SUMM-CENT-IQR",
+        "STAT-SUMM-CENT-CODE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.24, 2.3 (central tendency, variation, percentiles and coding)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Broad summary-statistics point including discrete/continuous/grouped data, coding and interpercentile ranges; some sub-aspects share nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-2.3b",
+      "sourceReference": "p.24, 2.3 (standard deviation from summary statistics)",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-STDV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.24, 2.3 (standard deviation from summary statistics)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Calculation of standard deviation using Sxx and equivalent summary-statistic formulae."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-2.4a",
+      "sourceReference": "p.25, 2.4 (outliers)",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-BOXW",
+        "STAT-SUMM-CENT-IQR",
+        "STAT-SUMM-CENT-STDV"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.25, 2.4 (outliers)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Outlier recognition linked to box plots and to the quartile/IQR or standard-deviation rules used to identify them."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-2.4b",
+      "sourceReference": "p.25, 2.4 (select or critique data presentation)",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.25, 2.4 (select or critique data presentation)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Critical selection of presentation techniques is mapped to the general statistical-diagrams node; no dedicated critical-evaluation node exists."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-2.4c",
+      "sourceReference": "p.25, 2.4 (clean data)",
+      "canonicalNodeIds": [
+        "STAT-DATA-CLAS"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.25, 2.4 (clean data)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Data cleaning (missing data, errors, outliers) has no dedicated node; mapped to the data-classification parent."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-3.1a",
+      "sourceReference": "p.25, 3.1 (mutually exclusive and independent events)",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-MUTX",
+        "PROB-COMB-RULE-INDE",
+        "PROB-COMB-RULE-TREE",
+        "PROB-COMB-RULE-VENN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.25, 3.1 (mutually exclusive and independent events)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Mutually exclusive and independent events with Venn/tree diagrams; set notation and formal conditional probability are excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-3.1b",
+      "sourceReference": "p.25, 3.1 (link to discrete and continuous distributions)",
+      "canonicalNodeIds": [
+        "PROB-DIST-CRV-CONC",
+        "PROB-DIST-CRV-PROB"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.25, 3.1 (link to discrete and continuous distributions)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Informal link to continuous distributions and area-under-curve as probability; formal pdf knowledge is excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-4.1",
+      "sourceReference": "p.25, 4.1 (binomial and simple discrete distributions)",
+      "canonicalNodeIds": [
+        "PROB-DIST-BINO-MODE",
+        "PROB-DIST-BINO-PROB",
+        "PROB-DRVD-DRVB-DIST"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.25, 4.1 (binomial and simple discrete distributions)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Binomial model and probability calculations are mapped; the discrete uniform distribution has no dedicated node and mean/variance calculations are excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-5.1",
+      "sourceReference": "p.25, 5.1 (hypothesis-testing language)",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO",
+        "STAT-TEST-HYPO-NULL",
+        "STAT-TEST-HYPO-TAIL",
+        "STAT-TEST-HYPO-SIGL",
+        "STAT-TEST-HYPO-CRIT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.25, 5.1 (hypothesis-testing language)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Hypothesis-testing terminology mapped to hypothesis-test nodes; acceptance-region and p-value language are not separated."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-5.2",
+      "sourceReference": "p.25–26, 5.2 (binomial proportion test)",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-BINO",
+        "STAT-TEST-HYPO-SIGL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.25–26, 5.2 (binomial proportion test)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Conducting a binomial test for a proportion and interpreting the significance level as the probability of incorrectly rejecting the null hypothesis."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-6.1",
+      "sourceReference": "p.26, 6.1 (SI quantities and units)",
+      "canonicalNodeIds": [
+        "GEOM-MENS-UNIT",
+        "NUM-RAT-RATE-SPED",
+        "MECH-DYN-NEWT-MASS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.26, 6.1 (SI quantities and units)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Fundamental and derived SI units plus unit conversion; no dedicated mechanics-units node exists."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-7.1",
+      "sourceReference": "p.26, 7.1 (kinematics language)",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-DIST",
+        "MECH-KIN-LINE-SPED",
+        "MECH-KIN-LINE-ACCL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.26, 7.1 (kinematics language)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Definitions of position, displacement, distance, velocity, speed and acceleration."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-7.2",
+      "sourceReference": "p.26, 7.2 (kinematics graphs)",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-STGR",
+        "MECH-KIN-LINE-VTGR",
+        "MECH-KIN-LINE-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.26, 7.2 (kinematics graphs)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Displacement-time and velocity-time graphs with gradient and area interpretations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-7.3",
+      "sourceReference": "p.27, 7.3 (constant acceleration formulae)",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-CONST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.27, 7.3 (constant acceleration formulae)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Use and derivation of constant-acceleration (suvat) formulae."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-7.4",
+      "sourceReference": "p.27, 7.4 (calculus in kinematics)",
+      "canonicalNodeIds": [
+        "CALC-KIN-SVAT-DSDT",
+        "CALC-KIN-SVAT-DVDT",
+        "CALC-KIN-SVAT-INTV",
+        "CALC-KIN-SVAT-INTS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.27, 7.4 (calculus in kinematics)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Differentiation and integration relationships between displacement, velocity and acceleration."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-8.1",
+      "sourceReference": "p.27, 8.1 (force concept and Newton's first law)",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT",
+        "MECH-FORC-EQUI-NORM",
+        "MECH-DYN-NEWT-TENS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.27, 8.1 (force concept and Newton's first law)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Newton's first law has no separate node; mapped to the Newton's-laws parent plus normal reaction and tension."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-8.2",
+      "sourceReference": "p.27, 8.2 (Newton's second law in a straight line)",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-N2L",
+        "VECT-BASIC-NOTN-UNIT",
+        "VECT-BASIC-NOTN-COLV"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.27, 8.2 (Newton's second law in a straight line)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Scalar and simple 2-D vector forms of Newton's second law; resolving forces is excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-8.3",
+      "sourceReference": "p.27, 8.3 (weight and motion under gravity)",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-VERT",
+        "MECH-DYN-NEWT-MASS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.27, 8.3 (weight and motion under gravity)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Motion under gravity with default or specified values of g."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-8.4",
+      "sourceReference": "p.27, 8.4 (Newton's third law, equilibrium, pulleys and connected particles)",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-N3L",
+        "MECH-FORC-EQUI-PRIN",
+        "MECH-DYN-NEWT-CONP",
+        "MECH-DYN-NEWT-TENS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "8MA0/02"
+        ],
+        "evidence": [
+          {
+            "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+            "title": "Pearson Edexcel AS Mathematics 8MA0 specification",
+            "documentVersion": "2017",
+            "locator": "p.27, 8.4 (Newton's third law, equilibrium, pulleys and connected particles)",
+            "accessedAt": "2026-07-16",
+            "sha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Equilibrium, Newton's third law, smooth pulleys and connected particles; resolving is excluded in equilibrium cases."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-QUAD",
+      "sourceReference": "Appendix 1: Formulae, p.36",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-FORM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formula for roots of ax² + bx + c = 0 given in the AS formula list."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-INDICES",
+      "sourceReference": "Appendix 1: Formulae, p.36",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers the three index laws listed for AS."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-LOGS",
+      "sourceReference": "Appendix 1: Formulae, p.36",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-LAWS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Logarithm equivalence and product, quotient and power laws."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-COORD",
+      "sourceReference": "Appendix 1: Formulae, p.36",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-POINT",
+        "GEOM-COOR-LINE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Point-gradient form and perpendicular gradient condition for straight lines."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-TRIG",
+      "sourceReference": "Appendix 1: Formulae, p.36",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-SINR",
+        "TRIG-BASE-NONR-COSR",
+        "TRIG-BASE-NONR-AREA",
+        "TRIG-IDEN-IDEN-PYTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sine rule, cosine rule, area formula and Pythagorean identity listed for AS."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-MENS",
+      "sourceReference": "Appendix 1: Formulae, p.37",
+      "canonicalNodeIds": [
+        "GEOM-MENS-CIRC-CIRC",
+        "GEOM-MENS-CIRC-AREA",
+        "TRIG-BASE-RATR-PYTH",
+        "GEOM-MENS-AREA-TRAP",
+        "GEOM-MENS-SOLI-PRIS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Circle, Pythagoras, trapezium and prism formulae in the AS list."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-DIFF",
+      "sourceReference": "Appendix 1: Formulae, p.37",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-POWR",
+        "CALC-DIFF-RULE-EXPL",
+        "CALC-DIFF-RULE-SUMD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Differentiation results for x^n, e^kx and sums listed for AS."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-INTE",
+      "sourceReference": "Appendix 1: Formulae, p.37",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-POWR",
+        "CALC-INTE-CONC-DEFI",
+        "CALC-INTE-APPL-AREA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Integration results for x^n, sums and area under a curve; no dedicated node for linearity of integration."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-VECT",
+      "sourceReference": "Appendix 1: Formulae, p.37",
+      "canonicalNodeIds": [
+        "VECT-SPAC-THRD-MAG3"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "3D vector magnitude formula in the AS list."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-STAT-MEAN",
+      "sourceReference": "Appendix 1: Formulae, p.38",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-MEAN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Mean formula for raw and frequency data."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-MECH-FORCE",
+      "sourceReference": "Appendix 1: Formulae, p.38",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-MASS",
+        "MECH-DYN-NEWT-N2L",
+        "MECH-FORC-EQUI-FRIC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Weight, Newton’s second law and friction inequality."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-FORM-MECH-KINE",
+      "sourceReference": "Appendix 1: Formulae, p.38",
+      "canonicalNodeIds": [
+        "CALC-KIN-SVAT-DSDT",
+        "CALC-KIN-SVAT-DVDT",
+        "CALC-KIN-SVAT-INTV",
+        "CALC-KIN-SVAT-INTS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Variable acceleration kinematics using derivatives and integrals."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-NOTN-SET",
+      "sourceReference": "Appendix 2: Notation, p.39",
+      "canonicalNodeIds": [
+        "NUM-SYS-SET-LANG",
+        "NUM-SYS-SET-UNIN",
+        "NUM-SYS-SET-COMP",
+        "NUM-SYS-TYPE-NAT",
+        "NUM-SYS-TYPE-INTG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Set and interval notation listed in items 1.1–1.23; several symbols have no matching canonical node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-NOTN-MISC",
+      "sourceReference": "Appendix 2: Notation, p.40",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-PROP",
+        "ALGF-SEQ-SEQU-ARIT",
+        "ALGF-SEQ-SEQU-GEOM",
+        "ALGF-SEQ-SERS-ARSM",
+        "ALGF-SEQ-SERS-GESM",
+        "ALGF-SEQ-SERS-INFI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Miscellaneous symbols including proportion, sequence/series notation in items 2.1–2.21; many logical/comparison symbols lack nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-NOTN-OPER",
+      "sourceReference": "Appendix 2: Notation, p.41",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SQRT",
+        "ALGF-SEQ-BINO-COEF"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Operation symbols in items 3.1–3.10; only square root and binomial coefficient map cleanly."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-NOTN-FUNC",
+      "sourceReference": "Appendix 2: Notation, pp.41–42",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-DEFS-NOTN",
+        "ALGF-FUNC-COMP-INVR",
+        "ALGF-FUNC-COMP-COMP",
+        "CALC-DIFF-CONC-NOTN",
+        "CALC-INTE-CONC-INDI",
+        "CALC-INTE-CONC-DEFI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Function, derivative and integral notation in items 4.1–4.12; limit and increment symbols have no nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-NOTN-EXPL",
+      "sourceReference": "Appendix 2: Notation, p.42",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-EX",
+        "ALGF-LOG-LOGR-INVR",
+        "ALGF-LOG-LOGR-LN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Exponential and logarithmic notation in items 5.1–5.4."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-NOTN-TRIG",
+      "sourceReference": "Appendix 2: Notation, p.42",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR",
+        "TRIG-FUNC-ADVN",
+        "TRIG-FUNC-EXCT-INVS",
+        "TRIG-FUNC-EXCT-INVC",
+        "TRIG-FUNC-EXCT-INVT",
+        "TRIG-CIRC-RADI-DEFN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Trigonometric function, inverse function and angular measure notation in items 6.1–6.4."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-NOTN-VECT",
+      "sourceReference": "Appendix 2: Notation, p.42",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-COLV",
+        "VECT-BASIC-NOTN-UNIT",
+        "VECT-BASIC-NOTN-POSV",
+        "VECT-BASIC-NOTN-MAGN",
+        "VECT-GEOM-PROB-SEGM",
+        "VECT-SPAC-THRD-IJK"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vector notation items 7.1–7.11; displacement, velocity and acceleration vector symbols lack dedicated nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-NOTN-PROB",
+      "sourceReference": "Appendix 2: Notation, pp.43–44",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-NOTN",
+        "PROB-BASIC-BASIC-COMP",
+        "PROB-COMB-RULE-COND",
+        "PROB-DRVD-DRVB",
+        "PROB-DRVD-DRVB-DIST",
+        "PROB-DRVD-DRVB-EXPV",
+        "PROB-DRVD-DRVB-VARI",
+        "PROB-DIST-BINO-MODE",
+        "PROB-DIST-NORM-MODE",
+        "PROB-DIST-NORM-STAN",
+        "STAT-TEST-HYPO-NULL",
+        "STAT-CORR-REG-PMCC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Probability and statistics notation in items 8.1–8.31; some symbols such as population/sample variance and standard normal pdf/cdf lack nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-8MA0-NOTN-MECH",
+      "sourceReference": "Appendix 2: Notation, p.44",
+      "canonicalNodeIds": [
+        "MECH-FORC-FORC",
+        "MECH-FORC-EQUI-COEF",
+        "MECH-FURT-RIGD-MOMT",
+        "MECH-KIN-LINE-DIST",
+        "MECH-KIN-LINE-SPED",
+        "MECH-KIN-LINE-ACCL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Mechanics notation items 9.1–9.15; SI unit symbols and time/gravity symbols have no dedicated nodes."
+      ]
+    }
+  ]
+}

@@ -7,16 +7,20 @@ import {
 } from "lucide-react";
 import { COURSE_CATALOG } from "../course-context/catalog";
 
+function courseCount(board: string, level: string): number {
+  return COURSE_CATALOG.filter((course) => course.boardName === board && course.level === level).length;
+}
+
 const FEATURES = [
   {
     icon: GraduationCap,
     title: "A-Level 分数线查询",
     color: "#526B7E",
     items: [
-      "Edexcel A-Level：2,129 条数据，覆盖 125+ 门科目（2014-2026）",
-      "CAIE A-Level：4,597 条数据，涵盖数学、物理、化学、生物、经济、计算机等全部科目（2021-2025）",
-      "AQA A-Level（Oxford AQA）：634 条数据，覆盖 13 门科目（2018-2026）",
-      "OCR A-Level：701 条数据，覆盖人文与科学科目（2021-2025）",
+      `Edexcel A-Level：课程目录当前收录 ${courseCount("Edexcel", "A-Level")} 个资格条目`,
+      `CAIE A-Level：课程目录当前收录 ${courseCount("CAIE", "A-Level")} 个资格条目`,
+      `AQA A-Level：课程目录当前收录 ${courseCount("AQA", "A-Level")} 个资格条目`,
+      `OCR A-Level：课程目录当前收录 ${courseCount("OCR", "A-Level")} 个资格条目`,
       "支持按科目代码、年份、考试季筛选",
       "可视化趋势图，按时间顺序展示各等级分数线变化",
       "CSV 数据导出",
@@ -27,10 +31,10 @@ const FEATURES = [
     title: "GCSE / IGCSE 分数线查询",
     color: "#675A4D",
     items: [
-      "CAIE IGCSE：304 条数据，覆盖 A*-G 等级制科目（2021-2025）",
-      "Edexcel IGCSE：145 条数据，含数学 4MA1 等热门科目",
-      "OCR GCSE：132 条数据，含附加数学 6993 等",
-      "AQA GCSE：133 条数据，含进阶数学 8365 等",
+      `CAIE IGCSE：课程目录当前收录 ${courseCount("CAIE", "IGCSE")} 个资格条目`,
+      `Edexcel IGCSE：课程目录当前收录 ${courseCount("Edexcel", "IGCSE")} 个资格条目`,
+      `OCR GCSE：课程目录当前收录 ${courseCount("OCR", "GCSE")} 个资格条目；FSMQ 6993 独立展示`,
+      `AQA GCSE：课程目录当前收录 ${courseCount("AQA", "GCSE")} 个资格条目`,
       "支持 9-1 和 A*-G 两种等级制",
       "趋势图去重处理，避免数据点重复",
     ],
@@ -119,7 +123,7 @@ export default function About() {
           {/* Data Summary */}
           <div style={{ ...cardStyle, marginTop: 20, textAlign: "center" }}>
             <h3 style={{ fontSize: 18, fontWeight: 600, color: "#3D3832", margin: "0 0 20px" }}>数据总览</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", gap: 16 }}>
               {[
                 { num: String(COURSE_CATALOG.length), label: "课程目录条目" },
                 { num: String(new Set(COURSE_CATALOG.map((item) => item.subjectCode)).size), label: "科目代码" },

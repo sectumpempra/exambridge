@@ -1,0 +1,443 @@
+{
+  "schemaVersion": "1.0.0",
+  "qualificationVersionId": "CAIE-9231:2026-2027",
+  "reviewMethod": "kimi-independent-point-review",
+  "reviewedAt": "2026-07-16",
+  "requestedModelId": "kimi-k2.7-code-highspeed",
+  "responseModelId": "kimi-k2.7-code-highspeed",
+  "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
+  "pointReviews": [
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.1-ROOTCOEF",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.1-SUBST",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.2-RATIONALS",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated canonical node for rational functions; mapping to reciprocal graphs and asymptotes under-represents sketching general rational functions, oblique asymptotes and set-of-values-by-discriminant work."
+      ],
+      "recommendation": "Add a dedicated rational-functions node or retain mapping with a coverage caveat."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.2-GRAPHRELS",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Catalog lacks nodes for y^2=f(x), y=1/f(x) and y=f(|x|); only modulus graphs and generic transformation nodes are available."
+      ],
+      "recommendation": "Create specific graph-relation nodes or accept this as a partial mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.3-STANDARDSUMS",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.3-DIFFERENCES",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.3-CONVERGENCE",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.4-MATRIXOPS",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Matrix subtraction is not represented by a separate canonical node; only addition, multiplication and zero/identity nodes are listed."
+      ],
+      "recommendation": "Retain mapping and ensure subtraction is covered alongside addition."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.4-DETINV",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.4-INVPROD",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.4-TRANINVERSE",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated node for inverse transformation matrices; mapped to generic 2D transformations and inverse matrices."
+      ],
+      "recommendation": "Add an inverse-transformation node or retain with caveat."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.4-TRANCOMP",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.4-AREASCALE",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Area scale factor of a transformation lacks a dedicated canonical node; only determinant and 2D transformation nodes are used."
+      ],
+      "recommendation": "Add an area-scale-factor node or retain mapping."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.4-FINDMATRIX",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.4-INVARIANT",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Angles between lines/planes are not represented by dedicated angle nodes but are subsumed by scalar product and line/plane intersection nodes."
+      ],
+      "recommendation": "Keep as mapped; no action required unless finer granularity is needed."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-1.7",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Proof by induction has no dedicated canonical node; mapping to proof by deduction and logical argument is a coarse approximation of a required assessment technique."
+      ],
+      "recommendation": "Create a proof-by-induction node under Proof Methods."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-2.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-2.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "No dedicated canonical node for systems of three linear simultaneous equations, their consistency or geometric interpretation; only singularity/inverse and eigenvalue nodes are used."
+      ],
+      "recommendation": "Add a 3x3 linear systems/consistency node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-2.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-2.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-2.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-2.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-3.1",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-3.2",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-3.3",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-3.4",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-3.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-3.6",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-4.1",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Expectation of a function of X, the PDF-CDF relationship and CDFs of related variables are not represented by dedicated canonical nodes; only PDF, mean and probability nodes are used."
+      ],
+      "recommendation": "Add CRV transformation/expectation and CDF nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-4.2",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "weak",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Pooled estimate of population variance and normal-distribution tests for difference of means lack dedicated canonical nodes; only t-test and t-confidence-interval nodes are used."
+      ],
+      "recommendation": "Add pooled-variance and normal-difference-of-means nodes."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-4.3",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Fitting a theoretical distribution to data is subsumed by the chi-squared goodness-of-fit node but has no separate representation."
+      ],
+      "recommendation": "Keep as mapped or add a distribution-fitting node."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-4.4",
+      "status": "warning",
+      "sourceSupported": true,
+      "nodeFit": "acceptable",
+      "paperAllocationSupported": true,
+      "issues": [
+        "Normal approximations for the sign and Wilcoxon tests are not represented by dedicated canonical nodes."
+      ],
+      "recommendation": "Add normal-approximation nodes for non-parametric tests."
+    },
+    {
+      "syllabusPointId": "OFFICIAL-CAIE-9231-4.5",
+      "status": "pass",
+      "sourceSupported": true,
+      "nodeFit": "exact",
+      "paperAllocationSupported": true,
+      "issues": [],
+      "recommendation": "Keep as mapped."
+    }
+  ],
+  "missingOfficialPoints": [],
+  "duplicatePointIds": [],
+  "overallIssues": [
+    {
+      "severity": "medium",
+      "issue": "The canonical catalog lacks several Further Pure Mathematics 1 nodes, leading to weak or acceptable mappings: rational functions and oblique asymptotes (1.2-RATIONALS), graph relations y^2=f(x), y=1/f(x) and y=f(|x|) (1.2-GRAPHRELS), inverse transformation matrices (1.4-TRANINVERSE), area scale factor (1.4-AREASCALE), and proof by induction (1.7).",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9231-1.2-RATIONALS",
+        "OFFICIAL-CAIE-9231-1.2-GRAPHRELS",
+        "OFFICIAL-CAIE-9231-1.4-TRANINVERSE",
+        "OFFICIAL-CAIE-9231-1.4-AREASCALE",
+        "OFFICIAL-CAIE-9231-1.7"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Further Pure Mathematics 2 matrices content maps to eigenvalue and Cayley-Hamilton nodes, but the canonical catalog has no node for 3x3 linear simultaneous equations, consistency cases or geometric interpretation.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9231-2.2"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Further Probability & Statistics points are under-represented in the catalog: continuous random variable expectations of functions, CDF/PDF relationships and transformations of related variables (4.1); pooled variance and normal-distribution difference-of-means tests (4.2); and normal approximations for non-parametric tests (4.4).",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9231-4.1",
+        "OFFICIAL-CAIE-9231-4.2",
+        "OFFICIAL-CAIE-9231-4.4"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Fitting a theoretical distribution prior to a chi-squared goodness-of-fit test (4.3) is not separately represented, though it is subsumed by the chi-squared goodness-of-fit node.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9231-4.3"
+      ]
+    },
+    {
+      "severity": "medium",
+      "issue": "Paper 4 (Further Probability & Statistics) sections 4.1–4.4 are only partially mapped and no explanatory reasons are provided; distinct official bullets such as CDFs of related variables, pooled variance estimates, normal-distribution tests for a difference of means, confidence intervals for a difference of means, and fitting theoretical distributions are not represented by dedicated canonical nodes.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9231-4.1",
+        "OFFICIAL-CAIE-9231-4.2",
+        "OFFICIAL-CAIE-9231-4.3",
+        "OFFICIAL-CAIE-9231-4.4"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Several Paper 1 sub-points are mapped only partially or through overly broad canonical nodes, leaving gaps for oblique asymptotes and set-of-values via discriminant in rational functions, the relationship between a transformation and its inverse, area-scale-factor links, and proof by induction (mapped only to generic deductive-proof nodes).",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9231-1.2-RATIONALS",
+        "OFFICIAL-CAIE-9231-1.2-GRAPHRELS",
+        "OFFICIAL-CAIE-9231-1.4-TRANINVERSE",
+        "OFFICIAL-CAIE-9231-1.4-AREASCALE",
+        "OFFICIAL-CAIE-9231-1.7"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "Decomposition granularity is inconsistent: sections 1.1–1.4 and 3.1–3.4 are split into individual bullets, whereas 1.5–1.7, 2.1–2.6, 3.5–3.6 and all Paper 4 sections are represented by single broad official points, making precise coverage verification harder.",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9231-1.5",
+        "OFFICIAL-CAIE-9231-1.6",
+        "OFFICIAL-CAIE-9231-1.7",
+        "OFFICIAL-CAIE-9231-2.1",
+        "OFFICIAL-CAIE-9231-2.2",
+        "OFFICIAL-CAIE-9231-2.3",
+        "OFFICIAL-CAIE-9231-2.4",
+        "OFFICIAL-CAIE-9231-2.5",
+        "OFFICIAL-CAIE-9231-2.6",
+        "OFFICIAL-CAIE-9231-3.5",
+        "OFFICIAL-CAIE-9231-3.6",
+        "OFFICIAL-CAIE-9231-4.1",
+        "OFFICIAL-CAIE-9231-4.2",
+        "OFFICIAL-CAIE-9231-4.3",
+        "OFFICIAL-CAIE-9231-4.4",
+        "OFFICIAL-CAIE-9231-4.5"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "One mapping uses a prior-knowledge canonical node rather than a 9231-specific node: linear-momentum conservation in 3.6 is linked to MECH-MOMI-LINM-CONS (assumed from 9709).",
+      "affectedPointIds": [
+        "OFFICIAL-CAIE-9231-3.6"
+      ]
+    },
+    {
+      "severity": "low",
+      "issue": "The candidate index is limited to subject-content syllabus points; non-content sections of the official specification (aims, assessment objectives, command words, prior-knowledge requirements and MF19 formula/table sections) are not represented.",
+      "affectedPointIds": []
+    }
+  ]
+}

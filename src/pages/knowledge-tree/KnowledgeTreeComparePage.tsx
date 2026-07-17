@@ -87,11 +87,11 @@ export default function KnowledgeTreeComparePage() {
     queueMicrotask(() => {
       if (subjectA) {
         setCodeA(subjectA.code);
-        setPaperA(requestedPaperA && subjectA.papers.includes(requestedPaperA) ? requestedPaperA : null);
+        setPaperA(requestedPaperA && subjectA.paperComparisonReady && subjectA.papers.includes(requestedPaperA) ? requestedPaperA : null);
       }
       if (subjectB) {
         setCodeB(subjectB.code);
-        setPaperB(requestedPaperB && subjectB.papers.includes(requestedPaperB) ? requestedPaperB : null);
+        setPaperB(requestedPaperB && subjectB.paperComparisonReady && subjectB.papers.includes(requestedPaperB) ? requestedPaperB : null);
       }
     });
   }, [subjects, requestedCodeA, requestedCodeB, requestedPaperA, requestedPaperB]);
@@ -116,6 +116,15 @@ export default function KnowledgeTreeComparePage() {
     return s?.papers ?? [];
   }, [subjects, codeB]);
 
+  const subjectA = subjects.find((s) => s.code === codeA);
+  const subjectB = subjects.find((s) => s.code === codeB);
+  const subjectComparisonBlocked = Boolean(
+    subjectA && subjectB && (!subjectA.comparisonReady || !subjectB.comparisonReady)
+  );
+  const paperComparisonBlocked = Boolean(
+    (paperA && !subjectA?.paperComparisonReady) || (paperB && !subjectB?.paperComparisonReady)
+  );
+
   // Unified subject change handlers (avoid intermediate states)
   const handleSetCodeA = useCallback((newCode: string) => {
     setCodeA(newCode);
@@ -129,8 +138,8 @@ export default function KnowledgeTreeComparePage() {
 
   // Derived: is this a valid comparison?
   const isValidComparison = useMemo(
-    () => isKnowledgeComparisonValid(codeA, codeB, paperA, paperB),
-    [codeA, codeB, paperA, paperB]
+    () => !subjectComparisonBlocked && !paperComparisonBlocked && isKnowledgeComparisonValid(codeA, codeB, paperA, paperB),
+    [codeA, codeB, paperA, paperB, subjectComparisonBlocked, paperComparisonBlocked]
   );
   const comparisonPrompt = useMemo(
     () => getKnowledgeComparisonPrompt(codeA, codeB, paperA, paperB),
@@ -196,9 +205,7 @@ export default function KnowledgeTreeComparePage() {
       })),
     [subjects]
   );
-
-  const subjectA = subjects.find((s) => s.code === codeA);
-  const subjectB = subjects.find((s) => s.code === codeB);
+  const hasPublishedMappings = subjects.length > 0;
 
   const displayA = paperA ? `${subjectA?.name || codeA} ${paperA}` : subjectA?.name || codeA;
   const displayB = paperB ? `${subjectB?.name || codeB} ${paperB}` : subjectB?.name || codeB;
@@ -250,7 +257,7 @@ export default function KnowledgeTreeComparePage() {
             </h1>
             <p className="mt-2 text-sm text-[#625C54] leading-relaxed">
               基于 <strong className="text-[#3D3832]">812 节点</strong> 统一知识树，覆盖{" "}
-              <strong className="text-[#3D3832]">5 大考试局 21 个数学类科目</strong> 的精确映射
+              <strong className="text-[#3D3832]">5 大考试局 21 个数学类科目</strong> 的{hasPublishedMappings ? "已批准映射" : "候选映射"}
               <br />
               支持 <strong className="text-[#A9471F]">跨考试局整科对比</strong>、{" "}
               <strong className="text-[#A9471F]">同课程或跨课程 Paper 对比</strong> 及{" "}
@@ -259,14 +266,21 @@ export default function KnowledgeTreeComparePage() {
             {entry?.capabilities.papers.href && <Link to={withCourseContext(entry.capabilities.papers.href, context)} className="mt-4 inline-flex rounded-lg border border-[#d9d4ce] bg-white px-3 py-2 text-xs font-semibold text-[#675a4d] no-underline hover:border-[#a69888]">查看当前课程相关 Paper →</Link>}
           </div>
 
+          {!hasPublishedMappings && (
+            <div className="mb-6 rounded-2xl border border-[#e6cdbf] bg-[#fff8f3] p-5 text-center text-sm text-[#8a5c45]" role="status">
+              21 门课程映射已完成候选复核，正在等待所有者批准。批准前不会发布课程映射，也不会计算或展示精确相似度；下方仍可浏览已审计的 812 节点知识树。
+            </div>
+          )}
+
           {/* Subject + Paper selectors */}
-          <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-5">
+          {hasPublishedMappings && <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-5">
             <div className="flex items-start gap-4 flex-wrap">
               <div className="flex-1 min-w-[200px]">
                 <SubjectSelector label="科目 A" value={codeA} options={subjectOptions} onChange={handleSetCodeA} />
                 {papersA.length > 0 && (
                   <div className="mt-2">
-                    <PaperSelector label="Paper" papers={papersA} value={paperA} onChange={setPaperA} />
+                    <PaperSelector label="Paper" papers={papersA} value={paperA} onChange={setPaperA} disabled={!subjectA?.paperComparisonReady} />
+                    {!subjectA?.paperComparisonReady && <p className="mt-1 text-[10px] text-[#9a684d]">Paper 级映射待核验，暂不提供百分比对比</p>}
                   </div>
                 )}
               </div>
@@ -283,7 +297,8 @@ export default function KnowledgeTreeComparePage() {
                 <SubjectSelector label="科目 B" value={codeB} options={subjectOptions} onChange={handleSetCodeB} />
                 {papersB.length > 0 && (
                   <div className="mt-2">
-                    <PaperSelector label="Paper" papers={papersB} value={paperB} onChange={setPaperB} />
+                    <PaperSelector label="Paper" papers={papersB} value={paperB} onChange={setPaperB} disabled={!subjectB?.paperComparisonReady} />
+                    {!subjectB?.paperComparisonReady && <p className="mt-1 text-[10px] text-[#9a684d]">Paper 级映射待核验，暂不提供百分比对比</p>}
                   </div>
                 )}
               </div>
@@ -301,10 +316,10 @@ export default function KnowledgeTreeComparePage() {
                 </div>
               </div>
             )}
-          </div>
+          </div>}
 
           {/* Invalid comparison */}
-          {!isValidComparison && (
+          {hasPublishedMappings && !isValidComparison && (
             <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-6">
               <div className="flex items-center justify-center gap-2 text-[#625C54]">
                 <AlertCircle className="w-4 h-4 text-[#716A61]" />
@@ -313,6 +328,22 @@ export default function KnowledgeTreeComparePage() {
                 </p>
               </div>
             </div>
+          )}
+
+          {paperComparisonBlocked && (
+            <div className="mb-6 rounded-2xl border border-[#e6cdbf] bg-[#fff8f3] p-5 text-center text-sm text-[#8a5c45]">
+              Paper 级映射尚未达到完整且已复核的发布标准，本次不会计算或展示相似度。
+            </div>
+          )}
+
+          {subjectComparisonBlocked && (
+            <div className="mb-6 rounded-2xl border border-[#e6cdbf] bg-[#fff8f3] p-5 text-center text-sm text-[#8a5c45]">
+              当前课程映射仍处于候选复核阶段。本页可以浏览知识树，但不会计算或展示整科与 Paper 的精确相似度。
+            </div>
+          )}
+
+          {!hasPublishedMappings && (
+            <KnowledgeTreeView nodes={treeNodes} />
           )}
 
           {/* Calculation error */}

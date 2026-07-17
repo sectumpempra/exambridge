@@ -22,7 +22,7 @@ import {
   type PlannerExamDateResolution,
 } from "../data/plannerExamDates";
 import { usePlanner } from "../hooks/usePlanner";
-import type { PlannerConfig, PracticePaperOption } from "../hooks/usePlanner";
+import type { PaperPlanConfig, PlannerConfigV2, PracticePaperOption } from "../hooks/usePlanner";
 import { assetHref, buildPastPaperSets, resolvePastPaperCatalogKey, usePastPaperCatalogs } from "../domain-v2/past-papers";
 
 /** UI-level type: a selected paper group in the planner */
@@ -41,6 +41,8 @@ import { groupEdexcelALUnits, getUnitName, needsSubjectGrouping } from "../utils
 import { exportToExcel, exportToWord, exportToPDF } from "../utils/exportPlanner";
 
 const WEEKDAYS = ["日", "一", "二", "三", "四", "五", "六"];
+const paperGroupId = (group: Pick<SelectedPaperGroup, "board" | "level" | "subjectCode" | "paperLabel">) =>
+  `${group.board}|${group.level}|${group.subjectCode}|${group.paperLabel}`;
 
 /** Get the nearest future exam date for a paper group. Returns null if no date found. */
 function getGroupNearestExamDate(level: string, board: string, variants: { code: string }[]): string | null {
@@ -75,19 +77,27 @@ export default function Planner() {
   const [studentName, setStudentName] = useState("");
   // Backward-compatible loading from old share URLs (may contain level/board/selectedGroups)
   const oldShared = initialShared as unknown as Record<string, unknown> | null;
+  const sharedV2 = initialShared?.version === 2 ? initialShared : null;
+  const sharedGroups = sharedV2?.events.map((event) => ({
+    subjectCode: event.subjectCode,
+    paperLabel: event.paperLabel,
+    level: event.level,
+    board: event.board,
+    variants: event.variants,
+  } satisfies SelectedPaperGroup)) ?? [];
   const [selectedLevel, setSelectedLevel] = useState<string>(
-    (oldShared?.level as string) ?? "A-Level"
+    sharedV2?.events[0]?.level ?? (oldShared?.level as string) ?? "A-Level"
   );
   const [selectedBoard, setSelectedBoard] = useState<string>(
-    (oldShared?.board as string) ?? "CAIE"
+    sharedV2?.events[0]?.board ?? (oldShared?.board as string) ?? "CAIE"
   );
   const [selectedGroups, setSelectedGroups] = useState<SelectedPaperGroup[]>(
-    (oldShared?.selectedGroups as SelectedPaperGroup[]) ?? []
+    sharedGroups.length ? sharedGroups : (oldShared?.selectedGroups as SelectedPaperGroup[]) ?? []
   );
   const [startDate, setStartDate] = useState(initialShared?.startDate ?? format(new Date(), "yyyy-MM-dd"));
   const [restDays, setRestDays] = useState<number[]>(initialShared?.restDays ?? [0]);
-  const [intensity, setIntensity] = useState<Intensity>(initialShared?.intensity ?? "normal");
-  const [paperOverrides] = useState<Record<string, string>>(initialShared?.paperOverrides ?? {});
+  const [intensity, setIntensity] = useState<Intensity>(initialShared && initialShared.version !== 2 ? initialShared.intensity : "normal");
+  const [paperPlans, setPaperPlans] = useState<PaperPlanConfig[]>(sharedV2?.paperPlans ?? []);
   const [completedTasks, setCompletedTasks] = useState<Record<string, boolean>>({});
   const [collapsedWeeks, setCollapsedWeeks] = useState<Record<number, boolean>>({});
   // All subjects collapsed by default (true = collapsed)
@@ -114,6 +124,7 @@ export default function Planner() {
       setSelectedLevel(entry.plannerLevel!);
       setSelectedBoard(entry.plannerBoard!);
       setSelectedGroups([]);
+      setPaperPlans([]);
       const boardData = data[entry.plannerLevel!][entry.plannerBoard!] as Record<string, { name: string; papers: { code: string; component: string }[] }>;
       if (needsSubjectGrouping(entry.plannerBoard!, entry.plannerLevel!)) {
         const prefix = entry.subjectCode.slice(0, 3);
@@ -162,45 +173,63 @@ export default function Planner() {
 
   // Toggle a paper group (select/deselect all variants)
   const togglePaperGroup = (subjectCode: string, group: PaperGroup) => {
-    setSelectedGroups(prev => {
-      const exists = prev.find(g => g.subjectCode === subjectCode && g.paperNum === group.paperNum);
-      if (exists) {
-        return prev.filter(g => !(g.subjectCode === subjectCode && g.paperNum === group.paperNum));
-      }
-      return [...prev, {
-        subjectCode, paperNum: group.paperNum, paperLabel: group.label,
-        board: selectedBoard, level: selectedLevel,
-        variants: group.papers.map(p => ({ code: p.code, component: p.component })),
-      }];
-    });
+    const exists = selectedGroups.find(g => g.subjectCode === subjectCode && g.paperNum === group.paperNum);
+    if (exists) {
+      const id = paperGroupId(exists);
+      setSelectedGroups((groups) => groups.filter(g => !(g.subjectCode === subjectCode && g.paperNum === group.paperNum)));
+      setPaperPlans((plans) => plans.filter((plan) => plan.paperGroupId !== id));
+      return;
+    }
+    const selected: SelectedPaperGroup = {
+      subjectCode, paperNum: group.paperNum, paperLabel: group.label,
+      board: selectedBoard, level: selectedLevel,
+      variants: group.papers.map(p => ({ code: p.code, component: p.component })),
+    };
+    setSelectedGroups((groups) => [...groups, selected]);
+    setPaperPlans((plans) => [...plans, {
+      paperGroupId: paperGroupId(selected), enabled: true,
+      targetSetsPerWeek: INTENSITY_CONFIG[intensity].papersPerWeek,
+      priority: "normal", mode: "timed", durationMinutes: 90, reviewMinutes: 20,
+    }]);
   };
 
   // Toggle a unit for Edexcel AL (select/deselect all papers in unit)
   const toggleUnitSelection = (unitCode: string, papers: { code: string; component: string }[]) => {
-    setSelectedGroups(prev => {
-      const exists = prev.find(g => g.subjectCode === unitCode);
-      if (exists) {
-        return prev.filter(g => g.subjectCode !== unitCode);
-      }
-      return [...prev, {
-        subjectCode: unitCode, paperNum: "1", paperLabel: getUnitName(unitCode),
-        board: selectedBoard, level: selectedLevel,
-        variants: papers.map(p => ({ code: p.code, component: p.component })),
-      }];
-    });
+    const exists = selectedGroups.find(g => g.subjectCode === unitCode);
+    if (exists) {
+      const id = paperGroupId(exists);
+      setSelectedGroups((groups) => groups.filter(g => g.subjectCode !== unitCode));
+      setPaperPlans((plans) => plans.filter((plan) => plan.paperGroupId !== id));
+      return;
+    }
+    const selected: SelectedPaperGroup = {
+      subjectCode: unitCode, paperNum: "1", paperLabel: getUnitName(unitCode),
+      board: selectedBoard, level: selectedLevel,
+      variants: papers.map(p => ({ code: p.code, component: p.component })),
+    };
+    setSelectedGroups((groups) => [...groups, selected]);
+    setPaperPlans((plans) => [...plans, {
+      paperGroupId: paperGroupId(selected), enabled: true,
+      targetSetsPerWeek: INTENSITY_CONFIG[intensity].papersPerWeek,
+      priority: "normal", mode: "timed", durationMinutes: 90, reviewMinutes: 20,
+    }]);
+  };
+
+  const updatePaperPlan = (id: string, patch: Partial<PaperPlanConfig>) => {
+    setPaperPlans((plans) => plans.map((plan) => plan.paperGroupId === id ? { ...plan, ...patch } : plan));
   };
 
   // Build planner config from selected groups
   const { config, pastPapersMap } = useMemo(() => {
     // P1-3: Group variants into ExamEvents (one per subjectCode + paperLabel)
     const events = buildExamEvents(selectedGroups, getGroupNearestExamDate);
-    const cfg: PlannerConfig = {
+    const cfg: PlannerConfigV2 = {
+      version: 2,
       startDate,
       events,
       restDays,
-      intensity,
-      paperOverrides,
       maxTasksPerDay: 3,
+      paperPlans,
     };
     const map: Record<string, PracticePaperOption[]> = {};
     for (const g of selectedGroups) {
@@ -214,17 +243,23 @@ export default function Planner() {
       const componentCodes = g.variants
         .flatMap((variant) => [variant.component, variant.code])
         .map((value) => value.split("/").pop() ?? value);
-      map[name] = buildPastPaperSets(catalog, componentCodes).map((set) => ({
+      const plan = paperPlans.find((item) => item.paperGroupId === paperGroupId(g));
+      map[name] = buildPastPaperSets(catalog, componentCodes, { forPlanning: true })
+        .filter((set) => !plan?.allowedSeries?.length || plan.allowedSeries.includes(set.series))
+        .filter((set) => !plan?.allowedVariants?.length || (set.componentCode && plan.allowedVariants.includes(set.componentCode)))
+        .map((set) => ({
         id: set.id,
         title: set.title,
         questionPaperUrl: assetHref(set.questionPaper),
         markSchemeUrl: set.markScheme ? assetHref(set.markScheme) : undefined,
         sourcePageUrl: catalog.sourcePageUrl,
         accessStatus: set.questionPaper.accessStatus,
+        series: set.series,
+        variant: set.componentCode,
       }));
     }
     return { config: cfg, pastPapersMap: map };
-  }, [selectedGroups, startDate, restDays, intensity, paperOverrides, pastPaperCatalogs]);
+  }, [selectedGroups, startDate, restDays, paperPlans, pastPaperCatalogs]);
 
   const { weeks, totalTasks } = usePlanner(config, pastPapersMap);
 
@@ -279,20 +314,20 @@ export default function Planner() {
             {/* Level */}
             <div className={CARD_CLS}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}><Filter size={16} style={{ color: "#675A4D" }} /><h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>选择学段</h3></div>
-              <div style={{ display: "flex", gap: 8 }}>{levels.map(l => (<button key={l} onClick={() => { setSelectedLevel(l); setSelectedBoard(Object.keys((plannerData as Record<string, Record<string, unknown>>)[l] || {})[0] || ""); setSelectedGroups([]); }} className={selectBtnCls(selectedLevel === l)}>{l}</button>))}</div>
+              <div style={{ display: "flex", gap: 8 }}>{levels.map(l => (<button key={l} onClick={() => { setSelectedLevel(l); setSelectedBoard(Object.keys((plannerData as Record<string, Record<string, unknown>>)[l] || {})[0] || ""); setSelectedGroups([]); setPaperPlans([]); }} className={selectBtnCls(selectedLevel === l)}>{l}</button>))}</div>
             </div>
 
             {/* Board */}
             <div className={CARD_CLS}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}><GraduationCap size={16} style={{ color: "#675A4D" }} /><h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>选择考试局</h3></div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>{boards.map(b => (<button key={b} onClick={() => { setSelectedBoard(b); setSelectedGroups([]); }} className={selectBtnCls(selectedBoard === b)}>{b}</button>))}</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>{boards.map(b => (<button key={b} onClick={() => { setSelectedBoard(b); setSelectedGroups([]); setPaperPlans([]); }} className={selectBtnCls(selectedBoard === b)}>{b}</button>))}</div>
             </div>
 
             {/* Settings */}
             <div className={CARD_CLS}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}><Settings size={16} style={{ color: "#675A4D" }} /><h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>规划设置</h3></div>
               <div style={{ marginBottom: 12 }}><label style={{ fontSize: 12, color: "#625C54", fontWeight: 500, display: "block", marginBottom: 6 }}>开始日期</label><input aria-label="开始日期" type="date" value={startDate} onChange={e => setStartDate(e.target.value)} style={{ padding: "8px 12px", border: "1px solid #D9D4CE", borderRadius: 8, fontSize: 14, width: "100%", color: "#3D3832", background: "#FFF" }} /></div>
-              <div style={{ marginBottom: 12 }}><label style={{ fontSize: 12, color: "#625C54", fontWeight: 500, display: "block", marginBottom: 6 }}>备考强度</label><div style={{ display: "flex", gap: 6 }}>{(Object.keys(INTENSITY_CONFIG) as Intensity[]).map(k => (<button key={k} onClick={() => setIntensity(k)} className={selectBtnCls(intensity === k)}>{INTENSITY_CONFIG[k].label}</button>))}</div><p style={{ fontSize: 11, color: "#6E675E", margin: "4px 0 0" }}>{INTENSITY_CONFIG[intensity].description}</p></div>
+              <div style={{ marginBottom: 12 }}><label style={{ fontSize: 12, color: "#625C54", fontWeight: 500, display: "block", marginBottom: 6 }}>新选 Paper 默认强度</label><div style={{ display: "flex", gap: 6 }}>{(Object.keys(INTENSITY_CONFIG) as Intensity[]).map(k => (<button key={k} onClick={() => setIntensity(k)} className={selectBtnCls(intensity === k)}>{INTENSITY_CONFIG[k].label}</button>))}</div><p style={{ fontSize: 11, color: "#6E675E", margin: "4px 0 0" }}>只作为随后选中 Paper 的默认周配额；已选 Paper 可单独调整。</p></div>
               <div><label style={{ fontSize: 12, color: "#625C54", fontWeight: 500, display: "block", marginBottom: 6 }}>休息日</label><div style={{ display: "flex", gap: 4 }}>{WEEKDAYS.map((name, i) => (<button key={i} onClick={() => toggleRestDay(i)} title={WEEKDAYS[i]} style={{ width: 36, height: 36, borderRadius: 8, fontSize: 13, fontWeight: 600, border: restDays.includes(i) ? "1px solid #675A4D" : "1px solid #D9D4CE", background: restDays.includes(i) ? "linear-gradient(135deg, #675A4D, #A69888)" : "#FFF", color: restDays.includes(i) ? "#FFF" : "#625C54", cursor: "pointer" }}>{name}</button>))}</div>{restDays.length >= 7 && <p style={{ fontSize: 11, color: "#A9471F", margin: "4px 0 0" }}>⚠️ 一周内每天都设为休息日将导致规划为空</p>}</div>
             </div>
 
@@ -324,14 +359,14 @@ export default function Planner() {
                   const selectedPaperCount = selectedGroups.filter(g => g.subjectCode === subject.code).length;
                   return (
                     <div key={subject.code} style={{ border: "1px solid #E9E5DE", borderRadius: 10, overflow: "hidden" }}>
-                      <div onClick={() => setCollapsedSubjects(prev => ({ ...prev, [subject.code]: !prev[subject.code] }))}
-                        style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 12px", cursor: "pointer", background: selectedPaperCount > 0 ? "rgba(143,127,110,0.06)" : "#FAFAF8" }}>
+                      <button type="button" aria-expanded={!isSubjectCollapsed} onClick={() => setCollapsedSubjects(prev => ({ ...prev, [subject.code]: !prev[subject.code] }))}
+                        style={{ display: "flex", width: "100%", border: 0, textAlign: "left", alignItems: "center", gap: 8, padding: "10px 12px", cursor: "pointer", background: selectedPaperCount > 0 ? "rgba(143,127,110,0.06)" : "#FAFAF8" }}>
                         <span style={{ fontSize: 10, padding: "2px 7px", borderRadius: 8, background: "rgba(143,127,110,0.1)", color: "#675A4D", fontWeight: 700 }}>{CATEGORY_NAMES[subject.category]}</span>
                         <span style={{ fontSize: 14, fontWeight: 700, color: "#3D3832" }}>{subject.code}</span>
                         <span style={{ fontSize: 11, color: "#6E675E", flex: 1 }}>{subject.name}</span>
                         {selectedPaperCount > 0 && <span style={{ fontSize: 10, color: "#675A4D", fontWeight: 600 }}>{selectedPaperCount}个</span>}
                         {isSubjectCollapsed ? <ChevronDown size={14} style={{ color: "#6E675E" }} /> : <ChevronUp size={14} style={{ color: "#6E675E" }} />}
-                      </div>
+                      </button>
                       {!isSubjectCollapsed && (
                         <div style={{ padding: "6px 0", background: "#FFF" }}>
                           {subject.paperGroups.map(group => {
@@ -340,8 +375,8 @@ export default function Planner() {
                             const examDate = examSchedule?.date ?? null;
                             const daysUntil = examDate ? differenceInDays(parseLocalDate(examDate), new Date()) : null;
                             return (
-                              <div key={`${subject.code}_${group.paperNum}`} onClick={() => togglePaperGroup(subject.code, group)}
-                                style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 14px", cursor: "pointer", background: isSelected ? "rgba(143,127,110,0.04)" : "transparent", borderLeft: isSelected ? "3px solid #675A4D" : "3px solid transparent" }}>
+                              <button type="button" aria-pressed={isSelected} key={`${subject.code}_${group.paperNum}`} onClick={() => togglePaperGroup(subject.code, group)}
+                                style={{ display: "flex", width: "100%", border: 0, textAlign: "left", alignItems: "center", gap: 10, padding: "8px 14px", cursor: "pointer", background: isSelected ? "rgba(143,127,110,0.04)" : "transparent", borderLeft: isSelected ? "3px solid #675A4D" : "3px solid transparent" }}>
                                 <div style={{ width: 18, height: 18, borderRadius: 5, border: isSelected ? "none" : "1.5px solid #D9D4CE", background: isSelected ? "#675A4D" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                                   {isSelected && <Check size={12} color="#FFF" strokeWidth={3} />}
                                 </div>
@@ -350,7 +385,7 @@ export default function Planner() {
                                   {group.description && <div style={{ fontSize: 10, color: "#6E675E" }}>{group.description}</div>}
                                 </div>
                                 <span style={{ fontSize: 10, color: (daysUntil ?? Infinity) < 30 ? "#C17B5F" : "#6E675E" }}><ExamDateDisplay schedule={examSchedule} /></span>
-                              </div>
+                              </button>
                             );
                           })}
                         </div>
@@ -362,6 +397,47 @@ export default function Planner() {
                 )}
               </div>
             </div>
+
+            {selectedGroups.length > 0 && (
+              <div className={CARD_CLS}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                  <Settings size={16} style={{ color: "#675A4D" }} />
+                  <h3 style={{ fontSize: 15, fontWeight: 600, color: "#3D3832", margin: 0 }}>逐 Paper 练习强度</h3>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                  {selectedGroups.map((group) => {
+                    const id = paperGroupId(group);
+                    const plan = paperPlans.find((item) => item.paperGroupId === id);
+                    if (!plan) return null;
+                    const options = (pastPapersMap[`${group.subjectCode} ${group.paperLabel}`] ?? []).filter((item): item is PracticePaperOption => typeof item !== "string");
+                    const availableSeries = [...new Set(options.map((item) => item.series).filter((value): value is string => Boolean(value)))];
+                    const variants = [...new Set(group.variants.map((variant) => variant.component.split("/").pop() ?? variant.component))];
+                    return (
+                      <fieldset key={id} style={{ border: "1px solid #e6e0d8", borderRadius: 10, padding: 10, minWidth: 0 }}>
+                        <legend style={{ padding: "0 5px", fontSize: 12, fontWeight: 700, color: "#4a453f" }}>{group.subjectCode} {group.paperLabel}</legend>
+                        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 8 }}>
+                          <label style={{ fontSize: 10, color: "#625c54" }}>每周套数
+                            <input aria-label={`${group.subjectCode} ${group.paperLabel} 每周套数`} type="number" min={0} max={7} value={plan.targetSetsPerWeek} onChange={(event) => updatePaperPlan(id, { targetSetsPerWeek: Math.max(0, Math.min(7, Number(event.target.value))) })} style={{ display: "block", width: "100%", marginTop: 3, padding: "6px 8px", border: "1px solid #d9d4ce", borderRadius: 6 }} />
+                          </label>
+                          <label style={{ fontSize: 10, color: "#625c54" }}>优先级
+                            <select aria-label={`${group.subjectCode} ${group.paperLabel} 优先级`} value={plan.priority} onChange={(event) => updatePaperPlan(id, { priority: event.target.value as PaperPlanConfig["priority"] })} style={{ display: "block", width: "100%", marginTop: 3, padding: "6px 8px", border: "1px solid #d9d4ce", borderRadius: 6, background: "white" }}><option value="high">高</option><option value="normal">普通</option><option value="low">低</option></select>
+                          </label>
+                          <label style={{ fontSize: 10, color: "#625c54" }}>练习模式
+                            <select aria-label={`${group.subjectCode} ${group.paperLabel} 练习模式`} value={plan.mode} onChange={(event) => updatePaperPlan(id, { mode: event.target.value as PaperPlanConfig["mode"] })} style={{ display: "block", width: "100%", marginTop: 3, padding: "6px 8px", border: "1px solid #d9d4ce", borderRadius: 6, background: "white" }}><option value="timed">计时整套</option><option value="untimed">非计时</option><option value="review">复盘</option></select>
+                          </label>
+                          <label style={{ fontSize: 10, color: "#625c54" }}>练习/复盘分钟
+                            <span style={{ display: "flex", gap: 4, marginTop: 3 }}><input aria-label={`${group.subjectCode} 练习分钟`} type="number" min={10} max={300} value={plan.durationMinutes ?? 90} onChange={(event) => updatePaperPlan(id, { durationMinutes: Number(event.target.value) })} style={{ minWidth: 0, width: "50%", padding: "6px", border: "1px solid #d9d4ce", borderRadius: 6 }} /><input aria-label={`${group.subjectCode} 复盘分钟`} type="number" min={0} max={180} value={plan.reviewMinutes ?? 20} onChange={(event) => updatePaperPlan(id, { reviewMinutes: Number(event.target.value) })} style={{ minWidth: 0, width: "50%", padding: "6px", border: "1px solid #d9d4ce", borderRadius: 6 }} /></span>
+                          </label>
+                        </div>
+                        {availableSeries.length > 0 && <div style={{ marginTop: 8, fontSize: 10, color: "#625c54" }}>考季：{availableSeries.map((series) => <label key={series} style={{ marginLeft: 8 }}><input type="checkbox" checked={!plan.allowedSeries?.length || plan.allowedSeries.includes(series)} onChange={(event) => { const current = plan.allowedSeries?.length ? plan.allowedSeries : availableSeries; updatePaperPlan(id, { allowedSeries: event.target.checked ? [...new Set([...current, series])] : current.filter((item) => item !== series) }); }} /> {series}</label>)}</div>}
+                        {variants.length > 1 && <div style={{ marginTop: 6, fontSize: 10, color: "#625c54" }}>Variant：{variants.map((variant) => <label key={variant} style={{ marginLeft: 8 }}><input type="checkbox" checked={!plan.allowedVariants?.length || plan.allowedVariants.includes(variant)} onChange={(event) => { const current = plan.allowedVariants?.length ? plan.allowedVariants : variants; updatePaperPlan(id, { allowedVariants: event.target.checked ? [...new Set([...current, variant])] : current.filter((item) => item !== variant) }); }} /> {variant}</label>)}</div>}
+                        {options.length === 0 && <p style={{ margin: "7px 0 0", fontSize: 10, color: "#a15f46" }}>暂无已核验 Question Paper，本 Paper 不会生成任务。</p>}
+                      </fieldset>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
             {/* Countdown */}
             {selectedGroups.length > 0 && (
@@ -445,13 +521,13 @@ export default function Planner() {
                 </div>
               ) : (weeks.map(week => (
                 <div key={week.weekNum} className={CARD_CLS}>
-                  <div onClick={() => setCollapsedWeeks(prev => ({ ...prev, [week.weekNum]: !prev[week.weekNum] }))} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", cursor: "pointer", paddingBottom: 8, borderBottom: "1px solid #F0EDE8" }}>
+                  <button type="button" aria-expanded={!collapsedWeeks[week.weekNum]} onClick={() => setCollapsedWeeks(prev => ({ ...prev, [week.weekNum]: !prev[week.weekNum] }))} style={{ display: "flex", width: "100%", background: "transparent", border: 0, alignItems: "center", justifyContent: "space-between", cursor: "pointer", paddingBottom: 8, borderBottom: "1px solid #F0EDE8" }}>
                     <span style={{ fontSize: 15, fontWeight: 600, color: "#3D3832" }}>{week.weekLabel}</span>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <span style={{ fontSize: 12, color: "#6E675E" }}>{week.days.filter(d => !d.isRestDay && d.papers.length > 0).length} 天刷题 · {week.days.reduce((s, d) => s + d.papers.length, 0)} 套</span>
                       {collapsedWeeks[week.weekNum] ? <ChevronDown size={16} style={{ color: "#6E675E" }} /> : <ChevronUp size={16} style={{ color: "#6E675E" }} />}
                     </div>
-                  </div>
+                  </button>
                   {!collapsedWeeks[week.weekNum] && (<div style={{ display: "flex", flexDirection: "column", gap: 1, marginTop: 8 }}>{week.days.map(day => <DayRow key={day.date} day={day} completedTasks={completedTasks} onToggleComplete={key => setCompletedTasks(p => ({ ...p, [key]: !p[key] }))} />)}</div>)}
                 </div>
               )))}
@@ -484,13 +560,18 @@ function DayRow({ day, completedTasks, onToggleComplete }: {
             const isDone = completedTasks[key];
             return (
               <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, padding: "6px 10px", borderRadius: 6, background: isDone ? "rgba(107,143,94,0.08)" : "rgba(143,127,110,0.04)", border: isDone ? "1px solid rgba(107,143,94,0.2)" : "1px solid transparent" }}>
-                <button onClick={() => onToggleComplete(key)} style={{ width: 18, height: 18, borderRadius: "50%", border: isDone ? "none" : "1px solid #D9D4CE", background: isDone ? "#6B8F5E" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", flexShrink: 0 }}>{isDone && <Check size={12} color="#FFF" />}</button>
+                <button aria-label={`${isDone ? "取消完成" : "标记完成"}：${p.pastPaper}`} aria-pressed={Boolean(isDone)} onClick={() => onToggleComplete(key)} style={{ width: 18, height: 18, borderRadius: "50%", border: isDone ? "none" : "1px solid #D9D4CE", background: isDone ? "#6B8F5E" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", flexShrink: 0 }}>{isDone && <Check size={12} color="#FFF" />}</button>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
                     <span style={{ fontSize: 12, fontWeight: 600, color: "#675A4D" }}>{p.paperCode}</span>
                     <span style={{ fontSize: 12, color: "#4A453F", fontWeight: 500 }}>{p.pastPaper}</span>
                     {p.questionPaperUrl && <a href={p.questionPaperUrl} target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 3, color: "#486b58", fontSize: 11, fontWeight: 600, textDecoration: "none" }}><FileDown size={11} /> 试卷</a>}
                     {p.markSchemeUrl && <a href={p.markSchemeUrl} target="_blank" rel="noreferrer" style={{ color: "#5d6f64", fontSize: 11, fontWeight: 600, textDecoration: "none" }}>评分标准</a>}
+                    <span style={{ fontSize: 10, color: "#756e67" }}>
+                      {p.mode === "review" ? "复盘" : p.mode === "untimed" ? "不限时" : "计时"}
+                      {p.durationMinutes ? ` ${p.durationMinutes} 分钟` : ""}
+                      {p.reviewMinutes ? ` + 复盘 ${p.reviewMinutes} 分钟` : ""}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -530,13 +611,13 @@ function EdexcelALSubjectList({
         return (
           <div key={key} style={{ border: "1px solid #E9E5DE", borderRadius: 10, overflow: "hidden" }}>
             {/* Subject area header */}
-            <div onClick={() => onToggleSubject(key)}
-              style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 12px", cursor: "pointer", background: selectedCount > 0 ? "rgba(143,127,110,0.06)" : "#FAFAF8" }}>
+            <button type="button" aria-expanded={!isCollapsed} onClick={() => onToggleSubject(key)}
+              style={{ display: "flex", width: "100%", border: 0, textAlign: "left", alignItems: "center", gap: 8, padding: "10px 12px", cursor: "pointer", background: selectedCount > 0 ? "rgba(143,127,110,0.06)" : "#FAFAF8" }}>
               <span style={{ fontSize: 10, padding: "2px 7px", borderRadius: 8, background: "rgba(143,127,110,0.1)", color: "#675A4D", fontWeight: 700 }}>{group.categoryLabel}</span>
               <span style={{ fontSize: 14, fontWeight: 700, color: "#3D3832", flex: 1 }}>{group.subjectName}</span>
               {selectedCount > 0 && <span style={{ fontSize: 10, color: "#675A4D", fontWeight: 600 }}>{selectedCount}/{group.units.length}</span>}
               {isCollapsed ? <ChevronDown size={14} style={{ color: "#6E675E" }} /> : <ChevronUp size={14} style={{ color: "#6E675E" }} />}
-            </div>
+            </button>
             {/* Units list */}
             {!isCollapsed && (
               <div style={{ padding: "6px 0", background: "#FFF" }}>
@@ -546,8 +627,8 @@ function EdexcelALSubjectList({
                   const examDate = examSchedule?.date ?? null;
                   const daysUntil = examDate ? differenceInDays(parseLocalDate(examDate), new Date()) : null;
                   return (
-                    <div key={unit.code} onClick={() => onToggleUnit(unit.code, unit.papers)}
-                      style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 14px", cursor: "pointer", background: isSelected ? "rgba(143,127,110,0.04)" : "transparent", borderLeft: isSelected ? "3px solid #675A4D" : "3px solid transparent" }}>
+                    <button type="button" aria-pressed={isSelected} key={unit.code} onClick={() => onToggleUnit(unit.code, unit.papers)}
+                      style={{ display: "flex", width: "100%", border: 0, textAlign: "left", alignItems: "center", gap: 10, padding: "8px 14px", cursor: "pointer", background: isSelected ? "rgba(143,127,110,0.04)" : "transparent", borderLeft: isSelected ? "3px solid #675A4D" : "3px solid transparent" }}>
                       {/* Checkbox */}
                       <div style={{ width: 18, height: 18, borderRadius: 5, border: isSelected ? "none" : "1.5px solid #D9D4CE", background: isSelected ? "#675A4D" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                         {isSelected && <Check size={12} color="#FFF" strokeWidth={3} />}
@@ -561,7 +642,7 @@ function EdexcelALSubjectList({
                       <span style={{ fontSize: 10, color: (daysUntil ?? Infinity) < 30 ? "#C17B5F" : "#6E675E", flexShrink: 0 }}>
                         <ExamDateDisplay schedule={examSchedule} />
                       </span>
-                    </div>
+                    </button>
                   );
                 })}
               </div>

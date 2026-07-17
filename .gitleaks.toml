@@ -1,0 +1,20 @@
+title = "ExamBridge Gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+  [[rules.allowlists]]
+  description = "Public past-paper catalogue identifiers are not API keys"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = [
+    '''^(caie-(0580|0606|9231|9709)|pearson-(1ma1|4ma1|9ma0|9fm0|yma01)|ocr-h240)$''',
+  ]
+  paths = [
+    '''^data/candidates/past-papers/approved/2026-07-17-past-paper-10-maths/(pearson-9fm0|pearson-yma01)\.json$''',
+    '''^generated/past-paper-(activation|audit|research-audit)-report\.json$''',
+    '''^public/data/past-papers/index\.json$''',
+  ]

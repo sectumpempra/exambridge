@@ -18,9 +18,9 @@ const cache = new Map<string, Promise<PastPaperCatalog>>();
 
 function normalizedBoard(board: string): "CAIE" | "Edexcel" | "OCR" | undefined {
   const normalized = board.toLowerCase();
+  if (normalized.includes("ocr")) return "OCR";
   if (normalized.includes("cambridge") || normalized === "caie") return "CAIE";
   if (normalized.includes("pearson") || normalized.includes("edexcel")) return "Edexcel";
-  if (normalized.includes("ocr")) return "OCR";
   return undefined;
 }
 
@@ -64,10 +64,43 @@ export interface PastPaperSet {
   companions: PastPaperAsset[];
 }
 
-export function buildPastPaperSets(catalog: PastPaperCatalog, componentCodes?: readonly string[]): PastPaperSet[] {
+export type PastPaperCatalogMaturity = "catalogued" | "metadata-ready" | "past-paper-ready" | "verified";
+
+export function getPastPaperCatalogMaturity(catalog: PastPaperCatalog): PastPaperCatalogMaturity {
+  if (catalog.assets.length === 0) return "catalogued";
+  const questionPapers = catalog.assets.filter((asset) => asset.materialType === "question-paper");
+  if (questionPapers.length === 0) return "metadata-ready";
+  const publicQuestions = questionPapers.filter((asset) => asset.accessStatus === "public" && asset.linkStatus.status !== "broken");
+  if (publicQuestions.length === 0) return "metadata-ready";
+  const fullyPaired = publicQuestions.every((question) => catalog.assets.some((asset) =>
+    asset.paperSetId === question.paperSetId && asset.materialType === "mark-scheme" && asset.linkStatus.status !== "broken"
+  ));
+  const humanVerified = catalog.assets.every((asset) => asset.provenance.verifiedBy === "human");
+  return fullyPaired && humanVerified ? "verified" : "past-paper-ready";
+}
+
+export function buildPastPaperSets(
+  catalog: PastPaperCatalog,
+  componentCodes?: readonly string[],
+  options: { forPlanning?: boolean } = {},
+): PastPaperSet[] {
   const allowed = componentCodes?.length ? new Set(componentCodes.map((code) => code.toUpperCase())) : undefined;
   const questionPapers = catalog.assets.filter((asset) =>
     asset.materialType === "question-paper" && (!allowed || (asset.componentCode && allowed.has(asset.componentCode.toUpperCase())))
+    && (!options.forPlanning || (
+      asset.accessStatus === "public"
+      && asset.linkStatus.status !== "broken"
+      && asset.provenance.verifiedBy === "human"
+      && asset.syllabusApplicability === "current"
+      && catalog.assets.some((companion) =>
+        companion.paperSetId === asset.paperSetId
+        && companion.materialType === "mark-scheme"
+        && companion.accessStatus === "public"
+        && companion.linkStatus.status !== "broken"
+        && companion.provenance.verifiedBy === "human"
+        && companion.syllabusApplicability === "current"
+      )
+    ))
   );
 
   return questionPapers.map((questionPaper) => ({

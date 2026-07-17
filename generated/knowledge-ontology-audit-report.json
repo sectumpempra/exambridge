@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-16T15:29:39.372Z",
+  "tree": {
+    "version": "1.0.0-mvp",
+    "nodeCount": 812,
+    "sha256": "d41a316b480daa60391bde5d6f1c35f3e323bfb3adbfe2de3e455dc685ae1ab1"
+  },
+  "grain": "one canonical mathematics knowledge concept per node with a single parent path",
+  "checks": {
+    "uniqueIds": true,
+    "parentIntegrity": true,
+    "acyclic": true,
+    "levelAndPathConsistency": true,
+    "leafConsistency": true,
+    "normalizedSiblingUniqueness": true,
+    "stageValidity": true,
+    "semanticDomainReview": true
+  },
+  "repeatedNameCandidateCount": 14,
+  "nonKnowledgeCandidateCount": 0,
+  "semanticClassCounts": {
+    "root": 1,
+    "mathematicalKnowledge": 787,
+    "mathematicalPractice": 24,
+    "exactComparisonEligible": 576
+  },
+  "semanticCandidates": [
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "probability distributions",
+      "nodeIds": [
+        "PROB",
+        "PROB-DIST"
+      ],
+      "paths": [
+        "Mathematics > Probability and Distributions",
+        "Mathematics > Probability and Distributions > Probability Distributions"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "PROB is the whole probability domain; PROB-DIST is its distributions topic."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "reflections",
+      "nodeIds": [
+        "ALGF-FUNC-TRAN-REFL",
+        "GEOM-CONS-TRAN-REFL"
+      ],
+      "paths": [
+        "Mathematics > Algebra and Functions > Functions > Function Transformations > Reflections",
+        "Mathematics > Geometry and Mensuration > Construction and Transformations > Geometric Transformations > Reflections"
+      ],
+      "disposition": "keep-distinct",
+      "rationale": "Function reflection and geometric reflection are different operations in different domains."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "integration",
+      "nodeIds": [
+        "CALC-INTE",
+        "CALC-INTE-RULE"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Integration",
+        "Mathematics > Calculus > Integration > Integration Techniques"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "CALC-INTE is the topic branch; CALC-INTE-RULE groups integration techniques."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "general solutions",
+      "nodeIds": [
+        "CALC-DIFFEQ-FODE-GENS",
+        "CALC-LDE-FIRST-GENS"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Differential Equations > First Order Differential Equations > General solutions",
+        "Mathematics > Calculus > Linear Differential Equations > First Order Linear Differential Equations > General solutions"
+      ],
+      "disposition": "keep-distinct",
+      "rationale": "The nodes belong to general first-order and specifically linear differential-equation contexts."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "particular solutions",
+      "nodeIds": [
+        "CALC-DIFFEQ-FODE-PART",
+        "CALC-LDE-FIRST-PART"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Differential Equations > First Order Differential Equations > Particular solutions",
+        "Mathematics > Calculus > Linear Differential Equations > First Order Linear Differential Equations > Particular solutions"
+      ],
+      "disposition": "keep-distinct",
+      "rationale": "The nodes belong to general first-order and specifically linear differential-equation contexts."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "discrete random variables",
+      "nodeIds": [
+        "PROB-DRVD",
+        "PROB-DRVD-DRVB"
+      ],
+      "paths": [
+        "Mathematics > Probability and Distributions > Discrete Random Variables",
+        "Mathematics > Probability and Distributions > Discrete Random Variables > Discrete Random Variables"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent is a topic container and the child is a subtopic container; leaf concepts remain below it."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "probability generating functions",
+      "nodeIds": [
+        "PROB-PGF",
+        "PROB-PGF-PGF"
+      ],
+      "paths": [
+        "Mathematics > Probability and Distributions > Probability Generating Functions",
+        "Mathematics > Probability and Distributions > Probability Generating Functions > Probability Generating Functions"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent is a domain topic and the child groups definition and application concepts."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "rigid body equilibrium",
+      "nodeIds": [
+        "MECH-FURT-RIGD",
+        "MECH-FURT-RIGD-RBAL"
+      ],
+      "paths": [
+        "Mathematics > Mechanics > Further Mechanics > Rigid Body Equilibrium",
+        "Mathematics > Mechanics > Further Mechanics > Rigid Body Equilibrium > Rigid body equilibrium"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent groups rigid-body concepts; the leaf is the equilibrium concept itself."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "problem solving",
+      "nodeIds": [
+        "REAS-PROB",
+        "REAS-PROB-PSOL"
+      ],
+      "paths": [
+        "Mathematics > Mathematical Reasoning and Modelling > Problem Solving",
+        "Mathematics > Mathematical Reasoning and Modelling > Problem Solving > Problem-Solving Skills"
+      ],
+      "disposition": "keep-as-practice",
+      "rationale": "This branch represents mathematical practice, not assessment content, and is excluded from exact knowledge similarity."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "de moivre s theorem",
+      "nodeIds": [
+        "ALGF-CPLX-DEMO",
+        "ALGF-CPLX-DEMO-THM"
+      ],
+      "paths": [
+        "Mathematics > Algebra and Functions > Complex Numbers > De Moivre's Theorem",
+        "Mathematics > Algebra and Functions > Complex Numbers > De Moivre's Theorem > De Moivre's theorem"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent groups theorem, proof and applications; the leaf represents the theorem statement/use."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "cayley hamilton theorem",
+      "nodeIds": [
+        "ALGF-MATR-CAYL",
+        "ALGF-MATR-CAYL-THEO"
+      ],
+      "paths": [
+        "Mathematics > Algebra and Functions > Matrices > Cayley-Hamilton Theorem",
+        "Mathematics > Algebra and Functions > Matrices > Cayley-Hamilton Theorem > Cayley-Hamilton theorem"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent groups theorem and applications; the leaf represents the theorem statement/use."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "further differentiation",
+      "nodeIds": [
+        "CALC-FDIFF",
+        "CALC-FDIFF-FDIFF"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Further Differentiation",
+        "Mathematics > Calculus > Further Differentiation > Further Differentiation"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent is a curriculum branch; the child groups advanced differentiation techniques."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "further integration",
+      "nodeIds": [
+        "CALC-FINT",
+        "CALC-FINT-FINT"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Further Integration",
+        "Mathematics > Calculus > Further Integration > Further Integration Techniques"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent is a curriculum branch; the child groups advanced integration techniques."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "hyperbolic functions",
+      "nodeIds": [
+        "CALC-HYP",
+        "CALC-HYP-HYP"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Hyperbolic Functions",
+        "Mathematics > Calculus > Hyperbolic Functions > Hyperbolic Functions"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent is a curriculum branch; the child groups definitions and identities."
+    }
+  ],
+  "codexReviewedSemanticCandidateCount": 14,
+  "unresolvedSemanticCandidateCount": 0,
+  "machineIssueCount": 0,
+  "confirmedMigrationCount": 0,
+  "failureCount": 0,
+  "failures": [],
+  "warningCount": 0,
+  "warnings": []
+}

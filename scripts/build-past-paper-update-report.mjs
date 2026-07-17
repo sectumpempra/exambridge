@@ -6,6 +6,19 @@ const root = process.cwd();
 const candidateDirectory = resolve(root, "data/candidates/past-papers");
 const activeDirectory = resolve(root, "public/data/past-papers");
 const reportPath = resolve(root, "generated/past-paper-update-report.json");
+const candidateFiles = (await readdir(candidateDirectory)).filter((name) => name.endsWith(".json")).sort();
+const activeIndex = JSON.parse(await readFile(resolve(activeDirectory, "index.json"), "utf8"));
+if (candidateFiles.length === 0) {
+  await mkdir(resolve(root, "generated"), { recursive: true });
+  await writeFile(reportPath, `${JSON.stringify({
+    status: "no-candidate",
+    generatedAt: activeIndex.generatedAt,
+    activeCatalogs: activeIndex.catalogs.map((entry) => entry.key),
+    publicationBlocked: false,
+  }, null, 2)}\n`, "utf8");
+  console.log("Past-paper update report: no-candidate.");
+  process.exit(0);
+}
 const server = await createServer({
   configFile: false,
   appType: "custom",
@@ -16,12 +29,10 @@ const server = await createServer({
 
 try {
   const { PastPaperCatalogCandidateSchema } = await server.ssrLoadModule("/src/domain-v2/past-papers/schema.ts");
-  const candidateFiles = (await readdir(candidateDirectory)).filter((name) => name.endsWith(".json")).sort();
   const expectedModelId = process.env.KIMI_EXPECTED_MODEL_ID;
   if (candidateFiles.length > 0 && !expectedModelId) {
     throw new Error("KIMI_EXPECTED_MODEL_ID is required before validating any Kimi candidate.");
   }
-  const activeIndex = JSON.parse(await readFile(resolve(activeDirectory, "index.json"), "utf8"));
   const activeFiles = new Map(activeIndex.catalogs.map((entry) => [entry.key, entry.file]));
   const diffs = [];
 

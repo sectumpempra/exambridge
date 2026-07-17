@@ -1,0 +1,802 @@
+{
+  "schemaVersion": "4.0.0",
+  "qualificationVersionId": "Edexcel-4MA1:Issue 2",
+  "board": "Edexcel",
+  "subjectCode": "4MA1",
+  "subjectName": "International GCSE Mathematics A",
+  "level": "IGCSE",
+  "syllabusVersion": "Issue 2",
+  "effectiveFrom": "2017-09-01",
+  "sources": [
+    {
+      "url": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Mathematics%20A/2016/Specification%20and%20sample%20assessments/international-gcse-in-mathematics-spec-a.pdf",
+      "title": "Pearson Edexcel International GCSE Mathematics A specification",
+      "documentVersion": "Issue 2",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "d58830e570d58aeccd7146f5465b3c117378c42d08d663f18478f2793c7e737b",
+      "sourceType": "official"
+    }
+  ],
+  "reviewStatus": "owner-approved",
+  "review": {
+    "generatedAt": "2026-07-16",
+    "promptVersion": "knowledge-v4-2-map",
+    "requestedModelId": "kimi-k2.7-code-highspeed",
+    "responseModelId": "kimi-k2.7-code-highspeed",
+    "reviewedAt": "2026-07-16",
+    "approvedAt": "2026-07-16",
+    "approvalBatch": "knowledge-v4-20260716"
+  },
+  "declaredPapers": [
+    "4MA1/1F",
+    "4MA1/2F",
+    "4MA1/1H",
+    "4MA1/2H",
+    "1F",
+    "2F",
+    "1H",
+    "2H"
+  ],
+  "syllabusPoints": [
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.1",
+      "sourceReference": "p.17",
+      "canonicalNodeIds": [
+        "NUM-SYS-TYPE-INTG",
+        "NUM-OPS-CALC-FOUR",
+        "NUM-OPS-CALC-NEG",
+        "NUM-OPS-CALC-BIDM",
+        "NUM-OPS-CALC-BRAC",
+        "NUM-SYS-TYPE-NAT",
+        "NUM-SYS-TYPE-PRIM",
+        "NUM-SYS-TYPE-FACT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; integers, operations, primes, factors and multiples."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.2",
+      "sourceReference": "p.17",
+      "canonicalNodeIds": [
+        "NUM-FRAC-FRAC",
+        "NUM-FRAC-FRAC-EQVF",
+        "NUM-FRAC-FRAC-SIMP",
+        "NUM-FRAC-FRAC-MIXD",
+        "NUM-FRAC-FRAC-PROP",
+        "NUM-FRAC-DECI-CONV"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; equivalent, mixed and operations with fractions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.3",
+      "sourceReference": "p.18, p.35",
+      "canonicalNodeIds": [
+        "NUM-FRAC-DECI-PLAC",
+        "NUM-FRAC-DECI-ORDR",
+        "NUM-FRAC-DECI-CONV",
+        "NUM-FRAC-DECI-RECR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers terminating decimals; Higher adds recurring decimals to fractions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.4",
+      "sourceReference": "p.18, p.35",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SQRT",
+        "NUM-POW-POWR-CUBR",
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-ZERO",
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-INDX-FRAC",
+        "NUM-POW-POWR-SURD",
+        "NUM-POW-POWR-RATD",
+        "NUM-SYS-TYPE-PRIM",
+        "NUM-SYS-TYPE-FACT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers powers, roots, prime factors, HCF and LCM; Higher adds surds, rationalising and fractional indices."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.5",
+      "sourceReference": "p.18, p.35",
+      "canonicalNodeIds": [
+        "NUM-SYS-SET-LANG",
+        "NUM-SYS-SET-UNIN",
+        "NUM-SYS-SET-COMP",
+        "NUM-SYS-SET-VENN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation introduces sets and Venn diagrams; Higher adds subsets, n(A) and practical situations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.6",
+      "sourceReference": "p.19, p.35",
+      "canonicalNodeIds": [
+        "NUM-FRAC-PERC-PART",
+        "NUM-FRAC-PERC-QTY",
+        "NUM-FRAC-PERC-COMP",
+        "NUM-FRAC-PERC-INDE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers percentage change, reverse percentages and compound interest; Higher adds repeated percentage change."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.7",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-SIMP",
+        "NUM-RAT-RATI-SHAR",
+        "NUM-RAT-RATI-PROP",
+        "NUM-RAT-RATI-DIRE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; ratio, proportion, direct proportion and map/scale problems."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.8",
+      "sourceReference": "p.20, p.36",
+      "canonicalNodeIds": [
+        "NUM-ACC-ROUN-POW10",
+        "NUM-ACC-ROUN-SF",
+        "NUM-ACC-ROUN-DP",
+        "NUM-ACC-ROUN-ESTM",
+        "NUM-ACC-BOUN-UPLO",
+        "NUM-ACC-BOUN-CALC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers rounding, bounds and estimation; Higher adds problem solving with bounds."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.9",
+      "sourceReference": "p.20, p.36",
+      "canonicalNodeIds": [
+        "NUM-POW-STDF-CONV",
+        "NUM-POW-STDF-CALC",
+        "NUM-POW-STDF-INTP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation interprets and calculates in standard form; Higher solves problems."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.10",
+      "sourceReference": "p.20",
+      "canonicalNodeIds": [
+        "NUM-MEAS-TIME-TIME",
+        "NUM-MEAS-TIME-CLOCK",
+        "NUM-MEAS-TIME-MONE",
+        "GEOM-MENS-UNIT-LENG",
+        "GEOM-MENS-UNIT-AREA",
+        "GEOM-MENS-UNIT-VOLU",
+        "GEOM-MENS-UNIT-CAPA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; metric units, time, money and currency conversion."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-1.11",
+      "sourceReference": "p.20-21",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC-FOUR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculator use for numerical results; mapped broadly to calculation skills."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-2.1",
+      "sourceReference": "p.21, p.37",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-SYMB",
+        "ALGF-EXP-NOTN-GENR",
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-INDX-ZERO",
+        "NUM-POW-INDX-FRAC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers symbols and simple index laws; Higher extends to fractional and negative indices."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-2.2",
+      "sourceReference": "p.21, p.37",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-SUBS",
+        "ALGF-EXP-MANI-LIKE",
+        "ALGF-EXP-MANI-EXP1",
+        "ALGF-EXP-MANI-EXP2",
+        "ALGF-EXP-MANI-FACT",
+        "ALGF-EQN-QUAD-COMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers substitution, expanding, factorising quadratics x^2+bx+c; Higher adds general quadratics, algebraic fractions, completing the square and algebraic proof."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-2.3",
+      "sourceReference": "p.21, p.37",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-FORM",
+        "ALGF-EQN-LINE-SUBJ",
+        "ALGF-EQN-LINE-SUB2"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation changes subject appearing once; Higher includes subject appearing twice or power of subject."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-2.4",
+      "sourceReference": "p.22",
+      "canonicalNodeIds": [
+        "ALGF-EQN-LINE-SOLV",
+        "ALGF-EQN-LINE-FORM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; solve linear equations and set up from data."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-2.5",
+      "sourceReference": "p.38",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-DIRE",
+        "NUM-RAT-RATI-PROP",
+        "ALGF-FUNC-GRAP-RECP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Higher Tier only; direct and inverse proportion linked to graphs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-2.6",
+      "sourceReference": "p.22, p.38",
+      "canonicalNodeIds": [
+        "ALGF-EQN-SIMU-LIN2",
+        "ALGF-EQN-SIMU-ELIM",
+        "ALGF-EQN-SIMU-SUBS",
+        "ALGF-FUNC-GRAP-INTR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation solves two linear simultaneous equations; Higher interprets as intersecting lines."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-2.7",
+      "sourceReference": "p.22, p.38",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-FACT",
+        "ALGF-EQN-QUAD-FORM",
+        "ALGF-EQN-QUAD-COMP",
+        "ALGF-EQN-QUAD-DATA",
+        "ALGF-EQN-SIMU-LINQ"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation factorises x^2+bx+c; Higher adds formula, completing square, forming equations and linear-quadratic simultaneous equations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-2.8",
+      "sourceReference": "p.22, p.38",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-LINS",
+        "ALGF-EQN-INEQ-NUMB",
+        "ALGF-EQN-INEQ-REGN",
+        "ALGF-EQN-INEQ-QUAD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers linear inequalities and regions; Higher adds quadratic inequalities."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-3.1",
+      "sourceReference": "p.23, p.39",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-TERM",
+        "ALGF-SEQ-SEQU-NTH",
+        "ALGF-SEQ-SEQU-ARIT",
+        "ALGF-SEQ-SERS-ARSM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers term-to-term and nth term of arithmetic sequences; Higher adds a, d and sum of arithmetic series."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-3.2",
+      "sourceReference": "p.39",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-DEFS-DEFN",
+        "ALGF-FUNC-DEFS-NOTN",
+        "ALGF-FUNC-DEFS-DOMR",
+        "ALGF-FUNC-COMP-COMP",
+        "ALGF-FUNC-COMP-INVR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Higher Tier only; function notation, domain/range, composite and inverse functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-3.3",
+      "sourceReference": "p.23-24, p.39-40",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-COOR",
+        "GEOM-COOR-CART-MIDP",
+        "GEOM-COOR-LINE-GRAD",
+        "GEOM-COOR-LINE-YMXC",
+        "GEOM-COOR-LINE-GENR",
+        "GEOM-COOR-CART-DIST",
+        "ALGF-FUNC-GRAP-LINR",
+        "ALGF-FUNC-GRAP-QUAD",
+        "ALGF-FUNC-GRAP-CUBC",
+        "ALGF-FUNC-GRAP-RECP",
+        "TRIG-FUNC-GRAP-SINE",
+        "TRIG-FUNC-GRAP-COSN",
+        "TRIG-FUNC-GRAP-TANG",
+        "ALGF-FUNC-TRAN-VERT",
+        "ALGF-FUNC-TRAN-HORZ",
+        "ALGF-FUNC-TRAN-STRE",
+        "ALGF-FUNC-GRAP-INTR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers linear/quadratic graphs, gradients, coordinates and conversion graphs; Higher adds cubic, reciprocal, trigonometric graphs, transformations, intersections and parallel/perpendicular lines."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-3.4",
+      "sourceReference": "p.40-41",
+      "canonicalNodeIds": [
+        "CALC-DIFF-CONC-RATE",
+        "CALC-DIFF-RULE-POWR",
+        "CALC-DIFF-APPL-STAT",
+        "CALC-DIFF-APPL-MAXM",
+        "CALC-KIN-SVAT-DSDT",
+        "CALC-KIN-SVAT-DVDT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Higher Tier only; differentiation of integer powers, stationary points and kinematic applications."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.1",
+      "sourceReference": "p.25",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-ANGT",
+        "GEOM-SHAP-ANGL-POINT",
+        "GEOM-SHAP-ANGL-LINE",
+        "GEOM-SHAP-ANGL-VERT",
+        "GEOM-SHAP-ANGL-PARA",
+        "GEOM-SHAP-TERM-TRIA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; angle properties and triangle types."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.2",
+      "sourceReference": "p.25",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-TERM-POLY",
+        "GEOM-SHAP-TERM-QUAD",
+        "GEOM-SHAP-SIMI-CONG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; polygons, quadrilaterals and congruence."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.3",
+      "sourceReference": "p.26",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SYMM-LINE",
+        "GEOM-SHAP-SYMM-ROTA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; line and rotational symmetry."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.4",
+      "sourceReference": "p.26",
+      "canonicalNodeIds": [
+        "NUM-MEAS-TIME-TIME",
+        "NUM-MEAS-TIME-CLOCK",
+        "GEOM-SHAP-TERM-ANGT",
+        "NUM-RAT-RATE-SPED",
+        "NUM-RAT-RATE-DENS",
+        "NUM-RAT-RATE-PRES"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; measures, time, bearings and compound measures."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.5",
+      "sourceReference": "p.26",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS-MEAS",
+        "GEOM-CONS-CONS-TRIA",
+        "GEOM-CONS-CONS-PERB",
+        "GEOM-CONS-CONS-ANGB"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; constructions and scale drawings."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.6",
+      "sourceReference": "p.26, p.42",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-TANG",
+        "GEOM-SHAP-CITH-CHOR",
+        "GEOM-SHAP-CITH-SEMI",
+        "GEOM-SHAP-CITH-CENT",
+        "GEOM-SHAP-CITH-SAME",
+        "GEOM-SHAP-CITH-CYCL",
+        "GEOM-SHAP-CITH-ALTS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers circle vocabulary and basic chord/tangent properties; Higher adds circle angle theorems and cyclic quadrilaterals."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.7",
+      "sourceReference": "p.27, p.42",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-JUST",
+        "REAS-PROF-ARGM-LOGI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation asks for informal reasons; Higher requires standard geometrical reasons across lines, polygons and circles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.8",
+      "sourceReference": "p.27, p.42-43",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-PYTH",
+        "TRIG-BASE-RATR-SINE",
+        "TRIG-BASE-RATR-COSN",
+        "TRIG-BASE-RATR-TANG",
+        "TRIG-BASE-NONR-SINR",
+        "TRIG-BASE-NONR-COSR",
+        "TRIG-BASE-NONR-AREA",
+        "TRIG-FUNC-EXCT-EXCT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers right-angled trigonometry and Pythagoras in 2D; Higher adds obtuse angles, sine/cosine rules, 3D Pythagoras, area formula and 3D problems."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.9",
+      "sourceReference": "p.27, p.43",
+      "canonicalNodeIds": [
+        "GEOM-MENS-UNIT-AREA",
+        "GEOM-MENS-AREA-RECT",
+        "GEOM-MENS-AREA-TRIA",
+        "GEOM-MENS-AREA-PARA",
+        "GEOM-MENS-AREA-TRAP",
+        "GEOM-MENS-CIRC-CIRC",
+        "GEOM-MENS-CIRC-AREA",
+        "GEOM-MENS-CIRC-SECA",
+        "GEOM-MENS-CIRC-ARCL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers perimeters/areas of triangles, rectangles, parallelograms, trapezia and circles; Higher adds sectors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.10",
+      "sourceReference": "p.27-28, p.43",
+      "canonicalNodeIds": [
+        "GEOM-MENS-SOLI-CUBD",
+        "GEOM-MENS-SOLI-PRIS",
+        "GEOM-MENS-SOLI-CYLN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers prisms, cuboids, cylinders and volume conversions; Higher adds sphere and cone surface area/volume."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-4.11",
+      "sourceReference": "p.28, p.43",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-SIMI-SIML",
+        "GEOM-SHAP-SIMI-LENS",
+        "GEOM-SHAP-SIMI-AREA"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers length ratio in similar figures and scale drawings; Higher adds area and volume ratios."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-5.1",
+      "sourceReference": "p.44",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-COLV",
+        "VECT-BASIC-NOTN-MAGN",
+        "VECT-BASIC-NOTN-ADDS",
+        "VECT-BASIC-NOTN-SCAL",
+        "VECT-BASIC-NOTN-POSV",
+        "VECT-GEOM-PROB-COLL",
+        "VECT-GEOM-PROB-PARA",
+        "VECT-GEOM-PROB-RATI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Higher Tier only; vector notation, operations, modulus and simple geometrical proofs."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-5.2",
+      "sourceReference": "p.29",
+      "canonicalNodeIds": [
+        "GEOM-CONS-TRAN-ROTA",
+        "GEOM-CONS-TRAN-REFL",
+        "GEOM-CONS-TRAN-TRAN",
+        "GEOM-CONS-TRAN-ENLG",
+        "GEOM-CONS-TRAN-DESC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation and assumed Higher; rotations, reflections, translations, enlargements and descriptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-6.1",
+      "sourceReference": "p.30, p.45",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-BARCH",
+        "STAT-DATA-REPR-PIE",
+        "STAT-DATA-REPR-PICT",
+        "STAT-DATA-CLAS-TWOW",
+        "STAT-DATA-REPR-HIST",
+        "STAT-DATA-REPR-CUMF"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers pictograms, bar charts, pie charts, two-way tables and interpretation; Higher adds histograms and cumulative frequency diagrams."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-6.2",
+      "sourceReference": "p.30, p.45",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-MEAN",
+        "STAT-SUMM-CENT-MEDI",
+        "STAT-SUMM-CENT-MODE",
+        "STAT-SUMM-CENT-RANG",
+        "STAT-SUMM-CENT-ESTM",
+        "STAT-SUMM-CENT-QUAR",
+        "STAT-SUMM-CENT-IQR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers mean, median, mode, range and estimated mean for grouped data; Higher adds median/IQR from cumulative frequency diagrams."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-Edexcel-4MA1-6.3",
+      "sourceReference": "p.30-31, p.45",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SCALE",
+        "PROB-BASIC-BASIC-NOTN",
+        "PROB-BASIC-BASIC-SING",
+        "PROB-BASIC-BASIC-COMP",
+        "PROB-COMB-COUNT-SAMPS",
+        "PROB-COMB-COUNT-ENUM",
+        "PROB-COMB-RULE-ADD",
+        "PROB-COMB-RULE-MUTX",
+        "PROB-COMB-RULE-VENN",
+        "PROB-COMB-RULE-TREE",
+        "PROB-COMB-RULE-INDE",
+        "PROB-COMB-RULE-COND"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Foundation covers probability language, scale, sample spaces, complements, addition rule, Venn diagrams and expected frequency; Higher adds tree diagrams, independent and conditional probability."
+      ]
+    }
+  ]
+}

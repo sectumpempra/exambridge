@@ -217,7 +217,7 @@ export default function ExamOverviewPage() {
         </div>
       </section>
 
-      <PastPaperLibrary board={overview.board} subjectCode={entry?.subjectCode ?? overview.code} />
+      <PastPaperLibrary key={`${overview.id}-${entry?.subjectCode ?? overview.code}`} board={overview.board} subjectCode={entry?.subjectCode ?? overview.code} />
 
       {entry && <Suspense fallback={<div className="mt-8 rounded-3xl border border-[#d7dfe2] bg-[#f7fafb] px-5 py-12 text-center text-sm text-[#68777c]">正在加载分数线与成绩趋势…</div>}><ExamOverviewInsights key={overview.id} entry={entry} context={context} overviewId={overview.id} overviewCode={overview.code} /></Suspense>}
 

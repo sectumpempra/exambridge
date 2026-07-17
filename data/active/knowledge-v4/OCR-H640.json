@@ -1,0 +1,5547 @@
+{
+  "schemaVersion": "4.0.0",
+  "qualificationVersionId": "OCR-H640:Version 3",
+  "board": "OCR",
+  "subjectCode": "H640",
+  "subjectName": "A-Level Mathematics B (MEI)",
+  "level": "A-Level",
+  "syllabusVersion": "Version 3",
+  "effectiveFrom": "2017-09-01",
+  "sources": [
+    {
+      "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+      "title": "OCR A Level Mathematics B MEI H640 specification",
+      "documentVersion": "Version 3",
+      "locator": "local official specification: 308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+      "accessedAt": "2026-07-16",
+      "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+      "sourceType": "official"
+    }
+  ],
+  "reviewStatus": "owner-approved",
+  "review": {
+    "generatedAt": "2026-07-16",
+    "promptVersion": "knowledge-v4-3-chunked",
+    "requestedModelId": "kimi-k2.7-code-highspeed",
+    "responseModelId": "kimi-k2.7-code-highspeed",
+    "reviewedAt": "2026-07-16",
+    "approvedAt": "2026-07-16",
+    "approvalBatch": "knowledge-v4-20260716"
+  },
+  "declaredPapers": [
+    "01 Pure Mathematics and Mechanics",
+    "02 Pure Mathematics and Statistics",
+    "03 Pure Mathematics and Comprehension",
+    "PureCore",
+    "Stats",
+    "Mech",
+    "Comprehension",
+    "01",
+    "H640/01",
+    "H640/02",
+    "H640/03"
+  ],
+  "syllabusPoints": [
+    {
+      "syllabusPointId": "OFFICIAL-H640-1c-1",
+      "sourceReference": "p.5, 1c Aims and learning outcomes",
+      "canonicalNodeIds": [
+        "REAS-PROF",
+        "REAS-MODL",
+        "REAS-PROB"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Captures the whole aims and learning outcomes statement as a single cross-cutting official requirement.",
+        "Detailed numbered content points are not present in this chunk; they appear in section 2f."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2a-1",
+      "sourceReference": "p.7, 2a Content of A Level in Mathematics B (H640)",
+      "canonicalNodeIds": [
+        "REAS-PROF",
+        "ALGF",
+        "TRIG",
+        "CALC",
+        "VECT"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01 Pure Mathematics and Mechanics",
+          "02 Pure Mathematics and Statistics",
+          "03 Pure Mathematics and Comprehension"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.7, 2a Content of A Level in Mathematics B (H640)",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "High-level summary of the Pure mathematics content area: proof, algebra, graphs, sequences, trigonometry, logarithms, calculus and vectors.",
+        "Pure content is assessed in all three components."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2a-2",
+      "sourceReference": "p.7, 2a Content of A Level in Mathematics B (H640)",
+      "canonicalNodeIds": [
+        "MECH-KIN",
+        "MECH-FORC",
+        "MECH-DYN-NEWT",
+        "MECH-FURT-RIGD-MOMT"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01 Pure Mathematics and Mechanics"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.7, 2a Content of A Level in Mathematics B (H640)",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "High-level summary of the Mechanics content area: kinematics, motion under gravity, forces including friction, Newton's laws and simple moments.",
+        "Mechanics is explicitly assessed only in component 01."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2a-3",
+      "sourceReference": "p.7, 2a Content of A Level in Mathematics B (H640)",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP",
+        "STAT-EST",
+        "PROB",
+        "PROB-DIST-BINO",
+        "PROB-DIST-NORM",
+        "STAT-TEST-HYPO"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "02 Pure Mathematics and Statistics"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.7, 2a Content of A Level in Mathematics B (H640)",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "High-level summary of the Statistics content area: sampling and inference, probability, binomial and Normal distribution models, and hypothesis testing.",
+        "Statistics is explicitly assessed only in component 02."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH",
+      "sourceReference": "p.11",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-DIAG",
+        "NUMM-ROOT-ITER-CONV"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Cross-cutting expectation of technology use across pure, statistics and mechanics; not tied to a specific paper."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH-GRAPH",
+      "sourceReference": "p.11",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP",
+        "CALC-DIFF-APPL-SKET"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use graphing software to investigate relationships between graphical and algebraic representations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH-SPREAD",
+      "sourceReference": "p.11",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-ITER-CONV",
+        "NUMM-NINT-TRAP-ESTM"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use spreadsheets for tables of values, numerical methods, statistics and mechanics modelling."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH-STAT",
+      "sourceReference": "p.11",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR",
+        "STAT-SUMM-CENT-STDV"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use statistical software to explore data sets, generate tables and diagrams, and perform standard calculations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH-MECH",
+      "sourceReference": "p.11",
+      "canonicalNodeIds": [
+        "MECH-KIN",
+        "MECH-FURT-PROJ"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use graphing and/or spreadsheet software for mechanics modelling including kinematics and projectiles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-TECH-CAS",
+      "sourceReference": "p.11",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE",
+        "CALC-INTE-RULE"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Optional use of CAS to investigate algebraic relationships including derivatives and integrals."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2c-CALC",
+      "sourceReference": "p.12",
+      "canonicalNodeIds": [],
+      "unmappedReason": "assessment-administration",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculator requirements and examination advice; assessment administration rather than content."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-EXACT",
+      "sourceReference": "p.12",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SURD"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Command word defining expectation to give exact answers with surds, e or pi."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-PROVE",
+      "sourceReference": "p.13",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-DEDU"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formal proof requiring high level of mathematical detail and concise conclusion."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-SHOW",
+      "sourceReference": "p.13",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-LOGI"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Given result must be shown true with sufficiently detailed working covering every step."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-VERIFY",
+      "sourceReference": "p.14",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-LOGI"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Clear substitution of given value to justify a statement."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-FIND",
+      "sourceReference": "p.14",
+      "canonicalNodeIds": [],
+      "unmappedReason": "assessment-convention",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Command word indicating no justification required; calculator use permitted."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-DETERMINE",
+      "sourceReference": "p.14",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-ESTM"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Command word requiring justification and appropriate working."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-STATE",
+      "sourceReference": "p.15",
+      "canonicalNodeIds": [],
+      "unmappedReason": "assessment-convention",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Command words indicating neither working nor justification is required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-DETAILED",
+      "sourceReference": "p.15",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-LOGI"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Instruction requiring detailed and complete analytical method leading to a conclusion."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-HENCE",
+      "sourceReference": "p.16",
+      "canonicalNodeIds": [],
+      "unmappedReason": "assessment-convention",
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Indicates the next step should be based on what has gone before."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-HENCEOO",
+      "sourceReference": "p.16",
+      "canonicalNodeIds": [],
+      "unmappedReason": "assessment-convention",
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Indicates valid alternate methods exist but the indicated starting point is suggested."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-RESULT",
+      "sourceReference": "p.16",
+      "canonicalNodeIds": [],
+      "unmappedReason": "assessment-convention",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Permissive phrase indicating a given result that learners may use."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-PLOT",
+      "sourceReference": "p.16",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP",
+        "STAT-DATA-REPR-SCAT"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Mark points accurately and join with curve, line or line of best fit."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-SKETCH",
+      "sourceReference": "p.17",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP",
+        "CALC-DIFF-APPL-SKET"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Draw diagram showing main features of a curve including turning points, asymptotes and intercepts."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2d-CMD-DRAW",
+      "sourceReference": "p.17",
+      "canonicalNodeIds": [
+        "GEOM-CONS-CONS",
+        "MECH-FORC-FORC-DIAG"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Draw to accuracy appropriate to the problem, e.g. force diagrams or lines of best fit."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT1.1",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-LOGI",
+        "REAS-PROF-ARGM-SYMB"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Construct and present mathematical arguments using diagrams, graphs, deduction and precise symbolic language."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT1.2",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-SYMB"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understand and use mathematical language and syntax as set out in the content."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT1.3",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "NUM-SYS-SET-LANG",
+        "NUM-SYS-SET-UNIN",
+        "NUM-SYS-SET-COMP",
+        "NUM-SYS-SET-VENN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understand and use set theory language and symbols, applied to inequalities and probability."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT1.4",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-DEFS-DEFN",
+        "ALGF-FUNC-DEFS-DOMR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understand and use the definition of a function and domain/range."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT1.5",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "REAS-PROF-ARGM-CRIT",
+        "REAS-PROF-ARGM-JUST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Comprehend and critique mathematical arguments, proofs and justifications of methods and formulae."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.1",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-STRC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recognise underlying mathematical structure and simplify/abstract appropriately."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.2",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-UNST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Construct extended arguments to solve unstructured problems including problems in context."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.3",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpret and communicate solutions in the context of the original problem."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.4",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-ITER-CONV",
+        "NUMM-NINT-TRAP-ESTM"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understand that numerical methods permit solution to required accuracy when analytical methods fail."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.5",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-ESTM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Evaluate accuracy or limitations of solutions including numerical-method solutions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.6",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understand the mathematical problem-solving cycle: specify, collect, process/represent, interpret."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT2.7",
+      "sourceReference": "p.18",
+      "canonicalNodeIds": [
+        "REAS-PROB-PSOL-DIAG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understand, interpret and extract information from diagrams and construct mathematical diagrams including in mechanics."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT3.1",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ABST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Translate a situation in context into a mathematical model, making simplifying assumptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT3.2",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-INPT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use a mathematical model with suitable inputs to engage with and explore situations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT3.3",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpret the outputs of a mathematical model in the context of the original situation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT3.4",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understand that models can be refined by considering outputs and assumptions; evaluate appropriateness."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-H640-2e-OT3.5",
+      "sourceReference": "p.19",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understand and use modelling assumptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mp1",
+      "sourceReference": "p.24, Mp1",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-DEDU",
+        "REAS-PROF-PROF-EXHA",
+        "REAS-PROF-ARGM-LOGI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Proof by deduction and exhaustion; logical structure"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p2",
+      "sourceReference": "p.24, p2",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-COUN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p3",
+      "sourceReference": "p.24, p3",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-CONT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Ma1",
+      "sourceReference": "p.25, Ma1",
+      "canonicalNodeIds": [
+        "ALGF-EXP-NOTN-SYMB",
+        "ALGF-FUNC-DEFS-DEFN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vocabulary and notation for algebraic objects"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-ASSUMED-LINEAR-EQN",
+      "sourceReference": "p.25, assumed linear equations",
+      "canonicalNodeIds": [
+        "ALGF-EQN-LINE-SOLV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Assumed knowledge, no reference code"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-ASSUMED-CHANGE-SUBJECT",
+      "sourceReference": "p.25, assumed change of subject",
+      "canonicalNodeIds": [
+        "ALGF-EQN-LINE-SUBJ",
+        "ALGF-EQN-LINE-SUB2"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Assumed knowledge, includes repeated subject and powers/roots"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Ma2",
+      "sourceReference": "p.25, Ma2",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-FACT",
+        "ALGF-EQN-QUAD-COMP",
+        "ALGF-EQN-QUAD-FORM",
+        "ALGF-EQN-QUAD-FUNC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Multiple methods plus quadratics in a function"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a3",
+      "sourceReference": "p.25, a3",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-DISC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a4",
+      "sourceReference": "p.25, a4",
+      "canonicalNodeIds": [
+        "ALGF-EQN-SIMU-LIN2"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a5",
+      "sourceReference": "p.25, a5",
+      "canonicalNodeIds": [
+        "ALGF-EQN-SIMU-LINQ"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a6",
+      "sourceReference": "p.25, a6",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-INTR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Ma7",
+      "sourceReference": "p.26, Ma7",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-LINS",
+        "ALGF-EQN-INEQ-REGN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes graphical representation"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a8",
+      "sourceReference": "p.26, a8",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-QUAD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a9",
+      "sourceReference": "p.26, a9",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-SETN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a10",
+      "sourceReference": "p.26, a10",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-SURD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a11",
+      "sourceReference": "p.26, a11",
+      "canonicalNodeIds": [
+        "NUM-POW-POWR-RATD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a12",
+      "sourceReference": "p.26, a12",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX-POS",
+        "NUM-POW-INDX-ZERO",
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-INDX-FRAC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Laws of indices for all rational exponents"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a13",
+      "sourceReference": "p.26, a13",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX-NEG",
+        "NUM-POW-INDX-FRAC",
+        "NUM-POW-INDX-ZERO"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a14",
+      "sourceReference": "p.27, a14",
+      "canonicalNodeIds": [
+        "NUM-RAT-RATI-PROP",
+        "NUM-RAT-RATI-DIRE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Direct and inverse proportionality to powers/roots"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a15",
+      "sourceReference": "p.27, a15",
+      "canonicalNodeIds": [
+        "ALGF-POLY-PART-LINL",
+        "ALGF-POLY-PART-REPL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes squared linear factors; excludes irreducible quadratics/cubics"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-a16",
+      "sourceReference": "p.27, a16",
+      "canonicalNodeIds": [
+        "ALGF-POLY-POLY-DIVL",
+        "ALGF-EXP-MANI-FACT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Simple algebraic division of rational expressions"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mf1",
+      "sourceReference": "p.28, Mf1",
+      "canonicalNodeIds": [
+        "ALGF-EXP-MANI-LIKE",
+        "ALGF-EXP-MANI-EXP2",
+        "ALGF-POLY-POLY-DIVL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Excludes division by non-linear expressions"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f2",
+      "sourceReference": "p.28, f2",
+      "canonicalNodeIds": [
+        "ALGF-POLY-POLY-FACT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f3",
+      "sourceReference": "p.28, f3",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-DEFS-DEFN",
+        "ALGF-FUNC-DEFS-DOMR",
+        "ALGF-FUNC-DEFS-ONON",
+        "ALGF-FUNC-DEFS-NOTN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Function definition, domain, range, one-one/many-one"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f4",
+      "sourceReference": "p.28, f4",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-COMP-COMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f5",
+      "sourceReference": "p.28, f5",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-COMP-INVR",
+        "ALGF-FUNC-COMP-INVG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes graphs and existence conditions"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f6",
+      "sourceReference": "p.28, f6",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-MODU"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f7",
+      "sourceReference": "p.28, f7",
+      "canonicalNodeIds": [
+        "ALGF-EQN-INEQ-MODU"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-f8",
+      "sourceReference": "p.28, f8",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM",
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Modelling with functions, limitations/refinements"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-MC1",
+      "sourceReference": "p.29, MC1",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "General graphs of functions"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C2",
+      "sourceReference": "p.29, C2",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-INTR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C3",
+      "sourceReference": "p.29, C3",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-COMP",
+        "ALGF-FUNC-GRAP-QUAD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Completing the square for symmetry and turning point"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C4",
+      "sourceReference": "p.29, C4",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-CUBC",
+        "ALGF-FUNC-GRAP-QUAR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Polynomial graphs including repeated roots"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C5",
+      "sourceReference": "p.29, C5",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-STAT",
+        "CALC-DIFF-APPL-SKET"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stationary points in curve sketching"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C6",
+      "sourceReference": "p.29, C6",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-RECP",
+        "NUM-RAT-RATI-PROP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "y=x^a and y=x^{-a} with asymptotes and proportionality"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-MC7",
+      "sourceReference": "p.30, MC7",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-TRAN-VERT",
+        "ALGF-FUNC-TRAN-HORZ",
+        "ALGF-FUNC-TRAN-STRE",
+        "ALGF-FUNC-TRAN-REFL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Single transformations of graphs"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C8",
+      "sourceReference": "p.30, C8",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-TRAN"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "No separate node for combined function transformations"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-C9",
+      "sourceReference": "p.30, C9",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-INFL",
+        "CALC-DIFF-APPL-SKET"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Points of inflection in curve sketching"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-ASSUMED-YMXC",
+      "sourceReference": "p.31, assumed y = mx + c",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR",
+        "GEOM-COOR-LINE-YMXC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Assumed knowledge"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mg1",
+      "sourceReference": "p.31, Mg1",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-GRAD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g2",
+      "sourceReference": "p.31, g2",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-DIST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g3",
+      "sourceReference": "p.31, g3",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-MIDP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g4",
+      "sourceReference": "p.31, g4",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE-POINT",
+        "GEOM-COOR-LINE-GENR",
+        "GEOM-COOR-LINE-YMXC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Multiple forms of straight line equation"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g5",
+      "sourceReference": "p.31, g5",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-LINR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g6",
+      "sourceReference": "p.31, g6",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-INTR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g7",
+      "sourceReference": "p.31, g7",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM",
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Straight line models in context"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mg8",
+      "sourceReference": "p.32, Mg8",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-GRAP-INTR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g9",
+      "sourceReference": "p.32, g9",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CIRC-CENT",
+        "GEOM-COOR-CART-INTR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Line-circle intersection mapped via circle equation and intersection"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g10",
+      "sourceReference": "p.32, g10",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CIRC-CENT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g11",
+      "sourceReference": "p.32, g11",
+      "canonicalNodeIds": [
+        "GEOM-SHAP-CITH-SEMI",
+        "GEOM-SHAP-CITH-TANG",
+        "GEOM-SHAP-CITH-CHOR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Circle properties used in coordinate geometry"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g12",
+      "sourceReference": "p.32, g12",
+      "canonicalNodeIds": [
+        "GEOM-PARM-PARM-DEFS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g13",
+      "sourceReference": "p.32, g13",
+      "canonicalNodeIds": [
+        "GEOM-PARM-PARM-CART"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g14",
+      "sourceReference": "p.32, g14",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CIRC-CENT",
+        "GEOM-PARM-PARM-DEFS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Parametric form of a circle"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g15",
+      "sourceReference": "p.32, g15",
+      "canonicalNodeIds": [
+        "CALC-DIFF-PARI-PARM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-g16",
+      "sourceReference": "p.32, g16",
+      "canonicalNodeIds": [
+        "GEOM-PARM-PARM-MODE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Ms1",
+      "sourceReference": "p.33, Ms1",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-BINO-POSI"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s2",
+      "sourceReference": "p.33, s2",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-BINO-COEF",
+        "PROB-COMB-COUNT-COMB"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Factorial and combination notation for binomial coefficients"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s3",
+      "sourceReference": "p.33, s3",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-BINO-RATN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s4",
+      "sourceReference": "p.33, s4",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-BINO-RATN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Rewriting (a+bx)^n for expansion"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s5",
+      "sourceReference": "p.33, s5",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-BINO-RATN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Approximations using rational binomial expansions"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s6",
+      "sourceReference": "p.34, s6",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s7",
+      "sourceReference": "p.34, s7",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-TERM",
+        "ALGF-SEQ-SEQU-NTH"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formulas and recurrence relations"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s8",
+      "sourceReference": "p.34, s8",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SERS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s9",
+      "sourceReference": "p.34, s9",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SERS"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sigma notation mapped to series parent"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s10",
+      "sourceReference": "p.34, s10",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "No node for increasing/decreasing/periodic specifically"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s11",
+      "sourceReference": "p.34, s11",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SERS-CONV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s12",
+      "sourceReference": "p.34, s12",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-ARIT",
+        "ALGF-SEQ-SERS-ARSM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s13",
+      "sourceReference": "p.34, s13",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-ARIT",
+        "ALGF-SEQ-SERS-ARSM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s14",
+      "sourceReference": "p.34, s14",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-GEOM",
+        "ALGF-SEQ-SERS-GESM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s15",
+      "sourceReference": "p.34, s15",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-GEOM",
+        "ALGF-SEQ-SERS-GESM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s16",
+      "sourceReference": "p.34, s16",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SERS-INFI",
+        "ALGF-SEQ-SERS-CONV"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-s17",
+      "sourceReference": "p.34, s17",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM",
+        "REAS-MODL-MODL-OUTP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Modelling with sequences and series"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-ASSUMED-RIGHT-TRIG",
+      "sourceReference": "p.35, assumed right-angled triangle trigonometry",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-PYTH",
+        "TRIG-BASE-RATR-SINE",
+        "TRIG-BASE-RATR-COSN",
+        "TRIG-BASE-RATR-TANG"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Assumed knowledge"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mt1",
+      "sourceReference": "p.35, Mt1",
+      "canonicalNodeIds": [
+        "TRIG-CIRC-RADI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Unit-circle definitions for any angle; no exact node"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t2",
+      "sourceReference": "p.35, t2",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-GRAP-SINE",
+        "TRIG-FUNC-GRAP-COSN",
+        "TRIG-FUNC-GRAP-TANG",
+        "TRIG-FUNC-GRAP-PERD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Graphs, symmetries and periodicities"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-ASSUMED-EXACT-TRIG",
+      "sourceReference": "p.35, assumed exact trig values",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-EXCT-EXCT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Assumed knowledge"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t3",
+      "sourceReference": "p.35, t3",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t4",
+      "sourceReference": "p.35, t4",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-SINR",
+        "TRIG-BASE-NONR-COSR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t5",
+      "sourceReference": "p.35, t5",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-IDEN-TANR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t6",
+      "sourceReference": "p.35, t6",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-IDEN-PYTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t7",
+      "sourceReference": "p.35, t7",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-EQNS-SIMP",
+        "TRIG-IDEN-EQNS-INTR",
+        "TRIG-IDEN-EQNS-QUAD",
+        "TRIG-IDEN-EQNS-MULT",
+        "TRIG-FUNC-EXCT-INVS",
+        "TRIG-FUNC-EXCT-INVC",
+        "TRIG-FUNC-EXCT-INVT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Simple trig equations, intervals and principal values"
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mt8",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-EXCT-EXCT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Exact values of sine, cosine and tangent at standard angles and multiples."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t9",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-EXCT-INVS",
+        "TRIG-FUNC-EXCT-INVC",
+        "TRIG-FUNC-EXCT-INVT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Inverse trigonometric functions, their graphs, domains and ranges."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t10",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "TRIG-CIRC-RADI-DEFN",
+        "TRIG-CIRC-RADI-CONV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t11",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "TRIG-CIRC-RADI-ARCL",
+        "TRIG-CIRC-RADI-SECA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t12",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "TRIG-CIRC"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Small angle approximations; no dedicated canonical node for this topic."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t13",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-ADVN-SECA",
+        "TRIG-FUNC-ADVN-COSE",
+        "TRIG-FUNC-ADVN-COTA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t14",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "TRIG-FUNC-ADVN-GRAP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t15",
+      "sourceReference": "p.36",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-IDEN-PYTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mt16",
+      "sourceReference": "p.37",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-IDEN-ADDR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes geometric proofs; proofs using de Moivre's theorem are excluded."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t17",
+      "sourceReference": "p.37",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-IDEN-DBLA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t18",
+      "sourceReference": "p.37",
+      "canonicalNodeIds": [
+        "TRIG-APPL-MODE-WAVE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Equivalent forms R sin/cos, graph sketching, maxima/minima and equations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t19",
+      "sourceReference": "p.37",
+      "canonicalNodeIds": [
+        "TRIG-IDEN-EQNS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t20",
+      "sourceReference": "p.37",
+      "canonicalNodeIds": [
+        "REAS-PROF-PROF-DEDU"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-t21",
+      "sourceReference": "p.37",
+      "canonicalNodeIds": [
+        "TRIG-APPL-MODE-VECT",
+        "TRIG-APPL-MODE-KINE",
+        "TRIG-APPL-MODE-MECH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Argument not restricted to angles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E1",
+      "sourceReference": "p.38",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-AX"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E2",
+      "sourceReference": "p.38",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-INVR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E3",
+      "sourceReference": "p.38",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-INVR",
+        "ALGF-FUNC-GRAP-ASMP"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Asymptotes of exponential and logarithmic graphs mapped to asymptotes node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E4",
+      "sourceReference": "p.38",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-LAWS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E5",
+      "sourceReference": "p.38",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-LAWS"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Specific values log_a a and log_a 1 are a subset of logarithm laws."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E6",
+      "sourceReference": "p.38",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-EQNS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E7",
+      "sourceReference": "p.38",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-MODE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Linearising y=ax^n and y=ab^x using logarithms for parameter estimation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E8",
+      "sourceReference": "p.39",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-EX"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E9",
+      "sourceReference": "p.39",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-MODE",
+        "CALC-DIFF-RULE-EXPL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Gradient of e^(kx) and suitability of exponential model in applications."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E10",
+      "sourceReference": "p.39",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-LN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-E11",
+      "sourceReference": "p.39",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO-GROW"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Modelling growth/decay and considering limitations and refinements."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mc1",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "CALC-DIFF-CONC-GRAD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c2",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "CALC-DIFF-CONC-LIMT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c3",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "CALC-DIFF-CONC-GRAD",
+        "CALC-DIFF-CONC-RATE",
+        "CALC-DIFF-CONC-NOTN"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Derivative as gradient, rate of change and notation; units for real situations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c4",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-SKET"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c5",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-POWR",
+        "CALC-DIFF-CONC-LIMT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Power rule for rational n and first principles for small positive integer powers."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c6",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "CALC-DIFF"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Second derivative as rate of change of gradient; no dedicated canonical node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c7",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-STAT",
+        "CALC-DIFF-APPL-MAXM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c8",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-INCR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c9",
+      "sourceReference": "p.40",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-TANG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mc10",
+      "sourceReference": "p.41",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-EXPL",
+        "CALC-DIFF-RULE-LOGR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes e^(kx), a^(kx) and ln x."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c11",
+      "sourceReference": "p.41",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-TRIG",
+        "CALC-DIFF-CONC-LIMT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Differentiate sin/cos/tan (kx) and first principles for sin x and cos x."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c12",
+      "sourceReference": "p.41",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-PROD"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c13",
+      "sourceReference": "p.41",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-QUOT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c14",
+      "sourceReference": "p.41",
+      "canonicalNodeIds": [
+        "CALC-DIFF-RULE-CHAI"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c15",
+      "sourceReference": "p.41",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-RATC",
+        "CALC-DIFF-PARI-INVR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Connected rates of change and differentiation of inverse functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c16",
+      "sourceReference": "p.41",
+      "canonicalNodeIds": [
+        "CALC-DIFF-PARI-IMPL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c17",
+      "sourceReference": "p.42",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-INFL"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Concavity; no dedicated concavity node in the catalogue."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c18",
+      "sourceReference": "p.42",
+      "canonicalNodeIds": [
+        "CALC-DIFF-APPL-INFL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Stationary and non-stationary points of inflection."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mc19",
+      "sourceReference": "p.43",
+      "canonicalNodeIds": [
+        "CALC-INTE-CONC-REVD",
+        "CALC-INTE-CONC-FTCL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c20",
+      "sourceReference": "p.43",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-POWR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c21",
+      "sourceReference": "p.43",
+      "canonicalNodeIds": [
+        "CALC-INTE-CONC-INDI",
+        "CALC-INTE-APPL-CONS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c22",
+      "sourceReference": "p.43",
+      "canonicalNodeIds": [
+        "CALC-INTE-CONC-INDI",
+        "CALC-INTE-CONC-DEFI"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c23",
+      "sourceReference": "p.43",
+      "canonicalNodeIds": [
+        "CALC-INTE-APPL-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mc24",
+      "sourceReference": "p.44",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-EXPL",
+        "CALC-INTE-RULE-LOGR",
+        "CALC-INTE-RULE-TRIG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes e^(kx), 1/x, sin kx and cos kx."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c25",
+      "sourceReference": "p.44",
+      "canonicalNodeIds": [
+        "CALC-INTE-CONC"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Integration as the limit of a sum; mapped to the integral concepts parent."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c26",
+      "sourceReference": "p.44",
+      "canonicalNodeIds": [
+        "CALC-INTE-APPL-BETW",
+        "CALC-INTE-APPL-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Area between curves and area with respect to the y-axis."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c27",
+      "sourceReference": "p.44",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-SUBS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Reverse chain rule substitutions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c28",
+      "sourceReference": "p.44",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-SUBS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Other substitution cases requiring a suitable substitution."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c29",
+      "sourceReference": "p.44",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-PART"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Includes integration by parts applied to ln x."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c30",
+      "sourceReference": "p.44",
+      "canonicalNodeIds": [
+        "CALC-INTE-RULE-PFR"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Partial fractions with linear denominators."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c31",
+      "sourceReference": "p.45",
+      "canonicalNodeIds": [
+        "CALC-DIFFEQ-FODE-SETU"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c32",
+      "sourceReference": "p.45",
+      "canonicalNodeIds": [
+        "CALC-DIFFEQ-FODE-SEPV",
+        "CALC-DIFFEQ-FODE-GENS",
+        "CALC-DIFFEQ-FODE-PART"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Separable variables; general and particular solutions."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c33",
+      "sourceReference": "p.45",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-OUTP",
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpreting solutions and identifying limitations in context."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Me1",
+      "sourceReference": "p.46",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-SIGN-LOC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-e2",
+      "sourceReference": "p.46",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-SIGN-FAIL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-e3",
+      "sourceReference": "p.46",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-ITER-FORM",
+        "NUMM-ROOT-ITER-STAIR",
+        "NUMM-ROOT-ITER-COBW"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Fixed point iteration and staircase/cobweb diagrams."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-e4",
+      "sourceReference": "p.46",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-NEWR-APPL",
+        "NUMM-ROOT-NEWR-GEOM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-e5",
+      "sourceReference": "p.46",
+      "canonicalNodeIds": [
+        "NUMM-ROOT-ITER-CONV",
+        "NUMM-ROOT-NEWR-FAIL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Convergence and graphical demonstration of failure."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mc34",
+      "sourceReference": "p.46",
+      "canonicalNodeIds": [
+        "NUMM-NINT-TRAP-ESTM",
+        "NUMM-NINT-TRAP-OVER"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-c35",
+      "sourceReference": "p.46",
+      "canonicalNodeIds": [
+        "CALC-SER-SUMS-RECT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Upper and lower bounds on area using rectangles."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Me6",
+      "sourceReference": "p.46",
+      "canonicalNodeIds": [
+        "NUMM"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Contextual problem solving using numerical methods; mapped to parent numerical methods node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mv1",
+      "sourceReference": "p.47",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "2D vector language and terminology."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-v2",
+      "sourceReference": "p.47",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-ADDS",
+        "VECT-BASIC-NOTN-SCAL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-v3",
+      "sourceReference": "p.47",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-MAGN",
+        "VECT-BASIC-NOTN-DIRN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-v4",
+      "sourceReference": "p.47",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-POSV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-v5",
+      "sourceReference": "p.47",
+      "canonicalNodeIds": [
+        "GEOM-COOR-CART-DIST",
+        "VECT-BASIC-NOTN-POSV"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Distance between points represented by position vectors."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-v6",
+      "sourceReference": "p.47",
+      "canonicalNodeIds": [
+        "VECT-GEOM-PROB",
+        "MECH-FORC-FORC-VECN"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Vector problem solving including forces."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mv7",
+      "sourceReference": "p.47",
+      "canonicalNodeIds": [
+        "VECT-SPAC-THRD"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "3D vector language extending v2-v6."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-Mp21",
+      "sourceReference": "p.48",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-POP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p22",
+      "sourceReference": "p.48",
+      "canonicalNodeIds": [
+        "STAT-EST-ESTI-UNBI",
+        "STAT-EST-ESTI-SMEAN"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sample mean/variance as estimates of population parameters."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p23",
+      "sourceReference": "p.48",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-RAND"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Machine-generated candidate; independent point review required."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p24",
+      "sourceReference": "p.48",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Opportunity, systematic, stratified, quota, cluster and self-selected sampling; no dedicated node."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-p25",
+      "sourceReference": "p.48",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-BIAS",
+        "STAT-ENQ-SAMP"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Selecting and evaluating sampling techniques; identifying bias and practicalities."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MD1",
+      "sourceReference": "p.49 MD1",
+      "canonicalNodeIds": [
+        "STAT-DATA-CLAS-TYPE",
+        "STAT-DATA-REPR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Covers categorical/discrete/continuous/ranked data and standard single-variable diagrams; some diagram types (dot plot, frequency chart) are not represented as separate nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D2",
+      "sourceReference": "p.49 D2",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-HIST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Histogram area proportional to frequency and estimation of probabilities from area."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D3",
+      "sourceReference": "p.49 D3",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-CUMF"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Interpretation of cumulative frequency diagrams."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D4",
+      "sourceReference": "p.49 D4",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for describing distribution shape, symmetry, unimodal/bimodal or skewness.",
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Outcome is about vocabulary of frequency-distribution shape; no matching leaf node exists."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MD5",
+      "sourceReference": "p.50 MD5",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for the idea that sample diagrams become more representative of theoretical distributions as sample size increases.",
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Concerns sampling variability and convergence of empirical distributions; not mapped to a specific node."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D6",
+      "sourceReference": "p.50 D6",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR-SCAT",
+        "STAT-BIVA-CORR-LOBF"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Scatter diagrams, regression/best-fit lines, interpolation and extrapolation; excludes calculation of regression-line equation."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D7",
+      "sourceReference": "p.50 D7",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for identifying distinct sub-populations or outliers in scatter diagrams.",
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Outlier judgement by eye in scatter diagrams; no specific node."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D8",
+      "sourceReference": "p.50 D8",
+      "canonicalNodeIds": [
+        "STAT-BIVA-CORR-POSC",
+        "STAT-BIVA-CORR-NEGC",
+        "STAT-BIVA-CORR-ZEROC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Describing correlation and understanding that correlation does not imply causation."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D9",
+      "sourceReference": "p.50 D9",
+      "canonicalNodeIds": [
+        "STAT-DATA-REPR"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Selecting and critiquing presentation techniques including time-series graphs."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MD10",
+      "sourceReference": "p.51 MD10",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-MEAN",
+        "STAT-SUMM-CENT-MEDI",
+        "STAT-SUMM-CENT-MODE"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Central tendency, interpretation, choice of measure and weighted mean; weighted mean is not a separate node."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D11",
+      "sourceReference": "p.51 D11",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-RANG",
+        "STAT-SUMM-CENT-QUAR",
+        "STAT-SUMM-CENT-IQR"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Simple spread measures: range, percentiles, quartiles and interquartile range."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MD12",
+      "sourceReference": "p.52 MD12",
+      "canonicalNodeIds": [
+        "STAT-SUMM-CENT-STDV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Variance and standard deviation for raw, frequency and grouped data; calculator use."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D13",
+      "sourceReference": "p.52 D13",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for identifying outliers using the 2-sd or 1.5*IQR rules.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Outlier rules based on standard deviation and IQR; no outlier node in catalog."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-D14",
+      "sourceReference": "p.52 D14",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for data cleaning, missing data or errors.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Cleaning data including missing values, errors and outliers; no matching node."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-Mu1-prob",
+      "sourceReference": "p.53 * probability of an event",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-SING"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculating probability of an event using equally likely outcomes."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-star-complement",
+      "sourceReference": "p.53 * complementary event",
+      "canonicalNodeIds": [
+        "PROB-BASIC-BASIC-COMP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understanding complementary events and P(not-A)."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-star-expected-frequency",
+      "sourceReference": "p.53 * expected frequency",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for expected frequency calculated from probability.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Expected frequency = nP(A); not mapped to a specific node."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-star-diagrams",
+      "sourceReference": "p.53 * probability diagrams",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-TREE",
+        "PROB-COMB-COUNT-SAMPS",
+        "PROB-COMB-RULE-VENN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Use of tree diagrams, sample-space diagrams and Venn diagrams for probabilities."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-Mu1-events",
+      "sourceReference": "p.53 Mu1 (mutually exclusive and independent events)",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-MUTX",
+        "PROB-COMB-RULE-INDE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understanding and using mutually exclusive and independent events."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u2",
+      "sourceReference": "p.53 u2",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-ADD",
+        "PROB-COMB-RULE-MUTX"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Adding probabilities for mutually exclusive events."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u3",
+      "sourceReference": "p.53 u3",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-MULT",
+        "PROB-COMB-RULE-INDE"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Multiplying probabilities for independent events, including use of complements."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u4",
+      "sourceReference": "p.54 u4",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-MUTX",
+        "PROB-COMB-RULE-INDE",
+        "PROB-COMB-RULE-ADD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Mutually exclusive and independent events with associated notation and union formula."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u5",
+      "sourceReference": "p.54 u5",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-VENN",
+        "PROB-COMB-RULE-ADD"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Venn diagrams for up to three events and probabilities for non-mutually-exclusive events."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u6",
+      "sourceReference": "p.54 u6",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-COND",
+        "PROB-COMB-RULE-TREE",
+        "PROB-COMB-RULE-VENN",
+        "PROB-COMB-COUNT-SAMPS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Conditional probability from formula, tree diagrams, two-way tables, Venn diagrams and sample-space diagrams; excludes reverse conditional probability."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-u7",
+      "sourceReference": "p.54 u7",
+      "canonicalNodeIds": [
+        "PROB-COMB-RULE-INDE",
+        "PROB-COMB-RULE-COND"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Independence criterion P(B|A)=P(B) and product rule for independent events."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MR1",
+      "sourceReference": "p.55 MR1",
+      "canonicalNodeIds": [
+        "PROB-DIST-BINO-MODE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Recognising situations that give rise to a binomial distribution."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R2",
+      "sourceReference": "p.55 R2",
+      "canonicalNodeIds": [
+        "PROB-DIST-BINO-MODE"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Identifying success probability p and notation B(n,p)."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R3",
+      "sourceReference": "p.55 R3",
+      "canonicalNodeIds": [
+        "PROB-DIST-BINO-PROB"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculating binomial probabilities, including calculator functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R4",
+      "sourceReference": "p.55 R4",
+      "canonicalNodeIds": [
+        "PROB-DIST-BINO-MEAN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understanding and using mean=np; note mentions derivation."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R5",
+      "sourceReference": "p.55 R5",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for expected frequencies associated with a binomial distribution.",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Expected frequencies from binomial distribution; not mapped to a distinct node."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R6",
+      "sourceReference": "p.55 R6",
+      "canonicalNodeIds": [
+        "PROB-DRVD-DRVB",
+        "PROB-DRVD-DRVB-DIST"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Using probability functions and understanding discrete random variable; restricted to simple finite distributions."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R7",
+      "sourceReference": "p.55 R7",
+      "canonicalNodeIds": [
+        "PROB-DRVD-DRVB-DIST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Numerical probabilities for simple finite distributions and discrete uniform distribution."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MR8",
+      "sourceReference": "p.56 MR8",
+      "canonicalNodeIds": [
+        "PROB-DIST-NORM-MODE",
+        "PROB-DIST-BINO-NORM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Normal model, continuity correction and recognising when Normal approximation to binomial is appropriate."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R9",
+      "sourceReference": "p.56 R9",
+      "canonicalNodeIds": [
+        "PROB-DIST-NORM-MODE"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Shape of Normal curve, histograms tending to Normal and area as probability."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R10",
+      "sourceReference": "p.56 R10",
+      "canonicalNodeIds": [
+        "PROB-DIST-NORM-STAN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Linear transformations of Normal variables and standardisation."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R11",
+      "sourceReference": "p.56 R11",
+      "canonicalNodeIds": [
+        "PROB-DIST-NORM-MODE"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Line of symmetry at mean and points of inflection one standard deviation from mean."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R12",
+      "sourceReference": "p.56 R12",
+      "canonicalNodeIds": [
+        "PROB-DIST-NORM-MODE",
+        "PROB-DIST-NORM-STAN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Calculating and using Normal probabilities, including calculator functions."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-R13",
+      "sourceReference": "p.56 R13",
+      "canonicalNodeIds": [
+        "PROB-DIST-BINO-MODE",
+        "PROB-DIST-NORM-MODE",
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Modelling with probability distributions and critiquing assumptions, including appropriateness of binomial and Normal models."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MH1",
+      "sourceReference": "p.57 MH1",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-NULL",
+        "STAT-TEST-HYPO-TAIL",
+        "STAT-TEST-HYPO-SIGL",
+        "STAT-TEST-HYPO-CRIT"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Language and process of hypothesis testing including null/alternative hypotheses, significance level, test statistic, tail, critical value/region, acceptance region and p-value."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H2",
+      "sourceReference": "p.57 H2",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-TAIL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "When to apply one-tailed and two-tailed tests."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H3",
+      "sourceReference": "p.57 H3",
+      "canonicalNodeIds": [
+        "STAT-ENQ-SAMP-POP",
+        "STAT-TEST-HYPO-SIGL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Sample as basis for population inference and significance level as probability of incorrectly rejecting the null hypothesis."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H4",
+      "sourceReference": "p.58 H4",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-BINO",
+        "STAT-TEST-HYPO-NULL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Identifying null and alternative hypotheses for a binomial probability test."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H5",
+      "sourceReference": "p.58 H5",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-BINO"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Conducting a binomial hypothesis test and interpreting conclusions in context."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H6",
+      "sourceReference": "p.58 H6",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-CRIT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Identifying critical and acceptance regions for a binomial test."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MH7",
+      "sourceReference": "p.58 MH7",
+      "canonicalNodeIds": [
+        "STAT-EST-ESTI-SMEAN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Distribution of sample mean for samples from a Normal population."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H8",
+      "sourceReference": "p.58 H8",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-MEAN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Hypothesis test for a single mean using Normal distribution, known variance or large sample."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H9",
+      "sourceReference": "p.58 H9",
+      "canonicalNodeIds": [
+        "STAT-TEST-HYPO-CRIT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Identifying critical and acceptance regions for a Normal mean test."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-MH10",
+      "sourceReference": "p.59 MH10",
+      "canonicalNodeIds": [
+        "STAT-CORR-REG-PMCC",
+        "STAT-CORR-REG-SPEAR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Correlation as measure of linear fit and rank correlation coefficient; learners are not required to know names of particular coefficients."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-H11",
+      "sourceReference": "p.59 H11",
+      "canonicalNodeIds": [
+        "STAT-CORR-REG-PMCC",
+        "STAT-TEST-HYPO-NULL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Using a given correlation coefficient to make an inference about population correlation/association using p-value or critical value."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-Mp31",
+      "sourceReference": "p.60 Mp31",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Language of simplifying assumptions in mechanics (light, smooth, uniform, particle, inextensible, thin, rigid, long term)."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-p32",
+      "sourceReference": "p.60 p32",
+      "canonicalNodeIds": [
+        "REAS-MODL-MODL-ASSM"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Understanding and using the particle model."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-p33",
+      "sourceReference": "p.60 p33",
+      "canonicalNodeIds": [],
+      "unmappedReason": "No canonical node for SI fundamental quantities and units length, time and mass.",
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Fundamental SI units metre, second and kilogram; no specific node."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-p34",
+      "sourceReference": "p.60 p34",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-SPED",
+        "MECH-KIN-LINE-ACCL",
+        "MECH-FORC-FORC",
+        "MECH-DYN-NEWT-MASS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Derived quantities and units for velocity, acceleration, force and weight; no dedicated units node."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-OFFICIAL-p35",
+      "sourceReference": "p.60 p35",
+      "canonicalNodeIds": [
+        "MECH-FURT-RIGD-MOMT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Derived quantity and unit for moment: newton metre."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-Mk1",
+      "sourceReference": "p.61 Mk1",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-DIST",
+        "MECH-KIN-LINE-SPED",
+        "MECH-KIN-LINE-ACCL"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.61 Mk1",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Defines kinematic terminology for 1-D motion. Mapped to the relevant 1-D kinematics concept nodes; the point spans multiple nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-k2",
+      "sourceReference": "p.61 k2",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-DIST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.61 k2",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Distinction between position, displacement, distance and distance travelled."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-k3",
+      "sourceReference": "p.61 k3",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-SPED",
+        "MECH-KIN-LINE-ACCL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.61 k3",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Distinctions between velocity/speed and acceleration/magnitude of acceleration."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-k4",
+      "sourceReference": "p.61 k4",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-STGR",
+        "MECH-KIN-LINE-VTGR",
+        "MECH-KIN-LINE-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.61 k4",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Drawing and interpreting kinematics graphs including gradient and area interpretations."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-k5",
+      "sourceReference": "p.61 k5",
+      "canonicalNodeIds": [
+        "CALC-KIN-SVAT-DSDT",
+        "CALC-KIN-SVAT-DVDT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.61 k5",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Differentiating position and velocity with respect to time to obtain velocity and acceleration."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-k6",
+      "sourceReference": "p.61 k6",
+      "canonicalNodeIds": [
+        "CALC-KIN-SVAT-INTV",
+        "CALC-KIN-SVAT-INTS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.61 k6",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Integrating acceleration and velocity with respect to time to obtain velocity and displacement/position."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-k7",
+      "sourceReference": "p.61 k7",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-CONST"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.61 k7",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Recognition of when constant acceleration formulae are appropriate; learners should derive them."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-k8",
+      "sourceReference": "p.61 k8",
+      "canonicalNodeIds": [
+        "MECH-KIN-LINE-CONST",
+        "CALC-KIN-SVAT-DSDT",
+        "CALC-KIN-SVAT-DVDT",
+        "CALC-KIN-SVAT-INTV",
+        "CALC-KIN-SVAT-INTS"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.61 k8",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Problem solving combines constant acceleration formulae and calculus; spans several kinematics nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-Mk9",
+      "sourceReference": "p.62 Mk9",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-POSV",
+        "MECH-KIN-LINE-DIST",
+        "MECH-KIN-LINE-SPED",
+        "MECH-KIN-LINE-ACCL"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.62 Mk9",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "2-D kinematics language; no dedicated 2-D kinematics node exists, so mapped to vector position and 1-D kinematic concepts."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-k10",
+      "sourceReference": "p.62 k10",
+      "canonicalNodeIds": [
+        "VECT-BASIC-NOTN-ADDS",
+        "VECT-BASIC-NOTN-MAGN",
+        "CALC-KIN-SVAT-DSDT",
+        "CALC-KIN-SVAT-DVDT",
+        "CALC-KIN-SVAT-INTV",
+        "CALC-KIN-SVAT-INTS",
+        "MECH-KIN-LINE-CONST"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.62 k10",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Extends 1-D techniques to 2-D using vectors, including calculus and constant acceleration formulae in vector form."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-k11",
+      "sourceReference": "p.62 k11",
+      "canonicalNodeIds": [
+        "GEOM-PARM-PARM-CART",
+        "VECT-BASIC-NOTN-POSV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.62 k11",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Finding Cartesian equation from time-parametrised position vector components."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-k12",
+      "sourceReference": "p.62 k12",
+      "canonicalNodeIds": [
+        "VECT-GEOM-PROB",
+        "CALC-KIN-SVAT-DSDT",
+        "CALC-KIN-SVAT-DVDT"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.62 k12",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Using vectors to solve kinematics problems including relative position and interpreting velocity/acceleration directions."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-My1",
+      "sourceReference": "p.63 My1",
+      "canonicalNodeIds": [
+        "MECH-FURT-PROJ-MODEL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.63 My1",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Modelling projectile motion under gravity using vectors and standard assumptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-y2",
+      "sourceReference": "p.63 y2",
+      "canonicalNodeIds": [
+        "MECH-FURT-PROJ-HV",
+        "MECH-FURT-PROJ-RANGE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.63 y2",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Finding position, velocity, range and maximum height of a projectile."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-y3",
+      "sourceReference": "p.63 y3",
+      "canonicalNodeIds": [
+        "MECH-FURT-PROJ-HV"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.63 y3",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Finding initial velocity from given information; narrower than the general horizontal/vertical motion node."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-y4",
+      "sourceReference": "p.63 y4",
+      "canonicalNodeIds": [
+        "MECH-FURT-PROJ-TRAJ"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.63 y4",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Eliminating time to obtain the Cartesian trajectory equation."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-y5",
+      "sourceReference": "p.63 y5",
+      "canonicalNodeIds": [
+        "MECH-FURT-PROJ"
+      ],
+      "relation": "broader",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.63 y5",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "General problem solving with projectiles; broader than individual projectile nodes."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-MF1",
+      "sourceReference": "p.64 MF1",
+      "canonicalNodeIds": [
+        "MECH-FORC-FORC",
+        "MECH-FORC-EQUI-NORM"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.64 MF1",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Terminology for types of force and dependence of normal reaction on other forces."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F2",
+      "sourceReference": "p.64 F2",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-MASS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.64 F2",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Variation of g with location and modelling g as constant on Earth; no dedicated gravitational-acceleration node exists."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F3",
+      "sourceReference": "p.64 F3",
+      "canonicalNodeIds": [
+        "MECH-FORC-FORC-DIAG"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.64 F3",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Identifying forces and representing them in force diagrams, including external/internal forces."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F4",
+      "sourceReference": "p.64 F4",
+      "canonicalNodeIds": [
+        "MECH-FORC-FORC-RESL",
+        "MECH-FORC-FORC-VECN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.64 F4",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Finding resultants of concurrent forces in parallel/perpendicular directions or component-vector form."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F5",
+      "sourceReference": "p.64 F5",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-PRIN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.64 F5",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Equilibrium as vector sum of forces being zero in specified cases."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-MF6",
+      "sourceReference": "p.65 MF6",
+      "canonicalNodeIds": [
+        "MECH-FORC-FORC-COMP",
+        "MECH-FORC-EQUI-RESV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.65 MF6",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Resolving forces into components and finding resultants by adding components."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F7",
+      "sourceReference": "p.65 F7",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-PRIN"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.65 F7",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Equilibrium condition for a particle or body under concurrent forces."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F8",
+      "sourceReference": "p.65 F8",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-PRIN",
+        "MECH-FORC-FORC-VECN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.65 F8",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Vectors in equilibrium sum to zero and closed-force-figure representation."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F9",
+      "sourceReference": "p.65 F9",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-RESV"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.65 F9",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Solving equilibrium problems by resolving or using polygons/triangles of forces."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F10",
+      "sourceReference": "p.65 F10",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-NORM",
+        "MECH-FORC-EQUI-FRIC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.65 F10",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Contact force as combination of normal contact force and friction; smooth/rough modelling assumptions."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F11",
+      "sourceReference": "p.65 F11",
+      "canonicalNodeIds": [
+        "MECH-FORC-EQUI-FRIC",
+        "MECH-FORC-EQUI-COEF",
+        "MECH-FORC-EQUI-LIMF"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.65 F11",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Friction model F_R <= mu N and F_R = mu N when sliding; coefficient of friction and limiting/static friction."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F12",
+      "sourceReference": "p.65 F12",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-FRIC"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.65 F12",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Applying Newton's laws in problems involving friction."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-Mn1",
+      "sourceReference": "p.66 Mn1",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-N2L",
+        "MECH-FORC-EQUI-N3L"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.66 Mn1",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Know and understand all three Newton's laws and apply them; no dedicated first-law node exists."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-n2",
+      "sourceReference": "p.66 n2",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-N2L"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.66 n2",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Understanding the term equation of motion; associated with Newton's second law."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-n3",
+      "sourceReference": "p.66 n3",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-N2L",
+        "MECH-DYN-NEWT-VERT",
+        "MECH-DYN-NEWT-INCL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.66 n3",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Formulating equations of motion for a particle in a straight line, including motion under gravity and simple 2-D component cases."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-n4",
+      "sourceReference": "p.66 n4",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-CONP"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.66 n4",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Modelling systems as connected particles such as pulley systems and trains."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-n5",
+      "sourceReference": "p.66 n5",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-CONP"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.66 n5",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Formulating equations of motion for individual particles within a connected system."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-n6",
+      "sourceReference": "p.66 n6",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-CONP",
+        "MECH-DYN-NEWT-MASS"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.66 n6",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "System with no relative motion modelled as a single particle of total mass."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-n7",
+      "sourceReference": "p.66 n7",
+      "canonicalNodeIds": [
+        "MECH-DYN-NEWT-N2L",
+        "MECH-DYN-NEWT-VERT",
+        "MECH-DYN-NEWT-INCL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.66 n7",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Formulating equations of motion for a particle moving in a straight line or in a plane, extending n3."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-MF13",
+      "sourceReference": "p.67 MF13",
+      "canonicalNodeIds": [
+        "MECH-FURT-RIGD-MOMT"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.67 MF13",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Calculating moment of a force about a point or axis for rods and rectangular laminas."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F14",
+      "sourceReference": "p.67 F14",
+      "canonicalNodeIds": [
+        "MECH-FURT-RIGD-RBAL"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.67 F14",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Rigid body equilibrium requires zero resultant force and zero sum of moments about any point."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F15",
+      "sourceReference": "p.67 F15",
+      "canonicalNodeIds": [
+        "MECH-FURT-RIGD-MOMT"
+      ],
+      "relation": "narrower",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.67 F15",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Understanding that forces can exert a turning effect on a rigid body."
+      ]
+    },
+    {
+      "syllabusPointId": "OCR-H640-F16",
+      "sourceReference": "p.67 F16",
+      "canonicalNodeIds": [
+        "MECH-FURT-RIGD-COM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "fixed",
+        "papers": [
+          "01"
+        ],
+        "evidence": [
+          {
+            "url": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+            "title": "OCR A Level Mathematics B MEI H640 specification",
+            "documentVersion": "Version 3",
+            "locator": "p.67 F16",
+            "accessedAt": "2026-07-16",
+            "sha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+            "sourceType": "official"
+          }
+        ]
+      },
+      "reviewNotes": [
+        "Weight of a body acts through its centre of mass for moment calculations."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-SETN",
+      "sourceReference": "[PAGE 76] §5c.1 Set Notation",
+      "canonicalNodeIds": [
+        "NUM-SYS-SET-LANG",
+        "NUM-SYS-SET-UNIN",
+        "NUM-SYS-SET-COMP",
+        "NUM-SYS-SET-VENN"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Appendix requirement that learners understand standard set notation; paper allocation not explicitly fixed."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-MISC",
+      "sourceReference": "[PAGE 77] §5c.2 Miscellaneous Symbols",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC",
+        "NUM-RAT-RATI-PROP",
+        "ALGF-SEQ-SEQU",
+        "REAS-PROF-ARGM-LOGI"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Appendix requirement covering common mathematical symbols and sequence notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-OPER",
+      "sourceReference": "[PAGE 78] §5c.3 Operations",
+      "canonicalNodeIds": [
+        "NUM-OPS-CALC",
+        "NUM-POW-INDX",
+        "NUM-POW-POWR",
+        "ALGF-SEQ-BINO"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Appendix requirement covering arithmetic, summation, factorial and binomial coefficient notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-FUNC",
+      "sourceReference": "[PAGE 78] §5c.4 Functions",
+      "canonicalNodeIds": [
+        "ALGF-FUNC-DEFS",
+        "ALGF-FUNC-COMP",
+        "CALC-DIFF-CONC",
+        "CALC-INTE-CONC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Appendix requirement covering function, limit, derivative and integral notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-EXPL",
+      "sourceReference": "[PAGE 79] §5c.5 Exponential and Logarithmic Functions",
+      "canonicalNodeIds": [
+        "ALGF-LOG-EXPO",
+        "ALGF-LOG-LOGR"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Appendix requirement covering e, exp, log and ln notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-TRIG",
+      "sourceReference": "[PAGE 79] §5c.6 Trigonometric Functions",
+      "canonicalNodeIds": [
+        "TRIG-FUNC",
+        "TRIG-CIRC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Appendix requirement covering trigonometric and inverse trigonometric function notation and units."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-VECT",
+      "sourceReference": "[PAGE 79] §5c.9 Vectors",
+      "canonicalNodeIds": [
+        "VECT-BASIC",
+        "VECT-SPAC"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Appendix requirement covering vector notation in two and three dimensions. Sections 7 and 8 are not present in this chunk."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-PROB",
+      "sourceReference": "[PAGE 79]-[PAGE 80] §5c.11 Probability and Statistics",
+      "canonicalNodeIds": [
+        "PROB-BASIC",
+        "PROB-COMB",
+        "PROB-DRVD",
+        "PROB-DIST",
+        "STAT-SUMM",
+        "STAT-TEST"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Appendix requirement covering probability, distribution and statistical notation. Section 10 is not present in this chunk."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5c-MECH",
+      "sourceReference": "[PAGE 80]-[PAGE 81] §5c.12 Mechanics",
+      "canonicalNodeIds": [
+        "MECH-FORC",
+        "MECH-KIN",
+        "MECH-DYN",
+        "MECH-MOMI",
+        "MECH-ENER"
+      ],
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Appendix requirement covering SI units and mechanics notation."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-QUAD",
+      "sourceReference": "[PAGE 81] §5d Pure Mathematics — Quadratic Equations",
+      "canonicalNodeIds": [
+        "ALGF-EQN-QUAD-FORM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formula/identity learners must recall without it being provided."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-INDI",
+      "sourceReference": "[PAGE 81]-[PAGE 82] §5d Laws of Indices",
+      "canonicalNodeIds": [
+        "NUM-POW-INDX"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formula/identity learners must recall without it being provided."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-LOGS",
+      "sourceReference": "[PAGE 82] §5d Laws of Logarithms",
+      "canonicalNodeIds": [
+        "ALGF-LOG-LOGR-LAWS"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formula/identity learners must recall without it being provided."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-COOR",
+      "sourceReference": "[PAGE 82] §5d Coordinate Geometry",
+      "canonicalNodeIds": [
+        "GEOM-COOR-LINE"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formula/identity learners must recall without it being provided."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-SEQU",
+      "sourceReference": "[PAGE 82] §5d Sequences",
+      "canonicalNodeIds": [
+        "ALGF-SEQ-SEQU-ARIT",
+        "ALGF-SEQ-SEQU-GEOM"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formula/identity learners must recall without it being provided."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-TRIG",
+      "sourceReference": "[PAGE 82] §5d Trigonometry",
+      "canonicalNodeIds": [
+        "TRIG-BASE-NONR-SINR",
+        "TRIG-BASE-NONR-COSR",
+        "TRIG-BASE-NONR-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formula/identity learners must recall without it being provided."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-MENS",
+      "sourceReference": "[PAGE 82] §5d Mensuration",
+      "canonicalNodeIds": [
+        "GEOM-MENS-CIRC-CIRC",
+        "GEOM-MENS-CIRC-AREA"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formula/identity learners must recall without it being provided."
+      ]
+    },
+    {
+      "syllabusPointId": "OFFICIAL-OCR-H640-5d-PYTH",
+      "sourceReference": "[PAGE 82] §5d Pythagoras' Theorem",
+      "canonicalNodeIds": [
+        "TRIG-BASE-RATR-PYTH"
+      ],
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "paperApplicability": {
+        "kind": "not-specified"
+      },
+      "reviewNotes": [
+        "Formula/identity learners must recall without it being provided."
+      ]
+    }
+  ]
+}

@@ -82,17 +82,17 @@ export default function PaperComparePage() {
           </p>
 
           <section style={{ marginTop: 24, padding: 20, borderRadius: 16, border: "1px solid #E1DBD4", background: "rgba(255,255,255,0.82)" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 14 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: 14 }}>
               <label style={{ display: "grid", gap: 7, fontSize: 12, fontWeight: 700, color: "#675A4D" }}>
                 PAPER A
-                <select aria-label="选择试卷 A" value={paperAId} onChange={(event) => updateSelection(event.target.value, event.target.value === paperBId ? "" : paperBId)} style={{ padding: "11px 12px", border: "1px solid #D9D4CE", borderRadius: 10, background: "white", color: "#3D3832" }}>
+                <select aria-label="选择试卷 A" value={paperAId} onChange={(event) => updateSelection(event.target.value, event.target.value === paperBId ? "" : paperBId)} style={{ minWidth: 0, maxWidth: "100%", padding: "11px 12px", border: "1px solid #D9D4CE", borderRadius: 10, background: "white", color: "#3D3832" }}>
                   <option value="">选择第一张 Paper</option>
                   {orderedPapers.map((paper) => <option key={paper.paperId} value={paper.paperId}>{paper.board} {paper.subjectCode} P{paper.paperNumber} — {paper.paperName}</option>)}
                 </select>
               </label>
               <label style={{ display: "grid", gap: 7, fontSize: 12, fontWeight: 700, color: "#3F6A78" }}>
                 PAPER B
-                <select aria-label="选择试卷 B" value={paperBId} onChange={(event) => updateSelection(paperAId, event.target.value)} style={{ padding: "11px 12px", border: "1px solid #D9D4CE", borderRadius: 10, background: "white", color: "#3D3832" }}>
+                <select aria-label="选择试卷 B" value={paperBId} onChange={(event) => updateSelection(paperAId, event.target.value)} style={{ minWidth: 0, maxWidth: "100%", padding: "11px 12px", border: "1px solid #D9D4CE", borderRadius: 10, background: "white", color: "#3D3832" }}>
                   <option value="">选择第二张 Paper</option>
                   {orderedPapers.filter((paper) => paper.paperId !== paperAId).map((paper) => <option key={paper.paperId} value={paper.paperId}>{paper.board} {paper.subjectCode} P{paper.paperNumber} — {paper.paperName}</option>)}
                 </select>
@@ -103,7 +103,7 @@ export default function PaperComparePage() {
           {!paperA && !paperB && (
             <section style={{ marginTop: 22 }}>
               <h2 style={{ margin: "0 0 12px", fontSize: 16, color: "#3D3832" }}>常用结构对比</h2>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 10 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))", gap: 10 }}>
                 {SUGGESTED_PAIRS.map(([a, b, label]) => (
                   <button key={`${a}-${b}`} onClick={() => updateSelection(a, b)} style={{ padding: "15px 16px", textAlign: "left", border: "1px solid #E1DBD4", borderRadius: 12, background: "rgba(255,255,255,0.8)", color: "#4A453F", cursor: "pointer" }}>
                     <div style={{ fontWeight: 700, fontSize: 13 }}>{label}</div>
@@ -116,7 +116,7 @@ export default function PaperComparePage() {
 
           {paperA && paperB && (
             <>
-              <section style={{ marginTop: 22, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12 }}>
+              <section style={{ marginTop: 22, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: 12 }}>
                 <PaperSummary paper={paperA} label="PAPER A" color="#675A4D" />
                 <PaperSummary paper={paperB} label="PAPER B" color="#3F6A78" />
               </section>

@@ -13,13 +13,20 @@ export default defineConfig({
     screenshot: "only-on-failure",
   },
   projects: [
-    { name: "desktop-chromium", use: { ...devices["Desktop Chrome"] } },
-    { name: "mobile-375", use: { ...devices["iPhone 13"], browserName: "chromium" } },
+    { name: "desktop-chromium", testMatch: /routes\.spec\.ts/, use: { ...devices["Desktop Chrome"] } },
+    { name: "mobile-390", testMatch: /routes\.spec\.ts/, use: { ...devices["iPhone 13"], browserName: "chromium", viewport: { width: 390, height: 844 } } },
+    { name: "firefox-core", testMatch: /cross-browser\.spec\.ts/, use: { ...devices["Desktop Firefox"] } },
+    { name: "webkit-core", testMatch: /cross-browser\.spec\.ts/, use: { ...devices["Desktop Safari"] } },
+    ...[320, 360, 390, 768, 1024].map((width) => ({
+      name: `layout-${width}`,
+      testMatch: /layout\.spec\.ts/,
+      use: { browserName: "chromium" as const, viewport: { width, height: width < 700 ? 844 : 900 } },
+    })),
   ],
   webServer: {
-    command: "./node_modules/.bin/vinext build && node scripts/clean-server-public.mjs && ./node_modules/.bin/vinext start",
+    command: "node scripts/serve-static.mjs",
     url: "http://127.0.0.1:3000",
     reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
+    timeout: 30_000,
   },
 });

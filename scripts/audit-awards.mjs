@@ -44,6 +44,20 @@ const VERIFIED_ROUTE_SEMANTICS = deepFreeze({
     roundingRule: "none",
     grades: ["A*", "A", "B", "C", "D", "E"],
   },
+  "award:ocr:6993:linear": {
+    board: "OCR",
+    qualificationCode: "6993",
+    level: "Level 3 FSMQ",
+    specificationVersion: "6993-version-2.0-june-2026",
+    routeType: "linear",
+    routeKey: "6993-linear",
+    components: [
+      { code: "6993/01", inputKind: "raw", maxRawMark: 100, weightingFactor: 1 },
+    ],
+    maximumMarkAfterWeighting: 100,
+    roundingRule: "none",
+    grades: ["A", "B", "C", "D", "E"],
+  },
   "award:caie:9709:2023-2025:as:S1": {
     board: "CAIE",
     qualificationCode: "9709",
@@ -286,13 +300,18 @@ export function auditAwardData(input = {}) {
         failures.push(`${source} boundary[${index}] maximum ${boundary?.maximumMarkAfterWeighting} does not match route maximum ${route?.maximumMarkAfterWeighting} for "${route.id}"`);
       }
 
-      if (source === "official" && (route.board === "AQA" || route.board === "OCR")) {
+      if (source === "official" && (route.board === "AQA" || route.qualificationCode === "H240")) {
         if (typeof boundary?.sourceRowId !== "string" || !boundary.sourceRowId.endsWith("OVERALL")) {
           failures.push(`${route.board} ${route.qualificationCode} official boundary[${index}] must be a qualification-level OVERALL row`);
         }
         if (boundary?.maximumMarkAfterWeighting !== 300) {
           failures.push(`${route.board} ${route.qualificationCode} official boundary[${index}] must total 300`);
         }
+      }
+      if (source === "official" && route.qualificationCode === "6993") {
+        if (boundary?.sourceRowId !== "OCR-2025-JUNE-6993-01") failures.push("OCR 6993 boundary must identify the official single-paper row");
+        if (boundary?.maximumMarkAfterWeighting !== 100) failures.push("OCR 6993 official boundary must total 100");
+        if (Object.hasOwn(boundary?.thresholds ?? {}, "A*")) failures.push("OCR 6993 does not award grade A*");
       }
     }
     return keys;

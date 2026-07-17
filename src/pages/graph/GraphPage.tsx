@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import LZString from 'lz-string';
 import type { FunctionEntry, PresetFunction, Point } from './types';
 import { getFunctionColor, getNextUnusedColor, compileExpression, GRAPH_LIMITS } from './lib/graphRenderer';
@@ -465,10 +465,22 @@ export default function GraphPage() {
 
   const canUndo = historyIndex > 0;
   const canRedo = historyIndex < history.length - 1;
+  const graphSummary = useMemo(() => {
+    const visible = functions.filter((fn) => fn.visible && fn.expression.trim());
+    const invalid = visible.filter((fn) => !compileExpression(fn.expression, fn.mode));
+    const labels = visible
+      .filter((fn) => compileExpression(fn.expression, fn.mode))
+      .map((fn) => labelExpression(fn.expression, fn.mode, fn.params));
+    const intersectionText = intersections.length
+      ? `已标记 ${intersections.length} 个交点：${intersections.slice(0, 4).map((point) => `(${point.x.toFixed(2)}, ${point.y.toFixed(2)})`).join('、')}${intersections.length > 4 ? '等' : ''}。`
+      : '尚未标记交点。';
+    return `${labels.length ? `当前函数：${labels.join('；')}。` : '当前没有可绘制函数。'}${invalid.length ? `${invalid.length} 个表达式无效。` : ''}${intersectionText}`;
+  }, [functions, intersections]);
 
   return (
     <div className="graph-page-shell flex min-h-screen flex-col">
       <Header title="函数画图工具" />
+      <p className="sr-only" role="status" aria-live="polite">{graphSummary}</p>
       <main className="flex flex-1 flex-col overflow-visible lg:flex-row lg:overflow-hidden">
         <h1 className="sr-only">函数画图工具</h1>
         <div ref={canvasContainerRef} className="h-[58vh] min-h-[420px] w-full flex-1 lg:h-[calc(100vh-120px)] lg:min-h-0">

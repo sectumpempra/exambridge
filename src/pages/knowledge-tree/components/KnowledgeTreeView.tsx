@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import type { KnowledgeTreeNode } from "@/data/knowledge-tree/types";
 import { ChevronRight, ChevronDown, Search, Folder } from "lucide-react";
 
@@ -37,16 +37,20 @@ function TreeNodeItem({
   highlightNodes,
   aOnlyNodes,
   bOnlyNodes,
+  expandedIds,
+  onToggle,
 }: {
   item: TreeItem;
   depth: number;
   highlightNodes?: Set<string>;
   aOnlyNodes?: Set<string>;
   bOnlyNodes?: Set<string>;
+  expandedIds: Set<string>;
+  onToggle: (nodeId: string) => void;
 }) {
-  const [expanded, setExpanded] = useState(depth < 1);
   const hasChildren = item.children.length > 0;
   const nodeId = item.node.nodeId;
+  const expanded = expandedIds.has(nodeId);
   const isHighlight = highlightNodes?.has(nodeId);
   const isAOnly = aOnlyNodes?.has(nodeId);
   const isBOnly = bOnlyNodes?.has(nodeId);
@@ -56,10 +60,12 @@ function TreeNodeItem({
 
   return (
     <div>
-      <div
-        className="flex items-center gap-1.5 py-1.5 px-1 rounded cursor-pointer transition-colors hover:bg-[#F5F2EE] min-h-[36px]"
+      <button
+        type="button"
+        aria-expanded={hasChildren ? expanded : undefined}
+        className="flex w-full items-center gap-1.5 py-1.5 px-1 rounded border-0 bg-transparent text-left cursor-pointer transition-colors hover:bg-[#F5F2EE] min-h-[36px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#675A4D]"
         style={{ paddingLeft: `${depth * 16 + 4}px` }}
-        onClick={() => hasChildren && setExpanded(!expanded)}
+        onClick={() => hasChildren && onToggle(nodeId)}
         title={item.node.path.join(" > ")}
       >
         {hasChildren ? (
@@ -101,7 +107,7 @@ function TreeNodeItem({
             {statusLabel}
           </span>
         )}
-      </div>
+      </button>
 
       {expanded &&
         item.children.map((child) => (
@@ -112,6 +118,8 @@ function TreeNodeItem({
             highlightNodes={highlightNodes}
             aOnlyNodes={aOnlyNodes}
             bOnlyNodes={bOnlyNodes}
+            expandedIds={expandedIds}
+            onToggle={onToggle}
           />
         ))}
     </div>
@@ -120,7 +128,6 @@ function TreeNodeItem({
 
 export default function KnowledgeTreeView({ nodes, highlightNodes, aOnlyNodes, bOnlyNodes }: Props) {
   const [search, setSearch] = useState("");
-  const [allExpanded, setAllExpanded] = useState(false);
 
   // 5.6: Search keeps parent path — include matching nodes + all their ancestors
   const searchFilteredNodes = useMemo(() => {
@@ -151,6 +158,19 @@ export default function KnowledgeTreeView({ nodes, highlightNodes, aOnlyNodes, b
   }, [nodes, search]);
 
   const tree = useMemo(() => buildHierarchy(searchFilteredNodes), [searchFilteredNodes]);
+  const expandableNodeIds = useMemo(() => {
+    const parentIds = new Set(nodes.map((node) => node.parentNodeId).filter((value): value is string => Boolean(value)));
+    return nodes.filter((node) => parentIds.has(node.nodeId)).map((node) => node.nodeId);
+  }, [nodes]);
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(() => new Set(nodes.filter((node) => node.level < 1).map((node) => node.nodeId)));
+  const beforeExpandAll = useRef<Set<string> | null>(null);
+  const allExpanded = expandableNodeIds.length > 0 && expandableNodeIds.every((nodeId) => expandedIds.has(nodeId));
+  const toggleNode = (nodeId: string) => setExpandedIds((current) => {
+    const next = new Set(current);
+    if (next.has(nodeId)) next.delete(nodeId);
+    else next.add(nodeId);
+    return next;
+  });
 
   return (
     <div className="rounded-2xl border border-[#E8E4DE] bg-white overflow-hidden">
@@ -168,7 +188,15 @@ export default function KnowledgeTreeView({ nodes, highlightNodes, aOnlyNodes, b
             />
           </div>
           <button
-            onClick={() => setAllExpanded(!allExpanded)}
+            onClick={() => setExpandedIds((current) => {
+              if (allExpanded) {
+                const restored = beforeExpandAll.current ?? new Set<string>();
+                beforeExpandAll.current = null;
+                return new Set(restored);
+              }
+              beforeExpandAll.current = new Set(current);
+              return new Set(expandableNodeIds);
+            })}
             className="px-3 py-2 text-[11px] text-[#675A4D] border border-[#E8E4DE] rounded-lg hover:bg-[#F5F2EE] transition-colors whitespace-nowrap"
           >
             {allExpanded ? "收起全部" : "展开全部"}
@@ -195,6 +223,8 @@ export default function KnowledgeTreeView({ nodes, highlightNodes, aOnlyNodes, b
             highlightNodes={highlightNodes}
             aOnlyNodes={aOnlyNodes}
             bOnlyNodes={bOnlyNodes}
+            expandedIds={expandedIds}
+            onToggle={toggleNode}
           />
         ))}
         {tree.length === 0 && (

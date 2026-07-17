@@ -3,1936 +3,2857 @@
   "subjectCode": "J560",
   "subjectName": "GCSE Mathematics",
   "level": "GCSE",
-  "version": "1.1-statement-level",
-  "totalTopics": 9,
-  "mappedTopics": 9,
+  "version": "4.0.0-knowledge-v4-20260716",
+  "sourceSchemaVersion": "4.0.0",
+  "qualificationVersionId": "OCR-J560:Version 2.0",
+  "syllabusVersion": "Version 2.0",
+  "effectiveFrom": "2015-09-01",
+  "sourceUrl": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+  "sources": [
+    {
+      "url": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+      "title": "OCR GCSE Mathematics J560 specification",
+      "documentVersion": "Version 2.0",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+      "sourceType": "official"
+    }
+  ],
+  "approval": {
+    "approvedAt": "2026-07-16",
+    "approvalBatch": "knowledge-v4-20260716"
+  },
+  "verificationStatus": "verified",
+  "totalTopics": 11,
+  "mappedTopics": 10,
+  "paperStructure": {
+    "papers": [
+      "J560/01",
+      "J560/02",
+      "J560/03",
+      "J560/04",
+      "J560/05",
+      "J560/06",
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06"
+    ]
+  },
   "mappings": [
     {
-      "topicId": "OCR-J560-1",
-      "topicName": "Number",
+      "topicId": "OCR-J560-GEOM",
+      "topicName": "Geometry and Mensuration",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-J560-1.1",
-          "subtopicName": "Identify and use natural numbers, integers, prime numbers, square numbers, cube numbers, common factors, common multiples, rational and irrational numbers, and reciprocals.",
+          "subtopicId": "OFFICIAL-OCR-J560-2b-UNITS-01",
+          "subtopicName": "J560 specification p.11, 'Units and measures'",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "NUM-SYS-TYPE-NAT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-TYPE-NAT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-SYS-TYPE-INTG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-TYPE-INTG in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-SYS-TYPE-PRIM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-TYPE-PRIM in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.1.2",
-          "subtopicName": "Identify and use natural numbers, integers, prime numbers, square numbers, cube numbers, common factors, common multiples, rational and irrational numbers, and reciprocals.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-SYS-TYPE-FACT",
-              "matchStrength": "strong",
-              "matchReason": "HCF and LCM are represented by the broader factors and multiples leaf in the MVP tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.2",
-          "subtopicName": "Understand and use set language, notation and Venn diagrams to describe sets.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-SYS-SET-LANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-SET-LANG in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-SYS-SET-VENN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-SET-VENN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-SYS-SET-UNIN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-SYS-SET-UNIN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.3",
-          "subtopicName": "Calculate with squares, square roots, cubes, cube roots, and other powers and roots of numbers.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-POW-POWR-SQRT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-POWR-SQRT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-POW-POWR-CUBR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-POWR-CUBR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-POW-INDX-POS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-POS in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.4",
-          "subtopicName": "Use fractions, decimals and percentages; recognise equivalence and convert between these forms.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-FRAC-FRAC-EQVF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-FRAC-EQVF in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-FRAC-FRAC-SIMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-FRAC-SIMP in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-FRAC-DECI-CONV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-DECI-CONV in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.4.2",
-          "subtopicName": "Use fractions, decimals and percentages; recognise equivalence and convert between these forms.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-FRAC-DECI-PLAC",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "NUM-FRAC-DECI-RECR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "NUM-FRAC-FRAC-MIXD",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.5",
-          "subtopicName": "Order quantities by magnitude and demonstrate familiarity with the symbols =, !=, >, <, >= and <=.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-FRAC-DECI-ORDR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-DECI-ORDR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-INEQ-LINS",
+              "nodeId": "GEOM-MENS-UNIT-LENG",
               "matchStrength": "partial",
-              "matchReason": "Ordering and inequality symbols support later linear inequality work."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.6",
-          "subtopicName": "Use the four operations for calculations with integers, fractions and decimals, including correct ordering of operations and use of brackets.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-OPS-CALC-FOUR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-OPS-CALC-FOUR in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 partial relation; J560 specification p.11, 'Units and measures'"
             },
             {
-              "nodeId": "NUM-OPS-CALC-BIDM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-OPS-CALC-BIDM in the MVP knowledge tree."
+              "nodeId": "GEOM-MENS-UNIT-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 specification p.11, 'Units and measures'"
             },
             {
-              "nodeId": "NUM-OPS-CALC-BRAC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-OPS-CALC-BRAC in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.6.2",
-          "subtopicName": "Use the four operations for calculations with integers, fractions and decimals, including correct ordering of operations and use of brackets.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-OPS-CALC-NEG",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.7",
-          "subtopicName": "Understand and use indices and the rules of indices, including positive, zero, negative and fractional indices.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-POW-INDX-POS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-POS in the MVP knowledge tree."
+              "nodeId": "GEOM-MENS-UNIT-VOLU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 specification p.11, 'Units and measures'"
             },
             {
-              "nodeId": "NUM-POW-INDX-ZERO",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-ZERO in the MVP knowledge tree."
+              "nodeId": "GEOM-MENS-UNIT-CAPA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 specification p.11, 'Units and measures'"
             },
-            {
-              "nodeId": "NUM-POW-INDX-NEG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-NEG in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.7.2",
-          "subtopicName": "Understand and use indices and the rules of indices, including positive, zero, negative and fractional indices.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-POW-INDX-FRAC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-INDX-FRAC in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.8",
-          "subtopicName": "Use standard form A x 10^n where n is a positive or negative integer and 1 <= A < 10.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-POW-STDF-CONV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-STDF-CONV in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-POW-STDF-CALC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-STDF-CALC in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-POW-STDF-INTP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-STDF-INTP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.8.2",
-          "subtopicName": "Use standard form A x 10^n where n is a positive or negative integer and 1 <= A < 10.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-ACC-ROUN-POW10",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.9",
-          "subtopicName": "Round values to a specified degree of accuracy, make estimates, and round answers to a reasonable degree of accuracy in context.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-ACC-ROUN-DP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-ACC-ROUN-DP in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-ACC-ROUN-SF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-ACC-ROUN-SF in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-ACC-ROUN-ESTM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-ACC-ROUN-ESTM in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.10",
-          "subtopicName": "Give upper and lower bounds for data rounded to a specified accuracy.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-ACC-BOUN-UPLO",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-ACC-BOUN-UPLO in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-ACC-BOUN-CALC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-ACC-BOUN-CALC in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.11",
-          "subtopicName": "Understand and use ratio and proportion to give ratios in simplest form, divide a quantity in a given ratio, and use proportional reasoning in context.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-RAT-RATI-SIMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATI-SIMP in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-RAT-RATI-SHAR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATI-SHAR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-RAT-RATI-PROP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATI-PROP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.12",
-          "subtopicName": "Use common measures of rate and solve problems involving average speed, density, pressure, flow rates and other compound measures.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-RAT-RATE-SPED",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATE-SPED in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-RAT-RATE-DENS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATE-DENS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-RAT-RATE-PRES",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATE-PRES in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.12.2",
-          "subtopicName": "Use common measures of rate and solve problems involving average speed, density, pressure, flow rates and other compound measures.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-RAT-RATE-FLOW",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATE-FLOW in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.13",
-          "subtopicName": "Calculate percentages, percentage increase or decrease, reverse percentages, repeated percentage change, and simple or compound interest.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-FRAC-PERC-QTY",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-PERC-QTY in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-FRAC-PERC-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-PERC-COMP in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-FRAC-PERC-INDE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-FRAC-PERC-INDE in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.13.2",
-          "subtopicName": "Calculate percentages, percentage increase or decrease, reverse percentages, repeated percentage change, and simple or compound interest.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-FRAC-PERC-PART",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.14",
-          "subtopicName": "Calculate with time, including seconds, minutes, hours, days, weeks, months, years, 24-hour and 12-hour clocks, timetables and time zones.",
-          "paperReference": null,
-          "mappedNodes": [
             {
               "nodeId": "NUM-MEAS-TIME-TIME",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-MEAS-TIME-TIME in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 specification p.11, 'Units and measures'"
             },
             {
               "nodeId": "NUM-MEAS-TIME-CLOCK",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-MEAS-TIME-CLOCK in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 specification p.11, 'Units and measures'"
             },
-            {
-              "nodeId": "NUM-MEAS-TIME-ZONE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-MEAS-TIME-ZONE in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.15",
-          "subtopicName": "Calculate with money and convert from one currency to another.",
-          "paperReference": null,
-          "mappedNodes": [
             {
               "nodeId": "NUM-MEAS-TIME-MONE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-MEAS-TIME-MONE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-RAT-RATE-SPED",
-              "matchStrength": "weak",
-              "matchReason": "Currency conversion is a rate-style proportional calculation; the MVP tree does not have a separate exchange-rate leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-1.16",
-          "subtopicName": "Manipulate surds, including simplifying surds and rationalising a denominator.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-POW-POWR-SURD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-POWR-SURD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-POW-POWR-RATD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-POW-POWR-RATD in the MVP knowledge tree."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "OCR-J560-2",
-      "topicName": "Algebra and graphs",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "OCR-J560-2.1",
-          "subtopicName": "Know that letters can be used to represent generalised numbers and substitute numbers into expressions and formulas.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EXP-NOTN-GENR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-NOTN-GENR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EXP-NOTN-SUBS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-NOTN-SUBS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EXP-NOTN-SYMB",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.1.2",
-          "subtopicName": "Know that letters can be used to represent generalised numbers and substitute numbers into expressions and formulas.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EXP-NOTN-FORM",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.2",
-          "subtopicName": "Simplify expressions by collecting like terms, expand products of algebraic expressions and factorise.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EXP-MANI-LIKE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-LIKE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EXP-MANI-EXP1",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-EXP1 in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EXP-MANI-EXP2",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-EXP2 in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.2.2",
-          "subtopicName": "Simplify expressions by collecting like terms, expand products of algebraic expressions and factorise.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EXP-MANI-FACT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-FACT in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.3",
-          "subtopicName": "Manipulate algebraic fractions, including simplifying, adding, subtracting, multiplying and dividing algebraic fractions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EXP-MANI-FACT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EXP-MANI-FACT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-POLY-PART-APPL",
               "matchStrength": "partial",
-              "matchReason": "The MVP tree represents rational expression work more strongly in A-Level partial-fraction/rational-expression nodes."
+              "matchReason": "Owner-approved V4 partial relation; J560 specification p.11, 'Units and measures'"
+            },
+            {
+              "nodeId": "GEOM-CONS-CONS-MEAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 specification p.11, 'Units and measures'"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-2.4",
-          "subtopicName": "Construct expressions, equations and formulas; solve linear equations; solve simultaneous linear equations; and change the subject of formulas.",
+          "subtopicId": "OFFICIAL-J560-6.02d",
+          "subtopicName": "J560 p.27 6.02d",
+          "description": "Assessment depth: knowledge",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "ALGF-EQN-LINE-FORM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-LINE-FORM in the MVP knowledge tree."
+              "nodeId": "GEOM-MENS-CIRC-CIRC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02d"
             },
             {
-              "nodeId": "ALGF-EQN-LINE-SOLV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-LINE-SOLV in the MVP knowledge tree."
+              "nodeId": "GEOM-MENS-CIRC-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02d"
             },
             {
-              "nodeId": "ALGF-EQN-SIMU-LIN2",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-SIMU-LIN2 in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.4.2",
-          "subtopicName": "Construct expressions, equations and formulas; solve linear equations; solve simultaneous linear equations; and change the subject of formulas.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-LINE-SUBJ",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-LINE-SUBJ in the MVP knowledge tree."
+              "nodeId": "TRIG-BASE-RATR-PYTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02d"
             },
             {
-              "nodeId": "ALGF-EQN-LINE-SUB2",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+              "nodeId": "TRIG-BASE-RATR-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02d"
             },
             {
-              "nodeId": "ALGF-EQN-SIMU-ELIM",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.5",
-          "subtopicName": "Solve quadratic equations by factorisation, completing the square and the quadratic formula; solve simultaneous equations where one equation is linear and one is quadratic.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-QUAD-FACT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-FACT in the MVP knowledge tree."
+              "nodeId": "TRIG-BASE-RATR-COSN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02d"
             },
             {
-              "nodeId": "ALGF-EQN-QUAD-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-COMP in the MVP knowledge tree."
+              "nodeId": "TRIG-BASE-RATR-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02d"
             },
             {
               "nodeId": "ALGF-EQN-QUAD-FORM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-QUAD-FORM in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.5.2",
-          "subtopicName": "Solve quadratic equations by factorisation, completing the square and the quadratic formula; solve simultaneous equations where one equation is linear and one is quadratic.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-SIMU-LINQ",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-SIMU-LINQ in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.6",
-          "subtopicName": "Represent, interpret and solve inequalities, including linear inequalities and quadratic inequalities.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-INEQ-LINS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-LINS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-INEQ-QUAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-QUAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-INEQ-NUMB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-NUMB in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.6.2",
-          "subtopicName": "Represent, interpret and solve inequalities, including linear inequalities and quadratic inequalities.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-EQN-INEQ-REGN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-REGN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.7",
-          "subtopicName": "Continue sequences, recognise patterns, and find and use nth terms of linear, simple quadratic and simple cubic sequences.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQ-SEQU-TERM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SEQU-TERM in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-SEQ-SEQU-NTH",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-SEQ-SEQU-NTH in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-SEQ-SEQU-ARIT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.7.2",
-          "subtopicName": "Continue sequences, recognise patterns, and find and use nth terms of linear, simple quadratic and simple cubic sequences.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-SEQ-SERS-ARSM",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.8",
-          "subtopicName": "Use and interpret graphs in practical situations including travel graphs, conversion graphs and distance-time graphs.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-GRAP-LINR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-LINR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-LINE-GRAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "REAS-MODL-MODL-OUTP",
               "matchStrength": "partial",
-              "matchReason": "Graph interpretation in context is a modelling skill."
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02d"
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02d"
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02d"
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02d"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-2.9",
-          "subtopicName": "Construct tables of values, draw, recognise and interpret graphs of linear, quadratic, reciprocal, cubic and trigonometric functions.",
+          "subtopicId": "OFFICIAL-J560-7.01a",
+          "subtopicName": "J560 p.32 7.01a",
+          "description": "Assessment depth: application",
           "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-GRAP-LINR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-LINR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-GRAP-QUAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-QUAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-GRAP-CUBC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.9.2",
-          "subtopicName": "Construct tables of values, draw, recognise and interpret graphs of linear, quadratic, reciprocal, cubic and trigonometric functions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-GRAP-RECP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.10",
-          "subtopicName": "Recognise, sketch and interpret graphs of functions and solve associated equations graphically.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-GRAP-INTR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-INTR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-GRAP-QUAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-QUAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-GRAP-CUBC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-CUBC in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.10.2",
-          "subtopicName": "Recognise, sketch and interpret graphs of functions and solve associated equations graphically.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-DIFF-APPL-STAT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-DIFF-CONC-RATE",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            },
-            {
-              "nodeId": "CALC-DIFF-RULE-POWR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.10.3",
-          "subtopicName": "Recognise, sketch and interpret graphs of functions and solve associated equations graphically.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-KIN-SVAT-DSDT",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.11",
-          "subtopicName": "Understand function notation, domain and range, composite functions and inverse functions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-DEFS-NOTN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-DEFS-NOTN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-DEFS-DOMR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-DEFS-DOMR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-COMP-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-COMP-COMP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.11.2",
-          "subtopicName": "Understand function notation, domain and range, composite functions and inverse functions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-COMP-INVR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-COMP-INVR in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.12",
-          "subtopicName": "Apply transformations to graphs of functions, including translations, stretches and reflections.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-TRAN-VERT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-VERT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-TRAN-HORZ",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-HORZ in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-TRAN-STRE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-STRE in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.12.2",
-          "subtopicName": "Apply transformations to graphs of functions, including translations, stretches and reflections.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "ALGF-FUNC-TRAN-REFL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-TRAN-REFL in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.13",
-          "subtopicName": "Understand direct and inverse proportion and relate algebraic solutions to graphical representations.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "NUM-RAT-RATI-DIRE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATI-DIRE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-RAT-RATI-PROP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to NUM-RAT-RATI-PROP in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-FUNC-GRAP-RECP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-FUNC-GRAP-RECP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-2.14",
-          "subtopicName": "Use algebraic and geometrical reasoning to support arguments and proofs.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "REAS-PROF-PROF-DEDU",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: explicit or equivalent IGCSE coverage."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "OCR-J560-3",
-      "topicName": "Coordinate geometry",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "OCR-J560-3.1",
-          "subtopicName": "Use and interpret Cartesian coordinates in two dimensions.",
-          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-COOR-CART-COOR",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CART-COOR in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.32 7.01a"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-3.2",
-          "subtopicName": "Draw straight-line graphs for linear equations and interpret equations of linear graphs.",
+          "subtopicId": "OFFICIAL-J560-7.01f",
+          "subtopicName": "J560 p.33 7.01f",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "nodeId": "GEOM-COOR-CIRC-CENT",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-LINE-GENR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GENR in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.33 7.01f"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-3.3",
-          "subtopicName": "Find the gradient of a straight line, including from the coordinates of two points.",
+          "subtopicId": "OFFICIAL-J560-7.02a",
+          "subtopicName": "J560 p.33 7.02a",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-COOR-LINE-GRAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-3.4",
-          "subtopicName": "Calculate the length of a line segment and find the coordinates of the midpoint of a line segment.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-CART-DIST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CART-DIST in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-CART-MIDP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-CART-MIDP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-3.5",
-          "subtopicName": "Find equations of straight lines, including parallel and perpendicular lines.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-COOR-LINE-YMXC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-YMXC in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-COOR-LINE-GRAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-COOR-LINE-GRAD in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-ANGL-PARA",
               "matchStrength": "partial",
-              "matchReason": "Parallel/perpendicular line relationships are represented through angle and gradient geometry in the MVP tree."
+              "matchReason": "Owner-approved V4 partial relation; J560 p.33 7.02a"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.33 7.02a"
+            },
+            {
+              "nodeId": "GEOM-COOR-LINE-POINT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.33 7.02a"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-REGN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.33 7.02a"
             }
           ]
-        }
-      ]
-    },
-    {
-      "topicId": "OCR-J560-4",
-      "topicName": "Geometry",
-      "paperReference": null,
-      "subtopicMappings": [
+        },
         {
-          "subtopicId": "OCR-J560-4.1",
-          "subtopicName": "Use and interpret geometrical terms and the vocabulary of triangles, quadrilaterals, polygons, nets, solids and circles.",
+          "subtopicId": "OFFICIAL-J560-7.02b",
+          "subtopicName": "J560 p.33 7.02b",
+          "description": "Assessment depth: reasoning",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-LINE-YMXC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.33 7.02b"
+            },
+            {
+              "nodeId": "GEOM-COOR-CIRC-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.33 7.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-7.04b",
+          "subtopicName": "J560 p.35 7.04b",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-LINE-GRAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.35 7.04b"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-STGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.35 7.04b"
+            },
+            {
+              "nodeId": "MECH-KIN-LINE-VTGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.35 7.04b"
+            },
+            {
+              "nodeId": "NUM-RAT-RATE-SPED",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.35 7.04b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.01a",
+          "subtopicName": "J560 p.35 8.01a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-TERM",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 broader relation; J560 p.35 8.01a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.01b",
+          "subtopicName": "J560 p.35 8.01b",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-SHAP-TERM-ANGT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-TERM-ANGT in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.35 8.01b"
             },
             {
               "nodeId": "GEOM-SHAP-TERM-TRIA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-TERM-TRIA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-TERM-QUAD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-TERM-QUAD in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.35 8.01b"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-4.1.2",
-          "subtopicName": "Use and interpret geometrical terms and the vocabulary of triangles, quadrilaterals, polygons, nets, solids and circles.",
+          "subtopicId": "OFFICIAL-J560-8.01c",
+          "subtopicName": "J560 p.36 8.01c",
+          "description": "Assessment depth: knowledge",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-SHAP-TERM-POLY",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-TERM-POLY in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01c"
             },
             {
-              "nodeId": "GEOM-SHAP-SIMI-CONG",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+              "nodeId": "GEOM-SHAP-TERM-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01c"
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-TRIA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01c"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-4.2",
-          "subtopicName": "Measure and draw lines and angles; construct triangles; draw, use and interpret nets.",
+          "subtopicId": "OFFICIAL-J560-8.01d",
+          "subtopicName": "J560 p.36 8.01d",
+          "description": "Assessment depth: knowledge",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-SOLI-CUBD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01d"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PRIS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01d"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-CYLN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01d"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PYRA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.01f",
+          "subtopicName": "J560 p.36 8.01f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-CONS-CONS-MEAS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-CONS-MEAS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-CONS-CONS-TRIA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-CONS-TRIA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-CONS-CONS-PERB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-CONS-PERB in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01f"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-4.2.2",
-          "subtopicName": "Measure and draw lines and angles; construct triangles; draw, use and interpret nets.",
+          "subtopicId": "OFFICIAL-J560-8.01g",
+          "subtopicName": "J560 p.36 8.01g",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-COOR-CART-COOR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01g"
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-TRAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01g"
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-REFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01g"
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-ROTA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.36 8.01g"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.02a",
+          "subtopicName": "J560 p.36 8.02a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONS-CONS-PERB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.36 8.02a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.02b",
+          "subtopicName": "J560 p.36 8.02b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-CONS-CONS-ANGB",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-CONS-ANGB in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.36 8.02b"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-4.3",
-          "subtopicName": "Draw and interpret scale drawings and use and interpret three-figure bearings.",
+          "subtopicId": "OFFICIAL-J560-8.03a",
+          "subtopicName": "J560 p.37 8.03a",
+          "description": "Assessment depth: reasoning",
           "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-CONS-CONS-MEAS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-CONS-MEAS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-TERM-ANGT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-TERM-ANGT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "NUM-RAT-RATI-SIMP",
-              "matchStrength": "partial",
-              "matchReason": "Scale drawings are represented through ratio and proportional reasoning in the MVP tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-4.4",
-          "subtopicName": "Calculate lengths of similar shapes and use relationships between lengths, areas and volumes of similar shapes and solids.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-SHAP-SIMI-SIML",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SIMI-SIML in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-SIMI-LENS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SIMI-LENS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-SIMI-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SIMI-AREA in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-4.5",
-          "subtopicName": "Recognise line symmetry and order of rotational symmetry in two dimensions and symmetry properties of solids.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-SHAP-SYMM-LINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SYMM-LINE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-SYMM-ROTA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SYMM-ROTA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-SYMM-PLANE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-SYMM-PLANE in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-4.6",
-          "subtopicName": "Calculate unknown angles using angle properties at a point, on a straight line, in triangles, quadrilaterals, polygons and parallel lines.",
-          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-SHAP-ANGL-POINT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-ANGL-POINT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-ANGL-LINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-ANGL-LINE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-ANGL-VERT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-ANGL-VERT in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-4.6.2",
-          "subtopicName": "Calculate unknown angles using angle properties at a point, on a straight line, in triangles, quadrilaterals, polygons and parallel lines.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-SHAP-ANGL-PARA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-ANGL-PARA in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.37 8.03a"
             },
             {
               "nodeId": "REAS-PROF-ARGM-JUST",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.37 8.03a"
             },
             {
-              "nodeId": "REAS-PROF-ARGM-LOGI",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.37 8.03a"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-4.7",
-          "subtopicName": "Calculate unknown angles using circle theorems, including angle in a semicircle, tangent-radius, angle at centre, angles in the same segment, cyclic quadrilaterals and alternate segment theorem.",
+          "subtopicId": "OFFICIAL-J560-8.03b",
+          "subtopicName": "J560 p.37 8.03b",
+          "description": "Assessment depth: knowledge",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-ANGL-LINE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.37 8.03b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.03c",
+          "subtopicName": "J560 p.37 8.03c",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-ANGL-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.37 8.03c"
+            },
+            {
+              "nodeId": "GEOM-SHAP-ANGL-PARA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.37 8.03c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.03d",
+          "subtopicName": "J560 p.38 8.03d",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-TERM-TRIA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.38 8.03d"
+            },
+            {
+              "nodeId": "GEOM-SHAP-TERM-POLY",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.38 8.03d"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-JUST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.38 8.03d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.04a",
+          "subtopicName": "J560 p.38 8.04a",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-TERM-TRIA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.38 8.04a"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-JUST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.38 8.04a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.04b",
+          "subtopicName": "J560 p.38 8.04b",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-TERM-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.38 8.04b"
+            },
+            {
+              "nodeId": "REAS-PROF-ARGM-JUST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.38 8.04b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.04c",
+          "subtopicName": "J560 p.38 8.04c",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SYMM-LINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.38 8.04c"
+            },
+            {
+              "nodeId": "GEOM-SHAP-SYMM-ROTA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.38 8.04c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.05b",
+          "subtopicName": "J560 p.39 8.05b",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-CITH-CENT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.39 8.05b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.05c",
+          "subtopicName": "J560 p.39 8.05c",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-SHAP-CITH-SEMI",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-CITH-SEMI in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-CITH-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-CITH-TANG in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-SHAP-CITH-CENT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-CITH-CENT in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.39 8.05c"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-4.7.2",
-          "subtopicName": "Calculate unknown angles using circle theorems, including angle in a semicircle, tangent-radius, angle at centre, angles in the same segment, cyclic quadrilaterals and alternate segment theorem.",
+          "subtopicId": "OFFICIAL-J560-8.05d",
+          "subtopicName": "J560 p.39 8.05d",
+          "description": "Assessment depth: proof",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-SHAP-CITH-SAME",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-SHAP-CITH-SAME in the MVP knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; J560 p.39 8.05d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.05e",
+          "subtopicName": "J560 p.39 8.05e",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
             {
               "nodeId": "GEOM-SHAP-CITH-CHOR",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "OCR-J560-5",
-      "topicName": "Mensuration",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "OCR-J560-5.1",
-          "subtopicName": "Use metric units of mass, length, area, volume and capacity in practical situations and convert quantities into larger or smaller units.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-UNIT-LENG",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-UNIT-LENG in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-UNIT-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-UNIT-AREA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-UNIT-VOLU",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-UNIT-VOLU in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.39 8.05e"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-5.1.2",
-          "subtopicName": "Use metric units of mass, length, area, volume and capacity in practical situations and convert quantities into larger or smaller units.",
+          "subtopicId": "OFFICIAL-J560-8.05f",
+          "subtopicName": "J560 p.39 8.05f",
+          "description": "Assessment depth: proof",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "GEOM-MENS-UNIT-CAPA",
+              "nodeId": "GEOM-SHAP-CITH-TANG",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-UNIT-CAPA in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.39 8.05f"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-5.2",
-          "subtopicName": "Carry out calculations involving perimeter and area of rectangles, triangles, parallelograms and trapezia.",
+          "subtopicId": "OFFICIAL-J560-8.05g",
+          "subtopicName": "J560 p.40 8.05g",
+          "description": "Assessment depth: proof",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "GEOM-MENS-AREA-RECT",
+              "nodeId": "GEOM-SHAP-CITH-ALTS",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-AREA-RECT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-AREA-TRIA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-AREA-TRIA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-AREA-PARA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-AREA-PARA in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.40 8.05g"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-5.2.2",
-          "subtopicName": "Carry out calculations involving perimeter and area of rectangles, triangles, parallelograms and trapezia.",
+          "subtopicId": "OFFICIAL-J560-8.05h",
+          "subtopicName": "J560 p.40 8.05h",
+          "description": "Assessment depth: proof",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "GEOM-MENS-AREA-TRAP",
+              "nodeId": "GEOM-SHAP-CITH-CYCL",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-AREA-TRAP in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.40 8.05h"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-5.3",
-          "subtopicName": "Carry out calculations involving circumference and area of a circle, arc length and sector area.",
+          "subtopicId": "OFFICIAL-J560-8.06a",
+          "subtopicName": "J560 p.40 8.06a",
+          "description": "Assessment depth: knowledge",
           "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-CIRC-CIRC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-CIRC-CIRC in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-CIRC-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-CIRC-AREA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-MENS-CIRC-ARCL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-CIRC-ARCL in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-5.3.2",
-          "subtopicName": "Carry out calculations involving circumference and area of a circle, arc length and sector area.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-CIRC-SECA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-CIRC-SECA in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-5.4",
-          "subtopicName": "Carry out calculations and solve problems involving surface area and volume of cuboids, prisms, cylinders, spheres, pyramids and cones.",
-          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-MENS-SOLI-CUBD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-SOLI-CUBD in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.40 8.06a"
             },
             {
               "nodeId": "GEOM-MENS-SOLI-PRIS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-SOLI-PRIS in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.40 8.06a"
             },
             {
               "nodeId": "GEOM-MENS-SOLI-CYLN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-MENS-SOLI-CYLN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-5.4.2",
-          "subtopicName": "Carry out calculations and solve problems involving surface area and volume of cuboids, prisms, cylinders, spheres, pyramids and cones.",
-          "paperReference": null,
-          "mappedNodes": [
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.40 8.06a"
+            },
             {
               "nodeId": "GEOM-MENS-SOLI-PYRA",
-              "matchStrength": "strong",
-              "matchReason": "Cone and sphere are currently represented in the broader solid-shape branch by adjacent 3D volume leaves."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-5.5",
-          "subtopicName": "Carry out calculations and solve problems involving compound shapes and parts of shapes, compound solids and parts of solids.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "GEOM-MENS-AREA-RECT",
               "matchStrength": "partial",
-              "matchReason": "Compound shape work uses component area and perimeter skills."
-            },
-            {
-              "nodeId": "GEOM-MENS-SOLI-PRIS",
-              "matchStrength": "partial",
-              "matchReason": "Compound solid work uses surface-area and volume skills."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "OCR-J560-6",
-      "topicName": "Trigonometry",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "OCR-J560-6.1",
-          "subtopicName": "Know and use Pythagoras' theorem.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASE-RATR-PYTH",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-RATR-PYTH in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 partial relation; J560 p.40 8.06a"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-6.2",
-          "subtopicName": "Know and use sine, cosine and tangent ratios for acute angles in calculations involving sides and angles of a right-angled triangle.",
+          "subtopicId": "OFFICIAL-J560-9.01a",
+          "subtopicName": "J560 p.40 9.01a",
+          "description": "Assessment depth: application",
           "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASE-RATR-SINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-RATR-SINE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-RATR-COSN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-RATR-COSN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-RATR-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-RATR-TANG in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-6.3",
-          "subtopicName": "Know exact values of sine, cosine and tangent for standard angles.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-FUNC-EXCT-EXCT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-EXCT-EXCT in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-6.4",
-          "subtopicName": "Recognise, sketch and interpret sine, cosine and tangent graphs and solve trigonometric equations.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-FUNC-GRAP-SINE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-SINE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-FUNC-GRAP-COSN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-COSN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-FUNC-GRAP-TANG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-FUNC-GRAP-TANG in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-6.4.2",
-          "subtopicName": "Recognise, sketch and interpret sine, cosine and tangent graphs and solve trigonometric equations.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-IDEN-EQNS-SIMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-EQNS-SIMP in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-6.5",
-          "subtopicName": "Use the sine and cosine rules and the formula for the area of a triangle in calculations involving any triangle.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASE-NONR-SINR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-SINR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-NONR-COSR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-COSR in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-NONR-AREA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-NONR-AREA in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-6.6",
-          "subtopicName": "Carry out calculations and solve problems in three dimensions using Pythagoras' theorem and trigonometry.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "TRIG-BASE-RATR-PYTH",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-BASE-RATR-PYTH in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "TRIG-BASE-RATR-SINE",
-              "matchStrength": "strong",
-              "matchReason": "3D trigonometry applies the same right-angled trigonometric ratios in spatial contexts."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "topicId": "OCR-J560-7",
-      "topicName": "Transformations and vectors",
-      "paperReference": null,
-      "subtopicMappings": [
-        {
-          "subtopicId": "OCR-J560-7.1",
-          "subtopicName": "Recognise, describe and draw reflections, rotations, enlargements and translations, including combinations of transformations.",
-          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-CONS-TRAN-REFL",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-TRAN-REFL in the MVP knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; J560 p.40 9.01a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-9.01b",
+          "subtopicName": "J560 p.41 / 9.01b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
             {
               "nodeId": "GEOM-CONS-TRAN-ROTA",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-TRAN-ROTA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-CONS-TRAN-ENLG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-TRAN-ENLG in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.41 / 9.01b"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-7.1.2",
-          "subtopicName": "Recognise, describe and draw reflections, rotations, enlargements and translations, including combinations of transformations.",
+          "subtopicId": "OFFICIAL-OCR-J560-9.01c",
+          "subtopicName": "J560 p.41 / 9.01c",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "GEOM-CONS-TRAN-TRAN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONS-TRAN-TRAN in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.41 / 9.01c"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-COLV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.41 / 9.01c"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-7.2",
-          "subtopicName": "Describe a translation using a vector, add and subtract vectors and multiply a vector by a scalar.",
+          "subtopicId": "OFFICIAL-OCR-J560-9.01d",
+          "subtopicName": "J560 p.41 / 9.01d",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONS-TRAN-COMB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.41 / 9.01d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-9.02a",
+          "subtopicName": "J560 p.41 / 9.02a",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SIMI-CONG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.41 / 9.02a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-9.02b",
+          "subtopicName": "J560 p.41 / 9.02b",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SIMI-CONG",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; J560 p.41 / 9.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-9.04a",
+          "subtopicName": "J560 p.42 / 9.04a",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SIMI-SIML",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.42 / 9.04a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-9.04b",
+          "subtopicName": "J560 p.42 / 9.04b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONS-TRAN-ENLG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.42 / 9.04b"
+            },
+            {
+              "nodeId": "GEOM-CONS-TRAN-NEGS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.42 / 9.04b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-9.04c",
+          "subtopicName": "J560 p.42 / 9.04c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-SHAP-SIMI-LENS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.42 / 9.04c"
+            },
+            {
+              "nodeId": "GEOM-SHAP-SIMI-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.42 / 9.04c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.01a",
+          "subtopicName": "J560 p.43 / 10.01a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-UNIT-LENG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.01a"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.01a"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-VOLU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.01a"
+            },
+            {
+              "nodeId": "GEOM-MENS-UNIT-CAPA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.01a"
+            },
+            {
+              "nodeId": "NUM-MEAS-TIME-MONE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.01a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.02a",
+          "subtopicName": "J560 p.43 / 10.02a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-AREA-RECT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.43 / 10.02a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.02b",
+          "subtopicName": "J560 p.43 / 10.02b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-CIRC-CIRC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.02b"
+            },
+            {
+              "nodeId": "GEOM-MENS-CIRC-ARCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.02c",
+          "subtopicName": "J560 p.44 / 10.02c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-AREA-RECT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.44 / 10.02c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.03a",
+          "subtopicName": "J560 p.44 / 10.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-AREA-TRIA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.44 / 10.03a"
+            },
+            {
+              "nodeId": "TRIG-BASE-NONR-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.44 / 10.03a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.03b",
+          "subtopicName": "J560 p.44 / 10.03b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-AREA-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.44 / 10.03b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.03c",
+          "subtopicName": "J560 p.44 / 10.03c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-AREA-TRAP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.44 / 10.03c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.03d",
+          "subtopicName": "J560 p.44 / 10.03d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-CIRC-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.44 / 10.03d"
+            },
+            {
+              "nodeId": "GEOM-MENS-CIRC-SECA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.44 / 10.03d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.03e",
+          "subtopicName": "J560 p.44 / 10.03e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-AREA-RECT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.44 / 10.03e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.04a",
+          "subtopicName": "J560 p.44 / 10.04a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-SOLI-CUBD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.44 / 10.04a"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PRIS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.44 / 10.04a"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-CYLN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.44 / 10.04a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.04b",
+          "subtopicName": "J560 p.45 / 10.04b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-SOLI",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; J560 p.45 / 10.04b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.04c",
+          "subtopicName": "J560 p.45 / 10.04c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-SOLI-PYRA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.45 / 10.04c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-J560-NUM",
+      "topicName": "Number",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-1.01a",
+          "subtopicName": "p.13 / 1.01a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-CALC-FOUR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 / 1.01a"
+            },
+            {
+              "nodeId": "NUM-OPS-CALC-NEG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 / 1.01a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-1.02a",
+          "subtopicName": "p.13 / 1.02a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-SYS-TYPE-PRIM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.13 / 1.02a"
+            },
+            {
+              "nodeId": "NUM-SYS-TYPE-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.13 / 1.02a"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-SQRT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.13 / 1.02a"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-CUBR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.13 / 1.02a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-1.02b",
+          "subtopicName": "p.13 / 1.02b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-SYS-TYPE-PRIM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 / 1.02b"
+            },
+            {
+              "nodeId": "NUM-SYS-TYPE-FACT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.13 / 1.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-1.02c",
+          "subtopicName": "p.14 / 1.02c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-SYS-TYPE-FACT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.14 / 1.02c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-1.03a",
+          "subtopicName": "p.14 / 1.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-CALC-BIDM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.14 / 1.03a"
+            },
+            {
+              "nodeId": "NUM-OPS-CALC-BRAC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.14 / 1.03a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-1.04a",
+          "subtopicName": "p.14 / 1.04a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-CALC-FOUR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.14 / 1.04a"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-SQRT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.14 / 1.04a"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-CUBR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.14 / 1.04a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.01a",
+          "subtopicName": "p.15 / 2.01a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-FRAC-EQVF",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 / 2.01a"
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-MIXD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 / 2.01a"
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC-SIMP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 / 2.01a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.01b",
+          "subtopicName": "p.15 / 2.01b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-FRAC",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.15 / 2.01b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.01c",
+          "subtopicName": "p.15 / 2.01c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-FRAC",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.15 / 2.01c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.02a",
+          "subtopicName": "p.16 / 2.02a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-DECI-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 / 2.02a"
+            },
+            {
+              "nodeId": "NUM-FRAC-DECI-PLAC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 / 2.02a"
+            },
+            {
+              "nodeId": "NUM-FRAC-DECI-RECR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 / 2.02a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.02b",
+          "subtopicName": "p.16 / 2.02b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-CALC-FOUR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.16 / 2.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.02c",
+          "subtopicName": "p.16 / 2.02c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-OPS-CALC-FOUR",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.16 / 2.02c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.03a",
+          "subtopicName": "p.16 / 2.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-PERC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 / 2.03a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.03b",
+          "subtopicName": "p.17 / 2.03b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-PERC-PART",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.17 / 2.03b"
+            },
+            {
+              "nodeId": "NUM-FRAC-PERC-QTY",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.17 / 2.03b"
+            },
+            {
+              "nodeId": "NUM-FRAC-PERC-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.17 / 2.03b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.03c",
+          "subtopicName": "p.17 / 2.03c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-PERC-INDE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.17 / 2.03c"
+            },
+            {
+              "nodeId": "NUM-FRAC-PERC-QTY",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.17 / 2.03c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.04a",
+          "subtopicName": "p.17 / 2.04a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-DECI-ORDR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 / 2.04a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-2.04b",
+          "subtopicName": "p.17 / 2.04b",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-DECI-ORDR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 / 2.04b"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-LINS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 / 2.04b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-3.01a",
+          "subtopicName": "p.18 / 3.01a",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-INDX-POS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 / 3.01a"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-NEG",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 / 3.01a"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-FRAC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 / 3.01a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-3.01b",
+          "subtopicName": "p.18 / 3.01b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-POWR-SQRT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 / 3.01b"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-CUBR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 / 3.01b"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-POS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 / 3.01b"
+            },
+            {
+              "nodeId": "NUM-POW-INDX-FRAC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 / 3.01b"
+            },
+            {
+              "nodeId": "NUM-ACC-ROUN-ESTM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 / 3.01b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-3.01c",
+          "subtopicName": "p.18 / 3.01c",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-INDX",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 / 3.01c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-3.02a",
+          "subtopicName": "p.19 / 3.02a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-STDF-CONV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19 / 3.02a"
+            },
+            {
+              "nodeId": "NUM-POW-STDF-INTP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19 / 3.02a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-3.02b",
+          "subtopicName": "p.19 / 3.02b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-STDF-CALC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19 / 3.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-3.03a",
+          "subtopicName": "p.19 / 3.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-FRAC-FRAC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 / 3.03a"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-SURD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.19 / 3.03a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-3.03b",
+          "subtopicName": "p.19 / 3.03b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-POW-POWR-SURD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19 / 3.03b"
+            },
+            {
+              "nodeId": "NUM-POW-POWR-RATD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19 / 3.03b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-4.01a",
+          "subtopicName": "p.20 / 4.01a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-ROUN-DP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 / 4.01a"
+            },
+            {
+              "nodeId": "NUM-ACC-ROUN-SF",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 / 4.01a"
+            },
+            {
+              "nodeId": "NUM-ACC-ROUN-POW10",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 / 4.01a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-4.01b",
+          "subtopicName": "p.20 / 4.01b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-ROUN-ESTM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 / 4.01b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-4.01c",
+          "subtopicName": "p.21 / 4.01c",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-ACC-BOUN-UPLO",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 / 4.01c"
+            },
+            {
+              "nodeId": "NUM-ACC-BOUN-CALC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 / 4.01c"
+            },
+            {
+              "nodeId": "NUM-ACC-BOUN-ERR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 / 4.01c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-5.01a",
+          "subtopicName": "p.21 / 5.01a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-SIMP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 / 5.01a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-5.01b",
+          "subtopicName": "p.22 / 5.01b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-SHAR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22 / 5.01b"
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22 / 5.01b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-5.01c",
+          "subtopicName": "p.22 / 5.01c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22 / 5.01c"
+            },
+            {
+              "nodeId": "NUM-FRAC-FRAC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22 / 5.01c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-5.01d",
+          "subtopicName": "p.22 / 5.01d",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22 / 5.01d"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22 / 5.01d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-5.02a",
+          "subtopicName": "p.23 / 5.02a",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-DIRE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23 / 5.02a"
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23 / 5.02a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-5.02b",
+          "subtopicName": "p.23 / 5.02b",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23 / 5.02b"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.23 / 5.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.01b",
+          "subtopicName": "J560 p.43 / 10.01b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATE-SPED",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.01b"
+            },
+            {
+              "nodeId": "NUM-RAT-RATE-DENS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.01b"
+            },
+            {
+              "nodeId": "NUM-RAT-RATE-PRES",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.01b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.01c",
+          "subtopicName": "J560 p.43 / 10.01c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-RAT-RATI-SIMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.43 / 10.01c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-J560-ALGF",
+      "topicName": "Algebra and Functions",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-5.03a",
+          "subtopicName": "p.24 / 5.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-GROW",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24 / 5.03a"
+            },
+            {
+              "nodeId": "NUM-FRAC-PERC-INDE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24 / 5.03a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-6.01a",
+          "subtopicName": "p.24 / 6.01a",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-NOTN-SYMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24 / 6.01a"
+            },
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24 / 6.01a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-6.01b",
+          "subtopicName": "p.24 / 6.01b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-MANI-LIKE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24 / 6.01b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-6.01c",
+          "subtopicName": "p.25 / 6.01c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-MANI",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.25 / 6.01c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-6.01d",
+          "subtopicName": "p.25 / 6.01d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-MANI-EXP1",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25 / 6.01d"
+            },
+            {
+              "nodeId": "ALGF-EXP-MANI-EXP2",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25 / 6.01d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-6.01e",
+          "subtopicName": "p.25 / 6.01e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-MANI-FACT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25 / 6.01e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-6.01f",
+          "subtopicName": "p.25 / 6.01f",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25 / 6.01f"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-6.01g",
+          "subtopicName": "p.26 / 6.01g",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-MANI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.26 / 6.01g"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-6.02a",
+          "subtopicName": "p.26 / 6.02a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-NOTN-FORM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 / 6.02a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-6.02b",
+          "subtopicName": "p.26 / 6.02b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EXP-NOTN-SUBS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 / 6.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-6.02c",
+          "subtopicName": "J560 p.27 6.02c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-LINE-SUBJ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02c"
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-SUB2",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.27 6.02c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-6.03a",
+          "subtopicName": "J560 p.28 6.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-LINE-SOLV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.28 6.03a"
+            },
+            {
+              "nodeId": "ALGF-EQN-LINE-FORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.28 6.03a"
+            },
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.28 6.03a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-6.03b",
+          "subtopicName": "J560 p.28 6.03b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-QUAD-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.28 6.03b"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FORM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.28 6.03b"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.28 6.03b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-6.03c",
+          "subtopicName": "J560 p.29 6.03c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-SIMU-LIN2",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.29 6.03c"
+            },
+            {
+              "nodeId": "ALGF-EQN-SIMU-LINQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.29 6.03c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-6.03d",
+          "subtopicName": "J560 p.29 6.03d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.29 6.03d"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.29 6.03d"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-INTR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.29 6.03d"
+            },
+            {
+              "nodeId": "ALGF-EQN-SIMU-LIN2",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.29 6.03d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-6.04a",
+          "subtopicName": "J560 p.30 6.04a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-LINS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.30 6.04a"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-NUMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.30 6.04a"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.30 6.04a"
+            },
+            {
+              "nodeId": "ALGF-EQN-INEQ-SETN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.30 6.04a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-6.04b",
+          "subtopicName": "J560 p.30 6.04b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-REGN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.30 6.04b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-6.05a",
+          "subtopicName": "J560 p.31 6.05a",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-DEFS-DEFN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.31 6.05a"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-INVR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.31 6.05a"
+            },
+            {
+              "nodeId": "ALGF-FUNC-COMP-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.31 6.05a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-6.06a",
+          "subtopicName": "J560 p.31 6.06a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-TERM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.31 6.06a"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.31 6.06a"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.31 6.06a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-6.06b",
+          "subtopicName": "J560 p.32 6.06b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-ARIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 6.06b"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-GEOM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 6.06b"
+            },
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 6.06b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-7.01b",
+          "subtopicName": "J560 p.32 7.01b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01b"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01b"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-CUBQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01b"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01b"
+            },
+            {
+              "nodeId": "ALGF-LOG-EXPO-AX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-7.01c",
+          "subtopicName": "J560 p.32 7.01c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-GRAP-LINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01c"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-QUAD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01c"
+            },
+            {
+              "nodeId": "ALGF-POLY-POLY-CUBQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01c"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01c"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01c"
+            },
+            {
+              "nodeId": "ALGF-EQN-QUAD-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.32 7.01c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-7.01d",
+          "subtopicName": "J560 p.32 7.01d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-LOG-EXPO-AX",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.32 7.01d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-7.03a",
+          "subtopicName": "J560 p.34 7.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-FUNC-TRAN-VERT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.34 7.03a"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-HORZ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.34 7.03a"
+            },
+            {
+              "nodeId": "ALGF-FUNC-TRAN-REFL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.34 7.03a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-J560-MECH",
+      "topicName": "Mechanics",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-J560-6.02e",
+          "subtopicName": "J560 p.28 6.02e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-CONST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.28 6.02e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-7.04c",
+          "subtopicName": "J560 p.35 7.04c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-KIN-LINE-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.35 7.04c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-J560-NUMM",
+      "topicName": "NUMM",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-J560-6.03e",
+          "subtopicName": "J560 p.29 6.03e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUMM-ROOT-SIGN-LOC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.29 6.03e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-J560-TRIG",
+      "topicName": "TRIG",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-J560-7.01e",
+          "subtopicName": "J560 p.33 7.01e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-GRAP-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.33 7.01e"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-COSN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.33 7.01e"
+            },
+            {
+              "nodeId": "TRIG-FUNC-GRAP-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.33 7.01e"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.05a",
+          "subtopicName": "J560 p.45 / 10.05a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-RATR-PYTH",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.45 / 10.05a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.05b",
+          "subtopicName": "J560 p.45 / 10.05b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-RATR-SINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.45 / 10.05b"
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-COSN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.45 / 10.05b"
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-TANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.45 / 10.05b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.05c",
+          "subtopicName": "J560 p.45 / 10.05c",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-FUNC-EXCT-EXCT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.45 / 10.05c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.05d",
+          "subtopicName": "J560 p.46 / 10.05d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.46 / 10.05d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-10.05e",
+          "subtopicName": "J560 p.46 / 10.05e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.46 / 10.05e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-J560-REAS",
+      "topicName": "REAS",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-J560-7.04a",
+          "subtopicName": "J560 p.34 7.04a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-MODL-MODL-OUTP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.34 7.04a"
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-DIRE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.34 7.04a"
+            },
+            {
+              "nodeId": "NUM-RAT-RATI-PROP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.34 7.04a"
+            },
+            {
+              "nodeId": "ALGF-FUNC-GRAP-RECP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.34 7.04a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-12.03b",
+          "subtopicName": "J560 p.51 / 12.03b",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-ARGM-CRIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.51 / 12.03b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-J560-UNMAPPED",
+      "topicName": "Explicitly Unmapped",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-J560-8.01e",
+          "subtopicName": "J560 p.36 8.01e",
+          "description": "No canonical node for drawing diagrams from written descriptions.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.02c",
+          "subtopicName": "J560 p.37 8.02c",
+          "description": "No canonical node for perpendicular from a point to a line or perpendicular at a point.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.02d",
+          "subtopicName": "J560 p.37 8.02d",
+          "description": "No canonical node for loci or equidistant points.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.05a",
+          "subtopicName": "J560 p.39 8.05a",
+          "description": "No canonical node for circle vocabulary (centre, radius, chord, diameter, tangent, arc, sector, segment).",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-J560-8.06b",
+          "subtopicName": "J560 p.40 8.06b",
+          "description": "No canonical node for plans and elevations of 3D solids.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-11.01b",
+          "subtopicName": "J560 p.46 / 11.01b",
+          "description": "No canonical node for relative frequency or experimental probability.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-11.01c",
+          "subtopicName": "J560 p.46 / 11.01c",
+          "description": "No canonical node for relative frequency approaching theoretical probability.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-12.03d",
+          "subtopicName": "J560 p.52 / 12.03d",
+          "description": "No canonical node for identifying or handling outliers.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        }
+      ]
+    },
+    {
+      "topicId": "OCR-J560-VECT",
+      "topicName": "Vectors",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-9.03a",
+          "subtopicName": "J560 p.42 / 9.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-BASIC-NOTN-ADDS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.42 / 9.03a"
+            },
+            {
+              "nodeId": "VECT-BASIC-NOTN-SCAL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.42 / 9.03a"
+            },
+            {
+              "nodeId": "VECT-GEOM-PROB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.42 / 9.03a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-9.03b",
+          "subtopicName": "J560 p.42 / 9.03b",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "VECT-BASIC-NOTN-COLV",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-COLV in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "VECT-BASIC-NOTN-ADDS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-ADDS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "VECT-BASIC-NOTN-SCAL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-SCAL in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-7.3",
-          "subtopicName": "Calculate the magnitude of a vector.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-BASIC-NOTN-MAGN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-MAGN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-7.4",
-          "subtopicName": "Use position vectors and vector methods to reason and solve geometrical problems, including parallel vectors, collinearity, ratio and similarity.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-BASIC-NOTN-POSV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-BASIC-NOTN-POSV in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "VECT-GEOM-PROB-PARA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-GEOM-PROB-PARA in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "VECT-GEOM-PROB-COLL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-GEOM-PROB-COLL in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-7.4.2",
-          "subtopicName": "Use position vectors and vector methods to reason and solve geometrical problems, including parallel vectors, collinearity, ratio and similarity.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "VECT-GEOM-PROB-RATI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-GEOM-PROB-RATI in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.42 / 9.03b"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "OCR-J560-8",
+      "topicId": "OCR-J560-PROB",
       "topicName": "Probability",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-J560-8.1",
-          "subtopicName": "Understand and use the probability scale from 0 to 1, probability notation, probability of a single event and probability of an event not occurring.",
+          "subtopicId": "OFFICIAL-OCR-J560-11.01a",
+          "subtopicName": "J560 p.46 / 11.01a",
+          "description": "Assessment depth: knowledge",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "PROB-BASIC-BASIC-SCALE",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-BASIC-BASIC-SCALE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "PROB-BASIC-BASIC-NOTN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-BASIC-BASIC-NOTN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "PROB-BASIC-BASIC-SING",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-BASIC-BASIC-SING in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.46 / 11.01a"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-8.1.2",
-          "subtopicName": "Understand and use the probability scale from 0 to 1, probability notation, probability of a single event and probability of an event not occurring.",
+          "subtopicId": "OFFICIAL-OCR-J560-11.01d",
+          "subtopicName": "J560 p.47 / 11.01d",
+          "description": "Assessment depth: application",
           "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "PROB-BASIC-BASIC-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-BASIC-BASIC-COMP in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "PROB-COMB-RULE-INDE",
-              "matchStrength": "strong",
-              "matchReason": "Crosswalk alignment: equivalent IGCSE syllabus coverage maps to this MVP leaf."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-8.2",
-          "subtopicName": "Understand relative frequency as an estimate of probability and calculate expected frequencies.",
-          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "PROB-BASIC-BASIC-SING",
               "matchStrength": "partial",
-              "matchReason": "Relative frequency is represented through basic probability in the MVP tree."
+              "matchReason": "Owner-approved V4 partial relation; J560 p.47 / 11.01d"
             },
             {
               "nodeId": "PROB-BASIC-BASIC-COMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-BASIC-BASIC-COMP in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.47 / 11.01d"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-INDE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.47 / 11.01d"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-8.3",
-          "subtopicName": "Calculate the probability of combined events using sample space diagrams, Venn diagrams and tree diagrams.",
+          "subtopicId": "OFFICIAL-OCR-J560-11.02a",
+          "subtopicName": "J560 p.47 / 11.02a",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "PROB-COMB-COUNT-SAMPS",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-COUNT-SAMPS in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "PROB-COMB-RULE-VENN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-VENN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "PROB-COMB-RULE-TREE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-TREE in the MVP knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; J560 p.47 / 11.02a"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-8.3.2",
-          "subtopicName": "Calculate the probability of combined events using sample space diagrams, Venn diagrams and tree diagrams.",
+          "subtopicId": "OFFICIAL-OCR-J560-11.02b",
+          "subtopicName": "J560 p.48 / 11.02b",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-COUNT-ENUM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.48 / 11.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-11.02c",
+          "subtopicName": "J560 p.48 / 11.02c",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-RULE-VENN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.48 / 11.02c"
+            },
+            {
+              "nodeId": "NUM-SYS-SET-LANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.48 / 11.02c"
+            },
+            {
+              "nodeId": "NUM-SYS-SET-VENN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.48 / 11.02c"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-11.02d",
+          "subtopicName": "J560 p.48 / 11.02d",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-RULE-TREE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; J560 p.48 / 11.02d"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-11.02e",
+          "subtopicName": "J560 p.48 / 11.02e",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "PROB-COMB-RULE-ADD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-ADD in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.48 / 11.02e"
+            },
+            {
+              "nodeId": "PROB-COMB-RULE-MUTX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.48 / 11.02e"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-8.4",
-          "subtopicName": "Calculate conditional probability using Venn diagrams, tree diagrams and tables.",
+          "subtopicId": "OFFICIAL-OCR-J560-11.02f",
+          "subtopicName": "J560 p.49 / 11.02f",
+          "description": "Assessment depth: reasoning",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
+              "nodeId": "PROB-COMB-RULE-MULT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.49 / 11.02f"
+            },
+            {
               "nodeId": "PROB-COMB-RULE-COND",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-COND in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.49 / 11.02f"
             },
             {
-              "nodeId": "PROB-COMB-RULE-VENN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-VENN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "PROB-COMB-RULE-TREE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-COMB-RULE-TREE in the MVP knowledge tree."
+              "nodeId": "PROB-COMB-RULE-INDE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.49 / 11.02f"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "OCR-J560-9",
+      "topicId": "OCR-J560-STAT",
       "topicName": "Statistics",
       "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "OCR-J560-9.1",
-          "subtopicName": "Classify and tabulate statistical data.",
+          "subtopicId": "OFFICIAL-OCR-J560-12.01a",
+          "subtopicName": "J560 p.49 / 12.01a",
+          "description": "Assessment depth: knowledge",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
-              "nodeId": "STAT-DATA-CLAS-TYPE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-CLAS-TYPE in the MVP knowledge tree."
+              "nodeId": "STAT-ENQ-SAMP-POP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.49 / 12.01a"
             },
             {
-              "nodeId": "STAT-DATA-CLAS-TALL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-CLAS-TALL in the MVP knowledge tree."
+              "nodeId": "STAT-ENQ-SAMP-RAND",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.49 / 12.01a"
             },
             {
-              "nodeId": "STAT-DATA-CLAS-TWOW",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-CLAS-TWOW in the MVP knowledge tree."
+              "nodeId": "STAT-ENQ-SAMP-BIAS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.49 / 12.01a"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-9.2",
-          "subtopicName": "Read, interpret and draw inferences from tables and statistical diagrams and compare sets of data.",
+          "subtopicId": "OFFICIAL-OCR-J560-12.02a",
+          "subtopicName": "J560 p.50 / 12.02a",
+          "description": "Assessment depth: application",
           "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "STAT-DATA-REPR-BARCH",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-BARCH in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.50 / 12.02a"
             },
             {
               "nodeId": "STAT-DATA-REPR-PIE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-PIE in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-MEAN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEAN in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-9.2.2",
-          "subtopicName": "Read, interpret and draw inferences from tables and statistical diagrams and compare sets of data.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-SUMM-CENT-MEDI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEDI in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-9.3",
-          "subtopicName": "Calculate mean, median, mode, quartiles, range and interquartile range, including estimates for grouped data.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-SUMM-CENT-MEAN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEAN in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-MEDI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEDI in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-MODE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MODE in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-9.3.2",
-          "subtopicName": "Calculate mean, median, mode, quartiles, range and interquartile range, including estimates for grouped data.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-SUMM-CENT-IQR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-IQR in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-9.4",
-          "subtopicName": "Draw and interpret bar charts, pie charts, pictograms, stem-and-leaf diagrams and frequency distributions.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DATA-REPR-BARCH",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-BARCH in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-DATA-REPR-PIE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-PIE in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.50 / 12.02a"
             },
             {
               "nodeId": "STAT-DATA-REPR-PICT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-PICT in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.50 / 12.02a"
             }
           ]
         },
         {
-          "subtopicId": "OCR-J560-9.4.2",
-          "subtopicName": "Draw and interpret bar charts, pie charts, pictograms, stem-and-leaf diagrams and frequency distributions.",
+          "subtopicId": "OFFICIAL-OCR-J560-12.02b",
+          "subtopicName": "J560 p.50 / 12.02b",
+          "description": "Assessment depth: application",
           "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DATA-REPR-STEM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-STEM in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-9.5",
-          "subtopicName": "Draw and interpret scatter diagrams; understand positive, negative and zero correlation; draw and use a straight line of best fit.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DATA-REPR-SCAT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-SCAT in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-BIVA-CORR-POSC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-BIVA-CORR-POSC in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-BIVA-CORR-NEGC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-BIVA-CORR-NEGC in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-9.5.2",
-          "subtopicName": "Draw and interpret scatter diagrams; understand positive, negative and zero correlation; draw and use a straight line of best fit.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-BIVA-CORR-LOBF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-BIVA-CORR-LOBF in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-9.6",
-          "subtopicName": "Draw and interpret cumulative frequency tables and diagrams and estimate median, percentiles, quartiles and interquartile range.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-DATA-REPR-CUMF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-CUMF in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-MEDI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-MEDI in the MVP knowledge tree."
-            },
-            {
-              "nodeId": "STAT-SUMM-CENT-QUAR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-QUAR in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-9.6.2",
-          "subtopicName": "Draw and interpret cumulative frequency tables and diagrams and estimate median, percentiles, quartiles and interquartile range.",
-          "paperReference": null,
-          "mappedNodes": [
-            {
-              "nodeId": "STAT-SUMM-CENT-IQR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-SUMM-CENT-IQR in the MVP knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "OCR-J560-9.7",
-          "subtopicName": "Draw and interpret histograms and calculate with frequency density.",
-          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
           "mappedNodes": [
             {
               "nodeId": "STAT-DATA-REPR-HIST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-REPR-HIST in the MVP knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.50 / 12.02b"
             },
             {
-              "nodeId": "STAT-DATA-CLAS-GROUP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-DATA-CLAS-GROUP in the MVP knowledge tree."
+              "nodeId": "STAT-DATA-REPR-CUMF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.50 / 12.02b"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-12.03a",
+          "subtopicName": "J560 p.51 / 12.03a",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-SUMM-CENT-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.51 / 12.03a"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MEDI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.51 / 12.03a"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-MODE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.51 / 12.03a"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-RANG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.51 / 12.03a"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-QUAR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.51 / 12.03a"
+            },
+            {
+              "nodeId": "STAT-SUMM-CENT-IQR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.51 / 12.03a"
+            },
+            {
+              "nodeId": "STAT-DATA-REPR-BOXW",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.51 / 12.03a"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-OCR-J560-12.03c",
+          "subtopicName": "J560 p.52 / 12.03c",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-DATA-REPR-SCAT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.52 / 12.03c"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-POSC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.52 / 12.03c"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-NEGC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.52 / 12.03c"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-ZEROC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.52 / 12.03c"
+            },
+            {
+              "nodeId": "STAT-BIVA-CORR-LOBF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; J560 p.52 / 12.03c"
             }
           ]
         }

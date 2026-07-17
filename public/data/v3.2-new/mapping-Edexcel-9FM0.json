@@ -3,813 +3,3954 @@
   "subjectCode": "9FM0",
   "subjectName": "A-Level Further Mathematics",
   "level": "A-Level",
-  "version": "1.0-mvp",
-  "totalTopics": 5,
-  "mappedTopics": 5,
+  "version": "4.0.0-knowledge-v4-20260716",
+  "sourceSchemaVersion": "4.0.0",
+  "qualificationVersionId": "Edexcel-9FM0:2017",
+  "syllabusVersion": "2017",
+  "effectiveFrom": "2017-09-01",
+  "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+  "sources": [
+    {
+      "url": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+      "title": "Pearson Edexcel A Level Further Mathematics 9FM0 specification",
+      "documentVersion": "2017",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+      "sourceType": "official"
+    }
+  ],
+  "approval": {
+    "approvedAt": "2026-07-16",
+    "approvalBatch": "knowledge-v4-20260716"
+  },
+  "verificationStatus": "verified",
+  "totalTopics": 13,
+  "mappedTopics": 12,
   "paperStructure": {
     "papers": [
-      "CorePure1",
-      "CorePure2",
-      "3A",
-      "3B",
-      "3C",
-      "3D",
-      "4A",
-      "4B",
-      "4C",
-      "4D"
-    ],
-    "compulsory": [
-      "CorePure1",
-      "CorePure2"
-    ],
-    "asOnly": [],
-    "alevelOnly": [
-      "CorePure1",
-      "CorePure2"
-    ],
-    "applicationGroups": [
-      [
-        "3A",
-        "4A"
-      ],
-      [
-        "3A",
-        "4B"
-      ],
-      [
-        "3A",
-        "4C"
-      ],
-      [
-        "3A",
-        "4D"
-      ],
-      [
-        "3B",
-        "4B"
-      ],
-      [
-        "3B",
-        "4C"
-      ],
-      [
-        "3B",
-        "4D"
-      ],
-      [
-        "3C",
-        "4C"
-      ],
-      [
-        "3C",
-        "4D"
-      ],
-      [
-        "3D",
-        "4D"
-      ]
-    ],
-    "mutuallyExclusive": []
+      "Paper 1: Core Pure Mathematics 1",
+      "Paper 2: Core Pure Mathematics 2",
+      "Paper 3A: Further Pure Mathematics 1",
+      "Paper 4A: Further Pure Mathematics 2",
+      "Paper 3B: Further Statistics 1",
+      "Paper 4B: Further Statistics 2",
+      "Paper 3C: Further Mechanics 1",
+      "Paper 4C: Further Mechanics 2",
+      "Paper 3D: Decision Mathematics 1",
+      "Paper 4D: Decision Mathematics 2",
+      "P1",
+      "P2",
+      "P3A",
+      "P4A",
+      "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)",
+      "9FM0/04B Further Statistics 2",
+      "9FM0/03C Further Mechanics 1 (also Paper 4 Option 4C)",
+      "9FM0/04C Further Mechanics 2",
+      "P4C",
+      "P3D",
+      "P4D",
+      "Paper 1 Core Pure Mathematics 1",
+      "Paper 2 Core Pure Mathematics 2",
+      "Paper 3 Further Pure Mathematics 1",
+      "Paper 3 Further Statistics 1",
+      "Paper 3 Further Mechanics 1",
+      "Paper 3 Decision Mathematics 1",
+      "Paper 4 Further Pure Mathematics 2",
+      "Paper 4 Further Statistics 1",
+      "Paper 4 Further Mechanics 1",
+      "Paper 4 Decision Mathematics 1",
+      "Paper 4 Further Statistics 2",
+      "Paper 4 Further Mechanics 2",
+      "Paper 4 Decision Mathematics 2",
+      "9FM0/01 Core Pure Mathematics 1",
+      "9FM0/02 Core Pure Mathematics 2",
+      "9FM0/03A-03D Optional Paper 1",
+      "9FM0/04A-04G Optional Paper 2",
+      "9FM0/3A Further Pure Mathematics 1",
+      "9FM0/3B Further Statistics 1",
+      "9FM0/3C Further Mechanics 1",
+      "9FM0/3D Decision Mathematics 1",
+      "9FM0/4A Further Pure Mathematics 2",
+      "9FM0/4B Further Statistics 2",
+      "9FM0/4C Further Mechanics 2",
+      "9FM0/4D Decision Mathematics 2"
+    ]
   },
   "mappings": [
     {
-      "topicId": "Edexcel-9FM0-1",
-      "topicName": "Core Pure Mathematics",
-      "paperReference": [
-        "CorePure1",
-        "CorePure2"
-      ],
+      "topicId": "Edexcel-9FM0-REAS",
+      "topicName": "REAS",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9FM0-1.1",
-          "subtopicName": "Construct proofs using mathematical induction in contexts including sums of series, divisibility and powers of matrices.",
-          "paperReference": [
-            "CorePure1",
-            "CorePure2"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-1.1",
+          "subtopicName": "9FM0 specification, p.13",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "Paper 1: Core Pure Mathematics 1",
+            "Paper 2: Core Pure Mathematics 2"
           ],
           "mappedNodes": [
             {
               "nodeId": "REAS-PROF-PROF-DEDU",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-PROF-PROF-DEDU in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-MATR-CAYL-POWR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-MATR-CAYL-POWR in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; 9FM0 specification, p.13"
             },
             {
               "nodeId": "CALC-SER-SUMS-SUMR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-SER-SUMS-SUMR in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; 9FM0 specification, p.13"
+            },
+            {
+              "nodeId": "ALGF-MATR-CAYL-POWR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; 9FM0 specification, p.13"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-1.2",
-          "subtopicName": "Solve polynomial equations with complex roots and use complex number operations, conjugates, Argand diagrams, modulus-argument form, loci, de Moivre's theorem and roots of unity.",
-          "paperReference": [
-            "CorePure1",
-            "CorePure2"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-6.3",
+          "subtopicName": "p.29 6.3",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "REAS-PROF-PROF-DEDU",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 6.3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9FM0-ALGF",
+      "topicName": "Algebra and Functions",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.1",
+          "subtopicName": "9FM0 specification, p.13",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "Paper 1: Core Pure Mathematics 1",
+            "Paper 2: Core Pure Mathematics 2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-ROOT-POLY",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 9FM0 specification, p.13"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.2",
+          "subtopicName": "9FM0 specification, p.13",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "Paper 1: Core Pure Mathematics 1",
+            "Paper 2: Core Pure Mathematics 2"
           ],
           "mappedNodes": [
             {
               "nodeId": "ALGF-CPLX-BASIC-CART",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-CPLX-BASIC-CART in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; 9FM0 specification, p.13"
             },
             {
-              "nodeId": "ALGF-CPLX-BASIC-CONJ",
+              "nodeId": "ALGF-CPLX-BASIC-REAL",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-CPLX-BASIC-CONJ in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-CPLX-BASIC-ARGD",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-CPLX-BASIC-ARGD in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; 9FM0 specification, p.13"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-1.2.2",
-          "subtopicName": "Solve polynomial equations with complex roots and use complex number operations, conjugates, Argand diagrams, modulus-argument form, loci, de Moivre's theorem and roots of unity.",
-          "paperReference": [
-            "CorePure1",
-            "CorePure2"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.3",
+          "subtopicName": "9FM0 specification, p.14",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "Paper 1: Core Pure Mathematics 1",
+            "Paper 2: Core Pure Mathematics 2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-BASIC-CONJ",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 9FM0 specification, p.14"
+            },
+            {
+              "nodeId": "ALGF-ROOT-ROOT-CPLX",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 9FM0 specification, p.14"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.4",
+          "subtopicName": "9FM0 specification, p.14",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "Paper 1: Core Pure Mathematics 1",
+            "Paper 2: Core Pure Mathematics 2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-BASIC-ARGD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 9FM0 specification, p.14"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.5",
+          "subtopicName": "9FM0 specification, p.14",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "Paper 1: Core Pure Mathematics 1",
+            "Paper 2: Core Pure Mathematics 2"
           ],
           "mappedNodes": [
             {
               "nodeId": "ALGF-CPLX-POLAR-CONV",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-CPLX-POLAR-CONV in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-CPLX-ROOT-LOCI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-CPLX-ROOT-LOCI in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-CPLX-DEMO-THM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-CPLX-DEMO-THM in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; 9FM0 specification, p.14"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-1.3",
-          "subtopicName": "Use matrix operations, transformations, determinants, inverses, simultaneous equations, eigenvalues, eigenvectors, diagonalisation and Cayley-Hamilton theorem.",
-          "paperReference": [
-            "CorePure1",
-            "CorePure2"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.6",
+          "subtopicName": "9FM0 specification, p.14",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "Paper 1: Core Pure Mathematics 1",
+            "Paper 2: Core Pure Mathematics 2"
           ],
           "mappedNodes": [
             {
-              "nodeId": "ALGF-MATR-OPS-MULT",
+              "nodeId": "ALGF-CPLX-POLAR-MULT",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-MATR-OPS-MULT in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-MATR-TRAN-2D",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-MATR-TRAN-2D in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-MATR-INV-DET",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-MATR-INV-DET in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; 9FM0 specification, p.14"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-1.3.2",
-          "subtopicName": "Use matrix operations, transformations, determinants, inverses, simultaneous equations, eigenvalues, eigenvectors, diagonalisation and Cayley-Hamilton theorem.",
-          "paperReference": [
-            "CorePure1",
-            "CorePure2"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.7",
+          "subtopicName": "9FM0 specification, p.14",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "Paper 1: Core Pure Mathematics 1",
+            "Paper 2: Core Pure Mathematics 2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-ROOT-LOCI",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; 9FM0 specification, p.14"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.8",
+          "subtopicName": "p.15 2.8",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-DEMO-THM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 2.8"
+            },
+            {
+              "nodeId": "ALGF-CPLX-DEMO-MULTA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 2.8"
+            },
+            {
+              "nodeId": "ALGF-CPLX-DEMO-SERIES",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 2.8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.9",
+          "subtopicName": "p.15 2.9",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-POLAR-EULR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 2.9"
+            },
+            {
+              "nodeId": "ALGF-CPLX-POLAR-MODA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 2.9"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.10",
+          "subtopicName": "p.15 2.10",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-ROOT-NTH",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 2.10"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-2.11",
+          "subtopicName": "p.15 2.11",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-ROOT-UNITY",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 2.11"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-3.1",
+          "subtopicName": "p.15 3.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-OPS-ADD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 3.1"
+            },
+            {
+              "nodeId": "ALGF-MATR-OPS-MULT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 3.1"
+            },
+            {
+              "nodeId": "ALGF-MATR-OPS-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 3.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-3.2",
+          "subtopicName": "p.15 3.2",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-OPS-ZERO",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.15 3.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-3.3",
+          "subtopicName": "p.16 3.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-TRAN-2D",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 3.3"
+            },
+            {
+              "nodeId": "ALGF-MATR-TRAN-3D",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 3.3"
+            },
+            {
+              "nodeId": "ALGF-MATR-TRAN-COMP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 3.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-3.4",
+          "subtopicName": "p.16 3.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-TRAN-INVPT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 3.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-3.5",
+          "subtopicName": "p.16 3.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-INV-DET",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 3.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-3.6",
+          "subtopicName": "p.16 3.6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-INV-SING",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 3.6"
+            },
+            {
+              "nodeId": "ALGF-MATR-INV-INV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.16 3.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-3.7",
+          "subtopicName": "p.17 3.7",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
           ],
           "mappedNodes": [
             {
               "nodeId": "ALGF-MATR-INV-INV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-MATR-INV-INV in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-MATR-EIG-EVAL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-MATR-EIG-EVAL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-MATR-EIG-DIAG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-MATR-EIG-DIAG in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 3.7"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-1.4",
-          "subtopicName": "Use roots and coefficients, transformed-root polynomial equations, summation formulae, method of differences, Maclaurin series and further algebraic inequalities.",
-          "paperReference": [
-            "CorePure1",
-            "CorePure2"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-3.8",
+          "subtopicName": "p.17 3.8",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-INV-SING",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.17 3.8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-4.1",
+          "subtopicName": "p.17 4.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
           ],
           "mappedNodes": [
             {
               "nodeId": "ALGF-ROOT-ROOT-REL",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-ROOT-ROOT-REL in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.17 4.1"
             },
             {
-              "nodeId": "ALGF-ROOT-ROOT-TRANS",
+              "nodeId": "ALGF-ROOT-ROOT-SYMF",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-ROOT-ROOT-TRANS in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-SER-SUMS-SUMR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-SER-SUMS-SUMR in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.17 4.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-1.4.2",
-          "subtopicName": "Use roots and coefficients, transformed-root polynomial equations, summation formulae, method of differences, Maclaurin series and further algebraic inequalities.",
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-4.2",
+          "subtopicName": "p.17 4.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-ROOT-ROOT-TRANS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.17 4.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-7.1",
+          "subtopicName": "p.26 7.1",
+          "description": "Assessment depth: reasoning",
           "paperReference": [
-            "CorePure1",
-            "CorePure2"
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-EQN-INEQ-MODU",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 7.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-3.1",
+          "subtopicName": "p.27 3.1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P4A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-EIG-EVAL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.27 3.1"
+            },
+            {
+              "nodeId": "ALGF-MATR-EIG-EVEC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.27 3.1"
+            },
+            {
+              "nodeId": "ALGF-MATR-EIG-CHAR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.27 3.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-CPLX-001",
+          "subtopicName": "p.67, Complex Numbers",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-POLAR-MULT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67, Complex Numbers"
+            },
+            {
+              "nodeId": "ALGF-CPLX-ROOT-LOCI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67, Complex Numbers"
+            },
+            {
+              "nodeId": "ALGF-CPLX-POLAR-EULR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67, Complex Numbers"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-MATR-001",
+          "subtopicName": "p.67, Matrices",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-INV-DET",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67, Matrices"
+            },
+            {
+              "nodeId": "ALGF-MATR-INV-INV",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67, Matrices"
+            },
+            {
+              "nodeId": "ALGF-MATR-TRAN-COMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67, Matrices"
+            },
+            {
+              "nodeId": "ALGF-MATR-INV-PROD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67, Matrices"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-3.2",
+          "subtopicName": "p.27 3.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-EIG-DIAG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 3.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-3.3",
+          "subtopicName": "p.27 3.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-MATR-CAYL-THEO",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 3.3"
+            },
+            {
+              "nodeId": "ALGF-MATR-CAYL-APPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.27 3.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-4.1",
+          "subtopicName": "p.28 4.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-CPLX-ROOT-LOCI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 4.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-6.1",
+          "subtopicName": "p.29 6.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-TERM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 6.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-6.2",
+          "subtopicName": "p.29 6.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "ALGF-SEQ-SEQU-NTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 6.2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9FM0-CALC",
+      "topicName": "Calculus",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-4.3",
+          "subtopicName": "p.17 4.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-SER-SUMS-SUMR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.17 4.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-4.4",
+          "subtopicName": "p.18 4.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
           ],
           "mappedNodes": [
             {
               "nodeId": "CALC-SER-SUMS-DIFF",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-SER-SUMS-DIFF in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-SER-MACL-MACL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-SER-MACL-MACL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-INEQ-MODU",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-MODU in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.18 4.4"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-1.5",
-          "subtopicName": "Use further calculus including volumes of revolution, improper integrals, mean value of a function, inverse trigonometric differentiation and trigonometric substitution.",
-          "paperReference": [
-            "CorePure1",
-            "CorePure2"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-4.5",
+          "subtopicName": "p.18 4.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-SER-MACL-MACL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 4.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-4.6",
+          "subtopicName": "p.18 4.6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-SER-MACL-STAN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 4.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-5.1",
+          "subtopicName": "p.18 5.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
           ],
           "mappedNodes": [
             {
               "nodeId": "CALC-INTE-APPL-VOLR",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-INTE-APPL-VOLR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-FINT-APPL-IMPR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-FINT-APPL-IMPR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-FINT-APPL-MEAN",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-FINT-APPL-MEAN in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.18 5.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-1.5.2",
-          "subtopicName": "Use further calculus including volumes of revolution, improper integrals, mean value of a function, inverse trigonometric differentiation and trigonometric substitution.",
-          "paperReference": [
-            "CorePure1",
-            "CorePure2"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-5.2",
+          "subtopicName": "p.18 5.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FINT-APPL-IMPR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 5.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-5.3",
+          "subtopicName": "p.18 5.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FINT-APPL-MEAN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 5.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-5.4",
+          "subtopicName": "p.18 5.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-PFR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 5.4"
+            },
+            {
+              "nodeId": "ALGF-POLY-PART-QUAD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.18 5.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-5.5",
+          "subtopicName": "p.19 5.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
           ],
           "mappedNodes": [
             {
               "nodeId": "CALC-FDIFF-FDIFF-INVTR",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-FDIFF-FDIFF-INVTR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-FINT-FINT-TRSUB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-FINT-FINT-TRSUB in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.19 5.5"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-1.6",
-          "subtopicName": "Use 3D lines and planes, scalar products, vector products, intersections, distances, polar coordinates, hyperbolic functions and differential equations.",
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-5.6",
+          "subtopicName": "p.19 5.6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FINT-FINT-TRSUB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19 5.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-8.1",
+          "subtopicName": "p.20 8.1",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-HYP-HYP-DEFN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 8.1"
+            },
+            {
+              "nodeId": "CALC-HYP-HYP-GRAP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 8.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-8.2",
+          "subtopicName": "p.20 8.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-HYP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 8.2"
+            },
+            {
+              "nodeId": "CALC-FINT-FINT-HYP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 8.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-8.3",
+          "subtopicName": "p.21 8.3",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-HYP-HYP-INVH",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 8.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-8.4",
+          "subtopicName": "p.21 8.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-HYP-HYP-INVH",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.21 8.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-8.5",
+          "subtopicName": "p.21 8.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FINT-FINT-HYSUB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 8.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-9.1",
+          "subtopicName": "p.21 9.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-FIRST-IFAC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 9.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-9.2",
+          "subtopicName": "p.21 9.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-FIRST-GENS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 9.2"
+            },
+            {
+              "nodeId": "CALC-LDE-FIRST-PART",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 9.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-9.3",
+          "subtopicName": "p.21 9.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-FIRST-MODE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 9.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-9.4",
+          "subtopicName": "p.21 9.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SECOND-AUX",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.21 9.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-9.5",
+          "subtopicName": "p.22 9.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SECOND-CFPI",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22 9.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-9.6",
+          "subtopicName": "p.22 9.6",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SECOND-AUX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.22 9.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-9.7",
+          "subtopicName": "p.22 9.7",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SECOND-SHM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22 9.7"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-9.8",
+          "subtopicName": "p.22 9.8",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SECOND-DAMP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.22 9.8"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-9.9",
+          "subtopicName": "p.23 9.9",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SYSTEM-COUP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.23 9.9"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-2.1",
+          "subtopicName": "p.24 2.1",
+          "description": "Assessment depth: reasoning",
           "paperReference": [
-            "CorePure1",
-            "CorePure2"
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-SER-MACL-TAYL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24 2.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-2.2",
+          "subtopicName": "p.24 2.2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-SER-MACL-LIMIT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24 2.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-2.3",
+          "subtopicName": "p.24 2.3",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-LEIB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.24 2.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-2.5",
+          "subtopicName": "p.25 2.5",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FINT-FINT-TRSUB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 2.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-3.1",
+          "subtopicName": "p.25 3.1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SYSTEM-SER",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25 3.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-3.2",
+          "subtopicName": "p.25 3.2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SYSTEM-SUBS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25 3.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-2.1",
+          "subtopicName": "p.27 2.1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P4A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FINT-FINT-REDU",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.27 2.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-2.2",
+          "subtopicName": "p.27 2.2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P4A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-FINT-APPL-ARCL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.27 2.2"
+            },
+            {
+              "nodeId": "CALC-FINT-APPL-SURF",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.27 2.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM2-4.2",
+          "subtopicName": "p.40-41 Further Mechanics 2 / 4.2",
+          "description": "Assessment depth: proof",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4C"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SECOND-SHM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.40-41 Further Mechanics 2 / 4.2"
+            },
+            {
+              "nodeId": "MECH-FURT-ELAS-EPE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.40-41 Further Mechanics 2 / 4.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-ALGB-001",
+          "subtopicName": "p.67, Algebra",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-SER-SUMS-SUMR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67, Algebra"
+            },
+            {
+              "nodeId": "ALGF-ROOT-ROOT-REL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.67, Algebra"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-HYPB-001",
+          "subtopicName": "p.68, Hyperbolic Functions",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-HYP-HYP-DEFN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.68, Hyperbolic Functions"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-DIFF-001",
+          "subtopicName": "p.68, Calculus and Differential Equations - Differentiation",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-DIFF-RULE-POWR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68, Calculus and Differential Equations - Differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68, Calculus and Differential Equations - Differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-EXPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68, Calculus and Differential Equations - Differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-LOGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68, Calculus and Differential Equations - Differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-SUMD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68, Calculus and Differential Equations - Differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-PROD",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68, Calculus and Differential Equations - Differentiation"
+            },
+            {
+              "nodeId": "CALC-DIFF-RULE-CHAI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68, Calculus and Differential Equations - Differentiation"
+            },
+            {
+              "nodeId": "CALC-FDIFF-FDIFF-HYP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.68, Calculus and Differential Equations - Differentiation"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-INTE-001",
+          "subtopicName": "p.69, Calculus and Differential Equations - Integration",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-RULE-POWR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.69, Calculus and Differential Equations - Integration"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-TRIG",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.69, Calculus and Differential Equations - Integration"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-EXPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.69, Calculus and Differential Equations - Integration"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-LOGR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.69, Calculus and Differential Equations - Integration"
+            },
+            {
+              "nodeId": "CALC-INTE-RULE-SUBS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.69, Calculus and Differential Equations - Integration"
+            },
+            {
+              "nodeId": "CALC-FINT-FINT-HYP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.69, Calculus and Differential Equations - Integration"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-APPL-001",
+          "subtopicName": "p.69, Calculus and Differential Equations - area and volumes of revolution",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-INTE-APPL-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.69, Calculus and Differential Equations - area and volumes of revolution"
+            },
+            {
+              "nodeId": "CALC-INTE-APPL-VOLR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.69, Calculus and Differential Equations - area and volumes of revolution"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-SHM-001",
+          "subtopicName": "p.69, Calculus and Differential Equations - Simple Harmonic Motion",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SECOND-SHM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.69, Calculus and Differential Equations - Simple Harmonic Motion"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-SHMM-001",
+          "subtopicName": "p.71, Mechanics - Simple Harmonic Motion",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "CALC-LDE-SECOND-SHM",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.71, Mechanics - Simple Harmonic Motion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9FM0-VECT",
+      "topicName": "Vectors",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-6.1",
+          "subtopicName": "p.19 6.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
           ],
           "mappedNodes": [
             {
               "nodeId": "VECT-FURT-LINES-LINE",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-FURT-LINES-LINE in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "VECT-FURT-LINES-PLANE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-FURT-LINES-PLANE in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "VECT-FURT-PROD-SCAL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-FURT-PROD-SCAL in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.19 6.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-1.6.2",
-          "subtopicName": "Use 3D lines and planes, scalar products, vector products, intersections, distances, polar coordinates, hyperbolic functions and differential equations.",
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-6.2",
+          "subtopicName": "p.19 6.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-LINES-PLANE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19 6.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-6.3",
+          "subtopicName": "p.19 6.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-PROD-SCAL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.19 6.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-6.4",
+          "subtopicName": "p.19 6.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-PROD-SCAL",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.19 6.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-6.5",
+          "subtopicName": "p.20 6.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-LINES-INTER",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 6.5"
+            },
+            {
+              "nodeId": "VECT-FURT-LINES-DIST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 6.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-5.1",
+          "subtopicName": "p.26 5.1",
+          "description": "Assessment depth: application",
           "paperReference": [
-            "CorePure1",
-            "CorePure2"
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-PROD-VECT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 5.1"
+            },
+            {
+              "nodeId": "VECT-FURT-PROD-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 5.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-5.2",
+          "subtopicName": "p.26 5.2",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-PROD-TRIP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 5.2"
+            },
+            {
+              "nodeId": "VECT-FURT-PROD-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 5.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-5.3",
+          "subtopicName": "p.26 5.3",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-FURT-LINES-LINE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 5.3"
+            },
+            {
+              "nodeId": "VECT-FURT-LINES-PLANE",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 5.3"
+            },
+            {
+              "nodeId": "VECT-FURT-LINES-INTER",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 5.3"
+            },
+            {
+              "nodeId": "VECT-FURT-LINES-DIST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.26 5.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-VECT-001",
+          "subtopicName": "p.70, Vectors",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "VECT-SPAC-THRD-MAG3",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70, Vectors"
+            },
+            {
+              "nodeId": "VECT-FURT-PROD-SCAL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70, Vectors"
+            },
+            {
+              "nodeId": "VECT-FURT-LINES-LINE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70, Vectors"
+            },
+            {
+              "nodeId": "VECT-FURT-LINES-PLANE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70, Vectors"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9FM0-GEOM",
+      "topicName": "Geometry and Mensuration",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-7.1",
+          "subtopicName": "p.20 7.1",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
           ],
           "mappedNodes": [
             {
               "nodeId": "GEOM-POLR-POLR-CONV",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-POLR-POLR-CONV in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.20 7.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-7.2",
+          "subtopicName": "p.20 7.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-POLR-POLR-SKET",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 7.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-7.3",
+          "subtopicName": "p.20 7.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P1",
+            "P2"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-POLR-POLR-AREA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.20 7.3"
             },
             {
-              "nodeId": "CALC-HYP-HYP-DEFN",
+              "nodeId": "GEOM-POLR-POLR-TANG",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-HYP-HYP-DEFN in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.20 7.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-4.1",
+          "subtopicName": "p.25 4.1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONI-CONI-PARA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25 4.1"
             },
             {
-              "nodeId": "CALC-LDE-FIRST-IFAC",
+              "nodeId": "GEOM-CONI-CONI-ELLI",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-LDE-FIRST-IFAC in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.25 4.1"
+            },
+            {
+              "nodeId": "GEOM-CONI-CONI-HYPB",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25 4.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-4.2",
+          "subtopicName": "p.25 4.2",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONI-CONI-FOCD",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.25 4.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-4.3",
+          "subtopicName": "p.25 4.3",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONI-CONI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 4.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-4.4",
+          "subtopicName": "p.25 4.4",
+          "description": "Assessment depth: reasoning",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-CONI-CONI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.25 4.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-MENS-001",
+          "subtopicName": "p.66, Mensuration",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "GEOM-MENS-CIRC-CIRC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Mensuration"
+            },
+            {
+              "nodeId": "GEOM-MENS-CIRC-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Mensuration"
+            },
+            {
+              "nodeId": "GEOM-MENS-AREA-TRAP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Mensuration"
+            },
+            {
+              "nodeId": "GEOM-MENS-SOLI-PRIS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Mensuration"
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-ARCL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Mensuration"
+            },
+            {
+              "nodeId": "TRIG-CIRC-RADI-SECA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Mensuration"
+            },
+            {
+              "nodeId": "TRIG-BASE-RATR-PYTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Mensuration"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-9FM0-2",
-      "topicName": "Further Pure Mathematics Options",
-      "paperReference": [
-        "3A",
-        "4A"
-      ],
+      "topicId": "Edexcel-9FM0-TRIG",
+      "topicName": "TRIG",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9FM0-2.1",
-          "subtopicName": "Use t-formulae, Taylor series, Leibniz theorem, L'Hospital's rule, Weierstrass substitution, series solutions of differential equations and conic sections.",
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-1.1",
+          "subtopicName": "p.24 1.1",
+          "description": "Assessment depth: application",
           "paperReference": [
-            "3A"
+            "P3A"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "TRIG-IDEN-IDEN-TANR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to TRIG-IDEN-IDEN-TANR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-SER-MACL-TAYL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-SER-MACL-TAYL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-FDIFF-FDIFF-LEIB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-FDIFF-FDIFF-LEIB in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24 1.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-2.1.2",
-          "subtopicName": "Use t-formulae, Taylor series, Leibniz theorem, L'Hospital's rule, Weierstrass substitution, series solutions of differential equations and conic sections.",
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-1.2",
+          "subtopicName": "p.24 1.2",
+          "description": "Assessment depth: application",
           "paperReference": [
-            "3A"
+            "P3A"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "CALC-FINT-FINT-TRSUB",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-FINT-FINT-TRSUB in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-LDE-SYSTEM-SER",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-LDE-SYSTEM-SER in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "GEOM-CONI-CONI-PARA",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to GEOM-CONI-CONI-PARA in the expanded knowledge tree."
+              "nodeId": "TRIG-IDEN-IDEN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24 1.2"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-2.2",
-          "subtopicName": "Use further vectors, numerical differential equations, Simpson's rule and advanced inequalities.",
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-1.3",
+          "subtopicName": "p.24 1.3",
+          "description": "Assessment depth: application",
           "paperReference": [
-            "3A"
+            "P3A"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "VECT-FURT-PROD-VECT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-FURT-PROD-VECT in the expanded knowledge tree."
+              "nodeId": "TRIG-IDEN-EQNS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.24 1.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-TRIG-001",
+          "subtopicName": "p.66, Trigonometry",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "TRIG-BASE-NONR-SINR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Trigonometry"
             },
             {
-              "nodeId": "VECT-FURT-PROD-TRIP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to VECT-FURT-PROD-TRIP in the expanded knowledge tree."
+              "nodeId": "TRIG-BASE-NONR-COSR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Trigonometry"
             },
+            {
+              "nodeId": "TRIG-BASE-NONR-AREA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Trigonometry"
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-PYTH",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Trigonometry"
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-TANR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Trigonometry"
+            },
+            {
+              "nodeId": "TRIG-IDEN-IDEN-DBLA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Trigonometry"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-SECA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Trigonometry"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COSE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Trigonometry"
+            },
+            {
+              "nodeId": "TRIG-FUNC-ADVN-COTA",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.66, Trigonometry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9FM0-UNMAPPED",
+      "topicName": "Explicitly Unmapped",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-2.4",
+          "subtopicName": "p.24 2.4",
+          "description": "No canonical node in the supplied catalog covers L'Hospital's rule for indeterminate limits.",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-1.1",
+          "subtopicName": "p.27 1.1",
+          "description": "The supplied catalog contains no group theory nodes covering group axioms.",
+          "paperReference": [
+            "P4A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-1.2",
+          "subtopicName": "p.27 1.2",
+          "description": "The supplied catalog contains no group theory nodes covering examples of groups, Cayley tables or cyclic groups.",
+          "paperReference": [
+            "P4A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-1.3",
+          "subtopicName": "p.27 1.3",
+          "description": "The supplied catalog contains no group theory nodes covering order of groups/elements or subgroups.",
+          "paperReference": [
+            "P4A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-1.4",
+          "subtopicName": "p.27 1.4",
+          "description": "The supplied catalog contains no group theory nodes covering Lagrange's theorem.",
+          "paperReference": [
+            "P4A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-1.5",
+          "subtopicName": "p.27 1.5",
+          "description": "The supplied catalog contains no group theory nodes covering isomorphism of groups.",
+          "paperReference": [
+            "P4A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-2.4",
+          "subtopicName": "p.34 §2.4 Further Statistics 2 – Continuous uniform (rectangular) distribution",
+          "description": "No canonical node for the continuous uniform (rectangular) distribution.",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-5.3",
+          "subtopicName": "p.35 §5.3 Further Statistics 2 – Confidence limits for a Normal mean with variance known",
+          "description": "No canonical node for Normal confidence intervals with known variance (z-interval for a mean).",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-1.1",
+          "subtopicName": "p.47 Paper 4D / 1.1",
+          "description": "No canonical node for transportation problems",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-1.2",
+          "subtopicName": "p.47 Paper 4D / 1.2",
+          "description": "No canonical node for transportation problems",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-2.1",
+          "subtopicName": "p.47 Paper 4D / 2.1",
+          "description": "No canonical node for assignment/allocation problems",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-4.1",
+          "subtopicName": "p.48 Paper 4D / 4.1",
+          "description": "No canonical node for dynamic programming",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-6.1",
+          "subtopicName": "p.49 Paper 4D / 6.1",
+          "description": "No canonical node for recurrence relations",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-6.2",
+          "subtopicName": "p.49 Paper 4D / 6.2",
+          "description": "No canonical node for recurrence relations",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-7.1",
+          "subtopicName": "p.49 Paper 4D / 7.1",
+          "description": "No canonical node for decision analysis",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-7.2",
+          "subtopicName": "p.49 Paper 4D / 7.2",
+          "description": "No canonical node for expected monetary value/utility",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-4.2",
+          "subtopicName": "p.28 4.2",
+          "description": "No canonical leaf represents elementary z-plane to w-plane transformations.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-5.2",
+          "subtopicName": "p.28 5.2",
+          "description": "No canonical leaf represents Bezout's identity.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-5.3",
+          "subtopicName": "p.28 5.3",
+          "description": "No canonical leaf represents modular arithmetic and congruence properties.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-5.4",
+          "subtopicName": "p.28 5.4",
+          "description": "No canonical leaf represents Fermat's Little Theorem.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-5.6",
+          "subtopicName": "p.29 5.6",
+          "description": "No canonical leaf represents congruence equations.",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": []
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9FM0-NUMM",
+      "topicName": "NUMM",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-6.1",
+          "subtopicName": "p.26 6.1",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "P3A"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
             {
               "nodeId": "NUMM-ODE-FDM-ODE",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-ODE-FDM-ODE in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.26 6.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-2.2.2",
-          "subtopicName": "Use further vectors, numerical differential equations, Simpson's rule and advanced inequalities.",
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP1-6.2",
+          "subtopicName": "p.26 6.2",
+          "description": "Assessment depth: application",
           "paperReference": [
-            "3A"
+            "P3A"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
               "nodeId": "NUMM-NINT-SIMP-ESTM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to NUMM-NINT-SIMP-ESTM in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-EQN-INEQ-MODU",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-EQN-INEQ-MODU in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-2.3",
-          "subtopicName": "Use groups, reduction formulae, arc length, surface area of revolution, advanced matrix algebra, complex transformations and number theory.",
-          "paperReference": [
-            "4A"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "REAS-PROF-ARGM-LOGI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to REAS-PROF-ARGM-LOGI in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-FINT-FINT-REDU",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-FINT-FINT-REDU in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "CALC-FINT-APPL-ARCL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-FINT-APPL-ARCL in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-2.3.2",
-          "subtopicName": "Use groups, reduction formulae, arc length, surface area of revolution, advanced matrix algebra, complex transformations and number theory.",
-          "paperReference": [
-            "4A"
-          ],
-          "mappedNodes": [
-            {
-              "nodeId": "CALC-FINT-APPL-SURF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to CALC-FINT-APPL-SURF in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-MATR-EIG-DIAG",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-MATR-EIG-DIAG in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "ALGF-CPLX-ROOT-LOCI",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to ALGF-CPLX-ROOT-LOCI in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.26 6.2"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-9FM0-3",
-      "topicName": "Further Statistics Options",
-      "paperReference": [
-        "3B",
-        "4B"
-      ],
+      "topicId": "Edexcel-9FM0-PROB",
+      "topicName": "Probability",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9FM0-3.1",
-          "subtopicName": "Use discrete probability distributions, Poisson, binomial, geometric and negative binomial distributions, hypothesis testing, central limit theorem, chi-squared tests and probability generating functions.",
-          "paperReference": [
-            "3B"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-CP-5.7",
+          "subtopicName": "p.29 §5.7 Number theory – Combinatorics: counting problems, permutations and combinations",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-COUNT-PERM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 §5.7 Number theory – Combinatorics: counting problems, permutations and combinations"
+            },
+            {
+              "nodeId": "PROB-COMB-COUNT-COMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 §5.7 Number theory – Combinatorics: counting problems, permutations and combinations"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-1.1",
+          "subtopicName": "p.30 §1.1 Further Statistics 1 – Mean and variance of discrete probability distributions; E(g(X))",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
           ],
           "mappedNodes": [
             {
               "nodeId": "PROB-DRVD-DRVB-EXPV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DRVD-DRVB-EXPV in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30 §1.1 Further Statistics 1 – Mean and variance of discrete probability distributions; E(g(X))"
             },
             {
+              "nodeId": "PROB-DRVD-DRVB-VARI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30 §1.1 Further Statistics 1 – Mean and variance of discrete probability distributions; E(g(X))"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-2.1",
+          "subtopicName": "p.30 §2.1 Further Statistics 1 – The Poisson distribution and additive property",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
+            {
               "nodeId": "PROB-DIST-POIS-MODE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-POIS-MODE in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30 §2.1 Further Statistics 1 – The Poisson distribution and additive property"
             },
+            {
+              "nodeId": "PROB-DIST-POIS-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.30 §2.1 Further Statistics 1 – The Poisson distribution and additive property"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-2.2",
+          "subtopicName": "p.30 §2.2 Further Statistics 1 – Mean and variance of the binomial and Poisson distributions",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-BINO-MEAN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30 §2.2 Further Statistics 1 – Mean and variance of the binomial and Poisson distributions"
+            },
+            {
+              "nodeId": "PROB-DIST-POIS-MEAN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30 §2.2 Further Statistics 1 – Mean and variance of the binomial and Poisson distributions"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-2.3",
+          "subtopicName": "p.30 §2.3 Further Statistics 1 – Poisson distribution as an approximation to the binomial distribution",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-POIS-BINP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.30 §2.3 Further Statistics 1 – Poisson distribution as an approximation to the binomial distribution"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-3.1",
+          "subtopicName": "p.31 §3.1 Further Statistics 1 – Geometric and negative binomial distributions",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
             {
               "nodeId": "PROB-DIST-GEOM-MODE",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-GEOM-MODE in the expanded knowledge tree."
-            }
-          ]
-        },
-        {
-          "subtopicId": "Edexcel-9FM0-3.1.2",
-          "subtopicName": "Use discrete probability distributions, Poisson, binomial, geometric and negative binomial distributions, hypothesis testing, central limit theorem, chi-squared tests and probability generating functions.",
-          "paperReference": [
-            "3B"
-          ],
-          "mappedNodes": [
+              "matchReason": "Owner-approved V4 exact relation; p.31 §3.1 Further Statistics 1 – Geometric and negative binomial distributions"
+            },
             {
               "nodeId": "PROB-DIST-NBIN-MODE",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-NBIN-MODE in the expanded knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; p.31 §3.1 Further Statistics 1 – Geometric and negative binomial distributions"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-3.2",
+          "subtopicName": "p.31 §3.2 Further Statistics 1 – Mean and variance of a geometric distribution",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
             {
-              "nodeId": "STAT-EST-ESTI-CLT",
+              "nodeId": "PROB-DIST-GEOM-MEAN",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-EST-ESTI-CLT in the expanded knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; p.31 §3.2 Further Statistics 1 – Mean and variance of a geometric distribution"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-3.3",
+          "subtopicName": "p.31 §3.3 Further Statistics 1 – Mean and variance of negative binomial distribution",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-NBIN-MEAN",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 §3.3 Further Statistics 1 – Mean and variance of negative binomial distribution"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-7.1",
+          "subtopicName": "p.32 §7.1 Further Statistics 1 – Probability generating functions: definitions, derivations and applications",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
             {
               "nodeId": "PROB-PGF-PGF-CONC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-PGF-PGF-CONC in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32 §7.1 Further Statistics 1 – Probability generating functions: definitions, derivations and applications"
+            },
+            {
+              "nodeId": "PROB-PGF-PGF-DIST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32 §7.1 Further Statistics 1 – Probability generating functions: definitions, derivations and applications"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-3.2",
-          "subtopicName": "Use quality of tests, Type I and Type II errors, size, power and power functions.",
-          "paperReference": [
-            "3B"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-7.2",
+          "subtopicName": "p.32 §7.2 Further Statistics 1 – Use of probability generating functions to find mean and variance",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-TEST-HYPO-ERRS",
+              "nodeId": "PROB-PGF-PGF-MEAN",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-TEST-HYPO-ERRS in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "STAT-TEST-HYPO-SIGL",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-TEST-HYPO-SIGL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "STAT-TEST-HYPO-CRIT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-TEST-HYPO-CRIT in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.32 §7.2 Further Statistics 1 – Use of probability generating functions to find mean and variance"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-3.3",
-          "subtopicName": "Use least squares regression, residuals, continuous probability distributions, PMCC, Spearman rank correlation, normal combinations, estimators, confidence intervals, normal, chi-squared, F and t tests.",
-          "paperReference": [
-            "4B"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-7.3",
+          "subtopicName": "p.32 §7.3 Further Statistics 1 – Probability generating function of the sum of independent random variables",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
           ],
           "mappedNodes": [
             {
-              "nodeId": "STAT-CORR-REG-LSR",
+              "nodeId": "PROB-PGF-PGF-SUMS",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-CORR-REG-LSR in the expanded knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; p.32 §7.3 Further Statistics 1 – Probability generating function of the sum of independent random variables"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-2.1",
+          "subtopicName": "p.33 §2.1 Further Statistics 2 – Continuous random variable, probability density function and cumulative distribution function",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
             {
-              "nodeId": "STAT-CORR-REG-RESID",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-CORR-REG-RESID in the expanded knowledge tree."
+              "nodeId": "PROB-DIST-CRV-CONC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33 §2.1 Further Statistics 2 – Continuous random variable, probability density function and cumulative distribution function"
             },
             {
               "nodeId": "PROB-DIST-CRV-PDF",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to PROB-DIST-CRV-PDF in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.33 §2.1 Further Statistics 2 – Continuous random variable, probability density function and cumulative distribution function"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-3.3.2",
-          "subtopicName": "Use least squares regression, residuals, continuous probability distributions, PMCC, Spearman rank correlation, normal combinations, estimators, confidence intervals, normal, chi-squared, F and t tests.",
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-2.2",
+          "subtopicName": "p.34 §2.2 Further Statistics 2 – Relationship between probability density and cumulative distribution functions",
+          "description": "Assessment depth: application",
           "paperReference": [
-            "4B"
+            "9FM0/04B Further Statistics 2"
           ],
+          "paperApplicabilityKind": "fixed",
           "mappedNodes": [
             {
-              "nodeId": "STAT-CORR-REG-PMCC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-CORR-REG-PMCC in the expanded knowledge tree."
+              "nodeId": "PROB-DIST-CRV-PDF",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34 §2.2 Further Statistics 2 – Relationship between probability density and cumulative distribution functions"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-2.3",
+          "subtopicName": "p.34 §2.3 Further Statistics 2 – Mean, variance, E(g(X)), mode, median, percentiles and skewness of continuous random variables",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-CRV-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.34 §2.3 Further Statistics 2 – Mean, variance, E(g(X)), mode, median, percentiles and skewness of continuous random variables"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-4.1",
+          "subtopicName": "p.35 §4.1 Further Statistics 2 – Distribution of linear combinations of independent Normal random variables",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-DIST-NORM-MODE",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.35 §4.1 Further Statistics 2 – Distribution of linear combinations of independent Normal random variables"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-5.7",
+          "subtopicName": "p.29 5.7",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "PROB-COMB-COUNT-PERM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 5.7"
             },
             {
-              "nodeId": "STAT-CORR-REG-SPEAR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-CORR-REG-SPEAR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "STAT-INF2-TDIST-TTEST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to STAT-INF2-TDIST-TTEST in the expanded knowledge tree."
+              "nodeId": "PROB-COMB-COUNT-COMB",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 5.7"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-9FM0-4",
-      "topicName": "Further Mechanics Options",
-      "paperReference": [
-        "3C",
-        "4C"
-      ],
+      "topicId": "Edexcel-9FM0-STAT",
+      "topicName": "Statistics",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9FM0-4.1",
-          "subtopicName": "Use momentum, impulse, work, energy, power, elastic strings and springs, Hooke's law and elastic collisions in one and two dimensions.",
-          "paperReference": [
-            "3C"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-4.1",
+          "subtopicName": "p.31 §4.1 Further Statistics 1 – Hypothesis test for the mean of a Poisson distribution",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FURT-IMP-IMPL",
+              "nodeId": "STAT-TEST-HYPO-POIS",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-IMP-IMPL in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "MECH-MOMI-LINM-CONS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-MOMI-LINM-CONS in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "MECH-ENER-WORK-CONS",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-ENER-WORK-CONS in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.31 §4.1 Further Statistics 1 – Hypothesis test for the mean of a Poisson distribution"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-4.1.2",
-          "subtopicName": "Use momentum, impulse, work, energy, power, elastic strings and springs, Hooke's law and elastic collisions in one and two dimensions.",
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-4.2",
+          "subtopicName": "p.31 §4.2 Further Statistics 1 – Hypothesis test for parameter p of a geometric distribution",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.31 §4.2 Further Statistics 1 – Hypothesis test for parameter p of a geometric distribution"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-5.1",
+          "subtopicName": "p.31 §5.1 Further Statistics 1 – Applications of the Central Limit Theorem to other distributions",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-EST-ESTI-CLT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 §5.1 Further Statistics 1 – Applications of the Central Limit Theorem to other distributions"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-6.1",
+          "subtopicName": "p.31 §6.1 Further Statistics 1 – Chi squared goodness of fit tests and contingency tables",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-INF2-CHISQ-GOF",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 §6.1 Further Statistics 1 – Chi squared goodness of fit tests and contingency tables"
+            },
+            {
+              "nodeId": "STAT-INF2-CHISQ-INDEP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.31 §6.1 Further Statistics 1 – Chi squared goodness of fit tests and contingency tables"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS1-8.1",
+          "subtopicName": "p.32 §8.1 Further Statistics 1 – Type I and Type II errors, size and power of test, power function",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03B Further Statistics 1 (also Paper 4 Option 4B)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-ERRS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32 §8.1 Further Statistics 1 – Type I and Type II errors, size and power of test, power function"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-SIGL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32 §8.1 Further Statistics 1 – Type I and Type II errors, size and power of test, power function"
+            },
+            {
+              "nodeId": "STAT-TEST-HYPO-CRIT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.32 §8.1 Further Statistics 1 – Type I and Type II errors, size and power of test, power function"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-1.1",
+          "subtopicName": "p.33 §1.1 Further Statistics 2 – Least squares linear regression, residuals and minimising sum of squares of residuals",
+          "description": "Assessment depth: application",
           "paperReference": [
-            "3C"
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-CORR-REG-LSR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.33 §1.1 Further Statistics 2 – Least squares linear regression, residuals and minimising sum of squares of residuals"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-1.2",
+          "subtopicName": "p.33 §1.2 Further Statistics 2 – Residuals and residual sum of squares",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-CORR-REG-RESID",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.33 §1.2 Further Statistics 2 – Residuals and residual sum of squares"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-3.1",
+          "subtopicName": "p.34 §3.1 Further Statistics 2 – Product moment correlation coefficient and conditions for use",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-CORR-REG-PMCC",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.34 §3.1 Further Statistics 2 – Product moment correlation coefficient and conditions for use"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-3.2",
+          "subtopicName": "p.34 §3.2 Further Statistics 2 – Spearman's rank correlation coefficient",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-CORR-REG-SPEAR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.34 §3.2 Further Statistics 2 – Spearman's rank correlation coefficient"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-3.3",
+          "subtopicName": "p.35 §3.3 Further Statistics 2 – Testing hypothesis that a correlation is zero using Spearman or PMCC",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-CORR-REG-PMCC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 §3.3 Further Statistics 2 – Testing hypothesis that a correlation is zero using Spearman or PMCC"
+            },
+            {
+              "nodeId": "STAT-CORR-REG-SPEAR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 §3.3 Further Statistics 2 – Testing hypothesis that a correlation is zero using Spearman or PMCC"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-5.1",
+          "subtopicName": "p.35 §5.1 Further Statistics 2 – Standard error, estimator, bias and quality of estimators",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-EST-ESTI-UNBI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 §5.1 Further Statistics 2 – Standard error, estimator, bias and quality of estimators"
+            },
+            {
+              "nodeId": "STAT-EST-ESTI-SMEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 §5.1 Further Statistics 2 – Standard error, estimator, bias and quality of estimators"
+            },
+            {
+              "nodeId": "STAT-EST-ESTI-VARI",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.35 §5.1 Further Statistics 2 – Standard error, estimator, bias and quality of estimators"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-5.2",
+          "subtopicName": "p.35 §5.2 Further Statistics 2 – Concept of a confidence interval and its interpretation",
+          "description": "Assessment depth: knowledge",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-EST-ESTI",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.35 §5.2 Further Statistics 2 – Concept of a confidence interval and its interpretation"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-5.4",
+          "subtopicName": "p.35 §5.4 Further Statistics 2 – Hypothesis test for difference between means of two Normal distributions with variances known",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-TEST-HYPO-MEAN",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.35 §5.4 Further Statistics 2 – Hypothesis test for difference between means of two Normal distributions with variances known"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-5.5",
+          "subtopicName": "p.36 §5.5 Further Statistics 2 – Large sample results to extend to unknown population variances",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-EST-ESTI-CLT",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.36 §5.5 Further Statistics 2 – Large sample results to extend to unknown population variances"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-6.1",
+          "subtopicName": "p.36 §6.1 Further Statistics 2 – Hypothesis test and confidence interval for variance of a Normal distribution",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-INF2-CHISQ-VAR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.36 §6.1 Further Statistics 2 – Hypothesis test and confidence interval for variance of a Normal distribution"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-6.2",
+          "subtopicName": "p.36 §6.2 Further Statistics 2 – Hypothesis test that two independent samples are from Normal populations with equal variances",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-INF2-CHISQ-FTEST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.36 §6.2 Further Statistics 2 – Hypothesis test that two independent samples are from Normal populations with equal variances"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-7.1",
+          "subtopicName": "p.36 §7.1 Further Statistics 2 – Hypothesis test and confidence interval for mean of Normal distribution with unknown variance",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-INF2-TDIST-TTEST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.36 §7.1 Further Statistics 2 – Hypothesis test and confidence interval for mean of Normal distribution with unknown variance"
+            },
+            {
+              "nodeId": "STAT-INF2-TDIST-TCI",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.36 §7.1 Further Statistics 2 – Hypothesis test and confidence interval for mean of Normal distribution with unknown variance"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-7.2",
+          "subtopicName": "p.36 §7.2 Further Statistics 2 – Paired t-test",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-INF2-TDIST-PAIR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.36 §7.2 Further Statistics 2 – Paired t-test"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FS2-7.3",
+          "subtopicName": "p.36 §7.3 Further Statistics 2 – Hypothesis test and confidence interval for difference of two means from independent Normal distributions with equal but unknown variances",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04B Further Statistics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-INF2-TDIST-TWO",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.36 §7.3 Further Statistics 2 – Hypothesis test and confidence interval for difference of two means from independent Normal distributions with equal but unknown variances"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-STAT-001",
+          "subtopicName": "p.70, Statistics",
+          "description": "Assessment depth: knowledge",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "STAT-SUMM-CENT-MEAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70, Statistics"
+            },
+            {
+              "nodeId": "PROB-DIST-NORM-STAN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.70, Statistics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9FM0-MECH",
+      "topicName": "Mechanics",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM1-1.1",
+          "subtopicName": "p.37 §1.1 Further Mechanics 1 – Momentum and impulse, impulse-momentum principle, conservation of momentum for direct collision",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03C Further Mechanics 1 (also Paper 4 Option 4C)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-IMP-IMPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.37 §1.1 Further Mechanics 1 – Momentum and impulse, impulse-momentum principle, conservation of momentum for direct collision"
+            },
+            {
+              "nodeId": "MECH-MOMI-LINM-CONS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.37 §1.1 Further Mechanics 1 – Momentum and impulse, impulse-momentum principle, conservation of momentum for direct collision"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM1-1.2",
+          "subtopicName": "p.37 §1.2 Further Mechanics 1 – Momentum as a vector and impulse-momentum principle in vector form",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03C Further Mechanics 1 (also Paper 4 Option 4C)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-MOMI-LINM-VECN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.37 §1.2 Further Mechanics 1 – Momentum as a vector and impulse-momentum principle in vector form"
+            },
+            {
+              "nodeId": "MECH-FURT-IMP-IMPL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.37 §1.2 Further Mechanics 1 – Momentum as a vector and impulse-momentum principle in vector form"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM1-2.1",
+          "subtopicName": "p.37 §2.1 Further Mechanics 1 – Kinetic and potential energy, work and power, work-energy principle, conservation of mechanical energy",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03C Further Mechanics 1 (also Paper 4 Option 4C)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-ENER-WORK-WORK",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.37 §2.1 Further Mechanics 1 – Kinetic and potential energy, work and power, work-energy principle, conservation of mechanical energy"
+            },
+            {
+              "nodeId": "MECH-ENER-WORK-CONS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.37 §2.1 Further Mechanics 1 – Kinetic and potential energy, work and power, work-energy principle, conservation of mechanical energy"
+            },
+            {
+              "nodeId": "MECH-ENER-POWR-RATE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.37 §2.1 Further Mechanics 1 – Kinetic and potential energy, work and power, work-energy principle, conservation of mechanical energy"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM1-3.1",
+          "subtopicName": "p.37 §3.1 Further Mechanics 1 – Elastic strings and springs; Hooke's law",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03C Further Mechanics 1 (also Paper 4 Option 4C)"
           ],
           "mappedNodes": [
             {
               "nodeId": "MECH-FURT-ELAS-HOOK",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-ELAS-HOOK in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "MECH-FURT-ELAS-EPE",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-ELAS-EPE in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "MECH-FURT-IMP-OIMP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-IMP-OIMP in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.37 §3.1 Further Mechanics 1 – Elastic strings and springs; Hooke's law"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-4.2",
-          "subtopicName": "Use circular motion, vertical circles, centres of mass, moments and rigid-body equilibrium.",
-          "paperReference": [
-            "4C"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM1-3.2",
+          "subtopicName": "p.37 §3.2 Further Mechanics 1 – Energy stored in an elastic string or spring",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03C Further Mechanics 1 (also Paper 4 Option 4C)"
           ],
           "mappedNodes": [
             {
-              "nodeId": "MECH-FURT-CIRC-ANGS",
+              "nodeId": "MECH-FURT-ELAS-EPE",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-CIRC-ANGS in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "MECH-FURT-CIRC-RACC",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-CIRC-RACC in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "MECH-FURT-CIRC-VCIR",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-CIRC-VCIR in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.37 §3.2 Further Mechanics 1 – Energy stored in an elastic string or spring"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-4.2.2",
-          "subtopicName": "Use circular motion, vertical circles, centres of mass, moments and rigid-body equilibrium.",
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM1-4.1",
+          "subtopicName": "p.37 §4.1 Further Mechanics 1 – Direct impact of elastic spheres; Newton's law of restitution; loss of kinetic energy",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03C Further Mechanics 1 (also Paper 4 Option 4C)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-IMP-REST",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.37 §4.1 Further Mechanics 1 – Direct impact of elastic spheres; Newton's law of restitution; loss of kinetic energy"
+            },
+            {
+              "nodeId": "MECH-FURT-IMP-DIMP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.37 §4.1 Further Mechanics 1 – Direct impact of elastic spheres; Newton's law of restitution; loss of kinetic energy"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM1-4.2",
+          "subtopicName": "p.37 §4.2 Further Mechanics 1 – Successive direct impacts of spheres and/or sphere with smooth plane",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03C Further Mechanics 1 (also Paper 4 Option 4C)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-IMP-DIMP",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.37 §4.2 Further Mechanics 1 – Successive direct impacts of spheres and/or sphere with smooth plane"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM1-5.1",
+          "subtopicName": "p.38 §5.1 Further Mechanics 1 – Oblique impact of smooth elastic spheres and sphere with fixed surface; loss of kinetic energy",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03C Further Mechanics 1 (also Paper 4 Option 4C)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-IMP-OIMP",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.38 §5.1 Further Mechanics 1 – Oblique impact of smooth elastic spheres and sphere with fixed surface; loss of kinetic energy"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM1-5.2",
+          "subtopicName": "p.38 §5.2 Further Mechanics 1 – Successive oblique impacts of a sphere with smooth plane surfaces",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "9FM0/03C Further Mechanics 1 (also Paper 4 Option 4C)"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-IMP-OIMP",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.38 §5.2 Further Mechanics 1 – Successive oblique impacts of a sphere with smooth plane surfaces"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM2-1.1",
+          "subtopicName": "p.39 §1.1 Further Mechanics 2 – Angular speed, uniform motion in horizontal circle, radial acceleration",
+          "description": "Assessment depth: application",
           "paperReference": [
-            "4C"
+            "9FM0/04C Further Mechanics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-CIRC-ANGS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.39 §1.1 Further Mechanics 2 – Angular speed, uniform motion in horizontal circle, radial acceleration"
+            },
+            {
+              "nodeId": "MECH-FURT-CIRC-RACC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.39 §1.1 Further Mechanics 2 – Angular speed, uniform motion in horizontal circle, radial acceleration"
+            },
+            {
+              "nodeId": "MECH-FURT-CIRC-HCIR",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.39 §1.1 Further Mechanics 2 – Angular speed, uniform motion in horizontal circle, radial acceleration"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM2-1.2",
+          "subtopicName": "p.39 §1.2 Further Mechanics 2 – Motion of a particle in a vertical circle; radial and tangential acceleration; energy",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04C Further Mechanics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-CIRC-VCIR",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.39 §1.2 Further Mechanics 2 – Motion of a particle in a vertical circle; radial and tangential acceleration; energy"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM2-2.1",
+          "subtopicName": "p.39 §2.1 Further Mechanics 2 – Moment of a force; centre of mass of discrete mass distribution",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04C Further Mechanics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-RIGD-MOMT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.39 §2.1 Further Mechanics 2 – Moment of a force; centre of mass of discrete mass distribution"
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-COM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.39 §2.1 Further Mechanics 2 – Moment of a force; centre of mass of discrete mass distribution"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM2-2.2",
+          "subtopicName": "p.39 §2.2 Further Mechanics 2 – Centre of mass of uniform and composite plane figures and frameworks; equilibrium",
+          "description": "Assessment depth: application",
+          "paperReference": [
+            "9FM0/04C Further Mechanics 2"
+          ],
+          "paperApplicabilityKind": "fixed",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-RIGD-COM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.39 §2.2 Further Mechanics 2 – Centre of mass of uniform and composite plane figures and frameworks; equilibrium"
+            },
+            {
+              "nodeId": "MECH-FURT-RIGD-RBAL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.39 §2.2 Further Mechanics 2 – Centre of mass of uniform and composite plane figures and frameworks; equilibrium"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM2-3.1",
+          "subtopicName": "p.40 Further Mechanics 2 / 3.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4C"
           ],
           "mappedNodes": [
             {
               "nodeId": "MECH-FURT-RIGD-COM",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-RIGD-COM in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "MECH-FURT-RIGD-MOMT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-RIGD-MOMT in the expanded knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; p.40 Further Mechanics 2 / 3.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM2-3.2",
+          "subtopicName": "p.40 Further Mechanics 2 / 3.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4C"
+          ],
+          "mappedNodes": [
             {
               "nodeId": "MECH-FURT-RIGD-RBAL",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to MECH-FURT-RIGD-RBAL in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.40 Further Mechanics 2 / 3.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM2-3.3",
+          "subtopicName": "p.40 Further Mechanics 2 / 3.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4C"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-RIGD-TOPS",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.40 Further Mechanics 2 / 3.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM2-4.1",
+          "subtopicName": "p.40 Further Mechanics 2 / 4.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4C"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-VARF-DEQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.40 Further Mechanics 2 / 4.1"
+            },
+            {
+              "nodeId": "MECH-FURT-VARF-VVDX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.40 Further Mechanics 2 / 4.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FM2-5.1",
+          "subtopicName": "p.41 Further Mechanics 2 / 5.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4C"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-VARF-DEQ",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41 Further Mechanics 2 / 5.1"
+            },
+            {
+              "nodeId": "MECH-FURT-VARF-VVDX",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.41 Further Mechanics 2 / 5.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-MECH-001",
+          "subtopicName": "p.71, Mechanics - forces, equilibrium, kinematics, momentum and energy",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-DYN-NEWT-MASS",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71, Mechanics - forces, equilibrium, kinematics, momentum and energy"
+            },
+            {
+              "nodeId": "MECH-FORC-EQUI-FRIC",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71, Mechanics - forces, equilibrium, kinematics, momentum and energy"
+            },
+            {
+              "nodeId": "MECH-DYN-NEWT-N2L",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71, Mechanics - forces, equilibrium, kinematics, momentum and energy"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-DSDT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71, Mechanics - forces, equilibrium, kinematics, momentum and energy"
+            },
+            {
+              "nodeId": "CALC-KIN-SVAT-DVDT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71, Mechanics - forces, equilibrium, kinematics, momentum and energy"
+            },
+            {
+              "nodeId": "MECH-MOMI-LINM-DEFN",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71, Mechanics - forces, equilibrium, kinematics, momentum and energy"
+            },
+            {
+              "nodeId": "MECH-ENER-WORK-KE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71, Mechanics - forces, equilibrium, kinematics, momentum and energy"
+            },
+            {
+              "nodeId": "MECH-ENER-WORK-GPE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71, Mechanics - forces, equilibrium, kinematics, momentum and energy"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FORM-ELAS-001",
+          "subtopicName": "p.71, Mechanics - elastic strings",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "MECH-FURT-ELAS-HOOK",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71, Mechanics - elastic strings"
+            },
+            {
+              "nodeId": "MECH-FURT-ELAS-EPE",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.71, Mechanics - elastic strings"
             }
           ]
         }
       ]
     },
     {
-      "topicId": "Edexcel-9FM0-5",
-      "topicName": "Decision Mathematics Options",
-      "paperReference": [
-        "3D",
-        "4D"
-      ],
+      "topicId": "Edexcel-9FM0-DISC",
+      "topicName": "Discrete Mathematics",
+      "paperReference": null,
       "subtopicMappings": [
         {
-          "subtopicId": "Edexcel-9FM0-5.1",
-          "subtopicName": "Use graph terminology, algorithms, minimum spanning trees, shortest paths, route inspection and travelling salesperson methods.",
-          "paperReference": [
-            "3D"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-1.1",
+          "subtopicName": "p.42 Paper 3D / 1.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
           ],
           "mappedNodes": [
             {
-              "nodeId": "DISC-GRAPH-GRAPH-TERM",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-TERM in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "DISC-ALGO-ALGO-SORT",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to DISC-ALGO-ALGO-SORT in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "DISC-GRAPH-GRAPH-MST",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-MST in the expanded knowledge tree."
+              "nodeId": "DISC-ALGO-ALGO",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42 Paper 3D / 1.1"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-5.1.2",
-          "subtopicName": "Use graph terminology, algorithms, minimum spanning trees, shortest paths, route inspection and travelling salesperson methods.",
-          "paperReference": [
-            "3D"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-1.2",
+          "subtopicName": "p.42 Paper 3D / 1.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-SORT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42 Paper 3D / 1.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-1.3",
+          "subtopicName": "p.42 Paper 3D / 1.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-TERM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42 Paper 3D / 1.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-1.4",
+          "subtopicName": "p.42 Paper 3D / 1.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-TERM",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.42 Paper 3D / 1.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-2.1",
+          "subtopicName": "p.42 Paper 3D / 2.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-MST",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.42 Paper 3D / 2.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-2.2",
+          "subtopicName": "p.42 Paper 3D / 2.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
           ],
           "mappedNodes": [
             {
               "nodeId": "DISC-GRAPH-GRAPH-SHOR",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-SHOR in the expanded knowledge tree."
-            },
-            {
-              "nodeId": "DISC-GRAPH-GRAPH-TRAV",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to DISC-GRAPH-GRAPH-TRAV in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.42 Paper 3D / 2.2"
             }
           ]
         },
         {
-          "subtopicId": "Edexcel-9FM0-5.2",
-          "subtopicName": "Use matching, network flow, allocation, critical path analysis, dynamic programming and linear programming techniques.",
-          "paperReference": [
-            "4D"
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-3.1",
+          "subtopicName": "p.42-43 Paper 3D / 3.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
           ],
           "mappedNodes": [
             {
-              "nodeId": "DISC-ALGO-ALGO-MATCH",
+              "nodeId": "DISC-GRAPH-GRAPH-TRAV",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to DISC-ALGO-ALGO-MATCH in the expanded knowledge tree."
-            },
+              "matchReason": "Owner-approved V4 exact relation; p.42-43 Paper 3D / 3.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-3.2",
+          "subtopicName": "p.43 Paper 3D / 3.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-GRAPH-GRAPH-TRAV",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.43 Paper 3D / 3.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-4.1",
+          "subtopicName": "p.43 Paper 3D / 4.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-CPA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.43 Paper 3D / 4.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-4.2",
+          "subtopicName": "p.43 Paper 3D / 4.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-CPA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.43 Paper 3D / 4.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-4.3",
+          "subtopicName": "p.43-44 Paper 3D / 4.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-CPA",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.43-44 Paper 3D / 4.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-4.4",
+          "subtopicName": "p.44 Paper 3D / 4.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-GANT",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.44 Paper 3D / 4.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-4.5",
+          "subtopicName": "p.44 Paper 3D / 4.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-RESL",
+              "matchStrength": "exact",
+              "matchReason": "Owner-approved V4 exact relation; p.44 Paper 3D / 4.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-4.6",
+          "subtopicName": "p.44 Paper 3D / 4.6",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-RESL",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.44 Paper 3D / 4.6"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-5.1",
+          "subtopicName": "p.44 Paper 3D / 5.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-LP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.44 Paper 3D / 5.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-5.2",
+          "subtopicName": "p.44 Paper 3D / 5.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-LP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.44 Paper 3D / 5.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-5.3",
+          "subtopicName": "p.44 Paper 3D / 5.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-LP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.44 Paper 3D / 5.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM1-5.4",
+          "subtopicName": "p.44 Paper 3D / 5.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P3D",
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-LP",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.44 Paper 3D / 5.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-1.3",
+          "subtopicName": "p.47 Paper 4D / 1.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-LP",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.47 Paper 4D / 1.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-2.2",
+          "subtopicName": "p.47 Paper 4D / 2.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-LP",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.47 Paper 4D / 2.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-3.1",
+          "subtopicName": "p.47 Paper 4D / 3.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
             {
               "nodeId": "DISC-ALGO-ALGO-FLOW",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.47 Paper 4D / 3.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-3.2",
+          "subtopicName": "p.47 Paper 4D / 3.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-FLOW",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.47 Paper 4D / 3.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-3.3",
+          "subtopicName": "p.47 Paper 4D / 3.3",
+          "description": "Assessment depth: reasoning",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-FLOW",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.47 Paper 4D / 3.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-3.4",
+          "subtopicName": "p.47 Paper 4D / 3.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-FLOW",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.47 Paper 4D / 3.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-3.5",
+          "subtopicName": "p.48 Paper 4D / 3.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-ALGO-ALGO-FLOW",
+              "matchStrength": "strong",
+              "matchReason": "Owner-approved V4 narrower relation; p.48 Paper 4D / 3.5"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-5.1",
+          "subtopicName": "p.48 Paper 4D / 5.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-GAME",
               "matchStrength": "exact",
-              "matchReason": "Maps directly to DISC-ALGO-ALGO-FLOW in the expanded knowledge tree."
+              "matchReason": "Owner-approved V4 exact relation; p.48 Paper 4D / 5.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-5.2",
+          "subtopicName": "p.48 Paper 4D / 5.2",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-GAME",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.48 Paper 4D / 5.2"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-5.3",
+          "subtopicName": "p.48 Paper 4D / 5.3",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-GAME",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.48 Paper 4D / 5.3"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-5.4",
+          "subtopicName": "p.48 Paper 4D / 5.4",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-GAME",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.48 Paper 4D / 5.4"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-DM2-5.5",
+          "subtopicName": "p.48 Paper 4D / 5.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "eligible",
+          "eligiblePaperReference": [
+            "P4D"
+          ],
+          "mappedNodes": [
+            {
+              "nodeId": "DISC-PROJ-PROJ-GAME",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.48 Paper 4D / 5.5"
             },
             {
               "nodeId": "DISC-ALGO-ALGO-LP",
-              "matchStrength": "exact",
-              "matchReason": "Maps directly to DISC-ALGO-ALGO-LP in the expanded knowledge tree."
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.48 Paper 4D / 5.5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "topicId": "Edexcel-9FM0-NUM",
+      "topicName": "Number",
+      "paperReference": null,
+      "subtopicMappings": [
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-5.1",
+          "subtopicName": "p.28 5.1",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-SYS-TYPE-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.28 5.1"
+            }
+          ]
+        },
+        {
+          "subtopicId": "OFFICIAL-Edexcel-9FM0-FP2-5.5",
+          "subtopicName": "p.29 5.5",
+          "description": "Assessment depth: application",
+          "paperReference": null,
+          "paperApplicabilityKind": "not-specified",
+          "mappedNodes": [
+            {
+              "nodeId": "NUM-SYS-TYPE-FACT",
+              "matchStrength": "partial",
+              "matchReason": "Owner-approved V4 partial relation; p.29 5.5"
             }
           ]
         }

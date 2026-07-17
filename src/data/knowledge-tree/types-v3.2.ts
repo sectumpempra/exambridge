@@ -32,6 +32,8 @@ export interface SubtopicMapping {
   subtopicName: string;
   description?: string;
   paperReference: string[] | null;
+  paperApplicabilityKind?: "fixed" | "eligible" | "not-specified";
+  eligiblePaperReference?: string[];
   mappedNodes: MappedNode[];
 }
 
@@ -72,6 +74,14 @@ export interface MappingFile {
   totalTopics: number;
   mappedTopics: number;
   paperStructure?: PaperStructure;
+  sourceUrl?: string;
+  syllabusVersion?: string;
+  verificationStatus?: "verified" | "candidate" | "rejected";
+  sourceSchemaVersion?: "4.0.0";
+  qualificationVersionId?: string;
+  effectiveFrom?: string;
+  effectiveTo?: string;
+  approval?: { approvedAt: string; approvalBatch: string };
   mappings: TopicMapping[];
 }
 
@@ -85,6 +95,20 @@ export interface SubjectInfoV32 {
   hasPapers: boolean; // true if paperStructure exists
   papers: string[];   // list of paper codes
   isGCSE: boolean;
+  paperMappingCoverage: number;
+  paperComparisonReady: boolean;
+  /** Exact comparisons are only safe after owner-approved/verified review. */
+  comparisonReady: boolean;
+  verificationStatus: "verified" | "candidate" | "rejected";
+}
+
+export interface PaperMappingReadiness {
+  ready: boolean;
+  coverage: number;
+  referencedSubtopics: number;
+  totalSubtopics: number;
+  invalidReferences: string[];
+  reason?: string;
 }
 
 /** Paper selection for a subject */

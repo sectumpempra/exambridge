@@ -412,6 +412,8 @@ export default function DataTable({
                     const isSubjectName =
                       col.key.toLowerCase() === "subject" ||
                       col.key.toLowerCase() === "unit";
+                    const isSourceUrl = col.key === "_sourceUrl" && typeof val === "string" && val.startsWith("https://");
+                    const isVerification = col.key === "_verificationStatus";
                     return (
                       <TableCell
                         key={col.key}
@@ -425,7 +427,9 @@ export default function DataTable({
                             "max-w-[1px] overflow-hidden text-ellipsis"
                         )}
                       >
-                        {display}
+                        {isSourceUrl ? <a href={String(val)} target="_blank" rel="noreferrer" className="font-semibold text-[#486b58]">官方来源</a>
+                          : isVerification ? <span className={cn("rounded-full px-2 py-1 text-[10px] font-semibold", val === "verified" ? "bg-[#e7f0ea] text-[#456348]" : "bg-[#f2ece5] text-[#6f4f39]")}>{val === "verified" ? "已核验" : "待核验"}</span>
+                          : display}
                       </TableCell>
                     );
                   })}

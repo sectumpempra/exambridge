@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {
@@ -22,7 +22,7 @@ import {
 } from "../utils/gradeCalculation";
 import { useCourseContext } from "../course-context/CourseContextProvider";
 import AwardCalculatorPanel from "./grade-calculator/AwardCalculatorPanel";
-import { COURSE_CATALOG } from "../course-context/catalog";
+import { COURSE_CATALOG, withCourseContext } from "../course-context/catalog";
 import { awardCatalog } from "../domain-v2/awards/catalog";
 import { decodeAwardShareState } from "../domain-v2/awards/share-state";
 
@@ -328,7 +328,13 @@ export default function GradeCalculator() {
   const selectedCount = paperConfigs.filter(p => p.selected).length;
   const hasEmptyScore = paperConfigs.filter(p => p.selected).some(p => p.score === "");
   const awardCourseCandidate = sharedCourse ?? entry;
-  const awardQualification = awardCourseCandidate && ["AQA:7357", "OCR:H240", "CAIE:9709"].includes(`${awardCourseCandidate.boardName}:${awardCourseCandidate.subjectCode}`) && awardCourseCandidate.gradeCalculation.status !== "unavailable"
+  const qualificationChoices = useMemo(() => {
+    const supported = new Set(["AQA:7357", "OCR:H240", "OCR:6993", "CAIE:9709"]);
+    return [...new Map(COURSE_CATALOG
+      .filter((course) => supported.has(`${course.boardName}:${course.subjectCode}`) && course.gradeCalculation.status !== "unavailable")
+      .map((course) => [`${course.boardName}:${course.subjectCode}`, course])).values()];
+  }, []);
+  const awardQualification = awardCourseCandidate && ["AQA:7357", "OCR:H240", "OCR:6993", "CAIE:9709"].includes(`${awardCourseCandidate.boardName}:${awardCourseCandidate.subjectCode}`) && awardCourseCandidate.gradeCalculation.status !== "unavailable"
     ? awardCourseCandidate
     : null;
 
@@ -368,9 +374,25 @@ export default function GradeCalculator() {
               <h1 style={{ fontSize: 22, fontWeight: 600, color: "#3D3832", margin: 0 }}>等级预测模拟器</h1>
             </div>
             <p style={{ fontSize: 14, color: "#625C54", lineHeight: 1.7, margin: 0 }}>
-                当前仅开放已核验完整 award route 的 Edexcel IAL Mathematics。其他考试局仍可查询分数线，但不会生成可能误导的资格等级。
+                请先选择资格路线。只对具备完整路线与来源状态的数据计算；未核验或缺少路线的课程保持不可用。
             </p>
           </div>
+
+          {!entry && !sharedCourse && (
+            <section className={`${CARD_CLS} mb-5`} aria-labelledby="qualification-route-heading">
+              <h2 id="qualification-route-heading" style={{ margin: "0 0 6px", fontSize: 16, color: "#3D3832" }}>选择资格路线</h2>
+              <p style={{ margin: "0 0 14px", fontSize: 12, lineHeight: 1.6, color: "#6E675E" }}>官方整体边界路线会进入资格计算器；Edexcel IAL Mathematics 可继续使用下方 Raw → UMS 单元路线。</p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(210px, 100%), 1fr))", gap: 10 }}>
+                {qualificationChoices.map((course) => (
+                  <Link key={course.qualificationId} to={withCourseContext("/calculator", { qualificationId: course.qualificationId, specificationId: course.specificationId })}
+                    style={{ border: "1px solid #d9d4ce", borderRadius: 10, padding: "12px 14px", background: "#fff", color: "#3D3832", textDecoration: "none" }}>
+                    <strong style={{ display: "block", fontSize: 13 }}>{course.boardName} · {course.subjectCode}</strong>
+                    <span style={{ display: "block", marginTop: 3, fontSize: 11, color: "#6E675E" }}>{course.subjectName} · {course.gradeCalculation.status === "official" ? "官方路线" : "明确标注的预估路线"}</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Step 1: Board */}
           <div className={CARD_CLS}>
@@ -481,9 +503,9 @@ export default function GradeCalculator() {
                     return (
                       <div key={groupKey} style={{ border: "1px solid #E9E5DE", borderRadius: 12, overflow: "hidden", background: "#FFF" }}>
                         {/* Paper group header - clickable to expand */}
-                        <div onClick={() => setCollapsedGroups(prev => ({ ...prev, [groupKey]: !prev[groupKey] }))}
+                        <button type="button" aria-expanded={!isCollapsed} onClick={() => setCollapsedGroups(prev => ({ ...prev, [groupKey]: !prev[groupKey] }))}
                           style={{
-                            display: "flex", alignItems: "center", gap: 10, padding: "12px 16px",
+                            display: "flex", width: "100%", border: 0, textAlign: "left", alignItems: "center", gap: 10, padding: "12px 16px",
                             cursor: "pointer", background: selectedInGroup > 0 ? "rgba(143,127,110,0.04)" : "#FAFAF8",
                             borderBottom: isCollapsed ? "none" : "1px solid #F0EDE8",
                           }}>
@@ -493,7 +515,7 @@ export default function GradeCalculator() {
                             {selectedInGroup > 0 ? `${selectedInGroup}/${group.papers.length}` : `${group.papers.length}个`}
                           </span>
                           <span style={{ fontSize: 12, color: "#6E675E" }}>{isCollapsed ? "▼" : "▲"}</span>
-                        </div>
+                        </button>
                         {/* Variants inside group */}
                         {!isCollapsed && (
                           <div style={{ padding: "10px 14px", display: "flex", flexDirection: "column", gap: 10 }}>
@@ -510,7 +532,7 @@ export default function GradeCalculator() {
                                   opacity: p.selected ? 1 : 0.6, transition: "all 0.2s ease",
                                 }}>
                                   {/* Variant checkbox + label */}
-                                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: p.selected ? 10 : 0, cursor: "pointer" }}
+                                  <button type="button" aria-pressed={p.selected} style={{ display: "flex", width: "100%", border: 0, background: "transparent", padding: 0, textAlign: "left", alignItems: "center", gap: 10, marginBottom: p.selected ? 10 : 0, cursor: "pointer" }}
                                     onClick={() => togglePaper(i)}>
                                     {p.selected ?
                                       <CheckSquare size={16} style={{ color: "#675A4D", flexShrink: 0 }} /> :
@@ -518,7 +540,7 @@ export default function GradeCalculator() {
                                     }
                                     <span style={{ fontSize: 13, fontWeight: 600, color: p.selected ? "#3D3832" : "#6E675E" }}>{normalizeComponentDisplay(p.component)}</span>
                                     {!p.selected && <span style={{ fontSize: 11, color: "#716A61", marginLeft: "auto" }}>未选择</span>}
-                                  </div>
+                                  </button>
                                   {/* Inputs */}
                                   {p.selected && (
                                     <div style={{ display: "grid", gridTemplateColumns: "1fr 120px", gap: 10, alignItems: "flex-start", paddingLeft: 26 }}>

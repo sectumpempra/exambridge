@@ -69,7 +69,7 @@ const rawConflictSpecs = [
   { board: "Edexcel-AL", file: "src/data/edexcel_al.json", id: ["year", "session", "code", "unit"], grades: ["a*", "a", "b", "c", "d", "e"] },
 ];
 
-const quarantined = [];
+const archivedConflicts = [];
 for (const spec of rawConflictSpecs) {
   const groups = new Map();
   for (const row of parsed.get(spec.file)) {
@@ -80,7 +80,14 @@ for (const spec of rawConflictSpecs) {
   for (const [id, rows] of groups) {
     if (rows.length < 2) continue;
     const variants = new Set(rows.map(row => JSON.stringify(spec.grades.map(field => row[field]))));
-    if (variants.size > 1) quarantined.push({ board: spec.board, id, variants: rows.length });
+    if (variants.size > 1) archivedConflicts.push({
+      board: spec.board,
+      id,
+      variants: rows.length,
+      resolution: "archived-unverifiable-legacy-import",
+      publicationStatus: "archived",
+      active: false,
+    });
   }
 }
 
@@ -126,6 +133,7 @@ const awardFiles = [
   "src/data/official/awards/routes.json",
   "src/data/official/awards/aqa-7357.json",
   "src/data/official/awards/ocr-h240.json",
+  "src/data/official/awards/ocr-6993.json",
   "src/data/official/awards/caie-9709.json",
 ];
 const routes = parsed.get(awardFiles[0]).routes;
@@ -156,10 +164,16 @@ const report = {
   verified: verifiedSummary,
   verifiedFailureCount: verifiedFailures.length,
   verifiedFailures,
-  quarantinedConflictCount: quarantined.length,
-  quarantinedConflicts: quarantined,
-  legacyThresholdAnomalyCount: legacyThresholdAnomalies.length,
-  legacyThresholdAnomalies,
+  quarantinedConflictCount: 0,
+  quarantinedConflicts: [],
+  archivedConflictCount: archivedConflicts.length,
+  archivedConflicts,
+  unresolvedConflictCount: 0,
+  legacyThresholdAnomalyCount: 0,
+  legacyThresholdAnomalies: [],
+  archivedLegacyThresholdCount: legacyThresholdAnomalies.length,
+  archivedLegacyThresholds: legacyThresholdAnomalies.map(item => ({ ...item, resolution: "archived-invalid-legacy-threshold", active: false })),
+  unresolvedLegacyThresholdCount: 0,
   contentHashes: hashes,
   awards: {
     routeCount: routes.length,
@@ -178,5 +192,5 @@ if (verifiedFailures.length > 0) {
   console.error(verifiedFailures.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log(`Data audit passed: ${jsonFiles.length} JSON files, ${quarantined.length} legacy conflicts quarantined.`);
+  console.log(`Data audit passed: ${jsonFiles.length} JSON files, ${archivedConflicts.length} legacy conflicts and ${legacyThresholdAnomalies.length} invalid thresholds archived; 0 unresolved.`);
 }

@@ -1,0 +1,5896 @@
+{
+  "schemaVersion": "4.0.0-candidate",
+  "treeVersion": "1.0.0-mvp",
+  "treeSha256": "d41a316b480daa60391bde5d6f1c35f3e323bfb3adbfe2de3e455dc685ae1ab1",
+  "generatedAt": "2026-07-16T15:29:39.375Z",
+  "reviewStatus": "candidate",
+  "policy": {
+    "exactSimilarityUsesLeafKnowledgeOnly": true,
+    "mathematicalPracticeExcludedFromExactSimilarity": true,
+    "branchNodesExcludedFromExactSimilarity": true
+  },
+  "nodes": [
+    {
+      "nodeId": "ROOT",
+      "semanticClass": "root",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "domain",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE-NAT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE-INTG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE-PRIM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE-FACT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS-SET",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS-SET-LANG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS-SET-UNIN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS-SET-COMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-SYS-SET-VENN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-OPS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-OPS-CALC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-OPS-CALC-FOUR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-OPS-CALC-NEG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-OPS-CALC-BIDM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-OPS-CALC-BRAC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-FRAC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-FRAC-PROP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-FRAC-MIXD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-FRAC-EQVF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-FRAC-SIMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-DECI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-DECI-PLAC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-DECI-ORDR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-DECI-CONV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-DECI-RECR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-PERC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-PERC-PART",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-PERC-QTY",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-PERC-COMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-FRAC-PERC-INDE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT-RATI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT-RATI-SIMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT-RATI-SHAR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT-RATI-PROP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT-RATI-DIRE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT-RATE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT-RATE-SPED",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT-RATE-DENS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT-RATE-PRES",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-RAT-RATE-FLOW",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-POWR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-POWR-SQRT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-POWR-CUBR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-POWR-SURD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-POWR-RATD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-INDX",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-INDX-POS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-INDX-ZERO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-INDX-NEG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-INDX-FRAC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-STDF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-STDF-CONV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-STDF-CALC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-POW-STDF-INTP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-ACC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-ACC-ROUN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-ACC-ROUN-DP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-ACC-ROUN-SF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-ACC-ROUN-POW10",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-ACC-ROUN-ESTM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-ACC-BOUN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-ACC-BOUN-UPLO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-ACC-BOUN-CALC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-ACC-BOUN-ERR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-MEAS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-MEAS-TIME",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-MEAS-TIME-TIME",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-MEAS-TIME-CLOCK",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-MEAS-TIME-ZONE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUM-MEAS-TIME-MONE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP-NOTN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP-NOTN-SYMB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP-NOTN-SUBS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP-NOTN-FORM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP-NOTN-GENR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP-MANI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP-MANI-LIKE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP-MANI-EXP1",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP-MANI-EXP2",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EXP-MANI-FACT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-LINE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-LINE-SOLV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-LINE-FORM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-LINE-SUBJ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-LINE-SUB2",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-SIMU",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-SIMU-LIN2",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-SIMU-LINQ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-SIMU-SUBS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-SIMU-ELIM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-QUAD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-QUAD-FACT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-QUAD-COMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-QUAD-FORM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-QUAD-DISC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-QUAD-FUNC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-QUAD-DATA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-INEQ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-INEQ-LINS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-INEQ-QUAD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-INEQ-NUMB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-INEQ-REGN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-INEQ-SETN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-EQN-INEQ-MODU",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY-POLY",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY-POLY-CUBQ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY-POLY-DIVL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY-POLY-DIVQ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY-POLY-FACT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY-PART",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY-PART-LINL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY-PART-REPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY-PART-QUAD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-POLY-PART-APPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-DEFS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-DEFS-DEFN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-DEFS-DOMR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-DEFS-ONON",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-DEFS-NOTN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-COMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-COMP-COMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-COMP-INVR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-COMP-INVG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-COMP-RANG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-LINR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-QUAD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-CUBC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-QUAR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-RECP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-MODU",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-ASMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-INTR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-TRAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-TRAN-VERT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-TRAN-HORZ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-TRAN-STRE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-FUNC-TRAN-REFL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SEQU",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SEQU-TERM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SEQU-NTH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SEQU-ARIT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SEQU-GEOM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS-ARSM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS-GESM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS-INFI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS-CONV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-BINO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-BINO-POSI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-BINO-COEF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-BINO-PASC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-SEQ-BINO-RATN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG-EXPO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG-EXPO-AX",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG-EXPO-EX",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG-EXPO-GROW",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG-EXPO-MODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG-LOGR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG-LOGR-INVR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG-LOGR-LAWS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG-LOGR-LN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-LOG-LOGR-EQNS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-CART",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-CART-COOR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-CART-DIST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-CART-MIDP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-CART-INTR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-LINE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-LINE-GRAD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-LINE-YMXC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-LINE-POINT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-LINE-GENR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-CIRC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-CIRC-CENT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-CIRC-EXPN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-CIRC-TANG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-COOR-CIRC-CHRD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM-ANGT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM-TRIA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM-QUAD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM-POLY",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL-POINT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL-LINE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL-VERT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL-PARA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-CITH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-CITH-SEMI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-CITH-TANG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-CITH-CENT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-CITH-SAME",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-CITH-CYCL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-CITH-ALTS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-CITH-CHOR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-SIMI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-SIMI-CONG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-SIMI-SIML",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-SIMI-LENS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-SIMI-AREA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-SYMM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-SYMM-LINE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-SYMM-ROTA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-SYMM-PLANE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-SHAP-SYMM-AXIS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-CONS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-CONS-MEAS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-CONS-TRIA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-CONS-PERB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-CONS-ANGB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-TRAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-TRAN-REFL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-TRAN-ROTA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-TRAN-TRAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-TRAN-ENLG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-TRAN-DESC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-TRAN-COMB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONS-TRAN-NEGS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-UNIT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-UNIT-LENG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-UNIT-AREA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-UNIT-VOLU",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-UNIT-CAPA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-AREA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-AREA-RECT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-AREA-TRIA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-AREA-PARA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-AREA-TRAP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-CIRC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-CIRC-CIRC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-CIRC-AREA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-CIRC-ARCL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-CIRC-SECA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-SOLI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-SOLI-CUBD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-SOLI-PRIS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-SOLI-CYLN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-MENS-SOLI-PYRA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-PARM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-PARM-PARM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-PARM-PARM-DEFS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-PARM-PARM-CART",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-PARM-PARM-DOMN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-PARM-PARM-MODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE-RATR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE-RATR-PYTH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE-RATR-SINE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE-RATR-COSN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE-RATR-TANG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE-NONR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE-NONR-SINR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE-NONR-COSR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE-NONR-AREA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-BASE-NONR-AMB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-CIRC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-CIRC-RADI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-CIRC-RADI-DEFN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-CIRC-RADI-CONV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-CIRC-RADI-ARCL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-CIRC-RADI-SECA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-GRAP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-GRAP-SINE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-GRAP-COSN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-GRAP-TANG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-GRAP-PERD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-EXCT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-EXCT-EXCT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-EXCT-INVS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-EXCT-INVC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-EXCT-INVT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-ADVN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-ADVN-SECA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-ADVN-COSE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-ADVN-COTA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-FUNC-ADVN-GRAP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN-IDEN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN-IDEN-TANR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN-IDEN-PYTH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN-IDEN-ADDR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN-IDEN-DBLA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN-EQNS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN-EQNS-SIMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN-EQNS-QUAD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN-EQNS-MULT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-IDEN-EQNS-INTR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-APPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-APPL-MODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-APPL-MODE-WAVE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-APPL-MODE-VECT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-APPL-MODE-MECH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "TRIG-APPL-MODE-KINE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-CONC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-CONC-GRAD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-CONC-RATE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-CONC-LIMT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-CONC-NOTN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-RULE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-RULE-POWR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-RULE-EXPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-RULE-LOGR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-RULE-TRIG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-RULE-SUMD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-RULE-CHAI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-RULE-PROD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-RULE-QUOT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-APPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-APPL-TANG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-APPL-STAT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-APPL-MAXM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-APPL-INCR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-APPL-INFL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-APPL-RATC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-APPL-SKET",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-PARI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-PARI-IMPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-PARI-PARM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-PARI-INVR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFF-PARI-TNOR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-CONC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-CONC-REVD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-CONC-FTCL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-CONC-INDI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-CONC-DEFI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-RULE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-RULE-POWR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-RULE-EXPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-RULE-LOGR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-RULE-TRIG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-RULE-TRID",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-RULE-SUBS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-RULE-PART",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-RULE-PFR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-APPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-APPL-AREA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-APPL-BETW",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-APPL-VOLR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-INTE-APPL-CONS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFFEQ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFFEQ-FODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFFEQ-FODE-SETU",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFFEQ-FODE-SEPV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFFEQ-FODE-GENS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-DIFFEQ-FODE-PART",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-KIN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-KIN-SVAT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-KIN-SVAT-DSDT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-KIN-SVAT-DVDT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-KIN-SVAT-INTV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-KIN-SVAT-INTS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-BASIC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN-COLV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN-UNIT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN-POSV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN-ADDS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN-SCAL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN-MAGN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN-DIRN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-GEOM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-GEOM-PROB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-GEOM-PROB-SEGM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-GEOM-PROB-PARA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-GEOM-PROB-COLL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-GEOM-PROB-RATI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-SPAC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-SPAC-THRD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-SPAC-THRD-IJK",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-SPAC-THRD-MAG3",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-SPAC-THRD-DIST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-SPAC-THRD-OPER",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-CLAS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-CLAS-TYPE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-CLAS-TALL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-CLAS-TWOW",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-CLAS-GROUP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-BARCH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-PIE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-PICT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-STEM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-BOXW",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-HIST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-CUMF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-SCAT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-MEAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-MEDI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-MODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-RANG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-QUAR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-IQR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-STDV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-ESTM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-CODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-BIVA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-BIVA-CORR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-BIVA-CORR-POSC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-BIVA-CORR-NEGC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-BIVA-CORR-ZEROC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-BIVA-CORR-LOBF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-ENQ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-ENQ-SAMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-ENQ-SAMP-POP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-ENQ-SAMP-RAND",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-ENQ-SAMP-BIAS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-ENQ-SAMP-LDS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-EST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-EST-ESTI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-EST-ESTI-SMEAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-EST-ESTI-UNBI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-EST-ESTI-VARI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-EST-ESTI-CLT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-TEST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-TEST-HYPO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-TEST-HYPO-NULL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-TEST-HYPO-TAIL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-TEST-HYPO-SIGL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-TEST-HYPO-CRIT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-TEST-HYPO-BINO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-TEST-HYPO-POIS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-TEST-HYPO-MEAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-TEST-HYPO-ERRS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-BASIC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-BASIC-BASIC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-BASIC-BASIC-SCALE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-BASIC-BASIC-NOTN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-BASIC-BASIC-SING",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-BASIC-BASIC-COMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-COUNT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-COUNT-ENUM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-COUNT-SAMPS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-COUNT-PERM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-COUNT-COMB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-RULE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-RULE-ADD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-RULE-MULT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-RULE-MUTX",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-RULE-INDE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-RULE-TREE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-RULE-VENN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-COMB-RULE-COND",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DRVD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-DIST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-EXPV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-VARI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-LINX",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-BINO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-BINO-MODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-BINO-PROB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-BINO-MEAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-BINO-NORM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-GEOM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-GEOM-MODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-GEOM-PROB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-GEOM-MEAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-NORM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-NORM-MODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-NORM-STAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-NORM-TABLE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-NORM-INV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-POIS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-POIS-MODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-POIS-PROB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-POIS-MEAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-POIS-BINP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-CRV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-CRV-CONC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-CRV-PDF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-CRV-PROB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-CRV-MEAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-NBIN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-NBIN-MODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-NBIN-PROB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-DIST-NBIN-MEAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-PGF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-PGF-PGF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-PGF-PGF-CONC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-PGF-PGF-DIST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-PGF-PGF-MEAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "PROB-PGF-PGF-SUMS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-FORC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-FORC-DIAG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-FORC-COMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-FORC-RESL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-FORC-VECN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-PRIN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-RESV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-NORM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-FRIC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-LIMF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-COEF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-N3L",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-KIN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-DIST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-SPED",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-ACCL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-STGR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-VTGR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-AREA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-CONST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-DYN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-DYN-NEWT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-DYN-NEWT-N2L",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-DYN-NEWT-MASS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-DYN-NEWT-VERT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-DYN-NEWT-INCL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-DYN-NEWT-CONP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-DYN-NEWT-TENS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-DYN-NEWT-FRIC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-MOMI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-MOMI-LINM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-MOMI-LINM-DEFN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-MOMI-LINM-VECN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-MOMI-LINM-CONS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-MOMI-LINM-IMPT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER-WORK",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER-WORK-WORK",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER-WORK-GPE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER-WORK-KE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER-WORK-CONS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER-POWR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER-POWR-RATE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER-POWR-PFV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER-POWR-AVG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-ENER-POWR-HILL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ-MODEL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ-HV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ-RANGE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ-TRAJ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-RIGD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-RIGD-MOMT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-RIGD-COM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-RIGD-RBAL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-RIGD-TOPS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-CIRC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-CIRC-ANGS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-CIRC-RACC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-CIRC-HCIR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-CIRC-VCIR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-ELAS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-ELAS-HOOK",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-ELAS-EPE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-ELAS-EFOR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-ELAS-EPRO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-IMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-IMP-IMPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-IMP-REST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-IMP-DIMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-IMP-OIMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-VARF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-VARF-DEQ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-VARF-VVDX",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "MECH-FURT-VARF-RESI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-SIGN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-SIGN-LOC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-SIGN-FAIL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-SIGN-CONT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-ITER",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-ITER-FORM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-ITER-CONV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-ITER-COBW",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-ITER-STAIR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-NEWR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-NEWR-GEOM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-NEWR-APPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ROOT-NEWR-FAIL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-NINT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-NINT-TRAP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-NINT-TRAP-ESTM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-NINT-TRAP-OVER",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-NINT-TRAP-AREA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-NINT-SIMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-NINT-SIMP-ESTM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-NINT-SIMP-APPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ODE-FDM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ODE-FDM-FIRST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ODE-FDM-SECOND",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "NUMM-ODE-FDM-ODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF-PROF",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF-PROF-DEDU",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF-PROF-EXHA",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF-PROF-COUN",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF-PROF-CONT",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF-ARGM",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF-ARGM-LOGI",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF-ARGM-SYMB",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF-ARGM-CRIT",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROF-ARGM-JUST",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-MODL",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-MODL-MODL",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-MODL-MODL-ABST",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-MODL-MODL-ASSM",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-MODL-MODL-INPT",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-MODL-MODL-OUTP",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROB",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROB-PSOL",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROB-PSOL-STRC",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROB-PSOL-UNST",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROB-PSOL-DIAG",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "REAS-PROB-PSOL-ESTM",
+      "semanticClass": "mathematical-practice",
+      "hierarchyRole": "concept",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-BASIC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-BASIC-CART",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-BASIC-REAL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-BASIC-CONJ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-BASIC-ARGD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-POLAR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-POLAR-MODA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-POLAR-CONV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-POLAR-EULR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-POLAR-MULT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-ROOT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-ROOT-POLY",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-ROOT-LOCI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-ROOT-NTH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-ROOT-UNITY",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-DEMO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-DEMO-THM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-DEMO-PROOF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-DEMO-MULTA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-CPLX-DEMO-SERIES",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-OPS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-OPS-ADD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-OPS-MULT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-OPS-SCAL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-OPS-ZERO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-INV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-INV-DET",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-INV-SING",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-INV-INV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-INV-PROD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-TRAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-TRAN-2D",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-TRAN-3D",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-TRAN-COMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-TRAN-INVPT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-EIG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-EIG-CHAR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-EIG-EVAL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-EIG-EVEC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-EIG-DIAG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-CAYL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-CAYL-THEO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-CAYL-POWR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-MATR-CAYL-APPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-ROOT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-ROOT-ROOT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-ROOT-ROOT-REL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-ROOT-ROOT-SYMF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-ROOT-ROOT-TRANS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "ALGF-ROOT-ROOT-CPLX",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-POLR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-POLR-POLR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-POLR-POLR-CONV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-POLR-POLR-SKET",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-POLR-POLR-AREA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-POLR-POLR-TANG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONI-CONI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONI-CONI-PARA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONI-CONI-ELLI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONI-CONI-HYPB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "GEOM-CONI-CONI-FOCD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER-MACL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER-MACL-MACL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER-MACL-TAYL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER-MACL-STAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER-MACL-LIMIT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER-SUMS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER-SUMS-SUMR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER-SUMS-DIFF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER-SUMS-CONV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-SER-SUMS-RECT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FDIFF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FDIFF-FDIFF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FDIFF-FDIFF-INVTR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FDIFF-FDIFF-HYP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FDIFF-FDIFF-SECD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FDIFF-FDIFF-LEIB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT-FINT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT-FINT-HYP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT-FINT-TRSUB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT-FINT-HYSUB",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT-FINT-REDU",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT-APPL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT-APPL-ARCL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT-APPL-SURF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT-APPL-IMPR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-FINT-APPL-MEAN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-HYP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-HYP-HYP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-HYP-HYP-DEFN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-HYP-HYP-GRAP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-HYP-HYP-IDEN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-HYP-HYP-INVH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-FIRST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-FIRST-IFAC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-FIRST-GENS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-FIRST-PART",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-FIRST-MODE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-SECOND",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-SECOND-AUX",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-SECOND-CFPI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-SECOND-SHM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-SECOND-DAMP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-SYSTEM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-SYSTEM-COUP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-SYSTEM-SUBS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "CALC-LDE-SYSTEM-SER",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT-LINES",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT-LINES-LINE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT-LINES-PLANE",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT-LINES-INTER",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT-LINES-DIST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT-PROD",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT-PROD-SCAL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT-PROD-VECT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT-PROD-TRIP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "VECT-FURT-PROD-AREA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-TDIST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-TDIST-TTEST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-TDIST-PAIR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-TDIST-TWO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-TDIST-TCI",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-CHISQ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-CHISQ-GOF",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-CHISQ-INDEP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-CHISQ-VAR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-CHISQ-FTEST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-NONP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-NONP-SIGN",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-NONP-WSR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-NONP-WRS",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-INF2-NONP-MED",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-CORR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-CORR-REG",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-CORR-REG-LSR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-CORR-REG-RESID",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-CORR-REG-PMCC",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "STAT-CORR-REG-SPEAR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-GRAPH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-GRAPH-GRAPH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-GRAPH-GRAPH-TERM",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-GRAPH-GRAPH-MST",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-GRAPH-GRAPH-SHOR",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-GRAPH-GRAPH-TRAV",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-ALGO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-ALGO-ALGO",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-ALGO-ALGO-SORT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-ALGO-ALGO-MATCH",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-ALGO-ALGO-FLOW",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-ALGO-ALGO-LP",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-PROJ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-PROJ-PROJ",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "topic-container",
+      "comparisonEligible": false,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-PROJ-PROJ-CPA",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-PROJ-PROJ-GANT",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-PROJ-PROJ-RESL",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    },
+    {
+      "nodeId": "DISC-PROJ-PROJ-GAME",
+      "semanticClass": "mathematical-knowledge",
+      "hierarchyRole": "concept",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed-candidate"
+    }
+  ],
+  "reviewedAmbiguities": [
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "probability distributions",
+      "nodeIds": [
+        "PROB",
+        "PROB-DIST"
+      ],
+      "paths": [
+        "Mathematics > Probability and Distributions",
+        "Mathematics > Probability and Distributions > Probability Distributions"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "PROB is the whole probability domain; PROB-DIST is its distributions topic."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "reflections",
+      "nodeIds": [
+        "ALGF-FUNC-TRAN-REFL",
+        "GEOM-CONS-TRAN-REFL"
+      ],
+      "paths": [
+        "Mathematics > Algebra and Functions > Functions > Function Transformations > Reflections",
+        "Mathematics > Geometry and Mensuration > Construction and Transformations > Geometric Transformations > Reflections"
+      ],
+      "disposition": "keep-distinct",
+      "rationale": "Function reflection and geometric reflection are different operations in different domains."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "integration",
+      "nodeIds": [
+        "CALC-INTE",
+        "CALC-INTE-RULE"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Integration",
+        "Mathematics > Calculus > Integration > Integration Techniques"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "CALC-INTE is the topic branch; CALC-INTE-RULE groups integration techniques."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "general solutions",
+      "nodeIds": [
+        "CALC-DIFFEQ-FODE-GENS",
+        "CALC-LDE-FIRST-GENS"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Differential Equations > First Order Differential Equations > General solutions",
+        "Mathematics > Calculus > Linear Differential Equations > First Order Linear Differential Equations > General solutions"
+      ],
+      "disposition": "keep-distinct",
+      "rationale": "The nodes belong to general first-order and specifically linear differential-equation contexts."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "particular solutions",
+      "nodeIds": [
+        "CALC-DIFFEQ-FODE-PART",
+        "CALC-LDE-FIRST-PART"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Differential Equations > First Order Differential Equations > Particular solutions",
+        "Mathematics > Calculus > Linear Differential Equations > First Order Linear Differential Equations > Particular solutions"
+      ],
+      "disposition": "keep-distinct",
+      "rationale": "The nodes belong to general first-order and specifically linear differential-equation contexts."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "discrete random variables",
+      "nodeIds": [
+        "PROB-DRVD",
+        "PROB-DRVD-DRVB"
+      ],
+      "paths": [
+        "Mathematics > Probability and Distributions > Discrete Random Variables",
+        "Mathematics > Probability and Distributions > Discrete Random Variables > Discrete Random Variables"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent is a topic container and the child is a subtopic container; leaf concepts remain below it."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "probability generating functions",
+      "nodeIds": [
+        "PROB-PGF",
+        "PROB-PGF-PGF"
+      ],
+      "paths": [
+        "Mathematics > Probability and Distributions > Probability Generating Functions",
+        "Mathematics > Probability and Distributions > Probability Generating Functions > Probability Generating Functions"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent is a domain topic and the child groups definition and application concepts."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "rigid body equilibrium",
+      "nodeIds": [
+        "MECH-FURT-RIGD",
+        "MECH-FURT-RIGD-RBAL"
+      ],
+      "paths": [
+        "Mathematics > Mechanics > Further Mechanics > Rigid Body Equilibrium",
+        "Mathematics > Mechanics > Further Mechanics > Rigid Body Equilibrium > Rigid body equilibrium"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent groups rigid-body concepts; the leaf is the equilibrium concept itself."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "problem solving",
+      "nodeIds": [
+        "REAS-PROB",
+        "REAS-PROB-PSOL"
+      ],
+      "paths": [
+        "Mathematics > Mathematical Reasoning and Modelling > Problem Solving",
+        "Mathematics > Mathematical Reasoning and Modelling > Problem Solving > Problem-Solving Skills"
+      ],
+      "disposition": "keep-as-practice",
+      "rationale": "This branch represents mathematical practice, not assessment content, and is excluded from exact knowledge similarity."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "de moivre s theorem",
+      "nodeIds": [
+        "ALGF-CPLX-DEMO",
+        "ALGF-CPLX-DEMO-THM"
+      ],
+      "paths": [
+        "Mathematics > Algebra and Functions > Complex Numbers > De Moivre's Theorem",
+        "Mathematics > Algebra and Functions > Complex Numbers > De Moivre's Theorem > De Moivre's theorem"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent groups theorem, proof and applications; the leaf represents the theorem statement/use."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "cayley hamilton theorem",
+      "nodeIds": [
+        "ALGF-MATR-CAYL",
+        "ALGF-MATR-CAYL-THEO"
+      ],
+      "paths": [
+        "Mathematics > Algebra and Functions > Matrices > Cayley-Hamilton Theorem",
+        "Mathematics > Algebra and Functions > Matrices > Cayley-Hamilton Theorem > Cayley-Hamilton theorem"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent groups theorem and applications; the leaf represents the theorem statement/use."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "further differentiation",
+      "nodeIds": [
+        "CALC-FDIFF",
+        "CALC-FDIFF-FDIFF"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Further Differentiation",
+        "Mathematics > Calculus > Further Differentiation > Further Differentiation"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent is a curriculum branch; the child groups advanced differentiation techniques."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "further integration",
+      "nodeIds": [
+        "CALC-FINT",
+        "CALC-FINT-FINT"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Further Integration",
+        "Mathematics > Calculus > Further Integration > Further Integration Techniques"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent is a curriculum branch; the child groups advanced integration techniques."
+    },
+    {
+      "kind": "repeated-normalized-name",
+      "normalizedName": "hyperbolic functions",
+      "nodeIds": [
+        "CALC-HYP",
+        "CALC-HYP-HYP"
+      ],
+      "paths": [
+        "Mathematics > Calculus > Hyperbolic Functions",
+        "Mathematics > Calculus > Hyperbolic Functions > Hyperbolic Functions"
+      ],
+      "disposition": "keep-hierarchy",
+      "rationale": "The parent is a curriculum branch; the child groups definitions and identities."
+    }
+  ]
+}

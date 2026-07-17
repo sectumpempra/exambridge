@@ -9,6 +9,12 @@ import { Clipboard, RotateCcw, Sparkles, Zap, Heart, GraduationCap } from "lucid
 
 type PageState = "landing" | "quiz" | "loading" | "result";
 type TestMode = "student" | "teacher";
+const PERSONALITY_PROGRESS_VERSION = 1;
+
+interface SavedPersonalityProgress {
+  version: typeof PERSONALITY_PROGRESS_VERSION;
+  answers: number[];
+}
 
 export default function PersonalityTest() {
   const [searchParams] = useSearchParams();
@@ -26,12 +32,34 @@ export default function PersonalityTest() {
   const questions = useMemo(() => mode === "teacher" ? TEACHER_QUESTIONS : QUESTIONS, [mode]);
   const personalities = useMemo(() => mode === "teacher" ? TEACHER_PERSONALITIES : PERSONALITIES, [mode]);
   const isTeacher = mode === "teacher";
+  const progressKey = `exambridge-personality-v${PERSONALITY_PROGRESS_VERSION}-${mode}`;
+  const savedProgress = useMemo<SavedPersonalityProgress | null>(() => {
+    try {
+      const raw = localStorage.getItem(`exambridge-personality-v${PERSONALITY_PROGRESS_VERSION}-${mode}`);
+      if (!raw) return null;
+      const value = JSON.parse(raw) as Partial<SavedPersonalityProgress>;
+      if (value.version !== PERSONALITY_PROGRESS_VERSION || !Array.isArray(value.answers)) return null;
+      if (value.answers.length === 0 || value.answers.length >= questions.length) return null;
+      if (value.answers.some((answer) => !Number.isInteger(answer) || answer < 0 || answer > 3)) return null;
+      return { version: PERSONALITY_PROGRESS_VERSION, answers: value.answers };
+    } catch {
+      return null;
+    }
+  }, [mode, questions.length]);
 
   // Mode change resets handled by key prop on route component
 
   const startQuiz = () => {
+    localStorage.removeItem(progressKey);
     setAnswers([]);
     setCurrentQ(0);
+    setPage("quiz");
+  };
+
+  const continueQuiz = () => {
+    if (!savedProgress) return;
+    setAnswers(savedProgress.answers);
+    setCurrentQ(savedProgress.answers.length);
     setPage("quiz");
   };
 
@@ -41,12 +69,14 @@ export default function PersonalityTest() {
     setAnswers(newAnswers);
 
     if (currentQ < questions.length - 1) {
+      localStorage.setItem(progressKey, JSON.stringify({ version: PERSONALITY_PROGRESS_VERSION, answers: newAnswers }));
       setAnimating(true);
       setTimeout(() => {
         setCurrentQ(prev => prev + 1);
         setAnimating(false);
       }, 300);
     } else {
+      localStorage.removeItem(progressKey);
       const { code, dimensions: dims } = calculatePersonality(newAnswers, questions);
       const personality = personalities[code];
       setResult(personality || null);
@@ -67,6 +97,7 @@ export default function PersonalityTest() {
   };
 
   const handleRestart = () => {
+    localStorage.removeItem(progressKey);
     setPage("landing");
     setAnswers([]);
     setCurrentQ(0);
@@ -110,6 +141,11 @@ export default function PersonalityTest() {
                   </span>
                 ))}
               </div>
+              <div style={{ display: "flex", justifyContent: "center", gap: 10, flexWrap: "wrap" }}>
+              {savedProgress && <button onClick={continueQuiz}
+                style={{ padding: "14px 30px", borderRadius: 12, fontSize: 16, fontWeight: 600, background: "#FFF", color: "#675A4D", border: "1px solid #A69888", cursor: "pointer" }}>
+                继续上次（第 {savedProgress.answers.length + 1} 题）
+              </button>}
               <button onClick={startQuiz}
                 style={{
                   padding: "14px 40px", borderRadius: 12, fontSize: 17, fontWeight: 600,
@@ -119,8 +155,9 @@ export default function PersonalityTest() {
                 }}
                 onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
                 onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}>
-                开始诊断
+                {savedProgress ? "重新开始" : "开始诊断"}
               </button>
+              </div>
             </div>
           )}
 

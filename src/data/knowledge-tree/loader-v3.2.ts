@@ -5,6 +5,7 @@ import type {
   OverlapResultV32,
   CompareMode,
   ExclusiveSubtopicItem,
+  PaperMappingReadiness,
 } from "./types-v3.2";
 import type { KnowledgeTreeNode } from "./types";
 
@@ -13,48 +14,84 @@ import knowledgeTreeData from "./knowledge-tree.json";
 
 const BASE = `${import.meta.env.BASE_URL}data/v3.2-new`.replace(/\/+$/, "");
 
-// Mapping file list (derived from actual files)
-const MAPPING_FILES: string[] = [
-  "mapping-CAIE-0580.json",
-  "mapping-CAIE-0606.json",
-  "mapping-CAIE-9709.json",
-  "mapping-CAIE-9231.json",
-  "mapping-Edexcel-4MA1.json",
-  "mapping-Edexcel-4PM1.json",
-  "mapping-Edexcel-1MA1.json",
-  "mapping-Edexcel-8MA0.json",
-  "mapping-Edexcel-9MA0.json",
-  "mapping-Edexcel-9FM0.json",
-  "mapping-Edexcel-IAL.json",
-  "mapping-AQA-8300.json",
-  "mapping-AQA-8365.json",
-  "mapping-AQA-7357.json",
-  "mapping-AQA-7367.json",
-  "mapping-OCR-J560.json",
-  "mapping-OCR-H240.json",
-  "mapping-OCR-H640.json",
-  "mapping-OCR-H245.json",
-  "mapping-OCR-6993.json",
-  "mapping-WJEC-3300.json",
-];
+interface KnowledgeManifestV32 {
+  schemaVersion: string;
+  tree: { version: string; sha256: string; nodeCount: number };
+  mappings: Array<{
+    id: string;
+    path: string;
+    sha256: string;
+    verificationStatus: "verified" | "candidate" | "rejected";
+    paperMappingCoverage: number;
+  }>;
+  failureCount: number;
+}
 
 // --- Cached state ---
 let cachedTree: KnowledgeTreeV32 | null = null;
 let cachedMappings: Map<string, MappingFile> | null = null;
 let cachedSubjects: SubjectInfoV32[] | null = null;
+let cachedManifest: KnowledgeManifestV32 | null = null;
+
+export async function loadKnowledgeManifestV32(): Promise<KnowledgeManifestV32> {
+  if (cachedManifest) return cachedManifest;
+  const response = await fetch(`${BASE}/manifest.json`);
+  if (!response.ok) throw new Error(`Failed to load knowledge manifest: HTTP ${response.status}`);
+  const manifest = await response.json() as KnowledgeManifestV32;
+  if (!manifest.schemaVersion?.startsWith("3.2") || !Array.isArray(manifest.mappings) || manifest.failureCount !== 0) {
+    throw new Error("Invalid knowledge manifest");
+  }
+  cachedManifest = manifest;
+  return manifest;
+}
+
+export function getPaperMappingReadiness(mapping: MappingFile): PaperMappingReadiness {
+  const declared = new Set(mapping.paperStructure?.papers ?? []);
+  const subtopics = mapping.mappings.flatMap((topic) => topic.subtopicMappings);
+  const referenced = subtopics.filter((subtopic) => subtopic.paperApplicabilityKind === "fixed" && Array.isArray(subtopic.paperReference) && subtopic.paperReference.length > 0);
+  const invalidReferences = [...new Set(referenced.flatMap((subtopic) => subtopic.paperReference ?? []).filter((paper) => !declared.has(paper)))];
+  const coverage = subtopics.length > 0 ? referenced.length / subtopics.length : 0;
+  const ready = mapping.verificationStatus === "verified"
+    && declared.size > 0
+    && coverage === 1
+    && invalidReferences.length === 0;
+  return {
+    ready,
+    coverage,
+    referencedSubtopics: referenced.length,
+    totalSubtopics: subtopics.length,
+    invalidReferences,
+    reason: ready
+      ? undefined
+      : mapping.verificationStatus !== "verified"
+        ? "映射尚未完成官方来源复核"
+        : coverage < 1
+          ? "Paper 引用覆盖不足"
+          : invalidReferences.length > 0
+            ? "包含未知 Paper 引用"
+            : "缺少 Paper 结构",
+  };
+}
 
 /** Load the knowledge tree (bundled at build time) */
 export async function loadKnowledgeTreeV32(): Promise<KnowledgeTreeV32> {
   if (cachedTree) return cachedTree;
+  const manifest = await loadKnowledgeManifestV32();
   cachedTree = knowledgeTreeData as KnowledgeTreeV32;
+  if (cachedTree.nodes.length !== manifest.tree.nodeCount || cachedTree.version !== manifest.tree.version) {
+    cachedTree = null;
+    throw new Error("Knowledge tree does not match its manifest");
+  }
   return cachedTree!;
 }
 
 /** Load all mapping files */
 export async function loadAllMappingsV32(): Promise<Map<string, MappingFile>> {
   if (cachedMappings) return cachedMappings;
+  const manifest = await loadKnowledgeManifestV32();
   const map = new Map<string, MappingFile>();
-  const promises = MAPPING_FILES.map(async (file) => {
+  const promises = manifest.mappings.filter((entry) => entry.verificationStatus !== "rejected").map(async (entry) => {
+    const file = entry.path;
     try {
       const res = await fetch(`${BASE}/${file}`);
       if (!res.ok) {
@@ -62,6 +99,7 @@ export async function loadAllMappingsV32(): Promise<Map<string, MappingFile>> {
         return;
       }
       const data: MappingFile = await res.json();
+      data.verificationStatus = entry.verificationStatus;
       const code = `${data.board}-${data.subjectCode}`;
       map.set(code, data);
     } catch (e) {
@@ -86,6 +124,7 @@ export async function listSubjectsV32(): Promise<SubjectInfoV32[]> {
         (c) => m.subjectCode.includes(c)
       );
     const papers = m.paperStructure?.papers ?? [];
+    const readiness = getPaperMappingReadiness(m);
     subjects.push({
       code,
       board: m.board,
@@ -95,6 +134,10 @@ export async function listSubjectsV32(): Promise<SubjectInfoV32[]> {
       hasPapers: papers.length > 0,
       papers,
       isGCSE,
+      paperMappingCoverage: readiness.coverage,
+      paperComparisonReady: readiness.ready,
+      comparisonReady: m.verificationStatus === "verified",
+      verificationStatus: m.verificationStatus ?? "candidate",
     });
   }
   subjects.sort((a, b) => {
@@ -145,7 +188,7 @@ function extractNodeSet(
     for (const sm of topic.subtopicMappings) {
       if (paperFilter !== null) {
         const pr = sm.paperReference;
-        if (pr !== null && !pr.includes(paperFilter)) {
+        if (!pr?.includes(paperFilter)) {
           continue;
         }
       }
@@ -184,6 +227,12 @@ export async function calculateOverlapV32(
   const mA = mappings.get(codeA);
   const mB = mappings.get(codeB);
   if (!mA || !mB) return null;
+  if (mA.verificationStatus !== "verified" || mB.verificationStatus !== "verified") {
+    throw new Error("Subject-level mapping is not owner-approved");
+  }
+  if ((paperA && !getPaperMappingReadiness(mA).ready) || (paperB && !getPaperMappingReadiness(mB).ready)) {
+    throw new Error("Paper-level mapping is not verified");
+  }
 
   const setA = extractNodeSet(mA, paperA, tree);
   const setB = extractNodeSet(mB, paperB, tree);
@@ -292,7 +341,7 @@ export async function findExclusiveSubtopics(
       for (const sm of topic.subtopicMappings) {
         if (paperFilter !== null) {
           const pr = sm.paperReference;
-          if (pr !== null && !pr.includes(paperFilter)) continue;
+          if (!pr?.includes(paperFilter)) continue;
         }
         for (const mn of sm.mappedNodes) {
           const nid = mn.nodeId;
@@ -321,7 +370,7 @@ export async function findExclusiveSubtopics(
     for (const sm of topic.subtopicMappings) {
       if (paperA !== null) {
         const pr = sm.paperReference;
-        if (pr !== null && !pr.includes(paperA)) continue;
+        if (!pr?.includes(paperA)) continue;
       }
       const aNodeIds = new Set(sm.mappedNodes.map((mn) => mn.nodeId));
       const hasOverlap = [...aNodeIds].some((nid) => bAllNodes.has(nid));
@@ -350,7 +399,7 @@ export async function findExclusiveSubtopics(
     for (const sm of topic.subtopicMappings) {
       if (paperB !== null) {
         const pr = sm.paperReference;
-        if (pr !== null && !pr.includes(paperB)) continue;
+        if (!pr?.includes(paperB)) continue;
       }
       const bNodeIds = new Set(sm.mappedNodes.map((mn) => mn.nodeId));
       const hasOverlap = [...bNodeIds].some((nid) => aAllNodes.has(nid));

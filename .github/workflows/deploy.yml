@@ -13,11 +13,13 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
         with:
@@ -29,8 +31,57 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
+      - name: Audit canonical data
+        run: pnpm data:audit
+      - name: Typecheck
+        run: pnpm exec tsc --noEmit --incremental false
+      - name: Lint
+        run: pnpm lint
+      - name: Unit tests and coverage
+        run: pnpm test:coverage
+      - name: Audit production dependencies
+        run: pnpm audit --prod --audit-level moderate
+      - name: Scan tracked files for secrets
+        run: pnpm security:scan
+      - name: Test deployment safety in a replica tree
+        run: pnpm test:deployment
       - name: Build static production site
         run: pnpm build:static
+      - run: pnpm exec playwright install --with-deps chromium firefox webkit
+      - name: Core end-to-end tests
+        run: pnpm test:e2e
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload verified production artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: exambridge-production-static
+          path: dist-static
+          if-no-files-found: error
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: production-release-gate-evidence
+          if-no-files-found: ignore
+          path: |
+            generated/data-quality-report.json
+            generated/past-paper-audit-report.json
+            coverage/coverage-summary.json
+            playwright-report/
+            test-results/
+
+  deploy:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download verified production artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: exambridge-production-static
+          path: dist-static
 
       - name: Publish built site for the production server
         uses: peaceiris/actions-gh-pages@v4

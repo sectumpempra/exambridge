@@ -6,6 +6,7 @@ export const VerificationStatusSchema = z.enum([
   "not-held",
   "not-published",
   "quarantined",
+  "archived",
 ]);
 
 export const CanonicalBoundaryRecordSchema = z.object({

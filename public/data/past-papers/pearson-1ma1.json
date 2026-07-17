@@ -1,76 +1,3285 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.2.0",
   "key": "pearson-1ma1",
   "board": "Pearson Edexcel",
   "qualificationCode": "1MA1",
   "subjectCode": "1MA1",
   "qualificationName": "Pearson Edexcel GCSE (9-1) Mathematics",
+  "qualificationVersion": {
+    "id": "Edexcel-1MA1:2015",
+    "syllabusVersion": "2015",
+    "effectiveFrom": "2015-09-01",
+    "source": {
+      "url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+      "title": "Pearson Edexcel GCSE Mathematics 1MA1 specification",
+      "documentVersion": "2015",
+      "locator": "official specification / subject content",
+      "accessedAt": "2026-07-16",
+      "sha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b"
+    }
+  },
   "aliases": [
     "Edexcel-1MA1"
   ],
   "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
   "accessNote": "ExamBridge 只记录考试局官方公开材料并跳转到官方文件；不制作公开镜像。",
+  "coverage": [
+    {
+      "year": 2021,
+      "scope": "year-summary",
+      "status": "complete",
+      "sourcePageUrl": "https://www.gov.uk/government/publications/gcse-as-and-a-level-summer-report-2021/gcse-as-and-a-level-summer-report-2021",
+      "verifiedAt": "2026-07-17",
+      "note": "Ofqual 记录确认英国 GCSE、AS、A level 2021 夏季考试取消；官方目录中的 2021 秋季替代考季 QP/MS 已逐组件配对。"
+    },
+    {
+      "year": 2022,
+      "scope": "year-summary",
+      "status": "complete",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "Pearson 官方索引中该年份观察到的标准试卷与评分标准已按考季和组件逐项配对。"
+    },
+    {
+      "year": 2023,
+      "scope": "year-summary",
+      "status": "complete",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "Pearson 官方索引中该年份观察到的标准试卷与评分标准已按考季和组件逐项配对。"
+    },
+    {
+      "year": 2024,
+      "scope": "year-summary",
+      "status": "complete",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "Pearson 官方索引中该年份观察到的标准试卷与评分标准已按考季和组件逐项配对。"
+    },
+    {
+      "year": 2025,
+      "scope": "year-summary",
+      "status": "account-required",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "Pearson 官方索引中的 2025 文件位于受限路径，需要注册中心账号；仅记录状态，不提供代理下载。"
+    }
+  ],
+  "sittings": [
+    {
+      "year": 2021,
+      "series": "june",
+      "scope": "series-summary",
+      "expected": true,
+      "status": "not-held",
+      "sourcePageUrl": "https://www.gov.uk/government/publications/gcse-as-and-a-level-summer-report-2021/gcse-as-and-a-level-summer-report-2021",
+      "verifiedAt": "2026-07-17",
+      "note": "Ofqual 官方报告确认 2021 夏季 GCSE、AS 与 A level 考试取消，采用教师评定成绩。"
+    },
+    {
+      "year": 2021,
+      "series": "november",
+      "scope": "series-summary",
+      "expected": true,
+      "status": "complete",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "官方目录观察到 6 套公开 Question Paper，均已配对公开 Mark Scheme。"
+    },
+    {
+      "year": 2022,
+      "series": "june",
+      "scope": "series-summary",
+      "expected": true,
+      "status": "complete",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "官方目录观察到 6 套公开 Question Paper，均已配对公开 Mark Scheme。"
+    },
+    {
+      "year": 2022,
+      "series": "november",
+      "scope": "series-summary",
+      "expected": true,
+      "status": "complete",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "官方目录观察到 6 套公开 Question Paper，均已配对公开 Mark Scheme。"
+    },
+    {
+      "year": 2023,
+      "series": "june",
+      "scope": "series-summary",
+      "expected": true,
+      "status": "complete",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "官方目录观察到 6 套公开 Question Paper，均已配对公开 Mark Scheme。"
+    },
+    {
+      "year": 2023,
+      "series": "november",
+      "scope": "series-summary",
+      "expected": true,
+      "status": "complete",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "官方目录观察到 6 套公开 Question Paper，均已配对公开 Mark Scheme。"
+    },
+    {
+      "year": 2024,
+      "series": "june",
+      "scope": "series-summary",
+      "expected": true,
+      "status": "complete",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "官方目录观察到 6 套公开 Question Paper，均已配对公开 Mark Scheme。"
+    },
+    {
+      "year": 2024,
+      "series": "november",
+      "scope": "series-summary",
+      "expected": true,
+      "status": "complete",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "官方目录观察到 6 套公开 Question Paper，均已配对公开 Mark Scheme。"
+    },
+    {
+      "year": 2025,
+      "series": "june",
+      "scope": "series-summary",
+      "expected": true,
+      "status": "account-required",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "官方目录观察到 6 套受限 Question Paper；需要考试中心或教师账号，ExamBridge 不代理下载。"
+    },
+    {
+      "year": 2025,
+      "series": "november",
+      "scope": "series-summary",
+      "expected": true,
+      "status": "account-required",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "verifiedAt": "2026-07-17",
+      "note": "官方目录观察到 6 套受限 Question Paper；需要考试中心或教师账号，ExamBridge 不代理下载。"
+    }
+  ],
   "release": {
     "status": "approved",
-    "approvedAt": "2026-07-16",
-    "verifiedAt": "2026-07-16",
+    "approvedAt": "2026-07-17",
+    "verifiedAt": "2026-07-17",
     "approvedBy": "human"
   },
   "assets": [
     {
-      "id": "pearson-1ma1-2024-november-1h-qp",
-      "paperSetId": "pearson-1ma1-2024-november-1h",
-      "paperCode": "1H",
-      "componentCode": "1H",
-      "year": 2024,
+      "id": "pearson-1ma1-2021-november-1f-er",
+      "paperSetId": "pearson-1ma1-2021-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2021,
       "series": "november",
-      "materialType": "question-paper",
-      "title": "2024 November · 1MA1/1H · Paper 1 Higher (Non-Calculator)",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1F - November 2021",
       "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
-      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-que-20241107.pdf",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1f-pef-20220113.pdf",
       "accessStatus": "public",
       "distributionStatus": "link-only",
-      "syllabusApplicability": "review-required",
+      "syllabusApplicability": "current",
       "rights": {
         "basis": "official-link-only",
         "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
       },
       "provenance": {
         "sourceType": "official",
-        "verifiedAt": "2026-07-16",
+        "verifiedAt": "2026-07-17",
         "verifiedBy": "human"
       },
       "linkStatus": {
         "status": "ok",
-        "checkedAt": "2026-07-16"
+        "checkedAt": "2026-07-17"
       }
     },
     {
-      "id": "pearson-1ma1-2024-november-1h-ms",
-      "paperSetId": "pearson-1ma1-2024-november-1h",
-      "paperCode": "1H",
-      "componentCode": "1H",
-      "year": 2024,
+      "id": "pearson-1ma1-2021-november-1f-ms",
+      "paperSetId": "pearson-1ma1-2021-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2021,
       "series": "november",
       "materialType": "mark-scheme",
-      "title": "2024 November · 1MA1/1H · Mark Scheme",
+      "title": "Mark scheme - Paper 1F - November 2021",
       "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
-      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-rms-20250109.pdf",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1f-rms-20220113.pdf",
       "accessStatus": "public",
       "distributionStatus": "link-only",
-      "syllabusApplicability": "review-required",
+      "syllabusApplicability": "current",
       "rights": {
         "basis": "official-link-only",
         "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
       },
       "provenance": {
         "sourceType": "official",
-        "verifiedAt": "2026-07-16",
+        "verifiedAt": "2026-07-17",
         "verifiedBy": "human"
       },
       "linkStatus": {
         "status": "ok",
-        "checkedAt": "2026-07-16"
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-1f-qp",
+      "paperSetId": "pearson-1ma1-2021-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2021,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1F - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1f-que-20211103.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-1h-er",
+      "paperSetId": "pearson-1ma1-2021-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2021,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1H - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1h-pef-20220113.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-1h-ms",
+      "paperSetId": "pearson-1ma1-2021-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2021,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1H - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1h-rms-20220113.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-1h-qp",
+      "paperSetId": "pearson-1ma1-2021-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2021,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1H - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1h-que-20211103.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-2f-er",
+      "paperSetId": "pearson-1ma1-2021-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2021,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2F - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2f-pef-20220113.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-2f-ms",
+      "paperSetId": "pearson-1ma1-2021-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2021,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2F - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2f-rms-20220113.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-2f-qp",
+      "paperSetId": "pearson-1ma1-2021-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2021,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2F - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2f-que-20211105.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-2h-er",
+      "paperSetId": "pearson-1ma1-2021-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2021,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2H - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2h-pef-20220113.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-2h-ms",
+      "paperSetId": "pearson-1ma1-2021-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2021,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2H - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2h-rms-20220113.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-2h-qp",
+      "paperSetId": "pearson-1ma1-2021-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2021,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2H - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2h-que-20211105.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-3f-er",
+      "paperSetId": "pearson-1ma1-2021-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2021,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3F - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3f-pef-20220113.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-3f-ms",
+      "paperSetId": "pearson-1ma1-2021-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2021,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3F - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3f-rms-20220113.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-3f-qp",
+      "paperSetId": "pearson-1ma1-2021-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2021,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3F - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3f-que-20211109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-3h-er",
+      "paperSetId": "pearson-1ma1-2021-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2021,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3H - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3h-pef-20220113.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-3h-ms",
+      "paperSetId": "pearson-1ma1-2021-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2021,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3H - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3h-rms-20220113.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2021-november-3h-qp",
+      "paperSetId": "pearson-1ma1-2021-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2021,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3H - November 2021",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3h-que-20211109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-1f-er",
+      "paperSetId": "pearson-1ma1-2022-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2022,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1F - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1f-pef-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-1f-ms",
+      "paperSetId": "pearson-1ma1-2022-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2022,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1F - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1f-rms-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-1f-qp",
+      "paperSetId": "pearson-1ma1-2022-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2022,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1F - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1f-que-20220521.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-1h-er",
+      "paperSetId": "pearson-1ma1-2022-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2022,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1H - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1h-pef-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-1h-ms",
+      "paperSetId": "pearson-1ma1-2022-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2022,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1H - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1h-rms-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-1h-qp",
+      "paperSetId": "pearson-1ma1-2022-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2022,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1H - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1h-que-20220521.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-2f-er",
+      "paperSetId": "pearson-1ma1-2022-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2022,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2F - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2f-pef-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-2f-ms",
+      "paperSetId": "pearson-1ma1-2022-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2022,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2F - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2f-rms-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-2f-qp",
+      "paperSetId": "pearson-1ma1-2022-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2022,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2F - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2f-que-20220608.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-2h-er",
+      "paperSetId": "pearson-1ma1-2022-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2022,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2H - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2h-pef-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-2h-ms",
+      "paperSetId": "pearson-1ma1-2022-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2022,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2H - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2h-rms-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-2h-qp",
+      "paperSetId": "pearson-1ma1-2022-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2022,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2H - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2h-que-20220608.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-3f-er",
+      "paperSetId": "pearson-1ma1-2022-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2022,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3F - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3f-pef-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-3f-ms",
+      "paperSetId": "pearson-1ma1-2022-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2022,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3F - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3f-rms-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-3f-qp",
+      "paperSetId": "pearson-1ma1-2022-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2022,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3F - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3f-que-20220614.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-3h-er",
+      "paperSetId": "pearson-1ma1-2022-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2022,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3H - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3h-pef-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-3h-ms",
+      "paperSetId": "pearson-1ma1-2022-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2022,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3H - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3h-rms-20220825.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-june-3h-qp",
+      "paperSetId": "pearson-1ma1-2022-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2022,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3H - June 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3h-que-20220614.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-1f-er",
+      "paperSetId": "pearson-1ma1-2022-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2022,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1F - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1f-pef-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-1f-ms",
+      "paperSetId": "pearson-1ma1-2022-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2022,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1F - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1f-rms-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-1f-qp",
+      "paperSetId": "pearson-1ma1-2022-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2022,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1F - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1f-que-20221102.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-1h-er",
+      "paperSetId": "pearson-1ma1-2022-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2022,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1H - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1h-pef-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-1h-ms",
+      "paperSetId": "pearson-1ma1-2022-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2022,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1H - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1h-rms-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-1h-qp",
+      "paperSetId": "pearson-1ma1-2022-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2022,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1H - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1h-que-20221102.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-2f-er",
+      "paperSetId": "pearson-1ma1-2022-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2022,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2F - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2f-pef-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-2f-ms",
+      "paperSetId": "pearson-1ma1-2022-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2022,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2F - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2f-rms-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-2f-qp",
+      "paperSetId": "pearson-1ma1-2022-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2022,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2F - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2f-que-20221104.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-2h-er",
+      "paperSetId": "pearson-1ma1-2022-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2022,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2H - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2h-pef-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-2h-ms",
+      "paperSetId": "pearson-1ma1-2022-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2022,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2H - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2h-rms-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-2h-qp",
+      "paperSetId": "pearson-1ma1-2022-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2022,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2H - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-2h-que-20221104.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-3f-er",
+      "paperSetId": "pearson-1ma1-2022-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2022,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3F - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3f-pef-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-3f-ms",
+      "paperSetId": "pearson-1ma1-2022-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2022,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3F - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3f-rms-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-3f-qp",
+      "paperSetId": "pearson-1ma1-2022-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2022,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3F - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3f-que-20221108.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-3h-er",
+      "paperSetId": "pearson-1ma1-2022-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2022,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3H - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3h-pef-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-3h-ms",
+      "paperSetId": "pearson-1ma1-2022-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2022,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3H - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3h-rms-20230112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2022-november-3h-qp",
+      "paperSetId": "pearson-1ma1-2022-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2022,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3H - November 2022",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-3h-que-20221108.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-1f-er",
+      "paperSetId": "pearson-1ma1-2023-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2023,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1F - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-pef-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-1f-ms",
+      "paperSetId": "pearson-1ma1-2023-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2023,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1F - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-rms-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-1f-qp",
+      "paperSetId": "pearson-1ma1-2023-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2023,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1F - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-que-20230520.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-1h-er",
+      "paperSetId": "pearson-1ma1-2023-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2023,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1H - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-pef-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-1h-ms",
+      "paperSetId": "pearson-1ma1-2023-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2023,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1H - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-rms-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-1h-qp",
+      "paperSetId": "pearson-1ma1-2023-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2023,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1H - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-que-20230520.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-2f-er",
+      "paperSetId": "pearson-1ma1-2023-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2023,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2F - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-pef-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-2f-ms",
+      "paperSetId": "pearson-1ma1-2023-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2023,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2F - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-rms-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-2f-qp",
+      "paperSetId": "pearson-1ma1-2023-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2023,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2F - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-que-20230608.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-2h-er",
+      "paperSetId": "pearson-1ma1-2023-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2023,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2H - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-pef-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-2h-ms",
+      "paperSetId": "pearson-1ma1-2023-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2023,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2H - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-rms-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-2h-qp",
+      "paperSetId": "pearson-1ma1-2023-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2023,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2H - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-que-20230608.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-3f-er",
+      "paperSetId": "pearson-1ma1-2023-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2023,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3F - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-pef-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-3f-ms",
+      "paperSetId": "pearson-1ma1-2023-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2023,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3F - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-rms-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-3f-qp",
+      "paperSetId": "pearson-1ma1-2023-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2023,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - 1MA1 3F - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-que-20230615.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-3h-er",
+      "paperSetId": "pearson-1ma1-2023-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2023,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3H - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-pef-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-3h-ms",
+      "paperSetId": "pearson-1ma1-2023-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2023,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3H - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-rms-20230824.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-june-3h-qp",
+      "paperSetId": "pearson-1ma1-2023-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2023,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3H - June 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-que-20230615.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-1f-er",
+      "paperSetId": "pearson-1ma1-2023-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2023,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1F - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-pef-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-1f-ms",
+      "paperSetId": "pearson-1ma1-2023-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2023,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1F - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-rms-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-1f-qp",
+      "paperSetId": "pearson-1ma1-2023-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2023,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1F - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-que-20231109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-1h-er",
+      "paperSetId": "pearson-1ma1-2023-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2023,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "GCE",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/exam-materials/1ma1-1h-pef-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-1h-ms",
+      "paperSetId": "pearson-1ma1-2023-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2023,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1H - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-rms-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-1h-qp",
+      "paperSetId": "pearson-1ma1-2023-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2023,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1H - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-que-20231109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-2f-er",
+      "paperSetId": "pearson-1ma1-2023-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2023,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2F - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-pef-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-2f-ms",
+      "paperSetId": "pearson-1ma1-2023-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2023,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2F - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-rms-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-2f-qp",
+      "paperSetId": "pearson-1ma1-2023-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2023,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2F - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-que-20231111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-2h-er",
+      "paperSetId": "pearson-1ma1-2023-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2023,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2H - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-pef-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-2h-ms",
+      "paperSetId": "pearson-1ma1-2023-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2023,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2H - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-rms-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-2h-qp",
+      "paperSetId": "pearson-1ma1-2023-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2023,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2H - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-que-20231111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-3f-er",
+      "paperSetId": "pearson-1ma1-2023-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2023,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3F - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-pef-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-3f-ms",
+      "paperSetId": "pearson-1ma1-2023-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2023,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3F - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-rms-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-3f-qp",
+      "paperSetId": "pearson-1ma1-2023-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2023,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3F - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-que-20231114.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-3h-er",
+      "paperSetId": "pearson-1ma1-2023-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2023,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3H - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-pef-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-3h-ms",
+      "paperSetId": "pearson-1ma1-2023-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2023,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3H - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-rms-20240111.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2023-november-3h-qp",
+      "paperSetId": "pearson-1ma1-2023-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2023,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3H - November 2023",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-que-20231114.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-1f-er",
+      "paperSetId": "pearson-1ma1-2024-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2024,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1F - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-pef-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-1f-ms",
+      "paperSetId": "pearson-1ma1-2024-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2024,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1F - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-rms-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-1f-qp",
+      "paperSetId": "pearson-1ma1-2024-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2024,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1F - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-que-20240517.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-1h-er",
+      "paperSetId": "pearson-1ma1-2024-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2024,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1H - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-pef-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-1h-ms",
+      "paperSetId": "pearson-1ma1-2024-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2024,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1H - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-rms-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-1h-qp",
+      "paperSetId": "pearson-1ma1-2024-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2024,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1H - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-que-20240517.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-2f-er",
+      "paperSetId": "pearson-1ma1-2024-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2024,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2F - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-pef-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-2f-ms",
+      "paperSetId": "pearson-1ma1-2024-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2024,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2F - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-rms-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-2f-qp",
+      "paperSetId": "pearson-1ma1-2024-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2024,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2F - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-que-20240604.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-2h-er",
+      "paperSetId": "pearson-1ma1-2024-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2024,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2H - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-pef-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-2h-ms",
+      "paperSetId": "pearson-1ma1-2024-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2024,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2H - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-rms-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-2h-qp",
+      "paperSetId": "pearson-1ma1-2024-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2024,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2H - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-que-20240604.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-3f-er",
+      "paperSetId": "pearson-1ma1-2024-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2024,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3F - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-pef-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-3f-ms",
+      "paperSetId": "pearson-1ma1-2024-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2024,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3F - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-rms-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-3f-qp",
+      "paperSetId": "pearson-1ma1-2024-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2024,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3F - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-que-20240611.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-3h-er",
+      "paperSetId": "pearson-1ma1-2024-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2024,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3H - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-pef-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-3h-ms",
+      "paperSetId": "pearson-1ma1-2024-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2024,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3H - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-rms-20240822.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-june-3h-qp",
+      "paperSetId": "pearson-1ma1-2024-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2024,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3H - June 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-que-20240611.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-1f-er",
+      "paperSetId": "pearson-1ma1-2024-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2024,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1F - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-pef-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-1f-ms",
+      "paperSetId": "pearson-1ma1-2024-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2024,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark Scheme - Paper 1F - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-rms-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-1f-qp",
+      "paperSetId": "pearson-1ma1-2024-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2024,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1F - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1f-que-20241107.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
       }
     },
     {
@@ -81,24 +3290,1424 @@
       "year": 2024,
       "series": "november",
       "materialType": "examiner-report",
-      "title": "2024 November · 1MA1/1H · Examiner Report",
+      "title": "Examiner report - Paper 1H - November 2024",
       "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
       "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-pef-20250109.pdf",
       "accessStatus": "public",
       "distributionStatus": "link-only",
-      "syllabusApplicability": "review-required",
+      "syllabusApplicability": "current",
       "rights": {
         "basis": "official-link-only",
         "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
       },
       "provenance": {
         "sourceType": "official",
-        "verifiedAt": "2026-07-16",
+        "verifiedAt": "2026-07-17",
         "verifiedBy": "human"
       },
       "linkStatus": {
         "status": "ok",
-        "checkedAt": "2026-07-16"
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-1h-ms",
+      "paperSetId": "pearson-1ma1-2024-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2024,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark Scheme - Paper 1H - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-rms-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-1h-qp",
+      "paperSetId": "pearson-1ma1-2024-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2024,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1H - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-1h-que-20241107.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-2f-er",
+      "paperSetId": "pearson-1ma1-2024-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2024,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2F - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-pef-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-2f-ms",
+      "paperSetId": "pearson-1ma1-2024-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2024,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark Scheme - Paper 2F - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-rms-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-2f-qp",
+      "paperSetId": "pearson-1ma1-2024-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2024,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2F - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2f-que-20241109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-2h-er",
+      "paperSetId": "pearson-1ma1-2024-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2024,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2H - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-pef-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-2h-ms",
+      "paperSetId": "pearson-1ma1-2024-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2024,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark Scheme - Paper 2H - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-rms-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-2h-qp",
+      "paperSetId": "pearson-1ma1-2024-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2024,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2H - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-2h-que-20241109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-3f-er",
+      "paperSetId": "pearson-1ma1-2024-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2024,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3F - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-pef-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-3f-ms",
+      "paperSetId": "pearson-1ma1-2024-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2024,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark Scheme - Paper 3F - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-rms-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-3f-qp",
+      "paperSetId": "pearson-1ma1-2024-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2024,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3F - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3f-que-20241112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-3h-er",
+      "paperSetId": "pearson-1ma1-2024-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2024,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3H - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-pef-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-3h-ms",
+      "paperSetId": "pearson-1ma1-2024-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2024,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark Scheme - Paper 3H - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-rms-20250109.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2024-november-3h-qp",
+      "paperSetId": "pearson-1ma1-2024-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2024,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3H - November 2024",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Mathematics/2015/Exam-materials/1ma1-3h-que-20241112.pdf",
+      "accessStatus": "public",
+      "distributionStatus": "link-only",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "ExamBridge 只链接考试局官方公开文件，不制作公开镜像。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "ok",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-1f-er",
+      "paperSetId": "pearson-1ma1-2025-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2025,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1F - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1f-pef-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-1f-ms",
+      "paperSetId": "pearson-1ma1-2025-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2025,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1F - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1f-rms-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-1f-qp",
+      "paperSetId": "pearson-1ma1-2025-june-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2025,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1F - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1f-que-20250516.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-1h-er",
+      "paperSetId": "pearson-1ma1-2025-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2025,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1H - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1h-pef-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-1h-ms",
+      "paperSetId": "pearson-1ma1-2025-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2025,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1H - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1h-rms-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-1h-qp",
+      "paperSetId": "pearson-1ma1-2025-june-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2025,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1H - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1h-que-20250516.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-2f-er",
+      "paperSetId": "pearson-1ma1-2025-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2025,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2F - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2f-pef-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-2f-ms",
+      "paperSetId": "pearson-1ma1-2025-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2025,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2F - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2f-rms-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-2f-qp",
+      "paperSetId": "pearson-1ma1-2025-june-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2025,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2F - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2f-que-20250605.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-2h-er",
+      "paperSetId": "pearson-1ma1-2025-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2025,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2H - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2h-pef-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-2h-ms",
+      "paperSetId": "pearson-1ma1-2025-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2025,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2H - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2h-rms-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-2h-qp",
+      "paperSetId": "pearson-1ma1-2025-june-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2025,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2H - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2h-que-20250605.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-3f-er",
+      "paperSetId": "pearson-1ma1-2025-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2025,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3F - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3f-pef-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-3f-ms",
+      "paperSetId": "pearson-1ma1-2025-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2025,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3F - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3f-rms-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-3f-qp",
+      "paperSetId": "pearson-1ma1-2025-june-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2025,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3F - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3f-que-20250612.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-3h-er",
+      "paperSetId": "pearson-1ma1-2025-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2025,
+      "series": "june",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3H - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3h-pef-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-3h-ms",
+      "paperSetId": "pearson-1ma1-2025-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2025,
+      "series": "june",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3H - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3h-rms-20250821.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-june-3h-qp",
+      "paperSetId": "pearson-1ma1-2025-june-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2025,
+      "series": "june",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3H - June 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3h-que-20250612.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-1f-er",
+      "paperSetId": "pearson-1ma1-2025-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2025,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1F - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1f-pef-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-1f-ms",
+      "paperSetId": "pearson-1ma1-2025-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2025,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1F - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1f-rms-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-1f-qp",
+      "paperSetId": "pearson-1ma1-2025-november-1f",
+      "paperCode": "1F",
+      "componentCode": "1F",
+      "year": 2025,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1F - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1f-que-20251106.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-1h-er",
+      "paperSetId": "pearson-1ma1-2025-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2025,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 1H - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1h-pef-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-1h-ms",
+      "paperSetId": "pearson-1ma1-2025-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2025,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 1H - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1h-rms-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-1h-qp",
+      "paperSetId": "pearson-1ma1-2025-november-1h",
+      "paperCode": "1H",
+      "componentCode": "1H",
+      "year": 2025,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 1H - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-1h-que-20251106.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-2f-er",
+      "paperSetId": "pearson-1ma1-2025-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2025,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2F - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2f-pef-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-2f-ms",
+      "paperSetId": "pearson-1ma1-2025-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2025,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2F - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2f-rms-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-2f-qp",
+      "paperSetId": "pearson-1ma1-2025-november-2f",
+      "paperCode": "2F",
+      "componentCode": "2F",
+      "year": 2025,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2F - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2f-que-20251108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-2h-er",
+      "paperSetId": "pearson-1ma1-2025-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2025,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 2H - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2h-pef-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-2h-ms",
+      "paperSetId": "pearson-1ma1-2025-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2025,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 2H - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2h-rms-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-2h-qp",
+      "paperSetId": "pearson-1ma1-2025-november-2h",
+      "paperCode": "2H",
+      "componentCode": "2H",
+      "year": 2025,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 2H - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-2h-que-20251108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-3f-er",
+      "paperSetId": "pearson-1ma1-2025-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2025,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3F - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3f-pef-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-3f-ms",
+      "paperSetId": "pearson-1ma1-2025-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2025,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3F - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3f-rms-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-3f-qp",
+      "paperSetId": "pearson-1ma1-2025-november-3f",
+      "paperCode": "3F",
+      "componentCode": "3F",
+      "year": 2025,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3F - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3f-que-20251111.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-3h-er",
+      "paperSetId": "pearson-1ma1-2025-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2025,
+      "series": "november",
+      "materialType": "examiner-report",
+      "title": "Examiner report - Paper 3H - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3h-pef-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-3h-ms",
+      "paperSetId": "pearson-1ma1-2025-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2025,
+      "series": "november",
+      "materialType": "mark-scheme",
+      "title": "Mark scheme - Paper 3H - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3h-rms-20260108.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
+      }
+    },
+    {
+      "id": "pearson-1ma1-2025-november-3h-qp",
+      "paperSetId": "pearson-1ma1-2025-november-3h",
+      "paperCode": "3H",
+      "componentCode": "3H",
+      "year": 2025,
+      "series": "november",
+      "materialType": "question-paper",
+      "title": "Question paper - Paper 3H - November 2025",
+      "sourcePageUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.coursematerials.html",
+      "officialFileUrl": "https://qualifications.pearson.com/content/dam/secure/silver/all-uk-and-international/gcse/mathematics/2015/exam-materials/1ma1-3h-que-20251111.pdf",
+      "accessStatus": "account-required",
+      "distributionStatus": "restricted",
+      "syllabusApplicability": "current",
+      "rights": {
+        "basis": "official-link-only",
+        "note": "官方文件需要注册中心或教师账号；ExamBridge 仅记录元数据，不公开、不代理下载。"
+      },
+      "provenance": {
+        "sourceType": "official",
+        "verifiedAt": "2026-07-17",
+        "verifiedBy": "human"
+      },
+      "linkStatus": {
+        "status": "login-required",
+        "checkedAt": "2026-07-17"
       }
     }
   ]
