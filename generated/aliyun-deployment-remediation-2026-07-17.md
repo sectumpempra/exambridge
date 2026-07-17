@@ -4,7 +4,7 @@
 
 ## 结论
 
-仓库内的部署模板已经完成 P0/P1 整改；SSH 主机指纹、服务器只读盘点、阿里云部署前快照和服务器隔离目录 dry-run 均已完成。生产同步脚本、调度、Nginx 和 `current` 仍未修改。真实 `gh-pages` 产物因缺少 `release-provenance.json` 被新门禁正确阻断，因此上线前必须先由新发布门禁生成并发布 provenance 完整的构建产物。
+仓库内的部署模板已经完成 P0/P1 整改；SSH 主机指纹、服务器只读盘点、阿里云部署前快照和服务器隔离目录 dry-run 均已完成。提交 `8a6146ff1c6c015b2fde5e7ddbb1114964d55c3b` 的真实本地静态产物已在服务器隔离目录通过完整 dry-run。生产同步脚本、调度、Nginx 和 `current` 仍未修改。当前公开 `gh-pages` 产物仍因缺少 `release-provenance.json` 被新门禁正确阻断，因此上线前必须先由新发布门禁生成并发布 provenance 完整的构建产物。
 
 ## 已整改
 
@@ -24,6 +24,7 @@
 - 每次发布前后比较 PDF 数量和全部持久化材料字节数。
 - 从第二次新流程发布开始，还会和上一次验证记录比较；数量或大小下降均阻断发布。
 - 静态发布归档中出现任何 PDF 都会在切换前失败。
+- 静态构建会在生成 precache 和 provenance 前删除 release 内的 `exam-materials` 路径，并由独立预算检查再次确认该路径不存在；服务器持久化材料只能由部署脚本建立受控软链接。
 
 ### 原子发布与回滚
 
@@ -58,8 +59,8 @@
   - 非法回滚 SHA 阻断；
   - provenance 被篡改时阻断回滚；
   - 持久化 PDF 字节保持不变。
-- 新增部署契约测试：4/4 通过。
-- 完整 Vitest：697/697 通过。
+- 新增部署契约测试：5/5 通过。
+- 完整 Vitest：698/698 通过；语句覆盖率 95.88%、分支覆盖率 90.10%、函数覆盖率 93.99%、行覆盖率 97.07%。
 - TypeScript：通过。
 - ESLint：通过。
 - 静态生产构建、数据审计、PWA precache、bundle budget 和 release provenance：通过。
@@ -84,6 +85,11 @@
 - 演练前后生产 `current` 均指向 `/var/www/exambridge/releases/6d80cca85aa1c5dbc2541ee53e3f23f7a7f147e5`，生产 PDF 数量均为 107，`https://exambridge.cn/index.html` 健康检查通过。
 - 生产旧同步脚本 SHA-256 仍为 `6e742261b71236924f21950ec0622364d77b12ecb80baf9beede752552575ba0`，证明本轮未替换生产脚本。
 - 隔离复制发现 1 份 PDF 为 `deploy:deploy`、模式 `0600`，`admin` 无法读取；演练副本使用明确标记的合成占位 PDF 将门禁基线保持为 107。本轮没有修改该文件权限或任何生产 PDF。
+- 首个 macOS 本地归档因 AppleDouble `._dist-static` 形成第二根目录，被归档结构门禁拒绝，返回码为 1；该失败没有留下 staging、锁或 `current`。
+- 去除 AppleDouble 后，第二个候选包因 Vite 从 `public/exam-materials/SOURCES.md` 复制了真实 `exam-materials` 路径，被持久化目录冲突门禁拒绝，返回码为 1。由此新增提交 `8a6146ff1c6c015b2fde5e7ddbb1114964d55c3b`，在构建时删除并再次审计该路径。
+- 最终候选归档 SHA-256 为 `7dfbfde2ef970d6ce6c03e41aed868053ab945fe2fbfb6dbd018868336f20b00`，只有 `dist-static` 一个根、无 `exam-materials` 路径、无 PDF，包含 395 个静态文件。
+- 最终真实候选包 dry-run 返回码为 0；输出确认 `Dry run verified gh-pages 8a6146ff1c6c015b2fde5e7ddbb1114964d55c3b`，source commit 相同，且没有切换 `current`。
+- 最终复核确认生产 `current` 仍指向 `/var/www/exambridge/releases/6d80cca85aa1c5dbc2541ee53e3f23f7a7f147e5`，生产 PDF 仍为 107，线上健康检查返回码为 0，生产同步脚本 hash 未变化；隔离目录的 staging、锁和 replica `current` 均为空或不存在。
 
 ## 尚未执行的生产步骤
 
@@ -92,7 +98,7 @@
 - 确定 SSH 22 的来源限制策略；当前仍未修改防火墙。
 - 创建 marker 和最低 PDF 数量 guard。
 - 安装新脚本、systemd unit 或 Nginx 配置。
-- 在生产脚本安装前，用 provenance 完整的真实 `gh-pages` 产物再次运行网络 dry-run；失败切换和人工回滚仍需在独立副本中演练。
+- 在生产脚本安装前，用发布后的 provenance 完整真实 `gh-pages` 网络产物再次运行 dry-run；本地候选产物已经通过，但尚未发布为 `gh-pages`。失败切换和人工回滚仍需在独立副本中演练。
 - 重新加载 Nginx 或启动新同步任务。
 
 在真实 `gh-pages` provenance、写操作窗口和生产切换得到再次明确批准之前，production 推送与服务器模板安装继续保持阻断。
