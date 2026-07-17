@@ -226,6 +226,29 @@ validate_release() {
   validate_provenance "$candidate"
 }
 
+normalize_release_permissions() {
+  python3 - "$1" "$2" <<'PY'
+import os
+import sys
+
+release = os.path.realpath(sys.argv[1])
+materials = os.path.realpath(sys.argv[2])
+for directory, directories, files in os.walk(release, followlinks=False):
+    os.chmod(directory, 0o755)
+    for name in directories:
+        path = os.path.join(directory, name)
+        if os.path.islink(path):
+            if directory == release and name == "exam-materials" and os.path.realpath(path) == materials:
+                continue
+            raise SystemExit(f"release directory contains a forbidden link: {name}")
+    for name in files:
+        path = os.path.join(directory, name)
+        if os.path.islink(path):
+            raise SystemExit(f"release file contains a forbidden link: {name}")
+        os.chmod(path, 0o644)
+PY
+}
+
 link_exam_materials() {
   target="$1"
   link="$target/exam-materials"
@@ -309,8 +332,9 @@ import os
 import sys
 print(os.path.realpath(sys.argv[1]))
 PY
-)"
+  )"
   test "$current_real" = "$release" || fail "state and current symlink disagree"
+  normalize_release_permissions "$release" "$materials_real"
   validate_release "$release" >/dev/null
   link_exam_materials "$release"
   curl -fsS --max-time 15 "$health_url" >/dev/null || fail "current release health check failed"
@@ -349,6 +373,7 @@ stage="$base/releases/.staging-$sha-$$"
 test ! -e "$stage" || fail "staging path already exists"
 mkdir "$stage"
 tar -xzf "$work/site.tar.gz" --strip-components=1 -C "$stage"
+normalize_release_permissions "$stage" "$materials_real"
 source_commit="$(validate_release "$stage")"
 link_exam_materials "$stage"
 
@@ -363,6 +388,7 @@ fi
 
 if test -e "$release"; then
   test -d "$release" && test ! -L "$release" || fail "existing release path is unsafe"
+  normalize_release_permissions "$release" "$materials_real"
   existing_source_commit="$(validate_release "$release")"
   test "$existing_source_commit" = "$source_commit" || fail "existing release provenance differs from staged artifact"
   link_exam_materials "$release"

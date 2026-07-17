@@ -8,6 +8,7 @@ import {
   readFileSync,
   realpathSync,
   rmSync,
+  statSync,
   symlinkSync,
   writeFileSync,
 } from "node:fs";
@@ -64,6 +65,8 @@ function createArtifact(ghPagesSha, { pdfLeak = false, materialsCollision = fals
     mkdirSync(join(artifact, "exam-materials"));
     writeFileSync(join(artifact, "exam-materials", "collision.txt"), "must be rejected\n");
   }
+  chmodSync(artifact, 0o750);
+  chmodSync(join(artifact, "index.html"), 0o640);
   const archive = join(fixtureRoot, `${ghPagesSha}.tar.gz`);
   const packed = spawnSync("tar", ["-czf", archive, "-C", container, basename(artifact)], {
     encoding: "utf8",
@@ -138,8 +141,17 @@ try {
   expectSuccess("verified release switches atomically", success);
   assert.equal(realpathSync(join(base, "current")), realpathSync(join(releases, successSha)));
   assert.equal(realpathSync(join(base, "current", "exam-materials")), realpathSync(materials));
+  assert.equal(statSync(join(releases, successSha)).mode & 0o777, 0o755);
+  assert.equal(statSync(join(releases, successSha, "index.html")).mode & 0o777, 0o644);
   assert.equal(readFileSync(join(shared, "gh-pages.sha"), "utf8").trim(), successSha);
   assert.ok(existsSync(join(shared, "release-records", `${successSha}.json`)));
+
+  chmodSync(join(releases, successSha), 0o750);
+  chmodSync(join(releases, successSha, "index.html"), 0o640);
+  const permissionRepair = runSync(successSha, successArchive);
+  expectSuccess("an existing verified release is normalized for the web server", permissionRepair);
+  assert.equal(statSync(join(releases, successSha)).mode & 0o777, 0o755);
+  assert.equal(statSync(join(releases, successSha, "index.html")).mode & 0o777, 0o644);
 
   const materialBefore = readFileSync(join(materials, "persistent-fixture.pdf"));
 
