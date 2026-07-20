@@ -45,9 +45,9 @@ function createArtifact(ghPagesSha, { pdfLeak = false, materialsCollision = fals
   const container = join(fixtureRoot, `artifact-${ghPagesSha}`);
   const artifact = join(container, `exambridge-${ghPagesSha}`);
   const manifest = `${JSON.stringify({ schemaVersion: "fixture", ghPagesSha })}\n`;
-  mkdirSync(join(artifact, "data", "v3.2-new"), { recursive: true });
+  mkdirSync(join(artifact, "data", "knowledge-v5"), { recursive: true });
   writeFileSync(join(artifact, "index.html"), `<!doctype html><title>${ghPagesSha}</title>\n`);
-  writeFileSync(join(artifact, "data", "v3.2-new", "manifest.json"), manifest);
+  writeFileSync(join(artifact, "data", "knowledge-v5", "manifest.json"), manifest);
   writeFileSync(
     join(artifact, "release-provenance.json"),
     `${JSON.stringify({
@@ -56,7 +56,7 @@ function createArtifact(ghPagesSha, { pdfLeak = false, materialsCollision = fals
       generatedAt: "2026-07-17T00:00:00.000Z",
       trackedPdfCount: 0,
       evidence: {
-        "dist-static/data/v3.2-new/manifest.json": sha256(manifest),
+        "dist-static/data/knowledge-v5/manifest.json": sha256(manifest),
       },
     }, null, 2)}\n`,
   );

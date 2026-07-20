@@ -7,9 +7,11 @@ import {
 import { awardCatalog, createAwardCatalog } from "@/domain-v2/awards/catalog";
 import aqaJson from "@/data/official/awards/aqa-7357.json";
 import ocrJson from "@/data/official/awards/ocr-h240.json";
+import pearson8ma0Json from "@/data/official/awards/pearson-8ma0.json";
 
 const AQA_ROUTE_ID = "award:aqa:7357:linear";
 const OCR_ROUTE_ID = "award:ocr:h240:linear";
+const PEARSON_8MA0_ROUTE_ID = "award:pearson:8ma0:linear";
 
 const score = (componentCode: string, rawScore: number, series = "2025-june", variant?: string) => ({
   componentCode,
@@ -40,7 +42,7 @@ const expectAwardError = (run: () => unknown, code: AwardErrorCode) => {
   }
 };
 
-const thresholdCases = [...aqaJson.boundaries, ...ocrJson.boundaries].flatMap(boundary => {
+const thresholdCases = [...aqaJson.boundaries, ...ocrJson.boundaries, ...pearson8ma0Json.boundaries].flatMap(boundary => {
   const route = awardCatalog.getAwardRoute(boundary.routeId);
   if (!route) throw new Error(`Missing test route ${boundary.routeId}`);
   return route.grades.flatMap(publishedGrade => {
@@ -60,7 +62,7 @@ const thresholdCases = [...aqaJson.boundaries, ...ocrJson.boundaries].flatMap(bo
   });
 });
 
-describe("Official AQA and OCR linear awards", () => {
+describe("Official linear awards", () => {
   it.each([
     [259, "A"],
     [260, "A*"],
@@ -94,6 +96,27 @@ describe("Official AQA and OCR linear awards", () => {
     expect(result).toMatchObject({ source: "official", total: 242, grade: "A*" });
   });
 
+  it.each([
+    [107, "B"],
+    [108, "A"],
+    [109, "A"],
+  ])("maps Pearson 8MA0 June 2025 total %i to %s", (total, grade) => {
+    const result = calculateOfficialAward({
+      routeId: PEARSON_8MA0_ROUTE_ID,
+      series: "2025-june",
+      estimateConsent: false,
+      scores: linearScores(PEARSON_8MA0_ROUTE_ID, total, "2025-june"),
+    }, awardCatalog);
+
+    expect(result).toMatchObject({
+      source: "official",
+      routeId: PEARSON_8MA0_ROUTE_ID,
+      total,
+      maximumMarkAfterWeighting: 160,
+      grade,
+    });
+  });
+
   it.each(thresholdCases)("maps $label through the explicit grade order", ({ routeId, series, total, expectedGrade }) => {
     const result = calculateOfficialAward({
       routeId,
@@ -108,6 +131,7 @@ describe("Official AQA and OCR linear awards", () => {
   it.each([
     [AQA_ROUTE_ID, "2025-june", 70],
     [OCR_ROUTE_ID, "2025-june", 63],
+    [PEARSON_8MA0_ROUTE_ID, "2025-june", 56],
   ])("maps %s totals below the lowest published threshold to U", (routeId, series, total) => {
     const result = calculateOfficialAward({
       routeId,

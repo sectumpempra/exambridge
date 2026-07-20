@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import officialOcr from '../src/data/official/ocr-results-statistics.json';
+import edexcelALBoundaries from '../src/data/edexcel_al.json';
 import {
   ALL_SUBJECT_STATS,
   getAvailableBoards,
@@ -56,6 +57,10 @@ describe('official results statistics', () => {
   });
 
   it('keeps non-standard highest grades explicit instead of relabelling them A-star', () => {
+    expect(SPECIAL_OVERVIEW_TOP_GRADES['pearson-uk-8ma0']).toMatchObject({ label: 'A' });
+    expect(SPECIAL_OVERVIEW_TOP_GRADES['pearson-uk-8ma0'].rows[0]).toMatchObject({ year: 2025, rate: 28.2, entries: 5014 });
+    expect(SPECIAL_OVERVIEW_BOUNDARIES['pearson-uk-8ma0'].gradeFields.map(field => field.label)).toEqual(['A', 'B', 'C', 'D', 'E']);
+    expect(SPECIAL_OVERVIEW_BOUNDARIES['pearson-uk-8ma0'].rows[0]).toMatchObject({ maxMark: 160, a: 108, b: 95, c: 82, d: 69, e: 57 });
     expect(SPECIAL_OVERVIEW_TOP_GRADES['pearson-uk-7m20']).toMatchObject({ label: 'D*' });
     expect(SPECIAL_OVERVIEW_TOP_GRADES['ocr-6993']).toMatchObject({ label: 'A' });
     expect(SPECIAL_OVERVIEW_TOP_GRADES['ocr-6993'].rows.at(-1)?.rate).toBe(47.6);
@@ -65,6 +70,19 @@ describe('official results statistics', () => {
     expect(SPECIAL_OVERVIEW_BOUNDARIES['cambridge-0607'].gradeFields[0].label).toBe('A*');
     expect(SPECIAL_OVERVIEW_BOUNDARIES['cambridge-0607'].rows.some((row) => row.component === 'Extended 22,42,62' && row['a*'] === 222)).toBe(true);
     expect(isNineToOne('Edexcel', 'GCSE')).toBe(true);
+  });
+
+  it('includes the official 2025 8MA0 AS statistics and overall boundary', () => {
+    const statistics = getSubjectStats('8MA0', 'Edexcel UK', 'A-Level');
+    expect(statistics?.name).toBe('AS Mathematics');
+    expect(statistics?.years).toEqual([
+      expect.objectContaining({ year: 2025, series: 'june', aStarRate: 0, aRate: 28.2, bRate: 40.3, cRate: 52.8, dRate: 66.3, eRate: 77.4, entries: 5014 }),
+    ]);
+
+    const boundary = (edexcelALBoundaries as Array<Record<string, string | number>>).find(row => row.code === '8MA0');
+    expect(boundary).toMatchObject({ year: 2025, session: 'June', max_mark: 160, 'a*': '—', a: 108, b: 95, c: 82, d: 69, e: 57 });
+    expect(boundary?._verificationStatus).toBe('verified');
+    expect(boundary?._sourceUrl).toContain('grade-boundaries-june-2025-gce.pdf');
   });
 
   it('keeps every percentage in range and every cumulative grade sequence monotonic', () => {

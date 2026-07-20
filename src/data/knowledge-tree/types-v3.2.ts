@@ -44,6 +44,20 @@ export interface ExclusiveSubtopicItem {
   description?: string;
   topicName: string;
   paperRef: string[] | null;
+  comparisonStatus?: "shared" | "partial" | "exclusive" | "unresolved" | "non-comparable";
+  syllabusVersion?: string;
+  sectionId?: string;
+  printedPage?: number;
+  pdfPage?: number;
+  sourceUrl?: string;
+  sourceLocator?: string;
+  notesText?: string[];
+  examplesText?: string[];
+  tiers?: string[];
+  routes?: string[];
+  conceptLabels?: string[];
+  dimensionLabels?: string[];
+  decisionReason?: string;
 }
 
 /** Topic-level mapping */
@@ -94,6 +108,7 @@ export interface SubjectInfoV32 {
   level: string;      // e.g. "A-Level"
   hasPapers: boolean; // true if paperStructure exists
   papers: string[];   // list of paper codes
+  paperOptions: Array<{ id: string; code: string; name: string; tiers: string[] }>;
   isGCSE: boolean;
   paperMappingCoverage: number;
   paperComparisonReady: boolean;

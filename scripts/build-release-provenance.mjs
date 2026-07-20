@@ -9,16 +9,16 @@ const trackedPdfs = execFileSync("git", ["ls-files", "--", "*.pdf", "*.PDF"], { 
 if (trackedPdfs.length) throw new Error(`Tracked PDF files are forbidden: ${trackedPdfs.join(", ")}`);
 
 const evidenceFiles = [
-  "public/data/v3.2-new/manifest.json",
+  "data/active/knowledge-v5/activation.json",
+  "public/data/knowledge-v5/manifest.json",
+  "public/data/knowledge-v5/ontology.json",
   "generated/data-quality-report.json",
   "generated/past-paper-audit-report.json",
-  "generated/knowledge-v4-audit-report.json",
-  "generated/knowledge-point-review-report.json",
-  "generated/knowledge-ontology-audit-report.json",
-  "generated/knowledge-node-migration-v4.json",
-  "generated/knowledge-node-semantics-v4.json",
+  "generated/active-knowledge-v5-audit-report.json",
+  "generated/knowledge-v5-only-release-audit.json",
   "src/course-context/courseCatalog.generated.json",
-  "dist-static/data/v3.2-new/manifest.json",
+  "dist-static/data/knowledge-v5/manifest.json",
+  "dist-static/data/knowledge-v5/ontology.json",
 ];
 const evidence = {};
 for (const file of evidenceFiles) evidence[file] = await hashFile(file);

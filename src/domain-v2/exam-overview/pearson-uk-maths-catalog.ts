@@ -127,6 +127,48 @@ export const PEARSON_UK_MATHS_EXAM_OVERVIEWS: ExamOverview[] = [
     release,
   },
   {
+    id: "pearson-uk-8ma0",
+    board: "Pearson Edexcel",
+    qualification: "Pearson Edexcel AS Level Mathematics",
+    code: "8MA0",
+    region: {
+      label: "英格兰 AS Level",
+      note: "线性资格；两张试卷须在同一 May/June 考季完成。AS 等级为 A–E，不设 A*。仅展示官方 Morning / Afternoon。",
+    },
+    examSeries: [{ name: "May/June", note: "全部 assessment 在同一年完成" }],
+    paperCount: "2 张必考试卷；Pure Mathematics 占 62.5%，Statistics and Mechanics 占 37.5%。",
+    nextExam: { date: "2027-05-13", session: "Afternoon", code: "8MA0/01", title: "Paper 1 · Pure Mathematics", durationMinutes: 120 },
+    components: [
+      { code: "8MA0/01", name: "Paper 1 · Pure Mathematics", durationMinutes: 120, marks: 100, weighting: "62.5%", calculator: "allowed", assessmentMode: "written" },
+      { code: "8MA0/02", name: "Paper 2 · Statistics and Mechanics", durationMinutes: 75, marks: 60, weighting: "37.5%", calculator: "allowed", assessmentMode: "written", note: "Statistics 部分会考查 Pearson Large Data Set；考生须提前熟悉，但考试时不需要携带数据集副本。" },
+    ],
+    routes: [{ id: "linear", level: "AS Level · grades A–E", label: "Linear route", papers: ["8MA0/01", "8MA0/02"], note: "两张均为必考；AS 不设 A*。" }],
+    calculator: {
+      status: "all",
+      summary: "两张考试均允许计算器；计算器须具备迭代、汇总统计及标准统计分布概率功能。",
+      prohibited: ["符号代数、微分或积分", "文字、资料库或预存公式检索", "与其他设备或互联网通信"],
+    },
+    formula: {
+      supplied: true,
+      status: "provided",
+      label: "Mathematical Formulae and Statistical Tables",
+      summary: "两张考试均提供干净的 Pearson Level 3 Mathematical Formulae and Statistical Tables；考生不能携带自己的副本。规格 Appendix 1 另列出必须记忆、不会出现在公式册中的公式。",
+    },
+    upcomingSeries: "Summer 2027",
+    timetableStatus: "Final",
+    upcomingExams: [
+      { date: "2027-05-13", session: "Afternoon", code: "8MA0/01", title: "Paper 1 · Pure Mathematics", durationMinutes: 120 },
+      { date: "2027-05-21", session: "Afternoon", code: "8MA0/02", title: "Paper 2 · Statistics and Mechanics", durationMinutes: 75 },
+    ],
+    materials: [
+      { id: "8ma0-timetable", type: "timetable", title: "GCE Summer 2027 Final Timetable", version: "Final", status: "future", officialUrl: GCE_SUMMER_2027_TIMETABLE, previewUrl: `${LOCAL}/pearson-uk-gce-summer-2027-final.pdf` },
+      { id: "8ma0-spec", type: "syllabus", title: "AS Level Mathematics Specification", version: "Issue 3 · October 2025", status: "current", officialUrl: "https://qualifications.pearson.com/content/dam/pdf/A%20Level/Mathematics/2017/specification-and-sample-assesment/as-l3-mathematics-specification.pdf", previewUrl: `${LOCAL}/pearson-uk-8ma0-spec-issue3.pdf` },
+      { id: "8ma0-formulae", type: "formula", title: "Mathematical Formulae and Statistical Tables", version: "Issue 1 · July 2017", status: "reference", officialUrl: LEVEL_3_FORMULAE_BOOK, previewUrl: `${LOCAL}/pearson-uk-as-a-level-formulae-book-issue1.pdf` },
+      { id: "8ma0-large-data-set", type: "data-booklet", title: "Pearson Large Data Set · Weather data", version: "Issue 1 · qualification-lifetime dataset", status: "current", officialUrl: "https://qualifications.pearson.com/content/dam/pdf/A%20Level/Mathematics/2017/specification-and-sample-assesment/Pearson%20Edexcel%20GCE%20AS%20and%20AL%20Mathematics%20data%20set%20-%20Issue%201%20(1).xls", previewUrl: `${LOCAL}/pearson-uk-9ma0-assessment-guide.pdf`, note: "Paper 2 Statistics 会假设考生已熟悉该数据集。官方链接下载原始 Excel；站内预览为 Pearson assessment guide 的官方说明快照。" },
+    ],
+    release: { ...release, approvedAt: "2026-07-18", verifiedAt: "2026-07-18" },
+  },
+  {
     id: "pearson-uk-9ma0",
     board: "Pearson Edexcel",
     qualification: "Pearson Edexcel A Level Mathematics",

@@ -347,6 +347,28 @@ test("knowledge tree expand all changes the visible node set and restores it", a
   expect(await treeButtons.count()).toBe(before);
 });
 
+test("active Knowledge V5 renders audited overlap and complete exclusive statements", async ({ page }) => {
+  await page.goto("/#/knowledge-tree?subjectA=CAIE-0580&subjectB=Edexcel-4MA1");
+  await waitForPwaControl(page);
+
+  await expect(page.locator("main")).toContainText("EXAMBRIDGE v5 知识树驱动");
+  await expect(page.locator("main")).toContainText("1105 节点");
+  await expect(page.getByRole("heading", { name: "考纲相似度概览" })).toBeVisible();
+  await expect(page.getByText(/部分重合陈述：\d+/)).toBeVisible();
+  await expect(page.getByLabel("Paper")).toHaveCount(2);
+  await expect(page.locator("body")).not.toContainText("考纲数据完整性校验失败");
+
+  await page.getByRole("button", { name: "独有知识点" }).click();
+  await expect(page.getByRole("heading", { name: "独有、部分重合与待核验考纲原文" })).toBeVisible();
+  const exclusiveSections = page.locator('section[aria-label="确定独有"]');
+  await expect(exclusiveSections.first()).toBeVisible();
+  await expect.poll(async () => exclusiveSections.locator("p.text-sm").evaluateAll((rows) =>
+    Math.max(0, ...rows.map((row) => row.textContent?.trim().length ?? 0))
+  )).toBeGreaterThan(30);
+  await expect(exclusiveSections.getByText("Source Ref：", { exact: false }).first()).toBeVisible();
+  await expect(exclusiveSections.getByRole("link", { name: "官方来源" }).first()).toBeVisible();
+});
+
 test("core pages do not overflow the viewport at supported widths", async ({ page }) => {
   for (const width of [320, 360, 390, 768]) {
     await page.setViewportSize({ width, height: 900 });

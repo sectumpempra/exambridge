@@ -1,5 +1,5 @@
 import type { KnowledgeTreeNode } from "./types";
-import type { OverlapResultV32 } from "./types-v3.2";
+import type { KnowledgeComparisonV5 } from "@/domain-v2/knowledge-tree/comparison-v5";
 
 export interface ComparisonMetric {
   overlap: number;
@@ -8,7 +8,7 @@ export interface ComparisonMetric {
 }
 
 export interface KnowledgeComparisonViewData {
-  version: "3.2";
+  version: "5.0";
   comparison: {
     A: string;
     B: string;
@@ -18,51 +18,46 @@ export interface KnowledgeComparisonViewData {
   metrics: {
     /** Shared nodes divided by the union of both knowledge-node sets. */
     unionOverlap: ComparisonMetric;
-    /** Frequency-weighted Jaccard similarity across mapped nodes and ancestors. */
-    emphasisSimilarity: number;
     /** Share of A's knowledge nodes also represented in B. */
     coverageA: ComparisonMetric;
     /** Share of B's knowledge nodes also represented in A. */
     coverageB: ComparisonMetric;
+    partialStatementCount?: number;
+    unresolvedStatementCount?: number;
   };
 }
 
-function percentage(overlap: number, total: number) {
-  return total > 0 ? (overlap / total) * 100 : 0;
-}
-
-export function buildKnowledgeComparisonViewData(
-  result: OverlapResultV32,
+export function buildKnowledgeComparisonV5ViewData(
+  result: KnowledgeComparisonV5,
   displayA: string,
   displayB: string,
 ): KnowledgeComparisonViewData {
-  const unionTotal = result.aTotal + result.bTotal - result.sharedCount;
-
   return {
-    version: "3.2",
+    version: "5.0",
     comparison: {
       A: displayA,
       B: displayB,
-      topicCountA: result.aTotal,
-      topicCountB: result.bTotal,
+      topicCountA: result.exact.sharedNodeIds.length + result.exact.aOnlyNodeIds.length,
+      topicCountB: result.exact.sharedNodeIds.length + result.exact.bOnlyNodeIds.length,
     },
     metrics: {
       unionOverlap: {
-        overlap: result.sharedCount,
-        total: unionTotal,
-        percentage: percentage(result.sharedCount, unionTotal),
+        overlap: result.exact.sharedNodeIds.length,
+        total: result.exact.unionCount,
+        percentage: result.exact.jaccard,
       },
-      emphasisSimilarity: result.weighted,
       coverageA: {
-        overlap: result.sharedCount,
-        total: result.aTotal,
-        percentage: percentage(result.sharedCount, result.aTotal),
+        overlap: result.exact.sharedNodeIds.length,
+        total: result.exact.sharedNodeIds.length + result.exact.aOnlyNodeIds.length,
+        percentage: result.exact.coverageA,
       },
       coverageB: {
-        overlap: result.sharedCount,
-        total: result.bTotal,
-        percentage: percentage(result.sharedCount, result.bTotal),
+        overlap: result.exact.sharedNodeIds.length,
+        total: result.exact.sharedNodeIds.length + result.exact.bOnlyNodeIds.length,
+        percentage: result.exact.coverageB,
       },
+      partialStatementCount: result.counts.partial,
+      unresolvedStatementCount: result.counts.unresolved,
     },
   };
 }

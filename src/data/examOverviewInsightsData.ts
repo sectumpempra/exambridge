@@ -11,6 +11,12 @@ export const OFFICIAL_STATISTICS_UNAVAILABLE_MESSAGE = "官方尚未发布，不
 
 /** Qualifications whose highest grade does not fit the generic A-star / 9-1 model. */
 export const SPECIAL_OVERVIEW_TOP_GRADES: Record<string, OverviewTopGradeDefinition> = {
+  "pearson-uk-8ma0": {
+    label: "A",
+    rows: [{ year: 2025, series: "june", rate: 28.2, entries: 5014 }],
+    sourceUrl: "https://qualifications.pearson.com/content/dam/pdf/Support/Grade-statistics/A-level/grade-statistics-june-2025-provisional-advanced-subsidiary-level.pdf",
+    sourceStatus: "official",
+  },
   "pearson-uk-7m20": {
     label: "D*",
     rows: [{ year: 2025, series: "june", rate: 8.6, entries: 2512 }],
@@ -69,6 +75,15 @@ export const SPECIAL_OVERVIEW_BOUNDARIES: Record<string, {
       { key: "m", label: "M", color: "#3B6EA5" }, { key: "p", label: "P", color: "#7B5EA7" },
     ],
   },
+  "pearson-uk-8ma0": {
+    rows: [{ code: "8MA0", component: "Overall", session: "June", year: 2025, maxMark: 160, a: 108, b: 95, c: 82, d: 69, e: 57 }],
+    codeField: "code", sessionField: "session", yearField: "year", maxMarkField: "maxMark", componentField: "component",
+    gradeFields: [
+      { key: "a", label: "A", color: "#526B7E" }, { key: "b", label: "B", color: "#506D58" },
+      { key: "c", label: "C", color: "#6E5C40" }, { key: "d", label: "D", color: "#775E55" },
+      { key: "e", label: "E", color: "#655A70" },
+    ],
+  },
   "ocr-6993": {
     rows: [{ code: "6993", component: "01", session: "June", year: 2025, maxMark: 100, a: 67, b: 60, c: 53, d: 47, e: 41 }],
     codeField: "code", sessionField: "session", yearField: "year", maxMarkField: "maxMark", componentField: "component",
@@ -84,5 +99,7 @@ export const EXAM_OVERVIEW_INSIGHT_SOURCES = {
   "cambridge-0607-statistics": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/results-statistics/",
   "cambridge-0607-boundaries": "https://www.cambridgeinternational.org/Images/758469-cambridge-international-mathematics-0607-march-2026-grade-threshold-table.pdf",
   "pearson-7m20-boundaries": "https://qualifications.pearson.com/content/dam/pdf/Support/Grade-boundaries/Level-2-extended-maths-certificate/grade-boundaries-june-2025-l2-ext-maths.pdf",
+  "pearson-8ma0-boundaries": "https://qualifications.pearson.com/content/dam/pdf/Support/Grade-boundaries/A-level/grade-boundaries-june-2025-gce.pdf",
+  "pearson-8ma0-statistics": "https://qualifications.pearson.com/content/dam/pdf/Support/Grade-statistics/A-level/grade-statistics-june-2025-provisional-advanced-subsidiary-level.pdf",
   "ocr-6993-boundaries": "https://www.ocr.org.uk/Images/739510-core-maths-extended-project-and-fsmq-grade-boundaries-june-2025.pdf",
 } as const;

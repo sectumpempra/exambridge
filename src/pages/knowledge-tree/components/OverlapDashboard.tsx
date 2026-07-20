@@ -33,7 +33,7 @@ export default function OverlapDashboard({ overlap, subjectAName, subjectBName, 
     );
   }
 
-  const { unionOverlap, emphasisSimilarity, coverageA, coverageB } = overlap.metrics;
+  const { unionOverlap, coverageA, coverageB, partialStatementCount, unresolvedStatementCount } = overlap.metrics;
 
   return (
     <div className="rounded-2xl border border-[#E8E4DE] bg-white overflow-hidden">
@@ -84,13 +84,7 @@ export default function OverlapDashboard({ overlap, subjectAName, subjectBName, 
       </div>
 
       <div className="px-5 pb-5 sm:px-6 sm:pb-6">
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
-          <MetricCard
-            label="内容侧重相似度"
-            value={emphasisSimilarity}
-            note="按知识点在考纲映射中的出现频次加权"
-            tone="amber"
-          />
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
           <MetricCard
             label={`${subjectAName} 被覆盖`}
             value={coverageA.percentage}
@@ -105,6 +99,11 @@ export default function OverlapDashboard({ overlap, subjectAName, subjectBName, 
           />
         </div>
 
+        <div className="mt-3 flex flex-wrap gap-2 text-[11px] text-[#625C54]">
+          <span className="rounded-full border border-[#E5D4B7] bg-[#FBF6EC] px-3 py-1">部分重合陈述：{partialStatementCount ?? 0}</span>
+          <span className="rounded-full border border-[#D9D4CE] bg-[#FAF8F5] px-3 py-1">待核验陈述：{unresolvedStatementCount ?? 0}</span>
+        </div>
+
         <details className="group mt-4 rounded-xl border border-[#E8E4DE] bg-[#FAF8F5] px-4 py-3">
           <summary className="flex cursor-pointer list-none items-center gap-2 text-xs font-medium text-[#3D3832]">
             为什么这些百分比不同？
@@ -113,7 +112,7 @@ export default function OverlapDashboard({ overlap, subjectAName, subjectBName, 
           <div className="mt-3 space-y-2 text-[11px] leading-relaxed text-[#625C54]">
             <p><strong className="text-[#3D3832]">知识范围重合度</strong>：共同知识节点 ÷ 两科知识节点并集，用于判断“教什么”有多相似。</p>
             <p><strong className="text-[#3D3832]">单科覆盖率</strong>：共同节点 ÷ 该科全部节点。两科节点总数不同，所以两个方向的覆盖率可能不同。</p>
-            <p><strong className="text-[#3D3832]">内容侧重相似度</strong>：进一步考虑每个节点在考纲映射中出现的频次，用于判断“各部分强调多少”是否相近。范围接近时，侧重仍可能明显不同。</p>
+            <p><strong className="text-[#3D3832]">部分重合与待核验</strong>：上下位或范围不完整的关系单列，未批准或空映射不会折算为精确百分比。</p>
           </div>
         </details>
       </div>

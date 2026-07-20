@@ -2,7 +2,7 @@ import { FileText } from "lucide-react";
 
 interface PaperSelectorProps {
   label: string;
-  papers: string[];
+  papers: Array<{ id: string; code: string; name: string; tiers: string[] }>;
   value: string | null; // null = whole subject
   onChange: (paper: string | null) => void;
   disabled?: boolean;
@@ -28,9 +28,9 @@ export default function PaperSelector({
         className="rounded-lg border border-[#E8E4DE] bg-white px-3 py-1.5 text-xs text-[#3D3832] focus:border-[#675A4D] focus:outline-none focus:ring-1 focus:ring-[#675A4D]/20 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
       >
         <option value="">整科</option>
-        {papers.map((p) => (
-          <option key={p} value={p}>
-            {p}
+        {papers.map((paper) => (
+          <option key={paper.id} value={paper.id}>
+            {paper.code} · {paper.name}{paper.tiers.length ? ` · ${paper.tiers.join("/")}` : ""}
           </option>
         ))}
       </select>

@@ -381,6 +381,7 @@ export function examOverviewIdForCourse(entry: Pick<CourseContextEntry, "boardNa
   if (entry.boardName === "Edexcel" && entry.subjectCode === "YAC11") return "pearson-ial-accounting";
   if ((entry.boardName === "Edexcel" || entry.boardName === "Edexcel UK") && entry.subjectCode === "1MA1") return "pearson-uk-1ma1";
   if ((entry.boardName === "Edexcel" || entry.boardName === "Edexcel UK") && entry.subjectCode === "7M20") return "pearson-uk-7m20";
+  if ((entry.boardName === "Edexcel" || entry.boardName === "Edexcel UK") && entry.subjectCode === "8MA0") return "pearson-uk-8ma0";
   if ((entry.boardName === "Edexcel" || entry.boardName === "Edexcel UK") && entry.subjectCode === "9MA0") return "pearson-uk-9ma0";
   if ((entry.boardName === "Edexcel" || entry.boardName === "Edexcel UK") && entry.subjectCode === "9FM0") return "pearson-uk-9fm0";
   if (entry.boardName === "OCR" && entry.subjectCode === "J560") return "ocr-j560";

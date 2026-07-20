@@ -20,3 +20,8 @@ The July 2026 science and computing expansion adds 15 course groups: Cambridge
 catalog keeps the awarding-body PDF URL as canonical, stores only the documents
 needed for syllabus, timetable and supplied-reference preview, and monitors
 future Cambridge syllabuses before their activation window.
+
+The Pearson UK mathematics catalog also includes 8MA0 AS Mathematics using the
+official Issue 3 (October 2025) specification. Its in-site specification preview
+is expected at `pearson-uk-8ma0-spec-issue3.pdf` in the persistent material
+store; the PDF is deliberately not tracked in Git.

@@ -58,6 +58,21 @@ const VERIFIED_ROUTE_SEMANTICS = deepFreeze({
     roundingRule: "none",
     grades: ["A", "B", "C", "D", "E"],
   },
+  "award:pearson:8ma0:linear": {
+    board: "Edexcel UK",
+    qualificationCode: "8MA0",
+    level: "AS-Level",
+    specificationVersion: "8MA0-issue-3-october-2025",
+    routeType: "linear",
+    routeKey: "8ma0-linear",
+    components: [
+      { code: "8MA0/01", inputKind: "raw", maxRawMark: 100, weightingFactor: 1 },
+      { code: "8MA0/02", inputKind: "raw", maxRawMark: 60, weightingFactor: 1 },
+    ],
+    maximumMarkAfterWeighting: 160,
+    roundingRule: "none",
+    grades: ["A", "B", "C", "D", "E"],
+  },
   "award:caie:9709:2023-2025:as:S1": {
     board: "CAIE",
     qualificationCode: "9709",
@@ -312,6 +327,11 @@ export function auditAwardData(input = {}) {
         if (boundary?.sourceRowId !== "OCR-2025-JUNE-6993-01") failures.push("OCR 6993 boundary must identify the official single-paper row");
         if (boundary?.maximumMarkAfterWeighting !== 100) failures.push("OCR 6993 official boundary must total 100");
         if (Object.hasOwn(boundary?.thresholds ?? {}, "A*")) failures.push("OCR 6993 does not award grade A*");
+      }
+      if (source === "official" && route.qualificationCode === "8MA0") {
+        if (boundary?.sourceRowId !== "PEARSON-2025-JUNE-8MA0-OVERALL") failures.push("Pearson 8MA0 boundary must identify the official overall AS row");
+        if (boundary?.maximumMarkAfterWeighting !== 160) failures.push("Pearson 8MA0 official boundary must total 160");
+        if (Object.hasOwn(boundary?.thresholds ?? {}, "A*")) failures.push("Pearson 8MA0 AS does not award grade A*");
       }
     }
     return keys;

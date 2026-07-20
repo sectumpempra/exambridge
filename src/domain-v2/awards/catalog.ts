@@ -3,6 +3,7 @@ import aqaJson from "@/data/official/awards/aqa-7357.json";
 import ocrJson from "@/data/official/awards/ocr-h240.json";
 import ocrFsmqJson from "@/data/official/awards/ocr-6993.json";
 import caieJson from "@/data/official/awards/caie-9709.json";
+import pearsonAsMathsJson from "@/data/official/awards/pearson-8ma0.json";
 import estimatesJson from "../../../generated/estimates/award-boundaries-v1.json";
 import {
   EstimatedAwardBoundarySchema,
@@ -148,7 +149,7 @@ export function createAwardCatalog(data: AwardCatalogData) {
 
 export const awardCatalog = createAwardCatalog({
   routes: routesJson.routes,
-  officialBoundaries: [...aqaJson.boundaries, ...ocrJson.boundaries, ...ocrFsmqJson.boundaries, ...caieJson.boundaries],
+  officialBoundaries: [...aqaJson.boundaries, ...ocrJson.boundaries, ...ocrFsmqJson.boundaries, ...pearsonAsMathsJson.boundaries, ...caieJson.boundaries],
   estimatedBoundaries: estimatesJson.boundaries,
 });
 

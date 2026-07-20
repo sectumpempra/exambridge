@@ -13,7 +13,7 @@ import type { GradeCalculationAvailability } from "@/domain-v2/awards/schema";
 import ocrOfficialStatistics from "@/data/official/ocr-results-statistics.json";
 
 const ACCESSED_AT = "2026-07-15";
-const AWARD_QUALIFICATION_KEYS = new Set(["AQA|7357", "OCR|H240", "OCR|6993", "CAIE|9709"]);
+const AWARD_QUALIFICATION_KEYS = new Set(["AQA|7357", "OCR|H240", "OCR|6993", "CAIE|9709", "Edexcel UK|8MA0"]);
 // Cambridge's live subject directories were checked on 2026-07-15. These
 // codes supplement the recent-results rule for active subjects whose local
 // statistics import is intentionally incomplete.
@@ -88,6 +88,7 @@ const EXAM_OVERVIEW_SPECIFICATIONS = new Map([
   ["Edexcel|GCSE|1MA1", "Issue 2"],
   ["Edexcel UK|GCSE|1MA1", "Issue 2"],
   ["Edexcel UK|Level 2 Certificate|7M20", "Issue 2 · September 2025"],
+  ["Edexcel UK|A-Level|8MA0", "Issue 3 · October 2025"],
   ["Edexcel UK|A-Level|9MA0", "Issue 4"],
   ["Edexcel UK|A-Level|9FM0", "Issue 4"],
   ["OCR|GCSE|J560", "Version 2.0 · May 2026"],
@@ -244,6 +245,7 @@ function buildCatalog(): CourseContextEntry[] {
     ["AQA", "GCSE", "8300", "Mathematics"],
     ["Edexcel", "GCSE", "1MA1", "Mathematics"],
     ["Edexcel UK", "GCSE", "1MA1", "Mathematics"],
+    ["Edexcel UK", "A-Level", "8MA0", "AS Mathematics"],
     ["Edexcel UK", "A-Level", "9MA0", "Mathematics"],
     ["Edexcel UK", "A-Level", "9FM0", "Further Mathematics"],
     ["OCR", "GCSE", "J560", "Mathematics"],
@@ -361,11 +363,11 @@ function buildCatalog(): CourseContextEntry[] {
     const knowledgeTreeCode = knowledgeCode(course.board, course.code, level);
     const boundaryHref = boundariesHref(course.board, level);
     const isWjec = course.board === "WJEC/Eduqas";
-    const isMath = /math|mathematics/i.test(course.name) || ["9709", "0580", "0606", "0607", "9231", "WMA", "YFM01", "YPM01", "8300", "8365", "1MA1", "7M20", "9MA0", "9FM0", "J560", "6993", "H240", "H245"].includes(course.code);
+    const isMath = /math|mathematics/i.test(course.name) || ["9709", "0580", "0606", "0607", "9231", "WMA", "YFM01", "YPM01", "8300", "8365", "1MA1", "7M20", "8MA0", "9MA0", "9FM0", "J560", "6993", "H240", "H245"].includes(course.code);
     const isLegacyWma = course.board === "Edexcel" && level === "A-Level" && course.code === "WMA";
     const hasExamOverview = (course.board === "CAIE" && ["9709", "0580", "0606", "0607", "9231", "0610", "0620", "0625", "0478", "9700", "9701", "9702", "9618", "0455", "0450", "0452", "9708", "9609", "9706"].includes(course.code))
       || (course.board === "Edexcel" && ["4MA1", "4PM1", "4MB1", "4BI1", "4CH1", "4PH1", "4CP0", "4EC1", "4BS1", "4AC1", "WMA", "YFM01", "YPM01", "YBI11", "YCH11", "YPH11", "YEC11", "YBS11", "YAC11", "1MA1", "7M20", "9MA0", "9FM0"].includes(course.code))
-      || (course.board === "Edexcel UK" && ["1MA1", "7M20", "9MA0", "9FM0"].includes(course.code))
+      || (course.board === "Edexcel UK" && ["1MA1", "7M20", "8MA0", "9MA0", "9FM0"].includes(course.code))
       || (course.board === "AQA" && ["8300", "8365", "7357", "7367"].includes(course.code))
       || (course.board === "OCR" && ["J560", "6993", "H240", "H245"].includes(course.code));
     const latestYear = latestStatisticsYear.get(`${course.board}|${level}|${course.code}`);

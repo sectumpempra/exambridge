@@ -134,6 +134,7 @@ const awardFiles = [
   "src/data/official/awards/aqa-7357.json",
   "src/data/official/awards/ocr-h240.json",
   "src/data/official/awards/ocr-6993.json",
+  "src/data/official/awards/pearson-8ma0.json",
   "src/data/official/awards/caie-9709.json",
 ];
 const routes = parsed.get(awardFiles[0]).routes;

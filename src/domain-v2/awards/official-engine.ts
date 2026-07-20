@@ -49,7 +49,7 @@ const parseInput = (inputValue: unknown): AwardCalculationInput => {
 };
 
 const validateSupportedRoute = (route: OfficialAwardRoute) => {
-  const isLinear = (route.board === "AQA" || route.board === "OCR") && route.routeType === "linear";
+  const isLinear = (route.board === "AQA" || route.board === "OCR" || route.board === "Edexcel UK") && route.routeType === "linear";
   const isVerifiedCaie = route.board === "CAIE" && SUPPORTED_CAIE_ROUTE_IDS.has(route.id) &&
     (route.routeType === "same-series" || route.routeType === "staged");
   if (!isLinear && !isVerifiedCaie) throw new AwardCalculationError("UNSUPPORTED_ROUTE");
@@ -187,8 +187,10 @@ const calculateAward = (inputValue: unknown, catalog: AwardCatalog): AwardCalcul
     componentVariants: prepared.componentVariants,
   });
   if (!boundary) throw new AwardCalculationError("MISSING_BOUNDARY");
-  if (route.board !== "CAIE" &&
-    (!boundary.sourceRowId.endsWith("OVERALL") || boundary.maximumMarkAfterWeighting !== 300)) {
+  const validNonCaieSource = route.qualificationCode === "6993"
+    ? boundary.sourceRowId === "OCR-2025-JUNE-6993-01"
+    : boundary.sourceRowId.endsWith("OVERALL");
+  if (route.board !== "CAIE" && !validNonCaieSource) {
     throw new AwardCalculationError("MISSING_BOUNDARY");
   }
   const total = roundAwardTotal(prepared.weightedTotal, route.roundingRule);

@@ -10,8 +10,8 @@ import {
 import { explainCalculatorRestriction, isCalculatorRuleNote, mentionsCasRule } from "../src/domain-v2/exam-overview/calculator-language";
 
 describe("exam overview catalog", () => {
-  it("contains fifty schema-valid, human-approved course groups", () => {
-    expect(EXAM_OVERVIEW_CATALOG).toHaveLength(50);
+  it("contains fifty-one schema-valid, human-approved course groups", () => {
+    expect(EXAM_OVERVIEW_CATALOG).toHaveLength(51);
     for (const overview of EXAM_OVERVIEW_CATALOG) {
       expect(ExamOverviewSchema.safeParse(overview).success).toBe(true);
       expect(overview.release.status).toBe("approved");
@@ -27,7 +27,7 @@ describe("exam overview catalog", () => {
     }
   });
 
-  it("maps the supported catalog aliases to fifty overview groups", () => {
+  it("maps the supported catalog aliases to fifty-one overview groups", () => {
     const available = COURSE_CATALOG.filter((entry) => entry.capabilities.examOverview.status === "available");
     expect(new Set(available.map(examOverviewIdForCourse))).toEqual(new Set([
       "cambridge-9709", "cambridge-0580", "cambridge-0606", "cambridge-0607", "cambridge-9231",
@@ -41,13 +41,13 @@ describe("exam overview catalog", () => {
       "pearson-igcse-4ec1", "pearson-igcse-4bs1", "pearson-igcse-4ac1",
       "pearson-ial-economics", "pearson-ial-business", "pearson-ial-accounting",
       "aqa-8300", "aqa-8365", "aqa-7357", "aqa-7367",
-      "pearson-uk-1ma1", "pearson-uk-7m20", "pearson-uk-9ma0", "pearson-uk-9fm0",
+      "pearson-uk-1ma1", "pearson-uk-7m20", "pearson-uk-8ma0", "pearson-uk-9ma0", "pearson-uk-9fm0",
       "ocr-j560", "ocr-6993", "ocr-h240", "ocr-h245",
     ]));
     expect(available.every((entry) => entry.capabilities.examOverview.href === "/exam-overview")).toBe(true);
   });
 
-  it("has resolved boundary and highest-grade chart coverage for all 50 approved overview groups", () => {
+  it("has resolved boundary and highest-grade chart coverage for all 51 approved overview groups", () => {
     const coverage = EXAM_OVERVIEW_CATALOG.map((overview) => {
       const aliases = COURSE_CATALOG.filter((entry) => examOverviewIdForCourse(entry) === overview.id);
       return {
@@ -58,7 +58,7 @@ describe("exam overview catalog", () => {
     });
     expect(coverage.filter((item) => !item.available).map((item) => item.id)).toEqual([]);
     expect(coverage.filter((item) => !item.boundaries).map((item) => item.id)).toEqual([]);
-    expect(coverage.filter((item) => item.available)).toHaveLength(50);
+    expect(coverage.filter((item) => item.available)).toHaveLength(51);
   });
 
   it("explains CAS restrictions in candidate-facing language", () => {
@@ -82,6 +82,18 @@ describe("exam overview catalog", () => {
     const pearsonMathematics = EXAM_OVERVIEW_CATALOG.find((item) => item.id === "pearson-uk-9ma0");
     expect(pearsonMathematics?.components.find((item) => item.code === "9MA0/03")?.note).toContain("Large Data Set");
     expect(pearsonMathematics?.materials.some((item) => item.id === "9ma0-large-data-set" && item.type === "data-booklet")).toBe(true);
+
+    const pearsonAsMathematics = EXAM_OVERVIEW_CATALOG.find((item) => item.id === "pearson-uk-8ma0");
+    expect(pearsonAsMathematics?.components).toMatchObject([
+      { code: "8MA0/01", durationMinutes: 120, marks: 100, weighting: "62.5%", calculator: "allowed" },
+      { code: "8MA0/02", durationMinutes: 75, marks: 60, weighting: "37.5%", calculator: "allowed" },
+    ]);
+    expect(pearsonAsMathematics?.upcomingExams.map((exam) => [exam.code, exam.date])).toEqual([
+      ["8MA0/01", "2027-05-13"],
+      ["8MA0/02", "2027-05-21"],
+    ]);
+    expect(pearsonAsMathematics?.materials.find((item) => item.id === "8ma0-spec")?.version).toBe("Issue 3 · October 2025");
+    expect(pearsonAsMathematics?.routes[0].note).toContain("不设 A*");
 
     const ocrFurther = EXAM_OVERVIEW_CATALOG.find((item) => item.id === "ocr-h245");
     expect(ocrFurther?.routes).toHaveLength(6);

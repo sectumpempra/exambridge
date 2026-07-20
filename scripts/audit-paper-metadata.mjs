@@ -5,8 +5,8 @@ const source = await readFile("src/data/papers/paperMetadata.ts", "utf8");
 const compiled = ts.transpileModule(source, {
   compilerOptions: { module: ts.ModuleKind.ES2022, target: ts.ScriptTarget.ES2022 },
 }).outputText;
-const module = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString("base64")}`);
-const papers = module.ALL_PAPERS;
+const loadedModule = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString("base64")}`);
+const papers = loadedModule.ALL_PAPERS;
 const failures = [];
 
 for (const paper of papers) {

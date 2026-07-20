@@ -133,6 +133,7 @@ export async function listSubjectsV32(): Promise<SubjectInfoV32[]> {
       level: m.level,
       hasPapers: papers.length > 0,
       papers,
+      paperOptions: papers.map((paper) => ({ id: paper, code: paper, name: paper, tiers: [] })),
       isGCSE,
       paperMappingCoverage: readiness.coverage,
       paperComparisonReady: readiness.ready,

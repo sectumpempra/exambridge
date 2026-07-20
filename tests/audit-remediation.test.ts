@@ -1,16 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { getPaperById } from "@/data/papers/paperMetadata";
 import { getBoundariesForPaper } from "@/data/papers/paperBoundaries";
-import { getPaperMappingReadiness } from "@/data/knowledge-tree/loader-v3.2";
-import type { MappingFile } from "@/data/knowledge-tree/types-v3.2";
 import { ARCHIVED_CAIE_LEGACY_DATA, MERGED_CAIE_GCSE_DATA } from "@/data/official/mergedMathData";
 import { getDisplayCourseCatalog } from "@/course-context/catalog";
 import { getPastPaperCatalogMaturity } from "@/domain-v2/past-papers/catalog";
 import type { PastPaperCatalog } from "@/domain-v2/past-papers/schema";
 import { awardCatalog } from "@/domain-v2/awards/catalog";
 import { COURSE_CATALOG } from "@/course-context/catalog-source";
-import { KnowledgeMappingV4Schema } from "@/domain-v2/knowledge-tree/v4-schema";
 
 describe("audit remediation release invariants", () => {
   it("keeps the 2025-2027 CAIE 0580 structure aligned with official current boundaries", () => {
@@ -32,15 +30,6 @@ describe("audit remediation release invariants", () => {
     expect(papers.every((paper) => paper.verificationStatus === "verified" && paper.effectiveFrom === 2026)).toBe(true);
   });
 
-  it("does not treat null Paper references as verified Paper-level mapping", () => {
-    const mapping: MappingFile = {
-      board: "CAIE", subjectCode: "0580", subjectName: "Mathematics", level: "IGCSE", version: "1",
-      totalTopics: 1, mappedTopics: 1, verificationStatus: "verified", paperStructure: { papers: ["P2", "P4"] },
-      mappings: [{ topicId: "t", topicName: "Topic", paperReference: null, subtopicMappings: [{ subtopicId: "s", subtopicName: "Subtopic", paperReference: null, mappedNodes: [] }] }],
-    };
-    expect(getPaperMappingReadiness(mapping)).toMatchObject({ ready: false, coverage: 0, referencedSubtopics: 0 });
-  });
-
   it("requires the production deployment to pass the release gate before publishing", () => {
     const workflow = readFileSync(".github/workflows/deploy.yml", "utf8");
     expect(workflow).toContain("needs: verify");
@@ -48,96 +37,93 @@ describe("audit remediation release invariants", () => {
     expect(workflow).toContain("pnpm test:coverage");
     expect(workflow).toContain("pnpm test:e2e");
     expect(workflow.indexOf("needs: verify")).toBeLessThan(workflow.indexOf("peaceiris/actions-gh-pages"));
-    expect(readFileSync("package.json", "utf8")).toContain("prune-static-knowledge-candidates.mjs");
+    const packageJson = readFileSync("package.json", "utf8");
+    expect(packageJson).toContain("audit-active-knowledge-v5.mjs");
+    expect(packageJson).toContain("audit-knowledge-v5-only-release.mjs");
+    expect(packageJson).not.toContain("prune-static-knowledge-candidates.mjs");
+    expect(packageJson).not.toContain("audit-knowledge-v4.mjs &&");
     expect(readFileSync("scripts/build-release-provenance.mjs", "utf8")).toContain("trackedPdfs");
   });
 
-  it("does not publish candidate knowledge mappings in a static release", () => {
-    const pruning = readFileSync("scripts/prune-static-knowledge-candidates.mjs", "utf8");
-    expect(pruning).toContain('verificationStatus === "verified"');
-    expect(pruning).toContain('publicationPolicy: "owner-approved-only"');
+  it("publishes Knowledge V5 only and retains legacy data outside the public tree", () => {
+    expect(existsSync("public/data/v3.2")).toBe(false);
+    expect(existsSync("public/data/v3.2-new")).toBe(false);
+    expect(existsSync("data/archive/knowledge-v3.2/public-data/manifest.json")).toBe(true);
+    expect(existsSync("data/archive/knowledge-v4/public-projection/manifest.json")).toBe(true);
+    const page = readFileSync("src/pages/knowledge-tree/KnowledgeTreeComparePage.tsx", "utf8");
+    expect(page).not.toContain("loader-v3.2");
+    expect(page).not.toContain("listSubjectsV32");
+    const loader = readFileSync("src/data/knowledge-tree/loader-v5.ts", "utf8");
+    expect(loader).not.toContain("return null");
+    const releaseAudit = readFileSync("scripts/audit-knowledge-v5-only-release.mjs", "utf8");
+    expect(releaseAudit).toContain('allowedDataDirectories = new Set(["knowledge-v5", "past-papers"])');
+    expect(releaseAudit).toContain("legacy knowledge runtime reference remains");
   });
 
-  it("publishes only V4 owner-approved projections with the recorded approval batch", () => {
-    const manifest = JSON.parse(readFileSync("public/data/v3.2-new/manifest.json", "utf8"));
-    expect(manifest.mappings).toHaveLength(21);
-    expect(manifest.mappings.every((entry: { verificationStatus: string }) => entry.verificationStatus === "verified")).toBe(true);
-    expect(manifest.mappings.every((entry: { sourceSchemaVersion: string }) => entry.sourceSchemaVersion === "4.0.0")).toBe(true);
-    expect(manifest.mappings.every((entry: { approval: { approvedAt: string; approvalBatch: string } }) =>
-      entry.approval.approvedAt === "2026-07-16" && entry.approval.approvalBatch === "knowledge-v4-20260716"
-    )).toBe(true);
-    expect(manifest.mappings.filter((entry: { paperComparisonReady: boolean }) => entry.paperComparisonReady).map((entry: { id: string }) => entry.id).sort())
-      .toEqual(["CAIE-9231", "CAIE-9709", "OCR-6993"]);
+  it("requires an active V5 projection and uses whole-release rollback", () => {
+    const builder = readFileSync("scripts/build-knowledge-v5-static.mjs", "utf8");
+    const audit = readFileSync("scripts/audit-active-knowledge-v5.mjs", "utf8");
+    const activation = JSON.parse(readFileSync("data/active/knowledge-v5/activation.json", "utf8"));
+    expect(builder).toContain("Active Knowledge V5 requires 22 mappings");
+    expect(audit).toContain('rollbackStrategy !== "previous-verified-release"');
+    expect(activation.rollbackStrategy).toBe("previous-verified-release");
+    expect(activation).not.toHaveProperty("rollbackTarget");
   });
 
-  it("audits all 812 canonical knowledge nodes and records an explicit zero-migration decision", () => {
-    const ontology = JSON.parse(readFileSync("generated/knowledge-ontology-audit-report.json", "utf8"));
-    const semantics = JSON.parse(readFileSync("generated/knowledge-node-semantics-v4.json", "utf8"));
-    const migration = JSON.parse(readFileSync("generated/knowledge-node-migration-v4.json", "utf8"));
-    expect(ontology.tree.nodeCount).toBe(812);
-    expect(ontology.failureCount).toBe(0);
-    expect(ontology.unresolvedSemanticCandidateCount).toBe(0);
-    expect(ontology.checks).toMatchObject({
-      uniqueIds: true, parentIntegrity: true, acyclic: true, levelAndPathConsistency: true,
-      leafConsistency: true, normalizedSiblingUniqueness: true, stageValidity: true, semanticDomainReview: true,
-    });
-    expect(semantics.nodes).toHaveLength(812);
-    expect(semantics.nodes.filter((node: { comparisonEligible: boolean }) => node.comparisonEligible)).toHaveLength(576);
-    expect(migration).toMatchObject({ migrationRequired: false, migrations: [], pendingCandidates: [] });
+  it("publishes the V5 ontology and matching structural tree as one runtime snapshot", () => {
+    const builder = readFileSync("scripts/build-knowledge-v5-static.mjs", "utf8");
+    const loader = readFileSync("src/data/knowledge-tree/loader-v5.ts", "utf8");
+    const treeBytes = readFileSync("data/active/knowledge-v5/knowledge-tree.json");
+    const tree = JSON.parse(treeBytes.toString("utf8"));
+    const ontology = JSON.parse(readFileSync("data/active/knowledge-v5/ontology.json", "utf8"));
+    expect(tree.version).toBe(ontology.treeVersion);
+    expect(tree.nodes).toHaveLength(ontology.nodes.length);
+    expect(createHash("sha256").update(treeBytes).digest("hex")).toBe(ontology.treeSha256);
+    expect(builder).toContain('treeUrl: "/data/knowledge-v5/knowledge-tree.json"');
+    expect(builder).toContain("ontologyNodeCount: ontology.nodes.length");
+    expect(builder).toContain("createHash(\"sha256\").update(treeBytes)");
+    expect(loader).toContain("loadKnowledgeV5Tree");
+    expect(loader).toContain("value.nodes.length !== manifest.ontologyNodeCount");
   });
 
-  it("keeps all 21 point-reviewed mappings complete and owner-approved with provenance", () => {
-    const report = JSON.parse(readFileSync("generated/knowledge-point-review-report.json", "utf8"));
-    expect(report).toMatchObject({
-      expectedCourseCount: 21,
-      reviewedCourseCount: 21,
-      approvalEligibleCourseCount: 21,
-      failureCount: 0,
-    });
-    for (const summary of report.summaries) {
-      expect(summary.reviewedPoints, `${summary.id} reviewed points`).toBe(summary.candidatePoints);
-      expect(summary.sourcePageReferenceRate, `${summary.id} source page references`).toBe(1);
-      expect(summary.failCount, `${summary.id} failed reviews`).toBe(0);
-      expect(summary.missingOfficialPointCount, `${summary.id} missing official points`).toBe(0);
-      expect(summary.highIssueCount, `${summary.id} high-severity review issues`).toBe(0);
-      expect(summary.duplicatePointCount, `${summary.id} duplicate reviews`).toBe(0);
-      const mapping = JSON.parse(readFileSync(`data/active/knowledge-v4/${summary.id}.json`, "utf8"));
-      expect(KnowledgeMappingV4Schema.safeParse(mapping).success, `${summary.id} V4 schema`).toBe(true);
-      expect(mapping.reviewStatus, `${summary.id} activation status`).toBe("owner-approved");
-      expect(mapping.review).toMatchObject({ approvedAt: "2026-07-16", approvalBatch: "knowledge-v4-20260716" });
+  it("keeps approved mathematical-practice leaves active but outside overlap calculations", () => {
+    const audit = readFileSync("scripts/audit-active-knowledge-v5.mjs", "utf8");
+    const comparison = readFileSync("src/domain-v2/knowledge-tree/comparison-v5.ts", "utf8");
+    expect(audit).toContain("leafNodeIds.has(link.nodeId)");
+    expect(audit).not.toContain("else if (!semantic.comparisonEligible)");
+    expect(comparison).toContain("semantic.comparisonEligible");
+    expect(comparison).toContain('status: "non-comparable"');
+  });
+
+  it("keeps candidate research pipelines out of the GitHub-safe release branch", () => {
+    const packageJson = readFileSync("package.json", "utf8");
+    const schema = readFileSync("src/domain-v2/knowledge-tree/v5-schema.ts", "utf8");
+    const activeAudit = readFileSync("scripts/audit-active-knowledge-v5.mjs", "utf8");
+    expect(existsSync("data/candidates/knowledge-v5")).toBe(false);
+    expect(packageJson).not.toContain("knowledge:v5:extraction-audit");
+    expect(packageJson).not.toContain("knowledge:v5:formula-packets");
+    expect(packageJson).not.toContain("knowledge:v5:ontology-gap-cross-audit");
+    expect(schema).toContain('provider: z.enum(["kimi-code", "deepseek", "local"])');
+    expect(schema).toContain('call.requestedModel !== "deepseek-v4-pro"');
+    expect(activeAudit).toContain('mapping.board === "AQA"');
+    expect(activeAudit).toContain("unresolved assessable statement is active");
+  });
+
+  it("publishes 22 owner-approved V5 mappings from the recorded approval batch", () => {
+    const manifest = JSON.parse(readFileSync("public/data/knowledge-v5/manifest.json", "utf8"));
+    const activation = JSON.parse(readFileSync("data/active/knowledge-v5/activation.json", "utf8"));
+    const mappingFiles = readdirSync("data/active/knowledge-v5/mappings").filter((file) => file.endsWith(".json"));
+    expect(manifest.schemaVersion).toBe("5.0.0");
+    expect(manifest.activeBatch).toBe("knowledge-v5-20260719");
+    expect(manifest.mappings).toHaveLength(22);
+    expect(mappingFiles).toHaveLength(22);
+    expect(activation).toMatchObject({ approvalBatch: manifest.activeBatch, mappingCount: 22, ontologyNodeCount: 1105 });
+    for (const file of mappingFiles) {
+      const mapping = JSON.parse(readFileSync(`data/active/knowledge-v5/mappings/${file}`, "utf8"));
+      expect(mapping.reviewStatus, file).toBe("owner-approved");
+      expect(mapping.review.approvalBatch, file).toBe(manifest.activeBatch);
+      expect(mapping.statements.every((statement: { reviewStatus: string }) => statement.reviewStatus === "owner-approved"), file).toBe(true);
     }
-  });
-
-  it("requires explicit approval provenance before a V4 mapping can become owner-approved", () => {
-    const mapping = JSON.parse(readFileSync("data/active/knowledge-v4/CAIE-0580.json", "utf8"));
-    mapping.reviewStatus = "owner-approved";
-    delete mapping.review.approvedAt;
-    delete mapping.review.approvalBatch;
-    expect(KnowledgeMappingV4Schema.safeParse(mapping).success).toBe(false);
-    mapping.review.approvedAt = "2026-07-16";
-    mapping.review.approvalBatch = "owner-review-20260716";
-    expect(KnowledgeMappingV4Schema.safeParse(mapping).success).toBe(true);
-  });
-
-  it("rejects contradictory V4 point state, dates and Kimi provenance", () => {
-    const original = JSON.parse(readFileSync("data/active/knowledge-v4/CAIE-0580.json", "utf8"));
-
-    const missingReason = structuredClone(original);
-    missingReason.syllabusPoints[0].canonicalNodeIds = [];
-    delete missingReason.syllabusPoints[0].unmappedReason;
-    expect(KnowledgeMappingV4Schema.safeParse(missingReason).success).toBe(false);
-
-    const mappedAndUnmapped = structuredClone(original);
-    mappedAndUnmapped.syllabusPoints[0].unmappedReason = "contradictory";
-    expect(KnowledgeMappingV4Schema.safeParse(mappedAndUnmapped).success).toBe(false);
-
-    const reversedDates = structuredClone(original);
-    reversedDates.effectiveTo = "2024-12-31";
-    expect(KnowledgeMappingV4Schema.safeParse(reversedDates).success).toBe(false);
-
-    const wrongModel = structuredClone(original);
-    wrongModel.review.responseModelId = "unexpected-model";
-    expect(KnowledgeMappingV4Schema.safeParse(wrongModel).success).toBe(false);
   });
 
   it("permanently archives non-monotonic CAIE legacy rows outside the active data set", () => {
@@ -174,6 +160,21 @@ describe("audit remediation release invariants", () => {
     expect(boundary.thresholds).not.toHaveProperty("A*");
     const course = COURSE_CATALOG.find((entry) => entry.boardName === "OCR" && entry.subjectCode === "6993")!;
     expect(course.gradeCalculation).toEqual({ status: "official", routeIds: ["award:ocr:6993:linear"] });
+    expect(course.capabilities.calculator.status).toBe("available");
+  });
+
+  it("supports Pearson 8MA0 through its official two-paper A-E award route", () => {
+    const route = awardCatalog.getAwardRoute("award:pearson:8ma0:linear")!;
+    const boundary = awardCatalog.findOfficialBoundary({
+      routeId: route.id,
+      series: "2025-june",
+      componentVariants: ["8MA0/01", "8MA0/02"],
+    })!;
+    expect(route).toMatchObject({ board: "Edexcel UK", qualificationCode: "8MA0", maximumMarkAfterWeighting: 160, grades: ["A", "B", "C", "D", "E"] });
+    expect(boundary.thresholds).toEqual({ A: 108, B: 95, C: 82, D: 69, E: 57 });
+    expect(boundary.thresholds).not.toHaveProperty("A*");
+    const course = COURSE_CATALOG.find((entry) => entry.boardName === "Edexcel UK" && entry.subjectCode === "8MA0")!;
+    expect(course.gradeCalculation).toEqual({ status: "official", routeIds: ["award:pearson:8ma0:linear"] });
     expect(course.capabilities.calculator.status).toBe("available");
   });
 });

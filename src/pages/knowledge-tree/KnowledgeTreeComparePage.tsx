@@ -11,14 +11,9 @@ import TopicDiffView from "./components/TopicDiffView";
 import ExclusiveTopicsView from "./components/ExclusiveTopicsView";
 import type { OverlapResultV32, SubjectInfoV32, ExclusiveSubtopicItem } from "@/data/knowledge-tree/types-v3.2";
 import type { KnowledgeTreeNode } from "@/data/knowledge-tree/types";
-import {
-  listSubjectsV32,
-  calculateOverlapV32,
-  getOverlapSetsV32,
-  getTreeNodesV32,
-  findExclusiveSubtopics,
-} from "@/data/knowledge-tree/loader-v3.2";
-import { buildKnowledgeComparisonViewData } from "@/data/knowledge-tree/comparison-view";
+import { calculateKnowledgeV5Comparison, listSubjectsV5, loadKnowledgeV5Manifest, loadKnowledgeV5Tree } from "@/data/knowledge-tree/loader-v5";
+import { buildKnowledgeComparisonV5ViewData } from "@/data/knowledge-tree/comparison-view";
+import type { KnowledgeComparisonV5 } from "@/domain-v2/knowledge-tree";
 import { getKnowledgeComparisonPrompt, isKnowledgeComparisonValid } from "@/data/knowledge-tree/comparison-selection";
 import { useCourseContext } from "@/course-context/CourseContextProvider";
 import { withCourseContext } from "@/course-context/catalog";
@@ -36,6 +31,8 @@ export default function KnowledgeTreeComparePage() {
   const [subjects, setSubjects] = useState<SubjectInfoV32[]>([]);
   const [treeNodes, setTreeNodes] = useState<KnowledgeTreeNode[]>([]);
   const [loadingData, setLoadingData] = useState(true);
+  const [dataError, setDataError] = useState<string | null>(null);
+  const [knowledgeNodeCount, setKnowledgeNodeCount] = useState(0);
 
   // Selection state
   const [codeA, setCodeA] = useState("CAIE-9709");
@@ -46,6 +43,7 @@ export default function KnowledgeTreeComparePage() {
 
   // Async loading state
   const [overlapResult, setOverlapResult] = useState<OverlapResultV32 | null>(null);
+  const [v5Comparison, setV5Comparison] = useState<KnowledgeComparisonV5 | null>(null);
   const [overlapSets, setOverlapSets] = useState({
     shared: new Set<string>(),
     aOnly: new Set<string>(),
@@ -63,15 +61,15 @@ export default function KnowledgeTreeComparePage() {
     let cancelled = false;
     async function init() {
       try {
-        const [subjs, nodes] = await Promise.all([
-          listSubjectsV32(),
-          getTreeNodesV32(),
-        ]);
+        const manifest = await loadKnowledgeV5Manifest();
+        const [subjs, nodes] = await Promise.all([listSubjectsV5(), loadKnowledgeV5Tree(manifest)]);
         if (cancelled) return;
         setSubjects(subjs);
         setTreeNodes(nodes);
+        setKnowledgeNodeCount(manifest.ontologyNodeCount);
       } catch (e) {
-        console.error("Failed to load v3.2 data:", e);
+        console.error("Failed to load knowledge comparison data:", e);
+        if (!cancelled) setDataError("考纲数据完整性校验失败。为避免展示旧版或不完整结果，本页已停止计算，请稍后重试。");
       } finally {
         setLoadingData(false);
       }
@@ -108,16 +106,20 @@ export default function KnowledgeTreeComparePage() {
   // Get papers for selected subjects
   const papersA = useMemo(() => {
     const s = subjects.find((s) => s.code === codeA);
-    return s?.papers ?? [];
+    return s?.paperOptions ?? [];
   }, [subjects, codeA]);
 
   const papersB = useMemo(() => {
     const s = subjects.find((s) => s.code === codeB);
-    return s?.papers ?? [];
+    return s?.paperOptions ?? [];
   }, [subjects, codeB]);
 
   const subjectA = subjects.find((s) => s.code === codeA);
   const subjectB = subjects.find((s) => s.code === codeB);
+  const selectedPaperA = subjectA?.paperOptions.find((paper) => paper.id === paperA);
+  const selectedPaperB = subjectB?.paperOptions.find((paper) => paper.id === paperB);
+  const displayA = paperA ? `${subjectA?.name || codeA} ${selectedPaperA ? `${selectedPaperA.code} · ${selectedPaperA.name}` : paperA}` : subjectA?.name || codeA;
+  const displayB = paperB ? `${subjectB?.name || codeB} ${selectedPaperB ? `${selectedPaperB.code} · ${selectedPaperB.name}` : paperB}` : subjectB?.name || codeB;
   const subjectComparisonBlocked = Boolean(
     subjectA && subjectB && (!subjectA.comparisonReady || !subjectB.comparisonReady)
   );
@@ -174,15 +176,30 @@ export default function KnowledgeTreeComparePage() {
 
     async function calc() {
       try {
-        const [result, sets, exclusive] = await Promise.all([
-          calculateOverlapV32(codeA, codeB, paperA, paperB),
-          getOverlapSetsV32(codeA, codeB, paperA, paperB),
-          findExclusiveSubtopics(codeA, codeB, paperA, paperB),
-        ]);
+        const payload = await calculateKnowledgeV5Comparison(codeA, codeB, paperA, paperB);
         if (cancelled) return;
-        setOverlapResult(result);
-        setOverlapSets(sets);
-        setExclusiveData(exclusive);
+        const { result } = payload;
+        const mode = paperA && paperB ? "paper-vs-paper" : paperA || paperB ? "paper-vs-subject" : "subject-vs-subject";
+        setV5Comparison(result);
+        setOverlapResult({
+          subjectA: codeA,
+          subjectB: codeB,
+          paperA,
+          paperB,
+          mode,
+          unweighted: result.exact.jaccard,
+          weighted: result.exact.jaccard,
+          sharedNodes: result.exact.sharedNodeIds,
+          aOnlyNodes: result.exact.aOnlyNodeIds,
+          bOnlyNodes: result.exact.bOnlyNodeIds,
+          sharedCount: result.exact.sharedNodeIds.length,
+          aTotal: result.exact.sharedNodeIds.length + result.exact.aOnlyNodeIds.length,
+          bTotal: result.exact.sharedNodeIds.length + result.exact.bOnlyNodeIds.length,
+          aName: displayA,
+          bName: displayB,
+        });
+        setOverlapSets({ shared: new Set(result.exact.sharedNodeIds), aOnly: new Set(result.exact.aOnlyNodeIds), bOnly: new Set(result.exact.bOnlyNodeIds) });
+        setExclusiveData({ aExclusive: payload.aItems.filter((item) => item.comparisonStatus !== "shared"), bExclusive: payload.bItems.filter((item) => item.comparisonStatus !== "shared") });
       } catch {
         if (!cancelled) setCalcError("计算失败，请稍后重试");
       } finally {
@@ -192,7 +209,7 @@ export default function KnowledgeTreeComparePage() {
 
     calc();
     return () => { cancelled = true; };
-  }, [isValidComparison, codeA, codeB, paperA, paperB]);
+  }, [isValidComparison, codeA, codeB, paperA, paperB, displayA, displayB]);
 
   const subjectOptions = useMemo(
     () =>
@@ -207,9 +224,6 @@ export default function KnowledgeTreeComparePage() {
   );
   const hasPublishedMappings = subjects.length > 0;
 
-  const displayA = paperA ? `${subjectA?.name || codeA} ${paperA}` : subjectA?.name || codeA;
-  const displayB = paperB ? `${subjectB?.name || codeB} ${paperB}` : subjectB?.name || codeB;
-
   const { shared: sharedSet, aOnly: aOnlySet, bOnly: bOnlySet } = effectiveOverlapSets;
 
   const TABS: { key: TabKey; label: string; icon: React.ReactNode }[] = [
@@ -220,8 +234,8 @@ export default function KnowledgeTreeComparePage() {
 
   const overlapData = useMemo(() => {
     if (!effectiveOverlapResult) return null;
-    return buildKnowledgeComparisonViewData(effectiveOverlapResult, displayA, displayB);
-  }, [effectiveOverlapResult, displayA, displayB]);
+    return v5Comparison ? buildKnowledgeComparisonV5ViewData(v5Comparison, displayA, displayB) : null;
+  }, [effectiveOverlapResult, v5Comparison, displayA, displayB]);
 
   if (loadingData) {
     return (
@@ -250,14 +264,14 @@ export default function KnowledgeTreeComparePage() {
           {/* Page header */}
           <div className="mb-8">
             <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-[#6E5C40]">
-              EXAMBRIDGE v3.2 知识树驱动
+              EXAMBRIDGE v5 知识树驱动
             </p>
             <h1 className="text-[clamp(24px,4vw,36px)] font-bold leading-[1.2] text-[#3D3832]">
               考纲与 Paper 知识重合度分析
             </h1>
             <p className="mt-2 text-sm text-[#625C54] leading-relaxed">
-              基于 <strong className="text-[#3D3832]">812 节点</strong> 统一知识树，覆盖{" "}
-              <strong className="text-[#3D3832]">5 大考试局 21 个数学类科目</strong> 的{hasPublishedMappings ? "已批准映射" : "候选映射"}
+              基于 <strong className="text-[#3D3832]">{knowledgeNodeCount} 节点</strong> 统一知识树，覆盖{" "}
+              <strong className="text-[#3D3832]">5 大考试局 22 个数学类资格版本</strong> 的{hasPublishedMappings ? "已批准映射" : "候选映射"}
               <br />
               支持 <strong className="text-[#A9471F]">跨考试局整科对比</strong>、{" "}
               <strong className="text-[#A9471F]">同课程或跨课程 Paper 对比</strong> 及{" "}
@@ -266,14 +280,20 @@ export default function KnowledgeTreeComparePage() {
             {entry?.capabilities.papers.href && <Link to={withCourseContext(entry.capabilities.papers.href, context)} className="mt-4 inline-flex rounded-lg border border-[#d9d4ce] bg-white px-3 py-2 text-xs font-semibold text-[#675a4d] no-underline hover:border-[#a69888]">查看当前课程相关 Paper →</Link>}
           </div>
 
-          {!hasPublishedMappings && (
+          {dataError && (
+            <div className="mb-6 rounded-2xl border border-[#e6cdbf] bg-[#fff8f3] p-5 text-sm text-[#8a5c45]" role="alert">
+              {dataError}
+            </div>
+          )}
+
+          {!dataError && !hasPublishedMappings && (
             <div className="mb-6 rounded-2xl border border-[#e6cdbf] bg-[#fff8f3] p-5 text-center text-sm text-[#8a5c45]" role="status">
               21 门课程映射已完成候选复核，正在等待所有者批准。批准前不会发布课程映射，也不会计算或展示精确相似度；下方仍可浏览已审计的 812 节点知识树。
             </div>
           )}
 
           {/* Subject + Paper selectors */}
-          {hasPublishedMappings && <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-5">
+          {!dataError && hasPublishedMappings && <div className="mb-6 rounded-2xl border border-[#E8E4DE] bg-white p-5">
             <div className="flex items-start gap-4 flex-wrap">
               <div className="flex-1 min-w-[200px]">
                 <SubjectSelector label="科目 A" value={codeA} options={subjectOptions} onChange={handleSetCodeA} />
