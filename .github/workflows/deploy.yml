@@ -47,6 +47,8 @@ jobs:
         run: pnpm test:deployment
       - name: Build static production site
         run: pnpm build:static
+      - name: Build and audit inactive AI service artifact
+        run: pnpm build:ai && pnpm audit:ai
       - run: pnpm exec playwright install --with-deps chromium firefox webkit
       - name: Core end-to-end tests
         run: pnpm test:e2e
@@ -58,6 +60,13 @@ jobs:
         with:
           name: exambridge-production-static
           path: dist-static
+          if-no-files-found: error
+          retention-days: 3
+      - name: Upload verified inactive AI service artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: exambridge-ai-service
+          path: dist-ai
           if-no-files-found: error
           retention-days: 3
       - uses: actions/upload-artifact@v4

@@ -53,3 +53,9 @@ export function isV2Planner(flags: FeatureFlags = getFeatureFlags()): boolean {
 export function isV2Catalog(flags: FeatureFlags = getFeatureFlags()): boolean {
   return flags.catalogSource === "v2";
 }
+
+/** AI assistant stays local/dev-only until the owner separately approves public release. */
+export function isAIAssistantEnabled(env: { DEV?: boolean; VITE_AI_ASSISTANT_PUBLIC?: string } = import.meta.env): boolean {
+  const explicit = String(env.VITE_AI_ASSISTANT_PUBLIC ?? "").trim().toLowerCase();
+  return Boolean(env.DEV) || explicit === "true";
+}

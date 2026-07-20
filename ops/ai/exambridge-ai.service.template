@@ -1,0 +1,29 @@
+[Unit]
+Description=ExamBridge AI assistant service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=exambridge
+Group=www-data
+WorkingDirectory=/var/www/exambridge-ai/current
+Environment=NODE_ENV=production
+Environment=AI_HOST=127.0.0.1
+Environment=AI_PORT=8789
+Environment=EXAMBRIDGE_PUBLIC_ROOT=/var/www/exambridge/current
+EnvironmentFile=/etc/exambridge/ai.env
+ExecStart=/usr/bin/node /var/www/exambridge-ai/current/server.mjs
+Restart=on-failure
+RestartSec=3
+TimeoutStartSec=30
+TimeoutStopSec=20
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadOnlyPaths=/var/www/exambridge /var/www/exambridge-ai
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+
+[Install]
+WantedBy=multi-user.target

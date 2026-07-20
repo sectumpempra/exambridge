@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, GraduationCap, ChevronDown } from "lucide-react";
+import { Bot, Menu, GraduationCap, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MORE_NAV, NAV_GROUPS, type NavigationItem } from "@/data/navLinks";
 import CourseContextBar from "./CourseContextBar";
 import { useCourseContext } from "@/course-context/CourseContextProvider";
 import { withCourseContext } from "@/course-context/catalog";
+import { isAIAssistantEnabled } from "@/domain-v2/shared/feature-flags";
 import {
   Sheet,
   SheetContent,
@@ -25,6 +26,7 @@ export default function Header({ title: _headerTitle }: HeaderProps) {
   const { context } = useCourseContext();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const aiEnabled = isAIAssistantEnabled();
 
   /* Scroll listener for nav-glass background transition */
   useEffect(() => {
@@ -80,6 +82,15 @@ export default function Header({ title: _headerTitle }: HeaderProps) {
 
         {/* Desktop Nav */}
         <nav aria-label="主导航" className="hidden items-center gap-[clamp(12px,1.7vw,24px)] md:flex">
+          {aiEnabled && <Link
+            to={withCourseContext("/ai-assistant", context)}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[13px] font-semibold no-underline transition",
+              location.pathname === "/ai-assistant"
+                ? "border-[#526b7e] bg-[#253b46] text-white"
+                : "border-[#b8c4c5] bg-white/70 text-[#3f5963] hover:border-[#526b7e] hover:bg-white",
+            )}
+          ><Bot size={14} />AI 问答</Link>}
           {NAV_GROUPS.map((group) => {
             const isActive = group.items.some(isItemActive);
             return (
@@ -143,6 +154,10 @@ export default function Header({ title: _headerTitle }: HeaderProps) {
           >
             <SheetTitle className="sr-only">导航菜单</SheetTitle>
             <div className="flex flex-col gap-5 overflow-y-auto p-6 pt-12">
+              {aiEnabled && <section aria-labelledby="mobile-nav-ai">
+                <h2 id="mobile-nav-ai" className="mb-1 px-4 text-[11px] font-semibold tracking-[0.12em] text-[#887f75]">智能助手</h2>
+                <Link to={withCourseContext("/ai-assistant", context)} onClick={() => setMobileOpen(false)} className={cn("flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold no-underline", location.pathname === "/ai-assistant" ? "bg-[#253b46] text-white" : "bg-white/70 text-[#3f5963]")}><Bot size={15} />AI 问答</Link>
+              </section>}
               {NAV_GROUPS.map((group) => (
                 <section key={group.label} aria-labelledby={`mobile-nav-${group.label}`}>
                   <h2 id={`mobile-nav-${group.label}`} className="mb-1 px-4 text-[11px] font-semibold tracking-[0.12em] text-[#887f75]">{group.label}</h2>

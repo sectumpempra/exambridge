@@ -17,6 +17,7 @@ import type { KnowledgeComparisonV5 } from "@/domain-v2/knowledge-tree";
 import { getKnowledgeComparisonPrompt, isKnowledgeComparisonValid } from "@/data/knowledge-tree/comparison-selection";
 import { useCourseContext } from "@/course-context/CourseContextProvider";
 import { withCourseContext } from "@/course-context/catalog";
+import AIAssistantLauncher from "@/components/ai/AIAssistantLauncher";
 
 type TabKey = "tree" | "diff" | "exclusive";
 
@@ -336,6 +337,20 @@ export default function KnowledgeTreeComparePage() {
                 </div>
               </div>
             )}
+          </div>}
+
+          {!dataError && hasPublishedMappings && isValidComparison && <div className="mb-6 flex justify-end">
+            <AIAssistantLauncher
+              pageContext={{
+                pageType: "knowledge-comparison",
+                route: "/knowledge-tree",
+                selectedPaperIds: [paperA ?? "", paperB ?? ""],
+                comparisonIds: [codeA, codeB],
+              }}
+              qualificationIds={context ? [context.qualificationId] : []}
+              syllabusVersions={entry?.specificationLabel ? [entry.specificationLabel] : []}
+              contextLabel={`${displayA} ↔ ${displayB}`}
+            />
           </div>}
 
           {/* Invalid comparison */}

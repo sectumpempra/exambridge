@@ -9,6 +9,14 @@ export default defineConfig({
       "@": new URL("./src", import.meta.url).pathname,
     },
   },
+  server: {
+    proxy: {
+      "/api/ai": {
+        target: "http://127.0.0.1:8789",
+        changeOrigin: true,
+      },
+    },
+  },
   build: {
     outDir: "dist-static",
     emptyOutDir: true,
