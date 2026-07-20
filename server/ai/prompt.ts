@@ -2,8 +2,11 @@ import type { AIChatRequest } from "@/domain-v2/ai-assistant";
 
 export function isComplexAIQuestion(request: AIChatRequest): boolean {
   const latest = [...request.messages].reverse().find((message) => message.role === "user")?.content ?? "";
-  return request.pageContext.comparisonIds.length > 1
+  return request.pageContext.pageType === "knowledge-comparison"
+    || request.pageContext.comparisonIds.length > 1
+    || request.pageContext.selectedPaperIds.filter(Boolean).length > 1
     || request.qualificationIds.length > 1
+    || (request.resolvedContext?.qualificationIds.length ?? 0) > 1
     || /(比较|区别|差异|独有|重合|为什么|分析|解释|compare|difference|overlap|exclusive|why)/i.test(latest);
 }
 

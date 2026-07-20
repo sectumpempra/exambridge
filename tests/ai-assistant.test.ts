@@ -9,6 +9,7 @@ import {
 } from "@/domain-v2/ai-assistant";
 import { AIContextBuilder, overviewIdentityMatches } from "../server/ai/context-builder";
 import { AnonymousAIRateLimiter } from "../server/ai/rate-limit";
+import { AIServiceGuard } from "../server/ai/service-guard";
 import { AIProviderError, DeepSeekChatProvider, ensureAnswerCitations, hydrateCitations } from "../server/ai/provider";
 import { isComplexAIQuestion } from "../server/ai/prompt";
 import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai";
@@ -189,6 +190,12 @@ describe("AI assistant provider boundaries", () => {
   it("uses maximum reasoning for comparisons and lower reasoning for simple facts", () => {
     expect(isComplexAIQuestion(request())).toBe(false);
     expect(isComplexAIQuestion(request({ messages: [{ role: "user", content: "比较 9709 和 9MA0 的区别" }] }))).toBe(true);
+    expect(isComplexAIQuestion(request({
+      pageContext: { pageType: "knowledge-comparison", route: "/knowledge-tree", selectedPaperIds: [], comparisonIds: ["CAIE-9709"] },
+    }))).toBe(true);
+    expect(isComplexAIQuestion(request({
+      resolvedContext: { qualificationIds: ["a", "b"], qualificationCodes: ["A", "B"], paperIds: [], labels: ["A", "B"] },
+    }))).toBe(true);
   });
 
   it("fails safely when the server API key is absent", async () => {
@@ -243,6 +250,36 @@ describe("AI assistant provider boundaries", () => {
     if (second.allowed) second.release();
     expect(limiter.acquire("ip", 3)).toMatchObject({ allowed: false, reason: "rate-limited" });
   });
+
+  it("enforces daily request and token ceilings with a UTC reset", () => {
+    const start = Date.UTC(2026, 6, 21, 12);
+    const requestGuard = new AIServiceGuard(2, 1_000, 5, 60_000);
+    expect(requestGuard.beginProviderRequest(start)).toEqual({ allowed: true });
+    requestGuard.recordProviderSuccess(10, start);
+    expect(requestGuard.beginProviderRequest(start + 1)).toEqual({ allowed: true });
+    requestGuard.recordProviderSuccess(10, start + 1);
+    expect(requestGuard.beginProviderRequest(start + 2)).toMatchObject({ allowed: false, reason: "daily-request-limit" });
+    expect(requestGuard.beginProviderRequest(start + 24 * 60 * 60_000)).toEqual({ allowed: true });
+
+    const tokenGuard = new AIServiceGuard(10, 100, 5, 60_000);
+    expect(tokenGuard.beginProviderRequest(start)).toEqual({ allowed: true });
+    tokenGuard.recordProviderSuccess(100, start);
+    expect(tokenGuard.beginProviderRequest(start + 1)).toMatchObject({ allowed: false, reason: "daily-token-limit" });
+  });
+
+  it("opens and recovers the provider circuit after consecutive failures", () => {
+    const guard = new AIServiceGuard(10, 1_000, 2, 1_000);
+    const start = Date.UTC(2026, 6, 21, 12);
+    expect(guard.beginProviderRequest(start)).toEqual({ allowed: true });
+    guard.recordProviderFailure(start);
+    expect(guard.beginProviderRequest(start + 1)).toEqual({ allowed: true });
+    guard.recordProviderFailure(start + 1);
+    expect(guard.beginProviderRequest(start + 2)).toMatchObject({ allowed: false, reason: "provider-circuit-open" });
+    expect(guard.snapshot(start + 2).circuitOpen).toBe(true);
+    expect(guard.beginProviderRequest(start + 1_001)).toEqual({ allowed: true });
+    guard.recordProviderSuccess(20, start + 1_001);
+    expect(guard.snapshot(start + 1_001)).toMatchObject({ consecutiveProviderFailures: 0, circuitOpen: false });
+  });
 });
 
 describe("AI assistant HTTP/SSE boundary", () => {
@@ -279,6 +316,11 @@ describe("AI assistant HTTP/SSE boundary", () => {
         }),
       },
       limiter: new AnonymousAIRateLimiter(10, 60_000, 2, 10),
+      serviceGuard: {
+        beginProviderRequest: vi.fn().mockReturnValue({ allowed: true }),
+        recordProviderSuccess: vi.fn(),
+        recordProviderFailure: vi.fn(),
+      },
     };
     const server = createAIHttpServer(dependencies);
     await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
@@ -319,6 +361,7 @@ describe("AI assistant HTTP/SSE boundary", () => {
       });
       expect(dependencies.builder.build).toHaveBeenCalledOnce();
       expect(dependencies.provider.stream).toHaveBeenCalledOnce();
+      expect(dependencies.serviceGuard.recordProviderSuccess).toHaveBeenCalledWith(30);
     } finally {
       await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
     }

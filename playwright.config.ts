@@ -17,6 +17,7 @@ export default defineConfig({
     { name: "mobile-390", testMatch: /routes\.spec\.ts/, use: { ...devices["iPhone 13"], browserName: "chromium", viewport: { width: 390, height: 844 } } },
     { name: "firefox-core", testMatch: /cross-browser\.spec\.ts/, use: { ...devices["Desktop Firefox"] } },
     { name: "webkit-core", testMatch: /cross-browser\.spec\.ts/, use: { ...devices["Desktop Safari"] } },
+    { name: "ai-public-chromium", testMatch: /ai-assistant-public\.spec\.ts/, use: { ...devices["Desktop Chrome"] } },
     ...[320, 360, 390, 768, 1024].map((width) => ({
       name: `layout-${width}`,
       testMatch: /layout\.spec\.ts/,

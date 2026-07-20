@@ -5,6 +5,7 @@ import { pruneAIChatHistory } from "@/domain-v2/ai-assistant/history";
 import { AIContextBuilder } from "./context-builder";
 import { DeepSeekChatProvider, AIProviderError, ensureAnswerCitations, hydrateCitations } from "./provider";
 import { AnonymousAIRateLimiter } from "./rate-limit";
+import { AIServiceGuard, createAIServiceGuardFromEnv } from "./service-guard";
 import { buildAISystemPrompt, isComplexAIQuestion } from "./prompt";
 
 const PORT = Number(process.env.AI_PORT ?? 8789);
@@ -15,6 +16,7 @@ export interface AIHttpServerDependencies {
   builder: Pick<AIContextBuilder, "build">;
   provider: Pick<DeepSeekChatProvider, "isConfigured" | "stream">;
   limiter: Pick<AnonymousAIRateLimiter, "acquire">;
+  serviceGuard: Pick<AIServiceGuard, "beginProviderRequest" | "recordProviderSuccess" | "recordProviderFailure">;
 }
 
 function json(res: ServerResponse, status: number, value: unknown) {
@@ -88,7 +90,7 @@ async function handleChat(
   res: ServerResponse,
   dependencies: AIHttpServerDependencies,
 ) {
-  const { builder, provider, limiter } = dependencies;
+  const { builder, provider, limiter, serviceGuard } = dependencies;
   if (!originAllowed(req)) {
     json(res, 403, { error: "origin-not-allowed" });
     return;
@@ -124,6 +126,10 @@ async function handleChat(
   let model = "none";
   let promptTokens = 0;
   let completionTokens = 0;
+  let totalTokens = 0;
+  let reasoningEffort: "none" | "low" | "max" = "none";
+  let providerAttempted = false;
+  let providerSucceeded = false;
   try {
     const request = { ...parsed.data, messages: pruneAIChatHistory(parsed.data.messages) };
     const context = await builder.build(request);
@@ -145,16 +151,39 @@ async function handleChat(
       return;
     }
 
+    const guardDecision = serviceGuard.beginProviderRequest();
+    if (!guardDecision.allowed) {
+      status = guardDecision.reason;
+      sendEvent(res, errorEvent({
+        type: "error",
+        code: "service-limit",
+        message: guardDecision.reason === "provider-circuit-open"
+          ? "AI 服务连续失败，已暂时停止生成，请稍后再试。"
+          : "AI 服务今日使用额度已达到安全上限，请明日再试。",
+        retryAfterSeconds: guardDecision.retryAfterSeconds,
+      }));
+      return;
+    }
+
+    reasoningEffort = isComplexAIQuestion(request) ? "max" : "low";
+    const system = buildAISystemPrompt(request, context.promptContext);
+    providerAttempted = true;
     const result = await provider.stream({
-      system: buildAISystemPrompt(request, context.promptContext),
+      system,
       messages: request.messages,
-      reasoningEffort: isComplexAIQuestion(request) ? "max" : "low",
+      reasoningEffort,
       signal: controller.signal,
       onDelta: (text) => sendEvent(res, { type: "delta", text }),
     });
+    providerSucceeded = true;
     model = result.model;
     promptTokens = result.usage?.prompt_tokens ?? 0;
     completionTokens = result.usage?.completion_tokens ?? 0;
+    const reportedTotalTokens = result.usage?.total_tokens ?? promptTokens + completionTokens;
+    totalTokens = reportedTotalTokens > 0
+      ? reportedTotalTokens
+      : Math.ceil((system.length + request.messages.reduce((sum, message) => sum + message.content.length, 0) + result.answer.length) / 4);
+    serviceGuard.recordProviderSuccess(totalTokens);
     const answer = ensureAnswerCitations(result.answer, context.sources);
     const citations = hydrateCitations(answer, context.sources);
     sendEvent(res, { type: "citations", citations });
@@ -171,6 +200,7 @@ async function handleChat(
       return;
     }
     if (error instanceof AIProviderError) {
+      if (providerAttempted && !providerSucceeded && error.kind !== "configuration") serviceGuard.recordProviderFailure();
       status = `provider-${error.kind}`;
       sendEvent(res, errorEvent({
         type: "error",
@@ -190,8 +220,10 @@ async function handleChat(
       requestId,
       status,
       model,
+      reasoningEffort,
       promptTokens,
       completionTokens,
+      totalTokens,
       elapsedMs: Date.now() - startedAt,
     }));
   }
@@ -202,6 +234,7 @@ export function createAIHttpServer(overrides: Partial<AIHttpServerDependencies> 
     builder: overrides.builder ?? new AIContextBuilder(),
     provider: overrides.provider ?? new DeepSeekChatProvider(),
     limiter: overrides.limiter ?? new AnonymousAIRateLimiter(),
+    serviceGuard: overrides.serviceGuard ?? createAIServiceGuardFromEnv(),
   };
   return createServer(async (req, res) => {
     const url = new URL(req.url ?? "/", `http://${req.headers.host ?? "localhost"}`);

@@ -61,6 +61,7 @@ export const AIStreamEventSchema = z.discriminatedUnion("type", [
     code: z.enum([
       "invalid-request", "context-required", "rate-limited", "busy",
       "provider-timeout", "provider-unavailable", "configuration-error", "internal-error",
+      "service-limit",
     ]),
     message: z.string().min(1).max(500),
     retryAfterSeconds: z.number().int().positive().optional(),

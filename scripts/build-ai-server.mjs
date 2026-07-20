@@ -30,7 +30,7 @@ await build({
 await writeFile(path.join(outDir, "README.txt"), [
   "ExamBridge AI server bundle",
   "Required environment: DEEPSEEK_API_KEY, DEEPSEEK_BASE_URL, DEEPSEEK_MODEL",
-  "Optional environment: AI_HOST, AI_PORT, AI_ALLOWED_ORIGINS, AI_PROVIDER_TIMEOUT_MS, EXAMBRIDGE_DATA_ROOT",
+  "Optional environment: AI_HOST, AI_PORT, AI_ALLOWED_ORIGINS, AI_PROVIDER_TIMEOUT_MS, AI_DAILY_REQUEST_LIMIT, AI_DAILY_TOKEN_LIMIT, AI_PROVIDER_FAILURE_THRESHOLD, AI_PROVIDER_COOLDOWN_MS, EXAMBRIDGE_DATA_ROOT",
   "Do not place the environment file in the web root or Git repository.",
   "",
 ].join("\n"));
