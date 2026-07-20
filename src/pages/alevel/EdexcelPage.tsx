@@ -35,7 +35,7 @@ export default function AlevelEdexcelPage() {
   return (
     <ALevelBoardPage
       boardName="Edexcel"
-      note="Pearson Edexcel A-Level/IAL 历史分数线。已核验与待核验记录按严格发布策略区分；未核验数据不会用于等级预测。"
+      note="Pearson Edexcel AS/A-Level/IAL 历史分数线。8MA0 AS 使用 A–E 等级，不设 A*；已核验与待核验记录按严格发布策略区分，未核验数据不会用于等级预测。"
       columns={COLUMNS}
       data={data as Record<string, string | number>[]}
       gradeFields={GRADES}

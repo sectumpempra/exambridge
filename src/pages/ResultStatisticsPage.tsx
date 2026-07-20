@@ -53,6 +53,12 @@ const CONFIG_A_STAR: GradeConfig = {
   grades: ["aStarRate", "aRate", "bRate", "cRate", "dRate", "eRate"],
 };
 
+const CONFIG_A_TO_E: GradeConfig = {
+  colors: CONFIG_A_STAR.colors,
+  labels: CONFIG_A_STAR.labels,
+  grades: ["aRate", "bRate", "cRate", "dRate", "eRate"],
+};
+
 const CONFIG_9_1: GradeConfig = {
   colors: {
     grade9Rate: { stroke: "#A9471F", fill: "#A9471F" },  // 9 - Burnt orange
@@ -69,7 +75,8 @@ const CONFIG_9_1: GradeConfig = {
   grades: ["grade9Rate", "grade8Rate", "grade7Rate", "grade6Rate", "grade5Rate", "grade4Rate", "grade3Rate", "grade2Rate", "grade1Rate"],
 };
 
-function getGradeConfig(board: string, level: string): GradeConfig {
+function getGradeConfig(board: string, level: string, subjectCode?: string): GradeConfig {
+  if (board === "Edexcel UK" && subjectCode === "8MA0") return CONFIG_A_TO_E;
   return isNineToOne(board, level) ? CONFIG_9_1 : CONFIG_A_STAR;
 }
 
@@ -314,7 +321,10 @@ export default function ResultStatisticsPage() {
   }, [entry]);
 
   // Grade configuration (dynamic: A*-E or 9-1 based on board+level)
-  const gradeConfig = useMemo(() => getGradeConfig(selectedBoard, selectedLevel), [selectedBoard, selectedLevel]);
+  const gradeConfig = useMemo(
+    () => getGradeConfig(selectedBoard, selectedLevel, selectedSubjectCode),
+    [selectedBoard, selectedLevel, selectedSubjectCode],
+  );
 
   // Track user-toggled grades; gradesToShow is derived synchronously from gradeConfig
   const [toggledGrades, setToggledGrades] = useState<string[]>([]);
@@ -415,7 +425,7 @@ export default function ResultStatisticsPage() {
               </div>
               <div>
                 <h1 style={{ fontSize: 22, fontWeight: 700, color: "#3D3832", margin: 0 }}>
-                  历年 {isNineToOne(selectedBoard, selectedLevel) ? "Grade 9 / Grade 8" : "A*率 / A率"} 趋势
+                  历年 {gradeConfig.labels[gradeConfig.grades[0]]}率 / {gradeConfig.labels[gradeConfig.grades[1]]}率 趋势
                 </h1>
                 <p style={{ fontSize: 12, color: "#6E675E", margin: "2px 0 0" }}>
                   各考试局、各科目历年成绩统计 · 数据驱动备考决策

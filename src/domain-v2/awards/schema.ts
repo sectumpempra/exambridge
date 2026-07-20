@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const GradeSchema = z.enum(["A*", "A", "B", "C", "D", "E", "a", "b", "c", "d", "e"]);
 const HashSchema = z.string().regex(/^[a-f0-9]{64}$/);
-const QualificationBoardPairs = new Set(["AQA|7357", "OCR|H240", "OCR|6993", "CAIE|9709"]);
+const QualificationBoardPairs = new Set(["AQA|7357", "OCR|H240", "OCR|6993", "CAIE|9709", "Edexcel UK|8MA0"]);
 const OfficialSourceReferenceFields = {
   sourceUrl: z.string().url(),
   publishedAt: z.string().min(1),
@@ -29,8 +29,8 @@ export const OfficialSourceReferenceSchema = z.strictObject(OfficialSourceRefere
 
 export const OfficialAwardRouteSchema = z.object({
   id: z.string().min(1),
-  board: z.enum(["AQA", "OCR", "CAIE"]),
-  qualificationCode: z.enum(["7357", "H240", "6993", "9709"]),
+  board: z.enum(["AQA", "OCR", "CAIE", "Edexcel UK"]),
+  qualificationCode: z.enum(["7357", "H240", "6993", "9709", "8MA0"]),
   level: z.enum(["A-Level", "AS-Level", "Level 3 FSMQ"]),
   specificationVersion: z.string().min(1),
   routeType: z.enum(["linear", "same-series", "staged"]),

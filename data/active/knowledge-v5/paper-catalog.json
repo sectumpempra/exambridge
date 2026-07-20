@@ -1,0 +1,3914 @@
+{
+  "schemaVersion": "5.0.0",
+  "generatedAt": "2026-07-19",
+  "reviewStatus": "owner-approved",
+  "qualifications": [
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "sourceSha256": "6bb4bb826ad2363804a95248a4993b2e147e1a5c4673194e2088dab8754fc6ed",
+      "contentAllocation": "fixed-by-paper",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "6bb4bb826ad2363804a95248a4993b2e147e1a5c4673194e2088dab8754fc6ed",
+          "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7357/specification/subject-content",
+          "locator": "Official specification PDF pages 8–9, section 2.2 Assessments",
+          "evidenceSummary": "Paper 1 assesses sections A–I; Paper 2 adds mechanics; Paper 3 adds statistics."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "paper-1",
+          "code": "7357/1",
+          "name": "Paper 1 · Pure Mathematics",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "linear"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "6bb4bb826ad2363804a95248a4993b2e147e1a5c4673194e2088dab8754fc6ed",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7357/specification/subject-content",
+              "locator": "Official specification PDF pages 8–9, section 2.2 Assessments",
+              "evidenceSummary": "Paper 1 assesses sections A–I; written examination, 100 marks."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-2",
+          "code": "7357/2",
+          "name": "Paper 2 · Pure Mathematics and Mechanics",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "linear"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "6bb4bb826ad2363804a95248a4993b2e147e1a5c4673194e2088dab8754fc6ed",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7357/specification/subject-content",
+              "locator": "Official specification PDF pages 8–9, section 2.2 Assessments",
+              "evidenceSummary": "Paper 2 assesses Paper 1 content plus vectors and mechanics sections J and P–S; 100 marks."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-3",
+          "code": "7357/3",
+          "name": "Paper 3 · Pure Mathematics and Statistics",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "linear"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "6bb4bb826ad2363804a95248a4993b2e147e1a5c4673194e2088dab8754fc6ed",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7357/specification/subject-content",
+              "locator": "Official specification PDF pages 8–9, section 2.2 Assessments",
+              "evidenceSummary": "Paper 3 assesses Paper 1 content plus statistics sections K–O; 100 marks."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "linear",
+          "name": "Linear A-level route",
+          "tiers": [],
+          "paperIds": [
+            "paper-1",
+            "paper-2",
+            "paper-3"
+          ],
+          "selectionRule": "Students complete Papers 1, 2 and 3 in the same examination series.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "6bb4bb826ad2363804a95248a4993b2e147e1a5c4673194e2088dab8754fc6ed",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7357/specification/subject-content",
+              "locator": "Official specification PDF pages 7–9, sections 2 Specification at a glance and 2.2 Assessments",
+              "evidenceSummary": "The qualification is linear and requires all three Papers."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
+      "contentAllocation": "fixed-by-unit-or-option",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
+          "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7367/specification/subject-content/compulsory-content",
+          "locator": "Official specification PDF pages 9–10, Paper 3 route alternatives",
+          "evidenceSummary": "Papers 1 and 2 assess compulsory content; Paper 3 assesses the selected pair of optional applications."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "paper-1",
+          "code": "7367/1",
+          "name": "Paper 1 · Compulsory Pure",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "discrete-statistics",
+            "statistics-mechanics",
+            "mechanics-discrete"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7367/specification/subject-content/compulsory-content",
+              "locator": "Official specification PDF pages 8–9, section 2.2 Assessments",
+              "evidenceSummary": "Paper 1 may assess compulsory sections A–J; written examination, 100 marks."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-2",
+          "code": "7367/2",
+          "name": "Paper 2 · Compulsory Pure",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "discrete-statistics",
+            "statistics-mechanics",
+            "mechanics-discrete"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7367/specification/subject-content/compulsory-content",
+              "locator": "Official specification PDF pages 8–9, section 2.2 Assessments",
+              "evidenceSummary": "Paper 2 may assess compulsory sections A–J; written examination, 100 marks."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-3-discrete-statistics",
+          "code": "7367/3 · Discrete + Statistics",
+          "name": "Paper 3 · Discrete and Statistics",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "discrete-statistics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7367/specification/subject-content/compulsory-content",
+              "locator": "Official specification PDF pages 9–10, Paper 3 route alternatives",
+              "evidenceSummary": "Paper 3 consists of one Discrete booklet and one Statistics booklet."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-3-statistics-mechanics",
+          "code": "7367/3 · Statistics + Mechanics",
+          "name": "Paper 3 · Statistics and Mechanics",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "statistics-mechanics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7367/specification/subject-content/compulsory-content",
+              "locator": "Official specification PDF pages 9–10, Paper 3 route alternatives",
+              "evidenceSummary": "Paper 3 consists of one Statistics booklet and one Mechanics booklet."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-3-mechanics-discrete",
+          "code": "7367/3 · Mechanics + Discrete",
+          "name": "Paper 3 · Mechanics and Discrete",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "mechanics-discrete"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7367/specification/subject-content/compulsory-content",
+              "locator": "Official specification PDF pages 9–10, Paper 3 route alternatives",
+              "evidenceSummary": "Paper 3 consists of one Mechanics booklet and one Discrete booklet."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "discrete-statistics",
+          "name": "Discrete and Statistics route",
+          "tiers": [],
+          "paperIds": [
+            "paper-1",
+            "paper-2",
+            "paper-3-discrete-statistics"
+          ],
+          "selectionRule": "Complete compulsory Papers 1 and 2 and the Paper 3 combination containing the two named optional applications.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7367/specification/subject-content/compulsory-content",
+              "locator": "Official specification PDF pages 9–10, Paper 3 route alternatives",
+              "evidenceSummary": "Official Paper 3 option combination: Discrete and Statistics."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "statistics-mechanics",
+          "name": "Statistics and Mechanics route",
+          "tiers": [],
+          "paperIds": [
+            "paper-1",
+            "paper-2",
+            "paper-3-statistics-mechanics"
+          ],
+          "selectionRule": "Complete compulsory Papers 1 and 2 and the Paper 3 combination containing the two named optional applications.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7367/specification/subject-content/compulsory-content",
+              "locator": "Official specification PDF pages 9–10, Paper 3 route alternatives",
+              "evidenceSummary": "Official Paper 3 option combination: Statistics and Mechanics."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "mechanics-discrete",
+          "name": "Mechanics and Discrete route",
+          "tiers": [],
+          "paperIds": [
+            "paper-1",
+            "paper-2",
+            "paper-3-mechanics-discrete"
+          ],
+          "selectionRule": "Complete compulsory Papers 1 and 2 and the Paper 3 combination containing the two named optional applications.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7367/specification/subject-content/compulsory-content",
+              "locator": "Official specification PDF pages 9–10, Paper 3 route alternatives",
+              "evidenceSummary": "Official Paper 3 option combination: Mechanics and Discrete."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+      "contentAllocation": "tier-filtered-shared-syllabus",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+          "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification",
+          "locator": "Official specification PDF pages 7–9, Assessments and Subject content overview",
+          "evidenceSummary": "Students take all three papers at one tier and tier-applicable content may be assessed on any paper."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "paper-1f",
+          "code": "8300/1F",
+          "name": "Paper 1 Foundation · Non-calculator",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "foundation"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification",
+              "locator": "Official specification PDF pages 7–9, Assessments and Subject content overview",
+              "evidenceSummary": "Paper 1 Foundation · Non-calculator; content from any tier-applicable part of the specification may be assessed."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-2f",
+          "code": "8300/2F",
+          "name": "Paper 2 Foundation · Calculator",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "foundation"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification",
+              "locator": "Official specification PDF pages 7–9, Assessments and Subject content overview",
+              "evidenceSummary": "Paper 2 Foundation · Calculator; content from any tier-applicable part of the specification may be assessed."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-3f",
+          "code": "8300/3F",
+          "name": "Paper 3 Foundation · Calculator",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "foundation"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification",
+              "locator": "Official specification PDF pages 7–9, Assessments and Subject content overview",
+              "evidenceSummary": "Paper 3 Foundation · Calculator; content from any tier-applicable part of the specification may be assessed."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-1h",
+          "code": "8300/1H",
+          "name": "Paper 1 Higher · Non-calculator",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "higher"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification",
+              "locator": "Official specification PDF pages 7–9, Assessments and Subject content overview",
+              "evidenceSummary": "Paper 1 Higher · Non-calculator; content from any tier-applicable part of the specification may be assessed."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-2h",
+          "code": "8300/2H",
+          "name": "Paper 2 Higher · Calculator",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "higher"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification",
+              "locator": "Official specification PDF pages 7–9, Assessments and Subject content overview",
+              "evidenceSummary": "Paper 2 Higher · Calculator; content from any tier-applicable part of the specification may be assessed."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-3h",
+          "code": "8300/3H",
+          "name": "Paper 3 Higher · Calculator",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "higher"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification",
+              "locator": "Official specification PDF pages 7–9, Assessments and Subject content overview",
+              "evidenceSummary": "Paper 3 Higher · Calculator; content from any tier-applicable part of the specification may be assessed."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "foundation",
+          "name": "Foundation tier",
+          "tiers": [
+            "Foundation"
+          ],
+          "paperIds": [
+            "paper-1f",
+            "paper-2f",
+            "paper-3f"
+          ],
+          "selectionRule": "Take all three Foundation Papers in the same series.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification",
+              "locator": "Official specification PDF pages 7–9, Assessments and Subject content overview",
+              "evidenceSummary": "Students take three question papers at the same tier; all tier-applicable content can be assessed on any Paper."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "higher",
+          "name": "Higher tier",
+          "tiers": [
+            "Higher"
+          ],
+          "paperIds": [
+            "paper-1h",
+            "paper-2h",
+            "paper-3h"
+          ],
+          "selectionRule": "Take all three Higher Papers in the same series.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/gcse/mathematics-8300/specification",
+              "locator": "Official specification PDF pages 7–9, Assessments and Subject content overview",
+              "evidenceSummary": "Students take three question papers at the same tier; all tier-applicable content can be assessed on any Paper."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "AQA-8365:1.4",
+      "sourceSha256": "f361266afe5534fca9b2df50b931d9aacc944fe2f4295e9949e8079e93ce1972",
+      "contentAllocation": "qualification-wide-shared-syllabus",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "f361266afe5534fca9b2df50b931d9aacc944fe2f4295e9949e8079e93ce1972",
+          "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/aqa-certificate/mathematics-8365/specification",
+          "locator": "Official specification PDF page 5, section 2 Specification at a glance — Assessments",
+          "evidenceSummary": "Any part of the specification may be assessed on either required paper."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "paper-1",
+          "code": "8365/1",
+          "name": "Paper 1 · Non-calculator",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "linear"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "f361266afe5534fca9b2df50b931d9aacc944fe2f4295e9949e8079e93ce1972",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/aqa-certificate/mathematics-8365/specification",
+              "locator": "Official specification PDF page 5, section 2 Specification at a glance — Assessments",
+              "evidenceSummary": "Paper 1 may assess content from any part of the specification; 80 marks."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "paper-2",
+          "code": "8365/2",
+          "name": "Paper 2 · Calculator",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "linear"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "f361266afe5534fca9b2df50b931d9aacc944fe2f4295e9949e8079e93ce1972",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/aqa-certificate/mathematics-8365/specification",
+              "locator": "Official specification PDF page 5, section 2 Specification at a glance — Assessments",
+              "evidenceSummary": "Paper 2 may assess content from any part of the specification; 80 marks."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "linear",
+          "name": "Linear Level 2 route",
+          "tiers": [],
+          "paperIds": [
+            "paper-1",
+            "paper-2"
+          ],
+          "selectionRule": "Take both Papers in the same series.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "f361266afe5534fca9b2df50b931d9aacc944fe2f4295e9949e8079e93ce1972",
+              "sourceUrl": "https://www.aqa.org.uk/subjects/mathematics/aqa-certificate/mathematics-8365/specification",
+              "locator": "Official specification PDF page 5, section 2 Specification at a glance — Assessments",
+              "evidenceSummary": "The qualification is linear; both Papers are required and any specification content may be assessed on either."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "CAIE-0580:2025-2027",
+      "sourceSha256": "627f8e5dab21605f95b9aceec4a2dcdddf91dce5767d6938d647b38041c6d363",
+      "contentAllocation": "mixed",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "627f8e5dab21605f95b9aceec4a2dcdddf91dce5767d6938d647b38041c6d363",
+          "sourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
+          "locator": "Official specification PDF pages 57–59, section 4 Details of the assessment",
+          "evidenceSummary": "Each Core or Extended paper uses the corresponding tier content, except calculator-use content C1.14/E1.14 is excluded from the non-calculator paper."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "CAIE-0580-Paper-1",
+          "code": "1",
+          "name": "Paper 1 Non-calculator (Core)",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "core"
+          ],
+          "routes": [
+            "CAIE-0580-Route-Core"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "627f8e5dab21605f95b9aceec4a2dcdddf91dce5767d6938d647b38041c6d363",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
+              "locator": "pages 9,58",
+              "evidenceSummary": "Paper 1 Non-calculator (Core) described as compulsory for Core candidates, 1h30m, 80 marks, 50%."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-0580-Paper-2",
+          "code": "2",
+          "name": "Paper 2 Non-calculator (Extended)",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "extended"
+          ],
+          "routes": [
+            "CAIE-0580-Route-Extended"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "627f8e5dab21605f95b9aceec4a2dcdddf91dce5767d6938d647b38041c6d363",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
+              "locator": "pages 9,59",
+              "evidenceSummary": "Paper 2 Non-calculator (Extended) described as compulsory for Extended candidates, 2h, 100 marks, 50%."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-0580-Paper-3",
+          "code": "3",
+          "name": "Paper 3 Calculator (Core)",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "core"
+          ],
+          "routes": [
+            "CAIE-0580-Route-Core"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "627f8e5dab21605f95b9aceec4a2dcdddf91dce5767d6938d647b38041c6d363",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
+              "locator": "pages 9,58",
+              "evidenceSummary": "Paper 3 Calculator (Core) described as compulsory for Core candidates, 1h30m, 80 marks, 50%."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-0580-Paper-4",
+          "code": "4",
+          "name": "Paper 4 Calculator (Extended)",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "extended"
+          ],
+          "routes": [
+            "CAIE-0580-Route-Extended"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "627f8e5dab21605f95b9aceec4a2dcdddf91dce5767d6938d647b38041c6d363",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
+              "locator": "pages 9,59",
+              "evidenceSummary": "Paper 4 Calculator (Extended) described as compulsory for Extended candidates, 2h, 100 marks, 50%."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "CAIE-0580-Route-Core",
+          "name": "Core",
+          "tiers": [
+            "core"
+          ],
+          "paperIds": [
+            "CAIE-0580-Paper-1",
+            "CAIE-0580-Paper-3"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "627f8e5dab21605f95b9aceec4a2dcdddf91dce5767d6938d647b38041c6d363",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
+              "locator": "pages 9,57",
+              "evidenceSummary": "Core candidates must take Paper 1 and Paper 3."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "CAIE-0580-Route-Extended",
+          "name": "Extended",
+          "tiers": [
+            "extended"
+          ],
+          "paperIds": [
+            "CAIE-0580-Paper-2",
+            "CAIE-0580-Paper-4"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "627f8e5dab21605f95b9aceec4a2dcdddf91dce5767d6938d647b38041c6d363",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
+              "locator": "pages 9,57",
+              "evidenceSummary": "Extended candidates must take Paper 2 and Paper 4."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "CAIE-0606:2025-2027",
+      "sourceSha256": "7d5412763f74834a441e45f4b0f983d163d6fc7511568a8c63bdf830ec8508a8",
+      "contentAllocation": "qualification-wide-shared-syllabus",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "7d5412763f74834a441e45f4b0f983d163d6fc7511568a8c63bdf830ec8508a8",
+          "sourceUrl": "https://www.cambridgeinternational.org/Images/662470-2025-2027-syllabus.pdf",
+          "locator": "Official specification PDF page 21, section 4 Details of the assessment",
+          "evidenceSummary": "Both compulsory papers may contain questions based on any part of the syllabus content."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "0606-P1",
+          "code": "Paper 1",
+          "name": "Paper 1 – Non-calculator",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "0606-standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "7d5412763f74834a441e45f4b0f983d163d6fc7511568a8c63bdf830ec8508a8",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/662470-2025-2027-syllabus.pdf",
+              "locator": "Page 9, Page 21",
+              "evidenceSummary": "Paper 1 is a 2-hour non-calculator written paper with 80 marks, worth 50% of the qualification. All candidates take it. Questions are based on any part of the syllabus content."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "0606-P2",
+          "code": "Paper 2",
+          "name": "Paper 2 – Calculator",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "0606-standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "7d5412763f74834a441e45f4b0f983d163d6fc7511568a8c63bdf830ec8508a8",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/662470-2025-2027-syllabus.pdf",
+              "locator": "Page 9, Page 21",
+              "evidenceSummary": "Paper 2 is a 2-hour calculator written paper with 80 marks, worth 50%. A scientific calculator is required. All candidates take it. Questions are based on any part of the syllabus content."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "0606-standard",
+          "name": "Standard route (all candidates)",
+          "tiers": [],
+          "paperIds": [
+            "0606-P1",
+            "0606-P2"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "7d5412763f74834a441e45f4b0f983d163d6fc7511568a8c63bdf830ec8508a8",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/662470-2025-2027-syllabus.pdf",
+              "locator": "Page 9",
+              "evidenceSummary": "All candidates take two components: Paper 1 and Paper 2. Both are compulsory."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "CAIE-9231:2026-2027",
+      "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
+      "contentAllocation": "fixed-by-paper",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
+          "sourceUrl": "https://www.cambridgeinternational.org/Images/697357-2026-2027-syllabus.pdf",
+          "locator": "Official specification PDF pages 29–34, section 4 Details of the assessment",
+          "evidenceSummary": "Further Pure, Further Mechanics and Further Probability & Statistics content is allocated to the named components."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "CAIE-9231-Paper-1",
+          "code": "1",
+          "name": "Further Pure Mathematics 1",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "CAIE-9231-AS-Mechanics",
+            "CAIE-9231-AS-Statistics",
+            "CAIE-9231-A-Level"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697357-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–11 (PDF pages 9–12), syllabus overview and assessment overview",
+              "evidenceSummary": "1 Further Pure Mathematics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-9231-Paper-2",
+          "code": "2",
+          "name": "Further Pure Mathematics 2",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "CAIE-9231-A-Level"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697357-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–11 (PDF pages 9–12), syllabus overview and assessment overview",
+              "evidenceSummary": "2 Further Pure Mathematics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-9231-Paper-3",
+          "code": "3",
+          "name": "Further Mechanics",
+          "componentKind": "paper",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "CAIE-9231-AS-Mechanics",
+            "CAIE-9231-A-Level"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697357-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–11 (PDF pages 9–12), syllabus overview and assessment overview",
+              "evidenceSummary": "3 Further Mechanics is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-9231-Paper-4",
+          "code": "4",
+          "name": "Further Probability & Statistics",
+          "componentKind": "paper",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "CAIE-9231-AS-Statistics",
+            "CAIE-9231-A-Level"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697357-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–11 (PDF pages 9–12), syllabus overview and assessment overview",
+              "evidenceSummary": "4 Further Probability & Statistics is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "CAIE-9231-AS-Mechanics",
+          "name": "AS Level: Further Pure 1 and Further Mechanics",
+          "tiers": [],
+          "paperIds": [
+            "CAIE-9231-Paper-1",
+            "CAIE-9231-Paper-3"
+          ],
+          "selectionRule": "Take Papers 1 and 3.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697357-2026-2027-syllabus.pdf",
+              "locator": "official specification printed page 8 (PDF page 9), Structure",
+              "evidenceSummary": "AS candidates choose Paper 1 with Paper 3 for the Further Mechanics route."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "CAIE-9231-AS-Statistics",
+          "name": "AS Level: Further Pure 1 and Further Probability & Statistics",
+          "tiers": [],
+          "paperIds": [
+            "CAIE-9231-Paper-1",
+            "CAIE-9231-Paper-4"
+          ],
+          "selectionRule": "Take Papers 1 and 4.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697357-2026-2027-syllabus.pdf",
+              "locator": "official specification printed page 8 (PDF page 9), Structure",
+              "evidenceSummary": "AS candidates choose Paper 1 with Paper 4 for the Further Probability & Statistics route."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "CAIE-9231-A-Level",
+          "name": "A Level Further Mathematics",
+          "tiers": [],
+          "paperIds": [
+            "CAIE-9231-Paper-1",
+            "CAIE-9231-Paper-2",
+            "CAIE-9231-Paper-3",
+            "CAIE-9231-Paper-4"
+          ],
+          "selectionRule": "Take all four Papers.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697357-2026-2027-syllabus.pdf",
+              "locator": "official specification printed page 8 (PDF page 9), Structure",
+              "evidenceSummary": "A Level candidates take Papers 1, 2, 3 and 4."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "CAIE-9709:2026-2027",
+      "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+      "contentAllocation": "fixed-by-paper",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+          "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+          "locator": "Official specification PDF pages 40–45, section 4 Details of the assessment",
+          "evidenceSummary": "Pure Mathematics, Mechanics and Probability & Statistics content is allocated to the named Papers."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "CAIE-9709-Paper-1",
+          "code": "1",
+          "name": "Pure Mathematics 1",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "CAIE-9709-AS-Pure",
+            "CAIE-9709-AS-Mechanics",
+            "CAIE-9709-AS-Statistics",
+            "CAIE-9709-A-Level-Mechanics",
+            "CAIE-9709-A-Level-Statistics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "1 Pure Mathematics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-9709-Paper-2",
+          "code": "2",
+          "name": "Pure Mathematics 2",
+          "componentKind": "paper",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "CAIE-9709-AS-Pure"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "2 Pure Mathematics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-9709-Paper-3",
+          "code": "3",
+          "name": "Pure Mathematics 3",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "CAIE-9709-A-Level-Mechanics",
+            "CAIE-9709-A-Level-Statistics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "3 Pure Mathematics 3 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-9709-Paper-4",
+          "code": "4",
+          "name": "Mechanics",
+          "componentKind": "paper",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "CAIE-9709-AS-Mechanics",
+            "CAIE-9709-A-Level-Mechanics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "4 Mechanics is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-9709-Paper-5",
+          "code": "5",
+          "name": "Probability & Statistics 1",
+          "componentKind": "paper",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "CAIE-9709-AS-Statistics",
+            "CAIE-9709-A-Level-Mechanics",
+            "CAIE-9709-A-Level-Statistics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "5 Probability & Statistics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "CAIE-9709-Paper-6",
+          "code": "6",
+          "name": "Probability & Statistics 2",
+          "componentKind": "paper",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "CAIE-9709-A-Level-Statistics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "6 Probability & Statistics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "CAIE-9709-AS-Pure",
+          "name": "AS Level: Pure Mathematics only",
+          "tiers": [],
+          "paperIds": [
+            "CAIE-9709-Paper-1",
+            "CAIE-9709-Paper-2"
+          ],
+          "selectionRule": "Take Papers 1 and 2; this combination cannot be carried forward to A Level.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "Take Papers 1 and 2; this combination cannot be carried forward to A Level."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "CAIE-9709-AS-Mechanics",
+          "name": "AS Level: Pure Mathematics and Mechanics",
+          "tiers": [],
+          "paperIds": [
+            "CAIE-9709-Paper-1",
+            "CAIE-9709-Paper-4"
+          ],
+          "selectionRule": "Take Papers 1 and 4.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "Take Papers 1 and 4."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "CAIE-9709-AS-Statistics",
+          "name": "AS Level: Pure Mathematics and Probability & Statistics",
+          "tiers": [],
+          "paperIds": [
+            "CAIE-9709-Paper-1",
+            "CAIE-9709-Paper-5"
+          ],
+          "selectionRule": "Take Papers 1 and 5.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "Take Papers 1 and 5."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "CAIE-9709-A-Level-Mechanics",
+          "name": "A Level: Mechanics and Probability & Statistics",
+          "tiers": [],
+          "paperIds": [
+            "CAIE-9709-Paper-1",
+            "CAIE-9709-Paper-3",
+            "CAIE-9709-Paper-4",
+            "CAIE-9709-Paper-5"
+          ],
+          "selectionRule": "Take Papers 1, 3, 4 and 5, either staged where permitted or in one series.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "Take Papers 1, 3, 4 and 5, either staged where permitted or in one series."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "CAIE-9709-A-Level-Statistics",
+          "name": "A Level: Probability & Statistics",
+          "tiers": [],
+          "paperIds": [
+            "CAIE-9709-Paper-1",
+            "CAIE-9709-Paper-3",
+            "CAIE-9709-Paper-5",
+            "CAIE-9709-Paper-6"
+          ],
+          "selectionRule": "Take Papers 1, 3, 5 and 6, either staged where permitted or in one series.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051",
+              "sourceUrl": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+              "locator": "official specification printed pages 8–15 (PDF pages 9–16), syllabus overview and assessment overview",
+              "evidenceSummary": "Take Papers 1, 3, 5 and 6, either staged where permitted or in one series."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "Edexcel-1MA1:2015",
+      "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+      "contentAllocation": "tier-filtered-shared-syllabus",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+          "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+          "locator": "Official specification PDF pages 33–35, Assessment summary",
+          "evidenceSummary": "The three papers at a chosen tier assess that tier's prescribed content without a fixed topic split by paper."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "1MA1-1F",
+          "code": "1MA1/1F",
+          "name": "Paper 1 (Foundation Tier)",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "foundation"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+              "locator": "PDF page 33, PDF page 51",
+              "evidenceSummary": "Assessment summary details Paper 1 as a non-calculator written exam (1h30m, 80 marks), with code 1MA1/1F for Foundation tier. Appendix 2 confirms the paper/component codes."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "1MA1-1H",
+          "code": "1MA1/1H",
+          "name": "Paper 1 (Higher Tier)",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "higher"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+              "locator": "PDF page 33, PDF page 51",
+              "evidenceSummary": "Assessment summary details Paper 1 as a non-calculator written exam (1h30m, 80 marks), with code 1MA1/1H for Higher tier. Appendix 2 confirms the paper/component codes."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "1MA1-2F",
+          "code": "1MA1/2F",
+          "name": "Paper 2 (Foundation Tier)",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "foundation"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+              "locator": "PDF page 34, PDF page 51",
+              "evidenceSummary": "Assessment summary states Paper 2 is a calculator-allowed written exam (1h30m, 80 marks), code 1MA1/2F for Foundation tier. Appendix 2 confirms codes."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "1MA1-2H",
+          "code": "1MA1/2H",
+          "name": "Paper 2 (Higher Tier)",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "higher"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+              "locator": "PDF page 34, PDF page 51",
+              "evidenceSummary": "Assessment summary states Paper 2 is a calculator-allowed written exam (1h30m, 80 marks), code 1MA1/2H for Higher tier. Appendix 2 confirms codes."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "1MA1-3F",
+          "code": "1MA1/3F",
+          "name": "Paper 3 (Foundation Tier)",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "foundation"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+              "locator": "PDF page 35, PDF page 51",
+              "evidenceSummary": "Assessment summary states Paper 3 is a calculator-allowed written exam (1h30m, 80 marks), code 1MA1/3F for Foundation tier. Appendix 2 confirms codes."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "1MA1-3H",
+          "code": "1MA1/3H",
+          "name": "Paper 3 (Higher Tier)",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "higher"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+              "locator": "PDF page 35, PDF page 51",
+              "evidenceSummary": "Assessment summary states Paper 3 is a calculator-allowed written exam (1h30m, 80 marks), code 1MA1/3H for Higher tier. Appendix 2 confirms codes."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "foundation",
+          "name": "Foundation Tier Route",
+          "tiers": [
+            "Foundation"
+          ],
+          "paperIds": [
+            "1MA1-1F",
+            "1MA1-2F",
+            "1MA1-3F"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+              "locator": "PDF page 13, PDF page 40",
+              "evidenceSummary": "Qualification at a glance states the qualification consists of three equally-weighted papers at either Foundation or Higher tier, and all three must be at the same tier. Entry information confirms students must take all three papers from the chosen tier. The Foundation route requires Papers 1F, 2F and 3F."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "higher",
+          "name": "Higher Tier Route",
+          "tiers": [
+            "Higher"
+          ],
+          "paperIds": [
+            "1MA1-1H",
+            "1MA1-2H",
+            "1MA1-3H"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html",
+              "locator": "PDF page 13, PDF page 40",
+              "evidenceSummary": "Qualification at a glance states the qualification consists of three equally-weighted papers at either Foundation or Higher tier, and all three must be at the same tier. Entry information confirms students must take all three papers from the chosen tier. The Higher route requires Papers 1H, 2H and 3H."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "Edexcel-4MA1:Issue 2",
+      "sourceSha256": "d58830e570d58aeccd7146f5465b3c117378c42d08d663f18478f2793c7e737b",
+      "contentAllocation": "tier-filtered-shared-syllabus",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "d58830e570d58aeccd7146f5465b3c117378c42d08d663f18478f2793c7e737b",
+          "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Mathematics%20A/2016/Specification%20and%20sample%20assessments/international-gcse-in-mathematics-spec-a.pdf",
+          "locator": "Official specification PDF pages 41–42, Assessment information",
+          "evidenceSummary": "The two papers at each tier assess the prescribed content without a fixed topic split by paper."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "4MA1-1F",
+          "code": "4MA1/1F",
+          "name": "Paper 1F",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "Foundation"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "d58830e570d58aeccd7146f5465b3c117378c42d08d663f18478f2793c7e737b",
+              "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Mathematics%20A/2016/Specification%20and%20sample%20assessments/international-gcse-in-mathematics-spec-a.pdf",
+              "locator": "pages 11,41,51",
+              "evidenceSummary": "Page 11 lists Foundation Tier papers 1F and 2F with code 4MA1/1F. Page 41 details Paper 1F as a 2-hour, 100-mark examination. Page 51 confirms paper code 4MA1/1F."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "4MA1-2F",
+          "code": "4MA1/2F",
+          "name": "Paper 2F",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "Foundation"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "d58830e570d58aeccd7146f5465b3c117378c42d08d663f18478f2793c7e737b",
+              "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Mathematics%20A/2016/Specification%20and%20sample%20assessments/international-gcse-in-mathematics-spec-a.pdf",
+              "locator": "pages 11,41,51",
+              "evidenceSummary": "Page 11 lists Foundation Tier papers 1F and 2F with code 4MA1/2F. Page 41 details Paper 2F as a 2-hour, 100-mark examination. Page 51 confirms paper code 4MA1/2F."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "4MA1-1H",
+          "code": "4MA1/1H",
+          "name": "Paper 1H",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "Higher"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "d58830e570d58aeccd7146f5465b3c117378c42d08d663f18478f2793c7e737b",
+              "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Mathematics%20A/2016/Specification%20and%20sample%20assessments/international-gcse-in-mathematics-spec-a.pdf",
+              "locator": "pages 12,41,51",
+              "evidenceSummary": "Page 12 lists Higher Tier papers 1H and 2H with code 4MA1/1H. Page 41 details Paper 1H as a 2-hour, 100-mark examination. Page 51 confirms paper code 4MA1/1H."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "4MA1-2H",
+          "code": "4MA1/2H",
+          "name": "Paper 2H",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "Higher"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "d58830e570d58aeccd7146f5465b3c117378c42d08d663f18478f2793c7e737b",
+              "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Mathematics%20A/2016/Specification%20and%20sample%20assessments/international-gcse-in-mathematics-spec-a.pdf",
+              "locator": "pages 12,41,51",
+              "evidenceSummary": "Page 12 lists Higher Tier papers 1H and 2H with code 4MA1/2H. Page 41 details Paper 2H as a 2-hour, 100-mark examination. Page 51 confirms paper code 4MA1/2H."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "Foundation",
+          "name": "Foundation Tier",
+          "tiers": [
+            "Foundation"
+          ],
+          "paperIds": [
+            "4MA1-1F",
+            "4MA1-2F"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "d58830e570d58aeccd7146f5465b3c117378c42d08d663f18478f2793c7e737b",
+              "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Mathematics%20A/2016/Specification%20and%20sample%20assessments/international-gcse-in-mathematics-spec-a.pdf",
+              "locator": "pages 7,11,41",
+              "evidenceSummary": "Page 7 states the linear qualification consists of two examinations at Foundation and Higher Tier. Page 11 specifies Foundation Tier includes Paper 1F and 2F, both must be taken. Page 41 confirms both papers are mandatory for the qualification at Foundation Tier."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Higher",
+          "name": "Higher Tier",
+          "tiers": [
+            "Higher"
+          ],
+          "paperIds": [
+            "4MA1-1H",
+            "4MA1-2H"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "d58830e570d58aeccd7146f5465b3c117378c42d08d663f18478f2793c7e737b",
+              "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Mathematics%20A/2016/Specification%20and%20sample%20assessments/international-gcse-in-mathematics-spec-a.pdf",
+              "locator": "pages 7,12,41",
+              "evidenceSummary": "Page 7 states the linear qualification consists of two examinations at Foundation and Higher Tier. Page 12 specifies Higher Tier includes Paper 1H and 2H, both must be taken. Page 41 confirms both papers are mandatory for the qualification at Higher Tier."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "Edexcel-4PM1:2017",
+      "sourceSha256": "4d13a0fb7002e472c58ac3e136e3edb2ca33f9866597c75e871dbd5f06dcf5a6",
+      "contentAllocation": "qualification-wide-shared-syllabus",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "4d13a0fb7002e472c58ac3e136e3edb2ca33f9866597c75e871dbd5f06dcf5a6",
+          "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-further-pure-mathematics-2017.html",
+          "locator": "Official specification PDF page 27, Assessment information",
+          "evidenceSummary": "Both compulsory papers may assess any part of the specification content."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "4PM1-01",
+          "code": "4PM1/01",
+          "name": "Paper 1",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "4PM1-linear-HT"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "4d13a0fb7002e472c58ac3e136e3edb2ca33f9866597c75e871dbd5f06dcf5a6",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-further-pure-mathematics-2017.html",
+              "locator": "PDF pages 11, 27, 37",
+              "evidenceSummary": "Paper 1 (4PM1/01) is an externally assessed 2-hour examination, 100 marks, 50% weighting, covering entire specification content, Higher Tier (grades 9-4 with 3 allowed). Confirmed in qualification overview and Appendix 1."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "4PM1-02",
+          "code": "4PM1/02",
+          "name": "Paper 2",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "4PM1-linear-HT"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "4d13a0fb7002e472c58ac3e136e3edb2ca33f9866597c75e871dbd5f06dcf5a6",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-further-pure-mathematics-2017.html",
+              "locator": "PDF pages 11, 27, 37",
+              "evidenceSummary": "Paper 2 (4PM1/02) is an externally assessed 2-hour examination, 100 marks, 50% weighting, covering entire specification content, Higher Tier (grades 9-4 with 3 allowed). Confirmed in qualification overview and Appendix 1."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "4PM1-linear-HT",
+          "name": "Linear Higher Tier (both papers)",
+          "tiers": [
+            "Higher"
+          ],
+          "paperIds": [
+            "4PM1-01",
+            "4PM1-02"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "4d13a0fb7002e472c58ac3e136e3edb2ca33f9866597c75e871dbd5f06dcf5a6",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-further-pure-mathematics-2017.html",
+              "locator": "PDF pages 7, 11, 27",
+              "evidenceSummary": "Linear route requires both Paper 1 and Paper 2 in the same series. No optional units. Higher Tier only. Confirmed in qualification structure and assessment information."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "Edexcel-8MA0:2017",
+      "sourceSha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+      "contentAllocation": "fixed-by-paper",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+          "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/A%20Level/Mathematics/2017/specification-and-sample-assesment/as-l3-mathematics-specification.pdf",
+          "locator": "Official specification PDF pages 8–9, Qualification at a glance",
+          "evidenceSummary": "Paper 1 assesses Pure Mathematics; Paper 2 assesses Statistics and Mechanics."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "8MA0-01",
+          "code": "8MA0/01",
+          "name": "Paper 1: Pure Mathematics",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "route-8MA0"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+              "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/A%20Level/Mathematics/2017/specification-and-sample-assesment/as-l3-mathematics-specification.pdf",
+              "locator": "page 8",
+              "evidenceSummary": "Qualification at a glance: Paper 1: Pure Mathematics (*Paper code: 8MA0/01), written examination: 2 hours, 62.5% of the qualification, 100 marks. Content overview: Topic 1 – Proof, Topic 2 – Algebra and functions, Topic 3 – Coordinate geometry, Topic 4 – Sequences and series, Topic 5 – Trigonometry, Topic 6 – Exponentials and logarithms, Topic 7 – Differentiation, Topic 8 – Integration, Topic 9 – Vectors."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "8MA0-02",
+          "code": "8MA0/02",
+          "name": "Paper 2: Statistics and Mechanics",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "route-8MA0"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+              "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/A%20Level/Mathematics/2017/specification-and-sample-assesment/as-l3-mathematics-specification.pdf",
+              "locator": "page 9",
+              "evidenceSummary": "Paper 2: Statistics and Mechanics (*Paper code: 8MA0/02), written examination: 1 hour 15 minutes, 37.5% of the qualification, 60 marks. Content overview: Section A: Statistics (Topic 1 – Statistical sampling, Topic 2 – Data presentation and interpretation, Topic 3 – Probability, Topic 4 – Statistical distributions, Topic 5 – Statistical hypothesis testing); Section B: Mechanics (Topic 6 – Quantities and units in mechanics, Topic 7 – Kinematics, Topic 8 – Forces and Newton’s laws)."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "route-8MA0",
+          "name": "AS Mathematics",
+          "tiers": [],
+          "paperIds": [
+            "8MA0-01",
+            "8MA0-02"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
+              "sourceUrl": "https://qualifications.pearson.com/content/dam/pdf/A%20Level/Mathematics/2017/specification-and-sample-assesment/as-l3-mathematics-specification.pdf",
+              "locator": "page 8",
+              "evidenceSummary": "The Pearson Edexcel Level 3 Advanced Subsidiary GCE in Mathematics consists of two externally-examined papers. Students must complete all assessment in May/June in any single year."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "Edexcel-9FM0:2017",
+      "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+      "contentAllocation": "fixed-by-unit-or-option",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+          "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+          "locator": "Official specification PDF pages 52–59, Assessment information",
+          "evidenceSummary": "Core Pure content is assessed on Papers 1 and 2 and optional content is assessed through the selected Paper 3 and Paper 4 options."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "Edexcel-9FM0-01",
+          "code": "9FM0/01",
+          "name": "Paper 1: Core Pure Mathematics 1",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "Edexcel-9FM0-Route-A",
+            "Edexcel-9FM0-Route-B",
+            "Edexcel-9FM0-Route-C",
+            "Edexcel-9FM0-Route-D",
+            "Edexcel-9FM0-Route-E",
+            "Edexcel-9FM0-Route-F",
+            "Edexcel-9FM0-Route-G",
+            "Edexcel-9FM0-Route-H",
+            "Edexcel-9FM0-Route-J",
+            "Edexcel-9FM0-Route-K"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "9FM0/01 Paper 1: Core Pure Mathematics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-9FM0-02",
+          "code": "9FM0/02",
+          "name": "Paper 2: Core Pure Mathematics 2",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "Edexcel-9FM0-Route-A",
+            "Edexcel-9FM0-Route-B",
+            "Edexcel-9FM0-Route-C",
+            "Edexcel-9FM0-Route-D",
+            "Edexcel-9FM0-Route-E",
+            "Edexcel-9FM0-Route-F",
+            "Edexcel-9FM0-Route-G",
+            "Edexcel-9FM0-Route-H",
+            "Edexcel-9FM0-Route-J",
+            "Edexcel-9FM0-Route-K"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "9FM0/02 Paper 2: Core Pure Mathematics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-9FM0-3A",
+          "code": "9FM0/3A",
+          "name": "Paper 3A: Further Pure Mathematics 1",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-9FM0-Route-A",
+            "Edexcel-9FM0-Route-B",
+            "Edexcel-9FM0-Route-C",
+            "Edexcel-9FM0-Route-D"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "9FM0/3A Paper 3A: Further Pure Mathematics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-9FM0-3B",
+          "code": "9FM0/3B",
+          "name": "Paper 3B: Further Statistics 1",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-9FM0-Route-B",
+            "Edexcel-9FM0-Route-E",
+            "Edexcel-9FM0-Route-F",
+            "Edexcel-9FM0-Route-G"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "9FM0/3B Paper 3B: Further Statistics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-9FM0-3C",
+          "code": "9FM0/3C",
+          "name": "Paper 3C: Further Mechanics 1",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-9FM0-Route-C",
+            "Edexcel-9FM0-Route-E",
+            "Edexcel-9FM0-Route-H",
+            "Edexcel-9FM0-Route-J"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "9FM0/3C Paper 3C: Further Mechanics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-9FM0-3D",
+          "code": "9FM0/3D",
+          "name": "Paper 3D: Decision Mathematics 1",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-9FM0-Route-D",
+            "Edexcel-9FM0-Route-F",
+            "Edexcel-9FM0-Route-H",
+            "Edexcel-9FM0-Route-K"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "9FM0/3D Paper 3D: Decision Mathematics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-9FM0-4A",
+          "code": "9FM0/4A",
+          "name": "Paper 4A: Further Pure Mathematics 2",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-9FM0-Route-A"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "9FM0/4A Paper 4A: Further Pure Mathematics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-9FM0-4B",
+          "code": "9FM0/4B",
+          "name": "Paper 4B: Further Statistics 2",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-9FM0-Route-G"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "9FM0/4B Paper 4B: Further Statistics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-9FM0-4C",
+          "code": "9FM0/4C",
+          "name": "Paper 4C: Further Mechanics 2",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-9FM0-Route-J"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "9FM0/4C Paper 4C: Further Mechanics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-9FM0-4D",
+          "code": "9FM0/4D",
+          "name": "Paper 4D: Decision Mathematics 2",
+          "componentKind": "option",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-9FM0-Route-K"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "9FM0/4D Paper 4D: Decision Mathematics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "Edexcel-9FM0-Route-A",
+          "name": "Route A",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-9FM0-01",
+            "Edexcel-9FM0-02",
+            "Edexcel-9FM0-3A",
+            "Edexcel-9FM0-4A"
+          ],
+          "selectionRule": "Take compulsory Papers 1 and 2 plus the published Route A option pair.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "Take compulsory Papers 1 and 2 plus the published Route A option pair."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-9FM0-Route-B",
+          "name": "Route B",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-9FM0-01",
+            "Edexcel-9FM0-02",
+            "Edexcel-9FM0-3A",
+            "Edexcel-9FM0-3B"
+          ],
+          "selectionRule": "Take compulsory Papers 1 and 2 plus the published Route B option pair.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "Take compulsory Papers 1 and 2 plus the published Route B option pair."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-9FM0-Route-C",
+          "name": "Route C",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-9FM0-01",
+            "Edexcel-9FM0-02",
+            "Edexcel-9FM0-3A",
+            "Edexcel-9FM0-3C"
+          ],
+          "selectionRule": "Take compulsory Papers 1 and 2 plus the published Route C option pair.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "Take compulsory Papers 1 and 2 plus the published Route C option pair."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-9FM0-Route-D",
+          "name": "Route D",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-9FM0-01",
+            "Edexcel-9FM0-02",
+            "Edexcel-9FM0-3A",
+            "Edexcel-9FM0-3D"
+          ],
+          "selectionRule": "Take compulsory Papers 1 and 2 plus the published Route D option pair.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "Take compulsory Papers 1 and 2 plus the published Route D option pair."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-9FM0-Route-E",
+          "name": "Route E",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-9FM0-01",
+            "Edexcel-9FM0-02",
+            "Edexcel-9FM0-3B",
+            "Edexcel-9FM0-3C"
+          ],
+          "selectionRule": "Take compulsory Papers 1 and 2 plus the published Route E option pair.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "Take compulsory Papers 1 and 2 plus the published Route E option pair."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-9FM0-Route-F",
+          "name": "Route F",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-9FM0-01",
+            "Edexcel-9FM0-02",
+            "Edexcel-9FM0-3B",
+            "Edexcel-9FM0-3D"
+          ],
+          "selectionRule": "Take compulsory Papers 1 and 2 plus the published Route F option pair.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "Take compulsory Papers 1 and 2 plus the published Route F option pair."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-9FM0-Route-G",
+          "name": "Route G",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-9FM0-01",
+            "Edexcel-9FM0-02",
+            "Edexcel-9FM0-3B",
+            "Edexcel-9FM0-4B"
+          ],
+          "selectionRule": "Take compulsory Papers 1 and 2 plus the published Route G option pair.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "Take compulsory Papers 1 and 2 plus the published Route G option pair."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-9FM0-Route-H",
+          "name": "Route H",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-9FM0-01",
+            "Edexcel-9FM0-02",
+            "Edexcel-9FM0-3C",
+            "Edexcel-9FM0-3D"
+          ],
+          "selectionRule": "Take compulsory Papers 1 and 2 plus the published Route H option pair.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "Take compulsory Papers 1 and 2 plus the published Route H option pair."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-9FM0-Route-J",
+          "name": "Route J",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-9FM0-01",
+            "Edexcel-9FM0-02",
+            "Edexcel-9FM0-3C",
+            "Edexcel-9FM0-4C"
+          ],
+          "selectionRule": "Take compulsory Papers 1 and 2 plus the published Route J option pair.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "Take compulsory Papers 1 and 2 plus the published Route J option pair."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-9FM0-Route-K",
+          "name": "Route K",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-9FM0-01",
+            "Edexcel-9FM0-02",
+            "Edexcel-9FM0-3D",
+            "Edexcel-9FM0-4D"
+          ],
+          "selectionRule": "Take compulsory Papers 1 and 2 plus the published Route K option pair.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "2cf7b23180c528e6c6a93ce805148d287d780b22ae13fb5c96840ee4786108ba",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "official specification printed pages 49–53 (PDF pages 53–57), Breakdown of Assessment Objectives, Routes A–K",
+              "evidenceSummary": "Take compulsory Papers 1 and 2 plus the published Route K option pair."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "Edexcel-9MA0:2017",
+      "sourceSha256": "b008c50064090bab5c3e26e1f3c97778d21b492d5b839219f73eca11828ecef8",
+      "contentAllocation": "mixed",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "b008c50064090bab5c3e26e1f3c97778d21b492d5b839219f73eca11828ecef8",
+          "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+          "locator": "Official specification PDF pages 9–10, Qualification at a glance",
+          "evidenceSummary": "Papers 1 and 2 assess Pure Mathematics; Paper 3 assesses Statistics and Mechanics."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "9MA0/01",
+          "code": "9MA0/01",
+          "name": "Pure Mathematics 1",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "route-9MA0-all"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "b008c50064090bab5c3e26e1f3c97778d21b492d5b839219f73eca11828ecef8",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "page 9",
+              "evidenceSummary": "Specification page describing Paper 1: Pure Mathematics 1, code 9MA0/01, 2-hour written examination, 33.33% of qualification, 100 marks, covering Pure Mathematics topics."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "9MA0/02",
+          "code": "9MA0/02",
+          "name": "Pure Mathematics 2",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "route-9MA0-all"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "b008c50064090bab5c3e26e1f3c97778d21b492d5b839219f73eca11828ecef8",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "page 9",
+              "evidenceSummary": "Specification page describing Paper 2: Pure Mathematics 2, code 9MA0/02, 2-hour written examination, 33.33% of qualification, 100 marks, covering Pure Mathematics topics."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "9MA0/03",
+          "code": "9MA0/03",
+          "name": "Statistics and Mechanics",
+          "componentKind": "paper",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "route-9MA0-all"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "b008c50064090bab5c3e26e1f3c97778d21b492d5b839219f73eca11828ecef8",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "page 10",
+              "evidenceSummary": "Specification page describing Paper 3: Statistics and Mechanics, code 9MA0/03, 2-hour written examination, 33.33% of qualification, 100 marks, covering Statistics (Section A) and Mechanics (Section B)."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "route-9MA0-all",
+          "name": "A Level Mathematics",
+          "tiers": [],
+          "paperIds": [
+            "9MA0/01",
+            "9MA0/02",
+            "9MA0/03"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "b008c50064090bab5c3e26e1f3c97778d21b492d5b839219f73eca11828ecef8",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html",
+              "locator": "pages 9-10",
+              "evidenceSummary": "Qualification at a glance section states that the A Level consists of three externally-examined papers, all of which students must complete."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "Edexcel-IAL:2018",
+      "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+      "contentAllocation": "fixed-by-unit-or-option",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+          "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+          "locator": "Official specification PDF pages 7–17 and 72–76, qualification and unit assessment structure",
+          "evidenceSummary": "Content is allocated to named modular units and certification routes select the required unit combinations."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "Edexcel-IAL-P1",
+          "code": "WMA11/01",
+          "name": "Unit P1: Pure Mathematics 1",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Mathematics",
+            "Edexcel-IAL-IAS-Pure-Mathematics",
+            "Edexcel-IAL-Mathematics-M1-S1",
+            "Edexcel-IAL-Mathematics-M1-D1",
+            "Edexcel-IAL-Mathematics-M1-M2",
+            "Edexcel-IAL-Mathematics-S1-D1",
+            "Edexcel-IAL-Mathematics-S1-S2",
+            "Edexcel-IAL-Pure-Mathematics-FP2",
+            "Edexcel-IAL-Pure-Mathematics-FP3"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WMA11/01 Unit P1: Pure Mathematics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-P2",
+          "code": "WMA12/01",
+          "name": "Unit P2: Pure Mathematics 2",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Mathematics",
+            "Edexcel-IAL-IAS-Pure-Mathematics",
+            "Edexcel-IAL-Mathematics-M1-S1",
+            "Edexcel-IAL-Mathematics-M1-D1",
+            "Edexcel-IAL-Mathematics-M1-M2",
+            "Edexcel-IAL-Mathematics-S1-D1",
+            "Edexcel-IAL-Mathematics-S1-S2",
+            "Edexcel-IAL-Pure-Mathematics-FP2",
+            "Edexcel-IAL-Pure-Mathematics-FP3"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WMA12/01 Unit P2: Pure Mathematics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-P3",
+          "code": "WMA13/01",
+          "name": "Unit P3: Pure Mathematics 3",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-Mathematics-M1-S1",
+            "Edexcel-IAL-Mathematics-M1-D1",
+            "Edexcel-IAL-Mathematics-M1-M2",
+            "Edexcel-IAL-Mathematics-S1-D1",
+            "Edexcel-IAL-Mathematics-S1-S2",
+            "Edexcel-IAL-Pure-Mathematics-FP2",
+            "Edexcel-IAL-Pure-Mathematics-FP3"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WMA13/01 Unit P3: Pure Mathematics 3 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-P4",
+          "code": "WMA14/01",
+          "name": "Unit P4: Pure Mathematics 4",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-Mathematics-M1-S1",
+            "Edexcel-IAL-Mathematics-M1-D1",
+            "Edexcel-IAL-Mathematics-M1-M2",
+            "Edexcel-IAL-Mathematics-S1-D1",
+            "Edexcel-IAL-Mathematics-S1-S2",
+            "Edexcel-IAL-Pure-Mathematics-FP2",
+            "Edexcel-IAL-Pure-Mathematics-FP3"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WMA14/01 Unit P4: Pure Mathematics 4 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-FP1",
+          "code": "WFM01/01",
+          "name": "Unit FP1: Further Pure Mathematics 1",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Further-Mathematics",
+            "Edexcel-IAL-IAS-Pure-Mathematics",
+            "Edexcel-IAL-Further-Mathematics",
+            "Edexcel-IAL-Pure-Mathematics-FP2",
+            "Edexcel-IAL-Pure-Mathematics-FP3"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WFM01/01 Unit FP1: Further Pure Mathematics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-FP2",
+          "code": "WFM02/01",
+          "name": "Unit FP2: Further Pure Mathematics 2",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Further-Mathematics",
+            "Edexcel-IAL-Further-Mathematics",
+            "Edexcel-IAL-Pure-Mathematics-FP2"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WFM02/01 Unit FP2: Further Pure Mathematics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-FP3",
+          "code": "WFM03/01",
+          "name": "Unit FP3: Further Pure Mathematics 3",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Further-Mathematics",
+            "Edexcel-IAL-Further-Mathematics",
+            "Edexcel-IAL-Pure-Mathematics-FP3"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WFM03/01 Unit FP3: Further Pure Mathematics 3 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-M1",
+          "code": "WME01/01",
+          "name": "Unit M1: Mechanics 1",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Mathematics",
+            "Edexcel-IAL-IAS-Further-Mathematics",
+            "Edexcel-IAL-Mathematics-M1-S1",
+            "Edexcel-IAL-Mathematics-M1-D1",
+            "Edexcel-IAL-Mathematics-M1-M2",
+            "Edexcel-IAL-Further-Mathematics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WME01/01 Unit M1: Mechanics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-M2",
+          "code": "WME02/01",
+          "name": "Unit M2: Mechanics 2",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Further-Mathematics",
+            "Edexcel-IAL-Mathematics-M1-M2",
+            "Edexcel-IAL-Further-Mathematics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WME02/01 Unit M2: Mechanics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-M3",
+          "code": "WME03/01",
+          "name": "Unit M3: Mechanics 3",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Further-Mathematics",
+            "Edexcel-IAL-Further-Mathematics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WME03/01 Unit M3: Mechanics 3 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-S1",
+          "code": "WST01/01",
+          "name": "Unit S1: Statistics 1",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Mathematics",
+            "Edexcel-IAL-IAS-Further-Mathematics",
+            "Edexcel-IAL-Mathematics-M1-S1",
+            "Edexcel-IAL-Mathematics-S1-D1",
+            "Edexcel-IAL-Mathematics-S1-S2",
+            "Edexcel-IAL-Further-Mathematics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WST01/01 Unit S1: Statistics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-S2",
+          "code": "WST02/01",
+          "name": "Unit S2: Statistics 2",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Further-Mathematics",
+            "Edexcel-IAL-Mathematics-S1-S2",
+            "Edexcel-IAL-Further-Mathematics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WST02/01 Unit S2: Statistics 2 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-S3",
+          "code": "WST03/01",
+          "name": "Unit S3: Statistics 3",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Further-Mathematics",
+            "Edexcel-IAL-Further-Mathematics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WST03/01 Unit S3: Statistics 3 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Edexcel-IAL-D1",
+          "code": "WDM11/01",
+          "name": "Unit D1: Decision Mathematics 1",
+          "componentKind": "unit",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "Edexcel-IAL-IAS-Mathematics",
+            "Edexcel-IAL-IAS-Further-Mathematics",
+            "Edexcel-IAL-Mathematics-M1-D1",
+            "Edexcel-IAL-Mathematics-S1-D1",
+            "Edexcel-IAL-Further-Mathematics"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "WDM11/01 Unit D1: Decision Mathematics 1 is defined in the official assessment structure."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "Edexcel-IAL-IAS-Mathematics",
+          "name": "IAS Mathematics",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-P1",
+            "Edexcel-IAL-P2",
+            "Edexcel-IAL-M1",
+            "Edexcel-IAL-S1",
+            "Edexcel-IAL-D1"
+          ],
+          "selectionRule": "Take compulsory P1 and P2 plus exactly one of M1, S1 or D1.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take compulsory P1 and P2 plus exactly one of M1, S1 or D1."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-IAL-IAS-Further-Mathematics",
+          "name": "IAS Further Mathematics",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-FP1",
+            "Edexcel-IAL-FP2",
+            "Edexcel-IAL-FP3",
+            "Edexcel-IAL-M1",
+            "Edexcel-IAL-M2",
+            "Edexcel-IAL-M3",
+            "Edexcel-IAL-S1",
+            "Edexcel-IAL-S2",
+            "Edexcel-IAL-S3",
+            "Edexcel-IAL-D1"
+          ],
+          "selectionRule": "Take compulsory FP1 plus two eligible optional units under the official combination rules.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take compulsory FP1 plus two eligible optional units under the official combination rules."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-IAL-IAS-Pure-Mathematics",
+          "name": "IAS Pure Mathematics",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-P1",
+            "Edexcel-IAL-P2",
+            "Edexcel-IAL-FP1"
+          ],
+          "selectionRule": "Take P1, P2 and FP1.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take P1, P2 and FP1."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-IAL-Mathematics-M1-S1",
+          "name": "IAL Mathematics: M1 and S1",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-P1",
+            "Edexcel-IAL-P2",
+            "Edexcel-IAL-P3",
+            "Edexcel-IAL-P4",
+            "Edexcel-IAL-M1",
+            "Edexcel-IAL-S1"
+          ],
+          "selectionRule": "Take compulsory P1, P2, P3 and P4 plus M1 and S1.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take compulsory P1, P2, P3 and P4 plus M1 and S1."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-IAL-Mathematics-M1-D1",
+          "name": "IAL Mathematics: M1 and D1",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-P1",
+            "Edexcel-IAL-P2",
+            "Edexcel-IAL-P3",
+            "Edexcel-IAL-P4",
+            "Edexcel-IAL-M1",
+            "Edexcel-IAL-D1"
+          ],
+          "selectionRule": "Take compulsory P1, P2, P3 and P4 plus M1 and D1.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take compulsory P1, P2, P3 and P4 plus M1 and D1."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-IAL-Mathematics-M1-M2",
+          "name": "IAL Mathematics: M1 and M2",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-P1",
+            "Edexcel-IAL-P2",
+            "Edexcel-IAL-P3",
+            "Edexcel-IAL-P4",
+            "Edexcel-IAL-M1",
+            "Edexcel-IAL-M2"
+          ],
+          "selectionRule": "Take compulsory P1, P2, P3 and P4 plus M1 and M2.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take compulsory P1, P2, P3 and P4 plus M1 and M2."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-IAL-Mathematics-S1-D1",
+          "name": "IAL Mathematics: S1 and D1",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-P1",
+            "Edexcel-IAL-P2",
+            "Edexcel-IAL-P3",
+            "Edexcel-IAL-P4",
+            "Edexcel-IAL-S1",
+            "Edexcel-IAL-D1"
+          ],
+          "selectionRule": "Take compulsory P1, P2, P3 and P4 plus S1 and D1.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take compulsory P1, P2, P3 and P4 plus S1 and D1."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-IAL-Mathematics-S1-S2",
+          "name": "IAL Mathematics: S1 and S2",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-P1",
+            "Edexcel-IAL-P2",
+            "Edexcel-IAL-P3",
+            "Edexcel-IAL-P4",
+            "Edexcel-IAL-S1",
+            "Edexcel-IAL-S2"
+          ],
+          "selectionRule": "Take compulsory P1, P2, P3 and P4 plus S1 and S2.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take compulsory P1, P2, P3 and P4 plus S1 and S2."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-IAL-Further-Mathematics",
+          "name": "IAL Further Mathematics",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-FP1",
+            "Edexcel-IAL-FP2",
+            "Edexcel-IAL-FP3",
+            "Edexcel-IAL-M1",
+            "Edexcel-IAL-M2",
+            "Edexcel-IAL-M3",
+            "Edexcel-IAL-S1",
+            "Edexcel-IAL-S2",
+            "Edexcel-IAL-S3",
+            "Edexcel-IAL-D1"
+          ],
+          "selectionRule": "Take six different eligible units: FP1 and either FP2 or FP3 are compulsory, with the remaining units selected under the official combination rules.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take six different eligible units: FP1 and either FP2 or FP3 are compulsory, with the remaining units selected under the official combination rules."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-IAL-Pure-Mathematics-FP2",
+          "name": "IAL Pure Mathematics: FP2",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-P1",
+            "Edexcel-IAL-P2",
+            "Edexcel-IAL-P3",
+            "Edexcel-IAL-P4",
+            "Edexcel-IAL-FP1",
+            "Edexcel-IAL-FP2"
+          ],
+          "selectionRule": "Take P1, P2, P3, P4, FP1 and FP2.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take P1, P2, P3, P4, FP1 and FP2."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "Edexcel-IAL-Pure-Mathematics-FP3",
+          "name": "IAL Pure Mathematics: FP3",
+          "tiers": [],
+          "paperIds": [
+            "Edexcel-IAL-P1",
+            "Edexcel-IAL-P2",
+            "Edexcel-IAL-P3",
+            "Edexcel-IAL-P4",
+            "Edexcel-IAL-FP1",
+            "Edexcel-IAL-FP3"
+          ],
+          "selectionRule": "Take P1, P2, P3, P4, FP1 and FP3.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "71351e66d8434cc8976fa41801b65d77bdcad56f902e45807bc635bca317b408",
+              "sourceUrl": "https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels/mathematics-2018.html",
+              "locator": "official specification printed pages 9–10 (PDF pages 10–11), Qualification overview",
+              "evidenceSummary": "Take P1, P2, P3, P4, FP1 and FP3."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "OCR-6993:Version 2.0",
+      "sourceSha256": "d682352b907c422bd5d994153bd5440b3146913e92e9a7524148515109f8cb3f",
+      "contentAllocation": "qualification-wide-shared-syllabus",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "d682352b907c422bd5d994153bd5440b3146913e92e9a7524148515109f8cb3f",
+          "sourceUrl": "https://www.ocr.org.uk/Images/457916-specification-from-2018-.pdf",
+          "locator": "Official specification PDF page 8, assessment overview",
+          "evidenceSummary": "The single mandatory Paper covers all specification content."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "01",
+          "code": "01",
+          "name": "Paper 1",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "R1"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "d682352b907c422bd5d994153bd5440b3146913e92e9a7524148515109f8cb3f",
+              "sourceUrl": "https://www.ocr.org.uk/Images/457916-specification-from-2018-.pdf",
+              "locator": "page 8, page 23",
+              "evidenceSummary": "Page 8 assessment overview: Paper 1 (01) is a 2-hour written paper with 100 marks, covering all syllabus content. Page 23 entry code table confirms component code 01 for Paper 1."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "R1",
+          "name": "Default mandatory route",
+          "tiers": [],
+          "paperIds": [
+            "01"
+          ],
+          "selectionRule": "mandatory",
+          "sourceReferences": [
+            {
+              "sourceSha256": "d682352b907c422bd5d994153bd5440b3146913e92e9a7524148515109f8cb3f",
+              "sourceUrl": "https://www.ocr.org.uk/Images/457916-specification-from-2018-.pdf",
+              "locator": "page 8",
+              "evidenceSummary": "Learners take the mandatory Paper 1 to be awarded the OCR Level 3 FSMQ: Additional Maths."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "OCR-H240:Version 3",
+      "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+      "contentAllocation": "mixed",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+          "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+          "locator": "Official specification PDF pages 4 and 72–74, assessment overview",
+          "evidenceSummary": "Pure Mathematics is assessed across the three components; Statistics is allocated to component 02 and Mechanics to component 03."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "H240-01",
+          "code": "01",
+          "name": "Pure Mathematics",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "H240-standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+              "locator": "OFFICIAL PDF PAGE 4",
+              "evidenceSummary": "Paper 1: Pure Mathematics (01), 100 marks, 2 hour written paper, 33⅓% of total A Level. Assesses Pure Mathematics only in a single section."
+            },
+            {
+              "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+              "locator": "OFFICIAL PDF PAGE 78",
+              "evidenceSummary": "Entry code table lists Component 01 Pure Mathematics as external assessment."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "H240-02",
+          "code": "02",
+          "name": "Pure Mathematics and Statistics",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "H240-standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+              "locator": "OFFICIAL PDF PAGE 4",
+              "evidenceSummary": "Paper 2: Pure Mathematics and Statistics (02), 100 marks, 2 hour written paper, 33⅓% of total A Level. Two sections: Pure Mathematics (~50 marks) and Statistics (~50 marks)."
+            },
+            {
+              "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+              "locator": "OFFICIAL PDF PAGE 73",
+              "evidenceSummary": "Paper 2 description: assesses Pure Mathematics and Statistics, structured in two sections of ~50 marks each; some questions set in context of pre-release large data set."
+            },
+            {
+              "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+              "locator": "OFFICIAL PDF PAGE 78",
+              "evidenceSummary": "Entry code table lists Component 02 Pure Mathematics and Statistics as external assessment."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "H240-03",
+          "code": "03",
+          "name": "Pure Mathematics and Mechanics",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "H240-standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+              "locator": "OFFICIAL PDF PAGE 4",
+              "evidenceSummary": "Paper 3: Pure Mathematics and Mechanics (03), 100 marks, 2 hour written paper, 33⅓% of total A Level. Two sections: Pure Mathematics (~50 marks) and Mechanics (~50 marks)."
+            },
+            {
+              "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+              "locator": "OFFICIAL PDF PAGE 74",
+              "evidenceSummary": "Paper 3 description: assesses Pure Mathematics and Mechanics, structured in two sections of ~50 marks each."
+            },
+            {
+              "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+              "locator": "OFFICIAL PDF PAGE 78",
+              "evidenceSummary": "Entry code table lists Component 03 Pure Mathematics and Mechanics as external assessment."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "H240-standard",
+          "name": "A Level Mathematics A",
+          "tiers": [],
+          "paperIds": [
+            "H240-01",
+            "H240-02",
+            "H240-03"
+          ],
+          "selectionRule": "all",
+          "sourceReferences": [
+            {
+              "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+              "locator": "OFFICIAL PDF PAGE 4",
+              "evidenceSummary": "Learners must take all components to be awarded OCR’s A Level in Mathematics A."
+            },
+            {
+              "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308723-specification-accredited-a-level-gce-mathematics-a-h240.pdf",
+              "locator": "OFFICIAL PDF PAGE 78",
+              "evidenceSummary": "Entry code table shows H240 Mathematics A consists of three compulsory components (01, 02, 03)."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "OCR-H245:Version 2",
+      "sourceSha256": "61fb7eddcbf337a3094fb2312e073fcede1fc6fcd8925bc0be562c5007538459",
+      "contentAllocation": "mixed",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "61fb7eddcbf337a3094fb2312e073fcede1fc6fcd8925bc0be562c5007538459",
+          "sourceUrl": "https://www.ocr.org.uk/Images/308752-specification-accredited-a-level-gce-further-mathematics-a-h245.pdf",
+          "locator": "Official specification PDF pages 6 and 89–90, assessment overview",
+          "evidenceSummary": "Pure Core is shared across the core papers while each optional component assesses its named application area."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "Y540",
+          "code": "Y540",
+          "name": "Pure Core 1",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "61fb7eddcbf337a3094fb2312e073fcede1fc6fcd8925bc0be562c5007538459",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308752-specification-accredited-a-level-gce-further-mathematics-a-h245.pdf",
+              "locator": "Pages 6, 89, 94",
+              "evidenceSummary": "Page 6 overview lists Y540 as a mandatory Pure Core 1 paper. Page 89 describes the paper. Page 94 table lists the entry code."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Y541",
+          "code": "Y541",
+          "name": "Pure Core 2",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "61fb7eddcbf337a3094fb2312e073fcede1fc6fcd8925bc0be562c5007538459",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308752-specification-accredited-a-level-gce-further-mathematics-a-h245.pdf",
+              "locator": "Pages 6, 89, 94",
+              "evidenceSummary": "Page 6 overview lists Y541 as a mandatory Pure Core 2 paper. Page 89 describes the paper. Page 94 table lists the entry code."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Y542",
+          "code": "Y542",
+          "name": "Statistics",
+          "componentKind": "component",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "61fb7eddcbf337a3094fb2312e073fcede1fc6fcd8925bc0be562c5007538459",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308752-specification-accredited-a-level-gce-further-mathematics-a-h245.pdf",
+              "locator": "Pages 6, 89, 94",
+              "evidenceSummary": "Page 6 overview lists Y542 as an optional Statistics paper. Page 89 describes the paper. Page 94 table lists the entry code."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Y543",
+          "code": "Y543",
+          "name": "Mechanics",
+          "componentKind": "component",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "61fb7eddcbf337a3094fb2312e073fcede1fc6fcd8925bc0be562c5007538459",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308752-specification-accredited-a-level-gce-further-mathematics-a-h245.pdf",
+              "locator": "Pages 6, 90, 94",
+              "evidenceSummary": "Page 6 overview lists Y543 as an optional Mechanics paper. Page 90 describes the paper. Page 94 table lists the entry code."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Y544",
+          "code": "Y544",
+          "name": "Discrete Mathematics",
+          "componentKind": "component",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "61fb7eddcbf337a3094fb2312e073fcede1fc6fcd8925bc0be562c5007538459",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308752-specification-accredited-a-level-gce-further-mathematics-a-h245.pdf",
+              "locator": "Pages 6, 90, 94",
+              "evidenceSummary": "Page 6 overview lists Y544 as an optional Discrete Mathematics paper. Page 90 describes the paper. Page 94 table lists the entry code."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "Y545",
+          "code": "Y545",
+          "name": "Additional Pure Mathematics",
+          "componentKind": "component",
+          "assessmentRole": "option",
+          "tiers": [],
+          "routes": [
+            "standard"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "61fb7eddcbf337a3094fb2312e073fcede1fc6fcd8925bc0be562c5007538459",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308752-specification-accredited-a-level-gce-further-mathematics-a-h245.pdf",
+              "locator": "Pages 6, 90, 94",
+              "evidenceSummary": "Page 6 overview lists Y545 as an optional Additional Pure Mathematics paper. Page 90 describes the paper. Page 94 table lists the entry code."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "standard",
+          "name": "A Level Further Mathematics A",
+          "tiers": [],
+          "paperIds": [
+            "Y540",
+            "Y541",
+            "Y542",
+            "Y543",
+            "Y544",
+            "Y545"
+          ],
+          "selectionRule": "Mandatory: Y540, Y541. Optional: choose at least two papers from Y542, Y543, Y544, Y545. If more than two optional papers are taken, the best two results (by grade) are used to determine the qualification grade.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "61fb7eddcbf337a3094fb2312e073fcede1fc6fcd8925bc0be562c5007538459",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308752-specification-accredited-a-level-gce-further-mathematics-a-h245.pdf",
+              "locator": "Pages 6, 89, 94",
+              "evidenceSummary": "Page 6: 'All learners must take the two mandatory Pure Core papers Y540 and Y541 and any two* of the optional papers Y542, Y543, Y544 and Y545'. Page 89: 'consists of two mandatory papers and two optional papers'. Page 94 table with entry codes and description of optional paper flexibility."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "OCR-H640:Version 3",
+      "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+      "contentAllocation": "mixed",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+          "sourceUrl": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+          "locator": "Official specification PDF pages 4 and 68–70, assessment overview",
+          "evidenceSummary": "Pure Mathematics is shared while Mechanics, Statistics and Comprehension have component-specific assessment roles."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "01",
+          "code": "H640/01",
+          "name": "Pure Mathematics and Mechanics",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "A-Level-Route"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+              "locator": "PDF page 4",
+              "evidenceSummary": "Assessment Overview table lists Component 01: Pure Mathematics and Mechanics, 100 marks, 2 hour written paper, 36.4% of A Level."
+            },
+            {
+              "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+              "locator": "PDF page 73",
+              "evidenceSummary": "Entry code table shows H640 and Component 01: Pure Mathematics and Mechanics, External Assessment."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "02",
+          "code": "H640/02",
+          "name": "Pure Mathematics and Statistics",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "A-Level-Route"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+              "locator": "PDF page 4",
+              "evidenceSummary": "Assessment Overview table lists Component 02: Pure Mathematics and Statistics, 100 marks, 2 hour written paper, 36.4% of A Level."
+            },
+            {
+              "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+              "locator": "PDF page 73",
+              "evidenceSummary": "Entry code table shows H640 and Component 02: Pure Mathematics and Statistics, External Assessment."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "03",
+          "code": "H640/03",
+          "name": "Pure Mathematics and Comprehension",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [],
+          "routes": [
+            "A-Level-Route"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+              "locator": "PDF page 4",
+              "evidenceSummary": "Assessment Overview table lists Component 03: Pure Mathematics and Comprehension, 75 marks, 2 hour written paper, 27.3% of A Level."
+            },
+            {
+              "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+              "locator": "PDF page 73",
+              "evidenceSummary": "Entry code table shows H640 and Component 03: Pure Mathematics and Comprehension, External Assessment."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "A-Level-Route",
+          "name": "A Level Mathematics B (MEI)",
+          "tiers": [],
+          "paperIds": [
+            "01",
+            "02",
+            "03"
+          ],
+          "selectionRule": "all mandatory",
+          "sourceReferences": [
+            {
+              "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+              "locator": "PDF page 4",
+              "evidenceSummary": "States 'Learners must complete components 01, 02 and 03 to be awarded OCR A Level in Mathematics B (MEI).'"
+            },
+            {
+              "sourceSha256": "798af9a155827d9c7b33a50e5eded038f17f00d676c80467e44f03d8650bd6da",
+              "sourceUrl": "https://www.ocr.org.uk/Images/308740-specification-accredited-a-level-gce-mathematics-b-mei-h640.pdf",
+              "locator": "PDF page 69",
+              "evidenceSummary": "States 'All examined components must be taken in the same examination series at the end of the course.' Supports that all components are required for the qualification."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "OCR-J560:Version 2.0",
+      "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+      "contentAllocation": "tier-filtered-shared-syllabus",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+          "sourceUrl": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+          "locator": "Official specification PDF pages 10 and 54, qualification overview and forms of assessment",
+          "evidenceSummary": "All three papers in a tier assess the tier's prescribed content without a fixed topic split."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "J560-01",
+          "code": "J560/01",
+          "name": "Paper 1 (Foundation tier)",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "foundation"
+          ],
+          "routes": [
+            "J560-F"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+              "sourceUrl": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+              "locator": "PDF page 10 (Qualification Overview table), PDF page 54 (Forms of assessment), PDF page 58 (Entry options table)",
+              "evidenceSummary": "Foundation tier Paper 1, code J560/01, written exam 1h30m, 100 marks, calculator permitted."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "J560-02",
+          "code": "J560/02",
+          "name": "Paper 2 (Foundation tier)",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "foundation"
+          ],
+          "routes": [
+            "J560-F"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+              "sourceUrl": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+              "locator": "PDF page 10 (Qualification Overview table), PDF page 54 (Forms of assessment), PDF page 58 (Entry options table)",
+              "evidenceSummary": "Foundation tier Paper 2, code J560/02, written exam 1h30m, 100 marks, calculator not permitted."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "J560-03",
+          "code": "J560/03",
+          "name": "Paper 3 (Foundation tier)",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "foundation"
+          ],
+          "routes": [
+            "J560-F"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+              "sourceUrl": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+              "locator": "PDF page 10 (Qualification Overview table), PDF page 54 (Forms of assessment), PDF page 58 (Entry options table)",
+              "evidenceSummary": "Foundation tier Paper 3, code J560/03, written exam 1h30m, 100 marks, calculator permitted."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "J560-04",
+          "code": "J560/04",
+          "name": "Paper 4 (Higher tier)",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "higher"
+          ],
+          "routes": [
+            "J560-H"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+              "sourceUrl": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+              "locator": "PDF page 10 (Qualification Overview table), PDF page 54 (Forms of assessment), PDF page 58 (Entry options table)",
+              "evidenceSummary": "Higher tier Paper 4, code J560/04, written exam 1h30m, 100 marks, calculator permitted."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "J560-05",
+          "code": "J560/05",
+          "name": "Paper 5 (Higher tier)",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "higher"
+          ],
+          "routes": [
+            "J560-H"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+              "sourceUrl": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+              "locator": "PDF page 10 (Qualification Overview table), PDF page 54 (Forms of assessment), PDF page 58 (Entry options table)",
+              "evidenceSummary": "Higher tier Paper 5, code J560/05, written exam 1h30m, 100 marks, calculator not permitted."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "J560-06",
+          "code": "J560/06",
+          "name": "Paper 6 (Higher tier)",
+          "componentKind": "component",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "higher"
+          ],
+          "routes": [
+            "J560-H"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+              "sourceUrl": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+              "locator": "PDF page 10 (Qualification Overview table), PDF page 54 (Forms of assessment), PDF page 58 (Entry options table)",
+              "evidenceSummary": "Higher tier Paper 6, code J560/06, written exam 1h30m, 100 marks, calculator permitted."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "J560-F",
+          "name": "Foundation tier",
+          "tiers": [
+            "foundation"
+          ],
+          "paperIds": [
+            "J560-01",
+            "J560-02",
+            "J560-03"
+          ],
+          "selectionRule": "allOf",
+          "sourceReferences": [
+            {
+              "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+              "sourceUrl": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+              "locator": "PDF page 10 (Qualification Overview), PDF page 58 (Entry options)",
+              "evidenceSummary": "Candidates entered for Foundation tier must take all three Foundation tier papers (01, 02, 03)."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "J560-H",
+          "name": "Higher tier",
+          "tiers": [
+            "higher"
+          ],
+          "paperIds": [
+            "J560-04",
+            "J560-05",
+            "J560-06"
+          ],
+          "selectionRule": "allOf",
+          "sourceReferences": [
+            {
+              "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
+              "sourceUrl": "https://www.ocr.org.uk/Images/168982-specification-gcse-mathematics.pdf",
+              "locator": "PDF page 10 (Qualification Overview), PDF page 58 (Entry options)",
+              "evidenceSummary": "Candidates entered for Higher tier must take all three Higher tier papers (04, 05, 06)."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "WJEC-3300:Legacy qualification ending 2027",
+      "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+      "contentAllocation": "tier-filtered-shared-syllabus",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+          "sourceUrl": "https://www.wjec.co.uk/media/u3rbzz1p/wjec-gcse-maths-spec-from-2015-r-e.pdf",
+          "locator": "Official specification printed page 2 (PDF page 5), Summary of assessment",
+          "evidenceSummary": "Both units at the selected tier may contain questions on any part of the specification content."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "3300-U1F",
+          "code": "Unit 1: Non-calculator",
+          "name": "Unit 1: Non-calculator (Foundation)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "foundation"
+          ],
+          "routes": [
+            "route-foundation"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+              "sourceUrl": "https://www.wjec.co.uk/media/u3rbzz1p/wjec-gcse-maths-spec-from-2015-r-e.pdf",
+              "locator": "page 5",
+              "evidenceSummary": "Specifies Unit 1: Non-calculator written examination, Foundation tier: 1 hour 30 minutes, 65 marks, 50% of qualification."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "3300-U2F",
+          "code": "Unit 2: Calculator-allowed",
+          "name": "Unit 2: Calculator-allowed (Foundation)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "foundation"
+          ],
+          "routes": [
+            "route-foundation"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+              "sourceUrl": "https://www.wjec.co.uk/media/u3rbzz1p/wjec-gcse-maths-spec-from-2015-r-e.pdf",
+              "locator": "page 5",
+              "evidenceSummary": "Specifies Unit 2: Calculator-allowed written examination, Foundation tier: 1 hour 30 minutes, 65 marks, 50% of qualification."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "3300-U1I",
+          "code": "Unit 1: Non-calculator",
+          "name": "Unit 1: Non-calculator (Intermediate)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "intermediate"
+          ],
+          "routes": [
+            "route-intermediate"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+              "sourceUrl": "https://www.wjec.co.uk/media/u3rbzz1p/wjec-gcse-maths-spec-from-2015-r-e.pdf",
+              "locator": "page 5",
+              "evidenceSummary": "Specifies Unit 1: Non-calculator written examination, Intermediate tier: 1 hour 45 minutes, 80 marks, 50% of qualification."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "3300-U2I",
+          "code": "Unit 2: Calculator-allowed",
+          "name": "Unit 2: Calculator-allowed (Intermediate)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "intermediate"
+          ],
+          "routes": [
+            "route-intermediate"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+              "sourceUrl": "https://www.wjec.co.uk/media/u3rbzz1p/wjec-gcse-maths-spec-from-2015-r-e.pdf",
+              "locator": "page 5",
+              "evidenceSummary": "Specifies Unit 2: Calculator-allowed written examination, Intermediate tier: 1 hour 45 minutes, 80 marks, 50% of qualification."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "3300-U1H",
+          "code": "Unit 1: Non-calculator",
+          "name": "Unit 1: Non-calculator (Higher)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "higher"
+          ],
+          "routes": [
+            "route-higher"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+              "sourceUrl": "https://www.wjec.co.uk/media/u3rbzz1p/wjec-gcse-maths-spec-from-2015-r-e.pdf",
+              "locator": "page 5",
+              "evidenceSummary": "Specifies Unit 1: Non-calculator written examination, Higher tier: 1 hour 45 minutes, 80 marks, 50% of qualification."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "3300-U2H",
+          "code": "Unit 2: Calculator-allowed",
+          "name": "Unit 2: Calculator-allowed (Higher)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "higher"
+          ],
+          "routes": [
+            "route-higher"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+              "sourceUrl": "https://www.wjec.co.uk/media/u3rbzz1p/wjec-gcse-maths-spec-from-2015-r-e.pdf",
+              "locator": "page 5",
+              "evidenceSummary": "Specifies Unit 2: Calculator-allowed written examination, Higher tier: 1 hour 45 minutes, 80 marks, 50% of qualification."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "route-foundation",
+          "name": "Foundation Tier Route",
+          "tiers": [
+            "foundation"
+          ],
+          "paperIds": [
+            "3300-U1F",
+            "3300-U2F"
+          ],
+          "selectionRule": "mandatory: all units (2 papers) must be taken in the same series",
+          "sourceReferences": [
+            {
+              "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+              "sourceUrl": "https://www.wjec.co.uk/media/u3rbzz1p/wjec-gcse-maths-spec-from-2015-r-e.pdf",
+              "locator": "page 5, page 47",
+              "evidenceSummary": "Learners must sit both units at foundation tier in the same examination series. Qualification entry code: 3300PF (English) / 3300LF (Welsh)."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "route-intermediate",
+          "name": "Intermediate Tier Route",
+          "tiers": [
+            "intermediate"
+          ],
+          "paperIds": [
+            "3300-U1I",
+            "3300-U2I"
+          ],
+          "selectionRule": "mandatory: all units (2 papers) must be taken in the same series",
+          "sourceReferences": [
+            {
+              "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+              "sourceUrl": "https://www.wjec.co.uk/media/u3rbzz1p/wjec-gcse-maths-spec-from-2015-r-e.pdf",
+              "locator": "page 5, page 47",
+              "evidenceSummary": "Learners must sit both units at intermediate tier in the same examination series. Qualification entry code: 3300PN / 3300LN."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "routeId": "route-higher",
+          "name": "Higher Tier Route",
+          "tiers": [
+            "higher"
+          ],
+          "paperIds": [
+            "3300-U1H",
+            "3300-U2H"
+          ],
+          "selectionRule": "mandatory: all units (2 papers) must be taken in the same series",
+          "sourceReferences": [
+            {
+              "sourceSha256": "ccd69e53a11897189bd76e0864ed2120e2e3ad29a965cb17205a2d95b30685a7",
+              "sourceUrl": "https://www.wjec.co.uk/media/u3rbzz1p/wjec-gcse-maths-spec-from-2015-r-e.pdf",
+              "locator": "page 5, page 47",
+              "evidenceSummary": "Learners must sit both units at higher tier in the same examination series. Qualification entry code: 3300PH / 3300LH."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "qualificationVersionId": "WJEC-C00-4968-0:Version 5",
+      "sourceSha256": "dbf45ca922a5b4eec07b17276681bf54a6657e905c7f8e4e111247690076620f",
+      "contentAllocation": "mixed",
+      "contentAllocationReferences": [
+        {
+          "sourceSha256": "dbf45ca922a5b4eec07b17276681bf54a6657e905c7f8e4e111247690076620f",
+          "sourceUrl": "https://www.wjec.co.uk/qualifications/gcse-mathematics-and-numeracy-double-award-teaching-from-2025/",
+          "locator": "Official specification PDF pages 10–48, Unit content tables",
+          "evidenceSummary": "Each official content statement appears under one or more Unit columns; Higher-only content is distinguished from Foundation content."
+        }
+      ],
+      "papers": [
+        {
+          "paperId": "UNIT1H",
+          "code": "3320UA",
+          "name": "Unit 1: Financial Mathematics and Other Applications of Numeracy (Higher Tier)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "STANDARD"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "dbf45ca922a5b4eec07b17276681bf54a6657e905c7f8e4e111247690076620f",
+              "sourceUrl": "https://www.wjec.co.uk/qualifications/gcse-mathematics-and-numeracy-double-award-teaching-from-2025/",
+              "locator": "PDF pages 5, 59",
+              "evidenceSummary": "Unit 1 Higher tier written examination: 1 hour 45 minutes, 80 marks, 30% of qualification. Calculator allowed. Entry code 3320UA (English medium). Welsh medium code: 3320NA."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "UNIT1F",
+          "code": "3320U1",
+          "name": "Unit 1: Financial Mathematics and Other Applications of Numeracy (Foundation Tier)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "STANDARD"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "dbf45ca922a5b4eec07b17276681bf54a6657e905c7f8e4e111247690076620f",
+              "sourceUrl": "https://www.wjec.co.uk/qualifications/gcse-mathematics-and-numeracy-double-award-teaching-from-2025/",
+              "locator": "PDF pages 5, 59",
+              "evidenceSummary": "Unit 1 Foundation tier written examination: 1 hour 30 minutes, 65 marks, 30% of qualification. Calculator allowed. Entry code 3320U1 (English medium). Welsh medium code: 3320N1."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "UNIT2H",
+          "code": "3320UB",
+          "name": "Unit 2: Non-calculator (Higher Tier)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "STANDARD"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "dbf45ca922a5b4eec07b17276681bf54a6657e905c7f8e4e111247690076620f",
+              "sourceUrl": "https://www.wjec.co.uk/qualifications/gcse-mathematics-and-numeracy-double-award-teaching-from-2025/",
+              "locator": "PDF pages 5, 59",
+              "evidenceSummary": "Unit 2 Higher tier written examination: 1 hour 45 minutes, 80 marks, 30% of qualification. No calculator allowed. Entry code 3320UB (English medium). Welsh medium code: 3320NB."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "UNIT2F",
+          "code": "3320U2",
+          "name": "Unit 2: Non-calculator (Foundation Tier)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "STANDARD"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "dbf45ca922a5b4eec07b17276681bf54a6657e905c7f8e4e111247690076620f",
+              "sourceUrl": "https://www.wjec.co.uk/qualifications/gcse-mathematics-and-numeracy-double-award-teaching-from-2025/",
+              "locator": "PDF pages 5, 59",
+              "evidenceSummary": "Unit 2 Foundation tier written examination: 1 hour 30 minutes, 65 marks, 30% of qualification. No calculator allowed. Entry code 3320U2 (English medium). Welsh medium code: 3320N2."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "UNIT3H",
+          "code": "3320UC",
+          "name": "Unit 3: Calculator-allowed (Higher Tier)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Higher"
+          ],
+          "routes": [
+            "STANDARD"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "dbf45ca922a5b4eec07b17276681bf54a6657e905c7f8e4e111247690076620f",
+              "sourceUrl": "https://www.wjec.co.uk/qualifications/gcse-mathematics-and-numeracy-double-award-teaching-from-2025/",
+              "locator": "PDF pages 5, 59",
+              "evidenceSummary": "Unit 3 Higher tier written examination: 2 hours, 90 marks, 40% of qualification. Calculator allowed. Entry code 3320UC (English medium). Welsh medium code: 3320NC."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        },
+        {
+          "paperId": "UNIT3F",
+          "code": "3320U3",
+          "name": "Unit 3: Calculator-allowed (Foundation Tier)",
+          "componentKind": "unit",
+          "assessmentRole": "mandatory",
+          "tiers": [
+            "Foundation"
+          ],
+          "routes": [
+            "STANDARD"
+          ],
+          "sourceReferences": [
+            {
+              "sourceSha256": "dbf45ca922a5b4eec07b17276681bf54a6657e905c7f8e4e111247690076620f",
+              "sourceUrl": "https://www.wjec.co.uk/qualifications/gcse-mathematics-and-numeracy-double-award-teaching-from-2025/",
+              "locator": "PDF pages 5, 59",
+              "evidenceSummary": "Unit 3 Foundation tier written examination: 1 hour 45 minutes, 75 marks, 40% of qualification. Calculator allowed. Entry code 3320U3 (English medium). Welsh medium code: 3320N3."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "routes": [
+        {
+          "routeId": "STANDARD",
+          "name": "GCSE Mathematics and Numeracy (Double Award)",
+          "tiers": [
+            "Higher",
+            "Foundation"
+          ],
+          "paperIds": [
+            "UNIT1H",
+            "UNIT1F",
+            "UNIT2H",
+            "UNIT2F",
+            "UNIT3H",
+            "UNIT3F"
+          ],
+          "selectionRule": "Candidates must take exactly one paper from each unit group: {UNIT1H, UNIT1F}, {UNIT2H, UNIT2F}, {UNIT3H, UNIT3F}. All three selected papers are mandatory. Tiers may be mixed across units.",
+          "sourceReferences": [
+            {
+              "sourceSha256": "dbf45ca922a5b4eec07b17276681bf54a6657e905c7f8e4e111247690076620f",
+              "sourceUrl": "https://www.wjec.co.uk/qualifications/gcse-mathematics-and-numeracy-double-award-teaching-from-2025/",
+              "locator": "PDF pages 5, 6, 59",
+              "evidenceSummary": "The qualification comprises three mandatory units. Each unit is offered at Higher and Foundation tier. Candidates may be entered at different tiers across units. All units must be completed to obtain the award."
+            }
+          ],
+          "reviewStatus": "owner-approved"
+        }
+      ],
+      "reviewStatus": "owner-approved"
+    }
+  ]
+}

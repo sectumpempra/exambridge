@@ -59,8 +59,18 @@ describe("course grade calculation capability", () => {
       expect(generated?.lifecycleEvidence, source.qualificationId).toBe(source.lifecycleEvidence);
       expect(generated?.lastObservedYear, source.qualificationId).toBe(source.lastObservedYear);
     }
-    expect(GENERATED_CATALOG.filter(entry => entry.capabilities.calculator.status === "available"))
-      .toHaveLength(5);
+    expect(GENERATED_CATALOG
+      .filter(entry => entry.capabilities.calculator.status === "available")
+      .map(entry => entry.qualificationId)
+      .sort())
+      .toEqual([
+        "qual:aqa:a-level:7357",
+        "qual:caie:a-level:9709",
+        "qual:edexcel-uk:a-level:8ma0",
+        "qual:edexcel:a-level:wma",
+        "qual:ocr:a-level:h240",
+        "qual:ocr:level-3-fsmq:6993",
+      ]);
   });
 
   it("rejects unknown official route IDs and verified estimated capabilities", () => {

@@ -185,6 +185,15 @@ export default function GradeChart({
     return false;
   }, [data, codeField, componentField]);
 
+  const activeGradeFields = useMemo(() => {
+    if (!selectedCode) return gradeFields;
+    let filtered = data.filter(r => String(r[codeField]).toLowerCase() === selectedCode.toLowerCase());
+    if (selectedComponent && componentField) {
+      filtered = filtered.filter(r => String(r[componentField]).toLowerCase() === selectedComponent.toLowerCase());
+    }
+    return gradeFields.filter(field => filtered.some(row => Number(row[field.key]) > 0));
+  }, [selectedCode, selectedComponent, data, codeField, componentField, gradeFields]);
+
   const chartData = useMemo(() => {
     if (!selectedCode) return [];
     let filtered = data.filter(r => String(r[codeField]).toLowerCase() === selectedCode.toLowerCase());
@@ -206,7 +215,7 @@ export default function GradeChart({
 
       // Count non-zero grade values as a quality score
       let score = 0;
-      gradeFields.forEach(gf => { const v = Number(row[gf.key]) || 0; if (v > 0) score++; });
+      activeGradeFields.forEach(gf => { const v = Number(row[gf.key]) || 0; if (v > 0) score++; });
       if (Number(row[maxMarkField]) > 0) score++;
 
       if (!entryMap.has(sessionLabel)) {
@@ -226,14 +235,14 @@ export default function GradeChart({
       const sortKey = getSessionSortKey(sortKeyInput);
       const shortLabel = formatSessionLabel(sessionLabel);
       const entry: Record<string, string | number> = { session: shortLabel, _sortKey: sortKey, [maxMarkField]: Number(row[maxMarkField]) };
-      gradeFields.forEach(gf => { entry[gf.key] = Number(row[gf.key]) || 0; });
+      activeGradeFields.forEach(gf => { entry[gf.key] = Number(row[gf.key]) || 0; });
       entryMap2.set(sessionLabel, entry);
     });
 
     const entries = Array.from(entryMap2.values());
     entries.sort((a, b) => (a._sortKey as number) - (b._sortKey as number));
     return entries.map((e) => { const { _sortKey: _sk, ...rest } = e; void _sk; return rest; });
-  }, [selectedCode, selectedComponent, data, codeField, sessionField, yearField, maxMarkField, gradeFields, isCaie, componentField]);
+  }, [selectedCode, selectedComponent, data, codeField, sessionField, yearField, maxMarkField, activeGradeFields, isCaie, componentField]);
 
   const selectedName = codeOptions.find(o => o.code === selectedCode)?.name || "";
   const titleCode = selectedComponent ? `${selectedCode} (${selectedComponent})` : selectedCode;
@@ -313,7 +322,7 @@ export default function GradeChart({
               <Tooltip contentStyle={{ fontSize: 12, backgroundColor: "rgba(255,255,255,0.96)", border: "1px solid #D9D4CE", borderRadius: 10, color: "#3D3832", boxShadow: "0 4px 16px rgba(0,0,0,0.08)" }} />
               <Legend wrapperStyle={{ fontSize: 12, color: "#625C54", paddingTop: 16 }} />
               <Line type="monotone" dataKey={maxMarkField} stroke="#716A61" strokeWidth={2} strokeDasharray="6 3" dot={false} name="满分" />
-              {gradeFields.map(gf => (
+              {activeGradeFields.map(gf => (
                 <Line key={gf.key} type="monotone" dataKey={gf.key} stroke={gf.color} strokeWidth={2.5}
                   dot={{ r: 4, strokeWidth: 0, fill: gf.color }} activeDot={{ r: 6, stroke: gf.color, strokeWidth: 2, fill: "#FFF" }} name={gf.label} />
               ))}

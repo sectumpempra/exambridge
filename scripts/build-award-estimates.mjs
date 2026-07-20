@@ -91,16 +91,17 @@ const readJson = async path => JSON.parse(await readFile(path, "utf8"));
 
 async function buildFromRepository() {
   const root = process.cwd();
-  const [routesJson, aqaJson, ocrJson, ocrFsmqJson, caieJson] = await Promise.all([
+  const [routesJson, aqaJson, ocrJson, ocrFsmqJson, pearson8ma0Json, caieJson] = await Promise.all([
     readJson(resolve(root, "src/data/official/awards/routes.json")),
     readJson(resolve(root, "src/data/official/awards/aqa-7357.json")),
     readJson(resolve(root, "src/data/official/awards/ocr-h240.json")),
     readJson(resolve(root, "src/data/official/awards/ocr-6993.json")),
+    readJson(resolve(root, "src/data/official/awards/pearson-8ma0.json")),
     readJson(resolve(root, "src/data/official/awards/caie-9709.json")),
   ]);
   const artifact = buildAwardEstimateArtifact({
     routes: routesJson.routes,
-    officialBoundaries: [...aqaJson.boundaries, ...ocrJson.boundaries, ...ocrFsmqJson.boundaries, ...caieJson.boundaries],
+    officialBoundaries: [...aqaJson.boundaries, ...ocrJson.boundaries, ...ocrFsmqJson.boundaries, ...pearson8ma0Json.boundaries, ...caieJson.boundaries],
     targets: TARGETS,
   });
   await writeFile(

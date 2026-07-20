@@ -1,59 +1,35 @@
 import { describe, expect, it } from "vitest";
 import {
-  buildKnowledgeComparisonViewData,
+  buildKnowledgeComparisonV5ViewData,
   groupKnowledgeNodesByDomain,
   partitionKnowledgeNodes,
 } from "@/data/knowledge-tree/comparison-view";
 import type { KnowledgeTreeNode } from "@/data/knowledge-tree/types";
-import type { OverlapResultV32 } from "@/data/knowledge-tree/types-v3.2";
-
-function overlapResult(overrides: Partial<OverlapResultV32> = {}): OverlapResultV32 {
-  return {
-    subjectA: "CAIE-0580",
-    subjectB: "Edexcel-4MA1",
-    paperA: null,
-    paperB: null,
-    mode: "subject-vs-subject",
-    unweighted: 97.3421926910299,
-    weighted: 86.9,
-    sharedNodes: [],
-    aOnlyNodes: [],
-    bOnlyNodes: [],
-    sharedCount: 293,
-    aTotal: 299,
-    bTotal: 295,
-    aName: "IGCSE Mathematics",
-    bName: "International GCSE Mathematics A",
-    ...overrides,
-  };
-}
 
 describe("knowledge comparison view metrics", () => {
-  it("keeps union overlap, emphasis similarity and directional coverage semantically separate", () => {
-    const view = buildKnowledgeComparisonViewData(
-      overlapResult(),
-      "IGCSE Mathematics",
-      "International GCSE Mathematics A",
-    );
-
-    expect(view.metrics.unionOverlap.overlap).toBe(293);
-    expect(view.metrics.unionOverlap.total).toBe(301);
-    expect(view.metrics.unionOverlap.percentage).toBeCloseTo((293 / 301) * 100);
-    expect(view.metrics.emphasisSimilarity).toBe(86.9);
-    expect(view.metrics.coverageA.percentage).toBeCloseTo((293 / 299) * 100);
-    expect(view.metrics.coverageB.percentage).toBeCloseTo((293 / 295) * 100);
-  });
-
-  it("returns zero percentages for empty comparisons", () => {
-    const view = buildKnowledgeComparisonViewData(
-      overlapResult({ sharedCount: 0, aTotal: 0, bTotal: 0, weighted: 0, unweighted: 0 }),
-      "A",
-      "B",
-    );
-
-    expect(view.metrics.unionOverlap).toEqual({ overlap: 0, total: 0, percentage: 0 });
-    expect(view.metrics.coverageA.percentage).toBe(0);
-    expect(view.metrics.coverageB.percentage).toBe(0);
+  it("keeps exact overlap and directional coverage separate without a legacy emphasis metric", () => {
+    const view = buildKnowledgeComparisonV5ViewData({
+      subjectA: "CAIE-0580:2025-2027",
+      subjectB: "Edexcel-4MA1:Issue 2",
+      paperA: null,
+      paperB: null,
+      exact: {
+        sharedNodeIds: ["LINE"],
+        aOnlyNodeIds: ["AXIS-3D"],
+        bOnlyNodeIds: [],
+        unionCount: 2,
+        jaccard: 50,
+        coverageA: 50,
+        coverageB: 100,
+      },
+      aStatements: [],
+      bStatements: [],
+      counts: { shared: 2, partial: 1, exclusive: 1, unresolved: 3, "non-comparable": 2 },
+    }, "0580", "4MA1");
+    expect(view.version).toBe("5.0");
+    expect(view.metrics.unionOverlap.percentage).toBe(50);
+    expect(view.metrics.partialStatementCount).toBe(1);
+    expect(view.metrics.unresolvedStatementCount).toBe(3);
   });
 });
 

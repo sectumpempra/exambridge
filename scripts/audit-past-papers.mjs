@@ -61,7 +61,7 @@ try {
     const mappingFile = knowledgeMappingFiles[catalog.key];
     if (!mappingFile) failures.push(`${entry.file} has no owner-approved knowledge mapping link`);
     else {
-      const mapping = JSON.parse(await readFile(resolve(root, "data/active/knowledge-v4", mappingFile), "utf8"));
+      const mapping = JSON.parse(await readFile(resolve(root, "data/active/knowledge-v5/mappings", mappingFile), "utf8"));
       if (mapping.reviewStatus !== "owner-approved") failures.push(`${entry.file} references a knowledge mapping that is not owner-approved`);
       if (catalog.qualificationVersion.id !== mapping.qualificationVersionId) failures.push(`${entry.file} qualification version does not match the owner-approved mapping`);
       if (catalog.qualificationVersion.source.sha256 !== mapping.sources?.[0]?.sha256) failures.push(`${entry.file} specification hash does not match the owner-approved mapping`);

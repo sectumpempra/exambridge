@@ -9,6 +9,7 @@ import aqaJson from "@/data/official/awards/aqa-7357.json";
 import ocrJson from "@/data/official/awards/ocr-h240.json";
 import ocr6993Json from "@/data/official/awards/ocr-6993.json";
 import caieJson from "@/data/official/awards/caie-9709.json";
+import pearson8ma0Json from "@/data/official/awards/pearson-8ma0.json";
 import sourceManifestJson from "@/data/official/awards/source-manifest.json";
 import estimatesJson from "../generated/estimates/award-boundaries-v1.json";
 
@@ -66,6 +67,7 @@ const awardFiles = [
   "src/data/official/awards/aqa-7357.json",
   "src/data/official/awards/ocr-h240.json",
   "src/data/official/awards/ocr-6993.json",
+  "src/data/official/awards/pearson-8ma0.json",
   "src/data/official/awards/caie-9709.json",
 ];
 
@@ -76,7 +78,7 @@ const normalizedContentHashes: Record<string, string> = Object.fromEntries(award
 
 const realData: AuditFixture = {
   routes: routesJson.routes,
-  officialBoundaries: [...aqaJson.boundaries, ...ocrJson.boundaries, ...ocr6993Json.boundaries, ...caieJson.boundaries],
+  officialBoundaries: [...aqaJson.boundaries, ...ocrJson.boundaries, ...ocr6993Json.boundaries, ...pearson8ma0Json.boundaries, ...caieJson.boundaries],
   estimatedBoundaries: estimatesJson.boundaries,
   sourceManifest: sourceManifestJson,
   normalizedContentHashes,
@@ -89,7 +91,7 @@ const audit = (mutate?: (data: AuditFixture) => void) => {
 };
 
 const aqaBoundaryIndex = 0;
-const caieBoundaryIndex = aqaJson.boundaries.length + ocrJson.boundaries.length + ocr6993Json.boundaries.length;
+const caieBoundaryIndex = aqaJson.boundaries.length + ocrJson.boundaries.length + ocr6993Json.boundaries.length + pearson8ma0Json.boundaries.length;
 const caieRouteIndex = routesJson.routes.findIndex(route => route.board === "CAIE");
 
 describe("Award data audit", () => {
@@ -251,8 +253,8 @@ describe("Award data audit", () => {
     const report = JSON.parse(readFileSync(join(process.cwd(), "generated/data-quality-report.json"), "utf8"));
 
     expect(report.awards).toEqual({
-      routeCount: 6,
-      officialBoundaryCount: 12,
+      routeCount: 7,
+      officialBoundaryCount: 13,
       estimatedBoundaryCount: 1,
       failureCount: 0,
       failures: [],
