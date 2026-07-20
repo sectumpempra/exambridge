@@ -1,6 +1,6 @@
 # ExamBridge AI service handoff
 
-This directory contains inactive deployment templates. Adding them to the repository does not enable or publish the assistant.
+This directory contains the deployment templates for the separately operated AI service. Adding or changing these files in the repository does not by itself enable the public assistant or publish a release.
 
 ## Release boundary
 
