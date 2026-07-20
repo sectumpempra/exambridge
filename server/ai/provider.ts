@@ -26,6 +26,11 @@ type ProviderResult = {
   providerRequestId?: string;
 };
 
+function positiveInteger(value: string | undefined, fallback: number): number {
+  const parsed = Number(value);
+  return Number.isInteger(parsed) && parsed > 0 ? parsed : fallback;
+}
+
 function chatCompletionsUrl(baseUrl: string): string {
   return `${baseUrl.replace(/\/$/, "")}/chat/completions`;
 }
@@ -98,7 +103,10 @@ function normalizeCitationMarkers(answer: string, allowedSources: AICitation[]):
     const residue = body.replace(/S\d+/g, "").replace(/[\s,，、;；]+/g, "");
     if (ids.length === 0 || residue.length > 0) return full;
     return [...new Set(ids)].filter((sourceId) => allowed.has(sourceId)).map((sourceId) => `[${sourceId}]`).join("");
-  }).replace(/\s+([，。,.!?;:])/g, "$1");
+  })
+    .replace(/\[(?:sharedConcepts|sideA|sideB|exactMetrics|statementCounts|aOnlyNodeIds|bOnlyNodeIds)\]/g, "")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\s+([，。,.!?;:])/g, "$1");
 }
 
 export function hydrateCitations(answer: string, allowedSources: AICitation[]): AICitation[] {
@@ -112,6 +120,8 @@ export class DeepSeekChatProvider {
   private readonly baseUrl = process.env.DEEPSEEK_BASE_URL;
   private readonly model = process.env.DEEPSEEK_MODEL;
   private readonly timeoutMs = Number(process.env.AI_PROVIDER_TIMEOUT_MS ?? 60_000);
+  private readonly lowReasoningMaxTokens = positiveInteger(process.env.AI_PROVIDER_MAX_OUTPUT_TOKENS_LOW, 2_500);
+  private readonly maxReasoningMaxTokens = positiveInteger(process.env.AI_PROVIDER_MAX_OUTPUT_TOKENS_MAX, 6_000);
 
   isConfigured(): boolean {
     return Boolean(this.apiKey && this.baseUrl && this.model);
@@ -139,7 +149,9 @@ export class DeepSeekChatProvider {
           messages: [{ role: "system", content: options.system }, ...options.messages],
           stream: true,
           stream_options: { include_usage: true },
-          max_tokens: 2_500,
+          max_tokens: options.reasoningEffort === "max"
+            ? this.maxReasoningMaxTokens
+            : this.lowReasoningMaxTokens,
           thinking: { type: "enabled" },
           reasoning_effort: options.reasoningEffort,
           user_id: "exambridge-anonymous",
@@ -209,13 +221,14 @@ export class DeepSeekChatProvider {
     if (returnedModel && returnedModel !== this.model) {
       throw new AIProviderError(`Unexpected model response: ${returnedModel}`, "unavailable");
     }
-    return { answer: sanitizeAnswer(answer), model: returnedModel || this.model, usage, providerRequestId };
+    const sanitizedAnswer = sanitizeAnswer(answer);
+    if (!sanitizedAnswer) {
+      throw new AIProviderError("DeepSeek returned an empty answer", "unavailable");
+    }
+    return { answer: sanitizedAnswer, model: returnedModel || this.model, usage, providerRequestId };
   }
 }
 
 export function ensureAnswerCitations(answer: string, sources: AICitation[]): string {
-  const normalized = normalizeCitationMarkers(answer, sources);
-  if (hydrateCitations(normalized, sources).length > 0 || sources.length === 0) return normalized;
-  const ids = sources.slice(0, 2).map((source) => `[${source.sourceId}]`).join(" ");
-  return `${normalized}\n\n资料来源：${ids}`;
+  return normalizeCitationMarkers(answer, sources);
 }

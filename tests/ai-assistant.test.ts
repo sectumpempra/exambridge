@@ -195,6 +195,22 @@ describe("AI assistant provider boundaries", () => {
     expect(hydrateCitations(answer, sources)).toEqual(sources);
   });
 
+  it("removes internal comparison field markers from user-facing answers", () => {
+    const sources = [{ sourceId: "S1", title: "First", url: "https://example.com/first", dataVersion: "v1" }];
+    expect(ensureAnswerCitations("共同内容 [sharedConcepts] [S1]，独有内容 [aOnlyNodeIds]。", sources))
+      .toBe("共同内容 [S1]，独有内容。");
+  });
+
+  it("never invents citations when the provider omitted them", () => {
+    const sources = [
+      { sourceId: "S1", title: "First", url: "https://example.com/first", dataVersion: "v1" },
+      { sourceId: "S2", title: "Second", url: "https://example.com/second", dataVersion: "v1" },
+    ];
+    const answer = ensureAnswerCitations("没有引用的回答。", sources);
+    expect(answer).toBe("没有引用的回答。");
+    expect(hydrateCitations(answer, sources)).toEqual([]);
+  });
+
   it("uses maximum reasoning for comparisons and lower reasoning for simple facts", () => {
     expect(isComplexAIQuestion(request())).toBe(false);
     expect(isComplexAIQuestion(request({ messages: [{ role: "user", content: "比较 9709 和 9MA0 的区别" }] }))).toBe(true);
@@ -245,6 +261,30 @@ describe("AI assistant provider boundaries", () => {
     expect(result.answer).toBe("回答 [未展示的外部链接] [S1]");
     expect(result.usage?.total_tokens).toBe(12);
     expect(deltas.join("")).toBe(result.answer);
+    const requestBody = JSON.parse(String((vi.mocked(fetch).mock.calls[0]?.[1] as RequestInit)?.body));
+    expect(requestBody.max_tokens).toBe(2_500);
+  });
+
+  it("allocates a larger output budget to maximum reasoning and rejects empty answers", async () => {
+    process.env.DEEPSEEK_API_KEY = "test-only-placeholder";
+    process.env.DEEPSEEK_BASE_URL = "https://example.com/v1";
+    process.env.DEEPSEEK_MODEL = "deepseek-v4-pro";
+    const emptyBody = [
+      'data: {"model":"deepseek-v4-pro","choices":[{"delta":{}}],"usage":{"prompt_tokens":10,"completion_tokens":6000,"total_tokens":6010}}',
+      "",
+      "data: [DONE]",
+      "",
+    ].join("\n");
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(emptyBody, { status: 200 })));
+    await expect(new DeepSeekChatProvider().stream({
+      system: "system",
+      messages: [{ role: "user", content: "compare" }],
+      reasoningEffort: "max",
+      signal: new AbortController().signal,
+      onDelta: () => undefined,
+    })).rejects.toMatchObject({ kind: "unavailable", message: "DeepSeek returned an empty answer" });
+    const requestBody = JSON.parse(String((vi.mocked(fetch).mock.calls[0]?.[1] as RequestInit)?.body));
+    expect(requestBody.max_tokens).toBe(6_000);
   });
 
   it("surfaces provider HTTP failures and rejects unexpected returned models", async () => {
@@ -565,6 +605,57 @@ describe("AI assistant HTTP/SSE boundary", () => {
       ]));
       expect(provider.stream).toHaveBeenCalledOnce();
       expect(serviceGuard.recordProviderFailure).toHaveBeenCalledOnce();
+    } finally {
+      await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
+    }
+  });
+
+  it("rejects an ungrounded provider answer instead of attaching unrelated sources", async () => {
+    const source = {
+      sourceId: "S1",
+      title: "Official syllabus",
+      url: "https://example.com/syllabus",
+      dataVersion: "2026",
+    };
+    const serviceGuard = {
+      beginProviderRequest: vi.fn().mockReturnValue({ allowed: true }),
+      recordProviderSuccess: vi.fn(),
+      recordProviderFailure: vi.fn(),
+    };
+    const server = createAIHttpServer({
+      builder: {
+        build: vi.fn().mockResolvedValue({
+          promptContext: "{}",
+          sources: [source],
+          resolvedContext: { qualificationIds: [], qualificationCodes: ["CAIE-9709"], paperIds: [], labels: ["9709"] },
+        }),
+      },
+      provider: {
+        isConfigured: () => true,
+        stream: vi.fn().mockResolvedValue({
+          answer: "这段回答没有任何来源标记。",
+          model: "deepseek-v4-pro",
+          usage: { prompt_tokens: 10, completion_tokens: 5, total_tokens: 15 },
+        }),
+      },
+      limiter: new AnonymousAIRateLimiter(),
+      serviceGuard,
+    });
+    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+    try {
+      const { port } = server.address() as AddressInfo;
+      const response = await fetch(`http://127.0.0.1:${port}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(request()),
+      });
+      const events = parseSSE(await response.text());
+      expect(events).toEqual(expect.arrayContaining([
+        expect.objectContaining({ type: "error", code: "provider-unavailable" }),
+      ]));
+      expect(events.some((event) => event.type === "citations" || event.type === "done")).toBe(false);
+      expect(serviceGuard.recordProviderFailure).toHaveBeenCalledOnce();
+      expect(serviceGuard.recordProviderSuccess).not.toHaveBeenCalled();
     } finally {
       await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
     }

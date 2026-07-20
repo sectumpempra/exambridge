@@ -175,7 +175,6 @@ async function handleChat(
       signal: controller.signal,
       onDelta: (text) => sendEvent(res, { type: "delta", text }),
     });
-    providerSucceeded = true;
     model = result.model;
     promptTokens = result.usage?.prompt_tokens ?? 0;
     completionTokens = result.usage?.completion_tokens ?? 0;
@@ -183,9 +182,13 @@ async function handleChat(
     totalTokens = reportedTotalTokens > 0
       ? reportedTotalTokens
       : Math.ceil((system.length + request.messages.reduce((sum, message) => sum + message.content.length, 0) + result.answer.length) / 4);
-    serviceGuard.recordProviderSuccess(totalTokens);
     const answer = ensureAnswerCitations(result.answer, context.sources);
     const citations = hydrateCitations(answer, context.sources);
+    if (context.sources.length > 0 && citations.length === 0) {
+      throw new AIProviderError("DeepSeek answer did not cite an allowed source", "unavailable");
+    }
+    providerSucceeded = true;
+    serviceGuard.recordProviderSuccess(totalTokens);
     sendEvent(res, { type: "citations", citations });
     sendEvent(res, {
       type: "suggestions",
