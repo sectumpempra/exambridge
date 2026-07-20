@@ -82,9 +82,28 @@ class StreamingUrlSanitizer {
   }
 }
 
+function requestedCitationIds(answer: string): string[] {
+  return [...answer.matchAll(/\[([^\]]+)\]/g)].flatMap((match) => {
+    const body = match[1];
+    const ids = body.match(/S\d+/g) ?? [];
+    const residue = body.replace(/S\d+/g, "").replace(/[\s,，、;；]+/g, "");
+    return residue.length === 0 ? ids : [];
+  });
+}
+
+function normalizeCitationMarkers(answer: string, allowedSources: AICitation[]): string {
+  const allowed = new Set(allowedSources.map((source) => source.sourceId));
+  return answer.replace(/\[([^\]]+)\]/g, (full, body: string) => {
+    const ids = body.match(/S\d+/g) ?? [];
+    const residue = body.replace(/S\d+/g, "").replace(/[\s,，、;；]+/g, "");
+    if (ids.length === 0 || residue.length > 0) return full;
+    return [...new Set(ids)].filter((sourceId) => allowed.has(sourceId)).map((sourceId) => `[${sourceId}]`).join("");
+  }).replace(/\s+([，。,.!?;:])/g, "$1");
+}
+
 export function hydrateCitations(answer: string, allowedSources: AICitation[]): AICitation[] {
   const allowed = new Map(allowedSources.map((source) => [source.sourceId, source]));
-  const requested = [...answer.matchAll(/\[(S\d+)\]/g)].map((match) => match[1]);
+  const requested = requestedCitationIds(answer);
   return [...new Set(requested)].flatMap((sourceId) => allowed.get(sourceId) ?? []);
 }
 
@@ -195,7 +214,8 @@ export class DeepSeekChatProvider {
 }
 
 export function ensureAnswerCitations(answer: string, sources: AICitation[]): string {
-  if (hydrateCitations(answer, sources).length > 0 || sources.length === 0) return answer;
+  const normalized = normalizeCitationMarkers(answer, sources);
+  if (hydrateCitations(normalized, sources).length > 0 || sources.length === 0) return normalized;
   const ids = sources.slice(0, 2).map((source) => `[${source.sourceId}]`).join(" ");
-  return `${answer}\n\n资料来源：${ids}`;
+  return `${normalized}\n\n资料来源：${ids}`;
 }

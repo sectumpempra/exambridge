@@ -45,6 +45,19 @@ type SourceRegistry = {
   list: () => AICitation[];
 };
 
+type PromptItemBucket = {
+  items: unknown[];
+  omitted: number;
+};
+
+type ComparisonPromptContext = {
+  mode: "comparison";
+  sharedConcepts: PromptItemBucket;
+  sideA: PromptItemBucket;
+  sideB: PromptItemBucket;
+  truncationNotice: string;
+};
+
 export type AIContextBuildResult = {
   promptContext: string;
   sources: AICitation[];
@@ -133,6 +146,15 @@ function messageExplicitlyNamesCode(message: string, code: string): boolean {
 
 function trimArray<T>(items: T[], limit: number): { items: T[]; omitted: number } {
   return { items: items.slice(0, limit), omitted: Math.max(0, items.length - limit) };
+}
+
+function isComparisonPromptContext(value: unknown): value is ComparisonPromptContext {
+  if (!value || typeof value !== "object") return false;
+  const candidate = value as Partial<ComparisonPromptContext>;
+  return candidate.mode === "comparison"
+    && Array.isArray(candidate.sharedConcepts?.items)
+    && Array.isArray(candidate.sideA?.items)
+    && Array.isArray(candidate.sideB?.items);
 }
 
 function appliesToPaper(statement: KnowledgeMappingV5["statements"][number], paperId: string | null): boolean {
@@ -469,12 +491,27 @@ export class AIContextBuilder {
       };
     }
 
-    const payload = JSON.stringify({
+    const serializePayload = () => JSON.stringify({
       generatedFor: request.pageContext.pageType,
       sourcePolicy: "Only owner-approved ExamBridge data is included. Source IDs are resolved by the server.",
       examOverviews: overviews,
       knowledge,
     });
+    let payload = serializePayload();
+    if (payload.length > MAX_PROMPT_CONTEXT_CHARACTERS && isComparisonPromptContext(knowledge)) {
+      const buckets = [knowledge.sideA, knowledge.sideB, knowledge.sharedConcepts];
+      while (payload.length > MAX_PROMPT_CONTEXT_CHARACTERS) {
+        const target = buckets
+          .filter((bucket) => bucket.items.length > 0)
+          .sort((a, b) => JSON.stringify(b.items.at(-1)).length - JSON.stringify(a.items.at(-1)).length)[0];
+        if (!target) break;
+        target.items.pop();
+        target.omitted += 1;
+        payload = serializePayload();
+      }
+      knowledge.truncationNotice = "Lists were reduced to fit the verified assistant context budget. The ExamBridge comparison page remains the exhaustive source.";
+      payload = serializePayload();
+    }
     if (payload.length > MAX_PROMPT_CONTEXT_CHARACTERS) {
       throw new Error(`AI prompt context exceeded ${MAX_PROMPT_CONTEXT_CHARACTERS} characters`);
     }

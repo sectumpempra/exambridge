@@ -9,7 +9,7 @@ import {
 } from "@/domain-v2/ai-assistant";
 import { AIContextBuilder, overviewIdentityMatches } from "../server/ai/context-builder";
 import { AnonymousAIRateLimiter } from "../server/ai/rate-limit";
-import { AIProviderError, DeepSeekChatProvider, hydrateCitations } from "../server/ai/provider";
+import { AIProviderError, DeepSeekChatProvider, ensureAnswerCitations, hydrateCitations } from "../server/ai/provider";
 import { isComplexAIQuestion } from "../server/ai/prompt";
 import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai";
 
@@ -112,6 +112,50 @@ describe("AI assistant context builder", () => {
     expect(result.promptContext).toContain('"selectedPaperId":null');
     expect(result.promptContext).toContain('"selectedPaperId":"4MA1-1H"');
   });
+
+  it("fits the real 9709 versus 9MA0 comparison into the prompt budget", async () => {
+    const result = await builder.build(request({
+      pageContext: { pageType: "knowledge-comparison", route: "/knowledge-tree", selectedPaperIds: ["", ""], comparisonIds: ["CAIE-9709", "Edexcel-9MA0"] },
+      messages: [{ role: "user", content: "比较 CAIE 9709 和 Pearson Edexcel 9MA0 的知识范围" }],
+    }));
+    const payload = JSON.parse(result.promptContext) as {
+      knowledge: {
+        mode: string;
+        selections: Array<{ code: string }>;
+        exactMetrics: { sharedNodeIds: string[]; unionCount: number };
+        sharedConcepts: { items: unknown[] };
+        sideA: { items: unknown[] };
+        sideB: { items: unknown[] };
+        truncationNotice: string;
+      };
+    };
+    expect(result.clarification).toBeUndefined();
+    expect(result.promptContext.length).toBeLessThanOrEqual(52_000);
+    expect(payload.knowledge.mode).toBe("comparison");
+    expect(payload.knowledge.selections.map((selection) => selection.code)).toEqual(["CAIE-9709", "Edexcel-9MA0"]);
+    expect(payload.knowledge.exactMetrics.unionCount).toBeGreaterThan(0);
+    expect(
+      payload.knowledge.sharedConcepts.items.length
+      + payload.knowledge.sideA.items.length
+      + payload.knowledge.sideB.items.length,
+    ).toBeGreaterThan(0);
+    expect(payload.knowledge.truncationNotice).toContain("context budget");
+  });
+
+  it("reuses the server-resolved course context for a realistic follow-up", async () => {
+    const first = await builder.build(request());
+    const result = await builder.build(request({
+      resolvedContext: first.resolvedContext,
+      messages: [
+        { role: "user", content: "9709 可以使用计算器吗？" },
+        { role: "assistant", content: "9709 的各张 Paper 均允许使用符合规定的计算器。" },
+        { role: "user", content: "刚才提到的 Paper 2 为什么允许使用计算器？" },
+      ],
+    }));
+    expect(result.clarification).toBeUndefined();
+    expect(result.resolvedContext.qualificationCodes).toContain("CAIE-9709");
+    expect(result.promptContext).toContain("CAIE-9709");
+  });
 });
 
 describe("AI assistant provider boundaries", () => {
@@ -130,6 +174,16 @@ describe("AI assistant provider boundaries", () => {
   it("hydrates only allow-listed source IDs", () => {
     const sources = [{ sourceId: "S1", title: "Official", url: "https://example.com/official", dataVersion: "v1" }];
     expect(hydrateCitations("Fact [S1], invented [S9].", sources)).toEqual(sources);
+  });
+
+  it("normalizes grouped citations and removes unknown citation markers", () => {
+    const sources = [
+      { sourceId: "S1", title: "First", url: "https://example.com/first", dataVersion: "v1" },
+      { sourceId: "S2", title: "Second", url: "https://example.com/second", dataVersion: "v1" },
+    ];
+    const answer = ensureAnswerCitations("Shared fact [S1,S2], invented [S9].", sources);
+    expect(answer).toBe("Shared fact [S1][S2], invented.");
+    expect(hydrateCitations(answer, sources)).toEqual(sources);
   });
 
   it("uses maximum reasoning for comparisons and lower reasoning for simple facts", () => {
@@ -260,7 +314,7 @@ describe("AI assistant HTTP/SSE boundary", () => {
       expect(events[2].citations).toEqual([source]);
       expect(events[4]).toMatchObject({
         type: "done",
-        answer: "Paper 1 不可使用计算器 [S1]，无效引用会被忽略 [S9]。",
+        answer: "Paper 1 不可使用计算器 [S1]，无效引用会被忽略。",
         resolvedContext,
       });
       expect(dependencies.builder.build).toHaveBeenCalledOnce();
