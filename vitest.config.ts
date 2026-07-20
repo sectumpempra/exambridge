@@ -8,8 +8,8 @@ export default defineConfig({
     include: ["tests/**/*.test.ts"],
     coverage: {
       reporter: ["text", "html", "json-summary"],
-      include: ["src/domain-v2/**/*.ts", "src/adapters-v2/**/*.ts"],
-      exclude: ["**/*.d.ts", "**/index.ts"],
+      include: ["src/domain-v2/**/*.ts", "src/adapters-v2/**/*.ts", "server/ai/**/*.ts"],
+      exclude: ["**/*.d.ts", "src/**/index.ts", "server/ai/provider-smoke.ts"],
       thresholds: {
         lines: 90,
         branches: 80,
@@ -17,6 +17,7 @@ export default defineConfig({
         "src/domain-v2/calculator/**": { lines: 95, branches: 90 },
         "src/adapters-v2/legacy-data/**": { lines: 95, branches: 90 },
         "src/domain-v2/past-papers/**": { lines: 80, branches: 70 },
+        "server/ai/**": { lines: 85, branches: 75 },
       },
     },
   },

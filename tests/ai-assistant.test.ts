@@ -9,7 +9,7 @@ import {
 } from "@/domain-v2/ai-assistant";
 import { AIContextBuilder, overviewIdentityMatches } from "../server/ai/context-builder";
 import { AnonymousAIRateLimiter } from "../server/ai/rate-limit";
-import { AIServiceGuard } from "../server/ai/service-guard";
+import { AIServiceGuard, createAIServiceGuardFromEnv } from "../server/ai/service-guard";
 import { AIProviderError, DeepSeekChatProvider, ensureAnswerCitations, hydrateCitations } from "../server/ai/provider";
 import { isComplexAIQuestion } from "../server/ai/prompt";
 import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai";
@@ -24,6 +24,14 @@ function request(overrides: Partial<AIChatRequest> = {}): AIChatRequest {
     locale: "zh-CN",
     ...overrides,
   };
+}
+
+function parseSSE(body: string): Array<Record<string, unknown>> {
+  return body
+    .split(/\r?\n\r?\n/)
+    .map((block) => block.split(/\r?\n/).find((line) => line.startsWith("data:")))
+    .filter((line): line is string => Boolean(line))
+    .map((line) => JSON.parse(line.slice(5).trimStart()) as Record<string, unknown>);
 }
 
 describe("AI assistant request and history safety", () => {
@@ -239,6 +247,76 @@ describe("AI assistant provider boundaries", () => {
     expect(deltas.join("")).toBe(result.answer);
   });
 
+  it("surfaces provider HTTP failures and rejects unexpected returned models", async () => {
+    process.env.DEEPSEEK_API_KEY = "test-only-placeholder";
+    process.env.DEEPSEEK_BASE_URL = "https://example.com/v1/";
+    process.env.DEEPSEEK_MODEL = "deepseek-v4-pro";
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({ error: { message: "rate limited" } }), {
+      status: 429,
+      headers: { "Content-Type": "application/json" },
+    })));
+    await expect(new DeepSeekChatProvider().stream({
+      system: "system",
+      messages: [{ role: "user", content: "question" }],
+      reasoningEffort: "low",
+      signal: new AbortController().signal,
+      onDelta: () => undefined,
+    })).rejects.toMatchObject({ kind: "unavailable", status: 429, message: "rate limited" });
+
+    const mismatched = [
+      'data: {"model":"unexpected-model","choices":[{"delta":{"content":"answer"}}]}',
+      "",
+      "data: [DONE]",
+      "",
+    ].join("\n");
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(mismatched, { status: 200 })));
+    await expect(new DeepSeekChatProvider().stream({
+      system: "system",
+      messages: [{ role: "user", content: "question" }],
+      reasoningEffort: "max",
+      signal: new AbortController().signal,
+      onDelta: () => undefined,
+    })).rejects.toMatchObject({ kind: "unavailable", message: "Unexpected model response: unexpected-model" });
+  });
+
+  it("handles structured stream content and fails safely on missing bodies or network errors", async () => {
+    process.env.DEEPSEEK_API_KEY = "test-only-placeholder";
+    process.env.DEEPSEEK_BASE_URL = "https://example.com/v1";
+    process.env.DEEPSEEK_MODEL = "deepseek-v4-pro";
+    const structured = [
+      'data: {"model":"deepseek-v4-pro","choices":[{"delta":{"content":["A",{"text":"B"},{"content":"C"},null]}}]}',
+      "",
+      "data: [DONE]",
+      "",
+    ].join("\n");
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(structured, { status: 200 })));
+    await expect(new DeepSeekChatProvider().stream({
+      system: "system",
+      messages: [{ role: "user", content: "question" }],
+      reasoningEffort: "low",
+      signal: new AbortController().signal,
+      onDelta: () => undefined,
+    })).resolves.toMatchObject({ answer: "ABC", model: "deepseek-v4-pro" });
+
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(null, { status: 200 })));
+    await expect(new DeepSeekChatProvider().stream({
+      system: "system",
+      messages: [{ role: "user", content: "question" }],
+      reasoningEffort: "low",
+      signal: new AbortController().signal,
+      onDelta: () => undefined,
+    })).rejects.toMatchObject({ kind: "unavailable", message: "DeepSeek streaming body is missing" });
+
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("network down")));
+    await expect(new DeepSeekChatProvider().stream({
+      system: "system",
+      messages: [{ role: "user", content: "question" }],
+      reasoningEffort: "low",
+      signal: new AbortController().signal,
+      onDelta: () => undefined,
+    })).rejects.toMatchObject({ kind: "unavailable", message: "network down" });
+  });
+
   it("enforces per-IP request and concurrency limits", () => {
     const limiter = new AnonymousAIRateLimiter(2, 300_000, 1, 2);
     const first = limiter.acquire("ip", 0);
@@ -249,6 +327,12 @@ describe("AI assistant provider boundaries", () => {
     expect(second.allowed).toBe(true);
     if (second.allowed) second.release();
     expect(limiter.acquire("ip", 3)).toMatchObject({ allowed: false, reason: "rate-limited" });
+
+    const globalLimiter = new AnonymousAIRateLimiter(10, 60_000, 2, 1);
+    const globalFirst = globalLimiter.acquire("first", 0);
+    expect(globalFirst.allowed).toBe(true);
+    expect(globalLimiter.acquire("second", 0)).toMatchObject({ allowed: false, reason: "service-busy" });
+    if (globalFirst.allowed) globalFirst.release();
   });
 
   it("enforces daily request and token ceilings with a UTC reset", () => {
@@ -279,6 +363,20 @@ describe("AI assistant provider boundaries", () => {
     expect(guard.beginProviderRequest(start + 1_001)).toEqual({ allowed: true });
     guard.recordProviderSuccess(20, start + 1_001);
     expect(guard.snapshot(start + 1_001)).toMatchObject({ consecutiveProviderFailures: 0, circuitOpen: false });
+  });
+
+  it("loads positive service limits from environment and safely falls back for invalid values", () => {
+    const configured = createAIServiceGuardFromEnv({
+      AI_DAILY_REQUEST_LIMIT: "1",
+      AI_DAILY_TOKEN_LIMIT: "100",
+      AI_PROVIDER_FAILURE_THRESHOLD: "2",
+      AI_PROVIDER_COOLDOWN_MS: "1000",
+    });
+    const now = Date.UTC(2026, 6, 21, 12);
+    expect(configured.beginProviderRequest(now)).toEqual({ allowed: true });
+    expect(configured.beginProviderRequest(now + 1)).toMatchObject({ allowed: false, reason: "daily-request-limit" });
+    const fallback = createAIServiceGuardFromEnv({ AI_DAILY_REQUEST_LIMIT: "invalid", AI_DAILY_TOKEN_LIMIT: "0" });
+    expect(fallback.beginProviderRequest(now)).toEqual({ allowed: true });
   });
 });
 
@@ -339,11 +437,7 @@ describe("AI assistant HTTP/SSE boundary", () => {
 
       const body = await response.text();
       expect(body).not.toContain("event:");
-      const events = body
-        .split(/\r?\n\r?\n/)
-        .map((block) => block.split(/\r?\n/).find((line) => line.startsWith("data:")))
-        .filter((line): line is string => Boolean(line))
-        .map((line) => JSON.parse(line.slice(5).trimStart()));
+      const events = parseSSE(body);
 
       expect(events.map((event) => event.type)).toEqual([
         "meta",
@@ -362,6 +456,115 @@ describe("AI assistant HTTP/SSE boundary", () => {
       expect(dependencies.builder.build).toHaveBeenCalledOnce();
       expect(dependencies.provider.stream).toHaveBeenCalledOnce();
       expect(dependencies.serviceGuard.recordProviderSuccess).toHaveBeenCalledWith(30);
+    } finally {
+      await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
+    }
+  });
+
+  it("rejects unsafe HTTP requests before any provider call", async () => {
+    const dependencies: AIHttpServerDependencies = {
+      builder: { build: vi.fn() },
+      provider: { isConfigured: () => true, stream: vi.fn() },
+      limiter: new AnonymousAIRateLimiter(),
+      serviceGuard: new AIServiceGuard(),
+    };
+    const server = createAIHttpServer(dependencies);
+    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+    try {
+      const { port } = server.address() as AddressInfo;
+      const base = `http://127.0.0.1:${port}`;
+      const health = await fetch(`${base}/api/ai/health`);
+      expect(health.status).toBe(200);
+      await expect(health.json()).resolves.toMatchObject({ status: "ok", service: "exambridge-ai" });
+      expect((await fetch(`${base}/unknown`)).status).toBe(404);
+      expect((await fetch(`${base}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Origin: "https://evil.example" },
+        body: JSON.stringify(request()),
+      })).status).toBe(403);
+      expect((await fetch(`${base}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      })).status).toBe(400);
+      expect((await fetch(`${base}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ padding: "x".repeat(70_000) }),
+      })).status).toBe(413);
+      expect(dependencies.builder.build).not.toHaveBeenCalled();
+      expect(dependencies.provider.stream).not.toHaveBeenCalled();
+    } finally {
+      await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
+    }
+  });
+
+  it("returns local clarification and configuration errors without using provider quota", async () => {
+    const resolvedContext = { qualificationIds: [], qualificationCodes: [], paperIds: [], labels: [] };
+    const builder = vi.fn()
+      .mockResolvedValueOnce({ promptContext: "{}", sources: [], resolvedContext, clarification: "请先选择课程。" })
+      .mockResolvedValueOnce({ promptContext: "{}", sources: [], resolvedContext });
+    const serviceGuard = {
+      beginProviderRequest: vi.fn().mockReturnValue({ allowed: true }),
+      recordProviderSuccess: vi.fn(),
+      recordProviderFailure: vi.fn(),
+    };
+    const server = createAIHttpServer({
+      builder: { build: builder },
+      provider: { isConfigured: () => false, stream: vi.fn() },
+      limiter: new AnonymousAIRateLimiter(),
+      serviceGuard,
+    });
+    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+    try {
+      const { port } = server.address() as AddressInfo;
+      const post = () => fetch(`http://127.0.0.1:${port}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(request()),
+      });
+      expect(parseSSE(await (await post()).text()).map((event) => event.type)).toEqual(["meta", "delta", "suggestions", "done"]);
+      expect(parseSSE(await (await post()).text())).toEqual(expect.arrayContaining([
+        expect.objectContaining({ type: "error", code: "configuration-error" }),
+      ]));
+      expect(serviceGuard.beginProviderRequest).not.toHaveBeenCalled();
+    } finally {
+      await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
+    }
+  });
+
+  it("blocks exhausted service limits and records provider failures", async () => {
+    const resolvedContext = { qualificationIds: [], qualificationCodes: ["CAIE-9709"], paperIds: [], labels: ["9709"] };
+    const builder = { build: vi.fn().mockResolvedValue({ promptContext: "{}", sources: [], resolvedContext }) };
+    const provider = {
+      isConfigured: () => true,
+      stream: vi.fn().mockRejectedValue(new AIProviderError("rate", "unavailable", 429)),
+    };
+    const serviceGuard = {
+      beginProviderRequest: vi.fn()
+        .mockReturnValueOnce({ allowed: false, reason: "daily-token-limit", retryAfterSeconds: 60 })
+        .mockReturnValueOnce({ allowed: true }),
+      recordProviderSuccess: vi.fn(),
+      recordProviderFailure: vi.fn(),
+    };
+    const server = createAIHttpServer({ builder, provider, limiter: new AnonymousAIRateLimiter(), serviceGuard });
+    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+    try {
+      const { port } = server.address() as AddressInfo;
+      const post = () => fetch(`http://127.0.0.1:${port}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(request()),
+      });
+      expect(parseSSE(await (await post()).text())).toEqual(expect.arrayContaining([
+        expect.objectContaining({ type: "error", code: "service-limit", retryAfterSeconds: 60 }),
+      ]));
+      expect(provider.stream).not.toHaveBeenCalled();
+      expect(parseSSE(await (await post()).text())).toEqual(expect.arrayContaining([
+        expect.objectContaining({ type: "error", code: "provider-unavailable", retryAfterSeconds: 30 }),
+      ]));
+      expect(provider.stream).toHaveBeenCalledOnce();
+      expect(serviceGuard.recordProviderFailure).toHaveBeenCalledOnce();
     } finally {
       await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
     }
