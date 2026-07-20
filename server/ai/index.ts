@@ -10,9 +10,12 @@ import { buildAISystemPrompt, isComplexAIQuestion } from "./prompt";
 const PORT = Number(process.env.AI_PORT ?? 8789);
 const HOST = process.env.AI_HOST ?? "127.0.0.1";
 const MAX_BODY_BYTES = 64 * 1_024;
-const builder = new AIContextBuilder();
-const provider = new DeepSeekChatProvider();
-const limiter = new AnonymousAIRateLimiter();
+
+export interface AIHttpServerDependencies {
+  builder: Pick<AIContextBuilder, "build">;
+  provider: Pick<DeepSeekChatProvider, "isConfigured" | "stream">;
+  limiter: Pick<AnonymousAIRateLimiter, "acquire">;
+}
 
 function json(res: ServerResponse, status: number, value: unknown) {
   res.writeHead(status, {
@@ -80,7 +83,12 @@ function errorEvent(code: AIStreamEvent & { type: "error" }): AIStreamEvent {
   return code;
 }
 
-async function handleChat(req: IncomingMessage, res: ServerResponse) {
+async function handleChat(
+  req: IncomingMessage,
+  res: ServerResponse,
+  dependencies: AIHttpServerDependencies,
+) {
+  const { builder, provider, limiter } = dependencies;
   if (!originAllowed(req)) {
     json(res, 403, { error: "origin-not-allowed" });
     return;
@@ -189,18 +197,23 @@ async function handleChat(req: IncomingMessage, res: ServerResponse) {
   }
 }
 
-export function createAIHttpServer() {
+export function createAIHttpServer(overrides: Partial<AIHttpServerDependencies> = {}) {
+  const dependencies: AIHttpServerDependencies = {
+    builder: overrides.builder ?? new AIContextBuilder(),
+    provider: overrides.provider ?? new DeepSeekChatProvider(),
+    limiter: overrides.limiter ?? new AnonymousAIRateLimiter(),
+  };
   return createServer(async (req, res) => {
     const url = new URL(req.url ?? "/", `http://${req.headers.host ?? "localhost"}`);
     if (req.method === "GET" && url.pathname === "/api/ai/health") {
-      json(res, provider.isConfigured() ? 200 : 503, {
-        status: provider.isConfigured() ? "ok" : "not-configured",
+      json(res, dependencies.provider.isConfigured() ? 200 : 503, {
+        status: dependencies.provider.isConfigured() ? "ok" : "not-configured",
         service: "exambridge-ai",
       });
       return;
     }
     if (req.method === "POST" && url.pathname === "/api/ai/chat") {
-      await handleChat(req, res);
+      await handleChat(req, res, dependencies);
       return;
     }
     json(res, 404, { error: "not-found" });

@@ -1,4 +1,5 @@
 import { readFile } from "node:fs/promises";
+import type { AddressInfo } from "node:net";
 import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
@@ -10,6 +11,7 @@ import { AIContextBuilder, overviewIdentityMatches } from "../server/ai/context-
 import { AnonymousAIRateLimiter } from "../server/ai/rate-limit";
 import { AIProviderError, DeepSeekChatProvider, hydrateCitations } from "../server/ai/provider";
 import { isComplexAIQuestion } from "../server/ai/prompt";
+import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai";
 
 function request(overrides: Partial<AIChatRequest> = {}): AIChatRequest {
   return {
@@ -44,6 +46,14 @@ describe("AI assistant request and history safety", () => {
 
 describe("AI assistant context builder", () => {
   const builder = new AIContextBuilder(process.cwd());
+
+  it("resolves the real CAIE 9709 context used by the provider smoke test", async () => {
+    const result = await builder.build(request());
+    expect(result.clarification).toBeUndefined();
+    expect(result.resolvedContext.qualificationCodes).toContain("CAIE-9709");
+    expect(result.promptContext).toContain("CAIE-9709");
+    expect(result.sources.length).toBeGreaterThan(0);
+  });
 
   it("resolves an explicitly named course code without a hard-coded prompt whitelist", async () => {
     const result = await builder.build(request({ messages: [{ role: "user", content: "0607 的 Paper 结构是什么？" }] }));
@@ -178,5 +188,85 @@ describe("AI assistant provider boundaries", () => {
     expect(second.allowed).toBe(true);
     if (second.allowed) second.release();
     expect(limiter.acquire("ip", 3)).toMatchObject({ allowed: false, reason: "rate-limited" });
+  });
+});
+
+describe("AI assistant HTTP/SSE boundary", () => {
+  it("streams typed data-only events with resolved context and allow-listed citations", async () => {
+    const resolvedContext = {
+      qualificationIds: ["qual:caie:a-level:9709"],
+      qualificationCodes: ["CAIE-9709"],
+      paperIds: [],
+      labels: ["CAIE 9709 Mathematics"],
+    };
+    const source = {
+      sourceId: "S1",
+      title: "Cambridge International AS & A Level Mathematics 9709",
+      url: "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level-mathematics-9709/",
+      dataVersion: "2026-2027",
+    };
+    const dependencies: AIHttpServerDependencies = {
+      builder: {
+        build: vi.fn().mockResolvedValue({
+          promptContext: "{\"course\":\"CAIE-9709\"}",
+          sources: [source],
+          resolvedContext,
+        }),
+      },
+      provider: {
+        isConfigured: () => true,
+        stream: vi.fn().mockImplementation(async ({ onDelta }) => {
+          onDelta("Paper 1 不可使用计算器 [S1]");
+          return {
+            answer: "Paper 1 不可使用计算器 [S1]，无效引用会被忽略 [S9]。",
+            model: "deepseek-v4-pro",
+            usage: { prompt_tokens: 20, completion_tokens: 10, total_tokens: 30 },
+          };
+        }),
+      },
+      limiter: new AnonymousAIRateLimiter(10, 60_000, 2, 10),
+    };
+    const server = createAIHttpServer(dependencies);
+    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+
+    try {
+      const { port } = server.address() as AddressInfo;
+      const response = await fetch(`http://127.0.0.1:${port}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Origin: `http://127.0.0.1:${port}` },
+        body: JSON.stringify(request()),
+      });
+      expect(response.status).toBe(200);
+      expect(response.headers.get("content-type")).toContain("text/event-stream");
+      expect(response.headers.get("cache-control")).toContain("no-store");
+      expect(response.headers.get("x-accel-buffering")).toBe("no");
+
+      const body = await response.text();
+      expect(body).not.toContain("event:");
+      const events = body
+        .split(/\r?\n\r?\n/)
+        .map((block) => block.split(/\r?\n/).find((line) => line.startsWith("data:")))
+        .filter((line): line is string => Boolean(line))
+        .map((line) => JSON.parse(line.slice(5).trimStart()));
+
+      expect(events.map((event) => event.type)).toEqual([
+        "meta",
+        "delta",
+        "citations",
+        "suggestions",
+        "done",
+      ]);
+      expect(events[0].resolvedContext).toEqual(resolvedContext);
+      expect(events[2].citations).toEqual([source]);
+      expect(events[4]).toMatchObject({
+        type: "done",
+        answer: "Paper 1 不可使用计算器 [S1]，无效引用会被忽略 [S9]。",
+        resolvedContext,
+      });
+      expect(dependencies.builder.build).toHaveBeenCalledOnce();
+      expect(dependencies.provider.stream).toHaveBeenCalledOnce();
+    } finally {
+      await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
+    }
   });
 });
