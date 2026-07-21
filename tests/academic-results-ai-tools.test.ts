@@ -37,6 +37,7 @@ const manifest = (boundaries: GradeBoundaryV2[] = [], misconceptions: Misconcept
   schemaVersion: "2.0.0",
   activationBatch: "test-owner-approved",
   qualificationIdentities: [],
+  qualificationFactCards: [],
   sources: [],
   boundaries,
   statistics: [],

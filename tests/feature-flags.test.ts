@@ -5,6 +5,7 @@ import {
   isShadowMode,
   isV2Planner,
   isV2Catalog,
+  isAdvancedAcademicAnalysisEnabled,
 } from "@/domain-v2/shared";
 
 describe("Feature Flags", () => {
@@ -29,5 +30,11 @@ describe("Feature Flags", () => {
 
   it("isV2Catalog returns false by default", () => {
     expect(isV2Catalog()).toBe(false);
+  });
+
+  it("keeps difficulty, transition and prediction deferred unless explicitly enabled", () => {
+    expect(isAdvancedAcademicAnalysisEnabled({})).toBe(false);
+    expect(isAdvancedAcademicAnalysisEnabled({ VITE_ADVANCED_ACADEMIC_ANALYSIS: "false" })).toBe(false);
+    expect(isAdvancedAcademicAnalysisEnabled({ VITE_ADVANCED_ACADEMIC_ANALYSIS: "true" })).toBe(true);
   });
 });

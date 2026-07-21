@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import Header from "@/components/Header";
 import AIAssistantPage from "@/pages/AIAssistantPage";
+import AcademicAnalysisPage from "@/pages/AcademicAnalysisPage";
 import { safeStoredSession } from "@/components/ai/AIChatPanel";
 import { CourseContextProvider } from "@/course-context/CourseContextProvider";
 import { isAIAssistantEnabled } from "@/domain-v2/shared/feature-flags";
@@ -51,5 +52,12 @@ describe("AI assistant internal-preview UI", () => {
     }));
     expect(migrated).toMatchObject({ version: 2, scopes: [], roleView: "consulting" });
     expect(migrated?.messages).toHaveLength(1);
+  });
+
+  it("presents qualification facts while deferred analytics stay hidden", () => {
+    const html = render(createElement(AcademicAnalysisPage));
+    expect(html).toContain("资格事实、合分规则与成绩证据");
+    expect(html).not.toContain("方向性难度</button>");
+    expect(html).not.toContain("非官方分数线预测");
   });
 });

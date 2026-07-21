@@ -25,7 +25,7 @@ export const NAV_GROUPS: NavigationGroup[] = [
       { label: "成绩与等级", to: "/results", description: "分数线与 A* 率入口", preserveCourse: true },
       { label: "成绩统计", to: "/statistics", description: "历年成绩分布与趋势", preserveCourse: true },
       { label: "等级预测", to: "/calculator", description: "仅使用已核验的 award route", preserveCourse: true },
-      { label: "难度与过渡", to: "/academic-analysis", description: "五维难度、合分规则与个性化缺口", preserveCourse: true },
+      { label: "资格事实与规则", to: "/academic-analysis", description: "资格版本、Paper 结构与合分依据", preserveCourse: true },
     ],
   },
   {

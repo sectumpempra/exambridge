@@ -27,6 +27,7 @@ import {
   type ReadinessRequirement,
 } from "@/domain-v2/academic-results";
 import type { KnowledgeMappingV5 } from "@/domain-v2/knowledge-tree";
+import { isAdvancedAcademicAnalysisEnabled } from "@/domain-v2/shared/feature-flags";
 
 type Tab = "results" | "difficulty" | "transition";
 type KnowledgeManifest = {
@@ -121,6 +122,7 @@ async function loadReadinessRequirements(profile: DifficultyProfileV1) {
 }
 
 export default function AcademicAnalysisPage() {
+  const advancedAnalysisEnabled = isAdvancedAcademicAnalysisEnabled();
   const [tab, setTab] = useState<Tab>("results");
   const [manifest, setManifest] = useState<AcademicResultsManifestV2 | null>(null);
   const [loadError, setLoadError] = useState(false);
@@ -207,20 +209,28 @@ export default function AcademicAnalysisPage() {
   };
 
   return <div className="min-h-screen bg-[linear-gradient(180deg,#f0ede8,#f7f4f0)] text-[#3d3832]">
-    <Header title="成绩与难度分析" />
+    <Header title="资格事实与规则" />
     <main className="mx-auto max-w-[1200px] px-4 py-8 sm:px-6">
-      <div className="mb-6"><p className="m-0 text-xs font-semibold uppercase tracking-[0.16em] text-[#526b7e]">Academic Results V2</p><h1 className="mb-0 mt-2 text-3xl font-bold tracking-tight">成绩、难度与个性化过渡</h1><p className="mb-0 mt-3 max-w-3xl text-sm leading-6 text-[#716a61]">所有数值只读取 owner-approved active 数据。预测与个人掌握度有独立边界；没有证据时显示数据不足。</p></div>
-      <div className="mb-6 grid grid-cols-1 gap-2 rounded-2xl border border-[#d9d4ce] bg-white/75 p-2 sm:grid-cols-3" role="tablist" aria-label="分析类型">{([
-        ["results", "成绩与规则", BarChart3], ["difficulty", "方向性难度", Gauge], ["transition", "个性化过渡", BookOpenCheck],
-      ] as const).map(([value, label, Icon]) => <button key={value} type="button" role="tab" aria-selected={tab === value} onClick={() => setTab(value)} className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition ${tab === value ? "bg-[#253b46] text-white" : "text-[#625c54] hover:bg-[#eee9e3]"}`}><Icon size={16} />{label}</button>)}</div>
+      <div className="mb-6"><p className="m-0 text-xs font-semibold uppercase tracking-[0.16em] text-[#526b7e]">Academic Results V2</p><h1 className="mb-0 mt-2 text-3xl font-bold tracking-tight">资格事实、合分规则与成绩证据</h1><p className="mb-0 mt-3 max-w-3xl text-sm leading-6 text-[#716a61]">面向考试业务事实核验。所有内容只读取 owner-approved active 数据；Grade Statistics 是辅助背景，不阻塞规则说明。</p></div>
+      {advancedAnalysisEnabled && <div className="mb-6 grid grid-cols-1 gap-2 rounded-2xl border border-[#d9d4ce] bg-white/75 p-2 sm:grid-cols-3" role="tablist" aria-label="分析类型">{([
+        ["results", "资格事实与规则", BarChart3], ["difficulty", "方向性难度", Gauge], ["transition", "个性化过渡", BookOpenCheck],
+      ] as const).map(([value, label, Icon]) => <button key={value} type="button" role="tab" aria-selected={tab === value} onClick={() => setTab(value)} className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition ${tab === value ? "bg-[#253b46] text-white" : "text-[#625c54] hover:bg-[#eee9e3]"}`}><Icon size={16} />{label}</button>)}</div>}
 
       {loadError && <EmptyState title="数据清单读取失败">请刷新页面；系统不会回退到 legacy 或 candidate 数据。</EmptyState>}
       {!manifest && !loadError && <EmptyState title="正在读取 active 数据">正在核验 Academic Results V2 manifest。</EmptyState>}
 
       {manifest && tab === "results" && <section className="space-y-5">
+        {manifest.qualificationFactCards.length === 0
+          ? <EmptyState title="资格事实卡尚未激活">13 个资格的事实卡候选已经生成，但在 owner approval 前不会出现在 active 页面。规则解释与正式计算成熟度会分开显示。</EmptyState>
+          : <div className="grid gap-4 lg:grid-cols-2">{manifest.qualificationFactCards.map(card => <article key={card.awardQualificationId} className="rounded-2xl border border-[#ddd6ce] bg-white p-5">
+            <div className="flex flex-wrap items-start justify-between gap-3"><div><p className="m-0 text-xs font-semibold uppercase tracking-[0.12em] text-[#526b7e]">{card.board} · {card.level}</p><h2 className="mb-0 mt-1 text-lg font-bold">{card.subjectCode} · {card.subjectName}</h2><p className="mb-0 mt-1 text-xs text-[#81796f]">当前版本：{card.currentQualificationVersionId}</p></div><span className="rounded-full border border-[#cbd5d4] bg-[#f4f8f7] px-2.5 py-1 text-xs font-semibold text-[#50645e]">{card.maturity.level}</span></div>
+            <div className="mt-4 space-y-3">{card.routes.map(route => <div key={route.ruleId} className="rounded-xl bg-[#f5f1ec] p-3 text-sm"><strong>{route.routeId}</strong><span className="ml-2 text-xs text-[#81796f]">{route.routeType} · {route.scoringSystem}</span><p className="mb-0 mt-1 text-xs leading-5 text-[#716a61]">组件：{route.components.map(component => component.code).join(" + ")}；有效组合：{route.validCombinationIds.join("、")}</p></div>)}</div>
+            <dl className="mt-4 grid grid-cols-3 gap-2 text-center text-xs"><div className="rounded-lg border border-[#ebe6df] p-2"><dt className="text-[#81796f]">分数线</dt><dd className="m-0 mt-1 font-bold">{card.coverage.boundaries.satisfied}/{card.coverage.boundaries.expected}</dd></div><div className="rounded-lg border border-[#ebe6df] p-2"><dt className="text-[#81796f]">Statistics</dt><dd className="m-0 mt-1 font-bold">{card.coverage.statistics.satisfied}/{card.coverage.statistics.expected}</dd></div><div className="rounded-lg border border-[#ebe6df] p-2"><dt className="text-[#81796f]">规则证据</dt><dd className="m-0 mt-1 font-bold">{card.coverage.rules.satisfied}/{card.coverage.rules.expected}</dd></div></dl>
+            {card.maturity.reasons.length > 0 && <p className="mb-0 mt-3 text-xs leading-5 text-[#7a6258]">{card.maturity.reasons.join("；")}</p>}
+          </article>)}</div>}
         <div className="grid gap-3 sm:grid-cols-3"><div className="rounded-2xl border border-[#ddd6ce] bg-white p-5"><span className="text-xs text-[#756e67]">官方分数线</span><strong className="mt-2 block text-3xl">{manifest.boundaries.length}</strong></div><div className="rounded-2xl border border-[#ddd6ce] bg-white p-5"><span className="text-xs text-[#756e67]">成绩统计</span><strong className="mt-2 block text-3xl">{manifest.statistics.length}</strong></div><div className="rounded-2xl border border-[#ddd6ce] bg-white p-5"><span className="text-xs text-[#756e67]">合分规则</span><strong className="mt-2 block text-3xl">{manifest.awardRules.length}</strong></div></div>
         {manifest.boundaries.length === 0 ? <EmptyState title="尚无已批准成绩数据">候选迁移和冲突复核仍在进行；在 owner approval 前，这里不会展示 candidate 数值。</EmptyState> : <div className="overflow-x-auto rounded-2xl border border-[#ddd6ce] bg-white"><table className="min-w-[760px] w-full text-left text-sm"><thead><tr className="bg-[#f2eee8]"><th className="px-4 py-3">资格 / Route</th><th className="px-4 py-3">考季</th><th className="px-4 py-3">满分</th><th className="px-4 py-3">等级边界</th><th className="px-4 py-3">状态</th></tr></thead><tbody>{manifest.boundaries.map(boundary => <tr key={boundary.boundaryId} className="border-t border-[#ebe6df]"><td className="px-4 py-3 font-medium">{boundary.awardQualificationId}<span className="block text-xs text-[#81796f]">{boundary.routeId}</span></td><td className="px-4 py-3">{boundary.year} {boundary.series}</td><td className="px-4 py-3">{boundary.maximumMark ?? "—"}</td><td className="px-4 py-3">{boundary.gradeOrder.map(grade => `${grade}: ${boundary.thresholds[grade] ?? "—"}`).join(" · ")}</td><td className="px-4 py-3">{boundary.publicationStatus}</td></tr>)}</tbody></table></div>}
-        <div className="rounded-2xl border border-[#d5ccc0] bg-[#fffaf2] p-5"><h2 className="m-0 text-lg font-bold">非官方分数线预测</h2><p className="mb-0 mt-2 text-sm leading-6 text-[#716a61]">默认关闭。预测只使用最近 3–5 个同资格版本、同 route、同 tier、同满分的 owner-approved 官方整体边界；不能用于成绩承诺。</p><label className="mt-4 flex items-start gap-2 text-sm"><input type="checkbox" checked={predictionConsent} onChange={event => { setPredictionConsent(event.target.checked); setPredictionMessage(null); }} className="mt-1" /><span>我理解这是非官方统计预测，可能与最终官方边界明显不同。</span></label><Button type="button" className="mt-4" onClick={createPrediction} disabled={!predictionConsent}>生成示例预测</Button>{predictionMessage && <p className="mb-0 mt-3 text-sm font-medium" role="status">{predictionMessage}</p>}</div>
+        {advancedAnalysisEnabled && <div className="rounded-2xl border border-[#d5ccc0] bg-[#fffaf2] p-5"><h2 className="m-0 text-lg font-bold">非官方分数线预测</h2><p className="mb-0 mt-2 text-sm leading-6 text-[#716a61]">默认关闭。预测只使用最近 3–5 个同资格版本、同 route、同 tier、同满分的 owner-approved 官方整体边界；不能用于成绩承诺。</p><label className="mt-4 flex items-start gap-2 text-sm"><input type="checkbox" checked={predictionConsent} onChange={event => { setPredictionConsent(event.target.checked); setPredictionMessage(null); }} className="mt-1" /><span>我理解这是非官方统计预测，可能与最终官方边界明显不同。</span></label><Button type="button" className="mt-4" onClick={createPrediction} disabled={!predictionConsent}>生成示例预测</Button>{predictionMessage && <p className="mb-0 mt-3 text-sm font-medium" role="status">{predictionMessage}</p>}</div>}
       </section>}
 
       {manifest && tab === "difficulty" && <section className="space-y-5">
