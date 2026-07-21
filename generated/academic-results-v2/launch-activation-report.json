@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "approvalBatch": "academic-results-v2-launch-20260722",
+  "approvedAt": "2026-07-22T00:00:00+08:00",
+  "approvalScope": "13 qualification identities, 40 versioned award rules, source-backed misconceptions, and Codex-reviewed official boundary/statistics rows",
+  "manifestSha256": "f74383484a951e3badece07c0299e02a5644f9f001eecdcbad13ab16b2565902",
+  "activeCounts": {
+    "qualificationIdentities": 13,
+    "qualificationFactCards": 13,
+    "sources": 189,
+    "boundaries": 129,
+    "statistics": 32,
+    "awardRules": 40,
+    "misconceptions": 12
+  },
+  "ruleCoverage": {
+    "expected": 515,
+    "satisfied": 515,
+    "pending": 0,
+    "blocking": 0
+  },
+  "launchSafety": {
+    "p0GapCount": 0,
+    "calculatorEnabled": [
+      "award:caie:0580",
+      "award:pearson:8ma0",
+      "award:aqa:7357",
+      "award:aqa:7367",
+      "award:ocr:h240",
+      "award:ocr:h245",
+      "award:ocr:h640",
+      "award:ocr:6993"
+    ],
+    "calculatorExplainOnly": [
+      "award:caie:9709",
+      "award:caie:9231",
+      "award:pearson:4ma1",
+      "award:pearson:ial-mathematics",
+      "award:pearson:ial-further-mathematics"
+    ],
+    "gradeStatisticsBlocksRules": false,
+    "predictionsActivated": false,
+    "externalSearchActivated": false
+  }
+}

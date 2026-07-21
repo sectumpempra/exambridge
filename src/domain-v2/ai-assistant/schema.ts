@@ -42,6 +42,8 @@ const AIAcademicQuerySchema = z.discriminatedUnion("type", [
     routeId: z.string().min(1).max(200),
     targetSeries: z.string().regex(/^\d{4}-(january|march|june|october|november)$/),
     combinationId: z.string().min(1).max(200),
+    optionCode: z.string().min(1).max(100).optional(),
+    componentVariants: z.array(z.string().min(1).max(100)).min(1).max(12).optional(),
     componentScores: z.array(z.object({
       componentCode: z.string().min(1).max(120),
       series: z.string().regex(/^\d{4}-(january|march|june|october|november)$/),

@@ -184,9 +184,9 @@ function cardMaturity(identity, currentRules, currentBoundaryCells, currentRuleC
   const explainReady = identity.sourceIds.length > 0 && ruleExplainReady && !blockingExplain;
   const ownerApproved = identity.reviewStatus === "owner-approved"
     && currentRules.length > 0
-    && currentRules.every(rule => rule.verificationStatus === "owner-approved")
-    && currentBoundaryCells.some(cell => cell.coverageStatus === "satisfied" && cell.recordReviewStatus === "owner-approved");
+    && currentRules.every(rule => rule.verificationStatus === "owner-approved");
   const calculatorAvailable = ownerApproved
+    && currentBoundaryCells.some(cell => cell.coverageStatus === "satisfied" && cell.recordReviewStatus === "owner-approved")
     && currentRuleCells.length > 0
     && currentRuleCells.every(cell => cell.coverageStatus === "satisfied")
     && !gaps.some(item => item.blocks.includes("calculator-ready"));

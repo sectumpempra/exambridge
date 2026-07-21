@@ -38,13 +38,14 @@
       "rowCount": 5,
       "completePublishedOptionSets": true,
       "reason": "The available official AS overall rows are source-located and hashed; the A-E scale contains no invented A* threshold."
-    }
-  ],
-  "excludedFiles": [
+    },
     {
-      "path": "src/data/official/awards/caie-9709.json",
-      "reason": "The file contains three verified example route rows from June 2025, not the complete official option table, so it remains candidate-level."
+      "path": "src/data/official/academic-results-v2/caie-9709-2025.json",
+      "rowCount": 45,
+      "completePublishedOptionSets": true,
+      "reason": "All 45 June 2025 overall option rows are transcribed from the official table: 31 A Level route rows, P4, P3 and twelve standard AS rows. Option codes, component variants, maxima and monotonic thresholds passed deterministic checks; P3/P4 retain a separate special-composite route and are not silently treated as a standard syllabus route."
     }
   ],
+  "excludedFiles": [],
   "activationDecision": "candidate-only"
 }

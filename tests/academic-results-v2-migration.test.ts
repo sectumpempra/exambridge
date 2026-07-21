@@ -110,7 +110,7 @@ describe("Academic Results V2 migration candidate", () => {
   });
 
   it("covers all 13 approved qualifications without activating any candidate rule", () => {
-    expect(candidate.awardRules).toHaveLength(34);
+    expect(candidate.awardRules).toHaveLength(40);
     expect(new Set(candidate.awardRules.map(row => row.awardQualificationId)).size).toBe(13);
     expect(candidate.awardRules.every(row => row.verificationStatus !== "owner-approved")).toBe(true);
   });

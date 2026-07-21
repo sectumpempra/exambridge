@@ -49,7 +49,7 @@ test.describe("public AI assistant release surface", () => {
 
     await page.goto("/#/ai-assistant");
     await waitForPwaControl(page);
-    await expect(page.getByRole("heading", { level: 1, name: "先核对资料，再解释答案" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1, name: "全站考试事实查询" })).toBeVisible();
     await expect(page.getByText(/非 AQA 问题.*发送给 DeepSeek/)).toBeVisible();
     await expect(page.getByText(/不会发送官方 PDF、API 密钥或个人账号资料/)).toBeVisible();
     const courseSwitcher = page.getByRole("button", { name: /选择课程/ });

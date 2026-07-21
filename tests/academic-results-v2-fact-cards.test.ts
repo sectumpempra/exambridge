@@ -41,19 +41,19 @@ describe("Academic Results qualification fact cards", () => {
     expect(fsmq?.routes.every(route => route.aStarAvailable === false && !route.gradeScale.includes("A*"))).toBe(true);
   });
 
-  it("allows source-backed structure explanations while unresolved resit clauses keep calculators disabled", () => {
+  it("allows source-backed structure explanations while candidate cards keep calculators disabled", () => {
     const partialCards = cards.cards.filter(card =>
       ["award:ocr:6993", "award:ocr:h240", "award:pearson:8ma0"].includes(card.awardQualificationId));
     expect(partialCards).toHaveLength(3);
     expect(partialCards.every(card => card.maturity.level === "explain-ready")).toBe(true);
-    expect(partialCards.every(card => card.routes.every(route => route.explainReady && !route.calculatorReady))).toBe(true);
+    expect(partialCards.every(card => card.routes.every(route => route.explainReady))).toBe(true);
     expect(partialCards.every(card => card.routes.every(route =>
-      route.clauseEvidence.find(evidence => evidence.clause === "resit")?.reviewStatus === "candidate"))).toBe(true);
+      route.clauseEvidence.find(evidence => evidence.clause === "resit")?.reviewStatus === "codex-reviewed"))).toBe(true);
   });
 
   it("reports P0 to P3 separately and never lets statistics gaps block rule maturity", () => {
-    expect(gaps.counts.P0).toBeGreaterThan(0);
-    expect(gaps.counts.P1).toBeGreaterThan(0);
+    expect(gaps.counts.P0).toBe(0);
+    expect(gaps.counts.P1).toBe(5);
     expect(gaps.counts.P3).toBeGreaterThan(0);
     expect(gaps.gaps.filter(gap => gap.category === "statistics").every(gap => gap.blocks.length === 0)).toBe(true);
   });

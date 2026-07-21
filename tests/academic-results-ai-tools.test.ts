@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { buildAcademicToolContext, detectAcademicToolIntents } from "../server/ai/academic-tools";
 import { BOUNDARY_PREDICTION_DISCLAIMER_VERSION, type AcademicResultsManifestV2, type GradeBoundaryV2, type MisconceptionRecordV1 } from "@/domain-v2/academic-results";
@@ -45,6 +46,7 @@ const manifest = (boundaries: GradeBoundaryV2[] = [], misconceptions: Misconcept
   misconceptions,
   difficultyProfiles: [],
 });
+const activeManifest = JSON.parse(readFileSync("public/data/academic-results-v2/manifest.json", "utf8")) as AcademicResultsManifestV2;
 
 describe("academic results AI tools", () => {
   it("detects structured intents without invoking a model", () => {
@@ -118,5 +120,96 @@ describe("academic results AI tools", () => {
     const result = buildAcademicToolContext(request("AQA现在还使用UMS吗？"), manifest([], [record]), []);
     expect(result?.calls.find(call => call.name === "lookup_misconception")).toMatchObject({ status: "ok" });
     expect(result?.containsAqa).toBe(true);
+  });
+
+  it("returns no tool context when a question has no academic intent", () => {
+    expect(buildAcademicToolContext(request("你好，请介绍一下这个网站。"), activeManifest, [])).toBeUndefined();
+  });
+
+  it("queries approved statistics, rules and comparison records without inventing deferred difficulty data", () => {
+    const lookup = buildAcademicToolContext(request("2025 June 的 Grade Statistics 和分数线", {
+      academicQuery: { type: "lookup", awardQualificationId: "award:ocr:h240", year: 2025, series: "june", routeId: "award:ocr:h240:linear" },
+    }), activeManifest, ["OCR-H240:Version 3"]);
+    expect(lookup?.calls.find(call => call.name === "lookup_grade_boundary")?.status).toBe("ok");
+    expect(lookup?.calls.find(call => call.name === "lookup_grade_statistics")?.status).toBe("ok");
+
+    const compared = buildAcademicToolContext(
+      request("两个考试局规则有什么区别？课程难度怎么对比？"),
+      activeManifest,
+      ["AQA-7357:1.3", "OCR-H240:Version 3"],
+    );
+    expect(compared?.calls.find(call => call.name === "compare_qualification_rules")?.status).toBe("ok");
+    expect(compared?.calls.find(call => call.name === "compare_subjects")?.status).toBe("data-unavailable");
+    expect(compared?.calls.find(call => call.name === "calculate_transition_difficulty")?.status).toBe("data-unavailable");
+  });
+
+  it("requires mastery evidence for readiness and keeps missing profiles explicit", () => {
+    const withoutMastery = buildAcademicToolContext(
+      request("我准备好升读了吗？"),
+      activeManifest,
+      ["CAIE-0580:2025-2027", "CAIE-9709:2026-2027"],
+    );
+    expect(withoutMastery?.calls.find(call => call.name === "evaluate_student_readiness")).toMatchObject({ status: "input-required" });
+
+    const withMastery = buildAcademicToolContext(
+      request("根据掌握度判断具体缺口", { anonymousMastery: [{ nodeId: "ALG-TEST", level: "basic" }] }),
+      activeManifest,
+      ["CAIE-0580:2025-2027", "CAIE-9709:2026-2027"],
+    );
+    expect(withMastery?.calls.find(call => call.name === "evaluate_student_readiness")).toMatchObject({
+      status: "input-required",
+      result: expect.objectContaining({ anonymousMastery: [{ nodeId: "ALG-TEST", level: "basic" }] }),
+    });
+  });
+
+  it("calculates an owner-approved award and reports unavailable or invalid inputs deterministically", () => {
+    const rule = activeManifest.awardRules.find(item => item.awardQualificationId === "award:pearson:8ma0")!;
+    const academicQuery = {
+      type: "award-calculation" as const,
+      awardQualificationId: rule.awardQualificationId,
+      ruleId: rule.ruleId,
+      routeId: rule.routeId,
+      targetSeries: "2025-june",
+      combinationId: rule.validCombinations[0].combinationId,
+      componentScores: [
+        { componentCode: "8MA0/01", series: "2025-june", rawMark: 80 },
+        { componentCode: "8MA0/02", series: "2025-june", rawMark: 40 },
+      ],
+    };
+    const calculated = buildAcademicToolContext(request("帮我合分并算最终等级", { academicQuery }), activeManifest, [rule.qualificationVersionId]);
+    expect(calculated?.calls.find(call => call.name === "calculate_qualification_award")).toMatchObject({
+      status: "ok",
+      result: expect.objectContaining({ grade: "A", totalAwardMark: 120 }),
+    });
+
+    const unavailable = buildAcademicToolContext(request("帮我合分", {
+      academicQuery: { ...academicQuery, ruleId: "rule:missing" },
+    }), activeManifest, [rule.qualificationVersionId]);
+    expect(unavailable?.calls.find(call => call.name === "calculate_qualification_award")?.status).toBe("data-unavailable");
+
+    const invalid = buildAcademicToolContext(request("帮我合分", {
+      academicQuery: { ...academicQuery, componentScores: [{ componentCode: "8MA0/01", series: "2025-june", rawMark: 999 }] },
+    }), activeManifest, [rule.qualificationVersionId]);
+    expect(invalid?.calls.find(call => call.name === "calculate_qualification_award")?.status).toBe("invalid-input");
+  });
+
+  it("keeps prediction input and evidence failures explicit after consent", () => {
+    const consent = { boundaryPrediction: { enabled: true, disclaimerVersion: BOUNDARY_PREDICTION_DISCLAIMER_VERSION } };
+    const missingInput = buildAcademicToolContext(request("预测分数线", { featureConsent: consent }), manifest(), ["CAIE-9709:2026-2027"]);
+    expect(missingInput?.calls.find(call => call.name === "explain_boundary_prediction")?.status).toBe("input-required");
+
+    const insufficient = buildAcademicToolContext(request("预测 9709 2026 June 分数线", {
+      academicQuery: { type: "lookup", awardQualificationId: "award:caie:9709", year: 2026, series: "june", routeId: "9709-al" },
+      featureConsent: consent,
+    }), manifest([boundary("owner-approved", "only-one")]), ["CAIE-9709:2026-2027"]);
+    expect(insufficient?.calls.find(call => call.name === "explain_boundary_prediction")?.status).toBe("data-unavailable");
+  });
+
+  it("parses common exam-series wording when no structured lookup is supplied", () => {
+    const samples = ["January", "三月", "夏季", "October", "十一月"];
+    for (const sample of samples) {
+      const context = buildAcademicToolContext(request(`2025 ${sample} 分数线`), manifest(), ["CAIE-9709:2026-2027"]);
+      expect(context?.calls[0]).toMatchObject({ name: "lookup_grade_boundary", status: "data-unavailable" });
+    }
   });
 });

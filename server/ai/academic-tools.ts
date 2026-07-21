@@ -110,7 +110,7 @@ const recordMatches = (
     && (!awardQualificationId || record.awardQualificationId === awardQualificationId)
     && (!year || record.year === year)
     && (!series || record.series === series)
-    && (!routeId || record.routeId === routeId)
+    && (!routeId || !record.routeId || record.routeId === routeId)
     && (!tier || record.tier === tier);
 };
 
@@ -209,7 +209,15 @@ export function buildAcademicToolContext(
         calls.push({ name: "calculate_qualification_award", status: "data-unavailable", result: null, sourceIds: [] });
       } else {
         try {
-          const result = calculateQualificationAwardV2(query, rule, boundary);
+          const result = calculateQualificationAwardV2({
+            ruleId: query.ruleId,
+            routeId: query.routeId,
+            targetSeries: query.targetSeries,
+            combinationId: query.combinationId,
+            ...(query.optionCode ? { optionCode: query.optionCode } : {}),
+            ...(query.componentVariants ? { componentVariants: query.componentVariants } : {}),
+            componentScores: query.componentScores,
+          }, rule, boundary);
           calls.push({ name: "calculate_qualification_award", status: "ok", result, sourceIds: result.sourceIds });
         } catch (error) {
           calls.push({

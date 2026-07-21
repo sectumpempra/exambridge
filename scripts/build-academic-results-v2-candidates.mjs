@@ -86,6 +86,12 @@ function canonicalBoundaryRouteId(row) {
 }
 
 function boundaryQualificationVersionId(awardQualificationId, year, fallback) {
+  if (awardQualificationId === "award:caie:0580") {
+    if (year === 2019) return "CAIE-0580:2019";
+    if (year <= 2022) return "CAIE-0580:2020-2022";
+    if (year <= 2024) return "CAIE-0580:2023-2024";
+    return "CAIE-0580:2025-2027";
+  }
   if (awardQualificationId !== "award:caie:9709") return fallback;
   if (year === 2019) return "CAIE-9709:2019";
   if (year <= 2022) return "CAIE-9709:2020-2022";
@@ -112,7 +118,7 @@ async function loadLegacyStatistics() {
 const officialBoundaryFiles = [
   "src/data/official/awards/aqa-7357.json",
   "src/data/official/awards/caie-0580.json",
-  "src/data/official/awards/caie-9709.json",
+  "src/data/official/academic-results-v2/caie-9709-2025.json",
   "src/data/official/awards/ocr-6993.json",
   "src/data/official/awards/ocr-h240.json",
   "src/data/official/awards/ocr-h245.json",
@@ -226,6 +232,50 @@ const routeEffectiveFrom = route => route.board === "CAIE"
   ? `${route.specificationVersion.match(/20\d{2}/)?.[0] ?? "2023"}-01-01`
   : route.qualificationCode === "6993" ? "2018-09-01" : "2017-09-01";
 const completeDate = value => /^\d{4}-\d{2}$/.test(value) ? `${value}-01` : value;
+const administrativeRuleSources = {
+  "award:aqa:7357": addSource({
+    sourceId: "source:aqa-7357-v1-3-resits",
+    board: "AQA",
+    officialUrl: "https://filestore.aqa.org.uk/resources/mathematics/specifications/AQA-7357-SP-2017.PDF",
+    documentTitle: "AQA A-level Mathematics 7357 specification",
+    documentVersion: "1.3",
+    publishedAt: "2018-01-31",
+    accessedAt: "2026-07-22",
+    printedPage: 31,
+    pdfPage: 31,
+    tableName: "General administration - re-sits and shelf life",
+    sourceRowId: "AQA-7357-V1.3-P31-RESITS",
+    sourceDocumentHash: "6bb4bb826ad2363804a95248a4993b2e147e1a5c4673194e2088dab8754fc6ed",
+    verificationStatus: "codex-reviewed",
+  }),
+  "award:ocr:h240": addSource({
+    sourceId: "source:ocr-general-qualification-entry-resit-rules",
+    board: "OCR",
+    officialUrl: "https://www.ocr.org.uk/administration/general-qualifications/entries-and-registrations/entry-rules/",
+    documentTitle: "OCR general qualification entry rules",
+    documentVersion: "accessed 2026-07-22",
+    publishedAt: "2026-01-01",
+    accessedAt: "2026-07-22",
+    tableName: "Rules for retaking",
+    sourceRowId: "OCR-GENERAL-ENTRY-RULES-LINEAR-RETAKE-ALL-COMPONENTS",
+    sourceDocumentHash: "6bbe600850de6073b266c78c949cba4d955884ea37cf7da7e987163ee5c51006",
+    verificationStatus: "codex-reviewed",
+  }),
+  "award:ocr:6993": "source:ocr-general-qualification-entry-resit-rules",
+  "award:pearson:8ma0": addSource({
+    sourceId: "source:pearson-linear-as-a-level-results-resit-rules",
+    board: "Pearson",
+    officialUrl: "https://qualifications.pearson.com/en/support/support-topics/results-certification/understanding-marks-and-grades/understanding-your-results-information-for-students/edexcel-a-level-results-explained.html/EO",
+    documentTitle: "Pearson Edexcel linear AS and A level results explained",
+    documentVersion: "accessed 2026-07-22",
+    publishedAt: "2026-01-01",
+    accessedAt: "2026-07-22",
+    tableName: "Linear AS level and A level qualifications",
+    sourceRowId: "PEARSON-LINEAR-AS-A-LEVEL-RESIT-ALL-PAPERS",
+    sourceDocumentHash: "a332eef94db916d89911ffd90e3d6eedb8f52eadff75abdac9bb308ccecc1bd3",
+    verificationStatus: "codex-reviewed",
+  }),
+};
 const awardRules = legacyRoutes.filter(route => route.qualificationCode !== "9709").map(route => {
   const awardQualificationId = routeAwardId(route);
   const qualification = qualifications.get(awardQualificationId);
@@ -241,6 +291,14 @@ const awardRules = legacyRoutes.filter(route => route.qualificationCode !== "970
     sourceDocumentHash: route.sourceDocumentHash,
     verificationStatus: qualification.board === "AQA" ? "codex-reviewed" : "candidate",
   });
+  const ruleSourceIds = [sourceId, administrativeRuleSources[awardQualificationId]].filter(Boolean);
+  const resitNotes = qualification.board === "AQA"
+    ? ["The qualification may be re-sat within its shelf life; because it is linear, all assessments are completed in the same series."]
+    : qualification.board === "OCR"
+      ? ["OCR permits unlimited retakes of this linear qualification; all components must be taken in the retake series."]
+      : awardQualificationId === "award:pearson:8ma0"
+        ? ["To improve the AS grade, the candidate must retake both linear 8MA0 papers in the same series; AS is a stand-alone qualification."]
+        : ["A retake must use a complete valid route under the applicable board rules."];
   return {
     schemaVersion: "2.0.0",
     ruleId: `rule:${slug(route.id)}:${slug(route.specificationVersion)}`,
@@ -271,7 +329,7 @@ const awardRules = legacyRoutes.filter(route => route.qualificationCode !== "970
     resitRule: {
       allowed: true,
       selectionMethod: route.routeType === "linear" ? "complete-award-entry" : route.routeType === "staged" ? "whole-as-carry-forward" : "same-series-route",
-      notes: ["Candidate migration of the existing verified route; board-specific resit details require separate rule evidence."],
+      notes: resitNotes,
     },
     ...(route.routeType === "staged" ? {
       carryForwardRule: { allowed: true, maximumMonths: 13, unit: "whole-as", notes: ["Only the complete official AS carry-forward mark is accepted."] },
@@ -283,7 +341,7 @@ const awardRules = legacyRoutes.filter(route => route.qualificationCode !== "970
     },
     effectiveFrom: routeEffectiveFrom(route),
     ...(route.board === "CAIE" && route.specificationVersion.endsWith("2023-2025") ? { effectiveTo: "2025-12-31" } : {}),
-    sourceIds: [sourceId],
+    sourceIds: ruleSourceIds,
     verificationStatus: qualification.board === "AQA" ? "codex-reviewed" : "candidate",
   };
 });
@@ -321,6 +379,13 @@ for (const rule of awardRules) {
       : rule.verificationStatus,
     notes: [adjudication?.reason ?? "This clause inherits the Codex review status of the source-backed award rule."],
   }));
+  if (adjudication && adjudication.unresolvedClauses.length === 0) {
+    rule.verificationStatus = "codex-reviewed";
+    for (const sourceId of rule.sourceIds) {
+      const source = sourceRecords.get(sourceId);
+      if (source) source.verificationStatus = "codex-reviewed";
+    }
+  }
 }
 
 const directOfficialStatistics = [];

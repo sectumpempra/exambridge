@@ -11,6 +11,24 @@
       "currentQualificationVersionId": "CAIE-0580:2025-2027",
       "qualificationVersions": [
         {
+          "qualificationVersionId": "CAIE-0580:2019",
+          "effectiveFrom": "2019-01-01",
+          "effectiveTo": "2019-12-31",
+          "isCurrent": false
+        },
+        {
+          "qualificationVersionId": "CAIE-0580:2020-2022",
+          "effectiveFrom": "2020-01-01",
+          "effectiveTo": "2022-12-31",
+          "isCurrent": false
+        },
+        {
+          "qualificationVersionId": "CAIE-0580:2023-2024",
+          "effectiveFrom": "2023-01-01",
+          "effectiveTo": "2024-12-31",
+          "isCurrent": false
+        },
+        {
           "qualificationVersionId": "CAIE-0580:2025-2027",
           "effectiveFrom": "2025-01-01",
           "effectiveTo": "2027-12-31",
@@ -58,6 +76,813 @@
         }
       ],
       "routes": [
+        {
+          "ruleId": "rule:caie-0580:2019:core",
+          "qualificationVersionId": "CAIE-0580:2019",
+          "routeId": "award:caie:0580:core",
+          "routeType": "same-series",
+          "scoringSystem": "raw",
+          "effectiveFrom": "2019-01-01",
+          "effectiveTo": "2019-12-31",
+          "totalMaximumAwardMark": 160,
+          "gradeScale": [
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ],
+          "components": [
+            {
+              "code": "P1",
+              "inputKind": "raw",
+              "maximumRawMark": 56,
+              "maximumAwardMark": 56,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            },
+            {
+              "code": "P3",
+              "inputKind": "raw",
+              "maximumRawMark": 104,
+              "maximumAwardMark": 104,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            }
+          ],
+          "validCombinationIds": [
+            "0580-core-p1-p3"
+          ],
+          "roundingRule": "none",
+          "carryForward": false,
+          "resit": true,
+          "cashIn": false,
+          "unitLocking": false,
+          "aStarAvailable": false,
+          "clauseEvidence": [
+            {
+              "clause": "qualification-version",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "paper-structure",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "valid-combination",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "scoring-scale",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "rounding",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "resit",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "a-star",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "boundary-selection",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            }
+          ],
+          "explainReady": true,
+          "calculatorReady": true,
+          "sourceIds": [
+            "source:caie-0580-2019-november-threshold-routes"
+          ],
+          "reviewStatus": "codex-reviewed"
+        },
+        {
+          "ruleId": "rule:caie-0580:2019:extended",
+          "qualificationVersionId": "CAIE-0580:2019",
+          "routeId": "award:caie:0580:extended",
+          "routeType": "same-series",
+          "scoringSystem": "raw",
+          "effectiveFrom": "2019-01-01",
+          "effectiveTo": "2019-12-31",
+          "totalMaximumAwardMark": 200,
+          "gradeScale": [
+            "A*",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "components": [
+            {
+              "code": "P2",
+              "inputKind": "raw",
+              "maximumRawMark": 70,
+              "maximumAwardMark": 70,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            },
+            {
+              "code": "P4",
+              "inputKind": "raw",
+              "maximumRawMark": 130,
+              "maximumAwardMark": 130,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            }
+          ],
+          "validCombinationIds": [
+            "0580-extended-p2-p4"
+          ],
+          "roundingRule": "none",
+          "carryForward": false,
+          "resit": true,
+          "cashIn": false,
+          "unitLocking": false,
+          "aStarAvailable": true,
+          "clauseEvidence": [
+            {
+              "clause": "qualification-version",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "paper-structure",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "valid-combination",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "scoring-scale",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "rounding",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "resit",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "a-star",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "boundary-selection",
+              "sourceIds": [
+                "source:caie-0580-2019-november-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            }
+          ],
+          "explainReady": true,
+          "calculatorReady": true,
+          "sourceIds": [
+            "source:caie-0580-2019-november-threshold-routes"
+          ],
+          "reviewStatus": "codex-reviewed"
+        },
+        {
+          "ruleId": "rule:caie-0580:2020-2022:core",
+          "qualificationVersionId": "CAIE-0580:2020-2022",
+          "routeId": "award:caie:0580:core",
+          "routeType": "same-series",
+          "scoringSystem": "raw",
+          "effectiveFrom": "2020-01-01",
+          "effectiveTo": "2022-12-31",
+          "totalMaximumAwardMark": 160,
+          "gradeScale": [
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ],
+          "components": [
+            {
+              "code": "P1",
+              "inputKind": "raw",
+              "maximumRawMark": 56,
+              "maximumAwardMark": 56,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            },
+            {
+              "code": "P3",
+              "inputKind": "raw",
+              "maximumRawMark": 104,
+              "maximumAwardMark": 104,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            }
+          ],
+          "validCombinationIds": [
+            "0580-core-p1-p3"
+          ],
+          "roundingRule": "none",
+          "carryForward": false,
+          "resit": true,
+          "cashIn": false,
+          "unitLocking": false,
+          "aStarAvailable": false,
+          "clauseEvidence": [
+            {
+              "clause": "qualification-version",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "paper-structure",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "valid-combination",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "scoring-scale",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "rounding",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "resit",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "a-star",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "boundary-selection",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            }
+          ],
+          "explainReady": true,
+          "calculatorReady": true,
+          "sourceIds": [
+            "source:caie-0580-2020-2022-assessment-overview"
+          ],
+          "reviewStatus": "codex-reviewed"
+        },
+        {
+          "ruleId": "rule:caie-0580:2020-2022:extended",
+          "qualificationVersionId": "CAIE-0580:2020-2022",
+          "routeId": "award:caie:0580:extended",
+          "routeType": "same-series",
+          "scoringSystem": "raw",
+          "effectiveFrom": "2020-01-01",
+          "effectiveTo": "2022-12-31",
+          "totalMaximumAwardMark": 200,
+          "gradeScale": [
+            "A*",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "components": [
+            {
+              "code": "P2",
+              "inputKind": "raw",
+              "maximumRawMark": 70,
+              "maximumAwardMark": 70,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            },
+            {
+              "code": "P4",
+              "inputKind": "raw",
+              "maximumRawMark": 130,
+              "maximumAwardMark": 130,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            }
+          ],
+          "validCombinationIds": [
+            "0580-extended-p2-p4"
+          ],
+          "roundingRule": "none",
+          "carryForward": false,
+          "resit": true,
+          "cashIn": false,
+          "unitLocking": false,
+          "aStarAvailable": true,
+          "clauseEvidence": [
+            {
+              "clause": "qualification-version",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "paper-structure",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "valid-combination",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "scoring-scale",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "rounding",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "resit",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "a-star",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "boundary-selection",
+              "sourceIds": [
+                "source:caie-0580-2020-2022-assessment-overview"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            }
+          ],
+          "explainReady": true,
+          "calculatorReady": true,
+          "sourceIds": [
+            "source:caie-0580-2020-2022-assessment-overview"
+          ],
+          "reviewStatus": "codex-reviewed"
+        },
+        {
+          "ruleId": "rule:caie-0580:2023-2024:core",
+          "qualificationVersionId": "CAIE-0580:2023-2024",
+          "routeId": "award:caie:0580:core",
+          "routeType": "same-series",
+          "scoringSystem": "raw",
+          "effectiveFrom": "2023-01-01",
+          "effectiveTo": "2024-12-31",
+          "totalMaximumAwardMark": 160,
+          "gradeScale": [
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ],
+          "components": [
+            {
+              "code": "P1",
+              "inputKind": "raw",
+              "maximumRawMark": 56,
+              "maximumAwardMark": 56,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            },
+            {
+              "code": "P3",
+              "inputKind": "raw",
+              "maximumRawMark": 104,
+              "maximumAwardMark": 104,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            }
+          ],
+          "validCombinationIds": [
+            "0580-core-p1-p3"
+          ],
+          "roundingRule": "none",
+          "carryForward": false,
+          "resit": true,
+          "cashIn": false,
+          "unitLocking": false,
+          "aStarAvailable": false,
+          "clauseEvidence": [
+            {
+              "clause": "qualification-version",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "paper-structure",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "valid-combination",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "scoring-scale",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "rounding",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "resit",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "a-star",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "boundary-selection",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            }
+          ],
+          "explainReady": true,
+          "calculatorReady": true,
+          "sourceIds": [
+            "source:caie-0580-2024-june-threshold-routes"
+          ],
+          "reviewStatus": "codex-reviewed"
+        },
+        {
+          "ruleId": "rule:caie-0580:2023-2024:extended",
+          "qualificationVersionId": "CAIE-0580:2023-2024",
+          "routeId": "award:caie:0580:extended",
+          "routeType": "same-series",
+          "scoringSystem": "raw",
+          "effectiveFrom": "2023-01-01",
+          "effectiveTo": "2024-12-31",
+          "totalMaximumAwardMark": 200,
+          "gradeScale": [
+            "A*",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "components": [
+            {
+              "code": "P2",
+              "inputKind": "raw",
+              "maximumRawMark": 70,
+              "maximumAwardMark": 70,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            },
+            {
+              "code": "P4",
+              "inputKind": "raw",
+              "maximumRawMark": 130,
+              "maximumAwardMark": 130,
+              "weightingFactor": 1,
+              "durationMinutes": null,
+              "calculator": "unknown"
+            }
+          ],
+          "validCombinationIds": [
+            "0580-extended-p2-p4"
+          ],
+          "roundingRule": "none",
+          "carryForward": false,
+          "resit": true,
+          "cashIn": false,
+          "unitLocking": false,
+          "aStarAvailable": true,
+          "clauseEvidence": [
+            {
+              "clause": "qualification-version",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "paper-structure",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "valid-combination",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "scoring-scale",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "rounding",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "resit",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "a-star",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            },
+            {
+              "clause": "boundary-selection",
+              "sourceIds": [
+                "source:caie-0580-2024-june-threshold-routes"
+              ],
+              "reviewStatus": "codex-reviewed",
+              "notes": [
+                "This clause inherits the Codex review status of the source-backed award rule."
+              ]
+            }
+          ],
+          "explainReady": true,
+          "calculatorReady": true,
+          "sourceIds": [
+            "source:caie-0580-2024-june-threshold-routes"
+          ],
+          "reviewStatus": "codex-reviewed"
+        },
         {
           "ruleId": "rule:caie-0580:2025-2027:core",
           "qualificationVersionId": "CAIE-0580:2025-2027",
@@ -328,24 +1153,24 @@
       ],
       "coverage": {
         "boundaries": {
-          "expected": 16,
+          "expected": 52,
           "satisfied": 6,
           "explainedUnavailable": 0,
-          "pending": 10,
+          "pending": 46,
           "unexpected": 0,
           "conflicting": 0
         },
         "statistics": {
-          "expected": 6,
+          "expected": 24,
           "satisfied": 0,
           "explainedUnavailable": 0,
-          "pending": 6,
+          "pending": 24,
           "unexpected": 13,
           "conflicting": 0
         },
         "rules": {
-          "expected": 2,
-          "satisfied": 2,
+          "expected": 8,
+          "satisfied": 8,
           "explainedUnavailable": 0,
           "pending": 0,
           "unexpected": 0,
@@ -353,20 +1178,22 @@
         }
       },
       "maturity": {
-        "level": "evidence-ready",
+        "level": "explain-ready",
         "ownerApproved": false,
         "calculatorAvailable": false,
         "reasons": [
-          "Current rule evidence or a P0 identity/paper-structure condition is incomplete.",
           "Owner approval is still required before production activation.",
           "The calculator remains unavailable until current rules and an exact applicable overall boundary are owner-approved."
         ]
       },
       "sourceIds": [
+        "source:caie-0580-2019-november-threshold-routes",
+        "source:caie-0580-2020-2022-assessment-overview",
+        "source:caie-0580-2024-june-threshold-routes",
         "source:caie-0580-2025-2027-assessment-overview"
       ],
       "unresolvedGapIds": [
-        "fact-gap:award-caie-0580:historical-version-window",
+        "fact-gap:award-caie-0580:historical-boundary-gaps",
         "fact-gap:award-caie-0580:statistics-auxiliary-gaps"
       ],
       "generatedAt": "2026-07-21T00:00:00+08:00",
@@ -529,7 +1356,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -539,7 +1367,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -549,7 +1378,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -559,7 +1389,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -569,7 +1400,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -579,7 +1411,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -589,7 +1422,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -599,7 +1433,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -610,7 +1445,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2019-june-threshold-routes"
+            "source:caie-9709-2019-june-threshold-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -683,7 +1519,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -693,7 +1530,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -703,7 +1541,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -713,7 +1552,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -723,7 +1563,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -733,7 +1574,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -743,7 +1585,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -753,7 +1596,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2019-june-threshold-routes"
+                "source:caie-9709-2019-june-threshold-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -764,7 +1608,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2019-june-threshold-routes"
+            "source:caie-9709-2019-june-threshold-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -846,7 +1691,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -856,7 +1702,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -866,7 +1713,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -876,7 +1724,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -886,7 +1735,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -896,7 +1746,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -906,7 +1757,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -916,7 +1768,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -927,7 +1780,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2020-2022-assessment-routes"
+            "source:caie-9709-2020-2022-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -1019,7 +1873,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1029,7 +1884,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1039,7 +1895,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1049,7 +1906,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1059,7 +1917,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1069,7 +1928,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1079,7 +1939,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1089,7 +1950,8 @@
             {
               "clause": "carry-forward",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1099,7 +1961,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1110,7 +1973,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2020-2022-assessment-routes"
+            "source:caie-9709-2020-2022-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -1183,7 +2047,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1193,7 +2058,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1203,7 +2069,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1213,7 +2080,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1223,7 +2091,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1233,7 +2102,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1243,7 +2113,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1253,7 +2124,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2020-2022-assessment-routes"
+                "source:caie-9709-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1264,7 +2136,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2020-2022-assessment-routes"
+            "source:caie-9709-2020-2022-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -1346,7 +2219,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1356,7 +2230,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1366,7 +2241,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1376,7 +2252,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1386,7 +2263,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1396,7 +2274,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1406,7 +2285,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1416,7 +2296,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1427,7 +2308,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2023-2025-assessment-routes"
+            "source:caie-9709-2023-2025-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -1519,7 +2401,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1529,7 +2412,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1539,7 +2423,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1549,7 +2434,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1559,7 +2445,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1569,7 +2456,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1579,7 +2467,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1589,7 +2478,8 @@
             {
               "clause": "carry-forward",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1599,7 +2489,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1610,7 +2501,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2023-2025-assessment-routes"
+            "source:caie-9709-2023-2025-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -1683,7 +2575,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1693,7 +2586,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1703,7 +2597,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1713,7 +2608,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1723,7 +2619,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1733,7 +2630,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1743,7 +2641,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1753,7 +2652,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2023-2025-assessment-routes"
+                "source:caie-9709-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1764,7 +2664,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2023-2025-assessment-routes"
+            "source:caie-9709-2023-2025-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -1846,7 +2747,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1856,7 +2758,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1866,7 +2769,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1876,7 +2780,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1886,7 +2791,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1896,7 +2802,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1906,7 +2813,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1916,7 +2824,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -1927,7 +2836,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2026-2027-assessment-routes"
+            "source:caie-9709-2026-2027-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -2019,7 +2929,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2029,7 +2940,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2039,7 +2951,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2049,7 +2962,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2059,7 +2973,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2069,7 +2984,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2079,7 +2995,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2089,7 +3006,8 @@
             {
               "clause": "carry-forward",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2099,7 +3017,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2110,7 +3029,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2026-2027-assessment-routes"
+            "source:caie-9709-2026-2027-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -2183,7 +3103,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2193,7 +3114,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2203,7 +3125,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2213,7 +3136,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2223,7 +3147,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2233,7 +3158,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2243,7 +3169,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2253,7 +3180,8 @@
             {
               "clause": "boundary-selection",
               "sourceIds": [
-                "source:caie-9709-2026-2027-assessment-routes"
+                "source:caie-9709-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2264,17 +3192,18 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9709-2026-2027-assessment-routes"
+            "source:caie-9709-2026-2027-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         }
       ],
       "coverage": {
         "boundaries": {
-          "expected": 72,
-          "satisfied": 0,
+          "expected": 114,
+          "satisfied": 45,
           "explainedUnavailable": 0,
-          "pending": 72,
+          "pending": 69,
           "unexpected": 0,
           "conflicting": 0
         },
@@ -2308,10 +3237,10 @@
         "source:caie-9709-2019-june-threshold-routes",
         "source:caie-9709-2020-2022-assessment-routes",
         "source:caie-9709-2023-2025-assessment-routes",
-        "source:caie-9709-2026-2027-assessment-routes"
+        "source:caie-9709-2026-2027-assessment-routes",
+        "source:cambridge-carry-forward-regulations-2025"
       ],
       "unresolvedGapIds": [
-        "fact-gap:award-caie-9709:option-set-not-explicit",
         "fact-gap:award-caie-9709:current-boundary-not-ready",
         "fact-gap:award-caie-9709:historical-boundary-gaps",
         "fact-gap:award-caie-9709:statistics-auxiliary-gaps"
@@ -2437,7 +3366,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9231-2019-assessment-at-a-glance"
+                "source:caie-9231-2019-assessment-at-a-glance",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2447,7 +3377,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9231-2019-assessment-at-a-glance"
+                "source:caie-9231-2019-assessment-at-a-glance",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2457,7 +3388,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9231-2019-assessment-at-a-glance"
+                "source:caie-9231-2019-assessment-at-a-glance",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2467,7 +3399,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9231-2019-assessment-at-a-glance"
+                "source:caie-9231-2019-assessment-at-a-glance",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2477,7 +3410,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9231-2019-assessment-at-a-glance"
+                "source:caie-9231-2019-assessment-at-a-glance",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2487,7 +3421,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9231-2019-assessment-at-a-glance"
+                "source:caie-9231-2019-assessment-at-a-glance",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2497,7 +3432,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9231-2019-assessment-at-a-glance"
+                "source:caie-9231-2019-assessment-at-a-glance",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2508,7 +3444,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9231-2019-assessment-at-a-glance"
+            "source:caie-9231-2019-assessment-at-a-glance",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -2580,7 +3517,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2590,7 +3528,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2600,7 +3539,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2610,7 +3550,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2620,7 +3561,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2630,7 +3572,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2640,7 +3583,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2651,7 +3595,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9231-2020-2022-assessment-routes"
+            "source:caie-9231-2020-2022-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -2733,7 +3678,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2743,7 +3689,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2753,7 +3700,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2763,7 +3711,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2773,7 +3722,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2783,7 +3733,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2793,7 +3744,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2803,7 +3755,8 @@
             {
               "clause": "carry-forward",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2814,7 +3767,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9231-2020-2022-assessment-routes"
+            "source:caie-9231-2020-2022-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -2877,7 +3831,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2887,7 +3842,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2897,7 +3853,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2907,7 +3864,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2917,7 +3875,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2927,7 +3886,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2937,7 +3897,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9231-2020-2022-assessment-routes"
+                "source:caie-9231-2020-2022-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -2948,7 +3909,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9231-2020-2022-assessment-routes"
+            "source:caie-9231-2020-2022-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -3020,7 +3982,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3030,7 +3993,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3040,7 +4004,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3050,7 +4015,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3060,7 +4026,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3070,7 +4037,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3080,7 +4048,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3091,7 +4060,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9231-2023-2025-assessment-routes"
+            "source:caie-9231-2023-2025-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -3173,7 +4143,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3183,7 +4154,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3193,7 +4165,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3203,7 +4176,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3213,7 +4187,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3223,7 +4198,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3233,7 +4209,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3243,7 +4220,8 @@
             {
               "clause": "carry-forward",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3254,7 +4232,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9231-2023-2025-assessment-routes"
+            "source:caie-9231-2023-2025-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -3317,7 +4296,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3327,7 +4307,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3337,7 +4318,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3347,7 +4329,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3357,7 +4340,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3367,7 +4351,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3377,7 +4362,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9231-2023-2025-assessment-routes"
+                "source:caie-9231-2023-2025-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3388,7 +4374,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9231-2023-2025-assessment-routes"
+            "source:caie-9231-2023-2025-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -3459,7 +4446,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3469,7 +4457,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3479,7 +4468,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3489,7 +4479,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3499,7 +4490,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3509,7 +4501,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3519,7 +4512,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3530,7 +4524,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9231-2026-2027-assessment-routes"
+            "source:caie-9231-2026-2027-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -3611,7 +4606,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3621,7 +4617,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3631,7 +4628,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3641,7 +4639,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3651,7 +4650,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3661,7 +4661,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3671,7 +4672,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3681,7 +4683,8 @@
             {
               "clause": "carry-forward",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3692,7 +4695,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9231-2026-2027-assessment-routes"
+            "source:caie-9231-2026-2027-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -3754,7 +4758,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3764,7 +4769,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3774,7 +4780,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3784,7 +4791,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3794,7 +4802,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3804,7 +4813,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3814,7 +4824,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:caie-9231-2026-2027-assessment-routes"
+                "source:caie-9231-2026-2027-assessment-routes",
+                "source:cambridge-carry-forward-regulations-2025"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3825,7 +4836,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:caie-9231-2026-2027-assessment-routes"
+            "source:caie-9231-2026-2027-assessment-routes",
+            "source:cambridge-carry-forward-regulations-2025"
           ],
           "reviewStatus": "codex-reviewed"
         }
@@ -3869,7 +4881,8 @@
         "source:caie-9231-2019-assessment-at-a-glance",
         "source:caie-9231-2020-2022-assessment-routes",
         "source:caie-9231-2023-2025-assessment-routes",
-        "source:caie-9231-2026-2027-assessment-routes"
+        "source:caie-9231-2026-2027-assessment-routes",
+        "source:cambridge-carry-forward-regulations-2025"
       ],
       "unresolvedGapIds": [
         "fact-gap:award-caie-9231:current-boundary-not-ready",
@@ -3977,7 +4990,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3987,7 +5001,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -3997,7 +5012,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4007,7 +5023,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4017,7 +5034,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4027,7 +5045,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4037,7 +5056,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4048,7 +5068,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:pearson-4ma1-issue2-qualification-at-a-glance"
+            "source:pearson-4ma1-issue2-qualification-at-a-glance",
+            "source:pearson-international-gcse-linear-resit-rules"
           ],
           "reviewStatus": "codex-reviewed"
         },
@@ -4101,7 +5122,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4111,7 +5133,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4121,7 +5144,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4131,7 +5155,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4141,7 +5166,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4151,7 +5177,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4161,7 +5188,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:pearson-4ma1-issue2-qualification-at-a-glance"
+                "source:pearson-4ma1-issue2-qualification-at-a-glance",
+                "source:pearson-international-gcse-linear-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4172,7 +5200,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:pearson-4ma1-issue2-qualification-at-a-glance"
+            "source:pearson-4ma1-issue2-qualification-at-a-glance",
+            "source:pearson-international-gcse-linear-resit-rules"
           ],
           "reviewStatus": "codex-reviewed"
         }
@@ -4213,7 +5242,8 @@
         ]
       },
       "sourceIds": [
-        "source:pearson-4ma1-issue2-qualification-at-a-glance"
+        "source:pearson-4ma1-issue2-qualification-at-a-glance",
+        "source:pearson-international-gcse-linear-resit-rules"
       ],
       "unresolvedGapIds": [
         "fact-gap:award-pearson-4ma1:current-boundary-not-ready",
@@ -4318,80 +5348,88 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:pearson-8ma0-spec-issue3-p4-p5"
+                "source:pearson-8ma0-spec-issue3-p4-p5",
+                "source:pearson-linear-as-a-level-results-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. It does not provide enough resit evidence for a deterministic best-result decision."
+                "The specification establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. Pearson's current linear AS guidance confirms that AS is stand-alone and that improving the grade requires retaking all papers. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:pearson-8ma0-spec-issue3-p4-p5"
+                "source:pearson-8ma0-spec-issue3-p4-p5",
+                "source:pearson-linear-as-a-level-results-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. It does not provide enough resit evidence for a deterministic best-result decision."
+                "The specification establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. Pearson's current linear AS guidance confirms that AS is stand-alone and that improving the grade requires retaking all papers. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:pearson-8ma0-spec-issue3-p4-p5"
+                "source:pearson-8ma0-spec-issue3-p4-p5",
+                "source:pearson-linear-as-a-level-results-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. It does not provide enough resit evidence for a deterministic best-result decision."
+                "The specification establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. Pearson's current linear AS guidance confirms that AS is stand-alone and that improving the grade requires retaking all papers. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:pearson-8ma0-spec-issue3-p4-p5"
+                "source:pearson-8ma0-spec-issue3-p4-p5",
+                "source:pearson-linear-as-a-level-results-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. It does not provide enough resit evidence for a deterministic best-result decision."
+                "The specification establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. Pearson's current linear AS guidance confirms that AS is stand-alone and that improving the grade requires retaking all papers. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:pearson-8ma0-spec-issue3-p4-p5"
+                "source:pearson-8ma0-spec-issue3-p4-p5",
+                "source:pearson-linear-as-a-level-results-resit-rules"
               ],
-              "reviewStatus": "candidate",
+              "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. It does not provide enough resit evidence for a deterministic best-result decision."
+                "The specification establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. Pearson's current linear AS guidance confirms that AS is stand-alone and that improving the grade requires retaking all papers. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "resit",
               "sourceIds": [
-                "source:pearson-8ma0-spec-issue3-p4-p5"
+                "source:pearson-8ma0-spec-issue3-p4-p5",
+                "source:pearson-linear-as-a-level-results-resit-rules"
               ],
-              "reviewStatus": "candidate",
+              "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. It does not provide enough resit evidence for a deterministic best-result decision."
+                "The specification establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. Pearson's current linear AS guidance confirms that AS is stand-alone and that improving the grade requires retaking all papers. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:pearson-8ma0-spec-issue3-p4-p5"
+                "source:pearson-8ma0-spec-issue3-p4-p5",
+                "source:pearson-linear-as-a-level-results-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. It does not provide enough resit evidence for a deterministic best-result decision."
+                "The specification establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. Pearson's current linear AS guidance confirms that AS is stand-alone and that improving the grade requires retaking all papers. Integer raw marks are summed without a rounding transformation."
               ]
             }
           ],
           "explainReady": true,
-          "calculatorReady": false,
+          "calculatorReady": true,
           "sourceIds": [
-            "source:pearson-8ma0-spec-issue3-p4-p5"
+            "source:pearson-8ma0-spec-issue3-p4-p5",
+            "source:pearson-linear-as-a-level-results-resit-rules"
           ],
-          "reviewStatus": "candidate"
+          "reviewStatus": "codex-reviewed"
         }
       ],
       "coverage": {
@@ -4413,9 +5451,9 @@
         },
         "rules": {
           "expected": 1,
-          "satisfied": 0,
+          "satisfied": 1,
           "explainedUnavailable": 0,
-          "pending": 1,
+          "pending": 0,
           "unexpected": 0,
           "conflicting": 0
         }
@@ -4430,10 +5468,10 @@
         ]
       },
       "sourceIds": [
-        "source:pearson-8ma0-spec-issue3-p4-p5"
+        "source:pearson-8ma0-spec-issue3-p4-p5",
+        "source:pearson-linear-as-a-level-results-resit-rules"
       ],
       "unresolvedGapIds": [
-        "fact-gap:award-pearson-8ma0:current-rule-clauses",
         "fact-gap:award-pearson-8ma0:statistics-auxiliary-gaps"
       ],
       "generatedAt": "2026-07-21T00:00:00+08:00",
@@ -4625,7 +5663,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4635,7 +5674,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4645,7 +5685,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4655,7 +5696,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4665,7 +5707,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4675,7 +5718,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4685,7 +5729,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4695,7 +5740,8 @@
             {
               "clause": "cash-in",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4705,7 +5751,8 @@
             {
               "clause": "unit-locking",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -4716,7 +5763,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:pearson-ial-mathematics-issue3-rules"
+            "source:pearson-ial-mathematics-issue3-rules",
+            "source:pearson-ial-results-resit-cash-in-a-star"
           ],
           "reviewStatus": "codex-reviewed"
         }
@@ -4757,7 +5805,8 @@
         ]
       },
       "sourceIds": [
-        "source:pearson-ial-mathematics-issue3-rules"
+        "source:pearson-ial-mathematics-issue3-rules",
+        "source:pearson-ial-results-resit-cash-in-a-star"
       ],
       "unresolvedGapIds": [
         "fact-gap:award-pearson-ial-mathematics:current-boundary-not-ready",
@@ -5412,7 +6461,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5422,7 +6472,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5432,7 +6483,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5442,7 +6494,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5452,7 +6505,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5462,7 +6516,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5472,7 +6527,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5482,7 +6538,8 @@
             {
               "clause": "cash-in",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5492,7 +6549,8 @@
             {
               "clause": "unit-locking",
               "sourceIds": [
-                "source:pearson-ial-mathematics-issue3-rules"
+                "source:pearson-ial-mathematics-issue3-rules",
+                "source:pearson-ial-results-resit-cash-in-a-star"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5503,7 +6561,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:pearson-ial-mathematics-issue3-rules"
+            "source:pearson-ial-mathematics-issue3-rules",
+            "source:pearson-ial-results-resit-cash-in-a-star"
           ],
           "reviewStatus": "codex-reviewed"
         }
@@ -5544,7 +6603,8 @@
         ]
       },
       "sourceIds": [
-        "source:pearson-ial-mathematics-issue3-rules"
+        "source:pearson-ial-mathematics-issue3-rules",
+        "source:pearson-ial-results-resit-cash-in-a-star"
       ],
       "unresolvedGapIds": [
         "fact-gap:award-pearson-ial-further-mathematics:current-boundary-not-ready",
@@ -5659,7 +6719,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:aqa-7357-sp-2017-v1-3-p8-p9"
+                "source:aqa-7357-sp-2017-v1-3-p8-p9",
+                "source:aqa-7357-v1-3-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5669,7 +6730,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:aqa-7357-sp-2017-v1-3-p8-p9"
+                "source:aqa-7357-sp-2017-v1-3-p8-p9",
+                "source:aqa-7357-v1-3-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5679,7 +6741,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:aqa-7357-sp-2017-v1-3-p8-p9"
+                "source:aqa-7357-sp-2017-v1-3-p8-p9",
+                "source:aqa-7357-v1-3-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5689,7 +6752,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:aqa-7357-sp-2017-v1-3-p8-p9"
+                "source:aqa-7357-sp-2017-v1-3-p8-p9",
+                "source:aqa-7357-v1-3-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5699,7 +6763,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:aqa-7357-sp-2017-v1-3-p8-p9"
+                "source:aqa-7357-sp-2017-v1-3-p8-p9",
+                "source:aqa-7357-v1-3-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5709,7 +6774,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:aqa-7357-sp-2017-v1-3-p8-p9"
+                "source:aqa-7357-sp-2017-v1-3-p8-p9",
+                "source:aqa-7357-v1-3-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5719,7 +6785,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:aqa-7357-sp-2017-v1-3-p8-p9"
+                "source:aqa-7357-sp-2017-v1-3-p8-p9",
+                "source:aqa-7357-v1-3-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5730,7 +6797,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:aqa-7357-sp-2017-v1-3-p8-p9"
+            "source:aqa-7357-sp-2017-v1-3-p8-p9",
+            "source:aqa-7357-v1-3-resits"
           ],
           "reviewStatus": "codex-reviewed"
         }
@@ -5771,7 +6839,8 @@
         ]
       },
       "sourceIds": [
-        "source:aqa-7357-sp-2017-v1-3-p8-p9"
+        "source:aqa-7357-sp-2017-v1-3-p8-p9",
+        "source:aqa-7357-v1-3-resits"
       ],
       "unresolvedGapIds": [
         "fact-gap:award-aqa-7357:statistics-auxiliary-gaps"
@@ -5900,7 +6969,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:aqa-7367-v1-1-scheme-of-assessment"
+                "source:aqa-7367-v1-1-scheme-of-assessment",
+                "source:aqa-7367-v1-1-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5910,7 +6980,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:aqa-7367-v1-1-scheme-of-assessment"
+                "source:aqa-7367-v1-1-scheme-of-assessment",
+                "source:aqa-7367-v1-1-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5920,7 +6991,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:aqa-7367-v1-1-scheme-of-assessment"
+                "source:aqa-7367-v1-1-scheme-of-assessment",
+                "source:aqa-7367-v1-1-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5930,7 +7002,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:aqa-7367-v1-1-scheme-of-assessment"
+                "source:aqa-7367-v1-1-scheme-of-assessment",
+                "source:aqa-7367-v1-1-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5940,7 +7013,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:aqa-7367-v1-1-scheme-of-assessment"
+                "source:aqa-7367-v1-1-scheme-of-assessment",
+                "source:aqa-7367-v1-1-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5950,7 +7024,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:aqa-7367-v1-1-scheme-of-assessment"
+                "source:aqa-7367-v1-1-scheme-of-assessment",
+                "source:aqa-7367-v1-1-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5960,7 +7035,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:aqa-7367-v1-1-scheme-of-assessment"
+                "source:aqa-7367-v1-1-scheme-of-assessment",
+                "source:aqa-7367-v1-1-resits"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -5971,7 +7047,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:aqa-7367-v1-1-scheme-of-assessment"
+            "source:aqa-7367-v1-1-scheme-of-assessment",
+            "source:aqa-7367-v1-1-resits"
           ],
           "reviewStatus": "codex-reviewed"
         }
@@ -6012,7 +7089,8 @@
         ]
       },
       "sourceIds": [
-        "source:aqa-7367-v1-1-scheme-of-assessment"
+        "source:aqa-7367-v1-1-scheme-of-assessment",
+        "source:aqa-7367-v1-1-resits"
       ],
       "unresolvedGapIds": [
         "fact-gap:award-aqa-7367:statistics-auxiliary-gaps"
@@ -6121,80 +7199,88 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:ocr-h240-spec-v3-p2"
+                "source:ocr-h240-spec-v3-p2",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the fixed three-paper structure, raw maximum and A*-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the fixed three-paper raw-mark route and A*-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that all three components must be retaken. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:ocr-h240-spec-v3-p2"
+                "source:ocr-h240-spec-v3-p2",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the fixed three-paper structure, raw maximum and A*-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the fixed three-paper raw-mark route and A*-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that all three components must be retaken. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:ocr-h240-spec-v3-p2"
+                "source:ocr-h240-spec-v3-p2",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the fixed three-paper structure, raw maximum and A*-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the fixed three-paper raw-mark route and A*-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that all three components must be retaken. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:ocr-h240-spec-v3-p2"
+                "source:ocr-h240-spec-v3-p2",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the fixed three-paper structure, raw maximum and A*-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the fixed three-paper raw-mark route and A*-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that all three components must be retaken. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:ocr-h240-spec-v3-p2"
+                "source:ocr-h240-spec-v3-p2",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
-              "reviewStatus": "candidate",
+              "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the fixed three-paper structure, raw maximum and A*-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the fixed three-paper raw-mark route and A*-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that all three components must be retaken. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "resit",
               "sourceIds": [
-                "source:ocr-h240-spec-v3-p2"
+                "source:ocr-h240-spec-v3-p2",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
-              "reviewStatus": "candidate",
+              "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the fixed three-paper structure, raw maximum and A*-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the fixed three-paper raw-mark route and A*-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that all three components must be retaken. Integer raw marks are summed without a rounding transformation."
               ]
             },
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:ocr-h240-spec-v3-p2"
+                "source:ocr-h240-spec-v3-p2",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the fixed three-paper structure, raw maximum and A*-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the fixed three-paper raw-mark route and A*-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that all three components must be retaken. Integer raw marks are summed without a rounding transformation."
               ]
             }
           ],
           "explainReady": true,
-          "calculatorReady": false,
+          "calculatorReady": true,
           "sourceIds": [
-            "source:ocr-h240-spec-v3-p2"
+            "source:ocr-h240-spec-v3-p2",
+            "source:ocr-general-qualification-entry-resit-rules"
           ],
-          "reviewStatus": "candidate"
+          "reviewStatus": "codex-reviewed"
         }
       ],
       "coverage": {
@@ -6216,9 +7302,9 @@
         },
         "rules": {
           "expected": 1,
-          "satisfied": 0,
+          "satisfied": 1,
           "explainedUnavailable": 0,
-          "pending": 1,
+          "pending": 0,
           "unexpected": 0,
           "conflicting": 0
         }
@@ -6233,10 +7319,10 @@
         ]
       },
       "sourceIds": [
-        "source:ocr-h240-spec-v3-p2"
+        "source:ocr-h240-spec-v3-p2",
+        "source:ocr-general-qualification-entry-resit-rules"
       ],
       "unresolvedGapIds": [
-        "fact-gap:award-ocr-h240:current-rule-clauses",
         "fact-gap:award-ocr-h240:statistics-auxiliary-gaps"
       ],
       "generatedAt": "2026-07-21T00:00:00+08:00",
@@ -6375,7 +7461,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:ocr-h245-v2-assessment-overview"
+                "source:ocr-h245-v2-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6385,7 +7472,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:ocr-h245-v2-assessment-overview"
+                "source:ocr-h245-v2-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6395,7 +7483,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:ocr-h245-v2-assessment-overview"
+                "source:ocr-h245-v2-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6405,7 +7494,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:ocr-h245-v2-assessment-overview"
+                "source:ocr-h245-v2-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6415,7 +7505,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:ocr-h245-v2-assessment-overview"
+                "source:ocr-h245-v2-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6425,7 +7516,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:ocr-h245-v2-assessment-overview"
+                "source:ocr-h245-v2-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6435,7 +7527,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:ocr-h245-v2-assessment-overview"
+                "source:ocr-h245-v2-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6446,7 +7539,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:ocr-h245-v2-assessment-overview"
+            "source:ocr-h245-v2-assessment-overview",
+            "source:ocr-general-qualification-entry-resit-rules"
           ],
           "reviewStatus": "codex-reviewed"
         }
@@ -6487,7 +7581,8 @@
         ]
       },
       "sourceIds": [
-        "source:ocr-h245-v2-assessment-overview"
+        "source:ocr-h245-v2-assessment-overview",
+        "source:ocr-general-qualification-entry-resit-rules"
       ],
       "unresolvedGapIds": [
         "fact-gap:award-ocr-h245:statistics-auxiliary-gaps"
@@ -6578,7 +7673,8 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:ocr-h640-v3-assessment-overview"
+                "source:ocr-h640-v3-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6588,7 +7684,8 @@
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:ocr-h640-v3-assessment-overview"
+                "source:ocr-h640-v3-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6598,7 +7695,8 @@
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:ocr-h640-v3-assessment-overview"
+                "source:ocr-h640-v3-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6608,7 +7706,8 @@
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:ocr-h640-v3-assessment-overview"
+                "source:ocr-h640-v3-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6618,7 +7717,8 @@
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:ocr-h640-v3-assessment-overview"
+                "source:ocr-h640-v3-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6628,7 +7728,8 @@
             {
               "clause": "resit",
               "sourceIds": [
-                "source:ocr-h640-v3-assessment-overview"
+                "source:ocr-h640-v3-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6638,7 +7739,8 @@
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:ocr-h640-v3-assessment-overview"
+                "source:ocr-h640-v3-assessment-overview",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
@@ -6649,7 +7751,8 @@
           "explainReady": true,
           "calculatorReady": true,
           "sourceIds": [
-            "source:ocr-h640-v3-assessment-overview"
+            "source:ocr-h640-v3-assessment-overview",
+            "source:ocr-general-qualification-entry-resit-rules"
           ],
           "reviewStatus": "codex-reviewed"
         }
@@ -6690,7 +7793,8 @@
         ]
       },
       "sourceIds": [
-        "source:ocr-h640-v3-assessment-overview"
+        "source:ocr-h640-v3-assessment-overview",
+        "source:ocr-general-qualification-entry-resit-rules"
       ],
       "unresolvedGapIds": [
         "fact-gap:award-ocr-h640:statistics-auxiliary-gaps"
@@ -6785,80 +7889,88 @@
             {
               "clause": "qualification-version",
               "sourceIds": [
-                "source:ocr-6993-spec-v2-0-p7"
+                "source:ocr-6993-spec-v2-0-p7",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the current one-paper structure, raw maximum and A-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the single 100-mark paper and A-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that every component of a linear qualification must be retaken. The single integer raw mark requires no rounding step."
               ]
             },
             {
               "clause": "paper-structure",
               "sourceIds": [
-                "source:ocr-6993-spec-v2-0-p7"
+                "source:ocr-6993-spec-v2-0-p7",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the current one-paper structure, raw maximum and A-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the single 100-mark paper and A-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that every component of a linear qualification must be retaken. The single integer raw mark requires no rounding step."
               ]
             },
             {
               "clause": "valid-combination",
               "sourceIds": [
-                "source:ocr-6993-spec-v2-0-p7"
+                "source:ocr-6993-spec-v2-0-p7",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the current one-paper structure, raw maximum and A-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the single 100-mark paper and A-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that every component of a linear qualification must be retaken. The single integer raw mark requires no rounding step."
               ]
             },
             {
               "clause": "scoring-scale",
               "sourceIds": [
-                "source:ocr-6993-spec-v2-0-p7"
+                "source:ocr-6993-spec-v2-0-p7",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the current one-paper structure, raw maximum and A-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the single 100-mark paper and A-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that every component of a linear qualification must be retaken. The single integer raw mark requires no rounding step."
               ]
             },
             {
               "clause": "rounding",
               "sourceIds": [
-                "source:ocr-6993-spec-v2-0-p7"
+                "source:ocr-6993-spec-v2-0-p7",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
-              "reviewStatus": "candidate",
+              "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the current one-paper structure, raw maximum and A-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the single 100-mark paper and A-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that every component of a linear qualification must be retaken. The single integer raw mark requires no rounding step."
               ]
             },
             {
               "clause": "resit",
               "sourceIds": [
-                "source:ocr-6993-spec-v2-0-p7"
+                "source:ocr-6993-spec-v2-0-p7",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
-              "reviewStatus": "candidate",
+              "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the current one-paper structure, raw maximum and A-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the single 100-mark paper and A-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that every component of a linear qualification must be retaken. The single integer raw mark requires no rounding step."
               ]
             },
             {
               "clause": "a-star",
               "sourceIds": [
-                "source:ocr-6993-spec-v2-0-p7"
+                "source:ocr-6993-spec-v2-0-p7",
+                "source:ocr-general-qualification-entry-resit-rules"
               ],
               "reviewStatus": "codex-reviewed",
               "notes": [
-                "The source-located specification overview establishes the current one-paper structure, raw maximum and A-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+                "The specification establishes the single 100-mark paper and A-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that every component of a linear qualification must be retaken. The single integer raw mark requires no rounding step."
               ]
             }
           ],
           "explainReady": true,
-          "calculatorReady": false,
+          "calculatorReady": true,
           "sourceIds": [
-            "source:ocr-6993-spec-v2-0-p7"
+            "source:ocr-6993-spec-v2-0-p7",
+            "source:ocr-general-qualification-entry-resit-rules"
           ],
-          "reviewStatus": "candidate"
+          "reviewStatus": "codex-reviewed"
         }
       ],
       "coverage": {
@@ -6880,9 +7992,9 @@
         },
         "rules": {
           "expected": 1,
-          "satisfied": 0,
+          "satisfied": 1,
           "explainedUnavailable": 0,
-          "pending": 1,
+          "pending": 0,
           "unexpected": 0,
           "conflicting": 0
         }
@@ -6897,10 +8009,10 @@
         ]
       },
       "sourceIds": [
-        "source:ocr-6993-spec-v2-0-p7"
+        "source:ocr-6993-spec-v2-0-p7",
+        "source:ocr-general-qualification-entry-resit-rules"
       ],
       "unresolvedGapIds": [
-        "fact-gap:award-ocr-6993:current-rule-clauses",
         "fact-gap:award-ocr-6993:statistics-auxiliary-gaps"
       ],
       "generatedAt": "2026-07-21T00:00:00+08:00",

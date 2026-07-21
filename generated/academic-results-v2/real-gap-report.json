@@ -3,59 +3,41 @@
   "generatedAt": "2026-07-21T00:00:00+08:00",
   "qualificationCount": 13,
   "counts": {
-    "P0": 2,
-    "P1": 8,
-    "P2": 2,
+    "P0": 0,
+    "P1": 5,
+    "P2": 3,
     "P3": 13
   },
   "gaps": [
     {
-      "gapId": "fact-gap:award-caie-0580:historical-version-window",
+      "gapId": "fact-gap:award-caie-0580:historical-boundary-gaps",
       "awardQualificationId": "award:caie:0580",
-      "severity": "P0",
-      "category": "identity",
-      "description": "The identity catalog starts at 2025-01-01, after the 2019 coverage baseline. Historical records before that version cannot be safely assigned.",
+      "severity": "P2",
+      "category": "boundary",
+      "description": "36 historical boundary expectation(s) remain pending.",
       "sourceIds": [
+        "source:caie-0580-2019-november-threshold-routes",
+        "source:caie-0580-2020-2022-assessment-overview",
+        "source:caie-0580-2024-june-threshold-routes",
         "source:caie-0580-2025-2027-assessment-overview"
       ],
-      "remediation": "Add source-backed historical qualification versions before classifying pre-version records.",
-      "blocks": [
-        "explain-ready",
-        "activation"
-      ]
+      "remediation": "Prioritize only the historical series needed for business verification; do not block current explain-ready capability.",
+      "blocks": []
     },
     {
       "gapId": "fact-gap:award-caie-0580:statistics-auxiliary-gaps",
       "awardQualificationId": "award:caie:0580",
       "severity": "P3",
       "category": "statistics",
-      "description": "6 expected Grade Statistics cell(s) are pending and 13 observed row(s) need policy adjudication.",
+      "description": "24 expected Grade Statistics cell(s) are pending and 13 observed row(s) need policy adjudication.",
       "sourceIds": [
+        "source:caie-0580-2019-november-threshold-routes",
+        "source:caie-0580-2020-2022-assessment-overview",
+        "source:caie-0580-2024-june-threshold-routes",
         "source:caie-0580-2025-2027-assessment-overview"
       ],
       "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
       "blocks": []
-    },
-    {
-      "gapId": "fact-gap:award-caie-9709:option-set-not-explicit",
-      "awardQualificationId": "award:caie:9709",
-      "severity": "P0",
-      "category": "boundary",
-      "description": "3 route-series cell(s) contain published option rows, but the complete official option set is not declared by policy.",
-      "sourceIds": [
-        "source:caie-9709-2019-june-threshold-routes",
-        "source:caie-9709-2020-2022-assessment-routes",
-        "source:caie-9709-2023-2025-assessment-routes",
-        "source:caie-9709-2026-2027-assessment-routes",
-        "source:caie-9709-2025-june-p2-row-s1",
-        "source:caie-9709-2025-june-p2-row-ax",
-        "source:caie-9709-2025-june-p2-row-dx"
-      ],
-      "remediation": "Declare every official option and component-variant combination for the affected series.",
-      "blocks": [
-        "calculator-ready",
-        "activation"
-      ]
     },
     {
       "gapId": "fact-gap:award-caie-9709:current-boundary-not-ready",
@@ -80,7 +62,7 @@
       "awardQualificationId": "award:caie:9709",
       "severity": "P2",
       "category": "boundary",
-      "description": "63 historical boundary expectation(s) remain pending.",
+      "description": "60 historical boundary expectation(s) remain pending.",
       "sourceIds": [
         "source:caie-9709-2019-june-threshold-routes",
         "source:caie-9709-2020-2022-assessment-routes",
@@ -179,22 +161,6 @@
       ],
       "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
       "blocks": []
-    },
-    {
-      "gapId": "fact-gap:award-pearson-8ma0:current-rule-clauses",
-      "awardQualificationId": "award:pearson:8ma0",
-      "qualificationVersionId": "Edexcel-8MA0:2017",
-      "severity": "P1",
-      "category": "rule-clause",
-      "description": "Current rule coverage is missing: rounding, resit.",
-      "sourceIds": [
-        "source:pearson-8ma0-spec-issue3-p4-p5"
-      ],
-      "remediation": "Add source-backed clauses and deterministic tests for each missing rule feature.",
-      "blocks": [
-        "calculator-ready",
-        "activation"
-      ]
     },
     {
       "gapId": "fact-gap:award-pearson-8ma0:statistics-auxiliary-gaps",
@@ -315,22 +281,6 @@
       "blocks": []
     },
     {
-      "gapId": "fact-gap:award-ocr-h240:current-rule-clauses",
-      "awardQualificationId": "award:ocr:h240",
-      "qualificationVersionId": "OCR-H240:Version 3",
-      "severity": "P1",
-      "category": "rule-clause",
-      "description": "Current rule coverage is missing: rounding, resit.",
-      "sourceIds": [
-        "source:ocr-h240-spec-v3-p2"
-      ],
-      "remediation": "Add source-backed clauses and deterministic tests for each missing rule feature.",
-      "blocks": [
-        "calculator-ready",
-        "activation"
-      ]
-    },
-    {
       "gapId": "fact-gap:award-ocr-h240:statistics-auxiliary-gaps",
       "awardQualificationId": "award:ocr:h240",
       "severity": "P3",
@@ -389,22 +339,6 @@
       ],
       "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
       "blocks": []
-    },
-    {
-      "gapId": "fact-gap:award-ocr-6993:current-rule-clauses",
-      "awardQualificationId": "award:ocr:6993",
-      "qualificationVersionId": "OCR-6993:Version 2.0",
-      "severity": "P1",
-      "category": "rule-clause",
-      "description": "Current rule coverage is missing: rounding, resit.",
-      "sourceIds": [
-        "source:ocr-6993-spec-v2-0-p7"
-      ],
-      "remediation": "Add source-backed clauses and deterministic tests for each missing rule feature.",
-      "blocks": [
-        "calculator-ready",
-        "activation"
-      ]
     },
     {
       "gapId": "fact-gap:award-ocr-6993:statistics-auxiliary-gaps",

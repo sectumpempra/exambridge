@@ -111,8 +111,21 @@ for (const collection of ["sources", "boundaries", "statistics", "awardRules", "
     if (record.verificationStatus !== "owner-approved") failures.push(`active ${collection}[${index}] must be owner-approved`);
   }
 }
+for (const collection of ["qualificationIdentities", "qualificationFactCards", "misconceptions"]) {
+  if (!Array.isArray(active[collection])) failures.push(`active manifest ${collection} must be an array`);
+  for (const [index, record] of (active[collection] ?? []).entries()) {
+    if (record.reviewStatus !== "owner-approved") failures.push(`active ${collection}[${index}] must be owner-approved`);
+  }
+}
 const activeParse = academicSchemas.AcademicResultsManifestV2Schema.safeParse(active);
 if (!activeParse.success) failures.push(`active manifest schema failure: ${activeParse.error.issues.map(issue => `${issue.path.join(".")}: ${issue.message}`).join("; ")}`);
+if (active.activationBatch !== null) {
+  if (!/^academic-results-v2-launch-\d{8}$/.test(active.activationBatch)) failures.push("active academic-results-v2 activationBatch is invalid");
+  if (active.qualificationIdentities.length !== expectedAwardIds.length) failures.push("activated manifest must contain all 13 qualification identities");
+  if (active.qualificationFactCards.length !== expectedAwardIds.length) failures.push("activated manifest must contain all 13 qualification fact cards");
+  if (active.misconceptions.length < 12) failures.push("activated manifest must contain the launch misconception library");
+  if (active.difficultyProfiles.length !== 0) failures.push("difficulty profiles must remain inactive for the first facts-verification launch");
+}
 
 async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -140,6 +153,9 @@ if (trackedPdfs.length > 0) failures.push(`repository tracks ${trackedPdfs.lengt
 
 const coverageInputs = await loadAcademicResultsCoverageInputs(root);
 const candidate = coverageInputs.candidate;
+if (active.activationBatch !== null && active.awardRules.length !== candidate.awardRules.length) {
+  failures.push(`activated manifest must include every reviewed award rule (${active.awardRules.length}/${candidate.awardRules.length})`);
+}
 const candidateCollections = [
   ["sources", academicSchemas.SourceEvidenceV1Schema, "sourceId"],
   ["boundaries", academicSchemas.GradeBoundaryV2Schema, "boundaryId"],
@@ -164,6 +180,31 @@ for (const [collectionName, schema, idField] of candidateCollections) {
 }
 
 const candidateSourceIds = new Set((candidate.sources ?? []).map(source => source.sourceId));
+const activeSourceIds = new Set((active.sources ?? []).map(source => source.sourceId));
+for (const collectionName of ["qualificationIdentities", "boundaries", "statistics", "awardRules", "misconceptions"]) {
+  for (const record of active[collectionName] ?? []) {
+    for (const sourceId of record.sourceIds ?? []) {
+      if (!activeSourceIds.has(sourceId)) failures.push(`active ${collectionName} record references missing active source ${sourceId}`);
+    }
+  }
+}
+for (const rule of active.awardRules ?? []) {
+  for (const evidence of rule.clauseEvidence ?? []) {
+    if (evidence.reviewStatus !== "owner-approved") failures.push(`active rule ${rule.ruleId} contains non-approved ${evidence.clause} evidence`);
+    for (const sourceId of evidence.sourceIds ?? []) {
+      if (!activeSourceIds.has(sourceId)) failures.push(`active rule ${rule.ruleId} clause ${evidence.clause} references missing active source ${sourceId}`);
+    }
+  }
+}
+for (const card of active.qualificationFactCards ?? []) {
+  if (!card.maturity.ownerApproved) failures.push(`active fact card ${card.awardQualificationId} must declare owner approval`);
+  for (const sourceId of card.sourceIds ?? []) {
+    if (!activeSourceIds.has(sourceId)) failures.push(`active fact card ${card.awardQualificationId} references missing active source ${sourceId}`);
+  }
+  for (const route of card.routes ?? []) {
+    if (route.reviewStatus !== "owner-approved" || !route.explainReady) failures.push(`active fact card route ${route.ruleId} must be owner-approved and explain-ready`);
+  }
+}
 for (const identity of identityCatalog.identities ?? []) {
   for (const sourceId of identity.sourceIds ?? []) {
     if (!candidateSourceIds.has(sourceId)) failures.push(`${identity.awardQualificationId} identity references unknown source ${sourceId}`);

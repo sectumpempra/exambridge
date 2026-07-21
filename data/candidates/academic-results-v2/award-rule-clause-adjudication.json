@@ -6,24 +6,24 @@
   "rules": [
     {
       "ruleId": "rule:award-ocr-6993-linear:6993-version-2-0-june-2026",
-      "sourceIds": ["source:ocr-6993-spec-v2-0-p7"],
-      "approvedClauses": ["qualification-version", "paper-structure", "valid-combination", "scoring-scale", "a-star"],
-      "unresolvedClauses": ["rounding", "resit"],
-      "reason": "The source-located specification overview establishes the current one-paper structure, raw maximum and A-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+      "sourceIds": ["source:ocr-6993-spec-v2-0-p7", "source:ocr-general-qualification-entry-resit-rules"],
+      "approvedClauses": ["qualification-version", "paper-structure", "valid-combination", "scoring-scale", "rounding", "resit", "a-star"],
+      "unresolvedClauses": [],
+      "reason": "The specification establishes the single 100-mark paper and A-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that every component of a linear qualification must be retaken. The single integer raw mark requires no rounding step."
     },
     {
       "ruleId": "rule:award-ocr-h240-linear:h240-version-3",
-      "sourceIds": ["source:ocr-h240-spec-v3-p2"],
-      "approvedClauses": ["qualification-version", "paper-structure", "valid-combination", "scoring-scale", "a-star"],
-      "unresolvedClauses": ["rounding", "resit"],
-      "reason": "The source-located specification overview establishes the fixed three-paper structure, raw maximum and A*-E award scale. It does not provide enough board-specific resit evidence for a deterministic resit decision."
+      "sourceIds": ["source:ocr-h240-spec-v3-p2", "source:ocr-general-qualification-entry-resit-rules"],
+      "approvedClauses": ["qualification-version", "paper-structure", "valid-combination", "scoring-scale", "rounding", "resit", "a-star"],
+      "unresolvedClauses": [],
+      "reason": "The specification establishes the fixed three-paper raw-mark route and A*-E scale; OCR's general qualification entry rules separately confirm unlimited retakes and that all three components must be retaken. Integer raw marks are summed without a rounding transformation."
     },
     {
       "ruleId": "rule:award-pearson-8ma0-linear:8ma0-issue-3-october-2025",
-      "sourceIds": ["source:pearson-8ma0-spec-issue3-p4-p5"],
-      "approvedClauses": ["qualification-version", "paper-structure", "valid-combination", "scoring-scale", "a-star"],
-      "unresolvedClauses": ["rounding", "resit"],
-      "reason": "The source-located specification overview establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. It does not provide enough resit evidence for a deterministic best-result decision."
+      "sourceIds": ["source:pearson-8ma0-spec-issue3-p4-p5", "source:pearson-linear-as-a-level-results-resit-rules"],
+      "approvedClauses": ["qualification-version", "paper-structure", "valid-combination", "scoring-scale", "rounding", "resit", "a-star"],
+      "unresolvedClauses": [],
+      "reason": "The specification establishes the two-paper AS structure, 160 raw marks and A-E scale without A*. Pearson's current linear AS guidance confirms that AS is stand-alone and that improving the grade requires retaking all papers. Integer raw marks are summed without a rounding transformation."
     }
   ]
 }

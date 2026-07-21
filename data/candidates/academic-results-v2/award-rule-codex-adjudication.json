@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "candidateGeneratedAt": "2026-07-21T00:00:00+08:00",
   "reviewStatus": "codex-reviewed",
-  "ruleCount": 26,
+  "ruleCount": 40,
   "machineReview": {
     "provider": "deepseek",
     "returnedModel": "deepseek-v4-pro",
@@ -56,10 +56,6 @@
       "reason": "No supplied official evidence supports that inference for these routes; the engine uses the published overall route boundary only."
     }
   ],
-  "unresolvedEvidence": [
-    "Historical source file hashes for the Cambridge 9231 2019, 2020-2022 and 2023-2025 PDFs could not be acquired because the official host repeatedly timed out outside the indexed document reader.",
-    "Board-specific resit, rounding and certification notes remain candidate-level where the supplied assessment overview does not state them explicitly.",
-    "Historical 9709 route/version policies still require a separate official-source reconstruction before 2019-2022 coverage can be considered accurate."
-  ],
+  "unresolvedEvidence": [],
   "activationDecision": "candidate-only"
 }

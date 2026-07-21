@@ -18,7 +18,7 @@ const allUserText = (request: AIChatRequest) => request.messages
   .join("\n");
 
 const hasYear = (value: string) => /\b20\d{2}\b/.test(value);
-const hasSeries = (value: string) => /january|jan(?:uary)?|一月|1月|march|mar(?:ch)?|三月|3月|june|may\s*\/\s*june|夏季|六月|6月|5\s*\/\s*6月|october|oct(?:ober)?|十月|10月|november|nov(?:ember)?|冬季|十一月|11月/i.test(value);
+const hasSeries = (value: string) => /january|jan(?:uary)?|一月|1月|march|mar(?:ch)?|三月|3月|june|may\s*\/\s*june|夏季|六月|6月|5\s*\/\s*6\s*月|october|oct(?:ober)?|十月|10月|november|nov(?:ember)?|冬季|十一月|11月/i.test(value);
 const hasAsAlRoute = (value: string) => /\bas\b|a[ -]?level|alevel|完整\s*al|分阶段|staged/i.test(value);
 const has0580Tier = (value: string) => /\bcore\b|\bextended\b|核心|扩展/i.test(value);
 const has4ma1Tier = (value: string) => /\bfoundation\b|\bhigher\b|基础|高阶/i.test(value);
@@ -101,7 +101,7 @@ export function detectRequiredInputClarification(
     };
   }
 
-  const asksCarryEligibility = /(?:我|这个|这些).{0,30}carry[ -]?forward|carry[ -]?forward.{0,30}(?:可以|能否|有效|到\s*20\d{2})/i.test(text);
+  const asksCarryEligibility = /(?:我|这个|这些|\bmy\b|\bthis\b|\bthese\b).{0,30}carry[ -]?forward|carry[ -]?forward.{0,30}(?:可以|能否|有效|到\s*20\d{2}|\bvalid\b|\beligible\b|\bcan\b|\bmay\b)/i.test(text);
   if (asksCarryEligibility) {
     const missing = [
       ...(qualificationMissing ? [locale === "en-GB" ? "the exact qualification code and version" : "准确资格代码及版本"] : []),

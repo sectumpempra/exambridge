@@ -22,7 +22,7 @@ describe("official award-rule candidates", () => {
     expect(candidate.boundaries.every((boundary: unknown) => GradeBoundaryV2Schema.safeParse(boundary).success)).toBe(true);
     expect(candidate.statistics.every((row: unknown) => GradeStatisticsV2Schema.safeParse(row).success)).toBe(true);
     expect(new Set(rules.map(rule => rule.awardQualificationId)).size).toBe(13);
-    expect(rules).toHaveLength(34);
+    expect(rules).toHaveLength(40);
     expect(rules.every(rule => rule.verificationStatus !== "owner-approved")).toBe(true);
   });
 
@@ -57,11 +57,13 @@ describe("official award-rule candidates", () => {
       rule.boundarySelectionRule?.requiresOptionCode && rule.boundarySelectionRule.requiresComponentVariants)).toBe(true);
 
     const boundaries = candidate.boundaries.filter((row: { awardQualificationId: string }) => row.awardQualificationId === "award:caie:9709");
-    expect(boundaries).toHaveLength(3);
+    expect(boundaries).toHaveLength(45);
     expect(new Set(boundaries.map((row: { routeId: string }) => row.routeId))).toEqual(new Set([
       "award:caie:9709:2023-2025:as",
       "award:caie:9709:2023-2025:al:same-series",
       "award:caie:9709:2023-2025:al:staged",
+      "award:caie:9709:2023-2025:special-composite:P3",
+      "award:caie:9709:2023-2025:special-composite:P4",
     ]));
     expect(boundaries.every((row: { qualificationVersionId: string; optionCode?: string; componentVariants?: string[] }) =>
       row.qualificationVersionId === "CAIE-9709:2023-2025" && Boolean(row.optionCode) && Boolean(row.componentVariants?.length))).toBe(true);
@@ -78,7 +80,8 @@ describe("official award-rule candidates", () => {
       maximumMark: 200,
       thresholds: { "A*": 176, A: 152, B: 119, C: 86, D: 68, E: 51 },
     });
-    const rule = rules.find(item => item.routeId === "award:caie:0580:extended")!;
+    const rule = rules.find(item => item.routeId === "award:caie:0580:extended"
+      && item.qualificationVersionId === "CAIE-0580:2025-2027")!;
     expect(rule.boundarySelectionRule).toMatchObject({ requiresOptionCode: true, requiresComponentVariants: true });
     expect(calculateQualificationAwardV2({
       ruleId: rule.ruleId,

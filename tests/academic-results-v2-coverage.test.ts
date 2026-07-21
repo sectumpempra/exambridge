@@ -115,13 +115,13 @@ describe("Academic Results sparse coverage", () => {
     expect(verifiedH245).toHaveLength(30);
     expect(new Set(verifiedH245.map(cell => `${cell.year}:${cell.optionCode}`)).size).toBe(30);
 
-    const incomplete9709 = boundaryMatrix.cells.filter(cell =>
+    const complete9709 = boundaryMatrix.cells.filter(cell =>
       cell.awardQualificationId === "award:caie:9709"
       && cell.year === 2025
       && cell.series === "june"
       && cell.observedRecordIds.length > 0);
-    expect(incomplete9709).toHaveLength(3);
-    expect(incomplete9709.every(cell => cell.coverageStatus === "pending" && cell.recordReviewStatus === "candidate")).toBe(true);
+    expect(complete9709).toHaveLength(45);
+    expect(complete9709.every(cell => cell.coverageStatus === "satisfied" && cell.recordReviewStatus === "codex-reviewed")).toBe(true);
   });
 
   it("does not classify verified exceptional AQA November series as unexpected records", () => {
@@ -140,14 +140,13 @@ describe("Academic Results sparse coverage", () => {
     expect(ruleMatrix.blockingCellCount).toBe(0);
   });
 
-  it("separates explain-ready structural rules from calculator-ready policy clauses", () => {
-    const partiallyReviewed = ruleMatrix.cells.filter(cell =>
+  it("requires every launch rule clause before marking calculator policy ready", () => {
+    const fullyReviewed = ruleMatrix.cells.filter(cell =>
       ["award:ocr:6993", "award:ocr:h240", "award:pearson:8ma0"].includes(cell.awardQualificationId));
-    expect(partiallyReviewed).toHaveLength(3);
-    expect(partiallyReviewed.every(cell => cell.explainReady && !cell.calculatorReady)).toBe(true);
-    expect(partiallyReviewed.every(cell =>
-      cell.missingClauses.includes("rounding") && cell.missingClauses.includes("resit"))).toBe(true);
-    expect(partiallyReviewed.every(cell =>
+    expect(fullyReviewed).toHaveLength(3);
+    expect(fullyReviewed.every(cell => cell.explainReady && cell.calculatorReady)).toBe(true);
+    expect(fullyReviewed.every(cell => cell.missingClauses.length === 0)).toBe(true);
+    expect(fullyReviewed.every(cell =>
       cell.explainRequiredClauses.every(clause => cell.satisfiedClauses.includes(clause)))).toBe(true);
   });
 });

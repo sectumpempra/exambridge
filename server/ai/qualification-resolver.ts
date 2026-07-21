@@ -71,7 +71,7 @@ export function detectQualificationAmbiguity(message: string, locale: "zh-CN" | 
       ambiguityClass: "pearson-route",
       clarification: locale === "en-GB"
         ? "Do you mean a Pearson UK qualification or Pearson International Mathematics? Please provide the code if possible."
-        : "你指的是 Pearson UK 数学资格，还是 Pearson International 数学？如可以，请提供课程代码。",
+        : "你指的是 Pearson UK 本土版数学资格，还是 Pearson International 国际版数学？如可以，请提供课程代码。",
     };
   }
   return undefined;

@@ -117,6 +117,92 @@ describe("AI required input resolver", () => {
       "cash-in 以及重考/locking 历史",
     ]));
   });
+
+  it("accepts a fully specified 0580 boundary request and recognises Chinese series wording", () => {
+    expect(detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "请查 2025 年 5/6 月 0580 Extended option AX 的具体分数线" }],
+    }), ["award:caie:0580"])).toBeUndefined();
+  });
+
+  it("collects English qualification, year and series fields when no course was resolved", () => {
+    const result = detectRequiredInputClarification(request({
+      locale: "en-GB",
+      messages: [{ role: "user", content: "What is the grade boundary?" }],
+    }), []);
+    expect(result).toMatchObject({
+      kind: "boundary-lookup",
+      missing: ["the exact qualification code", "year", "exam series"],
+    });
+    expect(result?.clarification).toContain("To verify this grade boundary");
+  });
+
+  it("asks for the qualification-specific tier or route without repeating supplied dimensions", () => {
+    const pearson = detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "查询 2024 年十一月 4MA1 的分数线" }],
+    }), ["award:pearson:4ma1"]);
+    expect(pearson?.missing).toEqual(["Foundation 或 Higher"]);
+
+    const cambridge = detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "查一下 2025 June 9709 threshold" }],
+    }), ["award:caie:9709"]);
+    expect(cambridge?.missing).toEqual(["AS、同考季完整 A Level 或 staged route"]);
+
+    expect(detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "查一下 2025 June 9231 staged A Level threshold" }],
+    }), ["award:caie:9231"])).toBeUndefined();
+  });
+
+  it("produces the English calculation checklist and skips it once structured scores exist", () => {
+    const result = detectRequiredInputClarification(request({
+      locale: "en-GB",
+      messages: [{ role: "user", content: "Calculate my final award grade" }],
+    }), []);
+    expect(result).toMatchObject({ kind: "award-calculation" });
+    expect(result?.missing).toEqual([
+      "the exact qualification code and version",
+      "route and valid component combination",
+      "exam series for every component",
+      "every score and whether it is raw, scaled, UMS or PUM",
+    ]);
+    expect(result?.clarification).toContain("To calculate the qualification award");
+
+    expect(detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "请帮我算最终等级" }],
+      academicQuery: {
+        type: "award-calculation",
+        awardQualificationId: "award:ocr:6993",
+        ruleId: "rule:ocr:6993:linear:2024",
+        routeId: "award:ocr:6993:linear",
+        targetSeries: "2025-june",
+        combinationId: "linear",
+        componentScores: [{ componentCode: "01", series: "2025-june", rawMark: 80 }],
+      },
+    }), ["award:ocr:6993"])).toBeUndefined();
+  });
+
+  it("asks once for incomplete carry-forward facts and accepts a complete AS route", () => {
+    const zhResult = detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "这个 carry-forward 可以吗？" }],
+    }), []);
+    expect(zhResult).toMatchObject({
+      kind: "carry-forward-eligibility",
+      missing: ["准确资格代码及版本", "原考季和目标考季", "完整 AS route/组件组合"],
+    });
+
+    const enResult = detectRequiredInputClarification(request({
+      locale: "en-GB",
+      messages: [{ role: "user", content: "Can my 9709 carry-forward be valid?" }],
+    }), ["award:caie:9709"]);
+    expect(enResult?.missing).toEqual([
+      "the original and target exam series",
+      "the complete AS route/component combination",
+    ]);
+    expect(enResult?.clarification).toContain("To determine whether this carry-forward is valid");
+
+    expect(detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "9709 AS 2024 June carry-forward 到 2025 June 可以吗？" }],
+    }), ["award:caie:9709"])).toBeUndefined();
+  });
 });
 
 describe("AI assistant context builder", () => {

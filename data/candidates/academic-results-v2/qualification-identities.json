@@ -12,10 +12,13 @@
       "catalogQualificationIds": ["qual:caie:gcse:0580", "qual:caie:igcse:0580"],
       "knowledgeMappingCodes": ["CAIE-0580"],
       "qualificationVersions": [
+        { "qualificationVersionId": "CAIE-0580:2019", "effectiveFrom": "2019-01-01", "effectiveTo": "2019-12-31", "isCurrent": false },
+        { "qualificationVersionId": "CAIE-0580:2020-2022", "effectiveFrom": "2020-01-01", "effectiveTo": "2022-12-31", "isCurrent": false },
+        { "qualificationVersionId": "CAIE-0580:2023-2024", "effectiveFrom": "2023-01-01", "effectiveTo": "2024-12-31", "isCurrent": false },
         { "qualificationVersionId": "CAIE-0580:2025-2027", "effectiveFrom": "2025-01-01", "effectiveTo": "2027-12-31", "isCurrent": true }
       ],
       "aliases": ["0580", "CAIE 0580", "Cambridge IGCSE Mathematics", "IGCSE Mathematics 0580", "剑桥 IGCSE 数学", "剑桥 IG 数学", "CAIE IGCSE 数学"],
-      "sourceIds": ["source:caie-0580-2025-2027-assessment-overview"],
+      "sourceIds": ["source:caie-0580-2019-november-threshold-routes", "source:caie-0580-2020-2022-assessment-overview", "source:caie-0580-2024-june-threshold-routes", "source:caie-0580-2025-2027-assessment-overview"],
       "processingPolicy": "deepseek-candidate",
       "reviewStatus": "codex-reviewed"
     },
