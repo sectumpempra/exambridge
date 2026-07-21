@@ -1,14 +1,18 @@
+import { useState } from "react";
 import { Bot, BookOpenCheck, MessageCircleMore, ShieldCheck, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AIChatPanel from "@/components/ai/AIChatPanel";
 import AIContextCourseSwitcher from "@/components/ai/AIContextCourseSwitcher";
+import AIContextPaperSelector from "@/components/ai/AIContextPaperSelector";
 import { useCourseContext } from "@/course-context/CourseContextProvider";
 import { isAIAssistantEnabled } from "@/domain-v2/shared/feature-flags";
 
 export default function AIAssistantPage() {
   const { context, entry } = useCourseContext();
   const enabled = isAIAssistantEnabled();
+  const [paperSelection, setPaperSelection] = useState({ knowledgeCode: "", paperId: "" });
+  const selectedPaperId = paperSelection.knowledgeCode === entry?.knowledgeTreeCode ? paperSelection.paperId : "";
   return <div className="min-h-screen bg-[linear-gradient(180deg,#eef2f1_0%,#f5f2ee_42%,#f0ede8_100%)] text-[#3d3832]">
     <Header title="AI 问答" />
     <main className="mx-auto max-w-[1440px] px-4 py-5 sm:px-6 sm:py-7">
@@ -25,11 +29,11 @@ export default function AIAssistantPage() {
         </div>
         {enabled ? <AIChatPanel
           fullHeight
-          pageContext={{ pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [], comparisonIds: entry?.knowledgeTreeCode ? [entry.knowledgeTreeCode] : [] }}
+          pageContext={{ pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: selectedPaperId ? [selectedPaperId] : [], comparisonIds: entry?.knowledgeTreeCode ? [entry.knowledgeTreeCode] : [] }}
           qualificationIds={context ? [context.qualificationId] : []}
           syllabusVersions={entry?.specificationLabel ? [entry.specificationLabel] : []}
           contextLabel={entry ? `${entry.subjectCode} · ${entry.subjectName}` : "输入课程代码开始提问"}
-          contextControl={<AIContextCourseSwitcher />}
+          contextControl={<div className="flex min-w-0 flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-2"><AIContextCourseSwitcher /><AIContextPaperSelector knowledgeCode={entry?.knowledgeTreeCode} value={selectedPaperId} onChange={(paperId) => setPaperSelection({ knowledgeCode: entry?.knowledgeTreeCode ?? "", paperId })} /></div>}
         /> : <div className="flex min-h-[560px] items-center justify-center rounded-[28px] border border-[#d9d4ce] bg-white p-8 text-center"><div><ShieldCheck size={34} className="mx-auto text-[#526b7e]" /><h2 className="mb-0 mt-4 text-xl font-bold">AI 助手正在内部验收</h2><p className="mb-0 mt-2 text-sm text-[#716a61]">公开入口尚未启用。</p></div></div>}
       </section>
     </main>

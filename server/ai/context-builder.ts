@@ -62,12 +62,24 @@ export type AIContextBuildResult = {
   promptContext: string;
   sources: AICitation[];
   resolvedContext: AIResolvedContext;
+  paperFacts: AIPaperFact[];
   clarification?: string;
 };
 
 const MAX_PROMPT_CONTEXT_CHARACTERS = 52_000;
+const MAX_SINGLE_PAPER_CONTEXT_CHARACTERS = 240_000;
 const MAX_SHARED_CONCEPTS = 32;
 const MAX_STATEMENT_ITEMS_PER_SIDE = 12;
+
+export type AIPaperFact = {
+  paperId: string;
+  code: string;
+  name: string;
+  durationMinutes?: number;
+  marks?: number;
+  weighting?: string;
+  calculator?: string;
+};
 
 function createSourceRegistry(): SourceRegistry {
   const citations: AICitation[] = [];
@@ -161,6 +173,73 @@ function appliesToPaper(statement: KnowledgeMappingV5["statements"][number], pap
   if (!paperId) return true;
   return statement.paperApplicability.kind !== "not-specified"
     && statement.paperApplicability.papers.includes(paperId);
+}
+
+function paperCodeVariants(code: string): string[] {
+  const normalized = code.trim().toLowerCase();
+  const numeric = /^0*([1-9]\d*)$/.exec(normalized)?.[1];
+  return [...new Set([normalized, numeric].filter((value): value is string => Boolean(value)))];
+}
+
+function escaped(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function paperNameAliases(name: string): string[] {
+  const lower = name.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, " ").trim();
+  const aliases = new Set([lower]);
+  const numbered = /^(.*?)(\d+)$/.exec(lower.replace(/\s+/g, ""));
+  const trailingNumber = /\b(\d+)\s*$/.exec(lower)?.[1];
+  if (/probability\s+and\s+statistics|statistics/.test(lower) && trailingNumber) {
+    aliases.add(`s${trailingNumber}`);
+    aliases.add(`statistics ${trailingNumber}`);
+    aliases.add(`ps${trailingNumber}`);
+  }
+  if (/further\s+pure/.test(lower) && trailingNumber) aliases.add(`fp${trailingNumber}`);
+  if (/mechanics/.test(lower)) aliases.add(trailingNumber ? `m${trailingNumber}` : "mechanics");
+  if (/decision\s+mathematics/.test(lower) && trailingNumber) aliases.add(`d${trailingNumber}`);
+  if (numbered && numbered[1].length >= 3) aliases.add(numbered[0]);
+  return [...aliases];
+}
+
+export function resolvePaperIdFromMessage(message: string, entry: KnowledgeManifestEntry): string | null {
+  const normalized = message.toLowerCase().replace(/[‐‑–—]/g, "-");
+  const compact = normalized.replace(/[^a-z0-9]+/g, " ").trim();
+  const matches = entry.paperDefinitions?.filter((paper) => {
+    const codes = paperCodeVariants(paper.code);
+    if (paperNameAliases(paper.name).some((alias) => {
+      const pattern = alias.split(/\s+/).map(escaped).join("\\s+");
+      return new RegExp(`(?:^|\\b)${pattern}(?:\\b|$)`, "i").test(compact);
+    })) return true;
+    return codes.some((code) => {
+      const safeCode = escaped(code);
+      if (new RegExp(`\\bpaper\\s*${safeCode}\\b`, "i").test(normalized)) return true;
+      if (new RegExp(`\\bp\\s*${safeCode}\\b`, "i").test(normalized)) return true;
+      const subject = escaped(entry.subjectCode.toLowerCase());
+      return new RegExp(`\\b${subject}\\s*[/\\-]\\s*${safeCode}(?:\\d)?\\b`, "i").test(normalized);
+    });
+  }) ?? [];
+  return matches.length === 1 ? matches[0].paperId : null;
+}
+
+function resolveSelectedPaperIds(
+  request: AIChatRequest,
+  entries: KnowledgeManifestEntry[],
+): Array<string | null> {
+  const explicit = request.pageContext.selectedPaperIds.slice(0, 2).map((paperId) => paperId || null);
+  if (entries.length !== 1) return explicit;
+  const entry = entries[0];
+  const valid = new Set(entry.papers);
+  const selected = explicit[0];
+  if (selected && valid.has(selected)) return [selected];
+  for (const message of [...request.messages].reverse()) {
+    if (message.role !== "user") continue;
+    const paperId = resolvePaperIdFromMessage(message.content, entry);
+    if (paperId) return [paperId];
+  }
+  const resolved = request.resolvedContext?.paperIds.find((paperId) => valid.has(paperId));
+  if (resolved) return [resolved];
+  return [null];
 }
 
 export class AIContextBuilder {
@@ -308,6 +387,39 @@ export class AIContextBuilder {
     });
   }
 
+  private paperFactsForSelections(
+    courses: typeof COURSE_CATALOG,
+    entries: KnowledgeManifestEntry[],
+    selectedPaperIds: Array<string | null>,
+  ): AIPaperFact[] {
+    return entries.flatMap((entry, index) => {
+      const course = courses.find((candidate) => candidate.knowledgeTreeCode === entry.code);
+      const overview = course ? overviewForCourse(course) : undefined;
+      const selected = selectedPaperIds[index] ?? null;
+      return (entry.paperDefinitions ?? [])
+        .filter((paper) => !selected || paper.paperId === selected)
+        .map((paper) => {
+          const code = normalizedToken(paper.code);
+          const name = normalizedToken(paper.name);
+          const component = overview?.components.find((candidate) => {
+            const componentCode = normalizedToken(candidate.code);
+            return normalizedToken(candidate.name) === name
+              || componentCode === code
+              || (code.length > 0 && componentCode.endsWith(code));
+          });
+          return {
+            paperId: paper.paperId,
+            code: paper.code,
+            name: paper.name,
+            durationMinutes: component?.durationMinutes,
+            marks: component?.marks,
+            weighting: component?.weighting,
+            calculator: component?.calculator,
+          };
+        });
+    });
+  }
+
   private safeStatementItem(
     item: StatementComparisonV5,
     mapping: KnowledgeMappingV5,
@@ -363,14 +475,24 @@ export class AIContextBuilder {
     if (mappings.length === 1) {
       const paperId = selectedPaperIds[0] ?? null;
       const mapping = mappings[0];
+      const assessableStatements = mapping.statements.filter((statement) => statement.statementType === "assessable-content");
+      const selectedStatements = assessableStatements.filter((statement) => appliesToPaper(statement, paperId));
       const concepts = new Map<string, CanonicalNodeSemanticsV5>();
-      for (const statement of mapping.statements) {
-        if (!appliesToPaper(statement, paperId) || statement.statementType !== "assessable-content") continue;
+      for (const statement of selectedStatements) {
         for (const link of statement.conceptLinks) {
           const semantic = semantics.get(link.nodeId);
-          if (semantic?.comparisonEligible && semantic.reviewStatus === "owner-approved") concepts.set(link.nodeId, semantic);
+          if (semantic?.reviewStatus === "owner-approved") concepts.set(link.nodeId, semantic);
         }
       }
+      const paperCatalog = (entries[0].paperDefinitions ?? []).map((paper) => {
+        const statements = assessableStatements.filter((statement) => appliesToPaper(statement, paper.paperId));
+        return {
+          ...paper,
+          statementCount: statements.length,
+          conceptCount: new Set(statements.flatMap((statement) => statement.conceptLinks.map((link) => link.nodeId))).size,
+          topicHeadings: mapping.board === "AQA" ? undefined : [...new Set(statements.map((statement) => statement.topicHeading).filter(Boolean))],
+        };
+      });
       return {
         mode: "single-qualification",
         activeBatch: manifest.activeBatch,
@@ -384,13 +506,26 @@ export class AIContextBuilder {
           syllabusVersion: mapping.syllabusVersion,
           selectedPaperId: paperId,
           sourceIds: sourceIds.get(mapping.qualificationVersionId),
-          concepts: trimArray([...concepts.values()].map((node) => ({
+          paperCatalog,
+          selectedPaper: paperId ? entries[0].paperDefinitions?.find((paper) => paper.paperId === paperId) : undefined,
+          statements: paperId ? selectedStatements.map((statement) => ({
+            statementId: statement.statementId,
+            sectionId: statement.sectionId,
+            topicHeading: mapping.board === "AQA" ? undefined : statement.topicHeading,
+            statementText: mapping.board === "AQA" ? undefined : statement.statementText,
+            tiers: statement.tiers,
+            routes: statement.routes,
+            conceptLinks: statement.conceptLinks.map((link) => ({ nodeId: link.nodeId, relation: link.relation })),
+          })) : undefined,
+          statementCount: paperId ? selectedStatements.length : undefined,
+          statementsAreExhaustiveForSelectedPaper: Boolean(paperId),
+          concepts: (paperId ? [...concepts.values()] : []).map((node) => ({
             nodeId: node.nodeId,
             definition: node.definition,
             aliases: node.aliases,
             dimension: node.dimension,
             objectScopes: node.objectScopes,
-          })), 72),
+          })),
           aqaOriginalTextPolicy: mapping.board === "AQA" ? "Original AQA wording is intentionally withheld from the model." : undefined,
         },
       };
@@ -454,6 +589,7 @@ export class AIContextBuilder {
         return {
           promptContext: "{}",
           sources: [],
+          paperFacts: [],
           resolvedContext: {
             qualificationIds: courses.map((course) => course.qualificationId).slice(0, 2),
             qualificationCodes: knowledgeEntries.map((entry) => entry.code).slice(0, 2),
@@ -468,8 +604,9 @@ export class AIContextBuilder {
     }
     const sources = createSourceRegistry();
     const overviews = this.addOverviewContext(courses, sources);
-    const selectedPaperIds = request.pageContext.selectedPaperIds.slice(0, 2).map((paperId) => paperId || null);
+    const selectedPaperIds = resolveSelectedPaperIds(request, knowledgeEntries);
     const knowledge = await this.addKnowledgeContext(knowledgeEntries, manifest, selectedPaperIds, sources);
+    const paperFacts = this.paperFactsForSelections(courses, knowledgeEntries, selectedPaperIds);
 
     const resolvedContext: AIResolvedContext = {
       qualificationIds: courses.map((course) => course.qualificationId).slice(0, 2),
@@ -484,6 +621,7 @@ export class AIContextBuilder {
       return {
         promptContext: "{}",
         sources: [],
+        paperFacts: [],
         resolvedContext,
         clarification: request.locale === "en-GB"
           ? "Please choose a course or include an exact qualification code, such as 9709, before asking this question."
@@ -495,6 +633,7 @@ export class AIContextBuilder {
       generatedFor: request.pageContext.pageType,
       sourcePolicy: "Only owner-approved ExamBridge data is included. Source IDs are resolved by the server.",
       examOverviews: overviews,
+      deterministicPaperFacts: paperFacts,
       knowledge,
     });
     let payload = serializePayload();
@@ -512,9 +651,14 @@ export class AIContextBuilder {
       knowledge.truncationNotice = "Lists were reduced to fit the verified assistant context budget. The ExamBridge comparison page remains the exhaustive source.";
       payload = serializePayload();
     }
-    if (payload.length > MAX_PROMPT_CONTEXT_CHARACTERS) {
-      throw new Error(`AI prompt context exceeded ${MAX_PROMPT_CONTEXT_CHARACTERS} characters`);
+    const promptLimit = knowledge && typeof knowledge === "object"
+      && "mode" in knowledge && knowledge.mode === "single-qualification"
+      && selectedPaperIds.some(Boolean)
+      ? MAX_SINGLE_PAPER_CONTEXT_CHARACTERS
+      : MAX_PROMPT_CONTEXT_CHARACTERS;
+    if (payload.length > promptLimit) {
+      throw new Error(`AI prompt context exceeded ${promptLimit} characters`);
     }
-    return { promptContext: payload, sources: sources.list(), resolvedContext };
+    return { promptContext: payload, sources: sources.list(), resolvedContext, paperFacts };
   }
 }

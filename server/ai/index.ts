@@ -7,6 +7,7 @@ import { DeepSeekChatProvider, AIProviderError, ensureAnswerCitations, hydrateCi
 import { AnonymousAIRateLimiter } from "./rate-limit";
 import { AIServiceGuard, createAIServiceGuardFromEnv } from "./service-guard";
 import { buildAISystemPrompt, isComplexAIQuestion } from "./prompt";
+import { enforceDeterministicPaperFacts } from "./answer-grounding";
 
 const PORT = Number(process.env.AI_PORT ?? 8789);
 const HOST = process.env.AI_HOST ?? "127.0.0.1";
@@ -127,6 +128,7 @@ async function handleChat(
   let promptTokens = 0;
   let completionTokens = 0;
   let totalTokens = 0;
+  let paperFactCorrections = 0;
   let reasoningEffort: "none" | "low" | "max" = "none";
   let providerAttempted = false;
   let providerSucceeded = false;
@@ -182,7 +184,9 @@ async function handleChat(
     totalTokens = reportedTotalTokens > 0
       ? reportedTotalTokens
       : Math.ceil((system.length + request.messages.reduce((sum, message) => sum + message.content.length, 0) + result.answer.length) / 4);
-    const answer = ensureAnswerCitations(result.answer, context.sources);
+    const grounded = enforceDeterministicPaperFacts(result.answer, context.paperFacts ?? []);
+    paperFactCorrections = grounded.corrections.length;
+    const answer = ensureAnswerCitations(grounded.answer, context.sources);
     const citations = hydrateCitations(answer, context.sources);
     if (context.sources.length > 0 && citations.length === 0) {
       throw new AIProviderError("DeepSeek answer did not cite an allowed source", "unavailable");
@@ -227,6 +231,7 @@ async function handleChat(
       promptTokens,
       completionTokens,
       totalTokens,
+      paperFactCorrections,
       elapsedMs: Date.now() - startedAt,
     }));
   }

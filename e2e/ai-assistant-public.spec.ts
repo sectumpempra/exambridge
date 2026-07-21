@@ -18,7 +18,7 @@ test.describe("public AI assistant release surface", () => {
     const resolvedContext = {
       qualificationIds: ["qual:caie:a-level:9709"],
       qualificationCodes: ["CAIE-9709"],
-      paperIds: [],
+      paperIds: ["CAIE-9709-Paper-5"],
       labels: ["CAIE 9709 A-Level Mathematics"],
     };
     const source = {
@@ -36,7 +36,9 @@ test.describe("public AI assistant release surface", () => {
       { type: "suggestions", suggestions: ["说明各张 Paper 的区别"] },
       { type: "done", answer, requestId, resolvedContext },
     ];
+    let receivedRequest: { pageContext?: { selectedPaperIds?: string[] } } | undefined;
     await page.route("**/api/ai/chat", async (route) => {
+      receivedRequest = route.request().postDataJSON() as typeof receivedRequest;
       await route.fulfill({
         status: 200,
         contentType: "text/event-stream; charset=utf-8",
@@ -57,9 +59,13 @@ test.describe("public AI assistant release surface", () => {
     await page.getByPlaceholder("搜索考试局、课程名称或代码").fill("9709");
     await page.getByRole("option", { name: /CAIE 9709.*Mathematics/i }).click();
     await expect(page.getByRole("button", { name: /9709.*Mathematics.*更换课程/i })).toBeVisible();
+    const paperSelector = page.getByLabel("限定 AI 回答使用的 Paper");
+    await expect(paperSelector).toBeVisible();
+    await paperSelector.selectOption("CAIE-9709-Paper-5");
     const input = page.getByPlaceholder("输入问题；Shift + Enter 换行");
-    await input.fill("9709 的各张 Paper 可以使用计算器吗？");
+    await input.fill("S1 考哪些知识点？");
     await page.getByRole("button", { name: "发送" }).click();
+    expect(receivedRequest?.pageContext?.selectedPaperIds).toEqual(["CAIE-9709-Paper-5"]);
     await expect(page.getByRole("heading", { name: "结论" })).toBeVisible();
     await expect(page.locator("strong").filter({ hasText: "9709 的各张 Paper" })).toBeVisible();
     await expect(page.getByRole("listitem").filter({ hasText: "考生须遵守具体型号规定" })).toBeVisible();
