@@ -28,12 +28,13 @@ test.describe("public AI assistant release surface", () => {
       dataVersion: "2026-2027",
     };
     const requestId = "0f68f250-fbf8-4745-a830-18fca8b5cc4c";
+    const answer = "## 结论\n\n**9709 的各张 Paper** 均允许使用符合规定的计算器 [S1]。\n\n- 考生须遵守具体型号规定。";
     const events = [
       { type: "meta", requestId, resolvedContext },
-      { type: "delta", text: "9709 的各张 Paper 均允许使用符合规定的计算器 [S1]。" },
+      { type: "delta", text: answer },
       { type: "citations", citations: [source] },
       { type: "suggestions", suggestions: ["说明各张 Paper 的区别"] },
-      { type: "done", answer: "9709 的各张 Paper 均允许使用符合规定的计算器 [S1]。", requestId, resolvedContext },
+      { type: "done", answer, requestId, resolvedContext },
     ];
     await page.route("**/api/ai/chat", async (route) => {
       await route.fulfill({
@@ -49,11 +50,36 @@ test.describe("public AI assistant release surface", () => {
     await expect(page.getByRole("heading", { level: 1, name: "先核对资料，再解释答案" })).toBeVisible();
     await expect(page.getByText(/会发送给 DeepSeek 生成回答/)).toBeVisible();
     await expect(page.getByText(/不会发送官方 PDF、API 密钥或个人账号资料/)).toBeVisible();
+    const courseSwitcher = page.getByRole("button", { name: /选择课程/ });
+    await expect(courseSwitcher).toBeVisible();
+    await courseSwitcher.click();
+    await expect(page.getByRole("dialog", { name: "更换 AI 助手课程" })).toBeVisible();
+    await page.getByPlaceholder("搜索考试局、课程名称或代码").fill("9709");
+    await page.getByRole("option", { name: /CAIE 9709.*Mathematics/i }).click();
+    await expect(page.getByRole("button", { name: /9709.*Mathematics.*更换课程/i })).toBeVisible();
     const input = page.getByPlaceholder("输入问题；Shift + Enter 换行");
     await input.fill("9709 的各张 Paper 可以使用计算器吗？");
     await page.getByRole("button", { name: "发送" }).click();
-    await expect(page.getByText("9709 的各张 Paper 均允许使用符合规定的计算器 [S1]。")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "结论" })).toBeVisible();
+    await expect(page.locator("strong").filter({ hasText: "9709 的各张 Paper" })).toBeVisible();
+    await expect(page.getByRole("listitem").filter({ hasText: "考生须遵守具体型号规定" })).toBeVisible();
+    await expect(page.getByText("**9709 的各张 Paper**", { exact: true })).toHaveCount(0);
     await expect(page.getByRole("link", { name: /\[S1\].*9709/ })).toHaveAttribute("href", source.url);
     await expect(page.getByRole("button", { name: "清空对话" })).toBeEnabled();
+  });
+
+  test("keeps the course switcher usable without page overflow at 390px", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/#/ai-assistant");
+    await waitForPwaControl(page);
+    await page.getByRole("button", { name: /选择课程/ }).click();
+    await expect(page.getByRole("dialog", { name: "更换 AI 助手课程" })).toBeVisible();
+    await expect(page.getByPlaceholder("搜索考试局、课程名称或代码")).toBeVisible();
+    const overflow = await page.evaluate(() => ({
+      body: document.body.scrollWidth - document.body.clientWidth,
+      document: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    }));
+    expect(overflow.body).toBeLessThanOrEqual(1);
+    expect(overflow.document).toBeLessThanOrEqual(1);
   });
 });

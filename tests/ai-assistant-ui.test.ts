@@ -36,5 +36,6 @@ describe("AI assistant internal-preview UI", () => {
     expect(html).toContain("不会发送官方 PDF、API 密钥或个人账号资料");
     expect(html).toContain("输入问题；Shift + Enter 换行");
     expect(html).toContain("对话仅保存在当前浏览器标签页");
+    expect(html).toContain("选择课程");
   });
 });

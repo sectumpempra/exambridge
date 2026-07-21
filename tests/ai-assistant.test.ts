@@ -375,6 +375,21 @@ describe("AI assistant provider boundaries", () => {
     if (globalFirst.allowed) globalFirst.release();
   });
 
+  it("allows 20 accepted requests per IP in the default five-minute window", () => {
+    const limiter = new AnonymousAIRateLimiter();
+    const now = Date.UTC(2026, 6, 21, 0, 0, 0);
+    for (let index = 0; index < 20; index += 1) {
+      const decision = limiter.acquire("203.0.113.20", now);
+      expect(decision.allowed).toBe(true);
+      if (decision.allowed) decision.release();
+    }
+    expect(limiter.acquire("203.0.113.20", now)).toMatchObject({
+      allowed: false,
+      reason: "rate-limited",
+      retryAfterSeconds: 300,
+    });
+  });
+
   it("enforces daily request and token ceilings with a UTC reset", () => {
     const start = Date.UTC(2026, 6, 21, 12);
     const requestGuard = new AIServiceGuard(2, 1_000, 5, 60_000);

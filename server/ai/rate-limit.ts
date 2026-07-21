@@ -10,7 +10,7 @@ export class AnonymousAIRateLimiter {
   private lastSweep = 0;
 
   constructor(
-    private readonly requestLimit = 10,
+    private readonly requestLimit = 20,
     private readonly windowMs = 5 * 60_000,
     private readonly perIpConcurrent = 2,
     private readonly globalConcurrent = 20,
