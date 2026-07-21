@@ -262,6 +262,51 @@ function buildLocalAqaAnswer(
       : `本地已核验范围：${qualification?.selectedPaper?.name ?? "当前资格"}；共 ${qualification?.statementCount ?? qualification?.paperCatalog?.length ?? 0} 条映射记录。`);
   }
   for (const call of academic?.calls ?? []) {
+    if (["explain_qualification_rule", "compare_qualification_rules"].includes(call.name) && call.status === "ok" && Array.isArray(call.result)) {
+      for (const record of call.result as Array<{
+        subjectCode?: string;
+        routeId?: string;
+        routeType?: string;
+        scoringSystem?: string;
+        validCombinations?: Array<{ awardLevel?: string; componentCodes?: string[] }>;
+        totalMaximumAwardMark?: number;
+        gradeScale?: string[];
+        roundingRule?: string;
+        resitRule?: { allowed?: boolean; selectionMethod?: string; notes?: string[] };
+        carryForwardRule?: { allowed?: boolean; maximumMonths?: number; unit?: string; notes?: string[] };
+        cashInRule?: { required?: boolean; entryCode?: string; notes?: string[] };
+        unitLockingRule?: { lockedAfterCashIn?: boolean; unlockAllowed?: boolean; notes?: string[] };
+        aStarRule?: { available?: boolean; ruleKind?: string; notes?: string[] };
+        effectiveFrom?: string;
+        effectiveTo?: string;
+        sourceIds?: string[];
+      }>) {
+        const combinations = record.validCombinations?.map(combination =>
+          `${combination.awardLevel ?? "Award"}: ${(combination.componentCodes ?? []).join(" + ")}`,
+        ).join("；") ?? "—";
+        const markers = record.sourceIds?.map(sourceId => `[${sourceId}]`).join("") ?? "";
+        if (locale === "en-GB") {
+          lines.push([
+            `Verified award rule (${record.subjectCode ?? "AQA"} · ${record.routeType ?? "route"})${markers}`,
+            `Valid combination(s): ${combinations}.`,
+            `Scale: ${record.scoringSystem ?? "—"}; maximum award mark ${record.totalMaximumAwardMark ?? "—"}; grades ${(record.gradeScale ?? []).join("–") || "—"}; rounding ${record.roundingRule ?? "—"}.`,
+            `Resit: ${record.resitRule?.allowed ? "allowed as a complete award entry" : "not allowed"}${record.resitRule?.selectionMethod ? ` (${record.resitRule.selectionMethod})` : ""}.`,
+            `A*: ${record.aStarRule?.available ? `available under ${record.aStarRule.ruleKind ?? "the official overall rule"}` : "not available"}.`,
+            `Effective: ${record.effectiveFrom ?? "—"}${record.effectiveTo ? ` to ${record.effectiveTo}` : " onward"}.`,
+          ].join("\n"));
+        } else {
+          lines.push([
+            `已核验合分规则（${record.subjectCode ?? "AQA"} · ${record.routeType ?? "当前路线"}）${markers}`,
+            `有效组合：${combinations}。`,
+            `计分：${record.scoringSystem ?? "—"}；资格总满分 ${record.totalMaximumAwardMark ?? "—"}；等级 ${(record.gradeScale ?? []).join("、") || "—"}；舍入规则 ${record.roundingRule ?? "—"}。`,
+            `重考：${record.resitRule?.allowed ? "允许，但线性资格须作为完整资格入口参加" : "不允许"}${record.resitRule?.selectionMethod ? `（${record.resitRule.selectionMethod}）` : ""}。`,
+            `A*：${record.aStarRule?.available ? `可获得，按 ${record.aStarRule.ruleKind ?? "官方整体资格规则"} 判定` : "不设 A*"}。`,
+            `适用期：${record.effectiveFrom ?? "—"}${record.effectiveTo ? ` 至 ${record.effectiveTo}` : " 起"}。`,
+          ].join("\n"));
+        }
+      }
+      continue;
+    }
     if (call.name === "lookup_misconception" && call.status === "ok" && Array.isArray(call.result)) {
       for (const record of call.result as Array<{ correctedFact?: string; applicabilityNotes?: string[]; sourceIds?: string[] }>) {
         if (record.correctedFact) lines.push(`${record.correctedFact}${record.sourceIds?.map(sourceId => `[${sourceId}]`).join("") ?? ""}`);

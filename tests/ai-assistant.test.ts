@@ -205,6 +205,20 @@ describe("AI required input resolver", () => {
   });
 });
 
+describe("AQA deterministic answer detail", () => {
+  it("renders verified award-rule facts instead of only reporting a tool status", async () => {
+    const result = await new AIContextBuilder().build(request({
+      messages: [{ role: "user", content: "AQA 7357 的合分规则是什么？" }],
+    }));
+
+    expect(result.localAnswer).toContain("已核验合分规则（7357 · linear）");
+    expect(result.localAnswer).toContain("7357/1 + 7357/2 + 7357/3");
+    expect(result.localAnswer).toContain("资格总满分 300");
+    expect(result.localAnswer).toContain("A*：可获得");
+    expect(result.localAnswer).not.toContain("explain_qualification_rule：ok");
+  });
+});
+
 describe("AI assistant context builder", () => {
   const builder = new AIContextBuilder(process.cwd());
 
