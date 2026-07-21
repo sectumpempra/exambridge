@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import candidate from "../data/candidates/academic-results-v2/migration-candidate.json";
 import report from "../generated/academic-results-v2/migration-report.json";
+import pearsonReview from "../data/candidates/academic-results-v2/pearson-8ma0-statistics-review.json";
+import pearsonReviewUsage from "../generated/academic-results-v2/pearson-8ma0-statistics-review-usage.json";
 import {
   GradeBoundaryV2Schema,
   GradeStatisticsV2Schema,
@@ -51,6 +53,31 @@ describe("Academic Results V2 migration candidate", () => {
     expect(rows.find(row => row.awardQualificationId.endsWith("ial-further-mathematics") && row.year === 2026)?.gradeRates).toEqual({
       "A*": 47.7, A: 69.2, B: 81.3, C: 88.2, D: 92.9, E: 96.1,
     });
+  });
+
+  it("uses row-level Pearson 8MA0 evidence and never treats zero as a missing A-star grade", () => {
+    const rows = candidate.statistics.filter(row => row.awardQualificationId === "award:pearson:8ma0");
+    const reviewed = rows.filter(row => row.verificationStatus === "codex-reviewed");
+    expect(reviewed.map(row => row.year)).toEqual([2019, 2022, 2023, 2024]);
+    expect(reviewed.every(row => row.sourceIds.length === 1 && row.rateKind === "cumulative")).toBe(true);
+    expect(reviewed.find(row => row.year === 2019)).toMatchObject({
+      candidateCount: 9878,
+      gradeRates: { A: 24.7, B: 37.2, C: 51.2, D: 65.9, E: 79.3 },
+    });
+    expect(rows.every(row => !row.gradeOrder.includes("A*") && !Object.hasOwn(row.gradeRates, "A*"))).toBe(true);
+  });
+
+  it("keeps the 8MA0 machine review candidate-only with complete retry usage", () => {
+    expect(pearsonReview).toMatchObject({
+      reviewStatus: "machine-reviewed",
+      provider: "deepseek",
+      requestedModel: "deepseek-v4-pro",
+      returnedModel: "deepseek-v4-pro",
+    });
+    expect(pearsonReview.codexAdjudication.acceptedYears).toEqual([2019, 2022, 2023, 2024]);
+    expect(pearsonReviewUsage.usage.map(entry => entry.status)).toEqual(["invalid-json", "invalid-json", "success"]);
+    expect(pearsonReviewUsage.usage.every(entry => entry.provider === "deepseek" && entry.returnedModel === "deepseek-v4-pro")).toBe(true);
+    expect(pearsonReviewUsage.totals.totalTokens).toBe(14213);
   });
 
   it("preserves raw values whenever normalization occurred", () => {

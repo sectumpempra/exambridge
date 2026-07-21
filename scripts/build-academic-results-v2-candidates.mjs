@@ -388,13 +388,92 @@ for (const document of pearsonIalOfficialStatistics) {
   }
 }
 
+const pearson8ma0OfficialStatistics = [
+  {
+    year: 2019,
+    candidateCount: 9878,
+    rates: [24.7, 37.2, 51.2, 65.9, 79.3],
+    officialUrl: "https://qualifications.pearson.com/content/dam/pdf/Support/Grade-statistics/A-level/grade-statistics-june-2019-final-a-level-advanced-subsidiary.PDF",
+    documentTitle: "Grade Statistics - June 2019 (Final) - Advanced Subsidiary Level",
+    sourceDocumentHash: "0e5912386dd4733fe85377745db99ca9884a200978ec660f6fc32c3d99b22d45",
+    pdfPage: 30,
+  },
+  {
+    year: 2022,
+    candidateCount: 5538,
+    rates: [29.6, 42.8, 57.5, 72.3, 83.9],
+    officialUrl: "https://qualifications.pearson.com/content/dam/pdf/Support/Grade-statistics/A-level/grade-statistics-june-2022-final-advanced-subsidiary-level.pdf",
+    documentTitle: "Grade Statistics - June 2022 (Final) Advanced Subsidiary Level",
+    sourceDocumentHash: "58120aaa7257f90e70fe1d62aed083b198a7eee7047c9b84e54f3cafbc6a6220",
+    pdfPage: 13,
+  },
+  {
+    year: 2023,
+    candidateCount: 5509,
+    rates: [26.9, 38.7, 52.2, 65.4, 76.8],
+    officialUrl: "https://qualifications.pearson.com/content/dam/pdf/Support/Grade-statistics/A-level/grade-statistics-june-2023-final-advanced-subsidiary-level.pdf",
+    documentTitle: "Grade Statistics - June 2023 (Final) Advanced Subsidiary Level",
+    sourceDocumentHash: "c01ee7310574e05668abe39aad83e4e760bf4b40d6f33abfe93857fd31b968c8",
+    pdfPage: 13,
+  },
+  {
+    year: 2024,
+    candidateCount: 5685,
+    rates: [27.0, 38.8, 52.3, 64.2, 76.2],
+    officialUrl: "https://qualifications.pearson.com/content/dam/pdf/Support/Grade-statistics/A-level/grade-statistics-june-2024-final-advanced-subsidiary-level.pdf",
+    documentTitle: "Grade Statistics - June 2024 (Final) Advanced Subsidiary Level",
+    sourceDocumentHash: "d30d4ad5a5ec95d1a586090993ddd3b9f21b0fc82c17c73c0e2dad58042b2a58",
+    pdfPage: 13,
+  },
+];
+for (const document of pearson8ma0OfficialStatistics) {
+  const awardQualificationId = "award:pearson:8ma0";
+  const qualification = qualifications.get(awardQualificationId);
+  const sourceId = addSource({
+    sourceId: `source:pearson-8ma0-grade-statistics-${document.year}-june`,
+    board: "Pearson",
+    officialUrl: document.officialUrl,
+    documentTitle: document.documentTitle,
+    accessedAt: "2026-07-21",
+    printedPage: document.pdfPage,
+    pdfPage: document.pdfPage,
+    tableName: "Cumulative number of candidates at specified grades and percentages",
+    sourceRowId: `PEARSON-${document.year}-JUNE-8MA0-ALL-CANDIDATES`,
+    sourceDocumentHash: document.sourceDocumentHash,
+    effectiveFrom: `${document.year}-06-01`,
+    verificationStatus: "codex-reviewed",
+  });
+  directOfficialStatistics.push({
+    qualification,
+    awardQualificationId,
+    subject: { code: "8MA0" },
+    year: {
+      year: document.year,
+      series: "june",
+      entries: document.candidateCount,
+      aRate: document.rates[0],
+      bRate: document.rates[1],
+      cRate: document.rates[2],
+      dRate: document.rates[3],
+      eRate: document.rates[4],
+    },
+    sourceIds: [sourceId],
+    verificationStatus: "codex-reviewed",
+    publicationStatus: "final",
+  });
+}
+
 const gradeFields = [
   ["A*", "aStarRate"], ["A", "aRate"], ["B", "bRate"], ["C", "cRate"], ["D", "dRate"], ["E", "eRate"],
   ["9", "grade9Rate"], ["8", "grade8Rate"], ["7", "grade7Rate"], ["6", "grade6Rate"], ["5", "grade5Rate"], ["4", "grade4Rate"], ["3", "grade3Rate"], ["2", "grade2Rate"], ["1", "grade1Rate"],
 ];
 
-function toStatistics({ qualification, awardQualificationId, year, sourceIds, verificationStatus, publicationStatus }) {
-  const preferred = year.grade9Rate === undefined ? gradeFields.slice(0, 6) : gradeFields.slice(6);
+function toStatistics({ qualification, awardQualificationId, subject, year, sourceIds, verificationStatus, publicationStatus }) {
+  const preferred = year.grade9Rate !== undefined
+    ? gradeFields.slice(6)
+    : subject.code === "8MA0"
+      ? gradeFields.slice(1, 6)
+      : gradeFields.slice(0, 6);
   const gradeOrder = preferred.filter(([, field]) => year[field] !== undefined).map(([grade]) => grade);
   const gradeRates = Object.fromEntries(preferred.filter(([, field]) => year[field] !== undefined).map(([grade, field]) => [grade, year[field]]));
   const rawGradeRates = year.rawGradeRates
