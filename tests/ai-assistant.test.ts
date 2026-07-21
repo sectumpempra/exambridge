@@ -691,6 +691,7 @@ describe("AI assistant HTTP/SSE boundary", () => {
       },
       provider,
       webSearch,
+      externalSearchEnabled: true,
       limiter: new AnonymousAIRateLimiter(),
       serviceGuard: {
         beginProviderRequest: vi.fn().mockReturnValue({ allowed: true }),

@@ -20,6 +20,8 @@ export interface AIHttpServerDependencies {
   limiter: Pick<AnonymousAIRateLimiter, "acquire">;
   serviceGuard: Pick<AIServiceGuard, "beginProviderRequest" | "recordProviderSuccess" | "recordProviderFailure">;
   webSearch?: Pick<OpenAIWebSearchProvider, "isConfigured" | "search">;
+  externalSearchEnabled?: boolean;
+  boundaryPredictionEnabled?: boolean;
 }
 
 function latestUserMessage(request: ReturnType<typeof AIChatRequestSchema.parse>) {
@@ -175,7 +177,24 @@ async function handleChat(
   let providerAttempted = false;
   let providerSucceeded = false;
   try {
-    const request = { ...parsed.data, messages: pruneAIChatHistory(parsed.data.messages) };
+    const request = {
+      ...parsed.data,
+      messages: pruneAIChatHistory(parsed.data.messages),
+      featureConsent: {
+        externalSearch: {
+          enabled: dependencies.externalSearchEnabled === true
+            && parsed.data.featureConsent?.externalSearch?.enabled === true,
+        },
+        boundaryPrediction: {
+          enabled: dependencies.boundaryPredictionEnabled === true
+            && parsed.data.featureConsent?.boundaryPrediction?.enabled === true,
+          ...(dependencies.boundaryPredictionEnabled === true
+            && parsed.data.featureConsent?.boundaryPrediction?.disclaimerVersion
+            ? { disclaimerVersion: parsed.data.featureConsent.boundaryPrediction.disclaimerVersion }
+            : {}),
+        },
+      },
+    };
     const context = await builder.build(request);
     let promptContext = context.promptContext;
     const sources = [...context.sources];
@@ -203,6 +222,7 @@ async function handleChat(
     if (
       externalSearchEnabled
       && !context.containsAqa
+      && dependencies.externalSearchEnabled === true
       && context.externalSearchIdentity
       && (externalSearchRequested || internalDataMissing)
     ) {
@@ -336,6 +356,8 @@ export function createAIHttpServer(overrides: Partial<AIHttpServerDependencies> 
     limiter: overrides.limiter ?? new AnonymousAIRateLimiter(),
     serviceGuard: overrides.serviceGuard ?? createAIServiceGuardFromEnv(),
     webSearch: overrides.webSearch ?? new OpenAIWebSearchProvider(),
+    externalSearchEnabled: overrides.externalSearchEnabled ?? process.env.AI_EXTERNAL_SEARCH_ENABLED === "true",
+    boundaryPredictionEnabled: overrides.boundaryPredictionEnabled ?? process.env.AI_BOUNDARY_PREDICTION_ENABLED === "true",
   };
   return createServer(async (req, res) => {
     const url = new URL(req.url ?? "/", `http://${req.headers.host ?? "localhost"}`);

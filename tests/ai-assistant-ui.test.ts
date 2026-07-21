@@ -40,6 +40,8 @@ describe("AI assistant internal-preview UI", () => {
     expect(html).toContain("选择课程");
     expect(html).toContain("检索范围");
     expect(html).toContain("团队视图");
+    expect(html).not.toContain("内部数据不足时允许检索官方网页");
+    expect(html).not.toContain("允许回答非官方预测分数线");
   });
 
   it("migrates a V1 conversation only inside the current session payload", () => {

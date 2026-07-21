@@ -14,7 +14,6 @@ import {
 } from "@/domain-v2/ai-assistant";
 import { cn } from "@/lib/utils";
 import AIMessageMarkdown from "./AIMessageMarkdown";
-import { BOUNDARY_PREDICTION_DISCLAIMER_VERSION } from "@/domain-v2/academic-results";
 
 type DisplayMessage = AIChatMessage & {
   id: string;
@@ -137,8 +136,6 @@ export default function AIChatPanel({
   const [generating, setGenerating] = useState(false);
   const [suggestions, setSuggestions] = useState(DEFAULT_SUGGESTIONS);
   const [serviceError, setServiceError] = useState<string | null>(null);
-  const [externalSearchEnabled, setExternalSearchEnabled] = useState(false);
-  const [boundaryPredictionEnabled, setBoundaryPredictionEnabled] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
   const endRef = useRef<HTMLDivElement | null>(null);
 
@@ -233,11 +230,8 @@ export default function AIChatPanel({
           locale: /^en\b/i.test(navigator.language) ? "en-GB" : "zh-CN",
           resolvedContext,
           featureConsent: {
-            externalSearch: { enabled: externalSearchEnabled },
-            boundaryPrediction: {
-              enabled: boundaryPredictionEnabled,
-              ...(boundaryPredictionEnabled ? { disclaimerVersion: BOUNDARY_PREDICTION_DISCLAIMER_VERSION } : {}),
-            },
+            externalSearch: { enabled: false },
+            boundaryPrediction: { enabled: false },
           },
         }),
         signal: controller.signal,
@@ -305,14 +299,6 @@ export default function AIChatPanel({
             : <span className="rounded-full border border-dashed border-[#bfc9c7] px-2 py-1">全部资格</span>}
           <label className="ml-auto inline-flex items-center gap-1.5"><span>团队视图</span><select value={roleView} onChange={event => setRoleView(event.target.value as StoredSession["roleView"])} className="rounded-md border border-[#cbd5d4] bg-white px-1.5 py-1" aria-label="选择团队视图"><option value="teaching">教学</option><option value="consulting">课程顾问</option><option value="sales">销售顾问</option><option value="operations">学管/运营</option></select></label>
         </div>
-        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-[#625c54]">
-          <label className="inline-flex items-center gap-1.5"><input type="checkbox" checked={externalSearchEnabled} onChange={event => setExternalSearchEnabled(event.target.checked)} />内部数据不足时允许检索官方网页</label>
-          <label className="inline-flex items-center gap-1.5"><input type="checkbox" checked={boundaryPredictionEnabled} onChange={event => {
-            if (!event.target.checked) { setBoundaryPredictionEnabled(false); return; }
-            const accepted = window.confirm("分数线预测是非官方统计估计，可能与最终官方结果明显不同，不能用于成绩承诺。是否继续开启？");
-            setBoundaryPredictionEnabled(accepted);
-          }} />允许回答非官方预测分数线</label>
-        </div>
       </header>
 
       <div className="min-h-0 flex-1 overflow-y-auto px-4 py-5 sm:px-5" aria-live="polite">
@@ -340,7 +326,7 @@ export default function AIChatPanel({
           <Textarea value={input} onChange={(event) => setInput(event.target.value.slice(0, 2_000))} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }} placeholder="输入问题；Shift + Enter 换行" aria-label="向 ExamBridge AI 提问" className="max-h-48 min-h-[92px] resize-none border-0 bg-transparent px-2 py-2.5 shadow-none focus-visible:ring-0" disabled={generating} />
           {generating ? <Button type="button" onClick={() => abortRef.current?.abort()} className="mb-0.5 shrink-0 bg-[#8b655c] hover:bg-[#76544c]"><CircleStop size={16} />停止</Button> : <Button type="button" onClick={() => void send()} disabled={!input.trim() || input.length > 2_000} className="mb-0.5 shrink-0 bg-[#253b46] hover:bg-[#344f5b]"><Send size={16} />发送</Button>}
         </div>
-        <div className="mt-1.5 flex items-center justify-between gap-3 px-1 text-[10px] text-[#625c54]"><span>对话仅保存在当前浏览器标签页；生成时会发送至 DeepSeek</span><span className={cn("shrink-0", input.length > 1_900 && "font-semibold text-[#8a5c4d]")}>{input.length}/2000</span></div>
+        <div className="mt-1.5 flex items-center justify-between gap-3 px-1 text-[10px] text-[#625c54]"><span>对话仅保存在当前浏览器标签页；AQA 本地处理，其他问题只发送筛选后的已核验上下文</span><span className={cn("shrink-0", input.length > 1_900 && "font-semibold text-[#8a5c4d]")}>{input.length}/2000</span></div>
       </footer>
     </section>
   );
