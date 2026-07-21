@@ -14,15 +14,20 @@ import { AIServiceGuard, createAIServiceGuardFromEnv } from "../server/ai/servic
 import { AIProviderError, DeepSeekChatProvider, ensureAnswerCitations, hydrateCitations } from "../server/ai/provider";
 import { isComplexAIQuestion } from "../server/ai/prompt";
 import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai";
+import { detectQualificationAmbiguity, resolveApprovedQualificationAliases } from "../server/ai/qualification-resolver";
+import { detectRequiredInputClarification } from "../server/ai/required-input-resolver";
 
 function request(overrides: Partial<AIChatRequest> = {}): AIChatRequest {
   return {
+    version: 2,
     mode: "exam_assistant",
+    scopes: [],
     qualificationIds: [],
     syllabusVersions: [],
     pageContext: { pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [], comparisonIds: [] },
     messages: [{ role: "user", content: "9709 可以使用计算器吗？" }],
     locale: "zh-CN",
+    roleView: "consulting",
     ...overrides,
   };
 }
@@ -38,7 +43,7 @@ function parseSSE(body: string): Array<Record<string, unknown>> {
 describe("AI assistant request and history safety", () => {
   it("rejects oversized messages, excessive courses, and unknown modes", () => {
     expect(AIChatRequestSchema.safeParse({ ...request(), messages: [{ role: "user", content: "x".repeat(2_001) }] }).success).toBe(false);
-    expect(AIChatRequestSchema.safeParse({ ...request(), qualificationIds: ["a", "b", "c"] }).success).toBe(false);
+    expect(AIChatRequestSchema.safeParse({ ...request(), qualificationIds: ["a", "b", "c", "d", "e"] }).success).toBe(false);
     expect(AIChatRequestSchema.safeParse({ ...request(), mode: "advisor_consult" }).success).toBe(false);
   });
 
@@ -54,6 +59,152 @@ describe("AI assistant request and history safety", () => {
   });
 });
 
+describe("AI qualification ambiguity resolver", () => {
+  it("asks one focused question for generic IG, A Level and Pearson mathematics labels", () => {
+    expect(detectQualificationAmbiguity("IG数学的分数线是什么？")?.ambiguityClass).toBe("generic-igcse-mathematics");
+    expect(detectQualificationAmbiguity("A Level数学怎么合分？")?.ambiguityClass).toBe("generic-a-level-mathematics");
+    expect(detectQualificationAmbiguity("Edexcel数学怎么选课？")?.ambiguityClass).toBe("pearson-route");
+  });
+
+  it("does not override an exact qualification code", () => {
+    expect(detectQualificationAmbiguity("比较IG数学0580和A Level数学9709")).toBeUndefined();
+    expect(detectQualificationAmbiguity("Pearson 8MA0怎么合分？")).toBeUndefined();
+  });
+
+  it("resolves only owner-approved aliases and keeps candidate identities isolated", () => {
+    const base = {
+      schemaVersion: "2.0.0" as const,
+      awardQualificationId: "award:caie:0580",
+      board: "CAIE",
+      subjectCode: "0580",
+      subjectName: "Cambridge IGCSE Mathematics",
+      level: "IGCSE",
+      catalogQualificationIds: ["qual:caie:igcse:0580"],
+      knowledgeMappingCodes: ["CAIE-0580"],
+      qualificationVersions: [{ qualificationVersionId: "CAIE-0580:2025-2027", effectiveFrom: "2025-01-01", isCurrent: true }],
+      aliases: ["0580", "剑桥IGCSE数学"],
+      sourceIds: ["source-1"],
+      processingPolicy: "deepseek-candidate" as const,
+    };
+    expect(resolveApprovedQualificationAliases("剑桥IGCSE数学考什么？", [{ ...base, reviewStatus: "candidate" }])).toEqual([]);
+    expect(resolveApprovedQualificationAliases("剑桥IGCSE数学考什么？", [{ ...base, reviewStatus: "owner-approved" }]))
+      .toEqual([expect.objectContaining({ awardQualificationId: "award:caie:0580" })]);
+  });
+});
+
+describe("AI required input resolver", () => {
+  it("collects all missing boundary dimensions in one clarification", () => {
+    const result = detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "0580 的分数线是多少？" }],
+    }), ["award:caie:0580"]);
+    expect(result).toMatchObject({ kind: "boundary-lookup" });
+    expect(result?.missing).toEqual(expect.arrayContaining(["年份", "考季", "Core 或 Extended", "官方 option（例如 AX/BX）"]));
+  });
+
+  it("does not turn a general rule explanation into a score collection form", () => {
+    expect(detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "9709 的合分规则是什么？" }],
+    }), ["award:caie:9709"])).toBeUndefined();
+  });
+
+  it("requests score types and Pearson cash-in history for a concrete IAL calculation", () => {
+    const result = detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "请帮我算 Pearson IAL Mathematics 的最终等级" }],
+    }), ["award:pearson:ial-mathematics"]);
+    expect(result?.missing).toEqual(expect.arrayContaining([
+      "route 和有效组件组合",
+      "每项分数及其类型（raw、scaled、UMS 或 PUM）",
+      "cash-in 以及重考/locking 历史",
+    ]));
+  });
+
+  it("accepts a fully specified 0580 boundary request and recognises Chinese series wording", () => {
+    expect(detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "请查 2025 年 5/6 月 0580 Extended option AX 的具体分数线" }],
+    }), ["award:caie:0580"])).toBeUndefined();
+  });
+
+  it("collects English qualification, year and series fields when no course was resolved", () => {
+    const result = detectRequiredInputClarification(request({
+      locale: "en-GB",
+      messages: [{ role: "user", content: "What is the grade boundary?" }],
+    }), []);
+    expect(result).toMatchObject({
+      kind: "boundary-lookup",
+      missing: ["the exact qualification code", "year", "exam series"],
+    });
+    expect(result?.clarification).toContain("To verify this grade boundary");
+  });
+
+  it("asks for the qualification-specific tier or route without repeating supplied dimensions", () => {
+    const pearson = detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "查询 2024 年十一月 4MA1 的分数线" }],
+    }), ["award:pearson:4ma1"]);
+    expect(pearson?.missing).toEqual(["Foundation 或 Higher"]);
+
+    const cambridge = detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "查一下 2025 June 9709 threshold" }],
+    }), ["award:caie:9709"]);
+    expect(cambridge?.missing).toEqual(["AS、同考季完整 A Level 或 staged route"]);
+
+    expect(detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "查一下 2025 June 9231 staged A Level threshold" }],
+    }), ["award:caie:9231"])).toBeUndefined();
+  });
+
+  it("produces the English calculation checklist and skips it once structured scores exist", () => {
+    const result = detectRequiredInputClarification(request({
+      locale: "en-GB",
+      messages: [{ role: "user", content: "Calculate my final award grade" }],
+    }), []);
+    expect(result).toMatchObject({ kind: "award-calculation" });
+    expect(result?.missing).toEqual([
+      "the exact qualification code and version",
+      "route and valid component combination",
+      "exam series for every component",
+      "every score and whether it is raw, scaled, UMS or PUM",
+    ]);
+    expect(result?.clarification).toContain("To calculate the qualification award");
+
+    expect(detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "请帮我算最终等级" }],
+      academicQuery: {
+        type: "award-calculation",
+        awardQualificationId: "award:ocr:6993",
+        ruleId: "rule:ocr:6993:linear:2024",
+        routeId: "award:ocr:6993:linear",
+        targetSeries: "2025-june",
+        combinationId: "linear",
+        componentScores: [{ componentCode: "01", series: "2025-june", rawMark: 80 }],
+      },
+    }), ["award:ocr:6993"])).toBeUndefined();
+  });
+
+  it("asks once for incomplete carry-forward facts and accepts a complete AS route", () => {
+    const zhResult = detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "这个 carry-forward 可以吗？" }],
+    }), []);
+    expect(zhResult).toMatchObject({
+      kind: "carry-forward-eligibility",
+      missing: ["准确资格代码及版本", "原考季和目标考季", "完整 AS route/组件组合"],
+    });
+
+    const enResult = detectRequiredInputClarification(request({
+      locale: "en-GB",
+      messages: [{ role: "user", content: "Can my 9709 carry-forward be valid?" }],
+    }), ["award:caie:9709"]);
+    expect(enResult?.missing).toEqual([
+      "the original and target exam series",
+      "the complete AS route/component combination",
+    ]);
+    expect(enResult?.clarification).toContain("To determine whether this carry-forward is valid");
+
+    expect(detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "9709 AS 2024 June carry-forward 到 2025 June 可以吗？" }],
+    }), ["award:caie:9709"])).toBeUndefined();
+  });
+});
+
 describe("AI assistant context builder", () => {
   const builder = new AIContextBuilder(process.cwd());
 
@@ -63,6 +214,34 @@ describe("AI assistant context builder", () => {
     expect(result.resolvedContext.qualificationCodes).toContain("CAIE-9709");
     expect(result.promptContext).toContain("CAIE-9709");
     expect(result.sources.length).toBeGreaterThan(0);
+  });
+
+  it("lets explicit question qualifications replace conflicting page context", async () => {
+    const result = await builder.build(request({
+      scopes: [{
+        awardQualificationIds: ["award:aqa:7357"],
+        qualificationVersionIds: ["AQA-7357:1.3"],
+        catalogQualificationIds: ["qual:aqa:a-level:7357"],
+        source: "page-context",
+      }],
+      qualificationIds: ["qual:aqa:a-level:7357"],
+      pageContext: { pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [], comparisonIds: ["AQA-7357"] },
+      messages: [{ role: "user", content: "比较 9709 和 9231 的考试结构" }],
+    }));
+    expect(result.resolvedContext.qualificationCodes).toEqual(["CAIE-9709", "CAIE-9231"]);
+    expect(result.resolvedContext.awardQualificationIds).toEqual(["award:caie:9709", "award:caie:9231"]);
+    expect(result.resolvedContext.qualificationCodes).not.toContain("AQA-7357");
+  });
+
+  it("supports three-qualification fact context without inventing a multi-way knowledge percentage", async () => {
+    const result = await builder.build(request({
+      messages: [{ role: "user", content: "比较 0580、9709 和 9231 的考试结构" }],
+    }));
+    const payload = JSON.parse(result.promptContext) as { knowledge: { mode: string; selections: unknown[]; knowledgeComparisonPolicy: string } };
+    expect(result.resolvedContext.qualificationCodes).toEqual(["CAIE-0580", "CAIE-9709", "CAIE-9231"]);
+    expect(payload.knowledge.mode).toBe("multi-qualification-overview");
+    expect(payload.knowledge.selections).toHaveLength(3);
+    expect(payload.knowledge.knowledgeComparisonPolicy).toContain("pairwise");
   });
 
   it("resolves S1, Paper 5, P5 and component variants to the approved 9709 Paper 5 ID", async () => {
@@ -96,6 +275,8 @@ describe("AI assistant context builder", () => {
 
   it("lets an explicit follow-up Paper override an older resolved Paper while preserving vague follow-ups", async () => {
     const base = {
+      awardQualificationIds: ["award:caie:9709"],
+      qualificationVersionIds: ["CAIE-9709:2026-2027"],
       qualificationIds: ["qual:caie:a-level:9709"],
       qualificationCodes: ["CAIE-9709"],
       paperIds: ["CAIE-9709-Paper-5"],
@@ -171,16 +352,17 @@ describe("AI assistant context builder", () => {
     for (const link of original.conceptLinks) expect(result.promptContext).not.toContain(link.evidenceSpan);
   });
 
-  it("blocks pasted AQA statement wording before any provider prompt is built", async () => {
+  it("handles pasted AQA statement wording locally without constructing a provider answer", async () => {
     const rawAqa = JSON.parse(await readFile(path.join(process.cwd(), "public/data/knowledge-v5/mappings/AQA-8300.json"), "utf8")) as { statements: Array<{ statementText: string }> };
     const original = rawAqa.statements.find((statement) => statement.statementText.split(/\s+/).length >= 6)!;
     const result = await builder.build(request({
       pageContext: { pageType: "knowledge-comparison", route: "/knowledge-tree", selectedPaperIds: [], comparisonIds: ["AQA-8300"] },
       messages: [{ role: "user", content: `请解释这段：${original.statementText}` }],
     }));
-    expect(result.clarification).toContain("AQA");
-    expect(result.promptContext).toBe("{}");
-    expect(result.sources).toHaveLength(0);
+    expect(result.clarification).toBeUndefined();
+    expect(result.localAnswer).toContain("AQA");
+    expect(result.localAnswer).toContain("只在本地处理");
+    expect(result.promptContext).not.toContain(original.statementText);
   });
 
   it("preserves the second Paper slot in a Paper-vs-subject comparison", async () => {
@@ -201,7 +383,7 @@ describe("AI assistant context builder", () => {
       knowledge: {
         mode: string;
         selections: Array<{ code: string }>;
-        exactMetrics: { sharedNodeIds: string[]; unionCount: number };
+        exactMetrics: { sharedNodeCount: number; unionCount: number };
         sharedConcepts: { items: unknown[] };
         sideA: { items: unknown[] };
         sideB: { items: unknown[] };
@@ -218,7 +400,7 @@ describe("AI assistant context builder", () => {
       + payload.knowledge.sideA.items.length
       + payload.knowledge.sideB.items.length,
     ).toBeGreaterThan(0);
-    expect(payload.knowledge.truncationNotice).toContain("context budget");
+    expect(payload.knowledge.truncationNotice).toContain("assistant context");
   });
 
   it("reuses the server-resolved course context for a realistic follow-up", async () => {
@@ -322,7 +504,7 @@ describe("AI assistant provider boundaries", () => {
       pageContext: { pageType: "knowledge-comparison", route: "/knowledge-tree", selectedPaperIds: [], comparisonIds: ["CAIE-9709"] },
     }))).toBe(true);
     expect(isComplexAIQuestion(request({
-      resolvedContext: { qualificationIds: ["a", "b"], qualificationCodes: ["A", "B"], paperIds: [], labels: ["A", "B"] },
+      resolvedContext: { awardQualificationIds: ["award:a", "award:b"], qualificationVersionIds: ["A:v1", "B:v1"], qualificationIds: ["a", "b"], qualificationCodes: ["A", "B"], paperIds: [], labels: ["A", "B"] },
     }))).toBe(true);
   });
 
@@ -540,8 +722,136 @@ describe("AI assistant provider boundaries", () => {
 });
 
 describe("AI assistant HTTP/SSE boundary", () => {
+  it("adds eligible official live evidence to the DeepSeek context without activating it", async () => {
+    const provider = {
+      isConfigured: () => true,
+      stream: vi.fn().mockImplementation(async ({ system }) => ({
+        answer: system.includes("official-live-candidate-direct-answer-eligible")
+          ? "官方实时检索、尚未入库：A 等级线为 180/250 [S1]"
+          : "missing",
+        model: "deepseek-v4-pro",
+        usage: { prompt_tokens: 10, completion_tokens: 5, total_tokens: 15 },
+      })),
+    };
+    const webSearch = {
+      isConfigured: () => true,
+      search: vi.fn().mockResolvedValue({
+        evidence: {
+          schemaVersion: "1.0.0",
+          evidenceId: "external:test",
+          provider: "openai-web-search",
+          requestedModel: "gpt-5",
+          returnedModel: "gpt-5-snapshot",
+          query: "联网查 9709 最新分数线",
+          board: "CAIE",
+          qualificationCode: "9709",
+          year: 2025,
+          series: "june",
+          officialUrl: "https://www.cambridgeinternational.org/example.pdf",
+          documentTitle: "Official threshold table",
+          locator: "PDF page 2, row AX",
+          retrievedAt: "2026-07-21T12:00:00.000Z",
+          allowedDomain: true,
+          exactIdentityMatch: true,
+          numericValidationPassed: true,
+          conflictsWithActive: false,
+          directAnswerEligible: true,
+          verificationStatus: "candidate",
+        },
+        summary: "Official row",
+        numericFacts: [{ label: "A", value: 180, maximum: 250 }],
+        cached: false,
+      }),
+    };
+    const server = createAIHttpServer({
+      builder: {
+        build: vi.fn().mockResolvedValue({
+          promptContext: JSON.stringify({ academicResults: { calls: [] } }),
+          sources: [],
+          resolvedContext: { qualificationIds: [], qualificationCodes: ["CAIE-9709"], paperIds: [], labels: ["9709"] },
+          paperFacts: [],
+          containsAqa: false,
+          externalSearchIdentity: { board: "CAIE", qualificationCode: "9709" },
+          academicTools: { activeBatch: null, dataPolicy: "test", calls: [{ name: "lookup_grade_boundary", status: "data-unavailable", result: [], sourceIds: [] }] },
+        }),
+      },
+      provider,
+      webSearch,
+      externalSearchEnabled: true,
+      limiter: new AnonymousAIRateLimiter(),
+      serviceGuard: {
+        beginProviderRequest: vi.fn().mockReturnValue({ allowed: true }),
+        recordProviderSuccess: vi.fn(),
+        recordProviderFailure: vi.fn(),
+      },
+    });
+    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+    try {
+      const { port } = server.address() as AddressInfo;
+      const response = await fetch(`http://127.0.0.1:${port}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(request({
+          messages: [{ role: "user", content: "联网查 9709 最新分数线" }],
+          featureConsent: { externalSearch: { enabled: true } },
+        })),
+      });
+      const events = parseSSE(await response.text());
+      expect(webSearch.search).toHaveBeenCalledOnce();
+      expect(provider.stream).toHaveBeenCalledOnce();
+      expect(events.find(event => event.type === "citations")?.citations).toEqual([
+        expect.objectContaining({ sourceId: "S1", title: expect.stringContaining("尚未入库") }),
+      ]);
+      expect(events.at(-1)?.answer).toContain("180/250");
+    } finally {
+      await new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
+    }
+  });
+
+  it("streams AQA local answers without provider configuration, quota, or calls", async () => {
+    const resolvedContext = { awardQualificationIds: ["award:aqa:7357"], qualificationVersionIds: ["AQA-7357:1.3"], qualificationIds: ["aqa"], qualificationCodes: ["AQA-7357"], paperIds: [], labels: ["AQA 7357"] };
+    const provider = { isConfigured: () => false, stream: vi.fn() };
+    const serviceGuard = {
+      beginProviderRequest: vi.fn(),
+      recordProviderSuccess: vi.fn(),
+      recordProviderFailure: vi.fn(),
+    };
+    const server = createAIHttpServer({
+      builder: {
+        build: vi.fn().mockResolvedValue({
+          promptContext: "{}",
+          sources: [{ sourceId: "S1", title: "AQA official", url: "https://www.aqa.org.uk/example", dataVersion: "v1" }],
+          resolvedContext,
+          paperFacts: [],
+          localAnswer: "AQA 本地确定性回答 [S1]",
+        }),
+      },
+      provider,
+      limiter: new AnonymousAIRateLimiter(),
+      serviceGuard,
+    });
+    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+    try {
+      const { port } = server.address() as AddressInfo;
+      const response = await fetch(`http://127.0.0.1:${port}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(request()),
+      });
+      const events = parseSSE(await response.text());
+      expect(events.map(event => event.type)).toEqual(["meta", "delta", "citations", "suggestions", "done"]);
+      expect(events.at(-1)).toMatchObject({ answer: "AQA 本地确定性回答 [S1]" });
+      expect(provider.stream).not.toHaveBeenCalled();
+      expect(serviceGuard.beginProviderRequest).not.toHaveBeenCalled();
+    } finally {
+      await new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
+    }
+  });
+
   it("streams typed data-only events with resolved context and allow-listed citations", async () => {
     const resolvedContext = {
+      awardQualificationIds: ["award:caie:9709"],
+      qualificationVersionIds: ["CAIE-9709:2026-2027"],
       qualificationIds: ["qual:caie:a-level:9709"],
       qualificationCodes: ["CAIE-9709"],
       paperIds: [],
@@ -659,7 +969,7 @@ describe("AI assistant HTTP/SSE boundary", () => {
   });
 
   it("returns local clarification and configuration errors without using provider quota", async () => {
-    const resolvedContext = { qualificationIds: [], qualificationCodes: [], paperIds: [], labels: [] };
+    const resolvedContext = { awardQualificationIds: [], qualificationVersionIds: [], qualificationIds: [], qualificationCodes: [], paperIds: [], labels: [] };
     const builder = vi.fn()
       .mockResolvedValueOnce({ promptContext: "{}", sources: [], resolvedContext, clarification: "请先选择课程。" })
       .mockResolvedValueOnce({ promptContext: "{}", sources: [], resolvedContext });
@@ -693,7 +1003,7 @@ describe("AI assistant HTTP/SSE boundary", () => {
   });
 
   it("blocks exhausted service limits and records provider failures", async () => {
-    const resolvedContext = { qualificationIds: [], qualificationCodes: ["CAIE-9709"], paperIds: [], labels: ["9709"] };
+    const resolvedContext = { awardQualificationIds: ["award:caie:9709"], qualificationVersionIds: ["CAIE-9709:2026-2027"], qualificationIds: [], qualificationCodes: ["CAIE-9709"], paperIds: [], labels: ["9709"] };
     const builder = { build: vi.fn().mockResolvedValue({ promptContext: "{}", sources: [], resolvedContext }) };
     const provider = {
       isConfigured: () => true,

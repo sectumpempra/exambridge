@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-21T15:30:27.844Z",
+  "reviewStatus": "machine-reviewed",
+  "provider": "deepseek",
+  "requestedModel": "deepseek-v4-pro",
+  "returnedModel": "deepseek-v4-pro",
+  "verdict": "candidate_data_valid_with_issues",
+  "rowReviews": [
+    { "year": 2019, "monotonic": true, "countRateMatch": true, "concerns": [] },
+    { "year": 2022, "monotonic": true, "countRateMatch": true, "concerns": [] },
+    { "year": 2023, "monotonic": true, "countRateMatch": true, "concerns": [] },
+    { "year": 2024, "monotonic": true, "countRateMatch": true, "concerns": ["A rate is displayed as 27.0 after numeric normalization."] },
+    { "year": 2025, "monotonic": true, "countRateMatch": true, "concerns": ["Source binary and hash were unavailable during this batch.", "Publication status is provisional."] }
+  ],
+  "codexAdjudication": {
+    "acceptedYears": [2019, 2022, 2023, 2024],
+    "deferredYears": [2025],
+    "notes": [
+      "Accepted rows were re-extracted locally from official Pearson PDFs and count-to-rate arithmetic was independently recomputed.",
+      "The 2025 indexed row remains a source-unavailable candidate until the official binary and hash can be captured."
+    ]
+  }
+}

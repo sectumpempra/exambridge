@@ -29,7 +29,7 @@ for (const legacy of ["v3.2", "v3.2-new"]) {
 }
 
 const releaseDataEntries = await readdir(path.join(distRoot, "data"), { withFileTypes: true });
-const allowedDataDirectories = new Set(["knowledge-v5", "past-papers"]);
+const allowedDataDirectories = new Set(["academic-results-v2", "knowledge-v5", "past-papers"]);
 for (const entry of releaseDataEntries) {
   if (entry.isDirectory() && !allowedDataDirectories.has(entry.name)) failures.push(`unexpected release data directory: dist-static/data/${entry.name}`);
 }

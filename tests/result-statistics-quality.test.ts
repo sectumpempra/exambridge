@@ -15,10 +15,19 @@ import {
 } from '../src/data/examOverviewInsightsData';
 
 describe('official results statistics', () => {
-  it('contains the complete extracted OCR June 2021-2025 dataset', () => {
+  it('contains the complete extracted OCR June 2021-2025 dataset plus reviewed 2019 maths rows', () => {
     expect(officialOcr.gcse).toHaveLength(185);
-    expect(officialOcr.aLevel).toHaveLength(214);
-    expect(Object.keys(officialOcr.sources)).toEqual(['2021', '2022', '2023', '2024', '2025']);
+    expect(officialOcr.aLevel).toHaveLength(217);
+    expect(officialOcr.fsmq).toHaveLength(6);
+    expect(Object.keys(officialOcr.sources)).toEqual(['2019', '2021', '2022', '2023', '2024', '2025']);
+    expect(officialOcr.aLevel.find(row => row.code === 'H240' && row.year === 2019)).toMatchObject({
+      rates: [20.93, 48.73, 65.1, 78.96, 90.46, 97.79],
+      entries: 7149,
+    });
+    expect(officialOcr.fsmq.find(row => row.code === '6993' && row.year === 2019)).toMatchObject({
+      rates: [45.86, 60.86, 73.46, 81.95, 88.16],
+      entries: 7889,
+    });
   });
 
   it('uses official current specification codes and exact published rates', () => {

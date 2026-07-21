@@ -1,0 +1,252 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-21T11:24:50.172Z",
+  "reviewStatus": "machine-reviewed",
+  "provider": "deepseek",
+  "requestedModel": "deepseek-v4-pro",
+  "returnedModel": "deepseek-v4-pro",
+  "sourceCandidate": "migration-candidate.json",
+  "conflictReviews": [
+    {
+      "conflictId": "statistics-conflict:award-pearson-ial-further-mathematics-2025-june",
+      "classification": "likely-legacy-truncated-row",
+      "preferredVariantIndex": 0,
+      "confidence": 0.85,
+      "evidenceRequired": [
+        "Official Pearson published grade statistics for IAL Further Mathematics June 2025 series."
+      ],
+      "notes": [
+        "Variant 0 (index 0) presents a monotonically increasing cumulative distribution typical of real exam data. Variant 1 (index 1) shows an abrupt jump to 99.9 after grade B and identical 99.9 values for C, D, E, which is characteristic of a legacy truncation or capping artifact. Without an authoritative source, the exact values cannot be validated."
+      ]
+    },
+    {
+      "conflictId": "statistics-conflict:award-pearson-ial-further-mathematics-2025-november",
+      "classification": "likely-legacy-truncated-row",
+      "preferredVariantIndex": 0,
+      "confidence": 0.85,
+      "evidenceRequired": [
+        "Official Pearson published grade statistics for IAL Further Mathematics November 2025 series."
+      ],
+      "notes": [
+        "Similar to the June 2025 conflict, Variant 0 follows a realistic cumulative pattern, while Variant 1 caps the upper grades at 99.9 (C, D, E all 99.9). This suggests a systematic migration error."
+      ]
+    },
+    {
+      "conflictId": "statistics-conflict:award-pearson-ial-further-mathematics-2026-january",
+      "classification": "likely-legacy-truncated-row",
+      "preferredVariantIndex": 0,
+      "confidence": 0.85,
+      "evidenceRequired": [
+        "Official Pearson published grade statistics for IAL Further Mathematics January 2026 series."
+      ],
+      "notes": [
+        "Variant 1 has B at 95 and C, D, E at 99.9. While monotonic, the repeated 99.9 values and extreme leap from B to C are implausible. Variant 0 provides a smooth distribution."
+      ]
+    },
+    {
+      "conflictId": "statistics-conflict:award-pearson-ial-mathematics-2025-june",
+      "classification": "likely-legacy-truncated-row",
+      "preferredVariantIndex": 0,
+      "confidence": 0.85,
+      "evidenceRequired": [
+        "Official Pearson published grade statistics for IAL Mathematics June 2025 series."
+      ],
+      "notes": [
+        "Variant 0 appears coherent; Variant 1 duplicates 99.9 for C, D, E, indicating possible data corruption or rounding artifact during migration."
+      ]
+    },
+    {
+      "conflictId": "statistics-conflict:award-pearson-ial-mathematics-2025-november",
+      "classification": "likely-legacy-truncated-row",
+      "preferredVariantIndex": 0,
+      "confidence": 0.85,
+      "evidenceRequired": [
+        "Official Pearson published grade statistics for IAL Mathematics November 2025 series."
+      ],
+      "notes": [
+        "Variant 0 shows a plausible low pass rate (E at 80.6%) while Variant 1 inflates the upper grades (D 98, E 99.9). The sudden increase lacks typical exam distribution characteristics."
+      ]
+    },
+    {
+      "conflictId": "statistics-conflict:award-pearson-ial-mathematics-2026-january",
+      "classification": "likely-legacy-truncated-row",
+      "preferredVariantIndex": 0,
+      "confidence": 0.85,
+      "evidenceRequired": [
+        "Official Pearson published grade statistics for IAL Mathematics January 2026 series."
+      ],
+      "notes": [
+        "Variant 1 again caps C, D, E at 99.9, while Variant 0 maintains a credible gradient. Unless an official source confirms the 99.9 values, Variant 0 should be considered the more reliable candidate."
+      ]
+    }
+  ],
+  "ocrReviews": [
+    {
+      "statisticsId": "statistics:award-ocr-h240:2021:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h240:2022:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h240:2023:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h240:2024:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h240:2025:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": [
+        "Publication status is 'provisional'; values may be subject to revision once finalised."
+      ]
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h245:2021:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h245:2022:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h245:2023:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h245:2024:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h245:2025:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": [
+        "Publication status is 'provisional'; values may be subject to revision once finalised."
+      ]
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h640:2021:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h640:2022:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h640:2023:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h640:2024:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": []
+    },
+    {
+      "statisticsId": "statistics:award-ocr-h640:2025:june:all-candidates",
+      "checksPassed": [
+        "range",
+        "monotonicity",
+        "identity_consistency",
+        "no_suspicious_duplicate_values"
+      ],
+      "concerns": [
+        "Publication status is 'provisional'; values may be subject to revision once finalised."
+      ]
+    }
+  ],
+  "batchConclusion": {
+    "safeToMachineReviewOcr": true,
+    "unresolvedConflictIds": [
+      "statistics-conflict:award-pearson-ial-further-mathematics-2025-june",
+      "statistics-conflict:award-pearson-ial-further-mathematics-2025-november",
+      "statistics-conflict:award-pearson-ial-further-mathematics-2026-january",
+      "statistics-conflict:award-pearson-ial-mathematics-2025-june",
+      "statistics-conflict:award-pearson-ial-mathematics-2025-november",
+      "statistics-conflict:award-pearson-ial-mathematics-2026-january"
+    ]
+  }
+}

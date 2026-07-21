@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { Bot, CircleStop, ExternalLink, Send, ShieldCheck, Sparkles, Trash2, UserRound } from "lucide-react";
+import { Bot, CircleStop, ExternalLink, Send, ShieldCheck, Sparkles, Trash2, UserRound, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -9,6 +9,7 @@ import {
   type AICitation,
   type AIChatMessage,
   type AIPageContext,
+  type AIQueryScope,
   type AIResolvedContext,
 } from "@/domain-v2/ai-assistant";
 import { cn } from "@/lib/utils";
@@ -21,16 +22,26 @@ type DisplayMessage = AIChatMessage & {
   error?: boolean;
 };
 
-type StoredSession = {
+type StoredSessionV1 = {
   version: 1;
   messages: DisplayMessage[];
   resolvedContext?: AIResolvedContext;
+};
+
+type StoredSession = {
+  version: 2;
+  messages: DisplayMessage[];
+  resolvedContext?: AIResolvedContext;
+  scopes: AIQueryScope[];
+  roleView: "teaching" | "consulting" | "sales" | "operations";
+  detachedFromPageContext: boolean;
 };
 
 interface AIChatPanelProps {
   pageContext: AIPageContext;
   qualificationIds?: string[];
   syllabusVersions?: string[];
+  scopes?: AIQueryScope[];
   contextLabel?: string;
   contextControl?: ReactNode;
   className?: string;
@@ -44,18 +55,20 @@ const DEFAULT_SUGGESTIONS = [
   "请用家长容易理解的方式解释。",
 ];
 
-function safeStoredSession(value: string | null): StoredSession | null {
+export function safeStoredSession(value: string | null): StoredSession | null {
   if (!value) return null;
   try {
-    const parsed = JSON.parse(value) as StoredSession;
-    if (parsed.version !== 1 || !Array.isArray(parsed.messages)) return null;
+    const parsed = JSON.parse(value) as StoredSession | StoredSessionV1;
+    if (![1, 2].includes(parsed.version) || !Array.isArray(parsed.messages)) return null;
     const messages = parsed.messages.filter((message) =>
       message && typeof message.id === "string"
       && (message.role === "user" || message.role === "assistant")
       && typeof message.content === "string"
       && message.content.length <= 2_000
     ).slice(-12);
-    return { version: 1, messages, resolvedContext: parsed.resolvedContext };
+    return parsed.version === 2
+      ? { version: 2, messages, resolvedContext: parsed.resolvedContext, scopes: parsed.scopes ?? [], roleView: parsed.roleView ?? "consulting", detachedFromPageContext: parsed.detachedFromPageContext ?? false }
+      : { version: 2, messages, resolvedContext: parsed.resolvedContext, scopes: [], roleView: "consulting", detachedFromPageContext: false };
   } catch {
     return null;
   }
@@ -95,11 +108,18 @@ export default function AIChatPanel({
   pageContext,
   qualificationIds = [],
   syllabusVersions = [],
+  scopes,
   contextLabel,
   contextControl,
   className,
   fullHeight = false,
 }: AIChatPanelProps) {
+  const pageScopes = useMemo<AIQueryScope[]>(() => scopes ?? (qualificationIds.length > 0 || syllabusVersions.length > 0 ? [{
+    awardQualificationIds: [],
+    qualificationVersionIds: syllabusVersions.slice(0, 4),
+    catalogQualificationIds: qualificationIds.slice(0, 4),
+    source: "page-context",
+  }] : []), [qualificationIds, scopes, syllabusVersions]);
   const storageKey = useMemo(() => aiSessionStorageKey([
     pageContext.pageType,
     ...qualificationIds,
@@ -109,6 +129,9 @@ export default function AIChatPanel({
   const initial = useMemo(() => safeStoredSession(typeof window === "undefined" ? null : window.sessionStorage.getItem(storageKey)), [storageKey]);
   const [messages, setMessages] = useState<DisplayMessage[]>(initial?.messages ?? []);
   const [resolvedContext, setResolvedContext] = useState<AIResolvedContext | undefined>(initial?.resolvedContext);
+  const [queryScopes, setQueryScopes] = useState<AIQueryScope[]>(initial?.scopes.length ? initial.scopes : pageScopes);
+  const [roleView, setRoleView] = useState<StoredSession["roleView"]>(initial?.roleView ?? "consulting");
+  const [detachedFromPageContext, setDetachedFromPageContext] = useState(initial?.detachedFromPageContext ?? false);
   const [input, setInput] = useState("");
   const [generating, setGenerating] = useState(false);
   const [suggestions, setSuggestions] = useState(DEFAULT_SUGGESTIONS);
@@ -121,16 +144,19 @@ export default function AIChatPanel({
     queueMicrotask(() => {
       setMessages(restored?.messages ?? []);
       setResolvedContext(restored?.resolvedContext);
+      setQueryScopes(restored?.scopes.length ? restored.scopes : pageScopes);
+      setRoleView(restored?.roleView ?? "consulting");
+      setDetachedFromPageContext(restored?.detachedFromPageContext ?? false);
       setSuggestions(DEFAULT_SUGGESTIONS);
       setServiceError(null);
     });
     return () => abortRef.current?.abort();
-  }, [storageKey]);
+  }, [pageScopes, storageKey]);
 
   useEffect(() => {
     const stable = messages.filter((message) => !message.pending).slice(-12);
-    window.sessionStorage.setItem(storageKey, JSON.stringify({ version: 1, messages: stable, resolvedContext } satisfies StoredSession));
-  }, [messages, resolvedContext, storageKey]);
+    window.sessionStorage.setItem(storageKey, JSON.stringify({ version: 2, messages: stable, resolvedContext, scopes: queryScopes, roleView, detachedFromPageContext } satisfies StoredSession));
+  }, [detachedFromPageContext, messages, queryScopes, resolvedContext, roleView, storageKey]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -141,9 +167,32 @@ export default function AIChatPanel({
     window.sessionStorage.removeItem(storageKey);
     setMessages([]);
     setResolvedContext(undefined);
+    setQueryScopes(pageScopes);
+    setDetachedFromPageContext(false);
     setSuggestions(DEFAULT_SUGGESTIONS);
     setServiceError(null);
     setGenerating(false);
+  };
+
+  const removeResolvedScope = (index: number) => {
+    if (!resolvedContext) return;
+    const remaining = resolvedContext.labels.map((_, itemIndex) => itemIndex).filter(itemIndex => itemIndex !== index);
+    const nextResolved: AIResolvedContext = {
+      awardQualificationIds: remaining.map(itemIndex => resolvedContext.awardQualificationIds[itemIndex]).filter(Boolean),
+      qualificationVersionIds: remaining.map(itemIndex => resolvedContext.qualificationVersionIds[itemIndex]).filter(Boolean),
+      qualificationIds: remaining.map(itemIndex => resolvedContext.qualificationIds[itemIndex]).filter(Boolean),
+      qualificationCodes: remaining.map(itemIndex => resolvedContext.qualificationCodes[itemIndex]).filter(Boolean),
+      paperIds: [],
+      labels: remaining.map(itemIndex => resolvedContext.labels[itemIndex]).filter(Boolean),
+    };
+    setResolvedContext(nextResolved);
+    setQueryScopes(nextResolved.labels.map((_, itemIndex) => ({
+      awardQualificationIds: nextResolved.awardQualificationIds[itemIndex] ? [nextResolved.awardQualificationIds[itemIndex]] : [],
+      qualificationVersionIds: nextResolved.qualificationVersionIds[itemIndex] ? [nextResolved.qualificationVersionIds[itemIndex]] : [],
+      catalogQualificationIds: nextResolved.qualificationIds[itemIndex] ? [nextResolved.qualificationIds[itemIndex]] : [],
+      source: "manual-selection" as const,
+    })).filter(scope => scope.awardQualificationIds.length + scope.qualificationVersionIds.length + scope.catalogQualificationIds.length > 0));
+    setDetachedFromPageContext(true);
   };
 
   const send = async (content = input) => {
@@ -168,13 +217,22 @@ export default function AIChatPanel({
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
         body: JSON.stringify({
+          version: 2,
           mode: "exam_assistant",
-          qualificationIds: qualificationIds.slice(0, 2),
-          syllabusVersions: syllabusVersions.slice(0, 2),
-          pageContext,
+          scopes: queryScopes.slice(0, 4),
+          qualificationIds: [],
+          syllabusVersions: [],
+          pageContext: detachedFromPageContext
+            ? { ...pageContext, selectedPaperIds: [], comparisonIds: [] }
+            : pageContext,
+          roleView,
           messages: requestMessages,
           locale: /^en\b/i.test(navigator.language) ? "en-GB" : "zh-CN",
           resolvedContext,
+          featureConsent: {
+            externalSearch: { enabled: false },
+            boundaryPrediction: { enabled: false },
+          },
         }),
         signal: controller.signal,
       });
@@ -233,11 +291,18 @@ export default function AIChatPanel({
           </div>
           <Button type="button" variant="ghost" size="sm" onClick={clearConversation} disabled={messages.length === 0} className="shrink-0 text-[#675a4d]" aria-label="清空对话"><Trash2 size={15} /><span className="hidden sm:inline">清空</span></Button>
         </div>
-        <div className="mt-3 flex items-start gap-2 rounded-lg border border-[#ccd8d5] bg-white/70 px-3 py-2 text-[11px] leading-4 text-[#50645e]"><ShieldCheck size={14} className="mt-0.5 shrink-0" /><span>仅根据 ExamBridge 已核验资料回答。你的问题和筛选后的课程、Paper、考纲上下文会发送给 DeepSeek 生成回答；不会发送官方 PDF、API 密钥或个人账号资料。</span></div>
+        <div className="mt-3 flex items-start gap-2 rounded-lg border border-[#ccd8d5] bg-white/70 px-3 py-2 text-[11px] leading-4 text-[#50645e]"><ShieldCheck size={14} className="mt-0.5 shrink-0" /><span>仅根据 ExamBridge 已核验资料回答。非 AQA 问题会发送给 DeepSeek 生成回答，发送内容仅包括筛选后的课程、Paper 与考纲上下文；AQA 使用本地确定性模板。不会发送官方 PDF、API 密钥或个人账号资料。</span></div>
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-[#625c54]" aria-live="polite">
+          <span className="font-semibold">检索范围：</span>
+          {resolvedContext?.labels.length
+            ? resolvedContext.labels.map((label, index) => <span key={`${label}-${index}`} className="inline-flex items-center gap-1 rounded-full border border-[#cbd5d4] bg-white px-2 py-1"><span>{label}</span><button type="button" onClick={() => removeResolvedScope(index)} aria-label={`移除 ${label}`} className="rounded-full p-0.5 hover:bg-[#edf2f1]"><X size={11} /></button></span>)
+            : <span className="rounded-full border border-dashed border-[#bfc9c7] px-2 py-1">全部资格</span>}
+          <label className="ml-auto inline-flex items-center gap-1.5"><span>团队视图</span><select value={roleView} onChange={event => setRoleView(event.target.value as StoredSession["roleView"])} className="rounded-md border border-[#cbd5d4] bg-white px-1.5 py-1" aria-label="选择团队视图"><option value="teaching">教学</option><option value="consulting">课程顾问</option><option value="sales">销售顾问</option><option value="operations">学管/运营</option></select></label>
+        </div>
       </header>
 
       <div className="min-h-0 flex-1 overflow-y-auto px-4 py-5 sm:px-5" aria-live="polite">
-        {messages.length === 0 && <div className="mx-auto flex h-full max-w-xl flex-col items-center justify-center py-8 text-center"><span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#526b7e]/10 text-[#526b7e]"><Sparkles size={25} /></span><h3 className="mb-0 mt-4 text-lg font-bold text-[#3d3832]">直接问考试或考纲问题</h3><p className="mb-0 mt-2 max-w-md text-sm leading-6 text-[#716a61]">可以连续追问，例如先问 Paper 结构，再问“刚才第二张 Paper 能用计算器吗”。没有课程上下文时，请写明资格代码。</p></div>}
+        {messages.length === 0 && <div className="mx-auto flex h-full max-w-xl flex-col items-center justify-center py-8 text-center"><span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#526b7e]/10 text-[#526b7e]"><Sparkles size={25} /></span><h3 className="mb-0 mt-4 text-lg font-bold text-[#3d3832]">直接问考试事实或考纲问题</h3><p className="mb-0 mt-2 max-w-md text-sm leading-6 text-[#716a61]">通用规则无需选择课程；具体分数线或合分问题请写明资格、年份、考季和路线。可以连续追问。</p></div>}
         <div className="space-y-4">
           {messages.map((message) => <article key={message.id} className={cn("flex gap-2.5", message.role === "user" && "justify-end")}>
             {message.role === "assistant" && <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#253b46] text-white"><Bot size={14} /></span>}
@@ -261,7 +326,7 @@ export default function AIChatPanel({
           <Textarea value={input} onChange={(event) => setInput(event.target.value.slice(0, 2_000))} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }} placeholder="输入问题；Shift + Enter 换行" aria-label="向 ExamBridge AI 提问" className="max-h-48 min-h-[92px] resize-none border-0 bg-transparent px-2 py-2.5 shadow-none focus-visible:ring-0" disabled={generating} />
           {generating ? <Button type="button" onClick={() => abortRef.current?.abort()} className="mb-0.5 shrink-0 bg-[#8b655c] hover:bg-[#76544c]"><CircleStop size={16} />停止</Button> : <Button type="button" onClick={() => void send()} disabled={!input.trim() || input.length > 2_000} className="mb-0.5 shrink-0 bg-[#253b46] hover:bg-[#344f5b]"><Send size={16} />发送</Button>}
         </div>
-        <div className="mt-1.5 flex items-center justify-between gap-3 px-1 text-[10px] text-[#625c54]"><span>对话仅保存在当前浏览器标签页；生成时会发送至 DeepSeek</span><span className={cn("shrink-0", input.length > 1_900 && "font-semibold text-[#8a5c4d]")}>{input.length}/2000</span></div>
+        <div className="mt-1.5 flex items-center justify-between gap-3 px-1 text-[10px] text-[#625c54]"><span>对话仅保存在当前浏览器标签页；AQA 本地处理，其他问题只发送筛选后的已核验上下文</span><span className={cn("shrink-0", input.length > 1_900 && "font-semibold text-[#8a5c4d]")}>{input.length}/2000</span></div>
       </footer>
     </section>
   );

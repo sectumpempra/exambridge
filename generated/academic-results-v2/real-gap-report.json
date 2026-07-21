@@ -1,0 +1,364 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-21T00:00:00+08:00",
+  "qualificationCount": 13,
+  "counts": {
+    "P0": 0,
+    "P1": 5,
+    "P2": 3,
+    "P3": 13
+  },
+  "gaps": [
+    {
+      "gapId": "fact-gap:award-caie-0580:historical-boundary-gaps",
+      "awardQualificationId": "award:caie:0580",
+      "severity": "P2",
+      "category": "boundary",
+      "description": "36 historical boundary expectation(s) remain pending.",
+      "sourceIds": [
+        "source:caie-0580-2019-november-threshold-routes",
+        "source:caie-0580-2020-2022-assessment-overview",
+        "source:caie-0580-2024-june-threshold-routes",
+        "source:caie-0580-2025-2027-assessment-overview"
+      ],
+      "remediation": "Prioritize only the historical series needed for business verification; do not block current explain-ready capability.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-caie-0580:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:caie:0580",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "24 expected Grade Statistics cell(s) are pending and 13 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:caie-0580-2019-november-threshold-routes",
+        "source:caie-0580-2020-2022-assessment-overview",
+        "source:caie-0580-2024-june-threshold-routes",
+        "source:caie-0580-2025-2027-assessment-overview"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-caie-9709:current-boundary-not-ready",
+      "awardQualificationId": "award:caie:9709",
+      "qualificationVersionId": "CAIE-9709:2026-2027",
+      "severity": "P1",
+      "category": "boundary",
+      "description": "No current-version overall boundary expectation is satisfied at codex-reviewed or owner-approved maturity.",
+      "sourceIds": [
+        "source:caie-9709-2019-june-threshold-routes",
+        "source:caie-9709-2020-2022-assessment-routes",
+        "source:caie-9709-2023-2025-assessment-routes",
+        "source:caie-9709-2026-2027-assessment-routes"
+      ],
+      "remediation": "Verify at least one applicable current official overall boundary and its exact route/tier/option identity.",
+      "blocks": [
+        "calculator-ready"
+      ]
+    },
+    {
+      "gapId": "fact-gap:award-caie-9709:historical-boundary-gaps",
+      "awardQualificationId": "award:caie:9709",
+      "severity": "P2",
+      "category": "boundary",
+      "description": "60 historical boundary expectation(s) remain pending.",
+      "sourceIds": [
+        "source:caie-9709-2019-june-threshold-routes",
+        "source:caie-9709-2020-2022-assessment-routes",
+        "source:caie-9709-2023-2025-assessment-routes",
+        "source:caie-9709-2026-2027-assessment-routes"
+      ],
+      "remediation": "Prioritize only the historical series needed for business verification; do not block current explain-ready capability.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-caie-9709:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:caie:9709",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "24 expected Grade Statistics cell(s) are pending and 16 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:caie-9709-2019-june-threshold-routes",
+        "source:caie-9709-2020-2022-assessment-routes",
+        "source:caie-9709-2023-2025-assessment-routes",
+        "source:caie-9709-2026-2027-assessment-routes"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-caie-9231:current-boundary-not-ready",
+      "awardQualificationId": "award:caie:9231",
+      "qualificationVersionId": "CAIE-9231:2026-2027",
+      "severity": "P1",
+      "category": "boundary",
+      "description": "No current-version overall boundary expectation is satisfied at codex-reviewed or owner-approved maturity.",
+      "sourceIds": [
+        "source:caie-9231-2019-assessment-at-a-glance",
+        "source:caie-9231-2020-2022-assessment-routes",
+        "source:caie-9231-2023-2025-assessment-routes",
+        "source:caie-9231-2026-2027-assessment-routes"
+      ],
+      "remediation": "Verify at least one applicable current official overall boundary and its exact route/tier/option identity.",
+      "blocks": [
+        "calculator-ready"
+      ]
+    },
+    {
+      "gapId": "fact-gap:award-caie-9231:historical-boundary-gaps",
+      "awardQualificationId": "award:caie:9231",
+      "severity": "P2",
+      "category": "boundary",
+      "description": "38 historical boundary expectation(s) remain pending.",
+      "sourceIds": [
+        "source:caie-9231-2019-assessment-at-a-glance",
+        "source:caie-9231-2020-2022-assessment-routes",
+        "source:caie-9231-2023-2025-assessment-routes",
+        "source:caie-9231-2026-2027-assessment-routes"
+      ],
+      "remediation": "Prioritize only the historical series needed for business verification; do not block current explain-ready capability.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-caie-9231:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:caie:9231",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "16 expected Grade Statistics cell(s) are pending and 11 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:caie-9231-2019-assessment-at-a-glance",
+        "source:caie-9231-2020-2022-assessment-routes",
+        "source:caie-9231-2023-2025-assessment-routes",
+        "source:caie-9231-2026-2027-assessment-routes"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-pearson-4ma1:current-boundary-not-ready",
+      "awardQualificationId": "award:pearson:4ma1",
+      "qualificationVersionId": "Edexcel-4MA1:Issue 2",
+      "severity": "P1",
+      "category": "boundary",
+      "description": "No current-version overall boundary expectation is satisfied at codex-reviewed or owner-approved maturity.",
+      "sourceIds": [
+        "source:pearson-4ma1-issue2-qualification-at-a-glance"
+      ],
+      "remediation": "Verify at least one applicable current official overall boundary and its exact route/tier/option identity.",
+      "blocks": [
+        "calculator-ready"
+      ]
+    },
+    {
+      "gapId": "fact-gap:award-pearson-4ma1:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:pearson:4ma1",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "19 expected Grade Statistics cell(s) are pending and 0 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:pearson-4ma1-issue2-qualification-at-a-glance"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-pearson-8ma0:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:pearson:8ma0",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "2 expected Grade Statistics cell(s) are pending and 0 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:pearson-8ma0-spec-issue3-p4-p5",
+        "source:pearson-8ma0-grade-statistics-2019-june",
+        "source:uk-written-exams-cancelled-2020",
+        "source:uk-written-exams-cancelled-2021",
+        "source:pearson-8ma0-grade-statistics-2022-june",
+        "source:pearson-8ma0-grade-statistics-2023-june",
+        "source:pearson-8ma0-grade-statistics-2024-june"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-pearson-ial-mathematics:current-boundary-not-ready",
+      "awardQualificationId": "award:pearson:ial-mathematics",
+      "qualificationVersionId": "Edexcel-IAL:2018",
+      "severity": "P1",
+      "category": "boundary",
+      "description": "No current-version overall boundary expectation is satisfied at codex-reviewed or owner-approved maturity.",
+      "sourceIds": [
+        "source:pearson-ial-mathematics-issue3-rules"
+      ],
+      "remediation": "Verify at least one applicable current official overall boundary and its exact route/tier/option identity.",
+      "blocks": [
+        "calculator-ready"
+      ]
+    },
+    {
+      "gapId": "fact-gap:award-pearson-ial-mathematics:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:pearson:ial-mathematics",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "22 expected Grade Statistics cell(s) are pending and 1 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:pearson-ial-mathematics-issue3-rules",
+        "source:pearson-ial-grade-statistics-yma01-2025-june",
+        "source:pearson-ial-grade-statistics-yma01-2026-january"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-pearson-ial-further-mathematics:current-boundary-not-ready",
+      "awardQualificationId": "award:pearson:ial-further-mathematics",
+      "qualificationVersionId": "Edexcel-IAL:2018",
+      "severity": "P1",
+      "category": "boundary",
+      "description": "No current-version overall boundary expectation is satisfied at codex-reviewed or owner-approved maturity.",
+      "sourceIds": [
+        "source:pearson-ial-mathematics-issue3-rules"
+      ],
+      "remediation": "Verify at least one applicable current official overall boundary and its exact route/tier/option identity.",
+      "blocks": [
+        "calculator-ready"
+      ]
+    },
+    {
+      "gapId": "fact-gap:award-pearson-ial-further-mathematics:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:pearson:ial-further-mathematics",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "22 expected Grade Statistics cell(s) are pending and 1 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:pearson-ial-mathematics-issue3-rules",
+        "source:pearson-ial-grade-statistics-yfm01-2025-june",
+        "source:pearson-ial-grade-statistics-yfm01-2026-january"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-aqa-7357:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:aqa:7357",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "8 expected Grade Statistics cell(s) are pending and 0 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:aqa-7357-sp-2017-v1-3-p8-p9",
+        "source:aqa-results-statistics-7357-2019-june",
+        "source:uk-written-exams-cancelled-2020",
+        "source:aqa-results-statistics-7357-2020-june",
+        "source:uk-written-exams-cancelled-2021",
+        "source:aqa-results-statistics-7357-2021-june",
+        "source:aqa-results-statistics-7357-2022-june",
+        "source:aqa-results-statistics-7357-2023-june",
+        "source:aqa-results-statistics-7357-2024-june",
+        "source:aqa-results-statistics-7357-2025-june"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-aqa-7367:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:aqa:7367",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "8 expected Grade Statistics cell(s) are pending and 0 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:aqa-7367-v1-1-scheme-of-assessment",
+        "source:aqa-results-statistics-7367-2019-june",
+        "source:uk-written-exams-cancelled-2020",
+        "source:aqa-results-statistics-7367-2020-june",
+        "source:uk-written-exams-cancelled-2021",
+        "source:aqa-results-statistics-7367-2021-june",
+        "source:aqa-results-statistics-7367-2022-june",
+        "source:aqa-results-statistics-7367-2023-june",
+        "source:aqa-results-statistics-7367-2024-june",
+        "source:aqa-results-statistics-7367-2025-june"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-ocr-h240:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:ocr:h240",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "1 expected Grade Statistics cell(s) are pending and 0 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:ocr-h240-spec-v3-p2",
+        "source:ocr-results-statistics-h240-2019-june",
+        "source:uk-written-exams-cancelled-2020",
+        "source:uk-written-exams-cancelled-2021",
+        "source:ocr-results-statistics-h240-2021-june",
+        "source:ocr-results-statistics-h240-2022-june",
+        "source:ocr-results-statistics-h240-2023-june",
+        "source:ocr-results-statistics-h240-2024-june",
+        "source:ocr-results-statistics-h240-2025-june"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-ocr-h245:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:ocr:h245",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "1 expected Grade Statistics cell(s) are pending and 0 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:ocr-h245-v2-assessment-overview",
+        "source:ocr-results-statistics-h245-2019-june",
+        "source:uk-written-exams-cancelled-2020",
+        "source:uk-written-exams-cancelled-2021",
+        "source:ocr-results-statistics-h245-2021-june",
+        "source:ocr-results-statistics-h245-2022-june",
+        "source:ocr-results-statistics-h245-2023-june",
+        "source:ocr-results-statistics-h245-2024-june",
+        "source:ocr-results-statistics-h245-2025-june"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-ocr-h640:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:ocr:h640",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "1 expected Grade Statistics cell(s) are pending and 0 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:ocr-h640-v3-assessment-overview",
+        "source:ocr-results-statistics-h640-2019-june",
+        "source:uk-written-exams-cancelled-2020",
+        "source:uk-written-exams-cancelled-2021",
+        "source:ocr-results-statistics-h640-2021-june",
+        "source:ocr-results-statistics-h640-2022-june",
+        "source:ocr-results-statistics-h640-2023-june",
+        "source:ocr-results-statistics-h640-2024-june",
+        "source:ocr-results-statistics-h640-2025-june"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    },
+    {
+      "gapId": "fact-gap:award-ocr-6993:statistics-auxiliary-gaps",
+      "awardQualificationId": "award:ocr:6993",
+      "severity": "P3",
+      "category": "statistics",
+      "description": "1 expected Grade Statistics cell(s) are pending and 0 observed row(s) need policy adjudication.",
+      "sourceIds": [
+        "source:ocr-6993-spec-v2-0-p7",
+        "source:ocr-results-statistics-6993-2019-june",
+        "source:uk-written-exams-cancelled-2020",
+        "source:uk-written-exams-cancelled-2021",
+        "source:ocr-results-statistics-6993-2021-june",
+        "source:ocr-results-statistics-6993-2022-june",
+        "source:ocr-results-statistics-6993-2023-june",
+        "source:ocr-results-statistics-6993-2024-june",
+        "source:ocr-results-statistics-6993-2025-june"
+      ],
+      "remediation": "Continue statistics cleanup as auxiliary evidence without blocking rule explanation or calculation maturity.",
+      "blocks": []
+    }
+  ]
+}

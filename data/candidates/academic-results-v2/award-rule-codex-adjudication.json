@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "candidateGeneratedAt": "2026-07-21T00:00:00+08:00",
+  "reviewStatus": "codex-reviewed",
+  "ruleCount": 40,
+  "machineReview": {
+    "provider": "deepseek",
+    "returnedModel": "deepseek-v4-pro",
+    "persistedSemanticReviewCount": 17,
+    "usageRecordCount": 51,
+    "successfulUsageRecordCount": 40,
+    "invalidJsonUsageRecordCount": 11,
+    "notes": [
+      "AQA rules and source text were excluded from every external request.",
+      "Two broader re-review orchestrations were stopped after repeated long or invalid JSON completions; their usage remains journalled, but no partial review payload was promoted.",
+      "The seven historical 9231 rules were derived from official versioned syllabuses and rechecked deterministically by Codex; they remain codex-reviewed candidates rather than owner-approved data."
+    ]
+  },
+  "acceptedFindings": [
+    {
+      "field": "rule:caie-9231:al:staged.components.optional",
+      "action": "Mutually exclusive carried-forward AS results and the complementary application paper are marked optional; P2 remains mandatory.",
+      "evidence": "The explicit valid combinations and Cambridge route table require exactly one carried-forward AS option plus P2 and the complementary Paper 3 or Paper 4."
+    },
+    {
+      "field": "rule:pearson-ial-mathematics.components.optional",
+      "action": "P1, P2, P3 and P4 are mandatory; permitted applied-unit pairs remain explicit valid combinations.",
+      "evidence": "Pearson Issue 3 qualification overview and unit-combination tables."
+    },
+    {
+      "field": "rule:pearson-ial-further-mathematics.components.optional",
+      "action": "FP1 is mandatory; all remaining units are optional subject to the explicit combination list.",
+      "evidence": "Pearson Issue 3 qualification overview and unit-combination tables."
+    },
+    {
+      "field": "rule:ocr-h245.combinationSelectionRule",
+      "action": "Added deterministic best-official-grade selection across all valid two-option combinations when extra optional papers are supplied.",
+      "evidence": "OCR H245 specification section on calculating qualification results."
+    }
+  ],
+  "rejectedFindings": [
+    {
+      "finding": "Pearson IAL rules have no combination constraints.",
+      "reason": "The candidate stores the permitted combinations explicitly in validCombinations; a second prose constraint would duplicate the executable contract."
+    },
+    {
+      "finding": "OCR H245 does not state how many optional components are selected.",
+      "reason": "All six valid combinations explicitly contain Y540, Y541 and exactly two of Y542-Y545. Extra-paper selection is now separately machine-readable."
+    },
+    {
+      "finding": "4MA1 Higher should include grade 3.",
+      "reason": "The official linear 4MA1 Issue 2 specification targets grades 9-4; the allowable grade 3 cited by the model belongs to a different modular qualification."
+    },
+    {
+      "finding": "Cambridge A* should be inferred from an A2-only threshold.",
+      "reason": "No supplied official evidence supports that inference for these routes; the engine uses the published overall route boundary only."
+    }
+  ],
+  "unresolvedEvidence": [],
+  "activationDecision": "candidate-only"
+}

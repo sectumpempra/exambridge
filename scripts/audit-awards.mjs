@@ -324,12 +324,12 @@ export function auditAwardData(input = {}) {
         }
       }
       if (source === "official" && route.qualificationCode === "6993") {
-        if (boundary?.sourceRowId !== "OCR-2025-JUNE-6993-01") failures.push("OCR 6993 boundary must identify the official single-paper row");
+        if (typeof boundary?.sourceRowId !== "string" || !/^OCR-20\d{2}-JUNE-6993-01$/.test(boundary.sourceRowId)) failures.push("OCR 6993 boundary must identify the official single-paper row");
         if (boundary?.maximumMarkAfterWeighting !== 100) failures.push("OCR 6993 official boundary must total 100");
         if (Object.hasOwn(boundary?.thresholds ?? {}, "A*")) failures.push("OCR 6993 does not award grade A*");
       }
       if (source === "official" && route.qualificationCode === "8MA0") {
-        if (boundary?.sourceRowId !== "PEARSON-2025-JUNE-8MA0-OVERALL") failures.push("Pearson 8MA0 boundary must identify the official overall AS row");
+        if (typeof boundary?.sourceRowId !== "string" || !/^PEARSON-20\d{2}-JUNE-8MA0-OVERALL$/.test(boundary.sourceRowId)) failures.push("Pearson 8MA0 boundary must identify an official overall AS row");
         if (boundary?.maximumMarkAfterWeighting !== 160) failures.push("Pearson 8MA0 official boundary must total 160");
         if (Object.hasOwn(boundary?.thresholds ?? {}, "A*")) failures.push("Pearson 8MA0 AS does not award grade A*");
       }

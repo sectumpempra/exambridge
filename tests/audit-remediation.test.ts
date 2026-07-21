@@ -56,7 +56,7 @@ describe("audit remediation release invariants", () => {
     const loader = readFileSync("src/data/knowledge-tree/loader-v5.ts", "utf8");
     expect(loader).not.toContain("return null");
     const releaseAudit = readFileSync("scripts/audit-knowledge-v5-only-release.mjs", "utf8");
-    expect(releaseAudit).toContain('allowedDataDirectories = new Set(["knowledge-v5", "past-papers"])');
+    expect(releaseAudit).toContain('allowedDataDirectories = new Set(["academic-results-v2", "knowledge-v5", "past-papers"])');
     expect(releaseAudit).toContain("legacy knowledge runtime reference remains");
   });
 

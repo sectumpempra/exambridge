@@ -1,0 +1,236 @@
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+import {
+  GradeBoundaryV2Schema,
+  GradeStatisticsV2Schema,
+  QualificationAwardRuleV2Schema,
+  SourceEvidenceV1Schema,
+  calculateBestQualificationAwardV2,
+  calculateQualificationAwardV2,
+  type QualificationAwardRuleV2,
+} from "@/domain-v2/academic-results";
+
+const candidate = JSON.parse(readFileSync("data/candidates/academic-results-v2/migration-candidate.json", "utf8"));
+const rules: QualificationAwardRuleV2[] = candidate.awardRules.map((rule: unknown) => QualificationAwardRuleV2Schema.parse(rule));
+const reviewUsage = JSON.parse(readFileSync("generated/academic-results-v2/deepseek-award-rule-review-usage.json", "utf8")).usage;
+const caie0580Review = JSON.parse(readFileSync("data/candidates/academic-results-v2/caie-0580-2025-june-boundary-review.json", "utf8"));
+const caie0580ReviewUsage = JSON.parse(readFileSync("generated/academic-results-v2/caie-0580-2025-june-boundary-review-usage.json", "utf8"));
+
+describe("official award-rule candidates", () => {
+  it("validates every migrated row and covers all 13 approved qualifications", () => {
+    expect(candidate.sources.every((source: unknown) => SourceEvidenceV1Schema.safeParse(source).success)).toBe(true);
+    expect(candidate.boundaries.every((boundary: unknown) => GradeBoundaryV2Schema.safeParse(boundary).success)).toBe(true);
+    expect(candidate.statistics.every((row: unknown) => GradeStatisticsV2Schema.safeParse(row).success)).toBe(true);
+    expect(new Set(rules.map(rule => rule.awardQualificationId)).size).toBe(13);
+    expect(rules).toHaveLength(40);
+    expect(rules.every(rule => rule.verificationStatus !== "owner-approved")).toBe(true);
+  });
+
+  it("keeps AQA out of external review and records the requested DeepSeek provider and model", () => {
+    expect(reviewUsage.length).toBeGreaterThan(0);
+    expect(reviewUsage.every((entry: { provider: string }) => entry.provider === "deepseek")).toBe(true);
+    expect(reviewUsage.every((entry: { returnedModel?: string }) => entry.returnedModel === "deepseek-v4-pro")).toBe(true);
+    expect(reviewUsage.some((entry: { label: string }) => entry.label.toLowerCase().includes("aqa"))).toBe(false);
+  });
+
+  it("migrates option-specific AQA 7367 and OCR H245 overall boundaries without aggregating component thresholds", () => {
+    const aqaFurther = candidate.boundaries.filter((row: { awardQualificationId: string }) => row.awardQualificationId === "award:aqa:7367");
+    const ocrFurther = candidate.boundaries.filter((row: { awardQualificationId: string }) => row.awardQualificationId === "award:ocr:h245");
+    expect(aqaFurther).toHaveLength(21);
+    expect(new Set(aqaFurther.map((row: { optionCode: string }) => row.optionCode))).toEqual(new Set(["DS", "MD", "SM"]));
+    expect(aqaFurther.every((row: { boundaryScope: string; maximumMark: number; verificationStatus: string }) => row.boundaryScope === "overall" && row.maximumMark === 300 && row.verificationStatus === "codex-reviewed")).toBe(true);
+    expect(ocrFurther).toHaveLength(30);
+    expect(ocrFurther.every((row: { boundaryScope: string; maximumMark: number }) => row.boundaryScope === "overall" && row.maximumMark === 300)).toBe(true);
+    expect(candidate.boundaries.find((row: { awardQualificationId: string }) => row.awardQualificationId === "award:ocr:h640")).toMatchObject({
+      year: 2019,
+      series: "june",
+      maximumMark: 275,
+      thresholds: { "A*": 217, A: 178, B: 146, C: 114, D: 83, E: 52 },
+    });
+  });
+
+  it("versions 9709 conceptual routes separately from series-specific option rows", () => {
+    const caieRules = rules.filter(rule => rule.awardQualificationId === "award:caie:9709");
+    expect(caieRules).toHaveLength(11);
+    expect(caieRules.some(rule => rule.routeId.includes(":AX") || rule.routeId.includes(":DX") || rule.routeId.includes(":S1"))).toBe(false);
+    expect(caieRules.filter(rule => rule.effectiveFrom >= "2020-01-01").every(rule =>
+      rule.boundarySelectionRule?.requiresOptionCode && rule.boundarySelectionRule.requiresComponentVariants)).toBe(true);
+
+    const boundaries = candidate.boundaries.filter((row: { awardQualificationId: string }) => row.awardQualificationId === "award:caie:9709");
+    expect(boundaries).toHaveLength(45);
+    expect(new Set(boundaries.map((row: { routeId: string }) => row.routeId))).toEqual(new Set([
+      "award:caie:9709:2023-2025:as",
+      "award:caie:9709:2023-2025:al:same-series",
+      "award:caie:9709:2023-2025:al:staged",
+      "award:caie:9709:2023-2025:special-composite:P3",
+      "award:caie:9709:2023-2025:special-composite:P4",
+    ]));
+    expect(boundaries.every((row: { qualificationVersionId: string; optionCode?: string; componentVariants?: string[] }) =>
+      row.qualificationVersionId === "CAIE-9709:2023-2025" && Boolean(row.optionCode) && Boolean(row.componentVariants?.length))).toBe(true);
+  });
+
+  it("keeps all six 0580 option rows separate and requires exact variant selection", () => {
+    const boundaries = candidate.boundaries.filter((row: { awardQualificationId: string; year: number; series: string }) =>
+      row.awardQualificationId === "award:caie:0580" && row.year === 2025 && row.series === "june");
+    expect(boundaries).toHaveLength(6);
+    expect(new Set(boundaries.map((row: { optionCode: string }) => row.optionCode))).toEqual(new Set(["AX", "AY", "AZ", "BX", "BY", "BZ"]));
+    expect(boundaries.find((row: { optionCode: string }) => row.optionCode === "BY")).toMatchObject({
+      routeId: "award:caie:0580:extended",
+      componentVariants: ["22", "42"],
+      maximumMark: 200,
+      thresholds: { "A*": 176, A: 152, B: 119, C: 86, D: 68, E: 51 },
+    });
+    const rule = rules.find(item => item.routeId === "award:caie:0580:extended"
+      && item.qualificationVersionId === "CAIE-0580:2025-2027")!;
+    expect(rule.boundarySelectionRule).toMatchObject({ requiresOptionCode: true, requiresComponentVariants: true });
+    expect(calculateQualificationAwardV2({
+      ruleId: rule.ruleId,
+      routeId: rule.routeId,
+      targetSeries: "2025-june",
+      combinationId: "0580-extended-p2-p4",
+      optionCode: "BY",
+      componentVariants: ["22", "42"],
+      componentScores: [
+        { componentCode: "P2", series: "2025-june", rawMark: 80 },
+        { componentCode: "P4", series: "2025-june", rawMark: 75 },
+      ],
+    }, rule, boundaries.find((row: { optionCode: string }) => row.optionCode === "BY"))).toMatchObject({
+      totalAwardMark: 155,
+      grade: "A",
+      calculationStatus: "official",
+    });
+    expect(caie0580Review).toMatchObject({ reviewStatus: "machine-reviewed", verdict: "pass" });
+    expect(caie0580ReviewUsage.usage[0]).toMatchObject({ status: "success", returnedModel: "deepseek-v4-pro", totalTokens: 2577 });
+  });
+
+  it("migrates the verified 8MA0 AS overall series without inventing A-star", () => {
+    const boundaries = candidate.boundaries.filter((row: { awardQualificationId: string }) =>
+      row.awardQualificationId === "award:pearson:8ma0");
+    expect(boundaries).toHaveLength(5);
+    expect(boundaries.map((row: { year: number }) => row.year)).toEqual([2019, 2022, 2023, 2024, 2025]);
+    expect(boundaries.find((row: { year: number }) => row.year === 2019)).toMatchObject({
+      boundaryScope: "overall",
+      maximumMark: 160,
+      thresholds: { A: 101, B: 87, C: 74, D: 61, E: 48 },
+      verificationStatus: "codex-reviewed",
+    });
+    expect(boundaries.every((row: { thresholds: Record<string, number | null> }) =>
+      !Object.hasOwn(row.thresholds, "A*"))).toBe(true);
+  });
+
+  it("uses the legacy 9231 two-paper award only in 2019 and versioned modern rules afterwards", () => {
+    const furtherRules = rules.filter(rule => rule.awardQualificationId === "award:caie:9231");
+    expect(furtherRules).toHaveLength(10);
+    expect(furtherRules.find(rule => rule.routeId === "award:caie:9231:legacy-al")).toMatchObject({
+      qualificationVersionId: "CAIE-9231:2019",
+      effectiveFrom: "2019-01-01",
+      effectiveTo: "2019-12-31",
+      totalMaximumAwardMark: 200,
+    });
+    for (const version of ["2020-2022", "2023-2025", "2026-2027"]) {
+      const versionRules = furtherRules.filter(rule => rule.ruleId.includes(version));
+      expect(versionRules).toHaveLength(3);
+      expect(new Set(versionRules.map(rule => rule.routeId))).toEqual(new Set([
+        "award:caie:9231:as",
+        "award:caie:9231:al:same-series",
+        "award:caie:9231:al:staged",
+      ]));
+    }
+  });
+
+  it("keeps tiered, staged, optional-paper and modular routes distinct", () => {
+    const routeIds = new Set(rules.map(rule => rule.routeId));
+    for (const routeId of [
+      "award:caie:0580:core",
+      "award:caie:0580:extended",
+      "award:caie:9231:al:staged",
+      "award:pearson:4ma1:foundation",
+      "award:pearson:4ma1:higher",
+      "award:pearson:ial-mathematics:YMA01",
+      "award:pearson:ial-further-mathematics:YFM01",
+      "award:aqa:7367:linear",
+      "award:ocr:h245:linear",
+      "award:ocr:h640:linear",
+    ]) expect(routeIds.has(routeId), routeId).toBe(true);
+    expect(rules.find(rule => rule.routeId === "award:ocr:h245:linear")?.validCombinations).toHaveLength(6);
+    expect(rules.find(rule => rule.routeId === "award:aqa:7367:linear")?.validCombinations).toHaveLength(3);
+  });
+
+  it("marks a component optional exactly when at least one valid combination omits it", () => {
+    for (const rule of rules) {
+      for (const component of rule.components) {
+        const includedInEveryCombination = rule.validCombinations.every(combination => combination.componentCodes.includes(component.code));
+        expect(component.optional, `${rule.ruleId}/${component.code}`).toBe(!includedInEveryCombination);
+      }
+    }
+  });
+
+  it("applies Pearson IAL Further Mathematics best-three IA2 A-star logic", () => {
+    const rule = rules.find(item => item.routeId === "award:pearson:ial-further-mathematics:YFM01")!;
+    const selected = rule.validCombinations.find(item => ["FP2", "FP3", "M2", "M3"].every(code => item.componentCodes.includes(code)))!;
+    const advanced = new Set(["FP2", "FP3", "M2", "M3", "S2", "S3"]);
+    let advancedIndex = 0;
+    const marks = Object.fromEntries(selected.componentCodes.map(code => {
+      if (!advanced.has(code)) return [code, 100];
+      advancedIndex += 1;
+      return [code, advancedIndex <= 3 ? 90 : 10];
+    }));
+    const boundary = GradeBoundaryV2Schema.parse({
+      schemaVersion: "2.0.0",
+      boundaryId: "boundary:test:yfm01:2025-june",
+      qualificationVersionId: rule.qualificationVersionId,
+      awardQualificationId: rule.awardQualificationId,
+      year: 2025,
+      series: "june",
+      routeId: rule.routeId,
+      boundaryScope: "overall",
+      maximumMark: 600,
+      gradeOrder: ["A*", "A", "B", "C", "D", "E"],
+      thresholds: { "A*": 480, A: 480, B: 420, C: 360, D: 300, E: 240 },
+      publicationStatus: "final",
+      sourceIds: [rule.sourceIds[0]],
+      verificationStatus: "codex-reviewed",
+    });
+    const result = calculateQualificationAwardV2({
+      ruleId: rule.ruleId,
+      routeId: rule.routeId,
+      targetSeries: "2025-june",
+      combinationId: selected.combinationId,
+      componentScores: selected.componentCodes.map(componentCode => ({ componentCode, series: "2025-june", awardMark: marks[componentCode] ?? 0 })),
+    }, rule, boundary);
+    expect(result).toMatchObject({ totalAwardMark: 480, grade: "A*", aStarSatisfied: true });
+  });
+
+  it("selects OCR H245 optional papers by best official grade rather than highest raw total", () => {
+    const rule = rules.find(item => item.routeId === "award:ocr:h245:linear")!;
+    const boundaries = rule.validCombinations.map(combination => GradeBoundaryV2Schema.parse({
+      schemaVersion: "2.0.0",
+      boundaryId: `boundary:test:${combination.combinationId}`,
+      qualificationVersionId: rule.qualificationVersionId,
+      awardQualificationId: rule.awardQualificationId,
+      year: 2025,
+      series: "june",
+      routeId: rule.routeId,
+      optionCode: combination.optionCode,
+      boundaryScope: "overall",
+      maximumMark: 300,
+      gradeOrder: ["A*", "A", "B", "C", "D", "E"],
+      thresholds: combination.optionCode === "Y542+Y543"
+        ? { "A*": 240, A: 200, B: 170, C: 140, D: 110, E: 80 }
+        : { "A*": 290, A: 280, B: 250, C: 200, D: 150, E: 100 },
+      publicationStatus: "final",
+      sourceIds: [rule.sourceIds[0]],
+      verificationStatus: "codex-reviewed",
+    }));
+    const result = calculateBestQualificationAwardV2({
+      ruleId: rule.ruleId,
+      routeId: rule.routeId,
+      targetSeries: "2025-june",
+      componentScores: ([
+        ["Y540", 60], ["Y541", 60], ["Y542", 75], ["Y543", 20], ["Y544", 70], ["Y545", 10],
+      ] as const).map(([componentCode, rawMark]) => ({ componentCode, series: "2025-june", rawMark })),
+    }, rule, boundaries);
+    expect(result.selected).toMatchObject({ combinationId: "h245-y542-y543", totalAwardMark: 215, grade: "A" });
+    expect(result.consideredCombinationIds).toHaveLength(6);
+  });
+});

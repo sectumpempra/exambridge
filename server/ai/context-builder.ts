@@ -20,6 +20,13 @@ import type {
   AIChatRequest,
   AIResolvedContext,
 } from "@/domain-v2/ai-assistant";
+import {
+  AcademicResultsManifestV2Schema,
+  type AcademicResultsManifestV2,
+} from "@/domain-v2/academic-results";
+import { buildAcademicToolContext, type AcademicToolContext } from "./academic-tools";
+import { detectQualificationAmbiguity, resolveApprovedQualificationAliases } from "./qualification-resolver";
+import { detectRequiredInputClarification } from "./required-input-resolver";
 
 type KnowledgeManifestEntry = {
   code: string;
@@ -64,6 +71,10 @@ export type AIContextBuildResult = {
   resolvedContext: AIResolvedContext;
   paperFacts: AIPaperFact[];
   clarification?: string;
+  localAnswer?: string;
+  academicTools?: AcademicToolContext;
+  containsAqa: boolean;
+  externalSearchIdentity?: { board: string; qualificationCode: string };
 };
 
 const MAX_PROMPT_CONTEXT_CHARACTERS = 52_000;
@@ -107,6 +118,19 @@ function normalizedBoard(value: string): string {
   if (normalized.includes("cambridge") || normalized === "caie") return "caie";
   if (normalized.includes("pearson") || normalized.includes("edexcel")) return "edexcel";
   return normalized.replace(/[^a-z0-9]+/g, "");
+}
+
+function awardQualificationIdForCourse(course: CourseContextEntry): string {
+  const board = normalizedBoard(course.boardName);
+  const code = course.subjectCode.toLowerCase();
+  if (board === "edexcel" && code === "yma01") return "award:pearson:ial-mathematics";
+  if (board === "edexcel" && code === "yfm01") return "award:pearson:ial-further-mathematics";
+  const awardBoard = board === "edexcel" ? "pearson" : board;
+  return `award:${awardBoard}:${code}`;
+}
+
+function scopePriority(source: AIChatRequest["scopes"][number]["source"]): number {
+  return { "explicit-query": 0, "manual-selection": 1, "page-context": 2, inferred: 3 }[source];
 }
 
 export function overviewIdentityMatches(
@@ -156,6 +180,12 @@ function messageExplicitlyNamesCode(message: string, code: string): boolean {
   return normalizedMessage.includes(normalizedCode);
 }
 
+function explicitCodePosition(message: string, ...codes: string[]): number {
+  const normalizedMessage = normalizedToken(message);
+  const positions = codes.map(code => normalizedMessage.indexOf(normalizedToken(code))).filter(position => position >= 0);
+  return positions.length > 0 ? Math.min(...positions) : Number.MAX_SAFE_INTEGER;
+}
+
 function trimArray<T>(items: T[], limit: number): { items: T[]; omitted: number } {
   return { items: items.slice(0, limit), omitted: Math.max(0, items.length - limit) };
 }
@@ -167,6 +197,90 @@ function isComparisonPromptContext(value: unknown): value is ComparisonPromptCon
     && Array.isArray(candidate.sharedConcepts?.items)
     && Array.isArray(candidate.sideA?.items)
     && Array.isArray(candidate.sideB?.items);
+}
+
+function remapAcademicSourceIds(
+  value: unknown,
+  manifest: AcademicResultsManifestV2,
+  sources: SourceRegistry,
+): unknown {
+  const sourceMap = new Map(manifest.sources.map(source => [source.sourceId, source]));
+  const citationMap = new Map<string, string>();
+  const citationFor = (sourceId: string) => {
+    const cached = citationMap.get(sourceId);
+    if (cached) return cached;
+    const source = sourceMap.get(sourceId);
+    if (!source) return undefined;
+    const citationId = sources.add({
+      title: source.documentTitle,
+      url: source.officialUrl,
+      dataVersion: source.documentVersion ?? `${source.effectiveFrom}${source.effectiveTo ? `–${source.effectiveTo}` : ""}`,
+    });
+    citationMap.set(sourceId, citationId);
+    return citationId;
+  };
+  const walk = (item: unknown, key?: string): unknown => {
+    if (Array.isArray(item)) {
+      if (key === "sourceIds") return item.map(sourceId => typeof sourceId === "string" ? citationFor(sourceId) : undefined).filter(Boolean);
+      return item.map(child => walk(child));
+    }
+    if (!item || typeof item !== "object") return item;
+    return Object.fromEntries(Object.entries(item).map(([childKey, child]) => [childKey, walk(child, childKey)]));
+  };
+  return walk(value);
+}
+
+function buildLocalAqaAnswer(
+  locale: AIChatRequest["locale"],
+  knowledge: unknown,
+  academic: AcademicToolContext | undefined,
+  citations: AICitation[],
+  originalTextDetected: boolean,
+): string {
+  const sourceMarkers = citations.slice(0, 4).map(source => `[${source.sourceId}]`).join("");
+  const knowledgeObject = knowledge && typeof knowledge === "object" ? knowledge as Record<string, unknown> : undefined;
+  const lines = locale === "en-GB"
+    ? ["This question includes AQA. ExamBridge answered it with a deterministic local template; no AQA material was sent to an external model."]
+    : ["这个问题包含 AQA。ExamBridge 已使用本地确定性模板回答；AQA 材料没有发送给任何外部模型。"];
+  if (originalTextDetected) {
+    lines.push(locale === "en-GB"
+      ? "The pasted wording was processed locally and is not repeated here."
+      : "你粘贴的考纲原文只在本地处理，本回答不复述该段原文。");
+  }
+  if (knowledgeObject?.mode === "comparison") {
+    const exact = knowledgeObject.exactMetrics as { coverageA?: number; coverageB?: number; jaccard?: number; sharedNodeCount?: number } | undefined;
+    if (exact) {
+      const format = (value: number | undefined) => typeof value === "number" ? `${value.toFixed(1)}%` : "—";
+      lines.push(locale === "en-GB"
+        ? `Verified exact scope: ${exact.sharedNodeCount ?? 0} shared concepts; A→B ${format(exact.coverageA)}, B→A ${format(exact.coverageB)}, Jaccard ${format(exact.jaccard)}.`
+        : `已核验的精确知识范围：共同概念 ${exact.sharedNodeCount ?? 0} 个；A→B 覆盖率 ${format(exact.coverageA)}，B→A 覆盖率 ${format(exact.coverageB)}，Jaccard ${format(exact.jaccard)}。`);
+    }
+  } else if (knowledgeObject?.mode === "single-qualification") {
+    const qualification = knowledgeObject.qualification as { selectedPaper?: { name?: string }; statementCount?: number; paperCatalog?: unknown[] } | undefined;
+    lines.push(locale === "en-GB"
+      ? `Verified local coverage: ${qualification?.selectedPaper?.name ?? "the selected qualification"}; ${qualification?.statementCount ?? qualification?.paperCatalog?.length ?? 0} mapped item(s).`
+      : `本地已核验范围：${qualification?.selectedPaper?.name ?? "当前资格"}；共 ${qualification?.statementCount ?? qualification?.paperCatalog?.length ?? 0} 条映射记录。`);
+  }
+  for (const call of academic?.calls ?? []) {
+    if (call.name === "lookup_misconception" && call.status === "ok" && Array.isArray(call.result)) {
+      for (const record of call.result as Array<{ correctedFact?: string; applicabilityNotes?: string[]; sourceIds?: string[] }>) {
+        if (record.correctedFact) lines.push(`${record.correctedFact}${record.sourceIds?.map(sourceId => `[${sourceId}]`).join("") ?? ""}`);
+        if (record.applicabilityNotes?.length) lines.push(record.applicabilityNotes.join("；"));
+      }
+      continue;
+    }
+    const count = Array.isArray(call.result) ? call.result.length : call.result ? 1 : 0;
+    lines.push(locale === "en-GB"
+      ? `${call.name}: ${call.status}${count ? ` (${count} record(s))` : ""}.`
+      : `${call.name}：${call.status}${count ? `（${count} 条）` : ""}。`);
+  }
+  if (academic?.calls.some(call => call.status === "data-unavailable")) {
+    lines.push(locale === "en-GB"
+      ? "The approved active dataset does not yet contain the requested value, so no number is inferred."
+      : "当前 owner-approved active 数据尚未包含所问数值，因此不会猜测或用模型记忆补齐。");
+  }
+  if (sourceMarkers) lines.push(`${locale === "en-GB" ? "Sources" : "来源"}: ${sourceMarkers}`);
+  return lines.join("\n\n");
 }
 
 function appliesToPaper(statement: KnowledgeMappingV5["statements"][number], paperId: string | null): boolean {
@@ -226,7 +340,7 @@ function resolveSelectedPaperIds(
   request: AIChatRequest,
   entries: KnowledgeManifestEntry[],
 ): Array<string | null> {
-  const explicit = request.pageContext.selectedPaperIds.slice(0, 2).map((paperId) => paperId || null);
+  const explicit = request.pageContext.selectedPaperIds.slice(0, 4).map((paperId) => paperId || null);
   if (entries.length !== 1) return explicit;
   const entry = entries[0];
   const valid = new Set(entry.papers);
@@ -247,6 +361,7 @@ export class AIContextBuilder {
   private manifestPromise: Promise<KnowledgeManifest> | null = null;
   private ontologyPromise: Promise<CanonicalNodeSemanticsV5[]> | null = null;
   private mappingPromises = new Map<string, Promise<KnowledgeMappingV5>>();
+  private academicManifestPromise: Promise<AcademicResultsManifestV2> | null = null;
 
   constructor(root = process.env.EXAMBRIDGE_DATA_ROOT ?? process.cwd()) {
     this.publicRoot = path.resolve(process.env.EXAMBRIDGE_PUBLIC_ROOT ?? path.join(root, "public"));
@@ -272,6 +387,12 @@ export class AIContextBuilder {
     return this.manifestPromise;
   }
 
+  private loadAcademicManifest(): Promise<AcademicResultsManifestV2> {
+    this.academicManifestPromise ??= this.readJson("/data/academic-results-v2/manifest.json")
+      .then(value => AcademicResultsManifestV2Schema.parse(value));
+    return this.academicManifestPromise;
+  }
+
   private async loadOntology(manifest: KnowledgeManifest): Promise<CanonicalNodeSemanticsV5[]> {
     this.ontologyPromise ??= this.readJson(manifest.ontologyUrl).then((value) => {
       const ontology = KnowledgeOntologyV5Schema.parse(value);
@@ -293,25 +414,32 @@ export class AIContextBuilder {
     return promise;
   }
 
-  private resolveCourseEntries(request: AIChatRequest) {
+  private resolveCourseEntries(request: AIChatRequest, aliasAwardIds: string[] = []) {
     const result = [] as typeof COURSE_CATALOG;
     const seen = new Set<string>();
     const add = (entry: (typeof COURSE_CATALOG)[number] | undefined) => {
-      if (!entry || result.length >= 2) return;
+      if (!entry || result.length >= 4) return;
       const canonicalKey = overviewForCourse(entry)?.id ?? entry.knowledgeTreeCode ?? entry.qualificationId;
       if (seen.has(canonicalKey)) return;
       seen.add(canonicalKey);
       result.push(entry);
     };
 
-    request.qualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
-    request.resolvedContext?.qualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
-
     const message = latestUserMessage(request);
     COURSE_CATALOG
       .filter((entry) => messageExplicitlyNamesCode(message, entry.subjectCode))
-      .sort((a, b) => Number(Boolean(b.capabilities.examOverview.href)) - Number(Boolean(a.capabilities.examOverview.href)))
+      .sort((a, b) => explicitCodePosition(message, a.subjectCode) - explicitCodePosition(message, b.subjectCode)
+        || Number(Boolean(b.capabilities.examOverview.href)) - Number(Boolean(a.capabilities.examOverview.href)))
       .forEach(add);
+    if (result.length > 0) return result;
+    aliasAwardIds.forEach(awardId => add(COURSE_CATALOG.find(entry => awardQualificationIdForCourse(entry) === awardId)));
+    if (result.length > 0) return result;
+    [...request.scopes].sort((a, b) => scopePriority(a.source) - scopePriority(b.source)).forEach((scope) => {
+      scope.catalogQualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
+      scope.awardQualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => awardQualificationIdForCourse(entry) === id)));
+    });
+    request.qualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
+    request.resolvedContext?.qualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
     return result;
   }
 
@@ -323,19 +451,31 @@ export class AIContextBuilder {
     const result: KnowledgeManifestEntry[] = [];
     const seen = new Set<string>();
     const add = (entry: KnowledgeManifestEntry | undefined) => {
-      if (!entry || seen.has(entry.code) || result.length >= 2) return;
+      if (!entry || seen.has(entry.code) || result.length >= 4) return;
       seen.add(entry.code);
       result.push(entry);
     };
 
-    request.pageContext.comparisonIds.forEach((code) => add(manifest.mappings.find((entry) => entry.code === code)));
-    request.resolvedContext?.qualificationCodes.forEach((code) => add(manifest.mappings.find((entry) => entry.code === code)));
-    courses.forEach((course) => add(manifest.mappings.find((entry) => entry.code === course.knowledgeTreeCode)));
-
     const message = latestUserMessage(request);
     manifest.mappings
       .filter((entry) => messageExplicitlyNamesCode(message, entry.code) || messageExplicitlyNamesCode(message, entry.subjectCode))
+      .sort((a, b) => explicitCodePosition(message, a.code, a.subjectCode) - explicitCodePosition(message, b.code, b.subjectCode))
       .forEach(add);
+    if (result.length > 0) return result;
+    [...request.scopes].sort((a, b) => scopePriority(a.source) - scopePriority(b.source)).forEach((scope) => {
+      scope.qualificationVersionIds.forEach((versionId) => add(manifest.mappings.find((entry) => entry.qualificationVersionId === versionId)));
+      scope.awardQualificationIds.forEach((awardId) => {
+        const course = COURSE_CATALOG.find((entry) => awardQualificationIdForCourse(entry) === awardId);
+        add(manifest.mappings.find((entry) => entry.code === course?.knowledgeTreeCode));
+      });
+      scope.catalogQualificationIds.forEach((catalogId) => {
+        const course = COURSE_CATALOG.find((entry) => entry.qualificationId === catalogId);
+        add(manifest.mappings.find((entry) => entry.code === course?.knowledgeTreeCode));
+      });
+    });
+    request.pageContext.comparisonIds.forEach((code) => add(manifest.mappings.find((entry) => entry.code === code)));
+    courses.forEach((course) => add(manifest.mappings.find((entry) => entry.code === course.knowledgeTreeCode)));
+    request.resolvedContext?.qualificationCodes.forEach((code) => add(manifest.mappings.find((entry) => entry.code === code)));
     return result;
   }
 
@@ -531,6 +671,26 @@ export class AIContextBuilder {
       };
     }
 
+    if (mappings.length > 2) {
+      return {
+        mode: "multi-qualification-overview",
+        activeBatch: manifest.activeBatch,
+        selections: mappings.map((mapping, index) => ({
+          code: entries[index].code,
+          qualificationVersionId: mapping.qualificationVersionId,
+          board: mapping.board,
+          subjectCode: mapping.subjectCode,
+          subjectName: mapping.subjectName,
+          level: mapping.level,
+          syllabusVersion: mapping.syllabusVersion,
+          selectedPaperId: selectedPaperIds[index] ?? null,
+          sourceIds: sourceIds.get(mapping.qualificationVersionId),
+          aqaOriginalTextPolicy: mapping.board === "AQA" ? "Original AQA wording is intentionally withheld from the model." : undefined,
+        })),
+        knowledgeComparisonPolicy: "Exact knowledge overlap is intentionally not aggregated across three or four qualifications. Request a pairwise comparison for exact directional coverage and Jaccard metrics.",
+      };
+    }
+
     const [mappingA, mappingB] = mappings;
     const paperA = selectedPaperIds[0] || null;
     const paperB = selectedPaperIds[1] || null;
@@ -566,7 +726,15 @@ export class AIContextBuilder {
         sourceIds: sourceIds.get(mapping.qualificationVersionId),
         aqaOriginalTextPolicy: mapping.board === "AQA" ? "Original AQA wording is intentionally withheld from the model." : undefined,
       })),
-      exactMetrics: comparison.exact,
+      exactMetrics: {
+        sharedNodeCount: comparison.exact.sharedNodeIds.length,
+        aOnlyNodeCount: comparison.exact.aOnlyNodeIds.length,
+        bOnlyNodeCount: comparison.exact.bOnlyNodeIds.length,
+        unionCount: comparison.exact.unionCount,
+        jaccard: comparison.exact.jaccard,
+        coverageA: comparison.exact.coverageA,
+        coverageB: comparison.exact.coverageB,
+      },
       statementCounts: comparison.counts,
       sharedConcepts,
       sideA: aItems,
@@ -577,47 +745,79 @@ export class AIContextBuilder {
 
   async build(request: AIChatRequest): Promise<AIContextBuildResult> {
     const manifest = await this.loadManifest();
-    const courses = this.resolveCourseEntries(request);
+    const academicManifest = await this.loadAcademicManifest();
+    const ambiguity = detectQualificationAmbiguity(latestUserMessage(request), request.locale);
+    if (ambiguity) {
+      return {
+        promptContext: "{}",
+        sources: [],
+        paperFacts: [],
+        resolvedContext: {
+          awardQualificationIds: [],
+          qualificationVersionIds: [],
+          qualificationIds: [],
+          qualificationCodes: [],
+          paperIds: [],
+          labels: [],
+        },
+        clarification: ambiguity.clarification,
+        containsAqa: false,
+      };
+    }
+    const aliasMatches = resolveApprovedQualificationAliases(latestUserMessage(request), academicManifest.qualificationIdentities);
+    const courses = this.resolveCourseEntries(request, aliasMatches.map(identity => identity.awardQualificationId));
     const knowledgeEntries = this.resolveKnowledgeEntries(request, manifest, courses);
     const aqaEntries = knowledgeEntries.filter((entry) => entry.board === "AQA");
+    let aqaOriginalTextDetected = false;
     if (aqaEntries.length > 0) {
       const aqaMappings = await Promise.all(aqaEntries.map((entry) => this.loadMapping(entry)));
-      const hasOriginalText = request.messages
+      aqaOriginalTextDetected = request.messages
         .filter((message) => message.role === "user")
         .some((message) => aqaMappings.some((mapping) => containsAqaOriginalText(message.content, mapping)));
-      if (hasOriginalText) {
-        return {
-          promptContext: "{}",
-          sources: [],
-          paperFacts: [],
-          resolvedContext: {
-            qualificationIds: courses.map((course) => course.qualificationId).slice(0, 2),
-            qualificationCodes: knowledgeEntries.map((entry) => entry.code).slice(0, 2),
-            paperIds: request.pageContext.selectedPaperIds.filter(Boolean).slice(0, 2),
-            labels: knowledgeEntries.map((entry) => `${entry.board} ${entry.subjectCode} ${entry.subjectName}`).slice(0, 2),
-          },
-          clarification: request.locale === "en-GB"
-            ? "To respect AQA material restrictions, this wording will not be sent to the AI. Please ask again in your own words using only the qualification code and topic name."
-            : "为遵守 AQA 材料使用限制，这段考纲原文不会发送给 AI。请只保留资格代码和主题名称，并用自己的话重新提问。",
-        };
-      }
     }
     const sources = createSourceRegistry();
     const overviews = this.addOverviewContext(courses, sources);
     const selectedPaperIds = resolveSelectedPaperIds(request, knowledgeEntries);
     const knowledge = await this.addKnowledgeContext(knowledgeEntries, manifest, selectedPaperIds, sources);
     const paperFacts = this.paperFactsForSelections(courses, knowledgeEntries, selectedPaperIds);
+    const rawAcademic = buildAcademicToolContext(
+      request,
+      academicManifest,
+      knowledgeEntries.map(entry => entry.qualificationVersionId),
+    );
+    const academic = rawAcademic
+      ? remapAcademicSourceIds(rawAcademic, academicManifest, sources) as AcademicToolContext
+      : undefined;
 
     const resolvedContext: AIResolvedContext = {
-      qualificationIds: courses.map((course) => course.qualificationId).slice(0, 2),
-      qualificationCodes: knowledgeEntries.map((entry) => entry.code).slice(0, 2),
+      awardQualificationIds: [...new Set([
+        ...courses.map(awardQualificationIdForCourse),
+      ])].slice(0, 4),
+      qualificationVersionIds: [...new Set([
+        ...knowledgeEntries.map(entry => entry.qualificationVersionId),
+      ])].slice(0, 4),
+      qualificationIds: courses.map((course) => course.qualificationId).slice(0, 4),
+      qualificationCodes: knowledgeEntries.map((entry) => entry.code).slice(0, 4),
       paperIds: selectedPaperIds.filter((paperId): paperId is string => Boolean(paperId)),
       labels: (knowledgeEntries.length > 0
         ? knowledgeEntries.map((entry) => `${entry.board} ${entry.subjectCode} ${entry.subjectName}`)
-        : courses.map((course) => course.label)).slice(0, 2),
+        : courses.map((course) => course.label)).slice(0, 4),
     };
 
-    if (overviews.length === 0 && !knowledge) {
+    const requiredInput = detectRequiredInputClarification(request, resolvedContext.awardQualificationIds);
+    if (requiredInput) {
+      return {
+        promptContext: "{}",
+        sources: [],
+        paperFacts: [],
+        resolvedContext,
+        clarification: requiredInput.clarification,
+        containsAqa: false,
+      };
+    }
+
+    const hasVerifiedAcademicContext = academic?.calls.some(call => call.status === "ok") === true;
+    if (overviews.length === 0 && !knowledge && !hasVerifiedAcademicContext) {
       return {
         promptContext: "{}",
         sources: [],
@@ -626,15 +826,18 @@ export class AIContextBuilder {
         clarification: request.locale === "en-GB"
           ? "Please choose a course or include an exact qualification code, such as 9709, before asking this question."
           : "请先选择课程，或在问题中写明准确的资格代码（例如 9709）；当前没有足够上下文，不能猜测你指的是哪门考试。",
+        containsAqa: false,
       };
     }
 
     const serializePayload = () => JSON.stringify({
       generatedFor: request.pageContext.pageType,
+      roleView: request.roleView,
       sourcePolicy: "Only owner-approved ExamBridge data is included. Source IDs are resolved by the server.",
       examOverviews: overviews,
       deterministicPaperFacts: paperFacts,
       knowledge,
+      academicResults: academic,
     });
     let payload = serializePayload();
     if (payload.length > MAX_PROMPT_CONTEXT_CHARACTERS && isComparisonPromptContext(knowledge)) {
@@ -659,6 +862,20 @@ export class AIContextBuilder {
     if (payload.length > promptLimit) {
       throw new Error(`AI prompt context exceeded ${promptLimit} characters`);
     }
-    return { promptContext: payload, sources: sources.list(), resolvedContext, paperFacts };
+    const sourceList = sources.list();
+    return {
+      promptContext: payload,
+      sources: sourceList,
+      resolvedContext,
+      paperFacts,
+      ...((aqaEntries.length > 0 || academic?.containsAqa) ? {
+        localAnswer: buildLocalAqaAnswer(request.locale, knowledge, academic, sourceList, aqaOriginalTextDetected),
+      } : {}),
+      academicTools: academic,
+      containsAqa: aqaEntries.length > 0 || academic?.containsAqa === true,
+      ...(knowledgeEntries.length === 1 && aqaEntries.length === 0 ? {
+        externalSearchIdentity: { board: knowledgeEntries[0].board, qualificationCode: knowledgeEntries[0].subjectCode },
+      } : {}),
+    };
   }
 }

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-21T15:40:25.491Z",
+  "reviewStatus": "machine-reviewed",
+  "provider": "deepseek",
+  "requestedModel": "deepseek-v4-pro",
+  "returnedModel": "deepseek-v4-pro",
+  "verdict": "pass",
+  "rowReviews": [
+    { "code": "H240", "valid": true },
+    { "code": "H245", "valid": true },
+    { "code": "H640", "valid": true },
+    { "code": "6993", "valid": true }
+  ],
+  "concerns": [],
+  "codexAdjudication": {
+    "accepted": true,
+    "notes": [
+      "All rows were re-extracted locally from the official OCR PDF.",
+      "Cumulative counts, percentages, grade sets, printed pages, PDF pages and the full-file SHA-256 were checked independently."
+    ]
+  }
+}

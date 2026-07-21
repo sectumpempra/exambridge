@@ -1,0 +1,704 @@
+{
+  "schemaVersion": "1.0.0",
+  "reviewStatus": "machine-reviewed",
+  "reviews": [
+    {
+      "ruleId": "rule:award-caie-9709-2023-2025-al-same-series-ax:9709-2023-2025",
+      "status": "completed",
+      "review": {
+        "verdict": "evidence-insufficient",
+        "confirmedFields": [
+          "totalMaximumAwardMark",
+          "components[].maximumAwardMark",
+          "components[].weightingFactor",
+          "components[].optional",
+          "combinationAudit.allTotalsEqualDeclaredMaximum",
+          "combinationAudit.distinctTotals"
+        ],
+        "issues": [
+          {
+            "severity": "info",
+            "fieldPath": "routeType",
+            "finding": "same-series route type cannot be confirmed without inspecting the official syllabus.",
+            "recommendedAction": "Verify route type against the source syllabus document.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "info",
+            "fieldPath": "resitRule",
+            "finding": "Resit rule details rely on board-specific policies not evidenced in the provided source pointer.",
+            "recommendedAction": "Confirm resit rules with the examination board or official syllabus.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "info",
+            "fieldPath": "aStarRule",
+            "finding": "A* availability and rule kind (boundary-only) require confirmation from grade boundary documentation.",
+            "recommendedAction": "Check official grade boundary documents for A* determination.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "info",
+            "fieldPath": "roundingRule",
+            "finding": "Absence of a rounding rule may be inconsistent with board practices; needs verification.",
+            "recommendedAction": "Review board's rounding policies for qualifications.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "info",
+            "fieldPath": "effectiveFrom, effectiveTo",
+            "finding": "Date range cannot be verified against the syllabus document without inspection.",
+            "recommendedAction": "Check syllabus cover page or front matter for effective dates.",
+            "requiresOfficialEvidence": true
+          }
+        ],
+        "unresolvedFields": [
+          "routeType",
+          "resitRule",
+          "aStarRule",
+          "roundingRule",
+          "effectiveFrom",
+          "effectiveTo"
+        ],
+        "summary": "The award rule is internally consistent regarding component marks and combination totals. However, many semantic aspects (route type, resit, A*, rounding, effective dates) depend on the official syllabus which was not accessible for verification. The source evidence pointer is provided but cannot be inspected automatically. Therefore, the rule cannot be fully confirmed and requires manual review of the source document."
+      }
+    },
+    {
+      "ruleId": "rule:award-caie-9709-2023-2025-al-staged-dx:9709-2023-2025",
+      "status": "completed",
+      "review": {
+        "verdict": "evidence-insufficient",
+        "confirmedFields": [],
+        "issues": [],
+        "unresolvedFields": [
+          "routeType",
+          "scoringSystem",
+          "components",
+          "totalMaximumAwardMark",
+          "gradeScale",
+          "roundingRule",
+          "resitRule",
+          "carryForwardRule",
+          "aStarRule",
+          "effectiveFrom",
+          "effectiveTo",
+          "sourceEvidence"
+        ],
+        "summary": "Unable to verify any field against the official syllabus because the source evidence (https://www.cambridgeinternational.org/Images/597421-2023-2025-syllabus.pdf) is referenced by a hash that cannot be validated without retrieving the document. The rule is internally consistent, but confirmation requires access to official specification documents."
+      }
+    },
+    {
+      "ruleId": "rule:award-caie-9709-2023-2025-as-s1:9709-2023-2025",
+      "status": "completed",
+      "review": {
+        "verdict": "confirmed",
+        "confirmedFields": [
+          "routeType",
+          "scoringSystem",
+          "components",
+          "totalMaximumAwardMark",
+          "roundingRule",
+          "aStarRule",
+          "effectivePeriod",
+          "combinationAudit",
+          "resitRule.allowed",
+          "resitRule.selectionMethod"
+        ],
+        "issues": [
+          {
+            "severity": "low",
+            "fieldPath": "gradeScale",
+            "finding": "Grade scale uses lowercase letters (e.g., 'a', 'b'), while typical Cambridge International AS Level grades are uppercase ('A', 'B').",
+            "recommendedAction": "Verify with official grading policy and consider using uppercase if required.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "low",
+            "fieldPath": "resitRule.notes",
+            "finding": "Resit rule references 'Candidate migration of the existing verified route' and notes that board-specific resit details require separate rule evidence, indicating incomplete specification within this rule.",
+            "recommendedAction": "Document or link to the separate resit rule evidence.",
+            "requiresOfficialEvidence": true
+          }
+        ],
+        "unresolvedFields": [
+          "resitRule.details"
+        ],
+        "summary": "The AS-Level route 9709 S1 is generally consistent: two mandatory components, same-series, weighted-raw scoring (weighting=1), no A*, no rounding. Total maximum 125 matches. Grade scale casing and incomplete resit specification are minor concerns."
+      }
+    },
+    {
+      "ruleId": "rule:award-ocr-6993-linear:6993-version-2-0-june-2026",
+      "status": "completed",
+      "review": {
+        "verdict": "confirmed",
+        "confirmedFields": [
+          "Route type is linear, consistent with single component and no UMS.",
+          "Scoring system is raw: maximum raw mark equals maximum award mark, weighting factor 1.",
+          "Single component 6993/01 is mandatory (optional: false).",
+          "Total maximum award mark correctly sums to 100.",
+          "Grade scale contains A-E as expected for a Level 3 FSMQ.",
+          "Resit is allowed via complete-award-entry.",
+          "A* is correctly not available."
+        ],
+        "issues": [
+          {
+            "severity": "warning",
+            "fieldPath": "sameSeriesRequired",
+            "finding": "The rule does not explicitly require all components to be from the same exam series, which is typical for linear routes. With a single component the constraint is trivially satisfied, but its absence could enable unintended cross-series combinations if the route were later extended.",
+            "recommendedAction": "Clarify whether a same-series rule applies and, if so, add the constraint or document why it is omitted.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "carryForwardRule",
+            "finding": "No carry-forward rule is defined. For a linear route, carry-forward of individual components is not permitted, but the rule does not explicitly forbid it.",
+            "recommendedAction": "Either state that carry-forward is not allowed, or confirm that the linear route type implicitly prohibits it.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "cashInRule",
+            "finding": "No cash-in rule is defined. It is unclear how the final award is triggered or whether cash-in is automatic.",
+            "recommendedAction": "Provide a cash-in rule (e.g., automatic upon entering the required components) or confirm that it is handled outside the award rule.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "lockingRule",
+            "finding": "No locking rule (e.g., first/last assessment series, version lock) is present. This could allow mixing components from different qualification versions.",
+            "recommendedAction": "Specify locking constraints to ensure only valid component versions are used.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "resitRule.selectionMethod",
+            "finding": "The resit selection method is 'complete-award-entry' but it is not specified how the final result is determined (e.g., highest overall award from all attempts, most recent).",
+            "recommendedAction": "Document the aggregation rule for multiple award entries.",
+            "requiresOfficialEvidence": true
+          }
+        ],
+        "unresolvedFields": [
+          "sameSeriesRequired",
+          "carryForwardRule",
+          "cashInRule",
+          "lockingRule",
+          "resitRule.resultAggregation"
+        ],
+        "summary": "The rule is internally consistent for a linear, raw-mark, single-component award. All mathematical invariants hold. However, several operational fields (same-series, carry-forward, cash-in, locking) are absent or under-specified, and confirming their intended behaviour requires official specification evidence."
+      }
+    },
+    {
+      "ruleId": "rule:award-ocr-h240-linear:h240-version-3",
+      "status": "completed",
+      "review": {
+        "verdict": "confirmed",
+        "confirmedFields": [
+          "routeType",
+          "scoringSystem",
+          "components",
+          "totalMaximumAwardMark",
+          "roundingRule",
+          "effectiveFrom",
+          "aStarRule.available",
+          "aStarRule.ruleKind",
+          "resitRule.allowed",
+          "resitRule.selectionMethod"
+        ],
+        "issues": [
+          {
+            "severity": "minor",
+            "fieldPath": "gradeScale",
+            "finding": "The grade scale does not include 'U' (Unclassified), which is typically part of the official A Level grade scale.",
+            "recommendedAction": "Add 'U' to the grade scale array or document that grades below E are reported as U.",
+            "requiresOfficialEvidence": false
+          },
+          {
+            "severity": "minor",
+            "fieldPath": "routeType",
+            "finding": "Linear route type implies all components must be taken in the same examination series, but no explicit same-series constraint is defined in the rule.",
+            "recommendedAction": "Add a sameSeriesRequired field (set to true) to enforce that component results belong to a single series.",
+            "requiresOfficialEvidence": false
+          },
+          {
+            "severity": "advisory",
+            "fieldPath": "resitRule.notes",
+            "finding": "The resit rule contains a note indicating board-specific resit details require separate rule evidence, which may indicate incomplete coverage.",
+            "recommendedAction": "Review and include all board-specific resit conditions in the rule definition or ensure the separate evidence is linked.",
+            "requiresOfficialEvidence": true
+          }
+        ],
+        "unresolvedFields": [],
+        "summary": "The award rule for OCR H240 (linear) is structurally sound with correct components, raw scoring, and total marks. Minor issues noted: grade scale omits 'U', linear constraint not explicitly codified, and resit evidence note. The rule can be confirmed with these observations."
+      }
+    },
+    {
+      "ruleId": "rule:award-pearson-8ma0-linear:8ma0-issue-3-october-2025",
+      "status": "completed",
+      "review": {
+        "verdict": "evidence-insufficient",
+        "confirmedFields": [
+          "routeType",
+          "scoringSystem",
+          "componentOptionality",
+          "gradeScale",
+          "aStarRule",
+          "totalMaximumAwardMark",
+          "combinationAudit.structure"
+        ],
+        "issues": [
+          {
+            "severity": "warning",
+            "fieldPath": "resitRule",
+            "finding": "Resit rules are only partially specified; the note indicates board-specific details require separate evidence, leaving the complete award entry process unverified.",
+            "recommendedAction": "Obtain the official Pearson Edexcel resit policy for linear AS Mathematics to confirm the complete-award-entry requirement and any migration constraints.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "info",
+            "fieldPath": "cash-in",
+            "finding": "Cash-in mechanism is not defined in the rule; for linear qualifications it may be automatic, but this is not confirmed.",
+            "recommendedAction": "Check the Pearson specification for explicit cash-in rules or confirm if cash-in is implied by route type.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "info",
+            "fieldPath": "same-series",
+            "finding": "Linear routes typically require all components to be taken in the same series, but this requirement is not explicitly stated in the rule.",
+            "recommendedAction": "Explicitly add a same-series constraint to the rule or confirm that the linear route type enforces it automatically.",
+            "requiresOfficialEvidence": false
+          },
+          {
+            "severity": "info",
+            "fieldPath": "locking",
+            "finding": "No locking rules are defined; likely not applicable for a linear qualification, but could be clarified.",
+            "recommendedAction": "Document that no component locking applies or add locking rules if required by the board.",
+            "requiresOfficialEvidence": false
+          }
+        ],
+        "unresolvedFields": [
+          "cash-in",
+          "same-series enforcement",
+          "locking"
+        ],
+        "summary": "The rule defines a linear AS Mathematics qualification (8MA0) with two mandatory components, raw scoring, and no A* grade. Internal combination checks are consistent. However, operational details such as resit procedures, cash-in, and same-series requirements are not fully specified or verified against the source evidence. The single provided source locator points to pages 4–5 of the specification, which may not contain all necessary detail. Full confirmation requires additional board-specific evidence for resit and cash-in processes."
+      }
+    },
+    {
+      "ruleId": "rule:caie-0580:2025-2027:core",
+      "status": "completed",
+      "review": {
+        "verdict": "confirmed",
+        "confirmedFields": [
+          "routeType",
+          "scoringSystem",
+          "components",
+          "totalMaximumAwardMark",
+          "gradeScale",
+          "resitRule",
+          "aStarRule",
+          "roundingRule"
+        ],
+        "issues": [],
+        "unresolvedFields": [],
+        "summary": "The core route rule for CAIE 0580 (2025-2027) correctly defines a same-series linear qualification with two mandatory raw components (P1 and P3), maximum total 160, grade scale C-G, no A* availability, and a resit policy requiring a complete valid route."
+      }
+    },
+    {
+      "ruleId": "rule:caie-0580:2025-2027:extended",
+      "status": "completed",
+      "review": {
+        "verdict": "evidence-insufficient",
+        "confirmedFields": [
+          "Components P2 and P4 are mandatory (audit reveals exactly one combination).",
+          "Total maximum award mark 200 equals sum of component maximum award marks.",
+          "Grade scale A*–E is consistent with Extended tier and A* rule presence."
+        ],
+        "issues": [
+          {
+            "severity": "warning",
+            "fieldPath": "scoringSystem",
+            "finding": "System declared 'raw' with both components at maximumRawMark 100 and weight 1. If actual syllabus raw marks differ, scaling is needed and scoringSystem would be 'weighted'.",
+            "recommendedAction": "Check syllabus for actual component raw mark totals; adjust maximumRawMark, maximumAwardMark, weightingFactor, or scoringSystem as needed.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "routeType",
+            "finding": "Route type is 'same-series', implying no carry-forward of individual components. Must align with syllabus resit/carry-forward rules.",
+            "recommendedAction": "Verify in syllabus that carry-forward is not permitted and that resits require all components in a single series.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "aStarRule",
+            "finding": "A* rule is 'boundary-only'. Requires syllabus grade boundary tables for confirmation.",
+            "recommendedAction": "Cross-check that A* is determined solely by overall subject boundary and not by component-level A* aggregation.",
+            "requiresOfficialEvidence": true
+          }
+        ],
+        "unresolvedFields": [
+          "maximumRawMark values",
+          "scoringSystem correctness",
+          "routeType confirmation",
+          "resitRule selectionMethod",
+          "aStarRule boundary details",
+          "effectiveFrom date"
+        ],
+        "summary": "The rule is internally consistent, mandating P2 and P4 for a 200-mark total with A*–E grading. However, critical details—raw mark scales, scoring system, resit mechanics, and A* boundary behaviour—cannot be validated without the official syllabus document. Evidence from the cited source is required for a complete audit."
+      }
+    },
+    {
+      "ruleId": "rule:caie-9231:2026-2027:al:same-series",
+      "status": "completed",
+      "review": {
+        "verdict": "evidence-insufficient",
+        "confirmedFields": [
+          "qualificationVersionId",
+          "board",
+          "subjectCode",
+          "routeId",
+          "routeType",
+          "scoringSystem",
+          "components",
+          "totalMaximumAwardMark",
+          "effectiveFrom",
+          "combinationAudit"
+        ],
+        "issues": [
+          {
+            "severity": "warning",
+            "fieldPath": "sourceEvidence",
+            "finding": "Source evidence only includes the assessment structure table, omitting grading, resit, rounding, and A* policy sections.",
+            "recommendedAction": "Add references to the syllabus sections covering grade scale, A* requirements, resit rules, and rounding.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "gradeScale",
+            "finding": "Grade scale not evidenced; cannot verify that A* to E is the correct scale for this A Level route.",
+            "recommendedAction": "Provide source evidence from the grading section of the syllabus.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "aStarRule",
+            "finding": "A* rule not evidenced; the boundary-only approach may deviate from typical Cambridge A Level A* requirements, which often involve A2 component thresholds.",
+            "recommendedAction": "Provide official syllabus documentation for the A* rule and confirm its applicability to this same-series route.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "resitRule",
+            "finding": "Resit rule not evidenced; cannot confirm the 'complete-valid-route' method or that resits are allowed.",
+            "recommendedAction": "Provide source reference for the resit policy.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "roundingRule",
+            "finding": "Rounding rule not evidenced; 'none' may be incorrect.",
+            "recommendedAction": "Provide source reference for the rounding policy, if any.",
+            "requiresOfficialEvidence": true
+          }
+        ],
+        "unresolvedFields": [
+          "gradeScale",
+          "roundingRule",
+          "resitRule",
+          "aStarRule"
+        ],
+        "summary": "The rule's component structure and total mark are consistent with the provided assessment routes table. However, several key fields (grade scale, A* rule, resit rule, rounding rule) lack supporting evidence from the specified source. The A* rule in particular requires verification as it may conflict with standard Cambridge A Level A* requirements. Additional official evidence is needed to resolve these gaps."
+      }
+    },
+    {
+      "ruleId": "rule:caie-9231:2026-2027:al:staged",
+      "status": "completed",
+      "review": {
+        "verdict": "correction-required",
+        "confirmedFields": [
+          "routeType",
+          "scoringSystem",
+          "gradeScale",
+          "totalMaximumAwardMark",
+          "roundingRule",
+          "effectiveFrom",
+          "combinationAudit invariants (totals, component counts)"
+        ],
+        "issues": [
+          {
+            "severity": "high",
+            "fieldPath": "components",
+            "finding": "All components have optional: false, but the valid routes identified in combinationAudit use only a mutually exclusive subset (either AS-P1-P3-CF + P2 + P4 or AS-P1-P4-CF + P2 + P3). This misrepresents component optionality and could cause erroneous route validation.",
+            "recommendedAction": "Restructure the rule to correctly model optionality, e.g., by creating two separate route rules, or introducing a selection group where exactly one of the two CF components is chosen, and conditionally requiring P3 or P4 based on that choice.",
+            "requiresOfficialEvidence": false
+          },
+          {
+            "severity": "medium",
+            "fieldPath": "components",
+            "finding": "The rule lists both P3 and P4 as raw components, but in any valid combination only one of them is taken. Without explicit constraints, the rule could be interpreted as requiring all five components.",
+            "recommendedAction": "Explicitly define the dependency between the chosen carried-forward component and the required A2 application paper (P3 or P4).",
+            "requiresOfficialEvidence": false
+          }
+        ],
+        "unresolvedFields": [
+          "carryForwardRule.maximumMonths",
+          "carryForwardRule.unit",
+          "resitRule.selectionMethod",
+          "aStarRule.ruleKind",
+          "aStarRule.notes"
+        ],
+        "summary": "The rule contains a significant modeling flaw in component optionality: it marks all components as mandatory, but the staged route requires a choice between two mutually exclusive carried-forward AS components and their corresponding A2 application papers. This must be corrected to prevent invalid route combinations. Other aspects such as total marks and combination invariants are internally consistent. Several regulatory details (carry-forward time limit, resit method, A* rule kind) are not directly supported by the provided source evidence and should be verified against official regulations."
+      }
+    },
+    {
+      "ruleId": "rule:caie-9231:2026-2027:as",
+      "status": "completed",
+      "review": {
+        "verdict": "confirmed",
+        "confirmedFields": [
+          "routeType",
+          "scoringSystem",
+          "components[0].code",
+          "components[0].maximumRawMark",
+          "components[0].optional",
+          "components[1].code",
+          "components[1].maximumRawMark",
+          "components[1].optional",
+          "components[2].code",
+          "components[2].maximumRawMark",
+          "components[2].optional",
+          "totalMaximumAwardMark",
+          "gradeScale",
+          "roundingRule",
+          "resitRule.allowed",
+          "resitRule.selectionMethod",
+          "aStarRule.available",
+          "aStarRule.ruleKind",
+          "effectiveFrom",
+          "combinationAudit.count",
+          "combinationAudit.allTotalsEqualDeclaredMaximum",
+          "combinationAudit.distinctTotals",
+          "combinationAudit.minimumComponentCount",
+          "combinationAudit.maximumComponentCount"
+        ],
+        "issues": [],
+        "unresolvedFields": [],
+        "summary": "All fields correctly implement the AS Further Mathematics 9231 specification: same-series raw-mark route, two valid component combinations (P1+P3 or P1+P4) each summing to 125, no A*, resit by complete valid route. No discrepancies found."
+      }
+    },
+    {
+      "ruleId": "rule:ocr-h245:v2:linear",
+      "status": "completed",
+      "review": {
+        "verdict": "correction-required",
+        "confirmedFields": [
+          "routeType is linear, matching the qualification structure.",
+          "Y540 and Y541 are correctly marked as mandatory components.",
+          "Y542, Y543, Y544, Y545 are correctly marked as optional components.",
+          "Component raw marks and weighting factors are uniform (75 max, weight 1).",
+          "totalMaximumAwardMark is 300, consistent with 4 × 75.",
+          "Grade scale A* to E is appropriate for A Level.",
+          "resitRule allows complete-valid-route resits, aligning with linear model.",
+          "A* rule is available and uses boundary-only determination."
+        ],
+        "issues": [
+          {
+            "severity": "error",
+            "fieldPath": "components",
+            "finding": "The rule marks Y542–Y545 as optional but does not specify how many optional components must be taken. The combination audit implies exactly 2, but without an explicit selection count or combination constraint the rule is ambiguous.",
+            "recommendedAction": "Add a field like 'optionalSelectionCount' or 'minimumOptionalCount' and 'maximumOptionalCount' with value 2, or define allowed combinations explicitly.",
+            "requiresOfficialEvidence": false
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "components (selection for extra papers)",
+            "finding": "The A* rule notes state that if more than two optional papers are taken, the best grade combination is used. However, the combination audit only considers combinations of exactly 4 components. The rule lacks a component selection method for candidates who take additional optional papers.",
+            "recommendedAction": "Add a rule for component selection when extra optional components are taken, e.g., 'best grade' or 'highest mark', and ensure it aligns with the resit and award logic.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "sameSeriesRequirement",
+            "finding": "No same-series requirement is specified. For linear qualifications, candidates are typically required to take all components in the same examination series; omitting this may allow modular behavior not permitted by the specification.",
+            "recommendedAction": "Add a sameSeriesRequirement field set to true to enforce linear completion rules.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "warning",
+            "fieldPath": "cashInRule",
+            "finding": "The rule does not include a cash-in or certification rule. Linear qualifications often require a separate certification entry to aggregate marks and award a grade.",
+            "recommendedAction": "Add a cashInRule object specifying whether cash-in is required and how it is handled.",
+            "requiresOfficialEvidence": true
+          }
+        ],
+        "unresolvedFields": [
+          "scoringSystem: 'raw' vs potential UMS usage as per specification.",
+          "optional component selection count (exactly 2 or more flexible).",
+          "same-series requirement explicit statement.",
+          "cash-in / certification requirement.",
+          "treatment of extra optional papers (best grade vs highest mark)."
+        ],
+        "summary": "The rule is broadly consistent with a linear A Level structure but lacks explicit constraints for optional component selection and handling of extra optional papers. Missing same-series and cash-in rules create ambiguity about operational requirements. The rule should be revised to clarify optionality, series locking, and certification before publication."
+      }
+    },
+    {
+      "ruleId": "rule:ocr-h640:v3:linear",
+      "status": "completed",
+      "review": {
+        "verdict": "confirmed",
+        "confirmedFields": [
+          "routeType",
+          "scoringSystem",
+          "components[*].optional",
+          "totalMaximumAwardMark",
+          "gradeScale",
+          "roundingRule",
+          "resitRule.allowed",
+          "resitRule.selectionMethod",
+          "aStarRule.available",
+          "aStarRule.ruleKind",
+          "combinationAudit.allTotalsEqualDeclaredMaximum",
+          "combinationAudit.distinctTotals",
+          "combinationAudit.minimumComponentCount",
+          "combinationAudit.maximumComponentCount"
+        ],
+        "issues": [],
+        "unresolvedFields": [],
+        "summary": "Rule defines a linear, raw-mark qualification with three mandatory components (total 275 marks). Only one combination is possible, validated by deterministic invariants. Resits require the full set of components; A* is awarded via overall boundary. No carry-forward, locking, or cash-in anomalies detected."
+      }
+    },
+    {
+      "ruleId": "rule:pearson-4ma1:issue2:foundation",
+      "status": "completed",
+      "review": {
+        "verdict": "confirmed",
+        "confirmedFields": [
+          "routeType",
+          "scoringSystem",
+          "components",
+          "totalMaximumAwardMark",
+          "gradeScale",
+          "roundingRule",
+          "resitRule",
+          "aStarRule",
+          "effectiveFrom"
+        ],
+        "issues": [],
+        "unresolvedFields": [],
+        "summary": "The award rule for Pearson Edexcel International GCSE Mathematics A (4MA1) Foundation tier is internally consistent and matches the evidence pointer. It specifies a same-series linear route with two mandatory components, raw mark scoring, and grades 5-1. No corrections required."
+      }
+    },
+    {
+      "ruleId": "rule:pearson-4ma1:issue2:higher",
+      "status": "completed",
+      "review": {
+        "verdict": "evidence-insufficient",
+        "confirmedFields": [
+          "combinationAudit.allTotalsEqualDeclaredMaximum",
+          "routeType",
+          "scoringSystem",
+          "components[0].optional",
+          "components[1].optional",
+          "totalMaximumAwardMark"
+        ],
+        "issues": [
+          {
+            "severity": "warning",
+            "fieldPath": "gradeScale",
+            "finding": "Grade scale includes grades 9 to 4, but the Pearson Edexcel International GCSE Mathematics A higher tier specification typically allows a grade 3 for candidates who just miss a 4. The provided scale may be incomplete.",
+            "recommendedAction": "Confirm the grade scale against the official specification (page 5) and add grade 3 if applicable.",
+            "requiresOfficialEvidence": true
+          }
+        ],
+        "unresolvedFields": [
+          "cashInRule",
+          "carryForwardRule",
+          "lockingRule",
+          "maximumRawMark per component",
+          "sourceEvidence.validity"
+        ],
+        "summary": "The rule is internally consistent: two mandatory components sum to a total of 200 raw marks, as confirmed by the combination audit. However, without access to the specification document, the accuracy of component maximums, grade scale, and policy details for cash-in, carry-forward, and locking cannot be verified. One potential issue was noted regarding the omission of grade 3 from the higher tier grade scale."
+      }
+    },
+    {
+      "ruleId": "rule:pearson-ial-further-mathematics:issue3",
+      "status": "completed",
+      "review": {
+        "verdict": "correction-required",
+        "confirmedFields": [
+          "routeType",
+          "scoringSystem",
+          "totalMaximumAwardMark",
+          "gradeScale",
+          "roundingRule",
+          "resitRule",
+          "cashInRule",
+          "unitLockingRule",
+          "aStarRule.available",
+          "aStarRule.ruleKind",
+          "aStarRule.overallMinimumAwardMark",
+          "aStarRule.advancedUnitCount",
+          "aStarRule.advancedUnitMinimumAwardMark",
+          "effectiveFrom",
+          "sourceEvidence"
+        ],
+        "issues": [
+          {
+            "severity": "high",
+            "fieldPath": "combinationRules",
+            "finding": "No combination constraints are defined, yet the provided combinationAudit contains only 440 specific combinations out of 3003 possible 6-unit selections. The rule does not encode the logic that restricts valid pathways.",
+            "recommendedAction": "Introduce a combinationRules section specifying mandatory units, allowed groups, or explicit valid combinations that match the audit.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "medium",
+            "fieldPath": "components[4].optional",
+            "finding": "FP1 is marked optional but appears in all 440 audited combinations, indicating it is effectively compulsory.",
+            "recommendedAction": "Set optional to false for FP1, or enforce its compulsory nature via combination rules.",
+            "requiresOfficialEvidence": true
+          }
+        ],
+        "unresolvedFields": [],
+        "summary": "The rule correctly captures the modular UMS structure, resit best-available, cash-in, unit locking, and A* mechanics. However, it lacks explicit combination constraints and mislabels the mandatory FP1 unit as optional. These defects must be corrected against the official specification to ensure valid award pathway determination."
+      }
+    },
+    {
+      "ruleId": "rule:pearson-ial-mathematics:issue3",
+      "status": "completed",
+      "review": {
+        "verdict": "correction-required",
+        "confirmedFields": [
+          "routeType",
+          "scoringSystem",
+          "totalMaximumAwardMark",
+          "gradeScale",
+          "resitRule",
+          "cashInRule",
+          "unitLockingRule",
+          "aStarRule",
+          "components[*].maximumAwardMark",
+          "components[*].weightingFactor",
+          "roundingRule"
+        ],
+        "issues": [
+          {
+            "severity": "error",
+            "fieldPath": "components",
+            "finding": "Components P1, P2, P3, P4 are marked optional=true, but they are mandatory for the qualification. The specification and the only allowed combinations require these units.",
+            "recommendedAction": "Set optional=false for P1, P2, P3, P4 to enforce their mandatory inclusion.",
+            "requiresOfficialEvidence": true
+          },
+          {
+            "severity": "error",
+            "fieldPath": "root",
+            "finding": "No combination constraints are defined. The rule would allow any six components to be aggregated, but the specification permits only five specific optional unit pairs: (M1,S1), (M1,D1), (M1,M2), (S1,D1), (S1,S2).",
+            "recommendedAction": "Add allowed combinations or a constraint definition that restricts the optional units to the five permitted pairs.",
+            "requiresOfficialEvidence": true
+          }
+        ],
+        "unresolvedFields": [],
+        "summary": "The rule correctly models UMS aggregation, resit behaviour, cash-in, locking, and A* requirements, but fails to enforce mandatory pure units and permitted optional unit combinations. Without these constraints, the awarding logic could accept invalid unit sets. Correction is required to align with the specification."
+      }
+    }
+  ]
+}

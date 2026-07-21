@@ -59,3 +59,10 @@ export function isAIAssistantEnabled(env: { DEV?: boolean; VITE_AI_ASSISTANT_PUB
   const explicit = String(env.VITE_AI_ASSISTANT_PUBLIC ?? "").trim().toLowerCase();
   return Boolean(env.DEV) || explicit === "true";
 }
+
+/** Difficulty, transition and prediction remain deferred until separately approved. */
+export function isAdvancedAcademicAnalysisEnabled(
+  env: { VITE_ADVANCED_ACADEMIC_ANALYSIS?: string } = import.meta.env as { VITE_ADVANCED_ACADEMIC_ANALYSIS?: string },
+): boolean {
+  return String(env.VITE_ADVANCED_ACADEMIC_ANALYSIS ?? "").trim().toLowerCase() === "true";
+}

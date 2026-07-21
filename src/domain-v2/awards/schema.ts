@@ -7,6 +7,8 @@ const OfficialSourceReferenceFields = {
   sourceUrl: z.string().url(),
   publishedAt: z.string().min(1),
   accessedAt: z.string().min(1),
+  printedPage: z.number().int().positive().optional(),
+  pdfPage: z.number().int().positive().optional(),
   sourceRowId: z.string().min(1),
   sourceDocumentHash: HashSchema,
 };
