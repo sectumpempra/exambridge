@@ -7,7 +7,8 @@ import {
   pruneAIChatHistory,
   type AIChatRequest,
 } from "@/domain-v2/ai-assistant";
-import { AIContextBuilder, overviewIdentityMatches } from "../server/ai/context-builder";
+import { AIContextBuilder, overviewIdentityMatches, resolvePaperIdFromMessage } from "../server/ai/context-builder";
+import { enforceDeterministicPaperFacts } from "../server/ai/answer-grounding";
 import { AnonymousAIRateLimiter } from "../server/ai/rate-limit";
 import { AIServiceGuard, createAIServiceGuardFromEnv } from "../server/ai/service-guard";
 import { AIProviderError, DeepSeekChatProvider, ensureAnswerCitations, hydrateCitations } from "../server/ai/provider";
@@ -63,6 +64,75 @@ describe("AI assistant context builder", () => {
     expect(result.promptContext).toContain("CAIE-9709");
     expect(result.sources.length).toBeGreaterThan(0);
   });
+
+  it("resolves S1, Paper 5, P5 and component variants to the approved 9709 Paper 5 ID", async () => {
+    const manifest = JSON.parse(await readFile(path.join(process.cwd(), "public/data/knowledge-v5/manifest.json"), "utf8")) as {
+      mappings: Array<{ code: string; subjectCode: string; papers: string[]; paperDefinitions: Array<{ paperId: string; code: string; name: string; tiers: string[] }> }>;
+    };
+    const entry = manifest.mappings.find((mapping) => mapping.code === "CAIE-9709")!;
+    for (const message of ["S1 考哪些内容？", "Paper 5 有哪些知识点？", "P5 topics", "9709/52 考什么？", "Statistics 1 syllabus"]) {
+      expect(resolvePaperIdFromMessage(message, { ...entry, board: "CAIE", subjectName: "Mathematics", level: "A Level", qualificationVersionId: "x", mappingUrl: "x" }))
+        .toBe("CAIE-9709-Paper-5");
+    }
+  });
+
+  it("sends the exhaustive approved 9709 Paper 5 statements instead of a qualification-wide concept prefix", async () => {
+    const result = await builder.build(request({
+      qualificationIds: ["qual:caie:a-level:9709"],
+      pageContext: { pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [], comparisonIds: ["CAIE-9709"] },
+      messages: [{ role: "user", content: "S1 具体考哪些统计与概率知识点？" }],
+    }));
+    const payload = JSON.parse(result.promptContext) as { knowledge: { qualification: { selectedPaperId: string; statementCount: number; statementsAreExhaustiveForSelectedPaper: boolean; statements: Array<{ topicHeading: string; statementText: string }>; concepts: unknown[] } }; deterministicPaperFacts: Array<{ marks?: number }> };
+    expect(result.resolvedContext.paperIds).toEqual(["CAIE-9709-Paper-5"]);
+    expect(payload.knowledge.qualification.selectedPaperId).toBe("CAIE-9709-Paper-5");
+    expect(payload.knowledge.qualification.statementCount).toBe(22);
+    expect(payload.knowledge.qualification.statementsAreExhaustiveForSelectedPaper).toBe(true);
+    expect(payload.knowledge.qualification.statements.some((statement) => statement.topicHeading.includes("The normal distribution"))).toBe(true);
+    expect(payload.knowledge.qualification.statements.some((statement) => statement.statementText.includes("stem-and-leaf"))).toBe(true);
+    expect(payload.knowledge.qualification.concepts.length).toBe(47);
+    expect(payload.deterministicPaperFacts[0]?.marks).toBe(50);
+    expect(result.promptContext.length).toBeLessThanOrEqual(240_000);
+  });
+
+  it("lets an explicit follow-up Paper override an older resolved Paper while preserving vague follow-ups", async () => {
+    const base = {
+      qualificationIds: ["qual:caie:a-level:9709"],
+      qualificationCodes: ["CAIE-9709"],
+      paperIds: ["CAIE-9709-Paper-5"],
+      labels: ["CAIE 9709 Mathematics"],
+    };
+    const switched = await builder.build(request({
+      resolvedContext: base,
+      pageContext: { pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [], comparisonIds: ["CAIE-9709"] },
+      messages: [{ role: "user", content: "Paper 6 又考哪些内容？" }],
+    }));
+    expect(switched.resolvedContext.paperIds).toEqual(["CAIE-9709-Paper-6"]);
+    const continued = await builder.build(request({
+      resolvedContext: base,
+      pageContext: { pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [], comparisonIds: ["CAIE-9709"] },
+      messages: [{ role: "user", content: "它和前一张有什么关系？" }],
+    }));
+    expect(continued.resolvedContext.paperIds).toEqual(["CAIE-9709-Paper-5"]);
+  });
+
+  it("builds a non-empty exhaustive Paper context for every Paper in the active mathematics manifest", async () => {
+    const manifest = JSON.parse(await readFile(path.join(process.cwd(), "public/data/knowledge-v5/manifest.json"), "utf8")) as {
+      mappings: Array<{ code: string; papers: string[] }>;
+    };
+    for (const entry of manifest.mappings) {
+      for (const paperId of entry.papers) {
+        const result = await builder.build(request({
+          pageContext: { pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [paperId], comparisonIds: [entry.code] },
+          messages: [{ role: "user", content: `${entry.code} 这张 Paper 的知识范围是什么？` }],
+        }));
+        const payload = JSON.parse(result.promptContext) as { knowledge: { qualification: { selectedPaperId: string; statementCount: number; statementsAreExhaustiveForSelectedPaper: boolean } } };
+        expect(payload.knowledge.qualification.selectedPaperId, `${entry.code} ${paperId}`).toBe(paperId);
+        expect(payload.knowledge.qualification.statementCount, `${entry.code} ${paperId}`).toBeGreaterThan(0);
+        expect(payload.knowledge.qualification.statementsAreExhaustiveForSelectedPaper).toBe(true);
+        expect(result.promptContext.length, `${entry.code} ${paperId}`).toBeLessThanOrEqual(240_000);
+      }
+    }
+  }, 30_000);
 
   it("resolves an explicitly named course code without a hard-coded prompt whitelist", async () => {
     const result = await builder.build(request({ messages: [{ role: "user", content: "0607 的 Paper 结构是什么？" }] }));
@@ -183,6 +253,40 @@ describe("AI assistant provider boundaries", () => {
   it("hydrates only allow-listed source IDs", () => {
     const sources = [{ sourceId: "S1", title: "Official", url: "https://example.com/official", dataVersion: "v1" }];
     expect(hydrateCitations("Fact [S1], invented [S9].", sources)).toEqual(sources);
+  });
+
+  it("repairs deterministic marks and duration before the authoritative answer is emitted", () => {
+    const result = enforceDeterministicPaperFacts(
+      "**Paper 5: Probability & Statistics 1**\n\n- 时长：90 分钟\n- 满分：75 分 [S1]",
+      [{ paperId: "CAIE-9709-Paper-5", code: "5", name: "Probability & Statistics 1", durationMinutes: 75, marks: 50 }],
+    );
+    expect(result.answer).toContain("时长：75 分钟");
+    expect(result.answer).toContain("满分：50 分 [S1]");
+    expect(result.corrections).toEqual(expect.arrayContaining([
+      { paperId: "CAIE-9709-Paper-5", field: "durationMinutes" },
+      { paperId: "CAIE-9709-Paper-5", field: "marks" },
+    ]));
+  });
+
+  it("repairs each named Paper independently in a multi-Paper answer", () => {
+    const result = enforceDeterministicPaperFacts(
+      "Paper 4: Mechanics — duration: 90 minutes, marks: 75.\nPaper 5: Probability & Statistics 1 — duration: 60 mins, total marks: 75.",
+      [
+        { paperId: "CAIE-9709-Paper-4", code: "4", name: "Mechanics", durationMinutes: 75, marks: 50 },
+        { paperId: "CAIE-9709-Paper-5", code: "5", name: "Probability & Statistics 1", durationMinutes: 75, marks: 50 },
+      ],
+    );
+    expect(result.answer).toContain("Paper 4: Mechanics — duration: 75 minutes, marks: 50");
+    expect(result.answer).toContain("Paper 5: Probability & Statistics 1 — duration: 75 mins, total marks: 50");
+    expect(result.corrections).toHaveLength(4);
+  });
+
+  it("leaves answers unchanged when no complete fact or matching Paper anchor is available", () => {
+    expect(enforceDeterministicPaperFacts("No deterministic fields.", []).answer).toBe("No deterministic fields.");
+    expect(enforceDeterministicPaperFacts("A general overview with marks: 99.", [
+      { paperId: "P1", code: "1", name: "Pure Mathematics 1", marks: 75 },
+      { paperId: "P2", code: "2", name: "Pure Mathematics 2", marks: 50 },
+    ])).toEqual({ answer: "A general overview with marks: 99.", corrections: [] });
   });
 
   it("normalizes grouped citations and removes unknown citation markers", () => {
