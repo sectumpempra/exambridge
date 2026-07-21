@@ -49,7 +49,10 @@ const validateTargets = targets => targets.map(target => {
 });
 
 export function buildAwardEstimateArtifact(input) {
-  const routes = input.routes.map(value => OfficialAwardRouteSchema.parse(value));
+  const routes = input.routes.map(value => {
+    const route = OfficialAwardRouteSchema.parse(value);
+    return { ...route, supportingSources: route.supportingSources ?? [] };
+  });
   const officialBoundaries = input.officialBoundaries.map(value => OfficialAwardBoundarySchema.parse(value));
   const targets = validateTargets(input.targets);
   const inputManifestHash = sha256({ officialBoundaries, routes, targets });

@@ -54,11 +54,68 @@
       },
       "confidence": "low",
       "dataAsOf": "2025-08-14",
-      "inputManifestHash": "6340208a681f8683e3cf2304c8309ba9be762884ee76b580fb8d501cd6af3d3e",
-      "contentHash": "679f587c518bcf1baa51c9570d19d7dc7ae74400b9fe02af71cb1bea21fbca42",
+      "inputManifestHash": "00758d4e4c3c5dfb548025115d92c0f6bf3530908d9c719d16988b3740c23fa6",
+      "contentHash": "d5500e698861fc8cf39c2a893448908bc5a1c4f044e1f88d7669fd0cdc134305",
+      "isOfficial": false
+    },
+    {
+      "source": "estimated",
+      "methodVersion": "historical-weighted-median-v1",
+      "routeId": "award:ocr:h240:linear",
+      "targetSeries": "2026-june",
+      "componentVariants": [
+        "H240/01",
+        "H240/02",
+        "H240/03"
+      ],
+      "maximumMarkAfterWeighting": 300,
+      "sampleSeries": [
+        "2025-june",
+        "2024-june",
+        "2023-june",
+        "2022-june",
+        "2019-june"
+      ],
+      "sampleSize": 5,
+      "thresholds": {
+        "A*": {
+          "centre": 216,
+          "lower": 209,
+          "upper": 242
+        },
+        "A": {
+          "centre": 168,
+          "lower": 161,
+          "upper": 196
+        },
+        "B": {
+          "centre": 137,
+          "lower": 129,
+          "upper": 163
+        },
+        "C": {
+          "centre": 106,
+          "lower": 97,
+          "upper": 130
+        },
+        "D": {
+          "centre": 75,
+          "lower": 66,
+          "upper": 97
+        },
+        "E": {
+          "centre": 44,
+          "lower": 35,
+          "upper": 64
+        }
+      },
+      "confidence": "low",
+      "dataAsOf": "2025-08-14",
+      "inputManifestHash": "00758d4e4c3c5dfb548025115d92c0f6bf3530908d9c719d16988b3740c23fa6",
+      "contentHash": "98e90a215a1f2995f0ea28c5a11e2ec1e9e9094483604e4bdccf505edad7a917",
       "isOfficial": false
     }
   ],
-  "inputManifestHash": "6340208a681f8683e3cf2304c8309ba9be762884ee76b580fb8d501cd6af3d3e",
-  "contentHash": "50640824e6906d767dace4af8dc32f5e6f01d74a7f75e959e8ed021ceebba2ec"
+  "inputManifestHash": "00758d4e4c3c5dfb548025115d92c0f6bf3530908d9c719d16988b3740c23fa6",
+  "contentHash": "eea8fdfa2c2fcd7a0af346446494018b643d3a44feb7b4ff8326a7798d77fa46"
 }

@@ -75,12 +75,96 @@
       "normalizedDestinations": ["src/data/official/awards/routes.json"]
     },
     {
+      "id": "ocr-as-a-level-grade-boundaries-2019-june",
+      "url": "https://www.ocr.org.uk/Images/552365-reformed-a-level-grade-boundaries-june-2019.pdf",
+      "sha256": "d9bff20ffe2e90035360eda45d81587d883c4fd75e0458e130b59e75b180cff0",
+      "publishedAt": "2019-08-15",
+      "accessedAt": "2026-07-21",
+      "normalizedDestinations": [
+        "src/data/official/awards/ocr-h240.json",
+        "src/data/official/awards/ocr-h245.json",
+        "src/data/official/awards/ocr-h640.json"
+      ]
+    },
+    {
+      "id": "ocr-fsmq-grade-boundaries-2019-june",
+      "url": "https://www.ocr.org.uk/Images/552361-level-3-certificate-fsmq-extended-project-grade-boundaries-june-2019.pdf",
+      "sha256": "1c137edfb608e5536eebcc7678dca359ec20e7164dc7b03accf7dfa2df9a945f",
+      "publishedAt": "2019-08-15",
+      "accessedAt": "2026-07-21",
+      "normalizedDestinations": ["src/data/official/awards/ocr-6993.json"]
+    },
+    {
+      "id": "ocr-as-a-level-grade-boundaries-2022-june",
+      "url": "https://www.ocr.org.uk/Images/658475-as-and-a-level-grade-boundaries-june-2022.pdf",
+      "sha256": "7ee2066c71a647929282ae966c8ae8bb242dffa706fa91481f62888df8bded90",
+      "publishedAt": "2022-08-18",
+      "accessedAt": "2026-07-21",
+      "normalizedDestinations": [
+        "src/data/official/awards/ocr-h240.json",
+        "src/data/official/awards/ocr-h245.json",
+        "src/data/official/awards/ocr-h640.json"
+      ]
+    },
+    {
+      "id": "ocr-fsmq-grade-boundaries-2022-june",
+      "url": "https://www.ocr.org.uk/Images/658476-core-maths-fsmq-and-extended-project-grade-boundaries-june-2022.pdf",
+      "sha256": "f07a13a060fbc758755824c8041e36c58c5ba14df06184ab0d0ecd8cde20e3cf",
+      "publishedAt": "2022-08-18",
+      "accessedAt": "2026-07-21",
+      "normalizedDestinations": ["src/data/official/awards/ocr-6993.json"]
+    },
+    {
+      "id": "ocr-as-a-level-grade-boundaries-2023-june",
+      "url": "https://www.ocr.org.uk/Images/690902-as-and-a-level-grade-boundaries-june-2023.pdf",
+      "sha256": "cbde3e9e05885807e67babaee1c5dd87a05b3bc9335f0d219a2018aa570f4857",
+      "publishedAt": "2023-08-17",
+      "accessedAt": "2026-07-21",
+      "normalizedDestinations": [
+        "src/data/official/awards/ocr-h240.json",
+        "src/data/official/awards/ocr-h245.json",
+        "src/data/official/awards/ocr-h640.json"
+      ]
+    },
+    {
+      "id": "ocr-fsmq-grade-boundaries-2023-june",
+      "url": "https://www.ocr.org.uk/Images/690903-core-maths-extended-project-and-fsmq-grade-boundaries-june-2023.pdf",
+      "sha256": "56da29f705e01d2dfec5ed16b40133bb3d578faf5ddb92bbad4b644650d87947",
+      "publishedAt": "2023-08-17",
+      "accessedAt": "2026-07-21",
+      "normalizedDestinations": ["src/data/official/awards/ocr-6993.json"]
+    },
+    {
+      "id": "ocr-as-a-level-grade-boundaries-2024-june",
+      "url": "https://www.ocr.org.uk/Images/714687-as-and-a-level-grade-boundaries-june-2024.pdf",
+      "sha256": "5fc2101d65b8a94c7c8a1564752eaf5db441f25a1acfabb3aae8d79b87e19c6d",
+      "publishedAt": "2024-08-15",
+      "accessedAt": "2026-07-21",
+      "normalizedDestinations": [
+        "src/data/official/awards/ocr-h240.json",
+        "src/data/official/awards/ocr-h245.json",
+        "src/data/official/awards/ocr-h640.json"
+      ]
+    },
+    {
+      "id": "ocr-fsmq-grade-boundaries-2024-june",
+      "url": "https://www.ocr.org.uk/Images/714688-core-maths-extended-project-and-fsmq-grade-boundaries-june-2024.pdf",
+      "sha256": "251dd6440e1e00703b0bc957044a85aa42a3487e33deb5b0837336a7d36f39f9",
+      "publishedAt": "2024-08-15",
+      "accessedAt": "2026-07-21",
+      "normalizedDestinations": ["src/data/official/awards/ocr-6993.json"]
+    },
+    {
       "id": "ocr-as-a-level-grade-boundaries-2025-june",
       "url": "https://www.ocr.org.uk/Images/739509-as-and-a-level-grade-boundaries-june-2025.pdf",
       "sha256": "33da29554960082ecee68b07b00c9f49f5b34bd1fd5a698e318369f3dea5c05b",
       "publishedAt": "2025-08-14",
       "accessedAt": "2026-07-13",
-      "normalizedDestinations": ["src/data/official/awards/ocr-h240.json"]
+      "normalizedDestinations": [
+        "src/data/official/awards/ocr-h240.json",
+        "src/data/official/awards/ocr-h245.json",
+        "src/data/official/awards/ocr-h640.json"
+      ]
     },
     {
       "id": "ocr-6993-spec-v2.0",
@@ -137,8 +221,10 @@
   "normalizedFiles": {
     "src/data/official/awards/routes.json": "874e367d2a1785e299b34495cfd09d80a96965af59353cee2c034d9831e60128",
     "src/data/official/awards/aqa-7357.json": "89ab72099d7a89ad4cf725e2388bd6a8a26fa79d6ee3d3771b1d91da05ded242",
-    "src/data/official/awards/ocr-h240.json": "e62b022a92f228a93e12f4b0dadbd61374e92d1dfd7b445b902b900348bdf8ec",
-    "src/data/official/awards/ocr-6993.json": "d21a9c42666c3c21556011db06c56204c16e0d6b1cef439ea72c6f3df56de6a4",
+    "src/data/official/awards/ocr-h240.json": "ccb08fb8cab9fe8ae9ae607938167cf8b1aff0aa1c8f7d00b91f1f1b79bd5fb3",
+    "src/data/official/awards/ocr-h245.json": "79295c2c67643e015b11f1f79c7e0fab772d3562f8023a20027369e78418bbfe",
+    "src/data/official/awards/ocr-h640.json": "d00be3a1a4328ae252ebe861d1f4828025b3afb39d4131979de9ca61d9c8b8d8",
+    "src/data/official/awards/ocr-6993.json": "4404c1fcc092c33b9ed36bac8f162655821f663f06dcaa4ca527c136851a3ead",
     "src/data/official/awards/pearson-8ma0.json": "3f28d06af4e5d658df11d57f8a8ff2cabc37a9c557f6f9babdc144a8b0ef6b94",
     "src/data/official/awards/caie-9709.json": "ca4a2a4a2447d05ddada2c30bf476ecd27000f1e30fd944f1f7164bb55da3d93"
   }

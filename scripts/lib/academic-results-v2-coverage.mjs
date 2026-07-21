@@ -27,7 +27,12 @@ const policies = {
     sourceUrls: [CAMBRIDGE_MARCH, CAMBRIDGE_RESULTS],
   },
   "award:caie:9709": {
-    windows: recurring(["march", "june", "november"], ["award:caie:9709:2023-2025:as:S1", "award:caie:9709:2023-2025:al:same-series:AX", "award:caie:9709:2023-2025:al:staged:DX"]),
+    windows: [
+      window("2019-01-01", "2019-12-31", ["march", "june", "november"], ["award:caie:9709:2019:as", "award:caie:9709:2019:al:same-series", "award:caie:9709:2019:al:staged"], ["The 2019 same-series component structure differs from the revised syllabus; staged carry-forward remains explicitly unresolved until official route evidence is complete."]),
+      window("2020-01-01", "2022-12-31", ["march", "june", "november"], ["award:caie:9709:2020-2022:as", "award:caie:9709:2020-2022:al:same-series", "award:caie:9709:2020-2022:al:staged"]),
+      window("2023-01-01", "2025-12-31", ["march", "june", "november"], ["award:caie:9709:2023-2025:as", "award:caie:9709:2023-2025:al:same-series", "award:caie:9709:2023-2025:al:staged"]),
+      window("2026-01-01", undefined, ["march", "june", "november"], ["award:caie:9709:2026-2027:as", "award:caie:9709:2026-2027:al:same-series", "award:caie:9709:2026-2027:al:staged"]),
+    ],
     sourceUrls: [CAMBRIDGE_MARCH, CAMBRIDGE_RESULTS],
   },
   "award:caie:9231": {

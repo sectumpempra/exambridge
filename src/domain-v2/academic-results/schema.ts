@@ -104,6 +104,7 @@ export const GradeBoundaryV2Schema = z.strictObject({
   routeId: NonEmptyString,
   tier: NonEmptyString.optional(),
   optionCode: NonEmptyString.optional(),
+  componentVariants: z.array(NonEmptyString).min(1).optional(),
   region: NonEmptyString.optional(),
   componentCode: NonEmptyString.optional(),
   boundaryScope: z.enum(["component", "overall"]),
@@ -116,6 +117,9 @@ export const GradeBoundaryV2Schema = z.strictObject({
 }).superRefine((value, ctx) => {
   if (new Set(value.gradeOrder).size !== value.gradeOrder.length) {
     ctx.addIssue({ code: "custom", path: ["gradeOrder"], message: "gradeOrder must be unique" });
+  }
+  if (value.componentVariants && new Set(value.componentVariants).size !== value.componentVariants.length) {
+    ctx.addIssue({ code: "custom", path: ["componentVariants"], message: "componentVariants must be unique" });
   }
   if (value.boundaryScope === "component" && !value.componentCode) {
     ctx.addIssue({ code: "custom", path: ["componentCode"], message: "component boundaries require componentCode" });
@@ -235,6 +239,11 @@ export const QualificationAwardRuleV2Schema = z.strictObject({
     tieBreak: z.enum(["not-applicable", "highest-award-mark"]),
     notes: z.array(NonEmptyString),
   }).optional(),
+  boundarySelectionRule: z.strictObject({
+    requiresOptionCode: z.boolean(),
+    requiresComponentVariants: z.boolean(),
+    notes: z.array(NonEmptyString),
+  }).optional(),
   totalMaximumAwardMark: z.number().finite().positive(),
   gradeScale: z.array(NonEmptyString).min(1),
   roundingRule: z.enum(["none", "nearest-integer", "official-carry-forward", "board-published"]),
@@ -297,15 +306,27 @@ export const AwardComponentScoreV2Schema = z.strictObject({
   awardMark: z.number().finite().nonnegative().optional(),
 });
 
-export const AwardCalculationInputV2Schema = z.strictObject({
+const AwardInputV2Shape = {
   ruleId: NonEmptyString,
   routeId: NonEmptyString,
   targetSeries: z.string().regex(/^\d{4}-(january|march|june|october|november)$/),
-  combinationId: NonEmptyString,
+  optionCode: NonEmptyString.optional(),
+  componentVariants: z.array(NonEmptyString).min(1).optional(),
   componentScores: z.array(AwardComponentScoreV2Schema).min(1),
-});
+};
 
-export const AwardSelectionInputV2Schema = AwardCalculationInputV2Schema.omit({ combinationId: true });
+const validateAwardInputVariants = (value: { componentVariants?: string[] }, ctx: z.RefinementCtx) => {
+  if (value.componentVariants && new Set(value.componentVariants).size !== value.componentVariants.length) {
+    ctx.addIssue({ code: "custom", path: ["componentVariants"], message: "componentVariants must be unique" });
+  }
+};
+
+export const AwardCalculationInputV2Schema = z.strictObject({
+  ...AwardInputV2Shape,
+  combinationId: NonEmptyString,
+}).superRefine(validateAwardInputVariants);
+
+export const AwardSelectionInputV2Schema = z.strictObject(AwardInputV2Shape).superRefine(validateAwardInputVariants);
 
 export const AwardCalculationResultV2Schema = z.strictObject({
   ruleId: NonEmptyString,

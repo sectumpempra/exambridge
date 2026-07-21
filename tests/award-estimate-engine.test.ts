@@ -178,7 +178,7 @@ describe("deterministic estimate artifact", () => {
       officialBoundaries,
       targets: [target],
     });
-    expect(artifact.boundaries).toHaveLength(1);
+    expect(artifact.boundaries).toHaveLength(2);
     const record = artifact.boundaries[0];
     const { contentHash, ...withoutRecordHash } = record;
     expect(contentHash).toBe(createHash("sha256").update(canonicalStringify(withoutRecordHash)).digest("hex"));
@@ -186,15 +186,15 @@ describe("deterministic estimate artifact", () => {
     expect(record.inputManifestHash).toBe(artifact.inputManifestHash);
   });
 
-  it("emits only AQA 2026 June and skips configured official collisions", () => {
+  it("emits only sufficiently sourced 2026 June predictions and skips configured official collisions", () => {
     const artifact = buildAwardEstimateArtifact({
       routes: routesJson.routes,
       officialBoundaries,
       targets: [target, { targetSeries: "2025-june", dataAsOf: "2025-08-14" }],
     });
     expect(artifact.boundaries.map(boundary => `${boundary.routeId}|${boundary.targetSeries}`))
-      .toEqual(["award:aqa:7357:linear|2026-june"]);
-    expect(artifact.boundaries.some(boundary => /ocr|caie/i.test(boundary.routeId))).toBe(false);
+      .toEqual(["award:aqa:7357:linear|2026-june", "award:ocr:h240:linear|2026-june"]);
+    expect(artifact.boundaries.some(boundary => /caie/i.test(boundary.routeId))).toBe(false);
   });
 
   it("runs twice byte-for-byte identically and matches the committed artifact", () => {

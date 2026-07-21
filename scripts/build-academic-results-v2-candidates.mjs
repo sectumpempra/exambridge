@@ -55,6 +55,21 @@ function boundaryAwardId(routeId) {
   throw new Error(`Boundary route is outside approved scope: ${routeId}`);
 }
 
+function canonicalBoundaryRouteId(row) {
+  if (row.routeId.startsWith("award:caie:9709:2023-2025:as:")) return "award:caie:9709:2023-2025:as";
+  if (row.routeId.startsWith("award:caie:9709:2023-2025:al:same-series:")) return "award:caie:9709:2023-2025:al:same-series";
+  if (row.routeId.startsWith("award:caie:9709:2023-2025:al:staged:")) return "award:caie:9709:2023-2025:al:staged";
+  return row.routeId;
+}
+
+function boundaryQualificationVersionId(awardQualificationId, year, fallback) {
+  if (awardQualificationId !== "award:caie:9709") return fallback;
+  if (year === 2019) return "CAIE-9709:2019";
+  if (year <= 2022) return "CAIE-9709:2020-2022";
+  if (year <= 2025) return "CAIE-9709:2023-2025";
+  return "CAIE-9709:2026-2027";
+}
+
 async function loadLegacyStatistics() {
   const server = await createServer({
     root,
@@ -102,12 +117,13 @@ for (const file of officialBoundaryFiles) {
     boundaries.push({
       schemaVersion: "2.0.0",
       boundaryId: `boundary:${slug(row.sourceRowId)}`,
-      qualificationVersionId: qualification.currentKnowledgeQualificationVersionId,
+      qualificationVersionId: boundaryQualificationVersionId(awardQualificationId, year, qualification.currentKnowledgeQualificationVersionId),
       awardQualificationId,
       year,
       series,
-      routeId: row.routeId,
+      routeId: canonicalBoundaryRouteId(row),
       ...(row.optionCode ? { optionCode: row.optionCode } : {}),
+      ...(row.componentVariants ? { componentVariants: row.componentVariants } : {}),
       boundaryScope: "overall",
       maximumMark: row.maximumMarkAfterWeighting,
       gradeOrder: Object.keys(row.thresholds),
@@ -176,7 +192,7 @@ const routeEffectiveFrom = route => route.board === "CAIE"
   ? `${route.specificationVersion.match(/20\d{2}/)?.[0] ?? "2023"}-01-01`
   : route.qualificationCode === "6993" ? "2018-09-01" : "2017-09-01";
 const completeDate = value => /^\d{4}-\d{2}$/.test(value) ? `${value}-01` : value;
-const awardRules = legacyRoutes.map(route => {
+const awardRules = legacyRoutes.filter(route => route.qualificationCode !== "9709").map(route => {
   const awardQualificationId = routeAwardId(route);
   const qualification = qualifications.get(awardQualificationId);
   if (!qualification) throw new Error(`Route ${route.id} is outside approved scope`);

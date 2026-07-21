@@ -75,6 +75,35 @@ describe("Academic Results V2 award engine", () => {
     for (const value of cases) expect(() => calculateQualificationAwardV2(value, rule, boundary)).toThrow(AwardCalculationErrorV2);
   });
 
+  it("requires the exact Cambridge option and printed component variants when the rule declares that identity", () => {
+    const caieRule: QualificationAwardRuleV2 = {
+      ...rule,
+      boundarySelectionRule: {
+        requiresOptionCode: true,
+        requiresComponentVariants: true,
+        notes: ["Match the exact official threshold row."],
+      },
+    };
+    const caieBoundary: GradeBoundaryV2 = {
+      ...boundary,
+      optionCode: "AX",
+      componentVariants: ["11", "31", "41", "51"],
+    };
+    expect(calculateQualificationAwardV2({
+      ...input,
+      optionCode: "AX",
+      componentVariants: ["51", "41", "31", "11"],
+    }, caieRule, caieBoundary).grade).toBe("A");
+    for (const invalid of [
+      input,
+      { ...input, optionCode: "AY", componentVariants: ["11", "31", "51", "61"] },
+      { ...input, optionCode: "AX", componentVariants: ["11", "31", "42", "52"] },
+    ]) {
+      expect(() => calculateQualificationAwardV2(invalid, caieRule, caieBoundary))
+        .toThrowError(expect.objectContaining({ code: "BOUNDARY_MISMATCH" }));
+    }
+  });
+
   it("supports modular UMS with a separate advanced-unit A* condition", () => {
     const modular: QualificationAwardRuleV2 = {
       ...rule,

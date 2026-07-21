@@ -1,5 +1,9 @@
 const specifications = {
   caie0580: { sourceId: "source:caie-0580-2025-2027-assessment-overview", board: "CAIE", officialUrl: "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf", documentTitle: "Cambridge IGCSE Mathematics 0580 syllabus 2025-2027", documentVersion: "2025-2027", printedPage: 9, pdfPage: 11, tableName: "Assessment overview", sourceRowId: "CAIE-0580-2025-2027-P9", sourceDocumentHash: "627f8e5dab21605f95b9aceec4a2dcdddf91dce5767d6938d647b38041c6d363", publishedAt: "2024-05-14" },
+  caie9709Legacy: { sourceId: "source:caie-9709-2019-june-threshold-routes", board: "CAIE", officialUrl: "https://www.cambridgeinternational.org/Images/551952-mathematics-grade-threshold-table-9709-.pdf", documentTitle: "Cambridge International AS & A Level Mathematics 9709 June 2019 grade threshold table", documentVersion: "June 2019", printedPage: 2, pdfPage: 2, tableName: "Overall thresholds and valid component combinations", sourceRowId: "CAIE-9709-2019-JUNE-P2-COMBINATION-ROWS", sourceDocumentHash: "b26b4673ae94c84e113f36fce88186bc0e8df2ecd465a8cb38945c1fb390f480", publishedAt: "2019-08-13", effectiveFrom: "2019-01-01", effectiveTo: "2019-12-31" },
+  caie9709_2020_2022: { sourceId: "source:caie-9709-2020-2022-assessment-routes", board: "CAIE", officialUrl: "https://www.cambridgeinternational.org/Images/415060-2020-2022-syllabus.pdf", documentTitle: "Cambridge International AS & A Level Mathematics 9709 syllabus", documentVersion: "2020-2022 Version 2", printedPage: 10, pdfPage: 12, tableName: "Structure, assessment overview and three routes", sourceRowId: "CAIE-9709-2020-2022-P10-P12", sourceDocumentHash: "a808bc740ebed3f4d752a029468a4d85e1e19d19f9beb7678e0734bf97b6e140", publishedAt: "2020-05-01", effectiveFrom: "2020-01-01", effectiveTo: "2022-12-31" },
+  caie9709_2023_2025: { sourceId: "source:caie-9709-2023-2025-assessment-routes", board: "CAIE", officialUrl: "https://www.cambridgeinternational.org/Images/597421-2023-2025-syllabus.pdf", documentTitle: "Cambridge International AS & A Level Mathematics 9709 syllabus", documentVersion: "2023-2025", printedPage: 10, pdfPage: 12, tableName: "Structure, assessment overview and three routes", sourceRowId: "CAIE-9709-2023-2025-P10-P13", sourceDocumentHash: "3a7a37692399f47ff5e0d94cc41f9dd33d3b99467ce83aa4bad28c6136f96256", publishedAt: "2020-09-01", effectiveFrom: "2023-01-01", effectiveTo: "2025-12-31" },
+  caie9709_2026_2027: { sourceId: "source:caie-9709-2026-2027-assessment-routes", board: "CAIE", officialUrl: "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf", documentTitle: "Cambridge International AS & A Level Mathematics 9709 syllabus", documentVersion: "2026-2027 Version 4", printedPage: 11, pdfPage: 13, tableName: "Structure, assessment overview and three routes", sourceRowId: "CAIE-9709-2026-2027-P11-P16", sourceDocumentHash: "2499de4fc8cabc87d87d3b6be14cf98917079829bec94d677c6b40d292c1c051", publishedAt: "2025-12-01", effectiveFrom: "2026-01-01", effectiveTo: "2027-12-31" },
   caie9231: { sourceId: "source:caie-9231-2026-2027-assessment-routes", board: "CAIE", officialUrl: "https://www.cambridgeinternational.org/Images/697357-2026-2027-syllabus.pdf", documentTitle: "Cambridge International AS & A Level Further Mathematics 9231 syllabus", documentVersion: "2026-2027", printedPage: 10, pdfPage: 12, tableName: "Structure and assessment routes", sourceRowId: "CAIE-9231-2026-2027-P10-P12", sourceDocumentHash: "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800", publishedAt: "2025-07-31" },
   caie9231Legacy: { sourceId: "source:caie-9231-2019-assessment-at-a-glance", board: "CAIE", officialUrl: "https://www.cambridgeinternational.org/images/329490-2019-syllabus.pdf", documentTitle: "Cambridge International A Level Further Mathematics 9231 syllabus", documentVersion: "2019", printedPage: 7, pdfPage: 9, tableName: "Assessment at a glance", sourceRowId: "CAIE-9231-2019-P7-P8", publishedAt: "2018-01-01", effectiveFrom: "2019-01-01", effectiveTo: "2019-12-31" },
   caie9231_2020_2022: { sourceId: "source:caie-9231-2020-2022-assessment-routes", board: "CAIE", officialUrl: "https://www.cambridgeinternational.org/Images/414957-2020-2022-syllabus.pdf", documentTitle: "Cambridge International AS & A Level Further Mathematics 9231 syllabus", documentVersion: "2020-2022 Version 2", printedPage: 8, pdfPage: 10, tableName: "Structure, assessment overview and three routes", sourceRowId: "CAIE-9231-2020-2022-P8-P10", publishedAt: "2020-04-01", effectiveFrom: "2020-01-01", effectiveTo: "2022-12-31" },
@@ -43,8 +47,79 @@ function base({ ruleId, qualificationVersionId, awardQualificationId, board, sub
   };
 }
 
+function buildModernCaie9709Rules({ version, qualificationVersionId, effectiveFrom, effectiveTo, sourceId }) {
+  const common = { qualificationVersionId, awardQualificationId: "award:caie:9709", board: "CAIE", subjectCode: "9709", scoringSystem: "raw", effectiveFrom, effectiveTo, sourceId };
+  return [
+    {
+      ...base({
+        ...common,
+        ruleId: `rule:caie-9709:${version}:as`,
+        routeId: `award:caie:9709:${version}:as`,
+        routeType: "same-series",
+        components: [component("P1", 75), component("P2", 50, 50, "raw", true), component("P4", 50, 50, "raw", true), component("P5", 50, 50, "raw", true)],
+        validCombinations: [
+          combination("9709-as-pure", ["P1", "P2"], "AS Level"),
+          combination("9709-as-mechanics", ["P1", "P4"], "AS Level"),
+          combination("9709-as-statistics", ["P1", "P5"], "AS Level"),
+        ],
+        totalMaximumAwardMark: 125,
+        gradeScale: ["a", "b", "c", "d", "e"],
+      }),
+      boundarySelectionRule: { requiresOptionCode: true, requiresComponentVariants: true, notes: ["Cambridge option codes and printed component variants are series-specific and must match the exact official threshold row."] },
+      aStarRule: { available: false, ruleKind: "not-available", notes: ["AS Level is graded a to e; the Pure Mathematics-only option cannot be carried forward to A Level."] },
+    },
+    {
+      ...base({
+        ...common,
+        ruleId: `rule:caie-9709:${version}:al:same-series`,
+        routeId: `award:caie:9709:${version}:al:same-series`,
+        routeType: "same-series",
+        components: [component("P1", 75), component("P3", 75), component("P4", 50, 50, "raw", true), component("P5", 50), component("P6", 50, 50, "raw", true)],
+        validCombinations: [
+          combination("9709-al-mechanics-statistics", ["P1", "P3", "P4", "P5"], "A Level"),
+          combination("9709-al-statistics", ["P1", "P3", "P5", "P6"], "A Level"),
+        ],
+        totalMaximumAwardMark: 250,
+        gradeScale: ["A*", "A", "B", "C", "D", "E"],
+      }),
+      boundarySelectionRule: { requiresOptionCode: true, requiresComponentVariants: true, notes: ["Cambridge option codes and printed component variants are series-specific and must match the exact official threshold row."] },
+      aStarRule: { available: true, ruleKind: "boundary-only", notes: ["The exact option and component variants must be matched to the official threshold row for that series."] },
+    },
+    {
+      ...base({
+        ...common,
+        ruleId: `rule:caie-9709:${version}:al:staged`,
+        routeId: `award:caie:9709:${version}:al:staged`,
+        routeType: "staged",
+        components: [
+          component("AS-P1-P4-CF", null, 125, "carried-forward", true),
+          component("AS-P1-P5-CF", null, 125, "carried-forward", true),
+          component("P3", 75),
+          component("P4", 50, 50, "raw", true),
+          component("P5", 50, 50, "raw", true),
+          component("P6", 50, 50, "raw", true),
+        ],
+        validCombinations: [
+          combination("9709-staged-from-mechanics", ["AS-P1-P4-CF", "P3", "P5"], "A Level"),
+          combination("9709-staged-from-statistics-to-mechanics", ["AS-P1-P5-CF", "P3", "P4"], "A Level"),
+          combination("9709-staged-from-statistics-to-statistics-2", ["AS-P1-P5-CF", "P3", "P6"], "A Level"),
+        ],
+        totalMaximumAwardMark: 250,
+        gradeScale: ["A*", "A", "B", "C", "D", "E"],
+      }),
+      boundarySelectionRule: { requiresOptionCode: true, requiresComponentVariants: true, notes: ["Cambridge option codes and printed component variants are series-specific and must match the exact official threshold row."] },
+      carryForwardRule: { allowed: true, maximumMonths: 13, unit: "whole-as", notes: ["Carry forward the complete eligible AS result; individual paper marks are not mixed across series."] },
+      aStarRule: { available: true, ruleKind: "boundary-only", notes: ["The official staged option boundary determines the grade."] },
+    },
+  ];
+}
+
 export function buildOfficialAwardRuleCandidates(addSource) {
   const source0580 = evidence(addSource, "caie0580");
+  const source9709Legacy = evidence(addSource, "caie9709Legacy");
+  const source9709_2020_2022 = evidence(addSource, "caie9709_2020_2022");
+  const source9709_2023_2025 = evidence(addSource, "caie9709_2023_2025");
+  const source9709_2026_2027 = evidence(addSource, "caie9709_2026_2027");
   const source9231 = evidence(addSource, "caie9231");
   const source9231Legacy = evidence(addSource, "caie9231Legacy");
   const source9231_2020_2022 = evidence(addSource, "caie9231_2020_2022");
@@ -56,6 +131,8 @@ export function buildOfficialAwardRuleCandidates(addSource) {
   const sourceH640 = evidence(addSource, "ocrH640");
 
   const rules = [
+    { ...base({ ruleId: "rule:caie-9709:2019:as", qualificationVersionId: "CAIE-9709:2019", awardQualificationId: "award:caie:9709", board: "CAIE", subjectCode: "9709", routeId: "award:caie:9709:2019:as", routeType: "same-series", scoringSystem: "raw", components: [component("P1", 75), component("P2", 50, 50, "raw", true), component("P4", 50, 50, "raw", true), component("P6", 50, 50, "raw", true)], validCombinations: [combination("9709-2019-as-pure", ["P1", "P2"], "AS Level"), combination("9709-2019-as-mechanics", ["P1", "P4"], "AS Level"), combination("9709-2019-as-statistics", ["P1", "P6"], "AS Level")], totalMaximumAwardMark: 125, gradeScale: ["a", "b", "c", "d", "e"], effectiveFrom: "2019-01-01", effectiveTo: "2019-12-31", sourceId: source9709Legacy }), boundarySelectionRule: { requiresOptionCode: true, requiresComponentVariants: true, notes: ["The exact June or November 2019 option row and printed component variants must be selected."] }, aStarRule: { available: false, ruleKind: "not-available", notes: ["AS Level is graded a to e under the 2019 component structure."] } },
+    { ...base({ ruleId: "rule:caie-9709:2019:al:same-series", qualificationVersionId: "CAIE-9709:2019", awardQualificationId: "award:caie:9709", board: "CAIE", subjectCode: "9709", routeId: "award:caie:9709:2019:al:same-series", routeType: "same-series", scoringSystem: "raw", components: [component("P1", 75), component("P3", 75), component("P4", 50, 50, "raw", true), component("P5", 50, 50, "raw", true), component("P6", 50, 50, "raw", true), component("P7", 50, 50, "raw", true)], validCombinations: [combination("9709-2019-al-mechanics-statistics", ["P1", "P3", "P4", "P6"], "A Level"), combination("9709-2019-al-mechanics-1-2", ["P1", "P3", "P4", "P5"], "A Level"), combination("9709-2019-al-statistics-1-2", ["P1", "P3", "P6", "P7"], "A Level")], totalMaximumAwardMark: 250, gradeScale: ["A*", "A", "B", "C", "D", "E"], effectiveFrom: "2019-01-01", effectiveTo: "2019-12-31", sourceId: source9709Legacy }), boundarySelectionRule: { requiresOptionCode: true, requiresComponentVariants: true, notes: ["The exact June or November 2019 option row and printed component variants must be selected."] }, aStarRule: { available: true, ruleKind: "boundary-only", notes: ["The June 2019 official table confirms the three same-series component combinations; legacy staged carry-forward remains unresolved rather than inferred."] } },
     { ...base({ ruleId: "rule:caie-9231:2019:legacy-al", qualificationVersionId: "CAIE-9231:2019", awardQualificationId: "award:caie:9231", board: "CAIE", subjectCode: "9231", routeId: "award:caie:9231:legacy-al", routeType: "same-series", scoringSystem: "raw", components: [component("P1", 100), component("P2", 100)], validCombinations: [combination("9231-legacy-al-p1-p2", ["P1", "P2"], "A Level")], totalMaximumAwardMark: 200, gradeScale: ["A*", "A", "B", "C", "D", "E"], effectiveFrom: "2019-01-01", effectiveTo: "2019-12-31", sourceId: source9231Legacy }), aStarRule: { available: true, ruleKind: "boundary-only", notes: ["A* is determined from the official overall boundary for the legacy two-paper route."] } },
     { ...base({ ruleId: "rule:caie-0580:2025-2027:core", qualificationVersionId: "CAIE-0580:2025-2027", awardQualificationId: "award:caie:0580", board: "CAIE", subjectCode: "0580", routeId: "award:caie:0580:core", routeType: "same-series", scoringSystem: "raw", components: [component("P1", 80), component("P3", 80)], validCombinations: [combination("0580-core-p1-p3", ["P1", "P3"], "IGCSE Core")], totalMaximumAwardMark: 160, gradeScale: ["C", "D", "E", "F", "G"], effectiveFrom: "2025-01-01", sourceId: source0580 }), aStarRule: { available: false, ruleKind: "not-available", notes: ["Core candidates are eligible for grades C to G."] } },
     { ...base({ ruleId: "rule:caie-0580:2025-2027:extended", qualificationVersionId: "CAIE-0580:2025-2027", awardQualificationId: "award:caie:0580", board: "CAIE", subjectCode: "0580", routeId: "award:caie:0580:extended", routeType: "same-series", scoringSystem: "raw", components: [component("P2", 100), component("P4", 100)], validCombinations: [combination("0580-extended-p2-p4", ["P2", "P4"], "IGCSE Extended")], totalMaximumAwardMark: 200, gradeScale: ["A*", "A", "B", "C", "D", "E"], effectiveFrom: "2025-01-01", sourceId: source0580 }), aStarRule: { available: true, ruleKind: "boundary-only", notes: ["A* is determined from the official Extended route boundary."] } },
@@ -63,6 +140,12 @@ export function buildOfficialAwardRuleCandidates(addSource) {
     { ...base({ ruleId: "rule:caie-9231:2026-2027:al:same-series", qualificationVersionId: "CAIE-9231:2026-2027", awardQualificationId: "award:caie:9231", board: "CAIE", subjectCode: "9231", routeId: "award:caie:9231:al:same-series", routeType: "same-series", scoringSystem: "raw", components: [component("P1", 75), component("P2", 75), component("P3", 50), component("P4", 50)], validCombinations: [combination("9231-al-all-papers", ["P1", "P2", "P3", "P4"], "A Level")], totalMaximumAwardMark: 250, gradeScale: ["A*", "A", "B", "C", "D", "E"], effectiveFrom: "2026-01-01", sourceId: source9231 }), aStarRule: { available: true, ruleKind: "boundary-only", notes: ["A* is determined from the official route boundary."] } },
     { ...base({ ruleId: "rule:caie-9231:2026-2027:al:staged", qualificationVersionId: "CAIE-9231:2026-2027", awardQualificationId: "award:caie:9231", board: "CAIE", subjectCode: "9231", routeId: "award:caie:9231:al:staged", routeType: "staged", scoringSystem: "raw", components: [component("AS-P1-P3-CF", null, 125, "carried-forward", true), component("AS-P1-P4-CF", null, 125, "carried-forward", true), component("P2", 75), component("P3", 50, 50, "raw", true), component("P4", 50, 50, "raw", true)], validCombinations: [combination("9231-staged-from-p1-p3", ["AS-P1-P3-CF", "P2", "P4"], "A Level"), combination("9231-staged-from-p1-p4", ["AS-P1-P4-CF", "P2", "P3"], "A Level")], totalMaximumAwardMark: 250, gradeScale: ["A*", "A", "B", "C", "D", "E"], effectiveFrom: "2026-01-01", sourceId: source9231 }), carryForwardRule: { allowed: true, maximumMonths: 13, unit: "whole-as", notes: ["Carry forward the complete AS result, subject to Cambridge Handbook time limits; individual papers are not mixed."] }, aStarRule: { available: true, ruleKind: "boundary-only", notes: ["A* is determined from the official staged route boundary."] } },
   ];
+
+  rules.push(
+    ...buildModernCaie9709Rules({ version: "2020-2022", qualificationVersionId: "CAIE-9709:2020-2022", effectiveFrom: "2020-01-01", effectiveTo: "2022-12-31", sourceId: source9709_2020_2022 }),
+    ...buildModernCaie9709Rules({ version: "2023-2025", qualificationVersionId: "CAIE-9709:2023-2025", effectiveFrom: "2023-01-01", effectiveTo: "2025-12-31", sourceId: source9709_2023_2025 }),
+    ...buildModernCaie9709Rules({ version: "2026-2027", qualificationVersionId: "CAIE-9709:2026-2027", effectiveFrom: "2026-01-01", effectiveTo: "2027-12-31", sourceId: source9709_2026_2027 }),
+  );
 
   const current9231Rules = rules.filter(rule => rule.awardQualificationId === "award:caie:9231" && rule.effectiveFrom === "2026-01-01");
   for (const historical of [

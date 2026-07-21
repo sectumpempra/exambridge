@@ -54,6 +54,12 @@ const gradeFor = (total: number, boundary: GradeBoundaryV2) =>
     return threshold !== null && threshold !== undefined && total >= threshold;
   }) ?? "U";
 
+const sameStringSet = (left: string[] | undefined, right: string[] | undefined) => {
+  if (!left || !right || left.length !== right.length) return false;
+  const sortedRight = [...right].sort();
+  return [...left].sort().every((value, index) => value === sortedRight[index]);
+};
+
 const calculate = (
   inputValue: unknown,
   rule: QualificationAwardRuleV2,
@@ -108,11 +114,22 @@ const calculate = (
   }
 
   const totalAwardMark = rounded(Object.values(componentAwardMarks).reduce((sum, value) => sum + value, 0), rule.roundingRule);
+  const boundarySelection = rule.boundarySelectionRule;
+  const optionMatchesCombination = combination.optionCode
+    ? boundary.optionCode === combination.optionCode
+    : true;
+  const requiredOptionMatches = !boundarySelection?.requiresOptionCode
+    || Boolean(input.optionCode && boundary.optionCode === input.optionCode);
+  const requiredVariantsMatch = !boundarySelection?.requiresComponentVariants
+    || sameStringSet(input.componentVariants, boundary.componentVariants);
   if (
     boundary.routeId !== rule.routeId ||
     boundary.boundaryScope !== "overall" ||
     `${boundary.year}-${boundary.series}` !== input.targetSeries ||
-    boundary.maximumMark !== rule.totalMaximumAwardMark
+    boundary.maximumMark !== rule.totalMaximumAwardMark ||
+    !optionMatchesCombination ||
+    !requiredOptionMatches ||
+    !requiredVariantsMatch
   ) throw new AwardCalculationErrorV2("BOUNDARY_MISMATCH");
 
   let grade = gradeFor(totalAwardMark, boundary);

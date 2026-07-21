@@ -20,7 +20,7 @@ describe("official award-rule candidates", () => {
     expect(candidate.boundaries.every((boundary: unknown) => GradeBoundaryV2Schema.safeParse(boundary).success)).toBe(true);
     expect(candidate.statistics.every((row: unknown) => GradeStatisticsV2Schema.safeParse(row).success)).toBe(true);
     expect(new Set(rules.map(rule => rule.awardQualificationId)).size).toBe(13);
-    expect(rules).toHaveLength(26);
+    expect(rules).toHaveLength(34);
     expect(rules.every(rule => rule.verificationStatus !== "owner-approved")).toBe(true);
   });
 
@@ -37,14 +37,32 @@ describe("official award-rule candidates", () => {
     expect(aqaFurther).toHaveLength(21);
     expect(new Set(aqaFurther.map((row: { optionCode: string }) => row.optionCode))).toEqual(new Set(["DS", "MD", "SM"]));
     expect(aqaFurther.every((row: { boundaryScope: string; maximumMark: number; verificationStatus: string }) => row.boundaryScope === "overall" && row.maximumMark === 300 && row.verificationStatus === "codex-reviewed")).toBe(true);
-    expect(ocrFurther).toHaveLength(6);
+    expect(ocrFurther).toHaveLength(30);
     expect(ocrFurther.every((row: { boundaryScope: string; maximumMark: number }) => row.boundaryScope === "overall" && row.maximumMark === 300)).toBe(true);
     expect(candidate.boundaries.find((row: { awardQualificationId: string }) => row.awardQualificationId === "award:ocr:h640")).toMatchObject({
-      year: 2025,
+      year: 2019,
       series: "june",
       maximumMark: 275,
-      thresholds: { "A*": 226, A: 190, B: 159, C: 128, D: 97, E: 66 },
+      thresholds: { "A*": 217, A: 178, B: 146, C: 114, D: 83, E: 52 },
     });
+  });
+
+  it("versions 9709 conceptual routes separately from series-specific option rows", () => {
+    const caieRules = rules.filter(rule => rule.awardQualificationId === "award:caie:9709");
+    expect(caieRules).toHaveLength(11);
+    expect(caieRules.some(rule => rule.routeId.includes(":AX") || rule.routeId.includes(":DX") || rule.routeId.includes(":S1"))).toBe(false);
+    expect(caieRules.filter(rule => rule.effectiveFrom >= "2020-01-01").every(rule =>
+      rule.boundarySelectionRule?.requiresOptionCode && rule.boundarySelectionRule.requiresComponentVariants)).toBe(true);
+
+    const boundaries = candidate.boundaries.filter((row: { awardQualificationId: string }) => row.awardQualificationId === "award:caie:9709");
+    expect(boundaries).toHaveLength(3);
+    expect(new Set(boundaries.map((row: { routeId: string }) => row.routeId))).toEqual(new Set([
+      "award:caie:9709:2023-2025:as",
+      "award:caie:9709:2023-2025:al:same-series",
+      "award:caie:9709:2023-2025:al:staged",
+    ]));
+    expect(boundaries.every((row: { qualificationVersionId: string; optionCode?: string; componentVariants?: string[] }) =>
+      row.qualificationVersionId === "CAIE-9709:2023-2025" && Boolean(row.optionCode) && Boolean(row.componentVariants?.length))).toBe(true);
   });
 
   it("uses the legacy 9231 two-paper award only in 2019 and versioned modern rules afterwards", () => {

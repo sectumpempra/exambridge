@@ -324,7 +324,7 @@ export function auditAwardData(input = {}) {
         }
       }
       if (source === "official" && route.qualificationCode === "6993") {
-        if (boundary?.sourceRowId !== "OCR-2025-JUNE-6993-01") failures.push("OCR 6993 boundary must identify the official single-paper row");
+        if (typeof boundary?.sourceRowId !== "string" || !/^OCR-20\d{2}-JUNE-6993-01$/.test(boundary.sourceRowId)) failures.push("OCR 6993 boundary must identify the official single-paper row");
         if (boundary?.maximumMarkAfterWeighting !== 100) failures.push("OCR 6993 official boundary must total 100");
         if (Object.hasOwn(boundary?.thresholds ?? {}, "A*")) failures.push("OCR 6993 does not award grade A*");
       }

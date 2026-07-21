@@ -51,6 +51,8 @@ describe("Academic Results V2 contracts", () => {
 
   it("accepts a sourced monotonic overall boundary", () => {
     expect(GradeBoundaryV2Schema.parse(finalBoundary).maximumMark).toBe(300);
+    expect(GradeBoundaryV2Schema.parse({ ...finalBoundary, componentVariants: ["01", "02", "03"] }).componentVariants).toEqual(["01", "02", "03"]);
+    expect(() => GradeBoundaryV2Schema.parse({ ...finalBoundary, componentVariants: ["01", "01"] })).toThrow(/unique/i);
   });
 
   it("rejects component/overall identity leakage and non-monotonic thresholds", () => {

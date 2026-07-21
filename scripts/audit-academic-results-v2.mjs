@@ -1,6 +1,7 @@
 import { execFileSync } from "node:child_process";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
+import { createServer } from "vite";
 import { buildAcademicResultsCoverageMatrix, loadAcademicResultsCoverageInputs } from "./lib/academic-results-v2-coverage.mjs";
 
 const root = process.cwd();
@@ -27,6 +28,23 @@ const expectedAwardIds = [
 
 const scope = JSON.parse(await readFile(scopePath, "utf8"));
 const active = JSON.parse(await readFile(activePath, "utf8"));
+
+async function loadAcademicSchemas() {
+  const server = await createServer({
+    root,
+    configFile: false,
+    appType: "custom",
+    server: { middlewareMode: true },
+    logLevel: "silent",
+  });
+  try {
+    return await server.ssrLoadModule("/src/domain-v2/academic-results/schema.ts");
+  } finally {
+    await server.close();
+  }
+}
+
+const academicSchemas = await loadAcademicSchemas();
 
 if (scope.schemaVersion !== "1.0.0") failures.push("scope schemaVersion must be 1.0.0");
 if (!/^[a-f0-9]{40}$/.test(scope.baselineCommit ?? "")) failures.push("scope baselineCommit must be a full commit hash");
@@ -57,6 +75,8 @@ for (const collection of ["sources", "boundaries", "statistics", "awardRules", "
     if (record.verificationStatus !== "owner-approved") failures.push(`active ${collection}[${index}] must be owner-approved`);
   }
 }
+const activeParse = academicSchemas.AcademicResultsManifestV2Schema.safeParse(active);
+if (!activeParse.success) failures.push(`active manifest schema failure: ${activeParse.error.issues.map(issue => `${issue.path.join(".")}: ${issue.message}`).join("; ")}`);
 
 async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -83,6 +103,46 @@ const trackedPdfs = execFileSync("git", ["ls-files", "*.pdf"], { cwd: root, enco
 if (trackedPdfs.length > 0) failures.push(`repository tracks ${trackedPdfs.length} PDF file(s)`);
 
 const coverageInputs = await loadAcademicResultsCoverageInputs(root);
+const candidate = coverageInputs.candidate;
+const candidateCollections = [
+  ["sources", academicSchemas.SourceEvidenceV1Schema, "sourceId"],
+  ["boundaries", academicSchemas.GradeBoundaryV2Schema, "boundaryId"],
+  ["statistics", academicSchemas.GradeStatisticsV2Schema, "statisticsId"],
+  ["awardRules", academicSchemas.QualificationAwardRuleV2Schema, "ruleId"],
+];
+for (const [collectionName, schema, idField] of candidateCollections) {
+  const records = candidate[collectionName];
+  if (!Array.isArray(records)) {
+    failures.push(`candidate ${collectionName} must be an array`);
+    continue;
+  }
+  const ids = new Set();
+  for (const [index, record] of records.entries()) {
+    const parsed = schema.safeParse(record);
+    if (!parsed.success) failures.push(`candidate ${collectionName}[${index}] schema failure: ${parsed.error.issues.map(issue => `${issue.path.join(".")}: ${issue.message}`).join("; ")}`);
+    const id = record?.[idField];
+    if (typeof id !== "string") continue;
+    if (ids.has(id)) failures.push(`candidate ${collectionName} contains duplicate ${idField} ${id}`);
+    ids.add(id);
+  }
+}
+
+const candidateSourceIds = new Set((candidate.sources ?? []).map(source => source.sourceId));
+for (const collectionName of ["boundaries", "statistics", "awardRules"]) {
+  for (const record of candidate[collectionName] ?? []) {
+    for (const sourceId of record.sourceIds ?? []) {
+      if (!candidateSourceIds.has(sourceId)) failures.push(`candidate ${collectionName} ${record.boundaryId ?? record.statisticsId ?? record.ruleId} references unknown source ${sourceId}`);
+    }
+  }
+}
+
+const boundaryIdentity = new Set();
+for (const boundary of candidate.boundaries ?? []) {
+  const key = [boundary.awardQualificationId, boundary.qualificationVersionId, boundary.year, boundary.series, boundary.routeId, boundary.tier ?? "", boundary.optionCode ?? "", boundary.region ?? "", boundary.componentCode ?? "", boundary.boundaryScope].join("|");
+  if (boundaryIdentity.has(key)) failures.push(`candidate boundaries contain duplicate canonical identity ${key}`);
+  boundaryIdentity.add(key);
+}
+
 const coverageMatrix = await buildAcademicResultsCoverageMatrix(coverageInputs.scope, coverageInputs.candidate);
 
 const report = {
