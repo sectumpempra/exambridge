@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-21T15:48:52.844Z",
+  "reviewStatus": "machine-reviewed",
+  "provider": "deepseek",
+  "requestedModel": "deepseek-v4-pro",
+  "returnedModel": "deepseek-v4-pro",
+  "verdict": "pass",
+  "rowReviews": [
+    { "optionCode": "AX", "issues": [] },
+    { "optionCode": "AY", "issues": [] },
+    { "optionCode": "AZ", "issues": [] },
+    { "optionCode": "BX", "issues": [] },
+    { "optionCode": "BY", "issues": [] },
+    { "optionCode": "BZ", "issues": [] }
+  ],
+  "routeChecks": { "core": { "issues": [] }, "extended": { "issues": [] } },
+  "concerns": [],
+  "codexAdjudication": {
+    "accepted": true,
+    "notes": [
+      "All six rows were checked against the official one-page threshold PDF.",
+      "Option codes, component variants, grade scales, maxima and monotonic thresholds match the source."
+    ]
+  }
+}

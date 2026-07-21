@@ -88,6 +88,7 @@ async function loadLegacyStatistics() {
 
 const officialBoundaryFiles = [
   "src/data/official/awards/aqa-7357.json",
+  "src/data/official/awards/caie-0580.json",
   "src/data/official/awards/caie-9709.json",
   "src/data/official/awards/ocr-6993.json",
   "src/data/official/awards/ocr-h240.json",

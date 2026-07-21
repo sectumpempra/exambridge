@@ -13,6 +13,8 @@ import {
 const candidate = JSON.parse(readFileSync("data/candidates/academic-results-v2/migration-candidate.json", "utf8"));
 const rules: QualificationAwardRuleV2[] = candidate.awardRules.map((rule: unknown) => QualificationAwardRuleV2Schema.parse(rule));
 const reviewUsage = JSON.parse(readFileSync("generated/academic-results-v2/deepseek-award-rule-review-usage.json", "utf8")).usage;
+const caie0580Review = JSON.parse(readFileSync("data/candidates/academic-results-v2/caie-0580-2025-june-boundary-review.json", "utf8"));
+const caie0580ReviewUsage = JSON.parse(readFileSync("generated/academic-results-v2/caie-0580-2025-june-boundary-review-usage.json", "utf8"));
 
 describe("official award-rule candidates", () => {
   it("validates every migrated row and covers all 13 approved qualifications", () => {
@@ -63,6 +65,39 @@ describe("official award-rule candidates", () => {
     ]));
     expect(boundaries.every((row: { qualificationVersionId: string; optionCode?: string; componentVariants?: string[] }) =>
       row.qualificationVersionId === "CAIE-9709:2023-2025" && Boolean(row.optionCode) && Boolean(row.componentVariants?.length))).toBe(true);
+  });
+
+  it("keeps all six 0580 option rows separate and requires exact variant selection", () => {
+    const boundaries = candidate.boundaries.filter((row: { awardQualificationId: string; year: number; series: string }) =>
+      row.awardQualificationId === "award:caie:0580" && row.year === 2025 && row.series === "june");
+    expect(boundaries).toHaveLength(6);
+    expect(new Set(boundaries.map((row: { optionCode: string }) => row.optionCode))).toEqual(new Set(["AX", "AY", "AZ", "BX", "BY", "BZ"]));
+    expect(boundaries.find((row: { optionCode: string }) => row.optionCode === "BY")).toMatchObject({
+      routeId: "award:caie:0580:extended",
+      componentVariants: ["22", "42"],
+      maximumMark: 200,
+      thresholds: { "A*": 176, A: 152, B: 119, C: 86, D: 68, E: 51 },
+    });
+    const rule = rules.find(item => item.routeId === "award:caie:0580:extended")!;
+    expect(rule.boundarySelectionRule).toMatchObject({ requiresOptionCode: true, requiresComponentVariants: true });
+    expect(calculateQualificationAwardV2({
+      ruleId: rule.ruleId,
+      routeId: rule.routeId,
+      targetSeries: "2025-june",
+      combinationId: "0580-extended-p2-p4",
+      optionCode: "BY",
+      componentVariants: ["22", "42"],
+      componentScores: [
+        { componentCode: "P2", series: "2025-june", rawMark: 80 },
+        { componentCode: "P4", series: "2025-june", rawMark: 75 },
+      ],
+    }, rule, boundaries.find((row: { optionCode: string }) => row.optionCode === "BY"))).toMatchObject({
+      totalAwardMark: 155,
+      grade: "A",
+      calculationStatus: "official",
+    });
+    expect(caie0580Review).toMatchObject({ reviewStatus: "machine-reviewed", verdict: "pass" });
+    expect(caie0580ReviewUsage.usage[0]).toMatchObject({ status: "success", returnedModel: "deepseek-v4-pro", totalTokens: 2577 });
   });
 
   it("migrates the verified 8MA0 AS overall series without inventing A-star", () => {
