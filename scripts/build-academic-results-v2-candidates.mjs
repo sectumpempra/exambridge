@@ -279,6 +279,15 @@ for (const subject of aqaStats.filter(item => ["7357", "7367"].includes(item.cod
 const ocrStatsText = await readFile(join(root, "src/data/official/ocr-results-statistics.json"), "utf8");
 const ocrStats = JSON.parse(ocrStatsText);
 const ocrPdfMetadata = {
+  2019: {
+    hash: "b8f14756986d623357e238ac3f0ca2ef9d27f00464a33f2dee4820182e77a691",
+    publishedAt: "2020-01-31",
+    status: "final",
+    aLevelPrintedPage: 1,
+    aLevelPdfPage: 2,
+    fsmqPrintedPage: 4,
+    fsmqPdfPage: 5,
+  },
   2025: { hash: "ac952b2de8f1622d2c916628018c9bf5952adfca7463a9fbea258c059fd4d1f0", publishedAt: "2025-08-14", status: "provisional", fsmqPage: 6 },
   2024: { hash: "fd594bd4054ff6a1c953ccc2a7430b0d45bdf5315a55f25634375e8f6e791b59", publishedAt: "2024-08-15", status: "provisional", fsmqPage: 5 },
   2023: { hash: "9f2b9a95fee947e86e8a41b55c302eff8fb44ed716f8a9881f688b5d96dc8ec9", publishedAt: "2023-08-17", status: "provisional", fsmqPage: 5 },
@@ -298,8 +307,8 @@ for (const row of [...ocrStats.aLevel, ...(ocrStats.fsmq ?? [])].filter(item => 
     documentTitle: `OCR AS, A Level and FSMQ results statistics June ${row.year}`,
     publishedAt: metadata.publishedAt,
     accessedAt: "2026-07-21",
-    printedPage: row.code === "6993" ? metadata.fsmqPage : 1,
-    pdfPage: row.code === "6993" ? metadata.fsmqPage : 1,
+    printedPage: row.code === "6993" ? metadata.fsmqPrintedPage ?? metadata.fsmqPage : metadata.aLevelPrintedPage ?? 1,
+    pdfPage: row.code === "6993" ? metadata.fsmqPdfPage ?? metadata.fsmqPage : metadata.aLevelPdfPage ?? 1,
     tableName: row.code === "6993" ? `Advanced FSMQ Results June ${row.year}` : `Advanced GCE Results June ${row.year}`,
     sourceRowId: `OCR-${row.year}-JUNE-${row.code}`,
     sourceDocumentHash: metadata.hash,

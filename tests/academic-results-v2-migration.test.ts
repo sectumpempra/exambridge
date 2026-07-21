@@ -3,6 +3,8 @@ import candidate from "../data/candidates/academic-results-v2/migration-candidat
 import report from "../generated/academic-results-v2/migration-report.json";
 import pearsonReview from "../data/candidates/academic-results-v2/pearson-8ma0-statistics-review.json";
 import pearsonReviewUsage from "../generated/academic-results-v2/pearson-8ma0-statistics-review-usage.json";
+import ocr2019Review from "../data/candidates/academic-results-v2/ocr-2019-statistics-review.json";
+import ocr2019ReviewUsage from "../generated/academic-results-v2/ocr-2019-statistics-review-usage.json";
 import {
   GradeBoundaryV2Schema,
   GradeStatisticsV2Schema,
@@ -34,10 +36,29 @@ describe("Academic Results V2 migration candidate", () => {
     expect(aqa.every(row => statisticsProvenance[row.statisticsId]?.migrationOrigin === "official-local-aqa" && row.verificationStatus === "candidate")).toBe(true);
   });
 
-  it("includes OCR 6993 row-level official statistics from 2021 to 2025", () => {
+  it("includes OCR 6993 row-level official statistics for every available in-scope year", () => {
     const rows = candidate.statistics.filter(row => row.awardQualificationId === "award:ocr:6993");
-    expect(rows.map(row => row.year)).toEqual([2021, 2022, 2023, 2024, 2025]);
+    expect(rows.map(row => row.year)).toEqual([2019, 2021, 2022, 2023, 2024, 2025]);
     expect(rows.every(row => row.verificationStatus === "codex-reviewed" && row.sourceIds.length === 1)).toBe(true);
+    expect(rows.find(row => row.year === 2019)).toMatchObject({
+      candidateCount: 7889,
+      gradeOrder: ["A", "B", "C", "D", "E"],
+      gradeRates: { A: 45.86, B: 60.86, C: 73.46, D: 81.95, E: 88.16 },
+    });
+  });
+
+  it("adds OCR 2019 statistics for all four scoped routes with independent review provenance", () => {
+    const rows = candidate.statistics.filter(row =>
+      row.year === 2019 && ["award:ocr:h240", "award:ocr:h245", "award:ocr:h640", "award:ocr:6993"].includes(row.awardQualificationId));
+    expect(rows).toHaveLength(4);
+    expect(rows.every(row => row.verificationStatus === "codex-reviewed" && row.sourceIds.length === 1)).toBe(true);
+    expect(rows.find(row => row.awardQualificationId === "award:ocr:h245")).toMatchObject({
+      candidateCount: 1415,
+      gradeRates: { "A*": 31.52, A: 61.34, B: 79.79, C: 91.38, D: 96.89, E: 99.01 },
+    });
+    expect(ocr2019Review).toMatchObject({ reviewStatus: "machine-reviewed", provider: "deepseek", verdict: "pass" });
+    expect(ocr2019ReviewUsage.usage).toHaveLength(1);
+    expect(ocr2019ReviewUsage.usage[0]).toMatchObject({ status: "success", returnedModel: "deepseek-v4-pro", totalTokens: 2938 });
   });
 
   it("resolves the four Pearson IAL conflicts against exact official rows", () => {
