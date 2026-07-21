@@ -87,9 +87,50 @@ describe("Academic Results sparse coverage", () => {
     const cancelled = boundaryMatrix.cells.find(cell =>
       cell.awardQualificationId === "award:aqa:7357" && cell.year === 2020 && cell.series === "june");
     expect(cancelled).toMatchObject({ administrationStatus: "cancelled", coverageStatus: "explained-unavailable", recordReviewStatus: null });
-    const candidate0580 = boundaryMatrix.cells.find(cell =>
-      cell.awardQualificationId === "award:caie:0580" && cell.year === 2025 && cell.series === "june" && cell.routeId.endsWith(":extended"));
-    expect(candidate0580).toMatchObject({ administrationStatus: "held", coverageStatus: "pending", recordReviewStatus: "candidate" });
+    const verified0580 = boundaryMatrix.cells.find(cell =>
+      cell.awardQualificationId === "award:caie:0580"
+      && cell.year === 2025
+      && cell.series === "june"
+      && cell.optionCode === "BY");
+    expect(verified0580).toMatchObject({
+      routeId: "award:caie:0580:extended",
+      componentVariants: ["22", "42"],
+      administrationStatus: "held",
+      coverageStatus: "satisfied",
+      recordReviewStatus: "codex-reviewed",
+    });
+  });
+
+  it("requires exact, complete option sets before treating optioned boundaries as satisfied", () => {
+    const verified0580 = boundaryMatrix.cells.filter(cell =>
+      cell.awardQualificationId === "award:caie:0580"
+      && cell.year === 2025
+      && cell.series === "june"
+      && cell.coverageStatus === "satisfied");
+    expect(verified0580.map(cell => cell.optionCode).sort()).toEqual(["AX", "AY", "AZ", "BX", "BY", "BZ"]);
+
+    const verifiedH245 = boundaryMatrix.cells.filter(cell =>
+      cell.awardQualificationId === "award:ocr:h245"
+      && cell.coverageStatus === "satisfied");
+    expect(verifiedH245).toHaveLength(30);
+    expect(new Set(verifiedH245.map(cell => `${cell.year}:${cell.optionCode}`)).size).toBe(30);
+
+    const incomplete9709 = boundaryMatrix.cells.filter(cell =>
+      cell.awardQualificationId === "award:caie:9709"
+      && cell.year === 2025
+      && cell.series === "june"
+      && cell.observedRecordIds.length > 0);
+    expect(incomplete9709).toHaveLength(3);
+    expect(incomplete9709.every(cell => cell.coverageStatus === "pending" && cell.recordReviewStatus === "candidate")).toBe(true);
+  });
+
+  it("does not classify verified exceptional AQA November series as unexpected records", () => {
+    const aqaNovember = boundaryMatrix.cells.filter(cell =>
+      cell.awardQualificationId.startsWith("award:aqa:")
+      && [2020, 2021].includes(cell.year)
+      && cell.series === "november");
+    expect(aqaNovember.length).toBeGreaterThan(0);
+    expect(aqaNovember.every(cell => cell.coverageStatus === "satisfied")).toBe(true);
   });
 
   it("reports candidate gaps without letting Grade Statistics block rule maturity", () => {

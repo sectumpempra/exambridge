@@ -143,6 +143,28 @@ export function buildCoverageExpectationPolicies(scope, candidate, identityCatal
         sourceIds: rule.sourceIds,
         reviewStatus: "codex-reviewed",
       })));
+    for (const record of candidate.boundaries.filter(record => record.awardQualificationId === identity.awardQualificationId
+      && ["codex-reviewed", "owner-approved"].includes(record.verificationStatus)
+      && record.sourceIds.length > 0)) {
+      const exactDate = seriesDate(record.year, record.series);
+      boundaryExpectations.push({
+        expectationId: `boundary-expectation:exact:${slug(record.boundaryId)}`,
+        awardQualificationId: record.awardQualificationId,
+        qualificationVersionId: record.qualificationVersionId,
+        effectiveFrom: exactDate,
+        effectiveTo: exactDate,
+        series: [record.series],
+        routeId: record.routeId,
+        boundaryScope: record.boundaryScope,
+        ...(record.tier ? { tier: record.tier } : {}),
+        ...(record.optionCode ? { optionCode: record.optionCode } : {}),
+        ...(record.componentVariants ? { componentVariants: record.componentVariants } : {}),
+        ...(record.region ? { region: record.region } : {}),
+        ...(record.componentCode ? { componentCode: record.componentCode } : {}),
+        sourceIds: record.sourceIds,
+        reviewStatus: record.verificationStatus,
+      });
+    }
     return {
       schemaVersion: "1.0.0",
       policyId: `coverage-policy:${slug(identity.awardQualificationId)}`,
@@ -217,6 +239,16 @@ export function buildSparseCoverageMatrices(scope, candidate, policyCatalog) {
         for (const series of expectation.series) {
           const date = seriesDate(year, series);
           if (!appliesAt(expectation, date)) continue;
+          const moreSpecificExpectations = policy.boundaryExpectations.filter(candidateExpectation =>
+            candidateExpectation.expectationId !== expectation.expectationId
+            && candidateExpectation.awardQualificationId === expectation.awardQualificationId
+            && candidateExpectation.qualificationVersionId === expectation.qualificationVersionId
+            && candidateExpectation.routeId === expectation.routeId
+            && candidateExpectation.boundaryScope === expectation.boundaryScope
+            && candidateExpectation.effectiveFrom === date
+            && candidateExpectation.effectiveTo === date);
+          const genericExpectation = expectation.effectiveFrom !== date || expectation.effectiveTo !== date;
+          if (genericExpectation && moreSpecificExpectations.length > 0) continue;
           const records = candidate.boundaries.filter(record => boundaryMatchesExpectation(record, expectation, year, series));
           records.forEach(record => matchedBoundaryIds.add(record.boundaryId));
           const administration = resolveAdministration(expectation.awardQualificationId, year, series, records, sourceIds);

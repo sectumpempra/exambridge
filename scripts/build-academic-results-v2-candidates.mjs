@@ -119,12 +119,22 @@ const officialBoundaryFiles = [
   "src/data/official/awards/ocr-h640.json",
   "src/data/official/awards/pearson-8ma0.json",
 ];
+const boundaryAdjudication = await readJson("data/candidates/academic-results-v2/boundary-codex-adjudication.json");
+const codexReviewedBoundaryFiles = new Map(boundaryAdjudication.approvedFiles.map(item => [item.path, item]));
 const boundaries = [];
 for (const file of officialBoundaryFiles) {
-  for (const row of (await readJson(file)).boundaries) {
+  const fileRows = (await readJson(file)).boundaries;
+  const adjudication = codexReviewedBoundaryFiles.get(file);
+  if (adjudication && adjudication.rowCount !== fileRows.length) {
+    throw new Error(`${file} row count changed after Codex adjudication`);
+  }
+  for (const row of fileRows) {
     const awardQualificationId = boundaryAwardId(row.routeId);
     const qualification = qualifications.get(awardQualificationId);
     const { year, series } = parseSeries(row.series);
+    const verificationStatus = qualification.board === "AQA" || (adjudication && row.verificationStatus === "verified")
+      ? "codex-reviewed"
+      : "candidate";
     const sourceId = addSource({
       sourceId: `source:${slug(row.sourceRowId)}`,
       board: qualification.board,
@@ -136,7 +146,7 @@ for (const file of officialBoundaryFiles) {
       pdfPage: row.pdfPage,
       sourceRowId: row.sourceRowId,
       sourceDocumentHash: row.sourceDocumentHash,
-      verificationStatus: qualification.board === "AQA" ? "codex-reviewed" : "candidate",
+      verificationStatus,
     });
     boundaries.push({
       schemaVersion: "2.0.0",
@@ -154,7 +164,7 @@ for (const file of officialBoundaryFiles) {
       thresholds: row.thresholds,
       publicationStatus: "final",
       sourceIds: [sourceId],
-      verificationStatus: qualification.board === "AQA" ? "codex-reviewed" : "candidate",
+      verificationStatus,
     });
   }
 }

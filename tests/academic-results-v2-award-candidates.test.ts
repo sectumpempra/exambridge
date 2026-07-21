@@ -109,7 +109,7 @@ describe("official award-rule candidates", () => {
       boundaryScope: "overall",
       maximumMark: 160,
       thresholds: { A: 101, B: 87, C: 74, D: 61, E: 48 },
-      verificationStatus: "candidate",
+      verificationStatus: "codex-reviewed",
     });
     expect(boundaries.every((row: { thresholds: Record<string, number | null> }) =>
       !Object.hasOwn(row.thresholds, "A*"))).toBe(true);

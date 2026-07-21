@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "reviewedAt": "2026-07-22",
+  "reviewStatus": "codex-reviewed",
+  "approvedFiles": [
+    {
+      "path": "src/data/official/awards/caie-0580.json",
+      "rowCount": 6,
+      "completePublishedOptionSets": true,
+      "reason": "The June 2025 official threshold table is represented by all three Core and all three Extended option rows; option codes, component variants, maxima and monotonic thresholds passed deterministic checks."
+    },
+    {
+      "path": "src/data/official/awards/ocr-6993.json",
+      "rowCount": 5,
+      "completePublishedOptionSets": true,
+      "reason": "Each available June overall qualification row is source-located, hashed, monotonic and uses the A-E scale without A*."
+    },
+    {
+      "path": "src/data/official/awards/ocr-h240.json",
+      "rowCount": 5,
+      "completePublishedOptionSets": true,
+      "reason": "Each available June overall qualification row is source-located, hashed and matches the fixed three-component route."
+    },
+    {
+      "path": "src/data/official/awards/ocr-h245.json",
+      "rowCount": 30,
+      "completePublishedOptionSets": true,
+      "reason": "Every represented June series contains all six valid pairs of Y542-Y545 together with mandatory Y540 and Y541; hashes, maxima and monotonic thresholds passed deterministic checks."
+    },
+    {
+      "path": "src/data/official/awards/ocr-h640.json",
+      "rowCount": 5,
+      "completePublishedOptionSets": true,
+      "reason": "Each available June overall qualification row is source-located, hashed and matches the fixed three-component route."
+    },
+    {
+      "path": "src/data/official/awards/pearson-8ma0.json",
+      "rowCount": 5,
+      "completePublishedOptionSets": true,
+      "reason": "The available official AS overall rows are source-located and hashed; the A-E scale contains no invented A* threshold."
+    }
+  ],
+  "excludedFiles": [
+    {
+      "path": "src/data/official/awards/caie-9709.json",
+      "reason": "The file contains three verified example route rows from June 2025, not the complete official option table, so it remains candidate-level."
+    }
+  ],
+  "activationDecision": "candidate-only"
+}
