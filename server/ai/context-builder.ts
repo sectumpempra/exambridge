@@ -26,6 +26,7 @@ import {
 } from "@/domain-v2/academic-results";
 import { buildAcademicToolContext, type AcademicToolContext } from "./academic-tools";
 import { detectQualificationAmbiguity } from "./qualification-resolver";
+import { detectRequiredInputClarification } from "./required-input-resolver";
 
 type KnowledgeManifestEntry = {
   code: string;
@@ -799,6 +800,18 @@ export class AIContextBuilder {
         ? knowledgeEntries.map((entry) => `${entry.board} ${entry.subjectCode} ${entry.subjectName}`)
         : courses.map((course) => course.label)).slice(0, 4),
     };
+
+    const requiredInput = detectRequiredInputClarification(request, resolvedContext.awardQualificationIds);
+    if (requiredInput) {
+      return {
+        promptContext: "{}",
+        sources: [],
+        paperFacts: [],
+        resolvedContext,
+        clarification: requiredInput.clarification,
+        containsAqa: false,
+      };
+    }
 
     const hasVerifiedAcademicContext = academic?.calls.some(call => call.status === "ok") === true;
     if (overviews.length === 0 && !knowledge && !hasVerifiedAcademicContext) {

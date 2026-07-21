@@ -15,6 +15,7 @@ import { AIProviderError, DeepSeekChatProvider, ensureAnswerCitations, hydrateCi
 import { isComplexAIQuestion } from "../server/ai/prompt";
 import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai";
 import { detectQualificationAmbiguity } from "../server/ai/qualification-resolver";
+import { detectRequiredInputClarification } from "../server/ai/required-input-resolver";
 
 function request(overrides: Partial<AIChatRequest> = {}): AIChatRequest {
   return {
@@ -68,6 +69,33 @@ describe("AI qualification ambiguity resolver", () => {
   it("does not override an exact qualification code", () => {
     expect(detectQualificationAmbiguity("比较IG数学0580和A Level数学9709")).toBeUndefined();
     expect(detectQualificationAmbiguity("Pearson 8MA0怎么合分？")).toBeUndefined();
+  });
+});
+
+describe("AI required input resolver", () => {
+  it("collects all missing boundary dimensions in one clarification", () => {
+    const result = detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "0580 的分数线是多少？" }],
+    }), ["award:caie:0580"]);
+    expect(result).toMatchObject({ kind: "boundary-lookup" });
+    expect(result?.missing).toEqual(expect.arrayContaining(["年份", "考季", "Core 或 Extended", "官方 option（例如 AX/BX）"]));
+  });
+
+  it("does not turn a general rule explanation into a score collection form", () => {
+    expect(detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "9709 的合分规则是什么？" }],
+    }), ["award:caie:9709"])).toBeUndefined();
+  });
+
+  it("requests score types and Pearson cash-in history for a concrete IAL calculation", () => {
+    const result = detectRequiredInputClarification(request({
+      messages: [{ role: "user", content: "请帮我算 Pearson IAL Mathematics 的最终等级" }],
+    }), ["award:pearson:ial-mathematics"]);
+    expect(result?.missing).toEqual(expect.arrayContaining([
+      "route 和有效组件组合",
+      "每项分数及其类型（raw、scaled、UMS 或 PUM）",
+      "cash-in 以及重考/locking 历史",
+    ]));
   });
 });
 
