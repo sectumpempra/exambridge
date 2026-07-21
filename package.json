@@ -23,6 +23,7 @@
     "data:build": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs",
     "data:audit": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-paper-metadata.mjs && node scripts/audit-past-papers.mjs && node scripts/audit-active-knowledge-v5.mjs && node scripts/audit-academic-results-v2.mjs && node scripts/audit-data.mjs",
     "academic-results:v2:audit": "node scripts/audit-academic-results-v2.mjs",
+    "academic-results:v2:difficulty-candidates": "node scripts/build-difficulty-gold-candidates.mjs",
     "knowledge:v5:active-audit": "node scripts/audit-active-knowledge-v5.mjs",
     "knowledge:v5:static": "node scripts/build-knowledge-v5-static.mjs",
     "knowledge:v5:release-audit": "node scripts/audit-knowledge-v5-only-release.mjs",

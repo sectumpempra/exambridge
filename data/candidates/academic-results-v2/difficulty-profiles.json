@@ -1,0 +1,574 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-21T00:00:00+08:00",
+  "sourceKnowledgeBatch": "knowledge-v5-20260719",
+  "status": "candidate",
+  "profiles": [
+    {
+      "schemaVersion": "1.0.0",
+      "profileId": "difficulty:0580-extended-to-9709-as-p1-s1",
+      "sourceQualificationVersionId": "CAIE-0580:2025-2027",
+      "sourceRouteId": "extended-p2-p4",
+      "sourcePaperIds": [
+        "CAIE-0580-Paper-2",
+        "CAIE-0580-Paper-4"
+      ],
+      "sourceTiers": [
+        "Extended"
+      ],
+      "targetQualificationVersionId": "CAIE-9709:2026-2027",
+      "targetRouteId": "as-p1-s1",
+      "targetPaperIds": [
+        "CAIE-9709-Paper-1",
+        "CAIE-9709-Paper-5"
+      ],
+      "direction": "source-to-target",
+      "weights": {
+        "contentGap": 0.3,
+        "depthUplift": 0.25,
+        "assessmentDemand": 0.2,
+        "questionComplexity": 0.15,
+        "empiricalDemand": 0.1
+      },
+      "dimensions": {
+        "contentGap": {
+          "score": 60.483870967741936,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:CAIE-0580",
+            "knowledge-v5:CAIE-9709"
+          ],
+          "explanation": "75 of 124 approved target leaf concepts are not present in the selected source route."
+        },
+        "depthUplift": {
+          "score": 61.55913978494624,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:CAIE-0580",
+            "knowledge-v5:CAIE-9709"
+          ],
+          "explanation": "Depth uplift compares the highest approved assessment depth for each target leaf concept with the selected source route."
+        },
+        "assessmentDemand": {
+          "score": 0,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "exam-overview:cambridge-0580",
+            "exam-overview:cambridge-9709"
+          ],
+          "explanation": "Assessment uplift combines total duration (40%), paper count (30%), marks per minute (20%), and non-calculator share (10%)."
+        },
+        "questionComplexity": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Question-level derived metadata has not yet passed the evidence gate."
+        },
+        "empiricalDemand": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Comparable official performance evidence has not yet passed the evidence gate."
+        }
+      },
+      "score": 46.034946236559136,
+      "interval": [
+        33.534946236559136,
+        58.534946236559136
+      ],
+      "evidenceCoverage": 0.75,
+      "confidence": "medium",
+      "methodVersion": "exambridge-transition-difficulty-v1",
+      "verificationStatus": "candidate",
+      "label": "CAIE 0580 Extended → CAIE 9709 AS (Pure 1 + Statistics 1)",
+      "sourceCode": "CAIE-0580",
+      "targetCode": "CAIE-9709",
+      "processingPolicy": "deterministic-local"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "profileId": "difficulty:0580-extended-to-9709-al-p1-p3-m1-s1",
+      "sourceQualificationVersionId": "CAIE-0580:2025-2027",
+      "sourceRouteId": "extended-p2-p4",
+      "sourcePaperIds": [
+        "CAIE-0580-Paper-2",
+        "CAIE-0580-Paper-4"
+      ],
+      "sourceTiers": [
+        "Extended"
+      ],
+      "targetQualificationVersionId": "CAIE-9709:2026-2027",
+      "targetRouteId": "al-p1-p3-m1-s1",
+      "targetPaperIds": [
+        "CAIE-9709-Paper-1",
+        "CAIE-9709-Paper-3",
+        "CAIE-9709-Paper-4",
+        "CAIE-9709-Paper-5"
+      ],
+      "direction": "source-to-target",
+      "weights": {
+        "contentGap": 0.3,
+        "depthUplift": 0.25,
+        "assessmentDemand": 0.2,
+        "questionComplexity": 0.15,
+        "empiricalDemand": 0.1
+      },
+      "dimensions": {
+        "contentGap": {
+          "score": 74.02597402597402,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:CAIE-0580",
+            "knowledge-v5:CAIE-9709"
+          ],
+          "explanation": "171 of 231 approved target leaf concepts are not present in the selected source route."
+        },
+        "depthUplift": {
+          "score": 74.60317460317461,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:CAIE-0580",
+            "knowledge-v5:CAIE-9709"
+          ],
+          "explanation": "Depth uplift compares the highest approved assessment depth for each target leaf concept with the selected source route."
+        },
+        "assessmentDemand": {
+          "score": 51.66666666666667,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "exam-overview:cambridge-0580",
+            "exam-overview:cambridge-9709"
+          ],
+          "explanation": "Assessment uplift combines total duration (40%), paper count (30%), marks per minute (20%), and non-calculator share (10%)."
+        },
+        "questionComplexity": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Question-level derived metadata has not yet passed the evidence gate."
+        },
+        "empiricalDemand": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Comparable official performance evidence has not yet passed the evidence gate."
+        }
+      },
+      "score": 63.69191919191919,
+      "interval": [
+        51.19191919191919,
+        76.1919191919192
+      ],
+      "evidenceCoverage": 0.75,
+      "confidence": "medium",
+      "methodVersion": "exambridge-transition-difficulty-v1",
+      "verificationStatus": "candidate",
+      "label": "CAIE 0580 Extended → CAIE 9709 A Level (P1 + P3 + M1 + S1)",
+      "sourceCode": "CAIE-0580",
+      "targetCode": "CAIE-9709",
+      "processingPolicy": "deterministic-local"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "profileId": "difficulty:4ma1-higher-to-ial-mathematics",
+      "sourceQualificationVersionId": "Edexcel-4MA1:Issue 2",
+      "sourceRouteId": "higher",
+      "sourcePaperIds": [
+        "4MA1-1H",
+        "4MA1-2H"
+      ],
+      "sourceTiers": [
+        "Higher"
+      ],
+      "targetQualificationVersionId": "Edexcel-IAL:2018",
+      "targetRouteId": "ial-mathematics-p1-p4-m1-s1",
+      "targetPaperIds": [
+        "Edexcel-IAL-P1",
+        "Edexcel-IAL-P2",
+        "Edexcel-IAL-P3",
+        "Edexcel-IAL-P4",
+        "Edexcel-IAL-M1",
+        "Edexcel-IAL-S1"
+      ],
+      "direction": "source-to-target",
+      "weights": {
+        "contentGap": 0.3,
+        "depthUplift": 0.25,
+        "assessmentDemand": 0.2,
+        "questionComplexity": 0.15,
+        "empiricalDemand": 0.1
+      },
+      "dimensions": {
+        "contentGap": {
+          "score": 65.15837104072398,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:Edexcel-4MA1",
+            "knowledge-v5:Edexcel-IAL"
+          ],
+          "explanation": "144 of 221 approved target leaf concepts are not present in the selected source route."
+        },
+        "depthUplift": {
+          "score": 65.30920060331825,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:Edexcel-4MA1",
+            "knowledge-v5:Edexcel-IAL"
+          ],
+          "explanation": "Depth uplift compares the highest approved assessment depth for each target leaf concept with the selected source route."
+        },
+        "assessmentDemand": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Assessment structure evidence is incomplete."
+        },
+        "questionComplexity": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Question-level derived metadata has not yet passed the evidence gate."
+        },
+        "empiricalDemand": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Comparable official performance evidence has not yet passed the evidence gate."
+        }
+      },
+      "score": 58.374811463046754,
+      "interval": [
+        35.874811463046754,
+        80.87481146304674
+      ],
+      "evidenceCoverage": 0.55,
+      "confidence": "low",
+      "methodVersion": "exambridge-transition-difficulty-v1",
+      "verificationStatus": "candidate",
+      "label": "Pearson 4MA1 Higher → Pearson IAL Mathematics (P1–P4 + M1 + S1)",
+      "sourceCode": "Edexcel-4MA1",
+      "targetCode": "Edexcel-IAL",
+      "processingPolicy": "deterministic-local"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "profileId": "difficulty:9709-al-to-9231-al",
+      "sourceQualificationVersionId": "CAIE-9709:2026-2027",
+      "sourceRouteId": "al-p1-p3-m1-s1",
+      "sourcePaperIds": [
+        "CAIE-9709-Paper-1",
+        "CAIE-9709-Paper-3",
+        "CAIE-9709-Paper-4",
+        "CAIE-9709-Paper-5"
+      ],
+      "targetQualificationVersionId": "CAIE-9231:2026-2027",
+      "targetRouteId": "al-all-papers",
+      "targetPaperIds": [
+        "CAIE-9231-Paper-1",
+        "CAIE-9231-Paper-2",
+        "CAIE-9231-Paper-3",
+        "CAIE-9231-Paper-4"
+      ],
+      "direction": "source-to-target",
+      "weights": {
+        "contentGap": 0.3,
+        "depthUplift": 0.25,
+        "assessmentDemand": 0.2,
+        "questionComplexity": 0.15,
+        "empiricalDemand": 0.1
+      },
+      "dimensions": {
+        "contentGap": {
+          "score": 84,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:CAIE-9709",
+            "knowledge-v5:CAIE-9231"
+          ],
+          "explanation": "105 of 125 approved target leaf concepts are not present in the selected source route."
+        },
+        "depthUplift": {
+          "score": 84,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:CAIE-9709",
+            "knowledge-v5:CAIE-9231"
+          ],
+          "explanation": "Depth uplift compares the highest approved assessment depth for each target leaf concept with the selected source route."
+        },
+        "assessmentDemand": {
+          "score": 5.4054054054054035,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "exam-overview:cambridge-9709",
+            "exam-overview:cambridge-9231"
+          ],
+          "explanation": "Assessment uplift combines total duration (40%), paper count (30%), marks per minute (20%), and non-calculator share (10%)."
+        },
+        "questionComplexity": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Question-level derived metadata has not yet passed the evidence gate."
+        },
+        "empiricalDemand": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Comparable official performance evidence has not yet passed the evidence gate."
+        }
+      },
+      "score": 59.78108108108108,
+      "interval": [
+        47.28108108108108,
+        72.28108108108108
+      ],
+      "evidenceCoverage": 0.75,
+      "confidence": "medium",
+      "methodVersion": "exambridge-transition-difficulty-v1",
+      "verificationStatus": "candidate",
+      "label": "CAIE 9709 A Level → CAIE 9231 A Level Further Mathematics",
+      "sourceCode": "CAIE-9709",
+      "targetCode": "CAIE-9231",
+      "processingPolicy": "deterministic-local"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "profileId": "difficulty:aqa-7357-to-7367-discrete-statistics",
+      "sourceQualificationVersionId": "AQA-7357:1.3",
+      "sourceRouteId": "linear",
+      "sourcePaperIds": [
+        "paper-1",
+        "paper-2",
+        "paper-3"
+      ],
+      "targetQualificationVersionId": "AQA-7367:1.1",
+      "targetRouteId": "discrete-statistics",
+      "targetPaperIds": [
+        "paper-1",
+        "paper-2",
+        "paper-3-discrete-statistics"
+      ],
+      "direction": "source-to-target",
+      "weights": {
+        "contentGap": 0.3,
+        "depthUplift": 0.25,
+        "assessmentDemand": 0.2,
+        "questionComplexity": 0.15,
+        "empiricalDemand": 0.1
+      },
+      "dimensions": {
+        "contentGap": {
+          "score": 86.84210526315789,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:AQA-7357",
+            "knowledge-v5:AQA-7367"
+          ],
+          "explanation": "132 of 152 approved target leaf concepts are not present in the selected source route."
+        },
+        "depthUplift": {
+          "score": 88.1578947368421,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:AQA-7357",
+            "knowledge-v5:AQA-7367"
+          ],
+          "explanation": "Depth uplift compares the highest approved assessment depth for each target leaf concept with the selected source route."
+        },
+        "assessmentDemand": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Assessment structure evidence is incomplete."
+        },
+        "questionComplexity": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Question-level derived metadata has not yet passed the evidence gate."
+        },
+        "empiricalDemand": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Comparable official performance evidence has not yet passed the evidence gate."
+        }
+      },
+      "score": 70.59210526315789,
+      "interval": [
+        48.09210526315789,
+        93.09210526315789
+      ],
+      "evidenceCoverage": 0.55,
+      "confidence": "low",
+      "methodVersion": "exambridge-transition-difficulty-v1",
+      "verificationStatus": "candidate",
+      "label": "AQA 7357 Mathematics → AQA 7367 Further Mathematics (Discrete + Statistics)",
+      "sourceCode": "AQA-7357",
+      "targetCode": "AQA-7367",
+      "processingPolicy": "local-only"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "profileId": "difficulty:ocr-h240-to-h245",
+      "sourceQualificationVersionId": "OCR-H240:Version 3",
+      "sourceRouteId": "linear",
+      "sourcePaperIds": [
+        "H240-01",
+        "H240-02",
+        "H240-03"
+      ],
+      "targetQualificationVersionId": "OCR-H245:Version 2",
+      "targetRouteId": "all-components",
+      "targetPaperIds": [
+        "Y540",
+        "Y541",
+        "Y542",
+        "Y543",
+        "Y544",
+        "Y545"
+      ],
+      "direction": "source-to-target",
+      "weights": {
+        "contentGap": 0.3,
+        "depthUplift": 0.25,
+        "assessmentDemand": 0.2,
+        "questionComplexity": 0.15,
+        "empiricalDemand": 0.1
+      },
+      "dimensions": {
+        "contentGap": {
+          "score": 80.91286307053942,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:OCR-H240",
+            "knowledge-v5:OCR-H245"
+          ],
+          "explanation": "195 of 241 approved target leaf concepts are not present in the selected source route."
+        },
+        "depthUplift": {
+          "score": 81.32780082987553,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:OCR-H240",
+            "knowledge-v5:OCR-H245"
+          ],
+          "explanation": "Depth uplift compares the highest approved assessment depth for each target leaf concept with the selected source route."
+        },
+        "assessmentDemand": {
+          "score": 50,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "exam-overview:ocr-h240",
+            "exam-overview:ocr-h245"
+          ],
+          "explanation": "Assessment uplift combines total duration (40%), paper count (30%), marks per minute (20%), and non-calculator share (10%)."
+        },
+        "questionComplexity": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Question-level derived metadata has not yet passed the evidence gate."
+        },
+        "empiricalDemand": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Comparable official performance evidence has not yet passed the evidence gate."
+        }
+      },
+      "score": 67.10580912863071,
+      "interval": [
+        54.60580912863071,
+        79.60580912863071
+      ],
+      "evidenceCoverage": 0.75,
+      "confidence": "medium",
+      "methodVersion": "exambridge-transition-difficulty-v1",
+      "verificationStatus": "candidate",
+      "label": "OCR H240 Mathematics A → OCR H245 Further Mathematics A",
+      "sourceCode": "OCR-H240",
+      "targetCode": "OCR-H245",
+      "processingPolicy": "deterministic-local"
+    },
+    {
+      "schemaVersion": "1.0.0",
+      "profileId": "difficulty:ocr-h240-to-h640-mathematics-b",
+      "sourceQualificationVersionId": "OCR-H240:Version 3",
+      "sourceRouteId": "linear",
+      "sourcePaperIds": [
+        "H240-01",
+        "H240-02",
+        "H240-03"
+      ],
+      "targetQualificationVersionId": "OCR-H640:Version 3",
+      "targetRouteId": "linear",
+      "targetPaperIds": [
+        "01",
+        "02",
+        "03"
+      ],
+      "direction": "source-to-target",
+      "weights": {
+        "contentGap": 0.3,
+        "depthUplift": 0.25,
+        "assessmentDemand": 0.2,
+        "questionComplexity": 0.15,
+        "empiricalDemand": 0.1
+      },
+      "dimensions": {
+        "contentGap": {
+          "score": 18.75,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:OCR-H240",
+            "knowledge-v5:OCR-H640"
+          ],
+          "explanation": "60 of 320 approved target leaf concepts are not present in the selected source route."
+        },
+        "depthUplift": {
+          "score": 22.08333333333334,
+          "evidenceCoverage": 1,
+          "sourceIds": [
+            "knowledge-v5:OCR-H240",
+            "knowledge-v5:OCR-H640"
+          ],
+          "explanation": "Depth uplift compares the highest approved assessment depth for each target leaf concept with the selected source route."
+        },
+        "assessmentDemand": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Assessment structure evidence is incomplete."
+        },
+        "questionComplexity": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Question-level derived metadata has not yet passed the evidence gate."
+        },
+        "empiricalDemand": {
+          "score": null,
+          "evidenceCoverage": 0,
+          "sourceIds": [],
+          "explanation": "Comparable official performance evidence has not yet passed the evidence gate."
+        }
+      },
+      "score": 33.64583333333333,
+      "interval": [
+        11.145833333333336,
+        56.14583333333333
+      ],
+      "evidenceCoverage": 0.55,
+      "confidence": "low",
+      "methodVersion": "exambridge-transition-difficulty-v1",
+      "verificationStatus": "candidate",
+      "label": "OCR H240 Mathematics A → OCR H640 Mathematics B (MEI)",
+      "sourceCode": "OCR-H240",
+      "targetCode": "OCR-H640",
+      "processingPolicy": "deterministic-local",
+      "note": "H640 is Mathematics B (MEI), not Further Mathematics B. OCR Further Mathematics B is H645 and is outside the approved scope."
+    }
+  ]
+}

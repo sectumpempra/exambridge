@@ -13,6 +13,7 @@ import {
 } from "@/domain-v2/ai-assistant";
 import { cn } from "@/lib/utils";
 import AIMessageMarkdown from "./AIMessageMarkdown";
+import { BOUNDARY_PREDICTION_DISCLAIMER_VERSION } from "@/domain-v2/academic-results";
 
 type DisplayMessage = AIChatMessage & {
   id: string;
@@ -113,6 +114,8 @@ export default function AIChatPanel({
   const [generating, setGenerating] = useState(false);
   const [suggestions, setSuggestions] = useState(DEFAULT_SUGGESTIONS);
   const [serviceError, setServiceError] = useState<string | null>(null);
+  const [externalSearchEnabled, setExternalSearchEnabled] = useState(false);
+  const [boundaryPredictionEnabled, setBoundaryPredictionEnabled] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
   const endRef = useRef<HTMLDivElement | null>(null);
 
@@ -175,6 +178,13 @@ export default function AIChatPanel({
           messages: requestMessages,
           locale: /^en\b/i.test(navigator.language) ? "en-GB" : "zh-CN",
           resolvedContext,
+          featureConsent: {
+            externalSearch: { enabled: externalSearchEnabled },
+            boundaryPrediction: {
+              enabled: boundaryPredictionEnabled,
+              ...(boundaryPredictionEnabled ? { disclaimerVersion: BOUNDARY_PREDICTION_DISCLAIMER_VERSION } : {}),
+            },
+          },
         }),
         signal: controller.signal,
       });
@@ -233,7 +243,15 @@ export default function AIChatPanel({
           </div>
           <Button type="button" variant="ghost" size="sm" onClick={clearConversation} disabled={messages.length === 0} className="shrink-0 text-[#675a4d]" aria-label="清空对话"><Trash2 size={15} /><span className="hidden sm:inline">清空</span></Button>
         </div>
-        <div className="mt-3 flex items-start gap-2 rounded-lg border border-[#ccd8d5] bg-white/70 px-3 py-2 text-[11px] leading-4 text-[#50645e]"><ShieldCheck size={14} className="mt-0.5 shrink-0" /><span>仅根据 ExamBridge 已核验资料回答。你的问题和筛选后的课程、Paper、考纲上下文会发送给 DeepSeek 生成回答；不会发送官方 PDF、API 密钥或个人账号资料。</span></div>
+        <div className="mt-3 flex items-start gap-2 rounded-lg border border-[#ccd8d5] bg-white/70 px-3 py-2 text-[11px] leading-4 text-[#50645e]"><ShieldCheck size={14} className="mt-0.5 shrink-0" /><span>仅根据 ExamBridge 已核验资料回答。非 AQA 问题会发送给 DeepSeek 生成回答，发送内容仅包括筛选后的课程、Paper 与考纲上下文；AQA 使用本地确定性模板。不会发送官方 PDF、API 密钥或个人账号资料。</span></div>
+        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-[#625c54]">
+          <label className="inline-flex items-center gap-1.5"><input type="checkbox" checked={externalSearchEnabled} onChange={event => setExternalSearchEnabled(event.target.checked)} />内部数据不足时允许检索官方网页</label>
+          <label className="inline-flex items-center gap-1.5"><input type="checkbox" checked={boundaryPredictionEnabled} onChange={event => {
+            if (!event.target.checked) { setBoundaryPredictionEnabled(false); return; }
+            const accepted = window.confirm("分数线预测是非官方统计估计，可能与最终官方结果明显不同，不能用于成绩承诺。是否继续开启？");
+            setBoundaryPredictionEnabled(accepted);
+          }} />允许回答非官方预测分数线</label>
+        </div>
       </header>
 
       <div className="min-h-0 flex-1 overflow-y-auto px-4 py-5 sm:px-5" aria-live="polite">

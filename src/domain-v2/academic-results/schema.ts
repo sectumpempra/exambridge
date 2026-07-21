@@ -277,8 +277,12 @@ export const DifficultyProfileV1Schema = z.strictObject({
   profileId: NonEmptyString,
   sourceQualificationVersionId: NonEmptyString,
   sourceRouteId: NonEmptyString,
+  sourcePaperIds: z.array(NonEmptyString).min(1).optional(),
+  sourceTiers: z.array(NonEmptyString).optional(),
   targetQualificationVersionId: NonEmptyString,
   targetRouteId: NonEmptyString,
+  targetPaperIds: z.array(NonEmptyString).min(1).optional(),
+  targetTiers: z.array(NonEmptyString).optional(),
   direction: z.literal("source-to-target"),
   weights: z.strictObject({ contentGap: z.literal(0.30), depthUplift: z.literal(0.25), assessmentDemand: z.literal(0.20), questionComplexity: z.literal(0.15), empiricalDemand: z.literal(0.10) }),
   dimensions: z.strictObject({

@@ -39,6 +39,7 @@ const ResultsHub = lazy(() => import("./pages/ResultsHub"));
 const ToolsHub = lazy(() => import("./pages/ToolsHub"));
 const ExamOverviewPage = lazy(() => import("./pages/ExamOverviewPage"));
 const AIAssistantPage = lazy(() => import("./pages/AIAssistantPage"));
+const AcademicAnalysisPage = lazy(() => import("./pages/AcademicAnalysisPage"));
 
 function RouteFrame({ title, children }: { title: string; children: ReactNode }) {
   useEffect(() => { document.title = `${title} | ExamBridge`; }, [title]);
@@ -86,6 +87,7 @@ export default function App() {
         <Route path="/results" element={page("成绩与等级", <ResultsHub />)} />
         <Route path="/tools" element={page("教学工具", <ToolsHub />)} />
         <Route path="/ai-assistant" element={page("AI 问答", <AIAssistantPage />)} />
+        <Route path="/academic-analysis" element={page("成绩与难度分析", <AcademicAnalysisPage />)} />
 
         {/* A-Level 分数线 */}
         <Route path="/alevel" element={page("A-Level 分数线", <ALevelHome />)} />

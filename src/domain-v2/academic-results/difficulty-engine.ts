@@ -154,8 +154,12 @@ export function buildDifficultyProfile(input: {
   profileId: string;
   sourceQualificationVersionId: string;
   sourceRouteId: string;
+  sourcePaperIds?: string[];
+  sourceTiers?: string[];
   targetQualificationVersionId: string;
   targetRouteId: string;
+  targetPaperIds?: string[];
+  targetTiers?: string[];
   dimensions: Record<DifficultyKey, EvidenceDimension>;
   verificationStatus?: DifficultyProfileV1["verificationStatus"];
 }): DifficultyProfileV1 {
@@ -165,8 +169,12 @@ export function buildDifficultyProfile(input: {
     profileId: input.profileId,
     sourceQualificationVersionId: input.sourceQualificationVersionId,
     sourceRouteId: input.sourceRouteId,
+    ...(input.sourcePaperIds ? { sourcePaperIds: input.sourcePaperIds } : {}),
+    ...(input.sourceTiers ? { sourceTiers: input.sourceTiers } : {}),
     targetQualificationVersionId: input.targetQualificationVersionId,
     targetRouteId: input.targetRouteId,
+    ...(input.targetPaperIds ? { targetPaperIds: input.targetPaperIds } : {}),
+    ...(input.targetTiers ? { targetTiers: input.targetTiers } : {}),
     direction: "source-to-target",
     weights: DIFFICULTY_WEIGHTS,
     dimensions: input.dimensions,
