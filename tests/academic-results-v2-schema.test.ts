@@ -118,6 +118,12 @@ describe("Academic Results V2 contracts", () => {
       resitRule: { allowed: true, selectionMethod: "same-series-all-components", notes: [] },
       effectiveFrom: "2017-09-01",
       sourceIds: [approvedSource.sourceId],
+      clauseEvidence: ["qualification-version", "paper-structure", "valid-combination", "scoring-scale", "rounding", "resit", "a-star"].map(clause => ({
+        clause,
+        sourceIds: [approvedSource.sourceId],
+        reviewStatus: "owner-approved",
+        notes: ["Verified test evidence."],
+      })),
       verificationStatus: "owner-approved",
     } as const;
     expect(QualificationAwardRuleV2Schema.parse(rule).routeType).toBe("linear");

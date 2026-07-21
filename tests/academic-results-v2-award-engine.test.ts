@@ -21,6 +21,12 @@ const rule: QualificationAwardRuleV2 = {
   aStarRule: { available: true, ruleKind: "boundary-only", notes: [] },
   effectiveFrom: "2019-01-01",
   sourceIds: ["source:rule"],
+  clauseEvidence: ["qualification-version", "paper-structure", "valid-combination", "scoring-scale", "rounding", "resit", "a-star"].map(clause => ({
+    clause: clause as "qualification-version" | "paper-structure" | "valid-combination" | "scoring-scale" | "rounding" | "resit" | "a-star",
+    sourceIds: ["source:rule"],
+    reviewStatus: "candidate" as const,
+    notes: ["Test evidence."],
+  })),
   verificationStatus: "candidate",
 };
 

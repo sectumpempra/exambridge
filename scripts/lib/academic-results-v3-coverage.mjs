@@ -76,19 +76,13 @@ function requiredRuleClauses(rule) {
 }
 
 function satisfiedRuleClauses(rule) {
-  const clauses = [];
-  if (rule.qualificationVersionId && rule.effectiveFrom) clauses.push("qualification-version");
-  if (rule.components?.length) clauses.push("paper-structure");
-  if (rule.validCombinations?.length) clauses.push("valid-combination");
-  if (rule.scoringSystem && rule.totalMaximumAwardMark) clauses.push("scoring-scale");
-  if (rule.roundingRule) clauses.push("rounding");
-  if (rule.resitRule) clauses.push("resit");
-  if (rule.aStarRule) clauses.push("a-star");
-  if (rule.carryForwardRule) clauses.push("carry-forward");
-  if (rule.cashInRule) clauses.push("cash-in");
-  if (rule.unitLockingRule) clauses.push("unit-locking");
-  if (rule.boundarySelectionRule) clauses.push("boundary-selection");
-  return clauses;
+  return rule.clauseEvidence
+    .filter(evidence => ["codex-reviewed", "owner-approved"].includes(evidence.reviewStatus))
+    .map(evidence => evidence.clause);
+}
+
+function explainRequiredRuleClauses(requiredClauses) {
+  return requiredClauses.filter(clause => !["rounding", "resit"].includes(clause));
 }
 
 export function buildCoverageExpectationPolicies(scope, candidate, identityCatalog) {
@@ -325,10 +319,11 @@ export function buildSparseCoverageMatrices(scope, candidate, policyCatalog) {
       if (rule) matchedRuleKeys.add(`${rule.ruleId}|${expectation.combinationId}`);
       const satisfiedClauses = rule ? satisfiedRuleClauses(rule).filter(clause => expectation.requiredClauses.includes(clause)) : [];
       const missingClauses = expectation.requiredClauses.filter(clause => !satisfiedClauses.includes(clause));
+      const explainRequiredClauses = explainRequiredRuleClauses(expectation.requiredClauses);
+      const explainReady = Boolean(rule) && explainRequiredClauses.every(clause => satisfiedClauses.includes(clause));
+      const calculatorReady = Boolean(rule) && missingClauses.length === 0;
       const reviewStatus = rule?.verificationStatus ?? null;
-      const coverageStatus = !rule || missingClauses.length > 0 || !["codex-reviewed", "owner-approved"].includes(reviewStatus)
-        ? "pending"
-        : "satisfied";
+      const coverageStatus = calculatorReady ? "satisfied" : "pending";
       ruleCells.push({
         cellId: `rule-coverage:${slug(expectation.expectationId)}`,
         expectationId: expectation.expectationId,
@@ -339,14 +334,19 @@ export function buildSparseCoverageMatrices(scope, candidate, policyCatalog) {
         effectiveFrom: expectation.effectiveFrom,
         ...(expectation.effectiveTo ? { effectiveTo: expectation.effectiveTo } : {}),
         requiredClauses: expectation.requiredClauses,
+        explainRequiredClauses,
         satisfiedClauses,
         missingClauses,
+        explainReady,
+        calculatorReady,
         administrationStatus: "held",
         coverageStatus,
         recordReviewStatus: reviewStatus,
         observedRecordIds: rule ? [rule.ruleId] : [],
         sourceIds: unique([...expectation.sourceIds, ...(rule?.sourceIds ?? [])]),
-        notes: missingClauses.length > 0 ? [`Missing required rule clauses: ${missingClauses.join(", ")}.`] : [],
+        notes: missingClauses.length > 0
+          ? [`Unverified required rule clauses: ${missingClauses.join(", ")}.`, ...(explainReady ? ["Verified structural clauses are sufficient for explanation, but not for deterministic calculation."] : [])]
+          : [],
       });
     }
   }
@@ -409,8 +409,11 @@ export function buildSparseCoverageMatrices(scope, candidate, policyCatalog) {
         effectiveFrom: rule.effectiveFrom,
         ...(rule.effectiveTo ? { effectiveTo: rule.effectiveTo } : {}),
         requiredClauses: requiredRuleClauses(rule),
+        explainRequiredClauses: explainRequiredRuleClauses(requiredRuleClauses(rule)),
         satisfiedClauses: satisfiedRuleClauses(rule),
-        missingClauses: [],
+        missingClauses: requiredRuleClauses(rule).filter(clause => !satisfiedRuleClauses(rule).includes(clause)),
+        explainReady: explainRequiredRuleClauses(requiredRuleClauses(rule)).every(clause => satisfiedRuleClauses(rule).includes(clause)),
+        calculatorReady: requiredRuleClauses(rule).every(clause => satisfiedRuleClauses(rule).includes(clause)),
         administrationStatus: "held",
         coverageStatus: "unexpected-record",
         recordReviewStatus: rule.verificationStatus,

@@ -289,6 +289,40 @@ const awardRules = legacyRoutes.filter(route => route.qualificationCode !== "970
 });
 awardRules.push(...buildOfficialAwardRuleCandidates(addSource));
 
+const ruleClauseAdjudication = await readJson("data/candidates/academic-results-v2/award-rule-clause-adjudication.json");
+const ruleClauseReviews = new Map(ruleClauseAdjudication.rules.map(item => [item.ruleId, item]));
+const ruleClauses = rule => {
+  const clauses = ["qualification-version", "paper-structure", "valid-combination", "scoring-scale", "rounding", "resit", "a-star"];
+  if (rule.carryForwardRule) clauses.push("carry-forward");
+  if (rule.cashInRule) clauses.push("cash-in");
+  if (rule.unitLockingRule) clauses.push("unit-locking");
+  if (rule.boundarySelectionRule) clauses.push("boundary-selection");
+  return clauses;
+};
+for (const rule of awardRules) {
+  const adjudication = ruleClauseReviews.get(rule.ruleId);
+  if (adjudication) {
+    if (JSON.stringify(adjudication.sourceIds) !== JSON.stringify(rule.sourceIds)) {
+      throw new Error(`${rule.ruleId} sources changed after clause adjudication`);
+    }
+    const accounted = new Set([...adjudication.approvedClauses, ...adjudication.unresolvedClauses]);
+    const expected = ruleClauses(rule);
+    if (accounted.size !== expected.length || expected.some(clause => !accounted.has(clause))) {
+      throw new Error(`${rule.ruleId} clause adjudication does not account for every rule clause`);
+    }
+  } else if (rule.verificationStatus === "candidate") {
+    throw new Error(`${rule.ruleId} remains candidate without clause-level adjudication`);
+  }
+  rule.clauseEvidence = ruleClauses(rule).map(clause => ({
+    clause,
+    sourceIds: rule.sourceIds,
+    reviewStatus: adjudication
+      ? adjudication.approvedClauses.includes(clause) ? "codex-reviewed" : "candidate"
+      : rule.verificationStatus,
+    notes: [adjudication?.reason ?? "This clause inherits the Codex review status of the source-backed award rule."],
+  }));
+}
+
 const directOfficialStatistics = [];
 const aqaStats = await readJson("src/data/official/aqa-math-results-statistics.json");
 const aqaArchiveUrl = "https://www.aqa.org.uk/exams-administration/results-days/results-statistics/results-statistics-archive";

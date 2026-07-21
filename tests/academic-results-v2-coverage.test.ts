@@ -139,4 +139,15 @@ describe("Academic Results sparse coverage", () => {
     expect(ruleMatrix.pendingCellCount).toBeLessThan(statisticsMatrix.pendingCellCount);
     expect(ruleMatrix.blockingCellCount).toBe(0);
   });
+
+  it("separates explain-ready structural rules from calculator-ready policy clauses", () => {
+    const partiallyReviewed = ruleMatrix.cells.filter(cell =>
+      ["award:ocr:6993", "award:ocr:h240", "award:pearson:8ma0"].includes(cell.awardQualificationId));
+    expect(partiallyReviewed).toHaveLength(3);
+    expect(partiallyReviewed.every(cell => cell.explainReady && !cell.calculatorReady)).toBe(true);
+    expect(partiallyReviewed.every(cell =>
+      cell.missingClauses.includes("rounding") && cell.missingClauses.includes("resit"))).toBe(true);
+    expect(partiallyReviewed.every(cell =>
+      cell.explainRequiredClauses.every(clause => cell.satisfiedClauses.includes(clause)))).toBe(true);
+  });
 });

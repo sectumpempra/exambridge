@@ -193,6 +193,13 @@ export const RuleClauseV1Schema = z.enum([
   "boundary-selection",
 ]);
 
+export const RuleClauseEvidenceV1Schema = z.strictObject({
+  clause: RuleClauseV1Schema,
+  sourceIds: z.array(NonEmptyString).min(1),
+  reviewStatus: ReviewStatusSchema,
+  notes: z.array(NonEmptyString),
+});
+
 export const RuleExpectationV1Schema = z.strictObject({
   ...CoverageExpectationBaseV1Shape,
   routeId: NonEmptyString,
@@ -278,8 +285,11 @@ export const RuleCoverageCellV1Schema = z.strictObject({
   effectiveFrom: DateSchema,
   effectiveTo: DateSchema.optional(),
   requiredClauses: z.array(RuleClauseV1Schema).min(1),
+  explainRequiredClauses: z.array(RuleClauseV1Schema).min(1),
   satisfiedClauses: z.array(RuleClauseV1Schema),
   missingClauses: z.array(RuleClauseV1Schema),
+  explainReady: z.boolean(),
+  calculatorReady: z.boolean(),
 });
 
 const CoverageMatrixSummaryV1Shape = {
@@ -341,6 +351,9 @@ const FactCardRouteV1Schema = z.strictObject({
   cashIn: z.boolean(),
   unitLocking: z.boolean(),
   aStarAvailable: z.boolean(),
+  clauseEvidence: z.array(RuleClauseEvidenceV1Schema).min(1),
+  explainReady: z.boolean(),
+  calculatorReady: z.boolean(),
   sourceIds: z.array(NonEmptyString).min(1),
   reviewStatus: ReviewStatusSchema,
 });
@@ -641,6 +654,7 @@ export const QualificationAwardRuleV2Schema = z.strictObject({
   effectiveFrom: DateSchema,
   effectiveTo: DateSchema.optional(),
   sourceIds: z.array(NonEmptyString).min(1),
+  clauseEvidence: z.array(RuleClauseEvidenceV1Schema).min(1),
   verificationStatus: ReviewStatusSchema,
 }).superRefine((value, ctx) => {
   const componentCodes = value.components.map(component => component.code);
@@ -658,6 +672,18 @@ export const QualificationAwardRuleV2Schema = z.strictObject({
   }
   if (value.effectiveTo && value.effectiveTo < value.effectiveFrom) {
     ctx.addIssue({ code: "custom", path: ["effectiveTo"], message: "effectiveTo must not precede effectiveFrom" });
+  }
+  const clauseNames = value.clauseEvidence.map(item => item.clause);
+  if (new Set(clauseNames).size !== clauseNames.length) {
+    ctx.addIssue({ code: "custom", path: ["clauseEvidence"], message: "rule clause evidence must use unique clause names" });
+  }
+  const ruleSourceIds = new Set(value.sourceIds);
+  for (const [index, evidence] of value.clauseEvidence.entries()) {
+    for (const sourceId of evidence.sourceIds) {
+      if (!ruleSourceIds.has(sourceId)) {
+        ctx.addIssue({ code: "custom", path: ["clauseEvidence", index, "sourceIds"], message: `unknown rule source ${sourceId}` });
+      }
+    }
   }
   if (value.aStarRule?.ruleKind === "overall-plus-advanced-units" || value.aStarRule?.ruleKind === "overall-plus-best-advanced-units") {
     if (!value.aStarRule.available || !value.aStarRule.overallMinimumAwardMark || !value.aStarRule.advancedUnitMinimumAwardMark || !(value.aStarRule.advancedUnitCodes?.length)) {

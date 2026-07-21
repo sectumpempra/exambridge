@@ -92,18 +92,18 @@ function buildGaps(scope, candidate, identityCatalog, matrices) {
         blocks: ["calculator-ready", "activation"],
       }));
     }
-    const pendingCurrentRuleCells = currentRuleCells.filter(cell => cell.coverageStatus === "pending");
-    if (pendingCurrentRuleCells.length > 0) {
+    const structurallyIncompleteRuleCells = currentRuleCells.filter(cell => !cell.explainReady);
+    if (structurallyIncompleteRuleCells.length > 0) {
       gaps.push(gap({
         awardQualificationId: awardId,
         qualificationVersionId: current.qualificationVersionId,
-        severity: "P1",
+        severity: "P0",
         category: "review-maturity",
         suffix: "current-rule-review",
-        description: `${pendingCurrentRuleCells.length} current award combination(s) have not reached codex-reviewed rule maturity.`,
-        sourceIds: pendingCurrentRuleCells.flatMap(cell => cell.sourceIds),
-        remediation: "Review the rule clauses and official examples before enabling deterministic calculation.",
-        blocks: ["calculator-ready", "activation"],
+        description: `${structurallyIncompleteRuleCells.length} current award combination(s) do not yet have Codex-reviewed structural clauses for safe explanation.`,
+        sourceIds: structurallyIncompleteRuleCells.flatMap(cell => cell.sourceIds),
+        remediation: "Review qualification version, Paper structure, valid combinations, scoring scale and applicable route-specific clauses before explaining the rule.",
+        blocks: ["explain-ready", "calculator-ready", "activation"],
       }));
     }
     const missingClauses = unique(currentRuleCells.flatMap(cell => cell.missingClauses));
@@ -178,7 +178,9 @@ function matchOverviewComponent(component, overview) {
 
 function cardMaturity(identity, currentRules, currentBoundaryCells, currentRuleCells, gaps) {
   const blockingExplain = gaps.some(item => item.blocks.includes("explain-ready"));
-  const ruleExplainReady = currentRules.length > 0 && currentRules.every(rule => ["codex-reviewed", "owner-approved"].includes(rule.verificationStatus));
+  const ruleExplainReady = currentRules.length > 0
+    && currentRuleCells.length > 0
+    && currentRuleCells.every(cell => cell.explainReady);
   const explainReady = identity.sourceIds.length > 0 && ruleExplainReady && !blockingExplain;
   const ownerApproved = identity.reviewStatus === "owner-approved"
     && currentRules.length > 0
@@ -260,6 +262,13 @@ export function buildQualificationFactCards({ scope, candidate, identityCatalog,
         cashIn: Boolean(rule.cashInRule?.required),
         unitLocking: Boolean(rule.unitLockingRule?.lockedAfterCashIn),
         aStarAvailable: Boolean(rule.aStarRule?.available),
+        clauseEvidence: rule.clauseEvidence,
+        explainReady: matrices.rules.cells
+          .filter(cell => cell.observedRecordIds.includes(rule.ruleId))
+          .every(cell => cell.explainReady),
+        calculatorReady: matrices.rules.cells
+          .filter(cell => cell.observedRecordIds.includes(rule.ruleId))
+          .every(cell => cell.calculatorReady),
         sourceIds: rule.sourceIds,
         reviewStatus: rule.verificationStatus,
       })),

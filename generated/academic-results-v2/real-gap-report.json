@@ -181,16 +181,16 @@
       "blocks": []
     },
     {
-      "gapId": "fact-gap:award-pearson-8ma0:current-rule-review",
+      "gapId": "fact-gap:award-pearson-8ma0:current-rule-clauses",
       "awardQualificationId": "award:pearson:8ma0",
       "qualificationVersionId": "Edexcel-8MA0:2017",
       "severity": "P1",
-      "category": "review-maturity",
-      "description": "1 current award combination(s) have not reached codex-reviewed rule maturity.",
+      "category": "rule-clause",
+      "description": "Current rule coverage is missing: rounding, resit.",
       "sourceIds": [
         "source:pearson-8ma0-spec-issue3-p4-p5"
       ],
-      "remediation": "Review the rule clauses and official examples before enabling deterministic calculation.",
+      "remediation": "Add source-backed clauses and deterministic tests for each missing rule feature.",
       "blocks": [
         "calculator-ready",
         "activation"
@@ -315,16 +315,16 @@
       "blocks": []
     },
     {
-      "gapId": "fact-gap:award-ocr-h240:current-rule-review",
+      "gapId": "fact-gap:award-ocr-h240:current-rule-clauses",
       "awardQualificationId": "award:ocr:h240",
       "qualificationVersionId": "OCR-H240:Version 3",
       "severity": "P1",
-      "category": "review-maturity",
-      "description": "1 current award combination(s) have not reached codex-reviewed rule maturity.",
+      "category": "rule-clause",
+      "description": "Current rule coverage is missing: rounding, resit.",
       "sourceIds": [
         "source:ocr-h240-spec-v3-p2"
       ],
-      "remediation": "Review the rule clauses and official examples before enabling deterministic calculation.",
+      "remediation": "Add source-backed clauses and deterministic tests for each missing rule feature.",
       "blocks": [
         "calculator-ready",
         "activation"
@@ -391,16 +391,16 @@
       "blocks": []
     },
     {
-      "gapId": "fact-gap:award-ocr-6993:current-rule-review",
+      "gapId": "fact-gap:award-ocr-6993:current-rule-clauses",
       "awardQualificationId": "award:ocr:6993",
       "qualificationVersionId": "OCR-6993:Version 2.0",
       "severity": "P1",
-      "category": "review-maturity",
-      "description": "1 current award combination(s) have not reached codex-reviewed rule maturity.",
+      "category": "rule-clause",
+      "description": "Current rule coverage is missing: rounding, resit.",
       "sourceIds": [
         "source:ocr-6993-spec-v2-0-p7"
       ],
-      "remediation": "Review the rule clauses and official examples before enabling deterministic calculation.",
+      "remediation": "Add source-backed clauses and deterministic tests for each missing rule feature.",
       "blocks": [
         "calculator-ready",
         "activation"
