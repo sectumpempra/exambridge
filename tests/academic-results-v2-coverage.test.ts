@@ -40,6 +40,8 @@ describe("Academic Results V2 route-series coverage", () => {
 
   it("keeps unresolved evidence visible instead of claiming complete coverage", () => {
     expect(matrix.unresolvedCellCount).toBeGreaterThan(0);
+    expect(matrix.unresolvedCellCount).toBe(matrix.cells.filter(cell => cell.expectedByPolicy
+      && [cell.boundaryStatus, cell.statisticsStatus, cell.awardRuleStatus].some(status => status === "source-unavailable" || status === "conflict")).length);
     expect(matrix.cells.some(cell => cell.statisticsStatus === "conflict")).toBe(false);
     expect(matrix.cells.some(cell => cell.boundaryStatus === "source-unavailable")).toBe(true);
   });

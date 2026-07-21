@@ -31,6 +31,22 @@ describe("official award-rule candidates", () => {
     expect(reviewUsage.some((entry: { label: string }) => entry.label.toLowerCase().includes("aqa"))).toBe(false);
   });
 
+  it("migrates option-specific AQA 7367 and OCR H245 overall boundaries without aggregating component thresholds", () => {
+    const aqaFurther = candidate.boundaries.filter((row: { awardQualificationId: string }) => row.awardQualificationId === "award:aqa:7367");
+    const ocrFurther = candidate.boundaries.filter((row: { awardQualificationId: string }) => row.awardQualificationId === "award:ocr:h245");
+    expect(aqaFurther).toHaveLength(21);
+    expect(new Set(aqaFurther.map((row: { optionCode: string }) => row.optionCode))).toEqual(new Set(["DS", "MD", "SM"]));
+    expect(aqaFurther.every((row: { boundaryScope: string; maximumMark: number; verificationStatus: string }) => row.boundaryScope === "overall" && row.maximumMark === 300 && row.verificationStatus === "codex-reviewed")).toBe(true);
+    expect(ocrFurther).toHaveLength(6);
+    expect(ocrFurther.every((row: { boundaryScope: string; maximumMark: number }) => row.boundaryScope === "overall" && row.maximumMark === 300)).toBe(true);
+    expect(candidate.boundaries.find((row: { awardQualificationId: string }) => row.awardQualificationId === "award:ocr:h640")).toMatchObject({
+      year: 2025,
+      series: "june",
+      maximumMark: 275,
+      thresholds: { "A*": 226, A: 190, B: 159, C: 128, D: 97, E: 66 },
+    });
+  });
+
   it("uses the legacy 9231 two-paper award only in 2019 and versioned modern rules afterwards", () => {
     const furtherRules = rules.filter(rule => rule.awardQualificationId === "award:caie:9231");
     expect(furtherRules).toHaveLength(10);

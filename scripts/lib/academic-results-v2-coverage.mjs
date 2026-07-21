@@ -136,7 +136,8 @@ export async function buildAcademicResultsCoverageMatrix(scope, candidate) {
       }
     }
   }
-  const unresolvedCellCount = cells.filter(cell => [cell.boundaryStatus, cell.statisticsStatus, cell.awardRuleStatus].some(status => status === "source-unavailable" || status === "conflict")).length;
+  const unresolvedCellCount = cells.filter(cell => cell.expectedByPolicy
+    && [cell.boundaryStatus, cell.statisticsStatus, cell.awardRuleStatus].some(status => status === "source-unavailable" || status === "conflict")).length;
   return {
     schemaVersion: "2.0.0",
     generatedAt: candidate.generatedAt,

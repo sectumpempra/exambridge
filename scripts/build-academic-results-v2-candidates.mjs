@@ -76,6 +76,8 @@ const officialBoundaryFiles = [
   "src/data/official/awards/caie-9709.json",
   "src/data/official/awards/ocr-6993.json",
   "src/data/official/awards/ocr-h240.json",
+  "src/data/official/awards/ocr-h245.json",
+  "src/data/official/awards/ocr-h640.json",
   "src/data/official/awards/pearson-8ma0.json",
 ];
 const boundaries = [];
@@ -91,6 +93,8 @@ for (const file of officialBoundaryFiles) {
       documentTitle: `${qualification.label} ${row.series} official grade boundary`,
       publishedAt: row.publishedAt,
       accessedAt: row.accessedAt,
+      printedPage: row.printedPage,
+      pdfPage: row.pdfPage,
       sourceRowId: row.sourceRowId,
       sourceDocumentHash: row.sourceDocumentHash,
       verificationStatus: qualification.board === "AQA" ? "codex-reviewed" : "candidate",
@@ -113,6 +117,50 @@ for (const file of officialBoundaryFiles) {
       verificationStatus: qualification.board === "AQA" ? "codex-reviewed" : "candidate",
     });
   }
+}
+
+// AQA content is deliberately processed locally. The existing row extract contains
+// all three 7367 overall options; the already-verified 7357 file supplies the exact
+// document URL, publication date and hash for the same series-level source PDF.
+const aqaFurtherRows = (await readJson("src/data/official/aqa-a-level-math-grade-boundaries.json"))
+  .filter(row => row.code === "7367" && row.unit.toLowerCase().includes("overall"));
+const aqaSeriesEvidence = new Map((await readJson("src/data/official/awards/aqa-7357.json")).boundaries.map(row => [row.series, row]));
+const aqaFurtherQualification = qualifications.get("award:aqa:7367");
+for (const row of aqaFurtherRows) {
+  const seriesKey = `${row.year}-${row.session.toLowerCase()}`;
+  const source = aqaSeriesEvidence.get(seriesKey);
+  if (!source) throw new Error(`AQA 7367 ${seriesKey} has no verified series-level source evidence`);
+  const optionCode = row.unit.match(/7367(DS|MD|SM)/)?.[1];
+  if (!optionCode) throw new Error(`AQA 7367 row has no supported option code: ${row.unit}`);
+  const sourceRowId = `AQA-${row.year}-${row.session.toUpperCase()}-7367-${optionCode}-OVERALL`;
+  const sourceId = addSource({
+    sourceId: `source:${slug(sourceRowId)}`,
+    board: "AQA",
+    officialUrl: source.sourceUrl,
+    documentTitle: `AQA A-level Further Mathematics 7367 ${row.session} ${row.year} official grade boundaries`,
+    publishedAt: source.publishedAt,
+    accessedAt: source.accessedAt,
+    sourceRowId,
+    sourceDocumentHash: source.sourceDocumentHash,
+    verificationStatus: "codex-reviewed",
+  });
+  boundaries.push({
+    schemaVersion: "2.0.0",
+    boundaryId: `boundary:${slug(sourceRowId)}`,
+    qualificationVersionId: aqaFurtherQualification.currentKnowledgeQualificationVersionId,
+    awardQualificationId: "award:aqa:7367",
+    year: Number(row.year),
+    series: row.session.toLowerCase(),
+    routeId: "award:aqa:7367:linear",
+    optionCode,
+    boundaryScope: "overall",
+    maximumMark: row.max_mark,
+    gradeOrder: ["A*", "A", "B", "C", "D", "E"],
+    thresholds: { "A*": row.a_star, A: row.a, B: row.b, C: row.c, D: row.d, E: row.e },
+    publicationStatus: "final",
+    sourceIds: [sourceId],
+    verificationStatus: "codex-reviewed",
+  });
 }
 
 const legacyRoutes = (await readJson("src/data/official/awards/routes.json")).routes;
