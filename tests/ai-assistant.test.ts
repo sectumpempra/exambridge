@@ -14,6 +14,7 @@ import { AIServiceGuard, createAIServiceGuardFromEnv } from "../server/ai/servic
 import { AIProviderError, DeepSeekChatProvider, ensureAnswerCitations, hydrateCitations } from "../server/ai/provider";
 import { isComplexAIQuestion } from "../server/ai/prompt";
 import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai";
+import { detectQualificationAmbiguity } from "../server/ai/qualification-resolver";
 
 function request(overrides: Partial<AIChatRequest> = {}): AIChatRequest {
   return {
@@ -54,6 +55,19 @@ describe("AI assistant request and history safety", () => {
     expect(result.length).toBeLessThanOrEqual(6);
     expect(result.at(-1)?.content).toBe(messages.at(-1)?.content);
     expect(result.reduce((sum, item) => sum + item.content.length, 0)).toBeLessThanOrEqual(1_000);
+  });
+});
+
+describe("AI qualification ambiguity resolver", () => {
+  it("asks one focused question for generic IG, A Level and Pearson mathematics labels", () => {
+    expect(detectQualificationAmbiguity("IG数学的分数线是什么？")?.ambiguityClass).toBe("generic-igcse-mathematics");
+    expect(detectQualificationAmbiguity("A Level数学怎么合分？")?.ambiguityClass).toBe("generic-a-level-mathematics");
+    expect(detectQualificationAmbiguity("Edexcel数学怎么选课？")?.ambiguityClass).toBe("pearson-route");
+  });
+
+  it("does not override an exact qualification code", () => {
+    expect(detectQualificationAmbiguity("比较IG数学0580和A Level数学9709")).toBeUndefined();
+    expect(detectQualificationAmbiguity("Pearson 8MA0怎么合分？")).toBeUndefined();
   });
 });
 

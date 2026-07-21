@@ -25,6 +25,7 @@ import {
   type AcademicResultsManifestV2,
 } from "@/domain-v2/academic-results";
 import { buildAcademicToolContext, type AcademicToolContext } from "./academic-tools";
+import { detectQualificationAmbiguity } from "./qualification-resolver";
 
 type KnowledgeManifestEntry = {
   code: string;
@@ -741,6 +742,24 @@ export class AIContextBuilder {
 
   async build(request: AIChatRequest): Promise<AIContextBuildResult> {
     const manifest = await this.loadManifest();
+    const ambiguity = detectQualificationAmbiguity(latestUserMessage(request), request.locale);
+    if (ambiguity) {
+      return {
+        promptContext: "{}",
+        sources: [],
+        paperFacts: [],
+        resolvedContext: {
+          awardQualificationIds: [],
+          qualificationVersionIds: [],
+          qualificationIds: [],
+          qualificationCodes: [],
+          paperIds: [],
+          labels: [],
+        },
+        clarification: ambiguity.clarification,
+        containsAqa: false,
+      };
+    }
     const courses = this.resolveCourseEntries(request);
     const knowledgeEntries = this.resolveKnowledgeEntries(request, manifest, courses);
     const aqaEntries = knowledgeEntries.filter((entry) => entry.board === "AQA");
