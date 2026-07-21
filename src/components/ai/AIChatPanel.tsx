@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Bot, CircleStop, ExternalLink, Send, ShieldCheck, Sparkles, Trash2, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,6 +12,7 @@ import {
   type AIResolvedContext,
 } from "@/domain-v2/ai-assistant";
 import { cn } from "@/lib/utils";
+import AIMessageMarkdown from "./AIMessageMarkdown";
 
 type DisplayMessage = AIChatMessage & {
   id: string;
@@ -31,6 +32,7 @@ interface AIChatPanelProps {
   qualificationIds?: string[];
   syllabusVersions?: string[];
   contextLabel?: string;
+  contextControl?: ReactNode;
   className?: string;
   fullHeight?: boolean;
 }
@@ -94,6 +96,7 @@ export default function AIChatPanel({
   qualificationIds = [],
   syllabusVersions = [],
   contextLabel,
+  contextControl,
   className,
   fullHeight = false,
 }: AIChatPanelProps) {
@@ -220,13 +223,13 @@ export default function AIChatPanel({
   return (
     <section className={cn(
       "flex min-h-0 flex-col overflow-hidden rounded-[26px] border border-[#d7d3cd] bg-[#fdfcf9] shadow-[0_24px_70px_rgba(61,56,50,0.1)]",
-      fullHeight ? "h-[calc(100dvh-11rem)] min-h-[560px]" : "h-[min(760px,calc(100dvh-5rem))]",
+      fullHeight ? "h-[calc(100dvh-9.5rem)] min-h-[620px]" : "h-[min(820px,calc(100dvh-4rem))]",
       className,
     )} aria-label="ExamBridge AI 对话">
       <header className="border-b border-[#e2ddd6] bg-[linear-gradient(135deg,#f7f3ed,#eef3f2)] px-4 py-4 sm:px-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <div className="flex items-center gap-2"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#253b46] text-white"><Bot size={19} /></span><div><h2 className="m-0 text-base font-bold text-[#302d2a]">ExamBridge AI 助手</h2><p className="m-0 mt-0.5 truncate text-xs text-[#6e675e]">{contextLabel || "基于已核验资料回答"}</p></div></div>
+            <div className="flex items-center gap-2"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#253b46] text-white"><Bot size={19} /></span><div className="min-w-0"><h2 className="m-0 text-base font-bold text-[#302d2a]">ExamBridge AI 助手</h2>{contextControl ?? <p className="m-0 mt-0.5 truncate text-xs text-[#6e675e]">{contextLabel || "基于已核验资料回答"}</p>}</div></div>
           </div>
           <Button type="button" variant="ghost" size="sm" onClick={clearConversation} disabled={messages.length === 0} className="shrink-0 text-[#675a4d]" aria-label="清空对话"><Trash2 size={15} /><span className="hidden sm:inline">清空</span></Button>
         </div>
@@ -238,8 +241,10 @@ export default function AIChatPanel({
         <div className="space-y-4">
           {messages.map((message) => <article key={message.id} className={cn("flex gap-2.5", message.role === "user" && "justify-end")}>
             {message.role === "assistant" && <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#253b46] text-white"><Bot size={14} /></span>}
-            <div className={cn("max-w-[min(88%,720px)] rounded-2xl px-4 py-3 text-sm leading-7", message.role === "user" ? "bg-[#675a4d] text-white" : "border border-[#e0dcd6] bg-white text-[#403b35]", message.error && "border-[#dbb7ad] bg-[#fff7f4] text-[#855e53]")}>
-              <p className="m-0 whitespace-pre-wrap break-words">{message.content || (message.pending ? "正在整理已核验资料…" : "")}</p>
+            <div className={cn("max-w-[min(94%,900px)] rounded-2xl px-4 py-3 text-sm leading-7", message.role === "user" ? "bg-[#675a4d] text-white" : "border border-[#e0dcd6] bg-white text-[#403b35]", message.error && "border-[#dbb7ad] bg-[#fff7f4] text-[#855e53]")}>
+              {message.role === "assistant" && !message.error
+                ? <AIMessageMarkdown content={message.content || (message.pending ? "正在整理已核验资料…" : "")} />
+                : <p className="m-0 whitespace-pre-wrap break-words">{message.content || (message.pending ? "正在整理已核验资料…" : "")}</p>}
               {message.pending && <span className="mt-2 inline-flex items-center gap-1 text-xs text-[#7d756c]"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#526b7e]" />DeepSeek 正在生成</span>}
               {message.citations && message.citations.length > 0 && <div className="mt-3 border-t border-[#ebe7e1] pt-2"><p className="m-0 text-[11px] font-semibold text-[#756e67]">来源</p><ul className="m-0 mt-1 space-y-1 p-0">{message.citations.map((citation) => <li key={citation.sourceId} className="list-none"><a href={citation.url} target="_blank" rel="noreferrer" className="inline-flex max-w-full items-center gap-1 text-xs font-medium text-[#526b7e] underline decoration-[#a9b8bd] underline-offset-2"><span>[{citation.sourceId}] {citation.title}</span><ExternalLink size={11} className="shrink-0" /></a><span className="ml-1 text-[10px] text-[#8a8279]">{citation.dataVersion}</span></li>)}</ul></div>}
             </div>
@@ -253,7 +258,7 @@ export default function AIChatPanel({
         <div className="mb-3 flex gap-2 overflow-x-auto pb-1" aria-label="快捷问题">{suggestions.map((suggestion) => <button key={suggestion} type="button" onClick={() => void send(suggestion)} disabled={generating} className="shrink-0 rounded-full border border-[#d7d1ca] bg-white px-3 py-1.5 text-xs font-medium text-[#625c54] transition hover:border-[#a69888] hover:text-[#675a4d] disabled:opacity-50">{suggestion}</button>)}</div>
         {serviceError && <div className="mb-2 flex items-center justify-between gap-3 rounded-lg bg-[#fff1ec] px-3 py-2 text-xs text-[#8a5c4d]" role="alert"><span>{serviceError}</span><button type="button" onClick={() => setServiceError(null)} className="font-semibold">关闭</button></div>}
         <div className="flex items-end gap-2 rounded-2xl border border-[#d2cdc6] bg-white p-2 focus-within:border-[#8f8172] focus-within:ring-2 focus-within:ring-[#a69888]/15">
-          <Textarea value={input} onChange={(event) => setInput(event.target.value.slice(0, 2_000))} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }} placeholder="输入问题；Shift + Enter 换行" aria-label="向 ExamBridge AI 提问" className="max-h-32 min-h-11 resize-none border-0 bg-transparent px-2 py-2 shadow-none focus-visible:ring-0" disabled={generating} />
+          <Textarea value={input} onChange={(event) => setInput(event.target.value.slice(0, 2_000))} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }} placeholder="输入问题；Shift + Enter 换行" aria-label="向 ExamBridge AI 提问" className="max-h-48 min-h-[92px] resize-none border-0 bg-transparent px-2 py-2.5 shadow-none focus-visible:ring-0" disabled={generating} />
           {generating ? <Button type="button" onClick={() => abortRef.current?.abort()} className="mb-0.5 shrink-0 bg-[#8b655c] hover:bg-[#76544c]"><CircleStop size={16} />停止</Button> : <Button type="button" onClick={() => void send()} disabled={!input.trim() || input.length > 2_000} className="mb-0.5 shrink-0 bg-[#253b46] hover:bg-[#344f5b]"><Send size={16} />发送</Button>}
         </div>
         <div className="mt-1.5 flex items-center justify-between gap-3 px-1 text-[10px] text-[#625c54]"><span>对话仅保存在当前浏览器标签页；生成时会发送至 DeepSeek</span><span className={cn("shrink-0", input.length > 1_900 && "font-semibold text-[#8a5c4d]")}>{input.length}/2000</span></div>
