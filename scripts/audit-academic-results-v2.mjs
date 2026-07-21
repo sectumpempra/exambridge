@@ -210,11 +210,24 @@ if (sparseMatrices.statistics.blockingCellCount > 0) failures.push("unexpected o
 if (sparseMatrices.boundaries.blockingCellCount > 0) failures.push("unexpected or conflicting boundary records must be adjudicated");
 if (sparseMatrices.rules.blockingCellCount > 0) failures.push("unexpected or conflicting award-rule records must be adjudicated");
 
+const [factCards, gapReport] = await Promise.all([
+  readFile(join(generatedDirectory, "qualification-fact-cards.json"), "utf8").then(JSON.parse),
+  readFile(join(generatedDirectory, "real-gap-report.json"), "utf8").then(JSON.parse),
+]);
+const factCardParse = academicSchemas.QualificationFactCardCatalogV1Schema.safeParse(factCards);
+if (!factCardParse.success) failures.push(`qualification fact cards schema failure: ${factCardParse.error.issues.map(issue => `${issue.path.join(".")}: ${issue.message}`).join("; ")}`);
+const gapReportParse = academicSchemas.QualificationFactGapReportV1Schema.safeParse(gapReport);
+if (!gapReportParse.success) failures.push(`qualification fact gap report schema failure: ${gapReportParse.error.issues.map(issue => `${issue.path.join(".")}: ${issue.message}`).join("; ")}`);
+if ((factCards.cards ?? []).length !== expectedAwardIds.length) failures.push("qualification fact card catalog must contain all 13 approved awards");
+if ((gapReport.gaps ?? []).some(gap => gap.category === "statistics" && gap.blocks?.length > 0)) failures.push("Grade Statistics gaps must not block explain-ready, calculator-ready or activation");
+
 const report = {
   schemaVersion: "1.0.0",
   baselineCommit: scope.baselineCommit,
   targetQualificationCount: qualifications.length,
   qualificationIdentityCount: identityCatalog.identities?.length ?? 0,
+  qualificationFactCardCount: factCards.cards?.length ?? 0,
+  qualificationGapCounts: gapReport.counts,
   coverageCellCount: coverageMatrix.cells.length,
   expectedCoverageCellCount: coverageMatrix.expectedCellCount,
   unresolvedCoverageCellCount: coverageMatrix.unresolvedCellCount,

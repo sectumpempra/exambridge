@@ -313,6 +313,113 @@ export const RuleCoverageMatrixV1Schema = z.strictObject({
   cells: z.array(RuleCoverageCellV1Schema),
 });
 
+const FactCardComponentV1Schema = z.strictObject({
+  code: NonEmptyString,
+  inputKind: z.enum(["raw", "scaled-raw", "ums", "carried-forward"]),
+  maximumRawMark: z.number().finite().positive().nullable(),
+  maximumAwardMark: z.number().finite().positive(),
+  weightingFactor: z.number().finite().positive(),
+  durationMinutes: z.number().int().positive().nullable(),
+  calculator: z.enum(["allowed", "not-allowed", "required", "unknown"]),
+});
+
+const FactCardRouteV1Schema = z.strictObject({
+  ruleId: NonEmptyString,
+  qualificationVersionId: NonEmptyString,
+  routeId: NonEmptyString,
+  routeType: z.enum(["linear", "same-series", "staged", "modular"]),
+  scoringSystem: z.enum(["raw", "scaled-raw", "UMS", "weighted-raw"]),
+  effectiveFrom: DateSchema,
+  effectiveTo: DateSchema.optional(),
+  totalMaximumAwardMark: z.number().finite().positive(),
+  gradeScale: z.array(NonEmptyString).min(1),
+  components: z.array(FactCardComponentV1Schema).min(1),
+  validCombinationIds: z.array(NonEmptyString).min(1),
+  roundingRule: NonEmptyString,
+  carryForward: z.boolean(),
+  resit: z.boolean(),
+  cashIn: z.boolean(),
+  unitLocking: z.boolean(),
+  aStarAvailable: z.boolean(),
+  sourceIds: z.array(NonEmptyString).min(1),
+  reviewStatus: ReviewStatusSchema,
+});
+
+const CoverageCountsV1Schema = z.strictObject({
+  expected: z.number().int().nonnegative(),
+  satisfied: z.number().int().nonnegative(),
+  explainedUnavailable: z.number().int().nonnegative(),
+  pending: z.number().int().nonnegative(),
+  unexpected: z.number().int().nonnegative(),
+  conflicting: z.number().int().nonnegative(),
+});
+
+export const QualificationFactCardV1Schema = z.strictObject({
+  schemaVersion: z.literal("1.0.0"),
+  awardQualificationId: NonEmptyString,
+  board: NonEmptyString,
+  subjectCode: NonEmptyString,
+  subjectName: NonEmptyString,
+  level: NonEmptyString,
+  currentQualificationVersionId: NonEmptyString,
+  qualificationVersions: z.array(QualificationVersionIdentityV2Schema).min(1),
+  catalogQualificationIds: z.array(NonEmptyString).min(1),
+  knowledgeMappingCodes: z.array(NonEmptyString).min(1),
+  examSeries: z.array(NonEmptyString),
+  calculatorSummary: NonEmptyString.nullable(),
+  officialMaterials: z.array(z.strictObject({
+    title: NonEmptyString,
+    version: NonEmptyString,
+    officialUrl: z.string().url(),
+  })),
+  routes: z.array(FactCardRouteV1Schema),
+  coverage: z.strictObject({
+    boundaries: CoverageCountsV1Schema,
+    statistics: CoverageCountsV1Schema,
+    rules: CoverageCountsV1Schema,
+  }),
+  maturity: z.strictObject({
+    level: z.enum(["catalogued", "evidence-ready", "explain-ready", "calculator-ready"]),
+    ownerApproved: z.boolean(),
+    calculatorAvailable: z.boolean(),
+    reasons: z.array(NonEmptyString),
+  }),
+  sourceIds: z.array(NonEmptyString).min(1),
+  unresolvedGapIds: z.array(NonEmptyString),
+  generatedAt: DateTimeSchema,
+  reviewStatus: ReviewStatusSchema,
+});
+
+export const QualificationFactCardCatalogV1Schema = z.strictObject({
+  schemaVersion: z.literal("1.0.0"),
+  cards: z.array(QualificationFactCardV1Schema).min(1),
+});
+
+export const QualificationFactGapV1Schema = z.strictObject({
+  gapId: NonEmptyString,
+  awardQualificationId: NonEmptyString,
+  qualificationVersionId: NonEmptyString.optional(),
+  severity: z.enum(["P0", "P1", "P2", "P3"]),
+  category: z.enum(["identity", "paper-structure", "rule-clause", "boundary", "statistics", "unexpected-record", "review-maturity"]),
+  description: NonEmptyString,
+  sourceIds: z.array(NonEmptyString),
+  remediation: NonEmptyString,
+  blocks: z.array(z.enum(["explain-ready", "calculator-ready", "activation"])),
+});
+
+export const QualificationFactGapReportV1Schema = z.strictObject({
+  schemaVersion: z.literal("1.0.0"),
+  generatedAt: DateTimeSchema,
+  qualificationCount: z.number().int().positive(),
+  counts: z.strictObject({
+    P0: z.number().int().nonnegative(),
+    P1: z.number().int().nonnegative(),
+    P2: z.number().int().nonnegative(),
+    P3: z.number().int().nonnegative(),
+  }),
+  gaps: z.array(QualificationFactGapV1Schema),
+});
+
 export const SourceEvidenceV1Schema = z.strictObject({
   schemaVersion: z.literal("1.0.0"),
   sourceId: NonEmptyString,
@@ -764,6 +871,10 @@ export type CoverageExpectationPolicyCatalogV1 = z.infer<typeof CoverageExpectat
 export type BoundaryCoverageMatrixV1 = z.infer<typeof BoundaryCoverageMatrixV1Schema>;
 export type StatisticsCoverageMatrixV1 = z.infer<typeof StatisticsCoverageMatrixV1Schema>;
 export type RuleCoverageMatrixV1 = z.infer<typeof RuleCoverageMatrixV1Schema>;
+export type QualificationFactCardV1 = z.infer<typeof QualificationFactCardV1Schema>;
+export type QualificationFactCardCatalogV1 = z.infer<typeof QualificationFactCardCatalogV1Schema>;
+export type QualificationFactGapV1 = z.infer<typeof QualificationFactGapV1Schema>;
+export type QualificationFactGapReportV1 = z.infer<typeof QualificationFactGapReportV1Schema>;
 export type GradeBoundaryV2 = z.infer<typeof GradeBoundaryV2Schema>;
 export type GradeStatisticsV2 = z.infer<typeof GradeStatisticsV2Schema>;
 export type QualificationAwardRuleV2 = z.infer<typeof QualificationAwardRuleV2Schema>;
