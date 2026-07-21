@@ -46,11 +46,15 @@ jobs:
       - name: Test deployment safety in a replica tree
         run: pnpm test:deployment
       - name: Build static production site
+        env:
+          VITE_AI_ASSISTANT_PUBLIC: "true"
         run: pnpm build:static
-      - name: Build and audit inactive AI service artifact
+      - name: Build and audit AI service artifact
         run: pnpm build:ai && pnpm audit:ai
       - run: pnpm exec playwright install --with-deps chromium firefox webkit
       - name: Core end-to-end tests
+        env:
+          AI_PUBLIC_E2E: "true"
         run: pnpm test:e2e
       - uses: gitleaks/gitleaks-action@v2
         env:
@@ -62,7 +66,7 @@ jobs:
           path: dist-static
           if-no-files-found: error
           retention-days: 3
-      - name: Upload verified inactive AI service artifact
+      - name: Upload verified AI service artifact
         uses: actions/upload-artifact@v4
         with:
           name: exambridge-ai-service

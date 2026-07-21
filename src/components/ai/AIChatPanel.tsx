@@ -256,7 +256,7 @@ export default function AIChatPanel({
           <Textarea value={input} onChange={(event) => setInput(event.target.value.slice(0, 2_000))} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }} placeholder="输入问题；Shift + Enter 换行" aria-label="向 ExamBridge AI 提问" className="max-h-32 min-h-11 resize-none border-0 bg-transparent px-2 py-2 shadow-none focus-visible:ring-0" disabled={generating} />
           {generating ? <Button type="button" onClick={() => abortRef.current?.abort()} className="mb-0.5 shrink-0 bg-[#8b655c] hover:bg-[#76544c]"><CircleStop size={16} />停止</Button> : <Button type="button" onClick={() => void send()} disabled={!input.trim() || input.length > 2_000} className="mb-0.5 shrink-0 bg-[#253b46] hover:bg-[#344f5b]"><Send size={16} />发送</Button>}
         </div>
-        <div className="mt-1.5 flex items-center justify-between gap-3 px-1 text-[10px] text-[#8b837a]"><span>对话仅保存在当前浏览器标签页；生成时会发送至 DeepSeek</span><span className={cn("shrink-0", input.length > 1_900 && "font-semibold text-[#8a5c4d]")}>{input.length}/2000</span></div>
+        <div className="mt-1.5 flex items-center justify-between gap-3 px-1 text-[10px] text-[#625c54]"><span>对话仅保存在当前浏览器标签页；生成时会发送至 DeepSeek</span><span className={cn("shrink-0", input.length > 1_900 && "font-semibold text-[#8a5c4d]")}>{input.length}/2000</span></div>
       </footer>
     </section>
   );
