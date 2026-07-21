@@ -124,6 +124,7 @@ export const GradeStatisticsV2Schema = z.strictObject({
   rateKind: z.enum(["cumulative", "exclusive"]),
   gradeOrder: z.array(NonEmptyString).min(1),
   gradeRates: GradeValueRecordSchema,
+  rawGradeRates: GradeValueRecordSchema.optional(),
   publicationStatus: z.enum(["final", "provisional", "not-published", "restricted", "source-unavailable"]),
   normalization: z.strictObject({
     originalKind: NonEmptyString,
@@ -154,6 +155,9 @@ export const GradeStatisticsV2Schema = z.strictObject({
   }
   if (value.verificationStatus === "owner-approved" && value.sourceIds.length === 0) {
     ctx.addIssue({ code: "custom", path: ["sourceIds"], message: "owner-approved statistics require row-level evidence" });
+  }
+  if (value.rawGradeRates && !value.normalization) {
+    ctx.addIssue({ code: "custom", path: ["normalization"], message: "rawGradeRates require an explicit normalization record" });
   }
 });
 
@@ -191,7 +195,14 @@ export const QualificationAwardRuleV2Schema = z.strictObject({
   resitRule: z.strictObject({ allowed: z.boolean(), selectionMethod: NonEmptyString, notes: z.array(NonEmptyString) }),
   carryForwardRule: z.strictObject({ allowed: z.boolean(), maximumMonths: z.number().int().positive().optional(), unit: z.enum(["whole-as", "component", "none"]), notes: z.array(NonEmptyString) }).optional(),
   cashInRule: z.strictObject({ required: z.boolean(), entryCode: NonEmptyString.optional(), notes: z.array(NonEmptyString) }).optional(),
-  aStarRule: z.strictObject({ available: z.boolean(), ruleKind: NonEmptyString, notes: z.array(NonEmptyString) }).optional(),
+  aStarRule: z.strictObject({
+    available: z.boolean(),
+    ruleKind: z.enum(["boundary-only", "overall-plus-advanced-units", "not-available"]),
+    overallMinimumAwardMark: z.number().finite().nonnegative().optional(),
+    advancedUnitCodes: z.array(NonEmptyString).optional(),
+    advancedUnitMinimumAwardMark: z.number().finite().nonnegative().optional(),
+    notes: z.array(NonEmptyString),
+  }).optional(),
   effectiveFrom: DateSchema,
   effectiveTo: DateSchema.optional(),
   sourceIds: z.array(NonEmptyString).min(1),
@@ -213,6 +224,45 @@ export const QualificationAwardRuleV2Schema = z.strictObject({
   if (value.effectiveTo && value.effectiveTo < value.effectiveFrom) {
     ctx.addIssue({ code: "custom", path: ["effectiveTo"], message: "effectiveTo must not precede effectiveFrom" });
   }
+  if (value.aStarRule?.ruleKind === "overall-plus-advanced-units") {
+    if (!value.aStarRule.available || !value.aStarRule.overallMinimumAwardMark || !value.aStarRule.advancedUnitMinimumAwardMark || !(value.aStarRule.advancedUnitCodes?.length)) {
+      ctx.addIssue({ code: "custom", path: ["aStarRule"], message: "advanced-unit A* rules require overall and advanced-unit thresholds" });
+    } else {
+      for (const code of value.aStarRule.advancedUnitCodes) {
+        if (!knownCodes.has(code)) ctx.addIssue({ code: "custom", path: ["aStarRule", "advancedUnitCodes"], message: `unknown advanced unit code ${code}` });
+      }
+    }
+  }
+});
+
+export const AwardComponentScoreV2Schema = z.strictObject({
+  componentCode: NonEmptyString,
+  series: z.string().regex(/^\d{4}-(january|march|june|november)$/),
+  rawMark: z.number().finite().nonnegative().optional(),
+  awardMark: z.number().finite().nonnegative().optional(),
+});
+
+export const AwardCalculationInputV2Schema = z.strictObject({
+  ruleId: NonEmptyString,
+  routeId: NonEmptyString,
+  targetSeries: z.string().regex(/^\d{4}-(january|march|june|november)$/),
+  combinationId: NonEmptyString,
+  componentScores: z.array(AwardComponentScoreV2Schema).min(1),
+});
+
+export const AwardCalculationResultV2Schema = z.strictObject({
+  ruleId: NonEmptyString,
+  routeId: NonEmptyString,
+  boundaryId: NonEmptyString,
+  combinationId: NonEmptyString,
+  targetSeries: NonEmptyString,
+  componentAwardMarks: z.record(NonEmptyString, z.number().finite().nonnegative()),
+  totalAwardMark: z.number().finite().nonnegative(),
+  maximumAwardMark: z.number().finite().positive(),
+  grade: NonEmptyString,
+  aStarSatisfied: z.boolean().optional(),
+  calculationStatus: z.literal("official"),
+  sourceIds: z.array(NonEmptyString).min(1),
 });
 
 const DifficultyDimensionSchema = z.strictObject({
@@ -298,6 +348,9 @@ export type SourceEvidenceV1 = z.infer<typeof SourceEvidenceV1Schema>;
 export type GradeBoundaryV2 = z.infer<typeof GradeBoundaryV2Schema>;
 export type GradeStatisticsV2 = z.infer<typeof GradeStatisticsV2Schema>;
 export type QualificationAwardRuleV2 = z.infer<typeof QualificationAwardRuleV2Schema>;
+export type AwardComponentScoreV2 = z.infer<typeof AwardComponentScoreV2Schema>;
+export type AwardCalculationInputV2 = z.infer<typeof AwardCalculationInputV2Schema>;
+export type AwardCalculationResultV2 = z.infer<typeof AwardCalculationResultV2Schema>;
 export type DifficultyProfileV1 = z.infer<typeof DifficultyProfileV1Schema>;
 export type StudentMasteryProfileV1 = z.infer<typeof StudentMasteryProfileV1Schema>;
 export type ExternalEvidenceV1 = z.infer<typeof ExternalEvidenceV1Schema>;
