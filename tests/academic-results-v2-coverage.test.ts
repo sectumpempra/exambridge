@@ -22,9 +22,25 @@ describe("Academic Results V2 route-series coverage", () => {
     expect(JSON.stringify(matrix)).not.toContain("8M1");
   });
 
+  it("applies historical route and series windows instead of projecting current policy backwards", () => {
+    const expected9231 = matrix.cells.filter(cell => cell.awardQualificationId === "award:caie:9231" && cell.expectedByPolicy);
+    expect(expected9231.every(cell => ["june", "november"].includes(cell.series))).toBe(true);
+    expect(expected9231.filter(cell => cell.year === 2019).map(cell => cell.routeId)).toEqual([
+      "award:caie:9231:legacy-al",
+      "award:caie:9231:legacy-al",
+    ]);
+    expect(expected9231.filter(cell => cell.year === 2020).some(cell => cell.routeId === "award:caie:9231:as")).toBe(true);
+
+    const expected4ma1 = matrix.cells.filter(cell => cell.awardQualificationId === "award:pearson:4ma1" && cell.expectedByPolicy);
+    expect(expected4ma1.some(cell => cell.year === 2022 && cell.series === "november")).toBe(false);
+    expect(expected4ma1.some(cell => cell.year === 2023 && cell.series === "january")).toBe(true);
+    expect(expected4ma1.some(cell => cell.year === 2024 && cell.series === "january")).toBe(false);
+    expect(expected4ma1.some(cell => cell.year === 2024 && cell.series === "november")).toBe(true);
+  });
+
   it("keeps unresolved evidence visible instead of claiming complete coverage", () => {
     expect(matrix.unresolvedCellCount).toBeGreaterThan(0);
-    expect(matrix.cells.some(cell => cell.statisticsStatus === "conflict")).toBe(true);
+    expect(matrix.cells.some(cell => cell.statisticsStatus === "conflict")).toBe(false);
     expect(matrix.cells.some(cell => cell.boundaryStatus === "source-unavailable")).toBe(true);
   });
 });

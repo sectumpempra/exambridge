@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { createServer } from "vite";
+import { buildOfficialAwardRuleCandidates } from "./lib/official-award-rule-candidates.mjs";
 
 const root = process.cwd();
 const candidateDirectory = join(root, "data", "candidates", "academic-results-v2");
@@ -12,7 +13,7 @@ const slug = value => String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").re
 const readJson = async path => JSON.parse(await readFile(join(root, path), "utf8"));
 const sourceRecords = new Map();
 
-function addSource({ sourceId, board, officialUrl, documentTitle, publishedAt, accessedAt, printedPage, pdfPage, tableName, sourceRowId, sourceDocumentHash, verificationStatus }) {
+function addSource({ sourceId, board, officialUrl, documentTitle, documentVersion, publishedAt, accessedAt, printedPage, pdfPage, tableName, sourceRowId, sourceDocumentHash, effectiveFrom, effectiveTo, verificationStatus }) {
   if (!sourceRecords.has(sourceId)) {
     sourceRecords.set(sourceId, {
       schemaVersion: "1.0.0",
@@ -20,6 +21,7 @@ function addSource({ sourceId, board, officialUrl, documentTitle, publishedAt, a
       board,
       officialUrl,
       documentTitle,
+      ...(documentVersion ? { documentVersion } : {}),
       ...(publishedAt ? { publishedAt } : {}),
       accessedAt,
       ...(printedPage ? { printedPage } : {}),
@@ -27,7 +29,8 @@ function addSource({ sourceId, board, officialUrl, documentTitle, publishedAt, a
       ...(tableName ? { tableName } : {}),
       ...(sourceRowId ? { sourceRowId } : {}),
       ...(sourceDocumentHash ? { sourceDocumentHash } : {}),
-      effectiveFrom: publishedAt ?? `${scope.startYear}-01-01`,
+      effectiveFrom: effectiveFrom ?? publishedAt ?? `${scope.startYear}-01-01`,
+      ...(effectiveTo ? { effectiveTo } : {}),
       verificationStatus,
     });
   }
@@ -186,6 +189,7 @@ const awardRules = legacyRoutes.map(route => {
     verificationStatus: qualification.board === "AQA" ? "codex-reviewed" : "candidate",
   };
 });
+awardRules.push(...buildOfficialAwardRuleCandidates(addSource));
 
 const directOfficialStatistics = [];
 const aqaStats = await readJson("src/data/official/aqa-math-results-statistics.json");
@@ -254,12 +258,78 @@ for (const row of [...ocrStats.aLevel, ...(ocrStats.fsmq ?? [])].filter(item => 
   });
 }
 
+const pearsonIalOfficialStatistics = [
+  {
+    year: 2025,
+    series: "june",
+    publicationStatus: "final",
+    publishedAt: "2026-06-23",
+    officialUrl: "https://qualifications.pearson.com/content/dam/pdf/Support/Grade-statistics/International-A-level/grade-statistics-june-2025-final-edexcel-international-advanced-level.pdf",
+    documentTitle: "Grade Statistics - June 2025 (Final) Edexcel International Advanced Level",
+    sourceDocumentHash: "e480f4508f0acb78a867d8825a85e77ccf3e412b324af190dcffd7eda02c0b3c",
+    rows: [
+      { code: "YFM01", awardQualificationId: "award:pearson:ial-further-mathematics", rates: [36.6, 58.0, 78.7, 88.8, 94.5, 97.1] },
+      { code: "YMA01", awardQualificationId: "award:pearson:ial-mathematics", rates: [32.7, 53.2, 71.1, 82.7, 90.3, 94.9] },
+    ],
+  },
+  {
+    year: 2026,
+    series: "january",
+    publicationStatus: "provisional",
+    publishedAt: "2026-03-05",
+    officialUrl: "https://qualifications.pearson.com/content/dam/pdf/Support/Grade-statistics/International-A-level/grade-statistics-january-2026-provisional-international-advanced-level.pdf",
+    documentTitle: "Grade Statistics - January 2026 (Provisional) Edexcel International Advanced Level",
+    sourceDocumentHash: "3bff11f8340aafda8e02c85b264fffa83ab79b4131ccd8e77649fdd7115ce84b",
+    rows: [
+      { code: "YFM01", awardQualificationId: "award:pearson:ial-further-mathematics", rates: [47.7, 69.2, 81.3, 88.2, 92.9, 96.1] },
+      { code: "YMA01", awardQualificationId: "award:pearson:ial-mathematics", rates: [29.7, 45.6, 60.4, 73.2, 83.9, 91.0] },
+    ],
+  },
+];
+for (const document of pearsonIalOfficialStatistics) {
+  for (const row of document.rows) {
+    const qualification = qualifications.get(row.awardQualificationId);
+    const sourceId = addSource({
+      sourceId: `source:pearson-ial-grade-statistics-${row.code.toLowerCase()}-${document.year}-${document.series}`,
+      board: "Pearson",
+      officialUrl: document.officialUrl,
+      documentTitle: document.documentTitle,
+      publishedAt: document.publishedAt,
+      accessedAt: "2026-07-21",
+      printedPage: 2,
+      pdfPage: 2,
+      tableName: "Cumulative percentages at specified grades",
+      sourceRowId: `PEARSON-IAL-${document.year}-${document.series.toUpperCase()}-${row.code}`,
+      sourceDocumentHash: document.sourceDocumentHash,
+      verificationStatus: "codex-reviewed",
+    });
+    directOfficialStatistics.push({
+      qualification,
+      awardQualificationId: row.awardQualificationId,
+      subject: { code: row.code },
+      year: {
+        year: document.year,
+        series: document.series,
+        aStarRate: row.rates[0],
+        aRate: row.rates[1],
+        bRate: row.rates[2],
+        cRate: row.rates[3],
+        dRate: row.rates[4],
+        eRate: row.rates[5],
+      },
+      sourceIds: [sourceId],
+      verificationStatus: "codex-reviewed",
+      publicationStatus: document.publicationStatus,
+    });
+  }
+}
+
 const gradeFields = [
   ["A*", "aStarRate"], ["A", "aRate"], ["B", "bRate"], ["C", "cRate"], ["D", "dRate"], ["E", "eRate"],
   ["9", "grade9Rate"], ["8", "grade8Rate"], ["7", "grade7Rate"], ["6", "grade6Rate"], ["5", "grade5Rate"], ["4", "grade4Rate"], ["3", "grade3Rate"], ["2", "grade2Rate"], ["1", "grade1Rate"],
 ];
 
-function toStatistics({ qualification, awardQualificationId, year, sourceIds, verificationStatus, publicationStatus, origin }) {
+function toStatistics({ qualification, awardQualificationId, year, sourceIds, verificationStatus, publicationStatus }) {
   const preferred = year.grade9Rate === undefined ? gradeFields.slice(0, 6) : gradeFields.slice(6);
   const gradeOrder = preferred.filter(([, field]) => year[field] !== undefined).map(([grade]) => grade);
   const gradeRates = Object.fromEntries(preferred.filter(([, field]) => year[field] !== undefined).map(([grade, field]) => [grade, year[field]]));
@@ -289,11 +359,10 @@ function toStatistics({ qualification, awardQualificationId, year, sourceIds, ve
     publicationStatus,
     sourceIds,
     verificationStatus,
-    _migrationOrigin: origin,
   };
 }
 
-const statistics = directOfficialStatistics.map(item => toStatistics({ ...item, origin: item.qualification.board === "AQA" ? "official-local-aqa" : "official-ocr" }));
+const statistics = directOfficialStatistics.map(item => toStatistics(item));
 const coveredOfficialKeys = new Set(statistics.map(row => `${row.awardQualificationId}|${row.year}|${row.series}`));
 const legacySubjects = await loadLegacyStatistics();
 const codeToAwardId = new Map(scope.qualifications.map(item => [`${item.board}|${item.subjectCode}`.toLowerCase(), item.awardQualificationId]));
@@ -321,7 +390,6 @@ for (const subject of legacySubjects) {
       sourceIds: [],
       verificationStatus: "candidate",
       publicationStatus: "source-unavailable",
-      origin: "legacy-results-statistics",
     });
     const fingerprint = JSON.stringify({ candidateCount: candidate.candidateCount, gradeRates: candidate.gradeRates, rawGradeRates: candidate.rawGradeRates });
     const group = legacyGroups.get(key) ?? new Map();
@@ -352,6 +420,13 @@ const candidate = {
   sources: [...sourceRecords.values()].sort((a, b) => a.sourceId.localeCompare(b.sourceId)),
   boundaries: boundaries.sort((a, b) => a.boundaryId.localeCompare(b.boundaryId)),
   statistics: statistics.sort((a, b) => a.statisticsId.localeCompare(b.statisticsId)),
+  statisticsProvenance: Object.fromEntries(statistics.map(row => [row.statisticsId, {
+    migrationOrigin: row.awardQualificationId.startsWith("award:aqa:")
+      ? "official-local-aqa"
+      : row.sourceIds.length > 0
+        ? `official-${sourceRecords.get(row.sourceIds[0])?.board.toLowerCase() ?? "unknown"}`
+        : "legacy-results-statistics",
+  }])),
   awardRules: awardRules.sort((a, b) => a.ruleId.localeCompare(b.ruleId)),
   statisticsConflicts: statisticsConflicts.sort((a, b) => a.conflictId.localeCompare(b.conflictId)),
 };

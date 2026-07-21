@@ -1,8 +1,11 @@
 import {
   AwardCalculationInputV2Schema,
   AwardCalculationResultV2Schema,
+  AwardSelectionInputV2Schema,
+  AwardSelectionResultV2Schema,
   type AwardCalculationInputV2,
   type AwardCalculationResultV2,
+  type AwardSelectionResultV2,
   type GradeBoundaryV2,
   type QualificationAwardRuleV2,
 } from "./schema";
@@ -19,7 +22,10 @@ export type AwardCalculationErrorCodeV2 =
   | "RAW_MARK_REQUIRED"
   | "AWARD_MARK_REQUIRED"
   | "SCORE_OUT_OF_RANGE"
-  | "BOUNDARY_MISMATCH";
+  | "BOUNDARY_MISMATCH"
+  | "AUTO_SELECTION_NOT_ALLOWED"
+  | "NO_ELIGIBLE_COMBINATION"
+  | "NO_MATCHING_BOUNDARY";
 
 export class AwardCalculationErrorV2 extends Error {
   constructor(public readonly code: AwardCalculationErrorCodeV2) {
@@ -111,8 +117,12 @@ const calculate = (
 
   let grade = gradeFor(totalAwardMark, boundary);
   let aStarSatisfied: boolean | undefined;
-  if (grade === "A*" && rule.aStarRule?.ruleKind === "overall-plus-advanced-units") {
-    const advancedTotal = (rule.aStarRule.advancedUnitCodes ?? []).reduce((sum, code) => sum + (componentAwardMarks[code] ?? 0), 0);
+  if (grade === "A*" && (rule.aStarRule?.ruleKind === "overall-plus-advanced-units" || rule.aStarRule?.ruleKind === "overall-plus-best-advanced-units")) {
+    const advancedMarks = (rule.aStarRule.advancedUnitCodes ?? []).map(code => componentAwardMarks[code]).filter((value): value is number => value !== undefined);
+    const selectedAdvancedMarks = rule.aStarRule.ruleKind === "overall-plus-best-advanced-units"
+      ? advancedMarks.sort((a, b) => b - a).slice(0, rule.aStarRule.advancedUnitCount)
+      : advancedMarks;
+    const advancedTotal = selectedAdvancedMarks.reduce((sum, mark) => sum + mark, 0);
     aStarSatisfied = totalAwardMark >= (rule.aStarRule.overallMinimumAwardMark ?? Number.POSITIVE_INFINITY) &&
       advancedTotal >= (rule.aStarRule.advancedUnitMinimumAwardMark ?? Number.POSITIVE_INFINITY);
     if (!aStarSatisfied) grade = "A";
@@ -147,4 +157,48 @@ export function calculateQualificationAwardV2(
     if (error instanceof AwardCalculationErrorV2) throw error;
     throw new AwardCalculationErrorV2("INVALID_INPUT");
   }
+}
+
+export function calculateBestQualificationAwardV2(
+  inputValue: unknown,
+  rule: QualificationAwardRuleV2,
+  boundaries: GradeBoundaryV2[],
+): AwardSelectionResultV2 {
+  const parsed = AwardSelectionInputV2Schema.safeParse(inputValue);
+  if (!parsed.success) throw new AwardCalculationErrorV2("INVALID_INPUT");
+  if (parsed.data.ruleId !== rule.ruleId || parsed.data.routeId !== rule.routeId) {
+    throw new AwardCalculationErrorV2("RULE_ROUTE_MISMATCH");
+  }
+  if (rule.combinationSelectionRule?.selectionMethod !== "best-official-grade" || !rule.combinationSelectionRule.allowExtraComponentScores) {
+    throw new AwardCalculationErrorV2("AUTO_SELECTION_NOT_ALLOWED");
+  }
+
+  const providedCodes = new Set(parsed.data.componentScores.map(score => score.componentCode));
+  if (providedCodes.size !== parsed.data.componentScores.length) throw new AwardCalculationErrorV2("DUPLICATE_COMPONENT");
+  const knownCodes = new Set(rule.components.map(component => component.code));
+  if ([...providedCodes].some(code => !knownCodes.has(code))) throw new AwardCalculationErrorV2("UNKNOWN_COMPONENT");
+  const eligible = rule.validCombinations.filter(combination => combination.componentCodes.every(code => providedCodes.has(code)));
+  if (eligible.length === 0) throw new AwardCalculationErrorV2("NO_ELIGIBLE_COMBINATION");
+
+  const results = eligible.map(combination => {
+    const boundary = boundaries.find(item => item.routeId === rule.routeId
+      && `${item.year}-${item.series}` === parsed.data.targetSeries
+      && (combination.optionCode ? item.optionCode === combination.optionCode : !item.optionCode));
+    if (!boundary) throw new AwardCalculationErrorV2("NO_MATCHING_BOUNDARY");
+    return calculateQualificationAwardV2({
+      ...parsed.data,
+      combinationId: combination.combinationId,
+      componentScores: parsed.data.componentScores.filter(score => combination.componentCodes.includes(score.componentCode)),
+    }, rule, boundary);
+  });
+  const gradeRank = new Map(rule.gradeScale.map((grade, index) => [grade, index]));
+  gradeRank.set("U", rule.gradeScale.length);
+  results.sort((left, right) => (gradeRank.get(left.grade) ?? Number.POSITIVE_INFINITY) - (gradeRank.get(right.grade) ?? Number.POSITIVE_INFINITY)
+    || right.totalAwardMark - left.totalAwardMark
+    || left.combinationId.localeCompare(right.combinationId));
+  return AwardSelectionResultV2Schema.parse({
+    selected: results[0],
+    consideredCombinationIds: results.map(result => result.combinationId).sort(),
+    selectionMethod: "best-official-grade",
+  });
 }

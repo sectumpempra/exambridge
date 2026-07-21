@@ -229,17 +229,29 @@ export const QualificationAwardRuleV2Schema = z.strictObject({
   scoringSystem: z.enum(["raw", "scaled-raw", "UMS", "weighted-raw"]),
   components: z.array(ComponentRuleV2Schema).min(1),
   validCombinations: z.array(CombinationSchema).min(1),
+  combinationSelectionRule: z.strictObject({
+    selectionMethod: z.enum(["explicit-combination", "best-official-grade"]),
+    allowExtraComponentScores: z.boolean(),
+    tieBreak: z.enum(["not-applicable", "highest-award-mark"]),
+    notes: z.array(NonEmptyString),
+  }).optional(),
   totalMaximumAwardMark: z.number().finite().positive(),
   gradeScale: z.array(NonEmptyString).min(1),
   roundingRule: z.enum(["none", "nearest-integer", "official-carry-forward", "board-published"]),
   resitRule: z.strictObject({ allowed: z.boolean(), selectionMethod: NonEmptyString, notes: z.array(NonEmptyString) }),
   carryForwardRule: z.strictObject({ allowed: z.boolean(), maximumMonths: z.number().int().positive().optional(), unit: z.enum(["whole-as", "component", "none"]), notes: z.array(NonEmptyString) }).optional(),
   cashInRule: z.strictObject({ required: z.boolean(), entryCode: NonEmptyString.optional(), notes: z.array(NonEmptyString) }).optional(),
+  unitLockingRule: z.strictObject({
+    lockedAfterCashIn: z.boolean(),
+    unlockAllowed: z.boolean(),
+    notes: z.array(NonEmptyString),
+  }).optional(),
   aStarRule: z.strictObject({
     available: z.boolean(),
-    ruleKind: z.enum(["boundary-only", "overall-plus-advanced-units", "not-available"]),
+    ruleKind: z.enum(["boundary-only", "overall-plus-advanced-units", "overall-plus-best-advanced-units", "not-available"]),
     overallMinimumAwardMark: z.number().finite().nonnegative().optional(),
     advancedUnitCodes: z.array(NonEmptyString).optional(),
+    advancedUnitCount: z.number().int().positive().optional(),
     advancedUnitMinimumAwardMark: z.number().finite().nonnegative().optional(),
     notes: z.array(NonEmptyString),
   }).optional(),
@@ -264,13 +276,16 @@ export const QualificationAwardRuleV2Schema = z.strictObject({
   if (value.effectiveTo && value.effectiveTo < value.effectiveFrom) {
     ctx.addIssue({ code: "custom", path: ["effectiveTo"], message: "effectiveTo must not precede effectiveFrom" });
   }
-  if (value.aStarRule?.ruleKind === "overall-plus-advanced-units") {
+  if (value.aStarRule?.ruleKind === "overall-plus-advanced-units" || value.aStarRule?.ruleKind === "overall-plus-best-advanced-units") {
     if (!value.aStarRule.available || !value.aStarRule.overallMinimumAwardMark || !value.aStarRule.advancedUnitMinimumAwardMark || !(value.aStarRule.advancedUnitCodes?.length)) {
       ctx.addIssue({ code: "custom", path: ["aStarRule"], message: "advanced-unit A* rules require overall and advanced-unit thresholds" });
     } else {
       for (const code of value.aStarRule.advancedUnitCodes) {
         if (!knownCodes.has(code)) ctx.addIssue({ code: "custom", path: ["aStarRule", "advancedUnitCodes"], message: `unknown advanced unit code ${code}` });
       }
+    }
+    if (value.aStarRule.ruleKind === "overall-plus-best-advanced-units" && (!value.aStarRule.advancedUnitCount || value.aStarRule.advancedUnitCount > (value.aStarRule.advancedUnitCodes?.length ?? 0))) {
+      ctx.addIssue({ code: "custom", path: ["aStarRule", "advancedUnitCount"], message: "best-advanced-unit A* rules require a valid unit count" });
     }
   }
 });
@@ -290,6 +305,8 @@ export const AwardCalculationInputV2Schema = z.strictObject({
   componentScores: z.array(AwardComponentScoreV2Schema).min(1),
 });
 
+export const AwardSelectionInputV2Schema = AwardCalculationInputV2Schema.omit({ combinationId: true });
+
 export const AwardCalculationResultV2Schema = z.strictObject({
   ruleId: NonEmptyString,
   routeId: NonEmptyString,
@@ -303,6 +320,12 @@ export const AwardCalculationResultV2Schema = z.strictObject({
   aStarSatisfied: z.boolean().optional(),
   calculationStatus: z.literal("official"),
   sourceIds: z.array(NonEmptyString).min(1),
+});
+
+export const AwardSelectionResultV2Schema = z.strictObject({
+  selected: AwardCalculationResultV2Schema,
+  consideredCombinationIds: z.array(NonEmptyString).min(1),
+  selectionMethod: z.literal("best-official-grade"),
 });
 
 const DifficultyDimensionSchema = z.strictObject({
@@ -449,6 +472,8 @@ export type QualificationAwardRuleV2 = z.infer<typeof QualificationAwardRuleV2Sc
 export type AwardComponentScoreV2 = z.infer<typeof AwardComponentScoreV2Schema>;
 export type AwardCalculationInputV2 = z.infer<typeof AwardCalculationInputV2Schema>;
 export type AwardCalculationResultV2 = z.infer<typeof AwardCalculationResultV2Schema>;
+export type AwardSelectionInputV2 = z.infer<typeof AwardSelectionInputV2Schema>;
+export type AwardSelectionResultV2 = z.infer<typeof AwardSelectionResultV2Schema>;
 export type DifficultyProfileV1 = z.infer<typeof DifficultyProfileV1Schema>;
 export type BoundaryPredictionV1 = z.infer<typeof BoundaryPredictionV1Schema>;
 export type StudentMasteryProfileV1 = z.infer<typeof StudentMasteryProfileV1Schema>;
