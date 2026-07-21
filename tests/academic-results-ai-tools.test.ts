@@ -4,12 +4,15 @@ import { BOUNDARY_PREDICTION_DISCLAIMER_VERSION, type AcademicResultsManifestV2,
 import type { AIChatRequest } from "@/domain-v2/ai-assistant";
 
 const request = (content: string, overrides: Partial<AIChatRequest> = {}): AIChatRequest => ({
+  version: 2,
   mode: "exam_assistant",
+  scopes: [],
   qualificationIds: [],
   syllabusVersions: [],
   pageContext: { pageType: "academic-results", route: "/results", selectedPaperIds: [], comparisonIds: [] },
   messages: [{ role: "user", content }],
   locale: "zh-CN",
+  roleView: "consulting",
   ...overrides,
 });
 

@@ -9,6 +9,7 @@ import {
   type AICitation,
   type AIChatMessage,
   type AIPageContext,
+  type AIQueryScope,
   type AIResolvedContext,
 } from "@/domain-v2/ai-assistant";
 import { cn } from "@/lib/utils";
@@ -22,16 +23,25 @@ type DisplayMessage = AIChatMessage & {
   error?: boolean;
 };
 
-type StoredSession = {
+type StoredSessionV1 = {
   version: 1;
   messages: DisplayMessage[];
   resolvedContext?: AIResolvedContext;
+};
+
+type StoredSession = {
+  version: 2;
+  messages: DisplayMessage[];
+  resolvedContext?: AIResolvedContext;
+  scopes: AIQueryScope[];
+  roleView: "teaching" | "consulting" | "sales" | "operations";
 };
 
 interface AIChatPanelProps {
   pageContext: AIPageContext;
   qualificationIds?: string[];
   syllabusVersions?: string[];
+  scopes?: AIQueryScope[];
   contextLabel?: string;
   contextControl?: ReactNode;
   className?: string;
@@ -45,18 +55,20 @@ const DEFAULT_SUGGESTIONS = [
   "请用家长容易理解的方式解释。",
 ];
 
-function safeStoredSession(value: string | null): StoredSession | null {
+export function safeStoredSession(value: string | null): StoredSession | null {
   if (!value) return null;
   try {
-    const parsed = JSON.parse(value) as StoredSession;
-    if (parsed.version !== 1 || !Array.isArray(parsed.messages)) return null;
+    const parsed = JSON.parse(value) as StoredSession | StoredSessionV1;
+    if (![1, 2].includes(parsed.version) || !Array.isArray(parsed.messages)) return null;
     const messages = parsed.messages.filter((message) =>
       message && typeof message.id === "string"
       && (message.role === "user" || message.role === "assistant")
       && typeof message.content === "string"
       && message.content.length <= 2_000
     ).slice(-12);
-    return { version: 1, messages, resolvedContext: parsed.resolvedContext };
+    return parsed.version === 2
+      ? { version: 2, messages, resolvedContext: parsed.resolvedContext, scopes: parsed.scopes ?? [], roleView: parsed.roleView ?? "consulting" }
+      : { version: 2, messages, resolvedContext: parsed.resolvedContext, scopes: [], roleView: "consulting" };
   } catch {
     return null;
   }
@@ -96,11 +108,18 @@ export default function AIChatPanel({
   pageContext,
   qualificationIds = [],
   syllabusVersions = [],
+  scopes,
   contextLabel,
   contextControl,
   className,
   fullHeight = false,
 }: AIChatPanelProps) {
+  const pageScopes = useMemo<AIQueryScope[]>(() => scopes ?? (qualificationIds.length > 0 || syllabusVersions.length > 0 ? [{
+    awardQualificationIds: [],
+    qualificationVersionIds: syllabusVersions.slice(0, 4),
+    catalogQualificationIds: qualificationIds.slice(0, 4),
+    source: "page-context",
+  }] : []), [qualificationIds, scopes, syllabusVersions]);
   const storageKey = useMemo(() => aiSessionStorageKey([
     pageContext.pageType,
     ...qualificationIds,
@@ -110,6 +129,8 @@ export default function AIChatPanel({
   const initial = useMemo(() => safeStoredSession(typeof window === "undefined" ? null : window.sessionStorage.getItem(storageKey)), [storageKey]);
   const [messages, setMessages] = useState<DisplayMessage[]>(initial?.messages ?? []);
   const [resolvedContext, setResolvedContext] = useState<AIResolvedContext | undefined>(initial?.resolvedContext);
+  const [queryScopes, setQueryScopes] = useState<AIQueryScope[]>(initial?.scopes.length ? initial.scopes : pageScopes);
+  const [roleView, setRoleView] = useState<StoredSession["roleView"]>(initial?.roleView ?? "consulting");
   const [input, setInput] = useState("");
   const [generating, setGenerating] = useState(false);
   const [suggestions, setSuggestions] = useState(DEFAULT_SUGGESTIONS);
@@ -124,16 +145,18 @@ export default function AIChatPanel({
     queueMicrotask(() => {
       setMessages(restored?.messages ?? []);
       setResolvedContext(restored?.resolvedContext);
+      setQueryScopes(restored?.scopes.length ? restored.scopes : pageScopes);
+      setRoleView(restored?.roleView ?? "consulting");
       setSuggestions(DEFAULT_SUGGESTIONS);
       setServiceError(null);
     });
     return () => abortRef.current?.abort();
-  }, [storageKey]);
+  }, [pageScopes, storageKey]);
 
   useEffect(() => {
     const stable = messages.filter((message) => !message.pending).slice(-12);
-    window.sessionStorage.setItem(storageKey, JSON.stringify({ version: 1, messages: stable, resolvedContext } satisfies StoredSession));
-  }, [messages, resolvedContext, storageKey]);
+    window.sessionStorage.setItem(storageKey, JSON.stringify({ version: 2, messages: stable, resolvedContext, scopes: queryScopes, roleView } satisfies StoredSession));
+  }, [messages, queryScopes, resolvedContext, roleView, storageKey]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -144,6 +167,7 @@ export default function AIChatPanel({
     window.sessionStorage.removeItem(storageKey);
     setMessages([]);
     setResolvedContext(undefined);
+    setQueryScopes(pageScopes);
     setSuggestions(DEFAULT_SUGGESTIONS);
     setServiceError(null);
     setGenerating(false);
@@ -171,10 +195,13 @@ export default function AIChatPanel({
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
         body: JSON.stringify({
+          version: 2,
           mode: "exam_assistant",
-          qualificationIds: qualificationIds.slice(0, 2),
-          syllabusVersions: syllabusVersions.slice(0, 2),
+          scopes: queryScopes.slice(0, 4),
+          qualificationIds: qualificationIds.slice(0, 4),
+          syllabusVersions: syllabusVersions.slice(0, 4),
           pageContext,
+          roleView,
           messages: requestMessages,
           locale: /^en\b/i.test(navigator.language) ? "en-GB" : "zh-CN",
           resolvedContext,

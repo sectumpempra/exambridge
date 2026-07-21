@@ -118,6 +118,19 @@ function normalizedBoard(value: string): string {
   return normalized.replace(/[^a-z0-9]+/g, "");
 }
 
+function awardQualificationIdForCourse(course: CourseContextEntry): string {
+  const board = normalizedBoard(course.boardName);
+  const code = course.subjectCode.toLowerCase();
+  if (board === "edexcel" && code === "yma01") return "award:pearson:ial-mathematics";
+  if (board === "edexcel" && code === "yfm01") return "award:pearson:ial-further-mathematics";
+  const awardBoard = board === "edexcel" ? "pearson" : board;
+  return `award:${awardBoard}:${code}`;
+}
+
+function scopePriority(source: AIChatRequest["scopes"][number]["source"]): number {
+  return { "explicit-query": 0, "manual-selection": 1, "page-context": 2, inferred: 3 }[source];
+}
+
 export function overviewIdentityMatches(
   course: Pick<CourseContextEntry, "boardName" | "subjectCode">,
   overview: Pick<ExamOverview, "board" | "code">,
@@ -163,6 +176,12 @@ function messageExplicitlyNamesCode(message: string, code: string): boolean {
   if (normalizedCode.length < 3) return false;
   const normalizedMessage = normalizedToken(message);
   return normalizedMessage.includes(normalizedCode);
+}
+
+function explicitCodePosition(message: string, ...codes: string[]): number {
+  const normalizedMessage = normalizedToken(message);
+  const positions = codes.map(code => normalizedMessage.indexOf(normalizedToken(code))).filter(position => position >= 0);
+  return positions.length > 0 ? Math.min(...positions) : Number.MAX_SAFE_INTEGER;
 }
 
 function trimArray<T>(items: T[], limit: number): { items: T[]; omitted: number } {
@@ -312,7 +331,7 @@ function resolveSelectedPaperIds(
   request: AIChatRequest,
   entries: KnowledgeManifestEntry[],
 ): Array<string | null> {
-  const explicit = request.pageContext.selectedPaperIds.slice(0, 2).map((paperId) => paperId || null);
+  const explicit = request.pageContext.selectedPaperIds.slice(0, 4).map((paperId) => paperId || null);
   if (entries.length !== 1) return explicit;
   const entry = entries[0];
   const valid = new Set(entry.papers);
@@ -390,21 +409,26 @@ export class AIContextBuilder {
     const result = [] as typeof COURSE_CATALOG;
     const seen = new Set<string>();
     const add = (entry: (typeof COURSE_CATALOG)[number] | undefined) => {
-      if (!entry || result.length >= 2) return;
+      if (!entry || result.length >= 4) return;
       const canonicalKey = overviewForCourse(entry)?.id ?? entry.knowledgeTreeCode ?? entry.qualificationId;
       if (seen.has(canonicalKey)) return;
       seen.add(canonicalKey);
       result.push(entry);
     };
 
-    request.qualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
-    request.resolvedContext?.qualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
-
     const message = latestUserMessage(request);
     COURSE_CATALOG
       .filter((entry) => messageExplicitlyNamesCode(message, entry.subjectCode))
-      .sort((a, b) => Number(Boolean(b.capabilities.examOverview.href)) - Number(Boolean(a.capabilities.examOverview.href)))
+      .sort((a, b) => explicitCodePosition(message, a.subjectCode) - explicitCodePosition(message, b.subjectCode)
+        || Number(Boolean(b.capabilities.examOverview.href)) - Number(Boolean(a.capabilities.examOverview.href)))
       .forEach(add);
+    if (result.length > 0) return result;
+    [...request.scopes].sort((a, b) => scopePriority(a.source) - scopePriority(b.source)).forEach((scope) => {
+      scope.catalogQualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
+      scope.awardQualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => awardQualificationIdForCourse(entry) === id)));
+    });
+    request.qualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
+    request.resolvedContext?.qualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
     return result;
   }
 
@@ -416,19 +440,31 @@ export class AIContextBuilder {
     const result: KnowledgeManifestEntry[] = [];
     const seen = new Set<string>();
     const add = (entry: KnowledgeManifestEntry | undefined) => {
-      if (!entry || seen.has(entry.code) || result.length >= 2) return;
+      if (!entry || seen.has(entry.code) || result.length >= 4) return;
       seen.add(entry.code);
       result.push(entry);
     };
 
-    request.pageContext.comparisonIds.forEach((code) => add(manifest.mappings.find((entry) => entry.code === code)));
-    request.resolvedContext?.qualificationCodes.forEach((code) => add(manifest.mappings.find((entry) => entry.code === code)));
-    courses.forEach((course) => add(manifest.mappings.find((entry) => entry.code === course.knowledgeTreeCode)));
-
     const message = latestUserMessage(request);
     manifest.mappings
       .filter((entry) => messageExplicitlyNamesCode(message, entry.code) || messageExplicitlyNamesCode(message, entry.subjectCode))
+      .sort((a, b) => explicitCodePosition(message, a.code, a.subjectCode) - explicitCodePosition(message, b.code, b.subjectCode))
       .forEach(add);
+    if (result.length > 0) return result;
+    [...request.scopes].sort((a, b) => scopePriority(a.source) - scopePriority(b.source)).forEach((scope) => {
+      scope.qualificationVersionIds.forEach((versionId) => add(manifest.mappings.find((entry) => entry.qualificationVersionId === versionId)));
+      scope.awardQualificationIds.forEach((awardId) => {
+        const course = COURSE_CATALOG.find((entry) => awardQualificationIdForCourse(entry) === awardId);
+        add(manifest.mappings.find((entry) => entry.code === course?.knowledgeTreeCode));
+      });
+      scope.catalogQualificationIds.forEach((catalogId) => {
+        const course = COURSE_CATALOG.find((entry) => entry.qualificationId === catalogId);
+        add(manifest.mappings.find((entry) => entry.code === course?.knowledgeTreeCode));
+      });
+    });
+    request.pageContext.comparisonIds.forEach((code) => add(manifest.mappings.find((entry) => entry.code === code)));
+    courses.forEach((course) => add(manifest.mappings.find((entry) => entry.code === course.knowledgeTreeCode)));
+    request.resolvedContext?.qualificationCodes.forEach((code) => add(manifest.mappings.find((entry) => entry.code === code)));
     return result;
   }
 
@@ -624,6 +660,26 @@ export class AIContextBuilder {
       };
     }
 
+    if (mappings.length > 2) {
+      return {
+        mode: "multi-qualification-overview",
+        activeBatch: manifest.activeBatch,
+        selections: mappings.map((mapping, index) => ({
+          code: entries[index].code,
+          qualificationVersionId: mapping.qualificationVersionId,
+          board: mapping.board,
+          subjectCode: mapping.subjectCode,
+          subjectName: mapping.subjectName,
+          level: mapping.level,
+          syllabusVersion: mapping.syllabusVersion,
+          selectedPaperId: selectedPaperIds[index] ?? null,
+          sourceIds: sourceIds.get(mapping.qualificationVersionId),
+          aqaOriginalTextPolicy: mapping.board === "AQA" ? "Original AQA wording is intentionally withheld from the model." : undefined,
+        })),
+        knowledgeComparisonPolicy: "Exact knowledge overlap is intentionally not aggregated across three or four qualifications. Request a pairwise comparison for exact directional coverage and Jaccard metrics.",
+      };
+    }
+
     const [mappingA, mappingB] = mappings;
     const paperA = selectedPaperIds[0] || null;
     const paperB = selectedPaperIds[1] || null;
@@ -696,12 +752,18 @@ export class AIContextBuilder {
       : undefined;
 
     const resolvedContext: AIResolvedContext = {
-      qualificationIds: courses.map((course) => course.qualificationId).slice(0, 2),
-      qualificationCodes: knowledgeEntries.map((entry) => entry.code).slice(0, 2),
+      awardQualificationIds: [...new Set([
+        ...courses.map(awardQualificationIdForCourse),
+      ])].slice(0, 4),
+      qualificationVersionIds: [...new Set([
+        ...knowledgeEntries.map(entry => entry.qualificationVersionId),
+      ])].slice(0, 4),
+      qualificationIds: courses.map((course) => course.qualificationId).slice(0, 4),
+      qualificationCodes: knowledgeEntries.map((entry) => entry.code).slice(0, 4),
       paperIds: selectedPaperIds.filter((paperId): paperId is string => Boolean(paperId)),
       labels: (knowledgeEntries.length > 0
         ? knowledgeEntries.map((entry) => `${entry.board} ${entry.subjectCode} ${entry.subjectName}`)
-        : courses.map((course) => course.label)).slice(0, 2),
+        : courses.map((course) => course.label)).slice(0, 4),
     };
 
     if (overviews.length === 0 && !knowledge) {

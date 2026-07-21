@@ -13,8 +13,17 @@ export const AIPageContextSchema = z.object({
   pageType: z.enum(["assistant-home", "exam-overview", "knowledge-comparison", "academic-results", "difficulty-comparison", "transition-readiness"]),
   route: z.string().min(1).max(500),
   // Empty slots preserve A/B alignment for Paper-vs-subject comparisons.
-  selectedPaperIds: z.array(z.string().max(120)).max(2).default([]),
-  comparisonIds: z.array(z.string().min(1).max(120)).max(2).default([]),
+  selectedPaperIds: z.array(z.string().max(120)).max(4).default([]),
+  comparisonIds: z.array(z.string().min(1).max(120)).max(4).default([]),
+});
+
+export const AIQueryScopeSchema = z.object({
+  awardQualificationIds: z.array(z.string().min(1).max(200)).max(4).default([]),
+  qualificationVersionIds: z.array(z.string().min(1).max(200)).max(4).default([]),
+  catalogQualificationIds: z.array(z.string().min(1).max(200)).max(4).default([]),
+  source: z.enum(["explicit-query", "manual-selection", "page-context", "inferred"]),
+}).refine(value => value.awardQualificationIds.length + value.qualificationVersionIds.length + value.catalogQualificationIds.length > 0, {
+  message: "a query scope must identify at least one qualification",
 });
 
 const AIAcademicQuerySchema = z.discriminatedUnion("type", [
@@ -50,17 +59,24 @@ const AIAnonymousMasterySchema = z.array(z.object({
 });
 
 export const AIResolvedContextSchema = z.object({
-  qualificationIds: z.array(z.string().min(1).max(200)).max(2),
-  qualificationCodes: z.array(z.string().min(1).max(80)).max(2),
-  paperIds: z.array(z.string().min(1).max(120)).max(2),
-  labels: z.array(z.string().min(1).max(240)).max(2),
+  awardQualificationIds: z.array(z.string().min(1).max(200)).max(4).default([]),
+  qualificationVersionIds: z.array(z.string().min(1).max(200)).max(4).default([]),
+  qualificationIds: z.array(z.string().min(1).max(200)).max(4),
+  qualificationCodes: z.array(z.string().min(1).max(80)).max(4),
+  paperIds: z.array(z.string().min(1).max(120)).max(4),
+  labels: z.array(z.string().min(1).max(240)).max(4),
 });
 
 export const AIChatRequestSchema = z.object({
+  version: z.literal(2).default(2),
   mode: z.literal("exam_assistant"),
-  qualificationIds: z.array(z.string().min(1).max(200)).max(2),
-  syllabusVersions: z.array(z.string().min(1).max(120)).max(2),
+  scopes: z.array(AIQueryScopeSchema).max(4).default([]),
+  // Deprecated V1 fields are accepted only for in-tab request/session migration.
+  qualificationIds: z.array(z.string().min(1).max(200)).max(4).default([]),
+  syllabusVersions: z.array(z.string().min(1).max(120)).max(4).default([]),
   pageContext: AIPageContextSchema,
+  pageContextQualificationVersionId: z.string().min(1).max(200).optional(),
+  roleView: z.enum(["teaching", "consulting", "sales", "operations"]).default("consulting"),
   messages: z.array(AIChatMessageSchema).min(1).max(AI_ASSISTANT_HISTORY_MAX_MESSAGES),
   locale: z.enum(["zh-CN", "en-GB"]).default("zh-CN"),
   resolvedContext: AIResolvedContextSchema.optional(),
@@ -112,6 +128,7 @@ export const AIStreamEventSchema = z.discriminatedUnion("type", [
 export type AIChatMessage = z.infer<typeof AIChatMessageSchema>;
 export type AIChatRequest = z.infer<typeof AIChatRequestSchema>;
 export type AIPageContext = z.infer<typeof AIPageContextSchema>;
+export type AIQueryScope = z.infer<typeof AIQueryScopeSchema>;
 export type AIResolvedContext = z.infer<typeof AIResolvedContextSchema>;
 export type AICitation = z.infer<typeof AICitationSchema>;
 export type AIStreamEvent = z.infer<typeof AIStreamEventSchema>;

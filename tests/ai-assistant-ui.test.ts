@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import Header from "@/components/Header";
 import AIAssistantPage from "@/pages/AIAssistantPage";
+import { safeStoredSession } from "@/components/ai/AIChatPanel";
 import { CourseContextProvider } from "@/course-context/CourseContextProvider";
 import { isAIAssistantEnabled } from "@/domain-v2/shared/feature-flags";
 
@@ -37,5 +38,14 @@ describe("AI assistant internal-preview UI", () => {
     expect(html).toContain("输入问题；Shift + Enter 换行");
     expect(html).toContain("对话仅保存在当前浏览器标签页");
     expect(html).toContain("选择课程");
+  });
+
+  it("migrates a V1 conversation only inside the current session payload", () => {
+    const migrated = safeStoredSession(JSON.stringify({
+      version: 1,
+      messages: [{ id: "m1", role: "user", content: "9709是什么？" }],
+    }));
+    expect(migrated).toMatchObject({ version: 2, scopes: [], roleView: "consulting" });
+    expect(migrated?.messages).toHaveLength(1);
   });
 });

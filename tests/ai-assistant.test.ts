@@ -17,12 +17,15 @@ import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai"
 
 function request(overrides: Partial<AIChatRequest> = {}): AIChatRequest {
   return {
+    version: 2,
     mode: "exam_assistant",
+    scopes: [],
     qualificationIds: [],
     syllabusVersions: [],
     pageContext: { pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [], comparisonIds: [] },
     messages: [{ role: "user", content: "9709 可以使用计算器吗？" }],
     locale: "zh-CN",
+    roleView: "consulting",
     ...overrides,
   };
 }
@@ -38,7 +41,7 @@ function parseSSE(body: string): Array<Record<string, unknown>> {
 describe("AI assistant request and history safety", () => {
   it("rejects oversized messages, excessive courses, and unknown modes", () => {
     expect(AIChatRequestSchema.safeParse({ ...request(), messages: [{ role: "user", content: "x".repeat(2_001) }] }).success).toBe(false);
-    expect(AIChatRequestSchema.safeParse({ ...request(), qualificationIds: ["a", "b", "c"] }).success).toBe(false);
+    expect(AIChatRequestSchema.safeParse({ ...request(), qualificationIds: ["a", "b", "c", "d", "e"] }).success).toBe(false);
     expect(AIChatRequestSchema.safeParse({ ...request(), mode: "advisor_consult" }).success).toBe(false);
   });
 
@@ -63,6 +66,34 @@ describe("AI assistant context builder", () => {
     expect(result.resolvedContext.qualificationCodes).toContain("CAIE-9709");
     expect(result.promptContext).toContain("CAIE-9709");
     expect(result.sources.length).toBeGreaterThan(0);
+  });
+
+  it("lets explicit question qualifications replace conflicting page context", async () => {
+    const result = await builder.build(request({
+      scopes: [{
+        awardQualificationIds: ["award:aqa:7357"],
+        qualificationVersionIds: ["AQA-7357:1.3"],
+        catalogQualificationIds: ["qual:aqa:a-level:7357"],
+        source: "page-context",
+      }],
+      qualificationIds: ["qual:aqa:a-level:7357"],
+      pageContext: { pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [], comparisonIds: ["AQA-7357"] },
+      messages: [{ role: "user", content: "比较 9709 和 9231 的考试结构" }],
+    }));
+    expect(result.resolvedContext.qualificationCodes).toEqual(["CAIE-9709", "CAIE-9231"]);
+    expect(result.resolvedContext.awardQualificationIds).toEqual(["award:caie:9709", "award:caie:9231"]);
+    expect(result.resolvedContext.qualificationCodes).not.toContain("AQA-7357");
+  });
+
+  it("supports three-qualification fact context without inventing a multi-way knowledge percentage", async () => {
+    const result = await builder.build(request({
+      messages: [{ role: "user", content: "比较 0580、9709 和 9231 的考试结构" }],
+    }));
+    const payload = JSON.parse(result.promptContext) as { knowledge: { mode: string; selections: unknown[]; knowledgeComparisonPolicy: string } };
+    expect(result.resolvedContext.qualificationCodes).toEqual(["CAIE-0580", "CAIE-9709", "CAIE-9231"]);
+    expect(payload.knowledge.mode).toBe("multi-qualification-overview");
+    expect(payload.knowledge.selections).toHaveLength(3);
+    expect(payload.knowledge.knowledgeComparisonPolicy).toContain("pairwise");
   });
 
   it("resolves S1, Paper 5, P5 and component variants to the approved 9709 Paper 5 ID", async () => {
@@ -96,6 +127,8 @@ describe("AI assistant context builder", () => {
 
   it("lets an explicit follow-up Paper override an older resolved Paper while preserving vague follow-ups", async () => {
     const base = {
+      awardQualificationIds: ["award:caie:9709"],
+      qualificationVersionIds: ["CAIE-9709:2026-2027"],
       qualificationIds: ["qual:caie:a-level:9709"],
       qualificationCodes: ["CAIE-9709"],
       paperIds: ["CAIE-9709-Paper-5"],
@@ -323,7 +356,7 @@ describe("AI assistant provider boundaries", () => {
       pageContext: { pageType: "knowledge-comparison", route: "/knowledge-tree", selectedPaperIds: [], comparisonIds: ["CAIE-9709"] },
     }))).toBe(true);
     expect(isComplexAIQuestion(request({
-      resolvedContext: { qualificationIds: ["a", "b"], qualificationCodes: ["A", "B"], paperIds: [], labels: ["A", "B"] },
+      resolvedContext: { awardQualificationIds: ["award:a", "award:b"], qualificationVersionIds: ["A:v1", "B:v1"], qualificationIds: ["a", "b"], qualificationCodes: ["A", "B"], paperIds: [], labels: ["A", "B"] },
     }))).toBe(true);
   });
 
@@ -627,7 +660,7 @@ describe("AI assistant HTTP/SSE boundary", () => {
   });
 
   it("streams AQA local answers without provider configuration, quota, or calls", async () => {
-    const resolvedContext = { qualificationIds: ["aqa"], qualificationCodes: ["AQA-7357"], paperIds: [], labels: ["AQA 7357"] };
+    const resolvedContext = { awardQualificationIds: ["award:aqa:7357"], qualificationVersionIds: ["AQA-7357:1.3"], qualificationIds: ["aqa"], qualificationCodes: ["AQA-7357"], paperIds: [], labels: ["AQA 7357"] };
     const provider = { isConfigured: () => false, stream: vi.fn() };
     const serviceGuard = {
       beginProviderRequest: vi.fn(),
@@ -668,6 +701,8 @@ describe("AI assistant HTTP/SSE boundary", () => {
 
   it("streams typed data-only events with resolved context and allow-listed citations", async () => {
     const resolvedContext = {
+      awardQualificationIds: ["award:caie:9709"],
+      qualificationVersionIds: ["CAIE-9709:2026-2027"],
       qualificationIds: ["qual:caie:a-level:9709"],
       qualificationCodes: ["CAIE-9709"],
       paperIds: [],
@@ -785,7 +820,7 @@ describe("AI assistant HTTP/SSE boundary", () => {
   });
 
   it("returns local clarification and configuration errors without using provider quota", async () => {
-    const resolvedContext = { qualificationIds: [], qualificationCodes: [], paperIds: [], labels: [] };
+    const resolvedContext = { awardQualificationIds: [], qualificationVersionIds: [], qualificationIds: [], qualificationCodes: [], paperIds: [], labels: [] };
     const builder = vi.fn()
       .mockResolvedValueOnce({ promptContext: "{}", sources: [], resolvedContext, clarification: "请先选择课程。" })
       .mockResolvedValueOnce({ promptContext: "{}", sources: [], resolvedContext });
@@ -819,7 +854,7 @@ describe("AI assistant HTTP/SSE boundary", () => {
   });
 
   it("blocks exhausted service limits and records provider failures", async () => {
-    const resolvedContext = { qualificationIds: [], qualificationCodes: ["CAIE-9709"], paperIds: [], labels: ["9709"] };
+    const resolvedContext = { awardQualificationIds: ["award:caie:9709"], qualificationVersionIds: ["CAIE-9709:2026-2027"], qualificationIds: [], qualificationCodes: ["CAIE-9709"], paperIds: [], labels: ["9709"] };
     const builder = { build: vi.fn().mockResolvedValue({ promptContext: "{}", sources: [], resolvedContext }) };
     const provider = {
       isConfigured: () => true,
