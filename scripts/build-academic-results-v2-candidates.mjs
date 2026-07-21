@@ -37,6 +37,29 @@ function addSource({ sourceId, board, officialUrl, documentTitle, documentVersio
   return sourceId;
 }
 
+addSource({
+    sourceId: "source:uk-written-exams-cancelled-2020",
+    board: "UK government",
+    officialUrl: "https://www.gov.uk/government/publications/coronavirus-covid-19-cancellation-of-gcses-as-and-a-levels-in-2020",
+    documentTitle: "Cancellation of GCSEs, AS and A levels in 2020",
+    publishedAt: "2020-03-20",
+    accessedAt: "2026-07-22",
+    effectiveFrom: "2020-03-20",
+    effectiveTo: "2020-12-31",
+    verificationStatus: "codex-reviewed",
+});
+addSource({
+    sourceId: "source:uk-written-exams-cancelled-2021",
+    board: "UK government",
+    officialUrl: "https://www.gov.uk/government/publications/gcse-as-and-a-level-summer-report-2021/gcse-as-and-a-level-summer-report-2021",
+    documentTitle: "GCSE, AS and A level summer report 2021",
+    publishedAt: "2021-12-02",
+    accessedAt: "2026-07-22",
+    effectiveFrom: "2021-01-01",
+    effectiveTo: "2021-12-31",
+    verificationStatus: "codex-reviewed",
+});
+
 function parseSeries(value) {
   const normalized = String(value).trim().toLowerCase().replace("autumn", "november").replace("summer", "june");
   const match = normalized.match(/(20\d{2})[- ](jan(?:uary)?|mar(?:ch)?|jun(?:e)?|oct(?:ober)?|nov(?:ember)?)/)
@@ -497,6 +520,8 @@ function toStatistics({ qualification, awardQualificationId, subject, year, sour
     year: year.year,
     series: year.series === "summer" ? "june" : year.series === "autumn" ? "november" : year.series,
     regionScope: "all-published-candidates",
+    populationScope: "all-candidates",
+    statisticsScope: "overall",
     candidateCount: year.entries ?? null,
     rateKind: "cumulative",
     gradeOrder,

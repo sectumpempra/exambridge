@@ -3,6 +3,11 @@ import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { createServer } from "vite";
 import { buildAcademicResultsCoverageMatrix, loadAcademicResultsCoverageInputs } from "./lib/academic-results-v2-coverage.mjs";
+import {
+  buildCoverageExpectationPolicies,
+  buildCoverageMigrationReport,
+  buildSparseCoverageMatrices,
+} from "./lib/academic-results-v3-coverage.mjs";
 
 const root = process.cwd();
 const scopePath = join(root, "data", "candidates", "academic-results-v2", "scope.json");
@@ -186,6 +191,24 @@ for (const boundary of candidate.boundaries ?? []) {
 }
 
 const coverageMatrix = await buildAcademicResultsCoverageMatrix(coverageInputs.scope, coverageInputs.candidate);
+const policyCatalog = buildCoverageExpectationPolicies(coverageInputs.scope, coverageInputs.candidate, identityCatalog);
+const sparseMatrices = buildSparseCoverageMatrices(coverageInputs.scope, coverageInputs.candidate, policyCatalog);
+const migrationReport = buildCoverageMigrationReport(coverageMatrix, sparseMatrices);
+
+const sparseArtifacts = [
+  ["coverage expectation policies", academicSchemas.CoverageExpectationPolicyCatalogV1Schema, policyCatalog],
+  ["boundary coverage matrix", academicSchemas.BoundaryCoverageMatrixV1Schema, sparseMatrices.boundaries],
+  ["statistics coverage matrix", academicSchemas.StatisticsCoverageMatrixV1Schema, sparseMatrices.statistics],
+  ["rule coverage matrix", academicSchemas.RuleCoverageMatrixV1Schema, sparseMatrices.rules],
+];
+for (const [label, schema, value] of sparseArtifacts) {
+  const parsed = schema.safeParse(value);
+  if (!parsed.success) failures.push(`${label} schema failure: ${parsed.error.issues.map(issue => `${issue.path.join(".")}: ${issue.message}`).join("; ")}`);
+}
+
+if (sparseMatrices.statistics.blockingCellCount > 0) failures.push("unexpected or conflicting Grade Statistics records must be adjudicated");
+if (sparseMatrices.boundaries.blockingCellCount > 0) failures.push("unexpected or conflicting boundary records must be adjudicated");
+if (sparseMatrices.rules.blockingCellCount > 0) failures.push("unexpected or conflicting award-rule records must be adjudicated");
 
 const report = {
   schemaVersion: "1.0.0",
@@ -195,6 +218,32 @@ const report = {
   coverageCellCount: coverageMatrix.cells.length,
   expectedCoverageCellCount: coverageMatrix.expectedCellCount,
   unresolvedCoverageCellCount: coverageMatrix.unresolvedCellCount,
+  sparseCoverage: {
+    boundaries: {
+      expected: sparseMatrices.boundaries.expectedCellCount,
+      satisfied: sparseMatrices.boundaries.satisfiedCellCount,
+      explainedUnavailable: sparseMatrices.boundaries.explainedUnavailableCellCount,
+      pending: sparseMatrices.boundaries.pendingCellCount,
+      unexpected: sparseMatrices.boundaries.unexpectedRecordCount,
+      blocking: sparseMatrices.boundaries.blockingCellCount,
+    },
+    statistics: {
+      expected: sparseMatrices.statistics.expectedCellCount,
+      satisfied: sparseMatrices.statistics.satisfiedCellCount,
+      explainedUnavailable: sparseMatrices.statistics.explainedUnavailableCellCount,
+      pending: sparseMatrices.statistics.pendingCellCount,
+      unexpected: sparseMatrices.statistics.unexpectedRecordCount,
+      blocking: sparseMatrices.statistics.blockingCellCount,
+      blocksRuleMaturity: false,
+    },
+    rules: {
+      expected: sparseMatrices.rules.expectedCellCount,
+      satisfied: sparseMatrices.rules.satisfiedCellCount,
+      pending: sparseMatrices.rules.pendingCellCount,
+      unexpected: sparseMatrices.rules.unexpectedRecordCount,
+      blocking: sparseMatrices.rules.blockingCellCount,
+    },
+  },
   activeCounts: {
     sources: active.sources.length,
     boundaries: active.boundaries.length,
@@ -208,12 +257,20 @@ const report = {
 };
 
 await mkdir(generatedDirectory, { recursive: true });
-await writeFile(join(generatedDirectory, "coverage-matrix.json"), `${JSON.stringify(coverageMatrix, null, 2)}\n`);
-await writeFile(join(generatedDirectory, "baseline-audit.json"), `${JSON.stringify(report, null, 2)}\n`);
+await Promise.all([
+  writeFile(join(generatedDirectory, "coverage-matrix.json"), `${JSON.stringify(coverageMatrix, null, 2)}\n`),
+  writeFile(join(generatedDirectory, "legacy-combined-coverage.json"), `${JSON.stringify(coverageMatrix, null, 2)}\n`),
+  writeFile(join(generatedDirectory, "coverage-expectation-policies.json"), `${JSON.stringify(policyCatalog, null, 2)}\n`),
+  writeFile(join(generatedDirectory, "boundary-coverage-matrix.json"), `${JSON.stringify(sparseMatrices.boundaries, null, 2)}\n`),
+  writeFile(join(generatedDirectory, "statistics-coverage-matrix.json"), `${JSON.stringify(sparseMatrices.statistics, null, 2)}\n`),
+  writeFile(join(generatedDirectory, "rule-coverage-matrix.json"), `${JSON.stringify(sparseMatrices.rules, null, 2)}\n`),
+  writeFile(join(generatedDirectory, "coverage-migration-report.json"), `${JSON.stringify(migrationReport, null, 2)}\n`),
+  writeFile(join(generatedDirectory, "baseline-audit.json"), `${JSON.stringify(report, null, 2)}\n`),
+]);
 
 if (failures.length > 0) {
   console.error(failures.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log(`Academic Results V2 audit passed: ${qualifications.length} qualifications, ${coverageMatrix.expectedCellCount} expected route-series cells, ${coverageMatrix.unresolvedCellCount} unresolved, ${trackedPdfs.length} tracked PDFs.`);
+  console.log(`Academic Results V2 audit passed: ${qualifications.length} qualifications; sparse coverage boundary/statistics/rules pending ${sparseMatrices.boundaries.pendingCellCount}/${sparseMatrices.statistics.pendingCellCount}/${sparseMatrices.rules.pendingCellCount}; legacy unresolved ${coverageMatrix.unresolvedCellCount}; ${trackedPdfs.length} tracked PDFs.`);
 }

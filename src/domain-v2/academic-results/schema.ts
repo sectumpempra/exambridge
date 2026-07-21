@@ -108,6 +108,211 @@ export const AcademicResultsCoverageMatrixV2Schema = z.strictObject({
   cells: z.array(AcademicResultsCoverageCellV2Schema),
 });
 
+export const AdministrationStatusV1Schema = z.enum([
+  "held",
+  "not-held",
+  "cancelled",
+  "not-published",
+  "restricted",
+  "unknown",
+]);
+
+export const CoverageResolutionStatusV1Schema = z.enum([
+  "satisfied",
+  "explained-unavailable",
+  "pending",
+  "unexpected-record",
+  "conflicting-record",
+  "not-applicable",
+]);
+
+const CoverageExpectationBaseV1Shape = {
+  expectationId: NonEmptyString,
+  awardQualificationId: NonEmptyString,
+  qualificationVersionId: NonEmptyString,
+  effectiveFrom: DateSchema,
+  effectiveTo: DateSchema.optional(),
+  sourceIds: z.array(NonEmptyString).min(1),
+  reviewStatus: ReviewStatusSchema,
+};
+
+export const BoundaryExpectationV1Schema = z.strictObject({
+  ...CoverageExpectationBaseV1Shape,
+  series: z.array(ExamSeriesSchema).min(1),
+  routeId: NonEmptyString,
+  boundaryScope: z.enum(["component", "overall"]),
+  tier: NonEmptyString.optional(),
+  optionCode: NonEmptyString.optional(),
+  componentVariants: z.array(NonEmptyString).min(1).optional(),
+  region: NonEmptyString.optional(),
+  componentCode: NonEmptyString.optional(),
+}).superRefine((value, ctx) => {
+  if (value.effectiveTo && value.effectiveTo < value.effectiveFrom) {
+    ctx.addIssue({ code: "custom", path: ["effectiveTo"], message: "effectiveTo must not precede effectiveFrom" });
+  }
+  if (value.boundaryScope === "component" && !value.componentCode) {
+    ctx.addIssue({ code: "custom", path: ["componentCode"], message: "component boundary expectations require componentCode" });
+  }
+  if (value.boundaryScope === "overall" && value.componentCode) {
+    ctx.addIssue({ code: "custom", path: ["componentCode"], message: "overall boundary expectations must not declare componentCode" });
+  }
+});
+
+export const StatisticsExpectationV1Schema = z.strictObject({
+  ...CoverageExpectationBaseV1Shape,
+  series: z.array(ExamSeriesSchema).min(1),
+  routeId: NonEmptyString.optional(),
+  regionScope: NonEmptyString,
+  populationScope: NonEmptyString,
+  statisticsScope: z.enum(["component", "overall"]),
+  componentCode: NonEmptyString.optional(),
+  rateKind: z.enum(["cumulative", "exclusive"]),
+}).superRefine((value, ctx) => {
+  if (value.effectiveTo && value.effectiveTo < value.effectiveFrom) {
+    ctx.addIssue({ code: "custom", path: ["effectiveTo"], message: "effectiveTo must not precede effectiveFrom" });
+  }
+  if (value.statisticsScope === "component" && !value.componentCode) {
+    ctx.addIssue({ code: "custom", path: ["componentCode"], message: "component statistics expectations require componentCode" });
+  }
+  if (value.statisticsScope === "overall" && value.componentCode) {
+    ctx.addIssue({ code: "custom", path: ["componentCode"], message: "overall statistics expectations must not declare componentCode" });
+  }
+});
+
+export const RuleClauseV1Schema = z.enum([
+  "qualification-version",
+  "paper-structure",
+  "valid-combination",
+  "scoring-scale",
+  "rounding",
+  "carry-forward",
+  "resit",
+  "cash-in",
+  "unit-locking",
+  "a-star",
+  "boundary-selection",
+]);
+
+export const RuleExpectationV1Schema = z.strictObject({
+  ...CoverageExpectationBaseV1Shape,
+  routeId: NonEmptyString,
+  combinationId: NonEmptyString,
+  requiredClauses: z.array(RuleClauseV1Schema).min(1),
+}).superRefine((value, ctx) => {
+  if (value.effectiveTo && value.effectiveTo < value.effectiveFrom) {
+    ctx.addIssue({ code: "custom", path: ["effectiveTo"], message: "effectiveTo must not precede effectiveFrom" });
+  }
+});
+
+export const CoverageExpectationPolicyV1Schema = z.strictObject({
+  schemaVersion: z.literal("1.0.0"),
+  policyId: NonEmptyString,
+  awardQualificationId: NonEmptyString,
+  sourceIds: z.array(NonEmptyString).min(1),
+  boundaryExpectations: z.array(BoundaryExpectationV1Schema),
+  statisticsExpectations: z.array(StatisticsExpectationV1Schema),
+  ruleExpectations: z.array(RuleExpectationV1Schema),
+  reviewStatus: ReviewStatusSchema,
+});
+
+export const CoverageExpectationPolicyCatalogV1Schema = z.strictObject({
+  schemaVersion: z.literal("1.0.0"),
+  policies: z.array(CoverageExpectationPolicyV1Schema).min(1),
+}).superRefine((value, ctx) => {
+  const awardIds = value.policies.map(policy => policy.awardQualificationId);
+  if (new Set(awardIds).size !== awardIds.length) {
+    ctx.addIssue({ code: "custom", path: ["policies"], message: "policies must have unique awardQualificationId values" });
+  }
+  const expectationIds = value.policies.flatMap(policy => [
+    ...policy.boundaryExpectations,
+    ...policy.statisticsExpectations,
+    ...policy.ruleExpectations,
+  ].map(expectation => expectation.expectationId));
+  if (new Set(expectationIds).size !== expectationIds.length) {
+    ctx.addIssue({ code: "custom", path: ["policies"], message: "expectationId values must be globally unique" });
+  }
+});
+
+const CoverageCellBaseV1Shape = {
+  cellId: NonEmptyString,
+  expectationId: NonEmptyString.optional(),
+  awardQualificationId: NonEmptyString,
+  qualificationVersionId: NonEmptyString,
+  administrationStatus: AdministrationStatusV1Schema,
+  coverageStatus: CoverageResolutionStatusV1Schema,
+  recordReviewStatus: ReviewStatusSchema.nullable(),
+  observedRecordIds: z.array(NonEmptyString),
+  sourceIds: z.array(NonEmptyString),
+  notes: z.array(NonEmptyString),
+};
+
+export const BoundaryCoverageCellV1Schema = z.strictObject({
+  ...CoverageCellBaseV1Shape,
+  year: z.number().int().min(2019).max(2100),
+  series: ExamSeriesSchema,
+  routeId: NonEmptyString,
+  boundaryScope: z.enum(["component", "overall"]),
+  tier: NonEmptyString.optional(),
+  optionCode: NonEmptyString.optional(),
+  componentVariants: z.array(NonEmptyString).min(1).optional(),
+  region: NonEmptyString.optional(),
+  componentCode: NonEmptyString.optional(),
+});
+
+export const StatisticsCoverageCellV1Schema = z.strictObject({
+  ...CoverageCellBaseV1Shape,
+  year: z.number().int().min(2019).max(2100),
+  series: ExamSeriesSchema,
+  routeId: NonEmptyString.optional(),
+  regionScope: NonEmptyString,
+  populationScope: NonEmptyString,
+  statisticsScope: z.enum(["component", "overall"]),
+  componentCode: NonEmptyString.optional(),
+  rateKind: z.enum(["cumulative", "exclusive"]),
+});
+
+export const RuleCoverageCellV1Schema = z.strictObject({
+  ...CoverageCellBaseV1Shape,
+  routeId: NonEmptyString,
+  combinationId: NonEmptyString,
+  effectiveFrom: DateSchema,
+  effectiveTo: DateSchema.optional(),
+  requiredClauses: z.array(RuleClauseV1Schema).min(1),
+  satisfiedClauses: z.array(RuleClauseV1Schema),
+  missingClauses: z.array(RuleClauseV1Schema),
+});
+
+const CoverageMatrixSummaryV1Shape = {
+  schemaVersion: z.literal("1.0.0"),
+  generatedAt: DateTimeSchema,
+  baselineCommit: z.string().regex(/^[a-f0-9]{40}$/),
+  qualificationCount: z.number().int().positive(),
+  expectedCellCount: z.number().int().nonnegative(),
+  satisfiedCellCount: z.number().int().nonnegative(),
+  explainedUnavailableCellCount: z.number().int().nonnegative(),
+  pendingCellCount: z.number().int().nonnegative(),
+  unexpectedRecordCount: z.number().int().nonnegative(),
+  blockingCellCount: z.number().int().nonnegative(),
+};
+
+export const BoundaryCoverageMatrixV1Schema = z.strictObject({
+  ...CoverageMatrixSummaryV1Shape,
+  matrixKind: z.literal("grade-boundary"),
+  cells: z.array(BoundaryCoverageCellV1Schema),
+});
+
+export const StatisticsCoverageMatrixV1Schema = z.strictObject({
+  ...CoverageMatrixSummaryV1Shape,
+  matrixKind: z.literal("grade-statistics"),
+  cells: z.array(StatisticsCoverageCellV1Schema),
+});
+
+export const RuleCoverageMatrixV1Schema = z.strictObject({
+  ...CoverageMatrixSummaryV1Shape,
+  matrixKind: z.literal("award-rule"),
+  cells: z.array(RuleCoverageCellV1Schema),
+});
+
 export const SourceEvidenceV1Schema = z.strictObject({
   schemaVersion: z.literal("1.0.0"),
   sourceId: NonEmptyString,
@@ -217,6 +422,9 @@ export const GradeStatisticsV2Schema = z.strictObject({
   routeId: NonEmptyString.optional(),
   tier: NonEmptyString.optional(),
   regionScope: NonEmptyString,
+  populationScope: NonEmptyString.default("all-candidates"),
+  statisticsScope: z.enum(["component", "overall"]).default("overall"),
+  componentCode: NonEmptyString.optional(),
   candidateCount: z.number().int().nonnegative().nullable(),
   rateKind: z.enum(["cumulative", "exclusive"]),
   gradeOrder: z.array(NonEmptyString).min(1),
@@ -231,6 +439,12 @@ export const GradeStatisticsV2Schema = z.strictObject({
   sourceIds: z.array(NonEmptyString),
   verificationStatus: ReviewStatusSchema,
 }).superRefine((value, ctx) => {
+  if (value.statisticsScope === "component" && !value.componentCode) {
+    ctx.addIssue({ code: "custom", path: ["componentCode"], message: "component statistics require componentCode" });
+  }
+  if (value.statisticsScope === "overall" && value.componentCode) {
+    ctx.addIssue({ code: "custom", path: ["componentCode"], message: "overall statistics must not declare componentCode" });
+  }
   if (new Set(value.gradeOrder).size !== value.gradeOrder.length) {
     ctx.addIssue({ code: "custom", path: ["gradeOrder"], message: "gradeOrder must be unique" });
   }
@@ -543,6 +757,13 @@ export type SourceEvidenceV1 = z.infer<typeof SourceEvidenceV1Schema>;
 export type QualificationVersionIdentityV2 = z.infer<typeof QualificationVersionIdentityV2Schema>;
 export type QualificationIdentityV2 = z.infer<typeof QualificationIdentityV2Schema>;
 export type QualificationIdentityCatalogV2 = z.infer<typeof QualificationIdentityCatalogV2Schema>;
+export type AdministrationStatusV1 = z.infer<typeof AdministrationStatusV1Schema>;
+export type CoverageResolutionStatusV1 = z.infer<typeof CoverageResolutionStatusV1Schema>;
+export type CoverageExpectationPolicyV1 = z.infer<typeof CoverageExpectationPolicyV1Schema>;
+export type CoverageExpectationPolicyCatalogV1 = z.infer<typeof CoverageExpectationPolicyCatalogV1Schema>;
+export type BoundaryCoverageMatrixV1 = z.infer<typeof BoundaryCoverageMatrixV1Schema>;
+export type StatisticsCoverageMatrixV1 = z.infer<typeof StatisticsCoverageMatrixV1Schema>;
+export type RuleCoverageMatrixV1 = z.infer<typeof RuleCoverageMatrixV1Schema>;
 export type GradeBoundaryV2 = z.infer<typeof GradeBoundaryV2Schema>;
 export type GradeStatisticsV2 = z.infer<typeof GradeStatisticsV2Schema>;
 export type QualificationAwardRuleV2 = z.infer<typeof QualificationAwardRuleV2Schema>;

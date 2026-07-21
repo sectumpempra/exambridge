@@ -21,7 +21,7 @@ const recurring = (series, routes) => [window("2019-01-01", undefined, series, r
 
 // A policy window is intentionally versioned. Exam series and valid routes change over
 // time, so a current handbook must never be projected backwards over the whole archive.
-const policies = {
+export const legacyCombinedCoveragePolicies = {
   "award:caie:0580": {
     windows: recurring(["march", "june", "november"], ["award:caie:0580:core", "award:caie:0580:extended"]),
     sourceUrls: [CAMBRIDGE_MARCH, CAMBRIDGE_RESULTS],
@@ -91,7 +91,7 @@ const statusWithoutRecord = administration => ["cancelled", "not-held", "not-pub
 export async function buildAcademicResultsCoverageMatrix(scope, candidate) {
   const cells = [];
   for (const qualification of scope.qualifications) {
-    const policy = policies[qualification.awardQualificationId];
+    const policy = legacyCombinedCoveragePolicies[qualification.awardQualificationId];
     if (!policy) throw new Error(`Missing series policy for ${qualification.awardQualificationId}`);
     for (let year = scope.startYear; year <= scope.latestYear; year += 1) {
       const observedPairs = [

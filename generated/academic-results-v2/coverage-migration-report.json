@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "legacy": {
+    "matrixName": "legacy-combined-coverage",
+    "expectedCellCount": 306,
+    "unresolvedCellCount": 216,
+    "status": "archived-metric",
+    "reason": "The legacy cell mixed grade boundaries, Grade Statistics and award rules at route-series grain."
+  },
+  "replacements": {
+    "boundaries": {
+      "expectedCellCount": 270,
+      "pendingCellCount": 251,
+      "unexpectedRecordCount": 8,
+      "blockingCellCount": 0
+    },
+    "statistics": {
+      "expectedCellCount": 169,
+      "pendingCellCount": 131,
+      "unexpectedRecordCount": 42,
+      "blockingCellCount": 0,
+      "blocksRuleMaturity": false
+    },
+    "rules": {
+      "expectedCellCount": 509,
+      "pendingCellCount": 3,
+      "unexpectedRecordCount": 0,
+      "blockingCellCount": 0
+    }
+  }
+}
