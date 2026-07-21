@@ -298,6 +298,50 @@ export const DifficultyProfileV1Schema = z.strictObject({
   path: ["interval"], message: "difficulty score must sit inside its interval",
 });
 
+export const BoundaryPredictionV1Schema = z.strictObject({
+  schemaVersion: z.literal("1.0.0"),
+  predictionId: NonEmptyString,
+  qualificationVersionId: NonEmptyString,
+  awardQualificationId: NonEmptyString,
+  routeId: NonEmptyString,
+  tier: NonEmptyString.optional(),
+  optionCode: NonEmptyString.optional(),
+  targetYear: z.number().int().min(2019).max(2100),
+  targetSeries: ExamSeriesSchema,
+  maximumMark: z.number().finite().positive(),
+  gradeOrder: z.array(NonEmptyString).min(1),
+  predictedThresholds: GradeValueRecordSchema,
+  intervals: z.record(NonEmptyString, z.tuple([
+    z.number().finite().nonnegative(),
+    z.number().finite().nonnegative(),
+  ])),
+  sampleBoundaryIds: z.array(NonEmptyString).min(3).max(5),
+  sampleSeries: z.array(z.string().regex(/^\d{4}-(january|march|june|november)$/)).min(3).max(5),
+  dataCutoff: DateSchema,
+  methodVersion: z.literal("exambridge-boundary-prediction-v1"),
+  confidence: z.enum(["high", "medium", "low"]),
+  disclaimerVersion: NonEmptyString,
+  verificationStatus: z.literal("candidate"),
+}).superRefine((value, ctx) => {
+  if (new Set(value.sampleBoundaryIds).size !== value.sampleBoundaryIds.length) {
+    ctx.addIssue({ code: "custom", path: ["sampleBoundaryIds"], message: "sample boundary IDs must be unique" });
+  }
+  if (new Set(value.sampleSeries).size !== value.sampleSeries.length) {
+    ctx.addIssue({ code: "custom", path: ["sampleSeries"], message: "sample series must be unique" });
+  }
+  for (const grade of value.gradeOrder) {
+    const threshold = value.predictedThresholds[grade];
+    if (threshold === null || threshold === undefined) continue;
+    if (threshold > value.maximumMark) {
+      ctx.addIssue({ code: "custom", path: ["predictedThresholds", grade], message: "prediction exceeds maximumMark" });
+    }
+    const interval = value.intervals[grade];
+    if (!interval || interval[0] > threshold || threshold > interval[1] || interval[1] > value.maximumMark) {
+      ctx.addIssue({ code: "custom", path: ["intervals", grade], message: "prediction must sit inside a valid interval" });
+    }
+  }
+});
+
 export const StudentMasteryProfileV1Schema = z.strictObject({
   schemaVersion: z.literal("1.0.0"),
   profileVersion: z.literal(1),
@@ -344,6 +388,16 @@ export const ExternalEvidenceV1Schema = z.strictObject({
   }
 });
 
+export const AcademicResultsManifestV2Schema = z.strictObject({
+  schemaVersion: z.literal("2.0.0"),
+  activationBatch: NonEmptyString.nullable(),
+  sources: z.array(SourceEvidenceV1Schema),
+  boundaries: z.array(GradeBoundaryV2Schema),
+  statistics: z.array(GradeStatisticsV2Schema),
+  awardRules: z.array(QualificationAwardRuleV2Schema),
+  difficultyProfiles: z.array(DifficultyProfileV1Schema),
+});
+
 export type SourceEvidenceV1 = z.infer<typeof SourceEvidenceV1Schema>;
 export type GradeBoundaryV2 = z.infer<typeof GradeBoundaryV2Schema>;
 export type GradeStatisticsV2 = z.infer<typeof GradeStatisticsV2Schema>;
@@ -352,5 +406,7 @@ export type AwardComponentScoreV2 = z.infer<typeof AwardComponentScoreV2Schema>;
 export type AwardCalculationInputV2 = z.infer<typeof AwardCalculationInputV2Schema>;
 export type AwardCalculationResultV2 = z.infer<typeof AwardCalculationResultV2Schema>;
 export type DifficultyProfileV1 = z.infer<typeof DifficultyProfileV1Schema>;
+export type BoundaryPredictionV1 = z.infer<typeof BoundaryPredictionV1Schema>;
 export type StudentMasteryProfileV1 = z.infer<typeof StudentMasteryProfileV1Schema>;
 export type ExternalEvidenceV1 = z.infer<typeof ExternalEvidenceV1Schema>;
+export type AcademicResultsManifestV2 = z.infer<typeof AcademicResultsManifestV2Schema>;

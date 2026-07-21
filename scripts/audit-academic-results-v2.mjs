@@ -4,7 +4,7 @@ import { join, relative } from "node:path";
 
 const root = process.cwd();
 const scopePath = join(root, "data", "candidates", "academic-results-v2", "scope.json");
-const activePath = join(root, "src", "data", "official", "academic-results-v2", "manifest.json");
+const activePath = join(root, "public", "data", "academic-results-v2", "manifest.json");
 const generatedDirectory = join(root, "generated", "academic-results-v2");
 const failures = [];
 

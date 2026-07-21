@@ -8,6 +8,7 @@ import { AnonymousAIRateLimiter } from "./rate-limit";
 import { AIServiceGuard, createAIServiceGuardFromEnv } from "./service-guard";
 import { buildAISystemPrompt, isComplexAIQuestion } from "./prompt";
 import { enforceDeterministicPaperFacts } from "./answer-grounding";
+import { OpenAIWebSearchError, OpenAIWebSearchProvider, type OfficialSearchResult } from "./openai-web-search";
 
 const PORT = Number(process.env.AI_PORT ?? 8789);
 const HOST = process.env.AI_HOST ?? "127.0.0.1";
@@ -18,6 +19,45 @@ export interface AIHttpServerDependencies {
   provider: Pick<DeepSeekChatProvider, "isConfigured" | "stream">;
   limiter: Pick<AnonymousAIRateLimiter, "acquire">;
   serviceGuard: Pick<AIServiceGuard, "beginProviderRequest" | "recordProviderSuccess" | "recordProviderFailure">;
+  webSearch?: Pick<OpenAIWebSearchProvider, "isConfigured" | "search">;
+}
+
+function latestUserMessage(request: ReturnType<typeof AIChatRequestSchema.parse>) {
+  return [...request.messages].reverse().find(message => message.role === "user")?.content ?? "";
+}
+
+function searchYearAndSeries(request: ReturnType<typeof AIChatRequestSchema.parse>) {
+  if (request.academicQuery?.type === "lookup") {
+    return { year: request.academicQuery.year, series: request.academicQuery.series };
+  }
+  const message = latestUserMessage(request).toLowerCase();
+  const yearMatch = /\b(20\d{2})\b/.exec(message);
+  const series = /january|一月|1月/.test(message) ? "january"
+    : /march|三月|3月/.test(message) ? "march"
+      : /june|夏季|六月|6月|5\s*\/\s*6月/.test(message) ? "june"
+        : /november|冬季|十一月|11月|10\s*\/\s*11月/.test(message) ? "november"
+          : undefined;
+  return { year: yearMatch ? Number(yearMatch[1]) : undefined, series } as const;
+}
+
+function appendExternalSearchContext(
+  promptContext: string,
+  result: OfficialSearchResult | { status: string },
+  sourceId?: string,
+) {
+  const payload = JSON.parse(promptContext) as Record<string, unknown>;
+  payload.externalOfficialSearch = "evidence" in result ? {
+    status: result.evidence.directAnswerEligible ? "official-live-candidate-direct-answer-eligible" : "candidate-insufficient-for-determined-number",
+    evidence: {
+      ...result.evidence,
+      sourceId,
+      label: "Official live search; not yet active",
+    },
+    summary: result.evidence.directAnswerEligible ? result.summary : undefined,
+    numericFacts: result.evidence.directAnswerEligible ? result.numericFacts : [],
+    cached: result.cached,
+  } : result;
+  return JSON.stringify(payload);
 }
 
 function json(res: ServerResponse, status: number, value: unknown) {
@@ -92,6 +132,7 @@ async function handleChat(
   dependencies: AIHttpServerDependencies,
 ) {
   const { builder, provider, limiter, serviceGuard } = dependencies;
+  const webSearch = dependencies.webSearch ?? { isConfigured: () => false };
   if (!originAllowed(req)) {
     json(res, 403, { error: "origin-not-allowed" });
     return;
@@ -135,6 +176,8 @@ async function handleChat(
   try {
     const request = { ...parsed.data, messages: pruneAIChatHistory(parsed.data.messages) };
     const context = await builder.build(request);
+    let promptContext = context.promptContext;
+    const sources = [...context.sources];
     sendEvent(res, { type: "meta", requestId, resolvedContext: context.resolvedContext });
 
     if (context.clarification) {
@@ -142,6 +185,54 @@ async function handleChat(
       sendEvent(res, { type: "suggestions", suggestions: ["选择当前课程", "输入资格代码，例如 9709"] });
       sendEvent(res, { type: "done", answer: context.clarification, requestId, resolvedContext: context.resolvedContext });
       return;
+    }
+    if (context.localAnswer) {
+      status = "local-success";
+      model = "exambridge-local-deterministic";
+      const citations = hydrateCitations(context.localAnswer, context.sources);
+      sendEvent(res, { type: "delta", text: context.localAnswer });
+      if (citations.length > 0) sendEvent(res, { type: "citations", citations });
+      sendEvent(res, { type: "suggestions", suggestions: ["查看本地核验来源", "选择具体考试年份", "比较另一门非 AQA 课程"] });
+      sendEvent(res, { type: "done", answer: context.localAnswer, requestId, resolvedContext: context.resolvedContext });
+      return;
+    }
+    const externalSearchEnabled = request.featureConsent?.externalSearch?.enabled === true;
+    const externalSearchRequested = /(联网|实时|搜索|查找|最新|web\s*search|search\s*online)/i.test(latestUserMessage(request));
+    const internalDataMissing = context.academicTools?.calls.some(call => call.status === "data-unavailable") === true;
+    if (
+      externalSearchEnabled
+      && !context.containsAqa
+      && context.externalSearchIdentity
+      && (externalSearchRequested || internalDataMissing)
+    ) {
+      if (!webSearch.isConfigured() || !("search" in webSearch)) {
+        promptContext = appendExternalSearchContext(promptContext, { status: "not-configured" });
+      } else {
+        const { year, series } = searchYearAndSeries(request);
+        try {
+          const result = await webSearch.search({
+            ip: requestIp(req),
+            query: latestUserMessage(request),
+            board: context.externalSearchIdentity.board,
+            qualificationCode: context.externalSearchIdentity.qualificationCode,
+            ...(year === undefined ? {} : { year }),
+            ...(series === undefined ? {} : { series }),
+            conflictsWithActive: context.academicTools?.calls.some(call => call.status === "ok") === true,
+            signal: controller.signal,
+          });
+          const sourceId = `S${sources.length + 1}`;
+          sources.push({
+            sourceId,
+            title: `${result.evidence.documentTitle}（官方实时检索，尚未入库）`,
+            url: result.evidence.officialUrl,
+            dataVersion: `${result.evidence.retrievedAt} · ${result.evidence.locator ?? "locator-unavailable"}`,
+          });
+          promptContext = appendExternalSearchContext(promptContext, result, sourceId);
+        } catch (error) {
+          const status = error instanceof OpenAIWebSearchError ? error.kind : "unavailable";
+          promptContext = appendExternalSearchContext(promptContext, { status });
+        }
+      }
     }
     if (!provider.isConfigured()) {
       status = "configuration-error";
@@ -168,7 +259,7 @@ async function handleChat(
     }
 
     reasoningEffort = isComplexAIQuestion(request) ? "max" : "low";
-    const system = buildAISystemPrompt(request, context.promptContext);
+    const system = buildAISystemPrompt(request, promptContext);
     providerAttempted = true;
     const result = await provider.stream({
       system,
@@ -186,9 +277,9 @@ async function handleChat(
       : Math.ceil((system.length + request.messages.reduce((sum, message) => sum + message.content.length, 0) + result.answer.length) / 4);
     const grounded = enforceDeterministicPaperFacts(result.answer, context.paperFacts ?? []);
     paperFactCorrections = grounded.corrections.length;
-    const answer = ensureAnswerCitations(grounded.answer, context.sources);
-    const citations = hydrateCitations(answer, context.sources);
-    if (context.sources.length > 0 && citations.length === 0) {
+    const answer = ensureAnswerCitations(grounded.answer, sources);
+    const citations = hydrateCitations(answer, sources);
+    if (sources.length > 0 && citations.length === 0) {
       throw new AIProviderError("DeepSeek answer did not cite an allowed source", "unavailable");
     }
     providerSucceeded = true;
@@ -243,6 +334,7 @@ export function createAIHttpServer(overrides: Partial<AIHttpServerDependencies> 
     provider: overrides.provider ?? new DeepSeekChatProvider(),
     limiter: overrides.limiter ?? new AnonymousAIRateLimiter(),
     serviceGuard: overrides.serviceGuard ?? createAIServiceGuardFromEnv(),
+    webSearch: overrides.webSearch ?? new OpenAIWebSearchProvider(),
   };
   return createServer(async (req, res) => {
     const url = new URL(req.url ?? "/", `http://${req.headers.host ?? "localhost"}`);

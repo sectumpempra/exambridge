@@ -20,6 +20,11 @@ import type {
   AIChatRequest,
   AIResolvedContext,
 } from "@/domain-v2/ai-assistant";
+import {
+  AcademicResultsManifestV2Schema,
+  type AcademicResultsManifestV2,
+} from "@/domain-v2/academic-results";
+import { buildAcademicToolContext, type AcademicToolContext } from "./academic-tools";
 
 type KnowledgeManifestEntry = {
   code: string;
@@ -64,6 +69,10 @@ export type AIContextBuildResult = {
   resolvedContext: AIResolvedContext;
   paperFacts: AIPaperFact[];
   clarification?: string;
+  localAnswer?: string;
+  academicTools?: AcademicToolContext;
+  containsAqa: boolean;
+  externalSearchIdentity?: { board: string; qualificationCode: string };
 };
 
 const MAX_PROMPT_CONTEXT_CHARACTERS = 52_000;
@@ -169,6 +178,83 @@ function isComparisonPromptContext(value: unknown): value is ComparisonPromptCon
     && Array.isArray(candidate.sideB?.items);
 }
 
+function remapAcademicSourceIds(
+  value: unknown,
+  manifest: AcademicResultsManifestV2,
+  sources: SourceRegistry,
+): unknown {
+  const sourceMap = new Map(manifest.sources.map(source => [source.sourceId, source]));
+  const citationMap = new Map<string, string>();
+  const citationFor = (sourceId: string) => {
+    const cached = citationMap.get(sourceId);
+    if (cached) return cached;
+    const source = sourceMap.get(sourceId);
+    if (!source) return undefined;
+    const citationId = sources.add({
+      title: source.documentTitle,
+      url: source.officialUrl,
+      dataVersion: source.documentVersion ?? `${source.effectiveFrom}${source.effectiveTo ? `–${source.effectiveTo}` : ""}`,
+    });
+    citationMap.set(sourceId, citationId);
+    return citationId;
+  };
+  const walk = (item: unknown, key?: string): unknown => {
+    if (Array.isArray(item)) {
+      if (key === "sourceIds") return item.map(sourceId => typeof sourceId === "string" ? citationFor(sourceId) : undefined).filter(Boolean);
+      return item.map(child => walk(child));
+    }
+    if (!item || typeof item !== "object") return item;
+    return Object.fromEntries(Object.entries(item).map(([childKey, child]) => [childKey, walk(child, childKey)]));
+  };
+  return walk(value);
+}
+
+function buildLocalAqaAnswer(
+  locale: AIChatRequest["locale"],
+  knowledge: unknown,
+  academic: AcademicToolContext | undefined,
+  citations: AICitation[],
+  originalTextDetected: boolean,
+): string {
+  const sourceMarkers = citations.slice(0, 4).map(source => `[${source.sourceId}]`).join("");
+  const knowledgeObject = knowledge && typeof knowledge === "object" ? knowledge as Record<string, unknown> : undefined;
+  const lines = locale === "en-GB"
+    ? ["This question includes AQA. ExamBridge answered it with a deterministic local template; no AQA material was sent to an external model."]
+    : ["这个问题包含 AQA。ExamBridge 已使用本地确定性模板回答；AQA 材料没有发送给任何外部模型。"];
+  if (originalTextDetected) {
+    lines.push(locale === "en-GB"
+      ? "The pasted wording was processed locally and is not repeated here."
+      : "你粘贴的考纲原文只在本地处理，本回答不复述该段原文。");
+  }
+  if (knowledgeObject?.mode === "comparison") {
+    const exact = knowledgeObject.exactMetrics as { coverageA?: number; coverageB?: number; jaccard?: number; sharedNodeIds?: string[] } | undefined;
+    if (exact) {
+      const format = (value: number | undefined) => typeof value === "number" ? `${value.toFixed(1)}%` : "—";
+      lines.push(locale === "en-GB"
+        ? `Verified exact scope: ${exact.sharedNodeIds?.length ?? 0} shared concepts; A→B ${format(exact.coverageA)}, B→A ${format(exact.coverageB)}, Jaccard ${format(exact.jaccard)}.`
+        : `已核验的精确知识范围：共同概念 ${exact.sharedNodeIds?.length ?? 0} 个；A→B 覆盖率 ${format(exact.coverageA)}，B→A 覆盖率 ${format(exact.coverageB)}，Jaccard ${format(exact.jaccard)}。`);
+    }
+  } else if (knowledgeObject?.mode === "single-qualification") {
+    const qualification = knowledgeObject.qualification as { selectedPaper?: { name?: string }; statementCount?: number; paperCatalog?: unknown[] } | undefined;
+    lines.push(locale === "en-GB"
+      ? `Verified local coverage: ${qualification?.selectedPaper?.name ?? "the selected qualification"}; ${qualification?.statementCount ?? qualification?.paperCatalog?.length ?? 0} mapped item(s).`
+      : `本地已核验范围：${qualification?.selectedPaper?.name ?? "当前资格"}；共 ${qualification?.statementCount ?? qualification?.paperCatalog?.length ?? 0} 条映射记录。`);
+  }
+  for (const call of academic?.calls ?? []) {
+    const count = Array.isArray(call.result) ? call.result.length : call.result ? 1 : 0;
+    lines.push(locale === "en-GB"
+      ? `${call.name}: ${call.status}${count ? ` (${count} record(s))` : ""}.`
+      : `${call.name}：${call.status}${count ? `（${count} 条）` : ""}。`);
+  }
+  if (academic?.calls.some(call => call.status === "data-unavailable")) {
+    lines.push(locale === "en-GB"
+      ? "The approved active dataset does not yet contain the requested value, so no number is inferred."
+      : "当前 owner-approved active 数据尚未包含所问数值，因此不会猜测或用模型记忆补齐。");
+  }
+  if (sourceMarkers) lines.push(`${locale === "en-GB" ? "Sources" : "来源"}: ${sourceMarkers}`);
+  return lines.join("\n\n");
+}
+
 function appliesToPaper(statement: KnowledgeMappingV5["statements"][number], paperId: string | null): boolean {
   if (!paperId) return true;
   return statement.paperApplicability.kind !== "not-specified"
@@ -247,6 +333,7 @@ export class AIContextBuilder {
   private manifestPromise: Promise<KnowledgeManifest> | null = null;
   private ontologyPromise: Promise<CanonicalNodeSemanticsV5[]> | null = null;
   private mappingPromises = new Map<string, Promise<KnowledgeMappingV5>>();
+  private academicManifestPromise: Promise<AcademicResultsManifestV2> | null = null;
 
   constructor(root = process.env.EXAMBRIDGE_DATA_ROOT ?? process.cwd()) {
     this.publicRoot = path.resolve(process.env.EXAMBRIDGE_PUBLIC_ROOT ?? path.join(root, "public"));
@@ -270,6 +357,12 @@ export class AIContextBuilder {
       return manifest;
     });
     return this.manifestPromise;
+  }
+
+  private loadAcademicManifest(): Promise<AcademicResultsManifestV2> {
+    this.academicManifestPromise ??= this.readJson("/data/academic-results-v2/manifest.json")
+      .then(value => AcademicResultsManifestV2Schema.parse(value));
+    return this.academicManifestPromise;
   }
 
   private async loadOntology(manifest: KnowledgeManifest): Promise<CanonicalNodeSemanticsV5[]> {
@@ -580,33 +673,27 @@ export class AIContextBuilder {
     const courses = this.resolveCourseEntries(request);
     const knowledgeEntries = this.resolveKnowledgeEntries(request, manifest, courses);
     const aqaEntries = knowledgeEntries.filter((entry) => entry.board === "AQA");
+    let aqaOriginalTextDetected = false;
     if (aqaEntries.length > 0) {
       const aqaMappings = await Promise.all(aqaEntries.map((entry) => this.loadMapping(entry)));
-      const hasOriginalText = request.messages
+      aqaOriginalTextDetected = request.messages
         .filter((message) => message.role === "user")
         .some((message) => aqaMappings.some((mapping) => containsAqaOriginalText(message.content, mapping)));
-      if (hasOriginalText) {
-        return {
-          promptContext: "{}",
-          sources: [],
-          paperFacts: [],
-          resolvedContext: {
-            qualificationIds: courses.map((course) => course.qualificationId).slice(0, 2),
-            qualificationCodes: knowledgeEntries.map((entry) => entry.code).slice(0, 2),
-            paperIds: request.pageContext.selectedPaperIds.filter(Boolean).slice(0, 2),
-            labels: knowledgeEntries.map((entry) => `${entry.board} ${entry.subjectCode} ${entry.subjectName}`).slice(0, 2),
-          },
-          clarification: request.locale === "en-GB"
-            ? "To respect AQA material restrictions, this wording will not be sent to the AI. Please ask again in your own words using only the qualification code and topic name."
-            : "为遵守 AQA 材料使用限制，这段考纲原文不会发送给 AI。请只保留资格代码和主题名称，并用自己的话重新提问。",
-        };
-      }
     }
     const sources = createSourceRegistry();
     const overviews = this.addOverviewContext(courses, sources);
     const selectedPaperIds = resolveSelectedPaperIds(request, knowledgeEntries);
     const knowledge = await this.addKnowledgeContext(knowledgeEntries, manifest, selectedPaperIds, sources);
     const paperFacts = this.paperFactsForSelections(courses, knowledgeEntries, selectedPaperIds);
+    const academicManifest = await this.loadAcademicManifest();
+    const rawAcademic = buildAcademicToolContext(
+      request,
+      academicManifest,
+      knowledgeEntries.map(entry => entry.qualificationVersionId),
+    );
+    const academic = rawAcademic
+      ? remapAcademicSourceIds(rawAcademic, academicManifest, sources) as AcademicToolContext
+      : undefined;
 
     const resolvedContext: AIResolvedContext = {
       qualificationIds: courses.map((course) => course.qualificationId).slice(0, 2),
@@ -626,6 +713,7 @@ export class AIContextBuilder {
         clarification: request.locale === "en-GB"
           ? "Please choose a course or include an exact qualification code, such as 9709, before asking this question."
           : "请先选择课程，或在问题中写明准确的资格代码（例如 9709）；当前没有足够上下文，不能猜测你指的是哪门考试。",
+        containsAqa: false,
       };
     }
 
@@ -635,6 +723,7 @@ export class AIContextBuilder {
       examOverviews: overviews,
       deterministicPaperFacts: paperFacts,
       knowledge,
+      academicResults: academic,
     });
     let payload = serializePayload();
     if (payload.length > MAX_PROMPT_CONTEXT_CHARACTERS && isComparisonPromptContext(knowledge)) {
@@ -659,6 +748,20 @@ export class AIContextBuilder {
     if (payload.length > promptLimit) {
       throw new Error(`AI prompt context exceeded ${promptLimit} characters`);
     }
-    return { promptContext: payload, sources: sources.list(), resolvedContext, paperFacts };
+    const sourceList = sources.list();
+    return {
+      promptContext: payload,
+      sources: sourceList,
+      resolvedContext,
+      paperFacts,
+      ...(aqaEntries.length > 0 ? {
+        localAnswer: buildLocalAqaAnswer(request.locale, knowledge, academic, sourceList, aqaOriginalTextDetected),
+      } : {}),
+      academicTools: academic,
+      containsAqa: aqaEntries.length > 0,
+      ...(knowledgeEntries.length === 1 && aqaEntries.length === 0 ? {
+        externalSearchIdentity: { board: knowledgeEntries[0].board, qualificationCode: knowledgeEntries[0].subjectCode },
+      } : {}),
+    };
   }
 }

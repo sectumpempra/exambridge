@@ -171,16 +171,17 @@ describe("AI assistant context builder", () => {
     for (const link of original.conceptLinks) expect(result.promptContext).not.toContain(link.evidenceSpan);
   });
 
-  it("blocks pasted AQA statement wording before any provider prompt is built", async () => {
+  it("handles pasted AQA statement wording locally without constructing a provider answer", async () => {
     const rawAqa = JSON.parse(await readFile(path.join(process.cwd(), "public/data/knowledge-v5/mappings/AQA-8300.json"), "utf8")) as { statements: Array<{ statementText: string }> };
     const original = rawAqa.statements.find((statement) => statement.statementText.split(/\s+/).length >= 6)!;
     const result = await builder.build(request({
       pageContext: { pageType: "knowledge-comparison", route: "/knowledge-tree", selectedPaperIds: [], comparisonIds: ["AQA-8300"] },
       messages: [{ role: "user", content: `请解释这段：${original.statementText}` }],
     }));
-    expect(result.clarification).toContain("AQA");
-    expect(result.promptContext).toBe("{}");
-    expect(result.sources).toHaveLength(0);
+    expect(result.clarification).toBeUndefined();
+    expect(result.localAnswer).toContain("AQA");
+    expect(result.localAnswer).toContain("只在本地处理");
+    expect(result.promptContext).not.toContain(original.statementText);
   });
 
   it("preserves the second Paper slot in a Paper-vs-subject comparison", async () => {
@@ -540,6 +541,131 @@ describe("AI assistant provider boundaries", () => {
 });
 
 describe("AI assistant HTTP/SSE boundary", () => {
+  it("adds eligible official live evidence to the DeepSeek context without activating it", async () => {
+    const provider = {
+      isConfigured: () => true,
+      stream: vi.fn().mockImplementation(async ({ system }) => ({
+        answer: system.includes("official-live-candidate-direct-answer-eligible")
+          ? "官方实时检索、尚未入库：A 等级线为 180/250 [S1]"
+          : "missing",
+        model: "deepseek-v4-pro",
+        usage: { prompt_tokens: 10, completion_tokens: 5, total_tokens: 15 },
+      })),
+    };
+    const webSearch = {
+      isConfigured: () => true,
+      search: vi.fn().mockResolvedValue({
+        evidence: {
+          schemaVersion: "1.0.0",
+          evidenceId: "external:test",
+          provider: "openai-web-search",
+          requestedModel: "gpt-5",
+          returnedModel: "gpt-5-snapshot",
+          query: "联网查 9709 最新分数线",
+          board: "CAIE",
+          qualificationCode: "9709",
+          year: 2025,
+          series: "june",
+          officialUrl: "https://www.cambridgeinternational.org/example.pdf",
+          documentTitle: "Official threshold table",
+          locator: "PDF page 2, row AX",
+          retrievedAt: "2026-07-21T12:00:00.000Z",
+          allowedDomain: true,
+          exactIdentityMatch: true,
+          numericValidationPassed: true,
+          conflictsWithActive: false,
+          directAnswerEligible: true,
+          verificationStatus: "candidate",
+        },
+        summary: "Official row",
+        numericFacts: [{ label: "A", value: 180, maximum: 250 }],
+        cached: false,
+      }),
+    };
+    const server = createAIHttpServer({
+      builder: {
+        build: vi.fn().mockResolvedValue({
+          promptContext: JSON.stringify({ academicResults: { calls: [] } }),
+          sources: [],
+          resolvedContext: { qualificationIds: [], qualificationCodes: ["CAIE-9709"], paperIds: [], labels: ["9709"] },
+          paperFacts: [],
+          containsAqa: false,
+          externalSearchIdentity: { board: "CAIE", qualificationCode: "9709" },
+          academicTools: { activeBatch: null, dataPolicy: "test", calls: [{ name: "lookup_grade_boundary", status: "data-unavailable", result: [], sourceIds: [] }] },
+        }),
+      },
+      provider,
+      webSearch,
+      limiter: new AnonymousAIRateLimiter(),
+      serviceGuard: {
+        beginProviderRequest: vi.fn().mockReturnValue({ allowed: true }),
+        recordProviderSuccess: vi.fn(),
+        recordProviderFailure: vi.fn(),
+      },
+    });
+    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+    try {
+      const { port } = server.address() as AddressInfo;
+      const response = await fetch(`http://127.0.0.1:${port}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(request({
+          messages: [{ role: "user", content: "联网查 9709 最新分数线" }],
+          featureConsent: { externalSearch: { enabled: true } },
+        })),
+      });
+      const events = parseSSE(await response.text());
+      expect(webSearch.search).toHaveBeenCalledOnce();
+      expect(provider.stream).toHaveBeenCalledOnce();
+      expect(events.find(event => event.type === "citations")?.citations).toEqual([
+        expect.objectContaining({ sourceId: "S1", title: expect.stringContaining("尚未入库") }),
+      ]);
+      expect(events.at(-1)?.answer).toContain("180/250");
+    } finally {
+      await new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
+    }
+  });
+
+  it("streams AQA local answers without provider configuration, quota, or calls", async () => {
+    const resolvedContext = { qualificationIds: ["aqa"], qualificationCodes: ["AQA-7357"], paperIds: [], labels: ["AQA 7357"] };
+    const provider = { isConfigured: () => false, stream: vi.fn() };
+    const serviceGuard = {
+      beginProviderRequest: vi.fn(),
+      recordProviderSuccess: vi.fn(),
+      recordProviderFailure: vi.fn(),
+    };
+    const server = createAIHttpServer({
+      builder: {
+        build: vi.fn().mockResolvedValue({
+          promptContext: "{}",
+          sources: [{ sourceId: "S1", title: "AQA official", url: "https://www.aqa.org.uk/example", dataVersion: "v1" }],
+          resolvedContext,
+          paperFacts: [],
+          localAnswer: "AQA 本地确定性回答 [S1]",
+        }),
+      },
+      provider,
+      limiter: new AnonymousAIRateLimiter(),
+      serviceGuard,
+    });
+    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+    try {
+      const { port } = server.address() as AddressInfo;
+      const response = await fetch(`http://127.0.0.1:${port}/api/ai/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(request()),
+      });
+      const events = parseSSE(await response.text());
+      expect(events.map(event => event.type)).toEqual(["meta", "delta", "citations", "suggestions", "done"]);
+      expect(events.at(-1)).toMatchObject({ answer: "AQA 本地确定性回答 [S1]" });
+      expect(provider.stream).not.toHaveBeenCalled();
+      expect(serviceGuard.beginProviderRequest).not.toHaveBeenCalled();
+    } finally {
+      await new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
+    }
+  });
+
   it("streams typed data-only events with resolved context and allow-listed citations", async () => {
     const resolvedContext = {
       qualificationIds: ["qual:caie:a-level:9709"],

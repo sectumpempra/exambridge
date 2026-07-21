@@ -10,11 +10,43 @@ export const AIChatMessageSchema = z.object({
 });
 
 export const AIPageContextSchema = z.object({
-  pageType: z.enum(["assistant-home", "exam-overview", "knowledge-comparison"]),
+  pageType: z.enum(["assistant-home", "exam-overview", "knowledge-comparison", "academic-results", "difficulty-comparison", "transition-readiness"]),
   route: z.string().min(1).max(500),
   // Empty slots preserve A/B alignment for Paper-vs-subject comparisons.
   selectedPaperIds: z.array(z.string().max(120)).max(2).default([]),
   comparisonIds: z.array(z.string().min(1).max(120)).max(2).default([]),
+});
+
+const AIAcademicQuerySchema = z.discriminatedUnion("type", [
+  z.object({
+    type: z.literal("lookup"),
+    awardQualificationId: z.string().min(1).max(200),
+    year: z.number().int().min(2019).max(2100).optional(),
+    series: z.enum(["january", "march", "june", "november", "other"]).optional(),
+    routeId: z.string().min(1).max(200).optional(),
+    tier: z.string().min(1).max(100).optional(),
+  }),
+  z.object({
+    type: z.literal("award-calculation"),
+    awardQualificationId: z.string().min(1).max(200),
+    ruleId: z.string().min(1).max(300),
+    routeId: z.string().min(1).max(200),
+    targetSeries: z.string().regex(/^\d{4}-(january|march|june|november)$/),
+    combinationId: z.string().min(1).max(200),
+    componentScores: z.array(z.object({
+      componentCode: z.string().min(1).max(120),
+      series: z.string().regex(/^\d{4}-(january|march|june|november)$/),
+      rawMark: z.number().finite().nonnegative().optional(),
+      awardMark: z.number().finite().nonnegative().optional(),
+    })).min(1).max(12),
+  }),
+]);
+
+const AIAnonymousMasterySchema = z.array(z.object({
+  nodeId: z.string().min(1).max(160),
+  level: z.enum(["not-studied", "weak", "basic", "proficient"]),
+})).max(1_200).refine(items => new Set(items.map(item => item.nodeId)).size === items.length, {
+  message: "mastery node IDs must be unique",
 });
 
 export const AIResolvedContextSchema = z.object({
@@ -32,6 +64,15 @@ export const AIChatRequestSchema = z.object({
   messages: z.array(AIChatMessageSchema).min(1).max(AI_ASSISTANT_HISTORY_MAX_MESSAGES),
   locale: z.enum(["zh-CN", "en-GB"]).default("zh-CN"),
   resolvedContext: AIResolvedContextSchema.optional(),
+  academicQuery: AIAcademicQuerySchema.optional(),
+  anonymousMastery: AIAnonymousMasterySchema.optional(),
+  featureConsent: z.object({
+    boundaryPrediction: z.object({
+      enabled: z.boolean(),
+      disclaimerVersion: z.string().min(1).max(120).optional(),
+    }).optional(),
+    externalSearch: z.object({ enabled: z.boolean() }).optional(),
+  }).optional(),
 });
 
 export const AICitationSchema = z.object({

@@ -12,7 +12,10 @@ describe("Academic Results V2 migration candidate", () => {
   it("keeps every migrated record schema-valid", () => {
     candidate.sources.forEach(row => expect(SourceEvidenceV1Schema.safeParse(row).success).toBe(true));
     candidate.boundaries.forEach(row => expect(GradeBoundaryV2Schema.safeParse(row).success).toBe(true));
-    candidate.statistics.forEach(({ _migrationOrigin: _origin, ...row }) => expect(GradeStatisticsV2Schema.safeParse(row).success).toBe(true));
+    candidate.statistics.forEach(({ _migrationOrigin, ...row }) => {
+      expect(_migrationOrigin).toBeTruthy();
+      expect(GradeStatisticsV2Schema.safeParse(row).success).toBe(true);
+    });
     candidate.awardRules.forEach(row => expect(QualificationAwardRuleV2Schema.safeParse(row).success).toBe(true));
   });
 
