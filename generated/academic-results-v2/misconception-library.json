@@ -1,0 +1,307 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-22T00:00:00+08:00",
+  "activationDecision": "candidate-only",
+  "records": [
+    {
+      "misconceptionId": "misconception:component-boundary-is-award-boundary",
+      "awardQualificationIds": [
+        "award:ocr:h240"
+      ],
+      "qualificationVersionIds": [
+        "OCR-H240:Version 3"
+      ],
+      "incorrectClaim": "知道某一张 Paper 的 component boundary，就能判断最终资格等级。",
+      "correctedFact": "Component boundary只描述单个组件的参考边界；最终资格等级必须使用适用路线的overall qualification boundary和完整有效组件组合。",
+      "applicabilityNotes": [
+        "适用于同时发布component和overall边界的资格；回答前必须核对boundaryScope。"
+      ],
+      "sourceIds": [
+        "source:ocr-h240-spec-v3-p2",
+        "source:ocr-2025-june-h240-overall"
+      ],
+      "escalationTriggers": [
+        "只有component分数或component boundary，缺少完整组件组合或overall boundary。"
+      ],
+      "suggestedResponse": "这张Paper的边界不能单独判定最终等级；请提供同一考季的完整组件分数，我再匹配overall资格边界。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:statistics-is-boundary",
+      "awardQualificationIds": [
+        "award:ocr:h240"
+      ],
+      "qualificationVersionIds": [
+        "OCR-H240:Version 3"
+      ],
+      "incorrectClaim": "Grade Statistics里的A*比例就是A*分数线。",
+      "correctedFact": "Grade Statistics描述考生群体的成绩分布；grade boundary描述达到某等级所需的分数，两者口径和用途不同。",
+      "applicabilityNotes": [
+        "Statistics必须同时标明cumulative或exclusive、地域、群体和发布时间。"
+      ],
+      "sourceIds": [
+        "source:ocr-results-statistics-h240-2025-june",
+        "source:ocr-2025-june-h240-overall"
+      ],
+      "escalationTriggers": [
+        "来源只提供百分比而没有overall最大分和等级阈值。"
+      ],
+      "suggestedResponse": "这里看到的是考生比例，不是分数线；我会分别列出官方overall boundary和Grade Statistics，避免混用。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:average-paper-pum",
+      "awardQualificationIds": [
+        "award:caie:9709"
+      ],
+      "qualificationVersionIds": [
+        "CAIE-9709:2026-2027"
+      ],
+      "incorrectClaim": "把各张Paper的PUM直接取平均，就能得到9709 A Level PUM或最终等级。",
+      "correctedFact": "9709最终结果必须按官方有效路线、组件组合和对应考季的overall threshold处理；不得自行平均单张Paper的PUM。",
+      "applicabilityNotes": [
+        "AS、同考季完整A Level和staged A Level必须分别识别。"
+      ],
+      "sourceIds": [
+        "source:caie-9709-2026-2027-assessment-routes"
+      ],
+      "escalationTriggers": [
+        "用户只提供单张Paper PUM，或没有考季、route和option。"
+      ],
+      "suggestedResponse": "单张Paper PUM不能直接平均成最终A Level结果；请先确认route、考季和完整有效组件组合。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:mix-staged-as-papers",
+      "awardQualificationIds": [
+        "award:caie:9709",
+        "award:caie:9231"
+      ],
+      "qualificationVersionIds": [
+        "CAIE-9709:2026-2027",
+        "CAIE-9231:2026-2027"
+      ],
+      "incorrectClaim": "分阶段A Level可以从不同AS考季挑选单张Paper拼成carry-forward部分。",
+      "correctedFact": "Staged路线只接受符合规则的完整AS结果carry-forward，不能把不同考季的单张AS Paper自由混搭。",
+      "applicabilityNotes": [
+        "还必须核对时间窗口、原AS路线和后续A Level补考组件。"
+      ],
+      "sourceIds": [
+        "source:caie-9709-2026-2027-assessment-routes",
+        "source:caie-9231-2026-2027-assessment-routes"
+      ],
+      "escalationTriggers": [
+        "原AS结果不完整、超过carry-forward时限或缺少原考季信息。"
+      ],
+      "suggestedResponse": "Carry-forward的是完整且合资格的AS结果，不是任选几张旧Paper；请提供原AS考季和完整路线。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:ial-unit-is-cashed-in-award",
+      "awardQualificationIds": [
+        "award:pearson:ial-mathematics",
+        "award:pearson:ial-further-mathematics"
+      ],
+      "qualificationVersionIds": [
+        "Edexcel-IAL:2018"
+      ],
+      "incorrectClaim": "有六个IAL unit成绩就等于已经获得最终Mathematics或Further Mathematics资格。",
+      "correctedFact": "Unit结果必须满足对应资格的有效组合，并通过正确cash-in entry完成资格合成；相同unit还受跨资格使用和locking规则约束。",
+      "applicabilityNotes": [
+        "YMA01和YFM01共享考纲版本标识，但必须按不同awardQualificationId解析。"
+      ],
+      "sourceIds": [
+        "source:pearson-ial-mathematics-issue3-rules"
+      ],
+      "escalationTriggers": [
+        "缺少cash-in代码、unit历史、重考结果或已被另一资格锁定的信息。"
+      ],
+      "suggestedResponse": "六个unit分数本身不等于已经cash-in；我需要核对unit组合、YMA01/YFM01入口和locking状态。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:linear-a-level-uses-ums",
+      "awardQualificationIds": [
+        "award:aqa:7357",
+        "award:aqa:7367",
+        "award:ocr:h240",
+        "award:ocr:h245",
+        "award:ocr:h640"
+      ],
+      "qualificationVersionIds": [
+        "AQA-7357:1.3",
+        "AQA-7367:1.1",
+        "OCR-H240:Version 3",
+        "OCR-H245:Version 2",
+        "OCR-H640:Version 3"
+      ],
+      "incorrectClaim": "当前AQA或OCR线性A Level仍需要按旧模块化UMS合分。",
+      "correctedFact": "首批当前AQA/OCR数学资格按线性整体资格结构和适用overall raw-mark boundary处理，不应套用旧模块化UMS算法。",
+      "applicabilityNotes": [
+        "历史模块化资格必须使用独立的历史qualification version，不能由当前规则反推。"
+      ],
+      "sourceIds": [
+        "source:aqa-7357-sp-2017-v1-3-p8-p9",
+        "source:aqa-7367-v1-1-scheme-of-assessment",
+        "source:ocr-h240-spec-v3-p2",
+        "source:ocr-h245-v2-assessment-overview",
+        "source:ocr-h640-v3-assessment-overview"
+      ],
+      "escalationTriggers": [
+        "问题涉及旧版模块化资格、旧unit代码或资格版本不明。"
+      ],
+      "suggestedResponse": "当前这组资格是线性结构，不使用旧模块化UMS；若你问的是历史资格，请先确认年份和版本。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:a-star-is-one-paper-threshold",
+      "awardQualificationIds": [
+        "award:ocr:h240",
+        "award:caie:0580"
+      ],
+      "qualificationVersionIds": [
+        "OCR-H240:Version 3",
+        "CAIE-0580:2025-2027"
+      ],
+      "incorrectClaim": "只要某一张Paper达到一个A*分数，就能保证最终资格A*。",
+      "correctedFact": "A*由适用资格路线的完整有效组合和overall boundary决定；单张Paper表现不能替代整体资格判定。",
+      "applicabilityNotes": [
+        "某些模块化资格还有额外A*条件，必须使用该资格自己的版本化规则。"
+      ],
+      "sourceIds": [
+        "source:ocr-h240-spec-v3-p2",
+        "source:caie-0580-2025-2027-assessment-overview"
+      ],
+      "escalationTriggers": [
+        "只提供单张Paper成绩，或混用了component boundary。"
+      ],
+      "suggestedResponse": "单张Paper不能单独保证A*；需要完整组合并匹配同一考季的overall边界。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:mix-0580-core-extended",
+      "awardQualificationIds": [
+        "award:caie:0580"
+      ],
+      "qualificationVersionIds": [
+        "CAIE-0580:2025-2027"
+      ],
+      "incorrectClaim": "0580可以把Core和Extended的Paper混合起来合分。",
+      "correctedFact": "0580 Core和Extended是独立路线，必须使用各自完整Paper组合及与variant一致的option boundary。",
+      "applicabilityNotes": [
+        "Core使用P1+P3，Extended使用P2+P4；AX/AY/AZ与BX/BY/BZ不能互换。"
+      ],
+      "sourceIds": [
+        "source:caie-0580-2025-2027-assessment-overview",
+        "source:caie-0580-2025-june-row-ax",
+        "source:caie-0580-2025-june-row-bx"
+      ],
+      "escalationTriggers": [
+        "Paper号码跨Core/Extended，或option与组件variant不一致。"
+      ],
+      "suggestedResponse": "Core与Extended不能混合合分；请确认是P1+P3还是P2+P4，并提供具体variant。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:mix-4ma1-tiers",
+      "awardQualificationIds": [
+        "award:pearson:4ma1"
+      ],
+      "qualificationVersionIds": [
+        "Edexcel-4MA1:Issue 2"
+      ],
+      "incorrectClaim": "4MA1 Foundation和Higher Paper可以交叉组合计算最终等级。",
+      "correctedFact": "4MA1必须在同一tier内使用完整两卷组合，Foundation与Higher不可混合。",
+      "applicabilityNotes": [
+        "回答时必须明确1F+2F或1H+2H，并使用对应overall boundary。"
+      ],
+      "sourceIds": [
+        "source:pearson-4ma1-issue2-qualification-at-a-glance"
+      ],
+      "escalationTriggers": [
+        "输入同时包含F和H组件，或tier不明。"
+      ],
+      "suggestedResponse": "Foundation和Higher不能交叉合分；请确认完整的1F+2F或1H+2H路线。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:carry-forward-resit-cash-in-same",
+      "awardQualificationIds": [
+        "award:caie:9709",
+        "award:pearson:ial-mathematics"
+      ],
+      "qualificationVersionIds": [
+        "CAIE-9709:2026-2027",
+        "Edexcel-IAL:2018"
+      ],
+      "incorrectClaim": "carry-forward、resit和cash-in只是同一件事的不同叫法。",
+      "correctedFact": "Carry-forward是把符合条件的既有结果带入后续路线，resit是重新参加考试，cash-in是用资格入口聚合符合条件的unit结果；三者的输入、时点和后果不同。",
+      "applicabilityNotes": [
+        "CAIE staged路线重点核对carry-forward；Pearson IAL重点核对unit、resit历史和cash-in。"
+      ],
+      "sourceIds": [
+        "source:caie-9709-2026-2027-assessment-routes",
+        "source:pearson-ial-mathematics-issue3-rules"
+      ],
+      "escalationTriggers": [
+        "缺少原考季、重考历史、cash-in代码或unit locking信息。"
+      ],
+      "suggestedResponse": "这三个动作不等价：先确认你是在延续AS结果、重考某单元，还是提交最终cash-in。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:prediction-is-official-boundary",
+      "awardQualificationIds": [
+        "award:caie:0580",
+        "award:ocr:h240"
+      ],
+      "qualificationVersionIds": [
+        "CAIE-0580:2025-2027",
+        "OCR-H240:Version 3"
+      ],
+      "incorrectClaim": "根据往年趋势算出的预测分数线可以当作本考季官方分数线。",
+      "correctedFact": "预测值不是官方边界，不能替代考试局发布的具体考季、route、tier或option overall boundary。",
+      "applicabilityNotes": [
+        "预测功能当前延期且默认关闭；即使未来启用也必须单独标记非官方状态。"
+      ],
+      "sourceIds": [
+        "source:caie-0580-2025-june-row-by",
+        "source:ocr-2025-june-h240-overall"
+      ],
+      "escalationTriggers": [
+        "用户要求用预测值作正式成绩、录取或对外承诺。"
+      ],
+      "suggestedResponse": "该数值只能是非官方估计，不能用于正式判级；官方结果发布后必须以考试局边界为准。",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "misconceptionId": "misconception:historical-rule-applies-currently",
+      "awardQualificationIds": [
+        "award:caie:9709",
+        "award:caie:9231"
+      ],
+      "qualificationVersionIds": [
+        "CAIE-9709:2019",
+        "CAIE-9709:2026-2027",
+        "CAIE-9231:2019",
+        "CAIE-9231:2026-2027"
+      ],
+      "incorrectClaim": "同一个课程代码的历史Paper结构和合分规则可以直接用于当前考季。",
+      "correctedFact": "课程代码相同不代表规则不变；必须先按考季选择qualification version，再使用该版本的Paper结构、有效组合和合分规则。",
+      "applicabilityNotes": [
+        "9709和9231均保存多个历史版本，2019结构不得静默套用到2026-2027。"
+      ],
+      "sourceIds": [
+        "source:caie-9709-2019-june-threshold-routes",
+        "source:caie-9709-2026-2027-assessment-routes",
+        "source:caie-9231-2019-assessment-at-a-glance",
+        "source:caie-9231-2026-2027-assessment-routes"
+      ],
+      "escalationTriggers": [
+        "问题未提供年份考季，或输入Paper代码只存在于历史版本。"
+      ],
+      "suggestedResponse": "我需要先确认考试年份和考季；相同课程代码的历史与当前版本可能有不同Paper结构和合分规则。",
+      "reviewStatus": "codex-reviewed"
+    }
+  ]
+}

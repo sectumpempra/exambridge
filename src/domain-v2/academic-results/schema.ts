@@ -433,6 +433,31 @@ export const QualificationFactGapReportV1Schema = z.strictObject({
   gaps: z.array(QualificationFactGapV1Schema),
 });
 
+export const MisconceptionRecordV1Schema = z.strictObject({
+  misconceptionId: NonEmptyString,
+  awardQualificationIds: z.array(NonEmptyString).min(1),
+  qualificationVersionIds: z.array(NonEmptyString).min(1),
+  incorrectClaim: NonEmptyString,
+  correctedFact: NonEmptyString,
+  applicabilityNotes: z.array(NonEmptyString).min(1),
+  sourceIds: z.array(NonEmptyString).min(1),
+  escalationTriggers: z.array(NonEmptyString).min(1),
+  suggestedResponse: NonEmptyString,
+  reviewStatus: ReviewStatusSchema,
+});
+
+export const MisconceptionLibraryV1Schema = z.strictObject({
+  schemaVersion: z.literal("1.0.0"),
+  generatedAt: DateTimeSchema,
+  activationDecision: z.literal("candidate-only"),
+  records: z.array(MisconceptionRecordV1Schema).min(1),
+}).superRefine((value, ctx) => {
+  const ids = value.records.map(record => record.misconceptionId);
+  if (new Set(ids).size !== ids.length) {
+    ctx.addIssue({ code: "custom", path: ["records"], message: "misconception IDs must be unique" });
+  }
+});
+
 export const SourceEvidenceV1Schema = z.strictObject({
   schemaVersion: z.literal("1.0.0"),
   sourceId: NonEmptyString,
