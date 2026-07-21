@@ -254,7 +254,7 @@ describe("Award data audit", () => {
 
     expect(report.awards).toEqual({
       routeCount: 7,
-      officialBoundaryCount: 21,
+      officialBoundaryCount: 25,
       estimatedBoundaryCount: 2,
       failureCount: 0,
       failures: [],

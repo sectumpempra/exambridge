@@ -65,6 +65,21 @@ describe("official award-rule candidates", () => {
       row.qualificationVersionId === "CAIE-9709:2023-2025" && Boolean(row.optionCode) && Boolean(row.componentVariants?.length))).toBe(true);
   });
 
+  it("migrates the verified 8MA0 AS overall series without inventing A-star", () => {
+    const boundaries = candidate.boundaries.filter((row: { awardQualificationId: string }) =>
+      row.awardQualificationId === "award:pearson:8ma0");
+    expect(boundaries).toHaveLength(5);
+    expect(boundaries.map((row: { year: number }) => row.year)).toEqual([2019, 2022, 2023, 2024, 2025]);
+    expect(boundaries.find((row: { year: number }) => row.year === 2019)).toMatchObject({
+      boundaryScope: "overall",
+      maximumMark: 160,
+      thresholds: { A: 101, B: 87, C: 74, D: 61, E: 48 },
+      verificationStatus: "candidate",
+    });
+    expect(boundaries.every((row: { thresholds: Record<string, number | null> }) =>
+      !Object.hasOwn(row.thresholds, "A*"))).toBe(true);
+  });
+
   it("uses the legacy 9231 two-paper award only in 2019 and versioned modern rules afterwards", () => {
     const furtherRules = rules.filter(rule => rule.awardQualificationId === "award:caie:9231");
     expect(furtherRules).toHaveLength(10);
