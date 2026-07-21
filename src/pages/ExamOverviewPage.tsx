@@ -17,6 +17,7 @@ import {
 } from "@/domain-v2/exam-overview";
 import { explainCalculatorRestriction, isCalculatorRuleNote, mentionsCasRule } from "@/domain-v2/exam-overview/calculator-language";
 import { cn } from "@/lib/utils";
+import AIAssistantLauncher from "@/components/ai/AIAssistantLauncher";
 
 const ExamOverviewInsights = lazy(() => import("@/components/ExamOverviewInsights"));
 
@@ -153,6 +154,15 @@ export default function ExamOverviewPage() {
           </div>
         </div>
       </section>
+
+      <div className="mt-4 flex justify-end">
+        <AIAssistantLauncher
+          pageContext={{ pageType: "exam-overview", route: "/exam-overview", selectedPaperIds: [], comparisonIds: entry?.knowledgeTreeCode ? [entry.knowledgeTreeCode] : [] }}
+          qualificationIds={context ? [context.qualificationId] : []}
+          syllabusVersions={entry?.specificationLabel ? [entry.specificationLabel] : []}
+          contextLabel={`${overview.code} · ${overview.qualification}`}
+        />
+      </div>
 
       {overview.qualificationViews && <div className="mt-6 inline-flex rounded-xl border border-[#d2cdc6] bg-white/80 p-1" role="tablist" aria-label="选择资格视图">
         {overview.qualificationViews.map((view) => <button key={view.key} type="button" role="tab" aria-selected={qualificationView === view.key} onClick={() => setQualificationView(view.key)} className={cn("rounded-lg px-6 py-2 text-sm font-semibold transition", qualificationView === view.key ? "bg-[#526b7e] text-white shadow-sm" : "text-[#625c54] hover:bg-[#eef1f1]")}>{view.label}</button>)}

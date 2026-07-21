@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const responsiveRoutes = ["/courses", "/exam-overview", "/knowledge-tree", "/planner", "/papers", "/results", "/calculator"];
+const responsiveRoutes = ["/courses", "/exam-overview", "/knowledge-tree", "/planner", "/papers", "/results", "/calculator", "/ai-assistant"];
 
 for (const route of responsiveRoutes) {
   test(`${route} has no page-level horizontal overflow`, async ({ page }) => {

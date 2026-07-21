@@ -5,7 +5,7 @@ import AxeBuilder from "@axe-core/playwright";
 const routes = [
   "/", "/about", "/courses", "/exam-overview", "/results", "/tools", "/alevel", "/alevel/caie", "/alevel/edexcel", "/alevel/aqa", "/alevel/ocr", "/alevel/wjec",
   "/gcse", "/gcse/edexcel", "/gcse/caie", "/gcse/aqa", "/gcse/ocr", "/fsmq/ocr", "/calculator", "/planner", "/personality",
-  "/statistics", "/graph", "/papers", "/knowledge-tree",
+  "/statistics", "/graph", "/papers", "/knowledge-tree", "/ai-assistant",
 ];
 
 async function openAwardCourse(page: Page, query: string, _courseName: RegExp) {
@@ -69,6 +69,24 @@ test("unknown routes show a useful 404", async ({ page }) => {
   await waitForPwaControl(page);
   await expect(page.getByRole("heading", { level: 1, name: "这个页面不存在" })).toBeVisible();
   await expect(page.getByRole("link", { name: "返回首页" })).toBeVisible();
+});
+
+test("production build follows the explicit AI release flag", async ({ page }) => {
+  const aiPublic = process.env.AI_PUBLIC_E2E === "true";
+  await page.goto("/#/");
+  await waitForPwaControl(page);
+  if ((page.viewportSize()?.width ?? 1_024) < 768) {
+    await page.getByRole("button", { name: "打开菜单" }).click();
+  }
+  await expect(page.getByRole("link", { name: "AI 问答" })).toHaveCount(aiPublic ? 1 : 0);
+  await page.goto("/#/ai-assistant");
+  if (aiPublic) {
+    await expect(page.getByPlaceholder("输入问题；Shift + Enter 换行")).toBeVisible();
+    await expect(page.getByText("AI 助手正在内部验收", { exact: true })).toHaveCount(0);
+  } else {
+    await expect(page.getByText("AI 助手正在内部验收", { exact: true })).toBeVisible();
+    await expect(page.getByPlaceholder("输入问题；Shift + Enter 换行")).toHaveCount(0);
+  }
 });
 
 test("UK maths exam overviews preserve option routes and official conflicts", async ({ page }) => {

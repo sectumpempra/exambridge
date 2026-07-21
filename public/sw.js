@@ -40,9 +40,11 @@ async function staleWhileRevalidate(request) {
 }
 
 self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET") return;
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
+  // AI requests and health checks are always live and must never enter PWA caches.
+  if (url.pathname.startsWith("/api/ai/")) return;
+  if (event.request.method !== "GET") return;
 
   if (event.request.mode === "navigate") {
     event.respondWith(
