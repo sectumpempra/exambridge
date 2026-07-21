@@ -36,12 +36,12 @@ function addSource({ sourceId, board, officialUrl, documentTitle, publishedAt, a
 
 function parseSeries(value) {
   const normalized = String(value).trim().toLowerCase().replace("autumn", "november").replace("summer", "june");
-  const match = normalized.match(/(20\d{2})[- ](jan(?:uary)?|mar(?:ch)?|jun(?:e)?|nov(?:ember)?)/)
-    ?? normalized.match(/(jan(?:uary)?|mar(?:ch)?|jun(?:e)?|nov(?:ember)?)[- ](20\d{2})/);
+  const match = normalized.match(/(20\d{2})[- ](jan(?:uary)?|mar(?:ch)?|jun(?:e)?|oct(?:ober)?|nov(?:ember)?)/)
+    ?? normalized.match(/(jan(?:uary)?|mar(?:ch)?|jun(?:e)?|oct(?:ober)?|nov(?:ember)?)[- ](20\d{2})/);
   if (!match) throw new Error(`Unsupported series: ${value}`);
   const year = Number(match[1].startsWith("20") ? match[1] : match[2]);
   const token = match[1].startsWith("20") ? match[2] : match[1];
-  const series = token.startsWith("jan") ? "january" : token.startsWith("mar") ? "march" : token.startsWith("jun") ? "june" : "november";
+  const series = token.startsWith("jan") ? "january" : token.startsWith("mar") ? "march" : token.startsWith("jun") ? "june" : token.startsWith("oct") ? "october" : "november";
   return { year, series };
 }
 
@@ -61,8 +61,8 @@ async function loadLegacyStatistics() {
     logLevel: "silent",
   });
   try {
-    const module = await server.ssrLoadModule("/src/data/resultStatistics.ts");
-    return module.ALL_SUBJECT_STATS;
+    const resultStatisticsModule = await server.ssrLoadModule("/src/data/resultStatistics.ts");
+    return resultStatisticsModule.ALL_SUBJECT_STATS;
   } finally {
     await server.close();
   }
@@ -259,7 +259,7 @@ const gradeFields = [
   ["9", "grade9Rate"], ["8", "grade8Rate"], ["7", "grade7Rate"], ["6", "grade6Rate"], ["5", "grade5Rate"], ["4", "grade4Rate"], ["3", "grade3Rate"], ["2", "grade2Rate"], ["1", "grade1Rate"],
 ];
 
-function toStatistics({ qualification, awardQualificationId, subject, year, sourceIds, verificationStatus, publicationStatus, origin }) {
+function toStatistics({ qualification, awardQualificationId, year, sourceIds, verificationStatus, publicationStatus, origin }) {
   const preferred = year.grade9Rate === undefined ? gradeFields.slice(0, 6) : gradeFields.slice(6);
   const gradeOrder = preferred.filter(([, field]) => year[field] !== undefined).map(([grade]) => grade);
   const gradeRates = Object.fromEntries(preferred.filter(([, field]) => year[field] !== undefined).map(([grade, field]) => [grade, year[field]]));
@@ -304,7 +304,13 @@ for (const subject of legacySubjects) {
   if (!awardQualificationId || awardQualificationId.startsWith("award:aqa:") || ["award:ocr:h240", "award:ocr:h245", "award:ocr:h640"].includes(awardQualificationId)) continue;
   const qualification = qualifications.get(awardQualificationId);
   for (const year of subject.years.filter(item => item.year >= scope.startYear && item.year <= scope.latestYear)) {
-    const normalizedSeries = year.series === "summer" ? "june" : year.series === "autumn" ? "november" : year.series;
+    const normalizedSeries = year.series === "summer"
+      ? "june"
+      : year.series === "autumn"
+        ? "november"
+        : ["award:pearson:ial-mathematics", "award:pearson:ial-further-mathematics"].includes(awardQualificationId) && year.series === "november"
+          ? "october"
+          : year.series;
     const key = `${awardQualificationId}|${year.year}|${normalizedSeries}`;
     if (coveredOfficialKeys.has(key)) continue;
     const candidate = toStatistics({

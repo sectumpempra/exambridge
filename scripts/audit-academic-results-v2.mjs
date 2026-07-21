@@ -1,6 +1,7 @@
 import { execFileSync } from "node:child_process";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
+import { buildAcademicResultsCoverageMatrix, loadAcademicResultsCoverageInputs } from "./lib/academic-results-v2-coverage.mjs";
 
 const root = process.cwd();
 const scopePath = join(root, "data", "candidates", "academic-results-v2", "scope.json");
@@ -81,32 +82,16 @@ const trackedPdfs = execFileSync("git", ["ls-files", "*.pdf"], { cwd: root, enco
   .split("\n").filter(Boolean);
 if (trackedPdfs.length > 0) failures.push(`repository tracks ${trackedPdfs.length} PDF file(s)`);
 
-const coverageCells = qualifications.flatMap(qualification =>
-  Array.from({ length: scope.latestYear - scope.startYear + 1 }, (_, offset) => ({
-    awardQualificationId: qualification.awardQualificationId,
-    knowledgeQualificationVersionId: qualification.currentKnowledgeQualificationVersionId,
-    year: scope.startYear + offset,
-    expectedSeriesStatus: "official-calendar-review-required",
-    boundaryStatus: "pending-research",
-    statisticsStatus: "pending-research",
-    awardRuleStatus: "pending-research",
-  })),
-);
-
-const coverageMatrix = {
-  schemaVersion: "1.0.0",
-  baselineCommit: scope.baselineCommit,
-  startYear: scope.startYear,
-  latestYear: scope.latestYear,
-  qualificationCount: qualifications.length,
-  cells: coverageCells,
-};
+const coverageInputs = await loadAcademicResultsCoverageInputs(root);
+const coverageMatrix = await buildAcademicResultsCoverageMatrix(coverageInputs.scope, coverageInputs.candidate);
 
 const report = {
   schemaVersion: "1.0.0",
   baselineCommit: scope.baselineCommit,
   targetQualificationCount: qualifications.length,
-  coverageCellCount: coverageCells.length,
+  coverageCellCount: coverageMatrix.cells.length,
+  expectedCoverageCellCount: coverageMatrix.expectedCellCount,
+  unresolvedCoverageCellCount: coverageMatrix.unresolvedCellCount,
   activeCounts: {
     sources: active.sources.length,
     boundaries: active.boundaries.length,
@@ -127,5 +112,5 @@ if (failures.length > 0) {
   console.error(failures.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log(`Academic Results V2 audit passed: ${qualifications.length} qualifications, ${coverageCells.length} year cells, ${trackedPdfs.length} tracked PDFs.`);
+  console.log(`Academic Results V2 audit passed: ${qualifications.length} qualifications, ${coverageMatrix.expectedCellCount} expected route-series cells, ${coverageMatrix.unresolvedCellCount} unresolved, ${trackedPdfs.length} tracked PDFs.`);
 }

@@ -31,6 +31,7 @@ const seriesOrder: Record<GradeBoundaryV2["series"], number> = {
   january: 1,
   march: 3,
   june: 6,
+  october: 10,
   november: 11,
   other: 12,
 };

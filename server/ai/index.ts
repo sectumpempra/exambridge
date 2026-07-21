@@ -33,10 +33,11 @@ function searchYearAndSeries(request: ReturnType<typeof AIChatRequestSchema.pars
   const message = latestUserMessage(request).toLowerCase();
   const yearMatch = /\b(20\d{2})\b/.exec(message);
   const series = /january|一月|1月/.test(message) ? "january"
-    : /march|三月|3月/.test(message) ? "march"
+      : /march|三月|3月/.test(message) ? "march"
       : /june|夏季|六月|6月|5\s*\/\s*6月/.test(message) ? "june"
-        : /november|冬季|十一月|11月|10\s*\/\s*11月/.test(message) ? "november"
-          : undefined;
+        : /october|十月|10月/.test(message) ? "october"
+          : /november|冬季|十一月|11月/.test(message) ? "november"
+            : undefined;
   return { year: yearMatch ? Number(yearMatch[1]) : undefined, series } as const;
 }
 

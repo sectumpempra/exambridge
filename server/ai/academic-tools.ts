@@ -72,7 +72,8 @@ const parseSeries = (request: AIChatRequest) => {
   if (/january|jan(?:uary)?|一月|1月/.test(message)) return "january" as const;
   if (/march|mar(?:ch)?|三月|3月/.test(message)) return "march" as const;
   if (/june|may\s*\/\s*june|夏季|六月|6月|5\s*\/\s*6月/.test(message)) return "june" as const;
-  if (/november|october\s*\/\s*november|冬季|十一月|11月|10\s*\/\s*11月/.test(message)) return "november" as const;
+  if (/october|oct(?:ober)?|十月|10月/.test(message)) return "october" as const;
+  if (/november|nov(?:ember)?|冬季|十一月|11月/.test(message)) return "november" as const;
   return undefined;
 };
 

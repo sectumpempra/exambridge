@@ -30,7 +30,7 @@ export class AwardCalculationErrorV2 extends Error {
 
 const seriesDate = (series: string) => {
   const [year, season] = series.split("-");
-  const month = { january: "01", march: "03", june: "06", november: "11" }[season];
+  const month = { january: "01", march: "03", june: "06", october: "10", november: "11" }[season];
   return `${year}-${month ?? "01"}-01`;
 };
 

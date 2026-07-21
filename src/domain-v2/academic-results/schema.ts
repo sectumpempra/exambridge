@@ -13,7 +13,47 @@ export const ReviewStatusSchema = z.enum([
   "rejected",
 ]);
 
-export const ExamSeriesSchema = z.enum(["january", "march", "june", "november", "other"]);
+export const ExamSeriesSchema = z.enum(["january", "march", "june", "october", "november", "other"]);
+
+export const AcademicCoverageStatusSchema = z.enum([
+  "verified-record",
+  "candidate-record",
+  "conflict",
+  "not-held",
+  "not-published",
+  "cancelled",
+  "restricted",
+  "source-unavailable",
+]);
+
+export const AcademicResultsCoverageCellV2Schema = z.strictObject({
+  cellId: NonEmptyString,
+  awardQualificationId: NonEmptyString,
+  qualificationVersionId: NonEmptyString,
+  year: z.number().int().min(2019).max(2100),
+  series: ExamSeriesSchema,
+  routeId: NonEmptyString,
+  region: NonEmptyString.optional(),
+  expectedByPolicy: z.boolean(),
+  administrationStatus: z.enum(["held", "not-held", "not-published", "cancelled", "restricted", "source-unavailable"]),
+  boundaryStatus: AcademicCoverageStatusSchema,
+  statisticsStatus: AcademicCoverageStatusSchema,
+  awardRuleStatus: z.enum(["verified-record", "candidate-record", "source-unavailable"]),
+  sourceUrls: z.array(z.string().url()).min(1),
+  notes: z.array(NonEmptyString),
+});
+
+export const AcademicResultsCoverageMatrixV2Schema = z.strictObject({
+  schemaVersion: z.literal("2.0.0"),
+  generatedAt: DateTimeSchema,
+  baselineCommit: z.string().regex(/^[a-f0-9]{40}$/),
+  startYear: z.number().int().min(2019),
+  latestYear: z.number().int().min(2019),
+  qualificationCount: z.number().int().positive(),
+  expectedCellCount: z.number().int().nonnegative(),
+  unresolvedCellCount: z.number().int().nonnegative(),
+  cells: z.array(AcademicResultsCoverageCellV2Schema),
+});
 
 export const SourceEvidenceV1Schema = z.strictObject({
   schemaVersion: z.literal("1.0.0"),
@@ -237,7 +277,7 @@ export const QualificationAwardRuleV2Schema = z.strictObject({
 
 export const AwardComponentScoreV2Schema = z.strictObject({
   componentCode: NonEmptyString,
-  series: z.string().regex(/^\d{4}-(january|march|june|november)$/),
+  series: z.string().regex(/^\d{4}-(january|march|june|october|november)$/),
   rawMark: z.number().finite().nonnegative().optional(),
   awardMark: z.number().finite().nonnegative().optional(),
 });
@@ -245,7 +285,7 @@ export const AwardComponentScoreV2Schema = z.strictObject({
 export const AwardCalculationInputV2Schema = z.strictObject({
   ruleId: NonEmptyString,
   routeId: NonEmptyString,
-  targetSeries: z.string().regex(/^\d{4}-(january|march|june|november)$/),
+  targetSeries: z.string().regex(/^\d{4}-(january|march|june|october|november)$/),
   combinationId: NonEmptyString,
   componentScores: z.array(AwardComponentScoreV2Schema).min(1),
 });
@@ -320,7 +360,7 @@ export const BoundaryPredictionV1Schema = z.strictObject({
     z.number().finite().nonnegative(),
   ])),
   sampleBoundaryIds: z.array(NonEmptyString).min(3).max(5),
-  sampleSeries: z.array(z.string().regex(/^\d{4}-(january|march|june|november)$/)).min(3).max(5),
+  sampleSeries: z.array(z.string().regex(/^\d{4}-(january|march|june|october|november)$/)).min(3).max(5),
   dataCutoff: DateSchema,
   methodVersion: z.literal("exambridge-boundary-prediction-v1"),
   confidence: z.enum(["high", "medium", "low"]),

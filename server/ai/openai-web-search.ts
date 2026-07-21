@@ -18,7 +18,7 @@ export type OfficialSearchRequest = {
   board: string;
   qualificationCode: string;
   year?: number;
-  series?: "january" | "march" | "june" | "november" | "other";
+  series?: "january" | "march" | "june" | "october" | "november" | "other";
   conflictsWithActive: boolean;
   signal: AbortSignal;
 };
