@@ -235,7 +235,7 @@ describe("AI assistant context builder", () => {
       knowledge: {
         mode: string;
         selections: Array<{ code: string }>;
-        exactMetrics: { sharedNodeIds: string[]; unionCount: number };
+        exactMetrics: { sharedNodeCount: number; unionCount: number };
         sharedConcepts: { items: unknown[] };
         sideA: { items: unknown[] };
         sideB: { items: unknown[] };
@@ -252,7 +252,7 @@ describe("AI assistant context builder", () => {
       + payload.knowledge.sideA.items.length
       + payload.knowledge.sideB.items.length,
     ).toBeGreaterThan(0);
-    expect(payload.knowledge.truncationNotice).toContain("context budget");
+    expect(payload.knowledge.truncationNotice).toContain("assistant context");
   });
 
   it("reuses the server-resolved course context for a realistic follow-up", async () => {

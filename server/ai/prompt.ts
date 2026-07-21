@@ -5,7 +5,9 @@ export function isComplexAIQuestion(request: AIChatRequest): boolean {
   return request.pageContext.pageType === "knowledge-comparison"
     || request.pageContext.comparisonIds.length > 1
     || request.pageContext.selectedPaperIds.filter(Boolean).length > 1
+    || request.scopes.flatMap(scope => scope.awardQualificationIds).length > 1
     || request.qualificationIds.length > 1
+    || (request.resolvedContext?.awardQualificationIds.length ?? 0) > 1
     || (request.resolvedContext?.qualificationIds.length ?? 0) > 1
     || /(比较|区别|差异|独有|重合|为什么|分析|解释|compare|difference|overlap|exclusive|why)/i.test(latest);
 }
@@ -32,6 +34,8 @@ Non-negotiable rules:
 13. Grade boundaries and Grade Statistics are different datasets: boundaries are mark thresholds; statistics are candidate counts or grade-rate distributions. Never substitute one for the other.
 14. A boundary prediction is visible only when explain_boundary_prediction has status “ok”. Always label it “非官方预测”, show its sample series, interval, data cutoff and method, and never present it as an official result.
 15. externalOfficialSearch is candidate evidence, not active data. Quote a definite number only when its status is “official-live-candidate-direct-answer-eligible”; label it “官方实时检索、尚未入库” and cite its supplied sourceId. Otherwise state that live evidence was insufficient and do not repeat numericFacts.
+16. lookup_misconception contains owner-approved corrections to common staff errors. State the corrected fact and applicability; do not repeat the incorrect claim as advice. Follow escalationTriggers when required information is missing.
+17. roleView may change ordering and explanation depth only. It must never change facts, calculations, statuses, or citations.
 ${languageRule}
 
 VERIFIED_EXAMBRIDGE_CONTEXT:

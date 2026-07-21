@@ -908,6 +908,7 @@ export const AcademicResultsManifestV2Schema = z.strictObject({
   boundaries: z.array(GradeBoundaryV2Schema),
   statistics: z.array(GradeStatisticsV2Schema),
   awardRules: z.array(QualificationAwardRuleV2Schema),
+  misconceptions: z.array(MisconceptionRecordV1Schema).default([]),
   difficultyProfiles: z.array(DifficultyProfileV1Schema),
 });
 
@@ -926,6 +927,8 @@ export type QualificationFactCardV1 = z.infer<typeof QualificationFactCardV1Sche
 export type QualificationFactCardCatalogV1 = z.infer<typeof QualificationFactCardCatalogV1Schema>;
 export type QualificationFactGapV1 = z.infer<typeof QualificationFactGapV1Schema>;
 export type QualificationFactGapReportV1 = z.infer<typeof QualificationFactGapReportV1Schema>;
+export type MisconceptionRecordV1 = z.infer<typeof MisconceptionRecordV1Schema>;
+export type MisconceptionLibraryV1 = z.infer<typeof MisconceptionLibraryV1Schema>;
 export type GradeBoundaryV2 = z.infer<typeof GradeBoundaryV2Schema>;
 export type GradeStatisticsV2 = z.infer<typeof GradeStatisticsV2Schema>;
 export type QualificationAwardRuleV2 = z.infer<typeof QualificationAwardRuleV2Schema>;

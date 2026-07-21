@@ -15,6 +15,7 @@ export type AcademicToolName =
   | "explain_qualification_rule"
   | "compare_qualification_rules"
   | "compare_subjects"
+  | "lookup_misconception"
   | "calculate_transition_difficulty"
   | "evaluate_student_readiness"
   | "explain_boundary_prediction";
@@ -30,6 +31,7 @@ export type AcademicToolContext = {
   activeBatch: string | null;
   dataPolicy: string;
   calls: AcademicToolCall[];
+  containsAqa: boolean;
 };
 
 const latestUserMessage = (request: AIChatRequest) =>
@@ -46,6 +48,7 @@ export function detectAcademicToolIntents(request: AIChatRequest): Set<AcademicT
     intents.add(request.academicQuery?.type === "award-calculation" ? "calculate_qualification_award" : "explain_qualification_rule");
   }
   if (has(message, /考试规则|合分规则|重考|carry[ -]?forward|locking|组合规则/)) intents.add("explain_qualification_rule");
+  if (has(message, /有什么区别|什么区别|能不能混|是否等于|是不是.*(?:一样|分数线)|component boundary|paper pum|carry[ -]?forward|cash[ -]?in|locking|core|extended|foundation|higher|ums|预测分数线/)) intents.add("lookup_misconception");
   if (has(message, /(?:两个|两门|不同).*(?:考试局|规则)|考试局.*(?:区别|对比)|compare.*rule/)) intents.add("compare_qualification_rules");
   if (has(message, /(?:科目|课程).*(?:区别|对比)|(?:区别|对比).*(?:科目|课程)/)) intents.add("compare_subjects");
   if (has(message, /难度|difficulty|升读.*(?:差异|跨度)|过渡.*难/)) intents.add("calculate_transition_difficulty");
@@ -59,6 +62,21 @@ export function detectAcademicToolIntents(request: AIChatRequest): Set<AcademicT
 }
 
 const unique = (values: string[]) => [...new Set(values)];
+
+const MISCONCEPTION_PATTERNS: Record<string, RegExp> = {
+  "misconception:component-boundary-is-award-boundary": /component\s*boundary|单张.*(?:分数线|等级线)|paper.*(?:boundary|threshold)/i,
+  "misconception:statistics-is-boundary": /grade\s*statistic|成绩统计|等级比例|通过率.*分数线|分数线.*通过率/i,
+  "misconception:average-paper-pum": /pum|paper.*平均|平均.*paper/i,
+  "misconception:mix-staged-as-papers": /staged|分阶段|carry[ -]?forward.*paper|混.*as/i,
+  "misconception:ial-unit-is-cashed-in-award": /cash[ -]?in|ial.*unit|unit.*资格/i,
+  "misconception:linear-a-level-uses-ums": /(?:aqa|ocr).*(?:ums|模块)|ums.*(?:aqa|ocr)/i,
+  "misconception:a-star-is-one-paper-threshold": /单张.*a\*|paper.*a\*/i,
+  "misconception:mix-0580-core-extended": /0580.*(?:core|extended)|(?:core|extended).*0580/i,
+  "misconception:mix-4ma1-tiers": /4ma1.*(?:foundation|higher)|(?:foundation|higher).*4ma1/i,
+  "misconception:carry-forward-resit-cash-in-same": /carry[ -]?forward|resit|重考|cash[ -]?in/i,
+  "misconception:prediction-is-official-boundary": /预测.*分数线|predicted?.*boundar/i,
+  "misconception:historical-rule-applies-currently": /历史.*(?:规则|结构)|旧版.*(?:规则|结构)|当前.*历史/i,
+};
 
 const parseYear = (request: AIChatRequest) => {
   if (request.academicQuery?.type === "lookup" && request.academicQuery.year) return request.academicQuery.year;
@@ -108,6 +126,7 @@ export function buildAcademicToolContext(
   const approvedStatistics = manifest.statistics.filter(record => record.verificationStatus === "owner-approved");
   const approvedRules = manifest.awardRules.filter(record => record.verificationStatus === "owner-approved");
   const approvedDifficultyProfiles = manifest.difficultyProfiles.filter(record => record.verificationStatus === "owner-approved");
+  const approvedMisconceptions = manifest.misconceptions.filter(record => record.reviewStatus === "owner-approved");
   const calls: AcademicToolCall[] = [];
   const add = (name: AcademicToolName, records: unknown[], sourceIds: string[]) => calls.push({
     name,
@@ -141,6 +160,13 @@ export function buildAcademicToolContext(
       && qualificationVersionIds.includes(record.targetQualificationVersionId),
     );
     add("compare_subjects", records, records.flatMap(record => Object.values(record.dimensions).flatMap(dimension => dimension.sourceIds)));
+  }
+  if (intents.has("lookup_misconception")) {
+    const message = latestUserMessage(request);
+    const records = approvedMisconceptions.filter(record =>
+      (qualificationVersionIds.length === 0 || record.qualificationVersionIds.some(id => qualificationVersionIds.includes(id)))
+      && (MISCONCEPTION_PATTERNS[record.misconceptionId]?.test(message) ?? false));
+    add("lookup_misconception", records, records.flatMap(record => record.sourceIds));
   }
   if (intents.has("calculate_transition_difficulty")) {
     const records = approvedDifficultyProfiles.filter(record =>
@@ -244,5 +270,10 @@ export function buildAcademicToolContext(
     activeBatch: manifest.activationBatch,
     dataPolicy: "Only owner-approved active rows are queryable. Missing rows are never guessed. Predictions are non-official and consent-gated.",
     calls,
+    containsAqa: calls.some(call => call.name === "lookup_misconception" && Array.isArray(call.result)
+      && call.result.some(record => typeof record === "object" && record !== null
+        && "awardQualificationIds" in record
+        && Array.isArray(record.awardQualificationIds)
+        && record.awardQualificationIds.some((id: unknown) => typeof id === "string" && id.startsWith("award:aqa:")))),
   };
 }

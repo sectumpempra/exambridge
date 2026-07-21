@@ -246,12 +246,12 @@ function buildLocalAqaAnswer(
       : "你粘贴的考纲原文只在本地处理，本回答不复述该段原文。");
   }
   if (knowledgeObject?.mode === "comparison") {
-    const exact = knowledgeObject.exactMetrics as { coverageA?: number; coverageB?: number; jaccard?: number; sharedNodeIds?: string[] } | undefined;
+    const exact = knowledgeObject.exactMetrics as { coverageA?: number; coverageB?: number; jaccard?: number; sharedNodeCount?: number } | undefined;
     if (exact) {
       const format = (value: number | undefined) => typeof value === "number" ? `${value.toFixed(1)}%` : "—";
       lines.push(locale === "en-GB"
-        ? `Verified exact scope: ${exact.sharedNodeIds?.length ?? 0} shared concepts; A→B ${format(exact.coverageA)}, B→A ${format(exact.coverageB)}, Jaccard ${format(exact.jaccard)}.`
-        : `已核验的精确知识范围：共同概念 ${exact.sharedNodeIds?.length ?? 0} 个；A→B 覆盖率 ${format(exact.coverageA)}，B→A 覆盖率 ${format(exact.coverageB)}，Jaccard ${format(exact.jaccard)}。`);
+        ? `Verified exact scope: ${exact.sharedNodeCount ?? 0} shared concepts; A→B ${format(exact.coverageA)}, B→A ${format(exact.coverageB)}, Jaccard ${format(exact.jaccard)}.`
+        : `已核验的精确知识范围：共同概念 ${exact.sharedNodeCount ?? 0} 个；A→B 覆盖率 ${format(exact.coverageA)}，B→A 覆盖率 ${format(exact.coverageB)}，Jaccard ${format(exact.jaccard)}。`);
     }
   } else if (knowledgeObject?.mode === "single-qualification") {
     const qualification = knowledgeObject.qualification as { selectedPaper?: { name?: string }; statementCount?: number; paperCatalog?: unknown[] } | undefined;
@@ -260,6 +260,13 @@ function buildLocalAqaAnswer(
       : `本地已核验范围：${qualification?.selectedPaper?.name ?? "当前资格"}；共 ${qualification?.statementCount ?? qualification?.paperCatalog?.length ?? 0} 条映射记录。`);
   }
   for (const call of academic?.calls ?? []) {
+    if (call.name === "lookup_misconception" && call.status === "ok" && Array.isArray(call.result)) {
+      for (const record of call.result as Array<{ correctedFact?: string; applicabilityNotes?: string[]; sourceIds?: string[] }>) {
+        if (record.correctedFact) lines.push(`${record.correctedFact}${record.sourceIds?.map(sourceId => `[${sourceId}]`).join("") ?? ""}`);
+        if (record.applicabilityNotes?.length) lines.push(record.applicabilityNotes.join("；"));
+      }
+      continue;
+    }
     const count = Array.isArray(call.result) ? call.result.length : call.result ? 1 : 0;
     lines.push(locale === "en-GB"
       ? `${call.name}: ${call.status}${count ? ` (${count} record(s))` : ""}.`
@@ -715,7 +722,15 @@ export class AIContextBuilder {
         sourceIds: sourceIds.get(mapping.qualificationVersionId),
         aqaOriginalTextPolicy: mapping.board === "AQA" ? "Original AQA wording is intentionally withheld from the model." : undefined,
       })),
-      exactMetrics: comparison.exact,
+      exactMetrics: {
+        sharedNodeCount: comparison.exact.sharedNodeIds.length,
+        aOnlyNodeCount: comparison.exact.aOnlyNodeIds.length,
+        bOnlyNodeCount: comparison.exact.bOnlyNodeIds.length,
+        unionCount: comparison.exact.unionCount,
+        jaccard: comparison.exact.jaccard,
+        coverageA: comparison.exact.coverageA,
+        coverageB: comparison.exact.coverageB,
+      },
       statementCounts: comparison.counts,
       sharedConcepts,
       sideA: aItems,
@@ -766,7 +781,8 @@ export class AIContextBuilder {
         : courses.map((course) => course.label)).slice(0, 4),
     };
 
-    if (overviews.length === 0 && !knowledge) {
+    const hasVerifiedAcademicContext = academic?.calls.some(call => call.status === "ok") === true;
+    if (overviews.length === 0 && !knowledge && !hasVerifiedAcademicContext) {
       return {
         promptContext: "{}",
         sources: [],
@@ -781,6 +797,7 @@ export class AIContextBuilder {
 
     const serializePayload = () => JSON.stringify({
       generatedFor: request.pageContext.pageType,
+      roleView: request.roleView,
       sourcePolicy: "Only owner-approved ExamBridge data is included. Source IDs are resolved by the server.",
       examOverviews: overviews,
       deterministicPaperFacts: paperFacts,
@@ -816,11 +833,11 @@ export class AIContextBuilder {
       sources: sourceList,
       resolvedContext,
       paperFacts,
-      ...(aqaEntries.length > 0 ? {
+      ...((aqaEntries.length > 0 || academic?.containsAqa) ? {
         localAnswer: buildLocalAqaAnswer(request.locale, knowledge, academic, sourceList, aqaOriginalTextDetected),
       } : {}),
       academicTools: academic,
-      containsAqa: aqaEntries.length > 0,
+      containsAqa: aqaEntries.length > 0 || academic?.containsAqa === true,
       ...(knowledgeEntries.length === 1 && aqaEntries.length === 0 ? {
         externalSearchIdentity: { board: knowledgeEntries[0].board, qualificationCode: knowledgeEntries[0].subjectCode },
       } : {}),

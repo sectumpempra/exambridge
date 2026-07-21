@@ -268,6 +268,7 @@ const report = {
     boundaries: active.boundaries.length,
     statistics: active.statistics.length,
     awardRules: active.awardRules.length,
+    misconceptions: active.misconceptions?.length ?? 0,
     difficultyProfiles: active.difficultyProfiles.length,
   },
   trackedPdfCount: trackedPdfs.length,

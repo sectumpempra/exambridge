@@ -31,13 +31,15 @@ describe("AI assistant internal-preview UI", () => {
   it("renders the complete assistant surface and evidence boundary when enabled", () => {
     vi.stubEnv("VITE_AI_ASSISTANT_PUBLIC", "true");
     const html = render(createElement(AIAssistantPage));
-    expect(html).toContain("先核对资料，再解释答案");
+    expect(html).toContain("全站考试事实查询");
     expect(html).toContain("仅根据 ExamBridge 已核验资料回答");
     expect(html).toContain("会发送给 DeepSeek 生成回答");
     expect(html).toContain("不会发送官方 PDF、API 密钥或个人账号资料");
     expect(html).toContain("输入问题；Shift + Enter 换行");
     expect(html).toContain("对话仅保存在当前浏览器标签页");
     expect(html).toContain("选择课程");
+    expect(html).toContain("检索范围");
+    expect(html).toContain("团队视图");
   });
 
   it("migrates a V1 conversation only inside the current session payload", () => {
