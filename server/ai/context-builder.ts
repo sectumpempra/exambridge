@@ -25,7 +25,7 @@ import {
   type AcademicResultsManifestV2,
 } from "@/domain-v2/academic-results";
 import { buildAcademicToolContext, type AcademicToolContext } from "./academic-tools";
-import { detectQualificationAmbiguity } from "./qualification-resolver";
+import { detectQualificationAmbiguity, resolveApprovedQualificationAliases } from "./qualification-resolver";
 import { detectRequiredInputClarification } from "./required-input-resolver";
 
 type KnowledgeManifestEntry = {
@@ -414,7 +414,7 @@ export class AIContextBuilder {
     return promise;
   }
 
-  private resolveCourseEntries(request: AIChatRequest) {
+  private resolveCourseEntries(request: AIChatRequest, aliasAwardIds: string[] = []) {
     const result = [] as typeof COURSE_CATALOG;
     const seen = new Set<string>();
     const add = (entry: (typeof COURSE_CATALOG)[number] | undefined) => {
@@ -431,6 +431,8 @@ export class AIContextBuilder {
       .sort((a, b) => explicitCodePosition(message, a.subjectCode) - explicitCodePosition(message, b.subjectCode)
         || Number(Boolean(b.capabilities.examOverview.href)) - Number(Boolean(a.capabilities.examOverview.href)))
       .forEach(add);
+    if (result.length > 0) return result;
+    aliasAwardIds.forEach(awardId => add(COURSE_CATALOG.find(entry => awardQualificationIdForCourse(entry) === awardId)));
     if (result.length > 0) return result;
     [...request.scopes].sort((a, b) => scopePriority(a.source) - scopePriority(b.source)).forEach((scope) => {
       scope.catalogQualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
@@ -743,6 +745,7 @@ export class AIContextBuilder {
 
   async build(request: AIChatRequest): Promise<AIContextBuildResult> {
     const manifest = await this.loadManifest();
+    const academicManifest = await this.loadAcademicManifest();
     const ambiguity = detectQualificationAmbiguity(latestUserMessage(request), request.locale);
     if (ambiguity) {
       return {
@@ -761,7 +764,8 @@ export class AIContextBuilder {
         containsAqa: false,
       };
     }
-    const courses = this.resolveCourseEntries(request);
+    const aliasMatches = resolveApprovedQualificationAliases(latestUserMessage(request), academicManifest.qualificationIdentities);
+    const courses = this.resolveCourseEntries(request, aliasMatches.map(identity => identity.awardQualificationId));
     const knowledgeEntries = this.resolveKnowledgeEntries(request, manifest, courses);
     const aqaEntries = knowledgeEntries.filter((entry) => entry.board === "AQA");
     let aqaOriginalTextDetected = false;
@@ -776,7 +780,6 @@ export class AIContextBuilder {
     const selectedPaperIds = resolveSelectedPaperIds(request, knowledgeEntries);
     const knowledge = await this.addKnowledgeContext(knowledgeEntries, manifest, selectedPaperIds, sources);
     const paperFacts = this.paperFactsForSelections(courses, knowledgeEntries, selectedPaperIds);
-    const academicManifest = await this.loadAcademicManifest();
     const rawAcademic = buildAcademicToolContext(
       request,
       academicManifest,

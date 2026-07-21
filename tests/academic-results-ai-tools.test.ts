@@ -36,6 +36,7 @@ const boundary = (verificationStatus: GradeBoundaryV2["verificationStatus"], id:
 const manifest = (boundaries: GradeBoundaryV2[] = [], misconceptions: MisconceptionRecordV1[] = []): AcademicResultsManifestV2 => ({
   schemaVersion: "2.0.0",
   activationBatch: "test-owner-approved",
+  qualificationIdentities: [],
   sources: [],
   boundaries,
   statistics: [],

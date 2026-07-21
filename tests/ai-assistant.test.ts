@@ -14,7 +14,7 @@ import { AIServiceGuard, createAIServiceGuardFromEnv } from "../server/ai/servic
 import { AIProviderError, DeepSeekChatProvider, ensureAnswerCitations, hydrateCitations } from "../server/ai/provider";
 import { isComplexAIQuestion } from "../server/ai/prompt";
 import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai";
-import { detectQualificationAmbiguity } from "../server/ai/qualification-resolver";
+import { detectQualificationAmbiguity, resolveApprovedQualificationAliases } from "../server/ai/qualification-resolver";
 import { detectRequiredInputClarification } from "../server/ai/required-input-resolver";
 
 function request(overrides: Partial<AIChatRequest> = {}): AIChatRequest {
@@ -69,6 +69,26 @@ describe("AI qualification ambiguity resolver", () => {
   it("does not override an exact qualification code", () => {
     expect(detectQualificationAmbiguity("比较IG数学0580和A Level数学9709")).toBeUndefined();
     expect(detectQualificationAmbiguity("Pearson 8MA0怎么合分？")).toBeUndefined();
+  });
+
+  it("resolves only owner-approved aliases and keeps candidate identities isolated", () => {
+    const base = {
+      schemaVersion: "2.0.0" as const,
+      awardQualificationId: "award:caie:0580",
+      board: "CAIE",
+      subjectCode: "0580",
+      subjectName: "Cambridge IGCSE Mathematics",
+      level: "IGCSE",
+      catalogQualificationIds: ["qual:caie:igcse:0580"],
+      knowledgeMappingCodes: ["CAIE-0580"],
+      qualificationVersions: [{ qualificationVersionId: "CAIE-0580:2025-2027", effectiveFrom: "2025-01-01", isCurrent: true }],
+      aliases: ["0580", "剑桥IGCSE数学"],
+      sourceIds: ["source-1"],
+      processingPolicy: "deepseek-candidate" as const,
+    };
+    expect(resolveApprovedQualificationAliases("剑桥IGCSE数学考什么？", [{ ...base, reviewStatus: "candidate" }])).toEqual([]);
+    expect(resolveApprovedQualificationAliases("剑桥IGCSE数学考什么？", [{ ...base, reviewStatus: "owner-approved" }]))
+      .toEqual([expect.objectContaining({ awardQualificationId: "award:caie:0580" })]);
   });
 });
 

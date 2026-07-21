@@ -1,9 +1,48 @@
+import type { QualificationIdentityV2 } from "@/domain-v2/academic-results";
+
 const EXPLICIT_CODE = /\b(?:0580|9709|9231|4ma1|8ma0|yma01|xfm01|yfm01|xma01|7357|7367|h240|h245|h640|6993)\b/i;
 
 export type QualificationAmbiguity = {
   ambiguityClass: "generic-a-level-mathematics" | "generic-igcse-mathematics" | "pearson-route";
   clarification: string;
 };
+
+const normalizeAlias = (value: string) => value
+  .normalize("NFKC")
+  .toLowerCase()
+  .replace(/[\s·_—–-]+/g, " ")
+  .replace(/[^a-z0-9\u3400-\u9fff ]+/g, "")
+  .trim();
+
+export function resolveApprovedQualificationAliases(
+  message: string,
+  identities: QualificationIdentityV2[],
+): QualificationIdentityV2[] {
+  const normalizedMessageValue = normalizeAlias(message);
+  const normalizedMessage = ` ${normalizedMessageValue} `;
+  const compactMessage = normalizedMessageValue.replace(/\s+/g, "");
+  return identities
+    .filter(identity => identity.reviewStatus === "owner-approved")
+    .map(identity => ({
+      identity,
+      matchedLength: identity.aliases.reduce((longest, alias) => {
+        const normalized = normalizeAlias(alias);
+        if (!normalized) return longest;
+        const exactCode = /^[a-z]*\d+[a-z\d]*$/i.test(normalized);
+        const containsCjk = /[\u3400-\u9fff]/.test(normalized);
+        const matches = containsCjk
+          ? compactMessage.includes(normalized.replace(/\s+/g, ""))
+          : exactCode
+          ? new RegExp(`(?:^|\\s)${normalized.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:$|\\s)`, "i").test(normalizedMessage)
+          : normalizedMessage.includes(` ${normalized} `);
+        return matches ? Math.max(longest, normalized.length) : longest;
+      }, 0),
+    }))
+    .filter(result => result.matchedLength > 0)
+    .sort((a, b) => b.matchedLength - a.matchedLength || a.identity.awardQualificationId.localeCompare(b.identity.awardQualificationId))
+    .slice(0, 4)
+    .map(result => result.identity);
+}
 
 export function detectQualificationAmbiguity(message: string, locale: "zh-CN" | "en-GB" = "zh-CN"): QualificationAmbiguity | undefined {
   if (EXPLICIT_CODE.test(message)) return undefined;

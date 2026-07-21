@@ -31,4 +31,12 @@ describe("Academic Results V2 qualification identity bridge", () => {
       expect(identity.processingPolicy).toBe(identity.board === "AQA" ? "local-only" : "deepseek-candidate");
     }
   });
+
+  it("contains reviewable Chinese and English aliases without making candidates active", () => {
+    for (const identity of catalog.identities) {
+      expect(identity.aliases.some(alias => /[\u3400-\u9fff]/.test(alias)), identity.awardQualificationId).toBe(true);
+      expect(identity.aliases.some(alias => /[A-Za-z]/.test(alias)), identity.awardQualificationId).toBe(true);
+      expect(identity.reviewStatus).toBe("codex-reviewed");
+    }
+  });
 });

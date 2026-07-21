@@ -904,6 +904,7 @@ export const ExternalEvidenceV1Schema = z.strictObject({
 export const AcademicResultsManifestV2Schema = z.strictObject({
   schemaVersion: z.literal("2.0.0"),
   activationBatch: NonEmptyString.nullable(),
+  qualificationIdentities: z.array(QualificationIdentityV2Schema).default([]),
   sources: z.array(SourceEvidenceV1Schema),
   boundaries: z.array(GradeBoundaryV2Schema),
   statistics: z.array(GradeStatisticsV2Schema),
