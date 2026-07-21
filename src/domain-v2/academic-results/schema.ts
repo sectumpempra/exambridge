@@ -13,6 +13,59 @@ export const ReviewStatusSchema = z.enum([
   "rejected",
 ]);
 
+export const QualificationVersionIdentityV2Schema = z.strictObject({
+  qualificationVersionId: NonEmptyString,
+  effectiveFrom: DateSchema,
+  effectiveTo: DateSchema.optional(),
+  isCurrent: z.boolean(),
+}).superRefine((value, ctx) => {
+  if (value.effectiveTo && value.effectiveTo < value.effectiveFrom) {
+    ctx.addIssue({ code: "custom", path: ["effectiveTo"], message: "effectiveTo must not precede effectiveFrom" });
+  }
+});
+
+export const QualificationIdentityV2Schema = z.strictObject({
+  schemaVersion: z.literal("2.0.0"),
+  awardQualificationId: NonEmptyString,
+  board: NonEmptyString,
+  subjectCode: NonEmptyString,
+  subjectName: NonEmptyString,
+  level: NonEmptyString,
+  catalogQualificationIds: z.array(NonEmptyString).min(1),
+  knowledgeMappingCodes: z.array(NonEmptyString).min(1),
+  qualificationVersions: z.array(QualificationVersionIdentityV2Schema).min(1),
+  aliases: z.array(NonEmptyString).min(1),
+  sourceIds: z.array(NonEmptyString).min(1),
+  processingPolicy: z.enum(["local-only", "deepseek-candidate"]),
+  reviewStatus: ReviewStatusSchema,
+}).superRefine((value, ctx) => {
+  const uniqueFields = ["catalogQualificationIds", "knowledgeMappingCodes", "aliases", "sourceIds"] as const;
+  for (const field of uniqueFields) {
+    const normalized = value[field].map(item => item.trim().toLowerCase());
+    if (new Set(normalized).size !== normalized.length) {
+      ctx.addIssue({ code: "custom", path: [field], message: `${field} must be unique after normalization` });
+    }
+  }
+  const versionIds = value.qualificationVersions.map(version => version.qualificationVersionId);
+  if (new Set(versionIds).size !== versionIds.length) {
+    ctx.addIssue({ code: "custom", path: ["qualificationVersions"], message: "qualificationVersionId values must be unique within an award" });
+  }
+  if (value.qualificationVersions.filter(version => version.isCurrent).length !== 1) {
+    ctx.addIssue({ code: "custom", path: ["qualificationVersions"], message: "exactly one qualification version must be current" });
+  }
+});
+
+export const QualificationIdentityCatalogV2Schema = z.strictObject({
+  schemaVersion: z.literal("2.0.0"),
+  generatedFor: z.literal("academic-results-v2"),
+  identities: z.array(QualificationIdentityV2Schema).min(1),
+}).superRefine((value, ctx) => {
+  const awardIds = value.identities.map(identity => identity.awardQualificationId);
+  if (new Set(awardIds).size !== awardIds.length) {
+    ctx.addIssue({ code: "custom", path: ["identities"], message: "awardQualificationId values must be unique" });
+  }
+});
+
 export const ExamSeriesSchema = z.enum(["january", "march", "june", "october", "november", "other"]);
 
 export const AcademicCoverageStatusSchema = z.enum([
@@ -487,6 +540,9 @@ export const AcademicResultsManifestV2Schema = z.strictObject({
 });
 
 export type SourceEvidenceV1 = z.infer<typeof SourceEvidenceV1Schema>;
+export type QualificationVersionIdentityV2 = z.infer<typeof QualificationVersionIdentityV2Schema>;
+export type QualificationIdentityV2 = z.infer<typeof QualificationIdentityV2Schema>;
+export type QualificationIdentityCatalogV2 = z.infer<typeof QualificationIdentityCatalogV2Schema>;
 export type GradeBoundaryV2 = z.infer<typeof GradeBoundaryV2Schema>;
 export type GradeStatisticsV2 = z.infer<typeof GradeStatisticsV2Schema>;
 export type QualificationAwardRuleV2 = z.infer<typeof QualificationAwardRuleV2Schema>;

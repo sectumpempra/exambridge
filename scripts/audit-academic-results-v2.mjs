@@ -6,6 +6,7 @@ import { buildAcademicResultsCoverageMatrix, loadAcademicResultsCoverageInputs }
 
 const root = process.cwd();
 const scopePath = join(root, "data", "candidates", "academic-results-v2", "scope.json");
+const identityPath = join(root, "data", "candidates", "academic-results-v2", "qualification-identities.json");
 const activePath = join(root, "public", "data", "academic-results-v2", "manifest.json");
 const generatedDirectory = join(root, "generated", "academic-results-v2");
 const failures = [];
@@ -27,6 +28,7 @@ const expectedAwardIds = [
 ];
 
 const scope = JSON.parse(await readFile(scopePath, "utf8"));
+const identityCatalog = JSON.parse(await readFile(identityPath, "utf8"));
 const active = JSON.parse(await readFile(activePath, "utf8"));
 
 async function loadAcademicSchemas() {
@@ -46,6 +48,11 @@ async function loadAcademicSchemas() {
 
 const academicSchemas = await loadAcademicSchemas();
 
+const identityParse = academicSchemas.QualificationIdentityCatalogV2Schema.safeParse(identityCatalog);
+if (!identityParse.success) {
+  failures.push(`qualification identity schema failure: ${identityParse.error.issues.map(issue => `${issue.path.join(".")}: ${issue.message}`).join("; ")}`);
+}
+
 if (scope.schemaVersion !== "1.0.0") failures.push("scope schemaVersion must be 1.0.0");
 if (!/^[a-f0-9]{40}$/.test(scope.baselineCommit ?? "")) failures.push("scope baselineCommit must be a full commit hash");
 if (scope.startYear !== 2019) failures.push("scope startYear must remain 2019");
@@ -59,6 +66,30 @@ if (JSON.stringify([...awardIds].sort()) !== JSON.stringify([...expectedAwardIds
   failures.push("scope must contain exactly the 13 approved award qualifications");
 }
 if (JSON.stringify(scope).includes("8M1")) failures.push("scope must not contain the withdrawn 8M1 typo");
+
+const identityAwardIds = (identityCatalog.identities ?? []).map(identity => identity.awardQualificationId);
+if (JSON.stringify([...identityAwardIds].sort()) !== JSON.stringify([...expectedAwardIds].sort())) {
+  failures.push("qualification identity catalog must contain exactly the 13 approved award qualifications");
+}
+
+const compactCourseCatalog = JSON.parse(await readFile(join(root, "src", "course-context", "courseCatalog.generated.json"), "utf8"));
+const slug = value => String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const catalogQualificationIds = new Set((compactCourseCatalog.entries ?? []).map(row => `qual:${slug(row[0])}:${slug(row[1])}:${slug(row[2])}`));
+const knowledgeManifest = JSON.parse(await readFile(join(root, "public", "data", "knowledge-v5", "manifest.json"), "utf8"));
+const knowledgeMappingCodes = new Set((knowledgeManifest.mappings ?? []).map(mapping => mapping.code));
+const claimedCatalogIds = new Set();
+for (const identity of identityCatalog.identities ?? []) {
+  const expectedPolicy = identity.board === "AQA" ? "local-only" : "deepseek-candidate";
+  if (identity.processingPolicy !== expectedPolicy) failures.push(`${identity.awardQualificationId} identity must use ${expectedPolicy}`);
+  for (const catalogQualificationId of identity.catalogQualificationIds ?? []) {
+    if (!catalogQualificationIds.has(catalogQualificationId)) failures.push(`${identity.awardQualificationId} references unknown catalog qualification ${catalogQualificationId}`);
+    if (claimedCatalogIds.has(catalogQualificationId)) failures.push(`catalog qualification ${catalogQualificationId} is claimed by multiple award identities`);
+    claimedCatalogIds.add(catalogQualificationId);
+  }
+  for (const knowledgeMappingCode of identity.knowledgeMappingCodes ?? []) {
+    if (!knowledgeMappingCodes.has(knowledgeMappingCode)) failures.push(`${identity.awardQualificationId} references unknown knowledge mapping ${knowledgeMappingCode}`);
+  }
+}
 
 for (const qualification of qualifications) {
   for (const field of ["awardQualificationId", "currentKnowledgeQualificationVersionId", "board", "subjectCode", "label", "processingPolicy"]) {
@@ -128,6 +159,17 @@ for (const [collectionName, schema, idField] of candidateCollections) {
 }
 
 const candidateSourceIds = new Set((candidate.sources ?? []).map(source => source.sourceId));
+for (const identity of identityCatalog.identities ?? []) {
+  for (const sourceId of identity.sourceIds ?? []) {
+    if (!candidateSourceIds.has(sourceId)) failures.push(`${identity.awardQualificationId} identity references unknown source ${sourceId}`);
+  }
+  const ruleVersionIds = new Set((candidate.awardRules ?? [])
+    .filter(rule => rule.awardQualificationId === identity.awardQualificationId)
+    .map(rule => rule.qualificationVersionId));
+  for (const version of identity.qualificationVersions ?? []) {
+    if (!ruleVersionIds.has(version.qualificationVersionId)) failures.push(`${identity.awardQualificationId} identity version ${version.qualificationVersionId} has no award-rule record`);
+  }
+}
 for (const collectionName of ["boundaries", "statistics", "awardRules"]) {
   for (const record of candidate[collectionName] ?? []) {
     for (const sourceId of record.sourceIds ?? []) {
@@ -149,6 +191,7 @@ const report = {
   schemaVersion: "1.0.0",
   baselineCommit: scope.baselineCommit,
   targetQualificationCount: qualifications.length,
+  qualificationIdentityCount: identityCatalog.identities?.length ?? 0,
   coverageCellCount: coverageMatrix.cells.length,
   expectedCoverageCellCount: coverageMatrix.expectedCellCount,
   unresolvedCoverageCellCount: coverageMatrix.unresolvedCellCount,
