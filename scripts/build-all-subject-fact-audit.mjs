@@ -25,6 +25,12 @@ const canonicalBoardMatches = (course, identity) => {
   if (course.boardName.startsWith("Edexcel")) return identity.board === "Pearson";
   return course.boardName === identity.board;
 };
+const canonicalDisplayLevel = course => {
+  if (course.boardName === "CAIE" && ["GCSE", "IGCSE"].includes(course.level)) return "IGCSE";
+  if (course.boardName === "Edexcel" && /^4[A-Z0-9]+$/i.test(course.subjectCode)
+    && ["GCSE", "IGCSE"].includes(course.level)) return "IGCSE";
+  return course.level;
+};
 const countBoundaryRows = subjectIndex => Object.values(subjectIndex ?? {}).reduce((total, seriesMap) =>
   total + Object.values(seriesMap).reduce((sum, variants) => sum + variants.length, 0), 0);
 
@@ -84,7 +90,20 @@ try {
   }
   const crossLevelCollisions = [...oldGroups.entries()]
     .filter(([, levels]) => levels.size > 1)
-    .map(([legacyIdentity, levels]) => ({ legacyIdentity, levels: [...levels].sort() }));
+    .map(([legacyIdentity, levels]) => {
+      const [board, subjectCode] = legacyIdentity.split("|");
+      const matching = COURSE_CATALOG.filter(row => row.lifecycleStatus === "current"
+        && (row.boardName.startsWith("Edexcel") ? "pearson" : row.boardName) === board
+        && row.subjectCode === subjectCode);
+      const canonicalLevels = [...new Set(matching.map(canonicalDisplayLevel))].sort();
+      return {
+        legacyIdentity,
+        levels: [...levels].sort(),
+        canonicalLevels,
+        disposition: canonicalLevels.length > 1 ? "prevented-distinct-qualification-collapse" : "approved-level-alias-collapse",
+      };
+    });
+  const preventedCrossLevelCollisions = crossLevelCollisions.filter(row => row.disposition === "prevented-distinct-qualification-collapse");
   const boardSummary = [...new Set(courseRows.map(row => row.board))].sort().map(board => {
     const rows = courseRows.filter(row => row.board === board);
     return {
@@ -129,7 +148,8 @@ try {
       candidateCanonicalBoundaries: candidate.boundaries.length,
       candidateCanonicalStatistics: candidate.statistics.length,
       candidateCanonicalAwardRules: candidate.awardRules.length,
-      crossLevelCollisionsPrevented: crossLevelCollisions.length,
+      crossLevelCollisionsPrevented: preventedCrossLevelCollisions.length,
+      approvedLevelAliasCollapses: crossLevelCollisions.length - preventedCrossLevelCollisions.length,
       universityInstitutionsCandidate: university.institutions.length,
       universityProgrammesCandidate: university.programmes.length,
       universityUnresolvedQuarantined: university.quarantine.unresolved.length,
@@ -187,7 +207,7 @@ try {
     writeFile(join(outputDirectory, "statistics-coverage.json"), `${JSON.stringify({ schemaVersion: "1.0.0", generatedAt: report.generatedAt, blockingPolicy: "auxiliary", records: statisticsMatrix }, null, 2)}\n`),
     writeFile(join(outputDirectory, "resit-rule-coverage.json"), `${JSON.stringify({ schemaVersion: "1.0.0", generatedAt: report.generatedAt, records: ruleMatrix }, null, 2)}\n`),
   ]);
-  console.log(`All-subject facts audit: ${currentCourses.length} current display qualifications; ${report.totals.uniqueAwardQualificationsWithOwnerApprovedRules} unique owner-approved rule qualifications; legacy boundary/statistics ${report.totals.currentQualificationsWithLegacyBoundaries}/${report.totals.currentQualificationsWithLegacyStatistics}; ${crossLevelCollisions.length} cross-level collisions prevented.`);
+  console.log(`All-subject facts audit: ${currentCourses.length} current display qualifications; ${report.totals.uniqueAwardQualificationsWithOwnerApprovedRules} unique owner-approved rule qualifications; legacy boundary/statistics ${report.totals.currentQualificationsWithLegacyBoundaries}/${report.totals.currentQualificationsWithLegacyStatistics}; ${preventedCrossLevelCollisions.length} distinct-level collisions prevented and ${report.totals.approvedLevelAliasCollapses} level aliases merged.`);
 } finally {
   await server.close();
 }

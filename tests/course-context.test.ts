@@ -53,8 +53,9 @@ describe("course catalog", () => {
       .map(entry => entry.level)
       .sort()).toEqual(["A-Level", "GCSE"]);
     expect(display.filter(entry => entry.boardName === "CAIE" && entry.subjectCode === "0580")
-      .map(entry => entry.level)
-      .sort()).toEqual(["GCSE", "IGCSE"]);
+      .map(entry => entry.level)).toEqual(["IGCSE"]);
+    expect(display.find(entry => entry.boardName === "CAIE" && entry.subjectCode === "0580")
+      ?.capabilities.papers.status).not.toBe("unavailable");
   });
 
   it("assigns every course to an audited subject category", () => {

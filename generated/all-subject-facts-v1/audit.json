@@ -4,14 +4,14 @@
   "identityContract": "normalized-board + qualification-level + subject-code + qualification-version",
   "totals": {
     "rawCatalogRecords": 721,
-    "currentDisplayQualifications": 483,
+    "currentDisplayQualifications": 473,
     "historicalDisplayQualifications": 237,
     "legacyStatisticsSubjectRecords": 584,
     "legacyStatisticsYearRows": 3248,
     "legacyStatisticsNormalizationCandidates": 1223,
-    "currentQualificationsWithLegacyBoundaries": 105,
-    "currentQualificationsWithLegacyStatistics": 461,
-    "currentQualificationsWithOwnerApprovedRules": 15,
+    "currentQualificationsWithLegacyBoundaries": 95,
+    "currentQualificationsWithLegacyStatistics": 451,
+    "currentQualificationsWithOwnerApprovedRules": 13,
     "uniqueAwardQualificationsWithOwnerApprovedRules": 13,
     "activeCanonicalBoundaries": 129,
     "activeCanonicalStatistics": 32,
@@ -19,7 +19,8 @@
     "candidateCanonicalBoundaries": 129,
     "candidateCanonicalStatistics": 120,
     "candidateCanonicalAwardRules": 40,
-    "crossLevelCollisionsPrevented": 32,
+    "crossLevelCollisionsPrevented": 22,
+    "approvedLevelAliasCollapses": 10,
     "universityInstitutionsCandidate": 20,
     "universityProgrammesCandidate": 23,
     "universityUnresolvedQuarantined": 3
@@ -41,18 +42,18 @@
     },
     {
       "board": "CAIE",
-      "currentQualifications": 87,
-      "withLegacyBoundaries": 19,
-      "withLegacyStatistics": 67,
-      "withOwnerApprovedRules": 4,
+      "currentQualifications": 79,
+      "withLegacyBoundaries": 11,
+      "withLegacyStatistics": 59,
+      "withOwnerApprovedRules": 3,
       "localOnlyQualifications": 0
     },
     {
       "board": "Edexcel",
-      "currentQualifications": 81,
-      "withLegacyBoundaries": 5,
-      "withLegacyStatistics": 81,
-      "withOwnerApprovedRules": 4,
+      "currentQualifications": 79,
+      "withLegacyBoundaries": 3,
+      "withLegacyStatistics": 79,
+      "withOwnerApprovedRules": 3,
       "localOnlyQualifications": 0
     },
     {
@@ -90,23 +91,23 @@
     },
     {
       "subjectCategory": "biology",
-      "currentQualifications": 18,
-      "withLegacyBoundaries": 6,
-      "withLegacyStatistics": 18,
+      "currentQualifications": 17,
+      "withLegacyBoundaries": 5,
+      "withLegacyStatistics": 17,
       "withOwnerApprovedRules": 0
     },
     {
       "subjectCategory": "chemistry",
-      "currentQualifications": 16,
-      "withLegacyBoundaries": 6,
-      "withLegacyStatistics": 16,
+      "currentQualifications": 15,
+      "withLegacyBoundaries": 5,
+      "withLegacyStatistics": 15,
       "withOwnerApprovedRules": 0
     },
     {
       "subjectCategory": "computer-science",
-      "currentQualifications": 13,
-      "withLegacyBoundaries": 4,
-      "withLegacyStatistics": 13,
+      "currentQualifications": 12,
+      "withLegacyBoundaries": 3,
+      "withLegacyStatistics": 12,
       "withOwnerApprovedRules": 0
     },
     {
@@ -118,16 +119,16 @@
     },
     {
       "subjectCategory": "economics",
-      "currentQualifications": 28,
-      "withLegacyBoundaries": 6,
-      "withLegacyStatistics": 28,
+      "currentQualifications": 27,
+      "withLegacyBoundaries": 5,
+      "withLegacyStatistics": 27,
       "withOwnerApprovedRules": 0
     },
     {
       "subjectCategory": "humanities",
-      "currentQualifications": 73,
-      "withLegacyBoundaries": 19,
-      "withLegacyStatistics": 73,
+      "currentQualifications": 72,
+      "withLegacyBoundaries": 18,
+      "withLegacyStatistics": 72,
       "withOwnerApprovedRules": 0
     },
     {
@@ -139,10 +140,10 @@
     },
     {
       "subjectCategory": "mathematics",
-      "currentQualifications": 35,
-      "withLegacyBoundaries": 17,
-      "withLegacyStatistics": 33,
-      "withOwnerApprovedRules": 15
+      "currentQualifications": 31,
+      "withLegacyBoundaries": 13,
+      "withLegacyStatistics": 29,
+      "withOwnerApprovedRules": 13
     },
     {
       "subjectCategory": "other",
@@ -153,9 +154,9 @@
     },
     {
       "subjectCategory": "physics",
-      "currentQualifications": 16,
-      "withLegacyBoundaries": 6,
-      "withLegacyStatistics": 16,
+      "currentQualifications": 15,
+      "withLegacyBoundaries": 5,
+      "withLegacyStatistics": 15,
       "withOwnerApprovedRules": 0
     }
   ],
@@ -165,224 +166,374 @@
       "levels": [
         "GCSE",
         "IGCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "IGCSE"
+      ],
+      "disposition": "approved-level-alias-collapse"
     },
     {
       "legacyIdentity": "CAIE|0610",
       "levels": [
         "GCSE",
         "IGCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "IGCSE"
+      ],
+      "disposition": "approved-level-alias-collapse"
     },
     {
       "legacyIdentity": "CAIE|0620",
       "levels": [
         "GCSE",
         "IGCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "IGCSE"
+      ],
+      "disposition": "approved-level-alias-collapse"
     },
     {
       "legacyIdentity": "CAIE|0478",
       "levels": [
         "GCSE",
         "IGCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "IGCSE"
+      ],
+      "disposition": "approved-level-alias-collapse"
     },
     {
       "legacyIdentity": "CAIE|0455",
       "levels": [
         "GCSE",
         "IGCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "IGCSE"
+      ],
+      "disposition": "approved-level-alias-collapse"
     },
     {
       "legacyIdentity": "CAIE|0470",
       "levels": [
         "GCSE",
         "IGCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "IGCSE"
+      ],
+      "disposition": "approved-level-alias-collapse"
     },
     {
       "legacyIdentity": "CAIE|0580",
       "levels": [
         "GCSE",
         "IGCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "IGCSE"
+      ],
+      "disposition": "approved-level-alias-collapse"
     },
     {
       "legacyIdentity": "CAIE|0625",
       "levels": [
         "GCSE",
         "IGCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "IGCSE"
+      ],
+      "disposition": "approved-level-alias-collapse"
     },
     {
       "legacyIdentity": "pearson|4PM1",
       "levels": [
         "GCSE",
         "IGCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "IGCSE"
+      ],
+      "disposition": "approved-level-alias-collapse"
     },
     {
       "legacyIdentity": "pearson|4MA1",
       "levels": [
         "GCSE",
         "IGCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "IGCSE"
+      ],
+      "disposition": "approved-level-alias-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|ARAR",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|ARFI",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|ARGR",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|ARPH",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|ARTE",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|ARTH",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|BUSI",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|COSC",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|ELEC",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|ENLA",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|ENLI",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|FILM",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|FREN",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|GEOG",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|GEOL",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|GERM",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|MEDI",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|MUSI",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|PHED",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|RELI",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|SOCI",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     },
     {
       "legacyIdentity": "WJEC/Eduqas|SPAN",
       "levels": [
         "A-Level",
         "GCSE"
-      ]
+      ],
+      "canonicalLevels": [
+        "A-Level",
+        "GCSE"
+      ],
+      "disposition": "prevented-distinct-qualification-collapse"
     }
   ],
   "priorityWaves": [
@@ -396,7 +547,7 @@
       "wave": 1,
       "scope": "13 core mathematics qualifications and qualification rules",
       "status": "canonical-active-with-known-gaps",
-      "records": 15
+      "records": 13
     },
     {
       "wave": 2,
@@ -408,7 +559,7 @@
       "wave": 3,
       "scope": "remaining current qualifications",
       "status": "catalogue-and-gap-matrix",
-      "records": 446
+      "records": 438
     }
   ],
   "courses": [
@@ -2915,78 +3066,6 @@
       "priorityWave": 3
     },
     {
-      "qualificationId": "qual:caie:gcse:0606",
-      "board": "CAIE",
-      "level": "GCSE",
-      "subjectCode": "0606",
-      "subjectName": "Additional Mathematics",
-      "subjectCategory": "mathematics",
-      "awardQualificationId": null,
-      "ruleCoverage": "not-catalogued",
-      "legacyBoundaryRows": 34,
-      "activeCanonicalBoundaryRows": 0,
-      "legacyStatisticsRows": 17,
-      "activeCanonicalStatisticsRows": 0,
-      "normalizationCandidateRows": 0,
-      "sentinel99_9Rows": 16,
-      "processingPolicy": "deepseek-candidate-eligible",
-      "priorityWave": 3
-    },
-    {
-      "qualificationId": "qual:caie:gcse:0610",
-      "board": "CAIE",
-      "level": "GCSE",
-      "subjectCode": "0610",
-      "subjectName": "Biology",
-      "subjectCategory": "biology",
-      "awardQualificationId": null,
-      "ruleCoverage": "not-catalogued",
-      "legacyBoundaryRows": 24,
-      "activeCanonicalBoundaryRows": 0,
-      "legacyStatisticsRows": 17,
-      "activeCanonicalStatisticsRows": 0,
-      "normalizationCandidateRows": 0,
-      "sentinel99_9Rows": 14,
-      "processingPolicy": "deepseek-candidate-eligible",
-      "priorityWave": 3
-    },
-    {
-      "qualificationId": "qual:caie:gcse:0620",
-      "board": "CAIE",
-      "level": "GCSE",
-      "subjectCode": "0620",
-      "subjectName": "Chemistry",
-      "subjectCategory": "chemistry",
-      "awardQualificationId": null,
-      "ruleCoverage": "not-catalogued",
-      "legacyBoundaryRows": 24,
-      "activeCanonicalBoundaryRows": 0,
-      "legacyStatisticsRows": 17,
-      "activeCanonicalStatisticsRows": 0,
-      "normalizationCandidateRows": 0,
-      "sentinel99_9Rows": 16,
-      "processingPolicy": "deepseek-candidate-eligible",
-      "priorityWave": 3
-    },
-    {
-      "qualificationId": "qual:caie:gcse:0478",
-      "board": "CAIE",
-      "level": "GCSE",
-      "subjectCode": "0478",
-      "subjectName": "Computer Science",
-      "subjectCategory": "computer-science",
-      "awardQualificationId": null,
-      "ruleCoverage": "not-catalogued",
-      "legacyBoundaryRows": 12,
-      "activeCanonicalBoundaryRows": 0,
-      "legacyStatisticsRows": 17,
-      "activeCanonicalStatisticsRows": 0,
-      "normalizationCandidateRows": 0,
-      "sentinel99_9Rows": 17,
-      "processingPolicy": "deepseek-candidate-eligible",
-      "priorityWave": 3
-    },
-    {
       "qualificationId": "qual:caie:gcse:0654",
       "board": "CAIE",
       "level": "GCSE",
@@ -3005,24 +3084,6 @@
       "priorityWave": 3
     },
     {
-      "qualificationId": "qual:caie:gcse:0455",
-      "board": "CAIE",
-      "level": "GCSE",
-      "subjectCode": "0455",
-      "subjectName": "Economics",
-      "subjectCategory": "economics",
-      "awardQualificationId": null,
-      "ruleCoverage": "not-catalogued",
-      "legacyBoundaryRows": 12,
-      "activeCanonicalBoundaryRows": 0,
-      "legacyStatisticsRows": 17,
-      "activeCanonicalStatisticsRows": 0,
-      "normalizationCandidateRows": 0,
-      "sentinel99_9Rows": 16,
-      "processingPolicy": "deepseek-candidate-eligible",
-      "priorityWave": 3
-    },
-    {
       "qualificationId": "qual:caie:gcse:0500",
       "board": "CAIE",
       "level": "GCSE",
@@ -3037,60 +3098,6 @@
       "activeCanonicalStatisticsRows": 0,
       "normalizationCandidateRows": 0,
       "sentinel99_9Rows": 0,
-      "processingPolicy": "deepseek-candidate-eligible",
-      "priorityWave": 3
-    },
-    {
-      "qualificationId": "qual:caie:gcse:0470",
-      "board": "CAIE",
-      "level": "GCSE",
-      "subjectCode": "0470",
-      "subjectName": "History",
-      "subjectCategory": "humanities",
-      "awardQualificationId": null,
-      "ruleCoverage": "not-catalogued",
-      "legacyBoundaryRows": 16,
-      "activeCanonicalBoundaryRows": 0,
-      "legacyStatisticsRows": 17,
-      "activeCanonicalStatisticsRows": 0,
-      "normalizationCandidateRows": 0,
-      "sentinel99_9Rows": 13,
-      "processingPolicy": "deepseek-candidate-eligible",
-      "priorityWave": 3
-    },
-    {
-      "qualificationId": "qual:caie:gcse:0580",
-      "board": "CAIE",
-      "level": "GCSE",
-      "subjectCode": "0580",
-      "subjectName": "Mathematics",
-      "subjectCategory": "mathematics",
-      "awardQualificationId": "award:caie:0580",
-      "ruleCoverage": "owner-approved",
-      "legacyBoundaryRows": 140,
-      "activeCanonicalBoundaryRows": 6,
-      "legacyStatisticsRows": 17,
-      "activeCanonicalStatisticsRows": 0,
-      "normalizationCandidateRows": 0,
-      "sentinel99_9Rows": 12,
-      "processingPolicy": "deepseek-candidate-eligible",
-      "priorityWave": 1
-    },
-    {
-      "qualificationId": "qual:caie:gcse:0625",
-      "board": "CAIE",
-      "level": "GCSE",
-      "subjectCode": "0625",
-      "subjectName": "Physics",
-      "subjectCategory": "physics",
-      "awardQualificationId": null,
-      "ruleCoverage": "not-catalogued",
-      "legacyBoundaryRows": 24,
-      "activeCanonicalBoundaryRows": 0,
-      "legacyStatisticsRows": 17,
-      "activeCanonicalStatisticsRows": 0,
-      "normalizationCandidateRows": 0,
-      "sentinel99_9Rows": 17,
       "processingPolicy": "deepseek-candidate-eligible",
       "priorityWave": 3
     },
@@ -3939,42 +3946,6 @@
       "sentinel99_9Rows": 10,
       "processingPolicy": "deepseek-candidate-eligible",
       "priorityWave": 3
-    },
-    {
-      "qualificationId": "qual:edexcel:gcse:4pm1",
-      "board": "Edexcel",
-      "level": "GCSE",
-      "subjectCode": "4PM1",
-      "subjectName": "International GCSE Further Pure Mathematics",
-      "subjectCategory": "mathematics",
-      "awardQualificationId": null,
-      "ruleCoverage": "not-catalogued",
-      "legacyBoundaryRows": 1,
-      "activeCanonicalBoundaryRows": 0,
-      "legacyStatisticsRows": 2,
-      "activeCanonicalStatisticsRows": 0,
-      "normalizationCandidateRows": 0,
-      "sentinel99_9Rows": 0,
-      "processingPolicy": "deepseek-candidate-eligible",
-      "priorityWave": 3
-    },
-    {
-      "qualificationId": "qual:edexcel:gcse:4ma1",
-      "board": "Edexcel",
-      "level": "GCSE",
-      "subjectCode": "4MA1",
-      "subjectName": "International GCSE Mathematics A",
-      "subjectCategory": "mathematics",
-      "awardQualificationId": "award:pearson:4ma1",
-      "ruleCoverage": "owner-approved",
-      "legacyBoundaryRows": 41,
-      "activeCanonicalBoundaryRows": 0,
-      "legacyStatisticsRows": 8,
-      "activeCanonicalStatisticsRows": 0,
-      "normalizationCandidateRows": 0,
-      "sentinel99_9Rows": 0,
-      "processingPolicy": "deepseek-candidate-eligible",
-      "priorityWave": 1
     },
     {
       "qualificationId": "qual:edexcel:igcse:4ac1",

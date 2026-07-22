@@ -9,7 +9,10 @@ describe("all-subject examination facts audit", () => {
     expect(audit.identityContract).toContain("qualification-level");
     expect(audit.totals.crossLevelCollisionsPrevented).toBeGreaterThan(0);
     expect(audit.crossLevelCollisions.some(row => row.legacyIdentity === "WJEC/Eduqas|BUSI"
-      && row.levels.join(",") === "A-Level,GCSE")).toBe(true);
+      && row.levels.join(",") === "A-Level,GCSE"
+      && row.disposition === "prevented-distinct-qualification-collapse")).toBe(true);
+    expect(audit.crossLevelCollisions.some(row => row.legacyIdentity === "CAIE|0580"
+      && row.disposition === "approved-level-alias-collapse")).toBe(true);
   });
 
   it("separates legacy evidence from canonical active data", () => {
