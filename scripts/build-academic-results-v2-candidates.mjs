@@ -621,6 +621,7 @@ const caie0580OfficialStatistics = [
 for (const document of caie0580OfficialStatistics) {
   const awardQualificationId = "award:caie:0580";
   const qualification = qualifications.get(awardQualificationId);
+  const verificationStatus = document.sourceDocumentHash ? "codex-reviewed" : "candidate";
   const sourceId = addSource({
     sourceId: `source:caie-0580-grade-statistics-${document.year}-${document.series}`,
     board: "CAIE",
@@ -633,7 +634,7 @@ for (const document of caie0580OfficialStatistics) {
     sourceRowId: `CAIE-0580-${document.year}-${document.series.toUpperCase()}-MATHEMATICS`,
     sourceDocumentHash: document.sourceDocumentHash,
     effectiveFrom: `${document.year}-${document.series === "march" ? "03" : document.series === "june" ? "06" : "11"}-01`,
-    verificationStatus: "codex-reviewed",
+    verificationStatus,
   });
   directOfficialStatistics.push({
     qualification,
@@ -652,7 +653,7 @@ for (const document of caie0580OfficialStatistics) {
       gRate: document.rates[7],
     },
     sourceIds: [sourceId],
-    verificationStatus: "codex-reviewed",
+    verificationStatus,
     publicationStatus: "final",
   });
 }

@@ -63,10 +63,11 @@ describe("Academic Results V2 migration candidate", () => {
       "2025-march", "2025-june", "2025-november",
       "2026-march",
     ]);
-    expect(rows.every(row => row.verificationStatus === "codex-reviewed"
-      && row.publicationStatus === "final"
+    expect(rows.every(row => row.publicationStatus === "final"
       && row.rateKind === "cumulative"
       && row.sourceIds.length === 1)).toBe(true);
+    expect(rows.filter(row => row.verificationStatus === "codex-reviewed")).toHaveLength(16);
+    expect(rows.find(row => row.year === 2019 && row.series === "june")?.verificationStatus).toBe("candidate");
     expect(rows.every(row => JSON.stringify(row.gradeRates).includes("99.9") === false)).toBe(true);
     expect(rows.every(row => row.gradeOrder.join(",") === "A*,A,B,C,D,E,F,G")).toBe(true);
 
