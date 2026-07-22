@@ -43,7 +43,7 @@ export function detectAcademicToolIntents(request: AIChatRequest): Set<AcademicT
   const message = latestUserMessage(request);
   const intents = new Set<AcademicToolName>();
   if (has(message, /分数线|等级线|grade\s*boundar|threshold/)) intents.add("lookup_grade_boundary");
-  if (has(message, /grade\s*statistic|成绩统计|等级比例|报考人数|获得率|通过率/)) intents.add("lookup_grade_statistics");
+  if (has(message, /grade\s*statistic|成绩统计|等级比例|报考人数|获得率|通过率|a\s*\*\s*率|a星率|高分率/)) intents.add("lookup_grade_statistics");
   if (request.academicQuery?.type === "award-calculation" || has(message, /合分|总分怎么|cash[ -]?in|ums|算(?:最终)?等级|award mark/)) {
     intents.add(request.academicQuery?.type === "award-calculation" ? "calculate_qualification_award" : "explain_qualification_rule");
   }

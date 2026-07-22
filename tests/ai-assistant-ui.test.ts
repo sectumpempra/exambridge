@@ -40,7 +40,10 @@ describe("AI assistant internal-preview UI", () => {
     expect(html).toContain("对话仅保存在当前浏览器标签页");
     expect(html).toContain("选择课程");
     expect(html).toContain("检索范围");
-    expect(html).toContain("团队视图");
+    expect(html).toContain("未限定范围");
+    expect(html).toContain("放大输入框");
+    expect(html).toContain("min-h-[144px]");
+    expect(html).not.toContain("团队视图");
     expect(html).not.toContain("内部数据不足时允许检索官方网页");
     expect(html).not.toContain("允许回答非官方预测分数线");
   });
@@ -50,7 +53,8 @@ describe("AI assistant internal-preview UI", () => {
       version: 1,
       messages: [{ id: "m1", role: "user", content: "9709是什么？" }],
     }));
-    expect(migrated).toMatchObject({ version: 2, scopes: [], roleView: "consulting" });
+    expect(migrated).toMatchObject({ version: 2, scopes: [] });
+    expect(migrated).not.toHaveProperty("roleView");
     expect(migrated?.messages).toHaveLength(1);
   });
 

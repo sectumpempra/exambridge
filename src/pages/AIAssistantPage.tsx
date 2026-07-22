@@ -32,7 +32,7 @@ export default function AIAssistantPage() {
           pageContext={{ pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: selectedPaperId ? [selectedPaperId] : [], comparisonIds: entry?.knowledgeTreeCode ? [entry.knowledgeTreeCode] : [] }}
           qualificationIds={context ? [context.qualificationId] : []}
           syllabusVersions={entry?.specificationLabel ? [entry.specificationLabel] : []}
-          contextLabel={entry ? `${entry.subjectCode} · ${entry.subjectName}` : "全部资格"}
+          contextLabel={entry ? `${entry.subjectCode} · ${entry.subjectName}` : "未限定范围"}
           contextControl={<div className="flex min-w-0 flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-2"><AIContextCourseSwitcher /><AIContextPaperSelector knowledgeCode={entry?.knowledgeTreeCode} value={selectedPaperId} onChange={(paperId) => setPaperSelection({ knowledgeCode: entry?.knowledgeTreeCode ?? "", paperId })} /></div>}
         /> : <div className="flex min-h-[560px] items-center justify-center rounded-[28px] border border-[#d9d4ce] bg-white p-8 text-center"><div><ShieldCheck size={34} className="mx-auto text-[#526b7e]" /><h2 className="mb-0 mt-4 text-xl font-bold">AI 助手正在内部验收</h2><p className="mb-0 mt-2 text-sm text-[#716a61]">公开入口尚未启用。</p></div></div>}
       </section>

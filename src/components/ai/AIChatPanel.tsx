@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { Bot, CircleStop, ExternalLink, Send, ShieldCheck, Sparkles, Trash2, UserRound, X } from "lucide-react";
+import { Bot, CircleStop, ExternalLink, Maximize2, Minimize2, Send, ShieldCheck, Sparkles, Trash2, UserRound, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -7,6 +7,7 @@ import {
   aiSessionStorageKey,
   pruneAIChatHistory,
   type AICitation,
+  type AIClarification,
   type AIChatMessage,
   type AIPageContext,
   type AIQueryScope,
@@ -33,7 +34,6 @@ type StoredSession = {
   messages: DisplayMessage[];
   resolvedContext?: AIResolvedContext;
   scopes: AIQueryScope[];
-  roleView: "teaching" | "consulting" | "sales" | "operations";
   detachedFromPageContext: boolean;
 };
 
@@ -58,7 +58,7 @@ const DEFAULT_SUGGESTIONS = [
 export function safeStoredSession(value: string | null): StoredSession | null {
   if (!value) return null;
   try {
-    const parsed = JSON.parse(value) as StoredSession | StoredSessionV1;
+    const parsed = JSON.parse(value) as (StoredSession & { roleView?: string }) | StoredSessionV1;
     if (![1, 2].includes(parsed.version) || !Array.isArray(parsed.messages)) return null;
     const messages = parsed.messages.filter((message) =>
       message && typeof message.id === "string"
@@ -67,8 +67,8 @@ export function safeStoredSession(value: string | null): StoredSession | null {
       && message.content.length <= 2_000
     ).slice(-12);
     return parsed.version === 2
-      ? { version: 2, messages, resolvedContext: parsed.resolvedContext, scopes: parsed.scopes ?? [], roleView: parsed.roleView ?? "consulting", detachedFromPageContext: parsed.detachedFromPageContext ?? false }
-      : { version: 2, messages, resolvedContext: parsed.resolvedContext, scopes: [], roleView: "consulting", detachedFromPageContext: false };
+      ? { version: 2, messages, resolvedContext: parsed.resolvedContext, scopes: parsed.scopes ?? [], detachedFromPageContext: parsed.detachedFromPageContext ?? false }
+      : { version: 2, messages, resolvedContext: parsed.resolvedContext, scopes: [], detachedFromPageContext: false };
   } catch {
     return null;
   }
@@ -130,9 +130,11 @@ export default function AIChatPanel({
   const [messages, setMessages] = useState<DisplayMessage[]>(initial?.messages ?? []);
   const [resolvedContext, setResolvedContext] = useState<AIResolvedContext | undefined>(initial?.resolvedContext);
   const [queryScopes, setQueryScopes] = useState<AIQueryScope[]>(initial?.scopes.length ? initial.scopes : pageScopes);
-  const [roleView, setRoleView] = useState<StoredSession["roleView"]>(initial?.roleView ?? "consulting");
   const [detachedFromPageContext, setDetachedFromPageContext] = useState(initial?.detachedFromPageContext ?? false);
   const [input, setInput] = useState("");
+  const [inputExpanded, setInputExpanded] = useState(false);
+  const [clarification, setClarification] = useState<AIClarification | null>(null);
+  const [clarificationSelections, setClarificationSelections] = useState<Record<string, string>>({});
   const [generating, setGenerating] = useState(false);
   const [suggestions, setSuggestions] = useState(DEFAULT_SUGGESTIONS);
   const [serviceError, setServiceError] = useState<string | null>(null);
@@ -145,8 +147,9 @@ export default function AIChatPanel({
       setMessages(restored?.messages ?? []);
       setResolvedContext(restored?.resolvedContext);
       setQueryScopes(restored?.scopes.length ? restored.scopes : pageScopes);
-      setRoleView(restored?.roleView ?? "consulting");
       setDetachedFromPageContext(restored?.detachedFromPageContext ?? false);
+      setClarification(null);
+      setClarificationSelections({});
       setSuggestions(DEFAULT_SUGGESTIONS);
       setServiceError(null);
     });
@@ -155,8 +158,8 @@ export default function AIChatPanel({
 
   useEffect(() => {
     const stable = messages.filter((message) => !message.pending).slice(-12);
-    window.sessionStorage.setItem(storageKey, JSON.stringify({ version: 2, messages: stable, resolvedContext, scopes: queryScopes, roleView, detachedFromPageContext } satisfies StoredSession));
-  }, [detachedFromPageContext, messages, queryScopes, resolvedContext, roleView, storageKey]);
+    window.sessionStorage.setItem(storageKey, JSON.stringify({ version: 2, messages: stable, resolvedContext, scopes: queryScopes, detachedFromPageContext } satisfies StoredSession));
+  }, [detachedFromPageContext, messages, queryScopes, resolvedContext, storageKey]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -170,6 +173,8 @@ export default function AIChatPanel({
     setQueryScopes(pageScopes);
     setDetachedFromPageContext(false);
     setSuggestions(DEFAULT_SUGGESTIONS);
+    setClarification(null);
+    setClarificationSelections({});
     setServiceError(null);
     setGenerating(false);
   };
@@ -195,7 +200,7 @@ export default function AIChatPanel({
     setDetachedFromPageContext(true);
   };
 
-  const send = async (content = input) => {
+  const send = async (content = input, options?: { scopes?: AIQueryScope[] }) => {
     const trimmed = content.trim();
     if (!trimmed || generating || trimmed.length > 2_000) return;
     const userMessage: DisplayMessage = { id: crypto.randomUUID(), role: "user", content: trimmed };
@@ -207,6 +212,8 @@ export default function AIChatPanel({
     );
     setMessages((current) => [...current, userMessage, assistantMessage]);
     setInput("");
+    setClarification(null);
+    setClarificationSelections({});
     setGenerating(true);
     setServiceError(null);
     const controller = new AbortController();
@@ -219,13 +226,12 @@ export default function AIChatPanel({
         body: JSON.stringify({
           version: 2,
           mode: "exam_assistant",
-          scopes: queryScopes.slice(0, 4),
+          scopes: (options?.scopes ?? queryScopes).slice(0, 4),
           qualificationIds: [],
           syllabusVersions: [],
           pageContext: detachedFromPageContext
             ? { ...pageContext, selectedPaperIds: [], comparisonIds: [] }
             : pageContext,
-          roleView,
           messages: requestMessages,
           locale: /^en\b/i.test(navigator.language) ? "en-GB" : "zh-CN",
           resolvedContext,
@@ -255,6 +261,10 @@ export default function AIChatPanel({
             : message));
         }
         if (event.type === "suggestions") setSuggestions(event.suggestions);
+        if (event.type === "clarification") {
+          setClarification(event.clarification);
+          setClarificationSelections({});
+        }
         if (event.type === "done") {
           authoritativeAnswer = event.answer;
           setResolvedContext(event.resolvedContext);
@@ -278,6 +288,19 @@ export default function AIChatPanel({
     }
   };
 
+  const confirmClarification = () => {
+    if (!clarification || generating) return;
+    const selected = clarification.groups.map(group =>
+      group.options.find(option => option.optionId === clarificationSelections[group.groupId]),
+    );
+    if (selected.some(option => !option)) return;
+    const options = selected.filter((option): option is NonNullable<typeof option> => Boolean(option));
+    const nextScopes = options.map(option => option.scope);
+    setQueryScopes(nextScopes);
+    setDetachedFromPageContext(true);
+    void send(`已选择：${options.map(option => `${option.label}（${option.qualificationCode}）`).join("；")}。请继续回答我上一条问题。`, { scopes: nextScopes });
+  };
+
   return (
     <section className={cn(
       "flex min-h-0 flex-col overflow-hidden rounded-[26px] border border-[#d7d3cd] bg-[#fdfcf9] shadow-[0_24px_70px_rgba(61,56,50,0.1)]",
@@ -296,8 +319,7 @@ export default function AIChatPanel({
           <span className="font-semibold">检索范围：</span>
           {resolvedContext?.labels.length
             ? resolvedContext.labels.map((label, index) => <span key={`${label}-${index}`} className="inline-flex items-center gap-1 rounded-full border border-[#cbd5d4] bg-white px-2 py-1"><span>{label}</span><button type="button" onClick={() => removeResolvedScope(index)} aria-label={`移除 ${label}`} className="rounded-full p-0.5 hover:bg-[#edf2f1]"><X size={11} /></button></span>)
-            : <span className="rounded-full border border-dashed border-[#bfc9c7] px-2 py-1">全部资格</span>}
-          <label className="ml-auto inline-flex items-center gap-1.5"><span>团队视图</span><select value={roleView} onChange={event => setRoleView(event.target.value as StoredSession["roleView"])} className="rounded-md border border-[#cbd5d4] bg-white px-1.5 py-1" aria-label="选择团队视图"><option value="teaching">教学</option><option value="consulting">课程顾问</option><option value="sales">销售顾问</option><option value="operations">学管/运营</option></select></label>
+            : <span className="rounded-full border border-dashed border-[#bfc9c7] px-2 py-1">未限定范围</span>}
         </div>
       </header>
 
@@ -307,7 +329,7 @@ export default function AIChatPanel({
           {messages.map((message) => <article key={message.id} className={cn("flex gap-2.5", message.role === "user" && "justify-end")}>
             {message.role === "assistant" && <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#253b46] text-white"><Bot size={14} /></span>}
             <div className={cn("max-w-[min(94%,900px)] rounded-2xl px-4 py-3 text-sm leading-7", message.role === "user" ? "bg-[#675a4d] text-white" : "border border-[#e0dcd6] bg-white text-[#403b35]", message.error && "border-[#dbb7ad] bg-[#fff7f4] text-[#855e53]")}>
-              {message.role === "assistant" && !message.error
+              {message.role === "assistant"
                 ? <AIMessageMarkdown content={message.content || (message.pending ? "正在整理已核验资料…" : "")} />
                 : <p className="m-0 whitespace-pre-wrap break-words">{message.content || (message.pending ? "正在整理已核验资料…" : "")}</p>}
               {message.pending && <span className="mt-2 inline-flex items-center gap-1 text-xs text-[#7d756c]"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#526b7e]" />DeepSeek 正在生成</span>}
@@ -320,10 +342,26 @@ export default function AIChatPanel({
       </div>
 
       <footer className="border-t border-[#e2ddd6] bg-[#f8f5f1] p-3 sm:p-4">
+        {clarification && <div className="mb-3 max-h-[min(45dvh,420px)] overflow-y-auto rounded-2xl border border-[#cbd5d4] bg-white p-3 text-left" role="group" aria-label="请选择准确资格">
+          <p className="m-0 text-sm font-semibold text-[#3d3832]">{clarification.prompt}</p>
+          <div className="mt-3 grid gap-3 md:grid-cols-2">
+            {clarification.groups.map(group => <fieldset key={group.groupId} className="min-w-0 rounded-xl border border-[#e2ddd6] p-2.5">
+              <legend className="px-1 text-xs font-bold text-[#625c54]">{group.label}</legend>
+              <div className="space-y-2">
+                {group.options.map(option => <label key={option.optionId} className={cn("flex cursor-pointer items-start gap-2 rounded-lg border px-2.5 py-2 transition", clarificationSelections[group.groupId] === option.optionId ? "border-[#526b7e] bg-[#eef3f5]" : "border-[#ece8e2] hover:border-[#b9c5c8]") }>
+                  <input type="radio" name={`clarification-${group.groupId}`} value={option.optionId} checked={clarificationSelections[group.groupId] === option.optionId} onChange={() => setClarificationSelections(current => ({ ...current, [group.groupId]: option.optionId }))} className="mt-1" />
+                  <span className="min-w-0"><span className="block text-xs font-semibold text-[#403b35]">{option.label}</span><span className="mt-0.5 block text-[11px] leading-4 text-[#756e67]">{option.description}</span></span>
+                </label>)}
+              </div>
+            </fieldset>)}
+          </div>
+          <div className="mt-3 flex justify-end"><Button type="button" size="sm" onClick={confirmClarification} disabled={clarification.groups.some(group => group.required && !clarificationSelections[group.groupId])} className="bg-[#253b46] hover:bg-[#344f5b]">{clarification.submitLabel}</Button></div>
+        </div>}
         <div className="mb-3 flex gap-2 overflow-x-auto pb-1" aria-label="快捷问题">{suggestions.map((suggestion) => <button key={suggestion} type="button" onClick={() => void send(suggestion)} disabled={generating} className="shrink-0 rounded-full border border-[#d7d1ca] bg-white px-3 py-1.5 text-xs font-medium text-[#625c54] transition hover:border-[#a69888] hover:text-[#675a4d] disabled:opacity-50">{suggestion}</button>)}</div>
         {serviceError && <div className="mb-2 flex items-center justify-between gap-3 rounded-lg bg-[#fff1ec] px-3 py-2 text-xs text-[#8a5c4d]" role="alert"><span>{serviceError}</span><button type="button" onClick={() => setServiceError(null)} className="font-semibold">关闭</button></div>}
-        <div className="flex items-end gap-2 rounded-2xl border border-[#d2cdc6] bg-white p-2 focus-within:border-[#8f8172] focus-within:ring-2 focus-within:ring-[#a69888]/15">
-          <Textarea value={input} onChange={(event) => setInput(event.target.value.slice(0, 2_000))} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }} placeholder="输入问题；Shift + Enter 换行" aria-label="向 ExamBridge AI 提问" className="max-h-48 min-h-[92px] resize-none border-0 bg-transparent px-2 py-2.5 shadow-none focus-visible:ring-0" disabled={generating} />
+        <div className="relative flex items-end gap-2 rounded-2xl border border-[#d2cdc6] bg-white p-2 focus-within:border-[#8f8172] focus-within:ring-2 focus-within:ring-[#a69888]/15">
+          <button type="button" onClick={() => setInputExpanded(value => !value)} className="absolute right-2 top-2 z-10 rounded-lg p-1.5 text-[#756e67] hover:bg-[#f1ede7]" aria-label={inputExpanded ? "缩小输入框" : "放大输入框"} title={inputExpanded ? "缩小输入框" : "放大输入框"}>{inputExpanded ? <Minimize2 size={15} /> : <Maximize2 size={15} />}</button>
+          <Textarea value={input} onChange={(event) => setInput(event.target.value.slice(0, 2_000))} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }} placeholder="输入问题；Shift + Enter 换行" aria-label="向 ExamBridge AI 提问" className={cn("min-h-[144px] resize-y border-0 bg-transparent px-2 py-2.5 pr-10 shadow-none focus-visible:ring-0", inputExpanded ? "max-h-[50dvh] min-h-[300px]" : "max-h-[320px]")} disabled={generating} />
           {generating ? <Button type="button" onClick={() => abortRef.current?.abort()} className="mb-0.5 shrink-0 bg-[#8b655c] hover:bg-[#76544c]"><CircleStop size={16} />停止</Button> : <Button type="button" onClick={() => void send()} disabled={!input.trim() || input.length > 2_000} className="mb-0.5 shrink-0 bg-[#253b46] hover:bg-[#344f5b]"><Send size={16} />发送</Button>}
         </div>
         <div className="mt-1.5 flex items-center justify-between gap-3 px-1 text-[10px] text-[#625c54]"><span>对话仅保存在当前浏览器标签页；AQA 本地处理，其他问题只发送筛选后的已核验上下文</span><span className={cn("shrink-0", input.length > 1_900 && "font-semibold text-[#8a5c4d]")}>{input.length}/2000</span></div>

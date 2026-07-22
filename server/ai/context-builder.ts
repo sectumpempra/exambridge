@@ -17,6 +17,7 @@ import {
 } from "@/domain-v2/knowledge-tree";
 import type {
   AICitation,
+  AIClarification,
   AIChatRequest,
   AIResolvedContext,
 } from "@/domain-v2/ai-assistant";
@@ -25,7 +26,7 @@ import {
   type AcademicResultsManifestV2,
 } from "@/domain-v2/academic-results";
 import { buildAcademicToolContext, type AcademicToolContext } from "./academic-tools";
-import { detectQualificationAmbiguity, resolveApprovedQualificationAliases } from "./qualification-resolver";
+import { resolveApprovedQualificationAliases, resolveCatalogQualificationMentions } from "./qualification-resolver";
 import { detectRequiredInputClarification } from "./required-input-resolver";
 
 type KnowledgeManifestEntry = {
@@ -71,6 +72,7 @@ export type AIContextBuildResult = {
   resolvedContext: AIResolvedContext;
   paperFacts: AIPaperFact[];
   clarification?: string;
+  clarificationChoices?: AIClarification;
   localAnswer?: string;
   academicTools?: AcademicToolContext;
   containsAqa: boolean;
@@ -129,6 +131,13 @@ function awardQualificationIdForCourse(course: CourseContextEntry): string {
   return `award:${awardBoard}:${code}`;
 }
 
+function catalogCodeForCourse(course: CourseContextEntry): string {
+  if (course.knowledgeTreeCode) return course.knowledgeTreeCode;
+  const board = normalizedBoard(course.boardName);
+  const prefix = board === "edexcel" ? "Pearson" : board.toUpperCase();
+  return `${prefix}-${course.subjectCode}`;
+}
+
 function scopePriority(source: AIChatRequest["scopes"][number]["source"]): number {
   return { "explicit-query": 0, "manual-selection": 1, "page-context": 2, inferred: 3 }[source];
 }
@@ -176,6 +185,9 @@ function latestUserMessage(request: AIChatRequest): string {
 function messageExplicitlyNamesCode(message: string, code: string): boolean {
   const normalizedCode = normalizedToken(code);
   if (normalizedCode.length < 3) return false;
+  if (/^[A-Z]+$/.test(normalizedCode)) {
+    return new RegExp(`(?:^|[^A-Z])${normalizedCode}(?:$|[^A-Z])`, "i").test(message);
+  }
   const normalizedMessage = normalizedToken(message);
   return normalizedMessage.includes(normalizedCode);
 }
@@ -328,6 +340,18 @@ function buildLocalAqaAnswer(
   return lines.join("\n\n");
 }
 
+function buildLocalCatalogAnswer(
+  locale: AIChatRequest["locale"],
+  courses: CourseContextEntry[],
+  citations: AICitation[],
+): string {
+  const markers = citations.slice(0, 4).map(source => `[${source.sourceId}]`).join("");
+  const labels = courses.map(course => `${course.boardName} ${course.level} ${course.subjectName} (${course.subjectCode})`).join("；");
+  return locale === "en-GB"
+    ? `ExamBridge identified: ${labels}.${markers}\n\nThe active verified dataset currently contains only catalogue-level or partial coverage for this selection. I can identify the qualification, but I cannot infer an award rule, grade boundary, Grade Statistics value, or which qualification is easier from missing evidence.`
+    : `ExamBridge 已识别：${labels}。${markers}\n\n当前 active 已核验数据对这些选择只有课程目录或部分资料覆盖。我可以确认资格身份，但不能在缺少证据时推测合分规则、分数线、Grade Statistics 数值，或直接断言哪一门更容易。`;
+}
+
 function appliesToPaper(statement: KnowledgeMappingV5["statements"][number], paperId: string | null): boolean {
   if (!paperId) return true;
   return statement.paperApplicability.kind !== "not-specified"
@@ -459,7 +483,11 @@ export class AIContextBuilder {
     return promise;
   }
 
-  private resolveCourseEntries(request: AIChatRequest, aliasAwardIds: string[] = []) {
+  private resolveCourseEntries(
+    request: AIChatRequest,
+    aliasAwardIds: string[] = [],
+    catalogMatches: CourseContextEntry[] = [],
+  ) {
     const result = [] as typeof COURSE_CATALOG;
     const seen = new Set<string>();
     const add = (entry: (typeof COURSE_CATALOG)[number] | undefined) => {
@@ -477,6 +505,8 @@ export class AIContextBuilder {
         || Number(Boolean(b.capabilities.examOverview.href)) - Number(Boolean(a.capabilities.examOverview.href)))
       .forEach(add);
     if (result.length > 0) return result;
+    catalogMatches.forEach(add);
+    if (result.length > 0) return result;
     aliasAwardIds.forEach(awardId => add(COURSE_CATALOG.find(entry => awardQualificationIdForCourse(entry) === awardId)));
     if (result.length > 0) return result;
     [...request.scopes].sort((a, b) => scopePriority(a.source) - scopePriority(b.source)).forEach((scope) => {
@@ -486,6 +516,28 @@ export class AIContextBuilder {
     request.qualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
     request.resolvedContext?.qualificationIds.forEach((id) => add(COURSE_CATALOG.find((entry) => entry.qualificationId === id)));
     return result;
+  }
+
+  private addCatalogContext(courses: typeof COURSE_CATALOG, sources: SourceRegistry) {
+    return courses.map(course => ({
+      qualificationId: course.qualificationId,
+      board: course.boardName,
+      level: course.level,
+      subjectCode: course.subjectCode,
+      subjectName: course.subjectName,
+      lifecycleStatus: course.lifecycleStatus,
+      lastObservedYear: course.lastObservedYear,
+      capabilities: Object.fromEntries(Object.entries(course.capabilities).map(([feature, state]) => [feature, {
+        status: state.status,
+        verificationStatus: state.verificationStatus,
+        reason: state.reason,
+      }])),
+      sourceId: sources.add({
+        title: `${course.boardName} qualification catalogue — ${course.subjectCode} ${course.subjectName}`,
+        url: course.sourceUrl,
+        dataVersion: course.specificationLabel ?? `catalogue-${course.accessedAt}`,
+      }),
+    }));
   }
 
   private resolveKnowledgeEntries(
@@ -791,26 +843,32 @@ export class AIContextBuilder {
   async build(request: AIChatRequest): Promise<AIContextBuildResult> {
     const manifest = await this.loadManifest();
     const academicManifest = await this.loadAcademicManifest();
-    const ambiguity = detectQualificationAmbiguity(latestUserMessage(request), request.locale);
-    if (ambiguity) {
+    const catalogResolution = resolveCatalogQualificationMentions(latestUserMessage(request), COURSE_CATALOG, request.locale);
+    if (catalogResolution.ambiguity) {
+      const matched = catalogResolution.matchedCourses;
       return {
         promptContext: "{}",
         sources: [],
         paperFacts: [],
         resolvedContext: {
-          awardQualificationIds: [],
+          awardQualificationIds: matched.map(awardQualificationIdForCourse).slice(0, 4),
           qualificationVersionIds: [],
-          qualificationIds: [],
-          qualificationCodes: [],
+          qualificationIds: matched.map(course => course.qualificationId).slice(0, 4),
+          qualificationCodes: matched.map(catalogCodeForCourse).slice(0, 4),
           paperIds: [],
-          labels: [],
+          labels: matched.map(course => course.label).slice(0, 4),
         },
-        clarification: ambiguity.clarification,
+        clarification: catalogResolution.ambiguity.clarification,
+        clarificationChoices: catalogResolution.ambiguity.choices,
         containsAqa: false,
       };
     }
     const aliasMatches = resolveApprovedQualificationAliases(latestUserMessage(request), academicManifest.qualificationIdentities);
-    const courses = this.resolveCourseEntries(request, aliasMatches.map(identity => identity.awardQualificationId));
+    const courses = this.resolveCourseEntries(
+      request,
+      aliasMatches.map(identity => identity.awardQualificationId),
+      catalogResolution.matchedCourses,
+    );
     const knowledgeEntries = this.resolveKnowledgeEntries(request, manifest, courses);
     const aqaEntries = knowledgeEntries.filter((entry) => entry.board === "AQA");
     let aqaOriginalTextDetected = false;
@@ -821,6 +879,7 @@ export class AIContextBuilder {
         .some((message) => aqaMappings.some((mapping) => containsAqaOriginalText(message.content, mapping)));
     }
     const sources = createSourceRegistry();
+    const catalogFacts = this.addCatalogContext(courses, sources);
     const overviews = this.addOverviewContext(courses, sources);
     const selectedPaperIds = resolveSelectedPaperIds(request, knowledgeEntries);
     const knowledge = await this.addKnowledgeContext(knowledgeEntries, manifest, selectedPaperIds, sources);
@@ -842,7 +901,10 @@ export class AIContextBuilder {
         ...knowledgeEntries.map(entry => entry.qualificationVersionId),
       ])].slice(0, 4),
       qualificationIds: courses.map((course) => course.qualificationId).slice(0, 4),
-      qualificationCodes: knowledgeEntries.map((entry) => entry.code).slice(0, 4),
+      qualificationCodes: [...new Set([
+        ...knowledgeEntries.map((entry) => entry.code),
+        ...courses.map(catalogCodeForCourse),
+      ])].slice(0, 4),
       paperIds: selectedPaperIds.filter((paperId): paperId is string => Boolean(paperId)),
       labels: (knowledgeEntries.length > 0
         ? knowledgeEntries.map((entry) => `${entry.board} ${entry.subjectCode} ${entry.subjectName}`)
@@ -862,7 +924,7 @@ export class AIContextBuilder {
     }
 
     const hasVerifiedAcademicContext = academic?.calls.some(call => call.status === "ok") === true;
-    if (overviews.length === 0 && !knowledge && !hasVerifiedAcademicContext) {
+    if (catalogFacts.length === 0 && overviews.length === 0 && !knowledge && !hasVerifiedAcademicContext) {
       return {
         promptContext: "{}",
         sources: [],
@@ -877,8 +939,8 @@ export class AIContextBuilder {
 
     const serializePayload = () => JSON.stringify({
       generatedFor: request.pageContext.pageType,
-      roleView: request.roleView,
       sourcePolicy: "Only owner-approved ExamBridge data is included. Source IDs are resolved by the server.",
+      courseCatalog: catalogFacts,
       examOverviews: overviews,
       deterministicPaperFacts: paperFacts,
       knowledge,
@@ -908,16 +970,20 @@ export class AIContextBuilder {
       throw new Error(`AI prompt context exceeded ${promptLimit} characters`);
     }
     const sourceList = sources.list();
+    const containsAqaCourse = courses.some(course => course.boardName === "AQA");
+    const useCatalogOnlyAqaAnswer = containsAqaCourse && aqaEntries.length === 0 && !hasVerifiedAcademicContext;
     return {
       promptContext: payload,
       sources: sourceList,
       resolvedContext,
       paperFacts,
-      ...((aqaEntries.length > 0 || academic?.containsAqa) ? {
-        localAnswer: buildLocalAqaAnswer(request.locale, knowledge, academic, sourceList, aqaOriginalTextDetected),
+      ...((aqaEntries.length > 0 || academic?.containsAqa || useCatalogOnlyAqaAnswer) ? {
+        localAnswer: useCatalogOnlyAqaAnswer
+          ? buildLocalCatalogAnswer(request.locale, courses, sourceList)
+          : buildLocalAqaAnswer(request.locale, knowledge, academic, sourceList, aqaOriginalTextDetected),
       } : {}),
       academicTools: academic,
-      containsAqa: aqaEntries.length > 0 || academic?.containsAqa === true,
+      containsAqa: containsAqaCourse || aqaEntries.length > 0 || academic?.containsAqa === true,
       ...(knowledgeEntries.length === 1 && aqaEntries.length === 0 ? {
         externalSearchIdentity: { board: knowledgeEntries[0].board, qualificationCode: knowledgeEntries[0].subjectCode },
       } : {}),

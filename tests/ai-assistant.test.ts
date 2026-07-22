@@ -14,8 +14,9 @@ import { AIServiceGuard, createAIServiceGuardFromEnv } from "../server/ai/servic
 import { AIProviderError, DeepSeekChatProvider, ensureAnswerCitations, hydrateCitations } from "../server/ai/provider";
 import { isComplexAIQuestion } from "../server/ai/prompt";
 import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai";
-import { detectQualificationAmbiguity, resolveApprovedQualificationAliases } from "../server/ai/qualification-resolver";
+import { detectQualificationAmbiguity, resolveApprovedQualificationAliases, resolveCatalogQualificationMentions } from "../server/ai/qualification-resolver";
 import { detectRequiredInputClarification } from "../server/ai/required-input-resolver";
+import { COURSE_CATALOG } from "@/course-context/catalog";
 
 function request(overrides: Partial<AIChatRequest> = {}): AIChatRequest {
   return {
@@ -69,6 +70,39 @@ describe("AI qualification ambiguity resolver", () => {
   it("does not override an exact qualification code", () => {
     expect(detectQualificationAmbiguity("比较IG数学0580和A Level数学9709")).toBeUndefined();
     expect(detectQualificationAmbiguity("Pearson 8MA0怎么合分？")).toBeUndefined();
+  });
+
+  it("turns board-and-subject ambiguity into locally sourced selectable qualification groups", () => {
+    const result = resolveCatalogQualificationMentions("Edexcel 生物和 CAIE 生物，哪个更容易取得高分？", COURSE_CATALOG);
+    expect(result.ambiguity?.choices?.groups).toHaveLength(2);
+    expect(result.ambiguity?.choices?.groups.find(group => group.groupId.startsWith("pearson"))?.options.map(option => option.qualificationCode))
+      .toEqual(expect.arrayContaining(["4BI1", "YBI11", "9BI0"]));
+    expect(result.ambiguity?.choices?.groups.find(group => group.groupId.startsWith("caie"))?.options.map(option => option.qualificationCode))
+      .toEqual(expect.arrayContaining(["0610", "9700"]));
+  });
+
+  it("keeps an exact IGCSE code while asking only for the unresolved A Level mathematics qualification", () => {
+    const result = resolveCatalogQualificationMentions("IG数学0580和A LEVEL数学难度差异多大？", COURSE_CATALOG);
+    expect(result.matchedCourses.map(course => course.subjectCode)).toContain("0580");
+    expect(result.ambiguity?.choices?.groups).toHaveLength(1);
+    expect(result.ambiguity?.choices?.groups[0].label).toContain("A-Level");
+    expect(result.ambiguity?.choices?.groups[0].options.some(option => option.qualificationCode === "9709")).toBe(true);
+  });
+
+  it("resolves a unique catalog qualification by exact code without requiring active academic identity coverage", () => {
+    const result = resolveCatalogQualificationMentions("CAIE 9700 的考试结构是什么？", COURSE_CATALOG);
+    expect(result.ambiguity).toBeUndefined();
+    expect(result.matchedCourses.map(course => course.subjectCode)).toEqual(["9700"]);
+  });
+
+  it("uses official English subject names from the full catalog instead of a mathematics-only alias list", () => {
+    const result = resolveCatalogQualificationMentions("Compare AQA Psychology with OCR Psychology", COURSE_CATALOG, "en-GB");
+    const codes = [
+      ...result.matchedCourses.map(course => course.subjectCode),
+      ...(result.ambiguity?.choices?.groups.flatMap(group => group.options.map(option => option.qualificationCode)) ?? []),
+    ];
+    expect(codes).toContain("7182");
+    expect(codes.some(code => /^H\d{3}$/.test(code))).toBe(true);
   });
 
   it("resolves only owner-approved aliases and keeps candidate identities isolated", () => {
@@ -347,10 +381,33 @@ describe("AI assistant context builder", () => {
     )).toBe(false);
   });
 
-  it("asks for a course instead of guessing vague context", async () => {
+  it("offers locally sourced choices instead of guessing vague course context", async () => {
     const result = await builder.build(request({ messages: [{ role: "user", content: "这门数学可以使用计算器吗？" }] }));
-    expect(result.clarification).toContain("请先选择课程");
+    expect(result.clarification).toContain("对应多个资格");
+    expect(result.clarificationChoices?.groups[0].options.length).toBeGreaterThan(1);
     expect(result.sources).toHaveLength(0);
+  });
+
+  it("returns structured choices for a named subject ambiguity instead of a generic exact-code rejection", async () => {
+    const result = await builder.build(request({ messages: [{ role: "user", content: "Edexcel 生物和 CAIE 生物，哪个更容易取得高分？" }] }));
+    expect(result.clarificationChoices?.groups).toHaveLength(2);
+    expect(result.clarification).toContain("对应多个资格");
+  });
+
+  it("uses a manually selected catalog-only qualification as valid assistant context", async () => {
+    const biology = COURSE_CATALOG.find(course => course.boardName === "CAIE" && course.level === "A-Level" && course.subjectCode === "9700")!;
+    const result = await builder.build(request({
+      scopes: [{ awardQualificationIds: [], qualificationVersionIds: [], catalogQualificationIds: [biology.qualificationId], source: "manual-selection" }],
+      messages: [
+        { role: "user", content: "Edexcel 生物和 CAIE 生物，哪个更容易取得高分？" },
+        { role: "assistant", content: "请选择具体资格。" },
+        { role: "user", content: "已选择 CAIE A-Level Biology（9700），请继续。" },
+      ],
+    }));
+    expect(result.clarification).toBeUndefined();
+    expect(result.resolvedContext.qualificationIds).toContain(biology.qualificationId);
+    expect(result.promptContext).toContain('"courseCatalog"');
+    expect(result.promptContext).toContain('"subjectCode":"9700"');
   });
 
   it("builds owner-approved comparison metrics while withholding AQA wording", async () => {
@@ -985,7 +1042,29 @@ describe("AI assistant HTTP/SSE boundary", () => {
   it("returns local clarification and configuration errors without using provider quota", async () => {
     const resolvedContext = { awardQualificationIds: [], qualificationVersionIds: [], qualificationIds: [], qualificationCodes: [], paperIds: [], labels: [] };
     const builder = vi.fn()
-      .mockResolvedValueOnce({ promptContext: "{}", sources: [], resolvedContext, clarification: "请先选择课程。" })
+      .mockResolvedValueOnce({
+        promptContext: "{}",
+        sources: [],
+        resolvedContext,
+        clarification: "请选择准确资格。",
+        clarificationChoices: {
+          prompt: "请选择准确资格。",
+          submitLabel: "确认并继续",
+          groups: [{
+            groupId: "biology",
+            label: "Biology",
+            required: true,
+            options: ["9700", "0610"].map(code => ({
+              optionId: `qual:${code}`,
+              label: `CAIE ${code}`,
+              description: "课程目录",
+              qualificationCode: code,
+              availability: "catalogued" as const,
+              scope: { awardQualificationIds: [], qualificationVersionIds: [], catalogQualificationIds: [`qual:${code}`], source: "manual-selection" as const },
+            })),
+          }],
+        },
+      })
       .mockResolvedValueOnce({ promptContext: "{}", sources: [], resolvedContext });
     const serviceGuard = {
       beginProviderRequest: vi.fn().mockReturnValue({ allowed: true }),
@@ -1006,7 +1085,11 @@ describe("AI assistant HTTP/SSE boundary", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(request()),
       });
-      expect(parseSSE(await (await post()).text()).map((event) => event.type)).toEqual(["meta", "delta", "suggestions", "done"]);
+      const clarificationEvents = parseSSE(await (await post()).text());
+      expect(clarificationEvents.map((event) => event.type)).toEqual(["meta", "delta", "clarification", "done"]);
+      expect(clarificationEvents).toEqual(expect.arrayContaining([
+        expect.objectContaining({ type: "clarification", clarification: expect.objectContaining({ submitLabel: "确认并继续" }) }),
+      ]));
       expect(parseSSE(await (await post()).text())).toEqual(expect.arrayContaining([
         expect.objectContaining({ type: "error", code: "configuration-error" }),
       ]));

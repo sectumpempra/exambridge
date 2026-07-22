@@ -26,6 +26,28 @@ export const AIQueryScopeSchema = z.object({
   message: "a query scope must identify at least one qualification",
 });
 
+export const AIClarificationOptionSchema = z.object({
+  optionId: z.string().min(1).max(240),
+  label: z.string().min(1).max(240),
+  description: z.string().min(1).max(500),
+  qualificationCode: z.string().min(1).max(80),
+  availability: z.enum(["answer-ready", "partial", "catalogued"]),
+  scope: AIQueryScopeSchema,
+});
+
+export const AIClarificationGroupSchema = z.object({
+  groupId: z.string().min(1).max(120),
+  label: z.string().min(1).max(240),
+  required: z.boolean().default(true),
+  options: z.array(AIClarificationOptionSchema).min(2).max(10),
+});
+
+export const AIClarificationSchema = z.object({
+  prompt: z.string().min(1).max(800),
+  groups: z.array(AIClarificationGroupSchema).min(1).max(4),
+  submitLabel: z.string().min(1).max(80).default("确认并继续"),
+});
+
 const AIAcademicQuerySchema = z.discriminatedUnion("type", [
   z.object({
     type: z.literal("lookup"),
@@ -78,7 +100,8 @@ export const AIChatRequestSchema = z.object({
   syllabusVersions: z.array(z.string().min(1).max(120)).max(4).default([]),
   pageContext: AIPageContextSchema,
   pageContextQualificationVersionId: z.string().min(1).max(200).optional(),
-  roleView: z.enum(["teaching", "consulting", "sales", "operations"]).default("consulting"),
+  // Deprecated. Accepted only so an already-open V2 tab does not break during rollout.
+  roleView: z.enum(["teaching", "consulting", "sales", "operations"]).optional(),
   messages: z.array(AIChatMessageSchema).min(1).max(AI_ASSISTANT_HISTORY_MAX_MESSAGES),
   locale: z.enum(["zh-CN", "en-GB"]).default("zh-CN"),
   resolvedContext: AIResolvedContextSchema.optional(),
@@ -109,6 +132,7 @@ export const AIStreamEventSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("delta"), text: z.string() }),
   z.object({ type: z.literal("citations"), citations: z.array(AICitationSchema) }),
   z.object({ type: z.literal("suggestions"), suggestions: z.array(z.string().min(1).max(200)).max(4) }),
+  z.object({ type: z.literal("clarification"), clarification: AIClarificationSchema }),
   z.object({
     type: z.literal("done"),
     answer: z.string(),
@@ -132,5 +156,6 @@ export type AIChatRequest = z.infer<typeof AIChatRequestSchema>;
 export type AIPageContext = z.infer<typeof AIPageContextSchema>;
 export type AIQueryScope = z.infer<typeof AIQueryScopeSchema>;
 export type AIResolvedContext = z.infer<typeof AIResolvedContextSchema>;
+export type AIClarification = z.infer<typeof AIClarificationSchema>;
 export type AICitation = z.infer<typeof AICitationSchema>;
 export type AIStreamEvent = z.infer<typeof AIStreamEventSchema>;
