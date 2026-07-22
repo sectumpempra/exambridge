@@ -202,7 +202,11 @@ async function handleChat(
 
     if (context.clarification) {
       sendEvent(res, { type: "delta", text: context.clarification });
-      sendEvent(res, { type: "suggestions", suggestions: ["选择当前课程", "输入资格代码，例如 9709"] });
+      if (context.clarificationChoices) {
+        sendEvent(res, { type: "clarification", clarification: context.clarificationChoices });
+      } else {
+        sendEvent(res, { type: "suggestions", suggestions: ["选择当前课程", "输入资格代码，例如 9709"] });
+      }
       sendEvent(res, { type: "done", answer: context.clarification, requestId, resolvedContext: context.resolvedContext });
       return;
     }

@@ -55,6 +55,11 @@ describe("academic results AI tools", () => {
     expect(intents).toContain("calculate_transition_difficulty");
   });
 
+  it("recognises common Chinese A-star rate wording as Grade Statistics", () => {
+    expect(detectAcademicToolIntents(request("0580 的 A*率如何？"))).toContain("lookup_grade_statistics");
+    expect(detectAcademicToolIntents(request("这门课的A星率和高分率是多少？"))).toContain("lookup_grade_statistics");
+  });
+
   it("queries only owner-approved active rows and never exposes candidate rows", () => {
     const result = buildAcademicToolContext(
       request("9709 2025 June 分数线是多少？"),
