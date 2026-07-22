@@ -133,6 +133,7 @@ export default function AIChatPanel({
   const [detachedFromPageContext, setDetachedFromPageContext] = useState(initial?.detachedFromPageContext ?? false);
   const [input, setInput] = useState("");
   const [inputExpanded, setInputExpanded] = useState(false);
+  const [panelExpanded, setPanelExpanded] = useState(false);
   const [clarification, setClarification] = useState<AIClarification | null>(null);
   const [clarificationSelections, setClarificationSelections] = useState<Record<string, string>>({});
   const [generating, setGenerating] = useState(false);
@@ -164,6 +165,13 @@ export default function AIChatPanel({
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, [messages]);
+
+  useEffect(() => {
+    if (!panelExpanded) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, [panelExpanded]);
 
   const clearConversation = () => {
     abortRef.current?.abort();
@@ -304,7 +312,9 @@ export default function AIChatPanel({
   return (
     <section className={cn(
       "flex min-h-0 flex-col overflow-hidden rounded-[26px] border border-[#d7d3cd] bg-[#fdfcf9] shadow-[0_24px_70px_rgba(61,56,50,0.1)]",
-      fullHeight ? "h-[calc(100dvh-9.5rem)] min-h-[620px]" : "h-[min(820px,calc(100dvh-4rem))]",
+      panelExpanded
+        ? "fixed inset-2 z-[100] h-[calc(100dvh-1rem)] min-h-0 sm:inset-4 sm:h-[calc(100dvh-2rem)]"
+        : fullHeight ? "h-[calc(100dvh-8rem)] min-h-[680px] resize-y" : "h-[min(820px,calc(100dvh-4rem))] resize-y",
       className,
     )} aria-label="ExamBridge AI 对话">
       <header className="border-b border-[#e2ddd6] bg-[linear-gradient(135deg,#f7f3ed,#eef3f2)] px-4 py-4 sm:px-5">
@@ -312,7 +322,10 @@ export default function AIChatPanel({
           <div className="min-w-0">
             <div className="flex items-center gap-2"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#253b46] text-white"><Bot size={19} /></span><div className="min-w-0"><h2 className="m-0 text-base font-bold text-[#302d2a]">ExamBridge AI 助手</h2>{contextControl ?? <p className="m-0 mt-0.5 truncate text-xs text-[#6e675e]">{contextLabel || "基于已核验资料回答"}</p>}</div></div>
           </div>
-          <Button type="button" variant="ghost" size="sm" onClick={clearConversation} disabled={messages.length === 0} className="shrink-0 text-[#675a4d]" aria-label="清空对话"><Trash2 size={15} /><span className="hidden sm:inline">清空</span></Button>
+          <div className="flex shrink-0 items-center gap-1">
+            <Button type="button" variant="ghost" size="sm" onClick={() => setPanelExpanded(value => !value)} className="text-[#675a4d]" aria-label={panelExpanded ? "恢复回答区大小" : "放大回答区"} title={panelExpanded ? "恢复回答区大小" : "放大回答区"}>{panelExpanded ? <Minimize2 size={15} /> : <Maximize2 size={15} />}<span className="hidden md:inline">{panelExpanded ? "恢复" : "放大回答区"}</span></Button>
+            <Button type="button" variant="ghost" size="sm" onClick={clearConversation} disabled={messages.length === 0} className="text-[#675a4d]" aria-label="清空对话"><Trash2 size={15} /><span className="hidden sm:inline">清空</span></Button>
+          </div>
         </div>
         <div className="mt-3 flex items-start gap-2 rounded-lg border border-[#ccd8d5] bg-white/70 px-3 py-2 text-[11px] leading-4 text-[#50645e]"><ShieldCheck size={14} className="mt-0.5 shrink-0" /><span>仅根据 ExamBridge 已核验资料回答。非 AQA 问题会发送给 DeepSeek 生成回答，发送内容仅包括筛选后的课程、Paper 与考纲上下文；AQA 使用本地确定性模板。不会发送官方 PDF、API 密钥或个人账号资料。</span></div>
         <div className="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-[#625c54]" aria-live="polite">
