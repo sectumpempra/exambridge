@@ -21,10 +21,10 @@ export default function AIAssistantPage() {
         <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-[#ccd4d4] bg-white/70 px-3.5 py-2.5 shadow-[0_10px_30px_rgba(61,56,50,0.05)] sm:px-4">
           <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#253b46] text-white"><Bot size={16} /></span>
           <div className="min-w-[220px] flex-1">
-            <h1 className="m-0 text-sm font-bold leading-5 tracking-tight sm:text-base">全站考试事实查询</h1>
-            <p className="m-0 mt-0.5 text-[11px] leading-4 text-[#6c655d]">直接提问考试结构、Paper、合分、分数线或多个资格的差异；课程筛选不是必填项。</p>
+            <h1 className="m-0 text-sm font-bold leading-5 tracking-tight sm:text-base">考试信息核验</h1>
+            <p className="m-0 mt-0.5 text-[11px] leading-4 text-[#6c655d]">查询课程结构、Paper / Unit、合分规则、分数线与资格差异；可直接提问，也可限定课程范围。</p>
           </div>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#c9d5d3] bg-[#f6faf9] px-2.5 py-1 text-[10px] font-semibold text-[#526b7e]"><SearchCheck size={12} />已核验资料</span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#c9d5d3] bg-[#f6faf9] px-2.5 py-1 text-[10px] font-semibold text-[#526b7e]"><SearchCheck size={12} />基于当前已核验数据</span>
         </div>
         {enabled ? <AIChatPanel
           fullHeight

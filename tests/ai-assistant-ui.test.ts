@@ -35,7 +35,8 @@ describe("AI assistant internal-preview UI", () => {
   it("renders the complete assistant surface and evidence boundary when enabled", () => {
     vi.stubEnv("VITE_AI_ASSISTANT_PUBLIC", "true");
     const html = render(createElement(AIAssistantPage));
-    expect(html).toContain("全站考试事实查询");
+    expect(html).toContain("考试信息核验");
+    expect(html).toContain("基于当前已核验数据");
     expect(html).toContain("数据、模型与隐私说明");
     expect(html).toContain("回答仅使用 ExamBridge 当前已核验的 active 数据");
     expect(html).toContain("非 AQA 问题只向 DeepSeek 发送");

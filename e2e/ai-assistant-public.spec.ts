@@ -51,7 +51,7 @@ test.describe("public AI assistant release surface", () => {
 
     await page.goto("/#/ai-assistant");
     await waitForPwaControl(page);
-    await expect(page.getByRole("heading", { level: 1, name: "全站考试事实查询" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1, name: "考试信息核验" })).toBeVisible();
     const disclosure = page.getByText("数据、模型与隐私说明", { exact: true });
     await expect(disclosure).toBeVisible();
     await disclosure.click();
@@ -61,8 +61,9 @@ test.describe("public AI assistant release surface", () => {
     await expect(courseSwitcher).toBeVisible();
     await courseSwitcher.click();
     await expect(page.getByRole("dialog", { name: "更换 AI 助手课程" })).toBeVisible();
+    await expect(page.getByRole("button", { name: /数学类.*现行课程/ })).toBeVisible();
     await page.getByPlaceholder("搜索考试局、课程名称或代码").fill("9709");
-    await page.getByRole("option", { name: /CAIE 9709.*Mathematics/i }).click();
+    await page.getByRole("option", { name: /9709.*Mathematics.*CAIE/i }).click();
     await expect(page.getByRole("button", { name: /9709.*Mathematics.*更换课程/i })).toBeVisible();
     const paperSelector = page.getByLabel("限定 AI 回答使用的 Paper");
     await expect(paperSelector).toBeVisible();
@@ -115,6 +116,7 @@ test.describe("public AI assistant release surface", () => {
     await page.getByRole("button", { name: /选择课程/ }).click();
     await expect(page.getByRole("dialog", { name: "更换 AI 助手课程" })).toBeVisible();
     await expect(page.getByPlaceholder("搜索考试局、课程名称或代码")).toBeVisible();
+    await expect(page.getByRole("button", { name: /数学类.*现行课程/ })).toBeVisible();
     const overflow = await page.evaluate(() => ({
       body: document.body.scrollWidth - document.body.clientWidth,
       document: document.documentElement.scrollWidth - document.documentElement.clientWidth,
