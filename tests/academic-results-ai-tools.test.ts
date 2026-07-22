@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { buildAcademicToolContext, detectAcademicToolIntents } from "../server/ai/academic-tools";
+import { buildAcademicToolContext, detectAcademicToolIntents, resolveAcademicQualificationVersionIds } from "../server/ai/academic-tools";
 import { BOUNDARY_PREDICTION_DISCLAIMER_VERSION, type AcademicResultsManifestV2, type GradeBoundaryV2, type MisconceptionRecordV1 } from "@/domain-v2/academic-results";
 import type { AIChatRequest } from "@/domain-v2/ai-assistant";
 
@@ -216,5 +216,56 @@ describe("academic results AI tools", () => {
       const context = buildAcademicToolContext(request(`2025 ${sample} 分数线`), manifest(), ["CAIE-9709:2026-2027"]);
       expect(context?.calls[0]).toMatchObject({ name: "lookup_grade_boundary", status: "data-unavailable" });
     }
+  });
+
+  it("selects the qualification version that applies to an explicit historical year", () => {
+    const selected = resolveAcademicQualificationVersionIds(
+      activeManifest,
+      ["CAIE-0580:2025-2027"],
+      request("0580 2019 June 的分数线"),
+      ["award:caie:0580"],
+    );
+    expect(selected).toEqual(["CAIE-0580:2019"]);
+  });
+
+  it("expands all approved versions only when the user asks for historical coverage", () => {
+    const historical = resolveAcademicQualificationVersionIds(
+      activeManifest,
+      ["CAIE-0580:2025-2027"],
+      request("告诉我 0580 所有历年分数线和 A* 率"),
+      ["award:caie:0580"],
+    );
+    expect(historical).toEqual([
+      "CAIE-0580:2019",
+      "CAIE-0580:2020-2022",
+      "CAIE-0580:2023-2024",
+      "CAIE-0580:2025-2027",
+    ]);
+    const current = resolveAcademicQualificationVersionIds(
+      activeManifest,
+      ["CAIE-0580:2025-2027"],
+      request("0580 的分数线"),
+      ["award:caie:0580"],
+    );
+    expect(current).toEqual(["CAIE-0580:2025-2027"]);
+  });
+
+  it("reports non-queryable coverage without exposing candidate values", () => {
+    const result = buildAcademicToolContext(
+      request("告诉我 0580 所有历年 A* 率"),
+      activeManifest,
+      ["CAIE-0580:2025-2027"],
+      ["award:caie:0580"],
+    );
+    const statistics = result?.calls.find(call => call.name === "lookup_grade_statistics");
+    expect(statistics).toMatchObject({
+      status: "data-unavailable",
+      result: [],
+      availability: {
+        activeRecordCount: 0,
+        pendingExpectationCount: 24,
+        unexpectedRecordCount: 13,
+      },
+    });
   });
 });

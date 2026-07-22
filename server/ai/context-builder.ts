@@ -888,6 +888,11 @@ export class AIContextBuilder {
       request,
       academicManifest,
       knowledgeEntries.map(entry => entry.qualificationVersionId),
+      [...new Set([
+        ...aliasMatches.map(identity => identity.awardQualificationId),
+        ...courses.map(awardQualificationIdForCourse),
+        ...request.scopes.flatMap(scope => scope.awardQualificationIds),
+      ])],
     );
     const academic = rawAcademic
       ? remapAcademicSourceIds(rawAcademic, academicManifest, sources) as AcademicToolContext

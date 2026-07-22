@@ -47,6 +47,52 @@ describe("Academic Results V2 migration candidate", () => {
     });
   });
 
+  it("rebuilds the complete official 0580 statistics series without legacy sentinel values", () => {
+    const rows = candidate.statistics.filter(row => row.awardQualificationId === "award:caie:0580");
+    expect(rows).toHaveLength(17);
+    const seriesOrder: Record<string, number> = { march: 0, june: 1, november: 2 };
+    expect(rows
+      .map(row => ({ year: row.year, series: row.series }))
+      .sort((left, right) => left.year - right.year || seriesOrder[left.series] - seriesOrder[right.series])
+      .map(row => `${row.year}-${row.series}`)).toEqual([
+      "2019-june",
+      "2021-march", "2021-june", "2021-november",
+      "2022-march", "2022-june", "2022-november",
+      "2023-march", "2023-june", "2023-november",
+      "2024-march", "2024-june", "2024-november",
+      "2025-march", "2025-june", "2025-november",
+      "2026-march",
+    ]);
+    expect(rows.every(row => row.verificationStatus === "codex-reviewed"
+      && row.publicationStatus === "final"
+      && row.rateKind === "cumulative"
+      && row.sourceIds.length === 1)).toBe(true);
+    expect(rows.every(row => JSON.stringify(row.gradeRates).includes("99.9") === false)).toBe(true);
+    expect(rows.every(row => row.gradeOrder.join(",") === "A*,A,B,C,D,E,F,G")).toBe(true);
+
+    expect(rows.find(row => row.year === 2019 && row.series === "june")).toMatchObject({
+      qualificationVersionId: "CAIE-0580:2019",
+      gradeRates: { "A*": 18.4, A: 36, B: 53.6, C: 73.5, D: 83.1, E: 90.1, F: 92.1, G: 93.5 },
+    });
+    expect(rows.find(row => row.year === 2021 && row.series === "june")).toMatchObject({
+      qualificationVersionId: "CAIE-0580:2020-2022",
+      gradeRates: { "A*": 27.8, A: 44.3, B: 58.5, C: 80, D: 88.1, E: 94, F: 95.8, G: 97 },
+    });
+    expect(rows.find(row => row.year === 2025 && row.series === "june")).toMatchObject({
+      qualificationVersionId: "CAIE-0580:2025-2027",
+      gradeRates: { "A*": 19.8, A: 34.1, B: 50, C: 70.9, D: 80.3, E: 87.8, F: 90.3, G: 92.1 },
+    });
+
+    const sourceIds = rows.flatMap(row => row.sourceIds);
+    const sources = candidate.sources.filter(source => sourceIds.includes(source.sourceId));
+    expect(sources).toHaveLength(17);
+    expect(sources.every(source => source.officialUrl.startsWith("https://www.cambridgeinternational.org/Images/")
+      && [1, 2].includes(source.printedPage ?? 0)
+      && source.printedPage === source.pdfPage
+      && source.sourceRowId?.includes("0580"))).toBe(true);
+    expect(sources.filter(source => /^[a-f0-9]{64}$/.test(source.sourceDocumentHash ?? ""))).toHaveLength(16);
+  });
+
   it("adds OCR 2019 statistics for all four scoped routes with independent review provenance", () => {
     const rows = candidate.statistics.filter(row =>
       row.year === 2019 && ["award:ocr:h240", "award:ocr:h245", "award:ocr:h640", "award:ocr:6993"].includes(row.awardQualificationId));
