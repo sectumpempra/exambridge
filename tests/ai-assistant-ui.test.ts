@@ -41,6 +41,7 @@ describe("AI assistant internal-preview UI", () => {
     expect(html).toContain("选择课程");
     expect(html).toContain("检索范围");
     expect(html).toContain("未限定范围");
+    expect(html).toContain("放大回答区");
     expect(html).toContain("放大输入框");
     expect(html).toContain("min-h-[144px]");
     expect(html).not.toContain("团队视图");
