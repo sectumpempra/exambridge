@@ -27,6 +27,8 @@ describe("AI assistant internal-preview UI", () => {
     const html = render(createElement(Header));
     expect(html).toContain("AI 问答");
     expect(html).toContain("/ai-assistant");
+    expect(html).toContain("/brand/exambridge-logo-horizontal.svg");
+    expect(html).toContain('alt="ExamBridge"');
   });
 
   it("renders the complete assistant surface and evidence boundary when enabled", () => {

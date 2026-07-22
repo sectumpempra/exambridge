@@ -1,9 +1,16 @@
-const VERSION = "exambridge-v3";
+const VERSION = "exambridge-v4";
 const SHELL_CACHE = `${VERSION}-shell`;
 const DATA_CACHE = `${VERSION}-data`;
 const CACHE_PREFIX = "exambridge-";
 const APP_SHELL = "/";
-const CORE = [APP_SHELL, "/manifest.webmanifest", "/icons/icon-192x192.png", "/icons/icon-512x512.png"];
+const CORE = [
+  APP_SHELL,
+  "/manifest.webmanifest",
+  "/brand/exambridge-logo-horizontal.svg",
+  "/favicon.svg",
+  "/icons/icon-192x192.png",
+  "/icons/icon-512x512.png",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element -- The exact brand wordmark is a lightweight public SVG. */
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Bot, Menu, GraduationCap, ChevronDown } from "lucide-react";
+import { Bot, Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MORE_NAV, NAV_GROUPS, type NavigationItem } from "@/data/navLinks";
 import CourseContextBar from "./CourseContextBar";
@@ -54,30 +55,18 @@ export default function Header({ title: _headerTitle }: HeaderProps) {
       )}
     >
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-4">
-        {/* Logo with hover animation */}
         <Link
           to={withCourseContext("/", context)}
-          className="group flex items-center gap-2 no-underline"
+          aria-label="ExamBridge 首页"
+          className="group flex shrink-0 items-center no-underline"
         >
-          <div
-            className={cn(
-              "flex h-8 w-8 items-center justify-center rounded-lg",
-              "bg-gradient-to-br from-[#675A4D] to-[#A69888]",
-              "text-sm font-extrabold text-white tracking-tight",
-              "transition-transform duration-300 ease-out",
-              "group-hover:scale-110 group-hover:rotate-[-3deg]"
-            )}
-          >
-            <GraduationCap size={16} />
-          </div>
-          <span
-            className={cn(
-              "text-base font-bold tracking-wide text-[#3D3832]",
-              "transition-colors duration-300 group-hover:text-[#675A4D]"
-            )}
-          >
-            ExamBridge
-          </span>
+          <img
+            src="/brand/exambridge-logo-horizontal.svg"
+            alt="ExamBridge"
+            width="1190"
+            height="190"
+            className="h-7 w-auto max-w-[176px] transition-transform duration-300 ease-out group-hover:scale-[1.025] sm:h-8 sm:max-w-[200px]"
+          />
         </Link>
 
         {/* Desktop Nav */}

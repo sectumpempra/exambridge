@@ -69,7 +69,9 @@ describe("canonical data and PWA release contracts", () => {
 
   it("versions caches, revalidates data and removes obsolete ExamBridge caches", () => {
     const serviceWorker = readFileSync("public/sw.js", "utf8");
-    expect(serviceWorker).toContain('const VERSION = "exambridge-v3"');
+    expect(serviceWorker).toContain('const VERSION = "exambridge-v4"');
+    expect(serviceWorker).toContain('/brand/exambridge-logo-horizontal.svg');
+    expect(serviceWorker).toContain('/favicon.svg');
     expect(serviceWorker).toContain("self.skipWaiting()");
     expect(serviceWorker).toContain("staleWhileRevalidate");
     expect(serviceWorker).toContain("key.startsWith(CACHE_PREFIX)");
