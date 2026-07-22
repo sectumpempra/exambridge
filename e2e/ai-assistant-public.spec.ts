@@ -1,4 +1,6 @@
 import { expect, test } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
+import { readFile } from "node:fs/promises";
 
 const enabled = process.env.AI_PUBLIC_E2E === "true";
 
@@ -14,7 +16,7 @@ async function waitForPwaControl(page: import("@playwright/test").Page) {
 test.describe("public AI assistant release surface", () => {
   test.skip(!enabled, "Runs only against an explicitly AI-enabled production build.");
 
-  test("shows the disclosure and completes a cited streamed answer", async ({ page }) => {
+  test("shows the disclosure, completes a cited answer and exports it", async ({ page, context }) => {
     const resolvedContext = {
       qualificationIds: ["qual:caie:a-level:9709"],
       qualificationCodes: ["CAIE-9709"],
@@ -50,7 +52,10 @@ test.describe("public AI assistant release surface", () => {
     await page.goto("/#/ai-assistant");
     await waitForPwaControl(page);
     await expect(page.getByRole("heading", { level: 1, name: "全站考试事实查询" })).toBeVisible();
-    await expect(page.getByText(/非 AQA 问题.*发送给 DeepSeek/)).toBeVisible();
+    const disclosure = page.getByText("数据、模型与隐私说明", { exact: true });
+    await expect(disclosure).toBeVisible();
+    await disclosure.click();
+    await expect(page.getByText(/非 AQA 问题只向 DeepSeek/)).toBeVisible();
     await expect(page.getByText(/不会发送官方 PDF、API 密钥或个人账号资料/)).toBeVisible();
     const courseSwitcher = page.getByRole("button", { name: /选择课程/ });
     await expect(courseSwitcher).toBeVisible();
@@ -72,6 +77,35 @@ test.describe("public AI assistant release surface", () => {
     await expect(page.getByText("**9709 的各张 Paper**", { exact: true })).toHaveCount(0);
     await expect(page.getByRole("link", { name: /\[S1\].*9709/ })).toHaveAttribute("href", source.url);
     await expect(page.getByRole("button", { name: "清空对话" })).toBeEnabled();
+    await expect(page.getByRole("button", { name: "将此回答导出为 PNG" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "复制此回答的富文本" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "下载此回答的 HTML" })).toBeVisible();
+
+    await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+    await page.getByRole("button", { name: "复制此回答的富文本" }).click();
+    await expect(page.getByText(/已复制富文本和纯文本|已复制纯文本/)).toBeVisible();
+
+    const [htmlDownload] = await Promise.all([
+      page.waitForEvent("download"),
+      page.getByRole("button", { name: "下载此回答的 HTML" }).click(),
+    ]);
+    expect(htmlDownload.suggestedFilename()).toMatch(/^exambridge-answer-.*\.html$/);
+    const htmlPath = await htmlDownload.path();
+    expect(htmlPath).toBeTruthy();
+    const exportedHtml = await readFile(htmlPath!, "utf8");
+    expect(exportedHtml).toContain("9709 的各张 Paper");
+    expect(exportedHtml).toContain("Cambridge International AS &amp; A Level Mathematics 9709");
+    expect(exportedHtml).not.toContain("<script");
+
+    const [pngDownload] = await Promise.all([
+      page.waitForEvent("download"),
+      page.getByRole("button", { name: "将此回答导出为 PNG" }).click(),
+    ]);
+    expect(pngDownload.suggestedFilename()).toMatch(/^exambridge-answer-.*\.png$/);
+    const pngPath = await pngDownload.path();
+    expect(pngPath).toBeTruthy();
+    const png = await readFile(pngPath!);
+    expect([...png.subarray(0, 8)]).toEqual([137, 80, 78, 71, 13, 10, 26, 10]);
   });
 
   test("keeps the course switcher usable without page overflow at 390px", async ({ page }) => {
@@ -89,7 +123,7 @@ test.describe("public AI assistant release surface", () => {
     expect(overflow.document).toBeLessThanOrEqual(1);
   });
 
-  test("supports no-course questions with selectable ambiguity choices and an expandable composer", async ({ page }) => {
+  test("supports no-course questions, selectable ambiguity choices and answer fullscreen", async ({ page }) => {
     const requestId = "5edbda0c-bfb0-4d98-8b62-9a82ff12f211";
     const emptyContext = { awardQualificationIds: [], qualificationVersionIds: [], qualificationIds: [], qualificationCodes: [], paperIds: [], labels: [] };
     const selectedContext = {
@@ -150,10 +184,14 @@ test.describe("public AI assistant release surface", () => {
     await expect(page.getByText("团队视图", { exact: true })).toHaveCount(0);
     const input = page.getByPlaceholder("输入问题；Shift + Enter 换行");
     const initialHeight = (await input.boundingBox())?.height ?? 0;
-    expect(initialHeight).toBeGreaterThanOrEqual(140);
-    await page.getByRole("button", { name: "放大输入框" }).click();
-    await expect(page.getByRole("button", { name: "缩小输入框" })).toBeVisible();
-    expect((await input.boundingBox())?.height ?? 0).toBeGreaterThan(initialHeight);
+    expect(initialHeight).toBeGreaterThanOrEqual(100);
+    expect(initialHeight).toBeLessThan(200);
+    await expect(page.getByRole("button", { name: "放大输入框" })).toHaveCount(0);
+    await page.getByRole("button", { name: "全屏查看回答" }).click();
+    await expect(page.getByRole("dialog", { name: "ExamBridge AI 回答专注模式" })).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(page.getByRole("dialog", { name: "ExamBridge AI 回答专注模式" })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "全屏查看回答" })).toBeFocused();
     await input.fill("Edexcel 生物和 CAIE 生物，哪个更容易取得高分？");
     await page.getByRole("button", { name: "发送" }).click();
     await page.getByRole("radio", { name: /Edexcel IGCSE Biology/ }).check();
@@ -164,5 +202,50 @@ test.describe("public AI assistant release surface", () => {
       "qual:edexcel:igcse:4bi1",
       "qual:caie:a-level:9700",
     ]);
+  });
+
+  test("keeps failed and empty responses explicit and non-exportable", async ({ page }) => {
+    let requestCount = 0;
+    const emptyContext = { awardQualificationIds: [], qualificationVersionIds: [], qualificationIds: [], qualificationCodes: [], paperIds: [], labels: [] };
+    await page.route("**/api/ai/chat", async (route) => {
+      requestCount += 1;
+      if (requestCount === 1) {
+        await route.fulfill({ status: 503, contentType: "application/json", body: JSON.stringify({ error: "busy" }) });
+        return;
+      }
+      const requestId = "0f68f250-fbf8-4745-a830-18fca8b5cc4d";
+      await route.fulfill({
+        status: 200,
+        contentType: "text/event-stream; charset=utf-8",
+        body: [
+          { type: "meta", requestId, resolvedContext: emptyContext },
+          { type: "done", answer: "", requestId, resolvedContext: emptyContext },
+        ].map(event => `data: ${JSON.stringify(event)}\n\n`).join(""),
+      });
+    });
+
+    await page.goto("/#/ai-assistant");
+    await waitForPwaControl(page);
+    const input = page.getByPlaceholder("输入问题；Shift + Enter 换行");
+    await input.fill("什么是 carry-forward？");
+    await page.getByRole("button", { name: "发送" }).click();
+    await expect(page.getByText("AI 服务暂时不可用，请稍后重试。", { exact: true })).toBeVisible();
+    await expect(page.getByRole("button", { name: "将此回答导出为 PNG" })).toHaveCount(0);
+    await page.getByRole("button", { name: "重新生成" }).click();
+    await expect(page.getByText("服务没有返回可用回答，请重试。", { exact: true })).toBeVisible();
+    await expect(page.getByRole("button", { name: "将此回答导出为 PNG" })).toHaveCount(0);
+  });
+
+  test("has no serious accessibility violations in the default and answer-focus views", async ({ page }) => {
+    await page.goto("/#/ai-assistant");
+    await waitForPwaControl(page);
+    const defaultResults = await new AxeBuilder({ page }).analyze();
+    expect(defaultResults.violations.filter(({ impact }) => impact === "critical" || impact === "serious")).toEqual([]);
+
+    const focusButton = page.getByRole("button", { name: "全屏查看回答" });
+    await focusButton.click();
+    await expect(page.getByRole("dialog", { name: "ExamBridge AI 回答专注模式" })).toBeVisible();
+    const focusResults = await new AxeBuilder({ page }).analyze();
+    expect(focusResults.violations.filter(({ impact }) => impact === "critical" || impact === "serious")).toEqual([]);
   });
 });
