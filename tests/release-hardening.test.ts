@@ -73,6 +73,7 @@ describe("canonical data and PWA release contracts", () => {
     expect(serviceWorker).toContain('/brand/exambridge-logo-horizontal.svg');
     expect(serviceWorker).toContain('/favicon.svg');
     expect(serviceWorker).toContain("self.skipWaiting()");
+    expect(serviceWorker).not.toContain(".then(() => self.skipWaiting())");
     expect(serviceWorker).toContain("staleWhileRevalidate");
     expect(serviceWorker).toContain("key.startsWith(CACHE_PREFIX)");
     expect(serviceWorker).toContain("caches.delete(key)");

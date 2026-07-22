@@ -44,4 +44,10 @@ describe("ExamBridge brand V2 release assets", () => {
     expect(manifest).toContain('/icons/pwa-icon-maskable.svg');
     expect(manifest).toContain('/icons/maskable-icon-512x512.png');
   });
+
+  it("keeps the generated precache manifest compatible with multiline source assets", () => {
+    const builder = readFileSync("scripts/build-sw-precache.mjs", "utf8");
+    expect(builder).toContain("const corePattern");
+    expect(builder).toContain("Could not replace the service worker CORE precache manifest");
+  });
 });

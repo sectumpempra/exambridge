@@ -17,6 +17,11 @@ const version = `exambridge-${digest.digest("hex").slice(0, 16)}`;
 const swPath = join(dist, "sw.js");
 let sw = await readFile(swPath, "utf8");
 sw = sw.replace(/^const VERSION = .*;$/m, `const VERSION = ${JSON.stringify(version)};`);
-sw = sw.replace(/^const CORE = .*;$/m, `const CORE = ${JSON.stringify(urls)};`);
+const corePattern = /^const CORE = \[[\s\S]*?\];(?=\n\nself\.addEventListener\("install")/m;
+const generatedCore = `const CORE = ${JSON.stringify(urls)};`;
+sw = sw.replace(corePattern, generatedCore);
+if (!sw.includes(generatedCore)) {
+  throw new Error("Could not replace the service worker CORE precache manifest.");
+}
 await writeFile(swPath, sw);
 console.log(`Service worker precache built: ${urls.length} files, ${version}.`);

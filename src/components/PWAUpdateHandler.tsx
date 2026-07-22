@@ -27,7 +27,11 @@ export default function PWAUpdateHandler() {
       void registration.update();
     }).catch((error) => console.warn("Service worker registration failed", error));
 
-    const onControllerChange = () => window.location.reload();
+    let alreadyControlled = Boolean(navigator.serviceWorker.controller);
+    const onControllerChange = () => {
+      if (alreadyControlled) window.location.reload();
+      else alreadyControlled = true;
+    };
     navigator.serviceWorker.addEventListener("controllerchange", onControllerChange);
     return () => {
       active = false;
