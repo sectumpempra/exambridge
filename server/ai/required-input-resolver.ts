@@ -65,7 +65,9 @@ export function detectRequiredInputClarification(
   const locale = request.locale;
   const qualificationMissing = awardQualificationIds.length === 0;
 
-  const asksSpecificBoundary = /分数线|等级线|grade\s*boundar|threshold/i.test(text)
+  const asksStatistics = /grade\s*statistics?|成绩统计|等级统计|a\s*\*\s*率|通过率|达标率|比例|percentage/i.test(text);
+  const asksSpecificBoundary = !asksStatistics
+    && /分数线|等级线|grade\s*boundar|threshold/i.test(text)
     && (/多少|查询|查一下|具体|哪一条|what|lookup|\b20\d{2}\b/i.test(text));
   if (asksSpecificBoundary) {
     const missing = [

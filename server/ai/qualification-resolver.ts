@@ -22,9 +22,23 @@ const normalizeAlias = (value: string) => value
 
 const token = (value: string) => value.toUpperCase().replace(/[^A-Z0-9]+/g, "");
 
-const codeIsNamed = (message: string, code: string) => {
+const isYearLikeNumericCode = (value: string) => /^(?:19|20)\d{2}$/.test(value);
+
+const boardIsNamed = (message: string, board: string) => {
+  const family = boardFamily(board);
+  const pattern = BOARD_PATTERNS.find(candidate => candidate.family === family)?.pattern;
+  return pattern?.test(message) ?? false;
+};
+
+const codeIsNamed = (message: string, code: string, board: string) => {
   const normalizedCode = token(code);
   if (normalizedCode.length < 3) return false;
+  // Four-digit subject codes can collide with calendar years (for example AQA
+  // 2021 versus the June 2021 series). A bare year must not select a course.
+  // The actual subject code remains resolvable when its board is named.
+  if (isYearLikeNumericCode(normalizedCode) && !boardIsNamed(message, board)) {
+    return false;
+  }
   if (/^[A-Z]+$/.test(normalizedCode)) {
     return new RegExp(`(?:^|[^A-Z])${normalizedCode}(?:$|[^A-Z])`, "i").test(message);
   }
@@ -115,7 +129,7 @@ export function resolveCatalogQualificationMentions(
   courses: CourseContextEntry[],
   locale: "zh-CN" | "en-GB" = "zh-CN",
 ): CatalogQualificationResolution {
-  const explicit = dedupeCourses(courses.filter(course => codeIsNamed(message, course.subjectCode)));
+  const explicit = dedupeCourses(courses.filter(course => codeIsNamed(message, course.subjectCode, course.boardName)));
   const normalizedEnglishMessage = ` ${message.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()} `;
   const dynamicSubject = [...new Map(courses
     .filter(course => course.lifecycleStatus === "current")
@@ -208,6 +222,9 @@ export function resolveApprovedQualificationAliases(
         const normalized = normalizeAlias(alias);
         if (!normalized) return longest;
         const exactCode = /^[a-z]*\d+[a-z\d]*$/i.test(normalized);
+        if (exactCode && isYearLikeNumericCode(normalized) && !boardIsNamed(message, identity.board)) {
+          return longest;
+        }
         const containsCjk = /[\u3400-\u9fff]/.test(normalized);
         const matches = containsCjk
           ? compactMessage.includes(normalized.replace(/\s+/g, ""))

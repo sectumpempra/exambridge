@@ -95,6 +95,12 @@ describe("AI qualification ambiguity resolver", () => {
     expect(result.matchedCourses.map(course => course.subjectCode)).toEqual(["9700"]);
   });
 
+  it("does not mistake an exam year for a four-digit subject code", () => {
+    const result = resolveCatalogQualificationMentions("列出 CAIE 0580 在 2021 年 6 月的成绩统计", COURSE_CATALOG);
+    expect(result.matchedCourses.map(course => course.subjectCode)).toContain("0580");
+    expect(result.matchedCourses.map(course => course.subjectCode)).not.toContain("2021");
+  });
+
   it("uses official English subject names from the full catalog instead of a mathematics-only alias list", () => {
     const result = resolveCatalogQualificationMentions("Compare AQA Psychology with OCR Psychology", COURSE_CATALOG, "en-GB");
     const codes = [
@@ -124,6 +130,27 @@ describe("AI qualification ambiguity resolver", () => {
     expect(resolveApprovedQualificationAliases("剑桥IGCSE数学考什么？", [{ ...base, reviewStatus: "owner-approved" }]))
       .toEqual([expect.objectContaining({ awardQualificationId: "award:caie:0580" })]);
   });
+
+  it("requires the board name before treating a year-like approved alias as a subject code", () => {
+    const identity = {
+      schemaVersion: "2.0.0" as const,
+      awardQualificationId: "award:aqa:2021",
+      board: "AQA",
+      subjectCode: "2021",
+      subjectName: "AQA subject 2021",
+      level: "GCSE",
+      catalogQualificationIds: ["qual:aqa:gcse:2021"],
+      knowledgeMappingCodes: [],
+      qualificationVersions: [{ qualificationVersionId: "AQA-2021:current", effectiveFrom: "2025-01-01", isCurrent: true }],
+      aliases: ["2021"],
+      sourceIds: ["source-1"],
+      processingPolicy: "local-only" as const,
+      reviewStatus: "owner-approved" as const,
+    };
+    expect(resolveApprovedQualificationAliases("CAIE 0580 2021 年 6 月成绩统计", [identity])).toEqual([]);
+    expect(resolveApprovedQualificationAliases("AQA 2021 的考试结构", [identity]))
+      .toEqual([expect.objectContaining({ awardQualificationId: "award:aqa:2021" })]);
+  });
 });
 
 describe("AI required input resolver", () => {
@@ -139,6 +166,15 @@ describe("AI required input resolver", () => {
     expect(detectRequiredInputClarification(request({
       messages: [{ role: "user", content: "9709 的合分规则是什么？" }],
     }), ["award:caie:9709"])).toBeUndefined();
+  });
+
+  it("does not turn a Grade Statistics request into a boundary clarification", () => {
+    expect(detectRequiredInputClarification(request({
+      messages: [{
+        role: "user",
+        content: "列出 CAIE 0580 Grade Statistics 覆盖年份，并说明 2021 年 6 月 A* 比例。不要用分数线推算。",
+      }],
+    }), ["award:caie:0580"])).toBeUndefined();
   });
 
   it("requests score types and Pearson cash-in history for a concrete IAL calculation", () => {
