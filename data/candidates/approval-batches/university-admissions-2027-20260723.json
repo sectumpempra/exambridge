@@ -3,8 +3,8 @@
   "batchId": "verified-facts-university-admissions-2027-20260723",
   "domain": "university-admissions",
   "generatedAt": "2026-07-23",
-  "approvalStatus": "pending-owner",
-  "activationStatus": "candidate-only",
+  "approvalStatus": "owner-approved",
+  "activationStatus": "activated",
   "sourceCandidate": {
     "path": "data/candidates/university-admissions-v1/candidate.json",
     "sha256": "2917fda5b45fa5a88c4b5dcf656a5539dd7cdca8084d9b88009473c831b767ae",
@@ -153,5 +153,9 @@
       "statusCeilingRespected": true,
       "candidateRowsRemainUnchanged": true
     }
-  }
+  },
+  "approvedAt": "2026-07-23",
+  "approvedBy": "owner",
+  "activatedAt": "2026-07-23T04:16:16.071Z",
+  "activeManifestSha256": "1d5c77ea365838783e72514cd567bc846774902979c31ae3e75fd9e761dcce62"
 }

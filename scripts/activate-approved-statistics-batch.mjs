@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 import { createServer } from "vite";
 import { assertApprovalBatchReady, sha256Json } from "./lib/verified-facts-approval.mjs";
 
@@ -10,10 +10,17 @@ if (!batchPath) {
   throw new Error("Usage: node scripts/activate-approved-statistics-batch.mjs <owner-approved-batch.json>");
 }
 const readJson = async relativePath => JSON.parse(await readFile(join(root, relativePath), "utf8"));
+const writeJsonAtomic = async (relativePath, value) => {
+  const target = join(root, relativePath);
+  const temporary = `${target}.${process.pid}.tmp`;
+  await writeFile(temporary, `${JSON.stringify(value, null, 2)}\n`);
+  await rename(temporary, target);
+};
 const batch = assertApprovalBatchReady(await readJson(batchPath), "academic-results-statistics");
-const [candidate, active] = await Promise.all([
+const [candidate, active, activeMetadata] = await Promise.all([
   readJson(batch.sourceCandidate.path),
   readJson("public/data/academic-results-v2/manifest.json"),
+  readJson("data/active/academic-results-v2/activation.json"),
 ]);
 if (sha256Json(candidate) !== batch.sourceCandidate.sha256) {
   throw new Error("Candidate snapshot changed after owner review; rebuild and re-approve the batch");
@@ -56,14 +63,37 @@ try {
 }
 
 const manifestText = `${JSON.stringify(nextManifest, null, 2)}\n`;
+const activatedAt = new Date().toISOString();
+const manifestSha256 = createHash("sha256").update(manifestText).digest("hex");
 const report = {
   schemaVersion: "1.0.0",
   batchId: batch.batchId,
   baseActivationBatch: active.activationBatch,
-  activatedAt: new Date().toISOString(),
-  manifestSha256: createHash("sha256").update(manifestText).digest("hex"),
+  activatedAt,
+  manifestSha256,
   statisticsAdded: selectedStatistics.length,
   sourcesAdded: selectedSources.length,
+};
+const nextActiveMetadata = {
+  ...activeMetadata,
+  manifestSha256,
+  activeCounts: {
+    ...activeMetadata.activeCounts,
+    sources: nextManifest.sources.length,
+    statistics: nextManifest.statistics.length,
+  },
+  latestApprovedBatch: batch.batchId,
+  incrementalActivations: [
+    ...(activeMetadata.incrementalActivations ?? []).filter(entry => entry.batchId !== batch.batchId),
+    {
+      batchId: batch.batchId,
+      domain: batch.domain,
+      approvedAt: batch.approvedAt,
+      activatedAt,
+      statisticsAdded: selectedStatistics.length,
+      sourcesAdded: selectedSources.length,
+    },
+  ],
 };
 await Promise.all([
   mkdir(join(root, "data/active/academic-results-v2/approved-batches"), { recursive: true }),
@@ -73,8 +103,18 @@ const manifestTarget = join(root, "public/data/academic-results-v2/manifest.json
 const manifestTemporary = `${manifestTarget}.${process.pid}.tmp`;
 await writeFile(manifestTemporary, manifestText);
 await rename(manifestTemporary, manifestTarget);
+const activatedBatch = {
+  ...batch,
+  activationStatus: "activated",
+  activatedAt,
+  activeManifestSha256: manifestSha256,
+};
+const generatedBatchPath = `generated/verified-facts-approval/${basename(batchPath)}`;
 await Promise.all([
   writeFile(join(root, `data/active/academic-results-v2/approved-batches/${batch.batchId}.json`), `${JSON.stringify(report, null, 2)}\n`),
   writeFile(join(root, `generated/verified-facts-approval/activated/${batch.batchId}.json`), `${JSON.stringify(report, null, 2)}\n`),
+  writeJsonAtomic("data/active/academic-results-v2/activation.json", nextActiveMetadata),
+  writeJsonAtomic(batchPath, activatedBatch),
+  writeJsonAtomic(generatedBatchPath, activatedBatch),
 ]);
 console.log(`Activated exactly ${selectedStatistics.length} statistics rows from ${batch.batchId}.`);

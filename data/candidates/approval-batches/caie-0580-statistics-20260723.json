@@ -3,8 +3,8 @@
   "batchId": "verified-facts-caie-0580-statistics-202107-202603-20260723",
   "domain": "academic-results-statistics",
   "generatedAt": "2026-07-23",
-  "approvalStatus": "pending-owner",
-  "activationStatus": "candidate-only",
+  "approvalStatus": "owner-approved",
+  "activationStatus": "activated",
   "sourceCandidate": {
     "path": "data/candidates/academic-results-v2/migration-candidate.json",
     "sha256": "577b087ab2625ead776cfb057553381b0f694119e0c6bc120d3a2a34fa8f2cac"
@@ -83,8 +83,13 @@
       "uniqueCanonicalKeys": true,
       "cumulativeRatesMonotonic": true,
       "sourceHashesPresent": true,
-      "activeCollisions": 0,
+      "alreadyActive": 16,
+      "unexpectedActiveCollisions": 0,
       "candidateRowsRemainUnchanged": true
     }
-  }
+  },
+  "approvedAt": "2026-07-23",
+  "approvedBy": "owner",
+  "activatedAt": "2026-07-23T04:16:15.743Z",
+  "activeManifestSha256": "61fcb3549b3c2c86f7bc21fe6391bd95c5540f312e7cf57dc19557bfaf71ed97"
 }

@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { AcademicResultsManifestV2Schema } from "@/domain-v2/academic-results";
@@ -6,6 +7,7 @@ const active = AcademicResultsManifestV2Schema.parse(JSON.parse(
   readFileSync("public/data/academic-results-v2/manifest.json", "utf8"),
 ));
 const activation = JSON.parse(readFileSync("data/active/academic-results-v2/activation.json", "utf8"));
+const activeText = readFileSync("public/data/academic-results-v2/manifest.json", "utf8");
 
 describe("Academic Results V2 launch activation", () => {
   it("activates the complete source-backed rule and misconception set", () => {
@@ -18,6 +20,10 @@ describe("Academic Results V2 launch activation", () => {
       && rule.clauseEvidence.every(evidence => evidence.reviewStatus === "owner-approved"))).toBe(true);
     expect(active.sources.every(source => source.verificationStatus === "owner-approved"
       && /^[a-f0-9]{64}$/.test(source.sourceDocumentHash ?? ""))).toBe(true);
+    expect(activation.activeCounts.sources).toBe(active.sources.length);
+    expect(activation.activeCounts.statistics).toBe(active.statistics.length);
+    expect(activation.manifestSha256).toBe(createHash("sha256").update(activeText).digest("hex"));
+    expect(activation.latestApprovedBatch).toBe("verified-facts-caie-0580-statistics-202107-202603-20260723");
   });
 
   it("enables calculation only where every current route has an exact overall boundary", () => {

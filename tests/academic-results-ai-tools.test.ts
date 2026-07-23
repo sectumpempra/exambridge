@@ -250,7 +250,7 @@ describe("academic results AI tools", () => {
     expect(current).toEqual(["CAIE-0580:2025-2027"]);
   });
 
-  it("reports non-queryable coverage without exposing candidate values", () => {
+  it("returns the 16 owner-approved 0580 statistics rows without exposing the excluded 2019 candidate", () => {
     const result = buildAcademicToolContext(
       request("告诉我 0580 所有历年 A* 率"),
       activeManifest,
@@ -259,13 +259,16 @@ describe("academic results AI tools", () => {
     );
     const statistics = result?.calls.find(call => call.name === "lookup_grade_statistics");
     expect(statistics).toMatchObject({
-      status: "data-unavailable",
-      result: [],
+      status: "ok",
       availability: {
-        activeRecordCount: 0,
+        activeRecordCount: 16,
         pendingExpectationCount: 24,
         unexpectedRecordCount: 13,
       },
     });
+    const records = statistics?.result as Array<{ verificationStatus: string; year: number }>;
+    expect(records).toHaveLength(16);
+    expect(records.every(record => record.verificationStatus === "owner-approved")).toBe(true);
+    expect(records.some(record => record.year === 2019)).toBe(false);
   });
 });

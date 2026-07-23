@@ -9,6 +9,14 @@ import {
 const root = process.cwd();
 const generatedAt = "2026-07-23";
 const readJson = async relativePath => JSON.parse(await readFile(join(root, relativePath), "utf8"));
+const readJsonOptional = async relativePath => {
+  try {
+    return await readJson(relativePath);
+  } catch (error) {
+    if (error?.code === "ENOENT") return null;
+    throw error;
+  }
+};
 const writeJsonAtomic = async (relativePath, value) => {
   const target = join(root, relativePath);
   const temporary = `${target}.${process.pid}.tmp`;
@@ -16,11 +24,32 @@ const writeJsonAtomic = async (relativePath, value) => {
   await rename(temporary, target);
 };
 
-const [academicCandidate, activeAcademic, universityCandidate] = await Promise.all([
+const [academicCandidate, activeAcademic, universityCandidate, existingStatisticsPack, existingUniversityPack] = await Promise.all([
   readJson("data/candidates/academic-results-v2/migration-candidate.json"),
   readJson("public/data/academic-results-v2/manifest.json"),
   readJson("data/candidates/university-admissions-v1/candidate.json"),
+  readJsonOptional("data/candidates/approval-batches/caie-0580-statistics-20260723.json"),
+  readJsonOptional("data/candidates/approval-batches/university-admissions-2027-20260723.json"),
 ]);
+
+const preserveOwnerApproval = (nextPack, existingPack) => {
+  if (existingPack?.approvalStatus !== "owner-approved") return nextPack;
+  if (existingPack.batchId !== nextPack.batchId
+    || existingPack.domain !== nextPack.domain
+    || existingPack.sourceCandidate.sha256 !== nextPack.sourceCandidate.sha256
+    || JSON.stringify(existingPack.scope) !== JSON.stringify(nextPack.scope)) {
+    throw new Error(`Approved batch ${existingPack.batchId} no longer matches its reviewed candidate and scope`);
+  }
+  return {
+    ...nextPack,
+    approvalStatus: "owner-approved",
+    activationStatus: existingPack.activationStatus,
+    approvedAt: existingPack.approvedAt,
+    approvedBy: existingPack.approvedBy,
+    ...(existingPack.activatedAt ? { activatedAt: existingPack.activatedAt } : {}),
+    ...(existingPack.activeManifestSha256 ? { activeManifestSha256: existingPack.activeManifestSha256 } : {}),
+  };
+};
 
 const statistics0580 = academicCandidate.statistics
   .filter(record => record.awardQualificationId === "award:caie:0580")
@@ -41,9 +70,20 @@ assertUnique(eligibleStatistics.map(record => record.statisticsId), "0580 statis
 assertUnique(eligibleStatistics.map(record => `${record.qualificationVersionId}|${record.year}|${record.series}|${record.regionScope}|${record.populationScope}`), "0580 statistics keys");
 const activeStatisticsIds = new Set(activeAcademic.statistics.map(record => record.statisticsId));
 const activeCollisions = eligibleStatistics.filter(record => activeStatisticsIds.has(record.statisticsId));
-if (activeCollisions.length > 0) throw new Error(`Active 0580 statistics collisions: ${activeCollisions.map(row => row.statisticsId).join(", ")}`);
+const activeStatisticsMap = new Map(activeAcademic.statistics.map(record => [record.statisticsId, record]));
+const expectedActive = record => ({ ...record, verificationStatus: "owner-approved" });
+const exactActivatedRows = activeCollisions.filter(record =>
+  JSON.stringify(activeStatisticsMap.get(record.statisticsId)) === JSON.stringify(expectedActive(record)));
+const unexpectedActiveCollisions = activeCollisions.filter(record =>
+  !exactActivatedRows.some(exact => exact.statisticsId === record.statisticsId));
+if (unexpectedActiveCollisions.length > 0) {
+  throw new Error(`Active 0580 statistics collisions: ${unexpectedActiveCollisions.map(row => row.statisticsId).join(", ")}`);
+}
+if (exactActivatedRows.length > 0 && existingStatisticsPack?.activationStatus !== "activated") {
+  throw new Error("Active 0580 statistics exist without an activated owner-approved batch");
+}
 
-const statisticsPack = {
+const statisticsPack = preserveOwnerApproval({
   schemaVersion: "1.0.0",
   batchId: "verified-facts-caie-0580-statistics-202107-202603-20260723",
   domain: "academic-results-statistics",
@@ -75,11 +115,12 @@ const statisticsPack = {
       uniqueCanonicalKeys: true,
       cumulativeRatesMonotonic: true,
       sourceHashesPresent: true,
-      activeCollisions: activeCollisions.length,
+      alreadyActive: exactActivatedRows.length,
+      unexpectedActiveCollisions: unexpectedActiveCollisions.length,
       candidateRowsRemainUnchanged: true,
     },
   },
-};
+}, existingStatisticsPack);
 
 const unresolvedUniversityIds = new Set(universityCandidate.quarantine.unresolvedRecordIds);
 const approvedRequirementCandidates = universityCandidate.requirements
@@ -115,7 +156,7 @@ for (const records of universityCollections) {
 }
 assertUnique(approvedRequirementCandidates.map(record => record.requirementId), "University requirement IDs");
 
-const universityPack = {
+const universityPack = preserveOwnerApproval({
   schemaVersion: "1.0.0",
   batchId: "verified-facts-university-admissions-2027-20260723",
   domain: "university-admissions",
@@ -157,7 +198,7 @@ const universityPack = {
       candidateRowsRemainUnchanged: true,
     },
   },
-};
+}, existingUniversityPack);
 
 await Promise.all([
   mkdir(join(root, "data/candidates/approval-batches"), { recursive: true }),
@@ -170,18 +211,21 @@ await Promise.all([
   writeJsonAtomic("generated/verified-facts-approval/university-admissions-2027-20260723.json", universityPack),
   writeFile(join(root, "generated/verified-facts-approval/caie-0580-statistics-20260723.md"), `# CAIE 0580 Grade Statistics approval pack
 
-- Approval status: **pending owner review**
+- Approval status: **${statisticsPack.approvalStatus}**
+- Activation status: **${statisticsPack.activationStatus}**
 - Eligible rows: **${eligibleStatistics.length}**
 - Eligible official sources with verified PDF hashes: **${eligibleSources.length}**
 - Covered series: ${statisticsPack.scope.includedSeries.join(", ")}
 - Excluded rows: **${excludedStatistics.length}** (${excludedStatistics.map(row => row.statisticsId).join(", ")})
-- Active collisions: **0**
+- Already active approved rows: **${exactActivatedRows.length}**
+- Unexpected active collisions: **${unexpectedActiveCollisions.length}**
 
 Approval of this pack must not promote any other academic-results candidate. The excluded 2019 row remains candidate-only until its official source document can be verified.
 `),
   writeFile(join(root, "generated/verified-facts-approval/university-admissions-2027-20260723.md"), `# 2027 university admissions approval pack
 
-- Approval status: **pending owner review**
+- Approval status: **${universityPack.approvalStatus}**
+- Activation status: **${universityPack.activationStatus}**
 - Verified requirements eligible for approval: **${approvedRequirementCandidates.length}**
 - Included institutions / programmes: **${includedInstitutionIds.size} / ${includedProgrammeIds.size}**
 - Included admissions assessments: **${includedAssessmentIds.size}**
@@ -192,4 +236,4 @@ This pack approves only the listed IDs. Durham, the provisional King's record an
 `),
 ]);
 
-console.log(`Built approval packs: 0580 ${eligibleStatistics.length} rows; university ${approvedRequirementCandidates.length} verified requirements. Both remain pending-owner.`);
+console.log(`Built approval packs: 0580 ${eligibleStatistics.length} rows (${statisticsPack.approvalStatus}); university ${approvedRequirementCandidates.length} verified requirements (${universityPack.approvalStatus}).`);

@@ -1,6 +1,7 @@
 # 2027 university admissions approval pack
 
-- Approval status: **pending owner review**
+- Approval status: **owner-approved**
+- Activation status: **activated**
 - Verified requirements eligible for approval: **20**
 - Included institutions / programmes: **17 / 20**
 - Included admissions assessments: **4**
