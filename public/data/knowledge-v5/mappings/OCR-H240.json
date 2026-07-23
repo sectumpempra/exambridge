@@ -1958,21 +1958,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "REAS-PROF-PROF-CONT",
-          "relation": "broader",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "a proof of the irrationality of √2 and the infinity of primes",
-          "reviewNotes": [
-            "Proof by contradiction is the method used in these specific proofs."
-          ]
-        },
-        {
           "nodeId": "NUM-SYS-TYPE-PRIM",
           "relation": "partial",
           "assessmentDepth": "knowledge",
           "evidenceSpan": "infinity of primes",
           "reviewNotes": [
             "The proof involves prime numbers"
+          ]
+        },
+        {
+          "nodeId": "NUM-SYS-TYPE-V5216340AB",
+          "relation": "narrower",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "irrationality of √2",
+          "reviewNotes": [
+            "The statement explicitly mentions understanding a proof of the irrationality of √2, which directly involves the concept of irrational numbers."
           ]
         }
       ],
@@ -2390,6 +2390,15 @@
           "reviewNotes": [
             "Corrected assessment depth from reasoning to application. Solving quadratic inequalities is primarily an application skill; the node partially covers the statement by addressing quadratic inequalities only."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-V519CCD143",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "interpret such inequalities graphically",
+          "reviewNotes": [
+            "The statement explicitly requires graphical interpretation of inequalities."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2560,21 +2569,21 @@
           ]
         },
         {
-          "nodeId": "ALGF-FUNC-GRAP-CUBC",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "familiar with the terms ‘quadratic’, ‘cubic’ and ‘parabola’",
-          "reviewNotes": [
-            "Understanding cubic graphs supports familiarity with the term 'cubic'."
-          ]
-        },
-        {
           "nodeId": "ALGF-POLY-POLY-CUBQ",
           "relation": "broader",
           "assessmentDepth": "application",
           "evidenceSpan": "find a linear factor of a polynomial normally of degree ≤ 3",
           "reviewNotes": [
             "The statement involves cubic polynomials; this node covers factorisation and roots of cubics."
+          ]
+        },
+        {
+          "nodeId": "ALGF-EXP-NOTN-V52D3679C9",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Learners should be familiar with the terms ‘quadratic’, ‘cubic’ and ‘parabola’.",
+          "reviewNotes": [
+            "The statement explicitly requires learners to be familiar with the term 'quadratic'; this node directly covers recognising a quadratic expression."
           ]
         }
       ],
@@ -2623,6 +2632,15 @@
           "reviewNotes": [
             "Corrected assessment depth from knowledge to application. Polynomial division is an application skill needed for simplifying improper rational expressions."
           ]
+        },
+        {
+          "nodeId": "ALGF-POLY-POLY-FACT",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "The use of the factor theorem",
+          "reviewNotes": [
+            "The factor theorem is explicitly mentioned in the notes as a method that may be required for simplifying rational expressions. Changed relation from 'exact' to 'partial' because the statement covers multiple techniques."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2661,15 +2679,6 @@
           ]
         },
         {
-          "nodeId": "ALGF-FUNC-GRAP-MODU",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Understand and be able to use the modulus function",
-          "reviewNotes": [
-            "Understanding the modulus function includes knowledge of its graph, though the statement focuses on equations."
-          ]
-        },
-        {
           "nodeId": "ALGF-EQN-LINE-SOLV",
           "relation": "narrower",
           "assessmentDepth": "application",
@@ -2694,6 +2703,15 @@
           "evidenceSpan": "e.g. Solve |x + 2| ≤ |2x − 1|.",
           "reviewNotes": [
             "The example requires squaring both sides leading to a quadratic inequality."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-V53FA354D0",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Understand and be able to use the modulus function, including the notation |x|",
+          "reviewNotes": [
+            "This leaf covers the definition and basic properties of the modulus function, matching the understanding and notation requirement."
           ]
         }
       ],
@@ -2818,6 +2836,24 @@
           "reviewNotes": [
             "Codex residual seed (knowledge-v5-residual-codex-resolution-1): Codex accepted the full-index existing-leaf recall after source-bound dual review.",
             "This seed must still pass the independent second mapping review before activation."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-STAT",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "determination of stationary points",
+          "reviewNotes": [
+            "The note explicitly requires determination of stationary points for sketching."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-MAXM",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "distinguishing between them",
+          "reviewNotes": [
+            "The note explicitly requires distinguishing between stationary points, i.e., classification."
           ]
         }
       ],
@@ -3008,6 +3044,24 @@
           "reviewNotes": [
             "Reciprocal graphs represent inverse proportion."
           ]
+        },
+        {
+          "nodeId": "NUM-RAT-RATI-V5FE15784E",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "relate them to linear, reciprocal or other graphs of variation",
+          "reviewNotes": [
+            "The node covers proportion to powers and their graphs, matching 'other graphs of variation' in the notes."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-V5DD6B02A8",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "other graphs of variation",
+          "reviewNotes": [
+            "The note explicitly mentions 'other graphs of variation', which correspond to power function graphs y = k x^n."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3144,51 +3198,6 @@
           "evidenceSpan": "understand and be able to apply functions",
           "reviewNotes": [
             "Informal understanding of functions underpins their application."
-          ]
-        },
-        {
-          "nodeId": "ALGF-FUNC-DEFS-DOMR",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "apply functions",
-          "reviewNotes": [
-            "Using functions involves domain and range concepts, even if informally."
-          ]
-        },
-        {
-          "nodeId": "ALGF-POLY-POLY-FACT",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "context of the factor theorem (1.02j)",
-          "reviewNotes": [
-            "Applying function notation when using the factor theorem, e.g., f(a)=0."
-          ]
-        },
-        {
-          "nodeId": "ALGF-FUNC-TRAN-REFL",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "transformations of graphs (1.02w)",
-          "reviewNotes": [
-            "Function notation is essential for expressing graph transformations like y = -f(x)."
-          ]
-        },
-        {
-          "nodeId": "CALC-DIFF-CONC-GRAD",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "differentiation (Section 1.07)",
-          "reviewNotes": [
-            "The derivative f'(x) is a prime example of function notation in differentiation."
-          ]
-        },
-        {
-          "nodeId": "CALC-INTE-CONC-FTCL",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "Fundamental Theorem of Calculus (1.08a)",
-          "reviewNotes": [
-            "The theorem involves function notation and antiderivatives."
           ]
         }
       ],
@@ -3329,6 +3338,15 @@
           "reviewNotes": [
             "Adds the missing concept of one-to-one functions as the condition for inverse existence. Correct assessment depth is knowledge because the statement says 'know the condition'."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-DEFS-NOTN",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "vocabulary and associated notation is expected",
+          "reviewNotes": [
+            "The note explicitly requires knowledge of notation for inverse and composite functions."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3384,6 +3402,15 @@
           "evidenceSpan": "Understand the effect of simple transformations on the graph of y = f ( x ) including sketching associated graphs, describing transformations and finding relevant equations: y = a f ( x ) , y = f ( x ) + a , y = f ( x + a ) and y = f ( ax ) , for any real a.",
           "reviewNotes": [
             "Corrected assessment depth from knowledge to application."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-TRAN-REFL",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Understand the effect of simple transformations on the graph of y = f ( x ) including sketching associated graphs, describing transformations and finding relevant equations: y = a f ( x ) , y = f ( x ) + a , y = f ( x + a ) and y = f ( ax ) , for any real a.",
+          "reviewNotes": [
+            "Reflections are covered because a can be negative in y=af(x) and y=f(ax)."
           ]
         }
       ],
@@ -3495,6 +3522,24 @@
           "evidenceSpan": "squared linear terms",
           "reviewNotes": [
             "Covers repeated linear denominator factors."
+          ]
+        },
+        {
+          "nodeId": "ALGF-POLY-PART-APPL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Learners should be able to use partial fractions with the binomial expansion to find the power series for an algebraic fraction or as part of solving an integration problem.",
+          "reviewNotes": [
+            "Explicitly states application of partial fractions to binomial expansion and integration, matching the application node."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-PFR",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Learners should be able to use partial fractions with the binomial expansion to find the power series for an algebraic fraction or as part of solving an integration problem.",
+          "reviewNotes": [
+            "Directly matches integration using partial fractions."
           ]
         }
       ],
@@ -4068,6 +4113,15 @@
           "reviewNotes": [
             "Node specifically covers modelling with parametric equations."
           ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-RATC",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "those involving related rates of change",
+          "reviewNotes": [
+            "The note explicitly mentions related rates of change as a modelling context for parametric equations."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4445,6 +4499,33 @@
           "evidenceSpan": "simple relation of the form xₙ₊₁ = f(xₙ)",
           "reviewNotes": [
             "This node covers term-to-term rules (iterative relations)."
+          ]
+        },
+        {
+          "nodeId": "ALGF-SEQ-SEQU-V591957843",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "comment on the mathematical behaviour of the sequence",
+          "reviewNotes": [
+            "Commenting on behaviour includes identifying increasing sequences."
+          ]
+        },
+        {
+          "nodeId": "ALGF-SEQ-SEQU-V5233D1B95",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "comment on the mathematical behaviour of the sequence",
+          "reviewNotes": [
+            "Commenting on behaviour includes identifying decreasing sequences."
+          ]
+        },
+        {
+          "nodeId": "ALGF-SEQ-SEQU-V565FEBF83",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "comment on the mathematical behaviour of the sequence",
+          "reviewNotes": [
+            "Commenting on behaviour includes identifying periodic sequences."
           ]
         }
       ],
@@ -5137,6 +5218,15 @@
           "reviewNotes": [
             "Small-angle approximation derived from the first two terms of the Maclaurin series for cosine."
           ]
+        },
+        {
+          "nodeId": "TRIG-FUNC-V596C63600",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Find an approximate expression involving sin 3θ and 1 + cos θ when θ is small enough to neglect terms in θ³ or above.",
+          "reviewNotes": [
+            "The example assesses the small-angle approximations for sine and cosine, which are part of the node's scope. The tangent approximation is not assessed in this record, so the match is partial."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5237,15 +5327,6 @@
           "reviewNotes": [
             "Directly matches the node for trigonometric graph periodicities and symmetries.",
             "Updated depth to application to match 'use'."
-          ]
-        },
-        {
-          "nodeId": "TRIG-FUNC-EXCT-EXCT",
-          "relation": "exact",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "exact values of sin θ and cos θ",
-          "reviewNotes": [
-            "Notes explicitly require knowledge of exact trigonometric values."
           ]
         }
       ],
@@ -5395,6 +5476,15 @@
           "reviewNotes": [
             "This node covers graphs of arcsin, arccos, arctan with domains, ranges, and relation to sine, cosine, tangent graphs."
           ]
+        },
+        {
+          "nodeId": "TRIG-FUNC-ADVN-GRAP",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Understand the graphs of the functions given in 1.05h, their ranges and domains.",
+          "reviewNotes": [
+            "The statement explicitly requires understanding the graphs of secant, cosecant, and cotangent (among others), which matches the reciprocal trigonometric graphs node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5491,6 +5581,15 @@
           "reviewNotes": [
             "Simple trig equations are a subset of trigonometric equations that can be solved using these identities."
           ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-IDEN-V511E8B2D0",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "simple trigonometric proofs",
+          "reviewNotes": [
+            "Using basic trigonometric identities in simple identity proofs."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5552,60 +5651,6 @@
         ]
       },
       "conceptLinks": [
-        {
-          "nodeId": "TRIG-IDEN-IDEN-PYTH",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "In particular, the identities in 1.05j and 1.05k may be used in solving trigonometric equations, proving trigonometric identities or in evaluating integrals.",
-          "reviewNotes": [
-            "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
-          ]
-        },
-        {
-          "nodeId": "TRIG-IDEN-IDEN-TANR",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "In particular, the identities in 1.05j and 1.05k may be used in solving trigonometric equations, proving trigonometric identities or in evaluating integrals.",
-          "reviewNotes": [
-            "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
-          ]
-        },
-        {
-          "nodeId": "TRIG-IDEN-EQNS-SIMP",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "In particular, the identities in 1.05j and 1.05k may be used in solving trigonometric equations, proving trigonometric identities or in evaluating integrals.",
-          "reviewNotes": [
-            "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
-          ]
-        },
-        {
-          "nodeId": "TRIG-IDEN-EQNS-MULT",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "In particular, the identities in 1.05j and 1.05k may be used in solving trigonometric equations, proving trigonometric identities or in evaluating integrals.",
-          "reviewNotes": [
-            "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
-          ]
-        },
-        {
-          "nodeId": "TRIG-IDEN-EQNS-QUAD",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "In particular, the identities in 1.05j and 1.05k may be used in solving trigonometric equations, proving trigonometric identities or in evaluating integrals.",
-          "reviewNotes": [
-            "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
-          ]
-        },
-        {
-          "nodeId": "TRIG-IDEN-EQNS-INTR",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "In particular, the identities in 1.05j and 1.05k may be used in solving trigonometric equations, proving trigonometric identities or in evaluating integrals.",
-          "reviewNotes": [
-            "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
-          ]
-        },
         {
           "nodeId": "CALC-INTE-RULE-TRID",
           "relation": "partial",
@@ -5670,6 +5715,24 @@
           "evidenceSpan": "formulae for sin(A ± B), cos(A ± B) and tan(A ± B)",
           "reviewNotes": [
             "Exact match for addition formulas."
+          ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-IDEN-V511E8B2D0",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "prove trigonometric identities",
+          "reviewNotes": [
+            "The note explicitly mentions proving trigonometric identities using the double-angle and addition formulas, which aligns with this concept. The concept also covers other identities, so relation is partial."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-TRID",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "find derivatives and integrals",
+          "reviewNotes": [
+            "The note mentions finding integrals, which can involve using trig identities to rewrite integrands, as covered by this node. The derivatives part is not covered by this node, so relation is partial."
           ]
         }
       ],
@@ -5763,6 +5826,15 @@
           "reviewNotes": [
             "The harmonic form is a direct application of the addition formulas."
           ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-V5BA01A1FB",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "expressions for a cos θ + b sin θ in the equivalent forms of R cos(θ ± α) or R sin(θ ± α)",
+          "reviewNotes": [
+            "The statement explicitly requires converting a cos θ + b sin θ to harmonic form, which is the core of this concept. The concept also includes solving equations a cos θ + b sin θ = c, which is not explicitly assessed here, so relation is partial."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5793,15 +5865,6 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "TRIG-FUNC-GRAP-PERD",
-          "relation": "broader",
-          "assessmentDepth": "application",
-          "evidenceSpan": "sketch graphs of a cos θ + b sin θ",
-          "reviewNotes": [
-            "The graph is periodic and symmetric, properties covered by this node."
-          ]
-        },
-        {
           "nodeId": "TRIG-IDEN-IDEN-ADDR",
           "relation": "broader",
           "assessmentDepth": "application",
@@ -5817,6 +5880,15 @@
           "evidenceSpan": "sketch graphs",
           "reviewNotes": [
             "The resulting graph is a transformed sine wave."
+          ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-V5BA01A1FB",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "expressions for a cos θ + b sin θ in the equivalent forms of R cos(θ ± α) or R sin(θ ± α)",
+          "reviewNotes": [
+            "To sketch the graph, learners must first convert to harmonic form, which is part of this concept. The solving aspect is not assessed, so relation is partial."
           ]
         }
       ],
@@ -5848,21 +5920,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "TRIG-IDEN-IDEN-ADDR",
-          "relation": "broader",
-          "assessmentDepth": "application",
-          "evidenceSpan": "a cos θ + b sin θ",
-          "reviewNotes": [
-            "Used to express in harmonic form to identify amplitude and max/min."
-          ]
-        },
-        {
-          "nodeId": "TRIG-IDEN-IDEN-PYTH",
+          "nodeId": "TRIG-IDEN-V5BA01A1FB",
           "relation": "partial",
           "assessmentDepth": "application",
-          "evidenceSpan": "minimum or maximum points",
+          "evidenceSpan": "expressions for a cos θ + b sin θ in the equivalent forms of R cos(θ ± α) or R sin(θ ± α)",
           "reviewNotes": [
-            "R is found using √(a²+b²), rooted in Pythagoras."
+            "The statement explicitly requires converting a cos θ + b sin θ to harmonic form, which is the core of this concept. Solving equations is not mentioned, so relation is partial."
           ]
         }
       ],
@@ -6118,39 +6181,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "REAS-PROF-PROF-DEDU",
-          "relation": "exact",
-          "assessmentDepth": "proof",
-          "evidenceSpan": "construct proofs",
-          "reviewNotes": [
-            "Proof by deduction."
-          ]
-        },
-        {
-          "nodeId": "REAS-PROF-ARGM-LOGI",
-          "relation": "broader",
-          "assessmentDepth": "proof",
-          "evidenceSpan": "construct proofs",
-          "reviewNotes": [
-            "Logical deduction is a broader concept encompassing proof construction."
-          ]
-        },
-        {
-          "nodeId": "TRIG-IDEN-IDEN-ADDR",
+          "nodeId": "TRIG-IDEN-IDEN-V511E8B2D0",
           "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "trigonometric functions and identities",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "construct proofs involving trigonometric functions and identities",
           "reviewNotes": [
-            "Example proof uses addition formulas."
-          ]
-        },
-        {
-          "nodeId": "TRIG-IDEN-IDEN-DBLA",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "trigonometric functions and identities",
-          "reviewNotes": [
-            "Example proof uses double angle formulas."
+            "The statement, especially the example, requires proving a trigonometric identity using known identities. This node directly covers that skill. The statement is broader, so relation is partial."
           ]
         }
       ],
@@ -6295,6 +6331,15 @@
           "evidenceSpan": "gradient of eᵏˣ is equal to keᵏˣ",
           "reviewNotes": [
             "Direct differentiation rule for exponentials applied to e^{kx}."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-CONC-RATE",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "understand why the exponential model is suitable in many applications",
+          "reviewNotes": [
+            "The statement requires understanding that the exponential model is suitable because its rate of change is proportional to its value, which interprets the derivative as an instantaneous rate of change, matching the concept partially."
           ]
         }
       ],
@@ -6517,6 +6562,15 @@
           "reviewNotes": [
             "Exact match to the inverse function relationship."
           ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-LN",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "ln x as the inverse function of eˣ",
+          "reviewNotes": [
+            "The statement directly defines ln x as the inverse of e^x, which is exactly the definition in ALGF-LOG-LOGR-LN."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6590,6 +6644,15 @@
           "reviewNotes": [
             "Directly matches the first law of logarithms."
           ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-EQNS",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "use these laws in solving equations",
+          "reviewNotes": [
+            "The notes explicitly state that learners should be able to use the laws in solving equations, matching the equation solving node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6627,6 +6690,15 @@
           "reviewNotes": [
             "Directly matches the second law of logarithms."
           ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-EQNS",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "solving equations",
+          "reviewNotes": [
+            "The notes explicitly state that learners should be able to use these laws in solving equations, which directly corresponds to solving logarithmic/exponential equations."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6663,6 +6735,15 @@
           "evidenceSpan": "k logₐ x = logₐ xᵏ",
           "reviewNotes": [
             "Directly matches the third law of logarithms, including special cases mentioned."
+          ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-EQNS",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "solving equations",
+          "reviewNotes": [
+            "The notes explicitly state that learners should be able to use these laws in solving equations, which corresponds to the node for solving exponential/logarithmic equations."
           ]
         }
       ],
@@ -7098,6 +7179,15 @@
           "reviewNotes": [
             "Interpreting second derivative as derivative of the gradient."
           ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-MAXM",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "For distinguishing between maximum and minimum points.",
+          "reviewNotes": [
+            "Example explicitly uses the second derivative to distinguish between maximum and minimum points, matching the second derivative test for local extrema."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -7206,6 +7296,15 @@
           "reviewNotes": [
             "Defines point of inflection using second derivative and concavity change."
           ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-V5E12F612D",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "f) Understand and be able to use the second derivative in connection to convex and concave sections of curves and points of inflection. In particular, learners should know that: 3. if f″(x) = 0 and the curve changes from concave to convex or vice versa there is a point of inflection.",
+          "reviewNotes": [
+            "The statement explicitly requires determining convex and concave sections using the second derivative, which matches the node definition."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -7243,6 +7342,15 @@
           "evidenceSpan": "show differentiation from first principles",
           "reviewNotes": [
             "First principles differentiation requires the limit definition."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-CONC-NOTN",
+          "relation": "exact",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "use the definition f′(x) = lim as h → 0 of [f(x + h) − f(x)]/h including the notation",
+          "reviewNotes": [
+            "Notes explicitly require using derivative notation (prime notation) and limit notation in the first-principles proof, covering differentiation notation."
           ]
         }
       ],
@@ -7628,6 +7736,15 @@
           "reviewNotes": [
             "Second derivative condition is part of the definition in notes."
           ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-STAT",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "if also f′(x) = 0 at that point, then the point of inflection is a stationary point",
+          "reviewNotes": [
+            "The notes explicitly require knowledge that f'(x)=0 yields a stationary point, which is the stationary point concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -7883,6 +8000,15 @@
           "reviewNotes": [
             "Finding gradient is part of the process."
           ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-TANG",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "s) They should be able to find the gradient at a point on a curve and to use this to find the equations of tangents and normals, and to solve associated problems.",
+          "reviewNotes": [
+            "The statement explicitly requires finding equations of tangents and normals, matching the node definition."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -8022,6 +8148,15 @@
           "reviewNotes": [
             "Direct statement of reverse relationship."
           ]
+        },
+        {
+          "nodeId": "CALC-INTE-CONC-INDI",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "∫f(x) dx = F(x) + c",
+          "reviewNotes": [
+            "Added missing link for indefinite integral constant family from the explicit expression including '+ c'."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -8057,6 +8192,15 @@
           "evidenceSpan": "integrate xⁿ where n ≠ −1",
           "reviewNotes": [
             "Power rule for integration."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-V5A76A4288",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "sums, differences and constant multiples",
+          "reviewNotes": [
+            "Accepting pass1 addition: directly matches linearity rules for integration."
           ]
         }
       ],
@@ -8150,6 +8294,15 @@
           "evidenceSpan": "sin kx, cos kx",
           "reviewNotes": [
             "Trigonometric integrals."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-V5A76A4288",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "sums, differences and constant multiples",
+          "reviewNotes": [
+            "The statement explicitly requires integrating sums, differences and constant multiples of the listed functions, which directly matches the linearity rules of integration defined by CALC-INTE-RULE-V5A76A4288."
           ]
         }
       ],
@@ -9192,12 +9345,12 @@
           ]
         },
         {
-          "nodeId": "CALC-SER-SUMS-RECT",
-          "relation": "partial",
+          "nodeId": "NUMM-NINT-V5791D2387",
+          "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Understand and be able to use numerical integration of functions, including the use of the trapezium rule, and estimating the approximate area under a curve and the limits that it must lie between.",
+          "evidenceSpan": "use rectangles to estimate the area under a curve and to establish upper and lower bounds for a given integral",
           "reviewNotes": [
-            "Rectangle bounds for integral limits covered."
+            "Added based on note explicitly requiring use of rectangles to estimate area and establish bounds."
           ]
         }
       ],
@@ -9280,6 +9433,24 @@
           "reviewNotes": [
             "Directly matches using unit vectors i,j."
           ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-V551FD2F1C",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "use vector notation appropriately either as AB⃗ or a",
+          "reviewNotes": [
+            "Explicitly mentions using vector notation AB⃗ or a, which falls under this node covering vector terminology and notation in two dimensions."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-SVEC",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "difference between a scalar and a vector",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -9324,6 +9495,42 @@
           "evidenceSpan": "column vector (x, y, z)ᵀ",
           "reviewNotes": [
             "Directly matches using column vectors in 3D."
+          ]
+        },
+        {
+          "nodeId": "VECT-SPAC-THRD-MAG3",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "extending 1.10c to 1.10g to include vectors in three dimensions",
+          "reviewNotes": [
+            "Note explicitly extends the magnitude calculation of 1.10c to three dimensions, matching the 3D magnitude concept."
+          ]
+        },
+        {
+          "nodeId": "VECT-SPAC-THRD-OPER",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "extending 1.10c to 1.10g to include vectors in three dimensions",
+          "reviewNotes": [
+            "Note extends the vector operations of 1.10d to three dimensions, matching component-wise 3D operations."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-POSV",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "extending 1.10c to 1.10g to include vectors in three dimensions",
+          "reviewNotes": [
+            "Note extends 1.10e, position vectors, to three dimensions."
+          ]
+        },
+        {
+          "nodeId": "VECT-GEOM-PROB-APPL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "extending 1.10c to 1.10g to include vectors in three dimensions",
+          "reviewNotes": [
+            "Note extends 1.10f and 1.10g, solving problems using vectors, to three dimensions."
           ]
         }
       ],
@@ -9450,6 +9657,42 @@
           "evidenceSpan": "position vectors",
           "reviewNotes": [
             "Directly matches understanding position vectors."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-UNIT",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "unit vector",
+          "reviewNotes": [
+            "Note explicitly lists unit vector as a term learners should understand."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-ADDS",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "resultant vector",
+          "reviewNotes": [
+            "Resultant vector is the sum of vectors, directly related to vector addition."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-SCAL",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "parallel vector",
+          "reviewNotes": [
+            "Parallel vectors are scalar multiples, directly related to scalar multiplication."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-V551FD2F1C",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "displacement vector, component vector, resultant vector, parallel vector, equal vector and unit vector",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
           ]
         }
       ],
@@ -9620,12 +9863,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-ENQ-SAMP-LIMI",
-          "relation": "partial",
+          "nodeId": "STAT-ENQ-V5ACE58F20",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "use samples to make informal inferences about the population",
           "reviewNotes": [
-            "The node addresses how sample characteristics limit population conclusions, directly related to informal inference."
+            "The statement directly matches the node's definition of drawing informal conclusions about a population from sample data."
           ]
         }
       ],
@@ -9721,12 +9964,48 @@
           ]
         },
         {
-          "nodeId": "STAT-ENQ-SAMP-RAND",
-          "relation": "partial",
+          "nodeId": "STAT-ENQ-SAMP-V55A519001",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "select or critique sampling techniques",
           "reviewNotes": [
-            "Selecting sampling techniques includes understanding random sampling methods."
+            "Accepting pass1 addition: node directly covers selecting/evaluating sampling methods."
+          ]
+        },
+        {
+          "nodeId": "STAT-ENQ-SAMP-V59F893B8C",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "systematic",
+          "reviewNotes": [
+            "Accepting pass1 addition: systematic sampling explicitly in notes."
+          ]
+        },
+        {
+          "nodeId": "STAT-ENQ-SAMP-V54B7A21C8",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "stratified",
+          "reviewNotes": [
+            "Accepting pass1 addition: stratified sampling explicitly in notes."
+          ]
+        },
+        {
+          "nodeId": "STAT-ENQ-SAMP-V52F71E99D",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "quota",
+          "reviewNotes": [
+            "Accepting pass1 addition: quota sampling explicitly in notes."
+          ]
+        },
+        {
+          "nodeId": "STAT-ENQ-SAMP-CLUS",
+          "relation": "partial",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "cluster and quota sampling",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
           ]
         }
       ],
@@ -9801,6 +10080,33 @@
           "reviewNotes": [
             "Node covers histograms; statement includes them."
           ]
+        },
+        {
+          "nodeId": "STAT-DATA-REPR-V59A66C96C",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "vertical line charts",
+          "reviewNotes": [
+            "Accepting pass1 addition: vertical line charts explicitly in notes."
+          ]
+        },
+        {
+          "nodeId": "STAT-DATA-REPR-V5C253B276",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "interpret tables and diagrams",
+          "reviewNotes": [
+            "Adding general chart interpretation node; directly matches the overall statement."
+          ]
+        },
+        {
+          "nodeId": "STAT-DATA-REPR-DOTP",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "dot plots",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -9837,6 +10143,15 @@
           "evidenceSpan": "area in a histogram represents frequency",
           "reviewNotes": [
             "The node precisely states that histogram bar areas encode frequency."
+          ]
+        },
+        {
+          "nodeId": "STAT-DATA-REPR-V53BA17525",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "advantages and disadvantages of different statistical diagrams",
+          "reviewNotes": [
+            "The note explicitly requires understanding advantages and disadvantages of statistical diagrams; the node covers selecting and justifying a chart, which inherently involves such understanding. Link is partial because the statement only requires understanding, not the full selection and justification process."
           ]
         }
       ],
@@ -9894,6 +10209,24 @@
           "evidenceSpan": "interpret scatter diagrams",
           "reviewNotes": [
             "Interpreting scatter diagrams often involves assessing correlation strength and direction, covered by the node."
+          ]
+        },
+        {
+          "nodeId": "STAT-BIVA-CORR-V5821F67ED",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "regression lines",
+          "reviewNotes": [
+            "The node directly covers using and interpreting straight-line models as regression lines; the statement explicitly requires interpreting regression lines."
+          ]
+        },
+        {
+          "nodeId": "STAT-DATA-V53134A87A",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "recognition of scatter diagrams which include distinct sections of the population",
+          "reviewNotes": [
+            "The node covers identifying clusters and deviations in data; the statement explicitly requires recognizing distinct sections in scatter diagrams, which is a direct application."
           ]
         }
       ],
@@ -10054,6 +10387,24 @@
           "reviewNotes": [
             "Node directly covers comparing distributions using measures of centre and spread."
           ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-V5B7162823",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "percentile",
+          "reviewNotes": [
+            "Statement includes percentile as a measure; node covers calculation and interpretation of percentiles."
+          ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-VARI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "standard deviation and variance",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -10108,6 +10459,15 @@
           "reviewNotes": [
             "Node covers estimated mean for grouped data; standard deviation estimation is analogous but not explicitly covered."
           ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-V56BD742CD",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "from a frequency distribution",
+          "reviewNotes": [
+            "Calculating mean from a frequency distribution is a frequency-weighted mean; node covers that."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -10153,12 +10513,12 @@
           ]
         },
         {
-          "nodeId": "STAT-DATA-REPR-BOXW",
+          "nodeId": "STAT-DATA-V53134A87A",
           "relation": "partial",
           "assessmentDepth": "application",
-          "evidenceSpan": "statistical diagrams",
+          "evidenceSpan": "possible outliers",
           "reviewNotes": [
-            "Box plots are a key diagram for displaying outliers, and the statement includes interpreting outliers in diagrams."
+            "Statement requires recognising and interpreting possible outliers; node includes identifying outliers."
           ]
         }
       ],
@@ -10584,6 +10944,15 @@
           "reviewNotes": [
             "Node covers probability distribution tables directly; the statement also includes formula-defined distributions, which are not covered by this node."
           ]
+        },
+        {
+          "nodeId": "PROB-DRVD-DRVB-V576BA471F",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "simple, finite, discrete probability distributions, defined in the form of a table or a formula",
+          "reviewNotes": [
+            "Node defines discrete random variable with probability mass function expressible algebraically or in tables, matching the statement's exact requirement."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -10972,6 +11341,15 @@
           "reviewNotes": [
             "Direct link to standard deviation."
           ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-MEAN",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "mean",
+          "reviewNotes": [
+            "Statement explicitly mentions mean as a concept linked to the normal distribution."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -11313,6 +11691,24 @@
           "reviewNotes": [
             "The hypothesis testing language is developed in the context of the binomial distribution."
           ]
+        },
+        {
+          "nodeId": "STAT-TEST-HYPO-V5D9C52441",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "test statistic",
+          "reviewNotes": [
+            "The statement lists 'test statistic' as one of the terms in the language of hypothesis testing. The node definition precisely covers this term."
+          ]
+        },
+        {
+          "nodeId": "STAT-TEST-HYPO-V5C70A5551",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "p-value",
+          "reviewNotes": [
+            "The statement lists 'p-value' as one of the terms. The node definition defines p-value in the context of hypothesis testing, exactly matching the assessed knowledge."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -11347,6 +11743,15 @@
           "evidenceSpan": "conduct a statistical hypothesis test for the proportion in the binomial distribution and interpret the results in context",
           "reviewNotes": [
             "Directly the binomial hypothesis test procedure."
+          ]
+        },
+        {
+          "nodeId": "STAT-TEST-HYPO-CRIT",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "critical values",
+          "reviewNotes": [
+            "Note explicitly requires finding critical values, directly applying the critical region concept."
           ]
         }
       ],
@@ -11391,6 +11796,24 @@
           "evidenceSpan": "the significance level is the probability of incorrectly rejecting the null hypothesis",
           "reviewNotes": [
             "Precise definition of significance level."
+          ]
+        },
+        {
+          "nodeId": "STAT-TEST-HYPO-CRIT",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "rejection region",
+          "reviewNotes": [
+            "Note explicitly mentions rejection region in the context of significance level, assessing the critical region concept."
+          ]
+        },
+        {
+          "nodeId": "STAT-TEST-HYPO-V5D9C52441",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "test statistic",
+          "reviewNotes": [
+            "Note explicitly mentions test statistic in the context of significance level, assessing the concept of a test statistic."
           ]
         }
       ],
@@ -11753,6 +12176,15 @@
           "reviewNotes": [
             "Focuses on the SI unit of moment, which is a specific part of the broader concept of moments of forces."
           ]
+        },
+        {
+          "nodeId": "MECH-FURT-SIUN",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "unit for moment (N m)",
+          "reviewNotes": [
+            "The statement explicitly mentions understanding and using the SI unit for moment, which is a derived mechanical quantity. This directly matches the scope of MECH-FURT-SIUN."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -11961,15 +12393,6 @@
           ]
         },
         {
-          "nodeId": "CALC-KIN-SVAT-INTS",
-          "relation": "partial",
-          "assessmentDepth": "proof",
-          "evidenceSpan": "d) Understand, use and derive the formulae for constant acceleration for motion in a straight line: v = u + at; s = ut + ½at²; s = ½(u + v)t; v² = u² + 2as; s = vt − ½at². Learners may be required to derive the constant acceleration formulae using a variety of techniques: 1. by integration, e.g. v = ∫a dt ⇒ v = u + at; 2. by using and interpreting appropriate graphs, e.g. velocity against time; 3. by substitution of one (given) formula into another (given) formula, e.g. substituting v = u + at into s = ½(u + v)t to obtain s = ut + ½at².",
-          "reviewNotes": [
-            "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
-          ]
-        },
-        {
           "nodeId": "MECH-KIN-LINE-VTGR",
           "relation": "partial",
           "assessmentDepth": "proof",
@@ -12027,6 +12450,15 @@
           "evidenceSpan": "v = u + at",
           "reviewNotes": [
             "Vector addition is used in the equations, covered by this node."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-SCAL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "½at²",
+          "reviewNotes": [
+            "Scalar multiplication is explicitly used in the vector formula for displacement."
           ]
         }
       ],
@@ -12120,6 +12552,24 @@
           "evidenceSpan": "g) Be able to extend the application of differentiation and integration to two dimensions using vectors: x = f(t)i + g(t)j; v = dx/dt = ẋ = f′(t)i + g′(t)j; a = dv/dt = ẍ = d²x/dt² = f″(t)i + g″(t)j; x = ∫v dt and v = ∫a dt. Questions set may involve either column vector or i, j notation.",
           "reviewNotes": [
             "The node directly defines differentiation and integration of vector functions for 2D kinematics, exactly matching the statement. Assessment depth adjusted to application to reflect the statement's required skill level."
+          ]
+        },
+        {
+          "nodeId": "CALC-KIN-SVAT-DVDT",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "g) Be able to extend the application of differentiation and integration to two dimensions using vectors: x = f(t)i + g(t)j; v = dx/dt = ẋ = f′(t)i + g′(t)j; a = dv/dt = ẍ = d²x/dt² = f″(t)i + g″(t)j; x = ∫v dt and v = ∫a dt. Questions set may involve either column vector or i, j notation.",
+          "reviewNotes": [
+            "The statement explicitly includes 'a = dv/dt' and requires differentiating velocity to find acceleration in 2D, which exactly matches the node definition of finding instantaneous acceleration by differentiating a velocity function with respect to time."
+          ]
+        },
+        {
+          "nodeId": "CALC-KIN-SVAT-INTV",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "g) Be able to extend the application of differentiation and integration to two dimensions using vectors: x = f(t)i + g(t)j; v = dx/dt = ẋ = f′(t)i + g′(t)j; a = dv/dt = ẍ = d²x/dt² = f″(t)i + g″(t)j; x = ∫v dt and v = ∫a dt. Questions set may involve either column vector or i, j notation.",
+          "reviewNotes": [
+            "The statement explicitly includes 'v = ∫a dt' and requires integrating acceleration to find velocity in 2D, exactly matching the node definition of finding velocity by integrating an acceleration function with respect to time."
           ]
         }
       ],
@@ -12231,6 +12681,15 @@
           "evidenceSpan": "i) Be able to model the motion of a projectile as a particle moving with constant acceleration and understand the limitation of this model. Includes being able to: 1. Use horizontal and vertical equations of motion to solve problems on the motion of projectiles. 2. Find the magnitude and direction of the velocity at a given time or position. 3. Find the range on a horizontal plane and the greatest height achieved. 4. Derive and use the cartesian equation of the trajectory of a projectile. [Projectiles on an inclined plane and problems with resistive forces are excluded.]",
           "reviewNotes": [
             "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
+          ]
+        },
+        {
+          "nodeId": "MECH-KIN-LINE-CONST",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Use horizontal and vertical equations of motion to solve problems on the motion of projectiles.",
+          "reviewNotes": [
+            "Statement explicitly requires using constant acceleration equations for projectile motion, matching the node definition."
           ]
         }
       ],
@@ -12433,6 +12892,33 @@
           "reviewNotes": [
             "Explicitly mentioned."
           ]
+        },
+        {
+          "nodeId": "MECH-DYN-V5F502D767",
+          "relation": "broader",
+          "assessmentDepth": "application",
+          "evidenceSpan": "use Newton’s second law (F = ma) in simple cases of forces given as two dimensional vectors.",
+          "reviewNotes": [
+            "The statement applies N2L with 2D vectors, which is a specific instance of the node's concept of solving particle dynamics problems in a plane using vector components."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-SCAL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Find in vector form the force acting on a body of mass 2 kg when it is accelerating at (4i − 3j) m s⁻².",
+          "reviewNotes": [
+            "The example explicitly requires multiplying the acceleration vector by the scalar mass to obtain the force vector, demonstrating scalar multiplication of a vector."
+          ]
+        },
+        {
+          "nodeId": "MECH-FORC-FORC-VECN",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "forces given as two dimensional vectors",
+          "reviewNotes": [
+            "The statement explicitly treats forces as vectors, addressing the magnitude and direction aspects of the node; vector addition is not required in these simple cases."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -12487,6 +12973,15 @@
           "evidenceSpan": "inclined plane",
           "reviewNotes": [
             "Inclined plane problems are a key example where resolution is used."
+          ]
+        },
+        {
+          "nodeId": "MECH-DYN-V5F502D767",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Be able to extend use of Newton’s second law to situations where forces need to be resolved (restricted to two dimensions).",
+          "reviewNotes": [
+            "The statement combines N2L with force resolution in 2D, directly matching the integrated concept of 2D particle dynamics."
           ]
         }
       ],
@@ -12831,6 +13326,15 @@
           "reviewNotes": [
             "Motion analysis relies on Newton's second law F = ma."
           ]
+        },
+        {
+          "nodeId": "MECH-DYN-NEWT-TENS",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "light inextensible string",
+          "reviewNotes": [
+            "The example explicitly mentions a light inextensible string, which is a key concept for tension in connected particles; the node covers modeling the pulling force in a taut string."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -12921,6 +13425,15 @@
           "reviewNotes": [
             "Resolving forces is the technique used to apply the equilibrium condition."
           ]
+        },
+        {
+          "nodeId": "MECH-FORC-FORC-RESL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "polygon of forces",
+          "reviewNotes": [
+            "The note explicitly mentions using a polygon of forces, which is a method of vector addition of forces to find the resultant or verify equilibrium, covered by the force resultant node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -12953,12 +13466,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "MECH-FORC-EQUI-PRIN",
-          "relation": "broader",
+          "nodeId": "MECH-FORC-FORC-VECN",
+          "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Be able to solve problems involving simple cases of equilibrium of forces on a particle in two dimensions using vectors, including connected particles and smooth pulleys.",
+          "evidenceSpan": "equilibrium of forces on a particle in two dimensions using vectors",
           "reviewNotes": [
-            "The principle of equilibrium is a broader concept that underlies the specific problem-solving contexts; the statement applies the principle to connected particles and smooth pulleys."
+            "Statement explicitly requires using vectors to represent and combine forces, which is the concept of force as a vector."
+          ]
+        },
+        {
+          "nodeId": "MECH-FORC-EQUI-CONP",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "including connected particles and smooth pulleys",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
           ]
         }
       ],
@@ -13088,6 +13610,24 @@
           "reviewNotes": [
             "Underpinning concept: force is a vector."
           ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-MAGN",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "calculate the magnitude and direction of a force",
+          "reviewNotes": [
+            "Students must be able to calculate the magnitude of a force from its components, a vector magnitude skill."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-DIRN",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "calculate the magnitude and direction of a force",
+          "reviewNotes": [
+            "Students must be able to calculate the direction of a force, a vector direction skill."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -13123,6 +13663,15 @@
           "reviewNotes": [
             "Codex residual seed (knowledge-v5-residual-codex-resolution-1): Applying Newton's second law in vector component form for 2D particle dynamics is a distinct skill not represented by any single existing leaf; the component skills exist but the combination requires a new leaf.",
             "This seed must still pass the independent second mapping review before activation."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-POSV",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "position vector",
+          "reviewNotes": [
+            "The example explicitly requires finding the position vector of the particle."
           ]
         }
       ],
@@ -13231,6 +13780,15 @@
           "evidenceSpan": "two components",
           "reviewNotes": [
             "The contact force is resolved into two perpendicular components."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-MAGN",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "magnitude of the contact force",
+          "reviewNotes": [
+            "The notes explicitly state that questions will use the term 'magnitude of the contact force', requiring the concept of vector magnitude."
           ]
         }
       ],
@@ -13397,6 +13955,15 @@
           "reviewNotes": [
             "Codex residual seed (knowledge-v5-residual-codex-resolution-1): Codex accepted the full-index existing-leaf recall after source-bound dual review.",
             "This seed must still pass the independent second mapping review before activation."
+          ]
+        },
+        {
+          "nodeId": "MECH-DYN-NEWT-INCL",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "rough inclined plane",
+          "reviewNotes": [
+            "The example explicitly mentions a rough inclined plane, requiring the application of Newton's laws on a slope and resolution of weight."
           ]
         }
       ],
@@ -13591,15 +14158,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-19",
-    "promptVersion": "knowledge-mapping-v5-atomic-9-paper-bound",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "3c9e30c9f966382171ebcd55b5dade3dea544fdbd0352b43486eef11b5ee7fe2",
     "extractionSha256": "52ce59c8c1286419f176d04fc4d75667dbcbe3e6d1925a6804402f66a42ce8e5",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "a8131497bfc6f4570620782eabf58da1e111bd24f4faa072b618a6c429b157a6",
-    "batchId": "knowledge-v5-unified-20260719-OCR-H240",
+    "batchId": "knowledge-v5-concept-accounting-20260723-OCR-H240",
     "calls": [
       {
         "label": "knowledge-v5-extract-OCR-H240-p9-p10-p11-p12",
@@ -14188,10 +14755,20 @@
         "elapsedSeconds": 256,
         "clientRequestId": "a8137726-0c3d-46fe-9d6c-6e93ac8067b8",
         "fallbackReason": "explicit-deepseek-test"
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-OCR-H240",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

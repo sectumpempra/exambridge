@@ -412,16 +412,53 @@ describe("AI assistant context builder", () => {
       pageContext: { pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [], comparisonIds: ["CAIE-9709"] },
       messages: [{ role: "user", content: "S1 具体考哪些统计与概率知识点？" }],
     }));
-    const payload = JSON.parse(result.promptContext) as { knowledge: { qualification: { selectedPaperId: string; statementCount: number; statementsAreExhaustiveForSelectedPaper: boolean; statements: Array<{ topicHeading: string; statementText: string }>; concepts: unknown[] } }; deterministicPaperFacts: Array<{ marks?: number }> };
+    const payload = JSON.parse(result.promptContext) as { knowledge: { qualification: { selectedPaperId: string; statementCount: number; statementsAreExhaustiveForSelectedPaper: boolean; statements: Array<{ topicHeading: string; statementText: string; conceptLinks: Array<{ nodeId: string }> }>; concepts: unknown[] } }; deterministicPaperFacts: Array<{ marks?: number }> };
     expect(result.resolvedContext.paperIds).toEqual(["CAIE-9709-Paper-5"]);
     expect(payload.knowledge.qualification.selectedPaperId).toBe("CAIE-9709-Paper-5");
     expect(payload.knowledge.qualification.statementCount).toBe(22);
     expect(payload.knowledge.qualification.statementsAreExhaustiveForSelectedPaper).toBe(true);
     expect(payload.knowledge.qualification.statements.some((statement) => statement.topicHeading.includes("The normal distribution"))).toBe(true);
     expect(payload.knowledge.qualification.statements.some((statement) => statement.statementText.includes("stem-and-leaf"))).toBe(true);
-    expect(payload.knowledge.qualification.concepts.length).toBe(47);
+    const expectedConceptCount = new Set(
+      payload.knowledge.qualification.statements.flatMap((statement) => statement.conceptLinks.map((link) => link.nodeId)),
+    ).size;
+    expect(payload.knowledge.qualification.concepts.length).toBe(expectedConceptCount);
+    expect(expectedConceptCount).toBeGreaterThanOrEqual(47);
     expect(payload.deterministicPaperFacts[0]?.marks).toBe(50);
     expect(result.promptContext.length).toBeLessThanOrEqual(240_000);
+  });
+
+  it("retrieves query-matched official examples without requiring a Paper selection", async () => {
+    const result = await builder.build(request({
+      qualificationIds: ["qual:caie:igcse:0580"],
+      pageContext: { pageType: "assistant-home", route: "/ai-assistant", selectedPaperIds: [], comparisonIds: ["CAIE-0580"] },
+      messages: [{ role: "user", content: "0580 会考 collinear 吗？" }],
+    }));
+    const payload = JSON.parse(result.promptContext) as {
+      knowledge: {
+        qualification: {
+          selectedPaperId: null;
+          queryMatchedStatementCount: number;
+          queryMatchedStatementsAreExhaustive: boolean;
+          knowledgeEvidencePolicy: string;
+          statements: Array<{
+            statementId: string;
+            examplesText: string[];
+            tiers: string[];
+            paperApplicability: { papers: string[] };
+          }>;
+        };
+      };
+    };
+    const statement = payload.knowledge.qualification.statements
+      .find((item) => item.statementId === "CAIE-0580-E7.4-4");
+    expect(payload.knowledge.qualification.selectedPaperId).toBeNull();
+    expect(payload.knowledge.qualification.queryMatchedStatementCount).toBeGreaterThan(0);
+    expect(payload.knowledge.qualification.queryMatchedStatementsAreExhaustive).toBe(false);
+    expect(payload.knowledge.qualification.knowledgeEvidencePolicy).toContain("positive assessable evidence");
+    expect(statement?.examplesText).toContain("• show that 3 points are collinear");
+    expect(statement?.tiers).toEqual(["Extended"]);
+    expect(statement?.paperApplicability.papers).toEqual(["CAIE-0580-Paper-2", "CAIE-0580-Paper-4"]);
   });
 
   it("lets an explicit follow-up Paper override an older resolved Paper while preserving vague follow-ups", async () => {

@@ -1472,6 +1472,24 @@
           "reviewNotes": [
             "Covers standard algebraic notation, partially overlapping with the listed vocabulary terms."
           ]
+        },
+        {
+          "nodeId": "ALGF-EXP-NOTN-V56E45AA4D",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "constant, coefficient, expression, equation, function, identity, index, term, variable",
+          "reviewNotes": [
+            "Covers the explicit requirement to use algebraic terms expression, equation, identity, term correctly, as part of algebraic vocabulary."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-DEFS-DEFN",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "function",
+          "reviewNotes": [
+            "Explicit mention of function in the list of precise language; understanding its definition is required for correct use."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2175,6 +2193,15 @@
           "reviewNotes": [
             "Mathematical induction is a specific form of proof by deduction."
           ]
+        },
+        {
+          "nodeId": "REAS-PROF-PROF-V534EFC54E",
+          "relation": "exact",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "mathematical induction",
+          "reviewNotes": [
+            "The statement explicitly mentions mathematical induction, which has a dedicated ontology node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2387,6 +2414,15 @@
           "reviewNotes": [
             "Directly matches the modulus-argument form."
           ]
+        },
+        {
+          "nodeId": "ALGF-CPLX-POLAR-CONV",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "in either cartesian form z = x + i y , where i 2 =- 1 , or modulus-argument form",
+          "reviewNotes": [
+            "The statement explicitly requires expressing a complex number in both forms, which aligns with converting between Cartesian and modulus-argument forms."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2513,15 +2549,6 @@
           ]
         },
         {
-          "nodeId": "ALGF-CPLX-BASIC-REAL",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "cartesian",
-          "reviewNotes": [
-            "Real and imaginary parts are needed to perform addition, subtraction, etc. in Cartesian form."
-          ]
-        },
-        {
           "nodeId": "ALGF-CPLX-POLAR-MULT",
           "relation": "exact",
           "assessmentDepth": "application",
@@ -2537,6 +2564,15 @@
           "evidenceSpan": "modulus-argument",
           "reviewNotes": [
             "Modulus and argument are the components used in polar arithmetic."
+          ]
+        },
+        {
+          "nodeId": "ALGF-CPLX-BASIC-V5259C61CC",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "arithmetic operations ^ + , - , # , ' h on complex numbers in both cartesian",
+          "reviewNotes": [
+            "The statement explicitly requires addition, subtraction, multiplication, and division of complex numbers in Cartesian form, which is exactly the concept modeled by this node."
           ]
         }
       ],
@@ -3203,12 +3239,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "ALGF-CPLX-DEMO-THM",
-          "relation": "partial",
+          "nodeId": "ALGF-CPLX-POLAR-EULR",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "expressions for sin θ and cos θ in terms of eⁱᶿ",
           "reviewNotes": [
-            "The exponential expressions are closely tied to de Moivre and polar form."
+            "The statement explicitly requires using the exponential form of sine and cosine, which is exactly Euler's formula. This node captures the link between exponential notation and trigonometric functions."
           ]
         }
       ],
@@ -4564,21 +4600,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "VECT-FURT-LINES-INTER",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "determining whether or not lines intersect",
-          "reviewNotes": [
-            "Node covers line intersection determination, which is one aspect of the statement."
-          ]
-        },
-        {
           "nodeId": "VECT-GEOM-PROB-PARA",
           "relation": "narrower",
           "assessmentDepth": "application",
           "evidenceSpan": "are parallel",
           "reviewNotes": [
             "Node covers checking parallel vectors, directly relevant to determining if lines are parallel."
+          ]
+        },
+        {
+          "nodeId": "VECT-FURT-LINES-V5050C669B",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Includes determining whether or not lines intersect, are parallel or are skew.",
+          "reviewNotes": [
+            "The node specifically covers determining whether two lines in 3D are parallel, intersecting, or skew, matching the full scope of the statement."
           ]
         }
       ],
@@ -4699,15 +4735,6 @@
         ]
       },
       "conceptLinks": [
-        {
-          "nodeId": "VECT-FURT-LINES-DIST",
-          "relation": "exact",
-          "assessmentDepth": "application",
-          "evidenceSpan": "find the distance between two parallel lines and the shortest distance between two skew lines",
-          "reviewNotes": [
-            "Node directly covers computing shortest distances involving lines."
-          ]
-        },
         {
           "nodeId": "VECT-FURT-PROD-VECT",
           "relation": "partial",
@@ -4999,6 +5026,15 @@
           "reviewNotes": [
             "Partial fractions with distinct linear factors is a sub-skill required for the method of differences example."
           ]
+        },
+        {
+          "nodeId": "CALC-SER-SUMS-CONV",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "(finite or infinite)",
+          "reviewNotes": [
+            "For infinite series, the method of differences yields a closed-form partial sum; evaluating the limit to find the sum requires the concept of convergence via partial sums. This node covers that step, which is a part of the overall statement."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5201,6 +5237,15 @@
           "evidenceSpan": "domains and ranges",
           "reviewNotes": [
             "General concept of inverse functions includes domain/range relationship, applied here to hyperbolic inverses."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-DEFS-DOMR",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "domains and ranges",
+          "reviewNotes": [
+            "The statement explicitly assesses domain and range, matching the leaf concept for domain and range of a function."
           ]
         }
       ],
@@ -5575,6 +5620,15 @@
           "reviewNotes": [
             "Direct match."
           ]
+        },
+        {
+          "nodeId": "GEOM-POLR-POLR-V5D026AA18",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Understand and be able to use polar coordinates",
+          "reviewNotes": [
+            "The statement explicitly expects understanding and use of polar coordinates, matching the polar point location concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5743,56 +5797,6 @@
           ]
         },
         {
-          "nodeId": "CALC-DIFFEQ-FODE-SEPV",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "Be able to use differential equations in modelling in kinematics and in other contexts.",
-          "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): The statement is covered by existing leaves that together provide construction, solving and interpretation of differential equations in modelling.",
-            "This seed must still pass the independent second mapping review before activation."
-          ]
-        },
-        {
-          "nodeId": "CALC-DIFFEQ-FODE-GENS",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "Be able to use differential equations in modelling in kinematics and in other contexts.",
-          "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): The statement is covered by existing leaves that together provide construction, solving and interpretation of differential equations in modelling.",
-            "This seed must still pass the independent second mapping review before activation."
-          ]
-        },
-        {
-          "nodeId": "CALC-DIFFEQ-FODE-PART",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "Be able to use differential equations in modelling in kinematics and in other contexts.",
-          "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): The statement is covered by existing leaves that together provide construction, solving and interpretation of differential equations in modelling.",
-            "This seed must still pass the independent second mapping review before activation."
-          ]
-        },
-        {
-          "nodeId": "CALC-LDE-FIRST-MODE",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "Be able to use differential equations in modelling in kinematics and in other contexts.",
-          "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): The statement is covered by existing leaves that together provide construction, solving and interpretation of differential equations in modelling.",
-            "This seed must still pass the independent second mapping review before activation."
-          ]
-        },
-        {
-          "nodeId": "CALC-LDE-SECOND-CFPI",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "Be able to use differential equations in modelling in kinematics and in other contexts.",
-          "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): The statement is covered by existing leaves that together provide construction, solving and interpretation of differential equations in modelling.",
-            "This seed must still pass the independent second mapping review before activation."
-          ]
-        },
-        {
           "nodeId": "MECH-FURT-VARF-DEQ",
           "relation": "partial",
           "assessmentDepth": "application",
@@ -5800,6 +5804,33 @@
           "reviewNotes": [
             "Codex residual seed (knowledge-v5-residual-codex-resolution-1): The statement is covered by existing leaves that together provide construction, solving and interpretation of differential equations in modelling.",
             "This seed must still pass the independent second mapping review before activation."
+          ]
+        },
+        {
+          "nodeId": "CALC-KIN-SVAT-DSDT",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "v = ẋ = dx/dt",
+          "reviewNotes": [
+            "Confirmed by the two-pass concept-accounting review and Codex final verification."
+          ]
+        },
+        {
+          "nodeId": "CALC-KIN-SVAT-DVDT",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "a = v̇ = ẍ = dv/dt = d²x/dt²",
+          "reviewNotes": [
+            "Confirmed by the two-pass concept-accounting review and Codex final verification."
+          ]
+        },
+        {
+          "nodeId": "MECH-DYN-NEWT-N2L",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "use of Newton’s second law of motion",
+          "reviewNotes": [
+            "Confirmed by the two-pass concept-accounting review and Codex final verification."
           ]
         }
       ],
@@ -5836,6 +5867,15 @@
           "evidenceSpan": "find and use the integrating factor exp(∫P(x) dx)",
           "reviewNotes": [
             "Direct match."
+          ]
+        },
+        {
+          "nodeId": "CALC-LDE-FIRST-V58663BBEF",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Includes recognising when it is appropriate to do so, rearranging into the given form when necessary.",
+          "reviewNotes": [
+            "The node captures the explicit note about recognising and rearranging into standard form for first-order linear ODEs."
           ]
         }
       ],
@@ -6805,6 +6845,33 @@
           "reviewNotes": [
             "Covers knowing and using the mean formula for continuous distributions; variance formula is not explicitly covered by any allowed node."
           ]
+        },
+        {
+          "nodeId": "PROB-DIST-CRV-V5CCD3FE59",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "variance",
+          "reviewNotes": [
+            "Approved: note explicitly requires variance formula for continuous distributions."
+          ]
+        },
+        {
+          "nodeId": "PROB-DIST-EXPO-MODE",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "exponential distributions. Includes understanding informally the link between the exponential and Poisson distributions",
+          "reviewNotes": [
+            "Approved: note explicitly mentions exponential distribution and its link to Poisson."
+          ]
+        },
+        {
+          "nodeId": "PROB-DIST-CUNI-MODE",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "continuous uniform",
+          "reviewNotes": [
+            "Approved: note explicitly mentions continuous uniform distribution as an included distribution."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6888,6 +6955,15 @@
           "evidenceSpan": "calculate the mean and/or variance of a distribution using the formulae μ = E(X) = ∫ x f(x) dx and σ² = Var(X) = ∫ (x - μ)² f(x) dx = ∫ x² f(x) dx - μ²",
           "reviewNotes": [
             "The node covers expected value for continuous random variables; variance is an expected value, so applicable."
+          ]
+        },
+        {
+          "nodeId": "PROB-DIST-CRV-V5CCD3FE59",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "σ² = Var(X) = ∫ (x - μ)² f(x) dx = ∫ x² f(x) dx - μ²",
+          "reviewNotes": [
+            "Approved: statement directly provides and requires use of continuous variance formula."
           ]
         }
       ],
@@ -7233,6 +7309,15 @@
           "reviewNotes": [
             "Direct match to hypothesis tests for a population mean."
           ]
+        },
+        {
+          "nodeId": "STAT-EST-ESTI-CLT",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "a large sample drawn from any population",
+          "reviewNotes": [
+            "Approved: statement explicitly references large samples from any population, which relies on CLT."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -7314,6 +7399,15 @@
           "evidenceSpan": "Yates’ correction should be used in the special case of a 2×2 table",
           "reviewNotes": [
             "Specifically mentions Yates' correction."
+          ]
+        },
+        {
+          "nodeId": "STAT-INF2-CHISQ-COND",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Rows or columns, as appropriate, should be combined so that each expected frequency is at least 5",
+          "reviewNotes": [
+            "The note explicitly states the expected-frequency condition and the action of combining categories when the condition is not met."
           ]
         }
       ],
@@ -7428,21 +7522,12 @@
           ]
         },
         {
-          "nodeId": "PROB-BASIC-BASIC-EXPF",
-          "relation": "broader",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "each expected frequency is at least 5",
+          "nodeId": "STAT-INF2-CHISQ-COND",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Where necessary, adjacent classes should be combined so that each expected frequency is at least 5.",
           "reviewNotes": [
-            "Condition involves expected frequencies; node is a broader concept about expected frequency."
-          ]
-        },
-        {
-          "nodeId": "STAT-TEST-HYPO-CRIT",
-          "relation": "broader",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "A table of critical values of the χ² distribution will be provided",
-          "reviewNotes": [
-            "Critical values are part of critical regions; node is broader."
+            "The note explicitly states the expected-frequency condition and the action of combining classes when the condition is not met."
           ]
         }
       ],
@@ -7659,6 +7744,15 @@
           "evidenceSpan": "two-sample test",
           "reviewNotes": [
             "Unpaired Wilcoxon rank-sum test."
+          ]
+        },
+        {
+          "nodeId": "STAT-INF2-NONP-V509C283DC",
+          "relation": "broader",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Understand the difference between a paired-sample test and a two-sample test, and be able to select the appropriate form when solving problems.",
+          "reviewNotes": [
+            "Selecting an appropriate non-parametric test based on the data structure (paired vs independent) is directly assessed here."
           ]
         }
       ],
@@ -7904,12 +7998,21 @@
           ]
         },
         {
-          "nodeId": "STAT-TEST-HYPO-CRIT",
-          "relation": "broader",
+          "nodeId": "STAT-TEST-HYPO-V57C82D1FE",
+          "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "using either a given critical value, or a p-value and a table of critical values",
+          "evidenceSpan": "d) Use and be able to interpret Pearson’s product-moment correlation coefficient in hypothesis tests, using either a given critical value, or a p-value and a table of critical values.",
           "reviewNotes": [
-            "Involves critical values for hypothesis tests."
+            "This node precisely matches the instruction to use and interpret PMCC in hypothesis testing with critical values or p-values."
+          ]
+        },
+        {
+          "nodeId": "STAT-TEST-HYPO-V5C70A5551",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "d) Use and be able to interpret Pearson’s product-moment correlation coefficient in hypothesis tests, using either a given critical value, or a p-value and a table of critical values.",
+          "reviewNotes": [
+            "The statement explicitly requires interpretation and use of a p-value in hypothesis tests, which assesses understanding of the p-value concept; the node represents a specific component of the statement."
           ]
         }
       ],
@@ -7983,12 +8086,12 @@
           ]
         },
         {
-          "nodeId": "STAT-TEST-HYPO-CRIT",
+          "nodeId": "STAT-TEST-HYPO-V5E3F8B8D4",
           "relation": "broader",
           "assessmentDepth": "application",
-          "evidenceSpan": "Tables of critical values of Spearman’s coefficient will be provided",
+          "evidenceSpan": "carry out a hypothesis test for association",
           "reviewNotes": [
-            "Uses critical values for decision."
+            "The statement explicitly requires carrying out a hypothesis test, which involves the full process of formulating hypotheses, conducting the test, interpreting results, and considering limitations, as described by this node."
           ]
         }
       ],
@@ -8080,21 +8183,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-CORR-REG-LSR",
-          "relation": "exact",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "independent (or controlled) variable and a dependent (or response) variable",
-          "reviewNotes": [
-            "Least squares regression explicitly involves predictor and response variables."
-          ]
-        },
-        {
           "nodeId": "STAT-BIVA-CORR-CAUS",
           "relation": "broader",
           "assessmentDepth": "knowledge",
           "evidenceSpan": "neither parameter may be independent",
           "reviewNotes": [
             "Understanding that correlation does not imply causal direction relates to identifying independent/dependent variables."
+          ]
+        },
+        {
+          "nodeId": "STAT-BIVA-CORR-V5C62B299C",
+          "relation": "broader",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "independent (or controlled) variable and a dependent (or response) variable",
+          "reviewNotes": [
+            "The node defines explanatory and response variables, directly matching the statement's requirement to understand the difference between independent and dependent variables."
           ]
         }
       ],
@@ -8683,12 +8786,12 @@
           ]
         },
         {
-          "nodeId": "VECT-BASIC-NOTN-MAGN",
-          "relation": "partial",
+          "nodeId": "VECT-FURT-PROD-SCAL",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "scalar product",
           "reviewNotes": [
-            "v.v is the squared magnitude of the velocity vector; magnitude concept is used, not scalar product directly."
+            "The statement explicitly states using the scalar product to calculate kinetic energy, and the note uses dot product algebra; this node directly covers the scalar product operation."
           ]
         }
       ],
@@ -8801,12 +8904,12 @@
           ]
         },
         {
-          "nodeId": "MECH-ENER-WORK-WORK",
-          "relation": "partial",
+          "nodeId": "MECH-ENER-WORK-V55F947285",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "work-energy principle",
           "reviewNotes": [
-            "The work-energy principle is partially captured by the work done concept, especially when considering energy loss."
+            "The 'work-energy principle' is explicitly stated and the specific work-energy relation node accurately captures the principle."
           ]
         }
       ],
@@ -8851,6 +8954,15 @@
           "evidenceSpan": "systems which include elastic strings or springs",
           "reviewNotes": [
             "Elastic potential energy is the form of mechanical energy stored in such systems."
+          ]
+        },
+        {
+          "nodeId": "MECH-ENER-WORK-V55F947285",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "work-energy principle",
+          "reviewNotes": [
+            "The 'work-energy principle' is explicitly mentioned, and its application to elastic systems is required; this node covers the principle."
           ]
         }
       ],
@@ -9257,6 +9369,15 @@
           "evidenceSpan": "e.g. The oblique impact of two smooth spheres.",
           "reviewNotes": [
             "The examples indicate typical 2D impulse applications (oblique impact), which this node specifically covers."
+          ]
+        },
+        {
+          "nodeId": "MECH-MOMI-LINM-VECN",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "vector form I = m v - m u",
+          "reviewNotes": [
+            "Statement explicitly uses vector form of momentum in 2D, matching the momentum as vector concept."
           ]
         }
       ],
@@ -9853,6 +9974,24 @@
           "reviewNotes": [
             "Extending to radial and tangential acceleration is part of analysing vertical circular motion."
           ]
+        },
+        {
+          "nodeId": "MECH-FURT-CIRC-RACC",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "radial and tangential components",
+          "reviewNotes": [
+            "The statement explicitly mentions the radial component of acceleration, which corresponds to centripetal acceleration."
+          ]
+        },
+        {
+          "nodeId": "MECH-FURT-CIRC-V5B620D95E",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "tangential components",
+          "reviewNotes": [
+            "The statement explicitly mentions tangential components of acceleration."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -9891,6 +10030,24 @@
           "evidenceSpan": "motion round a vertical circle",
           "reviewNotes": [
             "The statement explicitly refers to solving vertical circle problems."
+          ]
+        },
+        {
+          "nodeId": "MECH-FURT-PROJ-MODEL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "free fall",
+          "reviewNotes": [
+            "The note mentions 'free fall', implying the idealized projectile model with constant gravity and no air resistance."
+          ]
+        },
+        {
+          "nodeId": "MECH-FURT-PROJ-HV",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "as a projectile",
+          "reviewNotes": [
+            "The example mentions a particle moving 'as a projectile', requiring the treatment of independent horizontal and vertical motion."
           ]
         }
       ],
@@ -9946,6 +10103,24 @@
           "evidenceSpan": "integrating factor",
           "reviewNotes": [
             "Integrating factor is a required solution method mentioned in the notes."
+          ]
+        },
+        {
+          "nodeId": "MECH-FURT-VARF-VVDX",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "a = v dv/dx",
+          "reviewNotes": [
+            "The statement explicitly mentions using the chain rule form a = v dv/dx, which maps to this leaf concept. However, it is only one part of the overall statement, so relation set to narrower."
+          ]
+        },
+        {
+          "nodeId": "CALC-KIN-SVAT-DVDT",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Be able to use a = dv/dt or a = v dv/dx to model the linear motion of a particle under the action of a variable force in one dimension only.",
+          "reviewNotes": [
+            "The statement explicitly includes 'a = dv/dt' as a form to model motion. The node CALC-KIN-SVAT-DVDT directly captures the meaning of a = dv/dt as the derivative of velocity, focusing on the differentiation operation. However, the specification's use of a = dv/dt in modeling also involves setting up differential equations, so the node represents a narrower skill that is a component of the required knowledge."
           ]
         }
       ],
@@ -10526,6 +10701,15 @@
           "reviewNotes": [
             "Venn diagrams are explicitly mentioned as a tool for the inclusion-exclusion principle, and the principle deals with set relationships visualised by such diagrams."
           ]
+        },
+        {
+          "nodeId": "NUM-SYS-SET-UNIN",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B)",
+          "reviewNotes": [
+            "The inclusion-exclusion principle directly operates on set unions and intersections; the formula explicitly shows these operations."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -10593,12 +10777,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "PROB-COMB-COUNT-PROD",
-          "relation": "partial",
+          "nodeId": "PROB-COMB-COUNT-PERM",
+          "relation": "narrower",
           "assessmentDepth": "application",
           "evidenceSpan": "derangements",
           "reviewNotes": [
-            "Derangement counting is a combinatorial problem; the multiplication principle is foundational for counting methods such as inclusion-exclusion."
+            "Derangements are a specific type of permutation (ordered arrangement with no fixed points), so counting derangements is a narrower application of permutation counting."
+          ]
+        },
+        {
+          "nodeId": "PROB-COMB-COUNT-ENUM",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "enumeration",
+          "reviewNotes": [
+            "The notes explicitly state 'Includes enumeration...', matching the systematic listing definition of ENUM."
           ]
         }
       ],
@@ -10741,12 +10934,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "DISC-GRAPH-GRAPH-TERM",
+          "nodeId": "DISC-GRAPH-GRAPH-SPEC",
           "relation": "exact",
-          "assessmentDepth": "knowledge",
+          "assessmentDepth": "application",
           "evidenceSpan": "“complete” and the notation K_n",
           "reviewNotes": [
-            "The node covers the term 'complete' graph and its notation."
+            "The statement directly assesses the term 'complete' and notation K_n, which is exactly the definition of DISC-GRAPH-GRAPH-SPEC (recognising and using complete graphs)."
           ]
         }
       ],
@@ -10920,12 +11113,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "DISC-GRAPH-GRAPH-TRAV",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
+          "nodeId": "DISC-GRAPH-GRAPH-EUHP",
+          "relation": "narrower",
+          "assessmentDepth": "application",
           "evidenceSpan": "Ore’s theorem",
           "reviewNotes": [
-            "Ore's theorem provides a sufficient condition for Hamiltonian graphs, relevant to the travelling salesperson problem (Hamiltonian cycle)."
+            "Ore’s theorem is a specific vertex-degree condition for recognising Hamiltonian cycles, which is a narrower aspect of the broader EUHP concept."
           ]
         }
       ],
@@ -11411,12 +11604,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "DISC-ALGO-ALGO-V5174E7F96",
+          "nodeId": "DISC-ALGO-ALGO-V57CDBFD38",
           "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Use the order of an algorithm to calculate an approximate run-time for a large problem by scaling up a given run-time.",
           "reviewNotes": [
-            "Codex replaced taxonomy-container links with atomic leaves (knowledge-v5-leaf-closure-round27-1)."
+            "The statement directly involves using order notation to estimate runtime, which aligns with the leaf definition; the existing link to algorithm comparison is incorrect."
           ]
         }
       ],
@@ -11645,6 +11838,15 @@
           "reviewNotes": [
             "These are specific sorting algorithms within the sorting node."
           ]
+        },
+        {
+          "nodeId": "DISC-ALGO-ALGO-V57CDBFD38",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "knowing that, in general, sorting algorithms have quadratic order as a function of the length of the list.",
+          "reviewNotes": [
+            "The note explicitly requires knowledge of a specific Big O classification, matching the leaf definition of expressing/comparing running time using order notation."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -11679,6 +11881,15 @@
           "evidenceSpan": "sort a list using quick sort",
           "reviewNotes": [
             "Quick sort is a key sorting algorithm in this node."
+          ]
+        },
+        {
+          "nodeId": "DISC-ALGO-ALGO-V57CDBFD38",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "knowing that quick sort is only O ( n 2 ) in the worst case",
+          "reviewNotes": [
+            "The note explicitly requires knowledge of quick sort's worst-case complexity, an instance of Big O notation, matching the leaf definition."
           ]
         }
       ],
@@ -11992,6 +12203,24 @@
           "reviewNotes": [
             "The statement precisely describes this specific lower bound method."
           ]
+        },
+        {
+          "nodeId": "DISC-GRAPH-GRAPH-MST",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "minimum spanning tree",
+          "reviewNotes": [
+            "The statement explicitly requires using a minimum spanning tree, which is the core skill of the MST leaf."
+          ]
+        },
+        {
+          "nodeId": "DISC-GRAPH-GRAPH-SPEC",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "complete graph",
+          "reviewNotes": [
+            "The statement explicitly mentions 'complete graph', requiring recognition of this special graph type."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -12132,6 +12361,15 @@
           "evidenceSpan": "graph that is not complete",
           "reviewNotes": [
             "The statement relies on the concept of a complete graph, which is part of graph terminology."
+          ]
+        },
+        {
+          "nodeId": "DISC-GRAPH-GRAPH-SPEC",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "graph that is not complete",
+          "reviewNotes": [
+            "The statement explicitly describes a limitation on a graph that is not complete, directly assessing the concept of recognising complete graphs and their complement."
           ]
         }
       ],
@@ -13141,6 +13379,15 @@
           "reviewNotes": [
             "Constructing the initial tableau is part of executing the Simplex method."
           ]
+        },
+        {
+          "nodeId": "DISC-ALGO-ALGO-LP-V575F57F1D",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "slack variables",
+          "reviewNotes": [
+            "The note explicitly mentions slack variables as part of the tableau columns, requiring understanding of their role in LP formulation."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -13214,6 +13461,15 @@
           "evidenceSpan": "interpret the values of the variables, slack variables and objective at any stage and know when the optimum has been achieved.",
           "reviewNotes": [
             "Interpreting the simplex tableau is a key reasoning skill within the method."
+          ]
+        },
+        {
+          "nodeId": "DISC-ALGO-ALGO-LP-V575F57F1D",
+          "relation": "narrower",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "discussing the effect of changes to the coefficients.",
+          "reviewNotes": [
+            "The note explicitly includes discussing the effect of coefficient changes, which is sensitivity analysis covered under LP formulation."
           ]
         }
       ],
@@ -13554,6 +13810,15 @@
           "reviewNotes": [
             "Simplex algorithm applied to game theory LP formulation."
           ]
+        },
+        {
+          "nodeId": "DISC-ALGO-ALGO-LP-V575F57F1D",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "reformulating the problem as a linear programming problem",
+          "reviewNotes": [
+            "Reformulating a game theory problem as an LP involves defining variables, constraints, and objective, which matches the LP formulation node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -13806,6 +14071,24 @@
             "Codex residual seed (knowledge-v5-residual-codex-resolution-1): No leaf covers solving first-order linear recurrence relations with constant coefficients.",
             "This seed must still pass the independent second mapping review before activation."
           ]
+        },
+        {
+          "nodeId": "ALGF-SEQ-SEQU-NTH",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "closed form",
+          "reviewNotes": [
+            "The notes require knowledge of 'closed form', which refers to an explicit position-to-term formula, matching this node."
+          ]
+        },
+        {
+          "nodeId": "ALGF-SEQ-SEQU-TERM",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "components of a recurrence system",
+          "reviewNotes": [
+            "The note requires knowledge of components of a recurrence system; this node covers the recurrence rule and starting value, which are key components."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -13834,30 +14117,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "CALC-LDE-SECOND-AUX",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "auxiliary equation and complementary function",
-          "reviewNotes": [
-            "The concept of auxiliary equation and complementary function is shared between second-order ODEs and recurrence relations; the node covers ODEs but the mathematical structure is analogous."
-          ]
-        },
-        {
-          "nodeId": "CALC-LDE-SECOND-CFPI",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "complementary function",
-          "reviewNotes": [
-            "Complementary function and particular integral concept applies to recurrence relations similarly."
-          ]
-        },
-        {
           "nodeId": "ALGF-EQN-QUAD-DISC",
           "relation": "narrower",
           "assessmentDepth": "application",
           "evidenceSpan": "auxiliary roots that are distinct real, repeated or complex",
           "reviewNotes": [
             "Discriminant determines the nature of the roots of the auxiliary quadratic equation."
+          ]
+        },
+        {
+          "nodeId": "ALGF-SEQ-SEQU-SEC2",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "second-order linear recurrence relation with constant coefficients",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
           ]
         }
       ],
@@ -14194,12 +14468,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "ALGF-EQN-SIMU-LIN3",
-          "relation": "partial",
+          "nodeId": "NUM-MOD-CONG-SIMU",
+          "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "solve simultaneous linear congruences",
+          "evidenceSpan": "simultaneous linear congruences of the form ax ≡ b (mod n)",
           "reviewNotes": [
-            "Analogy to solving linear simultaneous equations; the node covers standard equations but the structure is similar."
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
           ]
         }
       ],
@@ -14243,6 +14517,24 @@
           "evidenceSpan": "highest common factors (hcf), and coprimality",
           "reviewNotes": [
             "Directly covers factors, multiples, and highest common factor."
+          ]
+        },
+        {
+          "nodeId": "NUM-SYS-TYPE-V58BC171E6",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "fundamental theorem of arithmetic",
+          "reviewNotes": [
+            "The note explicitly states knowledge of the fundamental theorem is expected; this node covers the unique factorisation theorem."
+          ]
+        },
+        {
+          "nodeId": "NUM-SYS-TYPE-COMP",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "composite numbers",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
           ]
         }
       ],
@@ -14337,12 +14629,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "ALGF-GRUP-STRU-LAGR",
-          "relation": "narrower",
+          "nodeId": "NUM-SYS-TYPE-V505FDE124",
+          "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "if p is prime and hcf(a, p) = 1, then aᵖ⁻¹ ≡ 1 (mod p)",
+          "evidenceSpan": "Use Fermat’s little theorem",
           "reviewNotes": [
-            "Fermat’s little theorem is a corollary of Lagrange’s theorem for the group of units modulo p."
+            "Direct application of Fermat's Little Theorem."
+          ]
+        },
+        {
+          "nodeId": "NUM-SYS-TYPE-FACT",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "hcf(a, p) = 1",
+          "reviewNotes": [
+            "Explicitly uses the highest common factor condition."
           ]
         }
       ],
@@ -14410,12 +14711,12 @@
           ]
         },
         {
-          "nodeId": "ALGF-GRUP-STRU-LAGR",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "the n with this property, called “the order of a modulo p”, is a factor of p - 1",
+          "nodeId": "ALGF-GRUP-STRU-TERM",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "called “the order of a modulo p”",
           "reviewNotes": [
-            "The result that the order divides p-1 is a direct application of Lagrange’s theorem."
+            "Directly defines and uses the term 'order' in a group-theoretic context."
           ]
         }
       ],
@@ -14501,6 +14802,15 @@
           "reviewNotes": [
             "Direct mention of associativity of binary operations."
           ]
+        },
+        {
+          "nodeId": "ALGF-GRUP-OPER-DEFI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Be able to work with binary operations and their properties when defined on given sets.",
+          "reviewNotes": [
+            "Working with binary operations encompasses defining and applying them as per the node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -14570,6 +14880,16 @@
           "evidenceSpan": "Recall and be able to use the definition of a group",
           "reviewNotes": [
             "The definition of a group is precisely given by the group axioms."
+          ]
+        },
+        {
+          "nodeId": "ALGF-GRUP-OPER-COMM",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "in an abelian group the operation is commutative",
+          "reviewNotes": [
+            "The note explicitly states that in an abelian group the operation is commutative, directly matching the definition of a commutative operation.",
+            "The phrase 'knowing ... that in an abelian group the operation is commutative' assesses knowledge of commutative operations."
           ]
         }
       ],
@@ -15464,15 +15784,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-19",
-    "promptVersion": "knowledge-mapping-v5-atomic-9-paper-bound",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "61fb7eddcbf337a3094fb2312e073fcede1fc6fcd8925bc0be562c5007538459",
     "extractionSha256": "002e522e1428cfb8cb7e54237976240385f9acb3e71da3d08be7e0f1404c366a",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "06ee16ca15ddb07e6ac3d8dbe9a0a2ad8720c580183d89930b47ee86073845c1",
-    "batchId": "knowledge-v5-unified-20260719-OCR-H245",
+    "batchId": "knowledge-v5-concept-accounting-20260723-OCR-H245",
     "calls": [
       {
         "label": "knowledge-v5-extract-OCR-H245-p9-p10-p11-p12",
@@ -16187,10 +16507,20 @@
         "elapsedSeconds": 47,
         "clientRequestId": "2a396e56-91fb-4c1e-b8eb-1a8f5e591dda",
         "fallbackReason": "explicit-deepseek-test"
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-OCR-H245",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

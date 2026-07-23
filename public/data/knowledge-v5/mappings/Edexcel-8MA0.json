@@ -1532,6 +1532,15 @@
           "reviewNotes": [
             "Direct match for quadratic graphs and function work."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-DEFS-NOTN",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "The notation f ( x ) may be used",
+          "reviewNotes": [
+            "Function notation is explicitly mentioned and must be assessed."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1761,6 +1770,15 @@
           "reviewNotes": [
             "Example of solving and interpreting a quadratic inequality."
           ]
+        },
+        {
+          "nodeId": "ALGF-EQN-INEQ-V590B946F7",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "including inequalities with brackets and fractions",
+          "reviewNotes": [
+            "Statement explicitly includes inequalities with fractions; the note provides example a/x < b, which is a rational inequality reducible to quadratic, fitting this concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1978,6 +1996,15 @@
           "evidenceSpan": "factor theorem",
           "reviewNotes": [
             "Factor theorem for polynomials."
+          ]
+        },
+        {
+          "nodeId": "ALGF-POLY-POLY-CUBQ",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "factorise cubic expressions",
+          "reviewNotes": [
+            "The specification note explicitly states that students may be required to factorise cubic expressions, which matches the factorisation aspect of ALGF-POLY-POLY-CUBQ."
           ]
         }
       ],
@@ -2252,6 +2279,24 @@
           "evidenceSpan": "straight line models",
           "reviewNotes": [
             "Linear graphs and their use in modelling."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-V52A3E86F3",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "the line for converting degrees Celsius to degrees Fahrenheit",
+          "reviewNotes": [
+            "Conversion graph example explicitly mentioned in notes."
+          ]
+        },
+        {
+          "nodeId": "STAT-BIVA-CORR-V5821F67ED",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "straight line models",
+          "reviewNotes": [
+            "The statement directly requires using straight-line graphs to model relationships, interpreting gradient and intercept in context, which matches this concept."
           ]
         }
       ],
@@ -2723,6 +2768,15 @@
           "reviewNotes": [
             "Exact match to the stated identity."
           ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-IDEN-V511E8B2D0",
+          "relation": "partial",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "prove further identities",
+          "reviewNotes": [
+            "The note explicitly states that identities may be used to prove further identities, making the concept of establishing trigonometric identities assessable."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2757,6 +2811,15 @@
           "evidenceSpan": "sin² θ + cos² θ = 1",
           "reviewNotes": [
             "Exact match to the stated Pythagorean identity."
+          ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-IDEN-V511E8B2D0",
+          "relation": "partial",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "prove further identities",
+          "reviewNotes": [
+            "The note explicitly states that the identities may be used to prove further identities, making the concept of establishing trigonometric identities assessable."
           ]
         }
       ],
@@ -3134,6 +3197,15 @@
           "reviewNotes": [
             "Statement states the quotient law of logarithms."
           ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-INVR",
+          "relation": "narrower",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "log_a a = 1",
+          "reviewNotes": [
+            "Note explicitly includes the property log_a a = 1, which derives from the inverse relationship between logs and exponentials."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3170,6 +3242,15 @@
           "reviewNotes": [
             "Statement states the power law of logarithms, including negative and fractional exponents."
           ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-INVR",
+          "relation": "narrower",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "log_a a = 1",
+          "reviewNotes": [
+            "Note explicitly includes the property log_a a = 1, which derives from the inverse relationship between logs and exponentials."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3205,6 +3286,15 @@
           "evidenceSpan": "Solve equations of the form aˣ = b",
           "reviewNotes": [
             "Directly addresses solving exponential equations using logarithms."
+          ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-V560DACC04",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Students may use the change of base formula.",
+          "reviewNotes": [
+            "The note explicitly mentions the change of base formula as a method for solving exponential equations."
           ]
         }
       ],
@@ -3387,12 +3477,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "CALC-DIFF-CONC-GRAD",
-          "relation": "narrower",
+          "nodeId": "CALC-DIFF-CONC-V59DF0D9E9",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "sketching the gradient function for a given curve",
           "reviewNotes": [
-            "Application of the derivative as gradient concept to produce the graph of the derivative function."
+            "The canonical node exactly matches the requirement to sketch the derivative function from the given curve."
           ]
         }
       ],
@@ -3713,6 +3803,24 @@
           "reviewNotes": [
             "Exact match to the theorem statement."
           ]
+        },
+        {
+          "nodeId": "CALC-INTE-CONC-REVD",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Integration as the reverse process of differentiation",
+          "reviewNotes": [
+            "The notes explicitly state 'Integration as the reverse process of differentiation', which is the exact definition of this node."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-CONC-INDI",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "for indefinite integrals a constant of integration is required",
+          "reviewNotes": [
+            "The notes require knowledge of the constant of integration for indefinite integrals."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3849,6 +3957,15 @@
           "evidenceSpan": "use a definite integral to find the area under a curve.",
           "reviewNotes": [
             "The statement exactly describes the node."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-APPL-BETW",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "find the finite area bounded by the curve y = 6x − x² and the line y = 2x.",
+          "reviewNotes": [
+            "The example requires computing area between two curves, which directly invokes the BETWEEN concept beyond simple area under a curve."
           ]
         }
       ],
@@ -4152,6 +4269,15 @@
           "reviewNotes": [
             "Direct match to position vectors concept."
           ]
+        },
+        {
+          "nodeId": "VECT-GEOM-PROB-SEGM",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "OB⃗ − OA⃗ = AB⃗ = b − a.",
+          "reviewNotes": [
+            "The note explicitly expresses the directed segment AB as the difference of position vectors, exemplifying the concept of expressing directed line segments as vectors."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4223,6 +4349,15 @@
           "evidenceSpan": "Use vectors to solve problems",
           "reviewNotes": [
             "The node covers vector problem solving in various contexts, matching the statement."
+          ]
+        },
+        {
+          "nodeId": "VECT-GEOM-PROB-RATI",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "dividing AB in a given ratio",
+          "reviewNotes": [
+            "Example explicitly covers division of a line segment in a given ratio using vectors."
           ]
         }
       ],
@@ -4355,33 +4490,6 @@
           "reviewNotes": [
             "Covers opportunity sampling."
           ]
-        },
-        {
-          "nodeId": "STAT-ENQ-SAMP-V54B7A21C8",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "stratified sampling",
-          "reviewNotes": [
-            "Covers stratified sampling from notes."
-          ]
-        },
-        {
-          "nodeId": "STAT-ENQ-SAMP-V59F893B8C",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "systematic sampling",
-          "reviewNotes": [
-            "Covers systematic sampling from notes."
-          ]
-        },
-        {
-          "nodeId": "STAT-ENQ-SAMP-V52F71E99D",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "quota sampling",
-          "reviewNotes": [
-            "Covers quota sampling from notes."
-          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4423,6 +4531,15 @@
           "evidenceSpan": "critique sampling techniques",
           "reviewNotes": [
             "Bias is one key aspect to critique in sampling."
+          ]
+        },
+        {
+          "nodeId": "STAT-ENQ-SAMP-V55A519001",
+          "relation": "exact",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "Select or critique sampling techniques",
+          "reviewNotes": [
+            "The node describes selecting or evaluating a sampling method in context, which directly matches the statement's requirement to select or critique sampling techniques."
           ]
         }
       ],
@@ -4486,6 +4603,15 @@
           "reviewNotes": [
             "Cumulative frequency diagrams are another diagram type covered."
           ]
+        },
+        {
+          "nodeId": "STAT-DATA-REPR-V5962A4BA3",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "frequency polygons",
+          "reviewNotes": [
+            "The notes explicitly require familiarity with frequency polygons, and the node covers interpreting and constructing them."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4529,6 +4655,24 @@
           "evidenceSpan": "regression lines",
           "reviewNotes": [
             "Line of best fit is the informal term for regression line in this context."
+          ]
+        },
+        {
+          "nodeId": "STAT-BIVA-CORR-V5C62B299C",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "‘explanatory (independent)’ and ‘response (dependent)’ variables",
+          "reviewNotes": [
+            "The notes require familiarity with explanatory and response variables, matching this node which defines them and includes extrapolation dangers."
+          ]
+        },
+        {
+          "nodeId": "STAT-DATA-V53134A87A",
+          "relation": "exact",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "distinct sections of the population",
+          "reviewNotes": [
+            "The statement requires recognition of distinct sections in scatter diagrams, matching the node's inclusion of identifying clusters."
           ]
         }
       ],
@@ -4698,6 +4842,24 @@
           "reviewNotes": [
             "Coding facilitates calculation of mean and standard deviation."
           ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-V5B7162823",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Use of linear interpolation to calculate percentiles from grouped data is expected.",
+          "reviewNotes": [
+            "The notes explicitly require calculating percentiles via linear interpolation, which this node covers, including the interpercentile range."
+          ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-VARI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Measures of variation: variance",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4761,15 +4923,6 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-DATA-CLAS-CLEAN",
-          "relation": "broader",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "outliers",
-          "reviewNotes": [
-            "Data cleaning includes outlier detection; node is broader than statement."
-          ]
-        },
-        {
           "nodeId": "STAT-SUMM-CENT-IQR",
           "relation": "partial",
           "assessmentDepth": "reasoning",
@@ -4794,6 +4947,24 @@
           "evidenceSpan": "statistical diagrams",
           "reviewNotes": [
             "Box plots are a statistical diagram commonly used to display outliers."
+          ]
+        },
+        {
+          "nodeId": "STAT-DATA-V53134A87A",
+          "relation": "broader",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "possible outliers",
+          "reviewNotes": [
+            "Statement explicitly assesses recognizing outliers, which matches this node's definition of examining data to identify outliers."
+          ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-QUAR",
+          "relation": "partial",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "Q₁",
+          "reviewNotes": [
+            "The note specifies Q₁ as part of an outlier rule, making quartiles directly assessable."
           ]
         }
       ],
@@ -4892,6 +5063,24 @@
           "reviewNotes": [
             "Statement directly matches the data cleaning node."
           ]
+        },
+        {
+          "nodeId": "STAT-DATA-REPR-BOXW",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "box plot",
+          "reviewNotes": [
+            "Example explicitly mentions identifying outliers on a box plot, so box plot interpretation is assessable."
+          ]
+        },
+        {
+          "nodeId": "STAT-DATA-REPR-SCAT",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "scatter diagram",
+          "reviewNotes": [
+            "Example explicitly mentions identifying outliers on a scatter diagram, so scatter diagram interpretation is assessable."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4935,6 +5124,24 @@
           "evidenceSpan": "independent events",
           "reviewNotes": [
             "Understanding and using independent events."
+          ]
+        },
+        {
+          "nodeId": "PROB-COMB-RULE-TREE",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "tree diagrams",
+          "reviewNotes": [
+            "Notes state tree diagrams may be used when calculating probabilities, making this leaf assessable."
+          ]
+        },
+        {
+          "nodeId": "PROB-COMB-RULE-VENN",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Venn diagrams",
+          "reviewNotes": [
+            "Notes state Venn diagrams may be used when calculating probabilities, making this leaf assessable."
           ]
         }
       ],
@@ -5041,6 +5248,24 @@
           "reviewNotes": [
             "Direct calculation of binomial probabilities."
           ]
+        },
+        {
+          "nodeId": "PROB-DRVD-DRVB-V576BA471F",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "simple, discrete probability distributions",
+          "reviewNotes": [
+            "The statement explicitly assesses understanding of simple discrete probability distributions. This node directly covers that concept."
+          ]
+        },
+        {
+          "nodeId": "PROB-DIST-DUNI-MODE",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "discrete uniform distribution",
+          "reviewNotes": [
+            "Notes require students to know and identify the discrete uniform distribution."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5137,6 +5362,15 @@
             "Codex residual seed (knowledge-v5-residual-codex-resolution-1): Codex split the test statistic and p-value into independent atomic leaves.",
             "This seed must still pass the independent second mapping review before activation."
           ]
+        },
+        {
+          "nodeId": "PROB-DIST-BINO-MEAN",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "expected value of a binomial distribution is given by np",
+          "reviewNotes": [
+            "Note requires informal appreciation of binomial expected value for 2-tail tests."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5204,6 +5438,15 @@
           "evidenceSpan": "sample is being used to make an inference about the population",
           "reviewNotes": [
             "Exactly the population/sample distinction."
+          ]
+        },
+        {
+          "nodeId": "STAT-TEST-HYPO-NULL",
+          "relation": "narrower",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Hypotheses should be expressed in terms of the population parameter p",
+          "reviewNotes": [
+            "The note explicitly instructs expressing hypotheses in terms of population parameter p, which is a narrower application of formulating null and alternative hypotheses."
           ]
         }
       ],
@@ -5343,6 +5586,15 @@
           "evidenceSpan": "weight",
           "reviewNotes": [
             "Weight is the gravitational force on a mass; node covers mass/weight."
+          ]
+        },
+        {
+          "nodeId": "MECH-FORC-FORC-VECN",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "force",
+          "reviewNotes": [
+            "Force is listed explicitly among the derived quantities."
           ]
         }
       ],
@@ -5484,15 +5736,6 @@
           "evidenceSpan": "formulae for constant acceleration",
           "reviewNotes": [
             "Node covers the constant acceleration equations."
-          ]
-        },
-        {
-          "nodeId": "CALC-KIN-SVAT-DSDT",
-          "relation": "narrower",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "derive the formulae",
-          "reviewNotes": [
-            "Calculus relationship used in deriving the constant acceleration formulae."
           ]
         }
       ],
@@ -5699,6 +5942,24 @@
           "reviewNotes": [
             "Forces given as column vectors as per notes."
           ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-UNIT",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "i − j form",
+          "reviewNotes": [
+            "The note explicitly mentions forces given in i − j form, which uses the base unit vectors i and j, thus assessable."
+          ]
+        },
+        {
+          "nodeId": "MECH-FORC-FORC-VECN",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "forces given as 2-D vectors",
+          "reviewNotes": [
+            "The statement explicitly requires understanding forces as 2-D vectors, directly covering force as a vector quantity in mechanics."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5805,6 +6066,15 @@
           "reviewNotes": [
             "Node covers problems involving connected particles, including pulleys."
           ]
+        },
+        {
+          "nodeId": "MECH-DYN-NEWT-TENS",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "strings",
+          "reviewNotes": [
+            "Connected particle and pulley problems involve tension in strings; the note mentions strings explicitly."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5812,15 +6082,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-19",
-    "promptVersion": "knowledge-mapping-v5-atomic-9-paper-bound",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "29cf30e8f5c3cac6aba3b56b4242d3370b6fbac77bef444c31a4ae6ad43f0571",
     "extractionSha256": "6ff7a405b4acdc5887ed1c560c458b35984c6084805f96f405a604079865b0df",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "08d5113bdc5f4eee5227ffbb0d456cffc27ac03dda82bd4d88af19934861e202",
-    "batchId": "knowledge-v5-unified-20260719-Edexcel-8MA0",
+    "batchId": "knowledge-v5-concept-accounting-20260723-Edexcel-8MA0",
     "calls": [
       {
         "label": "knowledge-v5-extract-Edexcel-8MA0-p10-p11-p12-p13",
@@ -6045,10 +6315,20 @@
         "elapsedSeconds": 205,
         "clientRequestId": "1cee0fae-9327-462c-8a06-407df19f516b",
         "fallbackReason": "explicit-deepseek-test"
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-Edexcel-8MA0",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

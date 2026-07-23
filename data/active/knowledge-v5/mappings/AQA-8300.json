@@ -168,6 +168,26 @@
           "reviewNotes": [
             "Local-only semantic candidate score 0.947; requires Codex disposition."
           ]
+        },
+        {
+          "nodeId": "NUM-FRAC-PERC-V58658A972",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "profit, loss, cost price, selling price",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "NUM-OPS-CALC-NEG",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "all both positive and negative",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -349,6 +369,26 @@
           "evidenceSpan": "use the concepts and vocabulary of prime numbers, factors (divisors), multiples, common factors, common multiples, highest common factor, lowest common multiple, prime factorisation, including using product notation and the unique factorisation theorem",
           "reviewNotes": [
             "Codex local-only complete AQA 8300 semantic disposition against the full official atomic statement."
+          ]
+        },
+        {
+          "nodeId": "NUM-SYS-TYPE-V58BC171E6",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "prime factorisation",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "NUM-SYS-TYPE-V5B20CA634",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "highest common factor, lowest common multiple",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -2389,6 +2429,16 @@
           "reviewNotes": [
             "Codex local-only complete AQA 8300 semantic disposition against the full official atomic statement."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-INTR",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "intercepts of linear functions",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2882,15 +2932,6 @@
           ]
         },
         {
-          "nodeId": "MECH-KIN-LINE-STGR",
-          "relation": "partial",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "calculate or estimate gradients of graphs and areas under graphs (including quadratic and other non- linear graphs), and interpret results in cases such as distance-time graphs, velocity-time graphs and graphs in financial contexts",
-          "reviewNotes": [
-            "Codex local-only complete AQA 8300 semantic disposition against the full official atomic statement."
-          ]
-        },
-        {
           "nodeId": "MECH-KIN-LINE-VTGR",
           "relation": "partial",
           "assessmentDepth": "reasoning",
@@ -2906,6 +2947,16 @@
           "evidenceSpan": "calculate or estimate gradients of graphs and areas under graphs (including quadratic and other non- linear graphs), and interpret results in cases such as distance-time graphs, velocity-time graphs and graphs in financial contexts",
           "reviewNotes": [
             "Codex local-only complete AQA 8300 semantic disposition against the full official atomic statement."
+          ]
+        },
+        {
+          "nodeId": "MECH-KIN-LINE-V54E69BE35",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "distance-time graphs",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -4823,6 +4874,26 @@
           "reviewNotes": [
             "Codex local-only complete AQA 8300 semantic disposition against the full official atomic statement."
           ]
+        },
+        {
+          "nodeId": "NUM-FRAC-PERC-V5D5A83EE4",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "original value problems",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "NUM-FRAC-PERC-V545BCC9BB",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "simple interest",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5529,6 +5600,56 @@
           "reviewNotes": [
             "Codex local-only complete AQA 8300 semantic disposition against the full official atomic statement."
           ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-TERM-V58A928C3B",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "points",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-TERM-V5B7688C92",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "lines",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-TERM-V5C1785CC8",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "planes",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-TERM-V559481376",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "parallel lines",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-TERM-V52BA22A95",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "perpendicular lines",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5659,6 +5780,16 @@
           "evidenceSpan": "use the standard ruler and compass constructions (perpendicular bisector of a line segment, constructing a perpendicular to a given line from/at a given point, bisecting a given angle)",
           "reviewNotes": [
             "Local-only semantic candidate score 0.452; requires Codex disposition."
+          ]
+        },
+        {
+          "nodeId": "GEOM-CONS-CONS-V5A323E847",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "constructing a perpendicular to a given line from/at a given point",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -5915,6 +6046,16 @@
           "reviewNotes": [
             "Codex local-only complete AQA 8300 semantic disposition against the full official atomic statement."
           ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-ANGL-ISOS",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "properties of isosceles",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6075,6 +6216,16 @@
           "evidenceSpan": "apply angle facts, triangle congruence, similarity and properties of quadrilaterals to conjecture and derive results about angles and sides, including Pythagoras’ theorem and the fact that the base angles of an isosceles triangle are equal, and use known results to obtain simple proofs",
           "reviewNotes": [
             "Codex local-only complete AQA 8300 semantic disposition against the full official atomic statement."
+          ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-SIMI-CRIT",
+          "relation": "partial",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "triangle congruence, similarity",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -7804,12 +7955,13 @@
           ]
         },
         {
-          "nodeId": "PROB-COMB-RULE-TREE",
-          "relation": "partial",
+          "nodeId": "PROB-BASIC-V535A32E23",
+          "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "record, describe and analyse the frequency of outcomes of probability experiments using tables and frequency trees",
+          "evidenceSpan": "frequency trees",
           "reviewNotes": [
-            "Codex local-only gap disposition based on the complete official statement and the codex-reviewed canonical-node scope."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -8863,6 +9015,16 @@
           "reviewNotes": [
             "Codex local-only complete AQA 8300 semantic disposition against the full official atomic statement."
           ]
+        },
+        {
+          "nodeId": "STAT-BIVA-CORR-ZEROC",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "no correlation",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -8996,15 +9158,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-17",
-    "promptVersion": "aqa-v5-local-semantic-candidate-3-complete-8300-review-noncontent-reconciled-1",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
     "extractionSha256": "e12064062ed0755cc69794974f88a1fe6117682a04240206d63774756b3c1321",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "a913a0c8239e5d86ea39d0312a1131a5e283d8b6d0c7e71ea4db39f7ad96252e",
-    "batchId": "knowledge-v5-aqa-local-20260717",
+    "batchId": "knowledge-v5-concept-accounting-20260723-AQA-8300",
     "calls": [
       {
         "label": "knowledge-v5-local-AQA-8300",
@@ -9015,10 +9177,20 @@
         "promptTokens": 0,
         "completionTokens": 0,
         "totalTokens": 0
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-AQA-8300",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

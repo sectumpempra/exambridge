@@ -313,6 +313,15 @@
           "reviewNotes": [
             "Covers cubes and cube roots."
           ]
+        },
+        {
+          "nodeId": "NUM-SYS-TYPE-PARI",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "terms odd, even",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -438,6 +447,15 @@
           "reviewNotes": [
             "Prime factorisation is a specific application of factors; the node covers factors and multiples broadly."
           ]
+        },
+        {
+          "nodeId": "NUM-SYS-TYPE-V58BC171E6",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Express a whole number as a product of its prime factors",
+          "reviewNotes": [
+            "Node explicitly covers prime factorisation with product and exponent notation, directly matching statement and example."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -472,12 +490,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-SYS-TYPE-FACT",
-          "relation": "broader",
+          "nodeId": "NUM-SYS-TYPE-V58BC171E6",
+          "relation": "partial",
           "assessmentDepth": "knowledge",
           "evidenceSpan": "each number can be expressed as a product of prime factors in only one way",
           "reviewNotes": [
-            "Uniqueness of prime factorisation relates to factors; node covers factors and multiples."
+            "The statement directly addresses the uniqueness aspect of prime factorisation, which is included in the node definition; however, the node also includes product and exponent notation not assessed here, hence partial."
           ]
         }
       ],
@@ -639,12 +657,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-SYS-TYPE-FACT",
+          "nodeId": "NUM-SYS-TYPE-V5B20CA634",
           "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Find the HCF and LCM of two whole numbers from their prime factorisations",
           "reviewNotes": [
-            "Using prime factorizations to find HCF and LCM falls under factors and multiples."
+            "Direct match for using prime factorizations to compute HCF and LCM."
           ]
         }
       ],
@@ -867,15 +885,6 @@
           "reviewNotes": [
             "Explicitly mentions mixed numbers."
           ]
-        },
-        {
-          "nodeId": "NUM-FRAC-FRAC-PROP",
-          "relation": "exact",
-          "assessmentDepth": "application",
-          "evidenceSpan": "proper and improper",
-          "reviewNotes": [
-            "Classifies proper and improper fractions, which is the basis for operation selection."
-          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1001,6 +1010,15 @@
           "reviewNotes": [
             "Finding a fraction of a quantity is an application of multiplication, one of the four operations."
           ]
+        },
+        {
+          "nodeId": "NUM-FRAC-PERC-QTY",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "fraction of a quantity",
+          "reviewNotes": [
+            "Node directly matches finding a fraction of a quantity by multiplication, as required by the statement."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1087,12 +1105,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-RAT-RATI-PROP",
+          "nodeId": "NUM-RAT-RATI-V5D6010CE0",
           "relation": "narrower",
           "assessmentDepth": "application",
           "evidenceSpan": "Express one quantity as a fraction of another.",
           "reviewNotes": [
-            "Expressing a quantity as a fraction of another is a proportional relationship, a specific case of proportional reasoning."
+            "Statement directly matches the fraction writing skill, which is a narrower aspect of the node that also includes percentages."
           ]
         }
       ],
@@ -1221,12 +1239,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-FRAC-DECI-CONV",
-          "relation": "narrower",
+          "nodeId": "NUM-FRAC-DECI-RECR",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Convert a recurring decimal to an exact fraction or vice versa.",
           "reviewNotes": [
-            "This is a specific case of decimal-fraction conversion focusing on recurring decimals."
+            "The node includes conversion of recurring decimals to fractions as an explicit inclusion."
           ]
         }
       ],
@@ -1633,12 +1651,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-FRAC-PERC-INDE",
-          "relation": "narrower",
+          "nodeId": "NUM-FRAC-PERC-V5D5A83EE4",
+          "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Apply this to simple original value problems and simple interest.",
+          "evidenceSpan": "Calculate original price of an item costing £10 after a 50% discount.",
           "reviewNotes": [
-            "Applying percentage change to find original values or simple interest is a specific application of percentage increase and decrease."
+            "The example directly assesses finding the original quantity after a percentage change (reverse percentage)."
+          ]
+        },
+        {
+          "nodeId": "NUM-FRAC-PERC-V545BCC9BB",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "simple interest",
+          "reviewNotes": [
+            "The statement explicitly requires applying percentage change to simple interest calculations."
           ]
         }
       ],
@@ -1713,6 +1740,15 @@
           "evidenceSpan": "percentage change problems (including original value problems)",
           "reviewNotes": [
             "Directly matches applying percentage increase/decrease, including reverse percentage problems."
+          ]
+        },
+        {
+          "nodeId": "NUM-FRAC-PERC-V5D5A83EE4",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "original value problems",
+          "reviewNotes": [
+            "The statement includes original value problems as part of applying percentage change, directly matching the reverse percentage concept."
           ]
         }
       ],
@@ -2181,12 +2217,21 @@
           ]
         },
         {
-          "nodeId": "NUM-POW-POWR-SURD",
+          "nodeId": "NUM-POW-POWR-SQRT",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "exact roots",
+          "evidenceSpan": "√9 = 3",
           "reviewNotes": [
-            "Surds and exact roots node directly covers working with exact roots."
+            "The example explicitly demonstrates evaluating the principal square root of 9, which directly matches evaluating squares and principal square roots."
+          ]
+        },
+        {
+          "nodeId": "NUM-POW-POWR-CUBR",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "∛8 = 2",
+          "reviewNotes": [
+            "The example explicitly demonstrates computing the cube root of 8, which directly matches computing cube roots."
           ]
         }
       ],
@@ -2650,6 +2695,15 @@
           "reviewNotes": [
             "Using surds exactly matches the concept of exact numerical calculation with surds."
           ]
+        },
+        {
+          "nodeId": "NUM-POW-POWR-SURD",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Use surds in exact calculations without a calculator.",
+          "reviewNotes": [
+            "Using surds in calculations involves surd simplification and arithmetic, which this node covers."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2793,30 +2847,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-ACC-ROUN-DP",
-          "relation": "partial",
+          "nodeId": "NUM-ACC-ROUN-V535ECC04F",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Round answers to an appropriate level of accuracy.",
           "reviewNotes": [
-            "Appropriate rounding often involves choosing the correct number of decimal places, so this node partially applies."
-          ]
-        },
-        {
-          "nodeId": "NUM-ACC-ROUN-SF",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "Round answers to an appropriate level of accuracy.",
-          "reviewNotes": [
-            "Appropriate rounding often involves choosing the correct number of significant figures, so this node partially applies."
-          ]
-        },
-        {
-          "nodeId": "NUM-ACC-ROUN-POW10",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "Round answers to an appropriate level of accuracy.",
-          "reviewNotes": [
-            "Rounding to powers of ten may be appropriate in some contexts, so this node partially applies."
+            "The statement explicitly requires choosing an appropriate degree of accuracy for rounding, which exactly matches the node definition."
           ]
         }
       ],
@@ -2860,6 +2896,15 @@
           "evidenceSpan": "Estimate or check, without a calculator, the result of a calculation by using suitable approximations.",
           "reviewNotes": [
             "The statement directly describes estimation of calculations, matching the node definition."
+          ]
+        },
+        {
+          "nodeId": "NUM-ACC-ROUN-SF",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "to one significant figure",
+          "reviewNotes": [
+            "The example explicitly demonstrates rounding to one significant figure as part of estimation, making this specific rounding skill assessable."
           ]
         }
       ],
@@ -3277,12 +3322,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-RAT-RATI-SHAR",
-          "relation": "partial",
+          "nodeId": "NUM-RAT-RATI-V5B5C5E394",
+          "relation": "exact",
           "assessmentDepth": "knowledge",
           "evidenceSpan": "Express the division of a quantity into two parts as a ratio.",
           "reviewNotes": [
-            "Expressing a division as a ratio is the inverse of sharing, but still closely related to the concept."
+            "This concept exactly matches the statement: given a quantity divided into two parts, express the parts as a ratio."
           ]
         }
       ],
@@ -3495,6 +3540,15 @@
           "reviewNotes": [
             "The relationship between ratio and linear functions is exactly direct proportion (y = kx)."
           ]
+        },
+        {
+          "nodeId": "NUM-RAT-RATI-PROP",
+          "relation": "broader",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Understand the relationship between ratio and linear functions.",
+          "reviewNotes": [
+            "The node's alias includes 'ratios related to fractions and linear functions', which directly matches the statement. The statement is a specific aspect of this broader multiplicative reasoning concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3653,12 +3707,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-RAT-RATI-PROP",
+          "nodeId": "NUM-RAT-RATI-V5FE15784E",
           "relation": "broader",
           "assessmentDepth": "application",
-          "evidenceSpan": "Formulate equations and solve problems involving a quantity in direct proportion to a power or root of another quantity.",
+          "evidenceSpan": "direct proportion to a power or root of another quantity",
           "reviewNotes": [
-            "Direct proportion to a power/root extends beyond the simple y=kx form, fitting under the broader umbrella of proportional reasoning."
+            "The node specifically addresses proportion to powers and roots, including direct proportion y = kx^n. The statement focuses on the direct case, so the node is broader than the statement's explicit scope."
           ]
         }
       ],
@@ -3702,6 +3756,15 @@
           "evidenceSpan": "Solve simple word problems involving quantities in inverse proportion or simple algebraic proportions.",
           "reviewNotes": [
             "Explicit mention of inverse proportion matches the node."
+          ]
+        },
+        {
+          "nodeId": "NUM-RAT-RATI-DIRE",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "simple algebraic proportions",
+          "reviewNotes": [
+            "The phrase 'simple algebraic proportions' typically refers to direct proportion of the form y = kx. This node captures that specific concept, which is part of the overall statement."
           ]
         }
       ],
@@ -3856,21 +3919,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-FRAC-PERC-INDE",
+          "nodeId": "NUM-FRAC-PERC-V545BCC9BB",
           "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Calculate simple interest including in financial contexts.",
           "reviewNotes": [
-            "Simple interest is calculated as a percentage of a principal."
-          ]
-        },
-        {
-          "nodeId": "NUM-MEAS-TIME-MONE",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "including in financial contexts",
-          "reviewNotes": [
-            "Money calculations in financial contexts; not specific to interest."
+            "The statement directly assesses calculation of simple interest, which this dedicated node defines exactly."
           ]
         }
       ],
@@ -3925,6 +3979,15 @@
           "evidenceSpan": "multipliers",
           "reviewNotes": [
             "Multipliers are derived from percentage changes."
+          ]
+        },
+        {
+          "nodeId": "NUM-FRAC-PERC-V5FAE0A449",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Solve problems step-by-step involving multipliers over a given interval, for example, compound interest, depreciation, etc.",
+          "reviewNotes": [
+            "Repeated percentage change via multipliers is explicitly captured by this node."
           ]
         }
       ],
@@ -4047,30 +4110,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "ALGF-EXP-NOTN-SYMB",
-          "relation": "narrower",
+          "nodeId": "ALGF-EXP-NOTN-V56E45AA4D",
+          "relation": "broader",
           "assessmentDepth": "knowledge",
           "evidenceSpan": "expressions, equations, formulae, inequalities, terms and factors",
           "reviewNotes": [
-            "Node covers symbolic conventions; not all concepts and vocabulary."
-          ]
-        },
-        {
-          "nodeId": "ALGF-EQN-IDEN-DIST",
-          "relation": "narrower",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "equations",
-          "reviewNotes": [
-            "Distinguishing equations and identities; part of equation concept."
-          ]
-        },
-        {
-          "nodeId": "ALGF-EQN-INEQ-LINS",
-          "relation": "narrower",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "inequalities",
-          "reviewNotes": [
-            "Solving linear inequalities; narrower than overall inequality concepts."
+            "Node includes identities in its definition, which is not explicitly required by the statement, thus it is broader than the statement."
           ]
         }
       ],
@@ -4432,6 +4477,15 @@
           "reviewNotes": [
             "Expanding products of two brackets."
           ]
+        },
+        {
+          "nodeId": "ALGF-EXP-MANI-LIKE",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "(a + 2b)(a − b) = a² + ab − 2b²",
+          "reviewNotes": [
+            "The example result shows a simplified polynomial that requires combining like terms after expansion; this skill is implicitly assessed as part of the expansion process."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4470,6 +4524,15 @@
           "evidenceSpan": "Expand products of more than two binomials.",
           "reviewNotes": [
             "Expanding products of multiple brackets."
+          ]
+        },
+        {
+          "nodeId": "ALGF-EXP-MANI-LIKE",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "(x + 1)(x − 1)(2x + 1) = 2x³ + x² − 2x − 1",
+          "reviewNotes": [
+            "The example result requires combining like terms to achieve the simplified polynomial; combining like terms is a necessary step in expanding multiple brackets."
           ]
         }
       ],
@@ -4894,6 +4957,24 @@
           "evidenceSpan": "Rearrange formulae to change the subject, including cases where the subject appears twice, or where a power or reciprocal of the subject appears.",
           "reviewNotes": [
             "Exactly matches repeated-subject rearrangement."
+          ]
+        },
+        {
+          "nodeId": "ALGF-EQN-LINE-SUBJ",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "where a power or reciprocal of the subject appears",
+          "reviewNotes": [
+            "The statement explicitly includes rearranging formulae where the subject appears only once but with powers or reciprocals, which is covered by single-occurrence rearrangement."
+          ]
+        },
+        {
+          "nodeId": "ALGF-EXP-MANI-AFRA",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "[Examples may include manipulation of algebraic fractions, 6.01g]",
+          "reviewNotes": [
+            "The note indicates that algebraic fraction manipulation may be required in the context of rearranging formulae, so this skill is assessed."
           ]
         }
       ],
@@ -5410,6 +5491,15 @@
           "reviewNotes": [
             "Exact match to solving quadratics by factorisation."
           ]
+        },
+        {
+          "nodeId": "ALGF-EQN-QUAD-DATA",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Find x for an x cm by (x + 3) cm rectangle of area 40 cm².",
+          "reviewNotes": [
+            "The example requires forming a quadratic equation from a geometric context, matching the constructing quadratic equations concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5503,6 +5593,15 @@
           "reviewNotes": [
             "Exact match to using the quadratic formula."
           ]
+        },
+        {
+          "nodeId": "ALGF-EQN-V586F548E0",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "2/x − 2/(x + 1) = 1",
+          "reviewNotes": [
+            "The example is a fractional equation reducing to a quadratic, requiring clearing denominators."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5544,6 +5643,15 @@
           "evidenceSpan": "two linear simultaneous equations in two variables",
           "reviewNotes": [
             "Exact match to solving two linear simultaneous equations."
+          ]
+        },
+        {
+          "nodeId": "ALGF-EQN-LINE-FORM",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Set up and solve two linear simultaneous equations in two variables algebraically.",
+          "reviewNotes": [
+            "The statement includes setting up linear equations as part of the simultaneous equation process, matching the forming linear equations concept."
           ]
         }
       ],
@@ -5717,6 +5825,15 @@
           "reviewNotes": [
             "Exact match to intersections of graphs and solving equations."
           ]
+        },
+        {
+          "nodeId": "GEOM-COOR-CART-INTR",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Know that the coordinates of the points of intersection of a curve and a straight line are the solutions to the simultaneous equations for the line and curve.",
+          "reviewNotes": [
+            "The statement explicitly defines that the coordinates of intersection points are the solutions to simultaneous equations, directly matching the node's definition of points with identical coordinates and its inclusion of shared (x,y) pairs and simultaneous-equation solutions."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5748,21 +5865,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUMM-ROOT-SIGN-LOC",
-          "relation": "exact",
-          "assessmentDepth": "application",
-          "evidenceSpan": "systematic sign-change methods (for example, decimal search or interval bisection)",
-          "reviewNotes": [
-            "Exact match to locating roots by sign change."
-          ]
-        },
-        {
           "nodeId": "REAS-PROB-PSOL-NUMM",
           "relation": "exact",
           "assessmentDepth": "reasoning",
           "evidenceSpan": "when there is no simple analytical method of solving them",
           "reviewNotes": [
             "Exact match to choosing numerical methods over analytical."
+          ]
+        },
+        {
+          "nodeId": "NUMM-ROOT-V58969431A",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "systematic sign-change methods (for example, decimal search or interval bisection)",
+          "reviewNotes": [
+            "This node exactly covers systematic trial methods that use sign changes to find approximate solutions, as stated."
           ]
         }
       ],
@@ -6139,6 +6256,15 @@
           "reviewNotes": [
             "Direct match: generating terms from a term-to-term rule."
           ]
+        },
+        {
+          "nodeId": "ALGF-SEQ-SEQU-FIGU",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "1, 4, 9, 16, ...",
+          "reviewNotes": [
+            "The example explicitly requires generating the square number sequence, a figurate sequence."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6466,6 +6592,15 @@
           "reviewNotes": [
             "Generating terms, possibly by identifying the pattern."
           ]
+        },
+        {
+          "nodeId": "ALGF-SEQ-SEQU-GEOM",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "1, √2, 2, 2√2, …",
+          "reviewNotes": [
+            "The example sequence is a geometric progression, making the geometric sequences concept explicitly assessable."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6604,12 +6739,21 @@
           ]
         },
         {
-          "nodeId": "ALGF-FUNC-GRAP-QUAR",
-          "relation": "partial",
+          "nodeId": "ALGF-FUNC-GRAP-V5F319F463",
+          "relation": "broader",
           "assessmentDepth": "application",
           "evidenceSpan": "Use a table of values to plot other polynomial graphs and reciprocals.",
           "reviewNotes": [
-            "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
+            "The statement explicitly requires using a table of values to plot polynomial and reciprocal graphs; this node covers constructing a table of values for axⁿ sums and plotting, which is the exact skill required."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-RECP",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "reciprocals",
+          "reviewNotes": [
+            "The statement explicitly mentions reciprocals; this node covers graphs of reciprocal functions, which includes plotting using a table of values."
           ]
         }
       ],
@@ -6649,6 +6793,15 @@
           "evidenceSpan": "plot exponential graphs",
           "reviewNotes": [
             "Direct match: the node covers graphs of exponential functions y = a^x, matching the statement's requirement."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-V5F319F463",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Use a table of values to plot exponential graphs.",
+          "reviewNotes": [
+            "The statement explicitly requires constructing a table of values to plot exponential graphs, which directly matches this node's definition covering abˣ+c forms."
           ]
         }
       ],
@@ -6702,6 +6855,15 @@
           "evidenceSpan": "quadratic",
           "reviewNotes": [
             "The statement explicitly mentions quadratic functions, matching Quadratic graphs node."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-V5F319F463",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Use a table of values to plot graphs of linear and quadratic functions.",
+          "reviewNotes": [
+            "The statement explicitly requires constructing a table of values to plot linear and quadratic graphs, which this node covers (axⁿ sums)."
           ]
         }
       ],
@@ -7215,6 +7377,15 @@
           "reviewNotes": [
             "Direct match: the point-gradient form is used to find line equations from point and gradient, and generalises to two points by first computing gradient."
           ]
+        },
+        {
+          "nodeId": "GEOM-COOR-LINE-GRAD",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "through two given points",
+          "reviewNotes": [
+            "Finding the equation of a line through two points requires calculating the gradient; this node is the gradient concept and is explicitly assessable in the context."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -7489,12 +7660,21 @@
           ]
         },
         {
-          "nodeId": "REAS-MODL-MODL-OUTP",
-          "relation": "partial",
+          "nodeId": "MECH-KIN-LINE-V54E69BE35",
+          "relation": "narrower",
           "assessmentDepth": "application",
-          "evidenceSpan": "interpret graphs in real-world contexts",
+          "evidenceSpan": "distance-time",
           "reviewNotes": [
-            "The node covers interpreting model outputs, which aligns with the interpretation aspect of the statement."
+            "The example explicitly includes distance-time; this node covers constructing and interpreting distance-time graphs."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-V52A3E86F3",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "temperature conversion",
+          "reviewNotes": [
+            "The example includes temperature conversion; this node covers conversion graphs such as temperature conversion."
           ]
         }
       ],
@@ -7639,12 +7819,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "MECH-KIN-LINE-STGR",
-          "relation": "partial",
+          "nodeId": "ALGF-FUNC-GRAP-V5063EB753",
+          "relation": "broader",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Interpret straight line gradients as rates of change.",
+          "reviewNotes": [
+            "Covers the interpretation of straight line gradients as rates of change, though node is broader as it also covers curve gradients."
+          ]
+        },
+        {
+          "nodeId": "MECH-KIN-LINE-V54E69BE35",
+          "relation": "narrower",
           "assessmentDepth": "application",
           "evidenceSpan": "e.g. Gradient of a distance-time graph as a velocity.",
           "reviewNotes": [
-            "Provides a concrete context (distance-time) where the gradient-rate interpretation is applied."
+            "Specific context of distance-time graph gradient as speed matches example."
           ]
         }
       ],
@@ -7684,15 +7873,6 @@
           ]
         },
         {
-          "nodeId": "MECH-KIN-LINE-STGR",
-          "relation": "partial",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "Calculate or estimate gradients of graphs, and interpret in contexts such as distance-time graphs, velocity-time graphs and financial graphs.",
-          "reviewNotes": [
-            "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
-          ]
-        },
-        {
           "nodeId": "MECH-KIN-LINE-VTGR",
           "relation": "partial",
           "assessmentDepth": "reasoning",
@@ -7717,6 +7897,24 @@
           "evidenceSpan": "Calculate or estimate gradients of graphs, and interpret in contexts such as distance-time graphs, velocity-time graphs and financial graphs.",
           "reviewNotes": [
             "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-CONC-V5F5C7E3BE",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "estimate gradients of graphs",
+          "reviewNotes": [
+            "Provides a specific graphical method for estimating gradients by drawing a tangent."
+          ]
+        },
+        {
+          "nodeId": "MECH-KIN-LINE-V54E69BE35",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Calculate or estimate gradients of graphs, and interpret in contexts such as distance-time graphs, velocity-time graphs and financial graphs.",
+          "reviewNotes": [
+            "The statement explicitly requires interpreting gradients of distance-time graphs (one of the listed contexts), which aligns with the node's interpretation of gradient as speed, but does not assess other aspects such as constructing graphs or reading distances."
           ]
         }
       ],
@@ -7762,6 +7960,15 @@
           "evidenceSpan": "gradients of chords",
           "reviewNotes": [
             "The gradient of a straight line (chord) represents the average rate of change between two points."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-DEFS-V5AB360827",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Apply the concepts of average and instantaneous rate of change (gradients of chords or tangents) in numerical, algebraic and graphical contexts.",
+          "reviewNotes": [
+            "Exact match covering average and instantaneous rate of change via chords and tangents in the specified contexts."
           ]
         }
       ],
@@ -8229,9 +8436,9 @@
           "nodeId": "GEOM-SHAP-TERM-DIAG",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Draw diagrams from written descriptions",
+          "evidenceSpan": "Draw diagrams from written descriptions as required by questions.",
           "reviewNotes": [
-            "Node exactly covers translating written geometric descriptions into labelled diagrams."
+            "The canonical practice node exactly represents drawing a geometric diagram from a written description."
           ]
         }
       ],
@@ -8266,13 +8473,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "GEOM-CONS-CONS-V53E3A7F78",
+          "nodeId": "GEOM-CONS-CONS-V5E9947828",
           "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Use a ruler to construct and measure straight lines.",
           "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): Measuring lines is covered by GEOM-CONS-CONS-MEAS, but constructing straight lines with a ruler is a distinct skill not yet in the ontology.",
-            "This seed must still pass the independent second mapping review before activation."
+            "The node precisely covers using a ruler to draw a straight line and measuring its length."
           ]
         }
       ],
@@ -8356,12 +8562,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "GEOM-CONS-CONS-TRIA",
-          "relation": "partial",
+          "nodeId": "GEOM-CONS-CONS-V5A4D0DC3C",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Use compasses to construct circles.",
           "reviewNotes": [
-            "Constructing triangles with ruler and compasses requires drawing arcs and circles, so this node partially covers the basic compass skill."
+            "The node exactly matches constructing a circle with compass from a specified centre and radius."
           ]
         }
       ],
@@ -8552,12 +8758,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "GEOM-CONS-CONS-PERB",
-          "relation": "narrower",
+          "nodeId": "GEOM-CONS-CONS-V5A323E847",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Construct the perpendicular from a point to a line.",
           "reviewNotes": [
-            "This construction is a specific application of the perpendicular bisector method, using arcs to find the perpendicular through the given point."
+            "The node explicitly covers constructing a perpendicular from an external point to a line."
           ]
         }
       ],
@@ -8592,12 +8798,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "GEOM-CONS-CONS-PERB",
-          "relation": "narrower",
+          "nodeId": "GEOM-CONS-CONS-V5A323E847",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Construct the perpendicular to a line at a point.",
           "reviewNotes": [
-            "This construction is a specific application of the perpendicular bisector method, using arcs to find the perpendicular at the given point."
+            "The node explicitly covers constructing a perpendicular at a point on the line, which matches the statement exactly."
           ]
         }
       ],
@@ -9449,6 +9655,15 @@
           "reviewNotes": [
             "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
           ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-ANGL-V5821D7891",
+          "relation": "partial",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "Apply these angle properties in more formal proofs of geometrical results.",
+          "reviewNotes": [
+            "Exterior angle of a triangle is a fundamental angle property often used in formal geometric proofs, missing from existing links."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -9488,6 +9703,15 @@
           "evidenceSpan": "isosceles, equilateral and right-angled triangles",
           "reviewNotes": [
             "Directly names triangle types covered by the node."
+          ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-ANGL-ISOS",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Know the basic properties of isosceles, equilateral and right-angled triangles.",
+          "reviewNotes": [
+            "Isosceles triangle base angle equality is a basic property, directly covered by this node and missing from existing link."
           ]
         }
       ],
@@ -9652,6 +9876,15 @@
           "reviewNotes": [
             "Codex resolved the independent second-review residual (knowledge-v5-residual-round25-codex-1)."
           ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-ANGL-V5821D7891",
+          "relation": "partial",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "Use these facts in more formal proofs of geometrical results, for example circle theorems.",
+          "reviewNotes": [
+            "The exterior angle theorem is a property of triangles assessed for use in formal proofs."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -9766,21 +9999,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "GEOM-SHAP-TERM-QUAD",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "rectilinear figures",
-          "reviewNotes": [
-            "Quadrilaterals are a type of rectilinear figure; the statement uses properties of quadrilaterals to find lengths and angles in such figures."
-          ]
-        },
-        {
-          "nodeId": "REAS-PROF-ARGM-JUST",
-          "relation": "partial",
+          "nodeId": "GEOM-SHAP-V551C2832A",
+          "relation": "exact",
           "assessmentDepth": "reasoning",
-          "evidenceSpan": "simple proofs",
+          "evidenceSpan": "Use these facts to find lengths and angles in rectilinear figures and in simple proofs.",
           "reviewNotes": [
-            "Using facts in simple proofs involves justification, which aligns with the node's focus on explaining reasoning."
+            "The node exactly covers using quadrilateral properties in proofs and geometric arguments."
           ]
         }
       ],
@@ -10340,6 +10564,15 @@
           "evidenceSpan": "Construct plans and elevations of simple 3D solids, and representations (e.g. using isometric paper) of solids from plans and elevations.",
           "reviewNotes": [
             "The node covers constructing plans and elevations, exactly matching the statement."
+          ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-V55C4E07BF",
+          "relation": "broader",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Construct plans and elevations of simple 3D solids, and representations (e.g. using isometric paper) of solids from plans and elevations.",
+          "reviewNotes": [
+            "The statement includes drawing isometric representations, which matches the isometric drawing node; the node is broader as it covers general isometric drawing and interpreting."
           ]
         }
       ],
@@ -11164,6 +11397,15 @@
           "reviewNotes": [
             "Only the scale factor part is captured; centre identification is not covered."
           ]
+        },
+        {
+          "nodeId": "GEOM-CONS-TRAN-DESC",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Identify the centre and scale factor",
+          "reviewNotes": [
+            "The statement explicitly requires identification of transformation parameters, which matches the node's definition of fully specifying a transformation from an object-image pair."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -11489,12 +11731,12 @@
           ]
         },
         {
-          "nodeId": "NUM-MEAS-TIME-MONE",
-          "relation": "partial",
+          "nodeId": "GEOM-MENS-UNIT-MONE",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "money",
           "reviewNotes": [
-            "Money calculations inherently involve monetary units; no dedicated money-units node available."
+            "The statement explicitly refers to using and converting units of money, which matches the definition of GEOM-MENS-UNIT-MONE."
           ]
         }
       ],
@@ -11849,6 +12091,24 @@
           "evidenceSpan": "Use and convert compound units in algebraic contexts.",
           "reviewNotes": [
             "Covers fuel consumption rate as a compound unit, originally omitted."
+          ]
+        },
+        {
+          "nodeId": "NUM-RAT-RATE-UNIT",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Use and convert compound units in algebraic contexts.",
+          "reviewNotes": [
+            "Covers unit rate (e.g. price per unit, pay per hour) as a compound unit."
+          ]
+        },
+        {
+          "nodeId": "NUM-RAT-RATE-V54DFC0EBD",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Use and convert compound units in algebraic contexts.",
+          "reviewNotes": [
+            "Covers population density as a compound unit."
           ]
         }
       ],
@@ -12221,6 +12481,15 @@
           "evidenceSpan": "Know and apply the formula: area = base × height.",
           "reviewNotes": [
             "Area of a parallelogram, which includes rectangles as a special case."
+          ]
+        },
+        {
+          "nodeId": "GEOM-MENS-AREA-RECT",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "[Includes area of a rectangle]",
+          "reviewNotes": [
+            "The note explicitly includes rectangle area; the statement covers only area, not perimeter, so partial match."
           ]
         }
       ],
@@ -12975,6 +13244,15 @@
           "reviewNotes": [
             "The node covers the long-run relationship but not the recording and representation process itself; thus partial."
           ]
+        },
+        {
+          "nodeId": "PROB-BASIC-V535A32E23",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Record, describe and analyse the relative frequency of outcomes of repeated experiments using tables and frequency trees.",
+          "reviewNotes": [
+            "Directly maps to recording and analyzing frequencies using tables and frequency trees."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -13105,6 +13383,15 @@
           "evidenceSpan": "equally likely outcomes",
           "reviewNotes": [
             "Explicitly mentions equally likely outcomes and their use in simple experiments."
+          ]
+        },
+        {
+          "nodeId": "PROB-BASIC-BASIC-V543D4FAEF",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "expressed as fractions or decimals",
+          "reviewNotes": [
+            "Statement explicitly requires probabilities to be expressed as fractions or decimals."
           ]
         }
       ],
@@ -13280,12 +13567,30 @@
           ]
         },
         {
-          "nodeId": "PROB-COMB-COUNT-PROD",
-          "relation": "partial",
+          "nodeId": "PROB-COMB-COUNT-ENUM",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "list the outcomes of single events and simple combinations of events",
+          "reviewNotes": [
+            "The statement explicitly instructs systematic listing using tables and grids."
+          ]
+        },
+        {
+          "nodeId": "PROB-COMB-COUNT-PERM",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Finding the number of orders in which the letters E, F and G can be written",
           "reviewNotes": [
-            "The multiplication principle underlies counting permutations of letters."
+            "The example explicitly requires counting ordered arrangements (permutations)."
+          ]
+        },
+        {
+          "nodeId": "PROB-BASIC-BASIC-SING",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "list the outcomes of single events and simple combinations of events, and to calculate theoretical probabilities",
+          "reviewNotes": [
+            "The statement covers probability calculation for single events; it also includes combined events, so partial match."
           ]
         }
       ],
@@ -13786,6 +14091,15 @@
           "reviewNotes": [
             "Tree diagrams are the central tool described in the statement."
           ]
+        },
+        {
+          "nodeId": "PROB-COMB-COUNT-ENUM",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "enumerate sets",
+          "reviewNotes": [
+            "The statement explicitly requires using tree diagrams to enumerate sets, which directly demonstrates the skill of systematically listing all possible outcomes."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -14171,12 +14485,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-ENQ-SAMP-POP",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
+          "nodeId": "STAT-ENQ-V5ACE58F20",
+          "relation": "exact",
+          "assessmentDepth": "application",
           "evidenceSpan": "Infer properties of populations or distributions from a sample.",
           "reviewNotes": [
-            "Builds on the population/sample distinction to make inferences."
+            "Directly matches informal statistical inference from a sample."
           ]
         }
       ],
@@ -14298,12 +14612,21 @@
           ]
         },
         {
-          "nodeId": "STAT-DATA-CLAS-TYPE",
+          "nodeId": "STAT-DATA-REPR-V59A66C96C",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "vertical line charts for ungrouped discrete numerical data",
+          "reviewNotes": [
+            "The statement explicitly requires constructing and interpreting vertical line charts for ungrouped discrete numerical data, matching this ontology node."
+          ]
+        },
+        {
+          "nodeId": "STAT-DATA-REPR-V53BA17525",
           "relation": "partial",
           "assessmentDepth": "application",
           "evidenceSpan": "appropriate to the data type",
           "reviewNotes": [
-            "Choosing charts based on data classification."
+            "The statement requires interpreting and constructing charts appropriate to the data type, which involves selecting the correct chart; justifying the choice is not explicitly stated, so partial."
           ]
         }
       ],
@@ -14483,15 +14806,6 @@
           "reviewNotes": [
             "Constructing and interpreting cumulative frequency graphs."
           ]
-        },
-        {
-          "nodeId": "STAT-DATA-CLAS-GROUP",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "grouped data",
-          "reviewNotes": [
-            "Understanding grouped data underpins these diagrams."
-          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -14531,15 +14845,6 @@
           ]
         },
         {
-          "nodeId": "STAT-SUMM-CENT-MEDI",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "median",
-          "reviewNotes": [
-            "Estimating the median from a graphical representation of grouped data."
-          ]
-        },
-        {
           "nodeId": "STAT-SUMM-CENT-MODE",
           "relation": "partial",
           "assessmentDepth": "application",
@@ -14573,6 +14878,15 @@
           "evidenceSpan": "interquartile range",
           "reviewNotes": [
             "Calculating the interquartile range from estimated quartiles."
+          ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-V5220FA6CC",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "median",
+          "reviewNotes": [
+            "The statement explicitly asks for estimates of median from graphical representation of grouped data, which matches this node for estimated median from grouped frequency distributions."
           ]
         }
       ],
@@ -14824,12 +15138,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "REAS-PROF-ARGM-CRIT",
-          "relation": "partial",
+          "nodeId": "STAT-DATA-REPR-V51C0A079F",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "graphical misrepresentation",
           "reviewNotes": [
-            "Recognising flaws in graphical presentation is a form of critiquing arguments."
+            "The statement directly addresses recognising graphical misrepresentation, which is the exact definition of this node."
           ]
         }
       ],
@@ -14960,21 +15274,21 @@
           ]
         },
         {
-          "nodeId": "STAT-SUMM-CENT-MEDI",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "median",
-          "reviewNotes": [
-            "Median estimated from grouped data, not exactly the ordered middle."
-          ]
-        },
-        {
           "nodeId": "STAT-SUMM-CENT-RANG",
           "relation": "partial",
           "assessmentDepth": "application",
           "evidenceSpan": "range",
           "reviewNotes": [
             "Range estimated from class boundaries, not exact min/max."
+          ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-V5220FA6CC",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "median for grouped data",
+          "reviewNotes": [
+            "The statement requires estimating the median from grouped data, exactly matching this node."
           ]
         }
       ],
@@ -15151,12 +15465,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-DATA-CLAS-CLEAN",
-          "relation": "exact",
+          "nodeId": "STAT-DATA-V53134A87A",
+          "relation": "narrower",
           "assessmentDepth": "knowledge",
           "evidenceSpan": "outlier",
           "reviewNotes": [
-            "Data cleaning process includes identifying outliers."
+            "Directly matches the definition of data exploration which explicitly includes identifying outliers."
           ]
         }
       ],
@@ -15242,12 +15556,12 @@
           ]
         },
         {
-          "nodeId": "STAT-BIVA-CORR-LOBF",
+          "nodeId": "STAT-DATA-V53134A87A",
           "relation": "narrower",
           "assessmentDepth": "application",
-          "evidenceSpan": "scatter graph",
+          "evidenceSpan": "outliers",
           "reviewNotes": [
-            "Outliers are often points far from the line of best fit."
+            "Recognising outliers on a scatter graph is a specific application of data exploration's outlier spotting."
           ]
         }
       ],
@@ -15397,15 +15711,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-19",
-    "promptVersion": "knowledge-mapping-v5-atomic-9-paper-bound",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "0f128abe76c8856c3a829de9d0a33c7ee19df24185ad798e5d6968835fa1a47c",
     "extractionSha256": "c0e4a2f8dac18e5c7fd46838ec03f705726793b7b6abd4979372291758e46e88",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "1ac166a6e82dbbd242c68bef41101c09566e69e1578fcc533148c5115ef0e1d0",
-    "batchId": "knowledge-v5-unified-20260719-OCR-J560",
+    "batchId": "knowledge-v5-concept-accounting-20260723-OCR-J560",
     "calls": [
       {
         "label": "knowledge-v5-extract-OCR-J560-p11-p12-p13-p14",
@@ -18626,10 +18940,30 @@
         "elapsedSeconds": 49,
         "clientRequestId": "9899adba-566d-46ad-96fd-caeaca03214f",
         "fallbackReason": "explicit-deepseek-test"
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-OCR-J560",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
+      },
+      {
+        "label": "knowledge-v5-owner-gate-OCR-J560-OFFICIAL-J560-8.01e",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

@@ -1,0 +1,1199 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-23T15:16:35.701Z",
+  "candidateBatch": "knowledge-v5-concept-accounting-20260723",
+  "sourceBatch": "knowledge-v5-20260719",
+  "reviewStatus": "codex-reviewed",
+  "activationStatus": "not-active-awaiting-owner-approval",
+  "qualificationCount": 22,
+  "changedQualificationCount": 22,
+  "additionCount": 1382,
+  "removalCount": 601,
+  "ontologyAdditionCount": 35,
+  "ontologyAdditions": [
+    {
+      "nodeId": "NUMM-ODE-EULR-EXPL",
+      "parentNodeId": "NUMM-ODE",
+      "name": "Euler Method",
+      "definition": "Approximating a first-order initial-value problem with the explicit Euler update yₙ₊₁ = yₙ + h f(xₙ, yₙ), using one slope evaluation per step.",
+      "aliases": [
+        "ordinary Euler method",
+        "Euler's step-by-step method",
+        "explicit Euler method"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "first-order initial-value problems"
+      ],
+      "inclusions": [
+        "single-slope Euler update",
+        "stepwise numerical solution"
+      ],
+      "exclusions": [
+        "improved Euler method",
+        "modified Euler method",
+        "Runge-Kutta methods"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "The active ontology had only an Improved Euler node whose exclusions explicitly reject ordinary Euler.",
+        "A distinct leaf is required to represent AQA 7367 J2 without a false concept link."
+      ]
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-MODE",
+      "parentNodeId": "PROB-DRVD-DRVB",
+      "name": "Mode of a Discrete Random Variable",
+      "definition": "A value of a discrete random variable having the greatest probability mass; more than one mode may occur.",
+      "aliases": [
+        "mode of a discrete distribution",
+        "modal value of a DRV"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "discrete random variables",
+        "probability mass functions"
+      ],
+      "inclusions": [
+        "identifying a most probable value",
+        "multiple modes"
+      ],
+      "exclusions": [
+        "sample-data mode without a probability model",
+        "continuous density modes"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "The official statement explicitly assesses the mode of a discrete random variable."
+      ]
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-MEDI",
+      "parentNodeId": "PROB-DRVD-DRVB",
+      "name": "Median of a Discrete Random Variable",
+      "definition": "A value locating the 0.5 probability quantile of a discrete random variable, determined from cumulative probability.",
+      "aliases": [
+        "median of a discrete distribution",
+        "DRV median"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "discrete random variables",
+        "cumulative probability"
+      ],
+      "inclusions": [
+        "0.5 quantile",
+        "median from cumulative mass"
+      ],
+      "exclusions": [
+        "sample-data median without a probability model",
+        "continuous-distribution median"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "The official statement explicitly assesses the median of a discrete random variable."
+      ]
+    },
+    {
+      "nodeId": "PROB-DIST-EXPO-MEAN",
+      "parentNodeId": "PROB-DIST",
+      "name": "Exponential Distribution Moments",
+      "definition": "For an exponential distribution with rate λ, the mean is 1/λ and the variance is 1/λ², with standard deviation 1/λ.",
+      "aliases": [
+        "exponential mean and variance",
+        "exponential distribution moments"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "exponential random variables"
+      ],
+      "inclusions": [
+        "E(X) = 1/λ",
+        "Var(X) = 1/λ²",
+        "standard deviation 1/λ"
+      ],
+      "exclusions": [
+        "Poisson moments",
+        "generic continuous moments without the exponential model"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "The active exponential-distribution branch lacked a leaf for its explicit moments."
+      ]
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM-VERT",
+      "parentNodeId": "GEOM-SHAP-TERM",
+      "name": "Vertex of a geometric figure",
+      "definition": "A corner point at which two or more sides, edges or rays of a geometric figure meet.",
+      "aliases": [
+        "geometric vertex",
+        "corner"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "2D figures",
+        "3D solids"
+      ],
+      "inclusions": [
+        "vertices of polygons",
+        "vertices of solids"
+      ],
+      "exclusions": [
+        "vertex of a network graph",
+        "turning point of a function graph"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "CAIE-0580-CAIE-0580-C4.1"
+      ]
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-CUBS",
+      "parentNodeId": "ALGF-FUNC-GRAP",
+      "name": "Symmetry of cubic graphs",
+      "definition": "Recognising and using the rotational or point symmetry of a cubic function graph about its point of inflection.",
+      "aliases": [
+        "cubic graph symmetry",
+        "point symmetry of a cubic"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "2D cubic function graphs"
+      ],
+      "inclusions": [
+        "centre of rotational symmetry"
+      ],
+      "exclusions": [
+        "line symmetry of quadratic graphs"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "CAIE-0580-OFFICIAL-CAIE-0580-E2.11-3"
+      ]
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-MODX",
+      "parentNodeId": "ALGF-FUNC-GRAP",
+      "name": "Graphs of y = f(|x|)",
+      "definition": "Constructing and interpreting y=f(|x|) by reflecting the non-negative-x part of y=f(x) in the y-axis.",
+      "aliases": [
+        "input modulus graph",
+        "graph of f absolute x"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "2D function graphs"
+      ],
+      "inclusions": [
+        "even symmetry created by replacing x with |x|"
+      ],
+      "exclusions": [
+        "graphs of y=|f(x)|"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "CAIE-9231-OFFICIAL-CAIE-9231-1.2-GRAPHRELS"
+      ]
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-VARI",
+      "parentNodeId": "STAT-SUMM-CENT",
+      "name": "Variance of a data set",
+      "definition": "The mean squared deviation of data values from their mean, used as a measure of dispersion before taking its square root for standard deviation.",
+      "aliases": [
+        "data variance",
+        "measure of variance"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "raw data",
+        "grouped data"
+      ],
+      "inclusions": [
+        "population variance",
+        "sample descriptive variance"
+      ],
+      "exclusions": [
+        "variance of an abstract random variable",
+        "standard deviation"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "Edexcel-8MA0-OFFICIAL-Edexcel-8MA0-2.3a",
+        "Edexcel-9MA0-OFFICIAL-Edexcel-9MA0-2.3-3",
+        "Edexcel-IAL-OFFICIAL-Edexcel-IAL-S1-2.3",
+        "OCR-H240-2.02f"
+      ]
+    },
+    {
+      "nodeId": "ALGF-SEQ-SEQU-SEC2",
+      "parentNodeId": "ALGF-SEQ-SEQU",
+      "name": "Second-order linear recurrence relations",
+      "definition": "Solving second-order linear recurrence relations with constant coefficients by an auxiliary equation, complementary function and particular solution.",
+      "aliases": [
+        "second-order difference equations",
+        "order-two recurrences"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "homogeneous recurrences",
+        "non-homogeneous recurrences"
+      ],
+      "inclusions": [
+        "distinct, repeated and complex auxiliary roots"
+      ],
+      "exclusions": [
+        "first-order recurrences",
+        "continuous differential equations"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "Edexcel-9FM0-6.2",
+        "OCR-H245-OFFICIAL-OCR-H245-Y545-8.01g"
+      ]
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS-ARPF",
+      "parentNodeId": "ALGF-SEQ-SERS",
+      "name": "Proof of the arithmetic-series sum",
+      "definition": "Deriving the finite arithmetic-series sum formula rather than only substituting values into it.",
+      "aliases": [
+        "proof of arithmetic progression sum"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "finite arithmetic series"
+      ],
+      "inclusions": [
+        "pairing first and last terms"
+      ],
+      "exclusions": [
+        "using the formula without proof"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "Edexcel-IAL-OFFICIAL-Edexcel-IAL-P2-4.2"
+      ]
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS-GEPF",
+      "parentNodeId": "ALGF-SEQ-SERS",
+      "name": "Proof of the finite geometric-series sum",
+      "definition": "Deriving the finite geometric-series sum formula by multiplying by the common ratio and subtracting.",
+      "aliases": [
+        "proof of geometric progression sum"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "finite geometric series"
+      ],
+      "inclusions": [
+        "derivation of the finite sum formula"
+      ],
+      "exclusions": [
+        "sum to infinity",
+        "using the formula without proof"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "Edexcel-IAL-OFFICIAL-Edexcel-IAL-P2-4.4"
+      ]
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-CDF",
+      "parentNodeId": "PROB-DRVD-DRVB",
+      "name": "Discrete cumulative distribution function",
+      "definition": "For a discrete random variable, F(x)=P(X≤x), found by summing its probability mass function over values not exceeding x.",
+      "aliases": [
+        "discrete CDF"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "discrete random variables"
+      ],
+      "inclusions": [
+        "cumulative probabilities from a probability table"
+      ],
+      "exclusions": [
+        "continuous CDF obtained from a density"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "Edexcel-IAL-OFFICIAL-Edexcel-IAL-S1-5.2"
+      ]
+    },
+    {
+      "nodeId": "STAT-ENQ-SAMP-CLUS",
+      "parentNodeId": "STAT-ENQ-SAMP",
+      "name": "Cluster sampling",
+      "definition": "Dividing a population into natural groups, selecting one or more whole groups, and sampling members from the selected clusters.",
+      "aliases": [
+        "cluster sample"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "survey populations"
+      ],
+      "inclusions": [
+        "selection by naturally occurring groups"
+      ],
+      "exclusions": [
+        "stratified sampling from every stratum"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H240-OFFICIAL-OCR-H240-2.01d"
+      ]
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-DOTP",
+      "parentNodeId": "STAT-DATA-REPR",
+      "name": "Dot plots",
+      "definition": "A statistical display placing one dot for each observation above its value on a number line so frequencies appear as vertical stacks.",
+      "aliases": [
+        "dot diagram"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "single-variable numerical data"
+      ],
+      "inclusions": [
+        "interpreting distribution shape and frequency"
+      ],
+      "exclusions": [
+        "scatter diagrams",
+        "pictograms"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H240-OFFICIAL-OCR-H240-2.02a"
+      ]
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN-SVEC",
+      "parentNodeId": "VECT-BASIC-NOTN",
+      "name": "Scalar and vector distinction",
+      "definition": "Distinguishing a scalar, which has magnitude only, from a vector, which has both magnitude and direction.",
+      "aliases": [
+        "scalar versus vector"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "quantities",
+        "vector notation"
+      ],
+      "inclusions": [
+        "classifying quantities as scalar or vector"
+      ],
+      "exclusions": [
+        "scalar multiplication of a vector"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H240-OFFICIAL-OCR-H240-1.10a"
+      ]
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-CONP",
+      "parentNodeId": "MECH-FORC-EQUI",
+      "name": "Equilibrium of connected particles",
+      "definition": "Applying equilibrium conditions to particles connected by strings or smooth pulleys when the acceleration of each particle is zero.",
+      "aliases": [
+        "connected particles in equilibrium"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "particles",
+        "strings",
+        "smooth pulleys"
+      ],
+      "inclusions": [
+        "common tension under ideal-string assumptions"
+      ],
+      "exclusions": [
+        "connected particles with non-zero common acceleration"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H240-OFFICIAL-OCR-H240-3.03n"
+      ]
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE-COMP",
+      "parentNodeId": "NUM-SYS-TYPE",
+      "name": "Composite numbers",
+      "definition": "Natural numbers greater than 1 that have more than two positive factors and therefore are not prime.",
+      "aliases": [
+        "composite integer"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "positive integers"
+      ],
+      "inclusions": [
+        "classification by factor count"
+      ],
+      "exclusions": [
+        "prime numbers",
+        "the number 1"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H245-OFFICIAL-OCR-H245-Y545-8.02i"
+      ]
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-ATGR",
+      "parentNodeId": "MECH-KIN-LINE",
+      "name": "Acceleration-time graphs",
+      "definition": "Drawing and interpreting acceleration against time for straight-line motion, including the physical meaning of its values and area where appropriate.",
+      "aliases": [
+        "acceleration-time graph"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "straight-line kinematics"
+      ],
+      "inclusions": [
+        "constant and variable acceleration"
+      ],
+      "exclusions": [
+        "velocity-time graphs",
+        "displacement-time graphs"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H640-OCR-H640-k4"
+      ]
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ-INCL",
+      "parentNodeId": "MECH-FURT-PROJ",
+      "name": "Projectile range on an inclined plane",
+      "definition": "Determining the range of a projectile measured to its intersection with an inclined plane and identifying conditions for maximum range.",
+      "aliases": [
+        "inclined-plane projectile range"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "projectile motion",
+        "inclined planes"
+      ],
+      "inclusions": [
+        "maximum range on an inclined plane"
+      ],
+      "exclusions": [
+        "horizontal-plane range only"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H640-OCR-H640-My1"
+      ]
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ-BPAR",
+      "parentNodeId": "MECH-FURT-PROJ",
+      "name": "Bounding parabola of projectile trajectories",
+      "definition": "The envelope parabola that bounds all projectile trajectories launched from a fixed point with a fixed initial speed.",
+      "aliases": [
+        "projectile safety parabola",
+        "bounding parabola"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "families of projectile trajectories"
+      ],
+      "inclusions": [
+        "derivation or use of the envelope"
+      ],
+      "exclusions": [
+        "one projectile trajectory"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H640-OCR-H640-My1"
+      ]
+    },
+    {
+      "nodeId": "MECH-GRAV-INVS",
+      "parentNodeId": "MECH",
+      "name": "Inverse-square law of gravitation",
+      "definition": "Gravitational force or field strength varies inversely with the square of distance from the attracting mass.",
+      "aliases": [
+        "inverse square gravitation"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "point masses",
+        "spherically symmetric bodies"
+      ],
+      "inclusions": [
+        "1/r² dependence"
+      ],
+      "exclusions": [
+        "constant-g approximation near Earth's surface"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H640-OCR-H640-F2-2"
+      ]
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-AFRI",
+      "parentNodeId": "MECH-FORC-EQUI",
+      "name": "Angle of friction",
+      "definition": "The angle between the resultant contact force and the normal reaction at limiting equilibrium, satisfying tan φ=μ.",
+      "aliases": [
+        "friction angle"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "rough contact",
+        "limiting equilibrium"
+      ],
+      "inclusions": [
+        "relation between angle of friction and coefficient of friction"
+      ],
+      "exclusions": [
+        "angle of repose unless derived under its conditions"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H640-OCR-H640-F11"
+      ]
+    },
+    {
+      "nodeId": "MECH-FURT-RIGD-VMOM",
+      "parentNodeId": "MECH-FURT-RIGD",
+      "name": "Vector moment of a force",
+      "definition": "Representing the moment of a force about a point or axis by the vector cross product r×F and interpreting its direction.",
+      "aliases": [
+        "vector torque"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "2D or 3D force systems"
+      ],
+      "inclusions": [
+        "cross-product treatment of moments"
+      ],
+      "exclusions": [
+        "scalar force times perpendicular distance only"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H640-OCR-H640-MF13"
+      ]
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM-DGNL",
+      "parentNodeId": "GEOM-SHAP-TERM",
+      "name": "Diagonal of a polygon or solid",
+      "definition": "A line segment joining two non-adjacent vertices of a polygon, or corresponding non-adjacent vertices of a solid.",
+      "aliases": [
+        "geometric diagonal"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "polygons",
+        "polyhedra"
+      ],
+      "inclusions": [
+        "quadrilateral diagonals"
+      ],
+      "exclusions": [
+        "diagonal entries of a matrix",
+        "sloping lines generally"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "WJEC-3300-OFFICIAL-WJEC-3300-H-GEO-012",
+        "WJEC-C00-4968-0-3.1.1-2"
+      ]
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL-RGHT",
+      "parentNodeId": "GEOM-SHAP-ANGL",
+      "name": "Angle properties of right-angled triangles",
+      "definition": "A right-angled triangle has one 90-degree angle, so its other two interior angles are complementary.",
+      "aliases": [
+        "right-triangle angle facts"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "plane right-angled triangles"
+      ],
+      "inclusions": [
+        "two acute angles sum to 90 degrees"
+      ],
+      "exclusions": [
+        "Pythagoras",
+        "right-angle trigonometry"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "WJEC-C00-4968-0-p32-r5-b0-l2"
+      ]
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL-EQUI",
+      "parentNodeId": "GEOM-SHAP-ANGL",
+      "name": "Angle properties of equilateral triangles",
+      "definition": "Every interior angle of a plane equilateral triangle is 60 degrees.",
+      "aliases": [
+        "equilateral-triangle angle facts"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "plane equilateral triangles"
+      ],
+      "inclusions": [
+        "three equal 60-degree angles"
+      ],
+      "exclusions": [
+        "equal sides without angle reasoning"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "WJEC-C00-4968-0-p32-r5-b0-l2"
+      ]
+    },
+    {
+      "nodeId": "ALGF-LOG-LOGR-INEQ",
+      "parentNodeId": "ALGF-LOG-LOGR",
+      "name": "Exponential and logarithmic inequalities",
+      "definition": "Using logarithms and monotonicity to solve inequalities in which the unknown occurs in an exponent or logarithm.",
+      "aliases": [
+        "exponential inequalities",
+        "logarithmic inequalities"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "real exponential functions",
+        "real logarithms"
+      ],
+      "inclusions": [
+        "inequalities such as 2^x<5"
+      ],
+      "exclusions": [
+        "exponential equations",
+        "generic polynomial inequalities"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "CAIE-9709-OFFICIAL-CAIE-9709-P3-3.2.3"
+      ]
+    },
+    {
+      "nodeId": "ALGF-EQN-QUAD-SOLV",
+      "parentNodeId": "ALGF-EQN-QUAD",
+      "name": "Solving quadratic equations by an appropriate method",
+      "definition": "Solving a quadratic equation when no single method is prescribed, selecting factorisation, completing the square, the quadratic formula or another valid method.",
+      "aliases": [
+        "general quadratic solving"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "one-variable quadratic equations"
+      ],
+      "inclusions": [
+        "method selection"
+      ],
+      "exclusions": [
+        "forming a quadratic equation without solving it"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "Edexcel-4MA1-OFFICIAL-Edexcel-4MA1-2.7-3"
+      ]
+    },
+    {
+      "nodeId": "ALGF-POLY-PART-CUBC",
+      "parentNodeId": "ALGF-POLY-PART",
+      "name": "Partial fractions with an unfactorised cubic denominator",
+      "definition": "Decomposing an algebraic fraction when a cubic denominator factor is left unfactorised over the coefficient domain used by the qualification.",
+      "aliases": [
+        "irreducible cubic partial fractions"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "rational functions"
+      ],
+      "inclusions": [
+        "linear numerator over an unfactorised cubic factor where required"
+      ],
+      "exclusions": [
+        "distinct linear factors",
+        "irreducible quadratic factors"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H640-OFFICIAL-OCR-H640-a15"
+      ]
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-DERI",
+      "parentNodeId": "MECH-KIN-LINE",
+      "name": "Derivation of constant-acceleration formulae",
+      "definition": "Deriving the standard constant-acceleration equations from velocity definitions, averages or integration, rather than only applying them.",
+      "aliases": [
+        "derivation of SUVAT"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "straight-line constant acceleration"
+      ],
+      "inclusions": [
+        "deriving v=u+at and related equations"
+      ],
+      "exclusions": [
+        "formula substitution without derivation"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H640-OCR-H640-k7"
+      ]
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE-PARI",
+      "parentNodeId": "NUM-SYS-TYPE",
+      "name": "Odd and even integers",
+      "definition": "Classifying integers by parity: even integers are divisible by 2 and odd integers leave remainder 1 in absolute parity terms.",
+      "aliases": [
+        "parity",
+        "odd and even numbers"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "integers"
+      ],
+      "inclusions": [
+        "odd/even properties"
+      ],
+      "exclusions": [
+        "prime/composite classification"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "WJEC-3300-OFFICIAL-WJEC-3300-N-1.7",
+        "OCR-J560-OFFICIAL-OCR-J560-1.02a"
+      ]
+    },
+    {
+      "nodeId": "ALGF-MATR-EIG-POWR",
+      "parentNodeId": "ALGF-MATR-EIG",
+      "name": "Matrix powers by diagonalisation",
+      "definition": "Computing integer powers A^n from a diagonalisation A=QDQ⁻¹ by using A^n=QD^nQ⁻¹.",
+      "aliases": [
+        "powers via diagonalisation"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "diagonalisable square matrices"
+      ],
+      "inclusions": [
+        "2x2 and 3x3 matrix powers"
+      ],
+      "exclusions": [
+        "Cayley-Hamilton reduction"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "CAIE-9231-OFFICIAL-CAIE-9231-2.2.5"
+      ]
+    },
+    {
+      "nodeId": "CALC-HYP-HYP-EQNS",
+      "parentNodeId": "CALC-HYP-HYP",
+      "name": "Hyperbolic equations",
+      "definition": "Solving equations involving hyperbolic functions by exponential definitions, identities or inverse hyperbolic functions.",
+      "aliases": [
+        "solving hyperbolic equations"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "real hyperbolic functions"
+      ],
+      "inclusions": [
+        "a cosh x + b sinh x = c"
+      ],
+      "exclusions": [
+        "ordinary trigonometric equations"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "Edexcel-IAL-OFFICIAL-Edexcel-IAL-FP3-1.1"
+      ]
+    },
+    {
+      "nodeId": "STAT-BIVA-CORR-LINZ",
+      "parentNodeId": "STAT-BIVA-CORR",
+      "name": "Linearising nonlinear data relationships",
+      "definition": "Applying a change of variable to turn a power or exponential relationship into a straight-line form so model parameters can be estimated.",
+      "aliases": [
+        "linearisation by variable transformation"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "bivariate data",
+        "power models",
+        "exponential models"
+      ],
+      "inclusions": [
+        "linearising y=ax^n or y=kb^x"
+      ],
+      "exclusions": [
+        "ordinary least-squares calculation",
+        "linear data already in straight-line form"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "Edexcel-9MA0-OFFICIAL-Edexcel-9MA0-2.2"
+      ]
+    },
+    {
+      "nodeId": "NUM-MOD-CONG-SIMU",
+      "parentNodeId": "NUM",
+      "name": "Simultaneous linear congruences",
+      "definition": "Solving two or more linear congruences for a common integer solution, with the Chinese remainder theorem available when its conditions apply.",
+      "aliases": [
+        "simultaneous modular equations"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "integer congruences"
+      ],
+      "inclusions": [
+        "ax congruent to b modulo n",
+        "Chinese remainder theorem"
+      ],
+      "exclusions": [
+        "simultaneous real linear equations"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "codex-reviewed",
+      "stageDepth": "advanced",
+      "sourceHints": [
+        "OCR-H245-OFFICIAL-OCR-H245-Y545-8.02h"
+      ]
+    }
+  ],
+  "machineUnresolvedEntryCount": 56,
+  "localDispositionCount": 52,
+  "unresolvedAfterLocalDisposition": 0,
+  "residualCandidateCount": 465,
+  "residualAcceptedCount": 47,
+  "residualRejectedCount": 418,
+  "residualUnresolvedCount": 0,
+  "unchangedProposalCount": 6,
+  "additionsByQualification": {
+    "AQA-7357:1.3": 85,
+    "AQA-7367:1.1": 46,
+    "AQA-8300:1.0": 18,
+    "AQA-8365:1.4": 5,
+    "CAIE-0580:2025-2027": 105,
+    "CAIE-0606:2025-2027": 37,
+    "CAIE-9231:2026-2027": 26,
+    "CAIE-9709:2026-2027": 49,
+    "Edexcel-1MA1:2015": 82,
+    "Edexcel-4MA1:Issue 2": 55,
+    "Edexcel-4PM1:2017": 11,
+    "Edexcel-8MA0:2017": 36,
+    "Edexcel-9FM0:2017": 71,
+    "Edexcel-9MA0:2017": 76,
+    "Edexcel-IAL:2018": 87,
+    "OCR-6993:Version 2.0": 13,
+    "OCR-H240:Version 3": 91,
+    "OCR-H245:Version 2": 61,
+    "OCR-H640:Version 3": 97,
+    "OCR-J560:Version 2.0": 74,
+    "WJEC-3300:Legacy qualification ending 2027": 143,
+    "WJEC-C00-4968-0:Version 5": 114
+  },
+  "removalsByQualification": {
+    "AQA-7357:1.3": 14,
+    "AQA-7367:1.1": 25,
+    "AQA-8300:1.0": 2,
+    "AQA-8365:1.4": 0,
+    "CAIE-0580:2025-2027": 41,
+    "CAIE-0606:2025-2027": 6,
+    "CAIE-9231:2026-2027": 5,
+    "CAIE-9709:2026-2027": 23,
+    "Edexcel-1MA1:2015": 32,
+    "Edexcel-4MA1:Issue 2": 26,
+    "Edexcel-4PM1:2017": 2,
+    "Edexcel-8MA0:2017": 6,
+    "Edexcel-9FM0:2017": 24,
+    "Edexcel-9MA0:2017": 29,
+    "Edexcel-IAL:2018": 16,
+    "OCR-6993:Version 2.0": 6,
+    "OCR-H240:Version 3": 28,
+    "OCR-H245:Version 2": 25,
+    "OCR-H640:Version 3": 19,
+    "OCR-J560:Version 2.0": 39,
+    "WJEC-3300:Legacy qualification ending 2027": 131,
+    "WJEC-C00-4968-0:Version 5": 102
+  },
+  "caie0580VectorRegression": {
+    "statementId": "CAIE-0580-E7.4-4",
+    "requiredNodeIds": [
+      "VECT-GEOM-PROB-APPL",
+      "VECT-GEOM-PROB-PARA",
+      "VECT-GEOM-PROB-COLL",
+      "VECT-GEOM-PROB-RATI"
+    ],
+    "actualNodeIds": [
+      "VECT-GEOM-PROB-APPL",
+      "VECT-GEOM-PROB-PARA",
+      "VECT-GEOM-PROB-COLL",
+      "VECT-GEOM-PROB-RATI"
+    ],
+    "passed": true
+  },
+  "files": [
+    {
+      "file": "AQA-7357.json",
+      "touched": true,
+      "sha256": "3369f24e6e03c8171df2f0744258af7b3f49205506c65fc1e43bd51417058a6c"
+    },
+    {
+      "file": "AQA-7367.json",
+      "touched": true,
+      "sha256": "27fb532ea29d89fcdbc1fc912a032ed91d6ccf6456f213b09a6d4317831d179c"
+    },
+    {
+      "file": "AQA-8300.json",
+      "touched": true,
+      "sha256": "630b7f779eaab78219a23dd0ce790439e0876203de6f3558178354dcbb2a0ad0"
+    },
+    {
+      "file": "AQA-8365.json",
+      "touched": true,
+      "sha256": "300fc76e5b95efe0f2e1913871cdc7354ba7cb23454aab03f4260dc2b35e8ae2"
+    },
+    {
+      "file": "CAIE-0580.json",
+      "touched": true,
+      "sha256": "e4c04e0d9b9c14d9a35286cbae4781a0e20d33e71eac6e6150d9b7af69ec0269"
+    },
+    {
+      "file": "CAIE-0606.json",
+      "touched": true,
+      "sha256": "80b0629baf5940b5c0a6894e47463c21a375a4110aca9add9ff254956ca6adcf"
+    },
+    {
+      "file": "CAIE-9231.json",
+      "touched": true,
+      "sha256": "1dc9e8c3db8b4c6e0f282f4bef59acecdc1abc559d11445487f830814c15debe"
+    },
+    {
+      "file": "CAIE-9709.json",
+      "touched": true,
+      "sha256": "4bbb87317a94c3960c0d7025169bb55b0ba6f9e00b0a1a57e3c1102ee173de25"
+    },
+    {
+      "file": "Edexcel-1MA1.json",
+      "touched": true,
+      "sha256": "b4ed36a52a0addc1e1b44319ffc31179368e8645b34ce7758331c8528146ad02"
+    },
+    {
+      "file": "Edexcel-4MA1.json",
+      "touched": true,
+      "sha256": "aebd17baffbbf6c8ba3b4edf3b203e232295c1a0adcb26ff9a6e428e4064223f"
+    },
+    {
+      "file": "Edexcel-4PM1.json",
+      "touched": true,
+      "sha256": "d508507cb2687c4a73a99e822f033135f1301492edbc83b0dc52fce99f55b1fe"
+    },
+    {
+      "file": "Edexcel-8MA0.json",
+      "touched": true,
+      "sha256": "cd95ac6369c3ada9955e00a2772cd6dcc54e15e5cd1b2459386a41af90790359"
+    },
+    {
+      "file": "Edexcel-9FM0.json",
+      "touched": true,
+      "sha256": "b50c25fee49b6b8770b14336eaf5746e820520c941bdfab1874cd7c2b6250d81"
+    },
+    {
+      "file": "Edexcel-9MA0.json",
+      "touched": true,
+      "sha256": "4f43f58558f835f97eb9912fe465ed8a82fcd77236aeab4f6eb46ebd3557ba6e"
+    },
+    {
+      "file": "Edexcel-IAL.json",
+      "touched": true,
+      "sha256": "c33106f67bf17d64377cbcbc86d12b285360c2511c93dab7faa94a4fa0530b35"
+    },
+    {
+      "file": "OCR-6993.json",
+      "touched": true,
+      "sha256": "58548d392e5f11f4a9668a182e410ed158f6fd04621c24e15e10d30c191d8a48"
+    },
+    {
+      "file": "OCR-H240.json",
+      "touched": true,
+      "sha256": "068b9b3a560547668a20d9e1c0655c5fb0d77d25fdcdca588c08888a550e7fb6"
+    },
+    {
+      "file": "OCR-H245.json",
+      "touched": true,
+      "sha256": "02251834d40ff4c74eb1d1508ac5a2ccfd71b030a8853678af949e25ae156b08"
+    },
+    {
+      "file": "OCR-H640.json",
+      "touched": true,
+      "sha256": "8bac5de0e2b88fd6268d7652f70f610b022d152f010445eb00cd869745d86bda"
+    },
+    {
+      "file": "OCR-J560.json",
+      "touched": true,
+      "sha256": "98481ad27b0bc293945c347c47392b364b5ff34daa7adaee9b21b0f8b445c70d"
+    },
+    {
+      "file": "WJEC-3300.json",
+      "touched": true,
+      "sha256": "2058aad68a5835e1c0c3cf3012b8c55594ef80769bf041c9bb097afa48746d05"
+    },
+    {
+      "file": "WJEC-C00-4968-0.json",
+      "touched": true,
+      "sha256": "b49047eb91bba8b95b550c33511ee9e748f4094d1c77821d3a50acfd39df4299"
+    }
+  ],
+  "ownerApprovalGateCorrections": {
+    "unmappedStatementCount": 6,
+    "addedLinkCount": 12,
+    "ontologyAdditionCount": 0,
+    "reviewedLocally": true
+  }
+}

@@ -366,11 +366,15 @@ test("knowledge tree expand all changes the visible node set and restores it", a
 });
 
 test("active Knowledge V5 renders audited overlap and complete exclusive statements", async ({ page }) => {
+  const manifest = JSON.parse(
+    await readFile("public/data/knowledge-v5/manifest.json", "utf8"),
+  ) as { ontologyNodeCount: number };
+
   await page.goto("/#/knowledge-tree?subjectA=CAIE-0580&subjectB=Edexcel-4MA1");
   await waitForPwaControl(page);
 
   await expect(page.locator("main")).toContainText("EXAMBRIDGE v5 知识树驱动");
-  await expect(page.locator("main")).toContainText("1105 节点");
+  await expect(page.locator("main")).toContainText(`${manifest.ontologyNodeCount} 节点`);
   await expect(page.getByRole("heading", { name: "考纲相似度概览" })).toBeVisible();
   await expect(page.getByText(/部分重合陈述：\d+/)).toBeVisible();
   await expect(page.getByLabel("Paper")).toHaveCount(2);

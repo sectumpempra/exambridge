@@ -54,3 +54,13 @@ __pycache__/
 /var/
 /.worktrees/
 /generated/release-provenance.json
+
+# Knowledge V5 concept-accounting review evidence that is reproducible locally.
+# The release branch retains only compact approval/audit evidence. Candidate
+# mappings, model journals and per-request payloads remain in the local archive.
+/generated/knowledge-v5-concept-accounting-audit.json
+/data/candidates/knowledge-v5-concept-accounting-20260723/*
+!/data/candidates/knowledge-v5-concept-accounting-20260723/candidate-audit-report.json
+!/data/candidates/knowledge-v5-concept-accounting-20260723/candidate-batch-report.json
+!/data/candidates/knowledge-v5-concept-accounting-20260723/codex-final-dispositions.json
+!/data/candidates/knowledge-v5-concept-accounting-20260723/aqa-local-review.json

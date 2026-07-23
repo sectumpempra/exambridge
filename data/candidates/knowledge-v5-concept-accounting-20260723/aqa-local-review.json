@@ -1,0 +1,2788 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-23T13:30:02.044Z",
+  "sourceBatch": "knowledge-v5-20260719",
+  "reviewStatus": "codex-reviewed",
+  "provider": "local",
+  "requestedModel": "local",
+  "returnedModel": "local",
+  "externalSourceTransmissionCount": 0,
+  "scope": [
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "assessableStatementCount": 123
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "assessableStatementCount": 229
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "assessableStatementCount": 177
+    },
+    {
+      "qualificationVersionId": "AQA-8365:1.4",
+      "assessableStatementCount": 62
+    }
+  ],
+  "reviewedAssessableStatementCount": 591,
+  "correctedStatementCount": 91,
+  "unchangedReviewedStatementCount": 500,
+  "additionCount": 154,
+  "removalCount": 41,
+  "ontologyAdditions": [
+    {
+      "nodeId": "NUMM-ODE-EULR-EXPL",
+      "parentNodeId": "NUMM-ODE",
+      "name": "Euler Method",
+      "definition": "Approximating a first-order initial-value problem with the explicit Euler update yₙ₊₁ = yₙ + h f(xₙ, yₙ), using one slope evaluation per step.",
+      "aliases": [
+        "ordinary Euler method",
+        "Euler's step-by-step method",
+        "explicit Euler method"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "first-order initial-value problems"
+      ],
+      "inclusions": [
+        "single-slope Euler update",
+        "stepwise numerical solution"
+      ],
+      "exclusions": [
+        "improved Euler method",
+        "modified Euler method",
+        "Runge-Kutta methods"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "The active ontology had only an Improved Euler node whose exclusions explicitly reject ordinary Euler.",
+        "A distinct leaf is required to represent AQA 7367 J2 without a false concept link."
+      ]
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-MODE",
+      "parentNodeId": "PROB-DRVD-DRVB",
+      "name": "Mode of a Discrete Random Variable",
+      "definition": "A value of a discrete random variable having the greatest probability mass; more than one mode may occur.",
+      "aliases": [
+        "mode of a discrete distribution",
+        "modal value of a DRV"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "discrete random variables",
+        "probability mass functions"
+      ],
+      "inclusions": [
+        "identifying a most probable value",
+        "multiple modes"
+      ],
+      "exclusions": [
+        "sample-data mode without a probability model",
+        "continuous density modes"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "The official statement explicitly assesses the mode of a discrete random variable."
+      ]
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-MEDI",
+      "parentNodeId": "PROB-DRVD-DRVB",
+      "name": "Median of a Discrete Random Variable",
+      "definition": "A value locating the 0.5 probability quantile of a discrete random variable, determined from cumulative probability.",
+      "aliases": [
+        "median of a discrete distribution",
+        "DRV median"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "discrete random variables",
+        "cumulative probability"
+      ],
+      "inclusions": [
+        "0.5 quantile",
+        "median from cumulative mass"
+      ],
+      "exclusions": [
+        "sample-data median without a probability model",
+        "continuous-distribution median"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "The official statement explicitly assesses the median of a discrete random variable."
+      ]
+    },
+    {
+      "nodeId": "PROB-DIST-EXPO-MEAN",
+      "parentNodeId": "PROB-DIST",
+      "name": "Exponential Distribution Moments",
+      "definition": "For an exponential distribution with rate λ, the mean is 1/λ and the variance is 1/λ², with standard deviation 1/λ.",
+      "aliases": [
+        "exponential mean and variance",
+        "exponential distribution moments"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "exponential random variables"
+      ],
+      "inclusions": [
+        "E(X) = 1/λ",
+        "Var(X) = 1/λ²",
+        "standard deviation 1/λ"
+      ],
+      "exclusions": [
+        "Poisson moments",
+        "generic continuous moments without the exponential model"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "The active exponential-distribution branch lacked a leaf for its explicit moments."
+      ]
+    }
+  ],
+  "additions": [
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B3",
+      "nodeId": "ALGF-FUNC-GRAP-QUAD",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "quadratic functions and their graphs",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B3",
+      "nodeId": "ALGF-EQN-QUAD-DISC",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the discriminant of a quadratic function",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B6-1",
+      "nodeId": "ALGF-EXP-MANI-EXP2",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "expanding brackets",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B6-1",
+      "nodeId": "ALGF-POLY-POLY-DIVL",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "simple algebraic division",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B6-2",
+      "nodeId": "ALGF-EXP-MANI-AFRA",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Simplify rational expressions",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B6-2",
+      "nodeId": "ALGF-POLY-POLY-DIVL",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "algebraic division",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B9",
+      "nodeId": "ALGF-FUNC-TRAN-VERT",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "y = f(x) + a",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B9",
+      "nodeId": "ALGF-FUNC-TRAN-HORZ",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "y = f(x + a)",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B9",
+      "nodeId": "ALGF-FUNC-TRAN-STRE",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "y = af(x)",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B11",
+      "nodeId": "REAS-MODL-MODL-ASSM",
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "consideration of limitations",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B11",
+      "nodeId": "REAS-MODL-MODL-OUTP",
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "refinements of the models",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B8",
+      "nodeId": "ALGF-FUNC-COMP-INVG",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "inverse functions and their graphs",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-C1-1",
+      "nodeId": "GEOM-COOR-LINE-GENR",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "ax + by + c = 0",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-C1-1",
+      "nodeId": "GEOM-COOR-LINE-PARA",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "gradient conditions for two straight lines to be parallel",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-C1-1",
+      "nodeId": "GEOM-COOR-LINE-PERP",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "or perpendicular",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-C2-1",
+      "nodeId": "GEOM-COOR-CIRC-CENT",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "(x − a)² + (y − b)² = r²",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-C2-1",
+      "nodeId": "GEOM-COOR-CIRC-EXPN",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "equation of a circle",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-C3",
+      "nodeId": "GEOM-PARM-PARM-CART",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "conversion between Cartesian and parametric forms",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-C4",
+      "nodeId": "GEOM-PARM-PARM-MODE",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "parametric equations in modelling",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-D1",
+      "nodeId": "ALGF-SEQ-BINO-POSI",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "binomial expansion of a + bx for positive integer n",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-D1",
+      "nodeId": "ALGF-SEQ-BINO-COEF",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the notations n ! , nCr",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-D1",
+      "nodeId": "ALGF-SEQ-BINO-RATN",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Extend to any rational n",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-D4",
+      "nodeId": "ALGF-SEQ-SEQU-NTH",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the formulae for n th term",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-D4",
+      "nodeId": "ALGF-SEQ-SERS-ARSM",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the sum to n terms",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-D5",
+      "nodeId": "ALGF-SEQ-SERS-GESM",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the sum of a finite geometric series",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-D5",
+      "nodeId": "ALGF-SEQ-SERS-INFI",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the sum to infinity of a convergent geometric series",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-D5",
+      "nodeId": "ALGF-SEQ-SERS-CONV",
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "including the use of r < 1",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E7",
+      "nodeId": "TRIG-IDEN-EQNS-INTR",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "in a given interval",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E7",
+      "nodeId": "TRIG-IDEN-EQNS-QUAD",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "quadratic equations in sin, cos and tan",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E7",
+      "nodeId": "TRIG-IDEN-EQNS-MULT",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "equations involving multiples of the unknown angle",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E2",
+      "nodeId": "TRIG-FUNC-V596C63600",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "standard small angle approximations",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E3-1",
+      "nodeId": "TRIG-FUNC-GRAP-SINE",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sine, cosine and tangent functions; their graphs",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E3-1",
+      "nodeId": "TRIG-FUNC-GRAP-COSN",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sine, cosine and tangent functions; their graphs",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E3-1",
+      "nodeId": "TRIG-FUNC-GRAP-TANG",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sine, cosine and tangent functions; their graphs",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E4",
+      "nodeId": "TRIG-FUNC-ADVN-SECA",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "definitions of secant, cosecant and cotangent",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E4",
+      "nodeId": "TRIG-FUNC-EXCT-INVS",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "arcsin, arccos and arctan",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E4",
+      "nodeId": "TRIG-FUNC-EXCT-INVC",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "arcsin, arccos and arctan",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E4",
+      "nodeId": "TRIG-FUNC-GRAP-V507F313F2",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "understanding of their graphs",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E6-2",
+      "nodeId": "TRIG-IDEN-IDEN-ADDR",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "R cos(θ ± α) or R sin(θ ± α)",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E9",
+      "nodeId": "TRIG-APPL-MODE-VECT",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "problems involving vectors",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E9",
+      "nodeId": "TRIG-APPL-MODE-KINE",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "kinematics",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E9",
+      "nodeId": "TRIG-APPL-MODE-MECH",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "forces",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G1-2",
+      "nodeId": "CALC-DIFF-APPL-V5E12F612D",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "convex and concave sections of curves",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G3-1",
+      "nodeId": "CALC-DIFF-APPL-INFL",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "points of inflection",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G4",
+      "nodeId": "CALC-DIFF-RULE-CHAI",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the chain rule",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G4",
+      "nodeId": "CALC-DIFF-PARI-INVR",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "inverse functions",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-H3",
+      "nodeId": "CALC-INTE-CONC-DEFI",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Evaluate definite integrals",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-H3",
+      "nodeId": "CALC-INTE-APPL-BETW",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the area between two curves",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G2-1",
+      "nodeId": "CALC-DIFF-RULE-POWR",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Differentiate x",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G2-1",
+      "nodeId": "CALC-DIFF-RULE-SUMD",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "constant multiples, sums and differences",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G2-2",
+      "nodeId": "CALC-DIFF-RULE-EXPL",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Differentiate e and a",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G2-2",
+      "nodeId": "CALC-DIFF-RULE-TRIG",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sin kx , cos kx , tan kx",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G2-2",
+      "nodeId": "CALC-DIFF-RULE-SUMD",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sums, differences and constant multiples",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-H2-1",
+      "nodeId": "CALC-INTE-RULE-POWR",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Integrate x",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-H2-1",
+      "nodeId": "CALC-INTE-RULE-V5A76A4288",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sums, differences and constant multiples",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-H2-2",
+      "nodeId": "CALC-INTE-RULE-TRIG",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sin kx , cos kx",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-H2-2",
+      "nodeId": "CALC-INTE-RULE-V5A76A4288",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sums, differences and constant multiples",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-I3",
+      "nodeId": "NUMM-NINT-TRAP-ESTM",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "use of the trapezium rule",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-I3",
+      "nodeId": "NUMM-NINT-TRAP-OVER",
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "limits that it must lie between",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-I4",
+      "nodeId": "REAS-PROB-PSOL-NUMM",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "numerical methods to solve problems in context",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-M2-1",
+      "nodeId": "PROB-COMB-RULE-VENN",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "conditional probability, including the use of tree diagrams, Venn diagrams and two-way tables",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-J3",
+      "nodeId": "VECT-BASIC-NOTN-ADDS",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Add vectors diagrammatically",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-J3",
+      "nodeId": "VECT-BASIC-NOTN-SCAL",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "multiplication by scalars",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-K1-3",
+      "nodeId": "STAT-ENQ-SAMP-V533C8854F",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "opportunity sampling",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-M1-1",
+      "nodeId": "PROB-COMB-RULE-MUTX",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mutually exclusive",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-N1",
+      "nodeId": "PROB-DRVD-DRVB-DIST",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "simple, discrete probability distributions",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-N1",
+      "nodeId": "PROB-DIST-BINO-MODE",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "binomial distribution, as a model",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-N1",
+      "nodeId": "PROB-DIST-BINO-PROB",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "calculate probabilities using the binomial distribution",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-N3",
+      "nodeId": "PROB-DIST-BINO-MODE",
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "binomial or Normal model",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-N3",
+      "nodeId": "REAS-MODL-MODL-ASSM",
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "may not be appropriate",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-O1",
+      "nodeId": "STAT-TEST-HYPO-NULL",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "null hypothesis, alternative hypothesis",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-O1",
+      "nodeId": "STAT-TEST-HYPO-V5D9C52441",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "test statistic",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-O1",
+      "nodeId": "STAT-TEST-HYPO-TAIL",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "1-tail test, 2-tail test",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-O1",
+      "nodeId": "STAT-TEST-HYPO-BINO",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "developed through a binomial model",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-O1",
+      "nodeId": "STAT-TEST-HYPO-V5C70A5551",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "p -value",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-O1",
+      "nodeId": "STAT-TEST-HYPO-V57C82D1FE",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "correlation coefficient using a given p -value or critical value",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-O3",
+      "nodeId": "STAT-TEST-HYPO-MEAN",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "hypothesis test for the mean of a Normal distribution",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-P1-2",
+      "nodeId": "MECH-FURT-SIUN",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "derived quantities and units",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-Q1",
+      "nodeId": "MECH-KIN-LINE-DIST",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "displacement; distance travelled",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-Q1",
+      "nodeId": "MECH-KIN-LINE-SPED",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "velocity; speed",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-Q2",
+      "nodeId": "MECH-KIN-LINE-AREA",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "area under the graph",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-Q3",
+      "nodeId": "MECH-KIN-LINE-CONST",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "formulae for constant acceleration",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-Q5",
+      "nodeId": "MECH-FURT-PROJ-MODEL",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Model motion under gravity",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-Q5",
+      "nodeId": "MECH-FURT-PROJ-HV",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "in a vertical plane using vectors",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-R2",
+      "nodeId": "MECH-FORC-FORC-COMP",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "forces need to be resolved",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-A1",
+      "nodeId": "REAS-PROF-PROF-V534EFC54E",
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mathematical induction",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-A1",
+      "nodeId": "CALC-SER-SUMS-SUMR",
+      "relation": "partial",
+      "assessmentDepth": "proof",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sums of series",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-B6",
+      "nodeId": "ALGF-CPLX-POLAR-MULT",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Multiply and divide complex numbers in modulus-argument form",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-B8",
+      "nodeId": "ALGF-CPLX-DEMO-MULTA",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "multiple angle formulae",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-B8",
+      "nodeId": "ALGF-CPLX-DEMO-SERIES",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sums of series",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-B10",
+      "nodeId": "ALGF-CPLX-ROOT-NTH",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "n distinct nth roots",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-C3",
+      "nodeId": "ALGF-MATR-TRAN-2D",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "linear transformations in 2D",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-C3",
+      "nodeId": "ALGF-MATR-TRAN-3D",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "single transformations in 3D",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-C3",
+      "nodeId": "ALGF-MATR-TRAN-COMP",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "successive transformations",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-C7",
+      "nodeId": "ALGF-MATR-INV-INV",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "by use of the inverse matrix",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-D3",
+      "nodeId": "CALC-SER-SUMS-SUMR",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sums of integers, squares and cubes",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-D7",
+      "nodeId": "CALC-DIFF-CONC-V594B8FC89",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "l'Hôpital's rule",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-D16-1",
+      "nodeId": "ALGF-FUNC-TRAN-VERT",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "transformations of curves involving translations",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-D16-1",
+      "nodeId": "ALGF-FUNC-TRAN-HORZ",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "transformations of curves involving translations",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-D16-1",
+      "nodeId": "ALGF-FUNC-TRAN-STRE",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "stretches parallel to coordinate axes",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-E3",
+      "nodeId": "CALC-FINT-APPL-MEAN",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean value of a function",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-E7",
+      "nodeId": "CALC-FINT-APPL-ARCL",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Arc length",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-E7",
+      "nodeId": "CALC-FINT-APPL-SURF",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "area of surface of revolution",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-F6-3",
+      "nodeId": "VECT-FURT-LINES-DIST",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "perpendicular distance between two lines, from a point to a line and from a point to a plane",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-H1-1",
+      "nodeId": "CALC-HYP-HYP-GRAP",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sketch their graphs",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-J2",
+      "nodeId": "NUMM-ODE-EULR-EXPL",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Euler’s step by step method",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-MD4",
+      "nodeId": "VECT-FURT-V53B72894B",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "position, velocity and acceleration as vectors",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-MD3",
+      "nodeId": "MECH-FURT-CIRC-RACC",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "a = rω² and a = v²/r",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SA3",
+      "nodeId": "PROB-DRVD-DRVB-EXPV",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean, variance, standard deviation, mode and median",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SA3",
+      "nodeId": "PROB-DRVD-DRVB-VARI",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean, variance, standard deviation, mode and median",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SA3",
+      "nodeId": "PROB-DRVD-DRVB-MODE",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean, variance, standard deviation, mode and median",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SA3",
+      "nodeId": "PROB-DRVD-DRVB-MEDI",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean, variance, standard deviation, mode and median",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SA6-2",
+      "nodeId": "PROB-DIST-DUNI-MODE",
+      "relation": "exact",
+      "assessmentDepth": "reasoning",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "this distribution can be used as a model",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SB3-1",
+      "nodeId": "PROB-DIST-POIS-MEAN",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean, variance and standard deviation of a Poisson distribution",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SB3-2",
+      "nodeId": "PROB-DIST-POIS-MEAN",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the mean and variance of X are equal",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SB5",
+      "nodeId": "STAT-TEST-HYPO-POIS",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "hypothesis test of a population mean from a single observation from a Poisson distribution",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SD4-1",
+      "nodeId": "PROB-DIST-CRV-MEAN",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean, variance and standard deviation",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SD4-1",
+      "nodeId": "PROB-DIST-CRV-V5CCD3FE59",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean, variance and standard deviation",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SD7-3",
+      "nodeId": "PROB-DIST-CUNI-MODE",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "rectangular distribution",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SD7-4",
+      "nodeId": "PROB-DIST-CRV-MEAN",
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean, variance and standard deviation",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SD7-4",
+      "nodeId": "PROB-DIST-CRV-V5CCD3FE59",
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean, variance and standard deviation",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SE2",
+      "nodeId": "STAT-INF2-CHISQ-INDEP",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "χ² statistic with appropriate degrees of freedom",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SE4",
+      "nodeId": "STAT-INF2-CHISQ-INDEP",
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "sources of association",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SG1",
+      "nodeId": "STAT-INF2-TDIST-TTEST",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean of a normal distribution with unknown variance using a t -statistic",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SH1",
+      "nodeId": "STAT-EST-ESTI-V516B7E1E1",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean of a normal distribution with known variance",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SH2",
+      "nodeId": "STAT-EST-ESTI-V59EB54818",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "large samples, for the mean of a normal distribution with unknown variance",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SH4",
+      "nodeId": "STAT-INF2-TDIST-TCI",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "small samples, for the mean of a normal distribution with unknown variance using the t -distribution",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SF3",
+      "nodeId": "PROB-DIST-EXPO-MEAN",
+      "relation": "exact",
+      "assessmentDepth": "proof",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "mean, variance and standard deviation for an exponential distribution",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-DE5",
+      "nodeId": "DISC-PROJ-PROJ-GANT",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "Gantt (cascade) diagrams",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-DE5",
+      "nodeId": "DISC-PROJ-PROJ-RESL",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "resource histograms",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SF1-2",
+      "nodeId": "PROB-DIST-CRV-CDF",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "cumulative distribution function",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-N2-1",
+      "nodeId": "NUM-FRAC-PERC-V58658A972",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "evidenceField": "notesText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "profit, loss, cost price, selling price",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-N2-1",
+      "nodeId": "NUM-OPS-CALC-NEG",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "all both positive and negative",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-N4",
+      "nodeId": "NUM-SYS-TYPE-V58BC171E6",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "prime factorisation",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-N4",
+      "nodeId": "NUM-SYS-TYPE-V5B20CA634",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "highest common factor, lowest common multiple",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-A10",
+      "nodeId": "ALGF-FUNC-GRAP-INTR",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "intercepts of linear functions",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-A15",
+      "nodeId": "MECH-KIN-LINE-V54E69BE35",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "distance-time graphs",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-R9-6",
+      "nodeId": "NUM-FRAC-PERC-V5D5A83EE4",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "original value problems",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-R9-6",
+      "nodeId": "NUM-FRAC-PERC-V545BCC9BB",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "simple interest",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-G1-1",
+      "nodeId": "GEOM-SHAP-TERM-V58A928C3B",
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "points",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-G1-1",
+      "nodeId": "GEOM-SHAP-TERM-V5B7688C92",
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "lines",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-G1-1",
+      "nodeId": "GEOM-SHAP-TERM-V5C1785CC8",
+      "relation": "partial",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "planes",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-G1-1",
+      "nodeId": "GEOM-SHAP-TERM-V559481376",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "parallel lines",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-G1-1",
+      "nodeId": "GEOM-SHAP-TERM-V52BA22A95",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "perpendicular lines",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-G4",
+      "nodeId": "GEOM-SHAP-ANGL-ISOS",
+      "relation": "partial",
+      "assessmentDepth": "application",
+      "evidenceField": "notesText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "properties of isosceles",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-G2-1",
+      "nodeId": "GEOM-CONS-CONS-V5A323E847",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "constructing a perpendicular to a given line from/at a given point",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-G6",
+      "nodeId": "GEOM-SHAP-SIMI-CRIT",
+      "relation": "partial",
+      "assessmentDepth": "reasoning",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "triangle congruence, similarity",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-P1",
+      "nodeId": "PROB-BASIC-V535A32E23",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "frequency trees",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-S6-2",
+      "nodeId": "STAT-BIVA-CORR-ZEROC",
+      "relation": "exact",
+      "assessmentDepth": "knowledge",
+      "evidenceField": "notesText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "no correlation",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8365:1.4",
+      "statementId": "AQA-8365-2.7",
+      "nodeId": "ALGF-SEQ-BINO-PASC",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "examplesText",
+      "evidenceIndex": 1,
+      "evidenceSpan": "Pascal’s triangle",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8365:1.4",
+      "statementId": "AQA-8365-3.7",
+      "nodeId": "GEOM-SHAP-CITH-SEMI",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "notesText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the angle in a semi-circle is 90°",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8365:1.4",
+      "statementId": "AQA-8365-3.7",
+      "nodeId": "GEOM-SHAP-CITH-CHOR",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "notesText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the perpendicular from the centre to a chord bisects the chord",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8365:1.4",
+      "statementId": "AQA-8365-3.7",
+      "nodeId": "GEOM-SHAP-CITH-TANG",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "notesText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "the angle between tangent and radius is 90o",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    },
+    {
+      "qualificationVersionId": "AQA-8365:1.4",
+      "statementId": "AQA-8365-6.10",
+      "nodeId": "TRIG-IDEN-EQNS-INTR",
+      "relation": "exact",
+      "assessmentDepth": "application",
+      "evidenceField": "statementText",
+      "evidenceIndex": 0,
+      "evidenceSpan": "in given intervals",
+      "reviewStatus": "codex-reviewed",
+      "reviewNotes": [
+        "AQA source was reviewed locally; no official wording was sent to an external model.",
+        "The cited source span explicitly assesses the canonical leaf concept."
+      ]
+    }
+  ],
+  "removals": [
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B9",
+      "nodeId": "PROB-COMB-COUNT-COMB",
+      "reason": "Function-graph transformations are unrelated to counting combinations.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-B11",
+      "nodeId": "ALGF-LOG-EXPO-MODE",
+      "reason": "The statement concerns generic function modelling, not specifically exponential models.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-E2",
+      "nodeId": "TRIG-IDEN-IDEN-PYTH",
+      "reason": "Small-angle approximations are not the Pythagorean trigonometric identity.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G2-1",
+      "nodeId": "CALC-INTE-RULE-EXPL",
+      "reason": "The statement assesses differentiation of powers, not integration of exponentials.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-G2-2",
+      "nodeId": "CALC-INTE-RULE-EXPL",
+      "reason": "The statement assesses differentiation of exponentials and trigonometric functions, not integration.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-H2-1",
+      "nodeId": "CALC-INTE-RULE-EXPL",
+      "reason": "The statement assesses integration of powers, not integration of exponentials.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-I4",
+      "nodeId": "NUM-RAT-RATI-PROP",
+      "reason": "Contextual numerical methods are not a ratio-and-proportion concept.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-H5",
+      "nodeId": "CALC-FINT-FINT-REDU",
+      "reason": "The official statement explicitly excludes reduction formulae.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-M2-1",
+      "nodeId": "NUM-SYS-SET-VENN",
+      "reason": "The statement assesses Venn diagrams for conditional probability events, not Venn diagrams as an abstract set-theory topic.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-J3",
+      "nodeId": "MECH-FORC-FORC-VECN",
+      "reason": "The statement assesses general vector addition and scalar multiplication, not force-vector notation.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-N1",
+      "nodeId": "STAT-SUMM-CENT-MEAN",
+      "reason": "The statement explicitly excludes calculation of the mean and variance of discrete random variables.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-O3",
+      "nodeId": "STAT-SUMM-CENT-MEAN",
+      "reason": "The statement assesses a hypothesis test for a population mean, not calculation of a descriptive mean.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-P1-2",
+      "nodeId": "MECH-KIN-LINE-ACCL",
+      "reason": "The statement concerns derived quantities and their SI units rather than rectilinear acceleration as a motion concept.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7357:1.3",
+      "statementId": "AQA-7357-Q5",
+      "nodeId": "MECH-DYN-NEWT-VERT",
+      "reason": "The statement assesses projectile kinematics under gravity, not Newton-law dynamics in a vertical line.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-B6",
+      "nodeId": "ALGF-CPLX-POLAR-CONV",
+      "reason": "The statement assesses multiplication and division in modulus-argument form, not conversion between Cartesian and polar forms.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-C3",
+      "nodeId": "GEOM-CONS-TRAN-COMB",
+      "reason": "The official statement assesses matrix representations of linear transformations, not elementary geometric construction transformations.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-D3",
+      "nodeId": "NUM-SYS-TYPE-INTG",
+      "reason": "The statement assesses closed-form sums of powers, not the classification of integers.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-D16-1",
+      "nodeId": "GEOM-CONS-TRAN-REFL",
+      "reason": "The statement concerns transformations of function curves, not geometric reflection constructions.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-D16-1",
+      "nodeId": "GEOM-CONS-TRAN-TRAN",
+      "reason": "The statement concerns transformations of function curves, not geometric translation constructions.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-E3",
+      "nodeId": "STAT-SUMM-CENT-MEAN",
+      "reason": "The statement concerns the integral average value of a function, not a descriptive-statistics arithmetic mean.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-E7",
+      "nodeId": "GEOM-MENS-CIRC-ARCL",
+      "reason": "The statement concerns the calculus arc-length functional for general curves, not the length of a circular arc.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-F6-3",
+      "nodeId": "GEOM-CONS-CONS-PDST",
+      "reason": "The statement concerns vector distances among lines, points and planes in three dimensions, not only the elementary planar point-to-line construction.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-J2",
+      "nodeId": "NUMM-ODE-EULR-IMPR",
+      "reason": "The official statement specifies ordinary Euler's step-by-step method; the current node explicitly excludes ordinary Euler and represents improved Euler.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-MD4",
+      "nodeId": "MECH-KIN-LINE-ACCL",
+      "reason": "The statement assesses vector kinematics in circular motion, not scalar acceleration in rectilinear motion.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-MD3",
+      "nodeId": "MECH-KIN-LINE-ACCL",
+      "reason": "The acceleration formulae are radial acceleration in circular motion, not general rectilinear acceleration.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SA3",
+      "nodeId": "STAT-SUMM-CENT-STDV",
+      "reason": "The statement assesses moments and location measures of a discrete random variable, not a descriptive-data standard deviation node.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SA6-2",
+      "nodeId": "PROB-DIST-NORM-MODE",
+      "reason": "In context, “this distribution” refers to the discrete uniform distribution in the immediately preceding statement, not the Normal distribution.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SB3-1",
+      "nodeId": "STAT-SUMM-CENT-STDV",
+      "reason": "The statement assesses the parameter-derived moments of the Poisson distribution, not generic descriptive standard deviation.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SB3-2",
+      "nodeId": "STAT-SUMM-CENT-MEAN",
+      "reason": "The statement assesses the Poisson identity E(X)=Var(X)=λ, not generic descriptive mean.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SD4-1",
+      "nodeId": "STAT-SUMM-CENT-STDV",
+      "reason": "The statement assesses moments derived from a continuous density, not generic descriptive standard deviation.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SD7-4",
+      "nodeId": "STAT-SUMM-CENT-STDV",
+      "reason": "The statement assesses proofs of the continuous-uniform moments, not generic descriptive standard deviation.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SE2",
+      "nodeId": "STAT-INF2-TDIST-TWO",
+      "reason": "A chi-squared association statistic is unrelated to a two-sample t procedure.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SE4",
+      "nodeId": "STAT-BIVA-CORR-INTR",
+      "reason": "Interpreting cells that drive a chi-squared association is not interpretation of a correlation coefficient.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SG1",
+      "nodeId": "STAT-INF2-TDIST-TWO",
+      "reason": "The official statement specifies a one-sample t test for a population mean, not a two-sample t procedure.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SH1",
+      "nodeId": "STAT-SUMM-CENT-MEAN",
+      "reason": "The statement assesses a confidence interval for a population mean with known variance, not descriptive mean.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SH2",
+      "nodeId": "STAT-SUMM-CENT-MEAN",
+      "reason": "The statement assesses a large-sample confidence interval for a population mean, not descriptive mean.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SH4",
+      "nodeId": "STAT-SUMM-CENT-MEAN",
+      "reason": "The statement assesses a t confidence interval for a population mean, not descriptive mean.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-SF3",
+      "nodeId": "STAT-SUMM-CENT-STDV",
+      "reason": "The statement assesses distribution-specific exponential moments, not generic descriptive standard deviation.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-7367:1.1",
+      "statementId": "AQA-7367-DE5",
+      "nodeId": "STAT-DATA-REPR-HIST",
+      "reason": "A resource histogram in project scheduling is not a statistical frequency histogram.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-A15",
+      "nodeId": "MECH-KIN-LINE-STGR",
+      "reason": "The official statement names distance-time graphs, while this node explicitly represents displacement-time graphs.",
+      "reviewStatus": "codex-reviewed"
+    },
+    {
+      "qualificationVersionId": "AQA-8300:1.0",
+      "statementId": "AQA-8300-P1",
+      "nodeId": "PROB-COMB-RULE-TREE",
+      "reason": "The official statement names frequency trees, while this node explicitly excludes frequency trees and represents probability trees.",
+      "reviewStatus": "codex-reviewed"
+    }
+  ],
+  "unresolved": [],
+  "methodology": [
+    "All AQA statements remained local and were not sent to Kimi, DeepSeek, OpenAI, or another external model.",
+    "The local review compared atomic statementText, notesText, and examplesText against comparison-eligible ontology leaves.",
+    "Only corrections with an exact source substring and an explicit ontology scope match are proposed."
+  ]
+}

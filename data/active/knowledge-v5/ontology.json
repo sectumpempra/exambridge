@@ -1,8 +1,8 @@
 {
   "schemaVersion": "5.0.0",
-  "treeVersion": "5.0.0-candidate.15",
-  "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-  "generatedAt": "2026-07-20",
+  "treeVersion": "5.0.0-owner-approved.20260723",
+  "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+  "generatedAt": "2026-07-23",
   "reviewStatus": "owner-approved",
   "nodes": [
     {
@@ -25009,6 +25009,759 @@
       ],
       "exclusions": [
         "sampling-frame bias"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "NUMM-ODE-EULR-EXPL",
+      "definition": "Approximating a first-order initial-value problem with the explicit Euler update yₙ₊₁ = yₙ + h f(xₙ, yₙ), using one slope evaluation per step.",
+      "aliases": [
+        "ordinary Euler method",
+        "Euler's step-by-step method",
+        "explicit Euler method"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "first-order initial-value problems"
+      ],
+      "inclusions": [
+        "single-slope Euler update",
+        "stepwise numerical solution"
+      ],
+      "exclusions": [
+        "improved Euler method",
+        "modified Euler method",
+        "Runge-Kutta methods"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-MODE",
+      "definition": "A value of a discrete random variable having the greatest probability mass; more than one mode may occur.",
+      "aliases": [
+        "mode of a discrete distribution",
+        "modal value of a DRV"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "discrete random variables",
+        "probability mass functions"
+      ],
+      "inclusions": [
+        "identifying a most probable value",
+        "multiple modes"
+      ],
+      "exclusions": [
+        "sample-data mode without a probability model",
+        "continuous density modes"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-MEDI",
+      "definition": "A value locating the 0.5 probability quantile of a discrete random variable, determined from cumulative probability.",
+      "aliases": [
+        "median of a discrete distribution",
+        "DRV median"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "discrete random variables",
+        "cumulative probability"
+      ],
+      "inclusions": [
+        "0.5 quantile",
+        "median from cumulative mass"
+      ],
+      "exclusions": [
+        "sample-data median without a probability model",
+        "continuous-distribution median"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "PROB-DIST-EXPO-MEAN",
+      "definition": "For an exponential distribution with rate λ, the mean is 1/λ and the variance is 1/λ², with standard deviation 1/λ.",
+      "aliases": [
+        "exponential mean and variance",
+        "exponential distribution moments"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "exponential random variables"
+      ],
+      "inclusions": [
+        "E(X) = 1/λ",
+        "Var(X) = 1/λ²",
+        "standard deviation 1/λ"
+      ],
+      "exclusions": [
+        "Poisson moments",
+        "generic continuous moments without the exponential model"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM-VERT",
+      "definition": "A corner point at which two or more sides, edges or rays of a geometric figure meet.",
+      "aliases": [
+        "geometric vertex",
+        "corner"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "2D figures",
+        "3D solids"
+      ],
+      "inclusions": [
+        "vertices of polygons",
+        "vertices of solids"
+      ],
+      "exclusions": [
+        "vertex of a network graph",
+        "turning point of a function graph"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-CUBS",
+      "definition": "Recognising and using the rotational or point symmetry of a cubic function graph about its point of inflection.",
+      "aliases": [
+        "cubic graph symmetry",
+        "point symmetry of a cubic"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "2D cubic function graphs"
+      ],
+      "inclusions": [
+        "centre of rotational symmetry"
+      ],
+      "exclusions": [
+        "line symmetry of quadratic graphs"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-MODX",
+      "definition": "Constructing and interpreting y=f(|x|) by reflecting the non-negative-x part of y=f(x) in the y-axis.",
+      "aliases": [
+        "input modulus graph",
+        "graph of f absolute x"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "2D function graphs"
+      ],
+      "inclusions": [
+        "even symmetry created by replacing x with |x|"
+      ],
+      "exclusions": [
+        "graphs of y=|f(x)|"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-VARI",
+      "definition": "The mean squared deviation of data values from their mean, used as a measure of dispersion before taking its square root for standard deviation.",
+      "aliases": [
+        "data variance",
+        "measure of variance"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "raw data",
+        "grouped data"
+      ],
+      "inclusions": [
+        "population variance",
+        "sample descriptive variance"
+      ],
+      "exclusions": [
+        "variance of an abstract random variable",
+        "standard deviation"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SEQU-SEC2",
+      "definition": "Solving second-order linear recurrence relations with constant coefficients by an auxiliary equation, complementary function and particular solution.",
+      "aliases": [
+        "second-order difference equations",
+        "order-two recurrences"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "homogeneous recurrences",
+        "non-homogeneous recurrences"
+      ],
+      "inclusions": [
+        "distinct, repeated and complex auxiliary roots"
+      ],
+      "exclusions": [
+        "first-order recurrences",
+        "continuous differential equations"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS-ARPF",
+      "definition": "Deriving the finite arithmetic-series sum formula rather than only substituting values into it.",
+      "aliases": [
+        "proof of arithmetic progression sum"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "finite arithmetic series"
+      ],
+      "inclusions": [
+        "pairing first and last terms"
+      ],
+      "exclusions": [
+        "using the formula without proof"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS-GEPF",
+      "definition": "Deriving the finite geometric-series sum formula by multiplying by the common ratio and subtracting.",
+      "aliases": [
+        "proof of geometric progression sum"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "finite geometric series"
+      ],
+      "inclusions": [
+        "derivation of the finite sum formula"
+      ],
+      "exclusions": [
+        "sum to infinity",
+        "using the formula without proof"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-CDF",
+      "definition": "For a discrete random variable, F(x)=P(X≤x), found by summing its probability mass function over values not exceeding x.",
+      "aliases": [
+        "discrete CDF"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "discrete random variables"
+      ],
+      "inclusions": [
+        "cumulative probabilities from a probability table"
+      ],
+      "exclusions": [
+        "continuous CDF obtained from a density"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "STAT-ENQ-SAMP-CLUS",
+      "definition": "Dividing a population into natural groups, selecting one or more whole groups, and sampling members from the selected clusters.",
+      "aliases": [
+        "cluster sample"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "survey populations"
+      ],
+      "inclusions": [
+        "selection by naturally occurring groups"
+      ],
+      "exclusions": [
+        "stratified sampling from every stratum"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-DOTP",
+      "definition": "A statistical display placing one dot for each observation above its value on a number line so frequencies appear as vertical stacks.",
+      "aliases": [
+        "dot diagram"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "single-variable numerical data"
+      ],
+      "inclusions": [
+        "interpreting distribution shape and frequency"
+      ],
+      "exclusions": [
+        "scatter diagrams",
+        "pictograms"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN-SVEC",
+      "definition": "Distinguishing a scalar, which has magnitude only, from a vector, which has both magnitude and direction.",
+      "aliases": [
+        "scalar versus vector"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "quantities",
+        "vector notation"
+      ],
+      "inclusions": [
+        "classifying quantities as scalar or vector"
+      ],
+      "exclusions": [
+        "scalar multiplication of a vector"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-CONP",
+      "definition": "Applying equilibrium conditions to particles connected by strings or smooth pulleys when the acceleration of each particle is zero.",
+      "aliases": [
+        "connected particles in equilibrium"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "particles",
+        "strings",
+        "smooth pulleys"
+      ],
+      "inclusions": [
+        "common tension under ideal-string assumptions"
+      ],
+      "exclusions": [
+        "connected particles with non-zero common acceleration"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE-COMP",
+      "definition": "Natural numbers greater than 1 that have more than two positive factors and therefore are not prime.",
+      "aliases": [
+        "composite integer"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "positive integers"
+      ],
+      "inclusions": [
+        "classification by factor count"
+      ],
+      "exclusions": [
+        "prime numbers",
+        "the number 1"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-ATGR",
+      "definition": "Drawing and interpreting acceleration against time for straight-line motion, including the physical meaning of its values and area where appropriate.",
+      "aliases": [
+        "acceleration-time graph"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "straight-line kinematics"
+      ],
+      "inclusions": [
+        "constant and variable acceleration"
+      ],
+      "exclusions": [
+        "velocity-time graphs",
+        "displacement-time graphs"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ-INCL",
+      "definition": "Determining the range of a projectile measured to its intersection with an inclined plane and identifying conditions for maximum range.",
+      "aliases": [
+        "inclined-plane projectile range"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "projectile motion",
+        "inclined planes"
+      ],
+      "inclusions": [
+        "maximum range on an inclined plane"
+      ],
+      "exclusions": [
+        "horizontal-plane range only"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ-BPAR",
+      "definition": "The envelope parabola that bounds all projectile trajectories launched from a fixed point with a fixed initial speed.",
+      "aliases": [
+        "projectile safety parabola",
+        "bounding parabola"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "families of projectile trajectories"
+      ],
+      "inclusions": [
+        "derivation or use of the envelope"
+      ],
+      "exclusions": [
+        "one projectile trajectory"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "MECH-GRAV-INVS",
+      "definition": "Gravitational force or field strength varies inversely with the square of distance from the attracting mass.",
+      "aliases": [
+        "inverse square gravitation"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "point masses",
+        "spherically symmetric bodies"
+      ],
+      "inclusions": [
+        "1/r² dependence"
+      ],
+      "exclusions": [
+        "constant-g approximation near Earth's surface"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-AFRI",
+      "definition": "The angle between the resultant contact force and the normal reaction at limiting equilibrium, satisfying tan φ=μ.",
+      "aliases": [
+        "friction angle"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "rough contact",
+        "limiting equilibrium"
+      ],
+      "inclusions": [
+        "relation between angle of friction and coefficient of friction"
+      ],
+      "exclusions": [
+        "angle of repose unless derived under its conditions"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "MECH-FURT-RIGD-VMOM",
+      "definition": "Representing the moment of a force about a point or axis by the vector cross product r×F and interpreting its direction.",
+      "aliases": [
+        "vector torque"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "2D or 3D force systems"
+      ],
+      "inclusions": [
+        "cross-product treatment of moments"
+      ],
+      "exclusions": [
+        "scalar force times perpendicular distance only"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM-DGNL",
+      "definition": "A line segment joining two non-adjacent vertices of a polygon, or corresponding non-adjacent vertices of a solid.",
+      "aliases": [
+        "geometric diagonal"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "polygons",
+        "polyhedra"
+      ],
+      "inclusions": [
+        "quadrilateral diagonals"
+      ],
+      "exclusions": [
+        "diagonal entries of a matrix",
+        "sloping lines generally"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL-RGHT",
+      "definition": "A right-angled triangle has one 90-degree angle, so its other two interior angles are complementary.",
+      "aliases": [
+        "right-triangle angle facts"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "plane right-angled triangles"
+      ],
+      "inclusions": [
+        "two acute angles sum to 90 degrees"
+      ],
+      "exclusions": [
+        "Pythagoras",
+        "right-angle trigonometry"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL-EQUI",
+      "definition": "Every interior angle of a plane equilateral triangle is 60 degrees.",
+      "aliases": [
+        "equilateral-triangle angle facts"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "plane equilateral triangles"
+      ],
+      "inclusions": [
+        "three equal 60-degree angles"
+      ],
+      "exclusions": [
+        "equal sides without angle reasoning"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "ALGF-LOG-LOGR-INEQ",
+      "definition": "Using logarithms and monotonicity to solve inequalities in which the unknown occurs in an exponent or logarithm.",
+      "aliases": [
+        "exponential inequalities",
+        "logarithmic inequalities"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "real exponential functions",
+        "real logarithms"
+      ],
+      "inclusions": [
+        "inequalities such as 2^x<5"
+      ],
+      "exclusions": [
+        "exponential equations",
+        "generic polynomial inequalities"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "ALGF-EQN-QUAD-SOLV",
+      "definition": "Solving a quadratic equation when no single method is prescribed, selecting factorisation, completing the square, the quadratic formula or another valid method.",
+      "aliases": [
+        "general quadratic solving"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "one-variable quadratic equations"
+      ],
+      "inclusions": [
+        "method selection"
+      ],
+      "exclusions": [
+        "forming a quadratic equation without solving it"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "ALGF-POLY-PART-CUBC",
+      "definition": "Decomposing an algebraic fraction when a cubic denominator factor is left unfactorised over the coefficient domain used by the qualification.",
+      "aliases": [
+        "irreducible cubic partial fractions"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "rational functions"
+      ],
+      "inclusions": [
+        "linear numerator over an unfactorised cubic factor where required"
+      ],
+      "exclusions": [
+        "distinct linear factors",
+        "irreducible quadratic factors"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-DERI",
+      "definition": "Deriving the standard constant-acceleration equations from velocity definitions, averages or integration, rather than only applying them.",
+      "aliases": [
+        "derivation of SUVAT"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "straight-line constant acceleration"
+      ],
+      "inclusions": [
+        "deriving v=u+at and related equations"
+      ],
+      "exclusions": [
+        "formula substitution without derivation"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE-PARI",
+      "definition": "Classifying integers by parity: even integers are divisible by 2 and odd integers leave remainder 1 in absolute parity terms.",
+      "aliases": [
+        "parity",
+        "odd and even numbers"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "integers"
+      ],
+      "inclusions": [
+        "odd/even properties"
+      ],
+      "exclusions": [
+        "prime/composite classification"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "ALGF-MATR-EIG-POWR",
+      "definition": "Computing integer powers A^n from a diagonalisation A=QDQ⁻¹ by using A^n=QD^nQ⁻¹.",
+      "aliases": [
+        "powers via diagonalisation"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "diagonalisable square matrices"
+      ],
+      "inclusions": [
+        "2x2 and 3x3 matrix powers"
+      ],
+      "exclusions": [
+        "Cayley-Hamilton reduction"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "CALC-HYP-HYP-EQNS",
+      "definition": "Solving equations involving hyperbolic functions by exponential definitions, identities or inverse hyperbolic functions.",
+      "aliases": [
+        "solving hyperbolic equations"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "real hyperbolic functions"
+      ],
+      "inclusions": [
+        "a cosh x + b sinh x = c"
+      ],
+      "exclusions": [
+        "ordinary trigonometric equations"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "STAT-BIVA-CORR-LINZ",
+      "definition": "Applying a change of variable to turn a power or exponential relationship into a straight-line form so model parameters can be estimated.",
+      "aliases": [
+        "linearisation by variable transformation"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "bivariate data",
+        "power models",
+        "exponential models"
+      ],
+      "inclusions": [
+        "linearising y=ax^n or y=kb^x"
+      ],
+      "exclusions": [
+        "ordinary least-squares calculation",
+        "linear data already in straight-line form"
+      ],
+      "semanticClass": "mathematical-knowledge",
+      "comparisonEligible": true,
+      "reviewStatus": "owner-approved"
+    },
+    {
+      "nodeId": "NUM-MOD-CONG-SIMU",
+      "definition": "Solving two or more linear congruences for a common integer solution, with the Chinese remainder theorem available when its conditions apply.",
+      "aliases": [
+        "simultaneous modular equations"
+      ],
+      "dimension": "not-applicable",
+      "objectScopes": [
+        "integer congruences"
+      ],
+      "inclusions": [
+        "ax congruent to b modulo n",
+        "Chinese remainder theorem"
+      ],
+      "exclusions": [
+        "simultaneous real linear equations"
       ],
       "semanticClass": "mathematical-knowledge",
       "comparisonEligible": true,
