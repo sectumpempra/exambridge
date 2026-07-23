@@ -28,6 +28,11 @@ import {
 import { buildAcademicToolContext, type AcademicToolContext } from "./academic-tools";
 import { resolveApprovedQualificationAliases, resolveCatalogQualificationMentions } from "./qualification-resolver";
 import { detectRequiredInputClarification } from "./required-input-resolver";
+import {
+  buildUniversityAdmissionsToolContext,
+  universityAdmissionsSourceMap,
+  type UniversityAdmissionsToolContext,
+} from "./university-admissions-tools";
 
 type KnowledgeManifestEntry = {
   code: string;
@@ -75,6 +80,7 @@ export type AIContextBuildResult = {
   clarificationChoices?: AIClarification;
   localAnswer?: string;
   academicTools?: AcademicToolContext;
+  universityAdmissionsTools?: UniversityAdmissionsToolContext;
   containsAqa: boolean;
   externalSearchIdentity?: { board: string; qualificationCode: string };
 };
@@ -240,6 +246,38 @@ function remapAcademicSourceIds(
     return Object.fromEntries(Object.entries(item).map(([childKey, child]) => [childKey, walk(child, childKey)]));
   };
   return walk(value);
+}
+
+function remapUniversityAdmissionsSourceIds(
+  value: UniversityAdmissionsToolContext,
+  sources: SourceRegistry,
+): UniversityAdmissionsToolContext {
+  const sourceMap = universityAdmissionsSourceMap();
+  const citationMap = new Map<string, string>();
+  const citationFor = (sourceId: string) => {
+    const cached = citationMap.get(sourceId);
+    if (cached) return cached;
+    const source = sourceMap.get(sourceId);
+    if (!source) return undefined;
+    const citationId = sources.add({
+      title: source.title,
+      url: source.finalUrl || source.url,
+      dataVersion: `${source.publishedOrUpdatedAt ?? source.accessedAt} · ${source.locator}`,
+    });
+    citationMap.set(sourceId, citationId);
+    return citationId;
+  };
+  const walk = (item: unknown, key?: string): unknown => {
+    if (Array.isArray(item)) {
+      if (key === "sourceIds") return item
+        .map(sourceId => typeof sourceId === "string" ? citationFor(sourceId) : undefined)
+        .filter(Boolean);
+      return item.map(child => walk(child));
+    }
+    if (!item || typeof item !== "object") return item;
+    return Object.fromEntries(Object.entries(item).map(([childKey, child]) => [childKey, walk(child, childKey)]));
+  };
+  return walk(value) as UniversityAdmissionsToolContext;
 }
 
 function buildLocalAqaAnswer(
@@ -843,8 +881,9 @@ export class AIContextBuilder {
   async build(request: AIChatRequest): Promise<AIContextBuildResult> {
     const manifest = await this.loadManifest();
     const academicManifest = await this.loadAcademicManifest();
+    const rawUniversityAdmissions = buildUniversityAdmissionsToolContext(request);
     const catalogResolution = resolveCatalogQualificationMentions(latestUserMessage(request), COURSE_CATALOG, request.locale);
-    if (catalogResolution.ambiguity) {
+    if (catalogResolution.ambiguity && !rawUniversityAdmissions) {
       const matched = catalogResolution.matchedCourses;
       return {
         promptContext: "{}",
@@ -897,6 +936,9 @@ export class AIContextBuilder {
     const academic = rawAcademic
       ? remapAcademicSourceIds(rawAcademic, academicManifest, sources) as AcademicToolContext
       : undefined;
+    const universityAdmissions = rawUniversityAdmissions
+      ? remapUniversityAdmissionsSourceIds(rawUniversityAdmissions, sources)
+      : undefined;
 
     const resolvedContext: AIResolvedContext = {
       awardQualificationIds: [...new Set([
@@ -929,7 +971,8 @@ export class AIContextBuilder {
     }
 
     const hasVerifiedAcademicContext = academic?.calls.some(call => call.status === "ok") === true;
-    if (catalogFacts.length === 0 && overviews.length === 0 && !knowledge && !hasVerifiedAcademicContext) {
+    const hasUniversityAdmissionsContext = Boolean(universityAdmissions);
+    if (catalogFacts.length === 0 && overviews.length === 0 && !knowledge && !hasVerifiedAcademicContext && !hasUniversityAdmissionsContext) {
       return {
         promptContext: "{}",
         sources: [],
@@ -950,6 +993,7 @@ export class AIContextBuilder {
       deterministicPaperFacts: paperFacts,
       knowledge,
       academicResults: academic,
+      universityAdmissions,
     });
     let payload = serializePayload();
     if (payload.length > MAX_PROMPT_CONTEXT_CHARACTERS && isComparisonPromptContext(knowledge)) {
@@ -988,6 +1032,7 @@ export class AIContextBuilder {
           : buildLocalAqaAnswer(request.locale, knowledge, academic, sourceList, aqaOriginalTextDetected),
       } : {}),
       academicTools: academic,
+      universityAdmissionsTools: universityAdmissions,
       containsAqa: containsAqaCourse || aqaEntries.length > 0 || academic?.containsAqa === true,
       ...(knowledgeEntries.length === 1 && aqaEntries.length === 0 ? {
         externalSearchIdentity: { board: knowledgeEntries[0].board, qualificationCode: knowledgeEntries[0].subjectCode },

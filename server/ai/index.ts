@@ -222,7 +222,8 @@ async function handleChat(
     }
     const externalSearchEnabled = request.featureConsent?.externalSearch?.enabled === true;
     const externalSearchRequested = /(联网|实时|搜索|查找|最新|web\s*search|search\s*online)/i.test(latestUserMessage(request));
-    const internalDataMissing = context.academicTools?.calls.some(call => call.status === "data-unavailable") === true;
+    const internalDataMissing = context.academicTools?.calls.some(call => call.status === "data-unavailable") === true
+      || context.universityAdmissionsTools?.calls.some(call => call.status === "data-unavailable") === true;
     if (
       externalSearchEnabled
       && !context.containsAqa
@@ -312,7 +313,9 @@ async function handleChat(
     sendEvent(res, { type: "citations", citations });
     sendEvent(res, {
       type: "suggestions",
-      suggestions: request.pageContext.pageType === "knowledge-comparison"
+      suggestions: context.universityAdmissionsTools
+        ? ["核对必修科目与等级", "说明入学考试要求", "比较另一所大学的同类专业"]
+        : request.pageContext.pageType === "knowledge-comparison"
         ? ["解释方向性覆盖率", "列出最重要的独有内容", "用家长容易理解的方式总结"]
         : ["说明各张 Paper 的区别", "解释计算器规则", "用家长容易理解的方式总结"],
     });

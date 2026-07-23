@@ -12,7 +12,7 @@ import { enforceDeterministicPaperFacts } from "../server/ai/answer-grounding";
 import { AnonymousAIRateLimiter } from "../server/ai/rate-limit";
 import { AIServiceGuard, createAIServiceGuardFromEnv } from "../server/ai/service-guard";
 import { AIProviderError, DeepSeekChatProvider, ensureAnswerCitations, hydrateCitations } from "../server/ai/provider";
-import { isComplexAIQuestion } from "../server/ai/prompt";
+import { buildAISystemPrompt, isComplexAIQuestion } from "../server/ai/prompt";
 import { createAIHttpServer, type AIHttpServerDependencies } from "../server/ai";
 import { detectQualificationAmbiguity, resolveApprovedQualificationAliases, resolveCatalogQualificationMentions } from "../server/ai/qualification-resolver";
 import { detectRequiredInputClarification } from "../server/ai/required-input-resolver";
@@ -262,6 +262,43 @@ describe("AI assistant context builder", () => {
     expect(result.resolvedContext.qualificationCodes).toContain("CAIE-9709");
     expect(result.promptContext).toContain("CAIE-9709");
     expect(result.sources.length).toBeGreaterThan(0);
+  });
+
+  it("answers an unscoped university question from the owner-approved read-only admissions manifest", async () => {
+    const result = await builder.build(request({
+      messages: [{ role: "user", content: "牛津大学 2027 数学本科的 A Level 录取要求是什么？" }],
+    }));
+    const payload = JSON.parse(result.promptContext) as {
+      universityAdmissions: {
+        activeBatch: string;
+        calls: Array<{ name: string; status: string; result: Array<{ requirement: { intakeYear: number } }> }>;
+        responseTemplate: { sections: string[] };
+      };
+    };
+    expect(result.clarification).toBeUndefined();
+    expect(result.universityAdmissionsTools?.calls[0]).toMatchObject({
+      name: "lookup_university_admissions_requirement",
+      status: "ok",
+    });
+    expect(payload.universityAdmissions.activeBatch).toBe("verified-facts-university-admissions-2027-20260723");
+    expect(payload.universityAdmissions.calls[0].result[0].requirement.intakeYear).toBe(2027);
+    expect(payload.universityAdmissions.responseTemplate.sections).toContain("整体成绩要求");
+    expect(result.sources.length).toBeGreaterThan(0);
+    expect(result.sources.every(source => source.url.startsWith("https://"))).toBe(true);
+    expect(result.promptContext).not.toContain("src-university");
+    expect(result.promptContext).toMatch(/"sourceIds":\["S\d+"/);
+  });
+
+  it("places the deterministic university answer template and missing-field rules in the system prompt", () => {
+    const prompt = buildAISystemPrompt(request(), JSON.stringify({
+      universityAdmissions: {
+        calls: [],
+        responseTemplate: { sections: ["直接结论", "官方来源"] },
+      },
+    }));
+    expect(prompt).toContain("read-only deterministic output");
+    expect(prompt).toContain("not-stated");
+    expect(prompt).toContain("Do not rank admission likelihood");
   });
 
   it("lets explicit question qualifications replace conflicting page context", async () => {

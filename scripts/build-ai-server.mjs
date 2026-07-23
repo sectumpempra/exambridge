@@ -40,6 +40,7 @@ const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 const serverBundle = await readFile(path.join(outDir, "server.mjs"));
 const knowledgeManifest = await readFile(path.join(root, "public/data/knowledge-v5/manifest.json"));
 const academicResultsManifest = await readFile(path.join(root, "public/data/academic-results-v2/manifest.json"));
+const universityAdmissionsManifest = await readFile(path.join(root, "data/active/university-admissions-v1/manifest.json"));
 const trackedPdfs = execFileSync("git", ["ls-files", "--", "*.pdf", "*.PDF"], {
   cwd: root,
   encoding: "utf8",
@@ -52,6 +53,7 @@ await writeFile(path.join(outDir, "artifact-manifest.json"), `${JSON.stringify({
   serverBundleSha256: sha256(serverBundle),
   knowledgeManifestSha256: sha256(knowledgeManifest),
   academicResultsManifestSha256: sha256(academicResultsManifest),
+  universityAdmissionsManifestSha256: sha256(universityAdmissionsManifest),
   trackedPdfCount: 0,
 }, null, 2)}\n`);
 
