@@ -188,9 +188,31 @@ function latestUserMessage(request: AIChatRequest): string {
   return [...request.messages].reverse().find((message) => message.role === "user")?.content ?? "";
 }
 
-function messageExplicitlyNamesCode(message: string, code: string): boolean {
+function messageExplicitlyNamesBoard(message: string, board: string): boolean {
+  const normalized = normalizedBoard(board);
+  switch (normalized) {
+    case "caie":
+      return /cambridge|caie|剑桥/i.test(message);
+    case "edexcel":
+      return /pearson|edexcel|培生|爱德思|edx/i.test(message);
+    case "aqa":
+      return /\baqa\b/i.test(message);
+    case "ocr":
+      return /\bocr\b/i.test(message);
+    default:
+      return normalized.includes("wjec") || normalized.includes("eduqas")
+        ? /wjec|eduqas|威尔士/i.test(message)
+        : false;
+  }
+}
+
+function messageExplicitlyNamesCode(message: string, code: string, board?: string): boolean {
   const normalizedCode = normalizedToken(code);
   if (normalizedCode.length < 3) return false;
+  if (/^(?:19|20)\d{2}$/.test(normalizedCode)
+    && (!board || !messageExplicitlyNamesBoard(message, board))) {
+    return false;
+  }
   if (/^[A-Z]+$/.test(normalizedCode)) {
     return new RegExp(`(?:^|[^A-Z])${normalizedCode}(?:$|[^A-Z])`, "i").test(message);
   }
@@ -538,7 +560,7 @@ export class AIContextBuilder {
 
     const message = latestUserMessage(request);
     COURSE_CATALOG
-      .filter((entry) => messageExplicitlyNamesCode(message, entry.subjectCode))
+      .filter((entry) => messageExplicitlyNamesCode(message, entry.subjectCode, entry.boardName))
       .sort((a, b) => explicitCodePosition(message, a.subjectCode) - explicitCodePosition(message, b.subjectCode)
         || Number(Boolean(b.capabilities.examOverview.href)) - Number(Boolean(a.capabilities.examOverview.href)))
       .forEach(add);
@@ -593,7 +615,8 @@ export class AIContextBuilder {
 
     const message = latestUserMessage(request);
     manifest.mappings
-      .filter((entry) => messageExplicitlyNamesCode(message, entry.code) || messageExplicitlyNamesCode(message, entry.subjectCode))
+      .filter((entry) => messageExplicitlyNamesCode(message, entry.code, entry.board)
+        || messageExplicitlyNamesCode(message, entry.subjectCode, entry.board))
       .sort((a, b) => explicitCodePosition(message, a.code, a.subjectCode) - explicitCodePosition(message, b.code, b.subjectCode))
       .forEach(add);
     if (result.length > 0) return result;

@@ -101,6 +101,19 @@ describe("AI qualification ambiguity resolver", () => {
     expect(result.matchedCourses.map(course => course.subjectCode)).not.toContain("2021");
   });
 
+  it("keeps exam years out of the complete context-builder course resolution path", async () => {
+    const result = await new AIContextBuilder().build(request({
+      messages: [{
+        role: "user",
+        content: "列出 ExamBridge 已核验的 CAIE 0580 Grade Statistics 覆盖年份和考季，并说明 2021 年 6 月 A* 比例。不要用分数线推算。",
+      }],
+    }));
+    expect(result.resolvedContext.qualificationCodes).toContain("CAIE-0580");
+    expect(result.resolvedContext.qualificationCodes).not.toContain("AQA-2021");
+    expect(result.resolvedContext.awardQualificationIds).not.toContain("award:aqa:2021");
+    expect(result.resolvedContext.qualificationIds).not.toContain("qual:aqa:a-level:2021");
+  });
+
   it("uses official English subject names from the full catalog instead of a mathematics-only alias list", () => {
     const result = resolveCatalogQualificationMentions("Compare AQA Psychology with OCR Psychology", COURSE_CATALOG, "en-GB");
     const codes = [
