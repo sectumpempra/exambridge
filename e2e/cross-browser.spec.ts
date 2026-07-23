@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const coreRoutes = ["/courses", "/knowledge-tree", "/planner", "/papers", "/statistics", "/calculator"];
+const coreRoutes = ["/courses", "/knowledge-tree", "/planner", "/papers", "/statistics", "/calculator", "/mechanics-lab"];
 
 for (const route of coreRoutes) {
   test(`${route} supports core navigation in this browser`, async ({ page }) => {

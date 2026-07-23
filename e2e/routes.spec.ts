@@ -5,7 +5,7 @@ import AxeBuilder from "@axe-core/playwright";
 const routes = [
   "/", "/about", "/courses", "/exam-overview", "/results", "/tools", "/alevel", "/alevel/caie", "/alevel/edexcel", "/alevel/aqa", "/alevel/ocr", "/alevel/wjec",
   "/gcse", "/gcse/edexcel", "/gcse/caie", "/gcse/aqa", "/gcse/ocr", "/fsmq/ocr", "/calculator", "/planner", "/personality",
-  "/statistics", "/graph", "/papers", "/knowledge-tree", "/ai-assistant",
+  "/statistics", "/graph", "/mechanics-lab", "/papers", "/knowledge-tree", "/ai-assistant",
 ];
 
 async function openAwardCourse(page: Page, query: string, _courseName: RegExp) {

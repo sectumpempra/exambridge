@@ -1,0 +1,55 @@
+{
+  "caseId": "gc-11-atwood-two-hanging",
+  "title": "两个悬挂物体（固定理想滑轮，阿特伍德机）",
+  "description": "m1=3 kg 与 m2=5 kg 悬挂于固定理想滑轮两侧，g=10。动力学模式。",
+  "physicsAssumptions": ["绳轻且不可伸长", "理想滑轮两侧张力相等", "滑轮无摩擦"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-11",
+    "title": "阿特伍德机",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 3, "position": { "x": -0.3, "y": 2 } },
+      { "id": "m-obj-2", "label": "物体 m2", "mass": 5, "position": { "x": 0.3, "y": 2 } }
+    ],
+    "surfaces": [],
+    "supports": [],
+    "pulleys": [
+      { "id": "pul-1", "kind": "fixed", "position": { "x": 0, "y": 4 } }
+    ],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "pulley", "pulleyId": "pul-1" },
+        { "type": "object", "objectId": "m-obj-2" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "T(rope-1)", "value": 37.5, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-1)", "value": 2.5, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-2)", "value": -2.5, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "tension", "magnitude": 37.5, "direction": { "x": 0, "y": 1 }, "tolerance": 1e-9 },
+      { "objectId": "m-obj-2", "kind": "tension", "magnitude": 37.5, "direction": { "x": 0, "y": 1 }, "tolerance": 1e-9 }
+    ],
+    "equations": [
+      { "kind": "rope-length", "termsContain": [{ "symbol": "a(m-obj-1)", "coefficient": -1 }, { "symbol": "a(m-obj-2)", "coefficient": -1 }] }
+    ],
+    "constraints": [
+      { "kind": "rope-length", "satisfied": true },
+      { "kind": "rope-tension-equal", "satisfied": true }
+    ],
+    "validationRules": ["residual-check"],
+    "assertions": ["a=(m2-m1)g/(m1+m2)=2.5 m/s²，m1 上升 m2 下降", "T=2·m1·m2·g/(m1+m2)=37.5 N", "同一根绳张力相等"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：m2 较重下降。m2：50-T=5a；m1：T-30=3a。相加：20=8a → a=2.5 m/s²；T=30+3×2.5=37.5 N。"
+}

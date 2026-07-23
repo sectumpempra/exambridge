@@ -1,0 +1,11 @@
+{
+  "caseId": "gc-30-corrupted-json",
+  "title": "损坏 JSON（安全拒绝）",
+  "description": "导入被截断的损坏 JSON，解析器必须安全拒绝且不抛出异常。",
+  "physicsAssumptions": [],
+  "expectParse": "error",
+  "expectedParseErrorKind": "invalid-json",
+  "sceneJson": "{\"schemaVersion\": \"1.0.0\", \"sceneId\": \"scene-broken\", \"title\": \"截断\", \"gravity\": 10, \"objects\": [",
+  "numericTolerance": 1e-9,
+  "derivationNotes": "JSON.parse 失败 → { ok: false, kind: \"invalid-json\" }，安全拒绝。"
+}

@@ -1,0 +1,43 @@
+{
+  "caseId": "gc-25-illegal-pulley-connection",
+  "title": "非法滑轮连接（绳端点直接终止于滑轮）",
+  "description": "绳 rope-1 一端连接物体，另一端直接终止于定滑轮（滑轮不能作为绳端点）。",
+  "physicsAssumptions": ["绳端点必须是物体、锚点或拉力端；滑轮只能作为中间节点"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-25",
+    "title": "非法滑轮连接",
+    "gravity": 10,
+    "analysisMode": "equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [
+      { "id": "pul-1", "kind": "fixed", "position": { "x": 2, "y": 2 } }
+    ],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "pulley", "pulleyId": "pul-1" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "input-required",
+    "values": [],
+    "forces": [],
+    "equations": [],
+    "constraints": [],
+    "validationRules": ["rope-terminal-pulley"],
+    "assertions": ["绳端点终止于滑轮属于非法拓扑", "不得按正常滑轮场景求解"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "拓扑检查：绳的终端节点类型为 pulley → input-required（非法滑轮连接）。"
+}

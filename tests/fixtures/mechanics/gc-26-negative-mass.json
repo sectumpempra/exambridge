@@ -1,0 +1,28 @@
+{
+  "caseId": "gc-26-negative-mass",
+  "title": "负质量（schema 拒绝）",
+  "description": "物体质量为 -2 kg，违反物理合法性，Zod 校验必须拒绝。",
+  "physicsAssumptions": ["质量必须为正数"],
+  "expectParse": "error",
+  "expectedParseErrorKind": "schema-violation",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-26",
+    "title": "负质量",
+    "gravity": 10,
+    "analysisMode": "equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": -2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "质量必须为正数 → schema-violation，安全拒绝，不得静默修正。"
+}

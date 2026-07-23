@@ -1,0 +1,45 @@
+{
+  "caseId": "gc-19-deceleration-direction-report",
+  "title": "初速度沿斜面向上（减速，摩擦随速度方向）",
+  "description": "质量 2 kg 物体在 30° 粗糙斜面上以 v0=3 m/s 沿斜面向上运动，μs=0.3，μk=0.2，g=10。动力学模式。",
+  "physicsAssumptions": ["滑动摩擦方向与速度方向相反（而非加速度）", "减速运动必须明确报告"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-19",
+    "title": "斜面向上减速",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 1.7320508075688772, "y": 1 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "inclined", "angleDeg": 30, "friction": { "model": "rough", "muS": 0.3, "muK": 0.2 } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [],
+    "initialConditions": [
+      { "objectId": "m-obj-1", "velocity": 3 }
+    ]
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "N(m-obj-1)", "value": 17.32050807568877, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-1)", "value": -6.732050807568877, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "kinetic-friction", "magnitude": -3.4641016151377544, "direction": { "x": 0.8660254037844386, "y": 0.5 }, "tolerance": 1e-9 }
+    ],
+    "equations": [],
+    "constraints": [
+      { "kind": "friction-direction", "satisfied": true }
+    ],
+    "validationRules": ["friction-state", "direction-report"],
+    "assertions": ["摩擦方向与 v0 相反（沿斜面向下）", "a=-(g·sin30°+μk·g·cos30°)≈-6.732051 m/s²", "明确报告物体在减速"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：v0 沿斜面向上 → 滑动摩擦沿斜面向下，f=μkN≈3.464102 N。沿斜面：-mg·sin30°-f=ma → a=(-10-3.464102)/2≈-6.732051 m/s²。v0>0 而 a<0 → 减速，directionReports.decelerating=true。"
+}

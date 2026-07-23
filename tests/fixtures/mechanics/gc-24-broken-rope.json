@@ -1,0 +1,42 @@
+{
+  "caseId": "gc-24-broken-rope",
+  "title": "断开绳（绳端点未连接）",
+  "description": "绳 rope-1 一端连接物体，另一端悬空（loose）。求解器应返回 input-required。",
+  "physicsAssumptions": ["绳必须有两个有效端点才能传力"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-24",
+    "title": "断开的绳",
+    "gravity": 10,
+    "analysisMode": "equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "loose" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "input-required",
+    "statusReasonContains": "拓扑",
+    "values": [],
+    "forces": [],
+    "equations": [],
+    "constraints": [],
+    "validationRules": ["rope-loose-end"],
+    "assertions": ["断开绳不得静默忽略", "requiredInputs 指出绳端点未连接"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "拓扑检查：绳存在 loose 端点 → input-required，提示重新连接。无需数值求解。"
+}

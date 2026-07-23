@@ -1,0 +1,52 @@
+{
+  "caseId": "gc-21-rope-slack",
+  "title": "绳松弛（桌面物体被拉向滑轮过快）",
+  "description": "m1=2 kg 在光滑水平面上，经定滑轮连接悬挂 m2=1 kg，m1 受 30 N 指向滑轮的拉力。绷紧假设解出负张力 → 绳松弛。",
+  "physicsAssumptions": ["绳只能受拉", "负张力意味着绳松弛"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-21",
+    "title": "绳松弛",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" },
+      { "id": "m-obj-2", "label": "物体 m2", "mass": 1, "position": { "x": 2, "y": -1 } }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [
+      { "id": "pul-1", "kind": "fixed", "position": { "x": 2, "y": 0.5 } }
+    ],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "pulley", "pulleyId": "pul-1" },
+        { "type": "object", "objectId": "m-obj-2" }
+      ] }
+    ],
+    "externalForces": [
+      { "id": "force-1", "objectId": "m-obj-1", "magnitude": 30, "angleDeg": 0, "label": "指向滑轮的拉力" }
+    ],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "assumption-invalid",
+    "statusReasonContains": "松弛",
+    "values": [
+      { "symbol": "T(rope-1)", "value": -3.3333333333333335, "tolerance": 1e-9 }
+    ],
+    "forces": [],
+    "equations": [],
+    "constraints": [
+      { "kind": "tension-non-negative", "satisfied": false }
+    ],
+    "validationRules": ["tension-non-negative"],
+    "assertions": ["绷紧假设解出 T=-10/3 N", "明确报告绳松弛并给出松弛重解参考值"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：绷紧假设 a2=-a1。m1：T+30=2a1；m2：T-10=a2=-a1 → T=10-a1。代入：40-a1=2a1 → a1=40/3，T=10-40/3=-10/3 N < 0 → 绳松弛。"
+}

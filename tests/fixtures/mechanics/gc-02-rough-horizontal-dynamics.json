@@ -1,0 +1,48 @@
+{
+  "caseId": "gc-02-rough-horizontal-dynamics",
+  "title": "粗糙水平面（静摩擦不足，滑动）",
+  "description": "质量 2 kg 物体在粗糙水平面上，受 10 N 水平外力，μs=0.4，μk=0.3，g=10。动力学模式。",
+  "physicsAssumptions": ["静摩擦上限 μsN", "滑动后动摩擦 μkN", "摩擦方向与运动趋势相反"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-02",
+    "title": "粗糙水平面受水平外力",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "rough", "muS": 0.4, "muK": 0.3 } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [
+      { "id": "force-1", "objectId": "m-obj-1", "magnitude": 10, "angleDeg": 0, "label": "水平推力 F" }
+    ],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "N(m-obj-1)", "value": 20, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-1)", "value": 2, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "kinetic-friction", "magnitude": -6, "direction": { "x": 1, "y": 0 }, "tolerance": 1e-9 },
+      { "objectId": "m-obj-1", "kind": "normal", "magnitude": 20, "direction": { "x": 0, "y": 1 }, "tolerance": 1e-9 }
+    ],
+    "equations": [
+      { "objectId": "m-obj-1", "kind": "newton-x", "termsContain": [{ "symbol": "a(m-obj-1)", "coefficient": -2 }] }
+    ],
+    "constraints": [
+      { "kind": "friction-direction", "satisfied": true }
+    ],
+    "validationRules": ["friction-state"],
+    "assertions": ["静摩擦上限 μsN=8 N < 10 N，物体滑动", "动摩擦 f=μkN=6 N，方向 -x", "a=(10-6)/2=2 m/s²"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：N=mg=20 N；静摩擦上限 μsN=8 N < F=10 N → 滑动；动摩擦 f=μkN=6 N（-x）；a=(F-f)/m=(10-6)/2=2 m/s²。"
+}

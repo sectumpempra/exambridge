@@ -1,0 +1,28 @@
+{
+  "caseId": "gc-27-illegal-friction-coefficient",
+  "title": "非法摩擦系数（μk > μs，schema 拒绝）",
+  "description": "粗糙平面 μk=0.5 > μs=0.3，违反物理常识，Zod 校验必须拒绝。",
+  "physicsAssumptions": ["动摩擦系数不得大于静摩擦系数"],
+  "expectParse": "error",
+  "expectedParseErrorKind": "schema-violation",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-27",
+    "title": "非法摩擦系数",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "rough", "muS": 0.3, "muK": 0.5 } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "μk > μs → schema-violation，安全拒绝。"
+}

@@ -29,6 +29,7 @@ describe("teacher-first navigation", () => {
       "/tools",
       "/planner",
       "/graph",
+      "/mechanics-lab",
       "/personality",
       "/about",
     ]));

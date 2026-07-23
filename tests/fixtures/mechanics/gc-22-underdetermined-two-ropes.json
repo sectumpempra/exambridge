@@ -1,0 +1,46 @@
+{
+  "caseId": "gc-22-underdetermined-two-ropes",
+  "title": "欠定系统（两根并联竖直绳悬挂同一物体）",
+  "description": "质量 2 kg 物体由两根并联竖直绳悬挂，静力平衡。T1+T2=20 N，无法唯一确定各自张力。",
+  "physicsAssumptions": ["两根绳均竖直且绷紧", "静力平衡"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-22",
+    "title": "双绳悬挂欠定",
+    "gravity": 10,
+    "analysisMode": "equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 2 } }
+    ],
+    "surfaces": [],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "anchor", "point": { "x": -0.5, "y": 5 } },
+        { "type": "object", "objectId": "m-obj-1" }
+      ] },
+      { "id": "rope-2", "kind": "rope", "nodes": [
+        { "type": "anchor", "point": { "x": 0.5, "y": 5 } },
+        { "type": "object", "objectId": "m-obj-1" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "underdetermined",
+    "statusReasonContains": "欠定",
+    "values": [],
+    "forces": [],
+    "equations": [
+      { "objectId": "m-obj-1", "kind": "newton-y", "termsContain": [{ "symbol": "T(rope-1)", "coefficient": 1 }, { "symbol": "T(rope-2)", "coefficient": 1 }] }
+    ],
+    "constraints": [],
+    "validationRules": ["determinacy-check"],
+    "assertions": ["独立方程数 1 < 未知量数 2", "自由未知量包含 T(rope-1) 或 T(rope-2)", "不得用最小二乘伪造唯一解"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：竖直方向只有 T1+T2=mg=20 N 一个独立方程，两个未知张力，欠定。水平方向两绳均竖直（吸附理想化），无方程。求解器必须报告欠定与自由未知量，不得伪造唯一解。"
+}

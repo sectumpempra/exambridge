@@ -1,0 +1,57 @@
+{
+  "caseId": "gc-13-incline-plus-hanging",
+  "title": "斜面物体连接悬挂物体",
+  "description": "m1=3 kg 在 30° 光滑斜面上，经顶端固定滑轮连接悬挂 m2=4 kg，g=10。动力学模式。",
+  "physicsAssumptions": ["斜面光滑", "绳轻且不可伸长", "理想滑轮两侧张力相等"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-13",
+    "title": "斜面物体连接悬挂物体",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 3, "position": { "x": 1.7320508075688772, "y": 1 }, "surfaceId": "surf-1" },
+      { "id": "m-obj-2", "label": "物体 m2", "mass": 4, "position": { "x": 3.4641016151377544, "y": 0 } }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "inclined", "angleDeg": 30, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [
+      { "id": "pul-1", "kind": "fixed", "position": { "x": 3.4641016151377544, "y": 2 } }
+    ],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "pulley", "pulleyId": "pul-1" },
+        { "type": "object", "objectId": "m-obj-2" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "T(rope-1)", "value": 25.71428571428571, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-1)", "value": 3.571428571428571, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-2)", "value": -3.571428571428571, "tolerance": 1e-9 },
+      { "symbol": "N(m-obj-1)", "value": 25.98076211353316, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "tension", "magnitude": 25.71428571428571, "direction": { "x": 0.8660254037844386, "y": 0.5 }, "tolerance": 1e-9 }
+    ],
+    "equations": [
+      { "kind": "rope-length", "termsContain": [{ "symbol": "a(m-obj-1)", "coefficient": -1 }, { "symbol": "a(m-obj-2)", "coefficient": -1 }] }
+    ],
+    "constraints": [
+      { "kind": "rope-length", "satisfied": true },
+      { "kind": "normal-non-negative", "satisfied": true }
+    ],
+    "validationRules": ["residual-check"],
+    "assertions": ["m2·g=40 N > m1·g·sin30°=15 N，m2 下降", "a=(40-15)/7=25/7 m/s²", "T=180/7 N"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：m2 下降、m1 沿斜面向上。m2：40-T=4a；m1：T-3×10×0.5=3a → T-15=3a。相加：25=7a → a=25/7≈3.571429 m/s²；T=40-4×25/7=180/7≈25.714286 N。N=m1·g·cos30°=30×0.8660254≈25.980762 N。"
+}

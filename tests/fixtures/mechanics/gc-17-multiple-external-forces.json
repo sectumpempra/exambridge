@@ -1,0 +1,46 @@
+{
+  "caseId": "gc-17-multiple-external-forces",
+  "title": "多个外力合成（粗糙水平面）",
+  "description": "质量 2 kg 物体在粗糙水平面上，受 F1=20 N（0°）与 F2=6 N（180°）两个外力，μs=0.5，μk=0.4，g=10。动力学模式。",
+  "physicsAssumptions": ["多个外力矢量合成", "滑动摩擦 μkN"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-17",
+    "title": "多个外力",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "rough", "muS": 0.5, "muK": 0.4 } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [
+      { "id": "force-1", "objectId": "m-obj-1", "magnitude": 20, "angleDeg": 0, "label": "F1" },
+      { "id": "force-2", "objectId": "m-obj-1", "magnitude": 6, "angleDeg": 180, "label": "F2" }
+    ],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "N(m-obj-1)", "value": 20, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-1)", "value": 3, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "kinetic-friction", "magnitude": -8, "direction": { "x": 1, "y": 0 }, "tolerance": 1e-9 }
+    ],
+    "equations": [],
+    "constraints": [
+      { "kind": "friction-direction", "satisfied": true }
+    ],
+    "validationRules": ["friction-state"],
+    "assertions": ["合力 Fx=14 N > μsN=10 N → 滑动", "a=(14-0.4×20)/2=3 m/s²"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：合力 Fx=20-6=14 N；μsN=10 N < 14 N → 滑动；f=μkN=8 N；a=(14-8)/2=3 m/s²；N=20 N。"
+}

@@ -1,0 +1,26 @@
+{
+  "caseId": "gc-31-unknown-version-json",
+  "title": "未知版本 JSON（安全拒绝）",
+  "description": "schemaVersion 为 2.0.0 的场景数据，迁移入口无对应迁移器，必须安全拒绝。",
+  "physicsAssumptions": [],
+  "expectParse": "error",
+  "expectedParseErrorKind": "unsupported-version",
+  "scene": {
+    "schemaVersion": "2.0.0",
+    "sceneId": "scene-future",
+    "title": "未来版本场景",
+    "gravity": 10,
+    "analysisMode": "equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0 } }
+    ],
+    "surfaces": [],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "版本不为 1.0.0 且无迁移器 → { ok: false, kind: \"unsupported-version\", foundVersion: \"2.0.0\" }。"
+}

@@ -1,0 +1,43 @@
+{
+  "caseId": "gc-07-incline-limiting-equilibrium",
+  "title": "斜面临界平衡（μs = tanθ）",
+  "description": "质量 2 kg 物体在 30° 粗糙斜面上，μs=tan30°≈0.5773503，μk=0.5，g=10。临界平衡模式：静摩擦恰好达到上限。",
+  "physicsAssumptions": ["临界平衡时 |f| = μsN", "临界角满足 tanθ = μs"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-07",
+    "title": "斜面临界平衡",
+    "gravity": 10,
+    "analysisMode": "limiting-equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 1.7320508075688772, "y": 1 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "inclined", "angleDeg": 30, "friction": { "model": "rough", "muS": 0.5773502691896258, "muK": 0.5 } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "N(m-obj-1)", "value": 17.32050807568877, "tolerance": 1e-9 },
+      { "symbol": "f(m-obj-1)", "value": 10, "tolerance": 1e-6 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "static-friction", "magnitude": 10, "direction": { "x": 0.8660254037844386, "y": 0.5 }, "tolerance": 1e-6 }
+    ],
+    "equations": [],
+    "constraints": [
+      { "kind": "static-friction-bound", "satisfied": true }
+    ],
+    "validationRules": ["friction-state"],
+    "assertions": ["|f|=10 N ≈ μsN，处于临界平衡", "假设列表中出现临界平衡说明"]
+  },
+  "numericTolerance": 1e-6,
+  "derivationNotes": "手工推导：临界条件 tanθ=μs → f=mg·sin30°=10 N，μsN=0.5773502691896258×17.32050807568877≈10 N。|f|=μsN（容差内）→ 临界平衡，摩擦沿斜面向上。"
+}
