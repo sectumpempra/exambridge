@@ -445,6 +445,16 @@
           "reviewNotes": [
             "Codex local-only complete AQA 8365 semantic disposition against the full official statement."
           ]
+        },
+        {
+          "nodeId": "ALGF-SEQ-BINO-PASC",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Pascal’s triangle",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1560,6 +1570,36 @@
           "evidenceSpan": "Understand that x2 + y2 = r2 is the equation of a circle with centre (0, 0) and radius r",
           "reviewNotes": [
             "Codex local-only complete AQA 8365 semantic disposition against the full official statement."
+          ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-CITH-SEMI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "the angle in a semi-circle is 90°",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-CITH-CHOR",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "the perpendicular from the centre to a chord bisects the chord",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-CITH-TANG",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "the angle between tangent and radius is 90o",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -2792,6 +2832,16 @@
           "reviewNotes": [
             "Local-only semantic candidate score 1.361; requires Codex disposition."
           ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-EQNS-INTR",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "in given intervals",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2799,15 +2849,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-17",
-    "promptVersion": "aqa-v5-local-semantic-candidate-3-complete-8365-review-noncontent-reconciled-1",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "f361266afe5534fca9b2df50b931d9aacc944fe2f4295e9949e8079e93ce1972",
     "extractionSha256": "135006a0228e5e9acb5521b02c2fb06b33098504aae43c9bb3facd5385e0fca0",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "5e4d81e56c6de56c823c36a8c95df669e79457a62fbf6ea06d65604de3b75f00",
-    "batchId": "knowledge-v5-aqa-local-20260717",
+    "batchId": "knowledge-v5-concept-accounting-20260723-AQA-8365",
     "calls": [
       {
         "label": "knowledge-v5-local-AQA-8365",
@@ -2818,10 +2868,20 @@
         "promptTokens": 0,
         "completionTokens": 0,
         "totalTokens": 0
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-AQA-8365",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

@@ -428,39 +428,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "REAS-PROF-ARGM-LOGI",
+          "nodeId": "ALGF-EXP-NOTN-V56E45AA4D",
           "relation": "narrower",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "logical deduction",
-          "reviewNotes": [
-            "The statement explicitly mentions logical deduction as a method, but the statement covers multiple methods, so the node is a narrower aspect."
-          ]
-        },
-        {
-          "nodeId": "REAS-PROF-ARGM-SYMB",
-          "relation": "narrower",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "correct use of symbols",
-          "reviewNotes": [
-            "Precise use of symbols is one component of constructing arguments, thus narrower."
-          ]
-        },
-        {
-          "nodeId": "REAS-PROF-ARGM-COMM",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "present mathematical arguments",
-          "reviewNotes": [
-            "Presenting arguments is a subset of communicating solutions; node is narrower given the statement's broader toolset."
-          ]
-        },
-        {
-          "nodeId": "ALGF-EXP-NOTN-SYMB",
-          "relation": "broader",
           "assessmentDepth": "knowledge",
           "evidenceSpan": "including: constant, coefficient, expression, equation, function, identity, index, term, variable",
           "reviewNotes": [
-            "The node covers general algebraic symbol conventions, which is broader than the specific list of terms; relation adjusted."
+            "The node exactly covers defining and distinguishing the algebraic vocabulary listed; it is a narrower skill within the broader statement."
           ]
         }
       ],
@@ -1501,6 +1474,15 @@
           "reviewNotes": [
             "Changed assessment depth from knowledge to application to match statement verb."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-DEFS-NOTN",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "The notation f(x) may be used",
+          "reviewNotes": [
+            "Note explicitly mentions f(x) notation, indicating need to read/write/evaluate using function notation in context of quadratic functions."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1790,6 +1772,15 @@
           "reviewNotes": [
             "Solving quadratic inequalities is another aspect."
           ]
+        },
+        {
+          "nodeId": "ALGF-EQN-INEQ-NUMB",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "interpret such inequalities graphically",
+          "reviewNotes": [
+            "The statement explicitly requires graphical interpretation of inequalities, corresponding to showing solutions on a number line."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1948,6 +1939,15 @@
           "evidenceSpan": "Factorise cubic expressions such as x³ + 3x² − 4",
           "reviewNotes": [
             "Cubic polynomials are a specific type manipulated, as shown in examples."
+          ]
+        },
+        {
+          "nodeId": "ALGF-EXP-MANI-EXP1",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "expanding brackets",
+          "reviewNotes": [
+            "Expanding brackets includes single-bracket expansion as a fundamental manipulation technique within polynomial algebra."
           ]
         }
       ],
@@ -2215,15 +2215,6 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-RAT-RATI-PROP",
-          "relation": "narrower",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "proportional relationships",
-          "reviewNotes": [
-            "Proportional reasoning is a general concept; the statement includes graphs, making this node a narrower aspect."
-          ]
-        },
-        {
           "nodeId": "NUM-RAT-RATI-DIRE",
           "relation": "narrower",
           "assessmentDepth": "application",
@@ -2368,6 +2359,15 @@
           "reviewNotes": [
             "Understanding domain and range."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-DEFS-NOTN",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "f(x)",
+          "reviewNotes": [
+            "Function notation explicitly used in notes (f(x) and arrow notation)."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2417,6 +2417,33 @@
           "reviewNotes": [
             "The node covers both vertical and horizontal stretches; the statement only covers y=af(x) (vertical), so the node is broader."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-TRAN-HORZ",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "x + π/4",
+          "reviewNotes": [
+            "Example y = −cos(x + π/4) illustrates horizontal translation."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-TRAN-REFL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "f(−x)",
+          "reviewNotes": [
+            "Example y = f(−x) + 1 includes reflection of f(x) in y-axis."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "y = |f(x)|",
+          "reviewNotes": [
+            "Notes explicitly require finding graphs of y = |f(x)| and y = |f(−x)|."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2465,6 +2492,33 @@
           "evidenceSpan": "y = f(ax)",
           "reviewNotes": [
             "Node includes vertical stretches too, so broader than the horizontal context."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-TRAN-VERT",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "y = 3 + sin 2x",
+          "reviewNotes": [
+            "Example y = 3 + sin 2x shows vertical translation."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-TRAN-REFL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "f(−x)",
+          "reviewNotes": [
+            "Example y = f(−x) + 1 includes reflection."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "y = |f(x)|",
+          "reviewNotes": [
+            "Notes require sketching modulus graphs."
           ]
         }
       ],
@@ -2532,6 +2586,15 @@
           "evidenceSpan": "combinations of these transformations",
           "reviewNotes": [
             "Combinations involve reflections."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "y = |f(x)|",
+          "reviewNotes": [
+            "Notes require sketching modulus graphs."
           ]
         }
       ],
@@ -2700,21 +2763,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "GEOM-COOR-LINE-YMXC",
+          "nodeId": "STAT-BIVA-CORR-V5821F67ED",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "straight line models",
+          "evidenceSpan": "Be able to use straight line models in a variety of contexts.",
           "reviewNotes": [
-            "Straight line models are represented by y=mx+c."
-          ]
-        },
-        {
-          "nodeId": "REAS-MODL-MODL-OUTP",
-          "relation": "broader",
-          "assessmentDepth": "application",
-          "evidenceSpan": "use straight line models in a variety of contexts",
-          "reviewNotes": [
-            "Using models involves interpreting outputs in context; statement scope (using models) is broader than the node (interpreting outputs)."
+            "The node captures the use of straight line graphs to model bivariate relationships, interpreting gradient and intercept in context, as required by the statement and exemplified in the notes (e.g., Celsius to Fahrenheit conversion)."
           ]
         }
       ],
@@ -2845,6 +2899,33 @@
           "reviewNotes": [
             "Direct geometric property."
           ]
+        },
+        {
+          "nodeId": "GEOM-SHAP-CITH-TANG",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "the perpendicular property of tangent and radius",
+          "reviewNotes": [
+            "Notes explicitly state using the perpendicular property of tangent and radius, which is the tangent-radius theorem."
+          ]
+        },
+        {
+          "nodeId": "GEOM-COOR-CIRC-TANG",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "find the equation of a tangent at a specified point",
+          "reviewNotes": [
+            "Notes require finding the equation of a tangent to a circle using the perpendicular radius property, directly matching the coordinate geometry tangent concept."
+          ]
+        },
+        {
+          "nodeId": "GEOM-COOR-CIRC-CENT",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "find the equation of a circumcircle",
+          "reviewNotes": [
+            "Finding a circumcircle equation involves using the centre-radius form of a circle's equation."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2881,6 +2962,24 @@
           "evidenceSpan": "the perpendicular from the centre to a chord bisects the chord",
           "reviewNotes": [
             "Direct geometric property about chords."
+          ]
+        },
+        {
+          "nodeId": "GEOM-COOR-CIRC-CHRD",
+          "relation": "broader",
+          "assessmentDepth": "application",
+          "evidenceSpan": "find the equation of a circumcircle of a triangle with given vertices using these properties",
+          "reviewNotes": [
+            "Adding the coordinate geometry chord node because the notes explicitly state using the perpendicular-from-centre bisects-chord property in a coordinate context to find a circumcircle."
+          ]
+        },
+        {
+          "nodeId": "GEOM-COOR-CIRC-TANG",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "find the equation of a tangent at a specified point, using the perpendicular property of tangent and radius",
+          "reviewNotes": [
+            "The note explicitly assesses finding the equation of a tangent using the perpendicular property, directly matching the coordinate geometry tangent node."
           ]
         }
       ],
@@ -3295,6 +3394,15 @@
           "reviewNotes": [
             "Periodic sequences are often defined by term-to-term rules; the node covers general recurrences, making it broader than the specific periodic context."
           ]
+        },
+        {
+          "nodeId": "ALGF-SEQ-SEQU-V565FEBF83",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Work with periodic sequences.",
+          "reviewNotes": [
+            "Periodic sequences are explicitly mentioned in the statement, matching the specific canonical node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3600,21 +3708,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "TRIG-IDEN-IDEN-TANR",
-          "relation": "exact",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "tangent",
-          "reviewNotes": [
-            "This identity directly defines tangent as the ratio of sine to cosine."
-          ]
-        },
-        {
           "nodeId": "GEOM-COOR-CART-COOR",
           "relation": "broader",
           "assessmentDepth": "knowledge",
           "evidenceSpan": "x and y coordinates",
           "reviewNotes": [
             "The unit circle definition of sine and cosine relies on understanding coordinates in the plane, so this is a broader enabling concept."
+          ]
+        },
+        {
+          "nodeId": "TRIG-BASE-V576670427",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "definitions of sine, cosine and tangent for all arguments",
+          "reviewNotes": [
+            "The statement and notes explicitly cover the unit-circle definitions for all real arguments, which matches this node exactly."
           ]
         }
       ],
@@ -3760,6 +3868,15 @@
           "evidenceSpan": "radian measure",
           "reviewNotes": [
             "The statement includes working with radian measure, which is based on the definition of a radian."
+          ]
+        },
+        {
+          "nodeId": "GEOM-MENS-CIRC-SECA",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Work with radian measure, including use for arc length and area of sector.",
+          "reviewNotes": [
+            "Statement explicitly requires using radian measure for area of sector, directly matching the node's definition of sector area. The task involves applying the appropriate formula."
           ]
         }
       ],
@@ -4284,30 +4401,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "TRIG-IDEN-IDEN-ADDR",
-          "relation": "narrower",
+          "nodeId": "TRIG-IDEN-V5BA01A1FB",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "a cos θ + b sin θ in the equivalent forms of r cos ( θ ± α ) or r sin ( θ ± α )",
           "reviewNotes": [
-            "Harmonic forms derived from addition formulae."
+            "Exact match for harmonic form conversion and use."
           ]
         },
         {
-          "nodeId": "TRIG-APPL-MODE-WAVE",
-          "relation": "partial",
+          "nodeId": "TRIG-IDEN-EQNS-INTR",
+          "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "a cos θ + b sin θ in the equivalent forms of r cos ( θ ± α ) or r sin ( θ ± α )",
+          "evidenceSpan": "in a given interval",
           "reviewNotes": [
-            "Harmonic form commonly used in wave models."
-          ]
-        },
-        {
-          "nodeId": "TRIG-IDEN-EQNS-SIMP",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "solve equations such as a cos θ + b sin θ = c",
-          "reviewNotes": [
-            "Notes specify solving equations using the harmonic form."
+            "Notes specify solving equations in a given interval, requiring restricted domain solutions."
           ]
         }
       ],
@@ -4410,21 +4518,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "REAS-PROF-PROF-DEDU",
+          "nodeId": "TRIG-IDEN-IDEN-V511E8B2D0",
           "relation": "exact",
           "assessmentDepth": "proof",
           "evidenceSpan": "Construct proofs involving trigonometric functions and identities",
           "reviewNotes": [
-            "Directly involves constructing proofs."
-          ]
-        },
-        {
-          "nodeId": "TRIG-IDEN-IDEN-ADDR",
-          "relation": "partial",
-          "assessmentDepth": "proof",
-          "evidenceSpan": "cos x cos 2x + sin x sin 2x ≡ cos x",
-          "reviewNotes": [
-            "Example identity uses addition formula."
+            "Statement explicitly requires constructing trigonometric identity proofs."
           ]
         }
       ],
@@ -4739,6 +4838,15 @@
           "reviewNotes": [
             "This is the product law of logarithms."
           ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-INVR",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "logₐa = 1",
+          "reviewNotes": [
+            "Note explicitly adds logₐa = 1 as part of understanding, which is a direct consequence of the inverse relationship between exponentials and logarithms."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4845,6 +4953,15 @@
           "evidenceSpan": "aˣ = b",
           "reviewNotes": [
             "Solving exponential equations exactly matches this node."
+          ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-V560DACC04",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "change-of-base formula",
+          "reviewNotes": [
+            "The notes explicitly state that students may use the change-of-base formula when solving equations of the form aˣ = b."
           ]
         }
       ],
@@ -5001,6 +5118,15 @@
           "reviewNotes": [
             "Evaluating the appropriateness of model outputs is a core part of interpreting outputs."
           ]
+        },
+        {
+          "nodeId": "ALGF-LOG-EXPO-GROW",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "exponential growth and decay",
+          "reviewNotes": [
+            "The statement explicitly requires using exponential growth and decay, which is the core concept of this node, in the context of modelling."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5084,6 +5210,15 @@
           "reviewNotes": [
             "The node directly defines the derivative as the gradient of the tangent."
           ]
+        },
+        {
+          "nodeId": "CALC-DIFF-CONC-NOTN",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "The notation f ′(x) may be used for the first derivative and f ″(x) may be used for the second derivative.",
+          "reviewNotes": [
+            "The note explicitly specifies the notation for derivatives, matching the differentiation notation node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5156,6 +5291,15 @@
           "reviewNotes": [
             "The node defines the derivative as the instantaneous rate of change."
           ]
+        },
+        {
+          "nodeId": "CALC-DIFF-CONC-NOTN",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "d y Know that is the rate of change of d x y with respect to x .",
+          "reviewNotes": [
+            "The note explicitly mentions dy/dx notation for rate of change, aligning with differentiation notation concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5190,6 +5334,15 @@
           "evidenceSpan": "sketching the gradient function for a given curve",
           "reviewNotes": [
             "Directly applies derivative as gradient to sketch its graph."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-CONC-V59DF0D9E9",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "sketching the gradient function for a given curve",
+          "reviewNotes": [
+            "The statement corresponds exactly to the concept of sketching f'(x) from f(x) graph."
           ]
         }
       ],
@@ -5227,6 +5380,15 @@
           "evidenceSpan": "second derivatives",
           "reviewNotes": [
             "The node is dedicated to interpreting and using the second derivative."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-CONC-NOTN",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "The notation f ′(x) may be used for the first derivative and f ″(x) may be used for the second derivative.",
+          "reviewNotes": [
+            "The note explicitly defines prime notation for first and second derivatives, which is covered by the notation concept."
           ]
         }
       ],
@@ -5320,6 +5482,24 @@
           "evidenceSpan": "For stationary points, f″(x) > 0 implies a minimum",
           "reviewNotes": [
             "The notes discuss using the second derivative to classify stationary points, which is a specific application within the broader statement."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-V5E12F612D",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "convex and concave sections of curves",
+          "reviewNotes": [
+            "Direct mention of convex and concave sections of curves."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-MAXM",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "For stationary points, f″(x) > 0 implies a minimum and f″(x) < 0 implies a maximum.",
+          "reviewNotes": [
+            "Notes explicitly state using second derivative to classify stationary points as maxima or minima."
           ]
         }
       ],
@@ -5778,6 +5958,15 @@
           "reviewNotes": [
             "Notes require finding tangents and normals for parametric/implicit curves, matching this node."
           ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-TANG",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "The finding of equations of tangents and normals to curves given parametrically or implicitly is required.",
+          "reviewNotes": [
+            "The notes explicitly require 'finding of equations of tangents and normals to curves given parametrically or implicitly,' which directly matches the node definition of using the derivative to find tangent and normal line equations."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5816,6 +6005,15 @@
           "evidenceSpan": "Construct simple differential equations",
           "reviewNotes": [
             "Directly matches the skill of setting up differential equations from contextual descriptions."
+          ]
+        },
+        {
+          "nodeId": "NUM-RAT-RATI-INVR",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "For example: In a simple model, the rate of decrease of the radius of the mint is inversely proportional to the square of the radius.",
+          "reviewNotes": [
+            "The example explicitly requires representing an inversely proportional relationship to set up a differential equation, thereby assessing the ability to recognize and represent such relationships."
           ]
         }
       ],
@@ -5920,6 +6118,15 @@
           "reviewNotes": [
             "Notes describe using initial conditions to find the constant of integration, which is covered by this node."
           ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-V5A76A4288",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "related sums, differences and constant multiples",
+          "reviewNotes": [
+            "Statement explicitly mentions integrating sums, differences and constant multiples, which is the linearity rule for integration."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -5983,6 +6190,15 @@
           "evidenceSpan": "Use identities to integrate sin²x, tan²x and cos²3x",
           "reviewNotes": [
             "Notes explicitly mention using identities to integrate, matching the node for integrating via trigonometric identities."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-V5A76A4288",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "related sums, differences and constant multiples",
+          "reviewNotes": [
+            "Statement explicitly mentions integrating sums, differences and constant multiples, which is the linearity rule for integration."
           ]
         }
       ],
@@ -6134,6 +6350,24 @@
           "reviewNotes": [
             "Understanding integration by parts as inverse of product rule."
           ]
+        },
+        {
+          "nodeId": "CALC-DIFF-RULE-CHAI",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "chain and product rules",
+          "reviewNotes": [
+            "Statement explicitly mentions understanding integration by substitution as the inverse of the chain rule."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-LOGR",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Students should recognise integrals of the form",
+          "reviewNotes": [
+            "Note explicitly describes the logarithmic integration rule for f'(x)/f(x)."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6227,6 +6461,15 @@
           "evidenceSpan": "finding particular solutions",
           "reviewNotes": [
             "Finding particular solutions subject to conditions."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFFEQ-FODE-GENS",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "sketch members of the family of solution curves",
+          "reviewNotes": [
+            "General solutions and families of solution curves for first order ODEs."
           ]
         }
       ],
@@ -6403,6 +6646,15 @@
           "reviewNotes": [
             "Staircase diagram for convergence."
           ]
+        },
+        {
+          "nodeId": "NUMM-ROOT-ITER-CONV",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "represent convergence using cobweb and staircase diagrams",
+          "reviewNotes": [
+            "Convergence of iteration methods to a root, represented graphically."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6457,6 +6709,15 @@
           "evidenceSpan": "understand how such methods can fail",
           "reviewNotes": [
             "Failure conditions for Newton-Raphson."
+          ]
+        },
+        {
+          "nodeId": "NUMM-ROOT-ITER-FORM",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "other recurrences xₙ₊₁ = g(xₙ)",
+          "reviewNotes": [
+            "Confirmed: statement explicitly mentions other recurrences x_n+1 = g(x_n); matches definition of general iterative formula."
           ]
         }
       ],
@@ -6724,6 +6985,15 @@
           "reviewNotes": [
             "Covers 3D distance between points."
           ]
+        },
+        {
+          "nodeId": "VECT-GEOM-PROB-SEGM",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "OB⃗ − OA⃗ = AB⃗ = b − a",
+          "reviewNotes": [
+            "Confirmed: example shows expressing directed segment AB using position vectors, which is exactly expressing directed line segments as vectors."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6947,6 +7217,15 @@
           "reviewNotes": [
             "Node exactly covers population and sample definitions."
           ]
+        },
+        {
+          "nodeId": "STAT-ENQ-SAMP-LIMI",
+          "relation": "partial",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "comment on the advantages and disadvantages associated with a census and a sample",
+          "reviewNotes": [
+            "Confirmed: node covers limitations (disadvantages), but note includes both advantages and disadvantages, so partial match. No better node for advantages."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6973,21 +7252,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-EST-ESTI-SMEAN",
-          "relation": "narrower",
+          "nodeId": "STAT-ENQ-V5ACE58F20",
+          "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "Use samples to make informal inferences about the population.",
           "reviewNotes": [
-            "Informal inference involves using sample statistics like the sample mean to infer population characteristics."
-          ]
-        },
-        {
-          "nodeId": "STAT-EST-ESTI-CLT",
-          "relation": "narrower",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Use samples to make informal inferences about the population.",
-          "reviewNotes": [
-            "CLT justifies using normal approximations for informal inference."
+            "The node exactly matches informal inference from samples."
           ]
         }
       ],
@@ -7026,12 +7296,39 @@
           ]
         },
         {
-          "nodeId": "STAT-ENQ-SAMP-BIAS",
-          "relation": "partial",
+          "nodeId": "STAT-ENQ-SAMP-V54B7A21C8",
+          "relation": "exact",
           "assessmentDepth": "knowledge",
-          "evidenceSpan": "opportunity sampling",
+          "evidenceSpan": "stratified sampling",
           "reviewNotes": [
-            "Opportunity sampling is a non-random technique that can introduce bias; node covers bias in sampling."
+            "Stratified sampling is explicitly listed in the note."
+          ]
+        },
+        {
+          "nodeId": "STAT-ENQ-SAMP-V59F893B8C",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "systematic sampling",
+          "reviewNotes": [
+            "Systematic sampling is explicitly listed."
+          ]
+        },
+        {
+          "nodeId": "STAT-ENQ-SAMP-V52F71E99D",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "quota sampling",
+          "reviewNotes": [
+            "Quota sampling is explicitly listed."
+          ]
+        },
+        {
+          "nodeId": "STAT-ENQ-SAMP-V533C8854F",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "opportunity (or convenience) sampling",
+          "reviewNotes": [
+            "Opportunity (convenience) sampling is explicitly listed; the node directly covers this non-random method."
           ]
         }
       ],
@@ -7068,12 +7365,12 @@
           ]
         },
         {
-          "nodeId": "STAT-ENQ-SAMP-BIAS",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "critique sampling techniques",
+          "nodeId": "STAT-ENQ-SAMP-V55A519001",
+          "relation": "exact",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "Select or critique sampling techniques in the context of solving a statistical problem",
           "reviewNotes": [
-            "Bias is a key criterion in critiquing sampling methods."
+            "This node directly matches selecting and critiquing sampling methods in context."
           ]
         }
       ],
@@ -7128,6 +7425,15 @@
           "reviewNotes": [
             "Mentioned in notes."
           ]
+        },
+        {
+          "nodeId": "STAT-DATA-REPR-V5962A4BA3",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "frequency polygons",
+          "reviewNotes": [
+            "Mentioned in notes as required diagram."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -7174,12 +7480,21 @@
           ]
         },
         {
-          "nodeId": "STAT-BIVA-CORR-INTR",
-          "relation": "partial",
-          "assessmentDepth": "reasoning",
+          "nodeId": "STAT-DATA-V53134A87A",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
           "evidenceSpan": "distinct sections of the population",
           "reviewNotes": [
-            "Interpreting distinct sections requires interpreting correlation within segments."
+            "The phrase 'recognition of scatter diagrams which include distinct sections of the population' directly maps to identifying clusters in data exploration."
+          ]
+        },
+        {
+          "nodeId": "STAT-BIVA-CORR-LINZ",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "A change of variable may linearise y = axⁿ or y = kbˣ",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
           ]
         }
       ],
@@ -7349,30 +7664,30 @@
           ]
         },
         {
-          "nodeId": "STAT-SUMM-CENT-QUAR",
-          "relation": "exact",
-          "assessmentDepth": "application",
-          "evidenceSpan": "percentiles",
-          "reviewNotes": [
-            "Quartiles are a specific type of percentile; linear interpolation for percentiles is required."
-          ]
-        },
-        {
-          "nodeId": "STAT-SUMM-CENT-IQR",
-          "relation": "exact",
-          "assessmentDepth": "application",
-          "evidenceSpan": "interpercentile ranges",
-          "reviewNotes": [
-            "IQR is a common interpercentile range."
-          ]
-        },
-        {
           "nodeId": "STAT-SUMM-CENT-CODE",
           "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "coding",
           "reviewNotes": [
             "Understanding and use of coding is required."
+          ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-V5B7162823",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "interpercentile ranges. Use of linear interpolation to calculate percentiles",
+          "reviewNotes": [
+            "Covers both percentiles and interpercentile ranges as explicitly required by the notes."
+          ]
+        },
+        {
+          "nodeId": "STAT-SUMM-CENT-VARI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Measures of variation: variance",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
           ]
         }
       ],
@@ -7448,24 +7763,6 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-DATA-REPR-BOXW",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "statistical diagrams",
-          "reviewNotes": [
-            "Box plots are a common statistical diagram that can display outliers."
-          ]
-        },
-        {
-          "nodeId": "STAT-DATA-REPR-SCAT",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "statistical diagrams",
-          "reviewNotes": [
-            "Scatter diagrams can reveal outliers in bivariate data."
-          ]
-        },
-        {
           "nodeId": "STAT-SUMM-CENT-IQR",
           "relation": "narrower",
           "assessmentDepth": "application",
@@ -7481,6 +7778,15 @@
           "evidenceSpan": "mean ± 3 × standard deviation",
           "reviewNotes": [
             "Standard deviation is used in the 3σ outlier rule."
+          ]
+        },
+        {
+          "nodeId": "STAT-DATA-V53134A87A",
+          "relation": "broader",
+          "assessmentDepth": "application",
+          "evidenceSpan": "possible outliers",
+          "reviewNotes": [
+            "Outliers are explicitly part of exploratory data analysis as defined in the node; the node is broader than the statement's focus on outliers alone."
           ]
         }
       ],
@@ -7602,6 +7908,24 @@
           "reviewNotes": [
             "Codex residual seed (knowledge-v5-residual-codex-resolution-1): Codex accepted the full-index existing-leaf recall after source-bound dual review.",
             "This seed must still pass the independent second mapping review before activation."
+          ]
+        },
+        {
+          "nodeId": "PROB-COMB-RULE-VENN",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Venn diagrams",
+          "reviewNotes": [
+            "The notes indicate that Venn diagrams may be used when calculating probabilities with mutually exclusive and independent events."
+          ]
+        },
+        {
+          "nodeId": "PROB-COMB-RULE-TREE",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "tree diagrams",
+          "reviewNotes": [
+            "The notes indicate that tree diagrams may be used when calculating probabilities with mutually exclusive and independent events."
           ]
         }
       ],
@@ -7838,21 +8162,30 @@
           ]
         },
         {
-          "nodeId": "PROB-DRVD-DRVB-DIST",
-          "relation": "narrower",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "simple, discrete probability distributions",
-          "reviewNotes": [
-            "Probability distribution tables represent discrete distributions."
-          ]
-        },
-        {
           "nodeId": "REAS-MODL-MODL-ASSM",
           "relation": "exact",
           "assessmentDepth": "application",
           "evidenceSpan": "comment critically on the appropriateness",
           "reviewNotes": [
             "Critiquing appropriateness involves modelling assumptions."
+          ]
+        },
+        {
+          "nodeId": "PROB-DIST-DUNI-MODE",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "discrete uniform distribution",
+          "reviewNotes": [
+            "Notes explicitly require knowledge and identification of the discrete uniform distribution."
+          ]
+        },
+        {
+          "nodeId": "PROB-DRVD-DRVB-V576BA471F",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "simple, discrete probability distributions",
+          "reviewNotes": [
+            "Statement requires understanding of discrete probability distributions, which aligns with the concept of a discrete random variable and its probability distribution."
           ]
         }
       ],
@@ -7923,6 +8256,15 @@
           "evidenceSpan": "Normal distribution as a model",
           "reviewNotes": [
             "Directly matching node."
+          ]
+        },
+        {
+          "nodeId": "PROB-DIST-NORM-V59122ADC3",
+          "relation": "partial",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "shape and the symmetry",
+          "reviewNotes": [
+            "Notes require knowledge of the shape and symmetry of the normal distribution, matching part of this node's definition."
           ]
         }
       ],
@@ -8181,6 +8523,15 @@
           "reviewNotes": [
             "Covers the test statistic concept, which was missing from the original links."
           ]
+        },
+        {
+          "nodeId": "PROB-DIST-BINO-MEAN",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "expected value of a binomial distribution is given by np",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -8244,53 +8595,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-CORR-REG-PMCC",
-          "relation": "partial",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "and be able to interpret a given correlation coefficient using a given p-value or critical value (calculation of correlation coefficients is excluded).",
+          "nodeId": "STAT-TEST-HYPO-V5C70A5551",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "using a given p-value",
           "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): No existing leaf covers hypothesis testing for correlation coefficient; existing leaves cover PMCC interpretation and general hypothesis testing concepts but not the specific test for ρ.",
-            "This seed must still pass the independent second mapping review before activation."
-          ]
-        },
-        {
-          "nodeId": "STAT-TEST-HYPO-NULL",
-          "relation": "partial",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "and be able to interpret a given correlation coefficient using a given p-value or critical value (calculation of correlation coefficients is excluded).",
-          "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): No existing leaf covers hypothesis testing for correlation coefficient; existing leaves cover PMCC interpretation and general hypothesis testing concepts but not the specific test for ρ.",
-            "This seed must still pass the independent second mapping review before activation."
-          ]
-        },
-        {
-          "nodeId": "STAT-TEST-HYPO-SIGL",
-          "relation": "partial",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "and be able to interpret a given correlation coefficient using a given p-value or critical value (calculation of correlation coefficients is excluded).",
-          "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): No existing leaf covers hypothesis testing for correlation coefficient; existing leaves cover PMCC interpretation and general hypothesis testing concepts but not the specific test for ρ.",
-            "This seed must still pass the independent second mapping review before activation."
-          ]
-        },
-        {
-          "nodeId": "STAT-TEST-HYPO-CRIT",
-          "relation": "partial",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "and be able to interpret a given correlation coefficient using a given p-value or critical value (calculation of correlation coefficients is excluded).",
-          "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): No existing leaf covers hypothesis testing for correlation coefficient; existing leaves cover PMCC interpretation and general hypothesis testing concepts but not the specific test for ρ.",
-            "This seed must still pass the independent second mapping review before activation."
-          ]
-        },
-        {
-          "nodeId": "STAT-TEST-HYPO-V57C82D1FE",
-          "relation": "partial",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "and be able to interpret a given correlation coefficient using a given p-value or critical value (calculation of correlation coefficients is excluded).",
-          "reviewNotes": [
-            "Codex residual seed (knowledge-v5-residual-codex-resolution-1): No existing leaf covers hypothesis testing for correlation coefficient; existing leaves cover PMCC interpretation and general hypothesis testing concepts but not the specific test for ρ.",
-            "This seed must still pass the independent second mapping review before activation."
+            "Explicitly requires using a given p-value; application of p-value concept."
           ]
         }
       ],
@@ -8513,6 +8823,24 @@
           "reviewNotes": [
             "Z-test for population mean with known variance."
           ]
+        },
+        {
+          "nodeId": "STAT-TEST-HYPO-V5D9C52441",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "(X̄ − μ)/(σ/√n) ∼ N(0, 1)",
+          "reviewNotes": [
+            "Explicit formula for test statistic and its null distribution."
+          ]
+        },
+        {
+          "nodeId": "STAT-TEST-HYPO-NULL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "state hypotheses in terms of μ",
+          "reviewNotes": [
+            "Explicit instruction to formulate null and alternative hypotheses."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -8705,12 +9033,21 @@
           ]
         },
         {
-          "nodeId": "VECT-SPAC-THRD-IJK",
+          "nodeId": "VECT-BASIC-NOTN-COLV",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "column-vector form",
+          "reviewNotes": [
+            "Column vectors are explicitly mentioned as a notation option for vectors in 2D kinematics."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-UNIT",
           "relation": "narrower",
           "assessmentDepth": "application",
-          "evidenceSpan": "vectors in i–j or column-vector form",
+          "evidenceSpan": "i–j",
           "reviewNotes": [
-            "i-j notation for 2D vectors."
+            "The statement uses i and j unit vectors as a notation for vectors in 2D kinematics."
           ]
         }
       ],
@@ -8834,6 +9171,15 @@
           "reviewNotes": [
             "Extends integration to find displacement from velocity vector."
           ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-UNIT",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "t²i + t³ᐟ²j",
+          "reviewNotes": [
+            "Unit vectors i and j are used in the example of differentiating a vector function."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -8940,6 +9286,24 @@
             "Codex residual seed (knowledge-v5-residual-codex-resolution-1): Codex rejected an aggregate or duplicate leaf and retained the precise existing or separately atomic concepts.",
             "This seed must still pass the independent second mapping review before activation."
           ]
+        },
+        {
+          "nodeId": "MECH-FORC-EQUI-NORM",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Normal reaction",
+          "reviewNotes": [
+            "Normal reaction is explicitly listed as a type of force in the notes."
+          ]
+        },
+        {
+          "nodeId": "MECH-DYN-NEWT-TENS",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "tension, thrust or compression",
+          "reviewNotes": [
+            "Tension and thrust/compression are explicitly listed as types of forces in the notes."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -8985,6 +9349,33 @@
             "Codex residual seed (knowledge-v5-residual-codex-resolution-1): Statement applies Newton's second law and force resolution; both concepts are already represented by these leaves.",
             "This seed must still pass the independent second mapping review before activation."
           ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-UNIT",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "i − j form",
+          "reviewNotes": [
+            "Specifies use of i-j notation, requiring understanding of unit vectors."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-COLV",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "column vectors",
+          "reviewNotes": [
+            "Specifies use of column vector notation."
+          ]
+        },
+        {
+          "nodeId": "MECH-DYN-NEWT-INCL",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "a particle moving on an inclined plane",
+          "reviewNotes": [
+            "Explicit example of extending force resolution to inclined planes."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -9027,6 +9418,15 @@
           "evidenceSpan": "motion in a straight line under gravity",
           "reviewNotes": [
             "Covers the application of constant-acceleration kinematics and Newton's laws to vertical motion."
+          ]
+        },
+        {
+          "nodeId": "MECH-DYN-NEWT-V588EC5887",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "gravitational acceleration, g , and its value in S.I. units to varying degrees of accuracy.",
+          "reviewNotes": [
+            "Directly covers the understanding of g, its SI unit value, and its variability with location."
           ]
         }
       ],
@@ -9125,6 +9525,15 @@
           "reviewNotes": [
             "Trigonometry used when resolving forces at angles."
           ]
+        },
+        {
+          "nodeId": "MECH-FORC-FORC-VECN",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "forces given as 2-D vectors",
+          "reviewNotes": [
+            "Requires understanding that force is a vector quantity in mechanics."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -9203,6 +9612,15 @@
           "evidenceSpan": "magnitude- direction form",
           "reviewNotes": [
             "Converting between magnitude-direction and components uses trigonometry."
+          ]
+        },
+        {
+          "nodeId": "MECH-DYN-V5F502D767",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "dynamics for motion in a plane",
+          "reviewNotes": [
+            "Solving problems involving particle motion in a plane by applying Newton's second law in vector component form."
           ]
         }
       ],
@@ -9550,15 +9968,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-19",
-    "promptVersion": "knowledge-mapping-v5-atomic-9-paper-bound",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "b008c50064090bab5c3e26e1f3c97778d21b492d5b839219f73eca11828ecef8",
     "extractionSha256": "2809b23201e32bbd43c37500190873eb077424724efc6eee81baa3072a80014c",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "fe5df2356a2180df9674d8f40eb1f9baa305b7b564c96cf55b46a03a72f885fe",
-    "batchId": "knowledge-v5-unified-20260719-Edexcel-9MA0",
+    "batchId": "knowledge-v5-concept-accounting-20260723-Edexcel-9MA0",
     "calls": [
       {
         "label": "knowledge-v5-extract-Edexcel-9MA0-p11-p12-p13-p14",
@@ -9965,10 +10383,20 @@
         "elapsedSeconds": 138,
         "clientRequestId": "8e60121c-e558-43cb-85f9-f0717f3aa4b7",
         "fallbackReason": "explicit-deepseek-test"
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-Edexcel-9MA0",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

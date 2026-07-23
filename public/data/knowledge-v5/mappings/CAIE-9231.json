@@ -148,6 +148,33 @@
           "reviewNotes": [
             "Statement includes reciprocal graphs, matching the node's concept of y=1/f(x)."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-V5EA8BC9C9",
+          "relation": "broader",
+          "assessmentDepth": "application",
+          "evidenceSpan": "y² = f(x)",
+          "reviewNotes": [
+            "Implicit graph sketching and interpretation broadly covers y² = f(x) as a case of an implicit equation, though the node is general and not specific to the transformation relationship from y=f(x)."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-INTR",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "use of such sketch graphs in the course of solving equations or inequalities",
+          "reviewNotes": [
+            "The node covers solving equations graphically via intersection points; inequalities are a natural extension but not explicitly mentioned in the node definition."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODX",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "y = f(|x|)",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -192,6 +219,33 @@
           "evidenceSpan": "simple rational functions",
           "reviewNotes": [
             "Reciprocal functions are a common subset of simple rational functions; node covers y=1/f(x) and related forms."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-DEFS-DOMR",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "determination of the set of values taken by the function",
+          "reviewNotes": [
+            "Statement explicitly requires finding the set of values (range) of a function, which is a narrower aspect of the domain/range node."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-INTR",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "intersections with the axes",
+          "reviewNotes": [
+            "The statement requires sketches to show intersections with axes, which involves locating intersection points of the curve with the coordinate axes, a specific application of curve intersection concepts."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-MAXM",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Including determination of the set of values taken by the function, e.g. by the use of a discriminant. Detailed plotting of curves will not be required, but sketches will generally be expected to show significant features, such as turning points, asymptotes and intersections with the axes.",
+          "reviewNotes": [
+            "The notes explicitly require sketches to show turning points, which are local maxima or minima. The node CALC-DIFF-APPL-MAXM defines exactly this concept and its classification using derivative tests, matching the required skill."
           ]
         }
       ],
@@ -384,6 +438,15 @@
           "evidenceSpan": "find inverses of non-singular matrices",
           "reviewNotes": [
             "Directly matches inverse computation."
+          ]
+        },
+        {
+          "nodeId": "ALGF-MATR-OPS-ZERO",
+          "relation": "broader",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "I for the identity matrix",
+          "reviewNotes": [
+            "The note specifies the notation I for identity matrix will be used, which falls under the identity matrix concept."
           ]
         }
       ],
@@ -654,6 +717,15 @@
           "evidenceSpan": "recognise that the matrix product AB represents the transformation that results from the transformation represented by B followed by the transformation represented by A",
           "reviewNotes": [
             "Node exactly defines composite matrix transformations and their geometric interpretation."
+          ]
+        },
+        {
+          "nodeId": "ALGF-MATR-TRAN-2D",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "understand the use of 2 × 2 matrices to represent certain geometric transformations in the x-y plane",
+          "reviewNotes": [
+            "The statement explicitly requires understanding of using 2x2 matrices for geometric transformations, which is the exact definition of this node."
           ]
         }
       ],
@@ -1062,6 +1134,24 @@
           "reviewNotes": [
             "Computing distances between points, lines and planes."
           ]
+        },
+        {
+          "nodeId": "TRIG-APPL-MODE-VECT",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "angles",
+          "reviewNotes": [
+            "The statement requires solving problems concerning angles using lines, planes, and vector products, which inherently involves computing angles between vectors, matching the 'angles' aspect of this node."
+          ]
+        },
+        {
+          "nodeId": "VECT-GEOM-PROB-APPL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "solve problems",
+          "reviewNotes": [
+            "The statement explicitly requires using vector concepts to solve multi-step problems concerning distances, angles and intersections, aligning with the vector applications node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1219,15 +1309,6 @@
           "evidenceSpan": "distances",
           "reviewNotes": [
             "Statement includes solving problems concerning distances."
-          ]
-        },
-        {
-          "nodeId": "TRIG-APPL-MODE-VECT",
-          "relation": "exact",
-          "assessmentDepth": "application",
-          "evidenceSpan": "angle between a line and a plane, and the angle between two planes",
-          "reviewNotes": [
-            "Finding angles between lines and planes uses trigonometry in vector contexts."
           ]
         }
       ],
@@ -1484,6 +1565,24 @@
           "reviewNotes": [
             "The statement is about using vector methods to solve a problem."
           ]
+        },
+        {
+          "nodeId": "VECT-FURT-LINES-PLANE",
+          "relation": "broader",
+          "assessmentDepth": "application",
+          "evidenceSpan": "use equations of lines and planes",
+          "reviewNotes": [
+            "Statement explicitly requires using equations of planes alongside lines to solve problems."
+          ]
+        },
+        {
+          "nodeId": "VECT-FURT-PROD-SCAL",
+          "relation": "broader",
+          "assessmentDepth": "application",
+          "evidenceSpan": "scalar and vector products",
+          "reviewNotes": [
+            "Statement mentions scalar products as a tool for solving problems involving distances and angles."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1516,12 +1615,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "REAS-PROF-PROF-DEDU",
-          "relation": "narrower",
+          "nodeId": "REAS-PROF-PROF-V534EFC54E",
+          "relation": "exact",
           "assessmentDepth": "proof",
           "evidenceSpan": "method of mathematical induction",
           "reviewNotes": [
-            "Mathematical induction is a deductive proof method."
+            "Mathematical induction is the specific proof technique required by the statement."
           ]
         }
       ],
@@ -1553,12 +1652,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "REAS-PROF-PROF-DEDU",
-          "relation": "narrower",
+          "nodeId": "REAS-PROF-PROF-V534EFC54E",
+          "relation": "exact",
           "assessmentDepth": "proof",
           "evidenceSpan": "inductive proof",
           "reviewNotes": [
-            "Induction is a specific proof technique covered under proof by deduction."
+            "Inductive proof explicitly mentioned as the method to be used."
           ]
         }
       ],
@@ -1782,12 +1881,12 @@
           ]
         },
         {
-          "nodeId": "VECT-FURT-LINES-INTER",
+          "nodeId": "VECT-FURT-LINES-V5AF055836",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "interpret geometrically in terms of lines and planes",
+          "evidenceSpan": "three planes meeting in a common point, or in a common line, or having no common points.",
           "reviewNotes": [
-            "Geometric interpretation uses intersections of lines and planes."
+            "The statement explicitly assesses the geometric interpretation of three linear equations as three planes, which is the focus of this node."
           ]
         }
       ],
@@ -1947,6 +2046,15 @@
           "evidenceSpan": "matrix whose columns are eigenvectors",
           "reviewNotes": [
             "Eigenvectors form the columns of Q."
+          ]
+        },
+        {
+          "nodeId": "ALGF-MATR-EIG-POWR",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "calculating powers of 2 × 2 or 3 × 3 matrices",
+          "reviewNotes": [
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
           ]
         }
       ],
@@ -2154,15 +2262,6 @@
           "evidenceSpan": "integrate hyperbolic functions",
           "reviewNotes": [
             "Direct match to integrating hyperbolic functions."
-          ]
-        },
-        {
-          "nodeId": "CALC-FINT-FINT-TRSUB",
-          "relation": "exact",
-          "assessmentDepth": "application",
-          "evidenceSpan": "trigonometric or hyperbolic substitutions",
-          "reviewNotes": [
-            "Use of trigonometric substitution for integration."
           ]
         },
         {
@@ -3531,6 +3630,15 @@
           "reviewNotes": [
             "Angular speed relation v=rω used in energy and force equations."
           ]
+        },
+        {
+          "nodeId": "MECH-FORC-EQUI-NORM",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "normal contact force",
+          "reviewNotes": [
+            "Explicitly mentioned in notes; students must find normal contact force in vertical circle problems."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3660,6 +3768,15 @@
           "evidenceSpan": "considerations of work and energy",
           "reviewNotes": [
             "Calculating work done by elastic forces may be needed."
+          ]
+        },
+        {
+          "nodeId": "MECH-FURT-CIRC-HCIR",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "a particle attached to an elastic string acting as a 'conical pendulum'.",
+          "reviewNotes": [
+            "The example explicitly mentions a conical pendulum, which requires applying horizontal circular motion concepts with elastic forces."
           ]
         }
       ],
@@ -3869,6 +3986,24 @@
           "reviewNotes": [
             "The node defines E(X) only; this statement generalizes to E(g(X)), so it is a partial match."
           ]
+        },
+        {
+          "nodeId": "PROB-DIST-CRV-CONC",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "continuous random variable X",
+          "reviewNotes": [
+            "The statement explicitly mentions 'continuous random variable X', so the concept of a continuous random variable is assessable."
+          ]
+        },
+        {
+          "nodeId": "PROB-DIST-CRV-PDF",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "probability density function",
+          "reviewNotes": [
+            "The statement explicitly uses the probability density function f(x) in the integral for E(g(X))."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3900,6 +4035,15 @@
           "evidenceSpan": "understand and use the relationship between the probability density function (PDF) and the cumulative distribution function (CDF), and use either to evaluate probabilities or percentiles",
           "reviewNotes": [
             "Direct match to the concept of relating PDF and CDF."
+          ]
+        },
+        {
+          "nodeId": "PROB-DIST-CRV-PROB",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "use either to evaluate probabilities",
+          "reviewNotes": [
+            "The statement requires evaluating probabilities using the PDF; the node covers computing probability by integrating the density, matching that part. The statement also includes using the CDF and percentiles, so relation is partial."
           ]
         }
       ],
@@ -4426,6 +4570,33 @@
           "reviewNotes": [
             "The sign test uses binomial probabilities; for large samples, a normal approximation is appropriate, so this node is relevant."
           ]
+        },
+        {
+          "nodeId": "STAT-INF2-NONP-SIGN",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "single-sample sign test",
+          "reviewNotes": [
+            "Direct match to the sign test node, which covers single-sample median tests."
+          ]
+        },
+        {
+          "nodeId": "STAT-INF2-NONP-WSR",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "single-sample Wilcoxon signed-rank test",
+          "reviewNotes": [
+            "Direct match to the Wilcoxon signed-rank test node, which covers single-sample and paired tests."
+          ]
+        },
+        {
+          "nodeId": "STAT-INF2-NONP-V5B3E5DFE2",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "normal approximations",
+          "reviewNotes": [
+            "The normal approximation for the Wilcoxon signed-rank test is explicitly covered by this node, providing specific formulas. It is a specific type of normal approximation, so relation is narrower."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4496,6 +4667,24 @@
           "evidenceSpan": "test for identity of populations",
           "reviewNotes": [
             "Testing for identity requires formulation of null and alternative hypotheses, covered by this node."
+          ]
+        },
+        {
+          "nodeId": "STAT-INF2-NONP-V509C283DC",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "as appropriate",
+          "reviewNotes": [
+            "The phrase 'as appropriate' indicates selecting the correct test based on data structure, which directly maps to the non-parametric test selection node."
+          ]
+        },
+        {
+          "nodeId": "STAT-INF2-NONP-V5B3E5DFE2",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "normal approximations",
+          "reviewNotes": [
+            "The normal approximations for the Wilcoxon signed-rank and rank-sum tests are covered by this node, providing specific formulas. It is a specific type of normal approximation, so relation is narrower."
           ]
         }
       ],
@@ -4638,15 +4827,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-19",
-    "promptVersion": "knowledge-mapping-v5-atomic-9-paper-bound",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "fdfe5e60db05caf6c45619e19b368a542b2e6b82c14387f03fe964fa90418800",
     "extractionSha256": "d77c4c1e7be644576a75b17149944a9468c3292486bb811c5da0fef6481de1f3",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "97e502fd581d0708001d7b271199fd36c7dcec36369e95e84895dd7a065ecbc9",
-    "batchId": "knowledge-v5-unified-20260719-CAIE-9231",
+    "batchId": "knowledge-v5-concept-accounting-20260723-CAIE-9231",
     "calls": [
       {
         "label": "knowledge-v5-extract-CAIE-9231-p15-p16-p17-p18",
@@ -5711,10 +5900,20 @@
         "elapsedSeconds": 16,
         "clientRequestId": "d25284bd-5077-4a90-96ab-ff4f2b45b528",
         "fallbackReason": "explicit-deepseek-test"
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-CAIE-9231",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

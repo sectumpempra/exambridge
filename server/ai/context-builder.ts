@@ -89,6 +89,7 @@ const MAX_PROMPT_CONTEXT_CHARACTERS = 52_000;
 const MAX_SINGLE_PAPER_CONTEXT_CHARACTERS = 240_000;
 const MAX_SHARED_CONCEPTS = 32;
 const MAX_STATEMENT_ITEMS_PER_SIDE = 12;
+const MAX_QUERY_MATCHED_KNOWLEDGE_STATEMENTS = 16;
 
 export type AIPaperFact = {
   paperId: string;
@@ -119,6 +120,71 @@ function createSourceRegistry(): SourceRegistry {
 
 function normalizedToken(value: string): string {
   return value.toUpperCase().replace(/[^A-Z0-9]+/g, "");
+}
+
+const KNOWLEDGE_TOKEN_EQUIVALENTS = new Map([
+  ["axes", "axis"],
+  ["collinearity", "collinear"],
+  ["parallelism", "parallel"],
+  ["similarity", "similar"],
+  ["symmetrical", "symmetry"],
+  ["symmetric", "symmetry"],
+  ["vertices", "vertex"],
+]);
+
+function normalizeKnowledgeWord(value: string): string {
+  const token = value.toLowerCase();
+  const equivalent = KNOWLEDGE_TOKEN_EQUIVALENTS.get(token);
+  if (equivalent) return equivalent;
+  if (token.length > 5 && token.endsWith("ies")) return `${token.slice(0, -3)}y`;
+  if (token.length > 4 && token.endsWith("s") && !token.endsWith("ss")) return token.slice(0, -1);
+  return token;
+}
+
+function knowledgeQueryTokens(value: string): string[] {
+  return [...new Set(
+    value
+      .toLowerCase()
+      .replace(/[’']/g, "")
+      .match(/[a-z0-9]{2,}|[\u3400-\u9fff]{2,}/g)
+      ?.map(normalizeKnowledgeWord)
+      .filter((token) => !["paper", "考试", "考纲", "知识点", "会考吗"].includes(token)) ?? [],
+  )];
+}
+
+function statementKnowledgeScore(
+  statement: KnowledgeMappingV5["statements"][number],
+  semantics: Map<string, CanonicalNodeSemanticsV5>,
+  query: string,
+): number {
+  const queryTokens = knowledgeQueryTokens(query);
+  if (queryTokens.length === 0) return 0;
+  const evidence = [
+    statement.topicHeading,
+    statement.statementText,
+    ...statement.notesText,
+    ...statement.examplesText,
+    ...statement.conceptLinks.flatMap((link) => {
+      const node = semantics.get(link.nodeId);
+      return node ? [node.definition, ...node.aliases, ...node.objectScopes, ...node.inclusions] : [];
+    }),
+  ].join(" ");
+  const evidenceTokens = new Set(knowledgeQueryTokens(evidence));
+  let score = 0;
+  for (const queryToken of queryTokens) {
+    if (evidenceTokens.has(queryToken)) {
+      score += 12;
+      continue;
+    }
+    if (queryToken.length >= 5 && [...evidenceTokens].some((token) => token.includes(queryToken) || queryToken.includes(token))) {
+      score += 5;
+    }
+  }
+  if (statement.examplesText.some((example) => {
+    const tokens = new Set(knowledgeQueryTokens(example));
+    return queryTokens.some((token) => tokens.has(token));
+  })) score += 8;
+  return score;
 }
 
 function normalizedBoard(value: string): string {
@@ -758,6 +824,7 @@ export class AIContextBuilder {
     manifest: KnowledgeManifest,
     selectedPaperIds: Array<string | null>,
     sources: SourceRegistry,
+    query: string,
   ) {
     if (entries.length === 0) return undefined;
     const ontology = await this.loadOntology(manifest);
@@ -775,8 +842,13 @@ export class AIContextBuilder {
       const mapping = mappings[0];
       const assessableStatements = mapping.statements.filter((statement) => statement.statementType === "assessable-content");
       const selectedStatements = assessableStatements.filter((statement) => appliesToPaper(statement, paperId));
+      const queryMatchedStatements = selectedStatements
+        .map((statement) => ({ statement, score: statementKnowledgeScore(statement, semantics, query) }))
+        .filter((item) => item.score > 0)
+        .sort((left, right) => right.score - left.score || left.statement.statementId.localeCompare(right.statement.statementId))
+        .slice(0, MAX_QUERY_MATCHED_KNOWLEDGE_STATEMENTS);
       const concepts = new Map<string, CanonicalNodeSemanticsV5>();
-      for (const statement of selectedStatements) {
+      for (const statement of (paperId ? selectedStatements : queryMatchedStatements.map((item) => item.statement))) {
         for (const link of statement.conceptLinks) {
           const semantic = semantics.get(link.nodeId);
           if (semantic?.reviewStatus === "owner-approved") concepts.set(link.nodeId, semantic);
@@ -814,10 +886,35 @@ export class AIContextBuilder {
             tiers: statement.tiers,
             routes: statement.routes,
             conceptLinks: statement.conceptLinks.map((link) => ({ nodeId: link.nodeId, relation: link.relation })),
+          })) : queryMatchedStatements.map(({ statement, score }) => ({
+            statementId: statement.statementId,
+            sectionId: statement.sectionId,
+            topicHeading: mapping.board === "AQA" ? undefined : statement.topicHeading,
+            statementText: mapping.board === "AQA" ? undefined : statement.statementText,
+            notesText: mapping.board === "AQA" ? undefined : statement.notesText,
+            examplesText: mapping.board === "AQA" ? undefined : statement.examplesText,
+            printedPage: mapping.board === "AQA" ? undefined : statement.printedPage,
+            pdfPage: mapping.board === "AQA" ? undefined : statement.pdfPage,
+            tiers: statement.tiers,
+            routes: statement.routes,
+            paperApplicability: statement.paperApplicability,
+            conceptLinks: statement.conceptLinks.map((link) => ({ nodeId: link.nodeId, relation: link.relation })),
+            queryRelevanceScore: score,
+          })),
+          queryMatchedEvidence: paperId ? queryMatchedStatements.map(({ statement, score }) => ({
+            statementId: statement.statementId,
+            notesText: mapping.board === "AQA" ? undefined : statement.notesText,
+            examplesText: mapping.board === "AQA" ? undefined : statement.examplesText,
+            printedPage: mapping.board === "AQA" ? undefined : statement.printedPage,
+            pdfPage: mapping.board === "AQA" ? undefined : statement.pdfPage,
+            queryRelevanceScore: score,
           })) : undefined,
           statementCount: paperId ? selectedStatements.length : undefined,
           statementsAreExhaustiveForSelectedPaper: Boolean(paperId),
-          concepts: (paperId ? [...concepts.values()] : []).map((node) => ({
+          queryMatchedStatementCount: queryMatchedStatements.length,
+          queryMatchedStatementsAreExhaustive: false,
+          knowledgeEvidencePolicy: "A query-matched official example is positive assessable evidence within its declared tier, route and Paper applicability. The absence of a query match is not proof that a topic is excluded.",
+          concepts: [...concepts.values()].map((node) => ({
             nodeId: node.nodeId,
             definition: node.definition,
             aliases: node.aliases,
@@ -944,7 +1041,13 @@ export class AIContextBuilder {
     const catalogFacts = this.addCatalogContext(courses, sources);
     const overviews = this.addOverviewContext(courses, sources);
     const selectedPaperIds = resolveSelectedPaperIds(request, knowledgeEntries);
-    const knowledge = await this.addKnowledgeContext(knowledgeEntries, manifest, selectedPaperIds, sources);
+    const knowledge = await this.addKnowledgeContext(
+      knowledgeEntries,
+      manifest,
+      selectedPaperIds,
+      sources,
+      latestUserMessage(request),
+    );
     const paperFacts = this.paperFactsForSelections(courses, knowledgeEntries, selectedPaperIds);
     const rawAcademic = buildAcademicToolContext(
       request,

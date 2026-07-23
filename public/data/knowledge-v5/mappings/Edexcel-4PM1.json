@@ -977,6 +977,24 @@
           "reviewNotes": [
             "Symmetric functions of roots"
           ]
+        },
+        {
+          "nodeId": "ALGF-EQN-QUAD-FORM",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "ax² + bx + c = 0 has roots α, β = (−b ± √(b² − 4ac))/(2a)",
+          "reviewNotes": [
+            "Students are expected to use the quadratic formula to find the roots, as explicitly stated in the note."
+          ]
+        },
+        {
+          "nodeId": "ALGF-ROOT-ROOT-TRANS",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "forming an equation with given roots, which are expressed in terms of α and β",
+          "reviewNotes": [
+            "Constructing a new quadratic equation whose roots are transformations of α and β, as stated in the note."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1051,21 +1069,21 @@
           ]
         },
         {
-          "nodeId": "ALGF-POLY-POLY-DIVL",
-          "relation": "exact",
-          "assessmentDepth": "application",
-          "evidenceSpan": "determine the remainder when the polynomial f(x) is divided by (ax + b)",
-          "reviewNotes": [
-            "Remainder theorem via division"
-          ]
-        },
-        {
           "nodeId": "ALGF-POLY-POLY-CUBQ",
           "relation": "partial",
           "assessmentDepth": "application",
           "evidenceSpan": "The factor and remainder theorems",
           "reviewNotes": [
             "Application to cubic factorisation"
+          ]
+        },
+        {
+          "nodeId": "ALGF-POLY-POLY-V523F6C6FE",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "determine the remainder when the polynomial f(x) is divided by (ax + b) or (ax − b)",
+          "reviewNotes": [
+            "Application of the remainder theorem: substituting x = -b/a yields the remainder."
           ]
         }
       ],
@@ -1550,21 +1568,30 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "VECT-SPAC-THRD-IJK",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Use of the vectors i and j will be expected.",
-          "reviewNotes": [
-            "i and j are the standard basis vectors for expressing components in 2D."
-          ]
-        },
-        {
           "nodeId": "TRIG-APPL-MODE-VECT",
           "relation": "partial",
           "assessmentDepth": "application",
           "evidenceSpan": "resolved parts",
           "reviewNotes": [
             "Resolving a vector into perpendicular components often uses trigonometry."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-UNIT",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Use of the vectors i and j will be expected.",
+          "reviewNotes": [
+            "i and j are unit vectors, as included in VECT-BASIC-NOTN-UNIT."
+          ]
+        },
+        {
+          "nodeId": "VECT-BASIC-NOTN-V551FD2F1C",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Components",
+          "reviewNotes": [
+            "The statement explicitly covers components of a vector, part of 2D vector terminology and notation."
           ]
         }
       ],
@@ -1633,6 +1660,15 @@
           "evidenceSpan": "Position vector",
           "reviewNotes": [
             "A position vector locates a point relative to the origin."
+          ]
+        },
+        {
+          "nodeId": "VECT-GEOM-PROB-SEGM",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "AB⃗ = OB⃗ − OA⃗ = b − a",
+          "reviewNotes": [
+            "The equation expresses directed segment AB using position vectors, a direct application of expressing segments as vectors."
           ]
         }
       ],
@@ -1721,6 +1757,15 @@
           "evidenceSpan": "Position vector of a point dividing the line AB in the ratio m : n",
           "reviewNotes": [
             "Ratio division is a key application of position vectors."
+          ]
+        },
+        {
+          "nodeId": "VECT-GEOM-PROB-APPL",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "concurrency",
+          "reviewNotes": [
+            "Concurrency is a geometric property that can be established using vectors, fitting the broad application of vectors to geometry."
           ]
         }
       ],
@@ -2015,6 +2060,15 @@
           "reviewNotes": [
             "Linearity of differentiation for sums and constant multiples."
           ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-V5A76A4288",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "integration of sums of multiples",
+          "reviewNotes": [
+            "Integration linearity for sums and constant multiples is explicitly required."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2298,6 +2352,15 @@
           "reviewNotes": [
             "Connected rates via the chain rule."
           ]
+        },
+        {
+          "nodeId": "CALC-DIFF-APPL-V574BA390A",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "d y ≈ d y d x d x for small dx",
+          "reviewNotes": [
+            "The note explicitly requires knowledge of linear approximation using the derivative."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2413,6 +2476,15 @@
           "evidenceSpan": "exact values for sine, cosine and tangent",
           "reviewNotes": [
             "Exact values for special angles are explicitly required."
+          ]
+        },
+        {
+          "nodeId": "TRIG-BASE-V576670427",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "trigonometric ratios of angles of any magnitude",
+          "reviewNotes": [
+            "The syllabus explicitly requires understanding of trigonometric ratios for any angle, which matches the unit circle definition."
           ]
         }
       ],
@@ -2678,6 +2750,15 @@
           "reviewNotes": [
             "One example is a quadratic equation in sin after using identity."
           ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-IDEN-PYTH",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "6cos² x° + sin x° − 5 = 0",
+          "reviewNotes": [
+            "Solving this example equation requires applying the Pythagorean identity sin²θ+cos²θ=1 to express all terms in one trigonometric function."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2685,15 +2766,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-19",
-    "promptVersion": "knowledge-mapping-v5-atomic-9-paper-bound",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "4d13a0fb7002e472c58ac3e136e3edb2ca33f9866597c75e871dbd5f06dcf5a6",
     "extractionSha256": "4956cb18ea4246f8833edd11a6b4687a3dc0fbcb5593f50fb04a8b19ba8e5a7f",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "5a82ca77add70cbd1e03cf41f955fdabd010ea8f3ff4488ad97c7ecf63650b84",
-    "batchId": "knowledge-v5-unified-20260719-Edexcel-4PM1",
+    "batchId": "knowledge-v5-concept-accounting-20260723-Edexcel-4PM1",
     "calls": [
       {
         "label": "knowledge-v5-extract-Edexcel-4PM1-p13-p14-p15-p16",
@@ -2834,10 +2915,20 @@
         "elapsedSeconds": 270,
         "clientRequestId": "fe682a02-53d7-4fc7-8699-c078d1f97299",
         "fallbackReason": "explicit-deepseek-test"
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-Edexcel-4PM1",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

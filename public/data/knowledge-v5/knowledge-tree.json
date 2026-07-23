@@ -1,7 +1,7 @@
 {
-  "version": "5.0.0-candidate.15",
-  "description": "Knowledge V5 canonical tree with all curriculum mappings closed onto comparison-eligible leaves.",
-  "totalNodes": 1105,
+  "version": "5.0.0-owner-approved.20260723",
+  "description": "Knowledge V5 canonical tree with concept-accounting corrections and owner-approval gate closure.",
+  "totalNodes": 1140,
   "nodes": [
     {
       "nodeId": "ROOT",
@@ -24962,6 +24962,683 @@
         "WJEC-3300"
       ],
       "parentNodeId": "STAT-ENQ-SAMP"
+    },
+    {
+      "nodeId": "NUMM-ODE-EULR-EXPL",
+      "name": "Euler Method",
+      "level": 3,
+      "domain": "Numerical Methods",
+      "path": [
+        "Mathematics",
+        "Numerical Methods",
+        "Numerical Differential Equations",
+        "Euler Method"
+      ],
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "isLeaf": true,
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "parentNodeId": "NUMM-ODE"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-MODE",
+      "name": "Mode of a Discrete Random Variable",
+      "level": 4,
+      "domain": "Probability and Distributions",
+      "path": [
+        "Mathematics",
+        "Probability and Distributions",
+        "Discrete Random Variables",
+        "Derived Distribution Methods",
+        "Mode of a Discrete Random Variable"
+      ],
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "isLeaf": true,
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "parentNodeId": "PROB-DRVD-DRVB"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-MEDI",
+      "name": "Median of a Discrete Random Variable",
+      "level": 4,
+      "domain": "Probability and Distributions",
+      "path": [
+        "Mathematics",
+        "Probability and Distributions",
+        "Discrete Random Variables",
+        "Derived Distribution Methods",
+        "Median of a Discrete Random Variable"
+      ],
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "isLeaf": true,
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "parentNodeId": "PROB-DRVD-DRVB"
+    },
+    {
+      "nodeId": "PROB-DIST-EXPO-MEAN",
+      "name": "Exponential Distribution Moments",
+      "level": 3,
+      "domain": "Probability and Distributions",
+      "path": [
+        "Mathematics",
+        "Probability and Distributions",
+        "Probability Distributions",
+        "Exponential Distribution Moments"
+      ],
+      "stageDepth": [
+        "a_level",
+        "further"
+      ],
+      "isLeaf": true,
+      "sourceHints": [
+        "AQA-7367"
+      ],
+      "parentNodeId": "PROB-DIST"
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM-VERT",
+      "name": "Vertex of a geometric figure",
+      "level": 4,
+      "domain": "Geometry and Mensuration",
+      "path": [
+        "Mathematics",
+        "Geometry and Mensuration",
+        "Geometry of Shapes",
+        "Geometrical Terms and Shapes",
+        "Vertex of a geometric figure"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "CAIE-0580-CAIE-0580-C4.1"
+      ],
+      "parentNodeId": "GEOM-SHAP-TERM"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-CUBS",
+      "name": "Symmetry of cubic graphs",
+      "level": 4,
+      "domain": "Algebra and Functions",
+      "path": [
+        "Mathematics",
+        "Algebra and Functions",
+        "Functions",
+        "Graphs of Functions",
+        "Symmetry of cubic graphs"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "CAIE-0580-OFFICIAL-CAIE-0580-E2.11-3"
+      ],
+      "parentNodeId": "ALGF-FUNC-GRAP"
+    },
+    {
+      "nodeId": "ALGF-FUNC-GRAP-MODX",
+      "name": "Graphs of y = f(|x|)",
+      "level": 4,
+      "domain": "Algebra and Functions",
+      "path": [
+        "Mathematics",
+        "Algebra and Functions",
+        "Functions",
+        "Graphs of Functions",
+        "Graphs of y = f(|x|)"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "CAIE-9231-OFFICIAL-CAIE-9231-1.2-GRAPHRELS"
+      ],
+      "parentNodeId": "ALGF-FUNC-GRAP"
+    },
+    {
+      "nodeId": "STAT-SUMM-CENT-VARI",
+      "name": "Variance of a data set",
+      "level": 4,
+      "domain": "Statistics",
+      "path": [
+        "Mathematics",
+        "Statistics",
+        "Summary Statistics",
+        "Averages and Spread",
+        "Variance of a data set"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "Edexcel-8MA0-OFFICIAL-Edexcel-8MA0-2.3a",
+        "Edexcel-9MA0-OFFICIAL-Edexcel-9MA0-2.3-3",
+        "Edexcel-IAL-OFFICIAL-Edexcel-IAL-S1-2.3",
+        "OCR-H240-2.02f"
+      ],
+      "parentNodeId": "STAT-SUMM-CENT"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SEQU-SEC2",
+      "name": "Second-order linear recurrence relations",
+      "level": 4,
+      "domain": "Algebra and Functions",
+      "path": [
+        "Mathematics",
+        "Algebra and Functions",
+        "Sequences and Series",
+        "Sequences",
+        "Second-order linear recurrence relations"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "Edexcel-9FM0-6.2",
+        "OCR-H245-OFFICIAL-OCR-H245-Y545-8.01g"
+      ],
+      "parentNodeId": "ALGF-SEQ-SEQU"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS-ARPF",
+      "name": "Proof of the arithmetic-series sum",
+      "level": 4,
+      "domain": "Algebra and Functions",
+      "path": [
+        "Mathematics",
+        "Algebra and Functions",
+        "Sequences and Series",
+        "Arithmetic and Geometric Series",
+        "Proof of the arithmetic-series sum"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "Edexcel-IAL-OFFICIAL-Edexcel-IAL-P2-4.2"
+      ],
+      "parentNodeId": "ALGF-SEQ-SERS"
+    },
+    {
+      "nodeId": "ALGF-SEQ-SERS-GEPF",
+      "name": "Proof of the finite geometric-series sum",
+      "level": 4,
+      "domain": "Algebra and Functions",
+      "path": [
+        "Mathematics",
+        "Algebra and Functions",
+        "Sequences and Series",
+        "Arithmetic and Geometric Series",
+        "Proof of the finite geometric-series sum"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "Edexcel-IAL-OFFICIAL-Edexcel-IAL-P2-4.4"
+      ],
+      "parentNodeId": "ALGF-SEQ-SERS"
+    },
+    {
+      "nodeId": "PROB-DRVD-DRVB-CDF",
+      "name": "Discrete cumulative distribution function",
+      "level": 4,
+      "domain": "Probability and Distributions",
+      "path": [
+        "Mathematics",
+        "Probability and Distributions",
+        "Discrete Random Variables",
+        "Derived Distribution Methods",
+        "Discrete cumulative distribution function"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "Edexcel-IAL-OFFICIAL-Edexcel-IAL-S1-5.2"
+      ],
+      "parentNodeId": "PROB-DRVD-DRVB"
+    },
+    {
+      "nodeId": "STAT-ENQ-SAMP-CLUS",
+      "name": "Cluster sampling",
+      "level": 4,
+      "domain": "Statistics",
+      "path": [
+        "Mathematics",
+        "Statistics",
+        "Statistical Enquiry",
+        "Sampling and Data Collection",
+        "Cluster sampling"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H240-OFFICIAL-OCR-H240-2.01d"
+      ],
+      "parentNodeId": "STAT-ENQ-SAMP"
+    },
+    {
+      "nodeId": "STAT-DATA-REPR-DOTP",
+      "name": "Dot plots",
+      "level": 4,
+      "domain": "Statistics",
+      "path": [
+        "Mathematics",
+        "Statistics",
+        "Data Handling",
+        "Statistical Diagrams",
+        "Dot plots"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H240-OFFICIAL-OCR-H240-2.02a"
+      ],
+      "parentNodeId": "STAT-DATA-REPR"
+    },
+    {
+      "nodeId": "VECT-BASIC-NOTN-SVEC",
+      "name": "Scalar and vector distinction",
+      "level": 4,
+      "domain": "Vectors",
+      "path": [
+        "Mathematics",
+        "Vectors",
+        "Vector Basics",
+        "Vector Notation and Operations",
+        "Scalar and vector distinction"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H240-OFFICIAL-OCR-H240-1.10a"
+      ],
+      "parentNodeId": "VECT-BASIC-NOTN"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-CONP",
+      "name": "Equilibrium of connected particles",
+      "level": 4,
+      "domain": "Mechanics",
+      "path": [
+        "Mathematics",
+        "Mechanics",
+        "Forces and Equilibrium",
+        "Equilibrium",
+        "Equilibrium of connected particles"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H240-OFFICIAL-OCR-H240-3.03n"
+      ],
+      "parentNodeId": "MECH-FORC-EQUI"
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE-COMP",
+      "name": "Composite numbers",
+      "level": 4,
+      "domain": "Number",
+      "path": [
+        "Mathematics",
+        "Number",
+        "Number Sets and Notation",
+        "Types of Number",
+        "Composite numbers"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H245-OFFICIAL-OCR-H245-Y545-8.02i"
+      ],
+      "parentNodeId": "NUM-SYS-TYPE"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-ATGR",
+      "name": "Acceleration-time graphs",
+      "level": 4,
+      "domain": "Mechanics",
+      "path": [
+        "Mathematics",
+        "Mechanics",
+        "Kinematics",
+        "Motion in a Straight Line",
+        "Acceleration-time graphs"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H640-OCR-H640-k4"
+      ],
+      "parentNodeId": "MECH-KIN-LINE"
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ-INCL",
+      "name": "Projectile range on an inclined plane",
+      "level": 4,
+      "domain": "Mechanics",
+      "path": [
+        "Mathematics",
+        "Mechanics",
+        "Further Mechanics",
+        "Projectile Motion",
+        "Projectile range on an inclined plane"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H640-OCR-H640-My1"
+      ],
+      "parentNodeId": "MECH-FURT-PROJ"
+    },
+    {
+      "nodeId": "MECH-FURT-PROJ-BPAR",
+      "name": "Bounding parabola of projectile trajectories",
+      "level": 4,
+      "domain": "Mechanics",
+      "path": [
+        "Mathematics",
+        "Mechanics",
+        "Further Mechanics",
+        "Projectile Motion",
+        "Bounding parabola of projectile trajectories"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H640-OCR-H640-My1"
+      ],
+      "parentNodeId": "MECH-FURT-PROJ"
+    },
+    {
+      "nodeId": "MECH-GRAV-INVS",
+      "name": "Inverse-square law of gravitation",
+      "level": 2,
+      "domain": "Mechanics",
+      "path": [
+        "Mathematics",
+        "Mechanics",
+        "Inverse-square law of gravitation"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H640-OCR-H640-F2-2"
+      ],
+      "parentNodeId": "MECH"
+    },
+    {
+      "nodeId": "MECH-FORC-EQUI-AFRI",
+      "name": "Angle of friction",
+      "level": 4,
+      "domain": "Mechanics",
+      "path": [
+        "Mathematics",
+        "Mechanics",
+        "Forces and Equilibrium",
+        "Equilibrium",
+        "Angle of friction"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H640-OCR-H640-F11"
+      ],
+      "parentNodeId": "MECH-FORC-EQUI"
+    },
+    {
+      "nodeId": "MECH-FURT-RIGD-VMOM",
+      "name": "Vector moment of a force",
+      "level": 4,
+      "domain": "Mechanics",
+      "path": [
+        "Mathematics",
+        "Mechanics",
+        "Further Mechanics",
+        "Rigid Body Statics",
+        "Vector moment of a force"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H640-OCR-H640-MF13"
+      ],
+      "parentNodeId": "MECH-FURT-RIGD"
+    },
+    {
+      "nodeId": "GEOM-SHAP-TERM-DGNL",
+      "name": "Diagonal of a polygon or solid",
+      "level": 4,
+      "domain": "Geometry and Mensuration",
+      "path": [
+        "Mathematics",
+        "Geometry and Mensuration",
+        "Geometry of Shapes",
+        "Geometrical Terms and Shapes",
+        "Diagonal of a polygon or solid"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "WJEC-3300-OFFICIAL-WJEC-3300-H-GEO-012",
+        "WJEC-C00-4968-0-3.1.1-2"
+      ],
+      "parentNodeId": "GEOM-SHAP-TERM"
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL-RGHT",
+      "name": "Angle properties of right-angled triangles",
+      "level": 4,
+      "domain": "Geometry and Mensuration",
+      "path": [
+        "Mathematics",
+        "Geometry and Mensuration",
+        "Geometry of Shapes",
+        "Angles",
+        "Angle properties of right-angled triangles"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "WJEC-C00-4968-0-p32-r5-b0-l2"
+      ],
+      "parentNodeId": "GEOM-SHAP-ANGL"
+    },
+    {
+      "nodeId": "GEOM-SHAP-ANGL-EQUI",
+      "name": "Angle properties of equilateral triangles",
+      "level": 4,
+      "domain": "Geometry and Mensuration",
+      "path": [
+        "Mathematics",
+        "Geometry and Mensuration",
+        "Geometry of Shapes",
+        "Angles",
+        "Angle properties of equilateral triangles"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "WJEC-C00-4968-0-p32-r5-b0-l2"
+      ],
+      "parentNodeId": "GEOM-SHAP-ANGL"
+    },
+    {
+      "nodeId": "ALGF-LOG-LOGR-INEQ",
+      "name": "Exponential and logarithmic inequalities",
+      "level": 4,
+      "domain": "Algebra and Functions",
+      "path": [
+        "Mathematics",
+        "Algebra and Functions",
+        "Exponentials and Logarithms",
+        "Logarithms",
+        "Exponential and logarithmic inequalities"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "CAIE-9709-OFFICIAL-CAIE-9709-P3-3.2.3"
+      ],
+      "parentNodeId": "ALGF-LOG-LOGR"
+    },
+    {
+      "nodeId": "ALGF-EQN-QUAD-SOLV",
+      "name": "Solving quadratic equations by an appropriate method",
+      "level": 4,
+      "domain": "Algebra and Functions",
+      "path": [
+        "Mathematics",
+        "Algebra and Functions",
+        "Equations and Inequalities",
+        "Quadratic Equations",
+        "Solving quadratic equations by an appropriate method"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "Edexcel-4MA1-OFFICIAL-Edexcel-4MA1-2.7-3"
+      ],
+      "parentNodeId": "ALGF-EQN-QUAD"
+    },
+    {
+      "nodeId": "ALGF-POLY-PART-CUBC",
+      "name": "Partial fractions with an unfactorised cubic denominator",
+      "level": 4,
+      "domain": "Algebra and Functions",
+      "path": [
+        "Mathematics",
+        "Algebra and Functions",
+        "Polynomials and Rational Functions",
+        "Partial Fractions",
+        "Partial fractions with an unfactorised cubic denominator"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H640-OFFICIAL-OCR-H640-a15"
+      ],
+      "parentNodeId": "ALGF-POLY-PART"
+    },
+    {
+      "nodeId": "MECH-KIN-LINE-DERI",
+      "name": "Derivation of constant-acceleration formulae",
+      "level": 4,
+      "domain": "Mechanics",
+      "path": [
+        "Mathematics",
+        "Mechanics",
+        "Kinematics",
+        "Motion in a Straight Line",
+        "Derivation of constant-acceleration formulae"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H640-OCR-H640-k7"
+      ],
+      "parentNodeId": "MECH-KIN-LINE"
+    },
+    {
+      "nodeId": "NUM-SYS-TYPE-PARI",
+      "name": "Odd and even integers",
+      "level": 4,
+      "domain": "Number",
+      "path": [
+        "Mathematics",
+        "Number",
+        "Number Sets and Notation",
+        "Types of Number",
+        "Odd and even integers"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "WJEC-3300-OFFICIAL-WJEC-3300-N-1.7",
+        "OCR-J560-OFFICIAL-OCR-J560-1.02a"
+      ],
+      "parentNodeId": "NUM-SYS-TYPE"
+    },
+    {
+      "nodeId": "ALGF-MATR-EIG-POWR",
+      "name": "Matrix powers by diagonalisation",
+      "level": 4,
+      "domain": "Algebra and Functions",
+      "path": [
+        "Mathematics",
+        "Algebra and Functions",
+        "Matrices",
+        "Eigenvalues and Diagonalisation",
+        "Matrix powers by diagonalisation"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "CAIE-9231-OFFICIAL-CAIE-9231-2.2.5"
+      ],
+      "parentNodeId": "ALGF-MATR-EIG"
+    },
+    {
+      "nodeId": "CALC-HYP-HYP-EQNS",
+      "name": "Hyperbolic equations",
+      "level": 4,
+      "domain": "Calculus",
+      "path": [
+        "Mathematics",
+        "Calculus",
+        "Hyperbolic Functions",
+        "Core Hyperbolic Function Theory",
+        "Hyperbolic equations"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "Edexcel-IAL-OFFICIAL-Edexcel-IAL-FP3-1.1"
+      ],
+      "parentNodeId": "CALC-HYP-HYP"
+    },
+    {
+      "nodeId": "STAT-BIVA-CORR-LINZ",
+      "name": "Linearising nonlinear data relationships",
+      "level": 4,
+      "domain": "Statistics",
+      "path": [
+        "Mathematics",
+        "Statistics",
+        "Bivariate Data",
+        "Correlation and Regression",
+        "Linearising nonlinear data relationships"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "Edexcel-9MA0-OFFICIAL-Edexcel-9MA0-2.2"
+      ],
+      "parentNodeId": "STAT-BIVA-CORR"
+    },
+    {
+      "nodeId": "NUM-MOD-CONG-SIMU",
+      "name": "Simultaneous linear congruences",
+      "level": 2,
+      "domain": "Number",
+      "path": [
+        "Mathematics",
+        "Number",
+        "Simultaneous linear congruences"
+      ],
+      "stageDepth": "advanced",
+      "isLeaf": true,
+      "sourceHints": [
+        "OCR-H245-OFFICIAL-OCR-H245-Y545-8.02h"
+      ],
+      "parentNodeId": "NUM"
     }
   ]
 }

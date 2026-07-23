@@ -189,6 +189,26 @@
           "reviewNotes": [
             "Local-only semantic candidate score 0.924; requires Codex disposition."
           ]
+        },
+        {
+          "nodeId": "REAS-PROF-PROF-V534EFC54E",
+          "relation": "exact",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "mathematical induction",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "CALC-SER-SUMS-SUMR",
+          "relation": "partial",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "sums of series",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -407,12 +427,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "ALGF-CPLX-POLAR-CONV",
+          "nodeId": "ALGF-CPLX-POLAR-MULT",
           "relation": "exact",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Multiply and divide complex numbers in modulus-argument form (knowledge of radians and compound angle formulae is assumed).",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Multiply and divide complex numbers in modulus-argument form",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.929; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -480,6 +501,26 @@
           "reviewNotes": [
             "Local-only semantic candidate score 1.037; requires Codex disposition."
           ]
+        },
+        {
+          "nodeId": "ALGF-CPLX-DEMO-MULTA",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "multiple angle formulae",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "ALGF-CPLX-DEMO-SERIES",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "sums of series",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -545,6 +586,16 @@
           "evidenceSpan": "Find the n distinct nth roots of reⁱᶿ for r ≠ 0 and know that they form the vertices of a regular n-gon in the Argand diagram.",
           "reviewNotes": [
             "Local-only semantic candidate score 0.894; requires Codex disposition."
+          ]
+        },
+        {
+          "nodeId": "ALGF-CPLX-ROOT-NTH",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "n distinct nth roots",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -689,12 +740,33 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "GEOM-CONS-TRAN-COMB",
+          "nodeId": "ALGF-MATR-TRAN-2D",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Use matrices to represent linear transformations in 2D; successive transformations; single transformations in 3D (3D transformations confined to reflection in one of x = 0, y = 0, z = 0 or rotation about one of the coordinate axes) (knowledge of 3D vectors is assumed).",
+          "evidenceSpan": "linear transformations in 2D",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.038; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "ALGF-MATR-TRAN-3D",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "single transformations in 3D",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "ALGF-MATR-TRAN-COMP",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "successive transformations",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -878,6 +950,16 @@
           "evidenceSpan": "Solve three linear simultaneous equations in three variables by use of the inverse matrix.",
           "reviewNotes": [
             "Local-only semantic candidate score 1.308; requires Codex disposition."
+          ]
+        },
+        {
+          "nodeId": "ALGF-MATR-INV-INV",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "by use of the inverse matrix",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -1214,12 +1296,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUM-SYS-TYPE-INTG",
+          "nodeId": "CALC-SER-SUMS-SUMR",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Understand and use formulae for the sums of integers, squares and cubes and use these to sum other series.",
+          "evidenceSpan": "sums of integers, squares and cubes",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.863; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -1361,6 +1444,16 @@
           "evidenceSpan": "Evaluation of limits using Maclaurin series or l'Hôpital's rule.",
           "reviewNotes": [
             "Local-only semantic candidate score 1.096; requires Codex disposition."
+          ]
+        },
+        {
+          "nodeId": "CALC-DIFF-CONC-V594B8FC89",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "l'Hôpital's rule",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -1679,30 +1772,42 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "GEOM-CONS-TRAN-REFL",
-          "relation": "exact",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Single transformations of curves involving translations, stretches parallel to coordinate axes and reflections in the coordinate axes and the lines y = ± x .",
-          "reviewNotes": [
-            "Local-only semantic candidate score 0.996; requires Codex disposition."
-          ]
-        },
-        {
-          "nodeId": "GEOM-CONS-TRAN-TRAN",
-          "relation": "exact",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Single transformations of curves involving translations, stretches parallel to coordinate axes and reflections in the coordinate axes and the lines y = ± x .",
-          "reviewNotes": [
-            "Local-only semantic candidate score 0.912; requires Codex disposition."
-          ]
-        },
-        {
           "nodeId": "ALGF-FUNC-TRAN-REFL",
           "relation": "exact",
           "assessmentDepth": "knowledge",
           "evidenceSpan": "Single transformations of curves involving translations, stretches parallel to coordinate axes and reflections in the coordinate axes and the lines y = ± x .",
           "reviewNotes": [
             "Local-only semantic candidate score 0.850; requires Codex disposition."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-TRAN-VERT",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "transformations of curves involving translations",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-TRAN-HORZ",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "transformations of curves involving translations",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-TRAN-STRE",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "stretches parallel to coordinate axes",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -1847,12 +1952,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-SUMM-CENT-MEAN",
+          "nodeId": "CALC-FINT-APPL-MEAN",
           "relation": "exact",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "Understand and evaluate the mean value of a function.",
+          "assessmentDepth": "application",
+          "evidenceSpan": "mean value of a function",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.157; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -2006,12 +2112,23 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "GEOM-MENS-CIRC-ARCL",
+          "nodeId": "CALC-FINT-APPL-ARCL",
           "relation": "exact",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Arc length and area of surface of revolution for curves expressed in Cartesian or parametric coordinates.",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Arc length",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.929; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "CALC-FINT-APPL-SURF",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "area of surface of revolution",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -2438,12 +2555,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "GEOM-CONS-CONS-PDST",
+          "nodeId": "VECT-FURT-LINES-DIST",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Calculate the perpendicular distance between two lines, from a point to a line and from a point to a plane.",
+          "evidenceSpan": "perpendicular distance between two lines, from a point to a line and from a point to a plane",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.247; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -2576,6 +2694,16 @@
           "evidenceSpan": "Understand the definitions of hyperbolic functions sinh x , cosh x and tanh x , including their domains and ranges, and be able to sketch their graphs.",
           "reviewNotes": [
             "Local-only semantic candidate score 1.333; requires Codex disposition."
+          ]
+        },
+        {
+          "nodeId": "CALC-HYP-HYP-GRAP",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "sketch their graphs",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -3359,12 +3487,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "NUMM-ODE-EULR-IMPR",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Euler’s step by step method for solving first order differential equations.",
+          "nodeId": "NUMM-ODE-EULR-EXPL",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Euler’s step by step method",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.703; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -4496,12 +4625,13 @@
           ]
         },
         {
-          "nodeId": "MECH-KIN-LINE-ACCL",
+          "nodeId": "MECH-FURT-CIRC-RACC",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Relationships between speed, angular speed, radius and acceleration. Use of v = rω, a = rω² and a = v²/r.",
+          "evidenceSpan": "a = rω² and a = v²/r",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.892; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -4529,12 +4659,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "MECH-KIN-LINE-ACCL",
+          "nodeId": "VECT-FURT-V53B72894B",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Use position, velocity and acceleration as vectors in the context of circular motion.",
+          "evidenceSpan": "position, velocity and acceleration as vectors",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.123; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -5060,12 +5191,43 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-SUMM-CENT-STDV",
+          "nodeId": "PROB-DRVD-DRVB-EXPV",
           "relation": "exact",
-          "assessmentDepth": "reasoning",
-          "evidenceSpan": "Evaluate measures of average and spread for a DRV to include mean, variance, standard deviation, mode and median.",
+          "assessmentDepth": "application",
+          "evidenceSpan": "mean, variance, standard deviation, mode and median",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.102; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "PROB-DRVD-DRVB-VARI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "mean, variance, standard deviation, mode and median",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "PROB-DRVD-DRVB-MODE",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "mean, variance, standard deviation, mode and median",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "PROB-DRVD-DRVB-MEDI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "mean, variance, standard deviation, mode and median",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -5192,12 +5354,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "PROB-DIST-NORM-MODE",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "Understand when this distribution can be used as a model.",
+          "nodeId": "PROB-DIST-DUNI-MODE",
+          "relation": "exact",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "this distribution can be used as a model",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.650; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -5357,12 +5520,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-SUMM-CENT-STDV",
+          "nodeId": "PROB-DIST-POIS-MEAN",
           "relation": "exact",
           "assessmentDepth": "knowledge",
-          "evidenceSpan": "Know mean, variance and standard deviation of a Poisson distribution.",
+          "evidenceSpan": "mean, variance and standard deviation of a Poisson distribution",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.428; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -5390,12 +5554,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-SUMM-CENT-MEAN",
+          "nodeId": "PROB-DIST-POIS-MEAN",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Use the result that, if X ~ Po(λ), then the mean and variance of X are equal.",
+          "evidenceSpan": "the mean and variance of X are equal",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.876; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -5471,6 +5636,16 @@
           "evidenceSpan": "Formulate hypotheses and carry out a hypothesis test of a population mean from a single observation from a Poisson distribution using direct evaluation of Poisson probabilities.",
           "reviewNotes": [
             "Local-only semantic candidate score 1.037; requires Codex disposition."
+          ]
+        },
+        {
+          "nodeId": "STAT-TEST-HYPO-POIS",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "hypothesis test of a population mean from a single observation from a Poisson distribution",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -5867,12 +6042,23 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-SUMM-CENT-STDV",
+          "nodeId": "PROB-DIST-CRV-MEAN",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Find the mean, variance and standard deviation for a given pdf, f x .",
+          "evidenceSpan": "mean, variance and standard deviation",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.342; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "PROB-DIST-CRV-V5CCD3FE59",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "mean, variance and standard deviation",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -6141,6 +6327,16 @@
           "reviewNotes": [
             "Codex local-only complete AQA 7367 semantic disposition against the full official statement."
           ]
+        },
+        {
+          "nodeId": "PROB-DIST-CUNI-MODE",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "rectangular distribution",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6167,12 +6363,23 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-SUMM-CENT-STDV",
+          "nodeId": "PROB-DIST-CRV-MEAN",
           "relation": "exact",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Know proofs of mean, variance and standard deviation for a rectangular distribution.",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "mean, variance and standard deviation",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.342; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "PROB-DIST-CRV-V5CCD3FE59",
+          "relation": "exact",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "mean, variance and standard deviation",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -6284,12 +6491,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-INF2-TDIST-TWO",
+          "nodeId": "STAT-INF2-CHISQ-INDEP",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Use of Σ((Oᵢ − Eᵢ)²/Eᵢ) as an approximate χ² statistic with appropriate degrees of freedom.",
+          "evidenceSpan": "χ² statistic with appropriate degrees of freedom",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.012; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -6350,12 +6558,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-BIVA-CORR-INTR",
-          "relation": "exact",
-          "assessmentDepth": "application",
-          "evidenceSpan": "Identification of sources of association in the context of a question.",
+          "nodeId": "STAT-INF2-CHISQ-INDEP",
+          "relation": "partial",
+          "assessmentDepth": "reasoning",
+          "evidenceSpan": "sources of association",
           "reviewNotes": [
-            "Codex local-only complete AQA 7367 semantic disposition against the full official statement."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -6456,6 +6665,16 @@
           "reviewNotes": [
             "Local-only semantic candidate score 1.342; requires Codex disposition."
           ]
+        },
+        {
+          "nodeId": "PROB-DIST-CRV-CDF",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "cumulative distribution function",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -6515,12 +6734,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-SUMM-CENT-STDV",
+          "nodeId": "PROB-DIST-EXPO-MEAN",
           "relation": "exact",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Know proofs of mean, variance and standard deviation for an exponential distribution.",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "mean, variance and standard deviation for an exponential distribution",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.342; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -6590,12 +6810,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-INF2-TDIST-TWO",
+          "nodeId": "STAT-INF2-TDIST-TTEST",
           "relation": "exact",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "Test for the mean of a normal distribution with unknown variance using a t -statistic with appropriate degrees of freedom.",
+          "assessmentDepth": "application",
+          "evidenceSpan": "mean of a normal distribution with unknown variance using a t -statistic",
           "reviewNotes": [
-            "Local-only semantic candidate score 1.072; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -6623,12 +6844,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-SUMM-CENT-MEAN",
+          "nodeId": "STAT-EST-ESTI-V516B7E1E1",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Construct symmetric confidence intervals for the mean of a normal distribution with known variance.",
+          "evidenceSpan": "mean of a normal distribution with known variance",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.853; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -6656,12 +6878,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-SUMM-CENT-MEAN",
+          "nodeId": "STAT-EST-ESTI-V59EB54818",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Construct symmetric confidence intervals from large samples, for the mean of a normal distribution with unknown variance.",
+          "evidenceSpan": "large samples, for the mean of a normal distribution with unknown variance",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.839; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -6722,12 +6945,13 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-SUMM-CENT-MEAN",
+          "nodeId": "STAT-INF2-TDIST-TCI",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Construct symmetric confidence intervals from small samples, for the mean of a normal distribution with unknown variance using the t -distribution.",
+          "evidenceSpan": "small samples, for the mean of a normal distribution with unknown variance using the t -distribution",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.839; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -7691,12 +7915,23 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "STAT-DATA-REPR-HIST",
+          "nodeId": "DISC-PROJ-PROJ-GANT",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "Construct and interpret Gantt (cascade) diagrams and resource histograms.",
+          "evidenceSpan": "Gantt (cascade) diagrams",
           "reviewNotes": [
-            "Local-only semantic candidate score 0.873; requires Codex disposition."
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
+          ]
+        },
+        {
+          "nodeId": "DISC-PROJ-PROJ-RESL",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "resource histograms",
+          "reviewNotes": [
+            "AQA source was reviewed locally; no official wording was sent to an external model.",
+            "The cited source span explicitly assesses the canonical leaf concept."
           ]
         }
       ],
@@ -8377,15 +8612,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-17",
-    "promptVersion": "aqa-v5-local-semantic-candidate-3-complete-7367-review-noncontent-reconciled-1",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "c3a54ab81186c86409c100182ae6c456b0f76da1f891adbe2222181b422f3313",
     "extractionSha256": "5d6dc0f146d2ad5556871a2896094a1bc53201c686414669994a9ecb3faa0a7e",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "8080f7274a1e75bfcabaf99d6b0deed749751a9feb5a6922bf2f12c136699549",
-    "batchId": "knowledge-v5-aqa-local-20260717",
+    "batchId": "knowledge-v5-concept-accounting-20260723-AQA-7367",
     "calls": [
       {
         "label": "knowledge-v5-local-AQA-7367",
@@ -8396,10 +8631,20 @@
         "promptTokens": 0,
         "completionTokens": 0,
         "totalTokens": 0
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-AQA-7367",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

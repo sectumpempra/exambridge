@@ -196,6 +196,15 @@
           "reviewNotes": [
             "Generalised numbers covers the concept of variables and unknowns."
           ]
+        },
+        {
+          "nodeId": "ALGF-EXP-NOTN-V56E45AA4D",
+          "relation": "narrower",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "expression, equation, identity",
+          "reviewNotes": [
+            "Confirmed by the two-pass concept-accounting review and Codex final verification."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -329,6 +338,15 @@
           "evidenceSpan": "square roots",
           "reviewNotes": [
             "Surd simplification is exemplified by the second set of examples."
+          ]
+        },
+        {
+          "nodeId": "NUM-POW-POWR-RATD",
+          "relation": "narrower",
+          "assessmentDepth": "application",
+          "evidenceSpan": "1/(2 + √3)",
+          "reviewNotes": [
+            "Rationalizing the denominator is required in the example."
           ]
         }
       ],
@@ -499,48 +517,12 @@
           ]
         },
         {
-          "nodeId": "ALGF-EQN-QUAD-FACT",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "quadratic",
-          "reviewNotes": [
-            "Solving quadratics by factorisation is one method for quadratic equations."
-          ]
-        },
-        {
-          "nodeId": "ALGF-EQN-QUAD-COMP",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "quadratic",
-          "reviewNotes": [
-            "Completing the square is another method for solving quadratic equations."
-          ]
-        },
-        {
           "nodeId": "ALGF-POLY-POLY-CUBQ",
           "relation": "narrower",
           "assessmentDepth": "application",
           "evidenceSpan": "cubic",
           "reviewNotes": [
             "Covers cubic polynomials including solving cubic equations."
-          ]
-        },
-        {
-          "nodeId": "ALGF-EQN-SIMU-LIN2",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "simultaneous equations in two unknowns",
-          "reviewNotes": [
-            "Linear simultaneous equations are a common instance of two-unknown systems."
-          ]
-        },
-        {
-          "nodeId": "ALGF-EQN-SIMU-LINQ",
-          "relation": "narrower",
-          "assessmentDepth": "application",
-          "evidenceSpan": "simultaneous equations in two unknowns",
-          "reviewNotes": [
-            "Covers the specific case of one linear and one quadratic equation."
           ]
         },
         {
@@ -784,6 +766,24 @@
           "evidenceSpan": "binomial distribution",
           "reviewNotes": [
             "Binomial distribution enumeration uses combinations to count outcomes."
+          ]
+        },
+        {
+          "nodeId": "PROB-COMB-COUNT-ENUM",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "enumerate outcomes",
+          "reviewNotes": [
+            "The statement explicitly requires systematic listing of outcomes, which matches the definition of systematic listing."
+          ]
+        },
+        {
+          "nodeId": "PROB-COMB-COUNT-SAMPS",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "enumerate outcomes",
+          "reviewNotes": [
+            "Enumerating outcomes constructs the complete set of all possible outcomes, i.e., the sample space."
           ]
         }
       ],
@@ -1232,6 +1232,24 @@
           "reviewNotes": [
             "Abstraction and simplification to produce a mathematical formulation."
           ]
+        },
+        {
+          "nodeId": "DISC-ALGO-ALGO-LP-V575F57F1D",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Express real situations in terms of linear inequalities",
+          "reviewNotes": [
+            "The leaf covers formulating linear programming problems including constraints; this statement exemplifies the constraint formulation part."
+          ]
+        },
+        {
+          "nodeId": "ALGF-EQN-INEQ-LINS",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "CG6 Express real situations in terms of linear inequalities.",
+          "reviewNotes": [
+            "The statement explicitly requires forming linear inequalities from real situations, which covers the formation aspect of the node; however, the node's broader scope includes manipulation with sign-reversal and expressing solution sets, which are not explicitly assessed here."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1367,6 +1385,15 @@
           "evidenceSpan": "tan i",
           "reviewNotes": [
             "Covers the tangent function definition and graph."
+          ]
+        },
+        {
+          "nodeId": "TRIG-BASE-V576670427",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "definitions of sin i , cos i and tan i for any angle",
+          "reviewNotes": [
+            "The statement explicitly requires using definitions of trigonometric functions for any angle, which corresponds to the unit circle definitions."
           ]
         }
       ],
@@ -1651,12 +1678,12 @@
           ]
         },
         {
-          "nodeId": "ALGF-EXP-NOTN-SYMB",
-          "relation": "partial",
+          "nodeId": "CALC-DIFF-CONC-NOTN",
+          "relation": "exact",
           "assessmentDepth": "knowledge",
           "evidenceSpan": "dy/dx, f′(x), ẋ",
           "reviewNotes": [
-            "Uses standard notation for derivatives."
+            "Notes explicitly list derivative notations (Leibniz, prime, dot). CALC-DIFF-CONC-NOTN is the specific leaf for derivative notation, more precise than the current ALGF-EXP-NOTN-SYMB link."
           ]
         }
       ],
@@ -1745,6 +1772,24 @@
           "evidenceSpan": "Evaluate definite integrals",
           "reviewNotes": [
             "Fundamental Theorem of Calculus is used to evaluate definite integrals."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-POWR",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "∫₀¹ x³ + 4x² - 1 dx",
+          "reviewNotes": [
+            "The example requires integrating powers of x using the power rule for integration, which is a leaf concept not yet linked."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-V5A76A4288",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "∫₀¹ x³ + 4x² - 1 dx",
+          "reviewNotes": [
+            "The example involves a sum of terms, so integrating it requires linearity (constant multiple and sum/difference rules). The missing leaf CALC-INTE-RULE-V5A76A4288 captures this explicitly."
           ]
         }
       ],
@@ -2149,6 +2194,15 @@
           "reviewNotes": [
             "Direct statement of integrating power functions."
           ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-V5A76A4288",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "and the sum of such functions",
+          "reviewNotes": [
+            "Statement requires integrating sums of functions, which invokes the linearity (sum) rule for integration. Relation adjusted to 'partial' because the statement is a compound requirement."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2191,6 +2245,15 @@
           "evidenceSpan": "be able to find the equation of a curve, given its gradient function and one point.",
           "reviewNotes": [
             "Example involves using the constant of integration."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-APPL-CONS",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "be able to find the equation of a curve, given its gradient function and one point.",
+          "reviewNotes": [
+            "Example directly assesses finding the particular solution by evaluating the constant of integration."
           ]
         }
       ],
@@ -2326,12 +2389,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "CALC-DIFF-CONC-LIMT",
+          "nodeId": "ALGF-FUNC-DEFS-V5AB360827",
           "relation": "exact",
           "assessmentDepth": "application",
-          "evidenceSpan": "a chord to estimate gradient",
+          "evidenceSpan": "Use a chord to estimate gradient of a tangent",
           "reviewNotes": [
-            "Using a chord to estimate gradient is the secant approximation for the derivative limit."
+            "Codex resolved a final-review ontology gap against the complete official statement, notes and examples."
           ]
         }
       ],
@@ -2743,15 +2806,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-19",
-    "promptVersion": "knowledge-mapping-v5-atomic-9-paper-bound",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "d682352b907c422bd5d994153bd5440b3146913e92e9a7524148515109f8cb3f",
     "extractionSha256": "2ef086dac6dbc9bd861b8f823c87f0cea188d8e4f8751d44de3fc3908dfac689",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "bb8215b58570bdcbdb4c676c23ea9b3e72ef49f010298bc39c175a53710e6f63",
-    "batchId": "knowledge-v5-unified-20260719-OCR-6993",
+    "batchId": "knowledge-v5-concept-accounting-20260723-OCR-6993",
     "calls": [
       {
         "label": "knowledge-v5-extract-OCR-6993-p9-p10-p11-p12",
@@ -2836,10 +2899,20 @@
         "elapsedSeconds": 226,
         "clientRequestId": "90d4a639-1f15-488b-9ec9-4c0bf628d390",
         "fallbackReason": "explicit-deepseek-test"
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-OCR-6993",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

@@ -54,9 +54,11 @@ function TreeNodeItem({
   const isHighlight = highlightNodes?.has(nodeId);
   const isAOnly = aOnlyNodes?.has(nodeId);
   const isBOnly = bOnlyNodes?.has(nodeId);
+  const hasComparisonStatus = Boolean(highlightNodes || aOnlyNodes || bOnlyNodes);
 
   const statusLabel = isAOnly ? "A独有" : isBOnly ? "B独有" : isHighlight ? "共同" : null;
   const statusColor = isAOnly ? "#A9471F" : isBOnly ? "#435F7A" : isHighlight ? "#456348" : null;
+  const coverageLabel = statusLabel ?? (hasComparisonStatus ? "当前两项均未覆盖" : "统一知识树节点");
 
   return (
     <div>
@@ -67,6 +69,7 @@ function TreeNodeItem({
         style={{ paddingLeft: `${depth * 16 + 4}px` }}
         onClick={() => hasChildren && onToggle(nodeId)}
         title={item.node.path.join(" > ")}
+        aria-label={`${item.node.path[item.node.path.length - 1]}，${coverageLabel}`}
       >
         {hasChildren ? (
           expanded ? (
@@ -81,7 +84,11 @@ function TreeNodeItem({
         {hasChildren ? (
           <Folder className="w-3.5 h-3.5 text-[#6E5C40] flex-shrink-0" />
         ) : (
-          <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: statusColor || "#716A61" }} />
+          <span
+            aria-hidden="true"
+            className="w-2 h-2 rounded-full flex-shrink-0"
+            style={{ backgroundColor: statusColor || "#716A61" }}
+          />
         )}
 
         <span
@@ -202,13 +209,17 @@ export default function KnowledgeTreeView({ nodes, highlightNodes, aOnlyNodes, b
             {allExpanded ? "收起全部" : "展开全部"}
           </button>
         </div>
-        <div className="mt-2 flex items-center gap-3 text-[10px] text-[#625C54]">
+        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-[#625C54]" aria-label="知识树颜色图例">
           <span>共 {nodes.length} 节点</span>
-          {highlightNodes && highlightNodes.size > 0 && (
+          {(highlightNodes || aOnlyNodes || bOnlyNodes) && (
             <>
-              <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-[#456348]" />共同 {highlightNodes.size}</span>
+              <span className="flex items-center gap-1"><span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#456348]" />共同 {highlightNodes?.size ?? 0}</span>
               {aOnlyNodes && <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-[#A9471F]" />A独有 {aOnlyNodes.size}</span>}
               {bOnlyNodes && <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-[#435F7A]" />B独有 {bOnlyNodes.size}</span>}
+              <span className="flex items-center gap-1">
+                <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#716A61]" />
+                灰色：知识树中存在，但当前两项均未覆盖
+              </span>
             </>
           )}
         </div>

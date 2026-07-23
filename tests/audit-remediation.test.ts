@@ -111,13 +111,19 @@ describe("audit remediation release invariants", () => {
 
   it("publishes 22 owner-approved V5 mappings from the recorded approval batch", () => {
     const manifest = JSON.parse(readFileSync("public/data/knowledge-v5/manifest.json", "utf8"));
+    const publicOntology = JSON.parse(readFileSync("public/data/knowledge-v5/ontology.json", "utf8"));
     const activation = JSON.parse(readFileSync("data/active/knowledge-v5/activation.json", "utf8"));
     const mappingFiles = readdirSync("data/active/knowledge-v5/mappings").filter((file) => file.endsWith(".json"));
     expect(manifest.schemaVersion).toBe("5.0.0");
-    expect(manifest.activeBatch).toBe("knowledge-v5-20260719");
+    expect(manifest.activeBatch).toBe(activation.approvalBatch);
     expect(manifest.mappings).toHaveLength(22);
     expect(mappingFiles).toHaveLength(22);
-    expect(activation).toMatchObject({ approvalBatch: manifest.activeBatch, mappingCount: 22, ontologyNodeCount: 1105 });
+    expect(activation).toMatchObject({
+      approvalBatch: "knowledge-v5-concept-accounting-20260723",
+      previousApprovalBatch: "knowledge-v5-20260719",
+      mappingCount: 22,
+      ontologyNodeCount: publicOntology.nodes.length,
+    });
     for (const file of mappingFiles) {
       const mapping = JSON.parse(readFileSync(`data/active/knowledge-v5/mappings/${file}`, "utf8"));
       expect(mapping.reviewStatus, file).toBe("owner-approved");

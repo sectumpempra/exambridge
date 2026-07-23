@@ -36,7 +36,9 @@ try {
 
 const failures = [];
 if (activation.schemaVersion !== "5.0.0") failures.push("activation.json must use schemaVersion 5.0.0");
-if (!/^knowledge-v5-\d{8}$/.test(activation.approvalBatch ?? "")) failures.push("activation.json has an invalid approval batch");
+if (!/^knowledge-v5-(?:concept-accounting-)?\d{8}$/.test(activation.approvalBatch ?? "")) {
+  failures.push("activation.json has an invalid approval batch");
+}
 if (!/^\d{4}-\d{2}-\d{2}$/.test(activation.approvedAt ?? "")) failures.push("activation.json has an invalid approval date");
 if (activation.approvedBy !== "owner") failures.push("activation.json must record owner approval");
 if (activation.rollbackStrategy !== "previous-verified-release") failures.push("activation.json must use whole-release rollback");

@@ -83,6 +83,15 @@
           "reviewNotes": [
             "Matches the term composition of functions."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-DEFS-DEFN",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "explaining in words why a given function is a function",
+          "reviewNotes": [
+            "The note explicitly requires explaining why a function is a function, matching the definition node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -276,6 +285,24 @@
           "evidenceSpan": "function notation",
           "reviewNotes": [
             "Directly matches recognising and using function notation."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-COMP-COMP",
+          "relation": "narrower",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "fg(x) [= f(g(x))]",
+          "reviewNotes": [
+            "The statement requires recognising and using composite function notation, which is a subset of the full composite functions concept."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-COMP-INVR",
+          "relation": "narrower",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "f⁻¹(x)",
+          "reviewNotes": [
+            "The statement requires recognising and using inverse function notation, which is a subset of the full inverse functions concept."
           ]
         }
       ],
@@ -961,6 +988,15 @@
           "reviewNotes": [
             "The remainder theorem is applied through polynomial division by a linear expression; the node covers the division process required to find remainders."
           ]
+        },
+        {
+          "nodeId": "ALGF-POLY-POLY-V523F6C6FE",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "remainder and factor theorems",
+          "reviewNotes": [
+            "The statement explicitly requires knowledge of the remainder theorem, a distinct concept from polynomial division."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1085,6 +1121,24 @@
           "reviewNotes": [
             "The statement directly matches modulus equations."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-INTR",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "graphical methods",
+          "reviewNotes": [
+            "Graphical solving of |ax+b|=c involves intersection of y=|ax+b| and y=c."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "an accurate graph is expected",
+          "reviewNotes": [
+            "The note requires an accurate graph; sketching y=|ax+b| is the focus of this node."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1120,6 +1174,15 @@
           "evidenceSpan": "Solve equations of the type | ax + b| = cx + d",
           "reviewNotes": [
             "The statement directly matches modulus equations."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "an accurate graph is expected",
+          "reviewNotes": [
+            "The note explicitly requires an accurate graph for graphical solutions, which involves sketching the modulus function graph y=|ax+b|. Thus the statement partially assesses the ability to sketch modulus graphs."
           ]
         }
       ],
@@ -1157,6 +1220,24 @@
           "reviewNotes": [
             "The statement directly matches modulus equations."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "graphical methods",
+          "reviewNotes": [
+            "Graphical solution method requires sketching the modulus graphs y=|ax+b| and y=|cx+d|."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-INTR",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "graphical methods",
+          "reviewNotes": [
+            "Finding intersection points of the two graphs is part of solving the equation graphically."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1193,6 +1274,24 @@
           "reviewNotes": [
             "The statement, though with a quadratic inside, is still a modulus equation."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "graphical methods",
+          "reviewNotes": [
+            "Sketching the modulus graph y=|ax²+bx+c| is required for the graphical solution method."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-INTR",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "graphical methods",
+          "reviewNotes": [
+            "Graphical solution involves finding intersections of y=|ax²+bx+c| and y=d."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1228,6 +1327,24 @@
           "evidenceSpan": "Solve graphically or algebraically inequalities of the type k|ax + b| > c (c ≥ 0), where k > 0.",
           "reviewNotes": [
             "Modulus inequalities are covered by the same modulus equations and inequalities node."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "graphically",
+          "reviewNotes": [
+            "Graphical solution requires sketching y=k|ax+b|, which involves modulus graph sketching."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-INTR",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "graphically",
+          "reviewNotes": [
+            "Graphical solution of inequality involves using intersection points to determine the solution set."
           ]
         }
       ],
@@ -1274,6 +1391,15 @@
           "reviewNotes": [
             "Graphical solution method uses intersection of curves, a partial application of graph intersection techniques."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "graphically",
+          "reviewNotes": [
+            "Graphical method requires sketching y=k|ax+b|, an application of modulus graph sketching."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1318,6 +1444,15 @@
           "evidenceSpan": "graphical solutions",
           "reviewNotes": [
             "Graphical approach uses intersection of absolute value functions."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "graphically",
+          "reviewNotes": [
+            "Graphical solution involves sketching modulus graphs y=|ax+b| and y=|cx+d|."
           ]
         }
       ],
@@ -1364,6 +1499,15 @@
           "reviewNotes": [
             "Graphical method involves comparing absolute value and linear graphs."
           ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "graphically",
+          "reviewNotes": [
+            "Graphical solution requires sketching the graph of y=|ax+b|, a modulus graph."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -1402,12 +1546,12 @@
           ]
         },
         {
-          "nodeId": "ALGF-EQN-INEQ-QUAD",
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
           "relation": "partial",
           "assessmentDepth": "application",
-          "evidenceSpan": "ax² + bx + c",
+          "evidenceSpan": "an accurate graph is expected",
           "reviewNotes": [
-            "Solving the inequality requires solving the quadratic inequalities resulting from removing the modulus, a partial application of quadratic inequality techniques."
+            "The note explicitly requires an accurate graph for graphical solutions, which involves sketching the modulus function graph y=|ax²+bx+c|. Thus the statement partially assesses the ability to sketch modulus graphs."
           ]
         }
       ],
@@ -1453,6 +1597,15 @@
           "evidenceSpan": "ax² + bx + c",
           "reviewNotes": [
             "Solving the inequality leads to a compound quadratic inequality, applying quadratic inequality methods."
+          ]
+        },
+        {
+          "nodeId": "ALGF-FUNC-GRAP-MODU",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "For graphical solutions, an accurate graph is expected.",
+          "reviewNotes": [
+            "Graphical solution explicitly requires sketching the modulus graph y=|ax²+bx+c|."
           ]
         }
       ],
@@ -1590,6 +1743,15 @@
           "evidenceSpan": "graphically",
           "reviewNotes": [
             "Graphical solving uses intersection of the cubic graph with horizontal line y = d."
+          ]
+        },
+        {
+          "nodeId": "ALGF-EQN-INEQ-POLY",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "cubic inequalities",
+          "reviewNotes": [
+            "Directly about solving cubic inequalities."
           ]
         }
       ],
@@ -1772,6 +1934,24 @@
           "evidenceSpan": "laws of logarithms",
           "reviewNotes": [
             "Directly covers all logarithm laws including change of base."
+          ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-V560DACC04",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "change of base of logarithms",
+          "reviewNotes": [
+            "The statement and example explicitly require using the change-of-base formula."
+          ]
+        },
+        {
+          "nodeId": "ALGF-LOG-LOGR-LN",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "as a natural logarithm",
+          "reviewNotes": [
+            "The example explicitly requires writing an expression as a natural logarithm, necessitating knowledge of the natural logarithm function (base e)."
           ]
         }
       ],
@@ -2216,12 +2396,12 @@
           ]
         },
         {
-          "nodeId": "TRIG-APPL-MODE-WAVE",
+          "nodeId": "TRIG-FUNC-GRAP-SINE",
           "relation": "partial",
           "assessmentDepth": "application",
-          "evidenceSpan": "amplitude and period",
+          "evidenceSpan": "amplitude",
           "reviewNotes": [
-            "Wave models explicitly use amplitude and period, providing a contextual application."
+            "Amplitude is a core property of the sine graph, matching the statement's focus on amplitude of a trigonometric function."
           ]
         }
       ],
@@ -2554,6 +2734,24 @@
           "reviewNotes": [
             "Statement explicitly requires solving within a specified domain interval."
           ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-IDEN-PYTH",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Includes the use of the relationships in 10.4.",
+          "reviewNotes": [
+            "Pythagorean identities are directly used to solve equations like 2 sec² θ + tan θ − 3 = 0."
+          ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-IDEN-TANR",
+          "relation": "partial",
+          "assessmentDepth": "application",
+          "evidenceSpan": "5 sin(θ/3) + 2 cos(θ/3) = 0",
+          "reviewNotes": [
+            "Solving this equation involves dividing by cos(θ/3) to obtain a tangent equation, using tan = sin/cos."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -2586,15 +2784,6 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "REAS-PROF-PROF-DEDU",
-          "relation": "broader",
-          "assessmentDepth": "proof",
-          "evidenceSpan": "Prove trigonometric relationships",
-          "reviewNotes": [
-            "Proof by deduction covers the general method of proving, which is applied here to trig relationships."
-          ]
-        },
-        {
           "nodeId": "TRIG-IDEN-IDEN-PYTH",
           "relation": "partial",
           "assessmentDepth": "application",
@@ -2610,6 +2799,15 @@
           "evidenceSpan": "Includes the use of the relationships in 10.4.",
           "reviewNotes": [
             "The tan = sin/cos relationship is used in many trig proofs."
+          ]
+        },
+        {
+          "nodeId": "TRIG-IDEN-IDEN-V511E8B2D0",
+          "relation": "exact",
+          "assessmentDepth": "proof",
+          "evidenceSpan": "Prove trigonometric relationships",
+          "reviewNotes": [
+            "The statement directly matches proving trigonometric identities."
           ]
         }
       ],
@@ -2818,12 +3016,12 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "ALGF-SEQ-BINO-COEF",
-          "relation": "exact",
+          "nodeId": "ALGF-SEQ-BINO-POSI",
+          "relation": "broader",
           "assessmentDepth": "application",
           "evidenceSpan": "Use the general term (n choose r)aⁿ⁻ʳbʳ",
           "reviewNotes": [
-            "The general term directly uses binomial coefficients; the node covers C(n,r)."
+            "The binomial expansion node explicitly includes the general term, which is required by this statement. The node covers the full expansion, which is broader than the specific use of the general term."
           ]
         }
       ],
@@ -3030,12 +3228,12 @@
           ]
         },
         {
-          "nodeId": "REAS-PROF-ARGM-SYMB",
-          "relation": "partial",
-          "assessmentDepth": "knowledge",
-          "evidenceSpan": "p",
+          "nodeId": "VECT-BASIC-NOTN-V551FD2F1C",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Understand and use vector notation.",
           "reviewNotes": [
-            "Using a symbol p to denote a vector."
+            "The node 'VECT-BASIC-NOTN-V551FD2F1C' covers the general use of vector notation and terminology in two dimensions, which directly corresponds to the statement's overall objective."
           ]
         }
       ],
@@ -3344,6 +3542,15 @@
           "evidenceSpan": "Solutions for indefinite integrals should include an arbitrary constant.",
           "reviewNotes": [
             "Standard indefinite integral form."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-RULE-V5A76A4288",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "sums",
+          "reviewNotes": [
+            "The statement requires integrating sums of terms, which directly relies on the sum rule (linearity of integration)."
           ]
         }
       ],
@@ -3760,6 +3967,15 @@
           "reviewNotes": [
             "This node directly covers the integration of (ax+b)^n including the arbitrary constant and the n=-1 case."
           ]
+        },
+        {
+          "nodeId": "CALC-INTE-CONC-INDI",
+          "relation": "exact",
+          "assessmentDepth": "knowledge",
+          "evidenceSpan": "Solutions for indefinite integrals should include an arbitrary constant.",
+          "reviewNotes": [
+            "The note explicitly requires the arbitrary constant for indefinite integrals, matching the concept."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3796,6 +4012,15 @@
           "evidenceSpan": "Integrate functions of the form sin(ax + b)",
           "reviewNotes": [
             "Integrating sin(ax+b) is a direct application of standard trigonometric antiderivatives."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-CONC-INDI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Solutions for indefinite integrals should include an arbitrary constant.",
+          "reviewNotes": [
+            "The note explicitly requires the inclusion of an arbitrary constant for indefinite integrals, which is a direct application of the concept in CALC-INTE-CONC-INDI."
           ]
         }
       ],
@@ -3834,6 +4059,15 @@
           "reviewNotes": [
             "Integrating cos(ax+b) is a direct application of standard trigonometric antiderivatives."
           ]
+        },
+        {
+          "nodeId": "CALC-INTE-CONC-INDI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Solutions for indefinite integrals should include an arbitrary constant.",
+          "reviewNotes": [
+            "The note explicitly requires the inclusion of an arbitrary constant for indefinite integrals, which is a direct application of the concept in CALC-INTE-CONC-INDI."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3871,6 +4105,15 @@
           "reviewNotes": [
             "Integrating sec²(ax+b) is a direct application of standard trigonometric antiderivatives."
           ]
+        },
+        {
+          "nodeId": "CALC-INTE-CONC-INDI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Solutions for indefinite integrals should include an arbitrary constant.",
+          "reviewNotes": [
+            "The note explicitly requires the inclusion of an arbitrary constant for indefinite integrals, which is a direct application of the concept in CALC-INTE-CONC-INDI."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -3906,6 +4149,15 @@
           "evidenceSpan": "Integrate functions of the form eᵃˣ⁺ᵇ",
           "reviewNotes": [
             "Integrating e^(ax+b) is a direct application of exponential integration rules."
+          ]
+        },
+        {
+          "nodeId": "CALC-INTE-CONC-INDI",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "Solutions for indefinite integrals should include an arbitrary constant.",
+          "reviewNotes": [
+            "The note explicitly requires the inclusion of an arbitrary constant for indefinite integrals, which is a direct application of the concept in CALC-INTE-CONC-INDI."
           ]
         }
       ],
@@ -4069,6 +4321,24 @@
           "reviewNotes": [
             "Directly matches displacement-time graph node, which includes gradient interpretation for velocity."
           ]
+        },
+        {
+          "nodeId": "MECH-KIN-LINE-ATGR",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "A particle moves in a straight line. Its displacement s, from a fixed point at time t, is given by s = 3t³ − 10t² + 4t + 8 for 0 ≤ t ≤ 3. Sketch its displacement–time graph, its speed–time graph and its acceleration–time graph.",
+          "reviewNotes": [
+            "The example explicitly requires sketching an acceleration-time graph, directly matching the node's definition of drawing and interpreting acceleration-time graphs. This skill is clearly assessed by the statement."
+          ]
+        },
+        {
+          "nodeId": "MECH-KIN-LINE-V50E58209B",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "A particle moves in a straight line. Its displacement s, from a fixed point at time t, is given by s = 3t³ − 10t² + 4t + 8 for 0 ≤ t ≤ 3. Sketch its displacement–time graph, its speed–time graph and its acceleration–time graph.",
+          "reviewNotes": [
+            "The example explicitly requires sketching a speed-time graph, directly matching the node's definition. This skill is assessed by the statement."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4096,21 +4366,21 @@
       },
       "conceptLinks": [
         {
-          "nodeId": "MECH-KIN-LINE-STGR",
-          "relation": "partial",
-          "assessmentDepth": "application",
-          "evidenceSpan": "distance–time",
-          "reviewNotes": [
-            "The node covers displacement-time graphs; distance-time may be used synonymously in single-direction motion, but the distinction warrants a partial mapping."
-          ]
-        },
-        {
           "nodeId": "CALC-DIFF-APPL-SKET",
           "relation": "partial",
           "assessmentDepth": "application",
           "evidenceSpan": "draw and use the following graphs: distance–time",
           "reviewNotes": [
             "The node provides the calculus techniques for sketching curves, which are used to draw distance-time graphs from displacement functions."
+          ]
+        },
+        {
+          "nodeId": "MECH-KIN-LINE-V54E69BE35",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "distance–time",
+          "reviewNotes": [
+            "The canonical ontology contains a dedicated leaf for distance-time graphs (MECH-KIN-LINE-V54E69BE35) which covers constructing, interpreting, and using such graphs, including speed as gradient and stationary periods. This exactly matches the statement's requirement to draw and use distance–time graphs."
           ]
         }
       ],
@@ -4237,6 +4507,15 @@
           "reviewNotes": [
             "The node provides the calculus sketching tools, applied to acceleration-time graphs."
           ]
+        },
+        {
+          "nodeId": "MECH-KIN-LINE-ATGR",
+          "relation": "exact",
+          "assessmentDepth": "application",
+          "evidenceSpan": "A particle moves in a straight line. Its displacement s, from a fixed point at time t, is given by s = 3t³ − 10t² + 4t + 8 for 0 ≤ t ≤ 3. Sketch its displacement–time graph, its speed–time graph and its acceleration–time graph.",
+          "reviewNotes": [
+            "The statement explicitly requires drawing and using acceleration-time graphs, which directly matches the node definition of drawing and interpreting acceleration against time for straight-line motion."
+          ]
         }
       ],
       "reviewStatus": "owner-approved"
@@ -4244,15 +4523,15 @@
   ],
   "reviewStatus": "owner-approved",
   "review": {
-    "generatedAt": "2026-07-19",
-    "promptVersion": "knowledge-mapping-v5-atomic-9-paper-bound",
+    "generatedAt": "2026-07-23",
+    "promptVersion": "knowledge-v5-concept-accounting-1",
     "sourceSha256": "7d5412763f74834a441e45f4b0f983d163d6fc7511568a8c63bdf830ec8508a8",
     "extractionSha256": "478854848a64e6cc4c0f6d7c85bf915b52e2318326f48fe96e70094ab1f27422",
-    "treeSha256": "ac2a16fec326c5d1a1552946b96150285a5a941992a3006564578a4d5e9e6a5c",
-    "ontologySha256": "4c74b85030a9d3d48f3d8f1bf752d5052cd4b87b901474bc5eda25e0b7d80420",
+    "treeSha256": "9ab279caaff613be0ece8fa3079f6db66696d2416c34702b773cc007f8ae73d6",
+    "ontologySha256": "ce5aa8720b13710fefbabaa47b68c320e1f110fea076f4fbdd8d9ae55ea84a09",
     "paperCatalogSha256": "dd4e6d9adf47663aaba00e5ed96c073238ffadd1f068b3a2281e44b61d34d058",
     "paperApplicabilitySha256": "eb6a34111fdc196347c6d77fea75f3d67a31bfecdaabc8a66348070adb55a258",
-    "batchId": "knowledge-v5-unified-20260719-CAIE-0606",
+    "batchId": "knowledge-v5-concept-accounting-20260723-CAIE-0606",
     "calls": [
       {
         "label": "knowledge-v5-extract-CAIE-0606-p11-p12-p13-p14",
@@ -5317,10 +5596,20 @@
         "elapsedSeconds": 181,
         "clientRequestId": "d145e5df-ae3b-46a1-9ace-425e918220db",
         "fallbackReason": "explicit-deepseek-test"
+      },
+      {
+        "label": "knowledge-v5-concept-accounting-final-CAIE-0606",
+        "provider": "local",
+        "requestedModel": "local",
+        "returnedModel": "local",
+        "status": "local-only",
+        "promptTokens": 0,
+        "completionTokens": 0,
+        "totalTokens": 0
       }
     ],
-    "reviewedAt": "2026-07-20",
-    "approvedAt": "2026-07-20",
-    "approvalBatch": "knowledge-v5-20260719"
+    "reviewedAt": "2026-07-23",
+    "approvedAt": "2026-07-23",
+    "approvalBatch": "knowledge-v5-concept-accounting-20260723"
   }
 }

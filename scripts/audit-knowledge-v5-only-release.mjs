@@ -40,7 +40,9 @@ if (!(await exists(manifestPath))) {
 } else {
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
   if (manifest.schemaVersion !== "5.0.0") failures.push("Knowledge V5 release manifest has the wrong schema version");
-  if (!/^knowledge-v5-\d{8}$/.test(manifest.activeBatch ?? "")) failures.push("Knowledge V5 release manifest has no approved batch");
+  if (!/^knowledge-v5-(?:concept-accounting-)?\d{8}$/.test(manifest.activeBatch ?? "")) {
+    failures.push("Knowledge V5 release manifest has no approved batch");
+  }
   if (manifest.mappings?.length !== 22) failures.push(`Knowledge V5 release requires 22 mappings; found ${manifest.mappings?.length ?? 0}`);
 }
 

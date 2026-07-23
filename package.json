@@ -34,10 +34,20 @@
     "knowledge:v5:active-audit": "node scripts/audit-active-knowledge-v5.mjs",
     "knowledge:v5:static": "node scripts/build-knowledge-v5-static.mjs",
     "knowledge:v5:release-audit": "node scripts/audit-knowledge-v5-only-release.mjs",
+    "knowledge:v5:concept-accounting-audit": "node scripts/build-knowledge-v5-concept-accounting-audit.mjs",
+    "knowledge:v5:aqa-local-review": "node scripts/build-aqa-local-concept-corrections.mjs",
+    "knowledge:v5:concept-review-pass1": "node scripts/review-knowledge-v5-concept-accounting.mjs",
+    "knowledge:v5:concept-review-final": "node scripts/finalize-knowledge-v5-concept-accounting-review.mjs",
+    "knowledge:v5:concept-local-dispositions": "node scripts/build-knowledge-v5-local-final-dispositions.mjs",
+    "knowledge:v5:concept-residual-review": "node scripts/verify-knowledge-v5-residual-cues.mjs",
+    "knowledge:v5:concept-candidate": "node scripts/build-knowledge-v5-concept-correction-batch.mjs",
+    "knowledge:v5:concept-candidate-audit": "node scripts/audit-knowledge-v5-concept-candidate.mjs",
+    "knowledge:v5:concept-owner-finalize": "node scripts/finalize-knowledge-v5-owner-approval.mjs",
+    "knowledge:v5:concept-activate": "node scripts/activate-knowledge-v5-concept-accounting.mjs",
     "security:scan": "node scripts/scan-repository-secrets.mjs",
     "report:knowledge-approval": "node scripts/build-knowledge-approval-report.mjs",
     "lint": "eslint app src server tests e2e --ignore-pattern dist --ignore-pattern dist-ai --ignore-pattern .next",
-    "check": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-paper-metadata.mjs && node scripts/audit-past-papers.mjs && node scripts/audit-active-knowledge-v5.mjs && node scripts/run-academic-results-v2-audit.mjs && node scripts/build-all-subject-fact-audit.mjs && node scripts/build-verified-facts-approval-packs.mjs && node scripts/audit-active-university-admissions-v1.mjs && node scripts/build-wave2-source-inventory.mjs && node scripts/audit-qualification-facts-v1.mjs && node scripts/audit-data.mjs && tsc --noEmit && eslint app src server tests e2e --ignore-pattern dist --ignore-pattern dist-ai --ignore-pattern .next && vitest run && node scripts/build-ai-server.mjs && node scripts/audit-ai-build.mjs && node scripts/clean-dist.mjs && vinext build && node scripts/clean-server-public.mjs && node scripts/check-build-budgets.mjs"
+    "check": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-paper-metadata.mjs && node scripts/audit-past-papers.mjs && node scripts/audit-active-knowledge-v5.mjs && node scripts/build-knowledge-v5-static.mjs && node scripts/run-academic-results-v2-audit.mjs && node scripts/build-all-subject-fact-audit.mjs && node scripts/build-verified-facts-approval-packs.mjs && node scripts/audit-active-university-admissions-v1.mjs && node scripts/build-wave2-source-inventory.mjs && node scripts/audit-qualification-facts-v1.mjs && node scripts/audit-data.mjs && tsc --noEmit && eslint app src server tests e2e --ignore-pattern dist --ignore-pattern dist-ai --ignore-pattern .next && vitest run && node scripts/build-ai-server.mjs && node scripts/audit-ai-build.mjs && node scripts/clean-dist.mjs && vinext build && node scripts/clean-server-public.mjs && node scripts/check-build-budgets.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
