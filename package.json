@@ -21,19 +21,21 @@
     "test:deployment": "node scripts/test-deployment-replica.mjs",
     "test:e2e": "playwright test",
     "data:build": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs",
-    "data:audit": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-paper-metadata.mjs && node scripts/audit-past-papers.mjs && node scripts/audit-active-knowledge-v5.mjs && node scripts/run-academic-results-v2-audit.mjs && node scripts/build-all-subject-fact-audit.mjs && node scripts/audit-data.mjs",
+    "data:audit": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-paper-metadata.mjs && node scripts/audit-past-papers.mjs && node scripts/audit-active-knowledge-v5.mjs && node scripts/run-academic-results-v2-audit.mjs && node scripts/build-all-subject-fact-audit.mjs && node scripts/build-verified-facts-approval-packs.mjs && node scripts/build-wave2-source-inventory.mjs && node scripts/audit-data.mjs",
     "academic-results:v2:build": "node scripts/build-academic-results-v2-candidates.mjs && node scripts/build-academic-results-v2-coverage.mjs && node scripts/build-qualification-fact-cards.mjs",
     "academic-results:v2:audit": "node scripts/run-academic-results-v2-audit.mjs",
     "academic-results:v2:coverage": "node scripts/build-academic-results-v2-coverage.mjs",
     "academic-results:v2:difficulty-candidates": "node scripts/build-difficulty-gold-candidates.mjs",
     "academic-facts:all-subject-audit": "node scripts/build-all-subject-fact-audit.mjs",
+    "academic-facts:approval-packs": "node scripts/build-verified-facts-approval-packs.mjs",
+    "academic-facts:wave2-inventory": "node scripts/build-wave2-source-inventory.mjs",
     "knowledge:v5:active-audit": "node scripts/audit-active-knowledge-v5.mjs",
     "knowledge:v5:static": "node scripts/build-knowledge-v5-static.mjs",
     "knowledge:v5:release-audit": "node scripts/audit-knowledge-v5-only-release.mjs",
     "security:scan": "node scripts/scan-repository-secrets.mjs",
     "report:knowledge-approval": "node scripts/build-knowledge-approval-report.mjs",
     "lint": "eslint app src server tests e2e --ignore-pattern dist --ignore-pattern dist-ai --ignore-pattern .next",
-    "check": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-paper-metadata.mjs && node scripts/audit-past-papers.mjs && node scripts/audit-active-knowledge-v5.mjs && node scripts/run-academic-results-v2-audit.mjs && node scripts/build-all-subject-fact-audit.mjs && node scripts/audit-data.mjs && tsc --noEmit && eslint app src server tests e2e --ignore-pattern dist --ignore-pattern dist-ai --ignore-pattern .next && vitest run && node scripts/build-ai-server.mjs && node scripts/audit-ai-build.mjs && node scripts/clean-dist.mjs && vinext build && node scripts/clean-server-public.mjs && node scripts/check-build-budgets.mjs"
+    "check": "node scripts/build-course-catalog.mjs && node scripts/build-static-boundaries.mjs && node scripts/build-award-estimates.mjs && node scripts/build-exam-overview-update-report.mjs && node scripts/build-past-paper-update-report.mjs && node scripts/audit-paper-metadata.mjs && node scripts/audit-past-papers.mjs && node scripts/audit-active-knowledge-v5.mjs && node scripts/run-academic-results-v2-audit.mjs && node scripts/build-all-subject-fact-audit.mjs && node scripts/build-verified-facts-approval-packs.mjs && node scripts/build-wave2-source-inventory.mjs && node scripts/audit-data.mjs && tsc --noEmit && eslint app src server tests e2e --ignore-pattern dist --ignore-pattern dist-ai --ignore-pattern .next && vitest run && node scripts/build-ai-server.mjs && node scripts/audit-ai-build.mjs && node scripts/clean-dist.mjs && vinext build && node scripts/clean-server-public.mjs && node scripts/check-build-budgets.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
