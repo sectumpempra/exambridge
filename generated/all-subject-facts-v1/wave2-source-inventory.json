@@ -9,7 +9,8 @@
     "nonAqaDeepSeekEligible": 15,
     "aqaLocalOnly": 6,
     "withCurrentSpecificationSource": 11,
-    "withDisplayStructureInventory": 11
+    "withDisplayStructureInventory": 11,
+    "withCodexReviewedQualificationFactsCandidate": 3
   },
   "records": [
     {
@@ -38,19 +39,25 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": {
+        "batchId": "qualification-facts-caie-advanced-sciences-20260723",
+        "qualificationVersionId": "CAIE-9700:2025-2027",
+        "reviewStatus": "codex-reviewed",
+        "activationStatus": "candidate-only"
+      },
       "externalModelProhibitionReason": null,
       "gaps": {
-        "qualificationVersionIdentity": "source-inventory-ready",
-        "paperOrUnitStructure": "display-inventory-ready-canonicalization-required",
-        "validAwardCombinations": "official-rule-evidence-required",
-        "resitPolicy": "official-rule-evidence-required",
-        "carryForward": "official-rule-evidence-required",
+        "qualificationVersionIdentity": "codex-reviewed-candidate",
+        "paperOrUnitStructure": "codex-reviewed-candidate",
+        "validAwardCombinations": "codex-reviewed-candidate",
+        "resitPolicy": "codex-reviewed-candidate",
+        "carryForward": "codex-reviewed-candidate-with-current-entry-option-gap",
         "cashInAndLocking": "not-applicable-or-unclassified",
-        "aStarRule": "official-rule-evidence-required",
+        "aStarRule": "grade-scale-candidate-threshold-selection-required",
         "gradeBoundaries": "canonical-migration-and-source-audit-required",
         "gradeStatistics": "auxiliary-canonical-migration-and-source-audit-required"
       },
-      "recommendedNextAction": "Extract the version, route and rule clauses from the catalogued official specification; independently verify resit/award policies against board regulations."
+      "recommendedNextAction": "Keep the qualification facts candidate-only; obtain the current series/zone Guide to Making Entries and exact overall boundaries before deterministic entry or grade calculation."
     },
     {
       "subjectCode": "9701",
@@ -78,19 +85,25 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": {
+        "batchId": "qualification-facts-caie-advanced-sciences-20260723",
+        "qualificationVersionId": "CAIE-9701:2025-2027",
+        "reviewStatus": "codex-reviewed",
+        "activationStatus": "candidate-only"
+      },
       "externalModelProhibitionReason": null,
       "gaps": {
-        "qualificationVersionIdentity": "source-inventory-ready",
-        "paperOrUnitStructure": "display-inventory-ready-canonicalization-required",
-        "validAwardCombinations": "official-rule-evidence-required",
-        "resitPolicy": "official-rule-evidence-required",
-        "carryForward": "official-rule-evidence-required",
+        "qualificationVersionIdentity": "codex-reviewed-candidate",
+        "paperOrUnitStructure": "codex-reviewed-candidate",
+        "validAwardCombinations": "codex-reviewed-candidate",
+        "resitPolicy": "codex-reviewed-candidate",
+        "carryForward": "codex-reviewed-candidate-with-current-entry-option-gap",
         "cashInAndLocking": "not-applicable-or-unclassified",
-        "aStarRule": "official-rule-evidence-required",
+        "aStarRule": "grade-scale-candidate-threshold-selection-required",
         "gradeBoundaries": "canonical-migration-and-source-audit-required",
         "gradeStatistics": "auxiliary-canonical-migration-and-source-audit-required"
       },
-      "recommendedNextAction": "Extract the version, route and rule clauses from the catalogued official specification; independently verify resit/award policies against board regulations."
+      "recommendedNextAction": "Keep the qualification facts candidate-only; obtain the current series/zone Guide to Making Entries and exact overall boundaries before deterministic entry or grade calculation."
     },
     {
       "subjectCode": "9702",
@@ -118,19 +131,25 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": {
+        "batchId": "qualification-facts-caie-advanced-sciences-20260723",
+        "qualificationVersionId": "CAIE-9702:2025-2027",
+        "reviewStatus": "codex-reviewed",
+        "activationStatus": "candidate-only"
+      },
       "externalModelProhibitionReason": null,
       "gaps": {
-        "qualificationVersionIdentity": "source-inventory-ready",
-        "paperOrUnitStructure": "display-inventory-ready-canonicalization-required",
-        "validAwardCombinations": "official-rule-evidence-required",
-        "resitPolicy": "official-rule-evidence-required",
-        "carryForward": "official-rule-evidence-required",
+        "qualificationVersionIdentity": "codex-reviewed-candidate",
+        "paperOrUnitStructure": "codex-reviewed-candidate",
+        "validAwardCombinations": "codex-reviewed-candidate",
+        "resitPolicy": "codex-reviewed-candidate",
+        "carryForward": "codex-reviewed-candidate-with-current-entry-option-gap",
         "cashInAndLocking": "not-applicable-or-unclassified",
-        "aStarRule": "official-rule-evidence-required",
+        "aStarRule": "grade-scale-candidate-threshold-selection-required",
         "gradeBoundaries": "canonical-migration-and-source-audit-required",
         "gradeStatistics": "auxiliary-canonical-migration-and-source-audit-required"
       },
-      "recommendedNextAction": "Extract the version, route and rule clauses from the catalogued official specification; independently verify resit/award policies against board regulations."
+      "recommendedNextAction": "Keep the qualification facts candidate-only; obtain the current series/zone Guide to Making Entries and exact overall boundaries before deterministic entry or grade calculation."
     },
     {
       "subjectCode": "9618",
@@ -158,6 +177,7 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "source-inventory-ready",
@@ -198,6 +218,7 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "source-inventory-ready",
@@ -238,6 +259,7 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "source-inventory-ready",
@@ -278,6 +300,7 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "source-inventory-ready",
@@ -318,6 +341,7 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "source-inventory-ready",
@@ -358,6 +382,7 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "source-inventory-ready",
@@ -398,6 +423,7 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "source-inventory-ready",
@@ -438,6 +464,7 @@
         "structureStatus": "display-reviewed-not-canonical-rule-evidence"
       },
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "source-inventory-ready",
@@ -466,6 +493,7 @@
       "currentSpecificationSources": [],
       "existingStructureInventory": null,
       "processingPolicy": "codex-local-only",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": "AQA source text and rows must remain local-only.",
       "gaps": {
         "qualificationVersionIdentity": "official-source-required",
@@ -494,6 +522,7 @@
       "currentSpecificationSources": [],
       "existingStructureInventory": null,
       "processingPolicy": "codex-local-only",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": "AQA source text and rows must remain local-only.",
       "gaps": {
         "qualificationVersionIdentity": "official-source-required",
@@ -522,6 +551,7 @@
       "currentSpecificationSources": [],
       "existingStructureInventory": null,
       "processingPolicy": "codex-local-only",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": "AQA source text and rows must remain local-only.",
       "gaps": {
         "qualificationVersionIdentity": "official-source-required",
@@ -550,6 +580,7 @@
       "currentSpecificationSources": [],
       "existingStructureInventory": null,
       "processingPolicy": "codex-local-only",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": "AQA source text and rows must remain local-only.",
       "gaps": {
         "qualificationVersionIdentity": "official-source-required",
@@ -578,6 +609,7 @@
       "currentSpecificationSources": [],
       "existingStructureInventory": null,
       "processingPolicy": "codex-local-only",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": "AQA source text and rows must remain local-only.",
       "gaps": {
         "qualificationVersionIdentity": "official-source-required",
@@ -606,6 +638,7 @@
       "currentSpecificationSources": [],
       "existingStructureInventory": null,
       "processingPolicy": "codex-local-only",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": "AQA source text and rows must remain local-only.",
       "gaps": {
         "qualificationVersionIdentity": "official-source-required",
@@ -634,6 +667,7 @@
       "currentSpecificationSources": [],
       "existingStructureInventory": null,
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "official-source-required",
@@ -662,6 +696,7 @@
       "currentSpecificationSources": [],
       "existingStructureInventory": null,
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "official-source-required",
@@ -690,6 +725,7 @@
       "currentSpecificationSources": [],
       "existingStructureInventory": null,
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "official-source-required",
@@ -718,6 +754,7 @@
       "currentSpecificationSources": [],
       "existingStructureInventory": null,
       "processingPolicy": "deepseek-candidate-eligible",
+      "qualificationFactsCandidate": null,
       "externalModelProhibitionReason": null,
       "gaps": {
         "qualificationVersionIdentity": "official-source-required",

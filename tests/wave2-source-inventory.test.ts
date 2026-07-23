@@ -15,8 +15,13 @@ describe("Wave 2 official-source inventory", () => {
 
   it("does not treat display overviews as canonical rule evidence", () => {
     expect(inventory.status).toBe("source-inventory-only");
-    expect(inventory.records.every(record =>
-      record.gaps.validAwardCombinations === "official-rule-evidence-required"
-      && record.gaps.resitPolicy === "official-rule-evidence-required")).toBe(true);
+    const candidateCodes = inventory.records
+      .filter(record => record.qualificationFactsCandidate?.reviewStatus === "codex-reviewed")
+      .map(record => record.subjectCode)
+      .sort();
+    expect(candidateCodes).toEqual(["9700", "9701", "9702"]);
+    expect(inventory.records.every(record => record.qualificationFactsCandidate === null
+      ? record.gaps.resitPolicy === "official-rule-evidence-required"
+      : record.qualificationFactsCandidate.activationStatus === "candidate-only")).toBe(true);
   });
 });

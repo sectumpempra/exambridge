@@ -5,6 +5,7 @@
 - AQA qualifications restricted to local processing: **6**
 - Current official specifications already catalogued: **11**
 - Existing display structure inventories: **11**
+- Codex-reviewed qualification-facts candidates: **3**
 
 ## Interpretation
 

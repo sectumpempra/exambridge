@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { createServer } from "vite";
 
@@ -10,6 +10,13 @@ const targetCodes = [
   "H420", "H432", "H556", "H443",
 ];
 const localOnlyCodes = new Set(["7402", "7405", "7408", "7136", "7132", "7517"]);
+const qualificationFactCandidate = JSON.parse(await readFile(
+  join(root, "data/candidates/qualification-facts-v1/caie-advanced-sciences-20260723.json"),
+  "utf8",
+));
+const qualificationFactCandidateByCode = new Map(
+  qualificationFactCandidate.qualifications.map(record => [record.subjectCode, record]),
+);
 const server = await createServer({
   root,
   configFile: false,
@@ -40,6 +47,7 @@ try {
         evidenceStatus: "catalogued-official-source-not-yet-rule-adjudicated",
       }));
     const processingPolicy = localOnlyCodes.has(subjectCode) ? "codex-local-only" : "deepseek-candidate-eligible";
+    const factsCandidate = qualificationFactCandidateByCode.get(subjectCode);
     return {
       subjectCode,
       courseIdentities: matchingCourses.map(course => ({
@@ -56,23 +64,33 @@ try {
         structureStatus: "display-reviewed-not-canonical-rule-evidence",
       } : null,
       processingPolicy,
+      qualificationFactsCandidate: factsCandidate ? {
+        batchId: qualificationFactCandidate.batchId,
+        qualificationVersionId: factsCandidate.qualificationVersionId,
+        reviewStatus: qualificationFactCandidate.reviewStatus,
+        activationStatus: qualificationFactCandidate.activationStatus,
+      } : null,
       externalModelProhibitionReason: localOnlyCodes.has(subjectCode)
         ? "AQA source text and rows must remain local-only."
         : null,
       gaps: {
-        qualificationVersionIdentity: specificationSources.length > 0 ? "source-inventory-ready" : "official-source-required",
-        paperOrUnitStructure: overview ? "display-inventory-ready-canonicalization-required" : "official-source-required",
-        validAwardCombinations: "official-rule-evidence-required",
-        resitPolicy: "official-rule-evidence-required",
-        carryForward: subjectCode.startsWith("97") || subjectCode === "9618" || subjectCode === "9609"
-          ? "official-rule-evidence-required"
+        qualificationVersionIdentity: factsCandidate ? "codex-reviewed-candidate" : specificationSources.length > 0 ? "source-inventory-ready" : "official-source-required",
+        paperOrUnitStructure: factsCandidate ? "codex-reviewed-candidate" : overview ? "display-inventory-ready-canonicalization-required" : "official-source-required",
+        validAwardCombinations: factsCandidate ? "codex-reviewed-candidate" : "official-rule-evidence-required",
+        resitPolicy: factsCandidate ? "codex-reviewed-candidate" : "official-rule-evidence-required",
+        carryForward: factsCandidate
+          ? "codex-reviewed-candidate-with-current-entry-option-gap"
+          : subjectCode.startsWith("97") || subjectCode === "9618" || subjectCode === "9609"
+            ? "official-rule-evidence-required"
           : "not-yet-classified",
         cashInAndLocking: subjectCode.startsWith("Y") ? "official-rule-evidence-required" : "not-applicable-or-unclassified",
-        aStarRule: "official-rule-evidence-required",
+        aStarRule: factsCandidate ? "grade-scale-candidate-threshold-selection-required" : "official-rule-evidence-required",
         gradeBoundaries: "canonical-migration-and-source-audit-required",
         gradeStatistics: "auxiliary-canonical-migration-and-source-audit-required",
       },
-      recommendedNextAction: specificationSources.length > 0
+      recommendedNextAction: factsCandidate
+        ? "Keep the qualification facts candidate-only; obtain the current series/zone Guide to Making Entries and exact overall boundaries before deterministic entry or grade calculation."
+        : specificationSources.length > 0
         ? "Extract the version, route and rule clauses from the catalogued official specification; independently verify resit/award policies against board regulations."
         : "Locate and hash the current official specification locally before any rule extraction.",
     };
@@ -89,6 +107,7 @@ try {
       aqaLocalOnly: records.filter(record => record.processingPolicy === "codex-local-only").length,
       withCurrentSpecificationSource: records.filter(record => record.currentSpecificationSources.length > 0).length,
       withDisplayStructureInventory: records.filter(record => record.existingStructureInventory).length,
+      withCodexReviewedQualificationFactsCandidate: records.filter(record => record.qualificationFactsCandidate?.reviewStatus === "codex-reviewed").length,
     },
     records,
   };
@@ -103,6 +122,7 @@ try {
 - AQA qualifications restricted to local processing: **${summary.counts.aqaLocalOnly}**
 - Current official specifications already catalogued: **${summary.counts.withCurrentSpecificationSource}**
 - Existing display structure inventories: **${summary.counts.withDisplayStructureInventory}**
+- Codex-reviewed qualification-facts candidates: **${summary.counts.withCodexReviewedQualificationFactsCandidate}**
 
 ## Interpretation
 
