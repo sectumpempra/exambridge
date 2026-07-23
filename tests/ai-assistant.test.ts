@@ -289,6 +289,20 @@ describe("AI assistant context builder", () => {
     expect(result.promptContext).toMatch(/"sourceIds":\["S\d+"/);
   });
 
+  it("handles an institution outside the active university dataset locally without calling the model", async () => {
+    const result = await builder.build(request({
+      messages: [{ role: "user", content: "Durham 2027 数学本科录取要求是什么？" }],
+    }));
+    expect(result.clarification).toContain("无法从这条问题中解析出可查询的大学和专业");
+    expect(result.universityAdmissionsTools?.calls[0]).toMatchObject({
+      status: "input-required",
+      result: null,
+      sourceIds: [],
+    });
+    expect(result.promptContext).toBe("{}");
+    expect(result.sources).toEqual([]);
+  });
+
   it("places the deterministic university answer template and missing-field rules in the system prompt", () => {
     const prompt = buildAISystemPrompt(request(), JSON.stringify({
       universityAdmissions: {
@@ -299,6 +313,9 @@ describe("AI assistant context builder", () => {
     expect(prompt).toContain("read-only deterministic output");
     expect(prompt).toContain("not-stated");
     expect(prompt).toContain("Do not rank admission likelihood");
+    expect(prompt).toContain("Never infer a campus");
+    expect(prompt).toContain("claim the record is conflict-free");
+    expect(prompt).toContain("Missing universityAdmissions links are not negative evidence");
   });
 
   it("lets explicit question qualifications replace conflicting page context", async () => {

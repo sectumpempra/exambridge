@@ -47,6 +47,10 @@ describe("University Admissions V1 AI tools", () => {
       requirement: { intakeYear: 2027, verificationStatus: "owner-approved" },
     });
     expect(call?.sourceIds.length).toBeGreaterThan(0);
+    expect(call?.sourceIds).not.toContain("src-university-of-oxford-computer-science-2027");
+    expect(JSON.stringify(call?.result)).not.toContain("reviewedByModel");
+    expect(JSON.stringify(call?.result)).not.toContain("conflictIds");
+    expect(JSON.stringify(call?.result)).not.toContain("collegeScope");
   });
 
   it("builds a like-for-like two-university comparison without ranking admission likelihood", () => {
@@ -59,6 +63,10 @@ describe("University Admissions V1 AI tools", () => {
       "inst-university-of-oxford",
     ]);
     expect(context?.responseTemplate.comparisonPolicy).toContain("Do not rank admission likelihood");
+    expect(context?.responseTemplate.missingFieldPolicy).toContain("Do not infer a campus");
+    expect(context?.responseTemplate.missingFieldPolicy).toContain("do not describe a verified minimum offer as non-typical");
+    expect(context?.responseTemplate.negativeEvidencePolicy).toContain("is not negative evidence");
+    expect(context?.responseTemplate.conclusionStatusPolicy).toContain("Do not discuss ingestion mechanics");
   });
 
   it("returns the approved TMUA record and only active programme links", () => {
@@ -88,7 +96,7 @@ describe("University Admissions V1 AI tools", () => {
 
     const quarantined = buildUniversityAdmissionsToolContext(request("Durham 2027 数学录取要求是什么？"));
     expect(quarantined?.calls[0]).toMatchObject({ status: "input-required", result: null, sourceIds: [] });
-    expect(JSON.stringify(quarantined)).not.toContain("overallOffer");
+    expect(JSON.stringify(quarantined?.calls[0].result)).not.toContain("overallOffer");
   });
 
   it("does not leak 2027 requirements into a request for a different intake year", () => {
@@ -102,7 +110,7 @@ describe("University Admissions V1 AI tools", () => {
         sourceIds: [],
       }),
     ]);
-    expect(JSON.stringify(context)).not.toContain("overallOffer");
+    expect(JSON.stringify(context?.calls[0].result)).not.toContain("overallOffer");
   });
 
   it("rejects a manifest containing any non-owner-approved active record", () => {

@@ -9,6 +9,7 @@ import { AIServiceGuard, createAIServiceGuardFromEnv } from "./service-guard";
 import { buildAISystemPrompt, isComplexAIQuestion } from "./prompt";
 import { enforceDeterministicPaperFacts } from "./answer-grounding";
 import { OpenAIWebSearchError, OpenAIWebSearchProvider, type OfficialSearchResult } from "./openai-web-search";
+import { groundUniversityAdmissionsAnswer } from "./university-admissions-grounding";
 
 const PORT = Number(process.env.AI_PORT ?? 8789);
 const HOST = process.env.AI_HOST ?? "127.0.0.1";
@@ -173,6 +174,7 @@ async function handleChat(
   let completionTokens = 0;
   let totalTokens = 0;
   let paperFactCorrections = 0;
+  let universityFactCorrections = 0;
   let reasoningEffort: "none" | "low" | "max" = "none";
   let providerAttempted = false;
   let providerSucceeded = false;
@@ -205,7 +207,12 @@ async function handleChat(
       if (context.clarificationChoices) {
         sendEvent(res, { type: "clarification", clarification: context.clarificationChoices });
       } else {
-        sendEvent(res, { type: "suggestions", suggestions: ["选择当前课程", "输入资格代码，例如 9709"] });
+        sendEvent(res, {
+          type: "suggestions",
+          suggestions: context.universityAdmissionsTools
+            ? ["输入当前已核验的大学名称", "补充专业或学科", "说明 2027 年入学"]
+            : ["选择当前课程", "输入资格代码，例如 9709"],
+        });
       }
       sendEvent(res, { type: "done", answer: context.clarification, requestId, resolvedContext: context.resolvedContext });
       return;
@@ -303,7 +310,13 @@ async function handleChat(
       : Math.ceil((system.length + request.messages.reduce((sum, message) => sum + message.content.length, 0) + result.answer.length) / 4);
     const grounded = enforceDeterministicPaperFacts(result.answer, context.paperFacts ?? []);
     paperFactCorrections = grounded.corrections.length;
-    const answer = ensureAnswerCitations(grounded.answer, sources);
+    const universityGrounded = groundUniversityAdmissionsAnswer(
+      grounded.answer,
+      context.universityAdmissionsTools,
+      request.locale,
+    );
+    universityFactCorrections = universityGrounded.corrections.length;
+    const answer = ensureAnswerCitations(universityGrounded.answer, sources);
     const citations = hydrateCitations(answer, sources);
     if (sources.length > 0 && citations.length === 0) {
       throw new AIProviderError("DeepSeek answer did not cite an allowed source", "unavailable");
@@ -351,6 +364,7 @@ async function handleChat(
       completionTokens,
       totalTokens,
       paperFactCorrections,
+      universityFactCorrections,
       elapsedMs: Date.now() - startedAt,
     }));
   }

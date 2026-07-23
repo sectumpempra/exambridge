@@ -958,6 +958,20 @@ export class AIContextBuilder {
         : courses.map((course) => course.label)).slice(0, 4),
     };
 
+    if (universityAdmissions?.calls.some(call => call.status === "input-required")) {
+      return {
+        promptContext: "{}",
+        sources: [],
+        paperFacts: [],
+        resolvedContext,
+        clarification: request.locale === "en-GB"
+          ? "The owner-approved active university dataset could not resolve a queryable institution and programme from this question. Please provide a currently verified university name plus the programme or subject. The active dataset currently covers 2027 entry only."
+          : "当前 owner-approved 大学 active 数据无法从这条问题中解析出可查询的大学和专业。请提供一所当前已核验的大学名称，以及专业或学科；现有 active 数据仅覆盖 2027 年入学。",
+        universityAdmissionsTools: universityAdmissions,
+        containsAqa: false,
+      };
+    }
+
     const requiredInput = detectRequiredInputClarification(request, resolvedContext.awardQualificationIds);
     if (requiredInput) {
       return {

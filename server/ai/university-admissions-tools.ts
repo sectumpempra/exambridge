@@ -22,7 +22,7 @@ type Programme = SourceLinkedRecord & {
   subjectArea: string;
   degreeType: string;
   intakeYears: number[];
-  campuses: string[];
+  campuses?: string[];
   uncertainties: string[];
 };
 
@@ -50,12 +50,15 @@ type Assessment = SourceLinkedRecord & {
   name: string;
   provider: string;
   category: string;
+  durationMinutes: number;
   testFormat: string;
   testDates: string[];
   registrationWindow: string;
   registrationMethod: string;
   calculatorPolicy: string;
   scoringMethod: string;
+  fees: Record<string, number>;
+  subjects: string[];
   uncertainties: string[];
 };
 
@@ -116,6 +119,8 @@ export type UniversityAdmissionsToolContext = {
     sections: string[];
     comparisonPolicy: string;
     missingFieldPolicy: string;
+    negativeEvidencePolicy: string;
+    conclusionStatusPolicy: string;
   };
 };
 
@@ -225,6 +230,89 @@ function matchedAssessmentIds(message: string): string[] {
     .map(([assessmentId]) => assessmentId);
 }
 
+function publicInstitution(record: Institution) {
+  return {
+    institutionId: record.institutionId,
+    name: record.name,
+    country: record.country,
+    verificationStatus: record.verificationStatus,
+  };
+}
+
+function publicProgramme(record: Programme) {
+  return {
+    programmeId: record.programmeId,
+    institutionId: record.institutionId,
+    name: record.name,
+    subjectArea: record.subjectArea,
+    degreeType: record.degreeType,
+    intakeYears: record.intakeYears,
+    campuses: record.campuses ?? [],
+    uncertainties: record.uncertainties,
+    sourceIds: record.sourceIds,
+    verificationStatus: record.verificationStatus,
+  };
+}
+
+function publicRequirement(record: Requirement) {
+  return {
+    requirementId: record.requirementId,
+    programmeId: record.programmeId,
+    institutionId: record.institutionId,
+    intakeYear: record.intakeYear,
+    campus: record.campus,
+    college: record.college,
+    qualificationRoute: record.qualificationRoute,
+    overallOffer: record.overallOffer,
+    subjectRequirements: record.subjectRequirements,
+    additionalRequirements: record.additionalRequirements,
+    gcseOrIgcseRequirements: record.gcseOrIgcseRequirements,
+    englishLanguageRequirements: record.englishLanguageRequirements,
+    mixedBoardPolicy: record.mixedBoardPolicy,
+    predictedGradePolicy: record.predictedGradePolicy,
+    resitPolicy: record.resitPolicy,
+    uncertainties: record.uncertainties,
+    sourceIds: record.sourceIds,
+    verificationStatus: record.verificationStatus,
+  };
+}
+
+function publicAssessment(record: Assessment) {
+  return {
+    assessmentId: record.assessmentId,
+    name: record.name,
+    provider: record.provider,
+    category: record.category,
+    durationMinutes: record.durationMinutes,
+    testFormat: record.testFormat,
+    testDates: record.testDates,
+    registrationWindow: record.registrationWindow,
+    registrationMethod: record.registrationMethod,
+    calculatorPolicy: record.calculatorPolicy,
+    scoringMethod: record.scoringMethod,
+    fees: record.fees,
+    subjects: record.subjects,
+    uncertainties: record.uncertainties,
+    sourceIds: record.sourceIds,
+    verificationStatus: record.verificationStatus,
+  };
+}
+
+function publicAssessmentLink(record: AssessmentLink) {
+  return {
+    linkId: record.linkId,
+    programmeId: record.programmeId,
+    institutionId: record.institutionId,
+    assessmentId: record.assessmentId,
+    intakeYear: record.intakeYear,
+    requirementLevel: record.requirementLevel,
+    scoreRequirement: record.scoreRequirement,
+    conditions: record.conditions,
+    sourceIds: record.sourceIds,
+    verificationStatus: record.verificationStatus,
+  };
+}
+
 function selectedProgrammeRecords(
   manifest: UniversityAdmissionsManifestV1,
   institutionIds: string[],
@@ -243,13 +331,17 @@ function selectedProgrammeRecords(
     const assessmentLinks = manifest.programmeAssessmentLinks
       .filter(link => selectedProgrammeIds.has(link.programmeId) && link.programmeId === programme.programmeId)
       .map(link => ({
-        ...link,
+        ...publicAssessmentLink(link),
         assessment: manifest.assessments.find(assessment => assessment.assessmentId === link.assessmentId),
+      }))
+      .map(link => ({
+        ...link,
+        assessment: link.assessment ? publicAssessment(link.assessment) : undefined,
       }));
     return [{
-      institution,
-      programme,
-      requirement,
+      institution: publicInstitution(institution),
+      programme: publicProgramme(programme),
+      requirement: publicRequirement(requirement),
       assessmentLinks,
     }];
   });
@@ -273,15 +365,17 @@ export function buildUniversityAdmissionsToolContext(
   const calls: UniversityAdmissionsToolCall[] = [];
 
   if (assessmentIds.length > 0) {
-    const records = requestedUnavailableYear
+    const sourceRecords = requestedUnavailableYear
       ? []
       : manifest.assessments.filter(assessment => assessmentIds.includes(assessment.assessmentId));
-    const relevantLinks = requestedUnavailableYear
+    const records = sourceRecords.map(publicAssessment);
+    const relevantLinks = (requestedUnavailableYear
       ? []
       : manifest.programmeAssessmentLinks.filter(link =>
         assessmentIds.includes(link.assessmentId)
         && link.intakeYear === intakeYear
-        && (institutionIds.length === 0 || institutionIds.includes(link.institutionId)));
+        && (institutionIds.length === 0 || institutionIds.includes(link.institutionId))))
+      .map(publicAssessmentLink);
     calls.push({
       name: "lookup_admissions_assessment",
       status: records.length > 0 ? "ok" : "data-unavailable",
@@ -307,7 +401,6 @@ export function buildUniversityAdmissionsToolContext(
       status: records.length > 0 ? "ok" : "data-unavailable",
       result: records,
       sourceIds: unique(records.flatMap(record => [
-        ...record.institution.sourceIds,
         ...record.programme.sourceIds,
         ...record.requirement.sourceIds,
         ...record.assessmentLinks.flatMap(link => [
@@ -354,7 +447,9 @@ export function buildUniversityAdmissionsToolContext(
           "结论状态",
         ],
       comparisonPolicy: "Compare like-for-like fields only. Do not rank admission likelihood or call one university easier when the active evidence does not support that conclusion.",
-      missingFieldPolicy: "not-stated means the official active evidence did not state the policy; it does not mean allowed, prohibited, required, or waived.",
+      missingFieldPolicy: "not-stated, null, an empty array, or an absent field means the active evidence did not state the fact. Do not infer a campus, college, policy, requirement, permission, prohibition, waiver, or exception. If overallOffer.typical is null, say the separate typical offer was not stated; do not describe a verified minimum offer as non-typical.",
+      negativeEvidencePolicy: "The absence of a programmeAssessmentLink, subject requirement, or policy is not negative evidence. Say only that the active record does not list it; never say the institution does not require, does not accept, waives, or prohibits it unless an explicit active field states that conclusion.",
+      conclusionStatusPolicy: `Describe the conclusion only as based on the owner-approved active record for ${ACTIVE_INTAKE_YEAR} entry and cite the supplied official sources. Do not discuss ingestion mechanics or expand this into claims that the evidence is conflict-free, complete, latest, current for another intake, or guarantees admission.`,
     },
   };
 }
