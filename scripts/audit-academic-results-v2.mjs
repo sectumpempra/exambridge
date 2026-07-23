@@ -1,4 +1,5 @@
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { createServer } from "vite";
@@ -35,6 +36,8 @@ const expectedAwardIds = [
 const scope = JSON.parse(await readFile(scopePath, "utf8"));
 const identityCatalog = JSON.parse(await readFile(identityPath, "utf8"));
 const active = JSON.parse(await readFile(activePath, "utf8"));
+const activeText = await readFile(activePath, "utf8");
+const activeMetadata = JSON.parse(await readFile(join(root, "data", "active", "academic-results-v2", "activation.json"), "utf8"));
 
 async function loadAcademicSchemas() {
   const server = await createServer({
@@ -105,6 +108,14 @@ for (const qualification of qualifications) {
 }
 
 if (active.schemaVersion !== "2.0.0") failures.push("active manifest schemaVersion must be 2.0.0");
+if (activeMetadata.manifestSha256 !== createHash("sha256").update(activeText).digest("hex")) {
+  failures.push("active academic-results manifest hash does not match activation metadata");
+}
+for (const collection of ["sources", "boundaries", "statistics", "awardRules", "misconceptions"]) {
+  if (activeMetadata.activeCounts?.[collection] !== active[collection]?.length) {
+    failures.push(`active academic-results ${collection} count does not match activation metadata`);
+  }
+}
 for (const collection of ["sources", "boundaries", "statistics", "awardRules", "difficultyProfiles"]) {
   if (!Array.isArray(active[collection])) failures.push(`active manifest ${collection} must be an array`);
   for (const [index, record] of (active[collection] ?? []).entries()) {

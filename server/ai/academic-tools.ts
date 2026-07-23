@@ -25,6 +25,13 @@ export type AcademicToolCall = {
   status: "ok" | "data-unavailable" | "consent-required" | "input-required" | "invalid-input";
   result: unknown;
   sourceIds: string[];
+  availability?: {
+    activeRecordCount: number;
+    pendingExpectationCount: number;
+    unexpectedRecordCount: number;
+    explainedUnavailableCount: number;
+    note: string;
+  };
 };
 
 export type AcademicToolContext = {
@@ -95,6 +102,51 @@ const parseSeries = (request: AIChatRequest) => {
   return undefined;
 };
 
+const requestsHistoricalCoverage = (request: AIChatRequest) => has(
+  latestUserMessage(request),
+  /历年|历史(?:数据|考季|分数线|成绩)|所有(?:年份|考季|系列)|全部(?:年份|考季|系列)|从\s*20\d{2}\s*年?(?:开始|起)|all\s+(?:years|series|sessions)|historical/,
+);
+
+const yearFallsWithinVersion = (
+  year: number,
+  version: { effectiveFrom: string; effectiveTo?: string },
+) => {
+  const date = `${year}-06-30`;
+  return date >= version.effectiveFrom && (!version.effectiveTo || date <= version.effectiveTo);
+};
+
+export function resolveAcademicQualificationVersionIds(
+  manifest: AcademicResultsManifestV2,
+  requestedQualificationVersionIds: string[],
+  request: AIChatRequest,
+  requestedAwardQualificationIds: string[] = [],
+): string[] {
+  const queryAwardId = request.academicQuery?.awardQualificationId;
+  const selectedAwardIds = new Set([
+    ...requestedAwardQualificationIds,
+    ...(queryAwardId ? [queryAwardId] : []),
+    ...manifest.qualificationIdentities
+      .filter(identity => identity.qualificationVersions.some(version => requestedQualificationVersionIds.includes(version.qualificationVersionId)))
+      .map(identity => identity.awardQualificationId),
+  ]);
+  const selectedIdentities = manifest.qualificationIdentities.filter(identity => selectedAwardIds.has(identity.awardQualificationId));
+  const year = parseYear(request);
+  if (year) {
+    const matching = selectedIdentities.flatMap(identity => identity.qualificationVersions
+      .filter(version => yearFallsWithinVersion(year, version))
+      .map(version => version.qualificationVersionId));
+    return unique(matching.length > 0 ? matching : requestedQualificationVersionIds);
+  }
+  if (requestsHistoricalCoverage(request)) {
+    const historical = selectedIdentities.flatMap(identity => identity.qualificationVersions.map(version => version.qualificationVersionId));
+    return unique(historical.length > 0 ? historical : requestedQualificationVersionIds);
+  }
+  if (requestedQualificationVersionIds.length > 0) return unique(requestedQualificationVersionIds);
+  return unique(selectedIdentities.flatMap(identity => identity.qualificationVersions
+    .filter(version => version.isCurrent)
+    .map(version => version.qualificationVersionId)));
+}
+
 const recordMatches = (
   record: { qualificationVersionId: string; awardQualificationId: string; year?: number; series?: string; routeId?: string; tier?: string },
   qualificationVersionIds: string[],
@@ -118,41 +170,76 @@ export function buildAcademicToolContext(
   request: AIChatRequest,
   manifestValue: unknown,
   qualificationVersionIds: string[],
+  awardQualificationIds: string[] = [],
 ): AcademicToolContext | undefined {
   const intents = detectAcademicToolIntents(request);
   if (intents.size === 0) return undefined;
   const manifest: AcademicResultsManifestV2 = AcademicResultsManifestV2Schema.parse(manifestValue);
+  const resolvedQualificationVersionIds = resolveAcademicQualificationVersionIds(
+    manifest,
+    qualificationVersionIds,
+    request,
+    awardQualificationIds,
+  );
+  const resolvedAwardQualificationIds = unique([
+    ...awardQualificationIds,
+    ...(request.academicQuery?.awardQualificationId ? [request.academicQuery.awardQualificationId] : []),
+    ...manifest.qualificationIdentities
+      .filter(identity => identity.qualificationVersions.some(version => resolvedQualificationVersionIds.includes(version.qualificationVersionId)))
+      .map(identity => identity.awardQualificationId),
+  ]);
   const approvedBoundaries = manifest.boundaries.filter(record => record.verificationStatus === "owner-approved");
   const approvedStatistics = manifest.statistics.filter(record => record.verificationStatus === "owner-approved");
   const approvedRules = manifest.awardRules.filter(record => record.verificationStatus === "owner-approved");
   const approvedDifficultyProfiles = manifest.difficultyProfiles.filter(record => record.verificationStatus === "owner-approved");
   const approvedMisconceptions = manifest.misconceptions.filter(record => record.reviewStatus === "owner-approved");
   const calls: AcademicToolCall[] = [];
-  const add = (name: AcademicToolName, records: unknown[], sourceIds: string[]) => calls.push({
-    name,
-    status: records.length > 0 ? "ok" : "data-unavailable",
-    result: records,
-    sourceIds: unique(sourceIds),
-  });
+  const add = (
+    name: AcademicToolName,
+    records: unknown[],
+    sourceIds: string[],
+    coverageKind?: "boundaries" | "statistics" | "rules",
+  ) => {
+    const coverage = coverageKind
+      ? manifest.qualificationFactCards
+        .filter(card => resolvedAwardQualificationIds.includes(card.awardQualificationId))
+        .map(card => card.coverage[coverageKind])
+      : [];
+    calls.push({
+      name,
+      status: records.length > 0 ? "ok" : "data-unavailable",
+      result: records,
+      sourceIds: unique(sourceIds),
+      ...(coverage.length > 0 ? {
+        availability: {
+          activeRecordCount: records.length,
+          pendingExpectationCount: coverage.reduce((sum, item) => sum + item.pending, 0),
+          unexpectedRecordCount: coverage.reduce((sum, item) => sum + item.unexpected, 0),
+          explainedUnavailableCount: coverage.reduce((sum, item) => sum + item.explainedUnavailable, 0),
+          note: "Counts describe coverage state only. Pending or unexpected rows are not queryable and their values are not exposed.",
+        },
+      } : {}),
+    });
+  };
 
   if (intents.has("lookup_grade_boundary")) {
-    const records = approvedBoundaries.filter(record => recordMatches(record, qualificationVersionIds, request));
-    add("lookup_grade_boundary", records, records.flatMap(record => record.sourceIds));
+    const records = approvedBoundaries.filter(record => recordMatches(record, resolvedQualificationVersionIds, request));
+    add("lookup_grade_boundary", records, records.flatMap(record => record.sourceIds), "boundaries");
   }
   if (intents.has("lookup_grade_statistics")) {
-    const records = approvedStatistics.filter(record => recordMatches(record, qualificationVersionIds, request));
-    add("lookup_grade_statistics", records, records.flatMap(record => record.sourceIds));
+    const records = approvedStatistics.filter(record => recordMatches(record, resolvedQualificationVersionIds, request));
+    add("lookup_grade_statistics", records, records.flatMap(record => record.sourceIds), "statistics");
   }
   if (intents.has("explain_qualification_rule")) {
     const records = approvedRules.filter(record =>
-      (qualificationVersionIds.length === 0 || qualificationVersionIds.includes(record.qualificationVersionId))
+      (resolvedQualificationVersionIds.length === 0 || resolvedQualificationVersionIds.includes(record.qualificationVersionId))
       && (!request.academicQuery?.awardQualificationId || record.awardQualificationId === request.academicQuery.awardQualificationId),
     );
-    add("explain_qualification_rule", records, records.flatMap(record => record.sourceIds));
+    add("explain_qualification_rule", records, records.flatMap(record => record.sourceIds), "rules");
   }
   if (intents.has("compare_qualification_rules")) {
-    const records = approvedRules.filter(record => qualificationVersionIds.includes(record.qualificationVersionId));
-    add("compare_qualification_rules", records, records.flatMap(record => record.sourceIds));
+    const records = approvedRules.filter(record => resolvedQualificationVersionIds.includes(record.qualificationVersionId));
+    add("compare_qualification_rules", records, records.flatMap(record => record.sourceIds), "rules");
   }
   if (intents.has("compare_subjects")) {
     const records = approvedDifficultyProfiles.filter(record =>
@@ -245,7 +332,7 @@ export function buildAcademicToolContext(
       const series = parseSeries(request);
       const awardQualificationId = query?.awardQualificationId;
       const routeId = query?.routeId;
-      const qualificationVersionId = qualificationVersionIds[0];
+      const qualificationVersionId = resolvedQualificationVersionIds[0];
       if (!year || !series || !awardQualificationId || !routeId || !qualificationVersionId) {
         calls.push({ name: "explain_boundary_prediction", status: "input-required", result: null, sourceIds: [] });
       } else {

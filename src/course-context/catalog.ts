@@ -87,13 +87,20 @@ function displayPreference(entry: CourseContextEntry): number {
   return 1;
 }
 
-/** One user-facing card per qualification code while retaining every raw entry in COURSE_CATALOG. */
+function displayQualificationLevel(entry: CourseContextEntry): string {
+  if (entry.boardName === "CAIE" && ["GCSE", "IGCSE"].includes(entry.level)) return "IGCSE";
+  if (entry.boardName === "Edexcel" && /^4[A-Z0-9]+$/i.test(entry.subjectCode)
+    && ["GCSE", "IGCSE"].includes(entry.level)) return "IGCSE";
+  return entry.level;
+}
+
+/** One user-facing card per board, level and qualification code while retaining every raw entry in COURSE_CATALOG. */
 export function getDisplayCourseCatalog(status: CourseLifecycleStatus): CourseContextEntry[] {
   const grouped = new Map<string, CourseContextEntry[]>();
   for (const entry of COURSE_CATALOG) {
     if (entry.lifecycleStatus !== status) continue;
     const board = entry.boardName.startsWith("Edexcel") ? "pearson" : entry.boardName;
-    const key = `${board}|${entry.subjectCode}`;
+    const key = `${board}|${displayQualificationLevel(entry)}|${entry.subjectCode}`;
     grouped.set(key, [...(grouped.get(key) ?? []), entry]);
   }
   const statusRank = { unavailable: 0, partial: 1, available: 2 } as const;

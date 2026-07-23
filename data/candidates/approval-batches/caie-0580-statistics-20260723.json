@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "verified-facts-caie-0580-statistics-202107-202603-20260723",
+  "domain": "academic-results-statistics",
+  "generatedAt": "2026-07-23",
+  "approvalStatus": "owner-approved",
+  "activationStatus": "activated",
+  "sourceCandidate": {
+    "path": "data/candidates/academic-results-v2/migration-candidate.json",
+    "sha256": "577b087ab2625ead776cfb057553381b0f694119e0c6bc120d3a2a34fa8f2cac"
+  },
+  "scope": {
+    "awardQualificationId": "award:caie:0580",
+    "includedStatisticsIds": [
+      "statistics:award-caie-0580:2021:june:all-candidates",
+      "statistics:award-caie-0580:2021:march:all-candidates",
+      "statistics:award-caie-0580:2021:november:all-candidates",
+      "statistics:award-caie-0580:2022:june:all-candidates",
+      "statistics:award-caie-0580:2022:march:all-candidates",
+      "statistics:award-caie-0580:2022:november:all-candidates",
+      "statistics:award-caie-0580:2023:june:all-candidates",
+      "statistics:award-caie-0580:2023:march:all-candidates",
+      "statistics:award-caie-0580:2023:november:all-candidates",
+      "statistics:award-caie-0580:2024:june:all-candidates",
+      "statistics:award-caie-0580:2024:march:all-candidates",
+      "statistics:award-caie-0580:2024:november:all-candidates",
+      "statistics:award-caie-0580:2025:june:all-candidates",
+      "statistics:award-caie-0580:2025:march:all-candidates",
+      "statistics:award-caie-0580:2025:november:all-candidates",
+      "statistics:award-caie-0580:2026:march:all-candidates"
+    ],
+    "includedSourceIds": [
+      "source:caie-0580-grade-statistics-2021-june",
+      "source:caie-0580-grade-statistics-2021-march",
+      "source:caie-0580-grade-statistics-2021-november",
+      "source:caie-0580-grade-statistics-2022-june",
+      "source:caie-0580-grade-statistics-2022-march",
+      "source:caie-0580-grade-statistics-2022-november",
+      "source:caie-0580-grade-statistics-2023-june",
+      "source:caie-0580-grade-statistics-2023-march",
+      "source:caie-0580-grade-statistics-2023-november",
+      "source:caie-0580-grade-statistics-2024-june",
+      "source:caie-0580-grade-statistics-2024-march",
+      "source:caie-0580-grade-statistics-2024-november",
+      "source:caie-0580-grade-statistics-2025-june",
+      "source:caie-0580-grade-statistics-2025-march",
+      "source:caie-0580-grade-statistics-2025-november",
+      "source:caie-0580-grade-statistics-2026-march"
+    ],
+    "includedSeries": [
+      "2021-june",
+      "2021-march",
+      "2021-november",
+      "2022-june",
+      "2022-march",
+      "2022-november",
+      "2023-june",
+      "2023-march",
+      "2023-november",
+      "2024-june",
+      "2024-march",
+      "2024-november",
+      "2025-june",
+      "2025-march",
+      "2025-november",
+      "2026-march"
+    ]
+  },
+  "excluded": [
+    {
+      "statisticsId": "statistics:award-caie-0580:2019:june:all-candidates",
+      "reason": "The official direct PDF is currently unavailable, so no source-document hash can be verified.",
+      "currentReviewStatus": "candidate"
+    }
+  ],
+  "integrity": {
+    "result": "pass",
+    "checks": {
+      "selectedStatistics": 16,
+      "selectedSources": 16,
+      "excludedStatistics": 1,
+      "uniqueStatisticsIds": true,
+      "uniqueCanonicalKeys": true,
+      "cumulativeRatesMonotonic": true,
+      "sourceHashesPresent": true,
+      "alreadyActive": 16,
+      "unexpectedActiveCollisions": 0,
+      "candidateRowsRemainUnchanged": true
+    }
+  },
+  "approvedAt": "2026-07-23",
+  "approvedBy": "owner",
+  "activatedAt": "2026-07-23T04:16:15.743Z",
+  "activeManifestSha256": "61fcb3549b3c2c86f7bc21fe6391bd95c5540f312e7cf57dc19557bfaf71ed97"
+}

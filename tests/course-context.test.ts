@@ -42,6 +42,22 @@ describe("course catalog", () => {
     expect(getDisplayCourseCatalog("historical").length).toBeGreaterThan(200);
   });
 
+  it("never collapses distinct qualification levels that reuse the same subject code", () => {
+    const display = getDisplayCourseCatalog("current");
+    const identities = display.map(entry => {
+      const board = entry.boardName.startsWith("Edexcel") ? "pearson" : entry.boardName;
+      return `${board}|${entry.level}|${entry.subjectCode}`;
+    });
+    expect(new Set(identities).size).toBe(identities.length);
+    expect(display.filter(entry => entry.boardName === "WJEC/Eduqas" && entry.subjectCode === "BUSI")
+      .map(entry => entry.level)
+      .sort()).toEqual(["A-Level", "GCSE"]);
+    expect(display.filter(entry => entry.boardName === "CAIE" && entry.subjectCode === "0580")
+      .map(entry => entry.level)).toEqual(["IGCSE"]);
+    expect(display.find(entry => entry.boardName === "CAIE" && entry.subjectCode === "0580")
+      ?.capabilities.papers.status).not.toBe("unavailable");
+  });
+
   it("assigns every course to an audited subject category", () => {
     const categories = new Set(COURSE_CATALOG.map((entry) => entry.subjectCategory));
     expect(categories).toEqual(new Set(["mathematics", "physics", "chemistry", "biology", "computer-science", "economics", "accounting", "humanities", "languages", "creative", "other"]));

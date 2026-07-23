@@ -530,6 +530,134 @@ for (const document of pearsonIalOfficialStatistics) {
   }
 }
 
+const caie0580OfficialStatistics = [
+  {
+    year: 2019, series: "june", rates: [18.4, 36.0, 53.6, 73.5, 83.1, 90.1, 92.1, 93.5],
+    officialUrl: "https://www.cambridgeinternational.org/Images/553492-cambridge-igcse-results-statistics-june-2019.pdf",
+    documentTitle: "Cambridge IGCSE candidate grades June 2019",
+    pdfPage: 2,
+  },
+  {
+    year: 2021, series: "march", rates: [34.7, 51.9, 64.7, 84.7, 90.8, 95.5, 97.3, 98.2],
+    officialUrl: "https://www.cambridgeinternational.org/Images/619296-cambridge-igcse-results-statistics-march-2021.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - March 2021", sourceDocumentHash: "2ab594ce85778e10a4c3847f7373a50b3ea576d070437e66ed57fb92373d1e20", pdfPage: 1,
+  },
+  {
+    year: 2021, series: "june", rates: [27.8, 44.3, 58.5, 80.0, 88.1, 94.0, 95.8, 97.0],
+    officialUrl: "https://www.cambridgeinternational.org/Images/647608-cambridge-igcse-results-statistics-june-2021.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - June 2021", sourceDocumentHash: "3963fadbf7ae25bdf0b54f006aafa0277e69a6318afe10a498f24044d23d4cc5", pdfPage: 2,
+  },
+  {
+    year: 2021, series: "november", rates: [17.5, 29.1, 41.2, 69.4, 80.2, 88.6, 91.7, 93.5],
+    officialUrl: "https://www.cambridgeinternational.org/Images/638167-cambridge-igcse-results-statistics-november-2021.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - November 2021", sourceDocumentHash: "0640c648f1fb84ad34d51150d1f6676ce115f95d2f4d19e3e6c4da44c2a970bc", pdfPage: 2,
+  },
+  {
+    year: 2022, series: "march", rates: [30.3, 52.1, 64.4, 84.6, 90.6, 94.8, 96.4, 97.4],
+    officialUrl: "https://www.cambridgeinternational.org/Images/655037-cambridge-igcse-results-statistics-march-2022.pdf",
+    documentTitle: "Cambridge IGCSE results statistics - March 2022", sourceDocumentHash: "df53273c2f3d82b4e4195da79cef131f58995eed3033802a252e23ab44f16e34", pdfPage: 1,
+  },
+  {
+    year: 2022, series: "june", rates: [24.3, 40.4, 54.7, 76.1, 84.9, 91.8, 93.9, 95.4],
+    officialUrl: "https://www.cambridgeinternational.org/Images/664323-cambridge-igcse-results-statistics-june-2022.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - June 2022", sourceDocumentHash: "77d70174f85594a9ea83d7cf521216146bb476c536991eba68f6dbaf4985e8ba", pdfPage: 2,
+  },
+  {
+    year: 2022, series: "november", rates: [12.3, 25.5, 38.7, 65.6, 77.1, 86.4, 89.7, 91.9],
+    officialUrl: "https://www.cambridgeinternational.org/Images/674918-cambridge-igcse-results-statistics-november-2022.pdf",
+    documentTitle: "Cambridge IGCSE results statistics November 2022", sourceDocumentHash: "68b2fb0708634eab44301dd0a1783b453badea2511379f3f2cbf1db5c689614c", pdfPage: 2,
+  },
+  {
+    year: 2023, series: "march", rates: [24.7, 44.3, 61.2, 81.9, 90.3, 95.2, 97.1, 98.1],
+    officialUrl: "https://www.cambridgeinternational.org/Images/687396-cambridge-igcse-results-statistics-march-2023.pdf",
+    documentTitle: "Cambridge IGCSE results statistics - March 2023", sourceDocumentHash: "ddaf409826950a2406c42126b6ee77b98b81c9afbc8477eebfdf4ca3c701eba7", pdfPage: 1,
+  },
+  {
+    year: 2023, series: "june", rates: [18.3, 34.7, 50.8, 72.5, 81.7, 89.4, 91.7, 93.2],
+    officialUrl: "https://www.cambridgeinternational.org/Images/693416-cambridge-igcse-results-statistics-june-2023.pdf",
+    documentTitle: "Cambridge IGCSE results statistics - June 2023", sourceDocumentHash: "f82f3242755c80b6c5a60e7dc97a73ad98ed3e890f23fabe165d4baae7faa394", pdfPage: 2,
+  },
+  {
+    year: 2023, series: "november", rates: [10.1, 22.9, 37.0, 63.4, 75.2, 84.9, 88.7, 91.1],
+    officialUrl: "https://www.cambridgeinternational.org/Images/707851-cambridge-igcse-results-statistics-november-2023.pdf",
+    documentTitle: "Cambridge IGCSE results statistics - November 2023", sourceDocumentHash: "7ff0d0d222cdd40d3deb789c3ca5200870f3b7e41acb8a7454edd27fd5c0aa05", pdfPage: 2,
+  },
+  {
+    year: 2024, series: "march", rates: [22.4, 39.8, 60.5, 81.1, 89.2, 94.2, 95.8, 96.8],
+    officialUrl: "https://www.cambridgeinternational.org/Images/712427-cambridge-igcse-results-statistics-march-2024.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - March 2024", sourceDocumentHash: "29b8222cefa77fd96e67e25f1c9ababdd177224feb31ec5b1216ce94037b2d12", pdfPage: 1,
+  },
+  {
+    year: 2024, series: "june", rates: [17.1, 33.9, 50.8, 71.0, 80.4, 88.1, 90.5, 92.3],
+    officialUrl: "https://www.cambridgeinternational.org/Images/717825-cambridge-igcse-results-statistics-june-2024.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - June 2024", sourceDocumentHash: "7bdcc7f2dd0934813b530e768b85b6abc21ee8d1df27306785dc72aac5d29614", pdfPage: 2,
+  },
+  {
+    year: 2024, series: "november", rates: [10.8, 22.5, 36.0, 62.3, 75.0, 84.7, 88.6, 91.1],
+    officialUrl: "https://www.cambridgeinternational.org/Images/729300-cambridge-igcse-results-statistics-november-2024.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - November 2024", sourceDocumentHash: "f609abd9b8b4f98c6a2f425a25b1041e659c20579953d0a414b7755c2ae45295", pdfPage: 2,
+  },
+  {
+    year: 2025, series: "march", rates: [20.0, 37.5, 58.1, 79.1, 87.6, 93.4, 95.5, 96.6],
+    officialUrl: "https://www.cambridgeinternational.org/Images/736213-cambridge-igcse-results-statistics-march-2025.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - March 2025", sourceDocumentHash: "ad7befe147663e1ac597dc65963588747f330da74717bca0c9ed5f03ad177287", pdfPage: 1,
+  },
+  {
+    year: 2025, series: "june", rates: [19.8, 34.1, 50.0, 70.9, 80.3, 87.8, 90.3, 92.1],
+    officialUrl: "https://www.cambridgeinternational.org/Images/743255-cambridge-igcse-june-2025-results-statistics.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - June 2025", sourceDocumentHash: "711bcfba416ccbe7e66e12ced8227f77388fb4f32e578ef58bdbfc9e3cefed08", pdfPage: 2,
+  },
+  {
+    year: 2025, series: "november", rates: [10.3, 21.9, 34.3, 61.3, 73.5, 84.1, 88.3, 91.3],
+    officialUrl: "https://www.cambridgeinternational.org/Images/754771-cambridge-igcse-november-2025-results-statistics.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - November 2025", sourceDocumentHash: "f203291c7f19d2b64984882e66d2834f4cdd3658a7d0a9bed1813847eef94b16", pdfPage: 2,
+  },
+  {
+    year: 2026, series: "march", rates: [19.8, 43.4, 62.3, 83.9, 90.6, 95.1, 97.0, 97.9],
+    officialUrl: "https://www.cambridgeinternational.org/Images/758800-cambridge-igcse-results-statistics-march-2026.pdf",
+    documentTitle: "Cambridge IGCSE Results Statistics - March 2026", sourceDocumentHash: "5c35ff801461f4f621f6e86dc12a467ada3c9b7d9c71c5167d6804c97fd589cc", pdfPage: 1,
+  },
+];
+for (const document of caie0580OfficialStatistics) {
+  const awardQualificationId = "award:caie:0580";
+  const qualification = qualifications.get(awardQualificationId);
+  const verificationStatus = document.sourceDocumentHash ? "codex-reviewed" : "candidate";
+  const sourceId = addSource({
+    sourceId: `source:caie-0580-grade-statistics-${document.year}-${document.series}`,
+    board: "CAIE",
+    officialUrl: document.officialUrl,
+    documentTitle: document.documentTitle,
+    accessedAt: "2026-07-23",
+    printedPage: document.pdfPage,
+    pdfPage: document.pdfPage,
+    tableName: "Cumulative world totals grades A* - G",
+    sourceRowId: `CAIE-0580-${document.year}-${document.series.toUpperCase()}-MATHEMATICS`,
+    sourceDocumentHash: document.sourceDocumentHash,
+    effectiveFrom: `${document.year}-${document.series === "march" ? "03" : document.series === "june" ? "06" : "11"}-01`,
+    verificationStatus,
+  });
+  directOfficialStatistics.push({
+    qualification,
+    awardQualificationId,
+    subject: { code: "0580" },
+    year: {
+      year: document.year,
+      series: document.series,
+      aStarRate: document.rates[0],
+      aRate: document.rates[1],
+      bRate: document.rates[2],
+      cRate: document.rates[3],
+      dRate: document.rates[4],
+      eRate: document.rates[5],
+      fRate: document.rates[6],
+      gRate: document.rates[7],
+    },
+    sourceIds: [sourceId],
+    verificationStatus,
+    publicationStatus: "final",
+  });
+}
+
 const pearson8ma0OfficialStatistics = [
   {
     year: 2019,
@@ -607,15 +735,16 @@ for (const document of pearson8ma0OfficialStatistics) {
 
 const gradeFields = [
   ["A*", "aStarRate"], ["A", "aRate"], ["B", "bRate"], ["C", "cRate"], ["D", "dRate"], ["E", "eRate"],
+  ["F", "fRate"], ["G", "gRate"],
   ["9", "grade9Rate"], ["8", "grade8Rate"], ["7", "grade7Rate"], ["6", "grade6Rate"], ["5", "grade5Rate"], ["4", "grade4Rate"], ["3", "grade3Rate"], ["2", "grade2Rate"], ["1", "grade1Rate"],
 ];
 
 function toStatistics({ qualification, awardQualificationId, subject, year, sourceIds, verificationStatus, publicationStatus }) {
   const preferred = year.grade9Rate !== undefined
-    ? gradeFields.slice(6)
+    ? gradeFields.slice(8)
     : subject.code === "8MA0"
       ? gradeFields.slice(1, 6)
-      : gradeFields.slice(0, 6);
+      : gradeFields.slice(0, 8);
   const gradeOrder = preferred.filter(([, field]) => year[field] !== undefined).map(([grade]) => grade);
   const gradeRates = Object.fromEntries(preferred.filter(([, field]) => year[field] !== undefined).map(([grade, field]) => [grade, year[field]]));
   const rawGradeRates = year.rawGradeRates
@@ -624,7 +753,7 @@ function toStatistics({ qualification, awardQualificationId, subject, year, sour
   return {
     schemaVersion: "2.0.0",
     statisticsId: `statistics:${slug(awardQualificationId)}:${year.year}:${year.series}:all-candidates`,
-    qualificationVersionId: qualification.currentKnowledgeQualificationVersionId,
+    qualificationVersionId: boundaryQualificationVersionId(awardQualificationId, year.year, qualification.currentKnowledgeQualificationVersionId),
     awardQualificationId,
     year: year.year,
     series: year.series === "summer" ? "june" : year.series === "autumn" ? "november" : year.series,

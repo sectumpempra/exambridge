@@ -1,0 +1,3629 @@
+{
+  "schemaVersion": "1.0.0",
+  "batchId": "university-admissions-2027-sol-final-20260722",
+  "importedAt": "2026-07-23",
+  "reviewStatus": "codex-reviewed",
+  "activationStatus": "candidate-only",
+  "sourceHandoff": {
+    "directoryName": "sol-final",
+    "manifestSha256": "8b5ea45ad6ebf1278ea801d5bea33e01b0abd71938a726f4cb5cc894df9239df",
+    "validationResult": "pass",
+    "maximumImportedStatus": "codex-reviewed",
+    "deepseekCompletedCalls": 0
+  },
+  "institutions": [
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-oxford",
+      "name": "University of Oxford",
+      "officialDomains": [
+        "ox.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-oxford-computer-science-2027",
+        "src-university-of-oxford-mathematics-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-cambridge",
+      "name": "University of Cambridge",
+      "officialDomains": [
+        "cam.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-cam-maths-2027",
+        "src-university-of-cambridge-engineering-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-imperial-college-london",
+      "name": "Imperial College London",
+      "officialDomains": [
+        "imperial.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-imperial-college-london-physics-2027",
+        "src-imperial-college-london-pure-mathematics-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-college-london",
+      "name": "University College London",
+      "officialDomains": [
+        "ucl.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-college-london-computer-science-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-london-school-of-economics-and-political-science",
+      "name": "London School of Economics and Political Science",
+      "officialDomains": [
+        "lse.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-london-school-of-economics-and-political-science-bsc-economics-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-warwick",
+      "name": "University of Warwick",
+      "officialDomains": [
+        "warwick.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-warwick-mathematics-bsc-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-edinburgh",
+      "name": "University of Edinburgh",
+      "officialDomains": [
+        "ed.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-edinburgh-economics-and-mathematics-ma-hons-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-manchester",
+      "name": "University of Manchester",
+      "officialDomains": [
+        "manchester.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-manchester-bsc-computer-science-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-bristol",
+      "name": "University of Bristol",
+      "officialDomains": [
+        "bristol.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-bristol-bsc-mathematics-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-bath",
+      "name": "University of Bath",
+      "officialDomains": [
+        "bath.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-bath-computer-science-bsc-hons-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-durham-university",
+      "name": "Durham University",
+      "officialDomains": [
+        "durham.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-durham-university-mathematics-bsc-hons-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-king-s-college-london",
+      "name": "King's College London",
+      "officialDomains": [
+        "kcl.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-king-s-college-london-quantitative-mathematics-bsc-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-birmingham",
+      "name": "University of Birmingham",
+      "officialDomains": [
+        "birmingham.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-birmingham-mathematics-bsc-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-southampton",
+      "name": "University of Southampton",
+      "officialDomains": [
+        "southampton.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-southampton-mathematics-bsc-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-nottingham",
+      "name": "University of Nottingham",
+      "officialDomains": [
+        "nottingham.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-nottingham-mathematics-bsc-hons-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-leeds",
+      "name": "University of Leeds",
+      "officialDomains": [
+        "leeds.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-leeds-mathematics-bsc-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-sheffield",
+      "name": "University of Sheffield",
+      "officialDomains": [
+        "sheffield.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-sheffield-mathematics-bsc-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-glasgow",
+      "name": "University of Glasgow",
+      "officialDomains": [
+        "gla.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-glasgow-mathematics-bsc-hons-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-st-andrews",
+      "name": "University of St Andrews",
+      "officialDomains": [
+        "st-andrews.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-st-andrews-mathematics-prospectus-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "country": "United Kingdom",
+      "institutionId": "inst-university-of-exeter",
+      "name": "University of Exeter",
+      "officialDomains": [
+        "exeter.ac.uk"
+      ],
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-exeter-bsc-mathematics-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    }
+  ],
+  "programmes": [
+    {
+      "degreeType": "undergraduate",
+      "institutionId": "inst-durham-university",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics BSc (Hons)",
+      "programmeId": "prog-durham-university-mathematics-bsc-hons",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-durham-university-mathematics-bsc-hons-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [
+        "Official 2027 course identity is confirmed from the page title; entry-requirements body remains unresolved."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "campuses": [
+        "South Kensington"
+      ],
+      "degreeType": "undergraduate",
+      "institutionId": "inst-imperial-college-london",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics (Pure Mathematics) BSc",
+      "programmeId": "prog-imperial-college-london-mathematics-pure-mathematics-bsc",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-imperial-college-london-pure-mathematics-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "campuses": [
+        "South Kensington"
+      ],
+      "degreeType": "undergraduate",
+      "institutionId": "inst-imperial-college-london",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Physics BSc",
+      "programmeId": "prog-imperial-college-london-physics-bsc",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-imperial-college-london-physics-2027"
+      ],
+      "subjectArea": "Physics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "campuses": [
+        "Strand Campus"
+      ],
+      "degreeType": "undergraduate",
+      "institutionId": "inst-king-s-college-london",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Quantitative Mathematics BSc",
+      "programmeId": "prog-king-s-college-london-quantitative-mathematics-bsc",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-king-s-college-london-quantitative-mathematics-bsc-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "campuses": [
+        "Houghton Street, London"
+      ],
+      "degreeType": "undergraduate",
+      "institutionId": "inst-london-school-of-economics-and-political-science",
+      "intakeYears": [
+        2027
+      ],
+      "name": "BSc Economics",
+      "programmeId": "prog-london-school-of-economics-and-political-science-bsc-economics",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-london-school-of-economics-and-political-science-bsc-economics-2027"
+      ],
+      "subjectArea": "Economics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "campuses": [
+        "London, Bloomsbury"
+      ],
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-college-london",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Computer Science BSc",
+      "programmeId": "prog-university-college-london-computer-science-bsc",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-college-london-computer-science-2027"
+      ],
+      "subjectArea": "Computer Science",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-bath",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Computer Science BSc (Hons)",
+      "programmeId": "prog-university-of-bath-computer-science-bsc-hons",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-bath-computer-science-bsc-hons-2027"
+      ],
+      "subjectArea": "Computer Science",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-birmingham",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics BSc",
+      "programmeId": "prog-university-of-birmingham-mathematics-bsc",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-birmingham-mathematics-bsc-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "campuses": [
+        "Clifton Campus"
+      ],
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-bristol",
+      "intakeYears": [
+        2027
+      ],
+      "name": "BSc Mathematics",
+      "programmeId": "prog-university-of-bristol-bsc-mathematics",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-bristol-bsc-mathematics-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "collegeScope": "All Colleges",
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-cambridge",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Engineering (BA (Hons) and MEng)",
+      "programmeId": "prog-university-of-cambridge-engineering-ba-hons-and-meng",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-cambridge-engineering-2027"
+      ],
+      "subjectArea": "Engineering",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "collegeScope": "All Colleges",
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-cambridge",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics (BA (Hons) and MMath)",
+      "programmeId": "prog-university-of-cambridge-mathematics-ba-hons-and-mmath",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-cam-maths-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-edinburgh",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Economics and Mathematics MA (Hons)",
+      "programmeId": "prog-university-of-edinburgh-economics-and-mathematics-ma-hons",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-edinburgh-economics-and-mathematics-ma-hons-2027"
+      ],
+      "subjectArea": "Economics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "campuses": [
+        "Streatham Campus"
+      ],
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-exeter",
+      "intakeYears": [
+        2027
+      ],
+      "name": "BSc Mathematics",
+      "programmeId": "prog-university-of-exeter-bsc-mathematics",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-exeter-bsc-mathematics-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-glasgow",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics BSc (Hons)",
+      "programmeId": "prog-university-of-glasgow-mathematics-bsc-hons",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-glasgow-mathematics-bsc-hons-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "campuses": [
+        "On campus"
+      ],
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-leeds",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics BSc",
+      "programmeId": "prog-university-of-leeds-mathematics-bsc",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-leeds-mathematics-bsc-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-manchester",
+      "intakeYears": [
+        2027
+      ],
+      "name": "BSc Computer Science",
+      "programmeId": "prog-university-of-manchester-bsc-computer-science",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-manchester-bsc-computer-science-2027"
+      ],
+      "subjectArea": "Computer Science",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-nottingham",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics BSc (Hons)",
+      "programmeId": "prog-university-of-nottingham-mathematics-bsc-hons",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-nottingham-mathematics-bsc-hons-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "collegeScope": "Oxford collegiate scope; not all colleges offer every course, and open applications are permitted. No unsupported college list is asserted.",
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-oxford",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Computer Science (BA or MCompSci)",
+      "programmeId": "prog-university-of-oxford-computer-science-ba-or-mcompsci",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-oxford-computer-science-2027"
+      ],
+      "subjectArea": "Computer Science",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "collegeScope": "Oxford collegiate scope; not all colleges offer every course, and open applications are permitted. No unsupported college list is asserted.",
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-oxford",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics / Mathematics and Statistics (BA/MMath)",
+      "programmeId": "prog-university-of-oxford-mathematics--mathematics-and-statistics-ba-mmath",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-oxford-mathematics-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-sheffield",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics BSc",
+      "programmeId": "prog-university-of-sheffield-mathematics-bsc",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-sheffield-mathematics-bsc-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "campuses": [
+        "Highfield Campus"
+      ],
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-southampton",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics BSc",
+      "programmeId": "prog-university-of-southampton-mathematics-bsc",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-southampton-mathematics-bsc-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-st-andrews",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics BSc (Honours)",
+      "programmeId": "prog-university-of-st-andrews-mathematics-bsc-honours",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-st-andrews-mathematics-prospectus-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "campuses": [
+        "Warwick Campus"
+      ],
+      "degreeType": "undergraduate",
+      "institutionId": "inst-university-of-warwick",
+      "intakeYears": [
+        2027
+      ],
+      "name": "Mathematics BSc",
+      "programmeId": "prog-university-of-warwick-mathematics-bsc",
+      "researchStatus": "official-source-reviewed",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-warwick-mathematics-bsc-2027"
+      ],
+      "subjectArea": "Mathematics",
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    }
+  ],
+  "requirements": [
+    {
+      "additionalRequirements": [],
+      "campus": "South Kensington",
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-imperial-college-london",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {
+          "minimum": "minimum entry standard",
+          "typical": "typical offer"
+        },
+        "minimum": "A*A*A for applicants taking three A levels; A*A*AA for applicants taking four A levels.",
+        "status": "verified",
+        "typical": "A*A*A for applicants taking three A levels; A*A*AA for applicants taking four A levels."
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-imperial-college-london-mathematics-pure-mathematics-bsc",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-imperial-college-london-mathematics-pure-mathematics-bsc-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-imperial-college-london-pure-mathematics-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Further Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "A special case may be considered where Further Mathematics A level is not offered by the school; no universal TMUA score threshold is stated."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": "South Kensington",
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-imperial-college-london",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {
+          "minimum": "minimum entry standard",
+          "typical": "typical offer"
+        },
+        "minimum": "A*A*A",
+        "status": "verified",
+        "typical": "A*A*A"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-imperial-college-london-physics-bsc",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-imperial-college-london-physics-bsc-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-imperial-college-london-physics-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Physics"
+        },
+        {
+          "conditions": [],
+          "minimumGrade": "A",
+          "requirementLevel": "required",
+          "subject": "Another A-level subject"
+        }
+      ],
+      "uncertainties": [
+        "The contextual route is described but no single contextual grade offer is published on the course page."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": "Strand Campus",
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-king-s-college-london",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {},
+        "minimum": null,
+        "status": "not-published",
+        "typical": null
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-king-s-college-london-quantitative-mathematics-bsc",
+      "publicationStatus": "published-provisional",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-king-s-college-london-quantitative-mathematics-bsc-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-king-s-college-london-quantitative-mathematics-bsc-2027"
+      ],
+      "subjectRequirements": [],
+      "uncertainties": [
+        "The 2027 page says its information is provisional and illustrative and should not be relied upon as definitive; recheck from September 2026."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": "Houghton Street, London",
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-london-school-of-economics-and-political-science",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "A*AB with A* in Mathematics",
+        "labels": {
+          "contextual": "contextual offer",
+          "typical": "standard offer"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "A*AA with A* in Mathematics"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-london-school-of-economics-and-political-science-bsc-economics",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-london-school-of-economics-and-political-science-bsc-economics-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-london-school-of-economics-and-political-science-bsc-economics-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [
+            "Desirable; published alternative treatment applies."
+          ],
+          "minimumGrade": null,
+          "requirementLevel": "recommended",
+          "subject": "Further Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "No fixed 2027 TMUA score threshold is stated; meeting standard grades does not guarantee an offer."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": "London, Bloomsbury",
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-college-london",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "A*AB",
+        "labels": {
+          "contextual": "contextual offer",
+          "minimum": "entry requirements"
+        },
+        "minimum": "A*A*A",
+        "status": "verified",
+        "typical": null
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-college-london-computer-science-bsc",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-college-london-computer-science-bsc-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-college-london-computer-science-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Mathematics or Further Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "Meeting the published entry requirement does not guarantee an offer."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-bath",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "AAA or A*AB including A in Mathematics",
+        "labels": {
+          "contextual": "contextual offer",
+          "typical": "typical offer"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "A*A*A including A in Mathematics"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-bath-computer-science-bsc-hons",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-bath-computer-science-bsc-hons-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-bath-computer-science-bsc-hons-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "Meeting or exceeding the typical requirements does not guarantee an offer."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-birmingham",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {},
+        "minimum": null,
+        "status": "not-published",
+        "typical": null
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-birmingham-mathematics-bsc",
+      "publicationStatus": "not-published-for-2027",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-birmingham-mathematics-bsc-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-birmingham-mathematics-bsc-2027"
+      ],
+      "subjectRequirements": [],
+      "uncertainties": [
+        "The live page exposes a 2027 selector and mentions 2027 fees, but its displayed first-year modules and application deadline remain tied to 2026 entry; the displayed AAA offer is not carried into 2027."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": "Clifton Campus",
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-bristol",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "AAA including Mathematics and a mathematics-related subject; alternatively AAB including AA in Mathematics and Further Mathematics.",
+        "labels": {
+          "contextual": "A-level contextual offer",
+          "typical": "A-level standard offer"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "A*A*A including A* in Mathematics and A in another mathematics-related subject; alternatively A*AA including A*A in Mathematics and Further Mathematics in either order."
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-bristol-bsc-mathematics",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-bristol-bsc-mathematics-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-bristol-bsc-mathematics-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [
+            "The grade depends on which published standard-offer route is used."
+          ],
+          "minimumGrade": null,
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "STEP may contribute to an alternative offer but is not treated as a universal formal threshold."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": "All Colleges",
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-cambridge",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {
+          "minimum": "minimum offer level"
+        },
+        "minimum": "A*A*A",
+        "status": "verified",
+        "typical": null
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-cambridge-engineering-ba-hons-and-meng",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-cambridge-engineering-ba-hons-and-meng-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-cambridge-engineering-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": null,
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [],
+          "minimumGrade": null,
+          "requirementLevel": "required",
+          "subject": "Physics"
+        },
+        {
+          "conditions": [
+            "Required to AS or A level if the applicant's school offers it."
+          ],
+          "minimumGrade": null,
+          "requirementLevel": "required-for-some-applicants",
+          "subject": "Further Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "Some Colleges often set offers above the minimum; Peterhouse may also ask for STEP II grade 2."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": "All Colleges",
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-cambridge",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {
+          "minimum": "minimum offer level"
+        },
+        "minimum": "A*A*A",
+        "status": "verified",
+        "typical": null
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-cambridge-mathematics-ba-hons-and-mmath",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-cambridge-mathematics-ba-hons-and-mmath-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-cam-maths-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [
+            "Colleges usually require A* in Mathematics and/or Further Mathematics."
+          ],
+          "minimumGrade": null,
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [
+            "Colleges usually require A* in Mathematics and/or Further Mathematics."
+          ],
+          "minimumGrade": null,
+          "requirementLevel": "required",
+          "subject": "Further Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "STEP offer conditions vary by College; no universal score beyond the official course wording is inferred."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-edinburgh",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "A*BB for eligible widening-access Plus Flag applicants",
+        "labels": {
+          "contextual": "minimum requirement for widening-access applicants",
+          "typical": "standard entry range based on recent offers"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "A*A*A* to A*AA"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-edinburgh-economics-and-mathematics-ma-hons",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-edinburgh-economics-and-mathematics-ma-hons-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-edinburgh-economics-and-mathematics-ma-hons-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [
+            "Mathematics qualification must have been achieved no more than two academic years before entry."
+          ],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "The standard range describes grades most applicants needed in recent years and is not an offer guarantee."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": "Streatham Campus",
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-exeter",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "ABB-ABC",
+        "labels": {
+          "contextual": "contextual offer",
+          "typical": "typical offer"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "AAA-AAB"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-exeter-bsc-mathematics",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-exeter-bsc-mathematics-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-exeter-bsc-mathematics-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A",
+          "requirementLevel": "required",
+          "subject": "Mathematics, Pure Mathematics or Further Mathematics"
+        }
+      ],
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-glasgow",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {
+          "typical": "A-level standard entry requirements"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "AAB-BBB with A-level Mathematics for the BSc route"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-glasgow-mathematics-bsc-hons",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-glasgow-mathematics-bsc-hons-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-glasgow-mathematics-bsc-hons-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": null,
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "The published grade range is an entry requirement and does not guarantee an offer."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": "On campus",
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-leeds",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "Access to Leeds: ABB including A Mathematics, or A Mathematics, B Further Mathematics and C in a third subject, plus completion of Access to Leeds.",
+        "labels": {
+          "contextual": "typical Access to Leeds offer",
+          "typical": "A-level entry requirement"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "AAA-AAB including grade A Mathematics; lower listed routes require Mathematics with Further Mathematics or AS Further Mathematics."
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-leeds-mathematics-bsc",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-leeds-mathematics-bsc-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-leeds-mathematics-bsc-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [
+            "Required on lower-grade published routes."
+          ],
+          "minimumGrade": null,
+          "requirementLevel": "required-for-some-applicants",
+          "subject": "Further Mathematics"
+        }
+      ],
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [
+        {
+          "type": "special-offer",
+          "value": "AAB for eligible UK refugee/care-experienced applicants, with stated subject conditions."
+        }
+      ],
+      "campus": null,
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-manchester",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "AAA including Mathematics and at least one specified science subject",
+        "labels": {
+          "contextual": "typical contextual A-level offer",
+          "typical": "typical A-level offer"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "A*AA including A* in Mathematics and at least one specified science subject"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-manchester-bsc-computer-science",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-manchester-bsc-computer-science-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-manchester-bsc-computer-science-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [
+            "Must include a significant pure element."
+          ],
+          "minimumGrade": "A* for the typical offer",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [],
+          "minimumGrade": null,
+          "requirementLevel": "required",
+          "subject": "One of Computer Science, Further Mathematics, Biology, Chemistry or Physics"
+        }
+      ],
+      "uncertainties": [],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-nottingham",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {
+          "typical": "2027 A-level entry requirements"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "A*AA or A*A*B including A* Mathematics; alternatively AAA with A in Mathematics and Further Mathematics, with additional published AS Further Mathematics routes."
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-nottingham-mathematics-bsc-hons",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-nottingham-mathematics-bsc-hons-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-nottingham-mathematics-bsc-hons-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [
+            "The grade depends on the published route."
+          ],
+          "minimumGrade": null,
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [
+            "Required for specified alternative routes."
+          ],
+          "minimumGrade": null,
+          "requirementLevel": "required-for-some-applicants",
+          "subject": "Further Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "STEP, MAT and TMUA are not factored into offer-making; they may only be considered after A-level results are released."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-oxford",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {
+          "minimum": "entry qualifications"
+        },
+        "minimum": "A*AA including A*A in Mathematics and Further Mathematics if Further Mathematics is available, in either order.",
+        "status": "verified",
+        "typical": null
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-oxford-computer-science-ba-or-mcompsci",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-oxford-computer-science-ba-or-mcompsci-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-oxford-computer-science-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [
+            "The two mathematics grades are A* and A when Further Mathematics is available."
+          ],
+          "minimumGrade": "A* or A",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [
+            "Expected when offered by the applicant's school; otherwise Oxford publishes alternative preparation routes."
+          ],
+          "minimumGrade": "A* or A",
+          "requirementLevel": "required-for-some-applicants",
+          "subject": "Further Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "Meeting the published entry qualification does not guarantee an offer."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": null,
+      "conflictIds": [
+        "conf-university-of-oxford-mathematics--mathematics-and-statistics-ba-mmath-admissions-test"
+      ],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-oxford",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {
+          "minimum": "entrance requirements"
+        },
+        "minimum": "A*A*A with the A*s in Mathematics and Further Mathematics if Further Mathematics is available.",
+        "status": "verified",
+        "typical": null
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-oxford-mathematics--mathematics-and-statistics-ba-mmath",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-oxford-mathematics--mathematics-and-statistics-ba-mmath-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-oxford-mathematics-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [
+            "Recommended and included in the A* condition when available."
+          ],
+          "minimumGrade": "A*",
+          "requirementLevel": "required-for-some-applicants",
+          "subject": "Further Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "Meeting the published entrance requirement does not guarantee an offer."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-sheffield",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "AAB including A in Mathematics",
+        "labels": {
+          "contextual": "Access Sheffield offer",
+          "typical": "standard offer"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "AAA including Mathematics"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-sheffield-mathematics-bsc",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-sheffield-mathematics-bsc-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-sheffield-mathematics-bsc-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "STEP grade 3 or above earns additional consideration but does not replace the third A level."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": "Highfield Campus",
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-southampton",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": null,
+        "labels": {
+          "typical": "typical offer"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "AAA or AABB including Mathematics grade A"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-southampton-mathematics-bsc",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-southampton-mathematics-bsc-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-southampton-mathematics-bsc-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "The page says contextual offers are lower than typical but does not publish a numeric 2027 contextual grade."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": null,
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-st-andrews",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "A*AB including A* in Mathematics for applicants assessed against minimum entry grades",
+        "labels": {
+          "contextual": "minimum contextual entry grades",
+          "minimum": "minimum entry grades",
+          "typical": "standard entry grades"
+        },
+        "minimum": "A*AB including A* in Mathematics",
+        "status": "verified",
+        "typical": "A*A*A including A* in Mathematics"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-st-andrews-mathematics-bsc-honours",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-st-andrews-mathematics-bsc-honours-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-st-andrews-mathematics-prospectus-2027",
+        "src-university-of-st-andrews-mathematics-bsc-honours-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "The 2027 prospectus is authoritative for the entry year but notes that course information can later be updated on the subject page."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "additionalRequirements": [],
+      "campus": "Warwick Campus",
+      "college": null,
+      "conflictIds": [],
+      "englishLanguageRequirements": [],
+      "gcseOrIgcseRequirements": [],
+      "institutionId": "inst-university-of-warwick",
+      "intakeYear": 2027,
+      "mixedBoardPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "overallOffer": {
+        "contextual": "A*A*B with A* in Mathematics and Further Mathematics",
+        "labels": {
+          "contextual": "contextual offer",
+          "typical": "typical offer"
+        },
+        "minimum": null,
+        "status": "verified",
+        "typical": "A*A* in Mathematics and Further Mathematics, plus A in a third A level"
+      },
+      "predictedGradePolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "programmeId": "prog-university-of-warwick-mathematics-bsc",
+      "qualificationRoute": {
+        "awardQualificationIds": [],
+        "board": null,
+        "countrySystem": "United Kingdom",
+        "qualificationType": "A Level",
+        "routeNotes": []
+      },
+      "requirementId": "req-university-of-warwick-mathematics-bsc-uk-a-level-2027",
+      "resitPolicy": {
+        "notes": [],
+        "status": "not-stated"
+      },
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceIds": [
+        "src-university-of-warwick-mathematics-bsc-2027"
+      ],
+      "subjectRequirements": [
+        {
+          "conditions": [],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Mathematics"
+        },
+        {
+          "conditions": [],
+          "minimumGrade": "A*",
+          "requirementLevel": "required",
+          "subject": "Further Mathematics"
+        }
+      ],
+      "uncertainties": [
+        "TMUA is described as typical rather than universal; no fixed 2027 score threshold is published."
+      ],
+      "verificationStatus": "codex-reviewed"
+    }
+  ],
+  "assessments": [
+    {
+      "assessmentId": "asm-esat",
+      "calculatorPolicy": "Calculator and dictionary are not permitted.",
+      "category": "admissions-test",
+      "durationMinutes": null,
+      "fees": {
+        "UKAndRepublicOfIrelandGBP": 78,
+        "elsewhereGBP": 133
+      },
+      "name": "Engineering and Science Admissions Test (ESAT)",
+      "provider": "UAT-UK",
+      "registrationMethod": "Create a UAT-UK account, choose the course-required modules, then book a Pearson Test Centre appointment.",
+      "registrationWindow": "2027-entry cycle: October 2026 or January 2027 sitting, subject to university-specific restrictions.",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoringMethod": "A separate 1-9 score per module to one decimal place; no universal pass/fail score.",
+      "sourceIds": [
+        "src-uat-uk-esat-2027"
+      ],
+      "subjects": [
+        "Mathematics",
+        "Physics",
+        "Chemistry",
+        "Biology"
+      ],
+      "testDates": [
+        "2026-10-12/2026-10-16",
+        "2027-01-04/2027-01-08"
+      ],
+      "testFormat": "Five possible computer-based modules; each module has 27 multiple-choice questions and lasts 40 minutes. Most courses require Mathematics 1 plus two further modules.",
+      "uncertainties": [
+        "Required modules and sitting restrictions are course-specific and are taken from university pages in the link records."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-step",
+      "calculatorPolicy": null,
+      "category": "admissions-test",
+      "durationMinutes": null,
+      "fees": null,
+      "name": "Sixth Term Examination Paper in Mathematics (STEP)",
+      "provider": "OCR",
+      "registrationMethod": null,
+      "registrationWindow": null,
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoringMethod": null,
+      "sourceIds": [
+        "src-ocr-step-mathematics"
+      ],
+      "subjects": [
+        "Mathematics"
+      ],
+      "testDates": [],
+      "testFormat": "Two examinations are available: STEP 2 and STEP 3. No 2027 operational dates are asserted from the reviewed provider page.",
+      "uncertainties": [
+        "Course- and College-specific conditions vary; no universal threshold or 2027 date is asserted."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-tara",
+      "calculatorPolicy": "Calculator and dictionary are not permitted.",
+      "category": "admissions-test",
+      "durationMinutes": 120,
+      "fees": {
+        "UKAndRepublicOfIrelandGBP": 78,
+        "elsewhereGBP": 133
+      },
+      "name": "Test of Academic Reasoning for Admissions (TARA)",
+      "provider": "UAT-UK",
+      "registrationMethod": "Create a UAT-UK account, then book a Pearson Test Centre appointment.",
+      "registrationWindow": "2027-entry cycle: October 2026 or January 2027 sitting, subject to university-specific restrictions.",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoringMethod": "Critical Thinking and Problem Solving each receive a 1-9 score; the Writing Task is sent to universities and is not scored by UAT-UK.",
+      "sourceIds": [
+        "src-uat-uk-tara-2027"
+      ],
+      "subjects": [
+        "Critical thinking",
+        "Problem solving",
+        "Writing"
+      ],
+      "testDates": [
+        "2026-10-12/2026-10-16",
+        "2027-01-04/2027-01-08"
+      ],
+      "testFormat": "Three compulsory 40-minute modules: Critical Thinking, Problem Solving and a Writing Task.",
+      "uncertainties": [
+        "Course-specific requirement levels are taken from university sources; no universal threshold is asserted."
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-tmua",
+      "calculatorPolicy": "Calculator and dictionary are not permitted.",
+      "category": "admissions-test",
+      "durationMinutes": 150,
+      "fees": {
+        "UKAndRepublicOfIrelandGBP": 78,
+        "elsewhereGBP": 133
+      },
+      "name": "Test of Mathematics for University Admission (TMUA)",
+      "provider": "UAT-UK",
+      "registrationMethod": "Create a UAT-UK account, then book a Pearson Test Centre appointment.",
+      "registrationWindow": "2027-entry cycle: October 2026 or January 2027 sitting, subject to university-specific restrictions.",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoringMethod": "One overall score on a 1-9 scale to one decimal place; no universal pass/fail score.",
+      "sourceIds": [
+        "src-uat-uk-tmua-2027"
+      ],
+      "subjects": [
+        "Mathematics",
+        "Mathematical reasoning"
+      ],
+      "testDates": [
+        "2026-10-12/2026-10-16",
+        "2027-01-04/2027-01-08"
+      ],
+      "testFormat": "Two computer-based multiple-choice papers: Applications of Mathematical Knowledge and Mathematical Reasoning; 20 questions and 75 minutes per paper.",
+      "uncertainties": [
+        "Course-specific requirement levels and any score use must be read from the relevant university source; no universal threshold is asserted."
+      ],
+      "verificationStatus": "codex-reviewed"
+    }
+  ],
+  "programmeAssessmentLinks": [
+    {
+      "assessmentId": "asm-step",
+      "conditions": [
+        "Applicants unable to take TMUA after its booking deadline may receive a conditional offer requiring at least one STEP paper."
+      ],
+      "institutionId": "inst-imperial-college-london",
+      "intakeYear": 2027,
+      "linkId": "link-prog-imperial-college-london-mathematics-pure-mathematics-bsc-asm-step",
+      "programmeId": "prog-imperial-college-london-mathematics-pure-mathematics-bsc",
+      "requirementLevel": "required-for-some-applicants",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-imperial-college-london-pure-mathematics-2027",
+        "src-ocr-step-mathematics"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-tmua",
+      "conditions": [
+        "Applicants applying on or before the last TMUA booking deadline are required to take TMUA; Imperial expects most offers to go to TMUA takers."
+      ],
+      "institutionId": "inst-imperial-college-london",
+      "intakeYear": 2027,
+      "linkId": "link-prog-imperial-college-london-mathematics-pure-mathematics-bsc-asm-tmua",
+      "programmeId": "prog-imperial-college-london-mathematics-pure-mathematics-bsc",
+      "requirementLevel": "required-for-some-applicants",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-imperial-college-london-pure-mathematics-2027",
+        "src-uat-uk-tmua-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-esat",
+      "conditions": [
+        "Applicants for 2027 entry must sit ESAT for selection."
+      ],
+      "institutionId": "inst-imperial-college-london",
+      "intakeYear": 2027,
+      "linkId": "link-prog-imperial-college-london-physics-bsc-asm-esat",
+      "programmeId": "prog-imperial-college-london-physics-bsc",
+      "requirementLevel": "required",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-imperial-college-london-physics-2027",
+        "src-uat-uk-esat-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-tmua",
+      "conditions": [
+        "All applicants must take TMUA; no fixed score threshold is published."
+      ],
+      "institutionId": "inst-london-school-of-economics-and-political-science",
+      "intakeYear": 2027,
+      "linkId": "link-prog-london-school-of-economics-and-political-science-bsc-economics-asm-tmua",
+      "programmeId": "prog-london-school-of-economics-and-political-science-bsc-economics",
+      "requirementLevel": "required",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-london-school-of-economics-and-political-science-bsc-economics-2027",
+        "src-uat-uk-tmua-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-tara",
+      "conditions": [
+        "All applicants for admission in 2027/28 must sit TARA alongside the UCAS application."
+      ],
+      "institutionId": "inst-university-college-london",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-college-london-computer-science-bsc-asm-tara",
+      "programmeId": "prog-university-college-london-computer-science-bsc",
+      "requirementLevel": "required",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-college-london-computer-science-2027",
+        "src-uat-uk-tara-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-step",
+      "conditions": [
+        "STEP achievement may be taken into account as part of an alternative offer; it is not a universal application threshold."
+      ],
+      "institutionId": "inst-university-of-bristol",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-bristol-bsc-mathematics-asm-step",
+      "programmeId": "prog-university-of-bristol-bsc-mathematics",
+      "requirementLevel": "considered",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-bristol-bsc-mathematics-2027",
+        "src-ocr-step-mathematics"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-esat",
+      "conditions": [
+        "All applicants must take Mathematics 1, Mathematics 2 and Physics modules."
+      ],
+      "institutionId": "inst-university-of-cambridge",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-cambridge-engineering-ba-hons-and-meng-asm-esat",
+      "programmeId": "prog-university-of-cambridge-engineering-ba-hons-and-meng",
+      "requirementLevel": "required",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-cambridge-engineering-2027",
+        "src-uat-uk-esat-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-step",
+      "conditions": [
+        "Peterhouse applicants may be asked for grade 2 in STEP II."
+      ],
+      "institutionId": "inst-university-of-cambridge",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-cambridge-engineering-ba-hons-and-meng-asm-step",
+      "programmeId": "prog-university-of-cambridge-engineering-ba-hons-and-meng",
+      "requirementLevel": "required-for-some-applicants",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-cambridge-engineering-2027",
+        "src-ocr-step-mathematics"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-step",
+      "conditions": [
+        "Cambridge Mathematics offers usually include STEP conditions with College variation."
+      ],
+      "institutionId": "inst-university-of-cambridge",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-cambridge-mathematics-ba-hons-and-mmath-asm-step",
+      "programmeId": "prog-university-of-cambridge-mathematics-ba-hons-and-mmath",
+      "requirementLevel": "required-for-some-applicants",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-cam-maths-2027",
+        "src-ocr-step-mathematics"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-tmua",
+      "conditions": [
+        "All applicants must take TMUA at an authorised assessment centre."
+      ],
+      "institutionId": "inst-university-of-cambridge",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-cambridge-mathematics-ba-hons-and-mmath-asm-tmua",
+      "programmeId": "prog-university-of-cambridge-mathematics-ba-hons-and-mmath",
+      "requirementLevel": "required",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-cam-maths-2027",
+        "src-uat-uk-tmua-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-step",
+      "conditions": [
+        "Not factored into offer-making; may be considered after A-level results are released."
+      ],
+      "institutionId": "inst-university-of-nottingham",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-nottingham-mathematics-bsc-hons-asm-step",
+      "programmeId": "prog-university-of-nottingham-mathematics-bsc-hons",
+      "requirementLevel": "considered",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-nottingham-mathematics-bsc-hons-2027",
+        "src-ocr-step-mathematics"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-tmua",
+      "conditions": [
+        "Not factored into offer-making; may be considered after A-level results are released."
+      ],
+      "institutionId": "inst-university-of-nottingham",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-nottingham-mathematics-bsc-hons-asm-tmua",
+      "programmeId": "prog-university-of-nottingham-mathematics-bsc-hons",
+      "requirementLevel": "considered",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-nottingham-mathematics-bsc-hons-2027",
+        "src-uat-uk-tmua-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-tmua",
+      "conditions": [
+        "All applicants for Oxford Computer Science courses must take TMUA."
+      ],
+      "institutionId": "inst-university-of-oxford",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-oxford-computer-science-ba-or-mcompsci-asm-tmua",
+      "programmeId": "prog-university-of-oxford-computer-science-ba-or-mcompsci",
+      "requirementLevel": "required",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-oxford-computer-science-2027",
+        "src-uat-uk-tmua-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-tmua",
+      "conditions": [
+        "The current 2027 official Oxford course page lists TMUA; the earlier MAT statement is not carried forward."
+      ],
+      "institutionId": "inst-university-of-oxford",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-oxford-mathematics--mathematics-and-statistics-ba-mmath-asm-tmua",
+      "programmeId": "prog-university-of-oxford-mathematics--mathematics-and-statistics-ba-mmath",
+      "requirementLevel": "required",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-oxford-mathematics-2027",
+        "src-uat-uk-tmua-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-step",
+      "conditions": [
+        "Grade 3 or above receives additional consideration but does not replace a third A level."
+      ],
+      "institutionId": "inst-university-of-sheffield",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-sheffield-mathematics-bsc-asm-step",
+      "programmeId": "prog-university-of-sheffield-mathematics-bsc",
+      "requirementLevel": "considered",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-sheffield-mathematics-bsc-2027",
+        "src-ocr-step-mathematics"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-step",
+      "conditions": [
+        "If taken and grade 2 is achieved, the official page gives an alternative AAB offer; STEP is not stated as compulsory."
+      ],
+      "institutionId": "inst-university-of-southampton",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-southampton-mathematics-bsc-asm-step",
+      "programmeId": "prog-university-of-southampton-mathematics-bsc",
+      "requirementLevel": "considered",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-southampton-mathematics-bsc-2027",
+        "src-ocr-step-mathematics"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-step",
+      "conditions": [
+        "Grade 2 in STEP is an offer condition for applicants who have not taken TMUA, except contextual-offer applicants."
+      ],
+      "institutionId": "inst-university-of-warwick",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-warwick-mathematics-bsc-asm-step",
+      "programmeId": "prog-university-of-warwick-mathematics-bsc",
+      "requirementLevel": "required-for-some-applicants",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-warwick-mathematics-bsc-2027",
+        "src-ocr-step-mathematics"
+      ],
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "assessmentId": "asm-tmua",
+      "conditions": [
+        "Typically required for all applicants except those eligible for a contextual offer."
+      ],
+      "institutionId": "inst-university-of-warwick",
+      "intakeYear": 2027,
+      "linkId": "link-prog-university-of-warwick-mathematics-bsc-asm-tmua",
+      "programmeId": "prog-university-of-warwick-mathematics-bsc",
+      "requirementLevel": "required-for-some-applicants",
+      "reviewedAt": "2026-07-22",
+      "reviewedByModel": "gpt-5.6-sol",
+      "scoreRequirement": null,
+      "sourceIds": [
+        "src-university-of-warwick-mathematics-bsc-2027",
+        "src-uat-uk-tmua-2027"
+      ],
+      "verificationStatus": "codex-reviewed"
+    }
+  ],
+  "sources": [
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-cambridge"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-cambridge-mathematics-ba-hons-and-mmath"
+      ],
+      "contentFingerprint": "sha256:942b5658f002be915d51ca873798d515939a37c496637b40a3c8e77615c35cfe",
+      "finalUrl": "https://www.undergraduate.study.cam.ac.uk/courses/mathematics-ba-hons-mmath",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Entry requirements; Minimum offer level; Admission assessment; STEP flexible offer scheme",
+      "officialDomain": "www.undergraduate.study.cam.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-cam-maths-2027",
+      "supportedFields": [
+        "overallOffer",
+        "subjectRequirements",
+        "TMUA",
+        "STEP"
+      ],
+      "title": "Mathematics, BA (Hons) and MMath | Undergraduate Study",
+      "url": "https://www.undergraduate.study.cam.ac.uk/courses/mathematics-ba-hons-mmath",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-durham-university"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-durham-university-mathematics-bsc-hons"
+      ],
+      "contentFingerprint": "sha256:a96b24c9ffe7dd76bb477d4c980f1180bda7f53d222ec032be3191710fac3327",
+      "evidenceSummary": "The official browser returned the title Mathematics G100 September 2027; the entry-requirements body could not be extracted and supports no offer fact.",
+      "finalUrl": "https://www.durham.ac.uk/study/courses/mathematics-g100/september-2027/",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "Official page title only; body extraction timed out",
+      "officialDomain": "www.durham.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "in-app-browser-title-only",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-durham-university-mathematics-bsc-hons-2027",
+      "supportedFields": [
+        "programme identity",
+        "2027 intake"
+      ],
+      "title": "Mathematics G100 September 2027 - Durham University",
+      "url": "https://www.durham.ac.uk/study/courses/mathematics-g100/september-2027/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-imperial-college-london"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-imperial-college-london-physics-bsc"
+      ],
+      "contentFingerprint": "sha256:ded1e4a93bea2f1feb96b93996a5f85730afa76b9f4eab60624a53b2133da66a",
+      "evidenceSummary": "October 2027, South Kensington; minimum and typical A*A*A including A* Mathematics and A* Physics; ESAT required for selection.",
+      "finalUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/physics-bsc/",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "Course key facts; Entry requirements; Admissions test (ESAT)",
+      "officialDomain": "www.imperial.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-web-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-imperial-college-london-physics-2027",
+      "supportedFields": [
+        "programme identity",
+        "2027 intake",
+        "campus",
+        "minimum offer",
+        "typical offer",
+        "subject requirements",
+        "ESAT"
+      ],
+      "title": "Physics BSc | Imperial College London",
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/physics-bsc/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-imperial-college-london"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-imperial-college-london-mathematics-pure-mathematics-bsc"
+      ],
+      "contentFingerprint": "sha256:e1e0aedc108534967815fc8aab5818383931e62f53e478432b7dfcf10fa31dad",
+      "evidenceSummary": "Minimum and typical A*A*A for three A levels or A*A*AA for four, including A* Mathematics and A* Further Mathematics; TMUA expected; STEP may enter offers when TMUA was not taken.",
+      "finalUrl": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/pure-mathematics-bsc/",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "Entry requirements; Minimum entry standard; Typical offer; Admissions test (TMUA)",
+      "officialDomain": "www.imperial.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-web-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-imperial-college-london-pure-mathematics-2027",
+      "supportedFields": [
+        "programme identity",
+        "2027 intake",
+        "minimum offer",
+        "typical offer",
+        "subject requirements",
+        "TMUA",
+        "STEP"
+      ],
+      "title": "Mathematics (Pure Mathematics) BSc | Imperial College London",
+      "url": "https://www.imperial.ac.uk/study/courses/undergraduate/2027/pure-mathematics-bsc/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-king-s-college-london"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-king-s-college-london-quantitative-mathematics-bsc"
+      ],
+      "contentFingerprint": "sha256:e17328e73cce6ae8f22d94c1942afe8f1441c345aabe578676f279cdb5f9eba0",
+      "finalUrl": "https://www.kcl.ac.uk/study/undergraduate/courses/quantitative-mathematics-bsc",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Overview: Who is this course for?; Special features disclaimer; Key Information",
+      "officialDomain": "www.kcl.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-king-s-college-london-quantitative-mathematics-bsc-2027",
+      "supportedFields": [
+        "publishedAlevel",
+        "mathematics",
+        "start",
+        "intakeStatus"
+      ],
+      "title": "Quantitative Mathematics BSc | King's College London",
+      "url": "https://www.kcl.ac.uk/study/undergraduate/courses/quantitative-mathematics-bsc",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-london-school-of-economics-and-political-science"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-london-school-of-economics-and-political-science-bsc-economics"
+      ],
+      "contentFingerprint": "sha256:337b18076dc58ad0603fa6fac7e71092420995fdabd4a41ff23a15c89c267151",
+      "finalUrl": "https://www.lse.ac.uk/study-at-lse/undergraduate/bsc-economics",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Key information, lines 215-254; Entry requirements, lines 299-354",
+      "officialDomain": "lse.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-london-school-of-economics-and-political-science-bsc-economics-2027",
+      "supportedFields": [
+        "programme identity",
+        "2027/28 intake",
+        "A-level overall and contextual offers",
+        "Mathematics and Further Mathematics treatment",
+        "TMUA requirement"
+      ],
+      "title": "BSc Economics - LSE",
+      "url": "https://www.lse.ac.uk/study-at-lse/undergraduate/bsc-economics",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [],
+      "applicableIntakeYears": [],
+      "applicableProgrammeIds": [],
+      "contentFingerprint": "sha256:daa0947fd54790e77134c9d5d562d03e4f209274e13e76e706896b884f9527d3",
+      "evidenceSummary": "OCR describes STEP as a mathematics examination used by Cambridge, Warwick and Imperial; STEP 2 and STEP 3 exist; candidates must check course-specific requirements.",
+      "finalUrl": "https://www.ocr.org.uk/students/step-mathematics/",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "STEP Mathematics overview lines 195-208",
+      "officialDomain": "www.ocr.org.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-web-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-ocr-step-mathematics",
+      "supportedFields": [
+        "assessment identity",
+        "provider",
+        "papers",
+        "course-specific requirement caveat"
+      ],
+      "title": "STEP Mathematics | OCR",
+      "url": "https://www.ocr.org.uk/students/step-mathematics/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [],
+      "contentFingerprint": "sha256:86bec0d9c8d4af5679a73808f0426f261b4f6778a695015e74792d536bfdd147",
+      "evidenceSummary": "UAT-UK owns ESAT; five possible 40-minute modules with 27 multiple-choice questions each; most candidates take Mathematics 1 and two further modules; no pass/fail.",
+      "finalUrl": "https://esat-tmua.ac.uk/about-the-tests/esat-test/",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "What you need to know; Test format; Booking and sitting the ESAT",
+      "officialDomain": "esat-tmua.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-web-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-uat-uk-esat-2027",
+      "supportedFields": [
+        "assessment identity",
+        "provider",
+        "format",
+        "modules",
+        "scoring",
+        "registration",
+        "2027 dates",
+        "fees"
+      ],
+      "title": "ESAT | UAT-UK",
+      "url": "https://esat-tmua.ac.uk/about-the-tests/esat-test/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [],
+      "contentFingerprint": "sha256:b09f0098ac31a23dd4326f350b93d6fe69aff5f86786beca2431bcb6c1aaad41",
+      "evidenceSummary": "UAT-UK owns TARA; Critical Thinking, Problem Solving and Writing Task modules, each 40 minutes; the writing task is unscored by UAT-UK.",
+      "finalUrl": "https://esat-tmua.ac.uk/about-the-tests/tara/",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "What you need to know; Test format; Booking and sitting the TARA",
+      "officialDomain": "esat-tmua.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-web-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-uat-uk-tara-2027",
+      "supportedFields": [
+        "assessment identity",
+        "provider",
+        "format",
+        "duration",
+        "scoring",
+        "registration",
+        "2027 dates",
+        "fees"
+      ],
+      "title": "TARA | UAT-UK",
+      "url": "https://esat-tmua.ac.uk/about-the-tests/tara/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [],
+      "contentFingerprint": "sha256:4c4ec6641b40d291be9fc1abfe2eafb887111cf34562bc34d6ca2b804594830e",
+      "evidenceSummary": "UAT-UK owns TMUA; two 75-minute multiple-choice papers; no calculator; score 1-9; October 2026 or January 2027 sitting for 2027 entry.",
+      "finalUrl": "https://esat-tmua.ac.uk/about-the-tests/tmua-test/",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "What you need to know; Test format; Booking and sitting the TMUA",
+      "officialDomain": "esat-tmua.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-web-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-uat-uk-tmua-2027",
+      "supportedFields": [
+        "assessment identity",
+        "provider",
+        "format",
+        "duration",
+        "scoring",
+        "registration",
+        "2027 dates",
+        "fees"
+      ],
+      "title": "TMUA | UAT-UK",
+      "url": "https://esat-tmua.ac.uk/about-the-tests/tmua-test/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-college-london"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-college-london-computer-science-bsc"
+      ],
+      "contentFingerprint": "sha256:976530466183f80985ea72d604905ab4c4fe57ade8080840bfda36ae48abdd6f",
+      "evidenceSummary": "September 2027, Bloomsbury; A*A*A with A* in Mathematics or Further Mathematics; contextual A*AB; all applicants must sit TARA.",
+      "finalUrl": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/computer-science-bsc",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "Key information lines 78-136; Entry requirements lines 139-196",
+      "officialDomain": "www.ucl.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-web-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-university-college-london-computer-science-2027",
+      "supportedFields": [
+        "programme identity",
+        "2027 intake",
+        "campus",
+        "A-level requirement",
+        "contextual offer",
+        "TARA"
+      ],
+      "title": "Computer Science BSc | Study at UCL",
+      "url": "https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/computer-science-bsc",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-bath"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-bath-computer-science-bsc-hons"
+      ],
+      "contentFingerprint": "sha256:3dec2a8aba6ad7ec214bba4c3c12b9778ef1fa9251a4b06c65ef0506d4814046",
+      "finalUrl": "https://www.bath.ac.uk/courses/undergraduate-2027/computer-science/bsc-computer-science/",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Programme heading, lines 24-35; Entry requirements, lines 258-316",
+      "officialDomain": "bath.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-bath-computer-science-bsc-hons-2027",
+      "supportedFields": [
+        "programme identity",
+        "2027 intake",
+        "A-level typical offer",
+        "contextual offer",
+        "selection-policy caveat"
+      ],
+      "title": "Computer Science BSc (Hons)",
+      "url": "https://www.bath.ac.uk/courses/undergraduate-2027/computer-science/bsc-computer-science/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-birmingham"
+      ],
+      "applicableIntakeYears": [
+        2026,
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-birmingham-mathematics-bsc"
+      ],
+      "contentFingerprint": "sha256:7a91c33401904f918ac52b1cb9941f78d86b91f4b33684099142fe7ecd1ac67d",
+      "finalUrl": "https://www.birmingham.ac.uk/study/undergraduate/subjects/mathematics-courses/mathematics-bsc",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Entry requirements; Fees and scholarships",
+      "officialDomain": "www.birmingham.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-birmingham-mathematics-bsc-2027",
+      "supportedFields": [
+        "latestOffer",
+        "latestContextualOffer",
+        "latestAdmissionsTest",
+        "intakeStatus"
+      ],
+      "title": "Mathematics BSc - University of Birmingham",
+      "url": "https://www.birmingham.ac.uk/study/undergraduate/subjects/mathematics-courses/mathematics-bsc",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-bristol"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-bristol-bsc-mathematics"
+      ],
+      "contentFingerprint": "sha256:2486500d3af9c4bdb932bcd7b991222fb3e7b7970aae54c66b62ac73e453232b",
+      "finalUrl": "https://www.bristol.ac.uk/study/undergraduate/2027/maths/bsc-mathematics/",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Overview; Entry requirements: A-level standard offer, A-level contextual offer, International Baccalaureate Diploma",
+      "officialDomain": "www.bristol.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-bristol-bsc-mathematics-2027",
+      "supportedFields": [
+        "standardOffer",
+        "contextualOffer",
+        "ib",
+        "admissionsTests",
+        "english",
+        "intakeStatus"
+      ],
+      "title": "BSc Mathematics | Study at Bristol | University of Bristol",
+      "url": "https://www.bristol.ac.uk/study/undergraduate/2027/maths/bsc-mathematics/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-cambridge"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-cambridge-engineering-ba-hons-and-meng"
+      ],
+      "contentFingerprint": "sha256:983868de26eb7f02a27a02795ebede3ee31c8d7eedae83d6b98a707ea911ea66",
+      "evidenceSummary": "2027 entry; minimum A*A*A; Mathematics and Physics required; Further Mathematics required when offered; all Colleges; ESAT required; Peterhouse may ask for STEP II grade 2.",
+      "finalUrl": "https://www.undergraduate.study.cam.ac.uk/courses/engineering-ba-hons-meng",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "Entry requirements lines 453-534; Key information lines 601-617",
+      "officialDomain": "www.undergraduate.study.cam.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-web-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-university-of-cambridge-engineering-2027",
+      "supportedFields": [
+        "programme identity",
+        "2027 intake",
+        "minimum offer",
+        "subject requirements",
+        "college scope",
+        "ESAT",
+        "STEP"
+      ],
+      "title": "Engineering, BA (Hons) and MEng | Undergraduate Study",
+      "url": "https://www.undergraduate.study.cam.ac.uk/courses/engineering-ba-hons-meng",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-edinburgh"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-edinburgh-economics-and-mathematics-ma-hons"
+      ],
+      "contentFingerprint": "sha256:107e9bbdc119255ddf17b3c75687a932d10f9e36df06c104494e9e14c020b232",
+      "finalUrl": "https://study.ed.ac.uk/programmes/undergraduate/133-economics-and-mathematics/entry-requirements",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "A levels: standard entry requirements / Required subjects",
+      "officialDomain": "study.ed.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-edinburgh-economics-and-mathematics-ma-hons-2027",
+      "supportedFields": [
+        "2027 intake",
+        "A-level grade range",
+        "Mathematics requirement",
+        "qualification recency condition"
+      ],
+      "title": "Economics and Mathematics MA (Hons) entry requirements",
+      "url": "https://study.ed.ac.uk/programmes/undergraduate/2027/133-economics-and-mathematics/entry-requirements",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-exeter"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-exeter-bsc-mathematics"
+      ],
+      "contentFingerprint": "sha256:05fa4d57a2cd35f7477ae3458142634fc1a367977d74cb7646d59617fc7c88f6",
+      "finalUrl": "https://www.exeter.ac.uk/undergraduate-degrees/bsc-mathematics/",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Page note and Summary; Entry requirements (typical offer)",
+      "officialDomain": "www.exeter.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-exeter-bsc-mathematics-2027",
+      "supportedFields": [
+        "offer",
+        "ib",
+        "contextual",
+        "intakeStatus"
+      ],
+      "title": "BSc Mathematics | Undergraduate Degrees | University of Exeter",
+      "url": "https://www.exeter.ac.uk/undergraduate-degrees/bsc-mathematics/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-glasgow"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-glasgow-mathematics-bsc-hons"
+      ],
+      "contentFingerprint": "sha256:d394f9017ddcca6367d3a2ef91124dc0632f1c5eacb9294a0ef1f88b74dee06a",
+      "finalUrl": "https://www.gla.ac.uk/undergraduate/degrees/mathematics/",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Entry requirements: for entry in 2027; Summary of entry requirements for Mathematics",
+      "officialDomain": "www.gla.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-glasgow-mathematics-bsc-hons-2027",
+      "supportedFields": [
+        "alevel",
+        "ib",
+        "scottish",
+        "intakeStatus"
+      ],
+      "title": "University of Glasgow - Undergraduate study - 2027 Degree programmes A-Z - Mathematics",
+      "url": "https://www.gla.ac.uk/undergraduate/degrees/mathematics/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-leeds"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-leeds-mathematics-bsc"
+      ],
+      "contentFingerprint": "sha256:82d5e5b0f765076d2c262bfbcec2b59c95c493b2128ae8174baab48f879177da",
+      "finalUrl": "https://courses.leeds.ac.uk/3440/mathematics-bsc",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Course header: Year of entry 2027; Entry requirements",
+      "officialDomain": "courses.leeds.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-leeds-mathematics-bsc-2027",
+      "supportedFields": [
+        "offer",
+        "ib",
+        "contextual",
+        "intakeStatus"
+      ],
+      "title": "Mathematics BSc | University of Leeds",
+      "url": "https://courses.leeds.ac.uk/3440/mathematics-bsc",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-manchester"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-manchester-bsc-computer-science"
+      ],
+      "contentFingerprint": "sha256:83aec00a4bf0c30fcf626b0301ac0c10fe54a3195c639b0d437d561d51f87d25",
+      "finalUrl": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00560/bsc-computer-science/",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Entry requirements, lines 492-544",
+      "officialDomain": "manchester.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-manchester-bsc-computer-science-2027",
+      "supportedFields": [
+        "programme identity",
+        "2027 intake",
+        "A-level overall and contextual offers",
+        "subject requirements",
+        "IB requirements"
+      ],
+      "title": "BSc Computer Science (2027 entry) | The University of Manchester",
+      "url": "https://www.manchester.ac.uk/study/undergraduate/courses/2027/00560/bsc-computer-science/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-nottingham"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-nottingham-mathematics-bsc-hons"
+      ],
+      "contentFingerprint": "sha256:edc7e3a230102a38be4380a3bf375cfb9f298790c75f1ac02e2020ce661cb4d9",
+      "finalUrl": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/Mathematics-BSc-Hons.html",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Entry requirements: Quick glance; A level and GCSE requirements; University admissions tests",
+      "officialDomain": "www.nottingham.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-nottingham-mathematics-bsc-hons-2027",
+      "supportedFields": [
+        "offer",
+        "subject",
+        "ib",
+        "admissionsTests",
+        "intakeStatus"
+      ],
+      "title": "Mathematics BSc (Hons) | University of Nottingham",
+      "url": "https://www.nottingham.ac.uk/studywithus/ugstudy/courses/UG/2027/Mathematics-BSc-Hons.html",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-oxford"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-oxford-computer-science-ba-or-mcompsci"
+      ],
+      "contentFingerprint": "sha256:cf00bd7c3df567144b0009d7deee83a65ea355fadc8e6ce3cdb059a59f7ff371",
+      "evidenceSummary": "A*AA; Mathematics required; Further Mathematics expected when available; current application deadline 15 October 2026.",
+      "finalUrl": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/computer-science",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "Course overview; How to apply; Qualifications required; Subjects required",
+      "officialDomain": "www.ox.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-web-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-university-of-oxford-computer-science-2027",
+      "supportedFields": [
+        "programme identity",
+        "2027 application cycle",
+        "A-level requirement",
+        "subject requirements"
+      ],
+      "title": "Computer Science | Oxford University",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/computer-science",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-oxford"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-oxford-mathematics--mathematics-and-statistics-ba-mmath"
+      ],
+      "contentFingerprint": "sha256:c22890c9665d60f51cdff38ec1550ad94a4b0b5d9ce60c08609b5e0837643dbe",
+      "evidenceSummary": "A*A*A with A*s in Mathematics and Further Mathematics if available; the current official page lists TMUA, not MAT.",
+      "finalUrl": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/mathematics?lang=en",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "Course overview; Admissions requirements; Other course requirements",
+      "officialDomain": "www.ox.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-web-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-university-of-oxford-mathematics-2027",
+      "supportedFields": [
+        "programme identity",
+        "A-level requirement",
+        "subject requirements",
+        "TMUA"
+      ],
+      "title": "Mathematics / Mathematics and Statistics | University of Oxford",
+      "url": "https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/mathematics?lang=en",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-sheffield"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-sheffield-mathematics-bsc"
+      ],
+      "contentFingerprint": "sha256:6f4e097500de44afa39306ec38857a89075fd8126919012c7639f0562ccc033d",
+      "finalUrl": "https://sheffield.ac.uk/undergraduate/courses/2027/mathematics-bsc",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "2027-28 entry; Entry requirements: Standard offer",
+      "officialDomain": "sheffield.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-sheffield-mathematics-bsc-2027",
+      "supportedFields": [
+        "standardOffer",
+        "alternativeOffers",
+        "ib",
+        "intakeStatus"
+      ],
+      "title": "Mathematics BSc | Undergraduate study | The University of Sheffield",
+      "url": "https://sheffield.ac.uk/undergraduate/courses/2027/mathematics-bsc",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-southampton"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-southampton-mathematics-bsc"
+      ],
+      "contentFingerprint": "sha256:0e55488e0d0df1b4e14fe992db9d56c3bc6599dcd60e46c9ee2c2863faa1daff",
+      "finalUrl": "https://www.southampton.ac.uk/courses/mathematics-degree-bsc",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Entry requirements: For Academic year 2027/28",
+      "officialDomain": "www.southampton.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-southampton-mathematics-bsc-2027",
+      "supportedFields": [
+        "offer",
+        "ib",
+        "admissionsTest",
+        "intakeStatus"
+      ],
+      "title": "Mathematics (Hons) | BSc | University of Southampton",
+      "url": "https://www.southampton.ac.uk/courses/mathematics-degree-bsc",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-st-andrews"
+      ],
+      "applicableIntakeYears": [
+        2026,
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-st-andrews-mathematics-bsc-honours"
+      ],
+      "contentFingerprint": "sha256:5e7bcd8a9f2d3ec530e52e46fc808777d6ec378e47c136b30fa5ec8574c81e04",
+      "finalUrl": "https://www.st-andrews.ac.uk/subjects/mathematics/mathematics-bsc/",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Page heading (2026 entry); Entry requirements; Do I need to have studied this subject before?",
+      "officialDomain": "www.st-andrews.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-st-andrews-mathematics-bsc-honours-2027",
+      "supportedFields": [
+        "latestOffer",
+        "subject",
+        "intakeStatus"
+      ],
+      "title": "Mathematics BSc - Subjects - University of St Andrews",
+      "url": "https://www.st-andrews.ac.uk/subjects/mathematics/mathematics-bsc/",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-st-andrews"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-st-andrews-mathematics-bsc-honours"
+      ],
+      "contentFingerprint": "sha256:fab2254a6eb46323ac91f8d711cb60c8b8bb7091ccdac64bcd705b6234586c3e",
+      "evidenceSummary": "GCE A-level standard A*A*A and minimum A*AB, both including A* in Mathematics. The PDF is referenced only and is not copied into this handoff.",
+      "finalUrl": "https://www.st-andrews.ac.uk/assets/university/study-at-st-andrews/documents/prospectus-and-brochures/ug-prospectus_2027_entry.pdf",
+      "fingerprintScope": "normalized evidence summary recorded by Sol; no official PDF copied into the handoff",
+      "httpStatus": 200,
+      "locator": "Mathematics & Statistics, prospectus pages 60-61",
+      "officialDomain": "www.st-andrews.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "retrievalMethod": "official-search-index-and-pdf-text-reader",
+      "reviewedByModel": "gpt-5.6-sol",
+      "sourceId": "src-university-of-st-andrews-mathematics-prospectus-2027",
+      "supportedFields": [
+        "2027 intake",
+        "standard offer",
+        "minimum offer",
+        "subject requirement"
+      ],
+      "title": "University of St Andrews Undergraduate Prospectus 2027 entry",
+      "url": "https://www.st-andrews.ac.uk/assets/university/study-at-st-andrews/documents/prospectus-and-brochures/ug-prospectus_2027_entry.pdf",
+      "verificationStatus": "codex-reviewed"
+    },
+    {
+      "accessedAt": "2026-07-22",
+      "applicableInstitutionIds": [
+        "inst-university-of-warwick"
+      ],
+      "applicableIntakeYears": [
+        2027
+      ],
+      "applicableProgrammeIds": [
+        "prog-university-of-warwick-mathematics-bsc"
+      ],
+      "contentFingerprint": "sha256:0534f1ea896f755a628fdac2637730d269f6ec16671a4df1ae7def2ff43f189c",
+      "finalUrl": "https://warwick.ac.uk/study/undergraduate/courses/bsc-mathematics/",
+      "fingerprintScope": "Terra evidence snapshot preserved; Sol reopened the official source on solVerifiedAt",
+      "httpStatus": 200,
+      "locator": "Programme key facts, lines 69-95; Entry requirements, lines 125-204",
+      "officialDomain": "warwick.ac.uk",
+      "publishedOrUpdatedAt": null,
+      "reviewedByModel": "gpt-5.6-sol",
+      "solVerifiedAt": "2026-07-22",
+      "sourceId": "src-university-of-warwick-mathematics-bsc-2027",
+      "supportedFields": [
+        "programme identity",
+        "2027 intake",
+        "A-level typical and contextual offers",
+        "TMUA status",
+        "STEP conditional status"
+      ],
+      "title": "Mathematics BSc",
+      "url": "https://warwick.ac.uk/study/undergraduate/courses/bsc-mathematics/",
+      "verificationStatus": "codex-reviewed"
+    }
+  ],
+  "quarantine": {
+    "unresolved": [
+      {
+        "fields": [
+          "overallOffer",
+          "subjectRequirements",
+          "assessmentRequirements"
+        ],
+        "nextCheck": "Retry the official Durham 2027 endpoint in a browser and capture the entry-requirements section before import approval.",
+        "reason": "The official 2027 course title loaded, but the entry-requirements body timed out and official search results exposed only an older prospectus. Older conditions were not carried into 2027.",
+        "recordId": "prog-durham-university-mathematics-bsc-hons",
+        "reviewStatus": "codex-reviewed",
+        "sourceIds": [
+          "src-durham-university-mathematics-bsc-hons-2027"
+        ],
+        "unresolvedId": "unres-durham-university-mathematics-bsc-hons-2027-entry-requirements"
+      },
+      {
+        "fields": [
+          "overallOffer",
+          "subjectRequirements",
+          "assessmentRequirements"
+        ],
+        "nextCheck": "Reopen the official course page after the definitive 2027 requirements are published.",
+        "reason": "The official 2027 page expressly says the information is provisional and illustrative, and directs applicants to recheck in September 2026.",
+        "recordId": "req-king-s-college-london-quantitative-mathematics-bsc-uk-a-level-2027",
+        "reviewStatus": "codex-reviewed",
+        "sourceIds": [
+          "src-king-s-college-london-quantitative-mathematics-bsc-2027"
+        ],
+        "unresolvedId": "unres-king-s-college-london-quantitative-mathematics-bsc-2027-offer"
+      },
+      {
+        "fields": [
+          "overallOffer",
+          "subjectRequirements",
+          "assessmentRequirements"
+        ],
+        "nextCheck": "Select or obtain a 2027-specific page state that explicitly binds the entry requirements to September 2027.",
+        "reason": "The official page mentions a 2027 selector and future fees but its displayed first-year modules and application deadline remain tied to 2026 entry; the displayed offer cannot safely be assigned to 2027.",
+        "recordId": "req-university-of-birmingham-mathematics-bsc-uk-a-level-2027",
+        "reviewStatus": "codex-reviewed",
+        "sourceIds": [
+          "src-university-of-birmingham-mathematics-bsc-2027"
+        ],
+        "unresolvedId": "unres-university-of-birmingham-mathematics-bsc-2027-offer"
+      }
+    ],
+    "rejectedRecords": [
+      {
+        "field": "overallOffer.minimum",
+        "reason": "The record is an A-level route; IB was removed from the A-level overall-offer field.",
+        "recordId": "req-university-of-cambridge-mathematics-ba-hons-and-mmath-uk-a-level-2027",
+        "rejectedId": "rej-cambridge-mathematics-a-level-field-contained-ib",
+        "reviewStatus": "codex-reviewed",
+        "sourceIds": [
+          "src-cam-maths-2027"
+        ],
+        "terraValue": "A*A*A (A level); the page also lists IB 41-42 with 776 at Higher Level."
+      },
+      {
+        "field": "admissionsTest",
+        "reason": "Current 2027 official evidence identifies TMUA; the earlier MAT statement is superseded.",
+        "recordId": "prog-university-of-oxford-mathematics--mathematics-and-statistics-ba-mmath",
+        "rejectedId": "rej-oxford-mathematics-mat-2027",
+        "reviewStatus": "codex-reviewed",
+        "sourceIds": [
+          "src-university-of-oxford-mathematics-2027",
+          "src-uat-uk-tmua-2027"
+        ],
+        "terraValue": "MAT"
+      },
+      {
+        "field": "overallOffer",
+        "reason": "The official disclaimer says the values are illustrative and not definitive.",
+        "recordId": "req-king-s-college-london-quantitative-mathematics-bsc-uk-a-level-2027",
+        "rejectedId": "rej-kcl-provisional-offer-as-definitive",
+        "reviewStatus": "codex-reviewed",
+        "sourceIds": [
+          "src-king-s-college-london-quantitative-mathematics-bsc-2027"
+        ],
+        "terraValue": "Displayed provisional 2027 grades"
+      },
+      {
+        "field": "overallOffer",
+        "reason": "The page does not bind the displayed offer to 2027; 2026 values are not carried forward.",
+        "recordId": "req-university-of-birmingham-mathematics-bsc-uk-a-level-2027",
+        "rejectedId": "rej-birmingham-2026-offer-carried-to-2027",
+        "reviewStatus": "codex-reviewed",
+        "sourceIds": [
+          "src-university-of-birmingham-mathematics-bsc-2027"
+        ],
+        "terraValue": "AAA / contextual AAB from the current page"
+      },
+      {
+        "field": "overallOffer",
+        "reason": "An older official prospectus cannot establish the 2027 offer.",
+        "recordId": "prog-durham-university-mathematics-bsc-hons",
+        "rejectedId": "rej-durham-old-prospectus-carried-to-2027",
+        "reviewStatus": "codex-reviewed",
+        "sourceIds": [
+          "src-durham-university-mathematics-bsc-hons-2027"
+        ],
+        "terraValue": "Older official prospectus offer"
+      },
+      {
+        "field": "admissionsTest",
+        "reason": "The course page states STEP/MAT/TMUA are not factored into offer-making and may only be considered after results.",
+        "recordId": "prog-university-of-nottingham-mathematics-bsc-hons",
+        "rejectedId": "rej-nottingham-mat-as-formal-2027-threshold",
+        "reviewStatus": "codex-reviewed",
+        "sourceIds": [
+          "src-university-of-nottingham-mathematics-bsc-hons-2027"
+        ],
+        "terraValue": "MAT as a formal threshold"
+      },
+      {
+        "field": "operationalDetails",
+        "reason": "Unsupported operational placeholders were replaced only after official UAT-UK verification.",
+        "recordId": "asm-tmua",
+        "rejectedId": "rej-assessment-operational-detail-without-provider-source",
+        "reviewStatus": "codex-reviewed",
+        "sourceIds": [
+          "src-uat-uk-tmua-2027"
+        ],
+        "terraValue": "Provider details need recheck"
+      }
+    ],
+    "resolvedConflicts": [
+      {
+        "conflictId": "conf-university-of-oxford-mathematics--mathematics-and-statistics-ba-mmath-admissions-test",
+        "field": "admissionsTest",
+        "recordId": "prog-university-of-oxford-mathematics--mathematics-and-statistics-ba-mmath",
+        "resolution": "For 2027 entry the current official Oxford course page and UAT-UK evidence identify TMUA. MAT is not carried into the 2027 record.",
+        "reviewStatus": "codex-reviewed",
+        "reviewedAt": "2026-07-22",
+        "reviewedByModel": "gpt-5.6-sol",
+        "sourceIds": [
+          "src-university-of-oxford-mathematics-2027",
+          "src-uat-uk-tmua-2027"
+        ],
+        "status": "resolved",
+        "terraConflict": "An earlier central-page snapshot said MAT while a newer department source said TMUA."
+      }
+    ],
+    "unresolvedRecordIds": [
+      "prog-durham-university-mathematics-bsc-hons",
+      "req-king-s-college-london-quantitative-mathematics-bsc-uk-a-level-2027",
+      "req-university-of-birmingham-mathematics-bsc-uk-a-level-2027"
+    ]
+  }
+}
