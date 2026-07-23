@@ -13,6 +13,7 @@ type ProgrammeRecord = {
   };
   assessmentLinks?: Array<{
     assessmentId?: string;
+    requirementLevel?: string;
     sourceIds?: string[];
     assessment?: {
       name?: string;
@@ -55,6 +56,8 @@ const ASSESSMENT_LABELS: Record<string, string> = {
 
 const ALL_ASSESSMENT_TOKENS = ["TMUA", "STEP", "ESAT", "TARA", "MAT"];
 const NEGATIVE_REQUIREMENT_CLAIM = /(不要求|无需|不需要|不再(?:使用|沿用|要求)|仅要求|只要求|does not require|doesn't require|not required|only requires?|no longer requires?)/i;
+const EXCLUSIVE_ASSESSMENT_CLAIM = /(仅需|只需|只要|only needs?|solely requires?)/i;
+const UNIVERSAL_ASSESSMENT_CLAIM = /(所有申请人|均须|必须.*(?:同时|参加|准备)|需同时|几乎确定|all applicants|must.*(?:take|sit|prepare)|definitely|almost certain)/i;
 const COLLEGE_INFERENCE_CLAIM = /(学院.*(?:不作限制|不受限制|不限)|(?:未限定|不限).*学院|(?:统一招生|开放申请)|all colleges|open application|college.*unrestricted)/i;
 
 function programmeRecords(context: UniversityAdmissionsToolContext): ProgrammeRecord[] {
@@ -126,6 +129,36 @@ function assessmentCorrection(
   return `${institution}: ${recorded}${citations}; it has no explicit record for ${unsupported.join(", ")}, so absence cannot be reported as “not required”.`;
 }
 
+function assessmentScopeCorrection(
+  record: ProgrammeRecord,
+  locale: AIChatRequest["locale"],
+): string {
+  const institution = institutionLabel(record, locale);
+  const links = record.assessmentLinks ?? [];
+  const details = links.map(link => {
+    const token = (link.assessmentId && ASSESSMENT_LABELS[link.assessmentId])
+      ?? ALL_ASSESSMENT_TOKENS.find(item => link.assessment?.name?.toUpperCase().includes(item))
+      ?? link.assessment?.name
+      ?? "assessment";
+    const scope = link.requirementLevel === "required"
+      ? (locale === "zh-CN" ? "当前记录明确为所有申请人必须参加" : "the active record marks it as required")
+      : link.requirementLevel === "required-for-some-applicants"
+        ? (locale === "zh-CN" ? "仅对部分申请人或特定条件适用" : "it applies only to some applicants or conditions")
+        : (locale === "zh-CN"
+          ? `当前记录状态为 ${link.requirementLevel ?? "未说明"}`
+          : `the active record status is ${link.requirementLevel ?? "not stated"}`);
+    return `${token}（${scope}）`;
+  });
+  const citations = citationSuffix(links.flatMap(link => [
+    ...(link.sourceIds ?? []),
+    ...(link.assessment?.sourceIds ?? []),
+  ]));
+  if (locale === "zh-CN") {
+    return `${institution}：当前 active 记录列出 ${details.join("、")}${citations}；不能把“部分适用”扩大为所有申请人，也不能因其他考试未列出就断定“仅需”这些考试。`;
+  }
+  return `${institution}: the active record lists ${details.join(", ")}${citations}; a condition for some applicants cannot be expanded to everyone, and an unlisted assessment cannot be treated as proof that these are the only assessments needed.`;
+}
+
 function collegeCorrection(record: ProgrammeRecord, locale: AIChatRequest["locale"]): string {
   const institution = institutionLabel(record, locale);
   const citations = citationSuffix(record.requirement?.sourceIds ?? []);
@@ -146,14 +179,33 @@ export function groundUniversityAdmissionsAnswer(
   const segments = answer.split(/([；;。！？!?\n]+)/);
   const grounded = segments.map(segment => {
     if (!segment.trim()) return segment;
+    const replacements: string[] = [];
     for (const record of records) {
       const aliases = institutionAliases(record);
       if (!containsAlias(segment, aliases)) continue;
-      const unsupportedAssessments = mentionedAssessmentTokens(segment)
+      const mentionedAssessments = mentionedAssessmentTokens(segment);
+      const linkedAssessments = linkedAssessmentTokens(record);
+      const unsupportedAssessments = mentionedAssessments
         .filter(token => !linkedAssessmentTokens(record).includes(token));
       if (unsupportedAssessments.length > 0 && NEGATIVE_REQUIREMENT_CLAIM.test(segment)) {
         corrections.push(`${record.institution?.institutionId ?? "unknown"}:unsupported-negative-assessment-claim:${unsupportedAssessments.join(",")}`);
-        return assessmentCorrection(record, unsupportedAssessments, locale);
+        replacements.push(assessmentCorrection(record, unsupportedAssessments, locale));
+        continue;
+      }
+      const overstatesLimitedAssessment = mentionedAssessments.some(token => {
+        const link = (record.assessmentLinks ?? []).find(item => {
+          const linkedToken = (item.assessmentId && ASSESSMENT_LABELS[item.assessmentId])
+            ?? ALL_ASSESSMENT_TOKENS.find(candidate => item.assessment?.name?.toUpperCase().includes(candidate));
+          return linkedToken === token;
+        });
+        return link?.requirementLevel && link.requirementLevel !== "required";
+      }) && UNIVERSAL_ASSESSMENT_CLAIM.test(segment);
+      const makesExclusiveClaim = mentionedAssessments.some(token => linkedAssessments.includes(token))
+        && EXCLUSIVE_ASSESSMENT_CLAIM.test(segment);
+      if (overstatesLimitedAssessment || makesExclusiveClaim) {
+        corrections.push(`${record.institution?.institutionId ?? "unknown"}:${overstatesLimitedAssessment ? "overstated-assessment-scope" : "unsupported-exclusive-assessment-claim"}`);
+        replacements.push(assessmentScopeCorrection(record, locale));
+        continue;
       }
       if (
         !record.requirement?.campus
@@ -161,10 +213,10 @@ export function groundUniversityAdmissionsAnswer(
         && COLLEGE_INFERENCE_CLAIM.test(segment)
       ) {
         corrections.push(`${record.institution?.institutionId ?? "unknown"}:unsupported-college-inference`);
-        return collegeCorrection(record, locale);
+        replacements.push(collegeCorrection(record, locale));
       }
     }
-    return segment;
+    return replacements.length > 0 ? [...new Set(replacements)].join(locale === "zh-CN" ? "；" : "; ") : segment;
   }).join("");
   return { answer: grounded, corrections };
 }

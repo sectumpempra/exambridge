@@ -66,4 +66,21 @@ describe("university admissions answer grounding", () => {
       corrections: [],
     });
   });
+
+  it("rewrites universal and exclusive claims that overstate assessment scope", () => {
+    const result = groundUniversityAdmissionsAnswer(
+      "因此，剑桥申请人几乎确定需同时准备 TMUA 和 STEP，牛津申请人则仅需 TMUA。",
+      comparison,
+      "zh-CN",
+    );
+    expect(result.answer).toContain("剑桥：当前 active 记录列出 STEP（仅对部分申请人或特定条件适用）、TMUA（当前记录明确为所有申请人必须参加）");
+    expect(result.answer).toContain("牛津：当前 active 记录列出 TMUA（当前记录明确为所有申请人必须参加）");
+    expect(result.answer).toContain("不能因其他考试未列出就断定“仅需”");
+    expect(result.answer).not.toContain("几乎确定");
+    expect(result.answer).not.toContain("仅需 TMUA");
+    expect(result.corrections).toEqual(expect.arrayContaining([
+      expect.stringContaining("overstated-assessment-scope"),
+      expect.stringContaining("unsupported-exclusive-assessment-claim"),
+    ]));
+  });
 });
