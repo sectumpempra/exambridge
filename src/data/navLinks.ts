@@ -42,6 +42,7 @@ export const NAV_GROUPS: NavigationGroup[] = [
       { label: "刷题规划", to: "/planner", description: "按 Paper 安排练习", preserveCourse: true },
       { label: "函数画图", to: "/graph", description: "绘图、调参和导出", preserveCourse: true },
       { label: "力学实验室", to: "/mechanics-lab", description: "二维受力、约束与运动分析", preserveCourse: true },
+      { label: "空间向量实验室", to: "/vector-geometry-lab", description: "距离、夹角、直线与平面的三维分析", preserveCourse: true },
     ],
   },
 ];

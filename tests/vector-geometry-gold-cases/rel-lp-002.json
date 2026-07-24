@@ -1,0 +1,60 @@
+{
+  "caseId": "rel-lp-002",
+  "category": "line-plane-relation",
+  "description": "线面关系：方向平行平面但基点不在平面内，平行且不含",
+  "input": {
+    "solver": "linePlaneRelation",
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "l-A",
+        "label": "l-A",
+        "position": {
+          "x": "1",
+          "y": "1",
+          "z": "3"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "1",
+        "z": "0"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "2"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "parallel-not-in-plane",
+    "dotProduct": "0",
+    "basePointResidual": "1"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b·n = 0；a·n − d0 = 3 − 2 = 1 ≠ 0 ⟹ 平行且不在平面内。",
+  "validationRules": [
+    "dot-product-evidence",
+    "base-point-substitution",
+    "relation-classification"
+  ]
+}

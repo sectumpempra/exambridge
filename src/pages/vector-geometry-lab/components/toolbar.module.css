@@ -1,0 +1,35 @@
+.toolbar {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.button {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #f6f8fa;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.button:hover:not(:disabled) {
+  background: #eef1f4;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button[aria-pressed="true"] {
+  background: #0969da;
+  border-color: #0969da;
+  color: #ffffff;
+}
+
+.button:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}

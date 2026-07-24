@@ -9,6 +9,15 @@ export default defineConfig({
       "tests/**/*.test.{ts,tsx}",
       "src/features/mechanics-lab/**/*.test.ts",
     ],
+    // Vector Geometry has browser-facing component and WebGL-degradation tests
+    // that require jsdom plus a canvas shim. Its dedicated config is executed
+    // separately by `test:vector-geometry` and by the release `check` gate.
+    exclude: [
+      "tests/vector-geometry-lab/**",
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.{idea,git,cache,output,temp}/**",
+    ],
     coverage: {
       reporter: ["text", "html", "json-summary"],
       include: [

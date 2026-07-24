@@ -1,0 +1,45 @@
+{
+  "caseId": "dist-pp-001",
+  "category": "point-point-distance",
+  "description": "普通：整数坐标，3-4-12 勾股结构，距离为整数 13",
+  "input": {
+    "solver": "pointPointDistance",
+    "point1": {
+      "pointId": "A",
+      "label": "A",
+      "position": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "point2": {
+      "pointId": "B",
+      "label": "B",
+      "position": {
+        "x": "3",
+        "y": "4",
+        "z": "12"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "distinct-points",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "13",
+      "radicand": "1",
+      "decimal": "13.000000"
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d² = (0−3)² + (0−4)² + (0−12)² = 9 + 16 + 144 = 169 = 13²，故 d = 13（有理数，radicand 1）。两点不同，分类 distinct-points。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification"
+  ]
+}

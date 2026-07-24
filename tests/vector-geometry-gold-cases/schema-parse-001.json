@@ -1,0 +1,200 @@
+{
+  "caseId": "schema-parse-001",
+  "category": "schema-parse",
+  "description": "schema 解析：合法场景文档被接受并保留实体",
+  "input": {
+    "solver": "schema-parse",
+    "document": {
+      "schemaVersion": "1.0.0",
+      "sceneId": "scene-stage4-smoke",
+      "title": "Stage 4 schema smoke scene",
+      "points": [
+        {
+          "pointId": "A",
+          "label": "A",
+          "position": {
+            "x": {
+              "input": "1",
+              "kind": "integer",
+              "numerator": "1",
+              "denominator": "1",
+              "exact": true
+            },
+            "y": {
+              "input": "2",
+              "kind": "integer",
+              "numerator": "2",
+              "denominator": "1",
+              "exact": true
+            },
+            "z": {
+              "input": "3",
+              "kind": "integer",
+              "numerator": "3",
+              "denominator": "1",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "vectors": [
+        {
+          "vectorId": "vec-v",
+          "label": "v",
+          "components": {
+            "x": {
+              "input": "1",
+              "kind": "integer",
+              "numerator": "1",
+              "denominator": "1",
+              "exact": true
+            },
+            "y": {
+              "input": "0",
+              "kind": "integer",
+              "numerator": "0",
+              "denominator": "1",
+              "exact": true
+            },
+            "z": {
+              "input": "0",
+              "kind": "integer",
+              "numerator": "0",
+              "denominator": "1",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lines": [
+        {
+          "lineId": "line-l",
+          "label": "l",
+          "point": {
+            "pointId": "P",
+            "label": "P",
+            "position": {
+              "x": {
+                "input": "0",
+                "kind": "integer",
+                "numerator": "0",
+                "denominator": "1",
+                "exact": true
+              },
+              "y": {
+                "input": "0",
+                "kind": "integer",
+                "numerator": "0",
+                "denominator": "1",
+                "exact": true
+              },
+              "z": {
+                "input": "0",
+                "kind": "integer",
+                "numerator": "0",
+                "denominator": "1",
+                "exact": true
+              }
+            }
+          },
+          "direction": {
+            "x": {
+              "input": "1",
+              "kind": "integer",
+              "numerator": "1",
+              "denominator": "1",
+              "exact": true
+            },
+            "y": {
+              "input": "1",
+              "kind": "integer",
+              "numerator": "1",
+              "denominator": "1",
+              "exact": true
+            },
+            "z": {
+              "input": "0",
+              "kind": "integer",
+              "numerator": "0",
+              "denominator": "1",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "planes": [
+        {
+          "planeId": "plane-pl",
+          "label": "pl",
+          "point": {
+            "pointId": "Q",
+            "label": "Q",
+            "position": {
+              "x": {
+                "input": "0",
+                "kind": "integer",
+                "numerator": "0",
+                "denominator": "1",
+                "exact": true
+              },
+              "y": {
+                "input": "0",
+                "kind": "integer",
+                "numerator": "0",
+                "denominator": "1",
+                "exact": true
+              },
+              "z": {
+                "input": "2",
+                "kind": "integer",
+                "numerator": "2",
+                "denominator": "1",
+                "exact": true
+              }
+            }
+          },
+          "normal": {
+            "x": {
+              "input": "0",
+              "kind": "integer",
+              "numerator": "0",
+              "denominator": "1",
+              "exact": true
+            },
+            "y": {
+              "input": "0",
+              "kind": "integer",
+              "numerator": "0",
+              "denominator": "1",
+              "exact": true
+            },
+            "z": {
+              "input": "1",
+              "kind": "integer",
+              "numerator": "1",
+              "denominator": "1",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "requestedAnalysis": []
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "title": "Stage 4 schema smoke scene",
+    "entityCounts": {
+      "points": 1,
+      "vectors": 1,
+      "lines": 1,
+      "planes": 1
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：文档携带 schemaVersion 1.0.0 与全部必需集合（points/vectors/lines/planes/requestedAnalysis），id 唯一 ⟹ parseVectorGeometryScene 必须接受。",
+  "validationRules": []
+}

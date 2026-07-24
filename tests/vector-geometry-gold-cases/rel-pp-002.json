@@ -1,0 +1,59 @@
+{
+  "caseId": "rel-pp-002",
+  "category": "plane-plane-relation",
+  "description": "面面关系：法向量平行但平面不同，平行不重合",
+  "input": {
+    "solver": "planePlaneRelation",
+    "plane1": {
+      "planeId": "pl1",
+      "label": "pl1",
+      "point": {
+        "pointId": "pl1-A",
+        "label": "pl1-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    },
+    "plane2": {
+      "planeId": "pl2",
+      "label": "pl2",
+      "point": {
+        "pointId": "pl2-A",
+        "label": "pl2-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "5"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "parallel-not-coincident",
+    "normalsRelation": "parallel",
+    "normalsDotProduct": "1"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：z = 0 与 z = 5：法向量相同（平行），规范化方程 (0,0,1,0) ≠ (0,0,1,5) ⟹ 平行不重合。",
+  "validationRules": [
+    "normals-relation",
+    "relation-classification"
+  ]
+}

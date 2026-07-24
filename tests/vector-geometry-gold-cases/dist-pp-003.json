@@ -1,0 +1,45 @@
+{
+  "caseId": "dist-pp-003",
+  "category": "point-point-distance",
+  "description": "重复点：两点完全重合，距离 0 且必须分类为 same-point",
+  "input": {
+    "solver": "pointPointDistance",
+    "point1": {
+      "pointId": "A",
+      "label": "A",
+      "position": {
+        "x": "2",
+        "y": "-1",
+        "z": "5"
+      }
+    },
+    "point2": {
+      "pointId": "B",
+      "label": "B",
+      "position": {
+        "x": "2",
+        "y": "-1",
+        "z": "5"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "same-point",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "0",
+      "radicand": "1",
+      "decimal": "0.000000"
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：差向量 (0, 0, 0)，d² = 0，d = 0。两点坐标完全相同 → same-point；距离为 0 的原因必须显式说明（禁止只返回 0）。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification"
+  ]
+}

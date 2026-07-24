@@ -1,0 +1,64 @@
+{
+  "caseId": "ang-pp-001",
+  "category": "plane-plane-angle",
+  "description": "普通锐二面角：法向量 (0,0,1) 与 (0,1,1)，45°",
+  "input": {
+    "solver": "planePlaneAngle",
+    "plane1": {
+      "planeId": "p1",
+      "label": "p1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    },
+    "plane2": {
+      "planeId": "p2",
+      "label": "p2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "1",
+          "y": "1",
+          "z": "1"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "1",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "acute",
+    "cosine": {
+      "kind": "exact",
+      "coefficient": "1/2",
+      "radicand": "2"
+    },
+    "angleDegrees": 45
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：两面角 = 法向量锐角。n1·n2 = 1；|n1| = 1，|n2| = √2；cos θ = (1/2)√2 → θ = 45°，acute。",
+  "validationRules": [
+    "cosine-within-bounds",
+    "angle-range",
+    "angle-classification"
+  ]
+}

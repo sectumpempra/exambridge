@@ -1,0 +1,50 @@
+{
+  "caseId": "eq-membership-002",
+  "category": "point-membership",
+  "description": "点在线上判定：不成立，残差非零",
+  "input": {
+    "solver": "isPointOnLine",
+    "point": {
+      "x": "2",
+      "y": "4",
+      "z": "7"
+    },
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "l-A",
+        "label": "l-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "2",
+        "z": "3"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "not-on-line",
+    "onLine": false,
+    "exact": true,
+    "parameter": "7/3"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：(P−a)×b = (2,4,7)×(1,2,3) = (12−14, 7−6, 4−4) = (−2,1,0) ≠ 0 ⟹ 不在线上；λ = 7/3（z 分量）仅为证据。",
+  "validationRules": [
+    {
+      "rule": "point-on-line-residual",
+      "passed": false
+    },
+    "relation-classification"
+  ]
+}

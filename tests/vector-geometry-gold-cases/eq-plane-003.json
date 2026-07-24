@@ -1,0 +1,31 @@
+{
+  "caseId": "eq-plane-003",
+  "category": "plane-equations",
+  "description": "平面方程：两方向平行退化，被拒绝且不声称唯一平面",
+  "input": {
+    "solver": "planeEquationsFromPointDirections",
+    "point": {
+      "x": "0",
+      "y": "0",
+      "z": "0"
+    },
+    "direction1": {
+      "x": "1",
+      "y": "1",
+      "z": "1"
+    },
+    "direction2": {
+      "x": "2",
+      "y": "2",
+      "z": "2"
+    }
+  },
+  "expectedStatus": "degenerate-input",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：u×v = (1,1,1)×(2,2,2) = 0 ⟹ 两方向平行，不能张成平面——必须拒绝而非声称生成了唯一平面。",
+  "validationRules": []
+}

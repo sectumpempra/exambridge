@@ -1,0 +1,80 @@
+{
+  "caseId": "dist-skew-003",
+  "category": "skew-lines-distance",
+  "description": "距离为 0：不平行但相交的两直线，分类 lines-intersect，两垂足同为交点",
+  "input": {
+    "solver": "skewLinesDistance",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "0",
+          "y": "1",
+          "z": "1"
+        }
+      },
+      "direction": {
+        "x": "0",
+        "y": "1",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "lines-intersect",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "0",
+      "radicand": "1",
+      "decimal": "0.000000"
+    },
+    "foot1": [
+      "0",
+      "0",
+      "0"
+    ],
+    "foot2": [
+      "0",
+      "0",
+      "0"
+    ],
+    "parameter1": "0",
+    "parameter2": "-1"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：方向不平行（叉积 (0,−1,1) ≠ 0）。Δ = 2；w = (0,1,1)，w·b1 = 0，w·b2 = 2；s = 0，t = (0 − 2)/2 = −1；F1 = (0,0,0)，F2 = (0,1,1) − (0,1,1) = (0,0,0)。两垂足重合 → d = 0 → lines-intersect，交点即原点。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-on-line1",
+    "foot-on-line2",
+    "connector-perpendicular-to-line1",
+    "connector-perpendicular-to-line2",
+    "triple-product-consistency"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "caseId": "dist-skew-001",
+  "category": "skew-lines-distance",
+  "description": "异面：经典互相垂直的异面直线，距离 3，两垂足均给出",
+  "input": {
+    "solver": "skewLinesDistance",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "3"
+        }
+      },
+      "direction": {
+        "x": "0",
+        "y": "1",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "skew",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "3",
+      "radicand": "1",
+      "decimal": "3.000000"
+    },
+    "foot1": [
+      "0",
+      "0",
+      "0"
+    ],
+    "foot2": [
+      "0",
+      "0",
+      "3"
+    ],
+    "parameter1": "0",
+    "parameter2": "0"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：w = A2−A1 = (0,0,3)；b1×b2 = (0,0,1)；三重积 w·(b1×b2) = 3；|b1×b2| = 1 → d = 3。方程组 s·1 − t·0 = 0、s·0 − t·1 = 0 → s = t = 0；垂足 F1 = (0,0,0)，F2 = (0,0,3)。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-on-line1",
+    "foot-on-line2",
+    "connector-perpendicular-to-line1",
+    "connector-perpendicular-to-line2",
+    "triple-product-consistency"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "caseId": "dist-ppl2-002",
+  "category": "parallel-planes-distance",
+  "description": "重合：两平面方程互为倍数，距离 0 分类 planes-coincident",
+  "input": {
+    "solver": "parallelPlanesDistance",
+    "plane1": {
+      "planeId": "p1",
+      "label": "p1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "1",
+          "y": "2",
+          "z": "3"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "1",
+        "z": "1"
+      }
+    },
+    "plane2": {
+      "planeId": "p2",
+      "label": "p2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "6"
+        }
+      },
+      "normal": {
+        "x": "2",
+        "y": "2",
+        "z": "2"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "planes-coincident",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "0",
+      "radicand": "1",
+      "decimal": "0.000000"
+    },
+    "segmentEnd1": [
+      "0",
+      "0",
+      "6"
+    ],
+    "segmentEnd2": [
+      "0",
+      "0",
+      "6"
+    ]
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：平面 1：x+y+z = 6；平面 2：2x+2y+2z = 12，互为 2 倍 → 同一平面。signed = A2·n1 − 6 = 6 − 6 = 0 → d = 0，F = A2 = (0,0,6) → planes-coincident。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-in-plane1",
+    "endpoint-in-plane2",
+    "connector-parallel-to-normal"
+  ]
+}

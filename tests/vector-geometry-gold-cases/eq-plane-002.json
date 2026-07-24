@@ -1,0 +1,45 @@
+{
+  "caseId": "eq-plane-002",
+  "category": "plane-equations",
+  "description": "平面方程：点+两方向生成，法向量为叉积",
+  "input": {
+    "solver": "planeEquationsFromPointDirections",
+    "point": {
+      "x": "0",
+      "y": "0",
+      "z": "0"
+    },
+    "direction1": {
+      "x": "1",
+      "y": "0",
+      "z": "0"
+    },
+    "direction2": {
+      "x": "0",
+      "y": "1",
+      "z": "0"
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "normalForm": "r·(0, 0, 1) = 0",
+    "pointNormalForm": "(r - (0, 0, 0))·(0, 0, 1) = 0",
+    "cartesianForm": "z = 0",
+    "parametricForm": "r = (0, 0, 0) + λ(1, 0, 0) + μ(0, 1, 0)",
+    "normal": [
+      "0",
+      "0",
+      "1"
+    ],
+    "d": "0"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：n = u×v = (1,0,0)×(0,1,0) = (0·0−0·1, 0·0−1·0, 1·1−0·0) = (0,0,1)；d = 0 ⟹ z = 0；参数式沿用给定方向。",
+  "validationRules": [
+    "normal-perpendicular-to-direction1",
+    "normal-perpendicular-to-direction2"
+  ]
+}

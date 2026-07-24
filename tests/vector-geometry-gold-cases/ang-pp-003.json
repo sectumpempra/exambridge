@@ -1,0 +1,65 @@
+{
+  "caseId": "ang-pp-003",
+  "category": "plane-plane-angle",
+  "description": "平行平面：法向量互为倍数，二面角 0°",
+  "input": {
+    "solver": "planePlaneAngle",
+    "plane1": {
+      "planeId": "p1",
+      "label": "p1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "2",
+        "z": "3"
+      }
+    },
+    "plane2": {
+      "planeId": "p2",
+      "label": "p2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "5",
+          "y": "5",
+          "z": "5"
+        }
+      },
+      "normal": {
+        "x": "2",
+        "y": "4",
+        "z": "6"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "parallel-planes",
+    "cosine": {
+      "kind": "exact",
+      "coefficient": "1",
+      "radicand": "1"
+    },
+    "angleDegrees": 0
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：n2 = 2·n1；n1·n2 = 2+8+18 = 28；|n1| = √14，|n2| = 2√14；cos θ = 28/28 = 1 → θ = 0°，parallel-planes。",
+  "validationRules": [
+    "cosine-within-bounds",
+    "angle-range",
+    "angle-classification",
+    "parallel-cross-zero"
+  ]
+}

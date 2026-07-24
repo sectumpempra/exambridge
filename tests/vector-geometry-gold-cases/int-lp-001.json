@@ -1,0 +1,64 @@
+{
+  "caseId": "int-lp-001",
+  "category": "line-plane-intersection",
+  "description": "线面求交：唯一交点，λ 回代双验证",
+  "input": {
+    "solver": "linePlaneIntersection",
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "l-A",
+        "label": "l-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "1",
+        "z": "1"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "1",
+          "y": "2",
+          "z": "3"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "1",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "unique",
+    "parameter": "2",
+    "intersectionPoint": [
+      "2",
+      "2",
+      "2"
+    ]
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d0 = 1+2+3 = 6；b·n = 3 ≠ 0；λ = (6 − 0)/3 = 2；P = (0,0,0) + 2(1,1,1) = (2,2,2)。回代：P·n = 6 = d0 ✓。",
+  "validationRules": [
+    "point-on-plane",
+    "point-on-line",
+    "relation-classification"
+  ]
+}

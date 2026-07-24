@@ -1,0 +1,62 @@
+{
+  "caseId": "dist-pl-001",
+  "category": "point-line-distance",
+  "description": "普通：点-直线距离 3√2/2（精确根式），含垂足与参数",
+  "input": {
+    "solver": "pointLineDistance",
+    "point": {
+      "pointId": "P",
+      "label": "P",
+      "position": {
+        "x": "2",
+        "y": "1",
+        "z": "2"
+      }
+    },
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "A",
+        "label": "A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "1",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "point-off-line",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "3/2",
+      "radicand": "2",
+      "decimal": "2.121320"
+    },
+    "foot": [
+      "3/2",
+      "3/2",
+      "0"
+    ],
+    "parameter": "3/2"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：λ = (P·b)/(b·b) = (2+1+0)/2 = 3/2；垂足 F = (3/2, 3/2, 0)；P−F = (1/2, −1/2, 2)；d² = 1/4 + 1/4 + 4 = 9/2；d = 3/√2 = (3/2)√2 ≈ 2.121320。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-on-line",
+    "connector-perpendicular-to-direction"
+  ]
+}

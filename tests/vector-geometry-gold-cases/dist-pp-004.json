@@ -1,0 +1,45 @@
+{
+  "caseId": "dist-pp-004",
+  "category": "point-point-distance",
+  "description": "分数输入：坐标含 1/2、−1/3、−1/4，距离 √89/4",
+  "input": {
+    "solver": "pointPointDistance",
+    "point1": {
+      "pointId": "A",
+      "label": "A",
+      "position": {
+        "x": "1/2",
+        "y": "-1/3",
+        "z": "2"
+      }
+    },
+    "point2": {
+      "pointId": "B",
+      "label": "B",
+      "position": {
+        "x": "1",
+        "y": "1/6",
+        "z": "-1/4"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "distinct-points",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "1/4",
+      "radicand": "89",
+      "decimal": "2.358495"
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：差向量 (1/2−1, −1/3−1/6, 2+1/4) = (−1/2, −1/2, 9/4)。d² = 1/4 + 1/4 + 81/16 = 4/16 + 4/16 + 81/16 = 89/16。89 素数，d = √89/4 ≈ 2.358495。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification"
+  ]
+}

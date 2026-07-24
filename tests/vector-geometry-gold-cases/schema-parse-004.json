@@ -1,0 +1,21 @@
+{
+  "caseId": "schema-parse-004",
+  "category": "schema-parse",
+  "description": "schema 解析：缺少必需集合的文档报 invalid-input",
+  "input": {
+    "solver": "schema-parse",
+    "document": {
+      "schemaVersion": "1.0.0",
+      "sceneId": "s",
+      "title": "t"
+    }
+  },
+  "expectedStatus": "invalid-input",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：文档缺 points/vectors/lines/planes/requestedAnalysis 必需键 ⟹ 结构校验失败，返回 invalid-input 及 issues。",
+  "validationRules": []
+}

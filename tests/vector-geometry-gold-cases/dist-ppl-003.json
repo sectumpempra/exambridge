@@ -1,0 +1,61 @@
+{
+  "caseId": "dist-ppl-003",
+  "category": "point-plane-distance",
+  "description": "距离为 0：点在平面内，分类 point-in-plane",
+  "input": {
+    "solver": "pointPlaneDistance",
+    "point": {
+      "pointId": "P",
+      "label": "P",
+      "position": {
+        "x": "1",
+        "y": "-1",
+        "z": "2"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "A",
+        "label": "A",
+        "position": {
+          "x": "2",
+          "y": "0",
+          "z": "1"
+        }
+      },
+      "normal": {
+        "x": "3",
+        "y": "-1",
+        "z": "2"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "point-in-plane",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "0",
+      "radicand": "1",
+      "decimal": "0.000000"
+    },
+    "foot": [
+      "1",
+      "-1",
+      "2"
+    ]
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：平面 r·n = A·n = 6+0+2 = 8；P·n = 3+1+4 = 8；signed = 0 → d = 0，F = P，分类 point-in-plane。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-in-plane",
+    "connector-parallel-to-normal"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "caseId": "dist-pll-002",
+  "category": "parallel-lines-distance",
+  "description": "重合：两直线实为同一条，距离 0 分类 lines-coincident",
+  "input": {
+    "solver": "parallelLinesDistance",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "1",
+          "y": "1",
+          "z": "1"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "-1",
+        "z": "2"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "2",
+          "y": "0",
+          "z": "3"
+        }
+      },
+      "direction": {
+        "x": "-2",
+        "y": "2",
+        "z": "-4"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "lines-coincident",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "0",
+      "radicand": "1",
+      "decimal": "0.000000"
+    },
+    "segmentEnd1": [
+      "2",
+      "0",
+      "3"
+    ],
+    "segmentEnd2": [
+      "2",
+      "0",
+      "3"
+    ]
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：方向互为 −2 倍，平行；(2,0,3) = (1,1,1) + 1·(1,−1,2)，A2 在 l1 上 → λ = 6/6 = 1，F = (2,0,3) = A2，d = 0 → lines-coincident。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-on-line1",
+    "connector-perpendicular-to-line1",
+    "connector-perpendicular-to-line2"
+  ]
+}

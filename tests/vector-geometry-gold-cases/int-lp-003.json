@@ -1,0 +1,60 @@
+{
+  "caseId": "int-lp-003",
+  "category": "line-plane-intersection",
+  "description": "线面求交：平行不在平面内，无解",
+  "input": {
+    "solver": "linePlaneIntersection",
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "l-A",
+        "label": "l-A",
+        "position": {
+          "x": "1",
+          "y": "1",
+          "z": "3"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "1",
+        "z": "0"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "2"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "parallel-no-intersection"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b·n = 0 但 a·n − d0 = 3 − 2 = 1 ≠ 0 ⟹ 直线与平面永不相交。",
+  "validationRules": [
+    {
+      "rule": "base-point-substitution",
+      "passed": false
+    },
+    "relation-classification"
+  ]
+}

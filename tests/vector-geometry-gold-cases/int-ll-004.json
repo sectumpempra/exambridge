@@ -1,0 +1,57 @@
+{
+  "caseId": "int-ll-004",
+  "category": "line-line-intersection",
+  "description": "线线求交：两直线重合，无穷多交点",
+  "input": {
+    "solver": "lineLineIntersection",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "l1-A",
+        "label": "l1-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "l2-A",
+        "label": "l2-A",
+        "position": {
+          "x": "2",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "2",
+        "y": "0",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "coincident-infinite"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b2 = 2b1 ⟹ 平行；基点连线 (2,0,0) = 2b1 ⟹ 与方向平行 ⟺ 两直线重合，每个点都是解。",
+  "validationRules": [
+    "directions-relation",
+    "relation-classification"
+  ]
+}

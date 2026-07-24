@@ -1,0 +1,45 @@
+{
+  "caseId": "dist-pp-002",
+  "category": "point-point-distance",
+  "description": "普通：距离为无理数 √29，必须以精确根式表达",
+  "input": {
+    "solver": "pointPointDistance",
+    "point1": {
+      "pointId": "A",
+      "label": "A",
+      "position": {
+        "x": "1",
+        "y": "2",
+        "z": "3"
+      }
+    },
+    "point2": {
+      "pointId": "B",
+      "label": "B",
+      "position": {
+        "x": "4",
+        "y": "6",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "distinct-points",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "1",
+      "radicand": "29",
+      "decimal": "5.385165"
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：差向量 (3, 4, −2)，d² = 9 + 16 + 4 = 29。29 是无平方因子素数，d = √29 ≈ 5.385165。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification"
+  ]
+}

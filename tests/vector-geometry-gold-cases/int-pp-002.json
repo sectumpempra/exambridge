@@ -1,0 +1,57 @@
+{
+  "caseId": "int-pp-002",
+  "category": "plane-plane-intersection",
+  "description": "面面求交：平行不重合，无交线",
+  "input": {
+    "solver": "planePlaneIntersection",
+    "plane1": {
+      "planeId": "pl1",
+      "label": "pl1",
+      "point": {
+        "pointId": "pl1-A",
+        "label": "pl1-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    },
+    "plane2": {
+      "planeId": "pl2",
+      "label": "pl2",
+      "point": {
+        "pointId": "pl2-A",
+        "label": "pl2-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "5"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "parallel-no-intersection"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：法向量相同 ⟹ 平行；规范化方程 (0,0,1,0) ≠ (0,0,1,5) ⟹ 不重合 ⟹ 无解。",
+  "validationRules": [
+    "normals-relation",
+    "relation-classification"
+  ]
+}

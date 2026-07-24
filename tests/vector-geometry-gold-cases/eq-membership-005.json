@@ -1,0 +1,64 @@
+{
+  "caseId": "eq-membership-005",
+  "category": "point-membership",
+  "description": "点在线上判定：近似输入走容差路径并记录容差",
+  "input": {
+    "solver": "isPointOnLine",
+    "point": {
+      "x": {
+        "input": "2",
+        "approximation": "2"
+      },
+      "y": {
+        "input": "4",
+        "approximation": "4"
+      },
+      "z": {
+        "input": "6.0000000001",
+        "approximation": "6.0000000001"
+      }
+    },
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "l-A",
+        "label": "l-A",
+        "position": {
+          "x": {
+            "input": "0",
+            "approximation": "0"
+          },
+          "y": {
+            "input": "0",
+            "approximation": "0"
+          },
+          "z": {
+            "input": "0",
+            "approximation": "0"
+          }
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "2",
+        "z": "3"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "on-line",
+    "onLine": true,
+    "exact": false
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：残差 (−2ε, ε, 0)（ε = 1e-10），范数 ≈ 2.24e-10 ≤ max(1e-9, 1e-9·|P−a||b|) ⟹ 容差路径判在线上，exact = false 且记录容差。",
+  "validationRules": [
+    "point-on-line-residual",
+    "relation-classification"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "caseId": "int-pp-001",
+  "category": "plane-plane-intersection",
+  "description": "面面求交：交线方向 n1×n2 且过验证点",
+  "input": {
+    "solver": "planePlaneIntersection",
+    "plane1": {
+      "planeId": "pl1",
+      "label": "pl1",
+      "point": {
+        "pointId": "pl1-A",
+        "label": "pl1-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "3"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    },
+    "plane2": {
+      "planeId": "pl2",
+      "label": "pl2",
+      "point": {
+        "pointId": "pl2-A",
+        "label": "pl2-A",
+        "position": {
+          "x": "0",
+          "y": "2",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "1",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "intersecting-in-line",
+    "intersectionLine": {
+      "point": [
+        "0",
+        "2",
+        "3"
+      ],
+      "direction": [
+        "-1",
+        "0",
+        "0"
+      ]
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：z = 3（d1 = 3）与 y = 2（d2 = 2）。方向 = n1×n2 = (0,0,1)×(0,1,0) = (0·0−1·1, 1·0−0·0, 0·1−0·0) = (−1,0,0)；Δ = 1，α = (3·1−2·0)/1 = 3，β = (2·1−3·0)/1 = 2，r0 = 3(0,0,1)+2(0,1,0) = (0,2,3)。验证：r0·n1 = 3 ✓，r0·n2 = 2 ✓，方向·n1 = 方向·n2 = 0 ✓。",
+  "validationRules": [
+    "direction-perpendicular-to-normal1",
+    "direction-perpendicular-to-normal2",
+    "point-on-plane1",
+    "point-on-plane2",
+    "relation-classification"
+  ]
+}

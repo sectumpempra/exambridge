@@ -16,7 +16,7 @@ ExamBridge 将分散在不同考试局、资格和考季中的公开考试信息
 | Paper 中心 | 检索试卷、连接课程与考纲，并进入已核验历年材料 | 10 门数学课程已接入试点；4MA1、YMA01 暂为官方入口，其余 8 门已有逐份记录；默认跳转考试局官方文件 |
 | 考纲对比 | 比较知识树、课程与相关 Paper | 不根据相似名称猜测课程映射 |
 | 等级预测 | 按正式 award route 计算或明确标注地预估等级 | 官方模式支持 AQA 7357、OCR H240、CAIE 9709 及原有 Edexcel IAL Mathematics；预估模式只用于已验证路线且官方目标考季尚未发布时 |
-| 教学工具 | 刷题规划、函数画图、导出与分享 | 本地偏好仅保存在浏览器中 |
+| 教学工具 | 刷题规划、函数画图、二维力学和空间向量实验室 | 实验室计算使用确定性求解器；本地场景只保存在浏览器中 |
 
 待核验记录不会进入等级预测。尚未发布、未举行或取消的考季保持缺失，不生成推测值；无法唯一识别的冲突记录进入隔离报告。
 
@@ -44,6 +44,8 @@ ExamBridge 将分散在不同考试局、资格和考季中的公开考试信息
 - `src/course-context`：课程目录、能力声明、上下文恢复与紧凑索引
 - `src/domain-v2/awards`：官方整体资格路线、非官方预估、分享恢复与来源证明
 - `src/domain-v2/past-papers`：历年材料 schema、课程映射、配套文件关联与安全链接解析
+- `src/features/vector-geometry-lab`：空间向量 schema、精确求解器、解释模型与懒加载三维渲染层
+- `src/pages/vector-geometry-lab`：16 个教学场景、坐标编辑、场景存储和导出界面
 - `src/domain-v2` 其他目录：计算领域模型与资格策略
 - `src/adapters-v2`：旧数据转换与统一适配
 - `src/data/official`：已核验官方修正版
@@ -79,6 +81,7 @@ pnpm test:e2e
 ```
 
 `pnpm check` 包含课程目录生成、数据审计、TypeScript、ESLint、单元测试、生产构建和产物预算检查。CI 还会执行浏览器测试与凭据扫描。
+Vector Geometry Lab 另有 `pnpm test:vector-geometry:coverage` 门禁，覆盖 88 个独立 Gold Cases、四层模块和教学界面。
 
 ## 数据治理
 

@@ -1,0 +1,33 @@
+{
+  "caseId": "eq-line-001",
+  "category": "line-equations",
+  "description": "直线方程：点+方向生成三形式",
+  "input": {
+    "solver": "lineEquationsFromPointDirection",
+    "point": {
+      "x": "1",
+      "y": "2",
+      "z": "3"
+    },
+    "direction": {
+      "x": "4",
+      "y": "5",
+      "z": "6"
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "vector": "r = (1, 2, 3) + λ(4, 5, 6)",
+    "parametric": "x = 1 + 4λ, y = 2 + 5λ, z = 3 + 6λ",
+    "symmetricApplicable": true,
+    "symmetric": "(x - 1)/4 = (y - 2)/5 = (z - 3)/6"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：向量式 r = a + λb；参数式逐分量读出 x = 1+4λ 等；对称式各分量解出 λ 并等连 (x−1)/4 = (y−2)/5 = (z−3)/6。",
+  "validationRules": [
+    "direction-non-zero"
+  ]
+}

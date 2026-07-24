@@ -1,0 +1,64 @@
+{
+  "caseId": "ang-pp-005",
+  "category": "plane-plane-angle",
+  "description": "根式商余弦：cos θ = √6/3，θ ≈ 35.264390°",
+  "input": {
+    "solver": "planePlaneAngle",
+    "plane1": {
+      "planeId": "p1",
+      "label": "p1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "1",
+        "z": "1"
+      }
+    },
+    "plane2": {
+      "planeId": "p2",
+      "label": "p2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "1",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "acute",
+    "cosine": {
+      "kind": "exact",
+      "coefficient": "1/3",
+      "radicand": "6"
+    },
+    "angleDegrees": 35.264389682754654
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：n1·n2 = 2；|n1| = √3，|n2| = √2，乘积 √6；cos θ = 2/√6 = (1/3)√6；θ = acos(√6/3) ≈ 35.264389682754654°，acute。",
+  "validationRules": [
+    "cosine-within-bounds",
+    "angle-range",
+    "angle-classification"
+  ]
+}

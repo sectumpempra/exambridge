@@ -1,0 +1,57 @@
+{
+  "caseId": "int-lp-002",
+  "category": "line-plane-intersection",
+  "description": "线面求交：直线在平面内，无穷多解",
+  "input": {
+    "solver": "linePlaneIntersection",
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "l-A",
+        "label": "l-A",
+        "position": {
+          "x": "1",
+          "y": "1",
+          "z": "2"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "1",
+        "z": "0"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "2"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "contained-infinite"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b·n = 0 且 a·n − d0 = 2 − 2 = 0 ⟹ 整条直线满足平面方程，每个点都是解。",
+  "validationRules": [
+    "base-point-substitution",
+    "relation-classification"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "caseId": "ang-vv-004",
+  "category": "vector-angle",
+  "description": "同向：两向量互为正倍数，夹角 0°，余弦精确为 1",
+  "input": {
+    "solver": "vectorAngle",
+    "vector1": {
+      "x": "1",
+      "y": "2",
+      "z": "2"
+    },
+    "vector2": {
+      "x": "2",
+      "y": "4",
+      "z": "4"
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "same-direction",
+    "cosine": {
+      "kind": "exact",
+      "coefficient": "1",
+      "radicand": "1"
+    },
+    "angleDegrees": 0
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：v2 = 2·v1；v1·v2 = 2+8+8 = 18；|v1| = 3，|v2| = 6；cos θ = 18/18 = 1 → θ = 0°，same-direction。应触发 parallel-cross-zero 残差验证。",
+  "validationRules": [
+    "cosine-within-bounds",
+    "angle-range",
+    "angle-classification",
+    "parallel-cross-zero"
+  ]
+}

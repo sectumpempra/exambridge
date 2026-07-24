@@ -1,0 +1,60 @@
+{
+  "caseId": "rel-lp-001",
+  "category": "line-plane-relation",
+  "description": "线面关系：方向平行平面且基点在平面内，直线含于平面",
+  "input": {
+    "solver": "linePlaneRelation",
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "l-A",
+        "label": "l-A",
+        "position": {
+          "x": "1",
+          "y": "1",
+          "z": "2"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "1",
+        "z": "0"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "2"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "contained-in-plane",
+    "dotProduct": "0",
+    "basePointResidual": "0"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：平面 z = 2（d0 = 2）。b·n = (1,1,0)·(0,0,1) = 0；a·n − d0 = 2 − 2 = 0 ⟹ 直线含于平面。",
+  "validationRules": [
+    "dot-product-evidence",
+    "base-point-substitution",
+    "relation-classification"
+  ]
+}

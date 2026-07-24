@@ -1,0 +1,38 @@
+{
+  "caseId": "ang-vv-003",
+  "category": "vector-angle",
+  "description": "钝角：135°，余弦精确形 −√2/2（向量夹角保留符号，范围 0°–180°）",
+  "input": {
+    "solver": "vectorAngle",
+    "vector1": {
+      "x": "1",
+      "y": "0",
+      "z": "0"
+    },
+    "vector2": {
+      "x": "-1",
+      "y": "1",
+      "z": "0"
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "obtuse",
+    "cosine": {
+      "kind": "exact",
+      "coefficient": "-1/2",
+      "radicand": "2"
+    },
+    "angleDegrees": 135
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：v1·v2 = −1；cos θ = −1/√2 = −(1/2)√2；θ = 135°，obtuse。向量夹角与直线夹角不同：不取绝对值。",
+  "validationRules": [
+    "cosine-within-bounds",
+    "angle-range",
+    "angle-classification"
+  ]
+}

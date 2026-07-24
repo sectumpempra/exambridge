@@ -1,0 +1,62 @@
+{
+  "caseId": "dist-pl-002",
+  "category": "point-line-distance",
+  "description": "方向倍乘：方向 (0,0,5) 非单位，距离恰为整数 5",
+  "input": {
+    "solver": "pointLineDistance",
+    "point": {
+      "pointId": "P",
+      "label": "P",
+      "position": {
+        "x": "3",
+        "y": "4",
+        "z": "7"
+      }
+    },
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "A",
+        "label": "A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "1"
+        }
+      },
+      "direction": {
+        "x": "0",
+        "y": "0",
+        "z": "5"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "point-off-line",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "5",
+      "radicand": "1",
+      "decimal": "5.000000"
+    },
+    "foot": [
+      "0",
+      "0",
+      "7"
+    ],
+    "parameter": "6/5"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：P−a = (3, 4, 6)；λ = ((3,4,6)·(0,0,5))/25 = 30/25 = 6/5；F = (0, 0, 1) + (6/5)(0, 0, 5) = (0, 0, 7)；P−F = (3, 4, 0)；d = √(9+16) = 5。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-on-line",
+    "connector-perpendicular-to-direction"
+  ]
+}

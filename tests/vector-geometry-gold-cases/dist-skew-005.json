@@ -1,0 +1,80 @@
+{
+  "caseId": "dist-skew-005",
+  "category": "skew-lines-distance",
+  "description": "几乎平行（精确路径）：方向偏差 10⁻⁹ 的精确分数，仍按异面精确求解，距离恰为 1",
+  "input": {
+    "solver": "skewLinesDistance",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "1"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "1/1000000000",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "skew",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "1",
+      "radicand": "1",
+      "decimal": "1.000000"
+    },
+    "foot1": [
+      "0",
+      "0",
+      "0"
+    ],
+    "foot2": [
+      "0",
+      "0",
+      "1"
+    ],
+    "parameter1": "0",
+    "parameter2": "0"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b1×b2 = (0, 0, 10⁻⁹) ≠ 0（精确分数输入，不走近似容差），非平行。w = (0,0,1)；w·b1 = 0，w·b2 = 0 → s = t = 0；F1 = (0,0,0)，F2 = (0,0,1)。连接器 (0,0,1) 与 b1、b2 点积均为 0 ✓，d = 1。三重积 = w·(b1×b2) = 10⁻⁹，|b1×b2| = 10⁻⁹，d = 1 ✓。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-on-line1",
+    "foot-on-line2",
+    "connector-perpendicular-to-line1",
+    "connector-perpendicular-to-line2",
+    "triple-product-consistency"
+  ]
+}

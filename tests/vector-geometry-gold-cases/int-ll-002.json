@@ -1,0 +1,57 @@
+{
+  "caseId": "int-ll-002",
+  "category": "line-line-intersection",
+  "description": "线线求交：平行不重合，无交点",
+  "input": {
+    "solver": "lineLineIntersection",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "l1-A",
+        "label": "l1-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "l2-A",
+        "label": "l2-A",
+        "position": {
+          "x": "0",
+          "y": "1",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "parallel-no-intersection"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b1 × b2 = 0（平行）；基点连线 (0,1,0) 与方向 (1,0,0) 的叉积 = (0,0,−1) ≠ 0 ⟹ 不重合 ⟹ 无交点。",
+  "validationRules": [
+    "directions-relation",
+    "relation-classification"
+  ]
+}

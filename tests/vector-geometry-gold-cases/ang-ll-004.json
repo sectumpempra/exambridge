@@ -1,0 +1,52 @@
+{
+  "caseId": "ang-ll-004",
+  "category": "line-line-angle",
+  "description": "零方向：直线方向向量为零时必须显式拒绝",
+  "input": {
+    "solver": "lineLineAngle",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "zero-vector",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：零方向不能定义直线（schema 层也会拒绝），core 层必须独立给出结构化 zero-vector 失败。",
+  "validationRules": []
+}

@@ -1,0 +1,52 @@
+{
+  "caseId": "dist-ppl2-003",
+  "category": "parallel-planes-distance",
+  "description": "结构化错误：不平行的两个平面调用平行平面距离求解器 → not-parallel",
+  "input": {
+    "solver": "parallelPlanesDistance",
+    "plane1": {
+      "planeId": "p1",
+      "label": "p1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "plane2": {
+      "planeId": "p2",
+      "label": "p2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "1",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "not-parallel",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：n1×n2 = (1,0,0)×(0,1,0) = (0,0,1) ≠ 0，两平面相交于一条直线而非平行。必须返回结构化 not-parallel。",
+  "validationRules": []
+}
