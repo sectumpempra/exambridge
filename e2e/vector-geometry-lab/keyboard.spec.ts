@@ -12,19 +12,26 @@
  */
 
 import { expect, test } from "@playwright/test";
-import { gotoApp, tabKey, tabUntil, waitViewportReady } from "./helpers.js";
+import {
+  gotoApp,
+  tabKey,
+  tabUntil,
+  waitViewportSettled,
+} from "./helpers.js";
 
 test.describe("keyboard operation", () => {
   test("main controls are reachable by keyboard", async ({ page, browserName }) => {
     await gotoApp(page);
-    await waitViewportReady(page);
+    const viewportStatus = await waitViewportSettled(page);
     await page.locator("body").click({ position: { x: 1, y: 1 } });
 
     const key = tabKey(browserName);
     const wanted: Array<{ name: string; found: boolean }> = [
       { name: "example select", found: false },
       { name: "object show checkbox", found: false },
-      { name: "toolbar view button", found: false },
+      ...(viewportStatus === "ready"
+        ? [{ name: "toolbar view button", found: false }]
+        : []),
       { name: "coordinate input", found: false },
       { name: "save-name input", found: false },
       { name: "export button", found: false },
@@ -61,7 +68,7 @@ test.describe("keyboard operation", () => {
 
   test("primary actions complete from the keyboard alone", async ({ page, browserName }) => {
     await gotoApp(page);
-    await waitViewportReady(page);
+    const viewportStatus = await waitViewportSettled(page);
     await page.locator("body").click({ position: { x: 1, y: 1 } });
     const forward = tabKey(browserName);
     const backward = tabKey(browserName, "backward");
@@ -93,19 +100,23 @@ test.describe("keyboard operation", () => {
     await page.keyboard.press("Space");
     await expect(page.getByLabel("Show point P")).toBeChecked();
 
-    // 3. Change a camera view with Enter.
-    const onTop = await tabUntil(
-      page,
-      (s) => s.tag === "button" && s.label === "Top",
-      80,
-      forward,
-    );
-    expect(onTop, "view button reachable").not.toBeNull();
-    await page.keyboard.press("Enter");
-    await expect(page.getByRole("button", { name: "Top", exact: true })).toHaveAttribute(
-      "aria-pressed",
-      "true",
-    );
+    // 3. Change a camera view when WebGL is available. In headless runners
+    // without WebGL these controls are intentionally disabled and omitted
+    // from the keyboard sequence.
+    if (viewportStatus === "ready") {
+      const onTop = await tabUntil(
+        page,
+        (s) => s.tag === "button" && s.label === "Top",
+        80,
+        forward,
+      );
+      expect(onTop, "view button reachable").not.toBeNull();
+      await page.keyboard.press("Enter");
+      await expect(page.getByRole("button", { name: "Top", exact: true })).toHaveAttribute(
+        "aria-pressed",
+        "true",
+      );
+    }
 
     // 4. Edit a coordinate by typing: Q x 4 → 1 gives |PQ| = 4.
     const onCoord = await tabUntil(

@@ -4,12 +4,16 @@
  */
 
 import { expect, test } from "@playwright/test";
-import { gotoApp, waitViewportReady } from "./helpers.js";
+import {
+  gotoApp,
+  requireViewportReady,
+  waitViewportSettled,
+} from "./helpers.js";
 
 test.describe("display controls", () => {
   test("per-object visibility and opacity controls respond", async ({ page }) => {
     await gotoApp(page);
-    await waitViewportReady(page);
+    const initialViewportStatus = await waitViewportSettled(page);
 
     const showU = page.getByLabel("Show vector u");
     await expect(showU).toBeChecked();
@@ -26,15 +30,19 @@ test.describe("display controls", () => {
     await planeOpacity.fill("60");
     await expect(planeOpacity).toHaveValue("60");
 
-    // The renderer survived all overlays.
-    await expect(page.getByTestId("viewport3d")).toHaveAttribute("data-status", "ready");
+    // The renderer state remains stable; controls are still honest when a
+    // CI browser has no WebGL and the text result path remains available.
+    await expect(page.getByTestId("viewport3d")).toHaveAttribute(
+      "data-status",
+      initialViewportStatus,
+    );
   });
 
   test("view presets, projection switch and camera reset update toolbar state", async ({
     page,
   }) => {
     await gotoApp(page);
-    await waitViewportReady(page);
+    await requireViewportReady(page);
 
     const top = page.getByRole("button", { name: "Top", exact: true });
     await top.click();

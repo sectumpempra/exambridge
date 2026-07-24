@@ -5,7 +5,7 @@
  */
 
 import { expect, test } from "@playwright/test";
-import { gotoApp, selectExample, waitViewportReady } from "./helpers.js";
+import { gotoApp, selectExample, waitViewportSettled } from "./helpers.js";
 
 test.beforeEach(async ({ page }) => {
   // Media emulation (stage-8 task §A): the app must stay fully usable.
@@ -29,13 +29,16 @@ test.describe("prefers-reduced-motion", () => {
     expect(transitionDuration).toBe("0s");
 
     // ... and the lab still computes, renders and switches examples.
-    await waitViewportReady(page);
+    const viewportStatus = await waitViewportSettled(page);
     await selectExample(page, "skew-lines");
     await expect(page.getByTestId("explanation-dist-skew")).toContainText("distance = 2");
 
     // The user can still override the switch explicitly.
     await toggle.click();
     await expect(toggle).toHaveAttribute("aria-pressed", "false");
-    await expect(page.getByTestId("viewport3d")).toHaveAttribute("data-status", "ready");
+    await expect(page.getByTestId("viewport3d")).toHaveAttribute(
+      "data-status",
+      viewportStatus,
+    );
   });
 });

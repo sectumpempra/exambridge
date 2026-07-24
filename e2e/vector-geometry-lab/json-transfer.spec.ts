@@ -42,7 +42,7 @@ test.describe("JSON export / import", () => {
     await writeFile(filePath, "{ not json at all ");
     await page.getByLabel("Import scene JSON file").setInputFiles(filePath);
 
-    const alert = page.getByRole("alert").first();
+    const alert = page.getByRole("alert").filter({ hasText: "not valid JSON" });
     await expect(alert).toContainText("not valid JSON");
     await expect(alert).toContainText("Nothing was imported");
     await expect(page.getByTestId("explanation-angle-vv")).toBeVisible();
@@ -58,7 +58,9 @@ test.describe("JSON export / import", () => {
     );
     await page.getByLabel("Import scene JSON file").setInputFiles(filePath);
 
-    const alert = page.getByRole("alert").first();
+    const alert = page
+      .getByRole("alert")
+      .filter({ hasText: 'Unsupported schemaVersion "99.0.0"' });
     await expect(alert).toContainText('Unsupported schemaVersion "99.0.0"');
     await expect(page.getByTestId("explanation-angle-vv")).toBeVisible();
   });

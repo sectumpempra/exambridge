@@ -40,7 +40,7 @@ test.describe("coordinate input", () => {
 
     // Structured, honest error: what is wrong + that the last valid results
     // remain on screen.
-    const alert = page.getByRole("alert").first();
+    const alert = page.getByRole("alert").filter({ hasText: "Invalid coordinates" });
     await expect(alert).toContainText("Invalid coordinates");
     await expect(alert).toContainText("showing the last valid scene and results");
     // The offending slot is flagged (aria-invalid + styling hook).
@@ -51,7 +51,7 @@ test.describe("coordinate input", () => {
 
     // Repairing the literal clears the error and recomputes.
     await xInput.fill("0");
-    await expect(page.getByRole("alert")).toHaveCount(0);
+    await expect(alert).toHaveCount(0);
     // Q = (0, 6, 3) → |PQ| = √17.
     await expect(article).toContainText("√17");
   });

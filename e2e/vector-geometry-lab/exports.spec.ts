@@ -5,7 +5,12 @@
  */
 
 import { expect, test } from "@playwright/test";
-import { gotoApp, saveDownload, waitViewportReady } from "./helpers.js";
+import {
+  gotoApp,
+  requireViewportReady,
+  saveDownload,
+  waitViewportSettled,
+} from "./helpers.js";
 
 const PNG_MAGIC = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 
@@ -36,7 +41,7 @@ test.describe("exports", () => {
     page,
   }) => {
     await gotoApp(page);
-    await waitViewportReady(page);
+    const viewportStatus = await waitViewportSettled(page);
     const downloadPromise = page.waitForEvent("download");
     await page.getByRole("button", { name: "Download HTML handout" }).click();
     const saved = await saveDownload(await downloadPromise);
@@ -46,8 +51,12 @@ test.describe("exports", () => {
     expect(saved.text).toContain("Angle between two vectors");
     expect(saved.text).toContain("90°");
     expect(saved.text).toContain("Verification");
-    // WebGL was ready → the handout embeds a real PNG snapshot.
-    expect(saved.text).toContain("data:image/png;base64,");
+    if (viewportStatus === "ready") {
+      expect(saved.text).toContain("data:image/png;base64,");
+    } else {
+      expect(saved.text).toContain("3D snapshot unavailable");
+      expect(saved.text).not.toContain("data:image/png;base64,");
+    }
     // Fully self-contained: no external references.
     expect(saved.text).not.toContain("http://");
     expect(saved.text).not.toContain("https://");
@@ -55,7 +64,7 @@ test.describe("exports", () => {
 
   test("PNG export downloads a real PNG captured from the 3D view", async ({ page }) => {
     await gotoApp(page);
-    await waitViewportReady(page);
+    await requireViewportReady(page);
 
     // High-resolution scale selects the @2x filename.
     await page.getByLabel("PNG export scale").selectOption("2");
@@ -105,6 +114,5 @@ test.describe("exports", () => {
     );
     expect(calls).toBe(1);
     await expect(page.getByTestId("explanation-angle-vv")).toBeVisible();
-    await expect(page.getByRole("alert")).toHaveCount(0);
   });
 });

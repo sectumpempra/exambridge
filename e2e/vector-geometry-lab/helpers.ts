@@ -3,7 +3,7 @@
  * build served by the Playwright webServer — no jsdom, no module stubs.
  */
 
-import { expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 import type { Download, Page } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 
@@ -26,6 +26,28 @@ export async function waitViewportReady(page: Page): Promise<void> {
   await expect(page.getByTestId("viewport3d")).toHaveAttribute("data-status", "ready", {
     timeout: 30_000,
   });
+}
+
+/** Waits for the renderer preflight to settle without assuming WebGL exists. */
+export async function waitViewportSettled(
+  page: Page,
+): Promise<"ready" | "unavailable"> {
+  const viewport = page.getByTestId("viewport3d");
+  await expect
+    .poll(() => viewport.getAttribute("data-status"), { timeout: 30_000 })
+    .toMatch(/^(ready|unavailable)$/);
+  const status = await viewport.getAttribute("data-status");
+  return status === "ready" ? "ready" : "unavailable";
+}
+
+/** Skips only a 3D-specific assertion when the runner has no usable WebGL. */
+export async function requireViewportReady(page: Page): Promise<void> {
+  const status = await waitViewportSettled(page);
+  test.skip(
+    status !== "ready",
+    "This runner has no usable WebGL; text and deterministic results are tested separately.",
+  );
+  await waitViewportReady(page);
 }
 
 /** Switches the built-in example by option value (the example id). */

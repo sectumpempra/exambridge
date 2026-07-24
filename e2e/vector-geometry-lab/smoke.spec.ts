@@ -11,7 +11,7 @@
  */
 
 import { expect, test } from "@playwright/test";
-import { gotoApp, waitViewportReady } from "./helpers.js";
+import { gotoApp, requireViewportReady } from "./helpers.js";
 
 test.describe("application smoke", () => {
   test("loads with the default example solved and the full text solution", async ({
@@ -60,7 +60,7 @@ test.describe("application smoke", () => {
     page,
   }) => {
     await gotoApp(page);
-    await waitViewportReady(page);
+    await requireViewportReady(page);
 
     const canvas = page.getByLabel(/3D vector geometry view/);
     await expect(canvas).toBeVisible();

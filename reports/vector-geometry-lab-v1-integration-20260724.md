@@ -57,7 +57,8 @@ Vector Geometry Lab V1 已作为 ExamBridge 的独立懒加载教学工具接入
 - ExamBridge 主测试：92 个文件，1383/1383 通过。
 - Mechanics Lab：18 个文件，249/249 通过；statements 98.70%，branches 91.02%。
 - Vector Geometry Lab：41 个文件，835/835 通过；statements 96.63%，branches 88.81%。
-- Playwright 全站矩阵：293 通过，5 个仅在显式启用生产 AI 环境时运行的用例按设计跳过。
+- Playwright 全站本地矩阵：293 通过，5 个仅在显式启用生产 AI 环境时运行的用例按设计跳过。
+- CI 环境兼容补丁后的 Lab 定向矩阵：104/104 通过，覆盖三浏览器及无 WebGL 降级。
 - 覆盖 Chromium、Firefox、WebKit、320/360/390/768/1024px、WebGL 禁用和截图状态。
 
 ### 构建与性能
@@ -66,7 +67,7 @@ Vector Geometry Lab V1 已作为 ExamBridge 的独立懒加载教学工具接入
 - 静态生产构建：通过。
 - 主站初始 JavaScript：178.1 KiB gzip。
 - Vector Geometry 路由：135.03 KiB raw / 38.52 KiB gzip。
-- Vector Geometry 样式：10.45 KiB raw / 2.62 KiB gzip。
+- Vector Geometry 样式：10.57 KiB raw / 2.65 KiB gzip。
 - Three.js 懒加载 chunk：539.25 KiB raw / 136.33 KiB gzip。
 - Service Worker precache：238 个文件。
 - Knowledge V5-only 发布审计：通过。
