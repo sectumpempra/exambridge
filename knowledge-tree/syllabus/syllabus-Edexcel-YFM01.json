@@ -1,0 +1,724 @@
+{
+  "board": "Edexcel",
+  "program": "International A-Level Further Mathematics (IAL)",
+  "specification_code": "XFM01 (IAS) / YFM01 (IAL)",
+  "unit_codes": {
+    "FP1": "WFM01",
+    "FP2": "WFM02",
+    "FP3": "WFM03",
+    "M1": "WME01",
+    "M2": "WME02",
+    "M3": "WME03",
+    "S1": "WST01",
+    "S2": "WST02",
+    "S3": "WST03",
+    "D1": "WDM01"
+  },
+  "first_teaching": "2018",
+  "structure": "Modular - 10 units available (FP1-FP3, M1-M3, S1-S3, D1), 6 units for full IAL",
+  "total_units": 10,
+  "ias_requirement": "3 units (FP1 + two options)",
+  "ial_requirement": "5 units (FP1 + FP2 or FP3 + two options) OR 6 units",
+  "notes": "Must be taken alongside IAL Mathematics. Units used for Mathematics cannot be reused for Further Mathematics. 12 distinct units needed for both qualifications.",
+  "units": [
+    {
+      "unit_id": "FP1",
+      "name": "Further Pure Mathematics 1",
+      "duration": "1h 30m",
+      "marks": 75,
+      "weighting_ial": "20% or 16.7%",
+      "weighting_ias": "33.3%",
+      "availability": "January, June"
+    },
+    {
+      "unit_id": "FP2",
+      "name": "Further Pure Mathematics 2",
+      "duration": "1h 30m",
+      "marks": 75,
+      "weighting_ial": "20% or 16.7%",
+      "weighting_ias": "N/A",
+      "availability": "January, June"
+    },
+    {
+      "unit_id": "FP3",
+      "name": "Further Pure Mathematics 3",
+      "duration": "1h 30m",
+      "marks": 75,
+      "weighting_ial": "20% or 16.7%",
+      "weighting_ias": "N/A",
+      "availability": "January, June"
+    },
+    {
+      "unit_id": "M1",
+      "name": "Mechanics 1",
+      "duration": "1h 30m",
+      "marks": 75,
+      "weighting_ial": "16.7%",
+      "weighting_ias": "33.3%",
+      "availability": "January, June, October"
+    },
+    {
+      "unit_id": "M2",
+      "name": "Mechanics 2",
+      "duration": "1h 30m",
+      "marks": 75,
+      "weighting_ial": "16.7%",
+      "weighting_ias": "N/A",
+      "availability": "January, June, October"
+    },
+    {
+      "unit_id": "M3",
+      "name": "Mechanics 3",
+      "duration": "1h 30m",
+      "marks": 75,
+      "weighting_ial": "16.7%",
+      "weighting_ias": "N/A",
+      "availability": "January, June"
+    },
+    {
+      "unit_id": "S1",
+      "name": "Statistics 1",
+      "duration": "1h 30m",
+      "marks": 75,
+      "weighting_ial": "16.7%",
+      "weighting_ias": "33.3%",
+      "availability": "January, June, October"
+    },
+    {
+      "unit_id": "S2",
+      "name": "Statistics 2",
+      "duration": "1h 30m",
+      "marks": 75,
+      "weighting_ial": "16.7%",
+      "weighting_ias": "N/A",
+      "availability": "January, June, October"
+    },
+    {
+      "unit_id": "S3",
+      "name": "Statistics 3",
+      "duration": "1h 30m",
+      "marks": 75,
+      "weighting_ial": "16.7%",
+      "weighting_ias": "N/A",
+      "availability": "January, June"
+    },
+    {
+      "unit_id": "D1",
+      "name": "Decision Mathematics 1",
+      "duration": "1h 30m",
+      "marks": 75,
+      "weighting_ial": "16.7%",
+      "weighting_ias": "33.3%",
+      "availability": "January, June"
+    }
+  ],
+  "topics": [
+    {
+      "topic_id": "FP1.1",
+      "name": "Complex Numbers",
+      "category": "Further Pure Mathematics 1",
+      "unit": "FP1",
+      "subtopics": [
+        "Complex number arithmetic (Cartesian form)",
+        "Modulus and argument",
+        "Modulus-argument form",
+        "Conjugate complex numbers",
+        "Loci on the Argand diagram",
+        "Complex roots of quadratic equations"
+      ]
+    },
+    {
+      "topic_id": "FP1.2",
+      "name": "Roots of Equations",
+      "category": "Further Pure Mathematics 1",
+      "unit": "FP1",
+      "subtopics": [
+        "Roots of polynomial equations",
+        "Relations between roots and coefficients",
+        "Forming equations with transformed roots"
+      ]
+    },
+    {
+      "topic_id": "FP1.3",
+      "name": "Numerical Methods",
+      "category": "Further Pure Mathematics 1",
+      "unit": "FP1",
+      "subtopics": [
+        "Numerical solution of equations",
+        "Newton-Raphson method",
+        "Fixed-point iteration",
+        "Mid-point and trapezium rules"
+      ]
+    },
+    {
+      "topic_id": "FP1.4",
+      "name": "Coordinate Systems",
+      "category": "Further Pure Mathematics 1",
+      "unit": "FP1",
+      "subtopics": [
+        "Parabola y² = 4ax (parametric equations, tangents, normals)",
+        "Rectangular hyperbola xy = c²",
+        "Focus-directrix properties",
+        "Intersection of lines with conics"
+      ]
+    },
+    {
+      "topic_id": "FP1.5",
+      "name": "Matrix Algebra",
+      "category": "Further Pure Mathematics 1",
+      "unit": "FP1",
+      "subtopics": [
+        "Matrix operations (addition, multiplication)",
+        "Identity and zero matrices",
+        "Determinant of 2×2 and 3×3 matrices",
+        "Inverse of 2×2 and 3×3 matrices",
+        "Singular matrices"
+      ]
+    },
+    {
+      "topic_id": "FP1.6",
+      "name": "Transformations Using Matrices",
+      "category": "Further Pure Mathematics 1",
+      "unit": "FP1",
+      "subtopics": [
+        "Linear transformations in 2D",
+        "Reflections, rotations, enlargements",
+        "Composition of transformations",
+        "Invariant points and lines",
+        "Matrix representation of transformations"
+      ]
+    },
+    {
+      "topic_id": "FP1.7",
+      "name": "Series",
+      "category": "Further Pure Mathematics 1",
+      "unit": "FP1",
+      "subtopics": [
+        "Summation formulae (Σr, Σr², Σr³)",
+        "Method of differences",
+        "Telescoping series"
+      ]
+    },
+    {
+      "topic_id": "FP1.8",
+      "name": "Mathematical Induction",
+      "category": "Further Pure Mathematics 1",
+      "unit": "FP1",
+      "subtopics": [
+        "Proof by induction",
+        "Summation formulae proofs",
+        "Divisibility proofs",
+        "Matrix results proofs",
+        "Sequence formulae proofs"
+      ]
+    },
+    {
+      "topic_id": "FP2.1",
+      "name": "Inequalities",
+      "category": "Further Pure Mathematics 2",
+      "unit": "FP2",
+      "subtopics": [
+        "Algebraic inequalities",
+        "Inequalities involving modulus",
+        "Graphical solution of inequalities",
+        "Using calculus for inequalities"
+      ]
+    },
+    {
+      "topic_id": "FP2.2",
+      "name": "Series and Sequences",
+      "category": "Further Pure Mathematics 2",
+      "unit": "FP2",
+      "subtopics": [
+        "Maclaurin series",
+        "Taylor series",
+        "Standard expansions (e^x, sin x, cos x, ln(1+x))",
+        "Method of differences (advanced)"
+      ]
+    },
+    {
+      "topic_id": "FP2.3",
+      "name": "Complex Numbers (De Moivre's Theorem)",
+      "category": "Further Pure Mathematics 2",
+      "unit": "FP2",
+      "subtopics": [
+        "De Moivre's theorem",
+        "nth roots of unity",
+        "nth roots of complex numbers",
+        "Trigonometric identities from De Moivre's theorem",
+        "Loci in the Argand diagram (advanced)"
+      ]
+    },
+    {
+      "topic_id": "FP2.4",
+      "name": "First and Second Order Differential Equations",
+      "category": "Further Pure Mathematics 2",
+      "unit": "FP2",
+      "subtopics": [
+        "First order linear (integrating factor)",
+        "Second order homogeneous",
+        "Second order non-homogeneous",
+        "Complementary function and particular integral",
+        "Boundary/initial conditions"
+      ]
+    },
+    {
+      "topic_id": "FP2.5",
+      "name": "Polar Coordinates",
+      "category": "Further Pure Mathematics 2",
+      "unit": "FP2",
+      "subtopics": [
+        "Polar and Cartesian conversion",
+        "Sketching polar curves",
+        "Area enclosed by polar curves",
+        "Tangents parallel and perpendicular to initial line"
+      ]
+    },
+    {
+      "topic_id": "FP3.1",
+      "name": "Hyperbolic Functions",
+      "category": "Further Pure Mathematics 3",
+      "unit": "FP3",
+      "subtopics": [
+        "Definitions of sinh, cosh, tanh",
+        "Hyperbolic identities",
+        "Osborn's rule",
+        "Differentiation and integration of hyperbolic functions",
+        "Inverse hyperbolic functions",
+        "Derivatives of inverse hyperbolic functions"
+      ]
+    },
+    {
+      "topic_id": "FP3.2",
+      "name": "Coordinate Systems (Ellipse and Hyperbola)",
+      "category": "Further Pure Mathematics 3",
+      "unit": "FP3",
+      "subtopics": [
+        "Ellipse x²/a² + y²/b² = 1",
+        "Hyperbola x²/a² - y²/b² = 1",
+        "Parametric equations",
+        "Tangents and normals",
+        "Foci and directrices",
+        "Eccentricity"
+      ]
+    },
+    {
+      "topic_id": "FP3.3",
+      "name": "Further Differentiation and Integration",
+      "category": "Further Pure Mathematics 3",
+      "unit": "FP3",
+      "subtopics": [
+        "Reduction formulae",
+        "Improper integrals",
+        "Arc length",
+        "Surface area of revolution",
+        "Integrals involving inverse trig functions",
+        "Integrals involving hyperbolic functions"
+      ]
+    },
+    {
+      "topic_id": "FP3.4",
+      "name": "Further Vectors",
+      "category": "Further Pure Mathematics 3",
+      "unit": "FP3",
+      "subtopics": [
+        "Vector (cross) product",
+        "Scalar triple product",
+        "Equation of a plane",
+        "Angle between line and plane",
+        "Angle between planes",
+        "Shortest distance from point to plane",
+        "Shortest distance between skew lines"
+      ]
+    },
+    {
+      "topic_id": "FP3.5",
+      "name": "Further Matrix Algebra",
+      "category": "Further Pure Mathematics 3",
+      "unit": "FP3",
+      "subtopics": [
+        "Eigenvalues and eigenvectors of 2×2 and 3×3 matrices",
+        "Diagonalisation",
+        "Symmetric matrices and orthogonal diagonalisation",
+        "Cayley-Hamilton theorem"
+      ]
+    },
+    {
+      "topic_id": "M1.1",
+      "name": "Mathematical Modelling in Mechanics",
+      "category": "Mechanics 1",
+      "unit": "M1",
+      "subtopics": [
+        "Modelling assumptions",
+        "Constructing a mathematical model",
+        "Vectors in mechanics"
+      ]
+    },
+    {
+      "topic_id": "M1.2",
+      "name": "Kinematics",
+      "category": "Mechanics 1",
+      "unit": "M1",
+      "subtopics": [
+        "Motion in a straight line (suvat)",
+        "Motion under gravity",
+        "Velocity-time graphs",
+        "Projectiles"
+      ]
+    },
+    {
+      "topic_id": "M1.3",
+      "name": "Newton's Laws and Forces",
+      "category": "Mechanics 1",
+      "unit": "M1",
+      "subtopics": [
+        "Newton's laws of motion",
+        "Connected particles",
+        "Pulleys",
+        "Friction",
+        "Inclined planes"
+      ]
+    },
+    {
+      "topic_id": "M1.4",
+      "name": "Momentum and Impulse",
+      "category": "Mechanics 1",
+      "unit": "M1",
+      "subtopics": [
+        "Momentum and impulse",
+        "Conservation of momentum",
+        "Direct impact",
+        "Newton's law of restitution"
+      ]
+    },
+    {
+      "topic_id": "M1.5",
+      "name": "Statics and Moments",
+      "category": "Mechanics 1",
+      "unit": "M1",
+      "subtopics": [
+        "Moments",
+        "Equilibrium of rigid bodies",
+        "Centre of mass of simple shapes",
+        "Ladder problems"
+      ]
+    },
+    {
+      "topic_id": "M2.1",
+      "name": "Kinematics in a Plane",
+      "category": "Mechanics 2",
+      "unit": "M2",
+      "subtopics": [
+        "2D motion with vectors",
+        "Projectiles (advanced)",
+        "Motion in polar coordinates"
+      ]
+    },
+    {
+      "topic_id": "M2.2",
+      "name": "Centres of Mass",
+      "category": "Mechanics 2",
+      "unit": "M2",
+      "subtopics": [
+        "Centre of mass of a system of particles",
+        "Centre of mass of composite bodies",
+        "Frameworks",
+        "Sliding and toppling"
+      ]
+    },
+    {
+      "topic_id": "M2.3",
+      "name": "Work and Energy",
+      "category": "Mechanics 2",
+      "unit": "M2",
+      "subtopics": [
+        "Work done by a constant force",
+        "Kinetic and potential energy",
+        "Conservation of energy",
+        "Work-energy principle",
+        "Power"
+      ]
+    },
+    {
+      "topic_id": "M2.4",
+      "name": "Collisions",
+      "category": "Mechanics 2",
+      "unit": "M2",
+      "subtopics": [
+        "Newton's law of restitution",
+        "Direct impact",
+        "Oblique impact",
+        "Successive impacts",
+        "Kinetic energy loss in collisions"
+      ]
+    },
+    {
+      "topic_id": "M2.5",
+      "name": "Statics of Rigid Bodies",
+      "category": "Mechanics 2",
+      "unit": "M2",
+      "subtopics": [
+        "Equilibrium of rigid bodies",
+        "Problems involving rods and joints"
+      ]
+    },
+    {
+      "topic_id": "M3.1",
+      "name": "Further Kinematics",
+      "category": "Mechanics 3",
+      "unit": "M3",
+      "subtopics": [
+        "Variable acceleration",
+        "Motion in a resisting medium",
+        "Circular motion (angular velocity, acceleration)"
+      ]
+    },
+    {
+      "topic_id": "M3.2",
+      "name": "Elastic Strings and Springs",
+      "category": "Mechanics 3",
+      "unit": "M3",
+      "subtopics": [
+        "Hooke's law",
+        "Elastic potential energy",
+        "Simple harmonic motion (SHM)",
+        "Period and amplitude of SHM"
+      ]
+    },
+    {
+      "topic_id": "M3.3",
+      "name": "Dynamics with Variable Forces",
+      "category": "Mechanics 3",
+      "unit": "M3",
+      "subtopics": [
+        "Motion under variable force",
+        "Connected bodies with variable forces"
+      ]
+    },
+    {
+      "topic_id": "M3.4",
+      "name": "Circular Motion",
+      "category": "Mechanics 3",
+      "unit": "M3",
+      "subtopics": [
+        "Motion in a horizontal circle",
+        "Motion in a vertical circle",
+        "Banked curves",
+        "Conical pendulum"
+      ]
+    },
+    {
+      "topic_id": "M3.5",
+      "name": "Statics of Rigid Bodies (Advanced)",
+      "category": "Mechanics 3",
+      "unit": "M3",
+      "subtopics": [
+        "Centre of mass by integration",
+        "Equilibrium of suspended bodies"
+      ]
+    },
+    {
+      "topic_id": "S1.1",
+      "name": "Data Representation and Summary Statistics",
+      "category": "Statistics 1",
+      "unit": "S1",
+      "subtopics": [
+        "Histograms and stem-and-leaf diagrams",
+        "Box plots",
+        "Measures of location (mean, median, mode)",
+        "Measures of dispersion (range, IQR, variance, standard deviation)",
+        "Coding",
+        "Outliers"
+      ]
+    },
+    {
+      "topic_id": "S1.2",
+      "name": "Probability",
+      "category": "Statistics 1",
+      "unit": "S1",
+      "subtopics": [
+        "Basic probability",
+        "Venn diagrams",
+        "Mutually exclusive and independent events",
+        "Conditional probability",
+        "Tree diagrams"
+      ]
+    },
+    {
+      "topic_id": "S1.3",
+      "name": "Correlation and Regression",
+      "category": "Statistics 1",
+      "unit": "S1",
+      "subtopics": [
+        "Scatter diagrams",
+        "Pearson's product moment correlation coefficient",
+        "Regression line of y on x",
+        "Interpolation and extrapolation"
+      ]
+    },
+    {
+      "topic_id": "S1.4",
+      "name": "Discrete Random Variables",
+      "category": "Statistics 1",
+      "unit": "S1",
+      "subtopics": [
+        "Probability distributions",
+        "Expectation E(X)",
+        "Variance Var(X)",
+        "Discrete uniform distribution"
+      ]
+    },
+    {
+      "topic_id": "S1.5",
+      "name": "The Normal Distribution",
+      "category": "Statistics 1",
+      "unit": "S1",
+      "subtopics": [
+        "Properties of normal distribution",
+        "Standard normal Z",
+        "Finding probabilities",
+        "Finding critical values",
+        "Normal approximation to binomial"
+      ]
+    },
+    {
+      "topic_id": "S2.1",
+      "name": "Binomial and Poisson Distributions",
+      "category": "Statistics 2",
+      "unit": "S2",
+      "subtopics": [
+        "Binomial distribution (conditions, calculations, mean, variance)",
+        "Poisson distribution (conditions, calculations, mean, variance)",
+        "Sum of independent Poisson variables",
+        "Poisson approximation to binomial",
+        "Distribution of sample mean"
+      ]
+    },
+    {
+      "topic_id": "S2.2",
+      "name": "Continuous Random Variables and Distributions",
+      "category": "Statistics 2",
+      "unit": "S2",
+      "subtopics": [
+        "Probability density functions",
+        "Cumulative distribution functions",
+        "Mean and variance of continuous distributions",
+        "Rectangular (continuous uniform) distribution",
+        "Exponential distribution"
+      ]
+    },
+    {
+      "topic_id": "S2.3",
+      "name": "Sampling and Hypothesis Testing",
+      "category": "Statistics 2",
+      "unit": "S2",
+      "subtopics": [
+        "Sampling methods",
+        "Hypothesis testing for binomial proportion",
+        "Hypothesis testing for Poisson mean",
+        "Type I and Type II errors"
+      ]
+    },
+    {
+      "topic_id": "S3.1",
+      "name": "Combinations of Random Variables",
+      "category": "Statistics 3",
+      "unit": "S3",
+      "subtopics": [
+        "Sum and difference of independent random variables",
+        "E(aX + bY) and Var(aX + bY)"
+      ]
+    },
+    {
+      "topic_id": "S3.2",
+      "name": "Estimation and Confidence Intervals",
+      "category": "Statistics 3",
+      "unit": "S3",
+      "subtopics": [
+        "Unbiased estimators",
+        "Central Limit Theorem",
+        "Confidence intervals for mean (known and unknown variance)",
+        "Confidence intervals for difference of means",
+        "t-distribution"
+      ]
+    },
+    {
+      "topic_id": "S3.3",
+      "name": "Further Hypothesis Testing",
+      "category": "Statistics 3",
+      "unit": "S3",
+      "subtopics": [
+        "Testing difference of means",
+        "Paired t-tests",
+        "Chi-squared goodness of fit",
+        "Chi-squared contingency tables"
+      ]
+    },
+    {
+      "topic_id": "S3.4",
+      "name": "Regression and Goodness of Fit",
+      "category": "Statistics 3",
+      "unit": "S3",
+      "subtopics": [
+        "Regression lines",
+        "Residuals",
+        "Goodness of fit tests"
+      ]
+    },
+    {
+      "topic_id": "D1.1",
+      "name": "Algorithms",
+      "category": "Decision Mathematics 1",
+      "unit": "D1",
+      "subtopics": [
+        "Algorithm design",
+        "Flow charts",
+        "Bubble sort",
+        "Quick sort",
+        "Bin packing algorithms",
+        "Order notation"
+      ]
+    },
+    {
+      "topic_id": "D1.2",
+      "name": "Graphs",
+      "category": "Decision Mathematics 1",
+      "unit": "D1",
+      "subtopics": [
+        "Graph terminology",
+        "Minimum spanning trees (Prim's, Kruskal's)",
+        "Dijkstra's algorithm",
+        "Chinese postman problem",
+        "Travelling salesman problem",
+        "Route inspection"
+      ]
+    },
+    {
+      "topic_id": "D1.3",
+      "name": "Critical Path Analysis",
+      "category": "Decision Mathematics 1",
+      "unit": "D1",
+      "subtopics": [
+        "Activity networks",
+        "Earliest and latest event times",
+        "Critical activities and critical path",
+        "Total float",
+        "Gantt charts",
+        "Scheduling"
+      ]
+    },
+    {
+      "topic_id": "D1.4",
+      "name": "Linear Programming",
+      "category": "Decision Mathematics 1",
+      "unit": "D1",
+      "subtopics": [
+        "Formulating LP problems",
+        "Graphical method",
+        "Simplex algorithm",
+        "Two-stage simplex",
+        "Big-M method"
+      ]
+    }
+  ]
+}

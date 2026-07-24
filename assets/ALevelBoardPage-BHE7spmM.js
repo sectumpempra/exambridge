@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-CjNSP63y.js";import{t}from"./BoardPage-BmHRXmOr.js";var n=e();function r(e){return(0,n.jsx)(t,{...e,csvSuffix:e.csvSuffix??`al`})}export{r as t};

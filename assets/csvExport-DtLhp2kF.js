@@ -1,0 +1,3 @@
+import{n as e}from"./excelExport-DXpDwCOm.js";function t(t){return t=String(e(t)),t.includes(`,`)||t.includes(`"`)||t.includes(`
+`)?`"${t.replace(/"/g,`""`)}"`:t}function n(e,n){if(e.length===0)return;let r=Object.keys(e[0]).filter(e=>!e.startsWith(`_`)),i=`﻿`+[r.map(t).join(`,`),...e.map(e=>r.map(n=>{let r=e[n];return t(r==null?``:String(r))}).join(`,`))].join(`
+`),a=new Blob([i],{type:`text/csv;charset=utf-8;`}),o=URL.createObjectURL(a),s=document.createElement(`a`);s.href=o,s.download=n,document.body.appendChild(s),s.click(),document.body.removeChild(s),URL.revokeObjectURL(o)}export{n as t};
