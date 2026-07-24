@@ -1,0 +1,56 @@
+{
+  "caseId": "gc-14-simple-movable-pulley",
+  "title": "简单理想动滑轮（绳长约束 2:1）",
+  "description": "动滑轮挂载 m_load=6 kg，绳一端固定于锚点，绕过动滑轮再绕过定滑轮，自由端悬挂 m2=2 kg，g=10。动力学模式。",
+  "physicsAssumptions": ["动滑轮无质量", "绳长约束：自由端位移 = 2×动滑轮位移", "同一根绳张力相等"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-14",
+    "title": "简单动滑轮",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-load", "label": "重物 load", "mass": 6, "position": { "x": 0, "y": 2 } },
+      { "id": "m-obj-2", "label": "物体 m2", "mass": 2, "position": { "x": 0.5, "y": 3 } }
+    ],
+    "surfaces": [],
+    "supports": [],
+    "pulleys": [
+      { "id": "pul-1", "kind": "movable", "position": { "x": 0, "y": 2 }, "attachedObjectId": "m-obj-load" },
+      { "id": "pul-2", "kind": "fixed", "position": { "x": 0.5, "y": 5 } }
+    ],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "anchor", "point": { "x": 0, "y": 5 } },
+        { "type": "pulley", "pulleyId": "pul-1" },
+        { "type": "pulley", "pulleyId": "pul-2" },
+        { "type": "object", "objectId": "m-obj-2" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "T(rope-1)", "value": 25.71428571428571, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-load)", "value": -1.4285714285714286, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-2)", "value": 2.857142857142857, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-2", "kind": "tension", "magnitude": 25.71428571428571, "direction": { "x": 0, "y": 1 }, "tolerance": 1e-9 }
+    ],
+    "equations": [
+      { "kind": "rope-length", "termsContain": [{ "symbol": "a(m-obj-load)", "coefficient": -2 }, { "symbol": "a(m-obj-2)", "coefficient": -1 }] }
+    ],
+    "constraints": [
+      { "kind": "rope-length", "satisfied": true },
+      { "kind": "rope-tension-equal", "satisfied": true }
+    ],
+    "validationRules": ["residual-check", "direction-report"],
+    "assertions": ["绳长约束 a(m2) = -2·a(load)", "a(load)=-10/7 m/s²（下降），与假定正方向相反并明确报告", "T=180/7 N"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：约束 a2=-2a1。load：2T-60=6a1；m2：T-20=2a2=-4a1。由第二式 T=20-4a1 代入：2(20-4a1)-60=6a1 → -20=14a1 → a1=-10/7≈-1.428571 m/s²（重物下降），a2=20/7≈2.857143 m/s²（m2 上升），T=20+40/7=180/7≈25.714286 N。"
+}

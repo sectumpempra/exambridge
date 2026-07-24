@@ -1,0 +1,44 @@
+{
+  "caseId": "gc-06-rough-incline-dynamics",
+  "title": "粗糙斜面（自由下滑，滑动摩擦）",
+  "description": "质量 2 kg 物体在 30° 粗糙斜面上由静止释放，μs=0.3，μk=0.2，g=10。动力学模式。",
+  "physicsAssumptions": ["静摩擦不足时转为滑动摩擦 μkN", "摩擦方向与运动趋势相反"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-06",
+    "title": "粗糙斜面下滑",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 1.7320508075688772, "y": 1 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "inclined", "angleDeg": 30, "friction": { "model": "rough", "muS": 0.3, "muK": 0.2 } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "N(m-obj-1)", "value": 17.32050807568877, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-1)", "value": -3.2679491924311228, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "kinetic-friction", "magnitude": 3.4641016151377544, "direction": { "x": 0.8660254037844386, "y": 0.5 }, "tolerance": 1e-9 }
+    ],
+    "equations": [],
+    "constraints": [
+      { "kind": "friction-direction", "satisfied": true },
+      { "kind": "normal-non-negative", "satisfied": true }
+    ],
+    "validationRules": ["friction-state"],
+    "assertions": ["μsN=5.196 N < mg·sin30°=10 N → 下滑", "a=-g(sin30°-μk·cos30°)≈-3.267949 m/s²", "滑动摩擦沿斜面向上"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：N=mg·cos30°≈17.320508 N；μsN≈5.196 N < 10 N → 滑动；f=μkN≈3.464102 N（沿斜面向上）；a=(-10+3.464102)/2≈-3.267949 m/s²（负号=沿斜面向下）。"
+}

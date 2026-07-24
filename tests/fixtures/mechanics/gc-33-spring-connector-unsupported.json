@@ -1,0 +1,43 @@
+{
+  "caseId": "gc-33-spring-connector-unsupported",
+  "title": "弹簧连接（unsupported）",
+  "description": "两物体由弹簧连接，第一版不支持弹簧，必须返回 unsupported。",
+  "physicsAssumptions": ["第一版不支持弹簧与弹性绳"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-33",
+    "title": "弹簧连接",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" },
+      { "id": "m-obj-2", "label": "物体 m2", "mass": 3, "position": { "x": 2, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [
+      { "id": "spring-1", "kind": "spring", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "object", "objectId": "m-obj-2" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "unsupported",
+    "statusReasonContains": "不支持",
+    "values": [],
+    "forces": [],
+    "equations": [],
+    "constraints": [],
+    "validationRules": ["spring-connector"],
+    "assertions": ["返回 unsupported 而非假装可计算", "unsupportedFeatures 列出弹簧"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "拓扑检查：connector kind=spring → unsupported（弹簧）。"
+}

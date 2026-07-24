@@ -1,0 +1,48 @@
+{
+  "caseId": "gc-15-rod-tension",
+  "title": "轻杆受拉（斜面上锚固）",
+  "description": "质量 2 kg 物体在 30° 光滑斜面上，由沿斜面方向的轻杆连接上侧锚点，平衡模式。",
+  "physicsAssumptions": ["轻杆只传递轴向力", "杆可受拉"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-15",
+    "title": "轻杆受拉",
+    "gravity": 10,
+    "analysisMode": "equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 1.7320508075688772, "y": 1 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "inclined", "angleDeg": 30, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [
+      { "id": "rod-1", "kind": "rod", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "anchor", "point": { "x": 3.4641016151377544, "y": 2 }, "label": "上侧锚点" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "R(rod-1)", "value": 10, "tolerance": 1e-9 },
+      { "symbol": "N(m-obj-1)", "value": 17.32050807568877, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "rod", "magnitude": 10, "direction": { "x": 0.8660254037844386, "y": 0.5 }, "tolerance": 1e-9 }
+    ],
+    "equations": [],
+    "constraints": [
+      { "kind": "rod-length", "satisfied": true }
+    ],
+    "validationRules": ["residual-check"],
+    "assertions": ["R=+10 N（正值=受拉）", "沿斜面：R = mg·sin30° = 10 N"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：沿斜面方向 R = mg·sin30° = 10 N，杆受拉（把物体拉向锚点）。垂直斜面 N = mg·cos30° ≈ 17.320508 N。"
+}

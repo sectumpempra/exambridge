@@ -1,0 +1,40 @@
+{
+  "caseId": "gc-35-free-fall",
+  "title": "自由落体（无平面无连接单物体）",
+  "description": "质量 2 kg 物体无任何平面与连接，动力学模式，只受重力。a=-g=-10 m/s²。",
+  "physicsAssumptions": ["只受重力", "V1 自由物体理想化为竖直路径"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-35",
+    "title": "自由落体",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 5 } }
+    ],
+    "surfaces": [],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "a(m-obj-1)", "value": -10, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "gravity", "magnitude": -20, "direction": { "x": 0, "y": 1 }, "tolerance": 1e-9 }
+    ],
+    "equations": [
+      { "objectId": "m-obj-1", "kind": "newton-y", "termsContain": [{ "symbol": "a(m-obj-1)", "coefficient": -2 }] }
+    ],
+    "constraints": [],
+    "validationRules": ["residual-check", "direction-report"],
+    "assertions": ["a=-g=-10 m/s²（竖直向下）", "加速度方向与假定正方向（向上）相反，必须明确报告"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：唯一方程 -m·a = m·g（路径正方向向上）→ a = -g = -10 m/s²。负号表示向下，方向报告 oppositeToAssumption=true。"
+}

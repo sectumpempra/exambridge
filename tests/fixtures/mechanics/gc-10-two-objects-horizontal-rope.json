@@ -1,0 +1,56 @@
+{
+  "caseId": "gc-10-two-objects-horizontal-rope",
+  "title": "两个水平面物体由理想绳连接",
+  "description": "m1=2 kg 与 m2=3 kg 在光滑水平面上由绳连接，m1 受 10 N 水平向左拉力，g=10。动力学模式。",
+  "physicsAssumptions": ["绳轻且不可伸长", "绳保持绷紧", "平面光滑"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-10",
+    "title": "两物体水平绳连接",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" },
+      { "id": "m-obj-2", "label": "物体 m2", "mass": 3, "position": { "x": 2, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "object", "objectId": "m-obj-2" }
+      ] }
+    ],
+    "externalForces": [
+      { "id": "force-1", "objectId": "m-obj-1", "magnitude": 10, "angleDeg": 180, "label": "水平拉力 F" }
+    ],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "T(rope-1)", "value": 6, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-1)", "value": -2, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-2)", "value": -2, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "tension", "magnitude": 6, "direction": { "x": 1, "y": 0 }, "tolerance": 1e-9 },
+      { "objectId": "m-obj-2", "kind": "tension", "magnitude": 6, "direction": { "x": -1, "y": 0 }, "tolerance": 1e-9 }
+    ],
+    "equations": [
+      { "kind": "rope-length", "termsContain": [{ "symbol": "a(m-obj-1)", "coefficient": -1 }, { "symbol": "a(m-obj-2)", "coefficient": 1 }] }
+    ],
+    "constraints": [
+      { "kind": "rope-length", "satisfied": true },
+      { "kind": "tension-non-negative", "satisfied": true }
+    ],
+    "validationRules": ["residual-check"],
+    "assertions": ["两物体加速度相同 a=-2 m/s²（向 -x 方向）", "张力 T=m2·|a|=6 N"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：绳不可伸长 → a1=a2=a。整体法：F=(m1+m2)|a| → |a|=10/5=2 m/s²，方向 -x。隔离 m2：T=m2·|a|=3×2=6 N。"
+}

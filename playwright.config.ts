@@ -18,6 +18,7 @@ export default defineConfig({
   projects: [
     { name: "desktop-chromium", testMatch: /routes\.spec\.ts/, use: { ...devices["Desktop Chrome"] } },
     { name: "mobile-390", testMatch: /routes\.spec\.ts/, use: { ...devices["iPhone 13"], browserName: "chromium", viewport: { width: 390, height: 844 } } },
+    { name: "mechanics-lab-chromium", testMatch: /mechanics-lab\.spec\.ts/, use: { ...devices["Desktop Chrome"] } },
     { name: "firefox-core", testMatch: /cross-browser\.spec\.ts/, use: { ...devices["Desktop Firefox"] } },
     { name: "webkit-core", testMatch: /cross-browser\.spec\.ts/, use: { ...devices["Desktop Safari"] } },
     { name: "ai-public-chromium", testMatch: /ai-assistant-public\.spec\.ts/, use: { ...devices["Desktop Chrome"] } },

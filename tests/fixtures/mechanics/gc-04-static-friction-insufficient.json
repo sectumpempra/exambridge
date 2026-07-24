@@ -1,0 +1,43 @@
+{
+  "caseId": "gc-04-static-friction-insufficient",
+  "title": "静摩擦不足（平衡模式，平衡假设不成立）",
+  "description": "质量 2 kg 物体在粗糙水平面上，平衡模式，受 10 N 水平外力，μs=0.4，μk=0.3，g=10。静摩擦上限 8 N < 10 N。",
+  "physicsAssumptions": ["静摩擦上限 μsN", "超过上限后物体将滑动"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-04",
+    "title": "静摩擦不足",
+    "gravity": 10,
+    "analysisMode": "equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "rough", "muS": 0.4, "muK": 0.3 } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [
+      { "id": "force-1", "objectId": "m-obj-1", "magnitude": 10, "angleDeg": 0 }
+    ],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "assumption-invalid",
+    "statusReasonContains": "静力平衡假设不成立",
+    "values": [
+      { "symbol": "f(m-obj-1)", "value": -10, "tolerance": 1e-9 }
+    ],
+    "forces": [],
+    "equations": [],
+    "constraints": [
+      { "kind": "static-friction-bound", "satisfied": false }
+    ],
+    "validationRules": ["static-friction-bound", "friction-state"],
+    "assertions": ["所需静摩擦 10 N 超过上限 8 N", "状态为 assumption-invalid 而非计算失败", "提示若滑动 a≈2 m/s²"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：N=20 N，μsN=8 N < F=10 N → 静摩擦不可能平衡，平衡假设不成立。滑动估算：a=(10-0.3×20)/2=2 m/s²。"
+}

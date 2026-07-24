@@ -1,0 +1,39 @@
+{
+  "caseId": "gc-23-inconsistent-equilibrium",
+  "title": "矛盾输入（光滑水平面平衡模式 + 无约束水平外力）",
+  "description": "质量 2 kg 物体在光滑水平面上，平衡模式，受 10 N 水平外力。没有任何力能平衡它，方程矛盾。",
+  "physicsAssumptions": ["平衡模式加速度为零", "平面光滑无摩擦"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-23",
+    "title": "平衡模式矛盾输入",
+    "gravity": 10,
+    "analysisMode": "equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [
+      { "id": "force-1", "objectId": "m-obj-1", "magnitude": 10, "angleDeg": 0 }
+    ],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "inconsistent",
+    "statusReasonContains": "矛盾",
+    "values": [],
+    "forces": [],
+    "equations": [],
+    "constraints": [],
+    "validationRules": ["consistency-check"],
+    "assertions": ["x 方向方程 0 = -10 不可能成立", "增广矩阵秩大于系数矩阵秩", "不得显示为普通计算失败"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：x 方向唯一方程为 0·N = -F = -10，无解。系数矩阵秩 0 < 增广矩阵秩 1 → inconsistent。"
+}

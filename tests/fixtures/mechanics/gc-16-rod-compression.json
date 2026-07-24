@@ -1,0 +1,48 @@
+{
+  "caseId": "gc-16-rod-compression",
+  "title": "轻杆受压（斜面下侧支撑）",
+  "description": "质量 2 kg 物体在 30° 光滑斜面上，由沿斜面方向的轻杆连接下侧锚点，平衡模式。杆受压。",
+  "physicsAssumptions": ["轻杆只传递轴向力", "杆可受压，负号表示压力"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-16",
+    "title": "轻杆受压",
+    "gravity": 10,
+    "analysisMode": "equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 1.7320508075688772, "y": 1 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "inclined", "angleDeg": 30, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [
+      { "id": "rod-1", "kind": "rod", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "anchor", "point": { "x": 0, "y": 0 }, "label": "下侧锚点" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "R(rod-1)", "value": -10, "tolerance": 1e-9 },
+      { "symbol": "N(m-obj-1)", "value": 17.32050807568877, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "rod", "magnitude": -10, "direction": { "x": -0.8660254037844386, "y": -0.5 }, "tolerance": 1e-9 }
+    ],
+    "equations": [],
+    "constraints": [
+      { "kind": "rod-length", "satisfied": true }
+    ],
+    "validationRules": ["residual-check"],
+    "assertions": ["R=-10 N（负值=受压）", "结果明确标注轻杆受压，不得取绝对值"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：杆轴从物体指向下侧锚点（沿斜面向下）。沿斜面：-R - mg·sin30° = 0 → R = -10 N，负号表示杆受压（实际作用力沿斜面向上 10 N）。N = mg·cos30° ≈ 17.320508 N。"
+}

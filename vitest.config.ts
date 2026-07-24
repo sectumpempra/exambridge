@@ -5,10 +5,17 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "node",
-    include: ["tests/**/*.test.ts"],
+    include: [
+      "tests/**/*.test.{ts,tsx}",
+      "src/features/mechanics-lab/**/*.test.ts",
+    ],
     coverage: {
       reporter: ["text", "html", "json-summary"],
-      include: ["src/domain-v2/**/*.ts", "src/adapters-v2/**/*.ts", "server/ai/**/*.ts"],
+      include: [
+        "src/domain-v2/**/*.ts",
+        "src/adapters-v2/**/*.ts",
+        "server/ai/**/*.ts",
+      ],
       exclude: ["**/*.d.ts", "src/**/index.ts", "server/ai/provider-smoke.ts"],
       thresholds: {
         lines: 90,

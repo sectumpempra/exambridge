@@ -1,0 +1,44 @@
+{
+  "caseId": "gc-28-zero-angle-incline",
+  "title": "零角度斜面（退化为水平面）",
+  "description": "倾角 0° 的斜面应退化为水平面。质量 2 kg 物体静置于光滑零角度斜面上，g=10。",
+  "physicsAssumptions": ["零角度斜面等价于水平面", "静力平衡"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-28",
+    "title": "零角度斜面",
+    "gravity": 10,
+    "analysisMode": "equilibrium",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "inclined", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "N(m-obj-1)", "value": 20, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "normal", "magnitude": 20, "direction": { "x": 0, "y": 1 }, "tolerance": 1e-9 }
+    ],
+    "equations": [
+      { "objectId": "m-obj-1", "kind": "newton-y", "termsContain": [{ "symbol": "N(m-obj-1)", "coefficient": 1 }] }
+    ],
+    "constraints": [
+      { "kind": "normal-non-negative", "satisfied": true }
+    ],
+    "validationRules": ["residual-check"],
+    "assertions": ["零角度斜面的支持力方向为竖直向上", "N=mg=20 N"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：θ=0° 时 sinθ=0、cosθ=1，路径方向 (1,0)、法线方向 (0,1)，退化为水平面：N=mg=20 N。"
+}

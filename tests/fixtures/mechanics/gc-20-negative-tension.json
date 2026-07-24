@@ -1,0 +1,50 @@
+{
+  "caseId": "gc-20-negative-tension",
+  "title": "负张力（两物体对推，绳不能受压）",
+  "description": "m1=2 kg 与 m2=3 kg 在光滑水平面上由绳连接，分别受 10 N 相向推力。绳需受压才能约束，解出负张力 → 绳松弛。",
+  "physicsAssumptions": ["理想绳只能受拉不能受压", "负张力必须显式报告，不得取绝对值"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-20",
+    "title": "负张力",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" },
+      { "id": "m-obj-2", "label": "物体 m2", "mass": 3, "position": { "x": 2, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "object", "objectId": "m-obj-2" }
+      ] }
+    ],
+    "externalForces": [
+      { "id": "force-1", "objectId": "m-obj-1", "magnitude": 10, "angleDeg": 0 },
+      { "id": "force-2", "objectId": "m-obj-2", "magnitude": 10, "angleDeg": 180 }
+    ],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "assumption-invalid",
+    "statusReasonContains": "绳",
+    "values": [
+      { "symbol": "T(rope-1)", "value": -10, "tolerance": 1e-9 }
+    ],
+    "forces": [],
+    "equations": [],
+    "constraints": [
+      { "kind": "tension-non-negative", "satisfied": false }
+    ],
+    "validationRules": ["tension-non-negative"],
+    "assertions": ["绷紧假设解出 T=-10 N", "明确报告绳将松弛", "不得对负张力取绝对值"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：绷紧假设 a1=a2。m1：10+T=2a；m2：-T-10=3a。相加：0=5a → a=0，T=-10 N < 0 → 绳不能受压，绷紧假设不成立，绳松弛。"
+}

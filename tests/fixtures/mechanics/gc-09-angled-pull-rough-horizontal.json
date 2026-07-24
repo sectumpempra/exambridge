@@ -1,0 +1,46 @@
+{
+  "caseId": "gc-09-angled-pull-rough-horizontal",
+  "title": "任意角度拉力（粗糙水平面）",
+  "description": "质量 2 kg 物体在粗糙水平面上，受 10 N、与水平成 30° 向上的拉力，μs=0.3，μk=0.2，g=10。动力学模式。",
+  "physicsAssumptions": ["拉力竖直分量减小支持力", "滑动摩擦 μkN"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-09",
+    "title": "任意角度拉力",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 2, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "rough", "muS": 0.3, "muK": 0.2 } }
+    ],
+    "supports": [],
+    "pulleys": [],
+    "connectors": [],
+    "externalForces": [
+      { "id": "force-1", "objectId": "m-obj-1", "magnitude": 10, "angleDeg": 30, "label": "斜向上拉力 F" }
+    ],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "N(m-obj-1)", "value": 15, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-1)", "value": 2.830127018922193, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "kinetic-friction", "magnitude": -3, "direction": { "x": 1, "y": 0 }, "tolerance": 1e-9 },
+      { "objectId": "m-obj-1", "kind": "applied", "magnitude": 10, "direction": { "x": 0.8660254037844386, "y": 0.5 }, "tolerance": 1e-9 }
+    ],
+    "equations": [],
+    "constraints": [
+      { "kind": "friction-direction", "satisfied": true }
+    ],
+    "validationRules": ["friction-state"],
+    "assertions": ["N=mg-F·sin30°=15 N", "F·cos30°=8.660 N > μsN=4.5 N → 滑动", "a=(8.660-0.2×15)/2≈2.830127 m/s²"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：N=20-10×0.5=15 N；Fx=10×cos30°≈8.660254 N > μsN=4.5 N → 滑动；f=μkN=3 N；a=(8.660254-3)/2≈2.830127 m/s²。"
+}

@@ -1,0 +1,44 @@
+{
+  "caseId": "gc-32-massive-pulley-unsupported",
+  "title": "有质量滑轮（unsupported）",
+  "description": "定滑轮质量 0.5 kg，第一版仅支持理想滑轮，必须返回 unsupported 并列出能力名称。",
+  "physicsAssumptions": ["第一版不支持有质量滑轮与滑轮转动惯量"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-32",
+    "title": "有质量滑轮",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 3, "position": { "x": -0.3, "y": 2 } },
+      { "id": "m-obj-2", "label": "物体 m2", "mass": 5, "position": { "x": 0.3, "y": 2 } }
+    ],
+    "surfaces": [],
+    "supports": [],
+    "pulleys": [
+      { "id": "pul-1", "kind": "fixed", "position": { "x": 0, "y": 4 }, "mass": 0.5 }
+    ],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "pulley", "pulleyId": "pul-1" },
+        { "type": "object", "objectId": "m-obj-2" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "unsupported",
+    "statusReasonContains": "不支持",
+    "values": [],
+    "forces": [],
+    "equations": [],
+    "constraints": [],
+    "validationRules": ["massive-pulley"],
+    "assertions": ["返回 unsupported 而非假装可计算", "unsupportedFeatures 列出有质量滑轮"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "拓扑检查：滑轮 mass=0.5 > 0 → unsupported（有质量滑轮）。"
+}

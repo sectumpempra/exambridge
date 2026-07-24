@@ -1,0 +1,67 @@
+{
+  "caseId": "gc-29-kinematics-constant-acceleration",
+  "title": "恒加速度运动（运动学模式）",
+  "description": "与 gc-12 相同装置（m1=4 桌面、 m2=2 悬挂、光滑），运动学模式，v0=0。验证恒加速度运动记录。",
+  "physicsAssumptions": ["恒加速度：v(t)=v0+at，s(t)=v0·t+½at²", "动画状态由确定性结果生成"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-29",
+    "title": "恒加速度运动演示",
+    "gravity": 10,
+    "analysisMode": "kinematics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 4, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" },
+      { "id": "m-obj-2", "label": "物体 m2", "mass": 2, "position": { "x": 2, "y": -1 } }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [
+      { "id": "pul-1", "kind": "fixed", "position": { "x": 2, "y": 0.5 } }
+    ],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "pulley", "pulleyId": "pul-1" },
+        { "type": "object", "objectId": "m-obj-2" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": [
+      { "objectId": "m-obj-1", "velocity": 0 },
+      { "objectId": "m-obj-2", "velocity": 0 }
+    ]
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "a(m-obj-1)", "value": 3.3333333333333335, "tolerance": 1e-9 },
+      { "symbol": "T(rope-1)", "value": 13.333333333333334, "tolerance": 1e-9 }
+    ],
+    "forces": [],
+    "equations": [],
+    "constraints": [
+      { "kind": "rope-length", "satisfied": true }
+    ],
+    "validationRules": ["residual-check"],
+    "kinematics": [
+      {
+        "objectId": "m-obj-1",
+        "accelerationAlongPath": 3.3333333333333335,
+        "tolerance": 1e-9,
+        "sampleAt": { "t": 2, "velocityAlongPath": 6.666666666666667, "displacementAlongPath": 6.666666666666667 }
+      },
+      {
+        "objectId": "m-obj-2",
+        "accelerationAlongPath": -3.3333333333333335,
+        "tolerance": 1e-9,
+        "sampleAt": { "t": 1, "velocityAlongPath": -3.3333333333333335, "displacementAlongPath": -1.6666666666666667 }
+      }
+    ],
+    "assertions": ["a=10/3 m/s²", "t=2s 时 v=20/3 m/s、s=20/3 m", "运动学记录由确定性求解结果生成"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导同 gc-12：a=10/3 m/s²，T=40/3 N。v0=0：v(t)=10/3·t，s(t)=5/3·t²。t=2：v=20/3≈6.666667 m/s，s=20/3≈6.666667 m。t=1（m2）：v=-10/3，s=-5/3。"
+}

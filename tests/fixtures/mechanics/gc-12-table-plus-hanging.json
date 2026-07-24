@@ -1,0 +1,58 @@
+{
+  "caseId": "gc-12-table-plus-hanging",
+  "title": "水平面物体连接悬挂物体",
+  "description": "m1=4 kg 在光滑水平面上，经固定滑轮连接悬挂 m2=2 kg，g=10。动力学模式。",
+  "physicsAssumptions": ["平面光滑", "绳轻且不可伸长", "理想滑轮两侧张力相等"],
+  "expectParse": "ok",
+  "scene": {
+    "schemaVersion": "1.0.0",
+    "sceneId": "scene-gc-12",
+    "title": "桌面物体连接悬挂物体",
+    "gravity": 10,
+    "analysisMode": "dynamics",
+    "objects": [
+      { "id": "m-obj-1", "label": "物体 m1", "mass": 4, "position": { "x": 0, "y": 0.5 }, "surfaceId": "surf-1" },
+      { "id": "m-obj-2", "label": "物体 m2", "mass": 2, "position": { "x": 2, "y": -1 } }
+    ],
+    "surfaces": [
+      { "id": "surf-1", "kind": "horizontal", "angleDeg": 0, "friction": { "model": "smooth" } }
+    ],
+    "supports": [],
+    "pulleys": [
+      { "id": "pul-1", "kind": "fixed", "position": { "x": 2, "y": 0.5 } }
+    ],
+    "connectors": [
+      { "id": "rope-1", "kind": "rope", "nodes": [
+        { "type": "object", "objectId": "m-obj-1" },
+        { "type": "pulley", "pulleyId": "pul-1" },
+        { "type": "object", "objectId": "m-obj-2" }
+      ] }
+    ],
+    "externalForces": [],
+    "initialConditions": []
+  },
+  "expected": {
+    "status": "solved",
+    "values": [
+      { "symbol": "T(rope-1)", "value": 13.333333333333334, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-1)", "value": 3.3333333333333335, "tolerance": 1e-9 },
+      { "symbol": "a(m-obj-2)", "value": -3.3333333333333335, "tolerance": 1e-9 },
+      { "symbol": "N(m-obj-1)", "value": 40, "tolerance": 1e-9 }
+    ],
+    "forces": [
+      { "objectId": "m-obj-1", "kind": "tension", "magnitude": 13.333333333333334, "direction": { "x": 1, "y": 0 }, "tolerance": 1e-9 },
+      { "objectId": "m-obj-2", "kind": "tension", "magnitude": 13.333333333333334, "direction": { "x": 0, "y": 1 }, "tolerance": 1e-9 }
+    ],
+    "equations": [
+      { "kind": "rope-length", "termsContain": [{ "symbol": "a(m-obj-1)", "coefficient": -1 }, { "symbol": "a(m-obj-2)", "coefficient": -1 }] }
+    ],
+    "constraints": [
+      { "kind": "rope-length", "satisfied": true },
+      { "kind": "tension-non-negative", "satisfied": true }
+    ],
+    "validationRules": ["residual-check"],
+    "assertions": ["a=m2·g/(m1+m2)=20/6=10/3 m/s²", "T=m1·a=40/3 N", "m1 的支持力 N=40 N"]
+  },
+  "numericTolerance": 1e-9,
+  "derivationNotes": "手工推导：m2：20-T=2a；m1：T=4a。相加：20=6a → a=10/3≈3.333333 m/s²；T=40/3≈13.333333 N。m1 竖直方向：N=m1·g=40 N。"
+}

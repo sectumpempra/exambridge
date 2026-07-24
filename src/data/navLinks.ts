@@ -41,6 +41,7 @@ export const NAV_GROUPS: NavigationGroup[] = [
       { label: "工具总览", to: "/tools", description: "按当前课程查看可用工具", preserveCourse: true },
       { label: "刷题规划", to: "/planner", description: "按 Paper 安排练习", preserveCourse: true },
       { label: "函数画图", to: "/graph", description: "绘图、调参和导出", preserveCourse: true },
+      { label: "力学实验室", to: "/mechanics-lab", description: "二维受力、约束与运动分析", preserveCourse: true },
     ],
   },
 ];
