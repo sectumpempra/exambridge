@@ -1,0 +1,76 @@
+{
+  "caseId": "dist-pll-001",
+  "category": "parallel-lines-distance",
+  "description": "平行：两平行线距离 5，垂线段端点给出",
+  "input": {
+    "solver": "parallelLinesDistance",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "0",
+          "y": "3",
+          "z": "4"
+        }
+      },
+      "direction": {
+        "x": "2",
+        "y": "0",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "parallel-distinct",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "5",
+      "radicand": "1",
+      "decimal": "5.000000"
+    },
+    "segmentEnd1": [
+      "0",
+      "0",
+      "0"
+    ],
+    "segmentEnd2": [
+      "0",
+      "3",
+      "4"
+    ]
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：方向 (1,0,0) 与 (2,0,0) 平行（叉积为零）。λ = (A2−A1)·b1/(b1·b1) = 0，F = (0,0,0)；连接器 (0,3,4)，d = √(9+16) = 5。垂线段端点 (0,0,0) 与 (0,3,4)。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-on-line1",
+    "connector-perpendicular-to-line1",
+    "connector-perpendicular-to-line2"
+  ]
+}

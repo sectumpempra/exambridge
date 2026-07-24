@@ -1,0 +1,66 @@
+{
+  "caseId": "rel-lp-003",
+  "category": "line-plane-relation",
+  "description": "线面关系：一般相交，给出 λ 与交点",
+  "input": {
+    "solver": "linePlaneRelation",
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "l-A",
+        "label": "l-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "1"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "1",
+        "z": "1"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "intersecting-at-point",
+    "dotProduct": "1",
+    "basePointResidual": "1",
+    "parameter": "-1",
+    "intersectionPoint": [
+      "-1",
+      "-1",
+      "0"
+    ]
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：平面 z = 0（d0 = 0）。b·n = 1 ≠ 0；λ = (d0 − a·n)/(b·n) = (0 − 1)/1 = −1；交点 = (0,0,1) − (1,1,1) = (−1,−1,0)。",
+  "validationRules": [
+    "dot-product-evidence",
+    "base-point-substitution",
+    "relation-classification"
+  ]
+}

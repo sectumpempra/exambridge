@@ -1,0 +1,59 @@
+{
+  "caseId": "rel-pp-001",
+  "category": "plane-plane-relation",
+  "description": "面面关系：方程互为倍数，两平面重合",
+  "input": {
+    "solver": "planePlaneRelation",
+    "plane1": {
+      "planeId": "pl1",
+      "label": "pl1",
+      "point": {
+        "pointId": "pl1-A",
+        "label": "pl1-A",
+        "position": {
+          "x": "1",
+          "y": "2",
+          "z": "3"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "1",
+        "z": "1"
+      }
+    },
+    "plane2": {
+      "planeId": "pl2",
+      "label": "pl2",
+      "point": {
+        "pointId": "pl2-A",
+        "label": "pl2-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "6"
+        }
+      },
+      "normal": {
+        "x": "2",
+        "y": "2",
+        "z": "2"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "coincident",
+    "normalsRelation": "parallel",
+    "normalsDotProduct": "6"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d1 = 1+2+3 = 6，方程 (1,1,1,6)；d2 = 12，方程 (2,2,2,12) = 2×(1,1,1,6) ⟹ 规范化后相同 ⟺ 重合。n1·n2 = 2+2+2 = 6。",
+  "validationRules": [
+    "normals-relation",
+    "relation-classification"
+  ]
+}

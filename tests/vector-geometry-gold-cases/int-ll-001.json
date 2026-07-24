@@ -1,0 +1,66 @@
+{
+  "caseId": "int-ll-001",
+  "category": "line-line-intersection",
+  "description": "线线求交：不平行且相交，唯一交点含双参数",
+  "input": {
+    "solver": "lineLineIntersection",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "l1-A",
+        "label": "l1-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "l2-A",
+        "label": "l2-A",
+        "position": {
+          "x": "0",
+          "y": "1",
+          "z": "1"
+        }
+      },
+      "direction": {
+        "x": "0",
+        "y": "1",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "unique",
+    "intersectionPoint": [
+      "0",
+      "0",
+      "0"
+    ],
+    "parameterOnLine1": "0",
+    "parameterOnLine2": "-1"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：w = A2−A1 = (0,1,1)；b11 = 1, b22 = 2, b12 = 0, w1 = 0, w2 = 2, Δ = 2。s = (0·2−0·2)/2 = 0，t = (0·0−1·2)/2 = −1。F1 = (0,0,0)，F2 = (0,1,1) − (0,1,1) = (0,0,0) ⟹ 垂足重合 ⟺ 唯一交点。",
+  "validationRules": [
+    "directions-relation",
+    "intersection-on-line1",
+    "intersection-on-line2",
+    "relation-classification"
+  ]
+}

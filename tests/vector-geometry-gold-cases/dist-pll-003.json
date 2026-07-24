@@ -1,0 +1,52 @@
+{
+  "caseId": "dist-pll-003",
+  "category": "parallel-lines-distance",
+  "description": "结构化错误：不平行的两条直线调用平行线距离求解器 → not-parallel",
+  "input": {
+    "solver": "parallelLinesDistance",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "0",
+        "y": "1",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "not-parallel",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b1×b2 = (1,0,0)×(0,1,0) = (0,0,1) ≠ 0，两方向不平行。按任务书要求必须返回结构化错误分类 not-parallel，而不是静默改算别的量。",
+  "validationRules": []
+}

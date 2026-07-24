@@ -1,0 +1,45 @@
+{
+  "caseId": "dist-pp-005",
+  "category": "point-point-distance",
+  "description": "极大坐标：3×10⁶、4×10⁶、12×10⁶ 仍精确得 13×10⁶",
+  "input": {
+    "solver": "pointPointDistance",
+    "point1": {
+      "pointId": "A",
+      "label": "A",
+      "position": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "point2": {
+      "pointId": "B",
+      "label": "B",
+      "position": {
+        "x": "3000000",
+        "y": "4000000",
+        "z": "12000000"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "distinct-points",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "13000000",
+      "radicand": "1",
+      "decimal": "13000000.000000"
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d² = (3² + 4² + 12²)×10¹² = 169×10¹²，d = 13×10⁶ = 13000000。bigint 精确路径不得有浮点损失。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification"
+  ]
+}

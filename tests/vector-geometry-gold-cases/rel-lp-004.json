@@ -1,0 +1,66 @@
+{
+  "caseId": "rel-lp-004",
+  "category": "line-plane-relation",
+  "description": "线面关系：方向平行法向量，直线垂直于平面（仍给出交点）",
+  "input": {
+    "solver": "linePlaneRelation",
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "l-A",
+        "label": "l-A",
+        "position": {
+          "x": "1",
+          "y": "2",
+          "z": "3"
+        }
+      },
+      "direction": {
+        "x": "0",
+        "y": "0",
+        "z": "7"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "perpendicular-to-plane",
+    "dotProduct": "7",
+    "basePointResidual": "3",
+    "parameter": "-3/7",
+    "intersectionPoint": [
+      "1",
+      "2",
+      "0"
+    ]
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b = (0,0,7) = 7n ⟹ b∥n ⟺ 直线垂直于平面。λ = (0 − 3)/7 = −3/7；交点 = (1,2,3) − (3/7)(0,0,7) = (1,2,0)。",
+  "validationRules": [
+    "dot-product-evidence",
+    "base-point-substitution",
+    "relation-classification"
+  ]
+}

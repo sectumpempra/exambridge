@@ -1,0 +1,62 @@
+{
+  "caseId": "dist-pl-003",
+  "category": "point-line-distance",
+  "description": "距离为 0：点恰好在直线上，分类 point-on-line",
+  "input": {
+    "solver": "pointLineDistance",
+    "point": {
+      "pointId": "P",
+      "label": "P",
+      "position": {
+        "x": "2",
+        "y": "4",
+        "z": "6"
+      }
+    },
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "A",
+        "label": "A",
+        "position": {
+          "x": "1",
+          "y": "2",
+          "z": "3"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "2",
+        "z": "3"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "point-on-line",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "0",
+      "radicand": "1",
+      "decimal": "0.000000"
+    },
+    "foot": [
+      "2",
+      "4",
+      "6"
+    ],
+    "parameter": "1"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：P−a = (1, 2, 3) = b，λ = 14/14 = 1，F = (1,2,3) + (1,2,3) = (2,4,6) = P，d = 0 → point-on-line，必须解释原因。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-on-line",
+    "connector-perpendicular-to-direction"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "caseId": "dist-ppl-001",
+  "category": "point-plane-distance",
+  "description": "普通：点-平面距离为有理数 5/3，含垂足",
+  "input": {
+    "solver": "pointPlaneDistance",
+    "point": {
+      "pointId": "P",
+      "label": "P",
+      "position": {
+        "x": "1",
+        "y": "1",
+        "z": "1"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "A",
+        "label": "A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "2",
+        "z": "2"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "point-outside-plane",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "5/3",
+      "radicand": "1",
+      "decimal": "1.666667"
+    },
+    "foot": [
+      "4/9",
+      "-1/9",
+      "-1/9"
+    ]
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：平面 r·n = 0；signed = P·n − 0 = 1+2+2 = 5；n·n = 9；d = |5|/3 = 5/3 ≈ 1.666667。垂足 F = P − (5/9)(1,2,2) = (4/9, −1/9, −1/9)。验证：F·n = 4/9 − 2/9 − 2/9 = 0 ✓。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-in-plane",
+    "connector-parallel-to-normal"
+  ]
+}

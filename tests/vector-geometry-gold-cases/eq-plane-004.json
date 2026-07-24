@@ -1,0 +1,46 @@
+{
+  "caseId": "eq-plane-004",
+  "category": "plane-equations",
+  "description": "平面方程：三点生成且验证过三点",
+  "input": {
+    "solver": "planeEquationsFromThreePoints",
+    "point1": {
+      "x": "1",
+      "y": "0",
+      "z": "0"
+    },
+    "point2": {
+      "x": "0",
+      "y": "1",
+      "z": "0"
+    },
+    "point3": {
+      "x": "0",
+      "y": "0",
+      "z": "1"
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "normalForm": "r·(1, 1, 1) = 1",
+    "pointNormalForm": "(r - (1, 0, 0))·(1, 1, 1) = 0",
+    "cartesianForm": "x + y + z = 1",
+    "parametricForm": "r = (1, 0, 0) + λ(-1, 1, 0) + μ(-1, 0, 1)",
+    "normal": [
+      "1",
+      "1",
+      "1"
+    ],
+    "d": "1"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：u = P2−P1 = (−1,1,0)，v = P3−P1 = (−1,0,1)；n = u×v = (1·1−0·0, 0·(−1)−(−1)·1, (−1)·0−1·(−1)) = (1,1,1)；d = P1·n = 1 ⟹ x+y+z = 1。回代：三点代入均为 1 ✓。",
+  "validationRules": [
+    "point1-on-plane",
+    "point2-on-plane",
+    "point3-on-plane"
+  ]
+}

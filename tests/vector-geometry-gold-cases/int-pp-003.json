@@ -1,0 +1,57 @@
+{
+  "caseId": "int-pp-003",
+  "category": "plane-plane-intersection",
+  "description": "面面求交：两平面重合，无穷多解",
+  "input": {
+    "solver": "planePlaneIntersection",
+    "plane1": {
+      "planeId": "pl1",
+      "label": "pl1",
+      "point": {
+        "pointId": "pl1-A",
+        "label": "pl1-A",
+        "position": {
+          "x": "1",
+          "y": "2",
+          "z": "3"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "1",
+        "z": "1"
+      }
+    },
+    "plane2": {
+      "planeId": "pl2",
+      "label": "pl2",
+      "point": {
+        "pointId": "pl2-A",
+        "label": "pl2-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "6"
+        }
+      },
+      "normal": {
+        "x": "2",
+        "y": "2",
+        "z": "2"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "coincident-infinite"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：(2,2,2,12) = 2×(1,1,1,6) ⟹ 两方程描述同一平面 ⟺ 整个平面都是解。",
+  "validationRules": [
+    "normals-relation",
+    "relation-classification"
+  ]
+}

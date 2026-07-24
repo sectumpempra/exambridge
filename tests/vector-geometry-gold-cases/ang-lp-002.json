@@ -1,0 +1,65 @@
+{
+  "caseId": "ang-lp-002",
+  "category": "line-plane-angle",
+  "description": "线面垂直：方向与法向量平行，线面角 90°，sin θ = 1",
+  "input": {
+    "solver": "linePlaneAngle",
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "A",
+        "label": "A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "0",
+        "y": "0",
+        "z": "5"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "B",
+        "label": "B",
+        "position": {
+          "x": "1",
+          "y": "2",
+          "z": "3"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "line-perpendicular-to-plane",
+    "sine": {
+      "kind": "exact",
+      "coefficient": "1",
+      "radicand": "1"
+    },
+    "angleDegrees": 90
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d = 5·n；|d·n| = 5；|d| = 5，|n| = 1；sin θ = 5/5 = 1 → θ = 90°，line-perpendicular-to-plane。应触发 parallel-cross-zero 验证。",
+  "validationRules": [
+    "sine-within-bounds",
+    "angle-range",
+    "angle-classification",
+    "parallel-cross-zero"
+  ]
+}

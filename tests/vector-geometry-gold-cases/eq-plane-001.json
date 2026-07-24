@@ -1,0 +1,39 @@
+{
+  "caseId": "eq-plane-001",
+  "category": "plane-equations",
+  "description": "平面方程：点+法向量生成四形式",
+  "input": {
+    "solver": "planeEquationsFromPointNormal",
+    "point": {
+      "x": "1",
+      "y": "0",
+      "z": "1"
+    },
+    "normal": {
+      "x": "1",
+      "y": "2",
+      "z": "2"
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "normalForm": "r·(1, 2, 2) = 3",
+    "pointNormalForm": "(r - (1, 0, 1))·(1, 2, 2) = 0",
+    "cartesianForm": "x + 2y + 2z = 3",
+    "parametricForm": "r = (1, 0, 1) + λ(0, 1, -1) + μ(4, -1, -1)",
+    "normal": [
+      "1",
+      "2",
+      "2"
+    ],
+    "d": "3"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d = A·n = 1·1 + 0·2 + 1·2 = 3 ⟹ r·(1,2,2) = 3 ⟺ x + 2y + 2z = 3。参数方向：|n_x| = 1 最小 ⟹ u = n×e_x = (0,2,−2) → 约化 (0,1,−1)；v = n×u = (−8,2,2) → 约化 (4,−1,−1)。",
+  "validationRules": [
+    "point-on-plane"
+  ]
+}

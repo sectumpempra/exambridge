@@ -1,0 +1,50 @@
+{
+  "caseId": "eq-membership-004",
+  "category": "point-membership",
+  "description": "点在面上判定：不成立，给出带符号代入值",
+  "input": {
+    "solver": "isPointInPlane",
+    "point": {
+      "x": "0",
+      "y": "0",
+      "z": "0"
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "1",
+          "y": "0",
+          "z": "1"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "2",
+        "z": "2"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "not-in-plane",
+    "inPlane": false,
+    "exact": true,
+    "signedValue": "-3"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：P·n − d0 = 0 − 3 = −3 ≠ 0 ⟹ 不在平面内，带符号值 −3 同时给出所在侧。",
+  "validationRules": [
+    {
+      "rule": "point-in-plane-residual",
+      "passed": false
+    },
+    "relation-classification"
+  ]
+}

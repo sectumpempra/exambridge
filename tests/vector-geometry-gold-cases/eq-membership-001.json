@@ -1,0 +1,47 @@
+{
+  "caseId": "eq-membership-001",
+  "category": "point-membership",
+  "description": "点在线上判定：成立并恢复参数 λ",
+  "input": {
+    "solver": "isPointOnLine",
+    "point": {
+      "x": "2",
+      "y": "4",
+      "z": "6"
+    },
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "l-A",
+        "label": "l-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "2",
+        "z": "3"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "on-line",
+    "onLine": true,
+    "exact": true,
+    "parameter": "2"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：(P−a)×b = (2,4,6)×(1,2,3) = (4·3−6·2, 6·1−2·3, 2·2−4·1) = (0,0,0) ⟹ 在线上；最大 |b_i| 为 z 分量，λ = 6/3 = 2。",
+  "validationRules": [
+    "point-on-line-residual",
+    "relation-classification"
+  ]
+}

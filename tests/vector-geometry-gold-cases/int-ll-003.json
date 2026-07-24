@@ -1,0 +1,59 @@
+{
+  "caseId": "int-ll-003",
+  "category": "line-line-intersection",
+  "description": "线线求交：异面直线，无交点（垂足证据）",
+  "input": {
+    "solver": "lineLineIntersection",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "l1-A",
+        "label": "l1-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "l2-A",
+        "label": "l2-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "3"
+        }
+      },
+      "direction": {
+        "x": "0",
+        "y": "1",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "skew-no-intersection"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：w = (0,0,3)；b11 = b22 = 1, b12 = 0, w1 = w2 = 0, Δ = 1 ⟹ s = t = 0。F1 = (0,0,0)，F2 = (0,0,3)，F2−F1 = (0,0,3) ≠ 0 ⟹ 异面无交。",
+  "validationRules": [
+    "directions-relation",
+    "foot-on-line1",
+    "foot-on-line2",
+    "relation-classification"
+  ]
+}

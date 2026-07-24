@@ -1,0 +1,65 @@
+{
+  "caseId": "ang-lp-001",
+  "category": "line-plane-angle",
+  "description": "线面平行：方向与法向量点积为 0，线面角 0°，分类 line-parallel-to-plane",
+  "input": {
+    "solver": "linePlaneAngle",
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "A",
+        "label": "A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "5"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "B",
+        "label": "B",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "line-parallel-to-plane",
+    "sine": {
+      "kind": "exact",
+      "coefficient": "0",
+      "radicand": "1"
+    },
+    "angleDegrees": 0
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d·n = 0 → sin θ = 0 → θ = 0°；方向与法向量垂直 ⟺ 直线平行于平面（本例直线 z=5 不在平面 z=0 内，但线面角定义只看方向）。",
+  "validationRules": [
+    "sine-within-bounds",
+    "angle-range",
+    "angle-classification",
+    "perpendicular-dot-zero"
+  ]
+}

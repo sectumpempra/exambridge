@@ -1,0 +1,31 @@
+{
+  "caseId": "eq-plane-005",
+  "category": "plane-equations",
+  "description": "平面方程：三点共线退化，被拒绝且明确不声称唯一平面",
+  "input": {
+    "solver": "planeEquationsFromThreePoints",
+    "point1": {
+      "x": "0",
+      "y": "0",
+      "z": "0"
+    },
+    "point2": {
+      "x": "1",
+      "y": "1",
+      "z": "1"
+    },
+    "point3": {
+      "x": "2",
+      "y": "2",
+      "z": "2"
+    }
+  },
+  "expectedStatus": "degenerate-input",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：u = (1,1,1)，v = (2,2,2) = 2u ⟹ u×v = 0 ⟺ 三点共线，过一条直线的平面有无穷多个——必须拒绝，不能声称已生成唯一平面。",
+  "validationRules": []
+}

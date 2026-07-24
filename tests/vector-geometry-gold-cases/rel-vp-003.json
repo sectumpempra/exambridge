@@ -1,0 +1,45 @@
+{
+  "caseId": "rel-vp-003",
+  "category": "vector-plane-relation",
+  "description": "线面关系：点积与叉积均非零，向量与平面斜交",
+  "input": {
+    "solver": "vectorPlaneRelation",
+    "vector": {
+      "x": "1",
+      "y": "0",
+      "z": "0"
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "1",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "oblique",
+    "dotProduct": "1"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：v·n = 1 ≠ 0 且 v×n = (0·1−0·1, 0·1−1·1, 1·1−0·1) = (0,−1,1) ≠ 0 ⟹ 斜交。",
+  "validationRules": [
+    "dot-product-evidence",
+    "relation-classification"
+  ]
+}

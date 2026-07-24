@@ -1,0 +1,45 @@
+{
+  "caseId": "dist-pp-006",
+  "category": "point-point-distance",
+  "description": "极小坐标：10⁻⁶ 量级的分数坐标，距离 13/1000000",
+  "input": {
+    "solver": "pointPointDistance",
+    "point1": {
+      "pointId": "A",
+      "label": "A",
+      "position": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "point2": {
+      "pointId": "B",
+      "label": "B",
+      "position": {
+        "x": "3/1000000",
+        "y": "4/1000000",
+        "z": "12/1000000"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "distinct-points",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "13/1000000",
+      "radicand": "1",
+      "decimal": "0.000013"
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d² = (9 + 16 + 144)/10¹² = 169/10¹²，d = 13/10⁶ = 13/1000000（有理数）。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification"
+  ]
+}

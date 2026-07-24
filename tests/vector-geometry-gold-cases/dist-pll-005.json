@@ -1,0 +1,79 @@
+{
+  "caseId": "dist-pll-005",
+  "category": "parallel-lines-distance",
+  "description": "容差边界外：近似方向 10⁻⁶ 偏差超出容差，拒绝并分类 not-parallel",
+  "input": {
+    "solver": "parallelLinesDistance",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": {
+          "input": "1",
+          "approximation": "1"
+        },
+        "y": {
+          "input": "0",
+          "approximation": "0"
+        },
+        "z": {
+          "input": "0",
+          "approximation": "0"
+        }
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": {
+            "input": "0",
+            "approximation": "0"
+          },
+          "y": {
+            "input": "2",
+            "approximation": "2"
+          },
+          "z": {
+            "input": "0",
+            "approximation": "0"
+          }
+        }
+      },
+      "direction": {
+        "x": {
+          "input": "1",
+          "approximation": "1"
+        },
+        "y": {
+          "input": "0.000001",
+          "approximation": "0.000001"
+        },
+        "z": {
+          "input": "0",
+          "approximation": "0"
+        }
+      }
+    }
+  },
+  "expectedStatus": "not-parallel",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：|b1×b2| = 10⁻⁶ > max(10⁻⁹, 10⁻⁹·|b1||b2|) ≈ 10⁻⁹，超出容差。按 spec §4『不得把非常接近但超过容差的结果当成相等』，必须拒绝并给结构化 not-parallel。",
+  "validationRules": []
+}

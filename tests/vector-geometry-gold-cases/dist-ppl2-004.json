@@ -1,0 +1,76 @@
+{
+  "caseId": "dist-ppl2-004",
+  "category": "parallel-planes-distance",
+  "description": "根式结果：两平行平面距离 3√2/2，含垂足",
+  "input": {
+    "solver": "parallelPlanesDistance",
+    "plane1": {
+      "planeId": "p1",
+      "label": "p1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "1",
+        "z": "0"
+      }
+    },
+    "plane2": {
+      "planeId": "p2",
+      "label": "p2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "3",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "2",
+        "y": "2",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "parallel-distinct",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "3/2",
+      "radicand": "2",
+      "decimal": "2.121320"
+    },
+    "segmentEnd1": [
+      "3/2",
+      "-3/2",
+      "0"
+    ],
+    "segmentEnd2": [
+      "3",
+      "0",
+      "0"
+    ]
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：法向量平行。平面 1：x + y = 0；signed = A2·n1 − 0 = 3；n1·n1 = 2；d² = 9/2 → d = 3/√2 = (3/2)√2 ≈ 2.121320。垂足 F = (3,0,0) − (3/2)(1,1,0) = (3/2, −3/2, 0)。验证：F·n1 = 3/2 − 3/2 = 0 ✓。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-in-plane1",
+    "endpoint-in-plane2",
+    "connector-parallel-to-normal"
+  ]
+}

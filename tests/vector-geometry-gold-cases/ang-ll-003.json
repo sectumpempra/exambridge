@@ -1,0 +1,65 @@
+{
+  "caseId": "ang-ll-003",
+  "category": "line-line-angle",
+  "description": "平行直线：方向互为负倍数，夹角 0°",
+  "input": {
+    "solver": "lineLineAngle",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "-1",
+        "z": "2"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "3",
+          "y": "0",
+          "z": "-1"
+        }
+      },
+      "direction": {
+        "x": "-2",
+        "y": "2",
+        "z": "-4"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "parallel-lines",
+    "cosine": {
+      "kind": "exact",
+      "coefficient": "1",
+      "radicand": "1"
+    },
+    "angleDegrees": 0
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d2 = −2·d1；d1·d2 = −2 − 2 − 8 = −12；|d1| = √6，|d2| = 2√6；cos θ = |−12|/12 = 1 → θ = 0°，parallel-lines。",
+  "validationRules": [
+    "cosine-within-bounds",
+    "angle-range",
+    "angle-classification",
+    "parallel-cross-zero"
+  ]
+}

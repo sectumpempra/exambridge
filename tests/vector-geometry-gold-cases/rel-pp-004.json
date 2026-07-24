@@ -1,0 +1,59 @@
+{
+  "caseId": "rel-pp-004",
+  "category": "plane-plane-relation",
+  "description": "面面关系：n1·n2 = 0，两平面垂直",
+  "input": {
+    "solver": "planePlaneRelation",
+    "plane1": {
+      "planeId": "pl1",
+      "label": "pl1",
+      "point": {
+        "pointId": "pl1-A",
+        "label": "pl1-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "plane2": {
+      "planeId": "pl2",
+      "label": "pl2",
+      "point": {
+        "pointId": "pl2-A",
+        "label": "pl2-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "1",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "perpendicular",
+    "normalsRelation": "perpendicular",
+    "normalsDotProduct": "0"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：n1×n2 = (1,0,0)×(0,1,0) = (0,0,1) ≠ 0 ⟹ 相交；n1·n2 = 0 ⟺ 二面角为直角 ⟹ 垂直。",
+  "validationRules": [
+    "normals-relation",
+    "relation-classification"
+  ]
+}

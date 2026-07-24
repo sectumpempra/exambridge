@@ -1,0 +1,64 @@
+{
+  "caseId": "ang-lp-004",
+  "category": "line-plane-angle",
+  "description": "斜交 45°：方向 (1,0,1) 对法向量 (0,0,1)，sin θ = √2/2",
+  "input": {
+    "solver": "linePlaneAngle",
+    "line": {
+      "lineId": "l",
+      "label": "l",
+      "point": {
+        "pointId": "A",
+        "label": "A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "1"
+      }
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "B",
+        "label": "B",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "oblique",
+    "sine": {
+      "kind": "exact",
+      "coefficient": "1/2",
+      "radicand": "2"
+    },
+    "angleDegrees": 45
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d·n = 1；|d| = √2，|n| = 1；sin θ = 1/√2 = (1/2)√2 → θ = 45°，oblique。",
+  "validationRules": [
+    "sine-within-bounds",
+    "angle-range",
+    "angle-classification"
+  ]
+}

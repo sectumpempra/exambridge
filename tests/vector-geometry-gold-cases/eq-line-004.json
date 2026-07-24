@@ -1,0 +1,33 @@
+{
+  "caseId": "eq-line-004",
+  "category": "line-equations",
+  "description": "直线方程：b_y = 0 时对称式不适用并说明原因",
+  "input": {
+    "solver": "lineEquationsFromPointDirection",
+    "point": {
+      "x": "1",
+      "y": "2",
+      "z": "3"
+    },
+    "direction": {
+      "x": "1",
+      "y": "0",
+      "z": "2"
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "vector": "r = (1, 2, 3) + λ(1, 0, 2)",
+    "parametric": "x = 1 + λ, y = 2, z = 3 + 2λ",
+    "symmetricApplicable": false,
+    "symmetricReasonContains": "b_y"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b_y = 0 ⟹ 对称式中 (y−2)/0 除零，不适用；参数式 y 分量退化为常数 y = 2。",
+  "validationRules": [
+    "direction-non-zero"
+  ]
+}

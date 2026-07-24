@@ -1,0 +1,17 @@
+{
+  "caseId": "schema-parse-003",
+  "category": "schema-parse",
+  "description": "schema 解析：损坏 JSON 文本报 invalid-json，不进入 schema 校验",
+  "input": {
+    "solver": "schema-parse",
+    "documentText": "{ not json"
+  },
+  "expectedStatus": "invalid-json",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：documentText 不是合法 JSON（裸标识符）⟹ runner 在 JSON.parse 阶段即失败，记 invalid-json。",
+  "validationRules": []
+}

@@ -1,0 +1,26 @@
+{
+  "caseId": "eq-line-003",
+  "category": "line-equations",
+  "description": "直线方程：重复点退化，被拒绝且不声称唯一直线",
+  "input": {
+    "solver": "lineEquationsFromTwoPoints",
+    "point1": {
+      "x": "1",
+      "y": "1",
+      "z": "1"
+    },
+    "point2": {
+      "x": "1",
+      "y": "1",
+      "z": "1"
+    }
+  },
+  "expectedStatus": "degenerate-input",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：P1 = P2 ⟹ 连线向量为零，两点不能确定唯一直线——必须拒绝而非生成。",
+  "validationRules": []
+}

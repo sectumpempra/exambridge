@@ -1,0 +1,64 @@
+{
+  "caseId": "ang-ll-001",
+  "category": "line-line-angle",
+  "description": "线线锐角约定：方向点积为负时取绝对值，(1,0,0) 与 (−1,−1,0) 夹角 45°",
+  "input": {
+    "solver": "lineLineAngle",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "5",
+          "y": "5",
+          "z": "5"
+        }
+      },
+      "direction": {
+        "x": "-1",
+        "y": "-1",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "acute",
+    "cosine": {
+      "kind": "exact",
+      "coefficient": "1/2",
+      "radicand": "2"
+    },
+    "angleDegrees": 45
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d1·d2 = −1；直线无取向，取 |d1·d2| = 1；|d1| = 1，|d2| = √2；cos θ = (1/2)√2 → θ = 45°（范围 0°–90°）。",
+  "validationRules": [
+    "cosine-within-bounds",
+    "angle-range",
+    "angle-classification"
+  ]
+}

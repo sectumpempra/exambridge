@@ -1,0 +1,76 @@
+{
+  "caseId": "dist-ppl2-001",
+  "category": "parallel-planes-distance",
+  "description": "平行 + 方程倍乘：法向量 (0,0,1) 与 (0,0,2)，两平面距离 7",
+  "input": {
+    "solver": "parallelPlanesDistance",
+    "plane1": {
+      "planeId": "p1",
+      "label": "p1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "1"
+      }
+    },
+    "plane2": {
+      "planeId": "p2",
+      "label": "p2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "7"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "2"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "parallel-distinct",
+    "distance": {
+      "kind": "exact",
+      "coefficient": "7",
+      "radicand": "1",
+      "decimal": "7.000000"
+    },
+    "segmentEnd1": [
+      "0",
+      "0",
+      "0"
+    ],
+    "segmentEnd2": [
+      "0",
+      "0",
+      "7"
+    ]
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：法向量平行（叉积为零）。平面 1：z = 0；signed = A2·n1 − 0 = 7；n1·n1 = 1 → d = 7。垂足 F = (0,0,7) − 7·(0,0,1) = (0,0,0)。法向量整体倍乘不改变平面（不变量）。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-in-plane1",
+    "endpoint-in-plane2",
+    "connector-parallel-to-normal"
+  ]
+}

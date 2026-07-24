@@ -1,0 +1,45 @@
+{
+  "caseId": "rel-vp-002",
+  "category": "vector-plane-relation",
+  "description": "线面关系：v ∥ n，向量垂直于平面",
+  "input": {
+    "solver": "vectorPlaneRelation",
+    "vector": {
+      "x": "2",
+      "y": "4",
+      "z": "6"
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "2",
+        "z": "3"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "perpendicular-to-plane",
+    "dotProduct": "28"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：v = 2n ⟹ v×n = (4·3−6·2, 6·1−2·3, 2·2−4·1) = (0,0,0) ⟺ v∥n ⟺ v 垂直于平面；v·n = 2+8+18 = 28。",
+  "validationRules": [
+    "dot-product-evidence",
+    "relation-classification"
+  ]
+}

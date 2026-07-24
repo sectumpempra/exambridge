@@ -1,0 +1,46 @@
+{
+  "caseId": "dist-pp-007",
+  "category": "point-point-distance",
+  "description": "根式输入：sqrt(2) 以显式近似载体进入，走容差路径",
+  "input": {
+    "solver": "pointPointDistance",
+    "point1": {
+      "pointId": "A",
+      "label": "A",
+      "position": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "point2": {
+      "pointId": "B",
+      "label": "B",
+      "position": {
+        "x": {
+          "input": "sqrt(2)",
+          "approximation": "1.4142135623730951"
+        },
+        "y": "0",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "distinct-points",
+    "distance": {
+      "kind": "approximate",
+      "value": 1.4142135623730951
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：sqrt(2) 不是有理数，契约要求以 approximateScalar 显式携带（exact:false），求解器必须走容差路径并记录 tolerance；距离 ≈ 1.4142135623730951。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification"
+  ]
+}

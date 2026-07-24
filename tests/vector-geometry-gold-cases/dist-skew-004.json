@@ -1,0 +1,52 @@
+{
+  "caseId": "dist-skew-004",
+  "category": "skew-lines-distance",
+  "description": "结构化错误：平行方向调用异面直线求解器 → not-skew",
+  "input": {
+    "solver": "skewLinesDistance",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": "1",
+        "y": "2",
+        "z": "3"
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": "5",
+          "y": "5",
+          "z": "5"
+        }
+      },
+      "direction": {
+        "x": "2",
+        "y": "4",
+        "z": "6"
+      }
+    }
+  },
+  "expectedStatus": "not-skew",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b2 = 2·b1，叉积为零，两直线平行（且 (5,5,5) 不在 l1 上），不是异面直线。必须返回结构化 not-skew，提示改用 parallelLinesDistance。",
+  "validationRules": []
+}

@@ -1,0 +1,52 @@
+{
+  "caseId": "rel-pp-005",
+  "category": "plane-plane-relation",
+  "description": "面面关系：零法向量被结构化拒绝",
+  "input": {
+    "solver": "planePlaneRelation",
+    "plane1": {
+      "planeId": "pl1",
+      "label": "pl1",
+      "point": {
+        "pointId": "pl1-A",
+        "label": "pl1-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "0",
+        "y": "0",
+        "z": "0"
+      }
+    },
+    "plane2": {
+      "planeId": "pl2",
+      "label": "pl2",
+      "point": {
+        "pointId": "pl2-A",
+        "label": "pl2-A",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "0",
+        "z": "0"
+      }
+    }
+  },
+  "expectedStatus": "zero-vector",
+  "expectedResults": {},
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：平面 1 的法向量为零向量，关系无定义——必须拒绝而非猜测分类。",
+  "validationRules": []
+}

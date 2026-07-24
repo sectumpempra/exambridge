@@ -1,0 +1,91 @@
+{
+  "caseId": "dist-pll-004",
+  "category": "parallel-lines-distance",
+  "description": "几乎平行 + 容差边界内：近似方向 5×10⁻¹⁰ 偏差在默认容差内，按平行处理",
+  "input": {
+    "solver": "parallelLinesDistance",
+    "line1": {
+      "lineId": "l1",
+      "label": "l1",
+      "point": {
+        "pointId": "A1",
+        "label": "A1",
+        "position": {
+          "x": "0",
+          "y": "0",
+          "z": "0"
+        }
+      },
+      "direction": {
+        "x": {
+          "input": "1",
+          "approximation": "1"
+        },
+        "y": {
+          "input": "0",
+          "approximation": "0"
+        },
+        "z": {
+          "input": "0",
+          "approximation": "0"
+        }
+      }
+    },
+    "line2": {
+      "lineId": "l2",
+      "label": "l2",
+      "point": {
+        "pointId": "A2",
+        "label": "A2",
+        "position": {
+          "x": {
+            "input": "0",
+            "approximation": "0"
+          },
+          "y": {
+            "input": "2",
+            "approximation": "2"
+          },
+          "z": {
+            "input": "0",
+            "approximation": "0"
+          }
+        }
+      },
+      "direction": {
+        "x": {
+          "input": "1",
+          "approximation": "1"
+        },
+        "y": {
+          "input": "0.0000000005",
+          "approximation": "0.0000000005"
+        },
+        "z": {
+          "input": "0",
+          "approximation": "0"
+        }
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "relation": "parallel-distinct",
+    "distance": {
+      "kind": "approximate",
+      "value": 2
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：|b1×b2| = 5×10⁻¹⁰ ≤ max(10⁻⁹, 10⁻⁹·|b1||b2|) ≈ 10⁻⁹（容差边界 inclusive），近似路径判平行。λ = (A2−A1)·b1/(b1·b1) = 0，F = (0,0,0)，d = |(0,2,0)| = 2。",
+  "validationRules": [
+    "distance-non-negative",
+    "relation-classification",
+    "foot-on-line1",
+    "connector-perpendicular-to-line1",
+    "connector-perpendicular-to-line2"
+  ]
+}

@@ -41,6 +41,7 @@ const ExamOverviewPage = lazy(() => import("./pages/ExamOverviewPage"));
 const AIAssistantPage = lazy(() => import("./pages/AIAssistantPage"));
 const AcademicAnalysisPage = lazy(() => import("./pages/AcademicAnalysisPage"));
 const MechanicsLabPage = lazy(() => import("./pages/MechanicsLabPage"));
+const VectorGeometryLabPage = lazy(() => import("./pages/VectorGeometryLabPage"));
 
 function RouteFrame({ title, children }: { title: string; children: ReactNode }) {
   useEffect(() => { document.title = `${title} | ExamBridge`; }, [title]);
@@ -88,6 +89,7 @@ export default function App() {
         <Route path="/results" element={page("成绩与等级", <ResultsHub />)} />
         <Route path="/tools" element={page("教学工具", <ToolsHub />)} />
         <Route path="/mechanics-lab" element={page("力学实验室", <MechanicsLabPage />)} />
+        <Route path="/vector-geometry-lab" element={page("空间向量实验室", <VectorGeometryLabPage />)} />
         <Route path="/ai-assistant" element={page("AI 问答", <AIAssistantPage />)} />
         <Route path="/academic-analysis" element={page("成绩与难度分析", <AcademicAnalysisPage />)} />
 

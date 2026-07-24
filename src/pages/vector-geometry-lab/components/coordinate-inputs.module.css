@@ -1,0 +1,59 @@
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.slot,
+.slotInvalid {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 0.35rem 0.5rem 0.5rem;
+  min-width: 0;
+}
+
+.slotInvalid {
+  border-color: #cf222e;
+  background: #fff8f7;
+}
+
+.slot legend,
+.slotInvalid legend {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding-inline: 0.25rem;
+}
+
+.axisRow {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.axisLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  flex: 1;
+  min-width: 4.5rem;
+}
+
+.axisLabel input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.25rem 0.35rem;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.axisLabel input:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 1px;
+}
+
+.axisLabel input[aria-invalid="true"] {
+  border-color: #cf222e;
+}

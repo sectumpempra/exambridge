@@ -1,0 +1,47 @@
+{
+  "caseId": "eq-membership-003",
+  "category": "point-membership",
+  "description": "点在面上判定：成立，残差为零",
+  "input": {
+    "solver": "isPointInPlane",
+    "point": {
+      "x": "3",
+      "y": "0",
+      "z": "0"
+    },
+    "plane": {
+      "planeId": "pl",
+      "label": "pl",
+      "point": {
+        "pointId": "pl-A",
+        "label": "pl-A",
+        "position": {
+          "x": "1",
+          "y": "0",
+          "z": "1"
+        }
+      },
+      "normal": {
+        "x": "1",
+        "y": "2",
+        "z": "2"
+      }
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "classification": "in-plane",
+    "inPlane": true,
+    "exact": true,
+    "signedValue": "0"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：d0 = 1·1+0·2+1·2 = 3；P·n − d0 = (3·1+0+0) − 3 = 0 ⟹ 在平面内。",
+  "validationRules": [
+    "point-in-plane-residual",
+    "relation-classification"
+  ]
+}

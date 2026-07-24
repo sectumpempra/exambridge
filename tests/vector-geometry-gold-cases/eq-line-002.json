@@ -1,0 +1,34 @@
+{
+  "caseId": "eq-line-002",
+  "category": "line-equations",
+  "description": "直线方程：两点生成，方向为连线向量",
+  "input": {
+    "solver": "lineEquationsFromTwoPoints",
+    "point1": {
+      "x": "1",
+      "y": "0",
+      "z": "2"
+    },
+    "point2": {
+      "x": "3",
+      "y": "1",
+      "z": "6"
+    }
+  },
+  "expectedStatus": "solved",
+  "expectedResults": {
+    "vector": "r = (1, 0, 2) + λ(2, 1, 4)",
+    "parametric": "x = 1 + 2λ, y = λ, z = 2 + 4λ",
+    "symmetricApplicable": true,
+    "symmetric": "(x - 1)/2 = y/1 = (z - 2)/4"
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 1e-09
+  },
+  "independentDerivation": "手工推导：b = P2 − P1 = (3−1, 1−0, 6−2) = (2,1,4)；y 分量基点为 0 故参数式 y = λ、对称式分子为 y。",
+  "validationRules": [
+    "point1-on-line",
+    "point2-on-line"
+  ]
+}
